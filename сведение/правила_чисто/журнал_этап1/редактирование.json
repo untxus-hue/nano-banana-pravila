@@ -1,0 +1,959 @@
+[
+ {
+  "id": "П-редактирование-2",
+  "поле": "content_en",
+  "было": "Native image generation: a strong integration between the Gemini model and its image-generation capabilities enables image generation and image editing through natural-language prompts; multi-step conversational editing and interleaved text-image generation are natural in this setting.",
+  "стало": "Native image generation: a strong integration between the model and its image-generation capabilities enables image generation and image editing through natural-language prompts; multi-step conversational editing and interleaved text-image generation are natural in this setting.",
+  "основание": "К-ПРОЧЕЕ",
+  "контроль": "замечания#31",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-2",
+  "поле": "caveats_en[1]",
+  "было": "Derived from the source: conversational multi-turn editing, interleaved text-image output and multilingual support are attributed to image generation being native to the Gemini model itself. (models: other)",
+  "стало": "Conversational multi-turn editing, interleaved text-image output and multilingual support are attributed to image generation being native to the Gemini model itself. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-2",
+  "поле": "паспорт.примечание",
+  "было": "No model key is marked as applicable in the core: it describes native image generation in Gemini 2.0 Flash (key other), a predecessor of the Nano Banana family.",
+  "стало": "No model key is marked as applicable in the core: it describes native image generation in Gemini 2.0 Flash (key other), a predecessor of the Nano Banana family.; Derived from the source: conversational multi-turn editing, interleaved text-image output and multilingual support are attributed to image generation being native to the Gemini model itself. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-3",
+  "поле": "caveats_en[1]",
+  "было": "Official add/compose examples still request the match explicitly: 'matches the soft lighting of the photo', 'with the lighting and shadows adjusted to match the outdoor environment', 'Adjust the fit, lighting, and shadows to make it look natural.' (models: nb2, nb25)",
+  "стало": "Add/compose examples still request the match explicitly: 'matches the soft lighting of the photo', 'with the lighting and shadows adjusted to match the outdoor environment', 'Adjust the fit, lighting, and shadows to make it look natural.' (models: nb2, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-3",
+  "поле": "caveats_en[2]",
+  "было": "Matching the existing lighting differs from changing it: 'major lighting changes (like day to night)' are listed under Limitations as sometimes producing unnatural results. (models: pro, nb2)",
+  "стало": "Matching the existing lighting differs from changing it: 'major lighting changes (like day to night)' can sometimes produce unnatural results. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-3",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Official add/compose examples still request the match explicitly: 'matches the soft lighting of the photo', 'with the lighting and shadows adjusted to match the outdoor environment', 'Adjust the fit, lighting, and shadows to make it look natural.' (models: nb2, nb25); Matching the existing lighting differs from changing it: 'major lighting changes (like day to night)' are listed under Limitations as sometimes producing unnatural results. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-4",
+  "поле": "caveats_en[2]",
+  "было": "Model cards list a related known limitation when editing: 'infrequent copying/pasting from user's input image to generated image' (see the copy-paste limitation rule). (models: pro, nb2, lite)",
+  "стало": "A related known limitation when editing: 'infrequent copying/pasting from user's input image to generated image' (see the copy-paste limitation rule). (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-4",
+  "поле": "caveats_en[4]",
+  "было": "Derived from the sources: editing is repeatedly framed as preserving what the user likes and as 'keep the subject, change the context'; Google Photos stresses people staying recognizable; the Halloween prompt set has no prompt asking to keep the face unchanged; quotes about Vertex AI stress consistency across edit rounds. (models: pro, nb2, lite, nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-4",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Model cards list a related known limitation when editing: 'infrequent copying/pasting from user's input image to generated image' (see the copy-paste limitation rule). (models: pro, nb2, lite); Derived from the sources: editing is repeatedly framed as preserving what the user likes and as 'keep the subject, change the context'; Google Photos stresses people staying recognizable; the Halloween prompt set has no prompt asking to keep the face unchanged; quotes about Vertex AI stress consistency across edit rounds. (models: pro, nb2, lite, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-5",
+  "поле": "caveats_en[1]",
+  "было": "Derived workflow in the Gemini app: supply a photo, state only what should change, and rely on the model to keep the person or pet looking the same. (models: nb25)",
+  "стало": "Workflow in the Gemini app: supply a photo, state only what should change, and rely on the model to keep the person or pet looking the same. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-5",
+  "поле": "caveats_en[4]",
+  "было": "Character consistency is among the showcased operations that the same source also lists under Limitations. (models: pro)",
+  "стало": "Character consistency is among the showcased operations and also among the limitations. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-5",
+  "поле": "caveats_en[5]",
+  "было": "The API guidance still recommends describing critical details such as a face in great detail during an edit.",
+  "стало": "Describing critical details such as a face in great detail during an edit is still recommended.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-5",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived workflow in the Gemini app: supply a photo, state only what should change, and rely on the model to keep the person or pet looking the same. (models: nb25); Character consistency is among the showcased operations that the same source also lists under Limitations. (models: pro); The API guidance still recommends describing critical details such as a face in great detail during an edit.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-6",
+  "поле": "caveats_en[0]",
+  "было": "Derived: the five prompt-construction components (style, subject, setting, action, composition) reappear as the five editing axes, each changed while the others are kept.",
+  "стало": "The five prompt-construction components (style, subject, setting, action, composition) reappear as the five editing axes, each changed while the others are kept.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-6",
+  "поле": "caveats_en[1]",
+  "было": "The source text of the action axis contains the typo 'stand stand still'.",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-6",
+  "поле": "caveats_en[2]",
+  "было": "Description of a hackathon winner (participant's project): 'high style consistency and precise pose editing' for multi-frame animation. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-6",
+  "поле": "паспорт.примечание",
+  "было": "No model key is marked as applicable in the core; the source (DeepMind prompt guide) does not name the model.",
+  "стало": "No model key is marked as applicable in the core; the source (DeepMind prompt guide) does not name the model.; Derived: the five prompt-construction components (style, subject, setting, action, composition) reappear as the five editing axes, each changed while the others are kept.; The source text of the action axis contains the typo 'stand stand still'.; Description of a hackathon winner (participant's project): 'high style consistency and precise pose editing' for multi-frame animation. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-7",
+  "поле": "caveats_en[1]",
+  "было": "The prompt displayed in the API docs ends '...and matches the soft lighting of the photo.', while the code samples actually send '...and not falling off.'; the displayed version is the canonical example. (models: nb2)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-7",
+  "поле": "caveats_en[2]",
+  "было": "The conversational-edit example of the prompting guide is a bare command without the template slots: 'Remove the man from the photo'. (models: pro, nb2)",
+  "стало": "The conversational-edit example is a bare command without the template slots: 'Remove the man from the photo'. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-7",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "The prompt displayed in the API docs ends '...and matches the soft lighting of the photo.', while the code samples actually send '...and not falling off.'; the displayed version is the canonical example. (models: nb2); The conversational-edit example of the prompting guide is a bare command without the template slots: 'Remove the man from the photo'. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-8",
+  "поле": "caveats_en[0]",
+  "было": "Derived: in the recipes notebook, reference and edit prompts usually end with a realism or quality constraint ('look natural and blend seamlessly', 'to make it look natural', 'should look like a high-end advertisement'). (models: nb25)",
+  "стало": "Reference and edit prompts usually end with a realism or quality constraint ('look natural and blend seamlessly', 'to make it look natural', 'should look like a high-end advertisement'). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-8",
+  "поле": "caveats_en[1]",
+  "было": "The model matches the original image's style, lighting, and perspective; the official examples nevertheless spell out lighting or physical fit in the integration clause. (models: nb2)",
+  "стало": "The model matches the original image's style, lighting, and perspective; examples nevertheless spell out lighting or physical fit in the integration clause. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-8",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: in the recipes notebook, reference and edit prompts usually end with a realism or quality constraint ('look natural and blend seamlessly', 'to make it look natural', 'should look like a high-end advertisement'). (models: nb25); The model matches the original image's style, lighting, and perspective; the official examples nevertheless spell out lighting or physical fit in the integration clause. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-9",
+  "поле": "caveats_en[1]",
+  "было": "Several official single-element edits omit the preservation clause: 'Change this person's dress to be made out of tennis balls.', 'the dog's mouth is closed.', 'change the perfume color to a light purple', 'Change the tree to an umbrella.' (models: nb25, lite)",
+  "стало": "Several single-element edits omit the preservation clause: 'Change this person's dress to be made out of tennis balls.', 'the dog's mouth is closed.', 'change the perfume color to a light purple', 'Change the tree to an umbrella.' (models: nb25, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-9",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Several official single-element edits omit the preservation clause: 'Change this person's dress to be made out of tennis balls.', 'the dog's mouth is closed.', 'change the perfume color to a light purple', 'Change the tree to an umbrella.' (models: nb25, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "content_en",
+  "было": "To preserve critical details such as a face or a logo during an edit, describe them in great detail along with the edit request.\n1. To ensure critical details (like a face or logo) are preserved during an edit, describe them in great detail along with the edit request.\n2. When placing an element from the second image onto an element from the first image, ensure that the features of the element from the first image remain completely unchanged, and state how the added element should integrate.\n3. For a real person, add a short explicit preservation line such as 'Keep my face exactly as it is.', 'Keep his face the same.', 'Mimic my real face.' or 'The man should retain his original features and expression.'",
+  "стало": "To ensure critical details (like a face or logo) are preserved during an edit, describe them in great detail along with the edit request.\n1. When placing an element from the second image onto an element from the first image, ensure that the features of the element from the first image remain completely unchanged, and state how the added element should integrate.\n2. For a real person, add a short explicit preservation line such as 'Keep my face exactly as it is.', 'Keep his face the same.', 'Mimic my real face.' or 'The man should retain his original features and expression.'",
+  "основание": "К-ПРОЧЕЕ",
+  "контроль": "замечания#25",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "content_en",
+  "было": "To ensure critical details (like a face or logo) are preserved during an edit, describe them in great detail along with the edit request.\n1. When placing an element from the second image onto an element from the first image, ensure that the features of the element from the first image remain completely unchanged, and state how the added element should integrate.\n2. For a real person, add a short explicit preservation line such as 'Keep my face exactly as it is.', 'Keep his face the same.', 'Mimic my real face.' or 'The man should retain his original features and expression.'",
+  "стало": "To ensure critical details (like a face or logo) are preserved during an edit, describe them in great detail along with the edit request.\n1. When placing an element from the second image onto an element from the first image, ensure that the features of the element from the first image remain completely unchanged, and state how the added element should integrate.\n2. For a real person, add a short explicit preservation line that keeps the face unchanged.",
+  "основание": "К-СЛУЧАЙ",
+  "контроль": "замечания#17",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "caveats_en[1]",
+  "было": "Derived: Gemini app materials instead teach relying on the model to keep a person looking the same across edits. (models: nb25)",
+  "стало": "The Gemini app approach instead relies on the model to keep a person looking the same across edits. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "caveats_en[2]",
+  "было": "Derived: not every official edit of a real person adds such a line: 'Show what I'd look like blonde with bangs.' and the astronaut-outfit edit say nothing about the face, and the Halloween photo prompts never ask to keep the face. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "caveats_en[3]",
+  "было": "Only one of these example lines is negative ('Don't change the faces.'); the others are positive ('Mimic my real face.', 'Keep his face the same.', 'Keep my face exactly as it is.').",
+  "стало": "Only one of the example face-preservation lines is negative ('Don't change the faces.'); the others are positive ('Mimic my real face.', 'Keep his face the same.', 'Keep my face exactly as it is.').",
+  "основание": "К-СЛУЧАЙ",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "forbids_in_output_en",
+  "было": [
+   "Don't change the faces.",
+   "woman with brown hair, blue eyes",
+   "blonde with bangs",
+   "astronaut outfit"
+  ],
+  "стало": [
+   "Don't change the faces.",
+   "woman with brown hair, blue eyes",
+   "blonde with bangs",
+   "astronaut outfit",
+   "The man should retain his original features and expression."
+  ],
+  "основание": "К-СЛУЧАЙ",
+  "контроль": "замечания#17",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-10",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: Gemini app materials instead teach relying on the model to keep a person looking the same across edits. (models: nb25); Derived: not every official edit of a real person adds such a line: 'Show what I'd look like blonde with bangs.' and the astronaut-outfit edit say nothing about the face, and the Halloween photo prompts never ask to keep the face. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[0]",
+  "было": "The 'Be explicit about what to keep exactly the same' tip sits under semantic masking (inpainting). (models: pro, nb2)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[1]",
+  "было": "Resolved: a keep-clause is phrased positively ('Keep everything else in the image exactly the same'); the negative forms in official edit examples conflict with the positive-phrasing rule.",
+  "стало": "A keep-clause is phrased positively ('Keep everything else in the image exactly the same'); the negative forms in edit examples conflict with the positive-phrasing rule.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[2]",
+  "было": "Derived: in the API docs every editing template and edit example pairs the change with a preservation clause: 'Keep everything else in the image exactly the same', 'Preserve the original composition', 'remain completely unchanged', 'Do not change any other elements of the image', 'Keep everything the same, but...'.",
+  "стало": "Editing templates and edit examples pair the change with a preservation clause: 'Keep everything else in the image exactly the same', 'Preserve the original composition', 'remain completely unchanged', 'Do not change any other elements of the image', 'Keep everything the same, but...'.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[3]",
+  "было": "Derived: hackathon JS guide examples: 'Leave the background unchanged.', 'leave everything else the same.' (models: nb25)",
+  "стало": "Keep-clause examples: 'Leave the background unchanged.', 'leave everything else the same.' (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[4]",
+  "было": "Derived: Pro examples: 'while keeping everything else the same', 'keep the can exactly the same', 'remains exactly locked in its current position', 'retain his original features and expression'. (models: pro)",
+  "стало": "Keep-clause examples: 'while keeping everything else the same', 'keep the can exactly the same', 'remains exactly locked in its current position', 'retain his original features and expression'. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[5]",
+  "было": "Derived: all editing templates of the 2.5 Flash Image blog reference the input and most state what must be preserved (everything else, original style, lighting, composition). (models: nb25)",
+  "стало": "Editing templates reference the input and most state what must be preserved (everything else, original style, lighting, composition). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[6]",
+  "было": "Derived: fidelity-oriented restoration prompts add 'while preserving every original detail' / 'maintaining all original details without any additions'; creative transformations (watercolor, cinematization) do not. (models: nb25)",
+  "стало": "Fidelity-oriented restoration prompts add 'while preserving every original detail' / 'maintaining all original details without any additions'; creative transformations (watercolor, cinematization) do not. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[7]",
+  "было": "Both positive ('Keep everything else ... exactly the same') and negative ('Do not change any other elements of the image.') clause forms appear in official prompts. (models: nb2)",
+  "стало": "Both positive ('Keep everything else ... exactly the same') and negative ('Do not change any other elements of the image.') clause forms appear in prompts. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[8]",
+  "было": "Official examples word the keep-clause in several ways: 'while keeping everything else the same', 'keeping everything else the same', 'The character, remains exactly locked in its current position', 'The man should retain his original features and expression', 'Maintain existing pose and framing'. (models: pro, nb2, nb25)",
+  "стало": "The keep-clause is worded in several ways: 'while keeping everything else the same', 'keeping everything else the same', 'The character, remains exactly locked in its current position', 'The man should retain his original features and expression', 'Maintain existing pose and framing'. (models: pro, nb2, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[10]",
+  "было": "Many official edit examples carry no keep-clause and name only the change: 'Remove the man from the photo', 'Turn this scene into nighttime', 'Focus on the flowers', 'Translate to French', 'Replace volumetric lighting with bokeh', 'Change the sofa's color to a deep navy blue.' (models: pro, nb2, nb25)",
+  "стало": "Many edit examples carry no keep-clause and name only the change: 'Remove the man from the photo', 'Turn this scene into nighttime', 'Focus on the flowers', 'Translate to French', 'Replace volumetric lighting with bokeh', 'Change the sofa's color to a deep navy blue.' (models: pro, nb2, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[11]",
+  "было": "Derived: on the Pro launch source the change + invariant pairing appears in 4 of 16 prompts and the shortest edits carry none; Pro developer edit prompts are 3-5 word commands naming only the change; in the Halloween prompt set only the Victorian-ghost prompt has a preservation clause and none asks to keep the face unchanged. (models: pro, nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "caveats_en[12]",
+  "было": "The only example covering Lite is a general Firebase example for all models. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-11",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "The 'Be explicit about what to keep exactly the same' tip sits under semantic masking (inpainting). (models: pro, nb2); Resolved: a keep-clause is phrased positively ('Keep everything else in the image exactly the same'); the negative forms in official edit examples conflict with the positive-phrasing rule.; Derived: in the API docs every editing template and edit example pairs the change with a preservation clause: 'Keep everything else in the image exactly the same', 'Preserve the original composition', 'remain completely unchanged', 'Do not change any other elements of the image', 'Keep everything the same, but...'.; Derived: hackathon JS guide examples: 'Leave the background unchanged.', 'leave everything else the same.' (models: nb25); Derived: Pro examples: 'while keeping everything else the same', 'keep the can exactly the same', 'remains exactly locked in its current position', 'retain his original features and expression'. (models: pro); Derived: all editing templates of the 2.5 Flash Image blog reference the input and most state what must be preserved (everything else, original style, lighting, composition). (models: nb25); Derived: fidelity-oriented restoration prompts add 'while preserving every original detail' / 'maintaining all original details without any additions'; creative transformations (watercolor, cinematization) do not. (models: nb25); Both positive ('Keep everything else ... exactly the same') and negative ('Do not change any other elements of the image.') clause forms appear in official prompts. (models: nb2); Official examples word the keep-clause in several ways: 'while keeping everything else the same', 'keeping everything else the same', 'The character, remains exactly locked in its current position', 'The man should retain his original features and expression', 'Maintain existing pose and framing'. (models: pro, nb2, nb25); Many official edit examples carry no keep-clause and name only the change: 'Remove the man from the photo', 'Turn this scene into nighttime', 'Focus on the flowers', 'Translate to French', 'Replace volumetric lighting with bokeh', 'Change the sofa's color to a deep navy blue.' (models: pro, nb2, nb25); Derived: on the Pro launch source the change + invariant pairing appears in 4 of 16 prompts and the shortest edits carry none; Pro developer edit prompts are 3-5 word commands naming only the change; in the Halloween prompt set only the Victorian-ghost prompt has a preservation clause and none asks to keep the face unchanged. (models: pro, nb25); The only example covering Lite is a general Firebase example for all models. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[1]",
+  "было": "Derived: edit prompts applied to an existing image in the Pro developer materials are 3-5-word imperative commands (verb + target) that rely on the image for all other context: 'Replace volumetric lighting with bokeh', 'Translate to French'. (models: pro)",
+  "стало": "Pro edit prompts applied to an existing image are 3-5-word imperative commands (verb + target) that rely on the image for all other context: 'Replace volumetric lighting with bokeh', 'Translate to French'. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[2]",
+  "было": "Derived: Gemini app examples open with an imperative transformation verb aimed at the input and add separate sentences for specifics. (models: nb25)",
+  "стало": "Gemini app examples open with an imperative transformation verb aimed at the input and add separate sentences for specifics. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[3]",
+  "было": "Derived: Google Earth examples are single imperative sentences starting with an action verb; the on-screen view supplies the place. (models: nb2)",
+  "стало": "Google Earth examples are single imperative sentences starting with an action verb; the on-screen view supplies the place. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[4]",
+  "было": "Derived: Agent Platform examples reference the attached image ('this image', 'this photo') and state only the target change with an imperative verb, without re-describing the scene. (models: pro, nb2, lite, nb25)",
+  "стало": "Agent Platform examples reference the attached image ('this image', 'this photo') and state only the target change with an imperative verb, without re-describing the scene. (models: pro, nb2, lite, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[5]",
+  "было": "The only literal prompt in the Nano Banana tips material is a one-line description of the desired end state: 'the dog's mouth is closed.' (models: nb25)",
+  "стало": "A one-line description of the desired end state is used as an edit prompt: 'the dog's mouth is closed.' (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[6]",
+  "было": "In the Gemini app prompting tips this is the sixth prompt element and applies only 'For modifying an existing image'. (models: pro, nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "caveats_en[7]",
+  "было": "Some official examples do not say where: 'Add a fluffy white cat.' names no place in the image.",
+  "стало": "",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#47",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-12",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: edit prompts applied to an existing image in the Pro developer materials are 3-5-word imperative commands (verb + target) that rely on the image for all other context: 'Replace volumetric lighting with bokeh', 'Translate to French'. (models: pro); Derived: Gemini app examples open with an imperative transformation verb aimed at the input and add separate sentences for specifics. (models: nb25); Derived: Google Earth examples are single imperative sentences starting with an action verb; the on-screen view supplies the place. (models: nb2); Derived: Agent Platform examples reference the attached image ('this image', 'this photo') and state only the target change with an imperative verb, without re-describing the scene. (models: pro, nb2, lite, nb25); The only literal prompt in the Nano Banana tips material is a one-line description of the desired end state: 'the dog's mouth is closed.' (models: nb25); In the Gemini app prompting tips this is the sixth prompt element and applies only 'For modifying an existing image'. (models: pro, nb25); Some official examples do not say where: 'Add a fluffy white cat.' names no place in the image.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-14",
+  "поле": "caveats_en[0]",
+  "было": "In the recipes notebook, ordinal references follow the order of parts in the request ([model_image, garment_image, text] -> 'the person in the first image', 'the garment from the second image'). (models: nb25)",
+  "стало": "Ordinal references follow the order of parts in the request ([model_image, garment_image, text] -> 'the person in the first image', 'the garment from the second image'). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-14",
+  "поле": "caveats_en[1]",
+  "было": "Derived: all editing templates of the 2.5 Flash Image blog explicitly reference the input ('Using the provided image...', 'Transform the provided photograph...', 'combining the elements from the provided images'). (models: nb25)",
+  "стало": "Editing templates explicitly reference the input ('Using the provided image...', 'Transform the provided photograph...', 'combining the elements from the provided images'). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-14",
+  "поле": "паспорт.примечание",
+  "было": "Strength lowered from fact to possibility under coordinator line K3: the formulating source (cookbook notebook) shows the pattern in examples without presenting it as advice.",
+  "стало": "Strength lowered from fact to possibility under coordinator line K3: the formulating source (cookbook notebook) shows the pattern in examples without presenting it as advice.; In the recipes notebook, ordinal references follow the order of parts in the request ([model_image, garment_image, text] -> 'the person in the first image', 'the garment from the second image'). (models: nb25); Derived: all editing templates of the 2.5 Flash Image blog explicitly reference the input ('Using the provided image...', 'Transform the provided photograph...', 'combining the elements from the provided images'). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "caveats_en[0]",
+  "было": "Official examples also add a negative specific sentence ('Do not include...').",
+  "стало": "Examples also add a negative specific sentence ('Do not include...').",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "caveats_en[1]",
+  "было": "Derived: all 10 examples of the Gemini app examples set are edits of one or more input images; none is pure text-to-image. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "caveats_en[2]",
+  "было": "Derived: in the 2025 trends set, 10 of 13 examples are edits of an uploaded photo and 3 are text-to-image.",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "caveats_en[3]",
+  "было": "No source states this as a rule; it is read off the examples. The closest direct statements are 'be direct and specific' and 'describe how you want to change the image'. (models: pro, nb2, lite, nb25)",
+  "стало": "Related direct advice: 'be direct and specific' and 'describe how you want to change the image'. (models: pro, nb2, lite, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "caveats_en[4]",
+  "было": "Derived: Pro developer edit prompts are short imperatives. (models: pro)",
+  "стало": "Pro edit prompts are short imperatives. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-15",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Official examples also add a negative specific sentence ('Do not include...').; Derived: all 10 examples of the Gemini app examples set are edits of one or more input images; none is pure text-to-image. (models: nb25); Derived: in the 2025 trends set, 10 of 13 examples are edits of an uploaded photo and 3 are text-to-image.; No source states this as a rule; it is read off the examples. The closest direct statements are 'be direct and specific' and 'describe how you want to change the image'. (models: pro, nb2, lite, nb25); Derived: Pro developer edit prompts are short imperatives. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-16",
+  "поле": "caveats_en[0]",
+  "было": "Observed in a single run: a new element added as instructed 'is both different and consistent', and replacing the bridge with a hammock 'preserves the attachments on the mountain summits'. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-16",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Observed in a single run: a new element added as instructed 'is both different and consistent', and replacing the bridge with a hammock 'preserves the attachments on the mountain summits'. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-17",
+  "поле": "caveats_en[5]",
+  "было": "'masked editing' is named among advanced features under Limitations that can sometimes produce unnatural results. (models: pro, nb2)",
+  "стало": "'masked editing' is named among advanced features that can sometimes produce unnatural results. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-17",
+  "поле": "caveats_en[6]",
+  "было": "Prompting tip in the same section: be explicit about what to keep exactly the same. (models: pro, nb2)",
+  "стало": "Prompting tip: be explicit about what to keep exactly the same. (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-17",
+  "поле": "caveats_en[9]",
+  "было": "Model cards list 'Masked/Doodle based editing: partial instruction following and persistent ink' as a known limitation (see the model-card limitation rule). (models: pro, nb2, lite)",
+  "стало": "'Masked/Doodle based editing: partial instruction following and persistent ink' is a known limitation (see the model-card limitation rule). (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-17",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "'masked editing' is named among advanced features under Limitations that can sometimes produce unnatural results. (models: pro, nb2); Prompting tip in the same section: be explicit about what to keep exactly the same. (models: pro, nb2); Model cards list 'Masked/Doodle based editing: partial instruction following and persistent ink' as a known limitation (see the model-card limitation rule). (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-18",
+  "поле": "caveats_en[5]",
+  "было": "Derived: the Lite source names only these local edit types; complex or global edits are not described there. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-18",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: the Lite source names only these local edit types; complex or global edits are not described there. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-19",
+  "поле": "caveats_en[0]",
+  "было": "Derived: the model cards list this together with occasional copy-paste of the input image and left/right confusion, so doodle/mask and spatially-worded edits need verification. (models: pro, nb2, lite)",
+  "стало": "Related known limitations: occasional copy-paste of the input image and left/right confusion; doodle/mask and spatially-worded edits need verification. (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-19",
+  "поле": "caveats_en[1]",
+  "было": "Doodle editing is at the same time a benchmarked capability: Pro card - Pro 1106±14 vs 2.5 Flash Image 1038±7; Flash-Lite card - NB2 1080, Pro 1043, Lite 990 (Thinking) / 985 (No thinking), Nano Banana 959. (models: pro, nb2, lite, nb25)",
+  "стало": "Doodle editing is at the same time a benchmarked capability: Pro 1106±14 vs 2.5 Flash Image 1038±7; separately NB2 1080, Pro 1043, Lite 990 (Thinking) / 985 (No thinking), Nano Banana 959. (models: pro, nb2, lite, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-19",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: the model cards list this together with occasional copy-paste of the input image and left/right confusion, so doodle/mask and spatially-worded edits need verification. (models: pro, nb2, lite); Doodle editing is at the same time a benchmarked capability: Pro card - Pro 1106±14 vs 2.5 Flash Image 1038±7; Flash-Lite card - NB2 1080, Pro 1043, Lite 990 (Thinking) / 985 (No thinking), Nano Banana 959. (models: pro, nb2, lite, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-20",
+  "поле": "caveats_en[1]",
+  "было": "Derived: the same sources showcase these very operations as capabilities (day-to-night lighting changes, blending multiple reference images, character consistency, translation/localization); the showcase is not a guarantee. (models: pro)",
+  "стало": "These very operations are also showcased as capabilities (day-to-night lighting changes, blending multiple reference images, character consistency, translation/localization); the showcase is not a guarantee. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-20",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: the same sources showcase these very operations as capabilities (day-to-night lighting changes, blending multiple reference images, character consistency, translation/localization); the showcase is not a guarantee. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-21",
+  "поле": "caveats_en[0]",
+  "было": "Derived: the model cards list this failure mode next to partial instruction following in masked/doodle edits and left/right confusion; edits need verification. (models: pro, nb2, lite)",
+  "стало": "Related known limitations: partial instruction following in masked/doodle edits and left/right confusion; edits need verification. (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-21",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Derived: the model cards list this failure mode next to partial instruction following in masked/doodle edits and left/right confusion; edits need verification. (models: pro, nb2, lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-22",
+  "поле": "caveats_en[0]",
+  "было": "Gemini 2.0 Flash (preview) lists '1) Recontextualize products in new environments.' as a showcased use (before/after image, prompt not shown). (models: other)",
+  "стало": "Gemini 2.0 Flash (preview) lists '1) Recontextualize products in new environments.' as a showcased use. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-22",
+  "поле": "caveats_en[6]",
+  "было": "Hackathon brief suggests e-commerce uses 'virtual room placement or product visualization'; a winner described by the host (participant's project) transforms 'a single product photo into every color, size, and style variant'. (models: nb25)",
+  "стало": "E-commerce uses: 'virtual room placement or product visualization'; transforming 'a single product photo into every color, size, and style variant'. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-22",
+  "поле": "caveats_en[7]",
+  "было": "Derived: sources frame these edits as 'keep the subject, change the context' and start from an existing asset rather than generating from scratch. (models: pro, nb25)",
+  "стало": "These edits 'keep the subject, change the context' and start from an existing asset rather than generating from scratch. (models: pro, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-22",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Gemini 2.0 Flash (preview) lists '1) Recontextualize products in new environments.' as a showcased use (before/after image, prompt not shown). (models: other); Hackathon brief suggests e-commerce uses 'virtual room placement or product visualization'; a winner described by the host (participant's project) transforms 'a single product photo into every color, size, and style variant'. (models: nb25); Derived: sources frame these edits as 'keep the subject, change the context' and start from an existing asset rather than generating from scratch. (models: pro, nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-26",
+  "поле": "title_en",
+  "было": "Outpainting recipe: extend onto a larger canvas",
+  "стало": "Outpainting: extend onto a larger canvas",
+  "основание": "К-МЕТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-26",
+  "поле": "content_en",
+  "было": "Outpainting extends an existing image beyond its original borders: the recipe takes a source image and a larger canvas and fills in the new areas.\n1. Inputs: the source image and a larger blank canvas, then the text (order in the recipe code: source_image, canvas, text).\n2. This is a creative outpainting task. Take the provided source image and seamlessly extend it to fill the entire blank canvas. The new areas should logically and stylistically continue the scene from the original image. Imagine what can exist just beyond the borders of the original photo and bring it to life.",
+  "стало": "Outpainting extends an existing image beyond its original borders: the recipe takes a source image and a larger canvas and fills in the new areas.\n1. Inputs: the source image and a larger blank canvas, then the text (order in the recipe code: source_image, canvas, text).\n2. This is a creative outpainting task. Take the provided source image and seamlessly extend it to fill the entire blank canvas. The new areas should logically and stylistically continue the scene from the original image. Imagine what might exist just beyond the borders of the original photo and bring it to life.",
+  "основание": "К-ФОРМУЛА",
+  "контроль": "замечания#23",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-26",
+  "поле": "content_en",
+  "было": "Outpainting extends an existing image beyond its original borders: the recipe takes a source image and a larger canvas and fills in the new areas.\n1. Inputs: the source image and a larger blank canvas, then the text (order in the recipe code: source_image, canvas, text).\n2. This is a creative outpainting task. Take the provided source image and seamlessly extend it to fill the entire blank canvas. The new areas should logically and stylistically continue the scene from the original image. Imagine what might exist just beyond the borders of the original photo and bring it to life.",
+  "стало": "Outpainting extends an existing image beyond its original borders: supply a source image and a larger canvas, and the model fills in the new areas.\n1. Inputs, in this order: the source image, then a larger blank canvas, then the text.\n2. This is a creative outpainting task. Take the provided source image and seamlessly extend it to fill the entire blank canvas. The new areas should logically and stylistically continue the scene from the original image. Imagine what might exist just beyond the borders of the original photo and bring it to life.",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#3",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-26",
+  "поле": "паспорт.примечание",
+  "было": "The recipe prompt is quoted verbatim except one word: 'might' in the last sentence is replaced with 'can' to satisfy the no-hedge rule for content_en; the verbatim prompt is kept in examples (E-74-9).",
+  "стало": "The prompt E-74-9 is quoted verbatim in content_en, including Google's 'might' (restored; a hedge inside a verbatim Google formula is kept); input order in content_en item 1: (order in the recipe code: source_image, canvas, text); the description line paraphrases E-74-8: 'This recipe takes a source image and a larger canvas and intelligently fills in the new areas.'",
+  "основание": "Ч4",
+  "контроль": "формулы#15",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-27",
+  "поле": "caveats_en[1]",
+  "было": "'restoring and colorizing old photos with an understanding of historical context'; the hackathon example adds the date as context: 'Restore and colorize this image from 1932'. (models: nb25)",
+  "стало": "'restoring and colorizing old photos with an understanding of historical context'; the date of the photo can be added as context. (models: nb25)",
+  "основание": "К-ДАТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-27",
+  "поле": "caveats_en[2]",
+  "было": "'How to restore, clean up, and straighten warped or vintage visual objects'.",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-27",
+  "поле": "caveats_en[3]",
+  "было": "'Example of an image application built in Poe to restore old images, using Gemini 2.5 Flash Image'. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-27",
+  "поле": "forbids_in_output_en[0]",
+  "было": "this image from 1932",
+  "стало": "this image from 1932",
+  "основание": "К-ДАТА",
+  "контроль": "",
+  "решение": "отклонено: строка из дословного примера Google (E-31-9), стоит в forbids как запрет на утечку конкретики; это не дата правила или документа"
+ },
+ {
+  "id": "П-редактирование-27",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "'restoring and colorizing old photos with an understanding of historical context'; the hackathon example adds the date as context: 'Restore and colorize this image from 1932'. (models: nb25); 'How to restore, clean up, and straighten warped or vintage visual objects'.; 'Example of an image application built in Poe to restore old images, using Gemini 2.5 Flash Image'. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-30",
+  "поле": "content_en",
+  "было": "Art restoration app built with Genkit skills: a system instruction routes each image to a restoration skill by image type; the paintings skill prescribes minimal intervention and a three-step process.\n1. System instruction: the model is a multimodal art restoration AI that first analyzes the image to determine its type, then invokes the corresponding restoration skills, then performs a highly precise restoration and outputs the restored image; it also returns a text part summarizing the process and naming the skills used.\n2. User turn: a short restore request ('Please restore this image using the appropriate techniques.') sent together with the image.\n3. The application bundles three skills - drawings, paintings, and photography - because each art style requires its own set of restoration instructions.\n4. Paintings skill: perform direct, minimal-intervention restoration of fine art paintings; prioritize historical integrity, original pigment depth, and surface textures over cosmetic modernization; keep only the elements and techniques present in the original piece. Core conservation mandates - Absolute Fidelity: keep strictly to the original subjects, figures, scenery, details, and narrative elements; Anti-Modernization: retain original brushstroke characteristics and support textures; Patina & Craquelure: respect the natural crack network (craquelure) as part of the artwork's history and keep the cracks unless they pose an active risk of paint loss.\n5. Step-by-step restoration process: Varnish Correction - gently balance aged, yellowed natural varnishes to recover the original pigment chromaticity at its original saturation; Soot & Grime Reduction - isolate and lift surface grime while protecting delicate, thin underlying glaze layers; Inpaint Major Loss - where paint layers are missing, use references from the surviving elements to bridge the gap, replicating the original brush direction, speed, height, transparency, and light source.",
+  "стало": "Art restoration through a system instruction and per-image-type skills: a system instruction routes each image to a restoration skill by image type; the paintings skill prescribes minimal intervention and a three-step process.\n1. System instruction: the model is a multimodal art restoration AI that first analyzes the image to determine its type, then invokes the corresponding restoration skills, then performs a highly precise restoration and outputs the restored image; it also returns a text part summarizing the process and naming the skills used.\n2. User turn: a short restore request ('Please restore this image using the appropriate techniques.') sent together with the image.\n3. Skills are split by image type - drawings, paintings, and photography - because each art style requires its own set of restoration instructions.\n4. Paintings skill: perform direct, minimal-intervention restoration of fine art paintings; prioritize historical integrity, original pigment depth, and surface textures over cosmetic modernization; keep only the elements and techniques present in the original piece. Core conservation mandates - Absolute Fidelity: keep strictly to the original subjects, figures, scenery, details, and narrative elements; Anti-Modernization: retain original brushstroke characteristics and support textures; Patina & Craquelure: respect the natural crack network (craquelure) as part of the artwork's history and keep the cracks unless they pose an active risk of paint loss.\n5. Step-by-step restoration process: Varnish Correction - gently balance aged, yellowed natural varnishes to recover the original pigment chromaticity at its original saturation; Soot & Grime Reduction - isolate and lift surface grime while protecting delicate, thin underlying glaze layers; Inpaint Major Loss - where paint layers are missing, use references from the surviving elements to bridge the gap, replicating the original brush direction, speed, height, transparency, and light source.",
+  "основание": "К-СЛУЧАЙ",
+  "контроль": "замечания#16",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-30",
+  "поле": "caveats_en[0]",
+  "было": "In the sample run the model returned a text part naming the skill ('Skills Used: paintings'); the author reports it 'correctly identified the image as a painting and activated the appropriate skill for restoration'; the post shows 'Ecce Homo restored using Gemini 3.1 Flash Image.' (models: nb2)",
+  "стало": "In the sample run the model returned a text part naming the skill ('Skills Used: paintings') and 'correctly identified the image as a painting and activated the appropriate skill for restoration'. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-30",
+  "поле": "caveats_en[2]",
+  "было": "Derived: the model's own restoration report says it minimized cracks and canvas weave and added parchment texture and scrollwork, against the skill's prohibitions; the source does not comment on this, so compliance with the prohibitions is not confirmed. (models: nb2)",
+  "стало": "The model's own restoration report says it minimized cracks and canvas weave and added parchment texture and scrollwork, against the skill's prohibitions. (models: nb2)",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#48",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-30",
+  "поле": "forbids_in_output_en",
+  "было": [
+   "You are Renaissance",
+   "Do not include any elements",
+   "Strictly forbidden to add",
+   "Do not flatten support textures",
+   "Do not fill or erase cracks",
+   "without forcing modern, high-contrast saturation",
+   "Ecce Homo",
+   "parchment texture and scrollwork"
+  ],
+  "стало": [
+   "You are Renaissance",
+   "Do not include any elements",
+   "Strictly forbidden to add",
+   "Do not flatten support textures",
+   "Do not fill or erase cracks",
+   "without forcing modern, high-contrast saturation",
+   "Ecce Homo",
+   "parchment texture and scrollwork",
+   "Genkit"
+  ],
+  "основание": "К-СЛУЧАЙ",
+  "контроль": "замечания#16",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-30",
+  "поле": "паспорт.примечание",
+  "было": "The prohibitions of the paintings skill are rephrased positively in content_en (magnet reason); the verbatim skill text is kept in examples (E-199-10).",
+  "стало": "The prohibitions of the paintings skill are rephrased positively in content_en (magnet reason); the verbatim skill text is kept in examples (E-199-10).; content_en is generalized from the source case: 'Art restoration app built with Genkit skills: a system instruction routes each image to a restoration skill by image type'; '3. The application bundles three skills - drawings, paintings, and photography - because each art style requires its own set of restoration instructions.'; In the sample run the model returned a text part naming the skill ('Skills Used: paintings'); the author reports it 'correctly identified the image as a painting and activated the appropriate skill for restoration'; the post shows 'Ecce Homo restored using Gemini 3.1 Flash Image.' (models: nb2); Derived: the model's own restoration report says it minimized cracks and canvas weave and added parchment texture and scrollwork, against the skill's prohibitions; the source does not comment on this, so compliance with the prohibitions is not confirmed. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-31",
+  "поле": "content_en",
+  "было": "Process visual objects in images as a three-step pipeline:\n1. Detect visual objects within images with a Gemini understanding model.\n2. Extract and restore the visual objects with the Nano Banana image model.\n3. Edit and transform the restored objects with the Nano Banana image model.",
+  "стало": "Process visual objects in images as a three-step pipeline:\n1. Detect visual objects within images with an image-understanding model.\n2. Extract and restore the visual objects with the image model.\n3. Edit and transform the restored objects with the image model.",
+  "основание": "К-ПРОЧЕЕ",
+  "контроль": "замечания#28",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-31",
+  "поле": "caveats_en[1]",
+  "было": "Derived: the notebook chains simple single-purpose steps (restore, then colorize/transform or cinematize), each taking the previous step's output image as input, rather than one complex prompt.",
+  "стало": "The pipeline chains simple single-purpose steps (restore, then colorize/transform or cinematize), each taking the previous step's output image as input, rather than one complex prompt.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-31",
+  "поле": "паспорт.примечание",
+  "было": "No model key is marked as applicable in the core: the sources name Nano Banana without a version; the detection step uses a Gemini understanding model (key other, marked partial).",
+  "стало": "No model key is marked as applicable in the core: the sources name Nano Banana without a version; the detection step uses a Gemini understanding model (key other, marked partial).; Derived: the notebook chains simple single-purpose steps (restore, then colorize/transform or cinematize), each taking the previous step's output image as input, rather than one complex prompt.",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-33",
+  "поле": "caveats_en[0]",
+  "было": "Hackathon framing: 'Nano Banana is about dynamic creation. Edit with words, blend realities, and access Gemini's unique world knowledge.'; the API's advanced features are '(consistency, fusion, editing)'; suggested app: 'Build the next generation of natural language photo editors.' (models: nb25)",
+  "стало": "'Nano Banana is about dynamic creation. Edit with words, blend realities, and access Gemini's unique world knowledge.'; the API's advanced features are '(consistency, fusion, editing)'; suggested app: 'Build the next generation of natural language photo editors.' (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-33",
+  "поле": "caveats_en[2]",
+  "было": "Naming: the model is called 'our latest image editing model' and 'the latest image editing model', but 'our latest image generation model' in the Halloween post. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-33",
+  "поле": "caveats_en[3]",
+  "было": "Derived: sources frame the model primarily as an editing model even while counting 'images generated'; hackathon materials contrast it with 'simple text-to-image'. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-33",
+  "поле": "caveats_en[6]",
+  "было": "Launch post: native image generation and editing in Gemini 2.5 Flash (aka nano-banana), 'more powerful creative control'. (models: nb25)",
+  "стало": "Native image generation and editing in Gemini 2.5 Flash (aka nano-banana), 'more powerful creative control'. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-редактирование-33",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Hackathon framing: 'Nano Banana is about dynamic creation. Edit with words, blend realities, and access Gemini's unique world knowledge.'; the API's advanced features are '(consistency, fusion, editing)'; suggested app: 'Build the next generation of natural language photo editors.' (models: nb25); Naming: the model is called 'our latest image editing model' and 'the latest image editing model', but 'our latest image generation model' in the Halloween post. (models: nb25); Derived: sources frame the model primarily as an editing model even while counting 'images generated'; hackathon materials contrast it with 'simple text-to-image'. (models: nb25); Launch post: native image generation and editing in Gemini 2.5 Flash (aka nano-banana), 'more powerful creative control'. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ }
+]
