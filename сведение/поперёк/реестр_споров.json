@@ -2405,6 +2405,81 @@
    },
    "итог": "решено: у Lite 14 рефов-объектов, слоты персонажей и стиля N/A (в); строка Firebase «10 + 4» для Lite — заменено",
    "чем_закрывается": ""
+  },
+  {
+   "id": "С-37",
+   "тип": "между_темами",
+   "коды": [
+    "Я-лимиты-36",
+    "Я-api-33",
+    "Я-лимиты-35",
+    "Я-api-34",
+    "Я-модели-66",
+    "Я-модели-67"
+   ],
+   "суть": "Можно ли использовать preview-модели в продакшене: доки Gemini API — «may be used for production», Firebase — «not recommended for production use», «only during prototyping».",
+   "версии": [
+    {
+     "текст": "Preview models may be used for production, will typically have billing enabled, might come with more restrictive rate limits and will be deprecated with at least 2 weeks notice (страница моделей Gemini API)",
+     "коды": [
+      "E-13-13"
+     ],
+     "тема": "лимиты_квоты"
+    },
+    {
+     "текст": "preview versions … not recommended for production use (Firebase AI Logic)",
+     "коды": [
+      "E-229-32"
+     ],
+     "тема": "лимиты_квоты"
+    },
+    {
+     "текст": "use preview and experimental versions only during prototyping; in production apps, use the explicit model name for the most recent stable version (Firebase AI Logic)",
+     "коды": [
+      "E-229-35",
+      "E-229-36"
+     ],
+     "тема": "api_код"
+    }
+   ],
+   "другие_темы": [
+    {
+     "тема": "лимиты_квоты",
+     "коды": [
+      "Я-лимиты-35",
+      "Я-лимиты-36"
+     ],
+     "что говорят": "Не слиты, связь «конфликтует» и вопрос сшивки."
+    },
+    {
+     "тема": "api_код",
+     "коды": [
+      "Я-api-33",
+      "Я-api-34"
+     ],
+     "что говорят": "Не слиты сознательно (версии моделей Gemini API против Firebase «preview только для прототипов»), связь «конфликтует»."
+    },
+    {
+     "тема": "модели_сравнение",
+     "коды": [
+      "Я-модели-66"
+     ],
+     "что говорят": "Согласовано: в продакшене — явный stable ID."
+    },
+    {
+     "тема": "модели_сравнение",
+     "коды": [
+      "Я-модели-67"
+     ],
+     "что говорят": "Решено: все действующие image-ID стабильные (gemini-3-pro-image, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-2.5-flash-image); preview-ID 3.x сняты 25.06.2026 / 17.07.2026, preview 2.5 — 15.01.2026."
+    }
+   ],
+   "попытка_решения": {
+    "правило": "ж",
+    "пояснение": "Разные поверхности (страница моделей Gemini API и Firebase AI Logic) дают свою политику для своей платформы — по (ж)/(а) не сводятся. Для image-моделей вопрос снят данными темы модели_сравнение: действующих preview-ID нет (Я-модели-67: E-5-7, E-53-7, E-5-11), у Lite preview не было вовсе."
+   },
+   "итог": "решено: по платформам (ж) — Gemini API допускает preview в продакшене, Firebase не рекомендует; для image-моделей неактуально: все действующие ID стабильные, preview-ID сняты (Я-модели-67)",
+   "чем_закрывается": ""
   }
  ]
 }
