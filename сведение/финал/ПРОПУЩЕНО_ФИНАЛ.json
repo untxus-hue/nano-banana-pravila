@@ -1,0 +1,102 @@
+[
+ {
+  "id": "П-промптинг-14",
+  "причина": "general Gemini app / NotebookLM text-answer advice (Persona / Task / Context / Format), not image generation; the example E-236-5 is a text task",
+  "основание": "Ф2",
+  "запись": {
+   "id": "П-промптинг-14",
+   "ядро": "Я-промптинг-14",
+   "тема": "промптинг",
+   "подтема": "Persona / Task / Context / Format",
+   "title_en": "Include Persona, Task, Context, Format",
+   "content_en": "To get the most relevant results in the Gemini app and NotebookLM, try to always include:\n1. Persona\n2. Task\n3. Context\n4. Format",
+   "unit_kind": "формула_шаблон",
+   "strength": "рекомендация",
+   "derived": false,
+   "target_engine": "nano_banana",
+   "models": [],
+   "models_partial": [],
+   "modality": "image",
+   "applies_when_en": "A text task in the Gemini app or NotebookLM (including preparing a prompt for an image), where the role, task, source and answer format need to be set.",
+   "not_applies_when_en": "A direct description of an image scene; there the components are different (subject, action, location, composition, style).",
+   "needs_from_prompt_en": [],
+   "forbids_in_output_en": [],
+   "caveats_en": [
+    "The example labels its parts with [Persona] [Task] [Context] [Format] after each sentence; the example is textual. (models: unspecified)",
+    "derived: Persona: Who is Gemini acting as? Task: What exactly do you need done? Context: What details or documents should it use? Format: Do you want a table, bullet points, an email, or something else? (models: unspecified)"
+   ],
+   "examples": [
+    {
+     "текст": "You are a professional business analyst.\n[Persona]\nSummarize the main action items from this week’s project updates.\n[Task]\nFocus on items that require immediate attention from leadership.\n[Context]\nProvide the response as a three-bullet executive summary.\n[Format]",
+     "код": "E-236-5",
+     "модели": [
+      "не_указано"
+     ],
+     "что_показывает_en": "Example of a four-part prompt labelled Persona, Task, Context and Format."
+    }
+   ],
+   "canaries_en": [
+    "Help me write a Gemini prompt to summarize my project notes",
+    "Draft a NotebookLM prompt that returns a table"
+   ],
+   "terms": [
+    {
+     "термин": "Persona",
+     "значение_en": "the role the model acts as; the first element of the Persona / Task / Context / Format prompt"
+    },
+    {
+     "термин": "output format",
+     "значение_en": "the required form of the answer, such as a table, bullet points or an email"
+    },
+    {
+     "термин": "input data",
+     "значение_en": "large amounts of material (documents, code) supplied in the prompt for the task, placed before the specific instructions or questions"
+    }
+   ],
+   "паспорт": {
+    "источники": [
+     {
+      "код": "E-236-4",
+      "стр": 236,
+      "url": "https://workspace.google.com/blog/ai-and-machine-learning/11-tips-to-help-teams-work-smarter-with-gemini",
+      "заголовок": "11 Tips to Work Smarter with Gemini in Google Workspace | Google Workspace Blog",
+      "дата": "2026-03-12",
+      "ранг": 4,
+      "роль": [
+       "ядро",
+       "формулирует",
+       "оговорка",
+       "модели"
+      ]
+     },
+     {
+      "код": "E-236-5",
+      "стр": 236,
+      "url": "https://workspace.google.com/blog/ai-and-machine-learning/11-tips-to-help-teams-work-smarter-with-gemini",
+      "заголовок": "11 Tips to Work Smarter with Gemini in Google Workspace | Google Workspace Blog",
+      "дата": "2026-03-12",
+      "ранг": 4,
+      "роль": [
+       "оговорка",
+       "пример",
+       "модели"
+      ]
+     }
+    ],
+    "лучший_источник": "E-236-4",
+    "дата_последняя": "2026-03-12",
+    "статус": "согласовано",
+    "магнит": false,
+    "связи": [
+     "Я-промптинг-13"
+    ],
+    "дом": {
+     "тема": "промптинг",
+     "код": "Я-промптинг-14"
+    },
+    "примечание": "No model key is marked as applicable in the core; the source is general Gemini app / NotebookLM advice and does not name an image model.; The advice is general for the Gemini app and NotebookLM and is not tied to image generation; for images it is only a hypothesis. (models: unspecified)"
+   },
+   "версия": "2026-09-25-чисто"
+  }
+ }
+]
