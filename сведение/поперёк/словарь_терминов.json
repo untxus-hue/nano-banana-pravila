@@ -745,11 +745,7 @@
   {
    "термин": ":predict (instances / parameters / predictions)",
    "значение_en": "the Imagen REST method. Variants: Gemini uses :generateContent",
-   "синонимы": [
-    "instances",
-    "parameters",
-    "predictions"
-   ],
+   "синонимы": [],
    "коды": [
     "E-112-4",
     "E-112-7",
@@ -763,8 +759,7 @@
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ]
   },
   {
@@ -1284,22 +1279,6 @@
    ]
   },
   {
-   "термин": "Agent Studio",
-   "значение_en": "",
-   "синонимы": [],
-   "коды": [],
-   "темы": [
-    "api_код"
-   ],
-   "ядра": [
-    "Я-api-12"
-   ],
-   "пометка": "значение в темах не дано",
-   "источник": [
-    "термин ядра"
-   ]
-  },
-  {
    "термин": "Agent Studio / Agent Media Studio",
    "значение_en": "New names of Vertex AI Studio / Vertex AI Media Studio (since Apr 22, 2026)",
    "синонимы": [],
@@ -1322,6 +1301,7 @@
    "значение_en": "Console studios of Gemini Enterprise Agent Platform, formerly Vertex AI Studio / Vertex AI Media Studio (Vertex AI Media Studio is the media studio through which NB2 was available in February 2026). Variants: texts before Apr 22, 2026 use the old names; the codelab writes 'Agent Platform Studio'.",
    "синонимы": [
     "Agent Platform Studio",
+    "Agent Studio",
     "Vertex AI Media Studio"
    ],
    "коды": [
@@ -1621,6 +1601,38 @@
    "пометка": "",
    "источник": [
     "словарь темы"
+   ]
+  },
+  {
+   "термин": "ALLOW_ADULT",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-83"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
+   "термин": "allow_all",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-83"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
    ]
   },
   {
@@ -2892,7 +2904,23 @@
    ]
   },
   {
-   "термин": "BLOCK_MEDIUM_AND_ABOVE",
+   "термин": "BLOCK_LOW_AND_ABOVE",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-139"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
+   "термин": "BLOCK_ONLY_HIGH",
    "значение_en": "",
    "синонимы": [],
    "коды": [],
@@ -3208,6 +3236,32 @@
    "пометка": "",
    "источник": [
     "словарь темы"
+   ]
+  },
+  {
+   "термин": "Brief",
+   "значение_en": "A new Video Overview format 'for when you only need quick insights'",
+   "синонимы": [],
+   "коды": [
+    "E-330-7"
+   ],
+   "темы": [
+    "продукт_ui"
+   ],
+   "ядра": [
+    "Я-продукт-47",
+    "Я-продукт-50"
+   ],
+   "пометка": "",
+   "источник": [
+    "термин ядра"
+   ],
+   "варианты_значений": [
+    {
+     "тема": "продукт_ui",
+     "термин": "Brief",
+     "значение_en": "A Video Overview format in NotebookLM for quick insights"
+    }
    ]
   },
   {
@@ -3644,9 +3698,7 @@
   {
    "термин": "Capabilities (Supported / Not supported)",
    "значение_en": "the capabilities table of a model card",
-   "синонимы": [
-    "Not supported"
-   ],
+   "синонимы": [],
    "коды": [
     "E-2-15",
     "E-3-13"
@@ -3655,14 +3707,11 @@
     "api_код"
    ],
    "ядра": [
-    "Я-api-47",
-    "Я-api-49",
-    "Я-api-53"
+    "Я-api-49"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ]
   },
   {
@@ -5119,6 +5168,22 @@
    ]
   },
   {
+   "термин": "Content.ImageContent",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-133"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "contents[] / Content.role",
    "значение_en": "In generateContent the whole history is passed in each request; the model's turns are inserted with the role model.",
    "синонимы": [
@@ -6126,22 +6191,6 @@
      "термин": "declarative / descriptive prompt",
      "значение_en": "describes the expected result"
     }
-   ]
-  },
-  {
-   "термин": "dedicated",
-   "значение_en": "",
-   "синонимы": [],
-   "коды": [],
-   "темы": [
-    "api_код"
-   ],
-   "ядра": [
-    "Я-api-164"
-   ],
-   "пометка": "значение в темах не дано",
-   "источник": [
-    "термин ядра"
    ]
   },
   {
@@ -7982,6 +8031,29 @@
    ]
   },
   {
+   "термин": "extreme panoramic",
+   "значение_en": "Cookbook label for 1:8 / 8:1.",
+   "синонимы": [
+    "Extreme panoramic"
+   ],
+   "коды": [
+    "E-20-26",
+    "E-326-22"
+   ],
+   "темы": [
+    "модели_сравнение",
+    "форматы_разрешение"
+   ],
+   "ядра": [
+    "Я-модели-47",
+    "Я-форматы-6"
+   ],
+   "пометка": "",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "face group",
    "значение_en": "a face group in Google Photos; its name links a person to their photos",
    "синонимы": [
@@ -8139,8 +8211,7 @@
    "термин": "Fast / Thinking / Pro / Flash-Lite",
    "значение_en": "Gemini model modes in the Gemini app menu; the chosen mode determines which Nano Banana draws. Variants: before Feb 26, 2026 Thinking = NB Pro (November 2025); after that NB2 everywhere, Flash-Lite = NB2 Lite, Pro mode + Redo = NB Pro; the NB2 page does not map the modes to image models (E-213-13).",
    "синонимы": [
-    "Fast / Thinking / Pro; Flash-Lite / Flash / Pro",
-    "Flash"
+    "Fast / Thinking / Pro; Flash-Lite / Flash / Pro"
    ],
    "коды": [
     "E-139-33",
@@ -8158,25 +8229,18 @@
     "продукт_ui"
    ],
    "ядра": [
-    "Я-модели-4",
     "Я-модели-88",
     "Я-продукт-2"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ],
    "варианты_значений": [
     {
      "тема": "модели_сравнение",
      "термин": "Fast / Thinking / Pro; Flash-Lite / Flash / Pro",
      "значение_en": "Modes (Gemini models) in the Gemini app; the image model depends on them."
-    },
-    {
-     "тема": "модели_сравнение",
-     "термин": "Flash",
-     "значение_en": "the line of fast Gemini models; NB2 is an image model based on Gemini 3 Flash"
     }
    ]
   },
@@ -8702,6 +8766,22 @@
    ],
    "ядра": [
     "Я-лимиты-53"
+   ],
+   "пометка": "",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
+   "термин": "Flash",
+   "значение_en": "the line of fast Gemini models; NB2 is an image model based on Gemini 3 Flash",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "модели_сравнение"
+   ],
+   "ядра": [
+    "Я-модели-4"
    ],
    "пометка": "",
    "источник": [
@@ -11666,20 +11746,25 @@
   {
    "термин": "HARM_CATEGORY_DANGEROUS_CONTENT / BLOCK_MEDIUM_AND_ABOVE / PROBABILITY",
    "значение_en": "category, threshold and method in the code sample",
-   "синонимы": [],
+   "синонимы": [
+    "BLOCK_MEDIUM_AND_ABOVE"
+   ],
    "коды": [
     "E-282-9",
     "E-319-9"
    ],
    "темы": [
+    "api_код",
     "безопасность_водяной_знак"
    ],
    "ядра": [
+    "Я-api-139",
     "Я-безопасность-38"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы"
+    "словарь темы",
+    "термин ядра"
    ]
   },
   {
@@ -13793,30 +13878,6 @@
    ]
   },
   {
-   "термин": "include_thoughts",
-   "значение_en": "The ThinkingConfig flag that returns thought summaries in the response.",
-   "синонимы": [],
-   "коды": [
-    "E-46-18",
-    "E-76-7",
-    "E-77-4"
-   ],
-   "темы": [
-    "api_код",
-    "thinking"
-   ],
-   "ядра": [
-    "Я-api-101",
-    "Я-api-103",
-    "Я-thinking-11",
-    "Я-thinking-17"
-   ],
-   "пометка": "",
-   "источник": [
-    "термин ядра"
-   ]
-  },
-  {
    "термин": "includeRaiReason",
    "значение_en": "Imagen: return the RAI filter reason code on a block",
    "синонимы": [],
@@ -14567,6 +14628,22 @@
    ]
   },
   {
+   "термин": "instances",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-169"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "instant film",
    "значение_en": "instant film (Google Photos template)",
    "синонимы": [],
@@ -14757,9 +14834,7 @@
    "термин": "Interactions API",
    "значение_en": "[part 1] the new Gemini API (GA since 06.2026): client.interactions.create / POST v1beta/interactions; the response is an array of steps [part 3] the client.interactions.create API with history storage; output — interaction.output_text / output_image. Variants: part 1 of the topic has the new response_format schema instead of image_generation_config/response_modalities.",
    "синонимы": [
-    "Content.ImageContent",
-    "Interactions API (ModelOutputStep, ThoughtStep, Content.ImageContent)",
-    "ModelOutputStep"
+    "Interactions API (ModelOutputStep, ThoughtStep, Content.ImageContent)"
    ],
    "коды": [
     "E-1-19",
@@ -14772,30 +14847,22 @@
     "E-326-7"
    ],
    "темы": [
-    "api_код",
-    "thinking"
+    "api_код"
    ],
    "ядра": [
     "Я-api-1",
     "Я-api-131",
-    "Я-api-133",
-    "Я-thinking-18"
+    "Я-api-133"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ],
    "варианты_значений": [
     {
      "тема": "api_код",
      "термин": "Interactions API (ModelOutputStep, ThoughtStep, Content.ImageContent)",
      "значение_en": "an interface with steps; the image is the content of a ModelOutputStep. Variants: the codelab uses a third-party Java SDK io.github.glaforge (E-106-1)"
-    },
-    {
-     "тема": "thinking",
-     "термин": "ModelOutputStep",
-     "значение_en": "The Interactions API step that holds the model's output content."
     }
    ]
   },
@@ -16865,48 +16932,21 @@
   {
    "термин": "mediaResolution / resolution (input)",
    "значение_en": "Tokenization resolution of INPUT media: low / medium / high / ultra_high (64 / 256 / 256 \"zoomed reframing\" tokens). Variant readings: ULTRA_HIGH exists at the Part level but not at the GenerationConfig level.",
-   "синонимы": [
-    "resolution",
-    "resolution (512px/1K/2K/4K)"
-   ],
+   "синонимы": [],
    "коды": [
-    "E-1-77",
-    "E-1-168",
-    "E-1-170",
-    "E-1-172",
     "E-19-47",
     "E-28-17",
-    "E-58-2",
-    "E-79-21",
-    "E-102-7",
-    "E-227-37",
-    "E-227-42"
+    "E-102-7"
    ],
    "темы": [
     "форматы_разрешение"
    ],
    "ядра": [
-    "Я-форматы-10",
-    "Я-форматы-17",
-    "Я-форматы-18",
     "Я-форматы-22"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
-   ],
-   "варианты_значений": [
-    {
-     "тема": "форматы_разрешение",
-     "термин": "resolution",
-     "значение_en": "Output image size class (512px / 1K / 2K / 4K) that together with the aspect ratio sets the pixel size."
-    },
-    {
-     "тема": "форматы_разрешение",
-     "термин": "resolution (512px/1K/2K/4K)",
-     "значение_en": "The size class columns of the Gemini 3 pixel table."
-    }
+    "словарь темы"
    ]
   },
   {
@@ -17484,6 +17524,25 @@
    ]
   },
   {
+   "термин": "model card",
+   "значение_en": "DeepMind model card: a structured overview of how a model was designed and evaluated; gives known limitations, mitigations and safety; may be updated",
+   "синонимы": [],
+   "коды": [
+    "E-153-1",
+    "E-168-1"
+   ],
+   "темы": [
+    "модели_сравнение"
+   ],
+   "ядра": [
+    "Я-модели-13"
+   ],
+   "пометка": "",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "Model code / Model ID",
    "значение_en": "the model string for the model field. Variants: the Gemini API says \"Model code\"; Agent Platform says \"Model ID\".",
    "синонимы": [
@@ -17702,6 +17761,26 @@
     "Я-модели-64"
    ],
    "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
+   "термин": "ModelOutputStep",
+   "значение_en": "The Interactions API step that holds the model's output content.",
+   "синонимы": [],
+   "коды": [
+    "E-106-3"
+   ],
+   "темы": [
+    "api_код",
+    "thinking"
+   ],
+   "ядра": [
+    "Я-api-133",
+    "Я-thinking-18"
+   ],
+   "пометка": "",
    "источник": [
     "термин ядра"
    ]
@@ -18997,6 +19076,23 @@
    ]
   },
   {
+   "термин": "Not supported",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-47",
+    "Я-api-53"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "numberOfImages",
    "значение_en": "the number of images per call for Imagen (1–4); not supported for the Gemini image models",
    "синонимы": [
@@ -19907,6 +20003,22 @@
    ]
   },
   {
+   "термин": "parameters",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-169"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
    "термин": "part story",
    "значение_en": "Usage in the source: \"Create a funny 6 part story with these 3 fluffy friends building a tree house.\"",
    "синонимы": [],
@@ -19987,6 +20099,7 @@
    "термин": "part.thought",
    "значение_en": "Where a thought sits in the response: in Interactions, a separate step of type \"thought\"; in generateContent, the thought flag on a part. Variants across pages: generateContent has no dedicated thought blocks (E-8-5).",
    "синонимы": [
+    "ThoughtStep",
     "thought block",
     "thought block / thought step",
     "thought step",
@@ -20016,6 +20129,7 @@
    "ядра": [
     "Я-api-100",
     "Я-api-103",
+    "Я-api-133",
     "Я-thinking-16",
     "Я-thinking-18",
     "Я-thinking-25",
@@ -20047,6 +20161,11 @@
      "тема": "thinking",
      "термин": "thought step",
      "значение_en": "In the Interactions API, a dedicated step of type \"thought\" in the steps array; it carries the summary and the signature."
+    },
+    {
+     "тема": "thinking",
+     "термин": "ThoughtStep",
+     "значение_en": "The Interactions API step type that holds the model's reasoning; it may come before the output step."
     }
    ]
   },
@@ -20379,8 +20498,6 @@
    "термин": "personGeneration",
    "значение_en": "Imagen parameter defining which people are allowed in the frame; not supported for Gemini Image models, where people are allowed by default. Variant: in 2023 faces were by default without children and celebrities (E-61-81) — replaced.",
    "синонимы": [
-    "ALLOW_ADULT",
-    "allow_all",
     "personGeneration (allow_all / allow_adult / dont_allow)"
    ],
    "коды": [
@@ -20404,8 +20521,7 @@
    ],
    "пометка": "Объединено с пометкой: параметр Imagen; поддерживается ли он у Gemini Image — расхождение тем (api_код: REST-пример Gemini с \"allow_all\"; безопасность: «not supported for Gemini Image»), см. конфликты и вопросы_все.",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ],
    "варианты_значений": [
     {
@@ -20850,6 +20966,22 @@
    "пометка": "",
    "источник": [
     "словарь темы"
+   ]
+  },
+  {
+   "термин": "predictions",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-169"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
    ]
   },
   {
@@ -23338,6 +23470,42 @@
    ]
   },
   {
+   "термин": "resolution",
+   "значение_en": "Output image size class (512px / 1K / 2K / 4K) that together with the aspect ratio sets the pixel size.",
+   "синонимы": [
+    "resolution (512px/1K/2K/4K)"
+   ],
+   "коды": [
+    "E-1-77",
+    "E-1-168",
+    "E-1-170",
+    "E-1-172",
+    "E-58-2",
+    "E-79-21",
+    "E-227-37",
+    "E-227-42"
+   ],
+   "темы": [
+    "форматы_разрешение"
+   ],
+   "ядра": [
+    "Я-форматы-10",
+    "Я-форматы-17",
+    "Я-форматы-18"
+   ],
+   "пометка": "",
+   "источник": [
+    "термин ядра"
+   ],
+   "варианты_значений": [
+    {
+     "тема": "форматы_разрешение",
+     "термин": "resolution (512px/1K/2K/4K)",
+     "значение_en": "The size class columns of the Gemini 3 pixel table."
+    }
+   ]
+  },
+  {
    "термин": "resource path",
    "значение_en": "",
    "синонимы": [],
@@ -23937,36 +24105,22 @@
   {
    "термин": "safety policies (model card)",
    "значение_en": "Google's internal rules for models: 6 categories of harmful content. Variants: Gemini 3 cards say 'aim to prevent' (E-167-44, E-169-42), the 2.5 card 'make best efforts to prevent' (E-170-26); the list of 6 categories differs from the 7 items of the Prohibited Use Policy (E-292-3…9).",
-   "синонимы": [
-    "model card"
-   ],
+   "синонимы": [],
    "коды": [
-    "E-153-1",
     "E-167-44",
-    "E-168-1",
     "E-169-42",
     "E-170-26",
     "E-279-12"
    ],
    "темы": [
-    "безопасность_водяной_знак",
-    "модели_сравнение"
+    "безопасность_водяной_знак"
    ],
    "ядра": [
-    "Я-безопасность-53",
-    "Я-модели-13"
+    "Я-безопасность-53"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
-   ],
-   "варианты_значений": [
-    {
-     "тема": "модели_сравнение",
-     "термин": "model card",
-     "значение_en": "DeepMind model card: a structured overview of how a model was designed and evaluated; gives known limitations, mitigations and safety; may be updated"
-    }
+    "словарь темы"
    ]
   },
   {
@@ -23992,8 +24146,6 @@
    "термин": "SafetySetting / HarmBlockThreshold",
    "значение_en": "A category's blocking threshold. Variants: OFF — Gemini API 'Turn off the safety filter', Agent Platform 'Switches off safety if all categories are turned OFF'; Imagen has its own values block_low_and_above/… (E-120-23).",
    "синонимы": [
-    "BLOCK_LOW_AND_ABOVE",
-    "BLOCK_ONLY_HIGH",
     "HarmBlockThreshold (OFF, BLOCK_NONE, BLOCK_LOW_AND_ABOVE, BLOCK_MEDIUM_AND_ABOVE, BLOCK_ONLY_HIGH)"
    ],
    "коды": [
@@ -24012,8 +24164,7 @@
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ],
    "варианты_значений": [
     {
@@ -24046,8 +24197,7 @@
    "значение_en": "[part 2] blocking thresholds by harm category (BLOCK_LOW_AND_ABOVE, BLOCK_MEDIUM_AND_ABOVE, BLOCK_ONLY_HIGH). Variants: Imagen uses safetySetting / safety_filter_level (E-120-13, E-85-45) [part 3] A safety filter setting; the examples use PROBABILITY / HARM_CATEGORY_DANGEROUS_CONTENT / BLOCK_MEDIUM_AND_ABOVE. Variants: the Go example uses three separate entries (an anomaly).",
    "синонимы": [
     "safetySettings",
-    "safetySettings / SafetySetting (method, category, threshold)",
-    "threshold"
+    "safetySettings / SafetySetting (method, category, threshold)"
    ],
    "коды": [
     "E-19-3",
@@ -24825,22 +24975,6 @@
    ]
   },
   {
-   "термин": "shared",
-   "значение_en": "",
-   "синонимы": [],
-   "коды": [],
-   "темы": [
-    "api_код"
-   ],
-   "ядра": [
-    "Я-api-164"
-   ],
-   "пометка": "значение в темах не дано",
-   "источник": [
-    "термин ядра"
-   ]
-  },
-  {
    "термин": "sharp, legible text",
    "значение_en": "sharp and readable text - the phrasing of the Pro/NB2 announcements and of docs about 2K/4K",
    "синонимы": [],
@@ -24931,6 +25065,33 @@
     "Я-модели-73"
    ],
    "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
+   ]
+  },
+  {
+   "термин": "signature",
+   "значение_en": "Short for thought signature: the encrypted reasoning state attached to a thought.",
+   "синонимы": [],
+   "коды": [
+    "E-6-9",
+    "E-8-18",
+    "E-19-26",
+    "E-20-48",
+    "E-28-27",
+    "E-46-23",
+    "E-125-14",
+    "E-133-38",
+    "E-133-39",
+    "E-326-40"
+   ],
+   "темы": [
+    "thinking"
+   ],
+   "ядра": [
+    "Я-thinking-22"
+   ],
+   "пометка": "",
    "источник": [
     "термин ядра"
    ]
@@ -25646,21 +25807,27 @@
   {
    "термин": "spillover / dedicated / shared",
    "значение_en": "overflow beyond PT into pay-as-you-go; the 'dedicated' header means PT only, 'shared' means pay-as-you-go only",
-   "синонимы": [],
+   "синонимы": [
+    "dedicated",
+    "shared"
+   ],
    "коды": [
     "E-115-19",
     "E-115-20",
     "E-115-21"
    ],
    "темы": [
+    "api_код",
     "лимиты_квоты"
    ],
    "ядра": [
+    "Я-api-164",
     "Я-лимиты-66"
    ],
    "пометка": "",
    "источник": [
-    "словарь темы"
+    "словарь темы",
+    "термин ядра"
    ]
   },
   {
@@ -28263,6 +28430,7 @@
    "значение_en": "[part 1] the level of thought-token generation; in generation_config. Variants: strings \"low\"/\"high\" (REST/Python); Java ThinkingLevel.LOW; Go interactions.ThinkingLevelLow; for Lite — minimal/high (extractor summary). [part 2] thinking settings: the level (HIGH/MINIMAL for NB2 and Lite) and returning thoughts. Variants: thinking_budget is the mechanism of models before Gemini 3 and together with thinking_level gives an error (E-46-14, E-46-15) [part 3] Control of thinking: the level (Gemini 3.x) and thought summaries; thinking_budget is the legacy way. Variants: in Interactions it goes directly into generation_config.",
    "синонимы": [
     "ThinkingConfig",
+    "include_thoughts",
     "thinkingConfig"
    ],
    "коды": [
@@ -28293,7 +28461,8 @@
     "Я-api-102",
     "Я-api-103",
     "Я-thinking-11",
-    "Я-thinking-12"
+    "Я-thinking-12",
+    "Я-thinking-17"
    ],
    "пометка": "",
    "источник": [
@@ -28310,6 +28479,11 @@
      "тема": "thinking",
      "термин": "thinkingConfig",
      "значение_en": "The REST/Firebase generationConfig field for thinking settings (thinkingLevel, thinkingBudget, includeThoughts); an error is returned if set for models that do not support thinking."
+    },
+    {
+     "тема": "thinking",
+     "термин": "include_thoughts",
+     "значение_en": "The ThinkingConfig flag that returns thought summaries in the response."
     }
    ]
   },
@@ -28509,7 +28683,6 @@
    "термин": "thought signature",
    "значение_en": "An encrypted representation of the internal reasoning; it is returned in the following turns to keep context continuity. Variation across pages: Vertex: \"especially / specifically when using function calling\"; \"save state\"; for images: \"preserve visual context between turns\" (E-6-18).",
    "синонимы": [
-    "signature",
     "thought signature (signature / thoughtSignature / thought_signature)",
     "thought signature / thoughtSignature / thought_signature",
     "thoughtSignature"
@@ -28528,8 +28701,7 @@
     "E-133-38",
     "E-133-39",
     "E-133-42",
-    "E-133-43",
-    "E-326-40"
+    "E-133-43"
    ],
    "темы": [
     "api_код",
@@ -28567,11 +28739,6 @@
      "тема": "thinking",
      "термин": "thoughtSignature",
      "значение_en": "The REST field with the thought signature: an opaque base64-encoded string reused in later requests."
-    },
-    {
-     "тема": "thinking",
-     "термин": "signature",
-     "значение_en": "Short for thought signature: the encrypted reasoning state attached to a thought."
     }
    ]
   },
@@ -28734,26 +28901,6 @@
    ]
   },
   {
-   "термин": "ThoughtStep",
-   "значение_en": "The Interactions API step type that holds the model's reasoning; it may come before the output step.",
-   "синонимы": [],
-   "коды": [
-    "E-106-3"
-   ],
-   "темы": [
-    "api_код",
-    "thinking"
-   ],
-   "ядра": [
-    "Я-api-133",
-    "Я-thinking-18"
-   ],
-   "пометка": "",
-   "источник": [
-    "термин ядра"
-   ]
-  },
-  {
    "термин": "ThoughtSummaryContent",
    "значение_en": "The schema of thought summary items: ImageContent or TextContent.",
    "синонимы": [],
@@ -28806,6 +28953,22 @@
    "пометка": "",
    "источник": [
     "словарь темы"
+   ]
+  },
+  {
+   "термин": "threshold",
+   "значение_en": "",
+   "синонимы": [],
+   "коды": [],
+   "темы": [
+    "api_код"
+   ],
+   "ядра": [
+    "Я-api-139"
+   ],
+   "пометка": "значение в темах не дано",
+   "источник": [
+    "термин ядра"
    ]
   },
   {
@@ -29407,14 +29570,11 @@
    "термин": "Ultrawide / Panoramic, Extreme panoramic",
    "значение_en": "Cookbook labels for 1:4 / 4:1 and 1:8 / 8:1.",
    "синонимы": [
-    "Extreme panoramic",
-    "extreme panoramic",
     "ultrawide"
    ],
    "коды": [
     "E-20-25",
-    "E-20-26",
-    "E-326-22"
+    "E-20-26"
    ],
    "темы": [
     "модели_сравнение",
@@ -29430,13 +29590,6 @@
    "источник": [
     "словарь темы",
     "термин ядра"
-   ],
-   "варианты_значений": [
-    {
-     "тема": "форматы_разрешение",
-     "термин": "Extreme panoramic",
-     "значение_en": "Cookbook label for 1:8 / 8:1."
-    }
    ]
   },
   {
@@ -30001,7 +30154,6 @@
    "термин": "Video Overviews",
    "значение_en": "NotebookLM video overviews with narration based on the sources; Nano Banana adds 6 styles and illustrations; two formats — Explainer and Brief (a short format).",
    "синонимы": [
-    "Brief",
     "Video Overviews (Explainer / Brief)"
    ],
    "коды": [
@@ -30027,24 +30179,13 @@
    ],
    "пометка": "",
    "источник": [
-    "словарь темы",
-    "термин ядра"
+    "словарь темы"
    ],
    "варианты_значений": [
     {
      "тема": "стиль",
      "термин": "Video Overviews",
      "значение_en": "NotebookLM video overviews"
-    },
-    {
-     "тема": "продукт_ui",
-     "термин": "Brief",
-     "значение_en": "A new Video Overview format 'for when you only need quick insights'"
-    },
-    {
-     "тема": "продукт_ui",
-     "термин": "Brief",
-     "значение_en": "A Video Overview format in NotebookLM for quick insights"
     }
    ]
   },
