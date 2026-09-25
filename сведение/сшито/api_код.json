@@ -592,7 +592,7 @@
     },
     {
      "модель": "nb25",
-     "текст_en": "the 2025 hackathon examples use generateContent (see api-128, E-31-4)",
+     "текст_en": "the 2025 hackathon examples use generateContent (see the core on multi-turn history in generateContent, E-31-4)",
      "коды": [
       "E-31-4"
      ]
@@ -821,6 +821,11 @@
      "с": "Я-api-2",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-128",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: multi-turn history in generateContent"
     }
    ],
    "связи_с_другими_темами": [],
@@ -1850,7 +1855,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Connecting the direct Gemini API (not Agent Platform) to a pipeline.",
-   "не_применяется_когда": "Agent Platform through a Google Cloud project (api-9).",
+   "не_применяется_когда": "Agent Platform through a Google Cloud project (see the core on the Gen AI SDK environment variables for Agent Platform).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -2195,7 +2200,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Setting up the environment for calls through Google Cloud (Agent Platform / Vertex) instead of a Google AI Studio API key.",
-   "не_применяется_когда": "The Google AI Studio / Gemini Developer API path with an API key (api-8, api-7).",
+   "не_применяется_когда": "The Google AI Studio / Gemini Developer API path with an API key (see the cores on the two access paths, an Agent Platform project or an AI Studio key; the Gemini API key).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -2385,6 +2390,11 @@
      "с": "Я-api-160",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-7",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Gemini API key"
     }
    ],
    "связи_с_другими_темами": [],
@@ -2769,7 +2779,7 @@
    "сила": "возможность",
    "применимость": "продукт",
    "ситуация_в_промпте": "Choosing where to try the model by hand before automating: a web console or studio, or the API.",
-   "не_применяется_когда": "Gemini app, Google AI Studio (key path — api-8); Higgsfield.",
+   "не_применяется_когда": "Gemini app, Google AI Studio (key path — see the core on the two access paths, an Agent Platform project or an AI Studio key); Higgsfield.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -4115,7 +4125,7 @@
    "модели_различия": [
     {
      "модель": "pro",
-     "текст_en": "gemini-3-pro-image-preview (a preview ID, shut down on 25.06.2026 — api-35)",
+     "текст_en": "gemini-3-pro-image-preview (a preview ID, shut down on 25.06.2026 — see the core on the preview ID shutdown on the Gemini API)",
      "коды": []
     },
     {
@@ -4589,7 +4599,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task names a model by its marketing name (Nano Banana Pro / 2 / 2 Lite) and the exact model string must be written into a call, or checked in someone else's code or service (an agent, Higgsfield) to see which model it actually calls.",
-   "не_применяется_когда": "The model is chosen at an intermediary by its own name; preview IDs (api-35, api-36); Imagen endpoints (api-38).",
+   "не_применяется_когда": "The model is chosen at an intermediary by its own name; preview IDs (see the cores on the preview ID shutdown on the Gemini API; the preview ID retirement on Agent Platform); Imagen endpoints (see the core on the deprecated Imagen endpoints).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -5085,6 +5095,11 @@
      "с": "Я-api-28",
      "тип": "уточняет",
      "пояснение": "история ID 2.5"
+    },
+    {
+     "с": "Я-api-38",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the deprecated Imagen endpoints"
     }
    ],
    "связи_с_другими_темами": [],
@@ -5580,7 +5595,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Maintaining old code on Nano Banana 2.5 or reading old examples.",
-   "не_применяется_когда": "New projects — 2.5 cannot be started (api-39).",
+   "не_применяется_когда": "New projects — 2.5 cannot be started (see the core on the Gemini 2.5 shutdown).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -7174,7 +7189,7 @@
     },
     {
      "модель": "nb25",
-     "текст_en": "gemini-2.5-flash-image-preview — launch link 26.08.2025 (E-67-12), recipes notebook (E-74-1); GA 02.10.2025 (api-41)",
+     "текст_en": "gemini-2.5-flash-image-preview — launch link 26.08.2025 (E-67-12), recipes notebook (E-74-1); GA 02.10.2025 (see the core on the Gemini 2.5 Flash Image GA release)",
      "коды": [
       "E-67-12",
       "E-74-1",
@@ -7241,7 +7256,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Old code, a notebook or a guide calls a model with the -preview suffix — the call has stopped working or behaves differently.",
-   "не_применяется_когда": "Imagen and old image-generation preview endpoints (api-38, api-37).",
+   "не_применяется_когда": "Imagen and old image-generation preview endpoints (see the cores on the deprecated Imagen endpoints; the deprecated image-generation preview endpoints).",
    "магнит": true,
    "магнит_причина": "\"no longer accessible\"; preview IDs must not be used",
    "термины": [
@@ -7514,6 +7529,21 @@
      "с": "Я-api-78",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-41",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Gemini 2.5 Flash Image GA release"
+    },
+    {
+     "с": "Я-api-38",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the deprecated Imagen endpoints"
+    },
+    {
+     "с": "Я-api-37",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the deprecated image-generation preview endpoints"
     }
    ],
    "связи_с_другими_темами": [],
@@ -7595,7 +7625,7 @@
    "сила": "рекомендация",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Old code calls gemini-2.0/2.5 \"image-generation-preview\" or Imagen previews (recontext, edit, ingredients).",
-   "не_применяется_когда": "Nano Banana preview IDs of 2026 (api-36).",
+   "не_применяется_когда": "Nano Banana preview IDs of 2026 (see the core on the preview ID retirement on Agent Platform).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -7808,6 +7838,11 @@
      "с": "Я-api-40",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-36",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the preview ID retirement on Agent Platform"
     }
    ],
    "связи_с_другими_темами": [],
@@ -7903,7 +7938,7 @@
    "сила": "рекомендация",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "An old pipeline or someone else's code still generates through an Imagen / imagegeneration / imagen-* endpoint — the endpoint is deprecated and a replacement is needed.",
-   "не_применяется_когда": "Calls already on gemini-*-image; preview endpoints (api-37); Gemini 3 image models (api-25).",
+   "не_применяется_когда": "Calls already on gemini-*-image; preview endpoints (see the core on the deprecated image-generation preview endpoints); Gemini 3 image models (see the core on the stable model IDs).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -8214,6 +8249,11 @@
      "с": "Я-api-165",
      "тип": "уточняет",
      "пояснение": "миграция с Imagen"
+    },
+    {
+     "с": "Я-api-25",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the stable model IDs"
     }
    ],
    "связи_с_другими_темами": [],
@@ -8541,7 +8581,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Deciding whether Nano Banana 2.5 is fit for production and mass generation (formats, batch mode, regionality).",
-   "не_применяется_когда": "Gemini 3 models (api-25); 2.5 is deprecated with retirement on 15.03.2027 (external E-52-2).",
+   "не_применяется_когда": "Gemini 3 models (see the core on the stable model IDs); 2.5 is deprecated with retirement on 15.03.2027 (external E-52-2).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -8655,6 +8695,11 @@
      "с": "Я-api-161",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-25",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the stable model IDs"
     }
    ],
    "связи_с_другими_темами": [],
@@ -9211,7 +9256,7 @@
    "сила": "факт",
    "применимость": "продукт",
    "ситуация_в_промпте": "Reading old material about Nano Banana 2.5 and its status.",
-   "не_применяется_когда": "New projects (2.5 is being shut down, api-39).",
+   "не_применяется_когда": "New projects (2.5 is being shut down, see the core on the Gemini 2.5 shutdown).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -9522,7 +9567,7 @@
     },
     {
      "модель": "nb2",
-     "текст_en": "Text and Image — Input and output; Audio — Not supported; Video — Input only (E-50-4, E-50-5, E-50-6 → api-54); blog E-45-17",
+     "текст_en": "Text and Image — Input and output; Audio — Not supported; Video — Input only (E-50-4, E-50-5, E-50-6 → see the core on video input for Nano Banana 2); blog E-45-17",
      "коды": [
       "E-50-4",
       "E-50-5",
@@ -9532,7 +9577,7 @@
     },
     {
      "модель": "lite",
-     "текст_en": "Image — Input and output; Text — Input only; Audio — Not supported (E-51-4, E-51-5); text output is disputed, api-48",
+     "текст_en": "Image — Input and output; Text — Input only; Audio — Not supported (E-51-4, E-51-5); text output is disputed, see the core on the disputed text output of Nano Banana 2 Lite",
      "коды": [
       "E-51-4",
       "E-51-5"
@@ -9594,7 +9639,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The author needs to know what can be fed to the model (text, images, PDF, video, audio) and what comes back (an image only or an image with text) — for example a reference in a PDF (a catalog, a brief) or in a video.",
-   "не_применяется_когда": "The input is ordinary images and text; choosing the format and size of the output image (api-75, api-78); video input and its disputes (api-54, api-53); Imagen.",
+   "не_применяется_когда": "The input is ordinary images and text; choosing the format and size of the output image (see the cores on aspect ratio in generateContent; image_size values); video input and its disputes (see the cores on video input for Nano Banana 2; the disputed video input of Nano Banana Pro); Imagen.",
    "магнит": true,
    "магнит_причина": "Negations 'Not supported' (audio/video) in the model cards.",
    "термины": [
@@ -9932,6 +9977,16 @@
      "с": "Я-api-51",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-75",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: aspect ratio in generateContent"
+    },
+    {
+     "с": "Я-api-78",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: image_size values"
     }
    ],
    "связи_с_другими_темами": [],
@@ -9985,7 +10040,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The cheapest and fastest model (Lite) has been chosen, and the task expects a caption, explanation or steps as text next to the image.",
-   "не_применяется_когда": "Pro, NB2, Nano Banana 2.5 — their text output is stated without caveats (api-47).",
+   "не_применяется_когда": "Pro, NB2, Nano Banana 2.5 — their text output is stated without caveats (see the core on input and output data types by model).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -10477,7 +10532,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Checking whether system instructions, caching, token counting and interleaving can be used with Pro.",
-   "не_применяется_когда": "Unsupported features — api-56.",
+   "не_применяется_когда": "Unsupported features — see the core on features the image models do not support.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -10640,7 +10695,7 @@
     },
     {
      "модель": "lite",
-     "текст_en": "Supported in Capabilities, but Text — Input only in Modalities (disputed, api-48)",
+     "текст_en": "Supported in Capabilities, but Text — Input only in Modalities (disputed, see the core on the disputed text output of Nano Banana 2 Lite)",
      "коды": [
       "E-51-17",
       "E-60-16"
@@ -10747,7 +10802,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task asks for a tutorial, recipe, step-by-step guide, post, story or storyboard with an illustration for each step or scene — text and images in one response.",
-   "не_применяется_когда": "A single image without text is needed (api-63); a series of separate frames with control over each one — separate calls in a loop (api-95); text output of Lite is disputed (api-48).",
+   "не_применяется_когда": "A single image without text is needed (see the core on image-only output); a series of separate frames with control over each one — separate calls in a loop (see the core on one image per call); text output of Lite is disputed (see the core on the disputed text output of Nano Banana 2 Lite).",
    "магнит": true,
    "магнит_причина": "Concrete items from Google examples (a blog post, a recipe with an image per step, a paella recipe, a macaron recipe).",
    "термины": [
@@ -11080,7 +11135,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Text arrives next to the image in the response: decide whether to keep it, use it as a description of the frame or ignore it.",
-   "не_применяется_когда": "Only IMAGE is requested (api-63) — there is no text by configuration.",
+   "не_применяется_когда": "Only IMAGE is requested (see the core on image-only output) — there is no text by configuration.",
    "магнит": true,
    "магнит_причина": "Concrete object from a Google example response (the Eiffel Tower at night with fireworks).",
    "термины": [],
@@ -11293,7 +11348,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The source material is a video (a frame from a clip, a cover or an infographic based on a video) and the author wants to feed it to Nano Banana Pro, the strongest model.",
-   "не_применяется_когда": "NB2 — video input is GA (api-54); Lite — supported per its card; NB2/Lite in the Gemini API — video input is stated (api-55); animating an image into a video is a different model (api-179).",
+   "не_применяется_когда": "NB2 — video input is GA (see the core on video input for Nano Banana 2); Lite — supported per its card; NB2/Lite in the Gemini API — video input is stated (see the core on passing video for video-to-image generation); animating an image into a video is a different model (see the core on model chains).",
    "магнит": true,
    "магнит_причина": "Negation 'Not supported' (video) in the core.",
    "термины": [
@@ -11553,6 +11608,11 @@
      "с": "Я-api-50",
      "тип": "уточняет",
      "пояснение": "возможности Pro"
+    },
+    {
+     "с": "Я-api-179",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: model chains"
     }
    ],
    "связи_с_другими_темами": [],
@@ -11579,7 +11639,7 @@
    "модели_различия": [
     {
      "модель": "pro",
-     "текст_en": "the \"Generate images from video\" page lists Pro among its models (E-87-2), but the Pro card contradicts itself — api-53",
+     "текст_en": "the \"Generate images from video\" page lists Pro among its models (E-87-2), but the Pro card contradicts itself — see the core on the disputed video input of Nano Banana Pro",
      "коды": [
       "E-87-2"
      ]
@@ -11692,7 +11752,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task has a clip or a YouTube link and needs an image based on it: a cover, a thumbnail, a \"representative frame\", an infographic on the video's content.",
-   "не_применяется_когда": "Nano Banana 2.5 (does not accept video); Pro — disputed (api-53); no image model outputs video; video generation is not this topic.",
+   "не_применяется_когда": "Nano Banana 2.5 (does not accept video); Pro — disputed (see the core on the disputed video input of Nano Banana Pro); no image model outputs video; video generation is not this topic.",
    "магнит": true,
    "магнит_причина": "Negations (\"Not supported\", \"not output\").",
    "термины": [
@@ -11997,7 +12057,7 @@
    "модели_различия": [
     {
      "модель": "pro",
-     "текст_en": "Agent Platform — see api-53",
+     "текст_en": "Agent Platform — see the core on the disputed video input of Nano Banana Pro",
      "коды": []
     },
     {
@@ -12426,7 +12486,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The author wants the image model to return a JSON description or a strict JSON schema, call tools, functions or code, use a URL as context, work in the Live API, or be fine-tuned — check whether it can.",
-   "не_применяется_когда": "The task is only to generate an image; a chain where a text model calls the tools and the image model only draws (api-179); Grounding with Google Search is supported by Pro and NB2 (api-149); system instructions are supported (api-61).",
+   "не_применяется_когда": "The task is only to generate an image; a chain where a text model calls the tools and the image model only draws (see the core on model chains); Grounding with Google Search is supported by Pro and NB2 (see the core on the google_search tool); system instructions are supported (see the core on system instructions).",
    "магнит": true,
    "магнит_причина": "List of negations ('Not supported') in the core and its parts.",
    "термины": [
@@ -13252,6 +13312,11 @@
      "с": "Я-api-58",
      "тип": "уточняет",
      "пояснение": "chat completions"
+    },
+    {
+     "с": "Я-api-179",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: model chains"
     }
    ],
    "связи_с_другими_темами": [],
@@ -13327,7 +13392,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The author wants the image model to return JSON (a description of the frame by a schema) together with the image.",
-   "не_применяется_когда": "A text model prepares a JSON script that is then fed to the image model (api-179).",
+   "не_применяется_когда": "A text model prepares a JSON script that is then fed to the image model (see the core on model chains).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -13497,7 +13562,7 @@
    ],
    "оговорки": [
     {
-     "текст_en": "In the OpenAI compatibility layer reasoning_effort maps to thinking_level (see api-104).",
+     "текст_en": "In the OpenAI compatibility layer reasoning_effort maps to thinking_level (see the core on reasoning_effort in the OpenAI layer).",
      "модели": [
       "не_указано"
      ],
@@ -13712,7 +13777,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The same large references or instructions go into many calls, and the author wants the repeated input to be cached and cost less.",
-   "не_применяется_когда": "Single, different requests; Nano Banana 2.5 (not supported); Provisioned Throughput and caching — api-164.",
+   "не_применяется_когда": "Single, different requests; Nano Banana 2.5 (not supported); Provisioned Throughput and caching — see the core on the Provisioned Throughput header and caching.",
    "магнит": true,
    "магнит_причина": "Negation 'Not supported' in the core.",
    "термины": [
@@ -14762,7 +14827,7 @@
      "выведено": false
     },
     {
-     "текст_en": "Agent Platform get-started page: \"You must include responseModalities: [\"TEXT\", \"IMAGE\"] in your configuration\" — whether TEXT is mandatory is disputed, see api-63.",
+     "текст_en": "Agent Platform get-started page: \"You must include responseModalities: [\"TEXT\", \"IMAGE\"] in your configuration\" — whether TEXT is mandatory is disputed, see the core on image-only output.",
      "модели": [
       "не_указано"
      ],
@@ -14871,7 +14936,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Any task whose output is an image (generation or editing) through generateContent or Firebase AI Logic: the call config must request the IMAGE modality, and the author decides whether to expect only an image or also text (caption, explanation, steps).",
-   "не_применяется_когда": "Interactions API: response_modalities is deprecated/removed there and the modality is set by a response_format entry (api-65, api-64); Imagen (:predict / generateImages) has no modalities; calls through Higgsfield or the OpenAI-compatible images endpoint; the placement of the field in the REST body — api-67.",
+   "не_применяется_когда": "Interactions API: response_modalities is deprecated/removed there and the modality is set by a response_format entry (see the cores on response_modalities removed from the Interactions API; the default text and image output and response_format arrays); Imagen (:predict / generateImages) has no modalities; calls through Higgsfield or the OpenAI-compatible images endpoint; the placement of the field in the REST body — see the core on the disputed placement of responseModalities in REST.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -15772,6 +15837,11 @@
      "с": "Я-api-165",
      "тип": "уточняет",
      "пояснение": "шаг миграции с Imagen"
+    },
+    {
+     "с": "Я-api-64",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the default text and image output and response_format arrays"
     }
    ],
    "связи_с_другими_темами": [],
@@ -15958,7 +16028,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The pipeline needs only the image file without accompanying text (which would otherwise be discarded) — or, conversely, text next to the image.",
-   "не_применяется_когда": "Captions or steps are needed next to the image (api-62); coherent text mixed with images is interleaving (api-51); a Higgsfield call where modalities are not set.",
+   "не_применяется_когда": "Captions or steps are needed next to the image (see the core on the required IMAGE response modality); coherent text mixed with images is interleaving (see the core on interleaved text and image output); a Higgsfield call where modalities are not set.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -16501,7 +16571,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Only the image file without the model's chatter is needed, or text (a caption, a poem) is needed together with the image in one response.",
-   "не_применяется_когда": "generateContent — there modalities are set with responseModalities (api-62).",
+   "не_применяется_когда": "generateContent — there modalities are set with responseModalities (see the core on the required IMAGE response modality).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -16615,6 +16685,11 @@
      "с": "Я-api-63",
      "тип": "уточняет",
      "пояснение": "только картинка: в Interactions — через response_format"
+    },
+    {
+     "с": "Я-api-62",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the required IMAGE response modality"
     }
    ],
    "связи_с_другими_темами": [],
@@ -16669,7 +16744,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Meeting response_modalities=[\"text\",\"image\"] in an Interactions example and deciding whether to write it into new code.",
-   "не_применяется_когда": "generateContent — there responseModalities is valid (api-62).",
+   "не_применяется_когда": "generateContent — there responseModalities is valid (see the core on the required IMAGE response modality).",
    "магнит": true,
    "магнит_причина": "Removal: response_modalities is removed in the Interactions API.",
    "термины": [
@@ -17257,7 +17332,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A raw REST call without an SDK is being written, and responseModalities and the image settings must be put in the right place of the body.",
-   "не_применяется_когда": "A call through the SDK (the field is at the config level there — api-62); Higgsfield.",
+   "не_применяется_когда": "A call through the SDK (the field is at the config level there — see the core on the required IMAGE response modality); Higgsfield.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -17747,7 +17822,7 @@
    ],
    "оговорки": [
     {
-     "текст_en": "New-schema opt-in for REST was the header Api-Revision: 2026-05-20; the new schema became the default after May 26, 2026 and the legacy schema was removed on June 8, 2026 (see api-2).",
+     "текст_en": "New-schema opt-in for REST was the header Api-Revision: 2026-05-20; the new schema became the default after May 26, 2026 and the legacy schema was removed on June 8, 2026 (see the core on the Interactions schema migration timeline).",
      "модели": [],
      "коды": [
       "E-27-12",
@@ -17829,7 +17904,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task sets a frame format (16:9, 9:16, square) or a size (2K/4K) — this is set by a call field, not by prompt words; when reading Google's code one must know which form of the field is current.",
-   "не_применяется_когда": "A call through generateContent (there generationConfig.imageConfig or responseFormat.image — api-72, api-73); a call through an intermediary where the format is chosen by its own setting.",
+   "не_применяется_когда": "A call through generateContent (there generationConfig.imageConfig or responseFormat.image — see the cores on generationConfig.imageConfig; generationConfig.responseFormat.image); a call through an intermediary where the format is chosen by its own setting.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -18259,6 +18334,16 @@
      "с": "Я-api-68",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-2",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Interactions schema migration timeline"
+    },
+    {
+     "с": "Я-api-72",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: generationConfig.imageConfig"
     }
    ],
    "связи_с_другими_темами": [],
@@ -18313,7 +18398,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Meeting generation_config.image_config in someone else's or old code and deciding whether it can be copied.",
-   "не_применяется_когда": "generateContent: there the generationConfig.imageConfig field is valid (api-72) — this is a different API.",
+   "не_применяется_когда": "generateContent: there the generationConfig.imageConfig field is valid (see the core on generationConfig.imageConfig) — this is a different API.",
    "магнит": true,
    "магнит_причина": "Removal: image_config is removed from generation_config (a legacy form that must not be copied).",
    "термины": [
@@ -18464,6 +18549,11 @@
      "с": "Я-api-2",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-72",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: generationConfig.imageConfig"
     }
    ],
    "связи_с_другими_темами": [],
@@ -18567,7 +18657,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Code copied from the Cookbook notebook (a call through client.interactions.create with a format or resolution) uses image_generation_config, and the author must know whether it matches the documented form.",
-   "не_применяется_когда": "Code following the current Gemini API docs — there it is response_format (api-69); generateContent (api-75); Firebase (api-76).",
+   "не_применяется_когда": "Code following the current Gemini API docs — there it is response_format (see the core on response_format with type image in the Interactions API); generateContent (see the core on aspect ratio in generateContent); Firebase (see the core on ImageConfig in Firebase AI Logic).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -18724,6 +18814,11 @@
      "с": "Я-api-131",
      "тип": "уточняет",
      "пояснение": "основы Interactions API"
+    },
+    {
+     "с": "Я-api-76",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: ImageConfig in Firebase AI Logic"
     }
    ],
    "связи_с_другими_темами": [],
@@ -18777,7 +18872,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The image format or size must be set in a generateContent call (or such code must be read).",
-   "не_применяется_когда": "Interactions API — only response_format there (api-69).",
+   "не_применяется_когда": "Interactions API — only response_format there (see the core on response_format with type image in the Interactions API).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -18857,6 +18952,11 @@
      "с": "Я-api-78",
      "тип": "требует",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-69",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: response_format with type image in the Interactions API"
     }
    ],
    "связи_с_другими_темами": [],
@@ -18902,7 +19002,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Reading generateContent code where the image format is set through responseFormat.image rather than imageConfig.",
-   "не_применяется_когда": "Interactions API (response_format with type \"image\" there — api-69).",
+   "не_применяется_когда": "Interactions API (response_format with type \"image\" there — see the core on response_format with type image in the Interactions API).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -19334,7 +19434,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task sets a frame format (a 9:16 story or reel, a 16:9 cover, a square, a 21:9 wide banner) and the call goes through generateContent (REST or the Python SDK, Gemini API / Agent Platform) — pass it as a call parameter, not only as words in the prompt.",
-   "не_применяется_когда": "Imagen (:predict) — aspectRatio in the parameters object (api-171); Higgsfield has its own format fields; Interactions API — api-71; Firebase — api-76; the old 2.5 preview without the parameter — api-77.",
+   "не_применяется_когда": "Imagen (:predict) — aspectRatio in the parameters object (see the core on optional Imagen parameters); Higgsfield has its own format fields; Interactions API — see the core on the Cookbook image_generation_config form; Firebase — see the core on ImageConfig in Firebase AI Logic; the old 2.5 preview without the parameter — see the core on the blank-canvas workaround for the frame format.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -19594,6 +19694,11 @@
      "с": "Я-api-62",
      "тип": "требует",
      "пояснение": "модальность IMAGE"
+    },
+    {
+     "с": "Я-api-171",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: optional Imagen parameters"
     }
    ],
    "связи_с_другими_темами": [],
@@ -19742,7 +19847,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "An app on Firebase AI Logic (mobile or web), and the task sets the image format or size.",
-   "не_применяется_когда": "Direct REST/Python (api-75), Interactions API (api-71); Firebase SDKs older than May 2026 do not yet have ImageConfig.",
+   "не_применяется_когда": "Direct REST/Python (see the core on aspect ratio in generateContent), Interactions API (see the core on the Cookbook image_generation_config form); Firebase SDKs older than May 2026 do not yet have ImageConfig.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -19932,6 +20037,11 @@
      "с": "Я-api-4",
      "тип": "уточняет",
      "пояснение": "версия SDK"
+    },
+    {
+     "с": "Я-api-71",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Cookbook image_generation_config form"
     }
    ],
    "связи_с_другими_темами": [],
@@ -20002,7 +20112,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A specific frame format is needed on a model or SDK without a format parameter — pass a blank canvas of the needed size as an image.",
-   "не_применяется_когда": "Models with imageConfig / image_generation_config — the format is set by a parameter (api-75, api-76, api-71).",
+   "не_применяется_когда": "Models with imageConfig / image_generation_config — the format is set by a parameter (see the cores on aspect ratio in generateContent; ImageConfig in Firebase AI Logic; the Cookbook image_generation_config form).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -20080,6 +20190,16 @@
      "с": "Я-api-75",
      "тип": "уточняет",
      "пояснение": "параметр, заменивший обходной способ"
+    },
+    {
+     "с": "Я-api-76",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: ImageConfig in Firebase AI Logic"
+    },
+    {
+     "с": "Я-api-71",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Cookbook image_generation_config form"
     }
    ],
    "связи_с_другими_темами": [],
@@ -20245,7 +20365,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "An image of a specific size is needed — a quick 0.5MP draft (512), a regular 1K, or print or a large banner at 2K–4K — and the value is written into a call parameter, where its spelling matters.",
-   "не_применяется_когда": "The intermediary chooses the size (Higgsfield has its own values); \"4K\" in the prompt text does not change the output size; the resolution of INPUT images is media_resolution (api-118); Imagen uses other fields.",
+   "не_применяется_когда": "The intermediary chooses the size (Higgsfield has its own values); \"4K\" in the prompt text does not change the output size; the resolution of INPUT images is media_resolution (see the core on where media_resolution is set); Imagen uses other fields.",
    "магнит": true,
    "магнит_причина": "Negation: lowercase values (such as 1k) will be rejected.",
    "термины": [
@@ -21310,7 +21430,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Working out which model-behavior settings (thinking, seed, token limit) can be passed in an image call through Interactions.",
-   "не_применяется_когда": "The image-format settings are response_format (api-69).",
+   "не_применяется_когда": "The image-format settings are response_format (see the core on response_format with type image in the Interactions API).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -21454,6 +21574,11 @@
      "с": "Я-api-126",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-69",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: response_format with type image in the Interactions API"
     }
    ],
    "связи_с_другими_темами": [],
@@ -21661,7 +21786,7 @@
    "сила": "рекомендация",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Tuning a call for a new task without knowing the optimal values.",
-   "не_применяется_когда": "Gemini 3 and temperature — keep the default (api-88).",
+   "не_применяется_когда": "Gemini 3 and temperature — keep the default (see the core on keeping temperature at 1.0 for Gemini 3).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -21900,7 +22025,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The call sets or plans a temperature: decide whether repeated generations from one prompt should be varied or as repeatable as possible, and know the allowed range and the default.",
-   "не_применяется_когда": "A Higgsfield call where temperature is not set; Imagen (:predict) has no temperature parameter; the newest general-use Gemini 3.x models ignore temperature (api-89); for Gemini 3 models Google recommends keeping 1.0 (api-88).",
+   "не_применяется_когда": "A Higgsfield call where temperature is not set; Imagen (:predict) has no temperature parameter; the newest general-use Gemini 3.x models ignore temperature (see the core on sampling parameters ignored by the newest Gemini 3.x models); for Gemini 3 models Google recommends keeping 1.0 (see the core on keeping temperature at 1.0 for Gemini 3).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -22746,7 +22871,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A config is carried between a Gemini 3.x text model and an image model (or one config is shared by both).",
-   "не_применяется_когда": "The image models themselves: Firebase puts Nano Banana into a separate category, and for Pro the card gives temperature/topP with defaults (api-87, api-90).",
+   "не_применяется_когда": "The image models themselves: Firebase puts Nano Banana into a separate category, and for Pro the card gives temperature/topP with defaults (see the cores on the temperature range and default; topP and topK).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -22901,6 +23026,11 @@
      "с": "Я-api-97",
      "тип": "уточняет",
      "пояснение": "penalties у Nano Banana"
+    },
+    {
+     "с": "Я-api-90",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: topP and topK"
     }
    ],
    "связи_с_другими_темами": [],
@@ -23040,7 +23170,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The call tunes topP/topK sampling to trade variants against repeatability or to reduce the spread of results between runs.",
-   "не_применяется_когда": "Imagen (:predict); the newest general-use Gemini 3.x models ignore these parameters (api-89); Gemini 2.5 Flash Image has topK fixed at 64 (api-91); in the Gemini API these sampling parameters are deprecated (api-88).",
+   "не_применяется_когда": "Imagen (:predict); the newest general-use Gemini 3.x models ignore these parameters (see the core on sampling parameters ignored by the newest Gemini 3.x models); Gemini 2.5 Flash Image has topK fixed at 64 (see the core on topK fixed at 64 for Nano Banana 2.5); in the Gemini API these sampling parameters are deprecated (see the core on keeping temperature at 1.0 for Gemini 3).",
    "магнит": true,
    "магнит_причина": "Negations in the core, caveats or techniques ('not'), e.g. top-K is not supported for Gemini 1.5.",
    "термины": [
@@ -23269,6 +23399,11 @@
      "с": "Я-api-89",
      "тип": "конфликтует",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-88",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: keeping temperature at 1.0 for Gemini 3"
     }
    ],
    "связи_с_другими_темами": [],
@@ -23605,7 +23740,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The task is to restore or clean up a source as close to the original as possible, without creative variation, and to get the same result on repeat.",
-   "не_применяется_когда": "Creative steps (colorization, stylization, \"cinematic\" processing) use the default config; the Imagen seed — api-172.",
+   "не_применяется_когда": "Creative steps (colorization, stylization, \"cinematic\" processing) use the default config; the Imagen seed — see the core on the Imagen addWatermark and seed.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -23855,7 +23990,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Several variants of an image are needed for one prompt, and the author wants to get them in one call through the number of candidates.",
-   "не_применяется_когда": "Variants are made by separate runs at the intermediary; Imagen sets the number of images with sampleCount / number_of_images (api-169, api-171); Gemini text models (candidateCount 1–8, removed in the newest ones — api-89).",
+   "не_применяется_когда": "Variants are made by separate runs at the intermediary; Imagen sets the number of images with sampleCount / number_of_images (see the cores on the Imagen :predict REST call; optional Imagen parameters); Gemini text models (candidateCount 1–8, removed in the newest ones — see the core on sampling parameters ignored by the newest Gemini 3.x models).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -24192,6 +24327,11 @@
      "с": "Я-api-89",
      "тип": "уточняет",
      "пояснение": "ошибка 400 у новейших текстовых"
+    },
+    {
+     "с": "Я-api-171",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: optional Imagen parameters"
     }
    ],
    "связи_с_другими_темами": [],
@@ -24276,7 +24416,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Several variants of an image are needed for one prompt (A/B, choosing the best frame).",
-   "не_применяется_когда": "An interleaved response with an image per step (api-51) — several different images by the prompt's design; Imagen (numberOfImages existed there).",
+   "не_применяется_когда": "An interleaved response with an image per step (see the core on interleaved text and image output) — several different images by the prompt's design; Imagen (numberOfImages existed there).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -24619,7 +24759,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A general generation config is carried over to an image model.",
-   "не_применяется_когда": "Text models (the parameters exist there; for the newest see api-89).",
+   "не_применяется_когда": "Text models (the parameters exist there; for the newest see the core on sampling parameters ignored by the newest Gemini 3.x models).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -24815,7 +24955,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A complex scene (many objects, text, an infographic) is called through the Interactions API: decide whether to raise the level of thinking before drawing, or look at how the model reasoned about the frame.",
-   "не_применяется_когда": "A simple image or an intermediary without a thinking knob; generateContent — api-101.",
+   "не_применяется_когда": "A simple image or an intermediary without a thinking knob; generateContent — see the core on thinkingConfig in generateContent.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -25388,7 +25528,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A complex scene with many conditions (a layout, text in the frame, an infographic) versus a simple quick image in a direct call — choosing how much the model should think before generating.",
-   "не_применяется_когда": "Nano Banana 2.5 — thinking_level returns an error (api-102); Higgsfield usually does not set the level; Interactions API — api-98; OpenAI layer — api-104.",
+   "не_применяется_когда": "Nano Banana 2.5 — thinking_level returns an error (see the core on thinking_level and thinking_budget errors); Higgsfield usually does not set the level; Interactions API — see the core on thinking_level in the Interactions API; OpenAI layer — see the core on reasoning_effort in the OpenAI layer.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -25835,7 +25975,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The response handler takes the first image it finds, while the model also returned interim \"thought images\".",
-   "не_применяется_когда": "Nano Banana 2.5 (no thinking); Interactions API — ThoughtStep there (api-133).",
+   "не_применяется_когда": "Nano Banana 2.5 (no thinking); Interactions API — ThoughtStep there (see the core on the Interactions ModelOutputStep).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -25988,6 +26128,11 @@
      "с": "Я-api-106",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-133",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Interactions ModelOutputStep"
     }
    ],
    "связи_с_другими_темами": [],
@@ -26026,7 +26171,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The call goes through the OpenAI-compatible layer (the openai client) to Gemini 3, and the thinking level must be set.",
-   "не_применяется_когда": "The native SDK — thinking_config (api-101); Pro Image does not support chat completions (api-58).",
+   "не_применяется_когда": "The native SDK — thinking_config (see the core on thinkingConfig in generateContent); Pro Image does not support chat completions (see the core on chat completions not supported by Pro Image).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -26724,7 +26869,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A reference or a source image for editing must be passed into the call — as a local file (bytes) or as a file lying in the cloud by a link — and packaged correctly.",
-   "не_применяется_когда": "An intermediary accepts the file itself; Imagen customization has its own base64 rules for referenceImages (api-174).",
+   "не_применяется_когда": "An intermediary accepts the file itself; Imagen customization has its own base64 rules for referenceImages (see the core on Imagen customization references).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -27140,6 +27285,11 @@
      "с": "Я-api-115",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-174",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: Imagen customization references"
     }
    ],
    "связи_с_другими_темами": [],
@@ -27325,7 +27475,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The references are in cloud storage or behind a link, and the call fails or does not see the file.",
-   "не_применяется_когда": "Passing bytes inline (api-108).",
+   "не_применяется_когда": "Passing bytes inline (see the core on inline and file media parts).",
    "магнит": true,
    "магнит_причина": "Negation \"not supported\" (VPC-SC).",
    "термины": [
@@ -27581,7 +27731,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "References must be fed into the call: one local file, several cloud files, a video by a link, or a mix of all these in one request.",
-   "не_применяется_когда": "REST without an SDK (api-108); Imagen customization (api-174).",
+   "не_применяется_когда": "REST without an SDK (see the core on inline and file media parts); Imagen customization (see the core on Imagen customization references).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -27819,6 +27969,11 @@
      "с": "Я-api-54",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-174",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: Imagen customization references"
     }
    ],
    "связи_с_другими_темами": [],
@@ -28028,7 +28183,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A reference arrived in an unusual format (HEIC from a phone, WEBP, PDF, MOV) or a PDF or text document must be supplied — will the model accept it as is.",
-   "не_применяется_когда": "The format of the output image (api-80, api-79).",
+   "не_применяется_когда": "The format of the output image (see the cores on the output file format, output_mime_type; the image/jpeg-only output MIME type).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -28272,6 +28427,16 @@
      "с": "Я-api-109",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-80",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the output file format, output_mime_type"
+    },
+    {
+     "с": "Я-api-79",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the image/jpeg-only output MIME type"
     }
    ],
    "связи_с_другими_темами": [],
@@ -28517,7 +28682,7 @@
    "сила": "рекомендация",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "One source image and a text instruction for it go into the call; or several references that the prompt text refers to by number (\"Image 1\", \"the first image\").",
-   "не_применяется_когда": "A call without images; Imagen customization — references are addressed by referenceId there (api-174).",
+   "не_применяется_когда": "A call without images; Imagen customization — references are addressed by referenceId there (see the core on Imagen customization references).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -28733,6 +28898,11 @@
      "с": "Я-api-108",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-174",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: Imagen customization references"
     }
    ],
    "связи_с_другими_темами": [],
@@ -29225,7 +29395,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "References or source images go into the call, and it matters how much detail the model sees in them (small text, a face, a logo) versus input token spend; one input image may need detail while the others do not.",
-   "не_применяется_когда": "The resolution of the OUTPUT image is image_size (api-78); media_resolution affects only the input; applicability to image models is not confirmed by the pages.",
+   "не_применяется_когда": "The resolution of the OUTPUT image is image_size (see the core on image_size values); media_resolution affects only the input; applicability to image models is not confirmed by the pages.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -29614,7 +29784,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Estimating the budget of a call with several references and wanting to know how many input tokens each image will take.",
-   "не_применяется_когда": "Output tokens of a 1K/2K/4K image — the prices topic; models before Gemini 3 and tuning datasets — api-120.",
+   "не_применяется_когда": "Output tokens of a 1K/2K/4K image — the prices topic; models before Gemini 3 and tuning datasets — see the core on mediaResolution in tuning datasets.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -29769,7 +29939,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "An old token table (64/256) turns up and someone tries to apply it to calculating references for Nano Banana.",
-   "не_применяется_когда": "Image generation: image models are not tuned; for requests — api-119.",
+   "не_применяется_когда": "Image generation: image models are not tuned; for requests — see the core on tokens per input image by media resolution.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -30260,7 +30430,7 @@
    ],
    "оговорки": [
     {
-     "текст_en": "Requires storage: store=true by default; store=false prevents using previous_interaction_id (api-125).",
+     "текст_en": "Requires storage: store=true by default; store=false prevents using previous_interaction_id (see the core on Interactions storage, store).",
      "модели": [],
      "коды": [
       "E-26-9",
@@ -30282,7 +30452,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The image is almost ready and a detail must be fixed (the language of a label, a color, a pose) in the next turn without re-sending everything.",
-   "не_применяется_когда": "generateContent — the history goes into contents[] there (api-128); an intermediary without a chain of turns.",
+   "не_применяется_когда": "generateContent — the history goes into contents[] there (see the core on multi-turn history in generateContent); an intermediary without a chain of turns.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -30448,6 +30618,11 @@
      "с": "Я-api-105",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-128",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: multi-turn history in generateContent"
     }
    ],
    "связи_с_другими_темами": [],
@@ -31132,7 +31307,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The image is refined with several messages (\"now make the background darker\") within one session.",
-   "не_применяется_когда": "A single generation; Interactions API has its own history (api-131).",
+   "не_применяется_когда": "A single generation; Interactions API has its own history (see the core on reading the Interactions response via output_image).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -31469,7 +31644,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Writing the response handler for generateContent: where the image lies in the response, what to do with the text next to it, how to save the file.",
-   "не_применяется_когда": "Interactions API — output_image / steps (api-131, api-133); Imagen — generated_images / predictions (api-169, api-170); Genkit — data URI (api-182); OpenAI layer — b64_json; thought images — api-103.",
+   "не_применяется_когда": "Interactions API — output_image / steps (see the cores on reading the Interactions response via output_image; the Interactions ModelOutputStep); Imagen — generated_images / predictions (see the cores on the Imagen :predict REST call; Imagen generate_images in the SDK); Genkit — data URI (see the core on Genkit Go); OpenAI layer — b64_json; thought images — see the core on thoughts in the response.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -31957,6 +32132,21 @@
      "с": "Я-api-182",
      "тип": "уточняет",
      "пояснение": "параллельный способ: Genkit"
+    },
+    {
+     "с": "Я-api-133",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Interactions ModelOutputStep"
+    },
+    {
+     "с": "Я-api-169",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the Imagen :predict REST call"
+    },
+    {
+     "с": "Я-api-170",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: Imagen generate_images in the SDK"
     }
    ],
    "связи_с_другими_темами": [],
@@ -32069,7 +32259,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Writing code that saves the image from an Interactions API response (a pipeline on the Interactions API or multi-turn editing with history kept on the API side).",
-   "не_применяется_когда": "A response with several images or interleaving — iterate over the steps (api-132); generateContent (api-166, api-130); Firebase chat (api-129).",
+   "не_применяется_когда": "A response with several images or interleaving — iterate over the steps (see the core on iterating over the Interactions steps); generateContent (see the cores on generation and editing through generateContent; reading the generateContent response parts); Firebase chat (see the core on multi-turn editing in a chat).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -32263,6 +32453,11 @@
      "с": "Я-api-124",
      "тип": "уточняет",
      "пояснение": "многоходовость Interactions"
+    },
+    {
+     "с": "Я-api-166",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: generation and editing through generateContent"
     }
    ],
    "связи_с_другими_темами": [],
@@ -32546,7 +32741,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The call goes through the Interactions API (an agentic interface with steps), not through generateContent.",
-   "не_применяется_когда": "A call through generateContent / the Gen AI SDK (api-62, api-130).",
+   "не_применяется_когда": "A call through generateContent / the Gen AI SDK (see the cores on the required IMAGE response modality; reading the generateContent response parts).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -32706,6 +32901,11 @@
      "с": "Я-api-130",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-62",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the required IMAGE response modality"
     }
    ],
    "связи_с_другими_темами": [],
@@ -32928,7 +33128,7 @@
    "сила": "рекомендация",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A live person is waiting for the image (a chat, a mini-app), and the perceived response speed matters.",
-   "не_применяется_когда": "Background batch generation (api-154).",
+   "не_применяется_когда": "Background batch generation (see the core on batch image generation).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -33504,7 +33704,7 @@
      "выведено": false
     },
     {
-     "текст_en": "In the OpenAI compatibility layer safety thresholds for the Images endpoint go through extra_body.safety_settings (see api-24).",
+     "текст_en": "In the OpenAI compatibility layer safety thresholds for the Images endpoint go through extra_body.safety_settings (see the core on extra_body in the OpenAI layer).",
      "модели": [
       "nb25",
       "pro"
@@ -33548,7 +33748,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A legitimate prompt near the filters (weapons in a film, medicine, revealing clothing, martial arts) runs into blocking, and the author wants to know whether the blocking threshold can be loosened or tightened in the call itself.",
-   "не_применяется_когда": "Calls through the Interactions API — custom safety settings are not supported there (api-140); an intermediary such as Higgsfield that sets the thresholds itself; hard policies that do not depend on settings (api-145); Imagen uses ImagenSafetySettings.",
+   "не_применяется_когда": "Calls through the Interactions API — custom safety settings are not supported there (see the core on safety settings unsupported in the Interactions API); an intermediary such as Higgsfield that sets the thresholds itself; hard policies that do not depend on settings (see the core on the raiFilteredReason support codes); Imagen uses ImagenSafetySettings.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -33827,6 +34027,11 @@
      "с": "Я-api-165",
      "тип": "уточняет",
      "пояснение": "миграция с Imagen"
+    },
+    {
+     "с": "Я-api-24",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: extra_body in the OpenAI layer"
     }
    ],
    "связи_с_другими_темами": [],
@@ -33872,7 +34077,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Building an image call through Interactions and wanting to set a custom safety threshold.",
-   "не_применяется_когда": "A call through generateContent — safetySettings exist there (api-139).",
+   "не_применяется_когда": "A call through generateContent — safetySettings exist there (see the core on safetySettings).",
    "магнит": true,
    "магнит_причина": "Negation: custom safety settings are not supported in the Interactions API.",
    "термины": [],
@@ -34118,7 +34323,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The call returned 'successfully' but there is no image, or it returned empty — determine who refused: the input filter (prompt blocked), the output filter (FinishReason IMAGE_SAFETY) or the model itself (a refusal text with FinishReason STOP).",
-   "не_применяется_когда": "Quota or overload errors (429) — api-147; support codes in raiFilteredReason — api-145; a generation that simply did not trigger (NO_IMAGE) — api-143.",
+   "не_применяется_когда": "Quota or overload errors (429) — see the core on retries on 429 and 400; support codes in raiFilteredReason — see the core on the raiFilteredReason support codes; a generation that simply did not trigger (NO_IMAGE) — see the core on responses without an image, NO_IMAGE.",
    "магнит": true,
    "магнит_причина": "Negation in a quote: the model says it can't generate unsafe images.",
    "термины": [
@@ -34450,6 +34655,11 @@
      "с": "Я-api-143",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-147",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: retries on 429 and 400"
     }
    ],
    "связи_с_другими_темами": [],
@@ -34503,7 +34713,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "No image arrived or an empty response came back — use the code to understand the cause (a filter, a prohibition, \"recitation\", or the model simply did not draw).",
-   "не_применяется_когда": "Quota or HTTP errors (api-146).",
+   "не_применяется_когда": "Quota or HTTP errors (see the core on HTTP 429).",
    "магнит": true,
    "магнит_причина": "Negative outcome codes (blocked prompt, no image) and the advice to rephrase a blocked prompt.",
    "термины": [
@@ -34745,13 +34955,13 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The pipeline received a response without an image or with text only; it must check the response and retry or rephrase the prompt.",
-   "не_применяется_когда": "A safety refusal (text + STOP, api-141) and a filter block (api-141) are different signals.",
+   "не_применяется_когда": "A safety refusal (text + STOP, see the core on the three refusal paths) and a filter block (see the core on the three refusal paths) are different signals.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
     {
      "термин": "FinishReason NO_IMAGE",
-     "значение_en": "the finish reason: the model produced only text without an image (the Firebase reading; see the dispute api-144)",
+     "значение_en": "the finish reason: the model produced only text without an image (the Firebase reading; see the dispute see the core on the disputed meaning of NO_IMAGE)",
      "коды": []
     }
    ],
@@ -35290,7 +35500,7 @@
    "сила": "возможность",
    "применимость": "политика",
    "ситуация_в_промпте": "The call returned a support code instead of an image (raiFilteredReason with a numeric code) — use the code to understand which category in the prompt or in the result triggered the filter, and rewrite the task.",
-   "не_применяется_когда": "A refusal by the model itself as text with STOP (api-141, api-141).",
+   "не_применяется_когда": "A refusal by the model itself as text with STOP (see the cores on the three refusal paths; the three refusal paths).",
    "магнит": true,
    "магнит_причина": "List of prohibited content categories and PII examples (credit card numbers, home addresses).",
    "термины": [
@@ -35916,7 +36126,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Batch generation fails with 429/5xx — a retry with a pause is needed.",
-   "не_применяется_когда": "A safety refusal (api-142) — a retry without changing the prompt will not help.",
+   "не_применяется_когда": "A safety refusal (see the core on the blockReason and finishReason codes) — a retry without changing the prompt will not help.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -36006,7 +36216,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A batch of generations hits the quota (429) or one-off 400 errors on the first access to storage.",
-   "не_применяется_когда": "Safety filter blocks — a retry will not help (api-141).",
+   "не_применяется_когда": "Safety filter blocks — a retry will not help (see the core on the three refusal paths).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -36175,7 +36385,7 @@
     },
     {
      "модель": "lite",
-     "текст_en": "Search grounding — not supported (api-49)",
+     "текст_en": "Search grounding — not supported (see the core on supported capabilities per model card)",
      "коды": []
     },
     {
@@ -36263,7 +36473,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The image must reflect fresh real-world data (weather, a match score, current events, an exchange rate) or the real look of an object from image search — the model needs search.",
-   "не_применяется_когда": "A fictional scene without real data; Lite and Nano Banana 2.5 do not support grounding (api-49; external E-51-20, E-52-22); Firebase — grounding with Google Maps is not supported (api-56).",
+   "не_применяется_когда": "A fictional scene without real data; Lite and Nano Banana 2.5 do not support grounding (see the core on supported capabilities per model card; external E-51-20, E-52-22); Firebase — grounding with Google Maps is not supported (see the core on features the image models do not support).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -36540,6 +36750,11 @@
      "с": "Я-api-56",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-49",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: supported capabilities per model card"
     }
    ],
    "связи_с_другими_темами": [],
@@ -37037,7 +37252,7 @@
    "модели_различия": [
     {
      "модель": "не_указано",
-     "текст_en": "general for the API; for images — through the section Generating images in batch (api-154)",
+     "текст_en": "general for the API; for images — through the section Generating images in batch (see the core on batch image generation)",
      "коды": []
     }
    ],
@@ -37179,7 +37394,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Many images are needed without interactivity and without hurry (a catalog, a series, a batch of variants), cheaper and without hitting online quotas.",
-   "не_применяется_когда": "A single interactive generation 'here and now' (api-135).",
+   "не_применяется_когда": "A single interactive generation 'here and now' (see the core on generateContent versus streamGenerateContent).",
    "магнит": true,
    "магнит_причина": "Negations: not for tuned models; doesn't support data residency requirements.",
    "термины": [
@@ -37519,7 +37734,7 @@
    ],
    "оговорки": [
     {
-     "текст_en": "The batch image examples call gemini-3-pro-image-preview via models/…:batchGenerateContent (a preview id shut down on June 25, 2026 — api-35).",
+     "текст_en": "The batch image examples call gemini-3-pro-image-preview via models/…:batchGenerateContent (a preview id shut down on June 25, 2026 — see the core on the preview ID shutdown on the Gemini API).",
      "модели": [
       "pro"
      ],
@@ -37643,6 +37858,11 @@
      "с": "Я-api-155",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-35",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the preview ID shutdown on the Gemini API"
     }
    ],
    "связи_с_другими_темами": [],
@@ -38109,7 +38329,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Configuring the location of an Agent Platform client or data storage requirements — for example, a call to a preview model fails with a region or 'model not found' error at us-central1.",
-   "не_применяется_когда": "The Gemini Developer API (only global there); per-model regions of GA models — api-161.",
+   "не_применяется_когда": "The Gemini Developer API (only global there); per-model regions of GA models — see the core on regions by model.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -38399,7 +38619,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "There is a requirement to keep processing in a specific region (EU/US), or a call from a region returns \"model not found\".",
-   "не_применяется_когда": "Preview models (api-160); the Higgsfield region.",
+   "не_применяется_когда": "Preview models (see the core on global and regional locations); the Higgsfield region.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -39134,7 +39354,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A pipeline or code still calls Imagen (generateImages) and must be moved to Nano Banana.",
-   "не_применяется_когда": "Code written for Gemini Image from the start — api-62, api-75, api-76 are enough.",
+   "не_применяется_когда": "Code written for Gemini Image from the start — see the cores on the required IMAGE response modality; aspect ratio in generateContent; ImageConfig in Firebase AI Logic are enough.",
    "магнит": true,
    "магнит_причина": "Concrete values from Google samples (an explicit 4:3 aspect ratio) and 'instead of' replacements (GenerativeModel instead of ImagenModel).",
    "термины": [
@@ -39442,6 +39662,11 @@
      "с": "Я-api-38",
      "тип": "уточняет",
      "пояснение": "Imagen снимается"
+    },
+    {
+     "с": "Я-api-75",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: aspect ratio in generateContent"
     }
    ],
    "связи_с_другими_темами": [],
@@ -39535,7 +39760,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Writing a first image generation or editing call on Gemini Image through the SDK.",
-   "не_применяется_когда": "Interactions API (client.interactions.create, api-131); the OpenAI layer; Imagen.",
+   "не_применяется_когда": "Interactions API (client.interactions.create, see the core on reading the Interactions response via output_image); the OpenAI layer; Imagen.",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -39838,7 +40063,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A mask-based edit (inpainting) is needed and Imagen editImage appears in the code.",
-   "не_применяется_когда": "Gemini Image — editing by words or chat without a mask (api-166, api-129); the Imagen endpoints are withdrawn (api-38).",
+   "не_применяется_когда": "Gemini Image — editing by words or chat without a mask (see the cores on generation and editing through generateContent; multi-turn editing in a chat); the Imagen endpoints are withdrawn (see the core on the deprecated Imagen endpoints).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -39938,6 +40163,16 @@
      "с": "Я-api-165",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-166",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: generation and editing through generateContent"
+    },
+    {
+     "с": "Я-api-129",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: multi-turn editing in a chat"
     }
    ],
    "связи_с_другими_темами": [],
@@ -40035,7 +40270,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "An old Imagen call (:predict) is being analysed or ported to Gemini.",
-   "не_применяется_когда": "Gemini generateContent (api-62, api-108).",
+   "не_применяется_когда": "Gemini generateContent (see the cores on the required IMAGE response modality; inline and file media parts).",
    "магнит": true,
    "магнит_причина": "A prompt example with a concrete object (\"a cat reading a book\").",
    "термины": [
@@ -40239,6 +40474,16 @@
      "с": "Я-api-94",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-62",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: the required IMAGE response modality"
+    },
+    {
+     "с": "Я-api-108",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: inline and file media parts"
     }
    ],
    "связи_с_другими_темами": [],
@@ -40534,7 +40779,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Setting up or porting an Imagen call and checking which fields it has at all.",
-   "не_применяется_когда": "Gemini image models — they have ImageConfig (api-75..23).",
+   "не_применяется_когда": "Gemini image models — they have ImageConfig (see the cores on aspect ratio in generateContent, image_size values, the output file format, output_mime_type, prominent_people and personGeneration).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -40692,6 +40937,21 @@
      "с": "Я-api-80",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-75",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: aspect ratio in generateContent"
+    },
+    {
+     "с": "Я-api-78",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: image_size values"
+    },
+    {
+     "с": "Я-api-82",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: prominent_people"
     }
    ],
    "связи_с_другими_темами": [],
@@ -40756,7 +41016,7 @@
    "сила": "факт",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Exact reproducibility of an Imagen image by seed is needed (A/B, repeating a frame) together with an invisible SynthID mark.",
-   "не_применяется_когда": "Gemini image models — seed and the watermark work differently there (api-93; the safety/watermark topic).",
+   "не_применяется_когда": "Gemini image models — seed and the watermark work differently there (see the core on the low-randomness restoration config; the safety/watermark topic).",
    "магнит": true,
    "магнит_причина": "A forbidden combination: seed cannot be used while the watermark is enabled.",
    "термины": [
@@ -41143,7 +41403,7 @@
    "сила": "требование",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "Several photos of one person or product must be submitted as one subject, separately from a service reference (a face mask).",
-   "не_применяется_когда": "Gemini image models — references are passed as contents parts and numbered in the text (api-111, api-115).",
+   "не_применяется_когда": "Gemini image models — references are passed as contents parts and numbered in the text (see the cores on putting images and videos into contents with the SDK; placing a single image before the text).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -41297,6 +41557,16 @@
      "с": "Я-api-38",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-111",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: putting images and videos into contents with the SDK"
+    },
+    {
+     "с": "Я-api-115",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: placing a single image before the text"
     }
    ],
    "связи_с_другими_темами": [],
@@ -41356,7 +41626,7 @@
    "сила": "возможность",
    "применимость": "промпт",
    "ситуация_в_промпте": "The prompt text must refer to the subject of a reference (a person, a product) so that the model links the words to a specific image.",
-   "не_применяется_когда": "Gemini image models — a reference is referred to there with words like \"Image 1\" or \"the first image\" (api-115).",
+   "не_применяется_когда": "Gemini image models — a reference is referred to there with words like \"Image 1\" or \"the first image\" (see the core on placing a single image before the text).",
    "магнит": true,
    "магнит_причина": "Concrete items from Google examples (Luxe Elixir hair oil, a man with short hair).",
    "термины": [
@@ -41420,6 +41690,11 @@
      "с": "Я-api-174",
      "тип": "требует",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-115",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: placing a single image before the text"
     }
    ],
    "связи_с_другими_темами": [],
@@ -41989,7 +42264,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "The author wants to attach \"skills\" or instructions by input-image type to the image model through Genkit.",
-   "не_применяется_когда": "A direct API call — function calling is not supported by the image models (api-56).",
+   "не_применяется_когда": "A direct API call — function calling is not supported by the image models (see the core on features the image models do not support).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [],
@@ -42375,7 +42650,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A Genkit service: the source photo must be inserted into a prompt template, and the image response decoded and saved.",
-   "не_применяется_когда": "The direct Gen AI SDK (api-130).",
+   "не_применяется_когда": "The direct Gen AI SDK (see the core on reading the generateContent response parts).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -42518,7 +42793,7 @@
    "сила": "возможность",
    "применимость": "параметры_вызова",
    "ситуация_в_промпте": "A pipeline on Genkit (Go) needs an image edit with a text report.",
-   "не_применяется_когда": "The direct SDK or REST (api-130, api-166).",
+   "не_применяется_когда": "The direct SDK or REST (see the cores on reading the generateContent response parts; generation and editing through generateContent).",
    "магнит": false,
    "магнит_причина": "",
    "термины": [
@@ -42591,6 +42866,11 @@
      "с": "Я-api-178",
      "тип": "уточняет",
      "пояснение": ""
+    },
+    {
+     "с": "Я-api-166",
+     "тип": "уточняет",
+     "пояснение": "ссылка из английского текста ядра: generation and editing through generateContent"
     }
    ],
    "связи_с_другими_темами": [],
