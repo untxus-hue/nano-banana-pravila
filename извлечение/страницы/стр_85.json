@@ -1,0 +1,1711 @@
+{
+ "id": 85,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/subject-customization",
+ "заголовок": "Subject customization  |  Generative AI on Vertex AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-18 UTC; срок миграции эндпоинтов — June 30, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'Google Developers Site Policies', 'About Google', лицензия CC BY 4.0 / Apache 2.0; Python-пример подключён из репозитория GoogleCloudPlatform/python-docs-samples (атрибут data-github-path в html). Строки 'Copyright Google LLC' на странице нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница документации Vertex AI (Google Cloud) для разработчиков о subject customization в Imagen 3 Customization (imagen-3.0-capability-001): генерация новых картинок по тексту + референс-изображениям субъекта (person, product, animal companion) с опциональным face mesh control image. Модели семейства Nano Banana здесь НЕ рассматриваются, кроме баннера: все старые image-эндпоинты (включая imagen-3.0-capability-001) объявлены deprecated с рекомендацией перейти на gemini-2.5-flash-image до 30 июня 2026. Также баннер 'Vertex AI documentation is no longer being updated'. Структура: список намеренных/ненамеренных сценариев, примеры, шаблоны промптов для person и product customization с тегами [referenceId], требования к фото лица, REST/Python/Console-инструкции. Собственные термины: subject reference, control reference (face mesh), referenceId, subjectDescription, intended/unintended use cases, free-style prompting. Повторные акценты: вписывать [referenceId] сразу после описания субъекта в промпте; один referenceId на серию снимков одного субъекта; ожидаемое качество только в intended use cases.",
+ "модели_на_странице": [
+  "imagen-3.0-capability-001 (Imagen 3 Customization)",
+  "Imagen 3 (генерация референсов в примерах)",
+  "gemini-2.5-flash-image (цель миграции)",
+  "устаревшие эндпоинты imagegeneration@002–006, imagetext@001, imagen-3.0-*, imagen-4.0-*"
+ ],
+ "структура": [
+  "Caution: deprecated endpoints",
+  "(вводная) Subject customization",
+  "Use cases: Intended use cases / Examples of unintended use cases",
+  "Subject customization examples: Person customization / Product customization",
+  "Before you begin",
+  "Subject customization (notebook)",
+  "Person customization: prompt templates, face requirements, REST, Python",
+  "Product customization: prompt templates, Console, REST",
+  "Product usage",
+  "Model versions",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content / Documentation / Get Started ... (верхнее меню)",
+   "итог": "ничего: обвязка сайта (навигация)"
+  },
+  {
+   "n": 2,
+   "начало": "Vertex AI / Generative AI on Vertex AI / Guides ... (боковое меню, строки ~64-575)",
+   "итог": "ничего: обвязка сайта (оглавление раздела)"
+  },
+  {
+   "n": 3,
+   "начало": "Vertex AI documentation is no longer being updated",
+   "итог": "ничего: обвязка (статус документации; учтено в сомнениях и E-85-62)"
+  },
+  {
+   "n": 4,
+   "начало": "Home / Documentation / ... Send feedback / Subject customization / Stay organized",
+   "итог": "ничего: обвязка (хлебные крошки)"
+  },
+  {
+   "n": 5,
+   "начало": "Caution: The following table describes image",
+   "итог": "E-85-2"
+  },
+  {
+   "n": 6,
+   "начало": "Discontinued endpoints / Recommended endpoint migration (14 строк)",
+   "итог": "E-85-1"
+  },
+  {
+   "n": 7,
+   "начало": "Imagen 3 Customization's subject customization helps you",
+   "итог": "E-85-3"
+  },
+  {
+   "n": 8,
+   "начало": "The following models support subject customization: imagen-3.0-capability-001",
+   "итог": "E-85-3"
+  },
+  {
+   "n": 9,
+   "начало": "Use cases: Imagen 3 Customization offers free-style",
+   "итог": "E-85-4"
+  },
+  {
+   "n": 10,
+   "начало": "We recommend using Imagen 3 Customization",
+   "итог": "E-85-5"
+  },
+  {
+   "n": 11,
+   "начало": "Intended use cases: The following are use",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 12,
+   "начало": "Stylize a photo of a person",
+   "итог": "E-85-6"
+  },
+  {
+   "n": 13,
+   "начало": "Stylize a photo of a person, and preserve",
+   "итог": "E-85-6"
+  },
+  {
+   "n": 14,
+   "начало": "(Low success) Place a product, such as",
+   "итог": "E-85-7"
+  },
+  {
+   "n": 15,
+   "начало": "Generate variations of a product that",
+   "итог": "E-85-8"
+  },
+  {
+   "n": 16,
+   "начало": "Stylize a photo of a person, while preserving",
+   "итог": "ничего: повтор E-85-6"
+  },
+  {
+   "n": 17,
+   "начало": "Examples of unintended use cases: The following",
+   "итог": "ничего: вводная к списку (смысл 'produces poor results' учтён в единицах)"
+  },
+  {
+   "n": 18,
+   "начало": "Place two or more people in different scenes",
+   "итог": "E-85-9"
+  },
+  {
+   "n": 19,
+   "начало": "Place two or more people ... using an example image as input for the style",
+   "итог": "E-85-9"
+  },
+  {
+   "n": 20,
+   "начало": "Stylize a photo of two or more people",
+   "итог": "E-85-9"
+  },
+  {
+   "n": 21,
+   "начало": "Place a pet into different scenes",
+   "итог": "E-85-10"
+  },
+  {
+   "n": 22,
+   "начало": "Stylize a photo of a pet and turn it into a drawing",
+   "итог": "E-85-10"
+  },
+  {
+   "n": 23,
+   "начало": "Stylize a photo of a pet ... (such as water color)",
+   "итог": "E-85-10"
+  },
+  {
+   "n": 24,
+   "начало": "Place a pet and a person into",
+   "итог": "E-85-11"
+  },
+  {
+   "n": 25,
+   "начало": "Stylize a photo of a pet and one or more people",
+   "итог": "E-85-11"
+  },
+  {
+   "n": 26,
+   "начало": "Place a two products into different scenes",
+   "итог": "E-85-12"
+  },
+  {
+   "n": 27,
+   "начало": "Place a product, such as a cookie or a couch ... specific image style",
+   "итог": "E-85-13"
+  },
+  {
+   "n": 28,
+   "начало": "Place a product into a different scene, while preserving the specific composition",
+   "итог": "E-85-14"
+  },
+  {
+   "n": 29,
+   "начало": "Place two products into different scenes ... using a specific image as input",
+   "итог": "E-85-12"
+  },
+  {
+   "n": 30,
+   "начало": "Place two products into different scenes, while preserving ... control image",
+   "итог": "E-85-14"
+  },
+  {
+   "n": 31,
+   "начало": "Subject customization examples: The following sections depict",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 32,
+   "начало": "Person customization / Sample Input Sample Output / Reference image1 / Text prompt: Generate an image about the woman",
+   "итог": "E-85-15"
+  },
+  {
+   "n": 33,
+   "начало": "1 Reference input image generated using Imagen 3",
+   "итог": "E-85-16"
+  },
+  {
+   "n": 34,
+   "начало": "Product customization / Reference image2 / Text prompt: Generate an image of the perfume bottle",
+   "итог": "E-85-17"
+  },
+  {
+   "n": 35,
+   "начало": "2 Reference input image generated using Imagen 3",
+   "итог": "E-85-18"
+  },
+  {
+   "n": 36,
+   "начало": "View Imagen for Editing and Customization model card",
+   "итог": "ничего: обвязка (ссылка)"
+  },
+  {
+   "n": 37,
+   "начало": "Before you begin: Sign in to your Google Cloud account ... (дважды)",
+   "итог": "ничего: обвязка (настройка проекта, биллинг, IAM-роли)"
+  },
+  {
+   "n": 38,
+   "начало": "Set up authentication for your environment. Console / REST",
+   "итог": "ничего: обвязка (аутентификация)"
+  },
+  {
+   "n": 39,
+   "начало": "Subject customization: To see an example ... notebook",
+   "итог": "ничего: обвязка (ссылки на ноутбук)"
+  },
+  {
+   "n": 40,
+   "начало": "You can provide reference images of subject types",
+   "итог": "E-85-19"
+  },
+  {
+   "n": 41,
+   "начало": "The prompt you use with Imagen 3 Customization",
+   "итог": "E-85-20"
+  },
+  {
+   "n": 42,
+   "начало": "Person customization: The following table describes prompt templates",
+   "итог": "ничего: вводная к таблице (смысл 'starting point' отражён в заметках шаблонов)"
+  },
+  {
+   "n": 43,
+   "начало": "Person image stylization with face mesh input / Subject image (1) / Facemesh control image (1) / Generate an image of SUBJECT_DESCRIPTION",
+   "итог": "E-85-21, E-85-22"
+  },
+  {
+   "n": 44,
+   "начало": "Person image stylization without face mesh input / Subject image (1-4) / Create an image about SUBJECT_DESCRIPTION",
+   "итог": "E-85-23, E-85-24"
+  },
+  {
+   "n": 45,
+   "начало": "Person image stylization without face mesh input / Create a STYLE_DESCRIPTION [2]",
+   "итог": "E-85-25, E-85-26"
+  },
+  {
+   "n": 46,
+   "начало": "Person image stylization with face mesh input / Subject image (1-3) / Create an image about SUBJECT_DESCRIPTION [1] in the pose",
+   "итог": "E-85-27, E-85-28"
+  },
+  {
+   "n": 47,
+   "начало": "Person image stylization with face mesh input / Create a STYLE_DESCRIPTION [3]",
+   "итог": "E-85-29, E-85-30"
+  },
+  {
+   "n": 48,
+   "начало": "We recommend that the face in your reference image",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 49,
+   "начало": "Is centered and occupies at least",
+   "итог": "E-85-31"
+  },
+  {
+   "n": 50,
+   "начало": "Is rotated in frontal view in",
+   "итог": "E-85-32"
+  },
+  {
+   "n": 51,
+   "начало": "Isn't occluded by objects, such as",
+   "итог": "E-85-33"
+  },
+  {
+   "n": 52,
+   "начало": "Use the following samples to send a customization request with person reference",
+   "итог": "E-85-34"
+  },
+  {
+   "n": 53,
+   "начало": "REST: For more information about the Imagen API, see ... endpoints.predict",
+   "итог": "ничего: обвязка (ссылки на API)"
+  },
+  {
+   "n": 54,
+   "начало": "This sample shows you how to specify a face mesh control area",
+   "итог": "E-85-34"
+  },
+  {
+   "n": 55,
+   "начало": "Before using any of the request data ... PROJECT_ID / LOCATION",
+   "итог": "ничего: обвязка (переменные проекта/региона)"
+  },
+  {
+   "n": 56,
+   "начало": "TEXT_PROMPT: The text prompt guides what images",
+   "итог": "E-85-35"
+  },
+  {
+   "n": 57,
+   "начало": "The following text prompt is for a request that has two reference images",
+   "итог": "E-85-36"
+  },
+  {
+   "n": 58,
+   "начало": "Create an image about a man with short hair [1] in the pose of control image [2]",
+   "итог": "E-85-36"
+  },
+  {
+   "n": 59,
+   "начало": "\"referenceId\": The ID of the reference image",
+   "итог": "E-85-37"
+  },
+  {
+   "n": 60,
+   "начало": "The generated image will follow the face structure",
+   "итог": "E-85-38"
+  },
+  {
+   "n": 61,
+   "начало": "BASE64_REFERENCE_IMAGE: A reference image to guide",
+   "итог": "E-85-39"
+  },
+  {
+   "n": 62,
+   "начало": "SUBJECT_DESCRIPTION: Optional. A text description (пример \"prompt\"/\"subjectDescription\" в <pre>)",
+   "итог": "E-85-40"
+  },
+  {
+   "n": 63,
+   "начало": "IMAGE_COUNT: The number of generated images. Accepted integer values: 1-4",
+   "итог": "E-85-41"
+  },
+  {
+   "n": 64,
+   "начало": "HTTP method and URL: POST ... imagen-3.0-capability-001:predict",
+   "итог": "ничего: код без промпта (эндпоинт отражён в заметке E-85-42)"
+  },
+  {
+   "n": 65,
+   "начало": "Request JSON body: instances / referenceImages / controlImageConfig",
+   "итог": "E-85-42"
+  },
+  {
+   "n": 66,
+   "начало": "To send your request, choose one of these options: curl / PowerShell",
+   "итог": "ничего: обвязка (команды отправки)"
+  },
+  {
+   "n": 67,
+   "начало": "The following sample response is for a request with sampleCount 2",
+   "итог": "E-85-43"
+  },
+  {
+   "n": 68,
+   "начало": "Python: from google import genai ... client.models.edit_image(... prompt=...)",
+   "итог": "E-85-44, E-85-45"
+  },
+  {
+   "n": 69,
+   "начало": "Product customization: The following table describes prompt templates",
+   "итог": "ничего: вводная к таблице"
+  },
+  {
+   "n": 70,
+   "начало": "Subject image (1-4) / Create an image about SUBJECT_DESCRIPTION [1] to match the description: ${PROMPT} / Luxe Elixir",
+   "итог": "E-85-46, E-85-47, E-85-48"
+  },
+  {
+   "n": 71,
+   "начало": "Subject image (1-4) / Generate an image of a SUBJECT_DESCRIPTION but / Seiko watch",
+   "итог": "E-85-49, E-85-50"
+  },
+  {
+   "n": 72,
+   "начало": "Use the following samples to send a customization request with product",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 73,
+   "начало": "Console: In the Google Cloud console, go to the Vertex AI > Vertex AI Studio",
+   "итог": "E-85-51"
+  },
+  {
+   "n": 74,
+   "начало": "In the Model section ... select Imagen 3 / Optional. Choose an Aspect ratio other than 1:1 (default)",
+   "итог": "E-85-51"
+  },
+  {
+   "n": 75,
+   "начало": "Optional. Change the Number of results.",
+   "итог": "E-85-51"
+  },
+  {
+   "n": 76,
+   "начало": "Optional. Provide a Negative prompt to guide",
+   "итог": "E-85-52"
+  },
+  {
+   "n": 77,
+   "начало": "Optional. Change any Advanced options. / Add reference / Reference type: Subject - product / Upload / Description / Done / Add an image",
+   "итог": "E-85-51"
+  },
+  {
+   "n": 78,
+   "начало": "After you add all your reference images ... All the reference images you add in that pane",
+   "итог": "E-85-53"
+  },
+  {
+   "n": 79,
+   "начало": "In the text prompt field ... add a text prompt that includes the reference number",
+   "итог": "ничего: вводная к примерам (повтор E-85-35)"
+  },
+  {
+   "n": 80,
+   "начало": "bright white room, the product [1]",
+   "итог": "E-85-54"
+  },
+  {
+   "n": 81,
+   "начало": "the animal [1] standing on a wide open field",
+   "итог": "E-85-55"
+  },
+  {
+   "n": 82,
+   "начало": "a black and white portrait of the person [1]",
+   "итог": "E-85-56"
+  },
+  {
+   "n": 83,
+   "начало": "REST: For more information about imagen-3.0-capability-001 model requests",
+   "итог": "ничего: обвязка (ссылка)"
+  },
+  {
+   "n": 84,
+   "начало": "Before using any of the request data (product) ... PROJECT_ID / LOCATION",
+   "итог": "ничего: обвязка"
+  },
+  {
+   "n": 85,
+   "начало": "TEXT_PROMPT: ... include the referenceId ... For example: Create an image about Luxe Elixir hair oil",
+   "итог": "ничего: повтор E-85-35 и E-85-47 (укороченный вариант того же примера)"
+  },
+  {
+   "n": 86,
+   "начало": "\"referenceId\": ... two reference images are of the same product",
+   "итог": "E-85-58"
+  },
+  {
+   "n": 87,
+   "начало": "BASE64_REFERENCE_IMAGE (product)",
+   "итог": "ничего: повтор E-85-39"
+  },
+  {
+   "n": 88,
+   "начало": "SUBJECT_DESCRIPTION: Optional ... \"prompt\": \"Luxe Elixir hair oil ... [1] against a pure white background.\"",
+   "итог": "E-85-57"
+  },
+  {
+   "n": 89,
+   "начало": "IMAGE_COUNT (product): Accepted integer values: 1-4",
+   "итог": "ничего: повтор E-85-41"
+  },
+  {
+   "n": 90,
+   "начало": "HTTP method and URL / Request JSON body (SUBJECT_TYPE_PRODUCT)",
+   "итог": "E-85-42"
+  },
+  {
+   "n": 91,
+   "начало": "To send your request ... curl / PowerShell (product)",
+   "итог": "ничего: обвязка"
+  },
+  {
+   "n": 92,
+   "начало": "The following sample response ... (product)",
+   "итог": "ничего: повтор E-85-43"
+  },
+  {
+   "n": 93,
+   "начало": "Product usage: To view usage standards and content restrictions",
+   "итог": "ничего: обвязка (ссылка на usage guidelines, содержания нет)"
+  },
+  {
+   "n": 94,
+   "начало": "Model versions: There are multiple image generation models",
+   "итог": "ничего: обвязка (ссылка)"
+  },
+  {
+   "n": 95,
+   "начало": "What's next: Read articles about Imagen ...",
+   "итог": "ничего: обвязка (ссылки)"
+  },
+  {
+   "n": 96,
+   "начало": "Send feedback / Except as otherwise noted ... Last updated 2026-09-18 UTC.",
+   "итог": "ничего: обвязка (лицензия, дата — в дата_в_тексте)"
+  },
+  {
+   "n": 97,
+   "начало": "Products and pricing / Support / Resources / Engage / About Google / языки",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-85-1",
+   "вид": "факт",
+   "утверждение_en": "Listed image generation endpoints (imagegeneration@002-006, imagetext@001, imagen-3.0-capability-001/002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/002, imagen-4.0-fast/generate/ultra-generate-001) are deprecated, and gemini-2.5-flash-image is the recommended migration endpoint for each.",
+   "цитата": "imagen-3.0-capability-001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Caution (deprecated endpoints)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "imagen-3.0-capability-001",
+    "imagen-4.0-*",
+    "imagen-3.0-*",
+    "imagegeneration@002–006",
+    "imagetext@001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (таблица 'Discontinued endpoints / Recommended endpoint migration')",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "в txt таблица склеена: имя старого эндпоинта сразу переходит в 'gemini-2.5-flash-image'; все 14 строк указывают на gemini-2.5-flash-image"
+  },
+  {
+   "код": "E-85-2",
+   "вид": "лимит",
+   "утверждение_en": "Google recommends updating deprecated image generation model endpoints before June 30, 2026, to avoid service disruption.",
+   "цитата": "We recommend updating your model\nendpoints before June 30, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "Caution (deprecated endpoints)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "срок относится к эндпоинтам из таблицы (Imagen / imagegeneration)"
+  },
+  {
+   "код": "E-85-3",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 Customization's subject customization generates new images from a text prompt and a user-provided reference image that guides generation; supported model: imagen-3.0-capability-001.",
+   "цитата": "Imagen 3 Customization's subject customization helps you generate new\nimages from a text prompt and a reference image that you provide.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization (вводная)",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-4",
+   "вид": "предупреждение",
+   "утверждение_en": "Imagen 3 Customization offers free-style prompting, which can give the impression it can do more than it is trained to do; good results are expected only for intended use cases, not when pushed outside them.",
+   "цитата": "Imagen 3 Customization offers free-style prompting, which can give the\nimpression that it can do more than it is trained to do.",
+   "источник_цитаты": "txt",
+   "раздел": "Use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "продолжение: 'while you can push the model to do things outside of the intended use cases, we don't expect good results.'"
+  },
+  {
+   "код": "E-85-5",
+   "вид": "правило",
+   "утверждение_en": "Google recommends using Imagen 3 Customization for the intended use cases, since the model was trained on them.",
+   "цитата": "We recommend using Imagen 3 Customization for the intended use cases, as\nwe've trained the model on those use cases and expect good results for them.",
+   "источник_цитаты": "txt",
+   "раздел": "Use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-6",
+   "вид": "факт",
+   "утверждение_en": "Intended use case: stylize a photo of a person, optionally preserving the person's facial expressions.",
+   "цитата": "Stylize a photo of a person, and preserve the person's facial expressions",
+   "источник_цитаты": "txt",
+   "раздел": "Intended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "в списке также отдельные пункты 'Stylize a photo of a person' и дубль 'Stylize a photo of a person, while preserving facial expression'"
+  },
+  {
+   "код": "E-85-7",
+   "вид": "ограничение",
+   "утверждение_en": "Placing a product (such as a couch or a cookie) into different scenes with different product angles is an intended use case but marked as low success.",
+   "цитата": "(Low success) Place a product, such as a couch or a cookie, into different\nscenes with different product angles.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-8",
+   "вид": "факт",
+   "утверждение_en": "Intended use case: generate variations of a product that doesn't preserve exact details.",
+   "цитата": "Generate variations of a product that doesn't preserve exact details",
+   "источник_цитаты": "txt",
+   "раздел": "Intended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "т.е. точное сохранение деталей продукта не обещается"
+  },
+  {
+   "код": "E-85-9",
+   "вид": "ограничение",
+   "утверждение_en": "Imagen 3 Customization isn't trained to place or stylize two or more people while preserving their identities, including with a style example image, and produces poor results for it.",
+   "цитата": "Place two or more people in different scenes while preserving their\nidentities",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "пункты списка: несколько людей в сценах; то же + стиль по примеру-картинке; стилизация фото двух и более людей"
+  },
+  {
+   "код": "E-85-10",
+   "вид": "ограничение",
+   "утверждение_en": "Placing a pet into different scenes while preserving its identity, or stylizing a pet photo into a drawing (with or without a specified style), is an unintended use case with poor results.",
+   "цитата": "Place a pet into different scenes while preserving its identity",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "пункты: питомец в сценах; питомец в рисунок; питомец в рисунок с заданным стилем (water color)"
+  },
+  {
+   "код": "E-85-11",
+   "вид": "ограничение",
+   "утверждение_en": "Placing a pet and a person together into a different scene while preserving both identities, or stylizing a pet with people into a drawing, is unintended and gives poor results.",
+   "цитата": "Place a pet and a person into a different scene, preserving the identities\nof both.",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-12",
+   "вид": "ограничение",
+   "утверждение_en": "Placing two products into different scenes with different product angles (including with a specific style image) is an unintended use case.",
+   "цитата": "Place a two products into different scenes with different product angles",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "опечатка источника 'a two products' сохранена"
+  },
+  {
+   "код": "E-85-13",
+   "вид": "ограничение",
+   "утверждение_en": "Placing a product into different scenes with different angles while following a specific image style (photorealistic with specific colors, lighting styles, or animation) is an unintended use case.",
+   "цитата": "Place a product, such as a cookie or a couch, into different scenes with\ndifferent product angles, and following a specific image style (such as\nphotorealistic with specific colors, lighting styles, or animation)",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-14",
+   "вид": "ограничение",
+   "утверждение_en": "Placing one or two products into a different scene while preserving a specific scene composition given by a control image is an unintended use case.",
+   "цитата": "Place a product into a different scene, while preserving the specific\ncomposition of the scene as specified by a control image",
+   "источник_цитаты": "txt",
+   "раздел": "Examples of unintended use cases",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Person customization sample prompt referencing the reference image with [1] and describing a 3d-cartoon portrait with a comma-separated list of style and quality descriptors.",
+   "цитата": "Generate an image about the woman with long hair[1] to\nmatch this description: a portrait of a woman with long\nhair[1] in 3d-cartoon style with blurred background. A cute\nand lovely character, smile face, looking at the camera, pastel\ncolor tone, high quality, 4k, masterpiece, super details, skin\ntexture, texture mapping, soft shadows, soft realistic lighting,\nvibrant colors.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization examples",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: 'Generate an image about <описание субъекта>[1] to match this description:' + повтор описания субъекта с [1] + стиль + фон + перечень дескрипторов (выражение, взгляд, тон, 'quality'-теги '4k, masterpiece', свет). Тег [1] стоит сразу после существительного субъекта."
+  },
+  {
+   "код": "E-85-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Prompt used with Imagen 3 image generation to create the person reference image for the sample.",
+   "цитата": "portrait of a woman in paris. she's wearing\nblack pants and a white shirt.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization examples",
+   "модели": [
+    "Imagen 3"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Сноска 1: референс сам сгенерирован Imagen 3. Структура: тип кадра ('portrait') + субъект + место + одежда; короткие предложения строчными."
+  },
+  {
+   "код": "E-85-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Product customization sample prompt: generate the referenced product with a single attribute change (color).",
+   "цитата": "Generate an image of the perfume bottle [1] but in cyan",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization examples",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Структура: 'Generate an image of <субъект> [1] but <изменение>' — минимальная вариация одного атрибута."
+  },
+  {
+   "код": "E-85-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Prompt used with Imagen 3 to create the product reference image.",
+   "цитата": "perfume bottle product style image in\nfront of a black background.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization examples",
+   "модели": [
+    "Imagen 3"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Структура: субъект + 'product style image' + фон."
+  },
+  {
+   "код": "E-85-19",
+   "вид": "факт",
+   "утверждение_en": "Few-shot prompting with Imagen 3 Customization supports reference images of three subject types: product, person, and animal companion; the chosen subject affects how the request is formed.",
+   "цитата": "Specifically, few-shot prompting with\nImagen 3 Customization supports the following subjects: product, person,\nand animal companion. The subject you choose affects how you form your\ngeneration request.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "ср. E-85-10: питомцы в списке unintended"
+  },
+  {
+   "код": "E-85-20",
+   "вид": "объяснение",
+   "утверждение_en": "The prompt used with Imagen 3 Customization might affect the quality of generated images; recommended templates are given as a starting point.",
+   "цитата": "The prompt you use with Imagen 3 Customization might affect the quality of your\ngenerated images.",
+   "источник_цитаты": "txt",
+   "раздел": "Subject customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-21",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Person stylization with face mesh input (1 subject image + 1 face mesh control image) template: 'Generate an image of SUBJECT_DESCRIPTION [1] with the facemesh from the control image [2]. ${PROMPT}'.",
+   "цитата": "Generate an image of SUBJECT_DESCRIPTION [1] with the\nfacemesh from the control image [2]. ${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "рекомендовано 'as a starting point'"
+  },
+  {
+   "код": "E-85-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example for the face-mesh person template: the person [1] with the facemesh from control image [2], looking straight ahead with a neutral expression, followed by a background description (truncated on the page).",
+   "цитата": "Generate an image of the person [1] with the facemesh\nfrom the control image [2]. The person should be looking\nstraight ahead with a neutral expression. The background should be a",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "На странице пример обрывается '...'. Структура: шаблонная часть + отдельные предложения 'The person should…', 'The background should…'."
+  },
+  {
+   "код": "E-85-23",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Person stylization without face mesh (1-4 subject images) template: 'Create an image about SUBJECT_DESCRIPTION [1] to match the description: a portrait of SUBJECT_DESCRIPTION [1]${PROMPT}'.",
+   "цитата": "Create an image about SUBJECT_DESCRIPTION [1] to match the\ndescription: a portrait of SUBJECT_DESCRIPTION [1]${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "описание субъекта с тегом [1] повторяется дважды"
+  },
+  {
+   "код": "E-85-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example: a woman with short hair [1] as a 3d-cartoon portrait with blurred background and a list of character, tone, quality and lighting descriptors.",
+   "цитата": "Create an image about a woman with short hair[1] to match the\ndescription: a portrait of a woman with short hair[1]in\n3d-cartoon style with blurred background. A cute and lovely character,\nsmile face, looking at the camera, pastel color tone, high quality, 4k,\nmasterpiece, super details, skin texture, texture mapping, soft shadows,\nsoft realistic lighting, vibrant colors",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: шаблон E-85-23 + '${PROMPT}' = стиль ('in 3d-cartoon style') + фон + дескрипторы через запятую, включая quality-теги."
+  },
+  {
+   "код": "E-85-25",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Person stylization without face mesh, with a style description tagged [2]: 'Create a STYLE_DESCRIPTION [2] image about SUBJECT_DESCRIPTION [1] to match the description: a portrait of SUBJECT_DESCRIPTION [1]STYLE_PROMPT'.",
+   "цитата": "Create a STYLE_DESCRIPTION [2] image about\nSUBJECT_DESCRIPTION [1] to match the description: a portrait\nof SUBJECT_DESCRIPTION [1]STYLE_PROMPT",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "в колонке Reference images для этой строки указано только 'Subject image (1-4)', хотя стиль помечен [2]"
+  },
+  {
+   "код": "E-85-26",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example of the style-tagged template: a 3d-cartoon style [2] image about a woman with short hair [1].",
+   "цитата": "Create a 3d-cartoon style [2] image about a woman with\nshort hair [1] to match the description: a portrait of a\nwoman with short hair [1]in 3d-cartoon style with blur\nbackground.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Цитата — отличающаяся голова примера; хвост ('A Cute and lovely character, smile face. see the camera, pastel color tone, high quality, 4k, masterpiece, super details, skin texture, texture mapping, Soft shadows, soft realistic lighting, vibrant colors') почти совпадает с E-85-24. Стиль назван дважды: как тег [2] в начале и словами внутри описания."
+  },
+  {
+   "код": "E-85-27",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Person stylization with face mesh (1-3 subject images + 1 face mesh control image) template: 'Create an image about SUBJECT_DESCRIPTION [1] in the pose of the CONTROL_IMAGE [2] to match the description: a portrait of SUBJECT_DESCRIPTION [1]${PROMPT}'.",
+   "цитата": "Create an image about SUBJECT_DESCRIPTION [1] in the pose of\nthe CONTROL_IMAGE [2] to match the description: a portrait of\nSUBJECT_DESCRIPTION [1]${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example: a woman with short hair [1] in the pose of the control image [2], as a 3d-cartoon portrait.",
+   "цитата": "Create an image about a woman with short hair [1] in the pose\nof the control image [2] to match the description: a portrait\nof a woman with short hair [1]in 3d-cartoon style with\nblur background.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Голова примера; хвост дескрипторов совпадает с E-85-26. Поза задаётся фразой 'in the pose of the control image [2]'."
+  },
+  {
+   "код": "E-85-29",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Person stylization with face mesh and style tag [3]: 'Create a STYLE_DESCRIPTION [3] image about SUBJECT_DESCRIPTION [1] in the pose of the CONTROL_IMAGE [2] to match the description: a portrait of SUBJECT_DESCRIPTION [1]${PROMPT}'.",
+   "цитата": "Create a STYLE_DESCRIPTION [3] image about\nSUBJECT_DESCRIPTION [1] in the pose of the CONTROL_IMAGE\n[2] to match the description: a portrait of\nSUBJECT_DESCRIPTION [1]${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "порядок тегов: стиль [3], субъект [1], control [2]"
+  },
+  {
+   "код": "E-85-30",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example: a 3d-cartoon style [3] image about a woman with short hair [1] in the pose of the control image [2].",
+   "цитата": "Create a 3d-cartoon style [3] image about a woman with\nshort hair [1] in the pose of the control image [2] to\nmatch the description: a portrait of a woman with short hair\n[1]in 3d-cartoon style with blur background.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Голова примера; хвост совпадает с E-85-26."
+  },
+  {
+   "код": "E-85-31",
+   "вид": "правило",
+   "утверждение_en": "Recommended: the face in the reference image is centered and occupies at least half of the whole image.",
+   "цитата": "Is centered and occupies at least half of the whole image",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "требование к референс-фото лица"
+  },
+  {
+   "код": "E-85-32",
+   "вид": "правило",
+   "утверждение_en": "Recommended: the face in the reference image is in frontal view in all directions (roll, pitch, and yaw).",
+   "цитата": "Is rotated in frontal view in all directions (roll, pitch, and yaw)",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-33",
+   "вид": "правило",
+   "утверждение_en": "Recommended: the face in the reference image isn't occluded by objects such as sunglasses or masks.",
+   "цитата": "Isn't occluded by objects, such as sunglasses or masks",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-34",
+   "вид": "факт",
+   "утверждение_en": "A person customization request can be sent with or without a face mesh control image; if the control reference is omitted, Imagen automatically detects a face mesh control area.",
+   "цитата": "you can also omit the control reference object\n(\"referenceType\": \"REFERENCE_TYPE_CONTROL\") and Imagen\nwill automatically detect a face mesh control area.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "также: 'You can send this type of request with or without a face mesh control image to further guide image generation.'"
+  },
+  {
+   "код": "E-85-35",
+   "вид": "правило",
+   "утверждение_en": "To use Imagen 3 Customization, include the referenceId of the provided reference image(s) in the text prompt in the format [$referenceId].",
+   "цитата": "To use Imagen 3 Customization, include the referenceId of\nthe reference image or images\nyou provide in the format [$referenceId].",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "повторено в разделе Product customization (REST)"
+  },
+  {
+   "код": "E-85-36",
+   "вид": "пример_промпта",
+   "утверждение_en": "REST example prompt for two reference images of the same man (referenceId 1) plus a face mesh control image (referenceId 2), requesting a pencil-sketch full-body portrait.",
+   "цитата": "Create an image about a man with short hair [1] in the pose of control image [2]\nto match the description: A pencil style sketch of a full-body portrait of a man with short\nhair [1] with hatch-cross drawing, hatch drawing of portrait with 6B and graphite pencils,\nwhite background, pencil drawing, high quality, pencil stroke, looking at camera,",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Цитата без последних слов 'natural human eyes' (лимит 60 слов). Структура: шаблон E-85-27 + медиум ('pencil style sketch'), тип кадра ('full-body portrait'), техника штриха ('hatch-cross', '6B and graphite pencils'), фон, взгляд."
+  },
+  {
+   "код": "E-85-37",
+   "вид": "правило",
+   "утверждение_en": "Reference images of the same subject (or style) share one referenceId; a control face mesh image gets a distinct referenceId.",
+   "цитата": "In this example the two reference images\nare of the same person, so they share the same referenceId (1) and\nthe control face mesh image has a distinct referenceId (2).",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "определение: 'The ID of the reference image, or the ID for a series of reference images that correspond to the same subject or style.'"
+  },
+  {
+   "код": "E-85-38",
+   "вид": "лимит",
+   "утверждение_en": "The generated image follows the face structure of the face mesh extracted from the reference image; only one face mesh control is supported.",
+   "цитата": "The generated image will follow the face structure of the face mesh extracted from the\nreference image and will improve the face appearance following. Only one face mesh control is\nsupported.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-39",
+   "вид": "ограничение",
+   "утверждение_en": "In REST requests, each reference image must be specified as a base64-encoded byte string.",
+   "цитата": "The\nimage must be specified as a base64-encoded byte\nstring.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "в Python-примере используется gcs_uri"
+  },
+  {
+   "код": "E-85-40",
+   "вид": "факт",
+   "утверждение_en": "SUBJECT_DESCRIPTION is an optional text description of the reference image that you can then use in the prompt field.",
+   "цитата": "SUBJECT_DESCRIPTION: Optional. A text description of the reference image you can\nthen use in the prompt field.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "пример в коде: prompt 'a full-body portrait of a man with short hair [1] with hatch-cross drawing' + subjectDescription 'man with short hair' — описание в prompt совпадает с subjectDescription"
+  },
+  {
+   "код": "E-85-41",
+   "вид": "лимит",
+   "утверждение_en": "IMAGE_COUNT (sampleCount) accepts integer values 1-4; default 4.",
+   "цитата": "Accepted integer values: 1-4. Default value: 4.",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "повторено в Product customization"
+  },
+  {
+   "код": "E-85-42",
+   "вид": "факт",
+   "утверждение_en": "The REST request lists referenceImages with referenceType REFERENCE_TYPE_SUBJECT (subjectImageConfig with subjectType SUBJECT_TYPE_PERSON or SUBJECT_TYPE_PRODUCT) and REFERENCE_TYPE_CONTROL (controlImageConfig with controlType CONTROL_TYPE_FACE_MESH, enableControlImageComputation true).",
+   "цитата": "\"controlType\": \"CONTROL_TYPE_FACE_MESH\",\n\"enableControlImageComputation\": true",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (тело запроса)",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "эндпоинт: POST .../publishers/google/models/imagen-3.0-capability-001:predict"
+  },
+  {
+   "код": "E-85-43",
+   "вид": "факт",
+   "утверждение_en": "The response returns one prediction object per sample with base64-encoded image bytes and mimeType image/png.",
+   "цитата": "\"mimeType\": \"image/png\"",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (пример ответа для sampleCount 2)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-44",
+   "вид": "пример_промпта",
+   "утверждение_en": "Python SDK example prompt combining subject [1] and control image [2] pose with a detailed watercolor style description.",
+   "цитата": "a portrait of a woman[1] in the pose of the control image[2]in a watercolor style by a professional artist, light and low-contrast stokes, bright pastel colors, a warm atmosphere, clean background, grainy paper, bold visible brushstrokes, patchy details",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt код склеен без пробелов вне строк, строка промпта сохранена)",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: тип кадра + субъект [1] + поза по control [2] + медиум ('watercolor style by a professional artist') + свойства мазка, палитры, атмосферы, фона, бумаги. Опечатка 'stokes' из источника. В html промпт разбит на 3 строки. SubjectReferenceConfig: subject_description='a headshot of a woman'."
+  },
+  {
+   "код": "E-85-45",
+   "вид": "факт",
+   "утверждение_en": "The Python sample calls client.models.edit_image on imagen-3.0-capability-001 with EditImageConfig(edit_mode='EDIT_MODE_DEFAULT', number_of_images=1, safety_filter_level='BLOCK_MEDIUM_AND_ABOVE', person_generation='ALLOW_ADULT').",
+   "цитата": "config=EditImageConfig(edit_mode=\"EDIT_MODE_DEFAULT\",number_of_images=1,safety_filter_level=\"BLOCK_MEDIUM_AND_ABOVE\",person_generation=\"ALLOW_ADULT\",",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (код Python-примера)",
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "в txt код Python-примера склеен без пробелов; цитата — склеенная строка из txt"
+  },
+  {
+   "код": "E-85-46",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Product customization template (1-4 subject images): 'Create an image about SUBJECT_DESCRIPTION [1] to match the description: ${PROMPT}'.",
+   "цитата": "Create an image about SUBJECT_DESCRIPTION [1] to match the\ndescription: ${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "рекомендовано 'as a starting point'"
+  },
+  {
+   "код": "E-85-47",
+   "вид": "пример_промпта",
+   "утверждение_en": "Product example (part 1): Luxe Elixir hair oil [1] in a close-up, high-key image of a woman's hand holding the product against a pure white background.",
+   "цитата": "Create an image about Luxe Elixir hair oil, golden liquid in\nglass bottle [1] to match the description: A close-up,\nhigh-key image of a woman's hand holding Luxe Elixir hair oil,\ngolden liquid in glass bottle [1] against a pure white\nbackground.",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: шаблон + тип кадра ('A close-up, high-key image') + действие (рука держит) + продукт с [1] (описание повторено дословно) + фон. Продолжение — E-85-48."
+  },
+  {
+   "код": "E-85-48",
+   "вид": "пример_промпта",
+   "утверждение_en": "Product example (part 2): well-lit hand, sharp focus on the bottle with shallow depth of field, soft diffused lighting with a subtle glow, simple and elegant composition highlighting the product's luxurious appeal.",
+   "цитата": "The woman's hand is well-lit and the focus is sharp on the\nbottle, with a shallow depth of field blurring the background and\nemphasizing the product. The lighting is soft and diffused, creating a\nsubtle glow around the bottle and hand. The overall composition is\nsimple and elegant, highlighting the product's luxurious appeal.",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Хвост примера E-85-47: освещённость руки, фокус/ГРИП, свет, затем общая композиция и цель кадра."
+  },
+  {
+   "код": "E-85-49",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Product customization template for variations: 'Generate an image of a SUBJECT_DESCRIPTION but ${PROMPT}'.",
+   "цитата": "Generate an image of a SUBJECT_DESCRIPTION but\n${PROMPT}",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "в самом шаблоне нет тега [1], в примере есть"
+  },
+  {
+   "код": "E-85-50",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example: Generate an image of a Seiko watch [1] but in blue.",
+   "цитата": "Generate an image of a Seiko watch [1] but in blue.",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "одно изменение атрибута (цвет) через 'but'"
+  },
+  {
+   "код": "E-85-51",
+   "вид": "инструкция",
+   "утверждение_en": "In Vertex AI Studio: select Imagen 3, optionally change aspect ratio (default 1:1), number of results, negative prompt and advanced options, add a reference of type 'Subject - product', upload images with optional description, then use the reference number in the prompt.",
+   "цитата": "Optional. Choose an Aspect ratio other than 1:1 (default).",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui",
+    "форматы_разрешение"
+   ],
+   "заметка": "шаги: Model=Imagen 3; Aspect ratio; Number of results; Negative prompt; Advanced options; Add reference -> Reference type: Subject - product -> Upload -> Description -> Add an image -> Add reference"
+  },
+  {
+   "код": "E-85-52",
+   "вид": "факт",
+   "утверждение_en": "In the Vertex AI Studio flow for Imagen 3, an optional negative prompt can guide the model on what to avoid generating.",
+   "цитата": "Optional. Provide a Negative prompt to guide the model on what to\navoid generating.",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-53",
+   "вид": "факт",
+   "утверждение_en": "In the console, all reference images added in one Add reference pane share the same reference number, which you use in the text prompt.",
+   "цитата": "All the reference images you add in that pane have the same reference\nnumber. Use this reference number when you add the text prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-54",
+   "вид": "пример_промпта",
+   "утверждение_en": "Console example prompt: bright white room, the product [1] on a glass table.",
+   "цитата": "bright white room, the product [1] on a glass table",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Структура: сцена сначала, затем субъект с [1] и опора."
+  },
+  {
+   "код": "E-85-55",
+   "вид": "пример_промпта",
+   "утверждение_en": "Console example prompt: the animal [1] standing on a wide open field with a forest in the distance.",
+   "цитата": "the animal [1] standing on a wide open field with a\nforest in the distance",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Структура: субъект с [1] + поза + место + дальний план."
+  },
+  {
+   "код": "E-85-56",
+   "вид": "пример_промпта",
+   "утверждение_en": "Console example prompt: a black and white portrait of the person [1] on a city street in film noir style [2].",
+   "цитата": "a black and white portrait of the person [1] on a city\nstreet in film noir style [2]",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "Imagen 3 (Vertex AI Studio)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Два тега: субъект [1] и стиль [2] (стилевой референс)."
+  },
+  {
+   "код": "E-85-57",
+   "вид": "пример_промпта",
+   "утверждение_en": "REST product example of subjectDescription reuse: prompt 'Luxe Elixir hair oil, golden liquid in glass bottle [1] against a pure white background.' with the same subjectDescription text.",
+   "цитата": "\"subjectDescription\": \"Luxe Elixir hair oil, golden liquid in glass bottle\"",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "описание субъекта в prompt дословно совпадает с subjectDescription; тег [1] ставится после него"
+  },
+  {
+   "код": "E-85-58",
+   "вид": "правило",
+   "утверждение_en": "Two reference images of the same product share the same referenceId (1).",
+   "цитата": "In this example the two reference images\nare of the same product, so they share the same referenceId (1).",
+   "источник_цитаты": "txt",
+   "раздел": "Product customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "повтор принципа E-85-37 для продукта"
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-85-59",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "All recommended customization templates follow one skeleton: '<Create|Generate> [a STYLE [n]] image about SUBJECT_DESCRIPTION [1] [in the pose of the control image [2]] to match the description: <full description that repeats SUBJECT_DESCRIPTION [1]>'.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Person/Product customization",
+   "модели": "imagen-3.0-capability-001",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-85-21, E-85-23, E-85-25, E-85-27, E-85-29, E-85-46, E-85-49",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "описание субъекта с тегом повторяется дважды: в вводной фразе и внутри описания"
+  },
+  {
+   "код": "E-85-60",
+   "вид": "приём",
+   "утверждение_en": "Across all examples, the reference tag [n] is placed immediately after the noun phrase describing the subject (or style), and the same text is used as subjectDescription.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "imagen-3.0-capability-001",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-85-15, E-85-24, E-85-36, E-85-57, E-85-40, E-85-54, E-85-56",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-85-61",
+   "вид": "объяснение",
+   "утверждение_en": "Person examples on this page use comma-separated descriptor lists including quality tags ('high quality, 4k, masterpiece, super details'), while the product example uses full descriptive sentences about shot type, lighting and composition.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "imagen-3.0-capability-001",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-85-15, E-85-24, E-85-47, E-85-48",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "наблюдение о стиле примеров, страница этого не комментирует"
+  },
+  {
+   "код": "E-85-62",
+   "вид": "предупреждение",
+   "утверждение_en": "Everything on this page applies to imagen-3.0-capability-001, which the same page lists as deprecated with gemini-2.5-flash-image as the recommended replacement; its templates and limits are not stated to apply to Gemini image models.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-85-1, E-85-2, E-85-3",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "плюс баннер 'Vertex AI documentation is no longer being updated'"
+  },
+  {
+   "код": "E-85-63",
+   "вид": "лимит",
+   "утверждение_en": "Reference image counts per recommended template: 1 subject + 1 face mesh (first face-mesh row), 1-4 subject images without face mesh, 1-3 subject images with 1 face mesh control image; only one face mesh control is supported.",
+   "цитата": "Subject image (1-3)\nFacemesh control image (1)",
+   "источник_цитаты": "txt",
+   "раздел": "Person customization",
+   "модели": [
+    "imagen-3.0-capability-001 (Imagen 3 Customization)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из колонки 'Reference images' таблицы шаблонов и E-85-38",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "E-85-19 называет 'animal companion' поддерживаемым типом субъекта, а Console-пример E-85-55 использует 'the animal [1]'; при этом E-85-10 относит размещение питомца в сценах с сохранением идентичности к unintended use cases с плохими результатами.",
+  "E-85-7: размещение продукта в разных сценах с разными ракурсами — intended (Low success); E-85-13: то же, но с заданным стилем — unintended. Граница по наличию стиля.",
+  "Шаблоны E-85-25 и E-85-29 содержат стилевой тег ([2]/[3]), но в колонке Reference images для них указаны только subject/facemesh-изображения; стилевой референс в этом режиме нигде не описан (при этом E-85-56 в Console использует 'film noir style [2]').",
+  "В списке intended use cases пункт про сохранение выражения лица повторён дважды разными словами.",
+  "E-85-49 (шаблон) не содержит тега [1], хотя E-85-35 требует включать [$referenceId]; пример E-85-50 тег содержит."
+ ],
+ "не_сказано": [
+  "Ничего не сказано про Gemini/Nano Banana: как переносить эти шаблоны/требования к лицу на gemini-2.5-flash-image, куда рекомендована миграция.",
+  "Нет требований к размеру/разрешению/формату референс-изображений, кроме свойств лица (E-85-31, E-85-32, E-85-33).",
+  "Не указаны допустимые значения aspect ratio, кроме дефолта 1:1 в Console (E-85-51).",
+  "Нет информации о цене, квотах, водяном знаке/SynthID для Imagen 3 Customization.",
+  "Не объяснено, чем отличается 'Create an image about … to match the description' от 'Generate an image of … but …' по результату — только разные сценарии."
+ ],
+ "сомнения": [
+  "Вся страница про устаревшую модель imagen-3.0-capability-001, не входящую в семейство Nano Banana; баннер: 'Vertex AI documentation is no longer being updated'.",
+  "Опечатки источника в примерах ('stokes', 'see the camera', 'a two products', 'blur background') сохранены в цитатах.",
+  "Пример E-85-22 обрывается на странице ('The background should be a ...'); пример E-85-36 процитирован без последних двух слов из-за лимита 60 слов; у E-85-26/E-85-28/E-85-30 процитированы только различающиеся головы."
+ ]
+}

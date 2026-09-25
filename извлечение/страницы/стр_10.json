@@ -1,0 +1,897 @@
+{
+ "id": 10,
+ "url": "https://ai.google.dev/gemini-api/docs/batch-mode",
+ "заголовок": "Batch API",
+ "дата_в_тексте": "Last updated 2026-09-17 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.» Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Руководство Gemini API по Batch API для разработчиков: асинхронная обработка больших объёмов за 50% стоимости, цель — 24 часа. Два способа подачи (inline до 20MB и JSONL-файл через File API до 2GB, рекомендован для больших пакетов), конфигурация на уровне запроса (system instructions, tools, модальности, structured output), эмбеддинги, состояния задания (EXPIRED после 48 ч), вебхуки, хранение результатов 6 недель, листинг/отмена/удаление, отдельный раздел «Generating images in batch» (Nano Banana: выше rate limits в обмен на до 24 ч; JSONL рекомендован для изображений; примеры на gemini-3-pro-image-preview с шаблонным промптом «A big letter A/B …» и responseModalities TEXT+IMAGE), технические детали (модальности как в обычном API, кэширование) и best practices (файл для больших пакетов, разбор ошибок по строкам, неидемпотентность создания, дробление больших пакетов). Код на Python/JS/Java/REST; все, кроме раздела изображений, — текстовые запросы.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (как «gemini-3-pro-image-preview» в коде раздела Generating images in batch; в тексте — «Gemini Nano Banana»)",
+  "gemini-3.8-flash (текстовые примеры)",
+  "gemini-embedding-2 (эмбеддинги)"
+ ],
+ "структура": [
+  "Batch API (вступление, Note)",
+  "Creating a batch job (Inline requests; Input file; Batch embedding support; Request configuration)",
+  "Monitoring job status (Polling and webhooks)",
+  "Retrieving results",
+  "Listing batch jobs",
+  "Cancelling a batch job",
+  "Deleting a batch job",
+  "Generating images in batch (Inline requests for images; Input file for images)",
+  "Technical details",
+  "Best practices",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Batch API | Gemini API | Google AI for Developers / Skip to main content …",
+   "итог": "ничего: обвязка сайта (заголовок, языки, шапка)"
+  },
+  {
+   "n": 2,
+   "начало": "Docs / API reference / Gemini API … Feedback information",
+   "итог": "ничего: обвязка сайта (левое меню, строки 30-181)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available. / Home / Gemini API / Docs / Send feedback",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 4,
+   "начало": "Batch API / Note: This feature is currently only available",
+   "итог": "E-10-1"
+  },
+  {
+   "n": 5,
+   "начало": "The Gemini Batch API is designed to process large volumes",
+   "итог": "E-10-2"
+  },
+  {
+   "n": 6,
+   "начало": "The target turnaround time is 24 hours",
+   "итог": "E-10-3"
+  },
+  {
+   "n": 7,
+   "начало": "Use Batch API for large-scale, non-urgent tasks",
+   "итог": "E-10-4"
+  },
+  {
+   "n": 8,
+   "начало": "Creating a batch job / You have two ways … Inline requests: A list of GenerateContentRequest",
+   "итог": "E-10-5"
+  },
+  {
+   "n": 9,
+   "начало": "Input file: A JSON Lines (JSONL) file where each line contains",
+   "итог": "E-10-6"
+  },
+  {
+   "n": 10,
+   "начало": "Inline requests / For a small number of requests, you can directly embed",
+   "итог": "ничего: вводная к коду, повтор E-10-5"
+  },
+  {
+   "n": 11,
+   "начало": "Код: Python / JavaScript / Java / REST (inline: one-sentence joke, sky blue, photosynthesis)",
+   "итог": "ничего: код без промпта изображения (текстовые запросы, gemini-3.8-flash)"
+  },
+  {
+   "n": 12,
+   "начало": "Input file / For larger sets of requests, prepare a JSON Lines (JSONL) file",
+   "итог": "E-10-7"
+  },
+  {
+   "n": 13,
+   "начало": "This file is uploaded using the File API. The maximum allowed file size",
+   "итог": "E-10-8"
+  },
+  {
+   "n": 14,
+   "начало": "The following is an example of a JSONL file … my-batch-requests.json / код JSONL",
+   "итог": "ничего: код без промпта изображения (текстовые запросы)"
+  },
+  {
+   "n": 15,
+   "начало": "Similarly to inline requests, you can specify other parameters … multimodal input",
+   "итог": "E-10-9"
+  },
+  {
+   "n": 16,
+   "начало": "Код: Python / JavaScript / Java / REST (создание и загрузка JSONL через File API)",
+   "итог": "ничего: код без промпта изображения"
+  },
+  {
+   "n": 17,
+   "начало": "The following example calls the BatchGenerateContent method with the input file / код",
+   "итог": "ничего: код без промпта изображения"
+  },
+  {
+   "n": 18,
+   "начало": "When you create a batch job, you will get a job name returned … example output",
+   "итог": "E-10-10"
+  },
+  {
+   "n": 19,
+   "начало": "Batch embedding support / You can use the Batch API to interact with the Embeddings model … код … cookbook",
+   "итог": "ничего: не про генерацию картинок (эмбеддинги)"
+  },
+  {
+   "n": 20,
+   "начало": "Request configuration / You can include any request configurations",
+   "итог": "E-10-11"
+  },
+  {
+   "n": 21,
+   "начало": "Код: Python / JavaScript / Java (system_instruction «You are a cat. Your name is Neko.»)",
+   "итог": "ничего: код без промпта изображения"
+  },
+  {
+   "n": 22,
+   "начало": "Similarly can specify tools to use for a request … Google Search tool / код",
+   "итог": "E-10-12"
+  },
+  {
+   "n": 23,
+   "начало": "You can specify structured output as well … код … example output (cookie recipes)",
+   "итог": "ничего: не про генерацию картинок (structured output, текстовые рецепты)"
+  },
+  {
+   "n": 24,
+   "начало": "Monitoring job status / Use the operation name … can be in one of the following states",
+   "итог": "E-10-13"
+  },
+  {
+   "n": 25,
+   "начало": "JOB_STATE_PENDING … JOB_STATE_CANCELLED (пункты списка)",
+   "итог": "ничего: повтор E-10-13 (перечень состояний)"
+  },
+  {
+   "n": 26,
+   "начало": "JOB_STATE_EXPIRED: The job has expired because it was running or pending",
+   "итог": "E-10-14"
+  },
+  {
+   "n": 27,
+   "начало": "You can poll the job status periodically … код Python / JavaScript / Java (опрос каждые 30 с)",
+   "итог": "ничего: повтор E-10-13; код без промпта изображения"
+  },
+  {
+   "n": 28,
+   "начало": "Polling and webhooks / Tired of polling? Gemini now supports Webhooks … код",
+   "итог": "E-10-15"
+  },
+  {
+   "n": 29,
+   "начало": "Retrieving results / Once the job status indicates your batch job has succeeded",
+   "итог": "ничего: вводная; поле response — деталь кода"
+  },
+  {
+   "n": 30,
+   "начало": "By default, batch job results are stored and available for download for 6 weeks",
+   "итог": "E-10-16"
+  },
+  {
+   "n": 31,
+   "начало": "Код: Python / JavaScript / Java / REST (получение результатов)",
+   "итог": "ничего: код без промпта изображения (REST использует .metadata.state и .response.* — см. противоречия)"
+  },
+  {
+   "n": 32,
+   "начало": "Listing batch jobs / You can list your recent batch jobs. / код",
+   "итог": "ничего: процедура API, не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "Cancelling a batch job / You can cancel an ongoing batch job … / код",
+   "итог": "E-10-17"
+  },
+  {
+   "n": 34,
+   "начало": "Deleting a batch job / You can delete an existing batch job … / код",
+   "итог": "ничего: повтор E-10-17 (удаление)"
+  },
+  {
+   "n": 35,
+   "начало": "Generating images in batch / If you're using Gemini Nano Banana",
+   "итог": "E-10-18"
+  },
+  {
+   "n": 36,
+   "начало": "You can either use inline requests for small batches … (recommended for image generation)",
+   "итог": "E-10-19"
+  },
+  {
+   "n": 37,
+   "начало": "Inline requests for images / код Python",
+   "итог": "E-10-20, E-10-21, E-10-22, E-10-23"
+  },
+  {
+   "n": 38,
+   "начало": "Inline requests for images / код JavaScript / Java / REST",
+   "итог": "ничего: повтор E-10-20, E-10-21, E-10-22 (те же промпты, модальности, модель; JS: responseModalities; Java: GenerateContentConfig.responseModalities; REST: .state и .dest.inlinedResponses)"
+  },
+  {
+   "n": 39,
+   "начало": "Input file for images / код Python",
+   "итог": "ничего: повтор E-10-20, E-10-21, E-10-22; источник цитаты E-10-23 (комментарий о JSONL-результате)"
+  },
+  {
+   "n": 40,
+   "начало": "Input file for images / код JavaScript / Java / REST",
+   "итог": "ничего: повтор E-10-20, E-10-21, E-10-22 (JSONL-строки с key и generation_config.responseModalities; REST: .dest.fileName)"
+  },
+  {
+   "n": 41,
+   "начало": "Technical details / Supported models: Batch API supports a range of Gemini models",
+   "итог": "E-10-24"
+  },
+  {
+   "n": 42,
+   "начало": "Pricing: Batch API usage is priced at 50% of the standard interactive API cost",
+   "итог": "ничего: повтор E-10-2 (уточнение «for the equivalent model»; ссылки на pricing и rate limits)"
+  },
+  {
+   "n": 43,
+   "начало": "Service level objective (SLO): Batch jobs are designed to complete within a 24-hour",
+   "итог": "ничего: повтор E-10-3 (добавлено «depending on their size and current system load»)"
+  },
+  {
+   "n": 44,
+   "начало": "Caching: Context caching is supported for batch requests",
+   "итог": "E-10-25"
+  },
+  {
+   "n": 45,
+   "начало": "Best practices / Use input files for large requests",
+   "итог": "E-10-26"
+  },
+  {
+   "n": 46,
+   "начало": "Error handling: Check the batchStats for failedRequestCount",
+   "итог": "E-10-27"
+  },
+  {
+   "n": 47,
+   "начало": "Submit jobs once: The creation of a batch job is not idempotent.",
+   "итог": "E-10-28"
+  },
+  {
+   "n": 48,
+   "начало": "Break up very large batches",
+   "итог": "E-10-29"
+  },
+  {
+   "n": 49,
+   "начало": "What's next / Check out the Batch API notebook … OpenAI compatibility layer supports Batch API",
+   "итог": "ничего: ссылки (OpenAI-совместимость — не про картинки)"
+  },
+  {
+   "n": 50,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: подвал-лицензия — признак официальности"
+  },
+  {
+   "n": 51,
+   "начало": "Last updated 2026-09-17 UTC.",
+   "итог": "ничего: дата — вынесена в дата_в_тексте"
+  },
+  {
+   "n": 52,
+   "начало": "Need to tell us more? … Terms / Privacy / Manage cookies / языки",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 53,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-10-30, E-10-31, E-10-32"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-10-1",
+   "вид": "ограничение",
+   "утверждение_en": "The Batch API is currently only available with the generateContent API.",
+   "цитата": "This feature is currently only available with the generateContent API. Please follow the content on this page for more information.",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API (вступление) — Note",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Т.е. не через Interactions API."
+  },
+  {
+   "код": "E-10-2",
+   "вид": "факт",
+   "утверждение_en": "The Gemini Batch API processes large volumes of requests asynchronously at 50% of the standard cost.",
+   "цитата": "The Gemini Batch API is designed to process large volumes of requests\nasynchronously at\n50% of the standard cost",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "В Technical details уточнено: «50% of the standard interactive API cost for the equivalent model»."
+  },
+  {
+   "код": "E-10-3",
+   "вид": "лимит",
+   "утверждение_en": "The target turnaround time for a batch is 24 hours, though in most cases it is much quicker.",
+   "цитата": "The target turnaround time is 24 hours, but in majority of cases, it is much\nquicker.",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Повторено в Technical details (SLO) и Best practices."
+  },
+  {
+   "код": "E-10-4",
+   "вид": "правило",
+   "утверждение_en": "Use the Batch API for large-scale, non-urgent tasks where an immediate response is not required (e.g., data pre-processing, running evaluations).",
+   "цитата": "Use Batch API for large-scale, non-urgent tasks such as data\npre-processing or running evaluations where an immediate response is not\nrequired.",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-5",
+   "вид": "лимит",
+   "утверждение_en": "Inline requests (a list of GenerateContentRequest objects in the batch creation request) suit smaller batches whose total request size stays under 20MB; the output is a list of inlineResponse objects.",
+   "цитата": "directly included in your batch creation request. This is suitable for\nsmaller batches that keep the total request size under 20MB.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating a batch job",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-6",
+   "вид": "правило",
+   "утверждение_en": "An input JSONL file, where each line is a complete GenerateContentRequest, is recommended for larger requests; the output is a JSONL file where each line is a GenerateContentResponse or a status object.",
+   "цитата": "file where each line contains a complete\nGenerateContentRequest\nobject.\nThis method is recommended for larger requests.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating a batch job",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-7",
+   "вид": "правило",
+   "утверждение_en": "Each line of the JSONL input file must be a JSON object containing a user-defined key and a request object (a valid GenerateContentRequest); the key is used to annotate the corresponding response.",
+   "цитата": "For larger sets of requests, prepare a JSON Lines (JSONL) file. Each line in\nthis file must be a JSON object containing a user-defined key and a request\nobject, where the request is a valid",
+   "источник_цитаты": "txt",
+   "раздел": "Input file",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример: ключ request-1 → ответ с тем же ключом."
+  },
+  {
+   "код": "E-10-8",
+   "вид": "лимит",
+   "утверждение_en": "The input file is uploaded via the File API; the maximum allowed input file size is 2GB.",
+   "цитата": "allowed file size for an input file is 2GB.",
+   "источник_цитаты": "txt",
+   "раздел": "Input file",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Повторено в Best practices: «there's a 2GB file size limit per input file»."
+  },
+  {
+   "код": "E-10-9",
+   "вид": "факт",
+   "утверждение_en": "Each request JSON in the file can carry other parameters such as system instructions, tools or other configurations, and for multimodal input you can reference other uploaded files within the JSONL file.",
+   "цитата": "Similarly to inline requests, you can specify other parameters like system\ninstructions, tools or other configurations in each request JSON.\nYou can upload this file using the\nFile API\nas\nshown in the following example. If\nyou are working with multimodal input, you can reference other uploaded files\nwithin your JSONL file.",
+   "источник_цитаты": "txt",
+   "раздел": "Input file",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Для пакетного редактирования изображений: входные картинки подаются как ссылки на загруженные через File API файлы (прямо про изображения не сказано)."
+  },
+  {
+   "код": "E-10-10",
+   "вид": "инструкция",
+   "утверждение_en": "Creating a batch job returns a job name; use it to monitor the job status and to retrieve results once the job completes.",
+   "цитата": "When you create a batch job, you will get a job name returned. Use this name",
+   "источник_цитаты": "txt",
+   "раздел": "Creating a batch job",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-11",
+   "вид": "факт",
+   "утверждение_en": "A batch request can include any configuration used in a standard non-batch request, such as temperature, system instructions, or other modalities.",
+   "цитата": "You can include any request configurations you would use in a standard non-batch\nrequest. For example, you could specify the temperature, system instructions or\neven pass in other modalities.",
+   "источник_цитаты": "txt",
+   "раздел": "Request configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Конфиг задаётся на уровне каждого запроса (см. E-10-21)."
+  },
+  {
+   "код": "E-10-12",
+   "вид": "факт",
+   "утверждение_en": "Tools can be specified per request in a batch, e.g., enabling the Google Search tool.",
+   "цитата": "Similarly can specify tools to use for a request. The following example",
+   "источник_цитаты": "txt",
+   "раздел": "Request configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "В коде: 'tools': [{'google_search': {}}] для одного из запросов."
+  },
+  {
+   "код": "E-10-13",
+   "вид": "факт",
+   "утверждение_en": "A batch job's state is one of JOB_STATE_PENDING, JOB_STATE_RUNNING, JOB_STATE_SUCCEEDED, JOB_STATE_FAILED, JOB_STATE_CANCELLED, or JOB_STATE_EXPIRED; poll the job periodically using its name.",
+   "цитата": "The state field of the batch job will indicate its current status. A batch job\ncan be in one of the following states:",
+   "источник_цитаты": "txt",
+   "раздел": "Monitoring job status",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-14",
+   "вид": "предупреждение",
+   "утверждение_en": "A job that runs or stays pending for more than 48 hours expires (JOB_STATE_EXPIRED) and has no results to retrieve; you can resubmit it or split the requests into smaller batches.",
+   "цитата": ": The job has expired because it was running or pending\nfor more than 48 hours. The job will not have any results to retrieve.\nYou can try submitting the job again or splitting up\nthe requests into smaller batches.",
+   "источник_цитаты": "txt",
+   "раздел": "Monitoring job status",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-15",
+   "вид": "факт",
+   "утверждение_en": "Instead of polling, you can subscribe to webhooks (batch.succeeded; the code also subscribes to batch.failed) so the Gemini API pushes notifications to your server when the operation completes.",
+   "цитата": "directly to allow the Gemini API to push real-time\nnotifications to your server when asynchronous or long-running operations\ncomplete.",
+   "источник_цитаты": "txt",
+   "раздел": "Polling and webhooks",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-16",
+   "вид": "лимит",
+   "утверждение_en": "By default, batch job results are stored and available for download for 6 weeks, then permanently deleted.",
+   "цитата": "By default, batch job results are stored and available for download for 6 weeks,\nbefore they are permanently deleted.",
+   "источник_цитаты": "txt",
+   "раздел": "Retrieving results",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-17",
+   "вид": "факт",
+   "утверждение_en": "Cancelling a batch job stops it from processing new requests; deleting a job also stops processing new requests and removes it from the list of batch jobs.",
+   "цитата": "You can cancel an ongoing batch job using its name. When a job is\ncanceled, it stops processing new requests.",
+   "источник_цитаты": "txt",
+   "раздел": "Cancelling a batch job / Deleting a batch job",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Удаление: «When a job is deleted, it stops processing new requests and is removed from the list of batch jobs.»"
+  },
+  {
+   "код": "E-10-18",
+   "вид": "факт",
+   "утверждение_en": "If you use Gemini Nano Banana and need to generate a lot of images, the Batch API gives higher rate limits in exchange for a turnaround of up to 24 hours.",
+   "цитата": "and need to generate a lot\nof images, you can use the Batch API to get higher\nrate limits\nin exchange for a turnaround of up\nto 24 hours.",
+   "источник_цитаты": "txt",
+   "раздел": "Generating images in batch",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Обмен скорости на более высокие rate limits (и, по общему разделу, 50% цены)."
+  },
+  {
+   "код": "E-10-19",
+   "вид": "правило",
+   "утверждение_en": "For image generation in batch, use inline requests for small batches (under 20MB) or a JSONL input file for large batches; the JSONL file is recommended for image generation.",
+   "цитата": "for large batches (recommended for image generation):",
+   "источник_цитаты": "txt",
+   "раздел": "Generating images in batch",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Причина рекомендации не объяснена."
+  },
+  {
+   "код": "E-10-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Batch image example prompts: \"A big letter A surrounded by animals starting with the A letter\" (and the same with B) — a one-parameter template varied per request.",
+   "цитата": "A big letter A surrounded by animals starting with the A letter",
+   "источник_цитаты": "html",
+   "раздел": "Generating images in batch (кодовые блоки)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Шаблон: «A big letter [X] surrounded by animals starting with the [X] letter». Второй запрос — буква B (повтор с заменой параметра). Структура: крупный текстовый элемент в центре (одна буква) + окружение, зависящее от параметра. Пакет — один шаблон с переменной на запрос. Одинаков во всех 4 языках и обоих режимах (inline / JSONL)."
+  },
+  {
+   "код": "E-10-21",
+   "вид": "инструкция",
+   "утверждение_en": "Image batch requests set the response modalities to TEXT and IMAGE per request: in the Python SDK inline form 'config': {'response_modalities': ['TEXT', 'IMAGE']}, and in JSONL/REST form \"generation_config\": {\"responseModalities\": [\"TEXT\", \"IMAGE\"]}.",
+   "цитата": "'config': {'response_modalities': ['TEXT', 'IMAGE']}",
+   "источник_цитаты": "html",
+   "раздел": "Generating images in batch (кодовые блоки)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Во всех image-примерах выход — текст+изображение. В JSONL-строке: {\"key\": \"request-1\", \"request\": {\"contents\": […], \"generation_config\": {\"responseModalities\": [\"TEXT\", \"IMAGE\"]}}}."
+  },
+  {
+   "код": "E-10-22",
+   "вид": "факт",
+   "утверждение_en": "The batch image examples call the model gemini-3-pro-image-preview via the batchGenerateContent endpoint.",
+   "цитата": "models/gemini-3-pro-image-preview:batchGenerateContent",
+   "источник_цитаты": "html",
+   "раздел": "Generating images in batch (кодовые блоки)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Id с суффиксом -preview; в Python/JS/Java — model=\"gemini-3-pro-image-preview\"."
+  },
+  {
+   "код": "E-10-23",
+   "вид": "объяснение",
+   "утверждение_en": "In batch image results, generated images come back as inline_data/inlineData parts (with a mime type and base64 data) alongside text parts; with a file input, the result file is also JSONL, one parsed response or error per line.",
+   "цитата": "# The result file is also a JSONL file. Parse and print each line.",
+   "источник_цитаты": "html",
+   "раздел": "Generating images in batch (кодовые блоки)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Inline: batch_job.dest.inlined_responses → response.candidates[0].content.parts → part.inline_data (mime_type), part.as_image().save(...). Файл: batch_job.dest.file_name → files.download → строки JSONL с 'response' или 'error'; part['inlineData']['data'] декодируется base64. Примеры опрашивают статус каждые 10 секунд."
+  },
+  {
+   "код": "E-10-24",
+   "вид": "факт",
+   "утверждение_en": "The Batch API supports a range of Gemini models (check the Models page for each model's support), and its supported modalities are the same as those of the interactive (non-batch) API.",
+   "цитата": "Batch API supports a range of Gemini models.\nRefer to the\nModels page\nfor each model's support\nof Batch API. The supported modalities for Batch API are the same\nas what's supported on the interactive (or non-batch) API.",
+   "источник_цитаты": "txt",
+   "раздел": "Technical details",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-25",
+   "вид": "факт",
+   "утверждение_en": "Context caching is supported for batch requests: specify the cached_content resource name in an individual request's configuration; a cache hit is billed at standard context caching rates.",
+   "цитата": "is supported\nfor batch requests. Reuse cached content by specifying the\ncached_content\nresource name in the configuration of individual requests within your batch.\nIf a request in your batch results in a cache hit, you pay the\nstandard context caching rates",
+   "источник_цитаты": "txt",
+   "раздел": "Technical details",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "Поддерживает ли кэширование конкретная модель изображений — на этой странице не сказано."
+  },
+  {
+   "код": "E-10-26",
+   "вид": "правило",
+   "утверждение_en": "For a large number of requests, always use the file input method, for better manageability and to avoid hitting request size limits for the BatchGenerateContent call itself (2GB limit per input file).",
+   "цитата": "For a large number of requests,\nalways use the file input\nmethod for better manageability and to avoid hitting request size limits for\nthe\nBatchGenerateContent\ncall itself. Note that there's a 2GB file size limit per input file.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-10-27",
+   "вид": "правило",
+   "утверждение_en": "After a job completes, check batchStats for failedRequestCount; with file output, parse each line to see whether it is a GenerateContentResponse or a status object indicating an error for that request.",
+   "цитата": "job completes. If using file output, parse each line to check if it's a\nGenerateContentResponse\nor a status object indicating an error for that\nspecific request.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Начало пункта: «Error handling: Check the batchStats for failedRequestCount after a job completes.»"
+  },
+  {
+   "код": "E-10-28",
+   "вид": "предупреждение",
+   "утверждение_en": "Batch job creation is not idempotent: sending the same creation request twice creates two separate batch jobs.",
+   "цитата": "The creation of a batch job is not idempotent.\nIf you send the same creation request twice, two separate batch jobs will\nbe created.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "Риск двойной оплаты."
+  },
+  {
+   "код": "E-10-29",
+   "вид": "правило",
+   "утверждение_en": "Actual processing time varies with system load and job size; for large jobs, consider breaking them into smaller batches if intermediate results are needed sooner.",
+   "цитата": "hours, actual processing time can vary based on system load and job size.\nFor large jobs, consider breaking them into smaller\nbatches if intermediate results are needed sooner.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-10-30",
+   "вид": "правило",
+   "утверждение_en": "Batch lifecycle timing: plan for up to ~24 hours turnaround (often faster), a job still running or pending after 48 hours expires with no results, and results must be downloaded within 6 weeks.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-10-3, E-10-14, E-10-16",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сводка трёх сроков из разных разделов."
+  },
+  {
+   "код": "E-10-31",
+   "вид": "факт",
+   "утверждение_en": "In batch, image-generation settings are per request: each request object carries its own contents and generation_config (responseModalities), consistent with the rule that any non-batch request configuration can be used per request.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Request configuration + Generating images in batch",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-10-11, E-10-21, E-10-24",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пакетная генерация изображений = набор обычных запросов с собственным конфигом."
+  },
+  {
+   "код": "E-10-32",
+   "вид": "факт",
+   "утверждение_en": "The image batch section shows only text-to-image requests with TEXT+IMAGE output; it gives no example with input/reference images, aspect ratio, image size, or thinking settings, although the page says any non-batch configuration and uploaded files for multimodal input can be used.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Generating images in batch",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id «gemini-3-pro-image-preview»",
+    "в тексте «Gemini Nano Banana» без версии"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-10-9, E-10-11, E-10-20, E-10-21",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Граница примеров страницы."
+  }
+ ],
+ "противоречия_внутри": [
+  "REST-примеры расходятся в JSON-путях статуса и результатов: в «Retrieving results» — .metadata.state, .response.inlinedResponses, .response.responsesFile; в «Generating images in batch» — .state, .dest.inlinedResponses, .dest.fileName.",
+  "Текст раздела изображений говорит о «Gemini Nano Banana» без версии, а все примеры используют id gemini-3-pro-image-preview (Nano Banana Pro, preview-суффикс).",
+  "Интервал опроса в примерах: 30 секунд в общих разделах, 10 секунд в разделе изображений (не противоречие, но разнобой).",
+  "Пример JSONL предлагается сохранить в «my-batch-requests.json», а код загрузки использует «my-batch-requests.jsonl»."
+ ],
+ "не_сказано": [
+  "Почему для генерации изображений рекомендован именно JSONL-файл — не объяснено.",
+  "Насколько выше rate limits для пакетной генерации изображений — не указано (ссылка на страницу rate limits).",
+  "Нет примеров пакетного редактирования (входные/референсные изображения), соотношения сторон, размера изображения, thinking в пакете.",
+  "Не сказано, поддерживают ли конкретные модели изображений (gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-2.5-flash-image) Batch API — только ссылка на страницу Models.",
+  "Цена пакетной генерации изображений в абсолютных числах не приведена."
+ ],
+ "сомнения": [
+  "Большинство единиц — общие правила Batch API (модель «не указано»); к изображениям прямо относятся E-10-18…E-10-23, остальные — через отсылку раздела изображений к общим механизмам (inline <20MB, JSONL, 24 ч).",
+  "Цитаты E-10-20…E-10-23 взяты из кодовых блоков html (источник_цитаты = html)."
+ ]
+}

@@ -1,0 +1,2028 @@
+{
+ "id": 227,
+ "url": "https://firebase.google.com/docs/ai-logic/generate-images-gemini",
+ "заголовок": "Generate & edit images using Gemini (aka \"Nano Banana\")  |  Firebase AI Logic",
+ "дата_в_тексте": "Last updated 2026-09-24 UTC",
+ "официальность": {
+  "домен": "firebase.google.com",
+  "второй_признак": "подвал: лицензионная строка 'For details, see the Google Developers Site Policies', Terms/Privacy; баннеры Firebase App Check. Строки Copyright Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочное руководство Firebase AI Logic для разработчиков мобильных и веб-приложений: как генерировать и редактировать картинки моделями Gemini Image ('Nano Banana') через SDK (Swift, Kotlin, Java, Web, Dart, Unity). Модели: gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite), устаревшая gemini-2.5-flash-image (Nano Banana). Дата: Last updated 2026-09-24. Структура: баннеры (App Check с 02.11.2026, отключение Gemini 2.5 в октябре 2026); вступление (Preview, возможности); Before you begin (модели, Blaze-тариф); четыре сценария с кодом на 6 языках (text-to-image, interleaved, edit, multi-turn chat); Provide reference images (пределы по моделям); Configure image generation (imageConfig, 14 соотношений сторон, размеры по моделям, правило суффикса K); Supported features (модальности-паттерны с примерами промптов, grounding, ввод видео/аудио, PNG, люди, safety, JSON, языки); Best practices (текст сначала, NO_IMAGE, явная просьба о картинке, STOP при небезопасном промпте). Большая часть .txt — код, токенизированный по строкам. Собственные термины: Gemini Image models, response modality, imageConfig, 'modalities' как паттерны.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-2.5-flash-image (Nano Banana) — deprecated",
+  "gemini-3.8-flash (как пример модели без генерации картинок)"
+ ],
+ "структура": [
+  "Баннеры",
+  "Вступление (Preview, возможности)",
+  "Before you begin / Models that support this capability",
+  "Generate and edit images: Generate images (text-only input); Generate interleaved images and text; Edit images (text-and-image input); Iterate and edit images using multi-turn chat",
+  "Provide reference images",
+  "Configure image generation: Supported aspect ratios; Supported image sizes (resolutions)",
+  "Supported features: Supported modalities; Supported tools; Other supported capabilities; Supported languages",
+  "Best practices"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generate & edit images using Gemini (aka \"Nano Banana\") | Firebase",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Build Build",
+   "итог": "ничего: обвязка сайта Firebase (меню продуктов, языки, левое меню документации), строки 2-408"
+  },
+  {
+   "n": 3,
+   "начало": "Starting November 2, 2026, Firebase App",
+   "итог": "E-227-1"
+  },
+  {
+   "n": 4,
+   "начало": "Model updates: The latest Gemini models",
+   "итог": "ничего: не про генерацию картинок (анонс Gemini 3.8 Flash)"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 2.5 models will shut down",
+   "итог": "E-227-2"
+  },
+  {
+   "n": 6,
+   "начало": "Firebase Documentation Firebase AI Logic AI",
+   "итог": "ничего: хлебные крошки, Send feedback"
+  },
+  {
+   "n": 7,
+   "начало": "Generate & edit images using Gemini (aka \"Nano Banana\") Stay organized",
+   "итог": "ничего: заголовок статьи и служебная кнопка"
+  },
+  {
+   "n": 8,
+   "начало": "Preview: Using the Firebase AI Logic",
+   "итог": "E-227-3"
+  },
+  {
+   "n": 9,
+   "начало": "You can ask a Gemini Image model to generate and edit",
+   "итог": "E-227-4 (фраза 'you can make this request directly from your app' — обвязка SDK)"
+  },
+  {
+   "n": 10,
+   "начало": "With this capability, you can do",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 11,
+   "начало": "Iteratively generate images through conversation with",
+   "итог": "E-227-5"
+  },
+  {
+   "n": 12,
+   "начало": "Generate images with high-quality text rendering,",
+   "итог": "E-227-6"
+  },
+  {
+   "n": 13,
+   "начало": "Generate interleaved text-image output. For example,",
+   "итог": "E-227-7"
+  },
+  {
+   "n": 14,
+   "начало": "Generate images using Gemini's world knowledge",
+   "итог": "E-227-8"
+  },
+  {
+   "n": 15,
+   "начало": "You can configure the response modality",
+   "итог": "E-227-9"
+  },
+  {
+   "n": 16,
+   "начало": "arrow_downward Jump to code for",
+   "итог": "ничего: навигация по странице"
+  },
+  {
+   "n": 17,
+   "начало": "See other guides for additional options",
+   "итог": "ничего: ссылки на другие гайды"
+  },
+  {
+   "n": 18,
+   "начало": "Before you begin Click your Gemini",
+   "итог": "ничего: переключатель провайдера (Gemini Developer API / Agent Platform Gemini API)"
+  },
+  {
+   "n": 19,
+   "начало": "If you haven't already, complete the",
+   "итог": "ничего: настройка проекта Firebase, не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "All our docs assume that you're",
+   "итог": "ничего: обвязка (версии SDK)"
+  },
+  {
+   "n": 21,
+   "начало": "For testing and iterating on your",
+   "итог": "E-227-10"
+  },
+  {
+   "n": 22,
+   "начало": "Models that support this capability gemini-3-pro-image",
+   "итог": "E-227-11"
+  },
+  {
+   "n": 23,
+   "начало": "Image-generating Gemini 2.5 models support this",
+   "итог": "E-227-12"
+  },
+  {
+   "n": 24,
+   "начало": "Important: Be aware of the following: The Gemini Image models require",
+   "итог": "E-227-13"
+  },
+  {
+   "n": 25,
+   "начало": "Image generation is not supported by",
+   "итог": "E-227-14"
+  },
+  {
+   "n": 26,
+   "начало": "Generate and edit images You can",
+   "итог": "ничего: заголовок раздела и повтор единицы E-227-4"
+  },
+  {
+   "n": 27,
+   "начало": "Note: Both of the following models support video input",
+   "итог": "E-227-15, E-227-16"
+  },
+  {
+   "n": 28,
+   "начало": "Generate images (text-only input) Before trying this",
+   "итог": "ничего: заголовок и повтор инструкции по настройке проекта"
+  },
+  {
+   "n": 29,
+   "начало": "You can ask a Gemini Image model to generate images by prompting with text. Create a",
+   "итог": "E-227-17"
+  },
+  {
+   "n": 30,
+   "начало": "Swift (код: text-to-image)",
+   "итог": "E-227-18, E-227-19"
+  },
+  {
+   "n": 31,
+   "начало": "Kotlin (код: text-to-image)",
+   "итог": "ничего: код без нового содержания, повтор промпта E-227-18"
+  },
+  {
+   "n": 32,
+   "начало": "Java (код: text-to-image)",
+   "итог": "ничего: код без нового содержания, повтор промпта E-227-18 ('Eiffel Tower')"
+  },
+  {
+   "n": 33,
+   "начало": "Web (код: text-to-image)",
+   "итог": "ничего: код, повтор промпта E-227-18; обработка 'Prompt or candidate was blocked' учтена в E-227-19"
+  },
+  {
+   "n": 34,
+   "начало": "Dart (код: text-to-image)",
+   "итог": "ничего: код без нового содержания, повтор промпта E-227-18"
+  },
+  {
+   "n": 35,
+   "начало": "Unity (код: text-to-image)",
+   "итог": "ничего: код, повтор промпта E-227-18; фильтр MimeType 'image/png' учтён в E-227-19"
+  },
+  {
+   "n": 36,
+   "начало": "Generate interleaved images and text Before",
+   "итог": "ничего: заголовок и повтор инструкции по настройке проекта"
+  },
+  {
+   "n": 37,
+   "начало": "You can ask a Gemini Image model to generate interleaved images",
+   "итог": "E-227-20"
+  },
+  {
+   "n": 38,
+   "начало": "Create a GenerativeModel instance, include response modalities of TEXT and IMAGE",
+   "итог": "E-227-21"
+  },
+  {
+   "n": 39,
+   "начало": "Swift (код: interleaved)",
+   "итог": "E-227-22"
+  },
+  {
+   "n": 40,
+   "начало": "Kotlin (код: interleaved)",
+   "итог": "ничего: код, повтор промпта E-227-22"
+  },
+  {
+   "n": 41,
+   "начало": "Java (код: interleaved)",
+   "итог": "ничего: код, повтор промпта E-227-22"
+  },
+  {
+   "n": 42,
+   "начало": "Web (код: interleaved)",
+   "итог": "ничего: код, повтор промпта E-227-22 (с опечаткой '.\\n.')"
+  },
+  {
+   "n": 43,
+   "начало": "Dart (код: interleaved)",
+   "итог": "ничего: код, повтор промпта E-227-22"
+  },
+  {
+   "n": 44,
+   "начало": "Unity (код: interleaved)",
+   "итог": "ничего: код, повтор промпта E-227-22"
+  },
+  {
+   "n": 45,
+   "начало": "Edit images (text-and-image input) Before trying",
+   "итог": "ничего: заголовок и повтор инструкции по настройке проекта"
+  },
+  {
+   "n": 46,
+   "начало": "You can ask a Gemini Image model to edit images by prompting",
+   "итог": "E-227-23"
+  },
+  {
+   "n": 47,
+   "начало": "Create a GenerativeModel instance, include the response modality of IMAGE (правка)",
+   "итог": "ничего: повтор единицы E-227-17"
+  },
+  {
+   "n": 48,
+   "начало": "Swift (код: edit)",
+   "итог": "E-227-24"
+  },
+  {
+   "n": 49,
+   "начало": "Kotlin (код: edit)",
+   "итог": "ничего: код, повтор промпта E-227-24"
+  },
+  {
+   "n": 50,
+   "начало": "Java (код: edit)",
+   "итог": "ничего: код, повтор промпта E-227-24"
+  },
+  {
+   "n": 51,
+   "начало": "Web (код: edit)",
+   "итог": "ничего: код, повтор промпта E-227-24"
+  },
+  {
+   "n": 52,
+   "начало": "Dart (код: edit)",
+   "итог": "ничего: код, повтор промпта E-227-24"
+  },
+  {
+   "n": 53,
+   "начало": "Unity (код: edit)",
+   "итог": "ничего: код, повтор промпта E-227-24 (с точкой)"
+  },
+  {
+   "n": 54,
+   "начало": "Iterate and edit images using multi-turn chat Before",
+   "итог": "ничего: заголовок и повтор инструкции по настройке проекта"
+  },
+  {
+   "n": 55,
+   "начало": "Using multi-turn chat, you can iterate",
+   "итог": "E-227-25"
+  },
+  {
+   "n": 56,
+   "начало": "Create a GenerativeModel instance, include the response modality of IMAGE in your model configuration, and call startChat()",
+   "итог": "E-227-26"
+  },
+  {
+   "n": 57,
+   "начало": "Important: If you're not familiar with the chat",
+   "итог": "ничего: ссылка на пример текстового чата"
+  },
+  {
+   "n": 58,
+   "начало": "Swift (код: chat)",
+   "итог": "E-227-27, E-227-28"
+  },
+  {
+   "n": 59,
+   "начало": "Kotlin (код: chat)",
+   "итог": "ничего: код, повтор E-227-27, E-227-28"
+  },
+  {
+   "n": 60,
+   "начало": "Java (код: chat)",
+   "итог": "ничего: код, повтор E-227-27, E-227-28"
+  },
+  {
+   "n": 61,
+   "начало": "Web (код: chat)",
+   "итог": "ничего: код, повтор E-227-27, E-227-28"
+  },
+  {
+   "n": 62,
+   "начало": "Dart (код: chat)",
+   "итог": "ничего: код, повтор E-227-27, E-227-28"
+  },
+  {
+   "n": 63,
+   "начало": "Unity (код: chat)",
+   "итог": "ничего: код, повтор E-227-27, E-227-28"
+  },
+  {
+   "n": 64,
+   "начало": "Provide reference images Gemini Image models let",
+   "итог": "ничего: заголовок и вводная (содержание — в пунктах ниже)"
+  },
+  {
+   "n": 65,
+   "начало": "Gemini 3.x Pro Image (gemini-3-pro-image, aka \"Nano Banana Pro\")",
+   "итог": "ничего: подзаголовок модели"
+  },
+  {
+   "n": 66,
+   "начало": "Up to 6 images of objects",
+   "итог": "E-227-29"
+  },
+  {
+   "n": 67,
+   "начало": "Up to 5 images of characters",
+   "итог": "E-227-30"
+  },
+  {
+   "n": 68,
+   "начало": "Up to 3 images to be used as style references",
+   "итог": "E-227-31"
+  },
+  {
+   "n": 69,
+   "начало": "Gemini 3.x Flash Image (gemini-3.1-flash-image): Up to 10 / Up to 4",
+   "итог": "E-227-32"
+  },
+  {
+   "n": 70,
+   "начало": "Gemini 3.x Flash‑Lite Image: Up to 10 / Up to 4",
+   "итог": "E-227-33"
+  },
+  {
+   "n": 71,
+   "начало": "Gemini 2.5 Flash Image: Up to 3 images",
+   "итог": "E-227-34"
+  },
+  {
+   "n": 72,
+   "начало": "Configure image generation By default, Gemini",
+   "итог": "E-227-35, E-227-36"
+  },
+  {
+   "n": 73,
+   "начало": "For example, you can configure the output image using aspect",
+   "итог": "E-227-37"
+  },
+  {
+   "n": 74,
+   "начало": "Swift (код: imageConfig)",
+   "итог": "E-227-39, E-227-38"
+  },
+  {
+   "n": 75,
+   "начало": "Kotlin (код: imageConfig)",
+   "итог": "ничего: код, повтор E-227-39, E-227-38"
+  },
+  {
+   "n": 76,
+   "начало": "Java (код: imageConfig)",
+   "итог": "ничего: код, повтор E-227-39"
+  },
+  {
+   "n": 77,
+   "начало": "Web (код: imageConfig)",
+   "итог": "E-227-40"
+  },
+  {
+   "n": 78,
+   "начало": "Dart (код: imageConfig)",
+   "итог": "ничего: код, повтор E-227-40 (с ошибкой кавычки в имени модели)"
+  },
+  {
+   "n": 79,
+   "начало": "Unity (код: imageConfig)",
+   "итог": "ничего: код, повтор E-227-40"
+  },
+  {
+   "n": 80,
+   "начало": "Supported aspect ratios All Gemini Image",
+   "итог": "E-227-41"
+  },
+  {
+   "n": 81,
+   "начало": "Supported image sizes (resolutions) depend on",
+   "итог": "E-227-42"
+  },
+  {
+   "n": 82,
+   "начало": "Gemini Image model Supported sizes (resolutions)",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 83,
+   "начало": "Gemini 3.x Pro Image gemini-3-pro-image (\"Nano Banana Pro\") Default: 1K",
+   "итог": "E-227-43"
+  },
+  {
+   "n": 84,
+   "начало": "Gemini 3.x Flash Image gemini-3.1-flash-image Default: 1K 512",
+   "итог": "E-227-44"
+  },
+  {
+   "n": 85,
+   "начало": "Gemini 3.x Flash‑Lite Image gemini-3.1-flash-lite-image Default: 1K",
+   "итог": "E-227-45"
+  },
+  {
+   "n": 86,
+   "начало": "Gemini 2.5 Flash Image gemini-2.5-flash-image Fixed at",
+   "итог": "E-227-46"
+  },
+  {
+   "n": 87,
+   "начало": "You must use an uppercase K",
+   "итог": "E-227-47"
+  },
+  {
+   "n": 88,
+   "начало": "Supported features The following are supported",
+   "итог": "ничего: заголовок и вводная со ссылкой назад"
+  },
+  {
+   "n": 89,
+   "начало": "Supported modalities The following are supported \"modalities\"",
+   "итог": "E-227-48"
+  },
+  {
+   "n": 90,
+   "начало": "Text → Image(s) (text-only to image) Generate an image of the Eiffel",
+   "итог": "ничего: повтор примера E-227-18"
+  },
+  {
+   "n": 91,
+   "начало": "Text → Image(s) (text rendering within image)",
+   "итог": "E-227-49"
+  },
+  {
+   "n": 92,
+   "начало": "Text → Image(s) & Text (interleaved) Generate an illustrated recipe",
+   "итог": "ничего: повтор примера E-227-22 (вариант формулировки)"
+  },
+  {
+   "n": 93,
+   "начало": "Generate a story about a dog",
+   "итог": "E-227-50"
+  },
+  {
+   "n": 94,
+   "начало": "Image(s) & Text → Image(s) & Text (interleaved) [image of a furnished room]",
+   "итог": "E-227-51"
+  },
+  {
+   "n": 95,
+   "начало": "Image editing (text-and-image to image) [image of scones] +",
+   "итог": "ничего: повтор примера E-227-24"
+  },
+  {
+   "n": 96,
+   "начало": "[image of a cat] + [image of a pillow]",
+   "итог": "E-227-52"
+  },
+  {
+   "n": 97,
+   "начало": "Multi-turn image editing (chat) [image of a blue car]",
+   "итог": "E-227-53"
+  },
+  {
+   "n": 98,
+   "начало": "Supported tools Support for Grounding with Google Search",
+   "итог": "E-227-54"
+  },
+  {
+   "n": 99,
+   "начало": "Other supported capabilities Supported multimodal input: Image input",
+   "итог": "E-227-55"
+  },
+  {
+   "n": 100,
+   "начало": "Video input: Gemini 3.x Flash Image",
+   "итог": "E-227-56"
+  },
+  {
+   "n": 101,
+   "начало": "Audio input: None of the Gemini",
+   "итог": "E-227-57"
+  },
+  {
+   "n": 102,
+   "начало": "All of the Gemini Image models support the following:",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 103,
+   "начало": "Generating PNG images.",
+   "итог": "E-227-58"
+  },
+  {
+   "n": 104,
+   "начало": "Generating and editing images of people.",
+   "итог": "E-227-59"
+  },
+  {
+   "n": 105,
+   "начало": "Using safety filters that provide a",
+   "итог": "E-227-60"
+  },
+  {
+   "n": 106,
+   "начало": "Support for generating structured output (like",
+   "итог": "E-227-61"
+  },
+  {
+   "n": 107,
+   "начало": "Supported languages While the Gemini Image",
+   "итог": "E-227-62"
+  },
+  {
+   "n": 108,
+   "начало": "Supported languages for the text prompt: Gemini 3.x",
+   "итог": "E-227-63"
+  },
+  {
+   "n": 109,
+   "начало": "Gemini 2.5 Flash Image model: EN, es-MX",
+   "итог": "E-227-64"
+  },
+  {
+   "n": 110,
+   "начало": "Supported languages for the text within the generated image",
+   "итог": "E-227-65"
+  },
+  {
+   "n": 111,
+   "начало": "To use a specific language within",
+   "итог": "E-227-66, E-227-67"
+  },
+  {
+   "n": 112,
+   "начало": "Best practices The following are best",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 113,
+   "начало": "When generating an image containing text,",
+   "итог": "E-227-68"
+  },
+  {
+   "n": 114,
+   "начало": "Image generation may not always trigger.",
+   "итог": "E-227-69"
+  },
+  {
+   "n": 115,
+   "начало": "The model might only generate text",
+   "итог": "E-227-70"
+  },
+  {
+   "n": 116,
+   "начало": "Try asking for image outputs explicitly.",
+   "итог": "E-227-71"
+  },
+  {
+   "n": 117,
+   "начало": "The model may stop generating partway",
+   "итог": "E-227-72"
+  },
+  {
+   "n": 118,
+   "начало": "The model may generate text as",
+   "итог": "E-227-73"
+  },
+  {
+   "n": 119,
+   "начало": "If a prompt is potentially unsafe,",
+   "итог": "E-227-74"
+  },
+  {
+   "n": 120,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, 'Last updated 2026-09-24 UTC' — использовано в дате и официальности), виджет отзыва"
+  },
+  {
+   "n": 121,
+   "начало": "Learn Developer guides SDK & API",
+   "итог": "ничего: подвал сайта Firebase, языки"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-227-1",
+   "вид": "факт",
+   "утверждение_en": "Starting November 2, 2026, Firebase App Check enforcement will be required to use Firebase AI Logic.",
+   "цитата": "Starting November 2, 2026, Firebase App Check enforcement will be\nrequired\nto use Firebase AI Logic.",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Касается всех вызовов через Firebase AI Logic, включая генерацию картинок."
+  },
+  {
+   "код": "E-227-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 models will shut down in October 2026 and new projects cannot start using them; update to a newer model such as gemini-3.1-flash-image.",
+   "цитата": "Gemini 2.5 models will shut down in\nOctober 2026\n(and new projects cannot start\n    using them). To avoid service disruptions, update to a newer model (like\ngemini-3.8-flash\nor\ngemini-3.1-flash-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Затрагивает gemini-2.5-flash-image; прямо рекомендован переход на gemini-3.1-flash-image."
+  },
+  {
+   "код": "E-227-3",
+   "вид": "факт",
+   "утверждение_en": "Generating and editing images with Gemini models via the Firebase AI Logic SDKs is in Preview: not subject to any SLA or deprecation policy and could change in backwards-incompatible ways.",
+   "цитата": "is a feature that's in Preview, which means that it\nisn't subject to any SLA or deprecation policy and could change in\nbackwards-incompatible ways.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Статус функции в SDK."
+  },
+  {
+   "код": "E-227-4",
+   "вид": "факт",
+   "утверждение_en": "A Gemini Image model can generate and edit images from text-only and text-and-file prompts.",
+   "цитата": "Image model to generate and edit images using\nboth text-only and text-and-file prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-5",
+   "вид": "факт",
+   "утверждение_en": "You can iteratively generate images through conversation in natural language, adjusting images while maintaining consistency and context.",
+   "цитата": "Iteratively generate images through conversation with natural language,\nadjusting images while maintaining consistency and context.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-6",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models can generate images with high-quality text rendering, including long strings of text.",
+   "цитата": "Generate images with high-quality text rendering, including long strings of\ntext.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "'including long strings of text' — заявлена поддержка длинного текста."
+  },
+  {
+   "код": "E-227-7",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models can generate interleaved text-image output, e.g. a blog post with text and images in a single turn, which previously required stringing together multiple models.",
+   "цитата": "Generate interleaved text-image output. For example, a blog post with text and\nimages in a single turn. Previously, this required stringing together multiple\nmodels.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models can generate images using Gemini's world knowledge and reasoning capabilities.",
+   "цитата": "Generate images using Gemini's world knowledge and reasoning capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-9",
+   "вид": "факт",
+   "утверждение_en": "You can configure the response modality so the model generates only images, or both images and text.",
+   "цитата": "You can configure the\nresponse modality\nfor your request so that the\nmodel generates only images or both images and text. Find a",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-10",
+   "вид": "приём",
+   "утверждение_en": "For testing and iterating on prompts, Google recommends using Google AI Studio.",
+   "цитата": "For testing and iterating on your prompts, we recommend using\nGoogle AI Studio\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Before you begin",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-11",
+   "вид": "факт",
+   "утверждение_en": "Models supporting image generation/editing in Firebase AI Logic are gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2) and gemini-3.1-flash-lite-image (Nano Banana 2 Lite).",
+   "цитата": "gemini-3-pro-image\n(aka \"Nano Banana Pro\")\ngemini-3.1-flash-image\n(aka \"Nano Banana 2\")\ngemini-3.1-flash-lite-image\n(aka \"Nano Banana 2 Lite\")",
+   "источник_цитаты": "txt",
+   "раздел": "Before you begin / Models that support this capability",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Официальное соответствие id и 'aka'-имён."
+  },
+  {
+   "код": "E-227-12",
+   "вид": "факт",
+   "утверждение_en": "Image-generating Gemini 2.5 models support this capability but are all deprecated.",
+   "цитата": "Image-generating\nGemini 2.5\nmodels support this\ncapability, but they're all deprecated.",
+   "источник_цитаты": "txt",
+   "раздел": "Before you begin / Models that support this capability",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-13",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Image models require the pay-as-you-go Blaze pricing plan regardless of the Gemini API provider.",
+   "цитата": "The\nGemini\nImage models require the\npay-as-you-go Blaze pricing plan\nregardless of your\nGemini API",
+   "источник_цитаты": "txt",
+   "раздел": "Before you begin / Models that support this capability",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Бесплатного тарифа для image-моделей в Firebase нет."
+  },
+  {
+   "код": "E-227-14",
+   "вид": "ограничение",
+   "утверждение_en": "Image generation is not supported by general-use Gemini models like gemini-3.8-flash.",
+   "цитата": "Image generation is\nnot\nsupported by the general-use\nGemini\nmodels like\ngemini-3.8-flash",
+   "источник_цитаты": "txt",
+   "раздел": "Before you begin / Models that support this capability",
+   "модели": [
+    "gemini-3.8-flash (как пример общей модели)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Для картинок нужна именно image-модель."
+  },
+  {
+   "код": "E-227-15",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image and gemini-3.1-flash-lite-image support video input.",
+   "цитата": "Both of the following models support video input:\ngemini-3.1-flash-image\n(aka \"Nano Banana 2\") and\ngemini-3.1-flash-lite-image\n(aka \"Nano Banana 2 Lite\").",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-16",
+   "вид": "инструкция",
+   "утверждение_en": "A detailed video-input example is not yet available; providing a video file in the request is similar to providing an image file, as in the image-editing examples.",
+   "цитата": "A detailed example for that capability is coming soon! For now, the final two\nexamples in this section about editing an image show how to provide an image\nfile in the request, which is similar to providing a video file in the request.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Отдельный пример для видео обещан ('coming soon')."
+  },
+  {
+   "код": "E-227-17",
+   "вид": "инструкция",
+   "утверждение_en": "To generate images from text, create a GenerativeModel instance, include the IMAGE response modality in the model configuration, and call generateContent.",
+   "цитата": "You can ask a\nGemini\nImage model to generate images by prompting with\ntext.\nCreate a\nGenerativeModel\ninstance,\ninclude the response modality of\nIMAGE\nin your model configuration,\nand call\ngenerateContent\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate images (text-only input)",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Text-to-image example prompt used in the code samples.",
+   "цитата": "Generate an image of the Eiffel tower with fireworks in the background.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate images (text-only input)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Простейшая форма: команда 'Generate an image of' + объект + фон. В других SDK-примерах 'Eiffel Tower' с заглавной; этот же промпт повторён в списке Supported modalities."
+  },
+  {
+   "код": "E-227-19",
+   "вид": "факт",
+   "утверждение_en": "The code samples read the image from the first inline data part and explicitly handle the case where the response contains no image data (and, in the Web sample, a blocked prompt or candidate).",
+   "цитата": "No image data in response.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate images (text-only input)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка ошибки из Swift-примера; в Web-примере 'Prompt or candidate was blocked:', в Unity картинка ищется по MimeType 'image/png'."
+  },
+  {
+   "код": "E-227-20",
+   "вид": "факт",
+   "утверждение_en": "A Gemini Image model can generate interleaved images with its text responses, e.g. an image for each step of a generated recipe alongside the step's instructions, without separate requests or different models.",
+   "цитата": "Image model to generate interleaved images with\nits text responses. For example, you can generate images of what each step of a\ngenerated recipe might look like along with the step's instructions, and you\ndon't have to make separate requests to the model or different models.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate interleaved images and text",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-21",
+   "вид": "инструкция",
+   "утверждение_en": "For interleaved output, include both TEXT and IMAGE response modalities in the model configuration and call generateContent.",
+   "цитата": "Create a\nGenerativeModel\ninstance,\ninclude response modalities of\nTEXT\nand\nIMAGE\nin your model configuration,\nand call\ngenerateContent\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate interleaved images and text",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Interleaved text-and-image example prompt used in the code samples.",
+   "цитата": "Generate an illustrated recipe for a paella.\nCreate images to go alongside the text as you generate the recipe",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Generate interleaved images and text",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Два предложения: что сгенерировать (иллюстрированный рецепт) + явная просьба создавать картинки по ходу текста. Во Web-примере опечатка '.\\n.', в Dart нет точки; в списке Supported modalities — вариант 'Create images alongside the text as you generate the recipe.'"
+  },
+  {
+   "код": "E-227-23",
+   "вид": "факт",
+   "утверждение_en": "You can ask a Gemini Image model to edit images by prompting with text and one or more images.",
+   "цитата": "Image model to edit images by prompting with text\nand one or more images.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Edit images (text-and-image input)",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-editing example prompt used with an input image (scones) in the code samples.",
+   "цитата": "Edit this image to make it look like a cartoon",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Edit images (text-and-image input)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Дейктик 'this image' + целевой стиль. В коде картинка передаётся вместе с текстом (Web: generateContent([prompt, imagePart])). В Unity-примере с точкой в конце."
+  },
+  {
+   "код": "E-227-25",
+   "вид": "факт",
+   "утверждение_en": "Using multi-turn chat, you can iterate with a Gemini Image model on images it generates or that you supply.",
+   "цитата": "Using multi-turn chat, you can iterate with a\nGemini\nImage model on the\nimages that it generates or that you supply.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Iterate and edit images using multi-turn chat",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-26",
+   "вид": "инструкция",
+   "утверждение_en": "For iterative editing, include the IMAGE response modality and use startChat() and sendMessage() to send new user messages.",
+   "цитата": "Create a\nGenerativeModel\ninstance,\ninclude the response modality of\nIMAGE\nin your model configuration,\nand call\nstartChat()\nand\nsendMessage()\nto send new user messages.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Iterate and edit images using multi-turn chat",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-27",
+   "вид": "факт",
+   "утверждение_en": "In a chat session, follow-up requests do not need to specify the image again.",
+   "цитата": "Follow up requests do not need to specify the image again",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Iterate and edit images using multi-turn chat",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Из комментария в коде (повторён во всех SDK-примерах)."
+  },
+  {
+   "код": "E-227-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up chat prompt after 'Edit this image to make it look like a cartoon'.",
+   "цитата": "But make it old-school line drawing style",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images / Iterate and edit images using multi-turn chat",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "стиль"
+   ],
+   "заметка": "Уточнение стиля в следующем ходе, без повторной передачи картинки; начинается с 'But' — опирается на предыдущий ход."
+  },
+  {
+   "код": "E-227-29",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana Pro accepts up to 6 reference images of objects to include with high fidelity in the final image.",
+   "цитата": "Up to 6 images of objects with high-fidelity to include in the final image",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-30",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana Pro accepts up to 5 reference images of characters to maintain character consistency.",
+   "цитата": "Up to 5 images of characters to maintain character consistency",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-31",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana Pro accepts up to 3 images to be used as style references.",
+   "цитата": "Up to 3 images to be used as style references",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Слот style references назван только для Pro."
+  },
+  {
+   "код": "E-227-32",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana 2 accepts up to 10 object reference images (high fidelity) and up to 4 character reference images (character consistency).",
+   "цитата": "Gemini 3.x Flash Image\n(\ngemini-3.1-flash-image\n, aka \"Nano Banana 2\"):\nUp to 10 images of objects with high-fidelity to include in the final image\nUp to 4 images of characters to maintain character consistency",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-33",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana 2 Lite accepts up to 10 object reference images (high fidelity) and up to 4 character reference images (character consistency).",
+   "цитата": "Gemini 3.x Flash‑Lite Image\n(\ngemini-3.1-flash-lite-image\n, aka \"Nano Banana 2 Lite\"):\nUp to 10 images of objects with high-fidelity to include in the final image\nUp to 4 images of characters to maintain character consistency",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-34",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image (Nano Banana) accepts up to 3 reference images.",
+   "цитата": "Gemini 2.5 Flash Image\n(\ngemini-2.5-flash-image\n, aka \"Nano Banana\"):\nUp to 3 images",
+   "источник_цитаты": "txt",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Без разбивки на объекты/персонажей/стиль."
+  },
+  {
+   "код": "E-227-35",
+   "вид": "факт",
+   "утверждение_en": "By default, Gemini Image models generate square images (1:1 aspect ratio) at 1024x1024 resolution.",
+   "цитата": "By default,\nGemini\nImage models generate square images\n(1:1 aspect ratio) at 1024x1024 resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-36",
+   "вид": "инструкция",
+   "утверждение_en": "You can customize output images using the imageConfig property within generationConfig, with aspect-ratio and image-size enums.",
+   "цитата": "You can customize the output of your\ngenerated images using the\nimageConfig\nproperty within\ngenerationConfig\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-37",
+   "вид": "факт",
+   "утверждение_en": "A 16:9 aspect ratio at 2K resolution results in a 2752x1536 image.",
+   "цитата": "For example, you can configure the output image using aspect\nratio and image size enums (such as a 16:9 aspect ratio and 2K resolution,\nresulting in a 2752x1536 image), like so:",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Пиксели при 2K для 16:9: длинная сторона 2752, а не 2048."
+  },
+  {
+   "код": "E-227-38",
+   "вид": "факт",
+   "утверждение_en": "In the image-config samples, the TEXT response modality is optional and IMAGE is required; include TEXT only if you want interleaved text and images in the response.",
+   "цитата": "// Configure the model to respond with text (optional) and images (required).\n// Include the text modality only if you want interleaved text and images in the response.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Из комментариев в коде (Swift/Kotlin и др.)."
+  },
+  {
+   "код": "E-227-39",
+   "вид": "факт",
+   "утверждение_en": "Aspect ratio and image size are both optional fields of the image config.",
+   "цитата": "Specify aspect ratio and image size (both optional) in an image config.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Если не заданы — действуют значения по умолчанию (1:1, 1K)."
+  },
+  {
+   "код": "E-227-40",
+   "вид": "факт",
+   "утверждение_en": "In the Web SDK, aspect ratio and size are set with enums such as ImageConfigAspectRatio.LANDSCAPE_16x9 and ImageConfigImageSize.SIZE_2K (other SDKs: AspectRatio.LANDSCAPE_16x9 / ImageSize.SIZE_2K, .landscape16x9 / .size2K, etc.).",
+   "цитата": "aspectRatio\n:\nImageConfigAspectRatio\n.\nLANDSCAPE_16x9",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Цитата из токенизированного кода в .txt (строки 4843-4847). В Dart-примере ошибка синтаксиса: model: 'gemini-3.1-flash-image, (незакрытая кавычка)."
+  },
+  {
+   "код": "E-227-41",
+   "вид": "лимит",
+   "утверждение_en": "All Gemini Image models support aspect ratios 1:1, 1:4, 1:8, 2:3, 3:2, 3:4, 4:1, 4:3, 4:5, 5:4, 8:1, 9:16, 16:9 and 21:9; the default is 1:1 (square).",
+   "цитата": "All\nGemini\nImage models support the following aspect ratios:\nDefault:\n1:1\n(square)\n1:1\n,\n1:4\n,\n1:8\n,\n2:3\n,\n3:2\n,\n3:4\n,\n4:1\n,\n4:3\n,\n4:5\n,\n5:4\n,\n8:1\n,\n9:16\n,\n16:9\n,\n21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported aspect ratios",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "14 соотношений, включая крайние 1:8 и 8:1. Сказано 'All', т.е. и для 2.5."
+  },
+  {
+   "код": "E-227-42",
+   "вид": "факт",
+   "утверждение_en": "Supported image sizes (resolutions) depend on the model.",
+   "цитата": "Supported image sizes (resolutions) depend on the model you're using.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-43",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana Pro supports sizes 1K (1024), 2K (2048) and 4K (4096); default 1K.",
+   "цитата": "Gemini 3.x Pro Image\ngemini-3-pro-image\n(\"Nano Banana Pro\")\nDefault:\n1K\n(1024)\n1K\n(1024),\n2K\n(2048),\n4K\n(4096)",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-44",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana 2 supports sizes 512, 1K (1024), 2K (2048) and 4K (4096); default 1K.",
+   "цитата": "Gemini 3.x Flash Image\ngemini-3.1-flash-image\n(\"Nano Banana 2\")\nDefault:\n1K\n(1024)\n512\n,\n1K\n(1024),\n2K\n(2048),\n4K\n(4096)",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Единственная модель с диапазоном от 512 до 4K."
+  },
+  {
+   "код": "E-227-45",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana 2 Lite supports 512 (Gemini Developer API only) and 1K (1024); default 1K.",
+   "цитата": "Gemini 3.x Flash‑Lite Image\ngemini-3.1-flash-lite-image\n(\"Nano Banana 2 Lite\")\nDefault:\n1K\n(1024)\n512\n(\nGemini Developer API\nonly)\n,\n1K\n(1024)",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Потолок Lite — 1K; 512 только в Gemini Developer API."
+  },
+  {
+   "код": "E-227-46",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image output size is fixed at 1K (1024).",
+   "цитата": "Gemini 2.5 Flash Image\ngemini-2.5-flash-image\n(\"Nano Banana\")\nFixed at\n1K\n(1024)",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-47",
+   "вид": "правило",
+   "утверждение_en": "Image size values must use an uppercase K suffix (1K, 2K, 4K); 512 has no K suffix; a lowercase k (e.g. 1k) will be rejected.",
+   "цитата": "You must use an uppercase\nK\nsuffix (that is,\n1K\n,\n2K\n,\n4K\n).\nThe\n512\nvalue does not use a\nK\nsuffix.\nA lowercase\nk\nsuffix (for example,\n1k\n) will be rejected.",
+   "источник_цитаты": "txt",
+   "раздел": "Configure image generation / Supported image sizes (resolutions)",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "'must' + 'will be rejected' — жёсткое требование формата значения."
+  },
+  {
+   "код": "E-227-48",
+   "вид": "объяснение",
+   "утверждение_en": "The listed 'modalities' are not explicitly set in requests; they are recommended patterns for common use cases, each with an example prompt and a code sample.",
+   "цитата": "These \"modalities\" aren't explicitly set in your requests. They're more like\nrecommended patterns for common use cases. Each modality in this list shows an\nexample prompt and has an example code sample earlier in this guide.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Отличает 'модальности' списка от параметра responseModalities."
+  },
+  {
+   "код": "E-227-49",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for text rendering within an image (Text → Image).",
+   "цитата": "Generate a cinematic photo of a large building with this giant text\nprojection mapped on the front of the building.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Тип кадра ('cinematic photo') + объект + способ размещения текста ('giant text projection mapped on the front'). Сам текст не указан ('this giant text') — пример неполный: неясно, откуда модель берёт текст."
+  },
+  {
+   "код": "E-227-50",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for interleaved text-and-image output (Text → Images & Text).",
+   "цитата": "Generate a story about a dog in a 3D cartoon animation style.\nFor each scene, generate an image.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "стиль"
+   ],
+   "заметка": "Задача (история) + стиль ('3D cartoon animation style') + правило разбиения ('For each scene, generate an image.')."
+  },
+  {
+   "код": "E-227-51",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for Images & Text → Images & Text (interleaved), with an image of a furnished room.",
+   "цитата": "[image of a furnished room] +\nWhat other color sofas would work in my space? Can you update the image?",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Вопрос + просьба обновить картинку: модель должна ответить текстом и изменённым изображением."
+  },
+  {
+   "код": "E-227-52",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example multi-image editing prompt with an image of a cat and an image of a pillow.",
+   "цитата": "[image of a cat] + [image of a pillow] +\nCreate a cross stitch of my cat on this pillow.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Два рефа адресованы по содержанию ('my cat', 'this pillow'); техника результата названа ('cross stitch')."
+  },
+  {
+   "код": "E-227-53",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example multi-turn editing chain with an image of a blue car: first turn, then second turn.",
+   "цитата": "[image of a blue car] +\nTurn this car into a convertible.\n, then\nNow change the color to yellow.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported modalities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Ход 1 меняет форму ('convertible'), ход 2 — цвет ('Now change the color'); одно изменение за ход."
+  },
+  {
+   "код": "E-227-54",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search is supported by Nano Banana Pro and Nano Banana 2.",
+   "цитата": "Support for\nGrounding with\nGoogle Search\n:\nGemini 3.x Pro Image\n(\ngemini-3-pro-image\n, aka \"Nano Banana Pro\")\nGemini 3.x Flash Image\n(\ngemini-3.1-flash-image\n, aka \"Nano Banana 2\")",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported tools",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Lite и 2.5 в списке нет."
+  },
+  {
+   "код": "E-227-55",
+   "вид": "факт",
+   "утверждение_en": "All Gemini Image models accept image input.",
+   "цитата": "Image input: All of the\nGemini\nImage models.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-56",
+   "вид": "факт",
+   "утверждение_en": "Video input is supported by Nano Banana 2 and Nano Banana 2 Lite.",
+   "цитата": "Video input:\nGemini 3.x Flash Image\n(\ngemini-3.1-flash-image\n, aka \"Nano Banana 2\")\nGemini 3.x Flash‑Lite Image\n(\ngemini-3.1-flash-lite-image\n, aka \"Nano Banana 2 Lite\")",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-57",
+   "вид": "ограничение",
+   "утверждение_en": "None of the Gemini Image models accept audio input.",
+   "цитата": "Audio input: None of the\nGemini\nImage models.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-58",
+   "вид": "факт",
+   "утверждение_en": "All Gemini Image models generate PNG images.",
+   "цитата": "Generating PNG images.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-59",
+   "вид": "факт",
+   "утверждение_en": "All Gemini Image models support generating and editing images of people.",
+   "цитата": "Generating and editing images of people.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-60",
+   "вид": "факт",
+   "утверждение_en": "All Gemini Image models use safety filters that provide a flexible and less restrictive user experience.",
+   "цитата": "Using safety filters that provide a flexible and less restrictive user\nexperience.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-61",
+   "вид": "факт",
+   "утверждение_en": "Generating structured output (like JSON) is supported by Nano Banana Pro.",
+   "цитата": "Support for\ngenerating structured output (like JSON)\n:\nGemini 3.x Pro Image\n(\ngemini-3-pro-image\n, aka \"Nano Banana Pro\")",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Other supported capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Только Pro."
+  },
+  {
+   "код": "E-227-62",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models support over 35 languages, but the listed languages give the best performance.",
+   "цитата": "While the\nGemini\nImage models\nsupport over 35 languages\n, the languages\nlisted in this section will give you the best performance.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-63",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3.x Image models the best-performing prompt languages are ar-EG, de-DE, EN, es-MX, fr-FR, hi-IN, id-ID, it-IT, ja-JP, ko-KR, pt-BR, ru-RU, ua-UA, vi-VN, zh-CN.",
+   "цитата": "Gemini 3.x Image\nmodels:\nar-EG\n,\nde-DE\n,\nEN\n,\nes-MX\n,\nfr-FR\n,\nhi-IN\n,\nid-ID\n,\nit-IT\n,\nja-JP\n,\nko-KR\n,\npt-BR\n,\nru-RU\n,\nua-UA\n,\nvi-VN\n,\nzh-CN",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Русский (ru-RU) в списке."
+  },
+  {
+   "код": "E-227-64",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 2.5 Flash Image the best-performing prompt languages are EN, es-MX, ja-JP, zh-CN, hi-IN.",
+   "цитата": "Gemini 2.5 Flash Image\nmodel:\nEN\n,\nes-MX\n,\nja-JP\n,\nzh-CN\n,\nhi-IN\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-65",
+   "вид": "факт",
+   "утверждение_en": "Text within generated images: Gemini 3.x Image models support the same languages as the prompt list; Gemini 2.5 Flash Image supports only English.",
+   "цитата": "Supported languages for the text within the generated image:\nGemini 3.x Image\nmodels: same languages as the list above\nGemini 2.5 Flash Image\nmodel: only English",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-66",
+   "вид": "приём",
+   "утверждение_en": "To use a specific language within a generated image, even without the language code, just ask the model in the prompt.",
+   "цитата": "To use a specific language within a generated image (even without the\nlanguage code), just ask the model within your prompt (for example,",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-67",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for changing the language of text inside an image.",
+   "цитата": "Update this infographic to be in Spanish. Do not change any other elements of the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features / Supported languages",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Правка + явная фиксация остального ('Do not change any other elements of the image.')."
+  },
+  {
+   "код": "E-227-68",
+   "вид": "правило",
+   "утверждение_en": "When generating an image containing text, first generate the text and then generate an image with that text.",
+   "цитата": "When generating an image containing text, first generate the text and then\ngenerate an image with that text.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Двухшаговый процесс: текст отдельно, потом картинка с ним."
+  },
+  {
+   "код": "E-227-69",
+   "вид": "предупреждение",
+   "утверждение_en": "Image generation may not always trigger, and image or text generation might not work as expected in some situations.",
+   "цитата": "Image generation may not always trigger. Also, image or text generation might\nnot work as expected in these situations:",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-70",
+   "вид": "факт",
+   "утверждение_en": "The model might generate only text and no image, especially if the prompt is ambiguous; in that case the FinishReason is NO_IMAGE.",
+   "цитата": "The model might only generate text and no image (especially if the prompt is\nambiguous). If this happens, the\nFinishReason\nis\nNO_IMAGE\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-71",
+   "вид": "приём",
+   "утверждение_en": "Try asking for image outputs explicitly, e.g. 'generate an image', 'provide images as you go along', 'update the image'.",
+   "цитата": "Try asking for image outputs explicitly. For example, \"generate an image\",\n\"provide images as you go along\", \"update the image\".",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Лекарство от NO_IMAGE."
+  },
+  {
+   "код": "E-227-72",
+   "вид": "предупреждение",
+   "утверждение_en": "The model may stop generating partway through; try again or try a different prompt.",
+   "цитата": "The model may stop generating partway through.\nTry again or try a different prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-73",
+   "вид": "приём",
+   "утверждение_en": "The model may generate text as an image; try asking for text outputs explicitly, e.g. 'generate narrative text along with illustrations'.",
+   "цитата": "The model may generate text as an image.\nTry asking for text outputs explicitly. For example, \"generate narrative\ntext along with illustrations\".",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-74",
+   "вид": "факт",
+   "утверждение_en": "If a prompt is potentially unsafe, the model might not process the request and instead return a response saying it can't create unsafe images; the FinishReason is STOP.",
+   "цитата": "If a prompt is potentially unsafe, the model might not process the request\nand instead return a response indicating that it can't create unsafe images.\nIf this happens, the\nFinishReason\nis\nSTOP\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-227-75",
+   "вид": "факт",
+   "утверждение_en": "Per-model summary from this page: Nano Banana Pro — 6 object / 5 character / 3 style refs, sizes 1K–4K, Search grounding, JSON output, no video input; Nano Banana 2 — 10 object / 4 character refs, sizes 512–4K, Search grounding, video input; Nano Banana 2 Lite — 10 object / 4 character refs, sizes 512 (Developer API only)–1K, video input, no Search grounding listed; Gemini 2.5 Flash Image — up to 3 refs, fixed 1K, English-only in-image text, deprecated.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Provide reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-227-29, E-227-30, E-227-31, E-227-32, E-227-33, E-227-34, E-227-43, E-227-44, E-227-45, E-227-46, E-227-54, E-227-61, E-227-56, E-227-65, E-227-12",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сводная таблица из разрозненных разделов."
+  },
+  {
+   "код": "E-227-76",
+   "вид": "правило",
+   "утверждение_en": "The page repeatedly signals that a response may lack an image (code guards for missing image data, NO_IMAGE when text only, generation may stop partway, unsafe prompt returns text with STOP), so callers should check the response parts for an image rather than rely on a successful call.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-227-19, E-227-69, E-227-70, E-227-72, E-227-74",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Вывод для конвейера: наличие картинки проверяется по частям ответа."
+  },
+  {
+   "код": "E-227-77",
+   "вид": "приём",
+   "утверждение_en": "Response modalities set what may come back, but the page also advises asking explicitly in the prompt for images (and for text when wanted); all example prompts open with an explicit verb such as 'Generate…', 'Create…', 'Edit this image…', 'Turn this…'.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Best practices",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-227-9, E-227-21, E-227-71, E-227-73, E-227-18, E-227-22, E-227-24, E-227-50, E-227-52, E-227-53",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-78",
+   "вид": "факт",
+   "утверждение_en": "On this page aspect ratio and size are controlled only through imageConfig enums (defaults 1:1 and 1K when unset); no example sets them in prompt text.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Configure image generation",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-227-35, E-227-36, E-227-39, E-227-41, E-227-43, E-227-44, E-227-45, E-227-46",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-227-79",
+   "вид": "приём",
+   "утверждение_en": "The multi-turn examples change one thing per turn (shape, then colour; cartoon, then line-drawing style) and do not resend the image in follow-ups.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Generate and edit images / Iterate and edit images using multi-turn chat",
+   "модели": "все Gemini Image модели (раскрыто из фразы 'Gemini Image models' по списку моделей страницы): gemini-3-pro-image (Nano Banana Pro), gemini-3.1-flash-image (Nano Banana 2), gemini-3.1-flash-lite-image (Nano Banana 2 Lite) (+ устаревшие 2.5)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-227-53, E-227-24, E-227-28, E-227-27",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Метки размеров '1K (1024)', '2K (2048)' и т.п. не равны пикселям для не-квадратных форматов: 16:9 при 2K даёт 2752x1536 (E-227-37) — длинная сторона больше 2048. Страница этого не объясняет.",
+  "Тексты промптов в SDK-примерах расходятся: 'Eiffel tower'/'Eiffel Tower'; paella с '.\\n.' во Web и без точки в Dart; 'cartoon.' с точкой в Unity.",
+  "В Dart-примере imageConfig ошибка синтаксиса: model: 'gemini-3.1-flash-image, (незакрытая кавычка).",
+  "2.5 Flash Image объявлена устаревшей (с отключением в октябре 2026), но продолжает описываться в таблицах рефов, размеров и языков."
+ ],
+ "не_сказано": [
+  "Лимит style-референсов для Nano Banana 2, Lite и 2.5 (назван только у Pro); суммарный предел входных картинок при сочетании объектов и персонажей.",
+  "Точные пиксельные размеры для остальных соотношений и размеров (дан один пример 2752x1536).",
+  "Нет ни слова о thinking/уровнях рассуждения для image-моделей, о SynthID/водяном знаке, о ценах (только требование тарифа Blaze).",
+  "Нет примера использования Grounding with Google Search для картинок и примера ввода видео ('coming soon').",
+  "Порядок частей в запросе (текст до/после картинки) не сформулирован как правило — в примерах промпт идёт первым.",
+  "Какие именно safety-фильтры и как их настраивать — только 'flexible and less restrictive'."
+ ],
+ "сомнения": [
+  "Второй признак официальности — лицензионная строка и подвал Firebase, без строки Copyright Google LLC.",
+  "Код в .txt токенизирован (по токену на строку); содержание кодовых блоков проверено скриптом на совпадение с <pre> в html (30 блоков, совпадают с точностью до 1-2 символов на стыках), читалось в html-виде.",
+  "Цитата E-227 'enums' — из токенизированного кода .txt, с переводами строк между токенами.",
+  "Единица 'noimg' опирается на строку ошибки из кода — это вывод о поведении SDK-примеров, а не формулировка текста."
+ ]
+}

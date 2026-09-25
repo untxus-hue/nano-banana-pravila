@@ -1,0 +1,710 @@
+{
+ "id": 136,
+ "url": "https://deepmind.google/models/gemini-image/",
+ "заголовок": "Gemini Image – Nano Banana — Google DeepMind",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "deepmind.google",
+  "второй_признак": "форма подписки на странице: 'I accept Google's Terms and Conditions and acknowledge that my information will be used in accordance with Google's Privacy Policy'; подвал 'About Google / Google products / Privacy / Terms'; текст от лица Google ('Our fastest, most efficient Gemini Image model… at our lowest cost yet'). Строки Copyright Google DeepMind/Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Хаб-страница семейства Gemini Image (Nano Banana) на deepmind.google для широкой аудитории и разработчиков. Дат нет ни в тексте, ни в meta html. ~65% текста — мега-меню и подвал DeepMind. Содержание: карусель из 4 слайдов (семейство Nano Banana, Nano Banana 2 Lite, Nano Banana 2, Nano Banana Pro) с кнопками Try/Build (в html — ID моделей AI Studio); Overview (глубокое понимание языка); Capabilities (Multimodal understanding, Conversational inputs, Real-world knowledge); Model family (три карточки: Gemini 3 Pro Image = Nano Banana Pro, Gemini 3.1 Flash Image = Nano Banana 2, Gemini 3.1 Flash-Lite Image = Nano Banana 2 Lite); Creating your prompts (один совет: детальные промпты — персонажи, место, настроение); Try Nano Banana (Gemini, Google Pics, AI Studio, Gemini API, Agent Platform). Термины: Gemini Image model(s), natively multimodal, conversational inputs, real-world logic, Flash speed, studio-quality. Повторно подчёркнуто: детальность промпта и позиционирование Pro/Flash/Lite. Картинки-примеры есть только как alt-описания в html; кодовых блоков нет. Оригинальная Nano Banana (gemini-2.5-flash-image) по имени модели на странице не названа.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro; в html-ссылке gemini-3-pro-image-preview)",
+  "gemini-3.1-flash-image (Nano Banana 2; в html-ссылке gemini-3.1-flash-image-preview)",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "'Nano Banana' как имя семейства",
+  "Gemini 3 (основа Pro)"
+ ],
+ "структура": [
+  "Мега-меню DeepMind (дважды)",
+  "Переключатель сайтов Google",
+  "Hero-карусель: Nano Banana / Nano Banana 2 Lite / Nano Banana 2 / Nano Banana Pro",
+  "Explore the latest",
+  "Overview",
+  "Capabilities: Multimodal understanding; Conversational inputs; Real-world knowledge",
+  "Model family: Nano Banana Pro; Nano Banana 2; Nano Banana 2 Lite",
+  "Creating your prompts",
+  "Try Nano Banana: Gemini; Google Pics; Google AI Studio; Gemini API; Gemini Enterprise Agent Platform",
+  "Follow us (форма подписки)",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Gemini Image – Nano Banana — Google DeepMind",
+   "итог": "ничего: заголовок страницы, строки 1-2"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Explore our next generation AI systems",
+   "итог": "ничего: обвязка сайта — мега-меню DeepMind (Models: Gemini, Gemini Omni, Nano Banana 'Create and edit detailed images', Veo…; Research; Science; About), строки 3-122"
+  },
+  {
+   "n": 3,
+   "начало": "Models Explore our next generation AI systems (повтор меню)",
+   "итог": "ничего: обвязка сайта — повтор мега-меню, совпадает по составу со строками 5-122 (включая слоган Nano Banana 'Create and edit detailed images'), строки 124-249"
+  },
+  {
+   "n": 4,
+   "начало": "Build with Gemini Try Gemini / Google DeepMind / Google AI Learn about all our AI",
+   "итог": "ничего: обвязка сайта — переключатель сайтов Google и продуктов, строки 250-277"
+  },
+  {
+   "n": 5,
+   "начало": "Slide 1 of 4",
+   "итог": "ничего: служебная метка карусели, строка 279"
+  },
+  {
+   "n": 6,
+   "начало": "Nano Banana 🍌 State-of-the-art image generation and editing models, built on Gemini",
+   "итог": "E-136-1 (строки 281-283) + alt картинки слайда → E-136-15"
+  },
+  {
+   "n": 7,
+   "начало": "Try in Gemini / Build with Nano Banana / View prompt guide",
+   "итог": "E-136-14 (href кнопки Build with Nano Banana в html); остальное — навигация, строки 285-287"
+  },
+  {
+   "n": 8,
+   "начало": "Nano Banana 2 Lite 🍌 Our fastest, most efficient Gemini Image model.",
+   "итог": "E-136-2 (строки 289-291) + alt картинки слайда → E-136-16"
+  },
+  {
+   "n": 9,
+   "начало": "Build with Nano Banana 2 Lite",
+   "итог": "E-136-14 (href в html: model=gemini-3.1-flash-lite-image), строка 293"
+  },
+  {
+   "n": 10,
+   "начало": "Nano Banana 2 🍌 Gemini 3.1 Flash Image offers pro-level image generation",
+   "итог": "E-136-3 (строки 295-297) + alt картинки слайда → E-136-17"
+  },
+  {
+   "n": 11,
+   "начало": "Try in Gemini / Build with Nano Banana 2",
+   "итог": "E-136-14 (href в html: model=gemini-3.1-flash-image-preview), строки 299-301"
+  },
+  {
+   "n": 12,
+   "начало": "Nano Banana Pro 🍌 Built on Gemini 3. Create and edit images with studio-quality",
+   "итог": "E-136-4 (строки 303-305) + alt картинки слайда → E-136-18"
+  },
+  {
+   "n": 13,
+   "начало": "Try in Gemini / Build with Nano Banana Pro",
+   "итог": "E-136-14 (href в html: model=gemini-3-pro-image-preview), строки 307-309"
+  },
+  {
+   "n": 14,
+   "начало": "Explore the latest",
+   "итог": "ничего: заголовок блока, строка 311"
+  },
+  {
+   "n": 15,
+   "начало": "Imagine almost anything – then create it. Generate detailed, playful, realistic, or whimsical images.",
+   "итог": "ничего: маркетинг без содержания (перечень настроений без указаний), строка 313"
+  },
+  {
+   "n": 16,
+   "начало": "Overview / Model family / Try Nano Banana",
+   "итог": "ничего: вкладки-навигация, строки 315-317"
+  },
+  {
+   "n": 17,
+   "начало": "The Gemini Image model uses deep language understanding",
+   "итог": "E-136-5 (строка 319)"
+  },
+  {
+   "n": 18,
+   "начало": "Capabilities",
+   "итог": "ничего: заголовок раздела, строка 321; иконки разделов в html (alt 'An icon of …') — ничего: декоративные иконки"
+  },
+  {
+   "n": 19,
+   "начало": "Multimodal understanding Upload images and share text instructions",
+   "итог": "E-136-6 (строки 323-325)"
+  },
+  {
+   "n": 20,
+   "начало": "Conversational inputs Use everyday language while creating images",
+   "итог": "E-136-7 (строки 327-329)"
+  },
+  {
+   "n": 21,
+   "начало": "Real-world knowledge Generate images that follow real-world logic",
+   "итог": "E-136-8 (строки 331-333)"
+  },
+  {
+   "n": 22,
+   "начало": "Model family Gemini Image models are natively multimodal",
+   "итог": "E-136-9 (строки 335-336)"
+  },
+  {
+   "n": 23,
+   "начало": "Gemini 3 Pro Image Nano Banana Pro Create and edit images with studio-quality … Learn more",
+   "итог": "E-136-10 (строки 338-344; слоган — повтор E-136-4) + alt картинки карточки → E-136-19"
+  },
+  {
+   "n": 24,
+   "начало": "Gemini 3.1 Flash Image Nano Banana 2 Pro-level image generation and editing, at Flash speed … Learn more",
+   "итог": "E-136-11 (строки 346-352) + alt картинки карточки — повтор E-136-17"
+  },
+  {
+   "n": 25,
+   "начало": "Gemini 3.1 Flash-Lite Image Nano Banana 2 Lite Generate and edit images faster … Learn more",
+   "итог": "E-136-12 (строки 354-360) + alt картинки карточки — повтор E-136-16"
+  },
+  {
+   "n": 26,
+   "начало": "Creating your prompts Use detailed prompts to take more control",
+   "итог": "E-136-13 (строки 362-364) + alt иллюстрации → E-136-20"
+  },
+  {
+   "n": 27,
+   "начало": "Learn how to prompt",
+   "итог": "ничего: ссылка на /models/gemini-image/prompt-guide/ (навигация), строка 366"
+  },
+  {
+   "n": 28,
+   "начало": "Try Nano Banana Gemini Image / Gemini Supercharge your creativity and productivity / Try in Gemini",
+   "итог": "ничего: маркетинг без содержания; поверхность Gemini учтена в E-136-21, строки 368-375"
+  },
+  {
+   "n": 29,
+   "начало": "Google Pics Create and refine images using Google's most advanced AI",
+   "итог": "E-136-21 (строки 377-381)"
+  },
+  {
+   "n": 30,
+   "начало": "Google AI Studio The fastest path from prompt to production / Gemini API / Gemini Enterprise Agent Platform",
+   "итог": "ничего: маркетинг/навигация; поверхности перечислены в E-136-21, строки 383-399"
+  },
+  {
+   "n": 31,
+   "начало": "Follow us Sign up for updates … I accept Google's Terms and Conditions",
+   "итог": "ничего: форма подписки (признак официальности: Google's Terms and Conditions / Privacy Policy), строки 401-407"
+  },
+  {
+   "n": 32,
+   "начало": "Build AI responsibly to benefit humanity Models Gemini … Cookies management controls",
+   "итог": "ничего: обвязка сайта — подвал (About Google, Privacy, Terms), строки 409-472"
+  },
+  {
+   "n": 33,
+   "начало": "ДЛИННАЯ ДИСТАНЦИЯ (вся страница)",
+   "итог": "E-136-22, E-136-23, E-136-24, E-136-25"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-136-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is presented as a family of state-of-the-art image generation and editing models built on Gemini.",
+   "цитата": "State-of-the-art image generation and editing models, built on Gemini",
+   "источник_цитаты": "txt",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Тот же текст в meta description html. 'Nano Banana' здесь — имя семейства, не конкретная модель; кнопка 'Build with Nano Banana' этого слайда ведёт в AI Studio на gemini-3.1-flash-image-preview (см. E-136-14)."
+  },
+  {
+   "код": "E-136-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite is described as the fastest, most efficient Gemini Image model, built for high-speed generation and editing at Google's lowest cost yet.",
+   "цитата": "Our fastest, most efficient Gemini Image model. Built to deliver high-speed generation and editing at our lowest cost yet.",
+   "источник_цитаты": "txt",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana 2 Lite",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Цифр цены/скорости нет — только позиционирование."
+  },
+  {
+   "код": "E-136-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is Gemini 3.1 Flash Image and offers pro-level image generation and editing at Flash speed.",
+   "цитата": "Gemini 3.1 Flash Image offers pro-level image generation and editing, at Flash speed",
+   "источник_цитаты": "txt",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana 2",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Слайд подписан 'Nano Banana 2 🍌' — прямое соответствие имени и модели."
+  },
+  {
+   "код": "E-136-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is built on Gemini 3 and creates and edits images with studio-quality levels of precision and control.",
+   "цитата": "Built on Gemini 3. Create and edit images with studio-quality levels of precision and control",
+   "источник_цитаты": "txt",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana Pro",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Слоган повторяется в карточке Model family (строка 342)."
+  },
+  {
+   "код": "E-136-5",
+   "вид": "объяснение",
+   "утверждение_en": "The Gemini Image model uses deep language understanding to capture the nuance of prompts, bridging the gap between what the user says and what they envision.",
+   "цитата": "The Gemini Image model uses deep language understanding to capture the nuance of your prompts — bridging the gap between what you say and what you envision.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Механизм описан на уровне маркетинга: понимание языка = учёт нюансов формулировки. Основание для развёрнутых естественно-языковых промптов."
+  },
+  {
+   "код": "E-136-6",
+   "вид": "факт",
+   "утверждение_en": "You can upload images and share text instructions with Gemini to create complex and detailed images (multimodal understanding).",
+   "цитата": "Upload images and share text instructions with Gemini to create complex and detailed images.",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities / Multimodal understanding",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Картинки на входе + текстовая инструкция. Лимитов на число картинок здесь нет."
+  },
+  {
+   "код": "E-136-7",
+   "вид": "приём",
+   "утверждение_en": "Use everyday language while creating images and keep the conversation going to refine what the model generates.",
+   "цитата": "Use everyday language while creating images, and keep the conversation going to refine what the model generates.",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities / Conversational inputs",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "промптинг"
+   ],
+   "заметка": "Итеративная доработка в диалоге вместо одного исчерпывающего промпта; обычный язык, без спецсинтаксиса."
+  },
+  {
+   "код": "E-136-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models generate images that follow real-world logic thanks to Gemini's advanced reasoning capabilities.",
+   "цитата": "Generate images that follow real-world logic, thanks to Gemini’s advanced reasoning capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities / Real-world knowledge",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "thinking"
+   ],
+   "заметка": "Апостроф в цитате — типографский (’)."
+  },
+  {
+   "код": "E-136-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models are natively multimodal and respond effectively and efficiently to even the most detailed prompts.",
+   "цитата": "Gemini Image models are natively multimodal, and respond effectively and efficiently to even the most detailed prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Model family",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "модели_сравнение"
+   ],
+   "заметка": "Поддерживает совет Creating your prompts (E-136-13): длинные детальные промпты не вредят."
+  },
+  {
+   "код": "E-136-10",
+   "вид": "факт",
+   "утверждение_en": "In the Model family list, Gemini 3 Pro Image is labelled Nano Banana Pro, with the tagline 'Create and edit images with studio-quality levels of precision and control'.",
+   "цитата": "Gemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "Model family / карточка Nano Banana Pro",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Карточка: 'Gemini 3 Pro Image' / 'Nano Banana Pro' / слоган (повтор E-136-4) / Learn more. Иллюстрация карточки — E-136-19."
+  },
+  {
+   "код": "E-136-11",
+   "вид": "факт",
+   "утверждение_en": "In the Model family list, Gemini 3.1 Flash Image is labelled Nano Banana 2: pro-level image generation and editing at Flash speed.",
+   "цитата": "Pro-level image generation and editing, at Flash speed",
+   "источник_цитаты": "txt",
+   "раздел": "Model family / карточка Nano Banana 2",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Карточка строки 346-352; смысл повторяет E-136-3, добавлено только имя в паре с 'Gemini 3.1 Flash Image'."
+  },
+  {
+   "код": "E-136-12",
+   "вид": "факт",
+   "утверждение_en": "In the Model family list, Gemini 3.1 Flash-Lite Image is labelled Nano Banana 2 Lite and generates and edits images faster and more efficiently than ever before.",
+   "цитата": "Generate and edit images faster and more efficiently than ever before.",
+   "источник_цитаты": "txt",
+   "раздел": "Model family / карточка Nano Banana 2 Lite",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Карточка строки 354-360. aria-label ссылки в html: 'Learn more about Nano Banana Lite' (без '2') — см. противоречия_внутри."
+  },
+  {
+   "код": "E-136-13",
+   "вид": "правило",
+   "утверждение_en": "Use detailed prompts to take more control over generated images: think about the characters, the setting and the overall feel; the more detail you add, the closer the image will be to what you imagined.",
+   "цитата": "Use detailed prompts to take more control over the images you generate. Think about what you want to see – the characters, the setting, and the overall feel. The more detail you add, the closer the image will be to what you’ve imagined.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating your prompts",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Единственный прямой совет по промптингу на странице. Три оси: персонажи, место действия, общее настроение. Ссылка 'Learn how to prompt' ведёт на /models/gemini-image/prompt-guide/."
+  },
+  {
+   "код": "E-136-14",
+   "вид": "факт",
+   "утверждение_en": "The page's AI Studio 'Build with' buttons open these model IDs: gemini-3-pro-image-preview (Nano Banana Pro), gemini-3.1-flash-image-preview (Nano Banana 2, also used by the generic 'Build with Nano Banana' button) and gemini-3.1-flash-lite-image (Nano Banana 2 Lite, without a -preview suffix).",
+   "цитата": "prompts/new_chat?model=gemini-3.1-flash-lite-image",
+   "источник_цитаты": "html",
+   "раздел": "Hero-карусель (ссылки кнопок Build with …)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из href кнопок в html (в .txt ссылок нет)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Остальные href: 'aistudio.google.com/prompts/new_chat?model=gemini-3-pro-image-preview' (Build with Nano Banana Pro) и '…?model=gemini-3.1-flash-image-preview' (Build with Nano Banana 2 и Build with Nano Banana). ID из ссылок, не из текста страницы."
+  },
+  {
+   "код": "E-136-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image description for the Nano Banana family slide: a golden-hour portrait in tall grass with ornate gold jewelry and warm facial light.",
+   "цитата": "A young woman stands in a field of tall grass during a golden hour sunset. She wears an intricate, heavy gold collar necklace and matching ornate earrings, with her face softly lit by the warm glow of the setting sun.",
+   "источник_цитаты": "html",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana (alt картинки)",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания картинки (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Порядок: субъект + место + время суток (golden hour) → детали аксессуаров → свет на лице."
+  },
+  {
+   "код": "E-136-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image description shown for Nano Banana 2 Lite (hero slide and model card): a detailed macro shot of a colorful spider on a dew-covered web.",
+   "цитата": "A detailed macro shot of a colorful spider on a dew-covered web.",
+   "источник_цитаты": "html",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana 2 Lite; Model family / карточка Nano Banana 2 Lite (alt)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания картинки (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Короткая формула: тип кадра (macro shot) + субъект + деталь среды. Повторяется дважды на странице."
+  },
+  {
+   "код": "E-136-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image description shown for Nano Banana 2 (hero slide and model card): a motion-blurred shot of a spinning woman in an embroidered red dress against a soft out-of-focus background.",
+   "цитата": "A dynamic, motion-blurred shot of a woman in a vibrant red traditional dress featuring colorful floral embroidery. She is spinning, causing the fabric of her skirt and sleeves to flare out in a circular motion. Her eyes are closed with a serene expression, set against a soft, out-of-focus background of cool blue and green tones that suggest a natural outdoor setting.",
+   "источник_цитаты": "html",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana 2; Model family / карточка Nano Banana 2 (alt)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания картинки (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Порядок: тип кадра/эффект камеры (motion-blurred) → субъект и одежда → действие и его физика (ткань разлетается по кругу) → эмоция → фон (боке, цветовая гамма)."
+  },
+  {
+   "код": "E-136-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image description shown for Nano Banana Pro (hero slide): a cinematic silhouette in a misty field at sunrise with golden light and lens flare through branches.",
+   "цитата": "A cinematic shot of a silhouetted figure standing in a misty grassy field at sunrise, with warm golden light and lens flare filtering through tree branches.",
+   "источник_цитаты": "html",
+   "раздел": "Hero-карусель (Slide 1-4 of 4) / слайд Nano Banana Pro (alt)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания картинки (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Стиль кадра (cinematic) → субъект → место и атмосфера (mist) → время (sunrise) → свет и оптический эффект (lens flare)."
+  },
+  {
+   "код": "E-136-19",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image description shown for Nano Banana Pro (model card): a cinematic portrait lit by red neon on a dark city street at night with teal bokeh.",
+   "цитата": "Cinematic portrait of a young man illuminated by red neon light on a dark city street at night with teal bokeh.",
+   "источник_цитаты": "html",
+   "раздел": "Model family / карточка Nano Banana Pro (alt)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания картинки (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Жанр кадра (cinematic portrait) → субъект → источник и цвет света (red neon) → место/время → контрастный цвет фона (teal bokeh)."
+  },
+  {
+   "код": "E-136-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Illustration for the 'Creating your prompts' advice: a long multi-sentence description of a cinematic wide-angle night scene with a vintage orange sedan in teal fog, headlights, palm silhouettes and a streetlamp.",
+   "цитата": "A cinematic, wide-angle shot of a vintage orange sedan parked on a dark, asphalt road at night. The scene is enveloped in a thick, teal-tinted fog that creates a moody, ethereal atmosphere. The car's headlights are turned on, casting powerful beams of warm light through the mist. To the left, the silhouettes of towering palm trees and a suburban house loom in the background, while a solitary streetlamp glows on the right, further illuminating the hazy green air.",
+   "источник_цитаты": "html",
+   "раздел": "Creating your prompts (alt иллюстрации)",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из alt-описания иллюстрации к разделу Creating your prompts (как промпт не помечено)",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Alt-описание картинки-примера из html; на странице как промпт НЕ помечено — это подпись изображения. Стоит рядом с советом 'Use detailed prompts' (E-136-13) и сам является развёрнутым описанием: тип кадра и объектив (cinematic, wide-angle) → главный объект → атмосфера (teal fog, moody) → источники света (фары, фонарь) → расстановка по кадру (to the left / on the right / background). В html-коде апостроф 'car's' — через &#39; (проверка с unescape)."
+  },
+  {
+   "код": "E-136-21",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana can be tried in the Gemini app, Google Pics (to create and refine images), Google AI Studio, the Gemini API and Gemini Enterprise Agent Platform.",
+   "цитата": "Create and refine images using Google's most advanced AI",
+   "источник_цитаты": "txt",
+   "раздел": "Try Nano Banana",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Цитата — подпись карточки Google Pics; остальные поверхности перечислены карточками строк 371-399 (Gemini, Google AI Studio, Gemini API, Gemini Enterprise Agent Platform) с маркетинговыми слоганами."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-136-22",
+   "вид": "факт",
+   "утверждение_en": "The page positions the three current models on a quality-to-speed/cost ladder: Nano Banana Pro for studio-quality precision and control (built on Gemini 3), Nano Banana 2 for pro-level quality at Flash speed, and Nano Banana 2 Lite as the fastest, most efficient, lowest-cost option.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Hero-карусель + Model family",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-136-2, E-136-3, E-136-4, E-136-10, E-136-11, E-136-12",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение только качественное, без цифр."
+  },
+  {
+   "код": "E-136-23",
+   "вид": "приём",
+   "утверждение_en": "The page's prompting emphasis is consistently on detail: models respond to 'even the most detailed prompts', capture prompt nuance, and the 'Creating your prompts' section is illustrated by a long, layered scene description.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Overview / Model family / Creating your prompts",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-136-5, E-136-9, E-136-13, E-136-20",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Повторный акцент страницы — детальность промпта."
+  },
+  {
+   "код": "E-136-24",
+   "вид": "приём",
+   "утверждение_en": "The example image descriptions on the page follow a recurring order: shot type or camera effect (cinematic, macro, motion-blurred, wide-angle) → subject → setting and time of day → light source and colour (golden hour, sunrise, red neon, headlights) → background/atmosphere (bokeh, fog, out-of-focus tones).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "alt-описания картинок-примеров",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-136-15, E-136-16, E-136-17, E-136-18, E-136-19, E-136-20",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": "Наблюдение по alt-текстам; страница не называет их промптами и не формулирует этот порядок как правило."
+  },
+  {
+   "код": "E-136-25",
+   "вид": "приём",
+   "утверждение_en": "Iterative refinement is presented as a core way of working: everyday-language instructions plus uploaded images, refined over a continuing conversation.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Capabilities",
+   "модели": [
+    "семейство Gemini Image / Nano Banana — раскрыто из контекста страницы: Nano Banana Pro, Nano Banana 2, Nano Banana 2 Lite"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-136-6, E-136-7",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "Сочетание двух карточек Capabilities."
+  }
+ ],
+ "противоречия_внутри": [
+  "Имя 'Nano Banana' на странице используется для семейства (слайд 1: 'models, built on Gemini'), а кнопка 'Build with Nano Banana' ведёт на gemini-3.1-flash-image-preview (Nano Banana 2) — т.е. по ссылке 'Nano Banana' = NB2, а не оригинальная 2.5 Flash Image.",
+  "aria-label ссылки в html — 'Learn more about Nano Banana Lite', видимый текст — 'Nano Banana 2 Lite'.",
+  "Строка 319 говорит в единственном числе 'The Gemini Image model', строка 336 — во множественном 'Gemini Image models'."
+ ],
+ "не_сказано": [
+  "Нет ни одного параметра API, разрешения, соотношения сторон, лимита, цены в цифрах.",
+  "Нет упоминания SynthID/водяного знака, безопасности, ограничений моделей.",
+  "Оригинальная Nano Banana (gemini-2.5-flash-image) по ID/версии не названа, хотя страница — хаб семейства.",
+  "Совет по промптам ограничен одним абзацем; сами правила вынесены на /models/gemini-image/prompt-guide/.",
+  "Не сказано, сколько картинок можно загрузить в Multimodal understanding."
+ ],
+ "сомнения": [
+  "Единицы E-136-15…E-136-20 — alt-описания картинок-примеров из html; на странице они не названы промптами. Записаны как пример_промпта с оговоркой; возможно, это просто подписи для доступности.",
+  "E-136-14 (ID моделей) выведен из href кнопок в html, в видимом тексте его нет; суффикс -preview у Pro и NB2 и его отсутствие у Lite — состояние ссылок на момент снимка.",
+  "Дата страницы не найдена; релевантность текста привязать ко времени нельзя."
+ ]
+}

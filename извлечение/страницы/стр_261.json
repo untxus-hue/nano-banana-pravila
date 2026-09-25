@@ -1,0 +1,962 @@
+{
+ "id": 261,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro-image",
+ "заголовок": "Gemini 3 Pro Image (Nano Banana Pro)  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал); Release date: May 28, 2026 (версия модели); дат публикации в html нет",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies', лицензии CC BY 4.0 / Apache 2.0, ссылки 'About Google', 'Google Cloud terms', 'Site terms'; раздел официальной документации Gemini Enterprise Agent Platform. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальная карточка модели gemini-3-pro-image (Nano Banana Pro) в документации Google Cloud Gemini Enterprise Agent Platform (бывший Vertex AI) для разработчиков/инженеров. Табличный справочник: позиционирование (самые сложные задачи, reasoning, лучшая для сложной и многоходовой генерации/редактирования), модальности (текст+картинка вход/выход; аудио/видео нет), лимиты токенов 65,536/32,768, возможности (thinking, system instructions, Search-grounding, многоходовое редактирование, interleaved, C2PA; нет structured output, function calling, tuning, virtual try-on), техспеки картинок (14 на промпт, 7 МБ inline / 30 МБ GCS, 15 соотношений сторон, 1K/2K/4K, 5 MIME), дефолты (temperature 1.0, topP 0.95, candidateCount 1), только global, GA 28.05.2026, токены: 560 на входную картинку, 1,120/1,120/2,000 на выходную 1K/2K/4K. Промптов и кода нет.",
+ "модели_на_странице": [
+  "gemini-3-pro-image"
+ ],
+ "структура": [
+  "Вводная (описание модели)",
+  "Model ID",
+  "Modalities",
+  "Token limits",
+  "Capabilities",
+  "Tools",
+  "Consumption options",
+  "Input size limit",
+  "Technical specifications (Image, Text, Parameter defaults)",
+  "Supported regions",
+  "Versions",
+  "Security controls",
+  "Image generation specifications (токены по разрешению)",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3 Pro Image (Nano Banana",
+   "итог": "ничего: заголовок страницы (title)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (верхнее меню, языки, огромное левое меню документации, хлебные крошки), строки 2-1042"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3 Pro Image (Nano Banana Pro) Stay organized",
+   "итог": "ничего: H1 и обвязка"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3 Pro Image (Nano Banana Pro), is designed",
+   "итог": "E-261-1"
+  },
+  {
+   "n": 5,
+   "начало": "Try in Agent Studio View in",
+   "итог": "ничего: кнопки-ссылки (Agent Studio, Model Garden, Deploy example app, Pricing)"
+  },
+  {
+   "n": 6,
+   "начало": "Note: \"Deploy example app\" requires a",
+   "итог": "ничего: не про генерацию картинок (требования к демо-приложению)"
+  },
+  {
+   "n": 7,
+   "начало": "Model ID gemini-3-pro-image",
+   "итог": "E-261-2"
+  },
+  {
+   "n": 8,
+   "начало": "Modalities description Text Input and output",
+   "итог": "E-261-3"
+  },
+  {
+   "n": 9,
+   "начало": "mic_off Audio Not supported videocam_off Video",
+   "итог": "E-261-4"
+  },
+  {
+   "n": 10,
+   "начало": "Token limits Context window 65,536",
+   "итог": "E-261-5"
+  },
+  {
+   "n": 11,
+   "начало": "Capabilities Thinking Supported",
+   "итог": "E-261-6"
+  },
+  {
+   "n": 12,
+   "начало": "System instructions Supported",
+   "итог": "E-261-7"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini Live API Not supported Structured",
+   "итог": "E-261-8"
+  },
+  {
+   "n": 14,
+   "начало": "Context caching Implicit context caching Supported",
+   "итог": "E-261-9"
+  },
+  {
+   "n": 15,
+   "начало": "RAG Engine Not supported Chat completions",
+   "итог": "E-261-10"
+  },
+  {
+   "n": 16,
+   "начало": "Image generation Image generation, Image generation",
+   "итог": "E-261-11"
+  },
+  {
+   "n": 17,
+   "начало": "Edit images Edit images, Multi-turn image",
+   "итог": "E-261-12"
+  },
+  {
+   "n": 18,
+   "начало": "Interleaved images and text Supported",
+   "итог": "E-261-13"
+  },
+  {
+   "n": 19,
+   "начало": "Content Credentials (C2PA) Supported",
+   "итог": "E-261-14"
+  },
+  {
+   "n": 20,
+   "начало": "Virtual try-on Not supported",
+   "итог": "E-261-15"
+  },
+  {
+   "n": 21,
+   "начало": "Tools Grounding Google Search Supported",
+   "итог": "E-261-16"
+  },
+  {
+   "n": 22,
+   "начало": "Code execution Not supported Function calling",
+   "итог": "E-261-17"
+  },
+  {
+   "n": 23,
+   "начало": "Consumption options Provisioned Throughput Supported",
+   "итог": "E-261-18"
+  },
+  {
+   "n": 24,
+   "начало": "Input size limit 500 MB",
+   "итог": "E-261-19"
+  },
+  {
+   "n": 25,
+   "начало": "Technical specifications Image photo Maximum images",
+   "итог": "E-261-20"
+  },
+  {
+   "n": 26,
+   "начало": "Maximum file size per file for",
+   "итог": "E-261-21"
+  },
+  {
+   "n": 27,
+   "начало": "Maximum number of output images per",
+   "итог": "E-261-22"
+  },
+  {
+   "n": 28,
+   "начало": "Supported aspect ratios: 1:1, 3:2,",
+   "итог": "E-261-23"
+  },
+  {
+   "n": 29,
+   "начало": "Supported resolutions: 1K, 2K, 4K",
+   "итог": "E-261-24"
+  },
+  {
+   "n": 30,
+   "начало": "Supported MIME types: image/png , image/jpeg",
+   "итог": "E-261-25"
+  },
+  {
+   "n": 31,
+   "начало": "Text description Maximum number of files",
+   "итог": "E-261-26"
+  },
+  {
+   "n": 32,
+   "начало": "Parameter defaults tune Temperature: 0.0-2.0",
+   "итог": "E-261-27"
+  },
+  {
+   "n": 33,
+   "начало": "candidateCount: 1",
+   "итог": "E-261-28"
+  },
+  {
+   "n": 34,
+   "начало": "Supported regions Model availability Global: global",
+   "итог": "E-261-29"
+  },
+  {
+   "n": 35,
+   "начало": "Versions gemini-3-pro-image Launch stage: GA",
+   "итог": "E-261-30"
+  },
+  {
+   "n": 36,
+   "начало": "Security controls Online prediction Data residency",
+   "итог": "ничего: не про генерацию картинок (перечень корпоративных security controls: Data residency, CMEK, VPC-SC, AXT)"
+  },
+  {
+   "n": 37,
+   "начало": "Image generation specifications Gemini 3 Pro",
+   "итог": "E-261-31"
+  },
+  {
+   "n": 38,
+   "начало": "Output image token consumption varies based",
+   "итог": "E-261-32"
+  },
+  {
+   "n": 39,
+   "начало": "Note: Additional charges apply for input",
+   "итог": "E-261-33"
+  },
+  {
+   "n": 40,
+   "начало": "For more information about image generation",
+   "итог": "ничего: ссылка на гайд Generate and edit images with Gemini"
+  },
+  {
+   "n": 41,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал (лицензия, Google Developers Site Policies, Last updated 2026-09-22 UTC)"
+  },
+  {
+   "n": 42,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: обвязка (виджет отзыва, ссылки подвала Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-261-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro) is designed to tackle the most challenging image generation by incorporating state-of-the-art reasoning capabilities; it is the best model for complex and multi-turn image generation and editing, with improved accuracy and enhanced image quality.",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro), is\ndesigned to tackle the most challenging image generation by incorporating\nstate-of-the-art reasoning capabilities. It's the best model for complex and\nmulti-turn image generation and editing, having improved accuracy and enhanced\nimage quality.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 Pro Image (Nano Banana Pro) (вводная)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "мультиход"
+   ],
+   "заметка": "Позиционирование: сложные задачи + многоходовое редактирование, опора на reasoning."
+  },
+  {
+   "код": "E-261-2",
+   "вид": "факт",
+   "утверждение_en": "The model ID is gemini-3-pro-image.",
+   "цитата": "Model ID\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Model ID",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image supports text and image as both input and output modalities.",
+   "цитата": "Text\nInput and output\nphoto\nImage\nInput and output",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-4",
+   "вид": "ограничение",
+   "утверждение_en": "Audio and video are not supported modalities for Gemini 3 Pro Image.",
+   "цитата": "Audio\nNot supported\nvideocam_off\nVideo\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Противоречит строке Capabilities 'Image generation from video input: Supported' (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-261-5",
+   "вид": "лимит",
+   "утверждение_en": "Token limits: context window 65,536 tokens; maximum output tokens 32,768.",
+   "цитата": "Token limits\nContext window\n65,536\nMaximum output tokens\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-6",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by Gemini 3 Pro Image.",
+   "цитата": "Thinking\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-7",
+   "вид": "факт",
+   "утверждение_en": "System instructions are supported by Gemini 3 Pro Image.",
+   "цитата": "System instructions\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-8",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Live API and structured output are not supported by Gemini 3 Pro Image.",
+   "цитата": "Gemini Live API\nNot supported\nStructured output\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-9",
+   "вид": "факт",
+   "утверждение_en": "Implicit context caching and Count Tokens are supported by Gemini 3 Pro Image.",
+   "цитата": "Context caching\nImplicit context caching\nSupported\nCount Tokens\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-10",
+   "вид": "ограничение",
+   "утверждение_en": "RAG Engine, chat completions, tuning and URL context are not supported by Gemini 3 Pro Image.",
+   "цитата": "RAG Engine\nNot supported\nChat completions\nNot supported\nTuning\nNot supported\nURL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Tuning не поддерживается — дообучить Pro Image нельзя."
+  },
+  {
+   "код": "E-261-11",
+   "вид": "факт",
+   "утверждение_en": "Image generation, including image generation from video input, is supported by Gemini 3 Pro Image.",
+   "цитата": "Image generation\nImage generation, Image generation from video input\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-12",
+   "вид": "факт",
+   "утверждение_en": "Image editing, including multi-turn image editing, is supported by Gemini 3 Pro Image.",
+   "цитата": "Edit images\nEdit images, Multi-turn image editing\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-13",
+   "вид": "факт",
+   "утверждение_en": "Interleaved images and text output is supported by Gemini 3 Pro Image.",
+   "цитата": "Interleaved images and text\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-14",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials (C2PA) are supported by Gemini 3 Pro Image.",
+   "цитата": "Content Credentials (C2PA)\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Страница не уточняет, добавляются ли C2PA-метаданные автоматически."
+  },
+  {
+   "код": "E-261-15",
+   "вид": "ограничение",
+   "утверждение_en": "Virtual try-on is not supported by Gemini 3 Pro Image.",
+   "цитата": "Virtual try-on\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели > Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Virtual Try-On — отдельная модель/функция в той же документации (см. левое меню)."
+  },
+  {
+   "код": "E-261-16",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search is supported as a tool for Gemini 3 Pro Image.",
+   "цитата": "Tools\nGrounding\nGoogle Search\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-17",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution and function calling are not supported for Gemini 3 Pro Image.",
+   "цитата": "Code execution\nNot supported\nFunction calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-18",
+   "вид": "факт",
+   "утверждение_en": "Consumption options: Provisioned Throughput, batch inference and pay-as-you-go (Standard PayGo, Flex PayGo) are supported; fixed quota is not supported.",
+   "цитата": "Consumption options\nProvisioned Throughput\nSupported\nBatch inference\nSupported\nPay-as-you-go\nStandard PayGo, Flex PayGo\nSupported\nFixed quota\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Batch inference — вариант для массовой генерации."
+  },
+  {
+   "код": "E-261-19",
+   "вид": "лимит",
+   "утверждение_en": "The input size limit for Gemini 3 Pro Image requests is 500 MB.",
+   "цитата": "Input size limit\n500 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options / Input size limit",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-20",
+   "вид": "лимит",
+   "утверждение_en": "Maximum images per prompt: 14.",
+   "цитата": "Maximum images per prompt:\n      14",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Лимит входных картинок-референсов."
+  },
+  {
+   "код": "E-261-21",
+   "вид": "лимит",
+   "утверждение_en": "Maximum file size per image file: 7 MB for inline data or direct uploads through the console, 30 MB for files from Google Cloud Storage.",
+   "цитата": "Maximum file size per file for inline data or direct uploads through the console:\n      7 MB\nMaximum file size per file from Google Cloud Storage:\n      30 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Для крупных референсов — передавать через Cloud Storage."
+  },
+  {
+   "код": "E-261-22",
+   "вид": "лимит",
+   "утверждение_en": "The maximum number of output images per prompt is limited by the 32,768 output tokens.",
+   "цитата": "Maximum number of output images per prompt:\n      Limited to 32,768 output tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-23",
+   "вид": "факт",
+   "утверждение_en": "Supported aspect ratios: 1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9, 9:21.",
+   "цитата": "Supported aspect ratios:\n      1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9, 9:21",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "15 значений, включая экстремальные 1:8/8:1 и 1:4/4:1."
+  },
+  {
+   "код": "E-261-24",
+   "вид": "факт",
+   "утверждение_en": "Supported output resolutions: 1K, 2K, 4K.",
+   "цитата": "Supported resolutions:\n      1K, 2K, 4K",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-25",
+   "вид": "факт",
+   "утверждение_en": "Supported image MIME types: image/png, image/jpeg, image/webp, image/heic, image/heif.",
+   "цитата": "Supported MIME types:\nimage/png\n,\nimage/jpeg\n,\nimage/webp\n,\nimage/heic\n,\nimage/heif",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Относится к входным изображениям (в карточке без уточнения вход/выход)."
+  },
+  {
+   "код": "E-261-26",
+   "вид": "лимит",
+   "утверждение_en": "Text/document input: number of files and pages per file limited by the 65,536-token context window; maximum 50 MB per file via API and Cloud Storage imports or 7 MB via direct console upload; supported MIME types application/pdf and text/plain.",
+   "цитата": "Maximum number of files per prompt:\n      As supported by the 65,536 token context window\nMaximum number of pages per file:\n      As supported by the 65,536 token context window\nMaximum file size per file:\n      50 MB (API and Cloud Storage imports) or 7 MB (direct upload through Google Cloud console)\nSupported MIME types:\napplication/pdf\n,\ntext/plain",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Text",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-27",
+   "вид": "факт",
+   "утверждение_en": "Parameter defaults: temperature range 0.0-2.0 (default 1.0); topP range 0.0-1.0 (default 0.95).",
+   "цитата": "Temperature: 0.0-2.0 (default 1.0)\ntopP: 0.0-1.0 (default 0.95)",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Parameter defaults",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Рекомендаций менять значения страница не даёт."
+  },
+  {
+   "код": "E-261-28",
+   "вид": "ограничение",
+   "утверждение_en": "candidateCount for Gemini 3 Pro Image is 1.",
+   "цитата": "candidateCount: 1",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications > Parameter defaults",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Один кандидат на запрос."
+  },
+  {
+   "код": "E-261-29",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 3 Pro Image is available only in the global region.",
+   "цитата": "Supported regions\nModel availability\nGlobal:\nglobal",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-30",
+   "вид": "факт",
+   "утверждение_en": "Version gemini-3-pro-image: launch stage GA, release date May 28, 2026, retirement date May 28, 2027 or later.",
+   "цитата": "Versions\ngemini-3-pro-image\nLaunch stage: GA\nRelease date: May 28, 2026\nRetirement date: May 28, 2027 or later",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-28",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-31",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image consumes 560 tokens per input image.",
+   "цитата": "Gemini 3 Pro Image consumes 560 tokens per input image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-261-32",
+   "вид": "факт",
+   "утверждение_en": "Output image token consumption depends on resolution: 1K (about 1 megapixel) 1,120 tokens; 2K (about 4 megapixels) 1,120 tokens; 4K (about 16 megapixels) 2,000 tokens.",
+   "цитата": "Output image token consumption varies based on the generated image resolution:\nOutput resolution\nApproximate megapixels\nOutput image tokens\n1K\n1\n1,120\n2K\n4\n1,120\n4K\n16\n2,000",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Значение для 2K совпадает с 1K (1,120) — см. сомнения."
+  },
+  {
+   "код": "E-261-33",
+   "вид": "факт",
+   "утверждение_en": "Additional charges apply for input and output tokens of other modalities such as text and video; the pricing page has the latest prices.",
+   "цитата": "Note:\nAdditional charges apply for input and output tokens for other modalities,\nsuch as text and video. Refer to the\npricing page\nfor\nthe latest.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications (Note)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Т.е. текст промпта, текстовый вывод и видеовход тарифицируются отдельно от картинок."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-261-34",
+   "вид": "объяснение",
+   "утверждение_en": "Per the token table, a 2K output image costs the same number of output tokens as a 1K image (1,120) while having about four times the pixels, and a 4K image costs about 1.8 times as many (2,000).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-261-32",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Следствие таблицы как она напечатана; если 1,120 для 2K — опечатка, вывод неверен."
+  },
+  {
+   "код": "E-261-35",
+   "вид": "объяснение",
+   "утверждение_en": "Since output images are limited only by the 32,768 output-token budget, a response could hold on the order of 29 images at 1K/2K (1,120 tokens each) or 16 at 4K (2,000 each), minus tokens spent on text and thinking; input references cost 560 tokens each, so 14 images use about 7,840 of the 65,536-token context.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications + Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-261-5, E-261-20, E-261-22, E-261-31, E-261-32",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Арифметический верхний предел, не заявление страницы; при candidateCount 1."
+  },
+  {
+   "код": "E-261-36",
+   "вид": "объяснение",
+   "утверждение_en": "The card positions Pro Image as a reasoning model for image work: thinking, system instructions, Google Search grounding, multi-turn editing and interleaved text-and-image output are supported, while all general-purpose tooling (function calling, code execution, URL context, RAG, structured output, tuning, Live API) is not.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities + Tools",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-261-1, E-261-6, E-261-7, E-261-8, E-261-10, E-261-12, E-261-13, E-261-16, E-261-17",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Modalities: 'Video — Not supported' (E-261-4), а Capabilities: 'Image generation, Image generation from video input — Supported' (E-261-11).",
+  "Таблица токенов: 2K (~4 МП) = 1,120 токенов, столько же, сколько 1K (~1 МП), хотя 4K = 2,000 — выбивается из прогрессии (возможна опечатка источника)."
+ ],
+ "не_сказано": [
+  "Нет цен в долларах — только токены и ссылка на pricing page.",
+  "Не сказано, какой формат у выходного изображения (MIME-типы перечислены без уточнения вход/выход).",
+  "Нет рекомендаций по temperature/topP для картинок — только диапазоны и дефолты.",
+  "Не сказано, добавляются ли C2PA и SynthID автоматически; SynthID вообще не упомянут.",
+  "Нет информации о подаче видео (длительность, форматы) при 'Image generation from video input'.",
+  "Нет параметров управления thinking (уровни/бюджет) для этой модели."
+ ],
+ "сомнения": [
+  "2K = 1,120 выходных токенов (как 1K) — возможная опечатка; единица E-261-32 и вывод E-261-34 передают таблицу как есть.",
+  "Дата 'Last updated 2026-09-22 UTC' — дата обновления страницы."
+ ]
+}

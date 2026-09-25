@@ -1,0 +1,349 @@
+{
+ "id": 57,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/provisioned-throughput/gemini-3-nano-banana-models",
+ "заголовок": "Provisioned Throughput for Gemini 3 Image models  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('we recommend that you increase the amount of GSUs purchased')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая справка Google Cloud для покупателей Provisioned Throughput (GSU) на Gemini Enterprise Agent Platform: окна применения квоты (quota enforcement windows) для Gemini 3 Image (Nano Banana) — отдельно для Gemini 3.1 Flash Image и Gemini 3 Pro Image, в зависимости от числа GSU. Объясняет, что окно ≠ латентность, почему окна больше при малом числе GSU, даёт пример с одной 4K-картинкой на 1 GSU 3.1 Flash Image (следующая — после окна 435 с), советует докупать GSU и пользоваться калькулятором. Промптинга нет.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "'Gemini 3 Image (also known as Nano Banana)' как общее имя"
+ ],
+ "структура": [
+  "вступление",
+  "Gemini 3.1 Flash Image (окна)",
+  "Gemini 3 Pro Image (окна)",
+  "пояснения + пример 4K",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта — верхнее меню, левое меню, повтор меню продуктов (строки 1-1031); по diff совпадает со страницей id 47 кроме короче списка языков в шапке (нет Indonesia, Italiano, עברית, 中文 – 繁體)"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок, 'Stay organized'), строки 1032-1040"
+  },
+  {
+   "n": 3,
+   "начало": "This section explains how Provisioned",
+   "итог": "E-57-1"
+  },
+  {
+   "n": 4,
+   "начало": "For Gemini 3 Image models,",
+   "итог": "E-57-2"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 3.1 Flash Image The",
+   "итог": "E-57-3"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3 Pro Image The",
+   "итог": "E-57-4"
+  },
+  {
+   "n": 7,
+   "начало": "The listed values aren't connected",
+   "итог": "E-57-5"
+  },
+  {
+   "n": 8,
+   "начало": "Enforcement windows are larger at",
+   "итог": "E-57-6, E-57-7"
+  },
+  {
+   "n": 9,
+   "начало": "For example, consider a situation",
+   "итог": "E-57-8, E-57-9"
+  },
+  {
+   "n": 10,
+   "начало": "We recommend using the estimation",
+   "итог": "E-57-10"
+  },
+  {
+   "n": 11,
+   "начало": "What's next Purchase standard Provisioned",
+   "итог": "ничего: ссылка 'What's next', строки 1104-1105"
+  },
+  {
+   "n": 12,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1106-1108"
+  },
+  {
+   "n": 13,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1109-1149"
+  },
+  {
+   "n": 14,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-57-11, E-57-12"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-57-1",
+   "вид": "факт",
+   "утверждение_en": "This page calls the Gemini 3 Image models 'Nano Banana' and covers how Provisioned Throughput works for them, including quota enforcement behavior.",
+   "цитата": "Gemini 3 Image\n(also known as Nano Banana) models, including quota enforcement behavior and\nminimum GSU purchase increment.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Страница отождествляет 'Gemini 3 Image' с 'Nano Banana' целиком (без Pro/2). Обещанный 'minimum GSU purchase increment' в тексте не раскрыт (см. противоречия)."
+  },
+  {
+   "код": "E-57-2",
+   "вид": "лимит",
+   "утверждение_en": "For Gemini 3 Image models under Provisioned Throughput, the quota enforcement windows vary based on the number of GSUs purchased for the model and are subject to change.",
+   "цитата": "the quota\nenforcement\nwindows\nvary based on the number of GSUs you purchase for the model, and are subject to\nchange.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Значения окон — не постоянные ('subject to change')."
+  },
+  {
+   "код": "E-57-3",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput quota enforcement windows for Gemini 3.1 Flash Image: 1 GSU 435 s; 2 GSUs 220 s; 3 GSUs 145 s; 4 GSUs 110 s; 5-14 GSUs 100 s; 15-17 GSUs 30 s; 18-21 GSUs 25 s; 22-28 GSUs 20 s; 29-42 GSUs 15 s; 43-99 GSUs 10 s; 100+ GSUs 5 s.",
+   "цитата": "1 GSU: 435 seconds\n2 GSUs: 220 seconds\n3 GSUs: 145 seconds\n4 GSUs: 110 seconds\n5-14 GSUs: 100 seconds\n15-17 GSUs: 30 seconds\n18-21 GSUs: 25 seconds\n22-28 GSUs: 20 seconds\n29-42 GSUs: 15 seconds\n43-99 GSUs: 10 seconds\n100+ GSUs: 5 seconds",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3.1 Flash Image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Скачок между 5-14 GSUs (100 с) и 15-17 GSUs (30 с)."
+  },
+  {
+   "код": "E-57-4",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput quota enforcement windows for Gemini 3 Pro Image: 1 GSU 1,230 s; 2 GSUs 615 s; 3 GSUs 410 s; 4 GSUs 310 s; 5 GSUs 245 s; 6 GSUs 205 s; 7-12 GSUs 175 s; 13-24 GSUs 100 s; 25-30 GSUs 50 s; 31-40 GSUs 40 s; 41-61 GSUs 30 s; 62-122 GSUs 20 s; 123-244 GSUs 10 s; 245+ GSUs 5 s.",
+   "цитата": "1 GSU: 1,230 seconds\n2 GSUs: 615 seconds\n3 GSUs: 410 seconds\n4 GSUs: 310 seconds\n5 GSUs: 245 seconds\n6 GSUs: 205 seconds\n7-12 GSUs: 175 seconds\n13 - 24 GSUs: 100 seconds\n25 - 30 GSUs: 50 seconds\n31 - 40 GSUs: 40 seconds\n41 - 61 GSUs: 30 seconds\n62 - 122 GSUs: 20 seconds\n123 - 244 GSUs: 10 seconds\n245+ GSUs: 5 seconds",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-57-5",
+   "вид": "объяснение",
+   "утверждение_en": "The listed enforcement-window values are not connected to request latency: the time to process a request is not the same as the quota enforcement window.",
+   "цитата": "The listed values aren't connected to the request latency. The time to process\nyour request isn't the same as the quota enforcement window.",
+   "источник_цитаты": "txt",
+   "раздел": "после таблиц",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Окно ≠ время генерации."
+  },
+  {
+   "код": "E-57-6",
+   "вид": "объяснение",
+   "утверждение_en": "Enforcement windows are larger at smaller GSU amounts to ensure that smaller requests are processed successfully within the window; as GSUs increase, longer windows are not required to process a request.",
+   "цитата": "Enforcement windows are larger at smaller GSU amounts to ensure that smaller\nrequests are processed successfully within the window. As the amount of GSUs for\na model increases, longer window times are not required to process a request.",
+   "источник_цитаты": "txt",
+   "раздел": "после таблиц",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Механизм: длинное окно при малом числе GSU нужно, чтобы запрос уложился."
+  },
+  {
+   "код": "E-57-7",
+   "вид": "правило",
+   "утверждение_en": "If you need to process outputs on Gemini 3 Image more frequently using Provisioned Throughput, Google recommends increasing the amount of GSUs purchased and checking the corresponding enforcement window.",
+   "цитата": "If\nyou need to process outputs on Gemini 3 Image more frequently\nusing Provisioned Throughput, we recommend that you increase the amount of\nGSUs purchased and check the corresponding enforcement window.",
+   "источник_цитаты": "txt",
+   "раздел": "после таблиц",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-57-8",
+   "вид": "объяснение",
+   "утверждение_en": "Example: with 1 GSU of Gemini 3.1 Flash Image and a workload generating a single 4K image, the image can usually be generated within seconds and is processed as Provisioned Throughput; generating another image of the same size requires waiting until the quota enforcement window ends (435 seconds for 1 GSU).",
+   "цитата": "For example, consider a situation where you purchased 1 GSU of\nGemini 3.1 Flash Image and have a workload that requires\ngenerating a single image with 4K resolution. In this case, you can usually\ngenerate this single image within seconds and the traffic is processed as\nProvisioned Throughput. However, if you wanted to generate another image\nof the same size, you need to wait until the quota enforcement window ends\n(435 seconds for 1 GSU).",
+   "источник_цитаты": "txt",
+   "раздел": "пример",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "форматы_разрешение"
+   ],
+   "заметка": "Косвенно подтверждает, что 3.1 Flash Image генерирует 4K; и что 1 GSU покрывает примерно одну 4K-картинку на окно 435 с. Про 1K/2K и про то, что будет с запросом до конца окна (spillover или отказ), не сказано."
+  },
+  {
+   "код": "E-57-9",
+   "вид": "факт",
+   "утверждение_en": "The timing of the quota enforcement window is determined by the Gemini Enterprise Agent Platform clock time, not by when the request is made.",
+   "цитата": "The time of this enforcement window is determined by\nthe Gemini Enterprise Agent Platform clock time and not when the request is made.",
+   "источник_цитаты": "txt",
+   "раздел": "пример",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Окна привязаны к часам платформы, а не к моменту запроса — ожидание может быть меньше полного окна (вывод не сделан на странице)."
+  },
+  {
+   "код": "E-57-10",
+   "вид": "инструкция",
+   "утверждение_en": "Google recommends using the estimation tool on the Provisioned Throughput page to estimate the number of GSUs required for a workload.",
+   "цитата": "We recommend using the estimation tool on the Provisioned Throughput\npage to\nestimate the number of GSUs required for your workload.",
+   "источник_цитаты": "txt",
+   "раздел": "пример / рекомендации",
+   "модели": [
+    "Gemini 3 Image (так в тексте; по разделам страницы = gemini-3.1-flash-image и gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-57-11",
+   "вид": "факт",
+   "утверждение_en": "At equal GSU counts, Gemini 3 Pro Image enforcement windows are longer than Gemini 3.1 Flash Image's (1,230 s vs 435 s at 1 GSU; 175 s vs 100 s at 7-12 GSUs), and the minimum 5-second window needs 245+ GSUs for Pro versus 100+ GSUs for 3.1 Flash Image.",
+   "цитата": "245+ GSUs: 5 seconds",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3.1 Flash Image / Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-57-3, E-57-4",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "При 1 GSU окно Pro примерно в 2,8 раза длиннее; страница такого сравнения не делает."
+  },
+  {
+   "код": "E-57-12",
+   "вид": "факт",
+   "утверждение_en": "The page's 'Gemini 3 Image' (Nano Banana) scope in practice covers only Gemini 3.1 Flash Image and Gemini 3 Pro Image; Gemini 3.1 Flash-Lite Image and Gemini 2.5 Flash Image have no enforcement windows listed.",
+   "цитата": "Gemini 3 Pro Image\nThe following are the quota enforcement windows for different GSU sizes for\nGemini 3 Pro Image:",
+   "источник_цитаты": "txt",
+   "раздел": "структура страницы",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-57-1, E-57-3, E-57-4",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Вступление обещает рассказать про 'minimum GSU purchase increment', но в тексте страницы (и в html) минимальный шаг покупки GSU не указан.",
+  "'Gemini 3 Image (also known as Nano Banana)' — страница называет Nano Banana всё семейство Gemini 3 Image, тогда как в других материалах Nano Banana = gemini-2.5-flash-image, Pro = 3 Pro Image, 2 = 3.1 Flash Image."
+ ],
+ "не_сказано": [
+  "Минимальный шаг покупки GSU (обещан во вступлении).",
+  "Как разрешение (1K/2K/4K) и число картинок влияют на расход GSU — пример только про одну 4K-картинку на 3.1 Flash Image.",
+  "Что происходит с запросом, отправленным до окончания окна: уходит в pay-as-you-go (spillover) или отклоняется.",
+  "Окна для gemini-3.1-flash-lite-image и gemini-2.5-flash-image."
+ ],
+ "сомнения": [
+  "Модели в единицах E-57-1/2/5/6/7/9/10 указаны как 'Gemini 3 Image' — по разделам это 3.1 Flash Image и 3 Pro Image; входит ли 3.1 Flash-Lite Image, страница не говорит."
+ ]
+}

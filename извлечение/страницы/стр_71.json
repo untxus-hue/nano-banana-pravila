@@ -1,0 +1,512 @@
+{
+ "id": 71,
+ "url": "https://codelabs.developers.google.com/gemini-consistent-imagery-notebook",
+ "заголовок": "Generating Consistent Imagery with Gemini Nano Banana  |  Google Codelabs",
+ "дата_в_тексте": "last-updated 2026-09-01T13:00:15Z (атрибут google-codelab-about в html; в .txt даты нет)",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "Подвал «Except as otherwise noted… see the Google Developers Site Policies» (стр. 101-107 .txt); ноутбук лежит в github.com/GoogleCloudPlatform/generative-ai (…/media-generation/consistent_imagery_generation.ipynb); автор в html — Laurent Picard (принадлежность к Google на странице не указана).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Кодлаб-обёртка (20 минут, автор Laurent Picard, обновлён 2026-09-01) к ноутбуку consistent_imagery_generation.ipynb (GoogleCloudPlatform/generative-ai). Для разработчиков на Python. Промптов и кода нет. Содержание: пайплайн «архивное изображение → извлечь персонажа в новый референс → серия консистентных иллюстраций только промптами и новыми ассетами»; навыки: character sheet, descriptive/imperative промпты, пространственное понимание Gemini, asset graph; требования (биллинг), стоимость (<0.40 USD на Google Cloud), два пути к API, способы открыть ноутбук. Повторный акцент — «prompt-based» / «only prompts and the new assets». Собственные термины (не определены): «character sheet», «asset graph», «descriptive or imperative prompts». Версия модели не названа.",
+ "модели_на_странице": [
+  "Nano Banana (без версии; в заголовке «Gemini Nano Banana»)",
+  "Gemini (без версии) — spatial understanding"
+ ],
+ "структура": [
+  "1. Overview (шаги 1️⃣-3️⃣, What you'll learn, What you'll need)",
+  "2. Before you begin (Option 1 Agent Platform / Option 2 AI Studio)",
+  "3. Run the notebook (Tool A/B/C)",
+  "4. Congratulations! (Learn more)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generating Consistent Imagery with Gemini Nano",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, стр. 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English Deutsch",
+   "итог": "ничего: обвязка сайта (меню языков, Sign in, стр. 2-26)"
+  },
+  {
+   "n": 3,
+   "начало": "Generating Consistent Imagery with Gemini Nano",
+   "итог": "ничего: заголовок кодлаба (стр. 27; даёт модель Nano Banana для раздела)"
+  },
+  {
+   "n": 4,
+   "начало": "1. Overview / In this lab, you will learn to build",
+   "итог": "E-71-1, E-71-16"
+  },
+  {
+   "n": 5,
+   "начало": "You will complete the following steps:",
+   "итог": "ничего: вводная фраза к списку"
+  },
+  {
+   "n": 6,
+   "начало": "1️⃣ Start with an archive image",
+   "итог": "E-71-2, E-71-15"
+  },
+  {
+   "n": 7,
+   "начало": "2️⃣ Extract a character to create",
+   "итог": "E-71-3, E-71-15"
+  },
+  {
+   "n": 8,
+   "начало": "3️⃣ Generate a series of consistent",
+   "итог": "E-71-4, E-71-15, E-71-16"
+  },
+  {
+   "n": 9,
+   "начало": "Here is a summary of what",
+   "итог": "ничего: картинка-сводка без подписи (в html alt — хэш-имя 627ed76fda56d1b0.png)"
+  },
+  {
+   "n": 10,
+   "начало": "What you'll learn",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 11,
+   "начало": "How to generate new consistent images",
+   "итог": "E-71-5"
+  },
+  {
+   "n": 12,
+   "начало": "How to create a character sheet",
+   "итог": "E-71-6"
+  },
+  {
+   "n": 13,
+   "начало": "How to use descriptive or imperative",
+   "итог": "E-71-7"
+  },
+  {
+   "n": 14,
+   "начало": "How to benefit from Gemini's spatial",
+   "итог": "E-71-8"
+  },
+  {
+   "n": 15,
+   "начало": "How to build an asset graph",
+   "итог": "E-71-9"
+  },
+  {
+   "n": 16,
+   "начало": "What you'll need",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 17,
+   "начало": "Familiarity running Python in a notebook",
+   "итог": "ничего: не про генерацию картинок (навык работы с ноутбуком)"
+  },
+  {
+   "n": 18,
+   "начало": "A Google Cloud project or a",
+   "итог": "E-71-10"
+  },
+  {
+   "n": 19,
+   "начало": "ℹ️ The total cost to run",
+   "итог": "E-71-11"
+  },
+  {
+   "n": 20,
+   "начало": "Let's get started...",
+   "итог": "ничего: переходная фраза"
+  },
+  {
+   "n": 21,
+   "начало": "2. Before you begin / To use the Gemini API",
+   "итог": "E-71-12"
+  },
+  {
+   "n": 22,
+   "начало": "🛠️ Option 1 - Gemini API via Agent Platform",
+   "итог": "E-71-13"
+  },
+  {
+   "n": 23,
+   "начало": "🛠️ Option 2 - Gemini API via Google AI Studio",
+   "итог": "E-71-14"
+  },
+  {
+   "n": 24,
+   "начало": "3. Run the notebook / Choose your preferred tool; Tool A - Open the notebook in Colab",
+   "итог": "ничего: не про генерацию картинок (среда запуска ноутбука: Colab)"
+  },
+  {
+   "n": 25,
+   "начало": "🧰 Tool B - Open the notebook in Colab Enterprise",
+   "итог": "ничего: не про генерацию картинок (Colab Enterprise / Workbench)"
+  },
+  {
+   "n": 26,
+   "начало": "🧰 Tool C - Get the notebook from GitHub",
+   "итог": "ничего: не про генерацию картинок (свой Jupyter)"
+  },
+  {
+   "n": 27,
+   "начало": "🗺️ Notebook table of contents",
+   "итог": "ничего: навигация по ноутбуку"
+  },
+  {
+   "n": 28,
+   "начало": "🏁 Run the notebook / You are ready.",
+   "итог": "ничего: переходная фраза"
+  },
+  {
+   "n": 29,
+   "начало": "4. Congratulations! / Congratulations on completing",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 30,
+   "начало": "Learn more / Complete the Detecting and Editing",
+   "итог": "ничего: ссылки на смежные материалы (кодлаб Detecting and Editing = id 70, Nano Banana recipes notebook, Agent Platform Prompt Gallery, Release Notes)"
+  },
+  {
+   "n": 31,
+   "начало": "Except as otherwise noted, the content",
+   "итог": "ничего: обвязка сайта (лицензия; «Google Developers Site Policies» — признак официальности)"
+  },
+  {
+   "n": 32,
+   "начало": "[[[\"Easy to understand\",\"easyToUnderstand\"",
+   "итог": "ничего: обвязка сайта (форма отзыва)"
+  },
+  {
+   "n": 33,
+   "начало": "Connect / Blog / Facebook (стр. 109-159)",
+   "итог": "ничего: обвязка сайта (подвал Google Developers; diff со стр. 109-159 кодлаба id 70 — идентичен)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-71-1",
+   "вид": "объяснение",
+   "утверждение_en": "The lab builds a prompt-based generation pipeline for an image library.",
+   "цитата": "In this lab, you will learn to build a prompt-based generation pipeline for your image library.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Ключевое слово «prompt-based»: пайплайн строится на промптах (и референсах), а не на дообучении."
+  },
+  {
+   "код": "E-71-2",
+   "вид": "приём",
+   "утверждение_en": "The pipeline starts from an archive image.",
+   "цитата": "1️⃣ Start with an archive image",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Исходник — архивное (старое) изображение; что с ним делать дальше — шаг 2."
+  },
+  {
+   "код": "E-71-3",
+   "вид": "приём",
+   "утверждение_en": "A character is extracted from the archive image to create a brand-new reference image.",
+   "цитата": "2️⃣ Extract a character to create a brand-new reference image",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Референс не берётся как есть из архива: из него генерируется новый, чистый референс персонажа."
+  },
+  {
+   "код": "E-71-4",
+   "вид": "приём",
+   "утверждение_en": "A series of consistent illustrations is then generated using only prompts and the newly created assets.",
+   "цитата": "3️⃣ Generate a series of consistent illustrations using only prompts and the new assets",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Консистентность серии держится на новых ассетах (референсах) + промптах; «only» — без иных средств (обучения, ручной правки)."
+  },
+  {
+   "код": "E-71-5",
+   "вид": "факт",
+   "утверждение_en": "The lab shows how to generate new consistent images from images and prompts.",
+   "цитата": "How to generate new consistent images from images and prompts",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-71-6",
+   "вид": "приём",
+   "утверждение_en": "The lab teaches how to create a character sheet.",
+   "цитата": "How to create a character sheet",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Термин «character sheet» (лист персонажа — несколько видов одного персонажа на одном изображении) на странице не определён; его роль в пайплайне — вероятно, референс для серии (шаг 2️⃣), но прямо не сказано."
+  },
+  {
+   "код": "E-71-7",
+   "вид": "приём",
+   "утверждение_en": "The lab covers using descriptive or imperative prompts.",
+   "цитата": "How to use descriptive or imperative prompts",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Два стиля промпта названы, но не определены: descriptive (описать желаемое изображение) / imperative (скомандовать действие). Когда какой — не сказано."
+  },
+  {
+   "код": "E-71-8",
+   "вид": "факт",
+   "утверждение_en": "The lab uses Gemini's spatial understanding as part of the consistent-imagery pipeline.",
+   "цитата": "How to benefit from Gemini's spatial understanding",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Gemini (без версии, модель понимания)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "Для чего именно (например, найти персонажа на архивном фото перед извлечением) страница не говорит."
+  },
+  {
+   "код": "E-71-9",
+   "вид": "приём",
+   "утверждение_en": "The lab teaches how to build an asset graph.",
+   "цитата": "How to build an asset graph",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из заголовка страницы",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Собственный термин «asset graph» не определён на странице; по контексту — связи между исходником, извлечённым референсом и производными картинками."
+  },
+  {
+   "код": "E-71-10",
+   "вид": "ограничение",
+   "утверждение_en": "Running the lab requires a Google Cloud project or a Gemini API key with billing enabled.",
+   "цитата": "A Google Cloud project or a Gemini API key with billing enabled",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll need",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-71-11",
+   "вид": "факт",
+   "утверждение_en": "The total cost to run this lab on Google Cloud is less than 0.40 USD.",
+   "цитата": "The total cost to run this lab on Google Cloud is less than 0.40 USD.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll need",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Число картинок и токенов на картинку здесь не указано, поэтому цену одной картинки вывести нельзя."
+  },
+  {
+   "код": "E-71-12",
+   "вид": "факт",
+   "утверждение_en": "The Gemini API can be used via Agent Platform (formerly Vertex AI) with a Google Cloud project, or via Google AI Studio with a Gemini API key.",
+   "цитата": "(formerly Vertex AI) with a Google Cloud project",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Текст разбит ссылками на строки 47-55; цитата — строка 52."
+  },
+  {
+   "код": "E-71-13",
+   "вид": "инструкция",
+   "утверждение_en": "For the Agent Platform route, a Google Cloud project with the Agent Platform API enabled is required.",
+   "цитата": "The Agent Platform API must be enabled for this project",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin / Option 1 - Gemini API via Agent Platform",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-71-14",
+   "вид": "инструкция",
+   "утверждение_en": "For the Google AI Studio route, a Gemini API key is required.",
+   "цитата": "Option 2 - Gemini API via Google AI Studio\nRequirement:\nA Gemini API key",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin / Option 2 - Gemini API via Google AI Studio",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-71-15",
+   "вид": "приём",
+   "утверждение_en": "For a consistent image series, the page's pipeline turns an archive image into a newly generated reference asset (e.g. an extracted character / character sheet) and then uses that new asset, not the original archive image, together with prompts to generate every image in the series.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "1. Overview (весь раздел)",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-71-2, E-71-3, E-71-4, E-71-6, E-71-9",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Якорь консистентности — сгенерированный «brand-new reference image», а не исходник. Прямо правилом не сформулировано, видно из последовательности шагов."
+  },
+  {
+   "код": "E-71-16",
+   "вид": "приём",
+   "утверждение_en": "The page repeatedly frames consistency as achieved through prompts plus image assets alone (\"prompt-based\", \"using only prompts and the new assets\", \"from images and prompts\"), with no mention of fine-tuning or training.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "1. Overview (весь раздел)",
+   "модели": [
+    "Nano Banana (без версии; из заголовка «Generating Consistent Imagery with Gemini Nano Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-71-1, E-71-4, E-71-5",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Повторяющийся акцент страницы (три формулировки). Отсутствие дообучения — вывод из молчания, не прямое утверждение."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет ни одного промпта и кода — всё в ноутбуке.",
+  "Не определены «character sheet», «asset graph», «descriptive vs imperative prompts».",
+  "Не сказано, для чего именно нужно пространственное понимание Gemini в этом пайплайне.",
+  "Не названа версия Nano Banana, нет лимитов на число референсов, форматов, соотношений сторон.",
+  "Стоимость дана без числа генераций — цену одной картинки не вывести."
+ ],
+ "сомнения": [
+  "Страница — лендинг кодлаба; реальный контент в ноутбуке consistent_imagery_generation.ipynb (в партии указан id 79 как носитель, в эту партию не входит).",
+  "Официальность по подвалу Google Developers Site Policies; принадлежность автора на странице не указана.",
+  "Толкования терминов в заметках E-71-6, E-71-9 — мои, страница их не даёт."
+ ]
+}

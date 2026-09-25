@@ -1,0 +1,468 @@
+{
+ "id": 345,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/gemini-image-generation-limitations",
+ "заголовок": "Gemini image generation limitations | Gemini Enterprise Agent Platform | Google Cloud Documentation",
+ "дата_в_тексте": "2026-09-22 ('Last updated 2026-09-22 UTC.')",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "Подвал 'Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … see the Google Developers Site Policies'; подвал Google Cloud ('About Google', 'Google Cloud terms').",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая справочная страница документации Gemini Enterprise Agent Platform для разработчиков: список ограничений генерации картинок Gemini. Названы только две модели — Gemini 2.5 Flash Image и Gemini 3 Pro Image — с разными списками рекомендованных языков (5 против 15) и разным максимумом входных картинок 'for best results' (3 против 14). Общие ограничения: нет аудио/видео на входе, неточное число картинок, текст в картинке — сначала сгенерировать текст. Подсписок сбоев с обходами: только текст без картинки (просить картинки явно), текст как картинка (просить текст явно), обрыв генерации (повторить/сменить промпт), отказ на небезопасный промпт с FinishReason STOP. Почти вся остальная страница — навигация.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image)",
+  "gemini-3-pro-image (Gemini 3 Pro Image)"
+ ],
+ "структура": [
+  "Список ограничений (6 пунктов)",
+  "Подсписок 'Image or text generation might not work as expected' (4 пункта)",
+  "What's next?",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini image generation limitations | Gemini Enterprise Agent Platform",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close Get Started … Send feedback",
+   "итог": "ничего: обвязка сайта, строки 2-1042; diff со стр_282 (строки 2-1041) пустой — меню совпадает до байта"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini image generation limitations Stay organized with collections",
+   "итог": "ничего: заголовок и служебная строка сайта"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini image generation is subject to the following limitations:",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 5,
+   "начало": "For best performance with Gemini 2.5 Flash Image, use the following languages",
+   "итог": "E-345-1, E-345-2"
+  },
+  {
+   "n": 6,
+   "начало": "Image generation doesn't support audio or video inputs.",
+   "итог": "E-345-3"
+  },
+  {
+   "n": 7,
+   "начало": "The model might not create the exact number of images you ask for.",
+   "итог": "E-345-4"
+  },
+  {
+   "n": 8,
+   "начало": "For best results using Gemini 2.5 Flash Image, include a maximum of three images",
+   "итог": "E-345-5, E-345-6"
+  },
+  {
+   "n": 9,
+   "начало": "When generating an image containing text, first generate the text",
+   "итог": "E-345-7"
+  },
+  {
+   "n": 10,
+   "начало": "Image or text generation might not work as expected in these situations:",
+   "итог": "ничего: вводная к подсписку"
+  },
+  {
+   "n": 11,
+   "начало": "The model might only create text and no image if the prompt is ambiguous.",
+   "итог": "E-345-8, E-345-9, E-345-10"
+  },
+  {
+   "n": 12,
+   "начало": "The model might create text as an image.",
+   "итог": "E-345-11, E-345-12, E-345-13"
+  },
+  {
+   "n": 13,
+   "начало": "The model might stop generating content even when it's not finished.",
+   "итог": "E-345-14, E-345-15"
+  },
+  {
+   "n": 14,
+   "начало": "If a prompt is potentially unsafe, the model might not process the request",
+   "итог": "E-345-16"
+  },
+  {
+   "n": 15,
+   "начало": "What's next? See the following links … Generate images with Gemini … responsible AI",
+   "итог": "ничего: ссылки на смежные страницы"
+  },
+  {
+   "n": 16,
+   "начало": "Send feedback Except as otherwise noted … Google Developers Site Policies … Last updated 2026-09-22 UTC.",
+   "итог": "ничего: подвал с лицензией и датой (учтены в официальности и дата_в_тексте)"
+  },
+  {
+   "n": 17,
+   "начало": "Products and pricing See all products … 한국어",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud), строки 1086-1131"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-345-1",
+   "вид": "ограничение",
+   "утверждение_en": "For best performance with Gemini 2.5 Flash Image, use the languages EN, es-MX, ja-JP, zh-CN or hi-IN.",
+   "цитата": "For best performance with Gemini 2.5 Flash Image, use the following\nlanguages: EN, es-MX, ja-JP, zh-CN, or hi-IN.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Список из 5 языков. 'For best performance' — рекомендация, не запрет других языков."
+  },
+  {
+   "код": "E-345-2",
+   "вид": "ограничение",
+   "утверждение_en": "For best performance with Gemini 3 Pro Image, use the languages ar-EG, de-DE, EN, es-MX, fr-FR, hi-IN, id-ID, it-IT, ja-JP, ko-KR, pt-BR, ru-RU, ua-UA, vi-VN and zh-CN.",
+   "цитата": "For best performance with\nGemini 3 Pro Image, use the following languages: ar-EG, de-DE, EN,\nes-MX, fr-FR, hi-IN, id-ID, it-IT, ja-JP, ko-KR, pt-BR, ru-RU, ua-UA, vi-VN,\nand zh-CN",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "15 языков, включая ru-RU. Код 'ua-UA' дан как на странице (нестандартный; ISO-код украинского — uk)."
+  },
+  {
+   "код": "E-345-3",
+   "вид": "ограничение",
+   "утверждение_en": "Image generation doesn't support audio or video inputs.",
+   "цитата": "Image generation doesn't support audio or video inputs.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Вход — только текст и картинки."
+  },
+  {
+   "код": "E-345-4",
+   "вид": "ограничение",
+   "утверждение_en": "The model might not create the exact number of images you ask for.",
+   "цитата": "The model might not create the exact number of images you ask for.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Число картинок в ответе не гарантируется запросом."
+  },
+  {
+   "код": "E-345-5",
+   "вид": "лимит",
+   "утверждение_en": "For best results with Gemini 2.5 Flash Image, include at most three images in an input.",
+   "цитата": "For best results using Gemini 2.5 Flash Image, include a maximum of\nthree images in an input.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сформулировано как 'for best results', а не как жёсткий лимит API."
+  },
+  {
+   "код": "E-345-6",
+   "вид": "лимит",
+   "утверждение_en": "For best results with Gemini 3 Pro Image, include at most 14 images in an input.",
+   "цитата": "For best results using Gemini 3 Pro Image,\ninclude a maximum of 14 images in an input.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сформулировано как 'for best results'."
+  },
+  {
+   "код": "E-345-7",
+   "вид": "приём",
+   "утверждение_en": "When generating an image that contains text, first generate the text and then generate an image with that text.",
+   "цитата": "When generating an image containing text, first generate the text and then\ngenerate an image with that text.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "мультиход"
+   ],
+   "заметка": "Императив без смягчения, но в списке ограничений как обход; двухшаговая схема: сначала текст, потом картинка с этим текстом."
+  },
+  {
+   "код": "E-345-8",
+   "вид": "ограничение",
+   "утверждение_en": "If the prompt is ambiguous, the model might create only text and no image.",
+   "цитата": "The model might only create text and no image if the prompt is\nambiguous.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-345-9",
+   "вид": "инструкция",
+   "утверждение_en": "If you want images, clearly ask for images in your request.",
+   "цитата": "If you want images, clearly ask for images in your request.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Обход для E-345-8."
+  },
+  {
+   "код": "E-345-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example wording to request images: \"provide images as you go along.\"",
+   "цитата": "provide images as you go along.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Фрагмент-добавка к промпту, а не самостоятельный промпт: явная просьба выдавать картинки по ходу ответа (для чередующегося текста и картинок)."
+  },
+  {
+   "код": "E-345-11",
+   "вид": "ограничение",
+   "утверждение_en": "The model might create text as an image.",
+   "цитата": "The model might create text as an image.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Т.е. вместо текстовой части ответа — картинка с текстом."
+  },
+  {
+   "код": "E-345-12",
+   "вид": "инструкция",
+   "утверждение_en": "To generate text, specifically ask for text output.",
+   "цитата": "To generate text, specifically\nask for text output.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Обход для E-345-11."
+  },
+  {
+   "код": "E-345-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example wording to request text output alongside images: \"generate narrative text along with illustrations.\"",
+   "цитата": "generate narrative text along with\nillustrations.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Фрагмент-добавка: явно разделяет модальности — 'narrative text' (текстом) и 'illustrations' (картинками). В txt фраза разбита переносом строки."
+  },
+  {
+   "код": "E-345-14",
+   "вид": "ограничение",
+   "утверждение_en": "The model might stop generating content even when it's not finished.",
+   "цитата": "The model might stop generating content even when it's not finished.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-345-15",
+   "вид": "инструкция",
+   "утверждение_en": "If generation stops before it is finished, try again or use a different prompt.",
+   "цитата": "If\nthis occurs, try again or use a different prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Обход для E-345-14."
+  },
+  {
+   "код": "E-345-16",
+   "вид": "предупреждение",
+   "утверждение_en": "If a prompt is potentially unsafe, the model might not process it and instead returns a response saying it can't create unsafe images; in this case the FinishReason is STOP.",
+   "цитата": "If a prompt is potentially unsafe, the model might not process the\nrequest and returns a response indicating that it can't create unsafe\nimages. In this case, the\nFinishReason is\nSTOP.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "FinishReason — STOP, а не отдельная причина безопасности; признак отказа — текст ответа."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-345-17",
+   "вид": "факт",
+   "утверждение_en": "The page gives per-model limits for only two models, and they differ sharply: Gemini 2.5 Flash Image — 5 recommended languages and at most 3 input images; Gemini 3 Pro Image — 15 languages and at most 14 input images. Nano Banana 2 and Nano Banana 2 Lite are not covered.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini image generation limitations",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-345-1, E-345-2, E-345-5, E-345-6",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-345-18",
+   "вид": "правило",
+   "утверждение_en": "Several failure modes are addressed by stating the wanted modality explicitly in the prompt: ask clearly for images, ask specifically for text output, and produce the text before the image that must contain it.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-345-7, E-345-9, E-345-10, E-345-12, E-345-13",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Общий знаменатель трёх советов страницы; как единое правило на странице не сформулирован."
+  },
+  {
+   "код": "E-345-19",
+   "вид": "предупреждение",
+   "утверждение_en": "A refusal for a potentially unsafe prompt comes with FinishReason STOP rather than a distinct safety reason, so the page's only stated signal of refusal is the response text saying it can't create unsafe images.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini image generation limitations — Image or text generation might not work as expected",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-345-16",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет данных по Nano Banana 2 (gemini-3.1-flash-image) и Nano Banana 2 Lite (gemini-3.1-flash-lite-image): ни языков, ни числа входных картинок.",
+  "Не сказано, являются ли 3 и 14 входных картинок жёсткими лимитами API или только рекомендацией ('for best results').",
+  "Не сказано, что происходит при языках вне списка (хуже качество или отказ).",
+  "Нет лимитов на число выходных картинок, разрешения, длину текста в картинке.",
+  "Не сказано, как программно отличить отказ по безопасности от нормального завершения, кроме текста ответа."
+ ],
+ "сомнения": [
+  "Код языка 'ua-UA' нестандартный (ISO 639-1 для украинского — 'uk'); передан как на странице.",
+  "По метаданным партии, дубль id 44 удалён в пользу этой страницы."
+ ]
+}

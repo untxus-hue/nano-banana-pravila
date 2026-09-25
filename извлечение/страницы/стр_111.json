@@ -1,0 +1,982 @@
+{
+ "id": 111,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/overview",
+ "заголовок": "Generate and edit images on Vertex AI  |  Generative AI on Vertex AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-18 UTC (подвал); в тексте срок миграции June 30, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0, ссылки About Google / Google Cloud terms; текст от лица Google (\"Imagen, our specialized image generation model\")",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Обзорная страница старой документации Vertex AI (баннер: больше не обновляется, всё переехало в Gemini Enterprise Agent Platform) 'Generate and edit images on Vertex AI' для разработчиков. Структура: предупреждение об устаревших эндпоинтах (все imagegeneration@/imagen-3.0/imagen-4.0 → gemini-2.5-flash-image до 30.06.2026); возможности Gemini+Imagen; шесть подробных промптов-примеров (сделаны Imagen 3, imagen-3.0-generate-002); quickstart Imagen 4 (Python generate_images с image_size 2K, REST :predict); таблица 'When to use Gemini or Imagen' (сильные стороны, доступность, задержка, цена, рекомендуемые задачи) и рекомендация начинать с Gemini, Imagen 4 Ultra — для лучшего качества; ноутбуки и ссылки. Термины: mask-free editing, multi-turn conversational editing, interleaved text and image generation. Повторяющийся акцент: Gemini — выбор по умолчанию.",
+ "модели_на_странице": [
+  "Gemini Image (без версии в таблице)",
+  "gemini-2.5-flash-image (цель миграции)",
+  "Gemini 3 Pro Image, Gemini 2.5 Flash Image (ноутбуки)",
+  "imagen-3.0-generate-002 (промпты-примеры)",
+  "imagen-4.0-generate-001, imagen-4.0-generate-preview-05-20 (quickstart)",
+  "Imagen 4 Ultra",
+  "устаревшие: imagegeneration@002-006, imagetext@001, imagen-3.0-*, imagen-4.0-*"
+ ],
+ "структура": [
+  "баннер: Vertex AI documentation is no longer being updated",
+  "Caution: deprecated endpoints (таблица)",
+  "Generate and edit images on Vertex AI (вступление, возможности)",
+  "Prompts for preceding images",
+  "Quickstart: Generate images from text prompts using Imagen",
+  "When to use Gemini or Imagen on Vertex AI (таблица)",
+  "Model versions",
+  "Try more examples",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (верхнее меню, левое меню документации Vertex AI, дубль меню; строки 1-574)"
+  },
+  {
+   "n": 2,
+   "начало": "Vertex AI documentation is no longer",
+   "итог": "E-111-1"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML … Send feedback Generate and edit images",
+   "итог": "ничего: хлебные крошки, служебная кнопка, заголовок, виджет коллекций (строки 577-586)"
+  },
+  {
+   "n": 4,
+   "начало": "Caution: The following table describes",
+   "итог": "E-111-2"
+  },
+  {
+   "n": 5,
+   "начало": "Discontinued endpointsRecommended endpoint migration",
+   "итог": "E-111-3"
+  },
+  {
+   "n": 6,
+   "начало": "imagegeneration@002gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 7,
+   "начало": "imagegeneration@003gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 8,
+   "начало": "imagegeneration@004gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 9,
+   "начало": "imagegeneration@005gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 10,
+   "начало": "imagegeneration@006gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 11,
+   "начало": "imagetext@001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 12,
+   "начало": "imagen-3.0-capability-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 13,
+   "начало": "imagen-3.0-capability-002gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 14,
+   "начало": "imagen-3.0-fast-generate-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 15,
+   "начало": "imagen-3.0-generate-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 16,
+   "начало": "imagen-3.0-generate-002gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 17,
+   "начало": "imagen-4.0-fast-generate-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 18,
+   "начало": "imagen-4.0-generate-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 19,
+   "начало": "imagen-4.0-ultra-generate-001gemini-2.5-flash-image",
+   "итог": "E-111-3 (строка таблицы)"
+  },
+  {
+   "n": 20,
+   "начало": "API reference overview: To view",
+   "итог": "ничего: ссылка на imagegeneration API reference"
+  },
+  {
+   "n": 21,
+   "начало": "Gemini and Imagen on Vertex AI bring",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 22,
+   "начало": "Try image generation (Vertex AI Studio) / Try Imagen in a Colab",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 23,
+   "начало": "With Gemini and Imagen, you",
+   "итог": "E-111-4"
+  },
+  {
+   "n": 24,
+   "начало": "Generate novel images using only",
+   "итог": "E-111-4 (пункт списка)"
+  },
+  {
+   "n": 25,
+   "начало": "Edit or expand an uploaded",
+   "итог": "E-111-4 (пункт списка)"
+  },
+  {
+   "n": 26,
+   "начало": "Upscale existing, generated, or edited",
+   "итог": "E-111-4 (пункт списка)"
+  },
+  {
+   "n": 27,
+   "начало": "Prompts for preceding images These",
+   "итог": "E-111-5"
+  },
+  {
+   "n": 28,
+   "начало": "Claymation scene. A medium wide",
+   "итог": "E-111-6"
+  },
+  {
+   "n": 29,
+   "начало": "Shot in the style of DSLR",
+   "итог": "E-111-7"
+  },
+  {
+   "n": 30,
+   "начало": "A weathered, wooden mech robot",
+   "итог": "E-111-8"
+  },
+  {
+   "n": 31,
+   "начало": "A view of a person's hand",
+   "итог": "E-111-9"
+  },
+  {
+   "n": 32,
+   "начало": "A large, colorful bouquet of flowers",
+   "итог": "E-111-10"
+  },
+  {
+   "n": 33,
+   "начало": "A single comic book panel of",
+   "итог": "E-111-11"
+  },
+  {
+   "n": 34,
+   "начало": "Quickstart: Generate images from text prompts using Imagen",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 35,
+   "начало": "You can generate novel images",
+   "итог": "E-111-12"
+  },
+  {
+   "n": 36,
+   "начало": "Sign in to your Google Cloud account … $300 in free credits",
+   "итог": "ничего: обвязка настройки аккаунта (маркетинг кредитов)"
+  },
+  {
+   "n": 37,
+   "начало": "In the Google Cloud console, on the project selector page (строки 661-684)",
+   "итог": "ничего: настройка проекта/биллинга/API и роли IAM, не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "In the Google Cloud console, on the project selector page (строки 685-708, дубль)",
+   "итог": "ничего: дословный повтор шагов настройки 661-684"
+  },
+  {
+   "n": 39,
+   "начало": "Set up authentication for your environment. … Python … REST (строки 709-736)",
+   "итог": "ничего: настройка аутентификации (gcloud, ADC), не про генерацию"
+  },
+  {
+   "n": 40,
+   "начало": "Use the following samples to generate … Python",
+   "итог": "E-111-13, E-111-14"
+  },
+  {
+   "n": 41,
+   "начало": "REST Set environment variables: … :predict … a cat reading a book",
+   "итог": "E-111-15"
+  },
+  {
+   "n": 42,
+   "начало": "The model returns a base64 image",
+   "итог": "повтор E-111-15"
+  },
+  {
+   "n": 43,
+   "начало": "For more information, see the Imagen Generate",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 44,
+   "начало": "When to use Gemini or Imagen",
+   "итог": "E-111-16"
+  },
+  {
+   "n": 45,
+   "начало": "AttributeGemini ImageImagen 4",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 46,
+   "начало": "StrengthsDefault recommendation. Unparalleled flexibility",
+   "итог": "E-111-17, E-111-18"
+  },
+  {
+   "n": 47,
+   "начало": "AvailabilityGenerally availableGenerally available",
+   "итог": "E-111-19"
+  },
+  {
+   "n": 48,
+   "начало": "Latency Higher. More computation is",
+   "итог": "E-111-20"
+  },
+  {
+   "n": 49,
+   "начало": "CostToken-based pricing.Cost-effective for specialized",
+   "итог": "E-111-21"
+  },
+  {
+   "n": 50,
+   "начало": "Recommended tasks",
+   "итог": "ничего: подзаголовок строки таблицы"
+  },
+  {
+   "n": 51,
+   "начало": "Interleaved text and image generation",
+   "итог": "E-111-22"
+  },
+  {
+   "n": 52,
+   "начало": "Combine creative elements from multiple",
+   "итог": "E-111-23"
+  },
+  {
+   "n": 53,
+   "начало": "Make highly specific edits to",
+   "итог": "E-111-24"
+  },
+  {
+   "n": 54,
+   "начало": "Apply a specific design or",
+   "итог": "E-111-25"
+  },
+  {
+   "n": 55,
+   "начало": "Image quality, photorealism, artistic detail",
+   "итог": "E-111-26"
+  },
+  {
+   "n": 56,
+   "начало": "Infusing branding, style, or generating",
+   "итог": "E-111-27"
+  },
+  {
+   "n": 57,
+   "начало": "Generating advanced spelling or typography.",
+   "итог": "E-111-28"
+  },
+  {
+   "n": 58,
+   "начало": "We recommend Gemini as a",
+   "итог": "E-111-29, E-111-30"
+  },
+  {
+   "n": 59,
+   "начало": "Model versions There are multiple",
+   "итог": "ничего: ссылки на Gemini models / Imagen models"
+  },
+  {
+   "n": 60,
+   "начало": "Try more examples To learn more … notebooks",
+   "итог": "ничего: ссылки на ноутбуки (Gemini 3 Pro Image, Gemini 2.5 Flash Image, Imagen 4 Image Generation, Imagen 3 Image Editing), строки 786-826"
+  },
+  {
+   "n": 61,
+   "начало": "What's next Use the following links",
+   "итог": "ничего: ссылки (Prompt guide, How-to, Reference)"
+  },
+  {
+   "n": 62,
+   "начало": "Image credit: All images generated",
+   "итог": "повтор E-111-5 (все картинки страницы — Imagen)"
+  },
+  {
+   "n": 63,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, Last updated 2026-09-18 UTC)"
+  },
+  {
+   "n": 64,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка (подвал, языки; строки 839-885)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-111-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Vertex AI documentation is no longer being updated; Vertex AI's services are now part of Gemini Enterprise Agent Platform, whose documentation has the most up-to-date information.",
+   "цитата": "Vertex AI documentation is no longer being updated\nVertex AI's services are now part of Gemini Enterprise Agent Platform. See the most up-to-date information in the Agent Platform documentation.",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Статус всего источника: документация заморожена."
+  },
+  {
+   "код": "E-111-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Several image generation endpoints are deprecated; Google recommends updating model endpoints before June 30, 2026, to avoid service disruption.",
+   "цитата": "Caution: The following table describes image generation endpoints that\nare deprecated and their replacements. We recommend updating your model\nendpoints before June 30, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images on Vertex AI (Caution)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Срок June 30, 2026 уже прошёл на дату обновления страницы (2026-09-18)."
+  },
+  {
+   "код": "E-111-3",
+   "вид": "факт",
+   "утверждение_en": "The discontinued endpoints imagegeneration@002 to @006, imagetext@001, imagen-3.0-capability-001/002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/002, imagen-4.0-fast-generate-001, imagen-4.0-generate-001 and imagen-4.0-ultra-generate-001 all have gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "Discontinued endpointsRecommended endpoint migration\nimagegeneration@002gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images on Vertex AI (Caution)",
+   "модели": [
+    "imagegeneration@002-006",
+    "imagetext@001",
+    "imagen-3.0-*",
+    "imagen-4.0-*",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Цитата — шапка и первая строка таблицы; остальные 13 строк (592-604) имеют ту же замену gemini-2.5-flash-image."
+  },
+  {
+   "код": "E-111-4",
+   "вид": "факт",
+   "утверждение_en": "With Gemini and Imagen you can generate novel images from only a text prompt, edit or expand an uploaded or generated image using a mask area you define, and upscale existing, generated, or edited images.",
+   "цитата": "With Gemini and Imagen, you can do the following:\nGenerate novel images using only a text prompt (text-to-image AI\ngeneration).\nEdit or expand an uploaded or generated image using a mask area you define.\nUpscale existing, generated, or edited images.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate and edit images on Vertex AI",
+   "модели": [
+    "Gemini (image)",
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "форматы_разрешение"
+   ],
+   "заметка": "Страница не разделяет, какие из возможностей (маска, апскейл) относятся к Gemini, а какие к Imagen; в таблице ниже Gemini описан как \"mask-free editing\"."
+  },
+  {
+   "код": "E-111-5",
+   "вид": "факт",
+   "утверждение_en": "The example images on the page were generated with the general Imagen 3 model (imagen-3.0-generate-002) using the prompts that follow.",
+   "цитата": "These images are generated using the general Imagen 3\nimage generation model (imagen-3.0-generate-002) and the\nfollowing prompts:",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Все шесть промптов ниже — для Imagen 3, не для Gemini."
+  },
+  {
+   "код": "E-111-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Claymation example: style label first, then shot size, subject, clothing and action in the setting.",
+   "цитата": "Claymation scene. A medium wide shot of an elderly woman. She is\nwearing flowing clothing. She is standing in a lush garden watering\nthe plants with an orange watering can",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: [стиль/медиум \"Claymation scene.\"] → [план \"A medium wide shot of\"] + [субъект \"an elderly woman\"] → [одежда] → [действие и место \"standing in a lush garden watering the plants\"] → [конкретная деталь с цветом \"orange watering can\"]. Короткие отдельные предложения, стиль вынесен в начало."
+  },
+  {
+   "код": "E-111-7",
+   "вид": "пример_промпта",
+   "утверждение_en": "Photographic example: camera/filter style first, then subject and specific real location, then colour relationship and the intended mood.",
+   "цитата": "Shot in the style of DSLR camera with the polarizing filter. A\nphoto of two hot air balloons over the unique rock formations in\nCappadocia, Turkey. The colors and patterns on these balloons contrast\nbeautifully against the earthy tones of the landscape below. This shot\ncaptures the sense of adventure that comes with enjoying such an\nexperience.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": "Структура: [техника съёмки \"Shot in the style of DSLR camera with the polarizing filter.\"] → [тип \"A photo of\"] + [субъект \"two hot air balloons\"] + [конкретное место \"over the unique rock formations in Cappadocia, Turkey\"] → [цветовой контраст \"colors and patterns … contrast … against the earthy tones\"] → [настроение \"the sense of adventure\"]."
+  },
+  {
+   "код": "E-111-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Digital cartoon example: detailed subject with materials and props, setting, small secondary subject, then style with colour and line quality, then background element.",
+   "цитата": "A weathered, wooden mech robot covered in flowering vines stands\npeacefully in a field of tall wildflowers, with a a small blue bird\nresting on its outstrecteched hand. Digital Cartoon, with warm colors\nand soft lines. A large cliff with a waterfall looms behind.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": "Структура: [субъект с материалом и состоянием \"A weathered, wooden mech robot covered in flowering vines\"] → [поза/место \"stands peacefully in a field of tall wildflowers\"] → [второстепенный субъект и точка контакта \"a small blue bird resting on its outstretched hand\"] → [стиль \"Digital Cartoon, with warm colors and soft lines.\"] → [фон \"A large cliff with a waterfall looms behind.\"]. Стиль вставлен в середину, фон — последним. В тексте опечатки Google (\"a a\", \"outstrecteched\")."
+  },
+  {
+   "код": "E-111-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Macro example: point-of-view framing (a view of a person's hand), action with a tool, supporting details (scarf, clay dust), then capture type 'macro DSLR image' and what to highlight.",
+   "цитата": "A view of a person's hand as they hold a little clay figurine of\na bird in their hand and sculpt it with a modeling tool in their other\nhand. You can see the sculptor's scarf. Their hands are covered in\nclay dust. A macro DSLR image highlighting the texture and\ncraftsmanship.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: [ракурс \"A view of a person's hand\"] → [действие \"hold … and sculpt it with a modeling tool\"] → [детали, подтверждающие реализм: scarf, clay dust] → [тип съёмки и цель \"A macro DSLR image highlighting the texture and craftsmanship.\"]. Цель кадра (что подчеркнуть) названа явно."
+  },
+  {
+   "код": "E-111-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Oil painting example: main subject and container, a focal element placed in front, list of surrounding elements, background colour, then art-historical style.",
+   "цитата": "A large, colorful bouquet of flowers in an old blue glass vase\non the table. In front is one beautiful peony flower surrounded by\nvarious other blossoms like roses, lilies, daisies, orchids, fruits,\nberries, green leaves. The background is dark gray. Oil painting in\nthe style of the Dutch Golden Age.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: [объект \"A large, colorful bouquet of flowers in an old blue glass vase on the table\"] → [фокусный элемент и позиция \"In front is one beautiful peony\"] → [перечень окружения] → [фон \"The background is dark gray.\"] → [стиль с эпохой \"Oil painting in the style of the Dutch Golden Age.\"]."
+  },
+  {
+   "код": "E-111-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Comic panel example with in-image text: format (single comic book panel), characters, setting, action, a speech bubble with its source and exact text after a colon, then colour style and era.",
+   "цитата": "A single comic book panel of a boy and his father on a grassy\nhill, staring at the sunset. A speech bubble points from the boy's\nmouth and says: The sun will rise again. Muted, late 1990s coloring\nstyle",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Структура: [формат \"A single comic book panel of\"] → [персонажи и место] → [действие \"staring at the sunset\"] → [текст в кадре: \"A speech bubble points from the boy's mouth and says: The sun will rise again.\"] → [стиль/эпоха \"Muted, late 1990s coloring style\"]. Работу делает указание, откуда идёт пузырь, и точная реплика после двоеточия (без кавычек)."
+  },
+  {
+   "код": "E-111-12",
+   "вид": "факт",
+   "утверждение_en": "Imagen can generate novel images using only descriptive text as input; the quickstart samples show a simplified case, and additional parameters can tailor the generated images.",
+   "цитата": "You can generate novel images using only descriptive text as an input. The\nfollowing samples show a simplified case for generating images, but you can use\nadditional\nparameters to\ntailor the generated images to your needs.",
+   "источник_цитаты": "txt",
+   "раздел": "Quickstart: Generate images from text prompts using Imagen",
+   "модели": "Imagen",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Imagen quickstart prompt 'A dog reading a newspaper' generated with imagen-4.0-generate-001 and GenerateImagesConfig(image_size=\"2K\").",
+   "цитата": "A dog reading a newspaper",
+   "источник_цитаты": "txt",
+   "раздел": "Quickstart: Generate images from text prompts using Imagen / Python",
+   "модели": "imagen-4.0-generate-001",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "форматы_разрешение"
+   ],
+   "заметка": "Минимальный промпт \"субъект + действие\" без стиля и камеры — демонстрация вызова, не образец качества. Параметр image_size=\"2K\" в GenerateImagesConfig; метод client.models.generate_images (не generate_content)."
+  },
+  {
+   "код": "E-111-14",
+   "вид": "инструкция",
+   "утверждение_en": "Imagen is called with client.models.generate_images(model=..., prompt=..., config=GenerateImagesConfig(image_size=\"2K\")) and the result is read from generated_images[0].image.",
+   "цитата": "image = client.models.generate_images(\n    model=\"imagen-4.0-generate-001\",\n    prompt=\"A dog reading a newspaper\",\n    config=GenerateImagesConfig(\n        image_size=\"2K\",\n    ),\n)",
+   "источник_цитаты": "html",
+   "раздел": "Quickstart: Generate images from text prompts using Imagen / Python",
+   "модели": "imagen-4.0-generate-001",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-15",
+   "вид": "инструкция",
+   "утверждение_en": "Imagen REST generation uses the :predict method with instances [{\"prompt\": ...}] and parameters {\"sampleCount\": 1} (example prompt 'a cat reading a book', model imagen-4.0-generate-preview-05-20), and returns base64 image bytes.",
+   "цитата": "\"instances\": [ { \"prompt\": \"a cat reading a book\" } ], \"parameters\": { \"sampleCount\": 1 }",
+   "источник_цитаты": "txt",
+   "раздел": "Quickstart: Generate images from text prompts using Imagen / REST",
+   "модели": "imagen-4.0-generate-preview-05-20",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Регион в примере — us-central1 (регионный эндпоинт). \"The model returns a base64 image bytes object.\" (строка 747)."
+  },
+  {
+   "код": "E-111-16",
+   "вид": "факт",
+   "утверждение_en": "Besides Gemini's built-in image generation, Imagen is available as Google's specialized image generation model.",
+   "цитата": "In addition to using Gemini's built-in image generation\ncapabilities, you can also access\nImagen, our specialized image\ngeneration model.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": [
+    "Gemini Image (конкретная модель в таблице не указана)",
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-17",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image is the default recommendation, offering unparalleled flexibility, contextual understanding, and mask-free editing, and is uniquely capable of multi-turn conversational editing.",
+   "цитата": "Default recommendation.\nUnparalleled flexibility, contextual understanding, and mask-free\nediting. Uniquely capable of multi-turn conversational editing.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-18",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4's strength is best quality/latency.",
+   "цитата": "Best quality/latency",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": "Imagen 4",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-19",
+   "вид": "факт",
+   "утверждение_en": "Both Gemini Image and Imagen 4 are listed as generally available.",
+   "цитата": "AvailabilityGenerally availableGenerally available",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": [
+    "Gemini Image (конкретная модель в таблице не указана)",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Противоречит таблице устаревших эндпоинтов (Imagen 4 → migration), см. противоречия."
+  },
+  {
+   "код": "E-111-20",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image has higher latency because more computation is required for its advanced capabilities, while Imagen 4 has low latency, optimized for near-real-time performance.",
+   "цитата": "Latency\nHigher. More computation is required for its advanced capabilities.\nLow. Optimized for near-real-time performance.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": [
+    "Gemini Image (конкретная модель в таблице не указана)",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-21",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image uses token-based pricing; Imagen 4 is described as cost-effective for specialized tasks.",
+   "цитата": "CostToken-based pricing.Cost-effective for specialized tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": [
+    "Gemini Image (конкретная модель в таблице не указана)",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-22",
+   "вид": "правило",
+   "утверждение_en": "Gemini Image is recommended for interleaved text and image generation that blends text and images.",
+   "цитата": "Interleaved text and image generation to seamlessly blend text and\nimages.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-23",
+   "вид": "правило",
+   "утверждение_en": "Gemini Image is recommended for combining creative elements from multiple images with a single prompt.",
+   "цитата": "Combine creative elements from multiple images with a single\nprompt.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-24",
+   "вид": "правило",
+   "утверждение_en": "Gemini Image is recommended for making highly specific edits to images, modifying individual elements with language commands, and iteratively working on an image.",
+   "цитата": "Make highly specific edits to images, modify individual elements\nwith language commands, and iteratively work on an image.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-25",
+   "вид": "правило",
+   "утверждение_en": "Gemini Image is recommended for applying a specific design or texture from one image to another while preserving the original subject's form and details.",
+   "цитата": "Apply a specific design or texture from one image to another while\npreserving the original subject's form and details.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-26",
+   "вид": "правило",
+   "утверждение_en": "Imagen 4 is recommended when image quality, photorealism, artistic detail, or specific styles (for example, impressionism and anime) are top priorities.",
+   "цитата": "Image quality, photorealism, artistic detail, or specific styles\n(for example, impressionism and anime) are top priorities.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Imagen 4",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-27",
+   "вид": "правило",
+   "утверждение_en": "Imagen 4 is recommended for infusing branding or style and for generating logos and product designs.",
+   "цитата": "Infusing branding, style, or generating logos and product designs.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Imagen 4",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-28",
+   "вид": "правило",
+   "утверждение_en": "Imagen 4 is recommended for generating advanced spelling or typography.",
+   "цитата": "Generating advanced spelling or typography.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI (Recommended tasks)",
+   "модели": "Imagen 4",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "модели_сравнение"
+   ],
+   "заметка": "Страница относит \"advanced spelling or typography\" к Imagen 4, а не к Gemini Image (какая версия Gemini — не указано)."
+  },
+  {
+   "код": "E-111-29",
+   "вид": "правило",
+   "утверждение_en": "Google recommends Gemini as a starting point for generating images.",
+   "цитата": "We recommend Gemini as a starting point for generating images.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": "Gemini Image (конкретная модель в таблице не указана)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-30",
+   "вид": "правило",
+   "утверждение_en": "Choose Imagen 4 Ultra for advanced use-cases or when you need the best image quality.",
+   "цитата": "Choose Imagen 4 Ultra for advanced use-cases or when you need\nthe best image quality.",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": "Imagen 4 Ultra",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Imagen 4 Ultra (imagen-4.0-ultra-generate-001) при этом числится в таблице устаревших эндпоинтов."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-111-31",
+   "вид": "приём",
+   "утверждение_en": "The six Imagen 3 example prompts share a pattern: a concrete subject with material/clothing details, an action and a specific setting, plus an explicit style/medium label (Claymation, DSLR with polarizing filter, Digital Cartoon, macro DSLR, Dutch Golden Age oil painting, late-1990s comic coloring) placed at the start or the end; several add shot type (medium wide shot, macro) and a stated purpose or mood.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Prompts for preceding images",
+   "модели": "imagen-3.0-generate-002 (Imagen 3)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-111-6, E-111-7, E-111-8, E-111-9, E-111-10, E-111-11",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Паттерн показан на Imagen 3; для Gemini страница такого не утверждает."
+  },
+  {
+   "код": "E-111-32",
+   "вид": "объяснение",
+   "утверждение_en": "Model choice trade-off on this page: Gemini Image is the default for flexible, contextual, multi-image, mask-free and multi-turn editing work at higher latency and token-based cost; Imagen 4 is positioned for top image quality, photorealism, specific styles, branding/logos and advanced typography at low latency.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "When to use Gemini or Imagen on Vertex AI",
+   "модели": [
+    "Gemini Image (конкретная модель в таблице не указана)",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-111-17, E-111-18, E-111-20, E-111-21, E-111-22, E-111-23, E-111-24, E-111-25, E-111-26, E-111-27, E-111-28, E-111-29, E-111-30",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-111-33",
+   "вид": "предупреждение",
+   "утверждение_en": "The page is internally stale: it lists Imagen 4 (including Ultra) endpoints as discontinued with migration to gemini-2.5-flash-image by June 30, 2026, yet still recommends Imagen 4 Ultra for best quality, marks Imagen 4 generally available, and uses Imagen 4 endpoints in its quickstart; the documentation is also marked as no longer updated.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "Imagen 4",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-111-1, E-111-2, E-111-3, E-111-19, E-111-30, E-111-13, E-111-15",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Imagen 4 / Imagen 4 Ultra перечислены как discontinued (миграция на gemini-2.5-flash-image до June 30, 2026), но таблица сравнения помечает Imagen 4 'Generally available' и советует 'Choose Imagen 4 Ultra … best image quality', а quickstart использует imagen-4.0-generate-001 и imagen-4.0-generate-preview-05-20.",
+  "Список возможностей говорит 'Edit or expand … using a mask area you define' для 'Gemini and Imagen', а таблица описывает Gemini как 'mask-free editing'.",
+  "Quickstart: Python использует imagen-4.0-generate-001, REST — imagen-4.0-generate-preview-05-20.",
+  "Шаги настройки проекта (строки 661-684) дословно повторены (685-708)."
+ ],
+ "не_сказано": [
+  "Не указано, какая именно модель Gemini имеется в виду под \"Gemini Image\" в таблице.",
+  "Промпты-примеры только для Imagen 3; для Gemini на странице нет ни одного промпта.",
+  "Нет параметров Gemini (aspect ratio, размер) и цен в цифрах.",
+  "Не объяснено, почему устаревшие Imagen-эндпоинты мигрируют именно на gemini-2.5-flash-image, а не на Gemini 3 image-модели.",
+  "Нет упоминания водяного знака/SynthID."
+ ],
+ "сомнения": [
+  "Документация помечена как неподдерживаемая; срок миграции (June 30, 2026) прошёл до даты обновления (2026-09-18) — рекомендации сравнительной таблицы могут быть устаревшими.",
+  "Промпты-примеры созданы для Imagen 3; перенос их структуры на Nano Banana — вывод, не утверждение страницы."
+ ]
+}

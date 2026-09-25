@@ -1,0 +1,563 @@
+{
+ "id": 72,
+ "url": "https://codelabs.developers.google.com/cloud-genkit-go-nano-banana",
+ "заголовок": "Build a photo restoration app using Genkit Go and Nano Banana Pro  |  Google Codelabs",
+ "дата_в_тексте": "updated=\"2026-05-31T23:02:56Z\" (атрибут google-codelab в html); в тексте даты нет",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "код codelab лежит в организации GoogleCloudPlatform (github.com/GoogleCloudPlatform/devrel-demos/.../cloud-genkit-go-nano-banana); подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0. Автор в html — authors=\"Daniela Petruzalek\"; принадлежность автора к Google на странице не указана",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Codelab платформы Google Codelabs для Go-разработчиков: сборка приложения GlowUp для реставрации и колоризации старых фото на Genkit Go и Nano Banana Pro (Gemini 3 Pro Image, gemini-3-pro-image-preview) через Vertex AI. Шаги: введение, настройка окружения, проект, первое Genkit-приложение (текстовые gemini-2.5-pro/2.5-flash, dotprompt-шаблоны), реставрация (glowup.prompt с imageConfig.imageSize 1K/2K/4K и {{ media }}; CLI; разбор data-URI), веб-сервис и Cloud Run, vibe-coding клиента, итог. Для генерации картинок существенно мало: модель только в global, imageSize 1K/2K/4K как параметр Nano Banana Pro, ввод фото через {{ media }}, формат ответа data:<mime>;base64. Текст промпта реставрации не отрендерен (скриншот + ссылка на GitHub). Основной объём — инструментарий Genkit и деплой.",
+ "модели_на_странице": [
+  "gemini-3-pro-image-preview (Nano Banana Pro)",
+  "vertexai/gemini-2.5-pro и vertexai/gemini-2.5-flash (текстовые, greeter)"
+ ],
+ "структура": [
+  "1. Introduction",
+  "2. Environment Setup",
+  "3. Project Setup (Create the project, Install Genkit CLI, Configure environment variables)",
+  "4. Create your first Genkit application (terminology, greeter flow, prompt templates)",
+  "5. Restoring Images with Nano Banana Pro (The Restoration Prompt, The image restoration flow, Testing)",
+  "6. Deploying glowUp as a web service (Cloud Run, vibe coding client, clean up)",
+  "7. Conclusion (Next steps)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Build a photo restoration app using Genkit Go and Nano Banana Pro | Google Codelabs",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English …",
+   "итог": "ничего: обвязка сайта Codelabs (языки, Sign in; строки 2-26)"
+  },
+  {
+   "n": 3,
+   "начало": "Build a photo restoration app (заголовок codelab)",
+   "итог": "ничего: заголовок (строка 27)"
+  },
+  {
+   "n": 4,
+   "начало": "1. Introduction",
+   "итог": "ничего: заголовок шага"
+  },
+  {
+   "n": 5,
+   "начало": "In this codelab, we are going to build GlowUp, a photo restoration tool",
+   "итог": "E-72-1"
+  },
+  {
+   "n": 6,
+   "начало": "You will use Genkit Go … Gemini 3 Pro Image (also known as Nano Banana Pro)",
+   "итог": "E-72-1 (модель: Gemini 3 Pro Image = Nano Banana Pro)"
+  },
+  {
+   "n": 7,
+   "начало": "Prerequisites Basic knowledge of Go",
+   "итог": "ничего: требования к участнику"
+  },
+  {
+   "n": 8,
+   "начало": "What you'll learn How to develop Genkit",
+   "итог": "ничего: перечень тем codelab"
+  },
+  {
+   "n": 9,
+   "начало": "What you'll need This workshop can be done … Go toolchain … Node.js",
+   "итог": "ничего: окружение разработки"
+  },
+  {
+   "n": 10,
+   "начало": "Recommended: a coding agent like Gemini CLI or Antigravity",
+   "итог": "ничего: инструменты разработки"
+  },
+  {
+   "n": 11,
+   "начало": "Key Technologies … Gemini Nano Banana Pro (Gemini 3 Pro Image): the model powering",
+   "итог": "повтор E-72-1 (роль модели)"
+  },
+  {
+   "n": 12,
+   "начало": "2. Environment Setup You can run this lab",
+   "итог": "ничего: настройка окружения"
+  },
+  {
+   "n": 13,
+   "начало": "Self-paced environment setup … Project name … Project ID … Project Number … Caution … Note",
+   "итог": "ничего: создание проекта Google Cloud (строки 74-98)"
+  },
+  {
+   "n": 14,
+   "начало": "Next, you'll need to enable billing … $300 USD Free Trial",
+   "итог": "ничего: биллинг"
+  },
+  {
+   "n": 15,
+   "начало": "Start Cloud Shell Attention: … persistent 5GB home directory",
+   "итог": "ничего: Cloud Shell (строки 103-114)"
+  },
+  {
+   "n": 16,
+   "начало": "3. Project Setup Create the project … mkdir -p glowup",
+   "итог": "ничего: создание Go-модуля (код без промпта)"
+  },
+  {
+   "n": 17,
+   "начало": "Install Genkit CLI … curl -sL cli.genkit.dev",
+   "итог": "ничего: установка CLI"
+  },
+  {
+   "n": 18,
+   "начало": "Configure environment variables Important! The Gemini 3 Pro Image model",
+   "итог": "E-72-2"
+  },
+  {
+   "n": 19,
+   "начало": "Ensure you have your correct Google Cloud credentials set up. Location must be global",
+   "итог": "E-72-3"
+  },
+  {
+   "n": 20,
+   "начало": "export GOOGLE_CLOUD_PROJECT=… export GOOGLE_CLOUD_LOCATION=global",
+   "итог": "повтор E-72-2 (код: GOOGLE_CLOUD_LOCATION=global)"
+  },
+  {
+   "n": 21,
+   "начало": "Run the following command in shell mode to enable the Vertex AI API",
+   "итог": "ничего: включение API"
+  },
+  {
+   "n": 22,
+   "начало": "And if you are running from your local machine … gcloud auth application-default login",
+   "итог": "ничего: аутентификация"
+  },
+  {
+   "n": 23,
+   "начало": "4. Create your first Genkit application Genkit is an open-source framework",
+   "итог": "ничего: вводная про Genkit"
+  },
+  {
+   "n": 24,
+   "начало": "Genkit terminology Plugins / Flows / Prompts",
+   "итог": "ничего: инструментарий Genkit (не про генерацию картинок)"
+  },
+  {
+   "n": 25,
+   "начало": "Connecting with AI models Genkit uses plugins … Google AI: Best for prototyping … Vertex AI: Recommended for production",
+   "итог": "ничего: выбор бэкенда плагина Genkit (не про картинки)"
+  },
+  {
+   "n": 26,
+   "начало": "Creating a greeter flow … A flow is a special Genkit function … main.go",
+   "итог": "ничего: вводная к текстовому примеру"
+  },
+  {
+   "n": 27,
+   "начало": "main.go (greeter, vertexai/gemini-2.5-pro, \"Say a warm and creative hello to %s\")",
+   "итог": "ничего: код без промпта картинок (текстовая модель)"
+  },
+  {
+   "n": 28,
+   "начало": "Save the file and then run go mod tidy … <-ctx.Done()",
+   "итог": "ничего: пояснение кода"
+  },
+  {
+   "n": 29,
+   "начало": "The genkit CLI was developed to help us test … genkit start -- go run main.go",
+   "итог": "ничего: запуск инструмента"
+  },
+  {
+   "n": 30,
+   "начало": "Note: if you are running this codelab from CloudShell, there is a bug",
+   "итог": "ничего: баг Dev UI в Cloud Shell"
+  },
+  {
+   "n": 31,
+   "начало": "If you open localhost:4000 … Take your time to explore the Dev UI",
+   "итог": "ничего: Dev UI"
+  },
+  {
+   "n": 32,
+   "начало": "Using prompt templates While you can hardcode your prompts",
+   "итог": "ничего: организация промптов в шаблонах (инструментарий, не про картинки)"
+  },
+  {
+   "n": 33,
+   "начало": "To define prompt templates, Genkit uses the open source dotprompt format … Frontmatter … Body … Note",
+   "итог": "ничего: формат dotprompt (инструментарий)"
+  },
+  {
+   "n": 34,
+   "начало": "The directory structure … glowup/ main.go prompts/",
+   "итог": "ничего: структура проекта"
+  },
+  {
+   "n": 35,
+   "начало": "Let's see this in practice … mkdir -p prompts … cloudshell edit prompts/greeter.prompt",
+   "итог": "ничего: команды"
+  },
+  {
+   "n": 36,
+   "начало": "Attention! Due to limitations of the codelab platform (greeter.prompt)",
+   "итог": "ничего: служебная оговорка — .prompt файлы не рендерятся на странице"
+  },
+  {
+   "n": 37,
+   "начало": "greeter.prompt This prompt showcases … vertexai/gemini-2.5-flash … temperature 1.9 … system prompt",
+   "итог": "ничего: не про генерацию картинок (текстовая модель gemini-2.5-flash; шкала temperature 0-2 дана для неё)"
+  },
+  {
+   "n": 38,
+   "начало": "Now, let's adapt the greeter flow … main.go (LookupPrompt)",
+   "итог": "ничего: код без промпта картинок"
+  },
+  {
+   "n": 39,
+   "начало": "Try running the flow from the command line … Example output (Hello there / Daniela)",
+   "итог": "ничего: вывод текстовой модели"
+  },
+  {
+   "n": 40,
+   "начало": "5. Restoring Images with Nano Banana Pro The Restoration Prompt Now that you are familiar",
+   "итог": "ничего: вводная шага"
+  },
+  {
+   "n": 41,
+   "начало": "Create a file named glowup.prompt … Attention! … glowup.prompt",
+   "итог": "ничего: текст промпта реставрации не отрендерен (на странице — картинка-скриншот и ссылка на GitHub GoogleCloudPlatform/devrel-demos), см. сомнения"
+  },
+  {
+   "n": 42,
+   "начало": "The restoration prompt follows the same pattern",
+   "итог": "ничего: вводная к списку отличий"
+  },
+  {
+   "n": 43,
+   "начало": "Image size: the imageSize property of imageConfig",
+   "итог": "E-72-4"
+  },
+  {
+   "n": 44,
+   "начало": "Media input: we are using the {{ media }} template",
+   "итог": "E-72-5"
+  },
+  {
+   "n": 45,
+   "начало": "You can test this prompt on the Dev UI. Feel free to tweak it",
+   "итог": "ничего: общий совет по инструменту (экспериментировать с промптом в Dev UI)"
+  },
+  {
+   "n": 46,
+   "начало": "The image restoration flow With the restoration prompt ready",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 47,
+   "начало": "main.go (glowUp flow, LookupPrompt \"glowup\", resp.Media(), decode)",
+   "итог": "ничего: код CLI без текста промпта; получение картинки через resp.Media() и разбор data-URI — см. E-72-6"
+  },
+  {
+   "n": 48,
+   "начало": "The code is very similar in structure to the greeter flow",
+   "итог": "ничего: пояснение кода"
+  },
+  {
+   "n": 49,
+   "начало": "We need to decode the output because the model returns",
+   "итог": "E-72-6"
+  },
+  {
+   "n": 50,
+   "начало": "You can see in the decode function … mime.ExtensionByType and base64.DecodeString",
+   "итог": "E-72-6 (способ декодирования)"
+  },
+  {
+   "n": 51,
+   "начало": "Testing the restoration flow … Library of Congress … direct link",
+   "итог": "ничего: тестовое фото (public domain)"
+  },
+  {
+   "n": 52,
+   "начало": "export IMAGE_URL=… go run main.go -- url $IMAGE_URL",
+   "итог": "ничего: команда запуска"
+  },
+  {
+   "n": 53,
+   "начало": "And here is the restored and colorized output: Success!",
+   "итог": "повтор E-72-1 (результат — реставрация с колоризацией; картинка на странице)"
+  },
+  {
+   "n": 54,
+   "начало": "6. Deploying glowUp as a web service … genkit.Handler … server plugin",
+   "итог": "ничего: развёртывание (не про генерацию)"
+  },
+  {
+   "n": 55,
+   "начало": "main.go (web server)",
+   "итог": "ничего: код сервера без промпта"
+  },
+  {
+   "n": 56,
+   "начало": "You can either run this service locally … curl … decode the base64 image … Note",
+   "итог": "ничего: тестирование сервера"
+  },
+  {
+   "n": 57,
+   "начало": "Deploy the web service to Cloud Run … gcloud run deploy … --region us-central1",
+   "итог": "ничего: деплой Cloud Run (регион сервиса, не модели)"
+  },
+  {
+   "n": 58,
+   "начало": "The deployment can take a few minutes … curl … decode",
+   "итог": "ничего: проверка эндпоинта"
+  },
+  {
+   "n": 59,
+   "начало": "Now we have a fully working photo restoration web server!",
+   "итог": "ничего: итоговая фраза"
+  },
+  {
+   "n": 60,
+   "начало": "Optional: \"Vibe coding\" a client application … Use the following prompt",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 61,
+   "начало": "GlowUp is a photo restoration service that takes a restoration request … Acceptance Criteria",
+   "итог": "ничего: промпт для кодинг-агента (клиент CLI), не промпт генерации картинки"
+  },
+  {
+   "n": 62,
+   "начало": "The agent might need to reorganise the files",
+   "итог": "ничего: совет по работе с агентом"
+  },
+  {
+   "n": 63,
+   "начало": "Cleaning up after the lab Attention: Make sure you delete the Cloud Run deployment",
+   "итог": "ничего: биллинг/очистка"
+  },
+  {
+   "n": 64,
+   "начало": "7. Conclusion Congratulations! … Use Nano Banana Pro to process images",
+   "итог": "ничего: перечень пройденного (повтор тем)"
+  },
+  {
+   "n": 65,
+   "начало": "Next steps … If you need some ideas for improvements",
+   "итог": "E-72-7"
+  },
+  {
+   "n": 66,
+   "начало": "The possibilities are endless! … Gemini CLI or Antigravity … Genkit MCP Server … full code here. Happy coding!",
+   "итог": "ничего: ссылки/маркетинг"
+  },
+  {
+   "n": 67,
+   "начало": "Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: обвязка (лицензия)"
+  },
+  {
+   "n": 68,
+   "начало": "[[[\"Easy to understand\" … Connect Blog … English …",
+   "итог": "ничего: обвязка (виджет отзыва, подвал, языки; строки 1860-1911)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-72-1",
+   "вид": "факт",
+   "утверждение_en": "GlowUp uses Nano Banana Pro (Gemini 3 Pro Image) to restore old, damaged, or black-and-white photos, creating high-quality 4K color images, and can be adapted to restore damaged illustrations, drawings, paintings or other images.",
+   "цитата": "GlowUp uses AI to restore old, damaged, or black-and-white photos, creating high-quality 4K color images. You can use this tool to give a new life to your family photos, or even adapt it to restore damaged illustrations, drawings, paintings or other forms of images.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Introduction",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "форматы_разрешение"
+   ],
+   "заметка": "Заявление codelab о результате (реставрация + колоризация в 4K); сам промпт реставрации на странице не показан."
+  },
+  {
+   "код": "E-72-2",
+   "вид": "ограничение",
+   "утверждение_en": "The Gemini 3 Pro Image model (gemini-3-pro-image-preview) is currently only available in the global location on Vertex AI, so the location must be set to global for the restoration flow to work.",
+   "цитата": "The Gemini 3 Pro Image model (\ngemini-3-pro-image-preview\n) is currently\nonly\navailable in the global location on Vertex AI. You\nmust\nset your location to\nglobal\nfor the restoration flow to work.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Project Setup / Configure environment variables",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "\"currently\" — состояние на дату codelab (updated 2026-05-31)."
+  },
+  {
+   "код": "E-72-3",
+   "вид": "правило",
+   "утверждение_en": "Location must be global when using Gemini 3 Pro Preview models, of which Nano Banana Pro is one.",
+   "цитата": "Location must be\nglobal\nwhen using Gemini 3 Pro Preview models (Nano Banana Pro is one of them).",
+   "источник_цитаты": "txt",
+   "раздел": "3. Project Setup / Configure environment variables",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)",
+    "Gemini 3 Pro Preview models"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Обобщение на все Gemini 3 Pro Preview модели — формулировка codelab."
+  },
+  {
+   "код": "E-72-4",
+   "вид": "факт",
+   "утверждение_en": "The imageSize property of imageConfig is a model-specific parameter of Nano Banana Pro that specifies the output size as 1K, 2K or 4K.",
+   "цитата": "the\nimageSize\nproperty of\nimageConfig\nis a model-specific parameter of Nano Banana Pro. It allows us to specify the\noutput size",
+   "источник_цитаты": "txt",
+   "раздел": "5. Restoring Images with Nano Banana Pro / The Restoration Prompt",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Задаётся во frontmatter .prompt-файла (Genkit dotprompt)."
+  },
+  {
+   "код": "E-72-5",
+   "вид": "приём",
+   "утверждение_en": "Use the {{ media }} template to inject the photo into the user prompt, which sends a multimodal (text + image) prompt to the model.",
+   "цитата": "Media input:\nwe are using the",
+   "источник_цитаты": "txt",
+   "раздел": "5. Restoring Images with Nano Banana Pro / The Restoration Prompt",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Специфика Genkit dotprompt (handlebars)."
+  },
+  {
+   "код": "E-72-6",
+   "вид": "факт",
+   "утверждение_en": "The model response returns the image data as a data URI in the format data:<mime type>;base64,<base64 encoded image>, which must be decoded (split mime type and base64 part) before saving the file.",
+   "цитата": "We need to decode the output because the model returns the image data in the following format:\ndata:<mime type>;base64,<base64 encoded image>",
+   "источник_цитаты": "txt",
+   "раздел": "5. Restoring Images with Nano Banana Pro / The image restoration flow",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Формат — как его отдаёт Genkit resp.Media(); расширение файла берётся из MIME-типа."
+  },
+  {
+   "код": "E-72-7",
+   "вид": "факт",
+   "утверждение_en": "Suggested extensions include using the model for other types of image processing, such as photo to drawing, drawing to photo, and sketch to final art.",
+   "цитата": "Perform other types of image processing (from photo to drawing, from drawing to photo, sketch to final art, etc.",
+   "источник_цитаты": "txt",
+   "раздел": "7. Conclusion / Next steps",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Идеи автора для доработки; не проверенные на странице возможности."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-72-8",
+   "вид": "объяснение",
+   "утверждение_en": "The restoration pipeline shown is: a dotprompt template whose frontmatter sets Nano Banana Pro with imageConfig.imageSize (1K/2K/4K), a body that injects the input photo via {{ media }}, a Vertex AI call in the global location, and decoding of the returned data URI into an image file.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "5. Restoring Images with Nano Banana Pro",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-72-2, E-72-4, E-72-5, E-72-6",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Сам текст инструкции реставрации на странице не виден."
+  },
+  {
+   "код": "E-72-9",
+   "вид": "предупреждение",
+   "утверждение_en": "The global-location requirement for gemini-3-pro-image-preview is stated twice on the page (an 'Important!' box and a separate note), marking it as the main setup pitfall for the restoration flow.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "3. Project Setup",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-72-2, E-72-3",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Повторный акцент страницы."
+  }
+ ],
+ "противоречия_внутри": [
+  "не найдено. Замечание: введение обещает \"high-quality 4K color images\", но конкретное значение imageSize в glowup.prompt на странице не видно (файл не отрендерен)."
+ ],
+ "не_сказано": [
+  "Нет текста промпта реставрации (glowup.prompt) — только скриншот и ссылка на GitHub.",
+  "Не сказано, как промпт добивается колоризации и сохранения лиц/деталей.",
+  "Не указаны aspect ratio, стоимость 4K, лимиты размера входного фото.",
+  "Не упомянуты SynthID/Content Credentials на восстановленных фото.",
+  "Не сказано, работает ли тот же поток с gemini-3.1-flash-image."
+ ],
+ "сомнения": [
+  "Ключевой промпт реставрации недоступен в тексте страницы (подтверждает пометку партии).",
+  "Автор (Daniela Petruzalek) указан только в атрибуте html; принадлежность к Google на странице не заявлена — официальность подтверждена по организации GoogleCloudPlatform и подвалу Google Developers Site Policies.",
+  "\"currently only available in the global location\" — состояние на 2026-05-31."
+ ]
+}

@@ -1,0 +1,1007 @@
+{
+ "id": 28,
+ "url": "https://ai.google.dev/api/interactions-api",
+ "заголовок": "Gemini Interactions API (reference) | Google AI for Developers",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC (подвал; meta article:published_time/datePublished в html нет)",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0 + 'Last updated 2026-09-23 UTC'; эндпоинт generativelanguage.googleapis.com; ссылки View the OpenAPI Spec. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочник нового Interactions API (beta, /v1beta/) для разработчиков: методы credentials и interactions (create/cancel/get/delete), ресурс Interaction, модели данных (Content: Audio/Document/Image/Text/Video; Tool; SSE-события; ResponseFormat; Step; EnvironmentConfig). Для картинок: список ID моделей (gemini-2.5-flash-image с описанием, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image), ImageContent (8 входных форматов, resolution low…ultra_high), ImageResponseFormat (14 соотношений, 512/1K/2K/4K, только image/jpeg, inline/uri) и пример {\"type\":\"image\",\"aspect_ratio\":\"16:9\",\"image_size\":\"1K\",\"mime_type\":\"image/jpeg\"}, ImageDelta при стриминге, image_search в GoogleSearch, учёт токенов по модальностям (в примере одна картинка на входе = 258 токенов), ThoughtStep/подписи. Образцов запросов (кода) в сохранённой странице нет, только примеры ответов; примера генерации картинки нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image",
+  "gemini-3-pro-image",
+  "nano-banana-pro-preview (Gemini 3 Pro Image Preview)",
+  "gemini-3.1-flash-image",
+  "много текстовых/агентных/музыкальных моделей (gemini-2.5-*, gemini-3.x-flash, gemma-4, lyria-3, robotics) — не про картинки",
+  "gemini-3.6-flash / gemini-3-flash-preview (в примерах ответов)"
+ ],
+ "структура": [
+  "Gemini Interactions API (вступление, beta)",
+  "CreateCredential",
+  "Creating an interaction (Request body: model, agent, input, system_instruction, tools, response_format, stream, store, background, generation_config, agent_config, environment, labels, previous_interaction_id, safety_settings, service_tier, webhook_config; Example Responses: Simple Request, Multi-turn, Image Input, Function Calling, Deep Research, Antigravity Agent, Reuse Environment, With Sources, Custom Agent)",
+  "Canceling an interaction",
+  "ListCredentials / GetCredential",
+  "Retrieving an interaction",
+  "UpdateCredential / DeleteCredential",
+  "Deleting an interaction",
+  "Resources: Interaction (+ Example)",
+  "Data Models: Content (Audio/Document/Image/Text/Video), Tool, InteractionSseEvent, ResponseFormat (Audio/Image/Text/Video), Step, EnvironmentConfig, EnvironmentNetworkEgressAllowlist, ToolChoiceConfig, ImageContent, TextContent"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini Interactions API (reference) | Google",
+   "итог": "ничего: обвязка сайта (заголовок, выбор языка, верхнее меню), строки 1-37"
+  },
+  {
+   "n": 2,
+   "начало": "Overview API versions Core APIs Interactions",
+   "итог": "ничего: обвязка сайта (левое меню API reference, баннер Gemini 3.8 Flash, хлебные крошки), строки 38-75"
+  },
+  {
+   "n": 3,
+   "начало": "The Gemini Interactions API allows developers",
+   "итог": "ничего: маркетинг без содержания (общее описание Gemini как мультимодальной модели), строка 76"
+  },
+  {
+   "n": 4,
+   "начало": "View as markdown View the OpenAPI",
+   "итог": "E-28-1"
+  },
+  {
+   "n": 5,
+   "начало": "CreateCredential post https://generativelanguage.googleapis.com/v1beta/credentials Creates",
+   "итог": "ничего: не про генерацию картинок (credentials: env var / bearer / OAuth2, ответ и пример), строки 88-240"
+  },
+  {
+   "n": 6,
+   "начало": "Creating an interaction post https://generativelanguage.googleapis.com/v1beta/interactions",
+   "итог": "E-28-2"
+  },
+  {
+   "n": 7,
+   "начало": "Path / Query Parameters api_version string",
+   "итог": "ничего: общий параметр api_version, строки 249-253"
+  },
+  {
+   "n": 8,
+   "начало": "model ModelOption (optional) The name",
+   "итог": "ничего: перечень текстовых/Gemma/latest-моделей (gemini-2.5-flash/pro, gemma-4, *-latest, 2.5-flash-lite), строки 257-278; image-модели — см. E-28-3, E-28-4"
+  },
+  {
+   "n": 9,
+   "начало": "gemini-2.5-flash-image Our native image generation",
+   "итог": "E-28-3"
+  },
+  {
+   "n": 10,
+   "начало": "gemini-3-flash-preview Our most intelligent model",
+   "итог": "ничего: не про генерацию картинок (gemini-3-flash-preview, 3.1-pro-preview, customtools, 3.1-flash-lite), строки 281-288"
+  },
+  {
+   "n": 11,
+   "начало": "gemini-3-pro-image Gemini 3 Pro Image",
+   "итог": "E-28-4"
+  },
+  {
+   "n": 12,
+   "начало": "gemini-3.5-flash Gemini 3.5 Flash - Our",
+   "итог": "ничего: не про генерацию картинок (gemini-3.5…3.8-flash, lyria-3, robotics-er), строки 295-310"
+  },
+  {
+   "n": 13,
+   "начало": "agent AgentOption (optional) The name",
+   "итог": "ничего: не про генерацию картинок (агенты Deep Research / Antigravity), строки 311-326"
+  },
+  {
+   "n": 14,
+   "начало": "input Content or array ( Content",
+   "итог": "E-28-5"
+  },
+  {
+   "n": 15,
+   "начало": "system_instruction string (optional) System instruction",
+   "итог": "ничего: поле system_instruction (string) и tools — без правил, строки 335-344"
+  },
+  {
+   "n": 16,
+   "начало": "response_format ResponseFormat or array (",
+   "итог": "E-28-6"
+  },
+  {
+   "n": 17,
+   "начало": "stream boolean (optional) Input only.",
+   "итог": "ничего: общие флаги stream/store/background, строки 353-363"
+  },
+  {
+   "n": 18,
+   "начало": "generation_config GenerationConfig (optional) Model Configuration",
+   "итог": "E-28-7"
+  },
+  {
+   "n": 19,
+   "начало": "max_output_tokens integer (optional) The maximum",
+   "итог": "E-28-8 (max_output_tokens — ничего: общий лимит)"
+  },
+  {
+   "n": 20,
+   "начало": "speech_config SpeakerConfig or array (SpeechConfig)",
+   "итог": "ничего: не про генерацию картинок (speech_config, stop_sequences), строки 381-407"
+  },
+  {
+   "n": 21,
+   "начало": "thinking_level ThinkingLevel (optional) The level",
+   "итог": "E-28-9"
+  },
+  {
+   "n": 22,
+   "начало": "thinking_summaries ThinkingSummaries (optional) Whether to",
+   "итог": "E-28-10"
+  },
+  {
+   "n": 23,
+   "начало": "tool_choice ToolChoiceConfig or enum (string)",
+   "итог": "ничего: не про генерацию картинок (tool_choice, transcription_config), строки 430-495"
+  },
+  {
+   "n": 24,
+   "начало": "video_config VideoConfig (optional) Configuration for",
+   "итог": "ничего: не про генерацию картинок (video_config: text_to_video, image_to_video — 1-2 исходные картинки как первый/последний кадр, reference_to_video, edit, extend — это видео), строки 496-520"
+  },
+  {
+   "n": 25,
+   "начало": "agent_config object (optional) Agent Configuration",
+   "итог": "ничего: не про генерацию картинок (Antigravity/Deep Research/Dynamic agent config, environment, labels), строки 521-601"
+  },
+  {
+   "n": 26,
+   "начало": "previous_interaction_id string (optional) The ID",
+   "итог": "E-28-11"
+  },
+  {
+   "n": 27,
+   "начало": "safety_settings array (SafetySetting) (optional) Safety",
+   "итог": "ничего: поле safety_settings без раскрытия типа; service_tier; webhook_config, строки 606-639"
+  },
+  {
+   "n": 28,
+   "начало": "Response Returns an Interaction resource. Simple",
+   "итог": "ничего: примеры ответов на текст (Simple Request, Multi-turn), модель gemini-3.6-flash, строки 640-817"
+  },
+  {
+   "n": 29,
+   "начало": "Image Input Example Response { \"created\"",
+   "итог": "E-28-12"
+  },
+  {
+   "n": 30,
+   "начало": "Function Calling Example Response { \"created\"",
+   "итог": "ничего: не про генерацию картинок (примеры ответов Function Calling, Deep Research, Antigravity Agent, Reuse Environment; With Sources и Custom Agent — пустые заголовки), строки 922-1297"
+  },
+  {
+   "n": 31,
+   "начало": "Canceling an interaction post https://generativelanguage.googleapis.com/v1beta/interactions/{id}/cancel",
+   "итог": "ничего: не про генерацию картинок (отмена только фоновых interaction, пример ответа), строки 1298-1363"
+  },
+  {
+   "n": 32,
+   "начало": "ListCredentials get https://generativelanguage.googleapis.com/v1beta/credentials Lists",
+   "итог": "ничего: не про генерацию картинок (ListCredentials, GetCredential), строки 1364-1522"
+  },
+  {
+   "n": 33,
+   "начало": "Retrieving an interaction get https://generativelanguage.googleapis.com/v1beta/interactions/{id}",
+   "итог": "ничего: не про генерацию картинок (get, stream, last_event_id, пример), строки 1523-1599"
+  },
+  {
+   "n": 34,
+   "начало": "UpdateCredential patch https://generativelanguage.googleapis.com/v1beta/credentials/{id} Updates",
+   "итог": "ничего: не про генерацию картинок (UpdateCredential, DeleteCredential, Deleting an interaction), строки 1600-1774"
+  },
+  {
+   "n": 35,
+   "начало": "Resources Interaction The Interaction resource. Fields",
+   "итог": "ничего: повтор полей запроса в ресурсе Interaction (agent, agent_config, created, environment, errors, id, input, labels, model — список моделей повторяет E-28-3, E-28-4; previous_interaction_id, response_format, safety_settings, service_tier), строки 1775-1987"
+  },
+  {
+   "n": 36,
+   "начало": "status enum (string) (optional) Required.",
+   "итог": "ничего: общие статусы interaction (in_progress, requires_action, completed, failed, cancelled, incomplete 'e.g. hitting max_tokens', budget_exceeded deprecated, queued), steps, system_instruction, tools, updated, строки 1988-2035"
+  },
+  {
+   "n": 37,
+   "начало": "usage Usage (optional) Output only.",
+   "итог": "E-28-13"
+  },
+  {
+   "n": 38,
+   "начало": "grounding_tool_count array (GroundingToolCount) (optional)",
+   "итог": "E-28-15"
+  },
+  {
+   "n": 39,
+   "начало": "total_cached_tokens integer (optional) Number of",
+   "итог": "E-28-14"
+  },
+  {
+   "n": 40,
+   "начало": "webhook_config WebhookConfig (optional) Optional. Webhook",
+   "итог": "ничего: не про генерацию картинок (webhook_config и пример Interaction на тексте), строки 2186-2298"
+  },
+  {
+   "n": 41,
+   "начало": "Data Models Content The content of",
+   "итог": "ничего: не про генерацию картинок (AudioContent, DocumentContent), строки 2298-2385"
+  },
+  {
+   "n": 42,
+   "начало": "ImageContent An image content block. data",
+   "итог": "E-28-16, E-28-17"
+  },
+  {
+   "n": 43,
+   "начало": "TextContent A text content block. annotations",
+   "итог": "ничего: не про генерацию картинок (TextContent, аннотации FileCitation — media_id 'in-case of image citations', PlaceCitation, SpeechAnnotation, UrlCitation, WordInfo), строки 2436-2643"
+  },
+  {
+   "n": 44,
+   "начало": "VideoContent A video content block. data",
+   "итог": "ничего: не про генерацию картинок (VideoContent: name 'Can be referenced by the model in the final response', processing, resolution), строки 2643-2740"
+  },
+  {
+   "n": 45,
+   "начало": "Examples Audio { \"type\" : \"audio\"",
+   "итог": "E-28-16 (пример Image: type image, BASE64_ENCODED_IMAGE, image/png; примеры Audio/Document/Text/Video — ничего), строки 2741-2803"
+  },
+  {
+   "n": 46,
+   "начало": "Tool A tool that can be used",
+   "итог": "ничего: не про генерацию картинок (CodeExecution, ComputerUse, FileSearch, Function, GoogleMaps), строки 2804-2930"
+  },
+  {
+   "n": 47,
+   "начало": "GoogleSearch A tool that can be used",
+   "итог": "E-28-18"
+  },
+  {
+   "n": 48,
+   "начало": "McpServer A MCPServer is a server",
+   "итог": "ничего: не про генерацию картинок (McpServer, UrlContext, список примеров Tool без кода), строки 2948-3014"
+  },
+  {
+   "n": 49,
+   "начало": "InteractionSseEvent Possible Types Polymorphic discriminator: event_type",
+   "итог": "ничего: SSE-события ErrorEvent, InteractionCompletedEvent, InteractionCreatedEvent, InteractionStatusUpdate — повтор статусов и Usage (E-28-13, E-28-15, E-28-14), строки 3014-3547"
+  },
+  {
+   "n": 50,
+   "начало": "StepDelta delta StepDeltaData (required) No",
+   "итог": "ничего: не про генерацию картинок (ArgumentsDelta, AudioDelta, CodeExecution*/FileSearch*/FunctionResult/GoogleMaps*/GoogleSearch* Delta), строки 3548-3878"
+  },
+  {
+   "n": 51,
+   "начало": "ImageDelta data string (optional) No",
+   "итог": "E-28-19"
+  },
+  {
+   "n": 52,
+   "начало": "McpServerToolCallDelta arguments object (required) No",
+   "итог": "ничего: не про генерацию картинок (McpServer*Delta, ProcessingCall/ResultDelta, TextAnnotationDelta, TextDelta), строки 3930-4210"
+  },
+  {
+   "n": 53,
+   "начало": "ThoughtSignatureDelta signature string (optional) Signature",
+   "итог": "E-28-20"
+  },
+  {
+   "n": 54,
+   "начало": "UrlContextCallDelta arguments UrlContextCallArguments (required)",
+   "итог": "ничего: не про генерацию картинок (UrlContext*Delta, VideoDelta, метаданные step.delta — повтор Usage E-28-13, StepStart, StepStop), строки 4238-4869"
+  },
+  {
+   "n": 55,
+   "начало": "Examples Error Event { \"error\" :",
+   "итог": "ничего: примеры SSE-событий на тексте (gemini-3.6-flash, gemini-3-flash-preview), строки 4870-5083"
+  },
+  {
+   "n": 56,
+   "начало": "ResponseFormat Possible Types AudioResponseFormat Configuration",
+   "итог": "ничего: не про генерацию картинок (AudioResponseFormat), строки 5083-5134"
+  },
+  {
+   "n": 57,
+   "начало": "ImageResponseFormat Configuration for image output",
+   "итог": "E-28-21"
+  },
+  {
+   "n": 58,
+   "начало": "1:1 1:1 aspect ratio. 2:3",
+   "итог": "E-28-22"
+  },
+  {
+   "n": 59,
+   "начало": "delivery enum (string) (optional) The",
+   "итог": "E-28-23"
+  },
+  {
+   "n": 60,
+   "начало": "image_size enum (string) (optional) The",
+   "итог": "E-28-24"
+  },
+  {
+   "n": 61,
+   "начало": "mime_type enum (string) (optional) The",
+   "итог": "E-28-25"
+  },
+  {
+   "n": 62,
+   "начало": "TextResponseFormat Configuration for text output",
+   "итог": "ничего: не про генерацию картинок (TextResponseFormat, VideoResponseFormat 16:9/9:16, 360p-4k, дефолт 720p), строки 5209-5281"
+  },
+  {
+   "n": 63,
+   "начало": "Examples Audio Output { \"type\" :",
+   "итог": "E-28-26 (примеры Audio Output, Text Output (JSON Schema), Video Output — ничего)"
+  },
+  {
+   "n": 64,
+   "начало": "Step A step in the interaction.",
+   "итог": "ничего: не про генерацию картинок (CodeExecution*/FileSearch*/Function*/GoogleMaps* Step; FunctionResultStep.result может содержать ImageContent — результаты функций, не генерация), строки 5375-5615"
+  },
+  {
+   "n": 65,
+   "начало": "GoogleSearchCallStep Google Search call step.",
+   "итог": "ничего: повтор E-28-18 (search_type web_search/image_search), GoogleSearchResultStep, McpServer*Step, строки 5615-5734"
+  },
+  {
+   "n": 66,
+   "начало": "ModelOutputStep Output generated by the model.",
+   "итог": "E-28-28"
+  },
+  {
+   "n": 67,
+   "начало": "ProcessingCallStep A server-initiated processing step",
+   "итог": "ничего: не про генерацию картинок (обработка медиа для понимания видео), строки 5750-5786"
+  },
+  {
+   "n": 68,
+   "начало": "ThoughtStep A thought step. signature",
+   "итог": "E-28-27"
+  },
+  {
+   "n": 69,
+   "начало": "UrlContextCallStep URL context call step.",
+   "итог": "ничего: не про генерацию картинок (UrlContext*Step, UserInputStep, примеры Step на тексте, включая ThoughtStep-пример в заметке E-28-27), строки 6063-6507"
+  },
+  {
+   "n": 70,
+   "начало": "EnvironmentConfig Configuration for a custom",
+   "итог": "ничего: не про генерацию картинок (EnvironmentConfig, источники, сеть, примеры Inline/External Sources — AGENTS.md и SKILL.md для агента, Network Allowlist, Proxy Credentials, EnvironmentNetworkEgressAllowlist), строки 6508-6769"
+  },
+  {
+   "n": 71,
+   "начало": "ToolChoiceConfig The tool choice configuration",
+   "итог": "ничего: не про генерацию картинок (allowed_tools, пример), строки 6770-6813"
+  },
+  {
+   "n": 72,
+   "начало": "ImageContent An image content block. Fields",
+   "итог": "ничего: повтор E-28-16, E-28-17 (отдельный раздел ImageContent + пример), строки 6814-6881"
+  },
+  {
+   "n": 73,
+   "начало": "TextContent A text content block. Fields",
+   "итог": "ничего: не про генерацию картинок (TextContent и аннотации, пример), строки 6882-7097"
+  },
+  {
+   "n": 74,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Site Policies, 'Last updated 2026-09-23 UTC', виджет отзывов, языки), строки 7098-7134"
+  },
+  {
+   "n": 75,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-28-29, E-28-30, E-28-31, E-28-32 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-28-1",
+   "вид": "факт",
+   "утверждение_en": "The Interactions API reference page describes the beta version, with endpoints under /v1beta/; a stable v1 version is also available.",
+   "цитата": "You are viewing the beta version of the Interactions API. Endpoints are under\n/v1beta/\n. The stable\nv1 version\nis also available.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini Interactions API (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-28-2",
+   "вид": "факт",
+   "утверждение_en": "An interaction is created with POST https://generativelanguage.googleapis.com/v1beta/interactions; the request names either a model (required if agent is not provided) or an agent.",
+   "цитата": "Creating an interaction\npost\nhttps://generativelanguage.googleapis.com/v1beta/interactions\nCreates a new interaction.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Поле model: 'The name of the `Model` used for generating the interaction. Required if `agent` is not provided.' Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-3",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image is described as \"our native image generation model, optimized for speed, flexibility, and contextual understanding\"; its text input and output is priced the same as 2.5 Flash.",
+   "цитата": "gemini-2.5-flash-image\nOur native image generation model, optimized for speed, flexibility, and contextual understanding. Text input and output is priced the same as 2.5 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / model",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Список ModelOption дословно повторён в ресурсе Interaction (строки 1932-1933). Цена картинок не указана — только текст = как 2.5 Flash."
+  },
+  {
+   "код": "E-28-4",
+   "вид": "факт",
+   "утверждение_en": "Image model IDs accepted by the Interactions API model field: gemini-3-pro-image (Gemini 3 Pro Image), nano-banana-pro-preview (Gemini 3 Pro Image Preview) and gemini-3.1-flash-image (Gemini 3.1 Flash Image), in addition to gemini-2.5-flash-image.",
+   "цитата": "gemini-3-pro-image\nGemini 3 Pro Image\nnano-banana-pro-preview\nGemini 3 Pro Image Preview\ngemini-3.1-flash-image\nGemini 3.1 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / model",
+   "модели": [
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview (= Gemini 3 Pro Image Preview)",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Preview-версия Nano Banana Pro здесь имеет ID 'nano-banana-pro-preview' (а не gemini-3-pro-image-preview). gemini-3.1-flash-lite-image и gemini-3.1-flash-image-preview в списке отсутствуют."
+  },
+  {
+   "код": "E-28-5",
+   "вид": "факт",
+   "утверждение_en": "The interaction input (required, common to model and agent) can be a Content object, an array of Content, an array of Steps, or a plain string.",
+   "цитата": "input\nContent\nor array (\nContent\n) or array (\nStep\n) or string\n(required)\nThe inputs for the interaction (common to both Model and Agent).",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "мультиход"
+   ],
+   "заметка": "Массив Step позволяет передать историю (user_input, model_output, thought) вручную. system_instruction в этом API — просто string. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-6",
+   "вид": "факт",
+   "утверждение_en": "response_format accepts a ResponseFormat or an array of ResponseFormat; its field description says it enforces that the generated response is a JSON object complying with the specified JSON schema.",
+   "цитата": "response_format\nResponseFormat\nor array (\nResponseFormat\n)\n(optional)\nEnforces that the generated response is a JSON object that complies with the JSON schema specified in this field.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Описание говорит только о JSON, но тип ResponseFormat включает ImageResponseFormat (E-28-21) — см. противоречия. Массив позволяет задать форматы нескольких модальностей. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-7",
+   "вид": "факт",
+   "утверждение_en": "generation_config is the model configuration, an alternative to agent_config and only applicable when model is set; its fields are max_output_tokens, seed, speech_config, stop_sequences, thinking_level, thinking_summaries, tool_choice, transcription_config and video_config.",
+   "цитата": "generation_config\nGenerationConfig\n(optional)\nModel Configuration\nConfiguration parameters for the model interaction.\nAlternative to `agent_config`. Only applicable when `model` is set.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / generation_config",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Среди полей generation_config нет image_config, response_modalities, temperature/top_p — параметры картинки задаются только через response_format (вывод E-28-29). Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-8",
+   "вид": "факт",
+   "утверждение_en": "generation_config.seed is the seed used in decoding for reproducibility.",
+   "цитата": "seed\ninteger\n(optional)\nSeed used in decoding for reproducibility.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / generation_config",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Работает ли seed для image-моделей — не сказано. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-9",
+   "вид": "факт",
+   "утверждение_en": "generation_config.thinking_level sets the level of thought tokens the model should generate: minimal (little to no thinking), low, medium, high.",
+   "цитата": "thinking_level\nThinkingLevel\n(optional)\nThe level of thought tokens that the model should generate.\nPossible values\nminimal\nLittle to no thinking.\nlow\nLow thinking level.\nmedium\nMedium thinking level.\nhigh\nHigh thinking level.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / generation_config",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Применимость к image-моделям и дефолт не указаны. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-10",
+   "вид": "факт",
+   "утверждение_en": "generation_config.thinking_summaries controls whether thought summaries are included in the response: auto or none.",
+   "цитата": "thinking_summaries\nThinkingSummaries\n(optional)\nWhether to include thought summaries in the response.\nPossible values\nauto\nAuto thinking summaries.\nnone\nNo thinking summaries.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body / generation_config",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-11",
+   "вид": "факт",
+   "утверждение_en": "previous_interaction_id carries the ID of the previous interaction, if any.",
+   "цитата": "previous_interaction_id\nstring\n(optional)\nThe ID of the previous interaction, if any.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Request body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Механизм продолжения диалога на стороне сервера (без повторной передачи истории) — полезно для многоходового редактирования; прямо про картинки не сказано. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-12",
+   "вид": "факт",
+   "утверждение_en": "In the Image Input example response, the input usage shows 10 text tokens and 258 image tokens for one image (total input 268).",
+   "цитата": "\"modality\"\n:\n\"image\"\n,\n\"tokens\"\n:\n258",
+   "источник_цитаты": "txt",
+   "раздел": "Creating an interaction / Image Input / Example Response",
+   "модели": [
+    "gemini-3.6-flash (пример)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из примера ответа",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Это ответ модели понимания (gemini-3.6-flash), а не генерации; число 258 токенов на картинку — из примера, правилом на странице не сформулировано; разрешение картинки не указано."
+  },
+  {
+   "код": "E-28-13",
+   "вид": "факт",
+   "утверждение_en": "Usage statistics break tokens down by modality (text, image, audio, video, document) for cached, input, output and tool-use tokens.",
+   "цитата": "output_tokens_by_modality\narray (ModalityTokens)\n(optional)\nA breakdown of output token usage by modality.",
+   "источник_цитаты": "txt",
+   "раздел": "Resources / Interaction / usage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "ResponseModality: 'image — Indicates the model should return images.' (формулировка enum не подходит к учёту входных токенов — см. противоречия). Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-14",
+   "вид": "факт",
+   "утверждение_en": "total_thought_tokens counts thought tokens for thinking models; total_tokens is prompt + responses + other internal tokens.",
+   "цитата": "total_thought_tokens\ninteger\n(optional)\nNumber of tokens of thoughts for thinking models.\ntotal_tokens\ninteger\n(optional)\nTotal token count for the interaction request (prompt + responses + other\ninternal tokens).",
+   "источник_цитаты": "txt",
+   "раздел": "Resources / Interaction / usage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-15",
+   "вид": "факт",
+   "утверждение_en": "Usage grounding_tool_count type google_search covers grounding with Google Web Search and Image Search (and Web Grounding for Enterprise); google_maps covers Google Maps grounding.",
+   "цитата": "google_search\nGrounding with Google Web Search and Image Search, & Web Grounding\nfor Enterprise.",
+   "источник_цитаты": "txt",
+   "раздел": "Resources / Interaction / usage / grounding_tool_count",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "цены"
+   ],
+   "заметка": "Image Search учитывается в том же счётчике google_search. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-16",
+   "вид": "факт",
+   "утверждение_en": "ImageContent is an image content block with data (image content), mime_type (image/png, image/jpeg, image/webp, image/heic, image/heif, image/gif, image/bmp, image/tiff), resolution (low, medium, high, ultra_high) and uri; type is always \"image\".",
+   "цитата": "ImageContent\nAn image content block.\ndata\nstring\n(optional)\nThe image content.\nmime_type\nenum (string)\n(optional)\nThe mime type of the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / Content / ImageContent",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Пример на странице: {\"type\": \"image\", \"data\": \"BASE64_ENCODED_IMAGE\", \"mime_type\": \"image/png\"}. Поля name/displayName у ImageContent нет (у VideoContent есть name, 'Can be referenced by the model in the final response'). Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-17",
+   "вид": "факт",
+   "утверждение_en": "Each image content block can carry its own media resolution: low, medium, high or ultra_high.",
+   "цитата": "resolution\nMediaResolution\n(optional)\nThe resolution of the media.\nPossible values\nlow\nLow resolution.\nmedium\nMedium resolution.\nhigh\nHigh resolution.\nultra_high\nUltra high resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / Content / ImageContent",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Числа токенов по уровням не даны. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-18",
+   "вид": "факт",
+   "утверждение_en": "GoogleSearch tool search_types: web_search enables web search and returns only text results; image_search enables image search and returns image bytes.",
+   "цитата": "search_types\narray (enum (string))\n(optional)\nThe types of search grounding to enable.\nPossible\n            values:\nweb_search\nSetting this field enables web search. Only text results are returned.\nimage_search\nSetting this field enables image search. Image bytes are returned.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / Tool / GoogleSearch",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "То же перечисление повторено в GoogleSearchCallStep.search_type. Какие модели поддерживают image_search — не сказано. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-19",
+   "вид": "факт",
+   "утверждение_en": "When streaming, image output arrives as an ImageDelta (data, mime_type, resolution, uri, type \"image\") inside step.delta events.",
+   "цитата": "ImageDelta\ndata\nstring\n(optional)\nNo description provided.\nmime_type\nenum (string)\n(optional)\nNo description provided.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / InteractionSseEvent / StepDelta",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Поля ImageDelta без описаний; перечень mime_type тот же, что у ImageContent (8 форматов), хотя выход картинки ограничен JPEG. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-20",
+   "вид": "факт",
+   "утверждение_en": "Streaming emits a ThoughtSignatureDelta (type \"thought_signature\") carrying a signature \"to match the backend source to be part of the generation\", and ThoughtSummaryDelta items adding to the thought summary.",
+   "цитата": "ThoughtSignatureDelta\nsignature\nstring\n(optional)\nSignature to match the backend source to be part of the generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / InteractionSseEvent / StepDelta",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-21",
+   "вид": "факт",
+   "утверждение_en": "ImageResponseFormat (type \"image\") configures image output: aspect_ratio 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1; delivery inline or uri; image_size 512 (512px), 1K, 2K, 4K; mime_type image/jpeg.",
+   "цитата": "ImageResponseFormat\nConfiguration for image output format.\naspect_ratio\nenum (string)\n(optional)\nThe aspect ratio for the image output.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Полный перечень в строках 5135-5208. Дефолты (соотношение, размер, delivery) здесь не указаны. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-22",
+   "вид": "факт",
+   "утверждение_en": "Supported image output aspect ratios in ImageResponseFormat: 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1.",
+   "цитата": "1:1\n1:1 aspect ratio.\n2:3\n2:3 aspect ratio.\n3:2\n3:2 aspect ratio.\n3:4\n3:4 aspect ratio.\n4:3\n4:3 aspect ratio.\n4:5\n4:5 aspect ratio.\n5:4\n5:4 aspect ratio.\n9:16\n9:16 aspect ratio.\n16:9\n16:9 aspect ratio.\n21:9\n21:9 aspect ratio.\n1:8\n1:8 aspect ratio.\n8:1\n8:1 aspect ratio.\n1:4\n1:4 aspect ratio.\n4:1\n4:1 aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "14 значений. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-23",
+   "вид": "факт",
+   "утверждение_en": "Image output delivery: inline (image data returned inline in the response) or uri (returned as a URI).",
+   "цитата": "delivery\nenum (string)\n(optional)\nThe delivery mode for the image output.\nPossible\n            values:\ninline\nImage data is returned inline in the response.\nuri\nImage data is returned as a URI.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Дефолт и срок жизни URI не указаны. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-24",
+   "вид": "факт",
+   "утверждение_en": "Image output sizes: 512 (512px), 1K, 2K, 4K.",
+   "цитата": "image_size\nenum (string)\n(optional)\nThe size of the image output.\nPossible\n            values:\n512\n512px image size.\n1K\n1K image size.\n2K\n2K image size.\n4K\n4K image size.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Дефолт здесь не указан. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-25",
+   "вид": "ограничение",
+   "утверждение_en": "The only image output MIME type is image/jpeg.",
+   "цитата": "mime_type\nenum (string)\n(optional)\nThe MIME type of the image output.\nPossible\n            values:\nimage/jpeg\nJPEG image format.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-26",
+   "вид": "приём",
+   "утверждение_en": "Example image output format object: {\"type\": \"image\", \"aspect_ratio\": \"16:9\", \"image_size\": \"1K\", \"mime_type\": \"image/jpeg\"}.",
+   "цитата": "Image Output\n{\n\"type\"\n:\n\"image\"\n,\n\"aspect_ratio\"\n:\n\"16:9\"\n,\n\"image_size\"\n:\n\"1K\"\n,\n\"mime_type\"\n:\n\"image/jpeg\"\n}",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / ResponseFormat / Examples",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Единственный на странице образец запроса картинки (как объект response_format). Модель рядом не указана."
+  },
+  {
+   "код": "E-28-27",
+   "вид": "факт",
+   "утверждение_en": "A ThoughtStep (type \"thought\") carries a signature (hash for backend validation) and a summary whose items can be ImageContent or TextContent.",
+   "цитата": "ThoughtStep\nA thought step.\nsignature\nstring\n(optional)\nA signature hash for backend validation.\nsummary\narray (ThoughtSummaryContent)\n(optional)\nA summary of the thought.\nPossible Types\nPolymorphic discriminator:\ntype\nImageContent",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / Step / ThoughtStep",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Пример: {\"type\": \"thought\", \"signature\": \"thought_sig_abcd1234\", \"summary\": [{\"type\": \"text\", \"text\": \"The model is searching Google for the capital of France.\"}]}. То, что сводка мысли может содержать картинку, — формально по схеме; когда это бывает, не сказано. Image-модели в этом месте не названы."
+  },
+  {
+   "код": "E-28-28",
+   "вид": "факт",
+   "утверждение_en": "Model output is returned as a ModelOutputStep (type \"model_output\") whose content is an array of Content blocks.",
+   "цитата": "ModelOutputStep\nOutput generated by the model.\ncontent\narray (\nContent\n)\n(optional)",
+   "источник_цитаты": "txt",
+   "раздел": "Data Models / Step / ModelOutputStep",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сгенерированная картинка, по схеме, должна быть блоком ImageContent в content — прямо не сказано. Image-модели в этом месте не названы."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-28-29",
+   "вид": "правило",
+   "утверждение_en": "In the Interactions API, image output parameters (aspect ratio, size, JPEG mime type, inline/URI delivery) are set only through response_format with an ImageResponseFormat object (type \"image\"); generation_config has no image_config or response_modalities field.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Creating an interaction / ResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-28-7, E-28-6, E-28-21, E-28-26",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Как явно запросить модальность «картинка» (аналог responseModalities) — страница не говорит; вероятно, наличием ImageResponseFormat, но это не утверждено."
+  },
+  {
+   "код": "E-28-30",
+   "вид": "ограничение",
+   "утверждение_en": "Image inputs accept eight formats (PNG, JPEG, WebP, HEIC, HEIF, GIF, BMP, TIFF) with per-image resolution, but image output is JPEG only.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Data Models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-28-16, E-28-17, E-28-25",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-28-31",
+   "вид": "факт",
+   "утверждение_en": "The Interactions API model list names four image-generation IDs (gemini-2.5-flash-image, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image) but not Nano Banana 2 Lite (gemini-3.1-flash-lite-image) nor gemini-3.1-flash-image-preview; only gemini-2.5-flash-image gets a descriptive sentence.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Creating an interaction / Resources / Interaction",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-28-3, E-28-4",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-28-32",
+   "вид": "приём",
+   "утверждение_en": "Multi-turn work (e.g., iterative image edits) can be chained either server-side via previous_interaction_id or client-side by sending the history as an array of Steps (user_input, model_output, thought with signature); thought signatures are surfaced in ThoughtStep and streamed as ThoughtSignatureDelta.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Creating an interaction / Data Models / Step",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-28-5, E-28-11, E-28-27, E-28-20, E-28-28",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": "Страница не связывает это с картинками и не говорит, обязателен ли возврат подписей."
+  }
+ ],
+ "противоречия_внутри": [
+  "Поле response_format описано как 'Enforces that the generated response is a JSON object that complies with the JSON schema specified in this field', но тип ResponseFormat включает AudioResponseFormat, ImageResponseFormat и VideoResponseFormat (выход не-JSON).",
+  "Enum ResponseModality описан как 'Indicates the model should return images/text/…', но используется для разбивки ВХОДНЫХ, кэшированных и tool-use токенов (input_tokens_by_modality и т.д.).",
+  "ImageDelta перечисляет 8 mime_type (png, jpeg, webp, heic, heif, gif, bmp, tiff) для потокового фрагмента картинки, тогда как ImageResponseFormat допускает на выходе только image/jpeg.",
+  "Статус budget_exceeded помечен 'Deprecated: Token and execution budget exhaustion returns INCOMPLETE (11)', но в InteractionCompletedEvent/Created список статусов его уже не содержит, а в ресурсе Interaction и InteractionStatusUpdate — содержит (не про картинки)."
+ ],
+ "не_сказано": [
+  "Нет примера запроса на генерацию или редактирование картинки; сохранены только примеры ответов (Image Input — понимание изображения моделью gemini-3.6-flash).",
+  "Как запросить именно модальность image (аналог responseModalities) и нужен ли для этого ImageResponseFormat — не сказано.",
+  "Дефолтные aspect_ratio, image_size, delivery для картинки; какие модели поддерживают какие значения (512, 4K, 1:8 и т.д.).",
+  "У ImageContent нет поля name/display_name для ссылки на конкретный реф в промпте (у VideoContent есть name).",
+  "Нет temperature/top_p в generation_config; работает ли seed для image-моделей — не сказано.",
+  "Nano Banana 2 Lite (gemini-3.1-flash-lite-image) отсутствует в списке моделей; цена картинок не указана (только «text input and output is priced the same as 2.5 Flash» для 2.5 Flash Image).",
+  "Сколько токенов стоят уровни resolution (low…ultra_high) — нет чисел (кроме примера 258 токенов на одну картинку)."
+ ],
+ "сомнения": [
+  "В сохранённом html нет кода запросов (вкладки с request-примерами не попали в снимок), только Example Response; поэтому шаблонов/примеров промптов на странице нет.",
+  "E-28-12 — число из примера ответа модели понимания, не правило; помечено как выведенное из примера.",
+  "Схемы Content/Usage/Annotation/ImageContent многократно дублируются внутри SSE-событий и Step; в ведомости дубли помечены как повтор соответствующих единиц."
+ ]
+}

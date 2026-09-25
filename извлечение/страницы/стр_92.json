@@ -1,0 +1,103 @@
+{
+ "id": 92,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview",
+ "заголовок": "Grounding overview  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' (лицензия CC BY 4.0 / Apache 2.0 Google Developers)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая обзорная страница Google Cloud о grounding на Agent Platform: определение, три пользы (меньше галлюцинаций, привязка к источникам, аудит через ссылки) и таблица из восьми способов grounding (Google Search, Google Maps, Agent Search, RAG Engine, Elasticsearch, свой search API, Web Grounding for Enterprise, Parallel web search). Изображения, image-модели и генерация картинок не упоминаются; содержательная часть — около 45 строк из 1131.",
+ "модели_на_странице": [
+  "модели не названы ('supported-model output', 'Gemini')"
+ ],
+ "структура": [
+  "ноутбук 'Intro to grounding'",
+  "определение grounding",
+  "benefits",
+  "таблица способов grounding",
+  "language support (ссылка)",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта — верхнее меню, левое меню, повтор меню продуктов (строки 1-1035) совпадают до байта со страницей id 47 (проверено diff)"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Grounding overview', 'Stay organized'), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "To see an example of",
+   "итог": "ничего: ссылки на ноутбук 'Intro to grounding', строки 1045-1055"
+  },
+  {
+   "n": 4,
+   "начало": "In generative AI, grounding is",
+   "итог": "E-92-1"
+  },
+  {
+   "n": 5,
+   "начало": "Grounding provides the following benefits:",
+   "итог": "ничего: не про генерацию картинок (польза grounding: меньше галлюцинаций, привязка к источникам, ссылки на источники — про текстовые ответы), строки 1061-1066"
+  },
+  {
+   "n": 6,
+   "начало": "You can ground supported-model output",
+   "итог": "ничего: не про генерацию картинок (таблица типов grounding: Google Search, Google Maps, Agent Search, RAG Engine, Elasticsearch, your search API, Web Grounding for Enterprise, Parallel web search; image-модели не названы), строки 1067-1078"
+  },
+  {
+   "n": 7,
+   "начало": "For language support, see Supported",
+   "итог": "ничего: ссылка на поддерживаемые языки промптов, строки 1079-1080"
+  },
+  {
+   "n": 8,
+   "начало": "What's next To learn more",
+   "итог": "ничего: ссылка на Responsible AI, строки 1081-1083"
+  },
+  {
+   "n": 9,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1084-1086"
+  },
+  {
+   "n": 10,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1087-1131"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-92-1",
+   "вид": "объяснение",
+   "утверждение_en": "In generative AI, grounding is the ability to connect model output to verifiable sources of information; giving models access to specific data sources tethers their output to these data and reduces the chances of inventing content.",
+   "цитата": "In generative AI, grounding is the ability to connect model output to verifiable\nsources of information. If you provide models with access to specific data\nsources, then grounding tethers their output to these data and reduces the\nchances of inventing content.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding overview (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Определение термина grounding в документации Google Cloud. Страница не упоминает изображения и image-модели; единица взята только как определение для темы grounding, без переноса на генерацию картинок."
+  }
+ ],
+ "длинная_дистанция": [],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Какие модели поддерживают grounding ('supported-model output' без списка) — в частности, поддерживают ли image-модели (gemini-3-pro-image и др.) Grounding with Google Search.",
+  "Работает ли grounding для генерации изображений или мультимодальных промптов — страница не говорит."
+ ],
+ "сомнения": [
+  "Страница не про генерацию картинок; единственная единица E-92-1 — определение термина grounding без привязки к image-моделям."
+ ]
+}

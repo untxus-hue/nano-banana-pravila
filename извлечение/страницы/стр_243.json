@@ -1,0 +1,863 @@
+{
+ "id": 243,
+ "url": "https://android-developers.googleblog.com/2025/10/boost-user-engagement-with-ai-image.html",
+ "заголовок": "Android Developers Blog: Boost user engagement with AI Image Generation",
+ "дата_в_тексте": "13 October 2025 (в html отдельной meta-даты публикации нет)",
+ "официальность": {
+  "домен": "android-developers.googleblog.com",
+  "второй_признак": "в каждом кодовом блоке строка «// Copyright 2025 Google LLC.» (SPDX Apache-2.0); авторы Thomas Ezan (Senior Developer Relations Engineer) и Mozart Louis (Developer Relations Engineer); текст от лица Google («we released new editing features for Imagen»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост Android Developers Blog (13.10.2025) для Android-разработчиков на Firebase AI Logic: сравнение Imagen (специализированная модель: фотореализм, стили, явные aspect ratio/формат, маска-inpainting/outpainting в developer preview) и Gemini 2.5 Flash Image «Nano Banana» (GA: знания мира и рассуждения, диалоговая правка с сохранением контекста и субъекта, картинки внутри длинного текста), с таблицей и кодом на Kotlin для одной и той же правки (блины → омлет): Imagen через маску и editImage, Gemini через chat с картинкой в первом сообщении и последующим «Now, center the omelet in the pan». Есть предупреждение про AI safety.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image, a.k.a. Nano Banana)",
+  "Imagen (imagen-3.0-capability-001 для редактирования)"
+ ],
+ "структура": [
+  "Вступление",
+  "Boost user engagement with images generated via Firebase AI Logic (+ AI safety)",
+  "Imagen or Gemini: The choice is yours (+ таблица)",
+  "Inpainting with Imagen (код 1-2)",
+  "Conversational image generation with Gemini 2.5 Flash Image (код 3-4)",
+  "Conclusion",
+  "метки / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Android Developers Blog: Boost user engagement",
+   "итог": "ничего: обвязка — title"
+  },
+  {
+   "n": 2,
+   "начало": "☰ Android Developers Blog The latest",
+   "итог": "ничего: обвязка — шапка и меню (строки 2-28)"
+  },
+  {
+   "n": 3,
+   "начало": "13 October 2025",
+   "итог": "ничего: дата (в дата_в_тексте)"
+  },
+  {
+   "n": 4,
+   "начало": "Boost user engagement with AI Image Generation (H1)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 5,
+   "начало": "Share this post LinkedIn Twitter Facebook",
+   "итог": "ничего: обвязка — Share (строки 31-37)"
+  },
+  {
+   "n": 6,
+   "начало": "Posted by Thomas Ezan, Senior Developer",
+   "итог": "ничего: авторы (в официальности)"
+  },
+  {
+   "n": 7,
+   "начало": "Adding custom images to your app",
+   "итог": "E-243-1 (первая фраза — маркетинг)"
+  },
+  {
+   "n": 8,
+   "начало": "Boost user engagement with images generated (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 9,
+   "начало": "Image generation models can be used",
+   "итог": "E-243-2"
+  },
+  {
+   "n": 10,
+   "начало": "For example, Imagen offers new editing",
+   "итог": "E-243-3"
+  },
+  {
+   "n": 11,
+   "начало": "Imagen supports inpainting, letting generate only",
+   "итог": "ничего: подпись к картинке, повтор E-243-3"
+  },
+  {
+   "n": 12,
+   "начало": "Alternatively, Gemini 2.5 Flash Image (a.k.a",
+   "итог": "E-243-4"
+  },
+  {
+   "n": 13,
+   "начало": "Use Gemini 2.5 Flash Image to create dynamic",
+   "итог": "ничего: подпись к картинке, повтор E-243-4"
+  },
+  {
+   "n": 14,
+   "начало": "Finally, the ability to conversationally and",
+   "итог": "E-243-5"
+  },
+  {
+   "n": 15,
+   "начало": "Use Gemini 2.5 Flash Image to edit a picture",
+   "итог": "ничего: подпись к картинке, повтор E-243-5 (использована для модели)"
+  },
+  {
+   "n": 16,
+   "начало": "When starting to integrate AI to",
+   "итог": "E-243-6 (строки 48-50, ссылка «AI safety»)"
+  },
+  {
+   "n": 17,
+   "начало": "Imagen or Gemini: The choice is yours (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 18,
+   "начало": "The difference between Gemini 2.5 Flash",
+   "итог": "E-243-7 (строки 52-56; первая фраза — вводная)"
+  },
+  {
+   "n": 19,
+   "начало": "Imagen is Google’s specialized image generation",
+   "итог": "E-243-8"
+  },
+  {
+   "n": 20,
+   "начало": "Таблица: заголовки Gemini 2.5 Flash Images (Nano Banana 🍌) / Imagen",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 21,
+   "начало": "🌎 world knowledge and reasoning for",
+   "итог": "ничего: строка таблицы (столбец Gemini), повтор E-243-7"
+  },
+  {
+   "n": 22,
+   "начало": "💬 edit images conversationally while maintaining",
+   "итог": "ничего: строка таблицы (столбец Gemini), повтор E-243-7"
+  },
+  {
+   "n": 23,
+   "начало": "📖 embed accurate visuals within long",
+   "итог": "ничего: строка таблицы (столбец Gemini), повтор E-243-7"
+  },
+  {
+   "n": 24,
+   "начало": "📐 specify the aspect ratio or",
+   "итог": "ничего: строка таблицы (столбец Imagen), повтор E-243-8"
+  },
+  {
+   "n": 25,
+   "начало": "🖌️Support of mask-based editing for in-painting",
+   "итог": "E-243-9"
+  },
+  {
+   "n": 26,
+   "начало": "🎚️ greater control over details of",
+   "итог": "ничего: строка таблицы (столбец Imagen), повтор E-243-8"
+  },
+  {
+   "n": 27,
+   "начало": "Let’s see how to use them",
+   "итог": "ничего: связка"
+  },
+  {
+   "n": 28,
+   "начало": "Inpainting with Imagen (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 29,
+   "начало": "A few months ago, we released",
+   "итог": "E-243-10 (строки 71-73)"
+  },
+  {
+   "n": 30,
+   "начало": "Imagen editing features include inpainting and",
+   "итог": "E-243-11 (строки 74-78)"
+  },
+  {
+   "n": 31,
+   "начало": "Use Imagen editing features to make",
+   "итог": "ничего: подпись к картинке, повтор E-243-12 (формулировка «guaranteeing» учтена в заметке)"
+  },
+  {
+   "n": 32,
+   "начало": "These changes are made while maintaining",
+   "итог": "E-243-12"
+  },
+  {
+   "n": 33,
+   "начало": "To implement inpainting with Imagen, first",
+   "итог": "E-243-13 (строки 81-83)"
+  },
+  {
+   "n": 34,
+   "начало": "Код 1 (html pre 0): val editingModel = Firebase.ai(...",
+   "итог": "E-243-14 (в txt — строки 84-121, разбиты по токенам)"
+  },
+  {
+   "n": 35,
+   "начало": "From there, define the inpainting function:",
+   "итог": "ничего: связка к коду"
+  },
+  {
+   "n": 36,
+   "начало": "Код 2 (html pre 1): val prompt = \"remove the pancakes...\"; suspend fun inpaintImageWithMask",
+   "итог": "E-243-15, E-243-16 (в txt — строки 123-185)"
+  },
+  {
+   "n": 37,
+   "начало": "You provide both a sourceImage, a",
+   "итог": "E-243-17 (строки 186-193)"
+  },
+  {
+   "n": 38,
+   "начало": "You can see it in action",
+   "итог": "ничего: ссылка на Imagen Editing Sample (строки 194-196)"
+  },
+  {
+   "n": 39,
+   "начало": "And Imagen also supports outpainting that",
+   "итог": "E-243-18 (строки 197-201; outpainting — повтор E-243-3; ссылка на документацию)"
+  },
+  {
+   "n": 40,
+   "начало": "Conversational image generation with Gemini 2.5 (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 41,
+   "начало": "One way to edit images with",
+   "итог": "E-243-19"
+  },
+  {
+   "n": 42,
+   "начало": "First, initialize the model:",
+   "итог": "ничего: связка к коду"
+  },
+  {
+   "n": 43,
+   "начало": "Код 3 (html pre 2): val model = ... generativeModel(modelName = \"gemini-2.5-flash-image\"",
+   "итог": "E-243-20 (в txt — строки 205-237)"
+  },
+  {
+   "n": 44,
+   "начало": "To achieve a similar outcome to",
+   "итог": "E-243-21 (строки 238-240)"
+  },
+  {
+   "n": 45,
+   "начало": "Код 4 (html pre 3): val chat = model.startChat() ... sendMessage",
+   "итог": "E-243-22, E-243-23, E-243-24, E-243-25, E-243-26 (в txt — строки 241-335)"
+  },
+  {
+   "n": 46,
+   "начало": "You can see it in action",
+   "итог": "ничего: ссылки на Gemini Image Chat sample и документацию (строки 336-340)"
+  },
+  {
+   "n": 47,
+   "начало": "Conclusion (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 48,
+   "начало": "Both Imagen and Gemini 2.5 Flash",
+   "итог": "ничего: вывод без нового содержания, повтор E-243-7, E-243-8"
+  },
+  {
+   "n": 49,
+   "начало": "Gemini GenAI Imagen",
+   "итог": "ничего: обвязка — метки поста"
+  },
+  {
+   "n": 50,
+   "начало": "Newer post Older post Google developers",
+   "итог": "ничего: обвязка — навигация и подвал (строки 346-361)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-243-1",
+   "вид": "факт",
+   "утверждение_en": "Firebase AI Logic offers two image capabilities: Imagen editing features (in preview) and the general availability of Gemini 2.5 Flash Image (\"Nano Banana\"), designed for contextual or conversational image generation.",
+   "цитата": "the specialized Imagen editing features, currently in preview, and the general availability of Gemini 2.5 Flash Image (a.k.a \"Nano Banana\"), designed for contextual or conversational image generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-13",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Статус на дату поста: Gemini 2.5 Flash Image — GA, Imagen editing — preview."
+  },
+  {
+   "код": "E-243-2",
+   "вид": "приём",
+   "утверждение_en": "Image generation models can be used to create custom user profile avatars or to integrate personalized visual assets into key screen flows of an app.",
+   "цитата": "Image generation models can be used to create custom user profile avatars or to integrate personalized visual assets directly into key screen flows.",
+   "источник_цитаты": "txt",
+   "раздел": "Boost user engagement with images generated via Firebase AI Logic",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-3",
+   "вид": "факт",
+   "утверждение_en": "Imagen editing (developer preview) lets you draw a mask and use inpainting to generate pixels inside the masked area, and outpainting to generate pixels outside the mask.",
+   "цитата": "You can now draw a mask and utilize inpainting to generate pixels within the masked area. Additionally, outpainting is available to generate pixels outside the mask.",
+   "источник_цитаты": "txt",
+   "раздел": "Boost user engagement with images generated via Firebase AI Logic",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Подпись к картинке: «Imagen supports inpainting, letting generate only a part of an image.»"
+  },
+  {
+   "код": "E-243-4",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.5 Flash Image can use the Gemini models' extended world knowledge and reasoning to generate contextually relevant images, which suits dynamic illustrations aligned with the user's current in-app experience.",
+   "цитата": "Alternatively, Gemini 2.5 Flash Image (a.k.a Nano Banana), can use extended world knowledge and the reasoning capabilities of the Gemini models to generate contextually relevant images, which is ideal for creating dynamic illustrations that align with a user's current in-app experience.",
+   "источник_цитаты": "txt",
+   "раздел": "Boost user engagement with images generated via Firebase AI Logic",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Подпись к картинке: «Use Gemini 2.5 Flash Image to create dynamic illustrations contextually relevant to your app.»"
+  },
+  {
+   "код": "E-243-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image supports conversational, iterative editing, letting users edit a photo using natural language.",
+   "цитата": "Finally, the ability to conversationally and iteratively edit images allow users to edit a photo using natural language.",
+   "источник_цитаты": "txt",
+   "раздел": "Boost user engagement with images generated via Firebase AI Logic",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (модель — из подписи к картинке «Use Gemini 2.5 Flash Image to edit a picture using natural language.»)",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-6",
+   "вид": "предупреждение",
+   "утверждение_en": "When integrating AI image generation, learn about AI safety: assess your app's security risks, consider adjustments to mitigate safety risks, perform safety testing appropriate to your use case, and solicit user feedback and monitor content.",
+   "цитата": "It is particularly key to assess your application's security risks, consider adjustments to mitigate safety risks, perform safety testing appropriate to your use case and solicit user feedback and monitor content.",
+   "источник_цитаты": "txt",
+   "раздел": "Boost user engagement with images generated via Firebase AI Logic",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ссылка «AI safety» в html. Сила — рекомендация («it is important», «particularly key»), не формальное требование."
+  },
+  {
+   "код": "E-243-7",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.5 Flash Image, as part of the Gemini family, excels at conversational image editing, keeping context and subject consistency across multiple iterations, and using world knowledge and reasoning to create contextually relevant visuals or embed accurate visuals within long text sequences.",
+   "цитата": "Gemini 2.5 Flash Image, as an image model within the larger Gemini family, excels in conversational image editing, maintaining context and subject consistency across multiple iterations, and leveraging \"world knowledge and reasoning\" to create contextually relevant visuals or embed accurate visuals within long text sequences.",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen or Gemini: The choice is yours",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "мультиход"
+   ],
+   "заметка": "Таблица сравнения повторяет три пункта: world knowledge and reasoning; edit images conversationally while maintaining context; embed accurate visuals within long text sequences."
+  },
+  {
+   "код": "E-243-8",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen is Google's specialized image generation model for greater creative control: highly photorealistic outputs, artistic detail, specific styles, and explicit controls for the aspect ratio or format of the generated image.",
+   "цитата": "Imagen is Google’s specialized image generation model, designed for greater creative control, specializing in highly photorealistic outputs, artistic detail, specific styles, and providing explicit controls for specifying the aspect ratio or format of the generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen or Gemini: The choice is yours",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "форматы_разрешение"
+   ],
+   "заметка": "Таблица повторяет: specify the aspect ratio or format; greater control over details (quality, artistic detail and specific styles)."
+  },
+  {
+   "код": "E-243-9",
+   "вид": "факт",
+   "утверждение_en": "In the comparison table, mask-based editing for in-painting and out-painting is listed under Imagen (not under Gemini 2.5 Flash Image).",
+   "цитата": "Support of mask-based editing for in-painting and out-painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen or Gemini: The choice is yours (таблица)",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Столбцы таблицы проверены по html: слева Gemini 2.5 Flash Image (3 пункта), справа Imagen (3 пункта)."
+  },
+  {
+   "код": "E-243-10",
+   "вид": "факт",
+   "утверждение_en": "Imagen is production-ready for image generation, but its editing features are still in developer preview.",
+   "цитата": "Although Imagen is now ready for production for image generation, editing features are still in",
+   "источник_цитаты": "txt",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-13",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Окончание фразы («developer preview.») — отдельной строкой в txt."
+  },
+  {
+   "код": "E-243-11",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen inpainting and outpainting are mask-based editing features that modify specific areas of an image without regenerating the whole picture, so you keep the best parts and change only what you want.",
+   "цитата": "This new capability allows users to modify specific areas of an image without regenerating the entire picture. This means you can preserve the best parts of your image and only alter what you wish to change.",
+   "источник_цитаты": "txt",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-12",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen mask edits keep the core elements and overall integrity of the original image, modifying only the masked area.",
+   "цитата": "These changes are made while maintaining the core elements and overall integrity of the original image and modifying only the area in the mask.",
+   "источник_цитаты": "txt",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Подпись к картинке говорит сильнее: «guaranteeing the rest of the image integrity»."
+  },
+  {
+   "код": "E-243-13",
+   "вид": "инструкция",
+   "утверждение_en": "To implement inpainting with Imagen, first initialize imagen-3.0-capability-001, a specific Imagen model that supports editing features.",
+   "цитата": "imagen-3.0-capability-001",
+   "источник_цитаты": "txt",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen (imagen-3.0-capability-001)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Контекст txt: «To implement inpainting with Imagen, first initialize … a specific Imagen model supporting editing features:». В коде модель создаётся через Firebase.ai(backend = GenerativeBackend.vertexAI()).imagenModel(...)."
+  },
+  {
+   "код": "E-243-14",
+   "вид": "факт",
+   "утверждение_en": "Example Imagen editing model config: numberOfImages = 1, aspectRatio = ImagenAspectRatio.SQUARE_1x1, imageFormat = ImagenImageFormat.jpeg(compressionQuality = 75), on the Vertex AI backend.",
+   "цитата": "aspectRatio = ImagenAspectRatio.SQUARE_1x1,",
+   "источник_цитаты": "html",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen (imagen-3.0-capability-001)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Полный блок: Firebase.ai(backend = GenerativeBackend.vertexAI()).imagenModel(\"imagen-3.0-capability-001\", generationConfig = ImagenGenerationConfig(numberOfImages = 1, aspectRatio = ImagenAspectRatio.SQUARE_1x1, imageFormat = ImagenImageFormat.jpeg(compressionQuality = 75))). Код с «// Copyright 2025 Google LLC.»"
+  },
+  {
+   "код": "E-243-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example Imagen inpainting prompt (used with a source image and a mask): \"remove the pancakes and make it an omelet instead\".",
+   "цитата": "remove the pancakes and make it an omelet instead",
+   "источник_цитаты": "html",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen (imagen-3.0-capability-001)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Структура: удаление («remove the pancakes») + замена («make it an omelet instead»). Место правки задаёт маска, а не текст; промпт описывает только что сделать в области маски."
+  },
+  {
+   "код": "E-243-16",
+   "вид": "инструкция",
+   "утверждение_en": "Imagen inpainting call: editingModel.editImage with referenceImages = [ImagenRawImage(source), ImagenRawMask(mask)], the prompt, and ImagenEditingConfig(editMode = ImagenEditMode.INPAINT_INSERTION, editSteps), with editSteps defaulting to 50 in the sample.",
+   "цитата": "editMode = ImagenEditMode.INPAINT_INSERTION,",
+   "источник_цитаты": "html",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen (imagen-3.0-capability-001)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "Сигнатура примера: suspend fun inpaintImageWithMask(sourceImage: Bitmap, maskImage: Bitmap, prompt: String, editSteps: Int = 50): Bitmap; результат — imageResponse.images.first().asBitmap(). Значение 50 — дефолт в образце кода, не рекомендация из текста."
+  },
+  {
+   "код": "E-243-17",
+   "вид": "инструкция",
+   "утверждение_en": "For Imagen inpainting you provide a source image, a mask image, a prompt for the edit and the number of edit steps.",
+   "цитата": "You provide both a sourceImage, a maskImage and a prompt for the edit and the number of edit steps to be performed.",
+   "источник_цитаты": "html",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen (imagen-3.0-capability-001)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "В txt фраза разбита на строки по кодовым словам; цитата — из html (видимый текст)."
+  },
+  {
+   "код": "E-243-18",
+   "вид": "факт",
+   "утверждение_en": "Imagen also offers Image customization capabilities to change the style of a picture or update a subject in a picture.",
+   "цитата": "You can also use Imagen’s Image customization capabilities to change the style of a picture or update a subject in a picture.",
+   "источник_цитаты": "txt",
+   "раздел": "Inpainting with Imagen",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Там же повторено про outpainting (генерация пикселей вне маски) — повтор E-243-3."
+  },
+  {
+   "код": "E-243-19",
+   "вид": "инструкция",
+   "утверждение_en": "One way to edit images with Gemini 2.5 Flash Image is to use the model's multi-turn chat capabilities.",
+   "цитата": "One way to edit images with Gemini 2.5 Flash Image is to use the model’s multi-turn chat capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-20",
+   "вид": "правило",
+   "утверждение_en": "When initializing gemini-2.5-flash-image (Firebase AI Logic, Google AI backend), the model must be configured to respond with both text and images: responseModalities = listOf(ResponseModality.TEXT, ResponseModality.IMAGE).",
+   "цитата": "// Configure the model to respond with text and images (required)",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Полный блок: Firebase.ai(backend = GenerativeBackend.googleAI()).generativeModel(modelName = \"gemini-2.5-flash-image\", generationConfig = generationConfig { responseModalities = listOf(ResponseModality.TEXT, ResponseModality.IMAGE) }). Слово «(required)» — в комментарии кода Google."
+  },
+  {
+   "код": "E-243-21",
+   "вид": "инструкция",
+   "утверждение_en": "To get an outcome similar to Imagen's mask-based editing, use the chat API to start a conversation with Gemini 2.5 Flash Image.",
+   "цитата": "To achieve a similar outcome to the mask-based Imagen method described above, we can utilize the",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Окончание фразы («chat API to initiate a conversation with Gemini 2.5 Flash Image.») — в следующих строках txt."
+  },
+  {
+   "код": "E-243-22",
+   "вид": "инструкция",
+   "утверждение_en": "Start the edit by creating a chat (model.startChat()) and sending a first user message that contains both the image and the text prompt.",
+   "цитата": "// To generate an initial response, send a user message with the image and text prompt",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "мультиход"
+   ],
+   "заметка": "Код: val chat = model.startChat(); val prompt = content { image(bitmap); text(\"…\") }; var response = chat.sendMessage(prompt)."
+  },
+  {
+   "код": "E-243-23",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example Gemini 2.5 Flash Image edit prompt sent together with the photo: \"remove the pancakes and add an omelet\".",
+   "цитата": "text(\"remove the pancakes and add an omelet\")",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Структура: удалить X + добавить Y, без маски и без указания места — модель сама находит объект по названию. Та же задача, что в E-243-15 для Imagen."
+  },
+  {
+   "код": "E-243-24",
+   "вид": "инструкция",
+   "утверждение_en": "Read the generated image from the response by taking the first candidate's content parts and filtering for an ImagePart.",
+   "цитата": ".candidates.first().content.parts.filterIsInstance<ImagePart>().firstOrNull()?.image",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Картинка приходит как одна из частей ответа (наряду с текстом); firstOrNull — картинки может не быть."
+  },
+  {
+   "код": "E-243-25",
+   "вид": "правило",
+   "утверждение_en": "In a chat session, follow-up edit requests do not need to include the image again.",
+   "цитата": "// Follow up requests do not need to specify the image again",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Контекст (картинка) хранится в истории чата."
+  },
+  {
+   "код": "E-243-26",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example follow-up edit prompt in the same chat: \"Now, center the omelet in the pan\".",
+   "цитата": "response = chat.sendMessage(\"Now, center the omelet in the pan\")",
+   "источник_цитаты": "html",
+   "раздел": "Conversational image generation with Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Структура: «Now,» (связка с предыдущим ходом) + действие композиции («center») + объект из прошлого хода («the omelet») + ориентир («in the pan»). Работу делает ссылка на объект, созданный в прошлом ходе."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-243-27",
+   "вид": "объяснение",
+   "утверждение_en": "The page contrasts two editing paradigms on the same task (pancakes to omelet): Imagen uses an explicit mask + prompt + edit steps in one call and keeps everything outside the mask intact; Gemini 2.5 Flash Image takes the image plus a natural-language instruction in a chat, with no mask, and supports multi-turn refinements with context kept.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-243-11, E-243-12, E-243-15, E-243-16, E-243-19, E-243-21, E-243-23, E-243-25, E-243-26",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-28",
+   "вид": "приём",
+   "утверждение_en": "Both examples use short imperative edit instructions of the form \"remove X and add/make Y\"; the follow-up turn refers to an object created in the previous turn and specifies only its placement.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "Imagen"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-243-15, E-243-23, E-243-26",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-243-29",
+   "вид": "объяснение",
+   "утверждение_en": "On this page aspect-ratio/format control and mask-based editing are attributed only to Imagen; the Gemini 2.5 Flash Image code shows no aspect-ratio setting, only response modalities.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-243-8, E-243-9, E-243-14, E-243-20",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Это утверждение страницы на 13.10.2025; страница не говорит, что у Gemini 2.5 Flash Image нет управления соотношением сторон — просто не показывает его."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не объяснено, почему Imagen в примере вызывается через backend vertexAI, а Gemini — через googleAI.",
+  "Нет рекомендаций по значению editSteps (50 — только дефолт в коде).",
+  "Для Gemini 2.5 Flash Image не показано управление соотношением сторон/форматом.",
+  "Нет лимитов, цен, водяного знака/SynthID.",
+  "Не сказано, как сформировать маску (формат, цвета) для Imagen."
+ ],
+ "сомнения": [
+  "Таблица приписывает управление aspect ratio/форматом только Imagen — это позиция страницы на 13.10.2025, зафиксирована как есть.",
+  "Шапка таблицы содержит опечатку «Gemini 2.5 Flash Images»."
+ ]
+}

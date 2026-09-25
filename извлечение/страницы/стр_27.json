@@ -1,0 +1,898 @@
+{
+ "id": 27,
+ "url": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
+ "заголовок": "Interactions API: Breaking changes migration guide (May 2026)",
+ "дата_в_тексте": "Last updated 2026-09-04 UTC (подвал .txt и html); внутри текста даты миграции: May 7, May 26, June 8, 2026; Api-Revision 2026-05-20 / 2026-05-07. Meta published/modified в html нет.",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.»; og:site_name «Google AI for Developers». Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Гайд миграции Interactions API (v1beta) на новую схему (май 2026) для разработчиков, пишущих на SDK Python/JS или REST. Две группы изменений: (1) ответ — массив steps вместо outputs (функции, серверные инструменты, стриминг, история без состояния); (2) единое полиморфное поле response_format вместо response_mime_type, image_config в generation_config и response_modalities. Про картинки — один подраздел «Image configuration» + пункты Key changes и чек-листа: aspect_ratio / image_size (+ новый mime_type) переезжают в запись response_format с type \"image\". Модель во всех примерах — gemini-3.8-flash (для картинки тоже); id моделей Nano Banana в контенте нет (только в меню). Повторно подчёркивается: legacy-схема удаляется 8 июня 2026, заголовок Api-Revision, «Opt-in needed before May 26th». Собственные термины: steps, step types (user_input, model_output, thought, function_call, google_search_call/result), polymorphic response_format, type discriminator, Api-Revision, Default flip, Sunset, SDK convenience properties (.output_image).",
+ "модели_на_странице": [
+  "gemini-3.8-flash (все примеры, включая генерацию картинки)",
+  "gemini-3.1-flash-tts-preview (аудио-пример)",
+  "id image-моделей (gemini-3-pro-image, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-2.5-flash-image) — только в alt-paths навигационного меню html, не в контенте"
+ ],
+ "структура": [
+  "Вводная плашка Breaking changes + вступление (две категории изменений)",
+  "Core change: outputs to steps (Basic input/output, Function calling, Server-side tools, Streaming, Stateless Conversation History)",
+  "Output format configuration: response_format changes (Key changes, Structured output (JSON), Image configuration, Audio configuration, multiple modalities)",
+  "How to migrate to the new schema (SDK users, REST API users, Timeline, Note)",
+  "Migration Checklist (Steps schema; Output format configuration)",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Interactions API: Breaking changes migration guide (May 2026)  |  Gemini API  |  Google AI for Developers",
+   "итог": "ничего: обвязка (заголовок вкладки, стр. 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English Deutsch … 한국어 / Get API key Cookbook Community Sign in",
+   "итог": "ничего: обвязка (шапка, меню языков, стр. 2-29)"
+  },
+  {
+   "n": 3,
+   "начало": "Docs API reference Gemini API … Feedback information",
+   "итог": "ничего: обвязка (левое меню документации, стр. 30-181; в html в alt-paths меню есть id image-моделей — в контент не входят)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3.8 Flash is now available. Try it out .",
+   "итог": "ничего: баннер сайта"
+  },
+  {
+   "n": 5,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: обвязка (хлебные крошки)"
+  },
+  {
+   "n": 6,
+   "начало": "Interactions API: Breaking changes migration guide (May 2026)",
+   "итог": "ничего: заголовок H1"
+  },
+  {
+   "n": 7,
+   "начало": "Breaking changes: The changes described in this guide are breaking changes … removed on June 8, 2026. Use the Api-Revision request header",
+   "итог": "E-27-1"
+  },
+  {
+   "n": 8,
+   "начало": "The v1beta Interactions API is introducing breaking changes that restructure the API shape",
+   "итог": "ничего: не про генерацию картинок (мотивация: mid-flight steering, async tool calls)"
+  },
+  {
+   "n": 9,
+   "начало": "Steps schema: A new steps array replaces the outputs array",
+   "итог": "ничего: не про генерацию картинок (общая схема ответа)"
+  },
+  {
+   "n": 10,
+   "начало": "Output format configuration: A new polymorphic response_format consolidates all output format controls",
+   "итог": "E-27-2"
+  },
+  {
+   "n": 11,
+   "начало": "Follow the steps in How to migrate to the new schema to update your integration.",
+   "итог": "ничего: навигационная ссылка"
+  },
+  {
+   "n": 12,
+   "начало": "Core change: outputs to steps / The new schema replaces the outputs array with a steps array.",
+   "итог": "ничего: не про генерацию картинок (общая схема ответа)"
+  },
+  {
+   "n": 13,
+   "начало": "Legacy: Responses returned a flat outputs array containing only the model's generated content.",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "New schema: Responses return a steps array containing structured steps with type discriminators.",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "POST /interactions returns only output steps. GET /interactions/{id} returns the full step timeline",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Basic input/output (unary) Before (legacy) Python / JavaScript / REST + // Response (outputs)",
+   "итог": "ничего: не про генерацию картинок (текстовый пример «Tell me a joke.»)"
+  },
+  {
+   "n": 17,
+   "начало": "After (new schema) Python / JavaScript (interaction.output_text)",
+   "итог": "ничего: не про генерацию картинок (текстовый пример)"
+  },
+  {
+   "n": 18,
+   "начало": "Note: For details on SDK convenience properties (including .output_text, .output_image, and .output_audio)",
+   "итог": "E-27-3"
+  },
+  {
+   "n": 19,
+   "начало": "[sdk-convenience]: /gemini-api/docs/interactions-overview#sdk-sugar",
+   "итог": "ничего: служебная строка ссылки (сырая markdown-сноска в тексте)"
+  },
+  {
+   "n": 20,
+   "начало": "REST # Opt-in needed before May 26th curl … Api-Revision: 2026-05-20 … // POST Response / // GET /v1beta/interactions/int_123",
+   "итог": "ничего: не про генерацию картинок (текстовый пример; заголовок Api-Revision разобран в E-27-20)"
+  },
+  {
+   "n": 21,
+   "начало": "Function calling: The request structure remains unchanged, but the response replaces the flat outputs",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 22,
+   "начало": "Function calling Before (legacy) / After (new schema) Python / JavaScript / REST (get_weather, thought signature)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 23,
+   "начало": "Server-side tools: Server-side tools (like Google Search or Code Execution) now yield specific step types",
+   "итог": "ничего: не про генерацию картинок (инструменты текстовой модели)"
+  },
+  {
+   "n": 24,
+   "начало": "Server-side tools Before (legacy) / After (new schema) Python / JavaScript / REST (Super Bowl, google_search_call)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 25,
+   "начало": "Streaming: Streaming exposes new event types: interaction.created … step.stop",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 26,
+   "начало": "Deprecated event types: interaction.start → interaction.created … interaction.status_update → replaced by",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 27,
+   "начало": "Streaming function calls: When you use streaming with function calling, the step.start event delivers the function name",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "Examples Before (Legacy) / After (New Schema) Python / JavaScript / REST + SSE Lines",
+   "итог": "ничего: не про генерацию картинок (потоковый текст)"
+  },
+  {
+   "n": 29,
+   "начало": "Stateless Conversation History: If you manage conversation history manually on the client side",
+   "итог": "E-27-4"
+  },
+  {
+   "n": 30,
+   "начало": "Legacy: Developers often collected the outputs array from responses and sent them back in the input field",
+   "итог": "E-27-4 (старая практика в заметке)"
+  },
+  {
+   "n": 31,
+   "начало": "New schema: You should now collect the steps array from the response and pass it in the input field",
+   "итог": "E-27-4"
+  },
+  {
+   "n": 32,
+   "начало": "Output format configuration: response_format changes / The updated API consolidates all output format controls",
+   "итог": "E-27-5"
+  },
+  {
+   "n": 33,
+   "начало": "Key changes: The API removes response_mime_type. You now specify the MIME type per format entry",
+   "итог": "E-27-6"
+  },
+  {
+   "n": 34,
+   "начало": "response_format is now a polymorphic object (or array). Each entry has a type discriminator … To request multiple output modalities",
+   "итог": "E-27-7, E-27-8"
+  },
+  {
+   "n": 35,
+   "начало": "image_config moves from generation_config to response_format. You now specify image output settings like aspect_ratio and image_size",
+   "итог": "E-27-9"
+  },
+  {
+   "n": 36,
+   "начало": "Structured output (JSON): The new schema removes the response_mime_type field.",
+   "итог": "ничего: не про генерацию картинок (JSON-вывод текста)"
+  },
+  {
+   "n": 37,
+   "начало": "Structured output Before (legacy) / After (new schema) Python / JavaScript / REST (Summarize this article.)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "Image configuration: The new schema removes image_config from generation_config.",
+   "итог": "E-27-10"
+  },
+  {
+   "n": 39,
+   "начало": "Image configuration Before (legacy) Python / JavaScript: generation_config={\"image_config\": {\"aspect_ratio\": \"1:1\", \"image_size\": \"1K\"}}",
+   "итог": "E-27-11, E-27-14"
+  },
+  {
+   "n": 40,
+   "начало": "Image configuration Before (legacy) REST: curl … \"generation_config\": {\"image_config\": …}",
+   "итог": "E-27-11"
+  },
+  {
+   "n": 41,
+   "начало": "Image configuration After (new schema) Python / JavaScript: # image_config is removed from generation_config — use response_format",
+   "итог": "E-27-12, E-27-13, E-27-15"
+  },
+  {
+   "n": 42,
+   "начало": "Image configuration After (new schema) REST: # Opt-in needed before May 26th … \"response_format\": {\"type\": \"image\", \"mime_type\": \"image/jpeg\"",
+   "итог": "E-27-12, E-27-13, E-27-14"
+  },
+  {
+   "n": 43,
+   "начало": "Audio configuration: The new schema replaces response_modalities: [\"audio\"] with a response_format entry of \"type\": \"audio\".",
+   "итог": "E-27-16"
+  },
+  {
+   "n": 44,
+   "начало": "Audio configuration Before (legacy) Python / JavaScript / REST (gemini-3.1-flash-tts-preview, response_modalities, speech_config Kore)",
+   "итог": "ничего: не про генерацию картинок (TTS; судьба response_modalities разобрана в E-27-16)"
+  },
+  {
+   "n": 45,
+   "начало": "Audio configuration After (new schema) Python / JavaScript / REST: # response_modalities is removed — use response_format",
+   "итог": "E-27-17"
+  },
+  {
+   "n": 46,
+   "начало": "To request multiple output modalities (for example, text and audio together), pass an array of format entries",
+   "итог": "E-27-18"
+  },
+  {
+   "n": 47,
+   "начало": "How to migrate to the new schema / SDK users: Upgrade to the latest SDK version (Python ≥2.0.0, JavaScript ≥2.0.0)",
+   "итог": "E-27-19"
+  },
+  {
+   "n": 48,
+   "начало": "REST API users: Add the Api-Revision: 2026-05-20 header to your requests to opt in",
+   "итог": "E-27-20"
+  },
+  {
+   "n": 49,
+   "начало": "Timeline: Date | Phase | SDK users | REST API users",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 50,
+   "начало": "May 7 | Opt-in | New SDK version available … | Add Api-Revision: 2026-05-20 header to opt in. Default remains legacy.",
+   "итог": "E-27-19, E-27-20 (повтор в таблице)"
+  },
+  {
+   "n": 51,
+   "начало": "May 26 | Default flip | No action needed if already upgraded … | New schema is now the default. Send Api-Revision: 2026-05-07",
+   "итог": "E-27-20 (повтор в таблице)"
+  },
+  {
+   "n": 52,
+   "начало": "June 8 | Sunset | Python 1.x.x and JS 1.x.x SDK versions will break … | Legacy schema removed … Api-Revision header ignored.",
+   "итог": "E-27-21"
+  },
+  {
+   "n": 53,
+   "начало": "Note: New features shipped after May 7 will only appear in steps responses.",
+   "итог": "E-27-22"
+  },
+  {
+   "n": 54,
+   "начало": "Migration Checklist / Steps schema: Update code to read response content from the steps array … Verify … user_input and model_output",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 55,
+   "начало": "(Function Calling) Update code to find function_call steps in the steps array.",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 56,
+   "начало": "(Server-Side Tools) Update code to handle tool-specific steps (e.g., google_search_call, google_search_result).",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 57,
+   "начало": "(Stateless History) Update history management to pass the steps array in the input field of the next request.",
+   "итог": "E-27-4 (повтор в чек-листе)"
+  },
+  {
+   "n": 58,
+   "начало": "(Streaming only) Update client to listen for new SSE event types (interaction.created, step.delta, etc.).",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "Output format configuration (response_format): Replace response_mime_type with a mime_type field inside response_format.",
+   "итог": "E-27-6 (повтор в чек-листе)"
+  },
+  {
+   "n": 60,
+   "начало": "Wrap your existing response_format JSON schema inside a {\"type\": \"text\", \"schema\": ...} object.",
+   "итог": "ничего: не про генерацию картинок (JSON-схема текста)"
+  },
+  {
+   "n": 61,
+   "начало": "(Image Generation) Move image_config from generation_config to a {\"type\": \"image\", ...} entry in response_format.",
+   "итог": "E-27-23"
+  },
+  {
+   "n": 62,
+   "начало": "(Speech Generation) Replace response_modalities=[\"audio\"] with a {\"type\": \"audio\"} entry in response_format.",
+   "итог": "E-27-16 (повтор в чек-листе)"
+  },
+  {
+   "n": 63,
+   "начало": "(Multimodal) Convert response_format from a single object to an array when requesting multiple output modalities.",
+   "итог": "E-27-24"
+  },
+  {
+   "n": 64,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies … Last updated 2026-09-04 UTC.",
+   "итог": "ничего: обвязка (лицензия CC BY 4.0 / Apache 2.0 — признак официальности; дата вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 65,
+   "начало": "Need to tell us more? [[[\"Easy to understand\" … Terms Privacy Manage cookies English … 한국어",
+   "итог": "ничего: обвязка (виджет отзыва, подвал, языки; стр. 2399-2425)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-27-1",
+   "вид": "предупреждение",
+   "утверждение_en": "The Interactions API changes described on the page are breaking changes; the legacy schema will be removed on June 8, 2026, and the Api-Revision request header is used to manage the migration.",
+   "цитата": "The changes described in this guide are\n  breaking changes to the Interactions API. The legacy schema will be\n  removed on\nJune 8, 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Interactions API: Breaking changes migration guide (May 2026) — вводная плашка «Breaking changes»",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-08",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее для всего Interactions API; касается и настроек картинки (image_config), которые по этой миграции переезжают. На дату страницы (Last updated 2026-09-04) срок 8 июня 2026 уже прошёл, но текст сформулирован в будущем времени."
+  },
+  {
+   "код": "E-27-2",
+   "вид": "факт",
+   "утверждение_en": "A new polymorphic response_format field consolidates all output format controls and removes response_mime_type.",
+   "цитата": "A new polymorphic\nresponse_format\nconsolidates all output format controls and removes\nresponse_mime_type",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление — две категории изменений (Output format configuration)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Картинок напрямую не называет; response_format — то поле, куда ниже переезжают настройки картинки (E-27-9)."
+  },
+  {
+   "код": "E-27-3",
+   "вид": "факт",
+   "утверждение_en": "The SDKs expose convenience properties on the interaction result, including .output_text, .output_image and .output_audio; details are on the Interactions overview page.",
+   "цитата": "For details on SDK convenience properties (including\n.output_text\n,\n.output_image\n, and\n.output_audio\n), see",
+   "источник_цитаты": "txt",
+   "раздел": "Core change: outputs to steps — Basic input/output (unary), Note",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Единственное место страницы, где упомянут доступ к сгенерированной картинке (.output_image); как он устроен, не показано — ссылка на /gemini-api/docs/interactions-overview#sdk-sugar."
+  },
+  {
+   "код": "E-27-4",
+   "вид": "инструкция",
+   "утверждение_en": "When conversation history is managed manually on the client (stateless use), collect the steps array from the response and pass it in the input field of the next request, appending the new user turn as a user_input step (the legacy practice was to send back the outputs array).",
+   "цитата": "You should now collect the\nsteps\narray from the response and pass it in the\ninput\nfield of the next request, appending your new user turn as a\nuser_input\nstep.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateless Conversation History",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Не про картинки специально, но это механизм передачи истории для многоходового диалога без хранения на сервере (в т.ч. многоходовой правки картинок). Абзац начинается с «you must update how you string along previous turns», сам приём сформулирован через «should»."
+  },
+  {
+   "код": "E-27-5",
+   "вид": "объяснение",
+   "утверждение_en": "The updated API puts all output format controls into a single polymorphic top-level response_format field, while generation_config stays focused on model behavior such as temperature, top_p and thinking.",
+   "цитата": "The updated API consolidates all output format controls into a unified,\npolymorphic\nresponse_format\nfield. This centralizes output configuration at\nthe top level and keeps\ngeneration_config\nfocused on model behavior (like\ntemperature, top_p, and thinking).",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration: response_format changes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код",
+    "thinking"
+   ],
+   "заметка": "Разделение: формат вывода (в т.ч. размер/пропорции картинки) — в response_format; поведение модели (в т.ч. thinking) — в generation_config."
+  },
+  {
+   "код": "E-27-6",
+   "вид": "правило",
+   "утверждение_en": "response_mime_type is removed; the MIME type is now specified per format entry inside response_format.",
+   "цитата": "The API removes\nresponse_mime_type\n.\nYou now specify the MIME type\nper format entry inside\nresponse_format\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration: response_format changes — Key changes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Повторено в Migration Checklist: «Replace response_mime_type with a mime_type field inside response_format»."
+  },
+  {
+   "код": "E-27-7",
+   "вид": "факт",
+   "утверждение_en": "response_format is a polymorphic object or array; each entry has a type discriminator (text, audio or image) plus type-specific fields.",
+   "цитата": "response_format\nis now a polymorphic object (or array).\nEach\nentry has a\ntype\ndiscriminator (\ntext\n,\naudio\n,\nimage\n) and\ntype-specific fields.",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration: response_format changes — Key changes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Три значения type перечислены полностью: text, audio, image."
+  },
+  {
+   "код": "E-27-8",
+   "вид": "инструкция",
+   "утверждение_en": "To request multiple output modalities, pass an array of format entries in response_format.",
+   "цитата": "To request multiple output modalities, pass an\narray of format entries.",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration: response_format changes — Key changes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример массива на странице не показан ни для одной пары модальностей."
+  },
+  {
+   "код": "E-27-9",
+   "вид": "правило",
+   "утверждение_en": "image_config moves from generation_config to response_format: image output settings such as aspect_ratio and image_size are now specified in a response_format entry with \"type\": \"image\".",
+   "цитата": "image_config\nmoves from\ngeneration_config\nto\nresponse_format\n.\nYou now specify image output settings like\naspect_ratio\nand\nimage_size\nin a\nresponse_format\nentry with\n\"type\": \"image\"",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration: response_format changes — Key changes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Главный пункт страницы про картинки. «like aspect_ratio and image_size» — перечень примерный, полный список полей image-записи не дан."
+  },
+  {
+   "код": "E-27-10",
+   "вид": "правило",
+   "утверждение_en": "The new schema removes image_config from generation_config; image output settings are specified in a response_format entry with \"type\": \"image\".",
+   "цитата": "The new schema removes\nimage_config\nfrom\ngeneration_config\n. You now specify\nimage output settings in a\nresponse_format\nentry with\n\"type\": \"image\"",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Повтор E-27-9 в отдельном разделе с кодом до/после."
+  },
+  {
+   "код": "E-27-11",
+   "вид": "факт",
+   "утверждение_en": "In the legacy schema, image settings were passed as generation_config.image_config with aspect_ratio and image_size (example: \"1:1\" and \"1K\").",
+   "цитата": "\"generation_config\": {\n\"image_config\": {\n\"aspect_ratio\": \"1:1\",\n\"image_size\": \"1K\"",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration — Before (legacy)",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Старая (legacy) форма; по странице после 8 июня 2026 удалена. Тот же вызов показан на Python, JavaScript и REST."
+  },
+  {
+   "код": "E-27-12",
+   "вид": "инструкция",
+   "утверждение_en": "In the new schema (REST opt-in with header Api-Revision: 2026-05-20), image settings are sent as a top-level response_format object: {\"type\": \"image\", \"mime_type\": \"image/jpeg\", \"aspect_ratio\": \"1:1\", \"image_size\": \"1K\"}.",
+   "цитата": "\"Api-Revision: 2026-05-20\"\n\\\n-d\n'{\n\"model\": \"gemini-3.8-flash\",\n\"input\": \"Generate an image of a sunset over the ocean.\",\n\"response_format\": {\n\"type\": \"image\",\n\"mime_type\": \"image/jpeg\",\n\"aspect_ratio\": \"1:1\",\n\"image_size\": \"1K\"",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration — After (new schema)",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Новая форма. В Python/JS SDK то же передаётся аргументом response_format={...} в client.interactions.create (код в html, блоки PRE 40-41). Комментарий REST «# Opt-in needed before May 26th»."
+  },
+  {
+   "код": "E-27-13",
+   "вид": "факт",
+   "утверждение_en": "An image entry in response_format can carry a mime_type field; the example uses \"image/jpeg\".",
+   "цитата": "\"mime_type\": \"image/jpeg\",",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration — After (new schema)",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "В legacy image_config поля mime_type не было. Допустимые значения mime_type для картинок не перечислены."
+  },
+  {
+   "код": "E-27-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "The image-generation example on the page uses the plain prompt \"Generate an image of a sunset over the ocean.\" with model gemini-3.8-flash.",
+   "цитата": "\"input\": \"Generate an image of a sunset over the ocean.\",",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Технический пример для демонстрации схемы, не образец промптинга. Модель в примере — gemini-3.8-flash, не одна из image-моделей Nano Banana."
+  },
+  {
+   "код": "E-27-15",
+   "вид": "правило",
+   "утверждение_en": "Code comment in the new-schema SDK examples: image_config is removed from generation_config and response_format is used instead.",
+   "цитата": "# image_config is removed from generation_config — use response_format",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Image configuration — After (new schema), Python/JavaScript",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "В JS-примере тот же текст с «//» вместо «#»."
+  },
+  {
+   "код": "E-27-16",
+   "вид": "правило",
+   "утверждение_en": "The new schema replaces response_modalities: [\"audio\"] with a response_format entry of \"type\": \"audio\".",
+   "цитата": "The new schema replaces\nresponse_modalities: [\"audio\"]\nwith a\nresponse_format\nentry of\n\"type\": \"audio\"",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Audio configuration",
+   "модели": [
+    "gemini-3.1-flash-tts-preview (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Про аудио, не про картинки; взято потому, что показывает судьбу response_modalities в новой схеме: модальность вывода задаётся type-записью response_format. Для картинок response_modalities на странице не упоминается. Повторено в чек-листе (Speech Generation)."
+  },
+  {
+   "код": "E-27-17",
+   "вид": "факт",
+   "утверждение_en": "Code comment in the new-schema examples: response_modalities is removed and response_format is used instead.",
+   "цитата": "# response_modalities is removed — use response_format",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — Audio configuration — After (new schema)",
+   "модели": [
+    "gemini-3.1-flash-tts-preview (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Формулировка общая («response_modalities is removed»), хотя стоит в аудио-примере; распространяется ли на картинки явно — не сказано (см. E-27-25)."
+  },
+  {
+   "код": "E-27-18",
+   "вид": "инструкция",
+   "утверждение_en": "To request multiple output modalities (for example text and audio together), pass an array of format entries to response_format instead of a single object.",
+   "цитата": "To request multiple output modalities (for example, text and audio together),\npass an array of format entries to\nresponse_format\ninstead of a single\nobject.",
+   "источник_цитаты": "txt",
+   "раздел": "Output format configuration — после Audio configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример — текст+аудио; для текст+картинка пример не дан."
+  },
+  {
+   "код": "E-27-19",
+   "вид": "факт",
+   "утверждение_en": "SDK users should upgrade to Python ≥2.0.0 / JavaScript ≥2.0.0, which opt in to the new schema automatically and support only the new schema; older 1.x.x SDKs keep working until the legacy schema is removed on June 8, 2026.",
+   "цитата": "Upgrade to the latest SDK version (Python ≥2.0.0, JavaScript ≥2.0.0). The\nSDK automatically opts you into the new schema — no code changes needed beyond\nupdating how you read responses (see examples above). Note that only the new\nschema is supported in these SDK versions. Older SDK versions\n(Python 1.x.x, JavaScript 1.x.x) will continue to work until the legacy\nschema is removed on\nJune 8, 2026",
+   "источник_цитаты": "txt",
+   "раздел": "How to migrate to the new schema — SDK users",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-08",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "«no code changes needed beyond updating how you read responses» — при этом для картинок меняется и форма запроса (image_config → response_format), см. длинную дистанцию E-27-29."
+  },
+  {
+   "код": "E-27-20",
+   "вид": "факт",
+   "утверждение_en": "REST users opt in to the new schema with header Api-Revision: 2026-05-20; after May 26 the new schema is the default for all requests; Api-Revision: 2026-05-07 temporarily opts out until June 8, when the legacy schema is permanently removed.",
+   "цитата": "Add the\nApi-Revision: 2026-05-20\nheader to your requests to opt in to\nthe new schema now. After\nMay 26\n, the new schema becomes the default for all\nrequests. You can temporarily opt out with\nApi-Revision: 2026-05-07\nuntil\nJune 8\n, when the API permanently removes the legacy schema.",
+   "источник_цитаты": "txt",
+   "раздел": "How to migrate to the new schema — REST API users",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-26 / 2026-06-08",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Те же даты повторены в таблице Timeline (строки May 7 и May 26)."
+  },
+  {
+   "код": "E-27-21",
+   "вид": "предупреждение",
+   "утверждение_en": "From June 8 (sunset), Python 1.x.x and JS 1.x.x SDK versions break for Interactions API calls, the legacy schema is removed and the Api-Revision header is ignored.",
+   "цитата": "Python 1.x.x and JS 1.x.x SDK versions will break for Interactions API calls.\nLegacy schema removed for Interactions API.\nApi-Revision\nheader ignored.",
+   "источник_цитаты": "txt",
+   "раздел": "How to migrate to the new schema — Timeline (June 8, Sunset)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-08",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для картинок это значит: форма generation_config.image_config после этой даты не работает (выведено, см. E-27-28)."
+  },
+  {
+   "код": "E-27-22",
+   "вид": "предупреждение",
+   "утверждение_en": "New features shipped after May 7 appear only in steps responses; clients on the legacy outputs schema do not receive new capabilities until they migrate.",
+   "цитата": "New features shipped after May 7 will only\n  appear in\nsteps\nresponses. Users on the legacy\noutputs\nschema will not receive new capabilities until they migrate.",
+   "источник_цитаты": "txt",
+   "раздел": "How to migrate to the new schema — Timeline, Note",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-07",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-27-23",
+   "вид": "инструкция",
+   "утверждение_en": "Migration checklist item for image generation: move image_config from generation_config to a {\"type\": \"image\", ...} entry in response_format.",
+   "цитата": "(Image Generation) Move\nimage_config\nfrom\ngeneration_config\nto a\n{\"type\": \"image\", ...}\nentry in\nresponse_format\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration Checklist — Output format configuration (response_format)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Многоточие «...» внутри цитаты — дословное из источника, не сокращение. Третий повтор правила (E-27-9, E-27-10)."
+  },
+  {
+   "код": "E-27-24",
+   "вид": "инструкция",
+   "утверждение_en": "Migration checklist item for multimodal output: convert response_format from a single object to an array when requesting multiple output modalities.",
+   "цитата": "(Multimodal) Convert\nresponse_format\nfrom a single object to an array when requesting multiple output modalities.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration Checklist — Output format configuration (response_format)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Повтор E-27-8 / E-27-18 в форме пункта чек-листа."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-27-25",
+   "вид": "объяснение",
+   "утверждение_en": "In the new Interactions schema, the image output modality and its settings are expressed in one place — a response_format entry whose type is \"image\" — instead of image_config inside generation_config; the page shows response_modalities being removed (in the audio example) and never shows response_modalities for images.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Output format configuration (весь раздел)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-27-7, E-27-9, E-27-16, E-27-17",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Два параллельных механизма старой схемы (response_modalities + generation_config.image_config) сводятся к одному (type-дискриминатор + поля записи). Что для картинок response_modalities тоже убран — прямо не сказано, выведено из общей формулировки «response_modalities is removed»."
+  },
+  {
+   "код": "E-27-26",
+   "вид": "объяснение",
+   "утверждение_en": "For image generation in the new schema, image format settings (aspect_ratio, image_size, mime_type) go into response_format while model-behavior settings such as thinking remain in generation_config, so an image request uses two separate configuration blocks.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Output format configuration: response_format changes + Image configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-27-5, E-27-9, E-27-12",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код",
+    "thinking",
+    "форматы_разрешение"
+   ],
+   "заметка": "Совместный пример (image response_format + thinking в generation_config) на странице не показан."
+  },
+  {
+   "код": "E-27-27",
+   "вид": "факт",
+   "утверждение_en": "mime_type is a new field for image output settings: the legacy image_config example has only aspect_ratio and image_size, while the new image entry adds mime_type (\"image/jpeg\"); allowed values are not listed.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Image configuration (Before/After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-27-6, E-27-11, E-27-13",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-27-28",
+   "вид": "предупреждение",
+   "утверждение_en": "Although last updated 2026-09-04, the page still speaks of the June 8, 2026 removal in the future tense; by the page's own timeline the legacy generation_config.image_config form no longer works after June 8, 2026, so only the response_format image entry is valid for Interactions API image requests.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница (плашка, How to migrate, Timeline)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-27-1, E-27-9, E-27-20, E-27-21 и даты «Last updated 2026-09-04 UTC»",
+   "дата_единицы": "2026-06-08",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Временная рамка текста (опт-ин «before May 26th») устарела относительно даты обновления страницы."
+  },
+  {
+   "код": "E-27-29",
+   "вид": "предупреждение",
+   "утверждение_en": "The SDK migration note says no code changes are needed beyond reading responses, but for image generation the request shape also changes (image_config must move into response_format), so SDK users generating images must change request code too.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "How to migrate — SDK users vs Image configuration",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-27-19, E-27-15, E-27-23",
+   "дата_единицы": "2026-05-20 (Api-Revision новой схемы; миграция май 2026)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Несогласованность внутри страницы: «no code changes needed beyond updating how you read responses» против чек-листа, требующего переносить image_config / response_mime_type / response_modalities в запросе."
+  }
+ ],
+ "противоречия_внутри": [
+  "Для картинок прямых противоречий нет: перенос image_config повторён трижды (Key changes, Image configuration, чек-лист) согласованно.",
+  "SDK users: «no code changes needed beyond updating how you read responses» — против чек-листа и примеров, где меняется и форма запроса (image_config, response_mime_type, response_modalities) — см. E-27-29.",
+  "Не про картинки: в примерах Server-side tools Python/JS читают step.result[0].search_suggestions (массив), а REST-ответ показывает result как объект.",
+  "Не про картинки: в SSE-примере новой схемы события step.stop и interaction.completed несут поле \"type\", остальные — \"event_type\"."
+ ],
+ "не_сказано": [
+  "Допустимые значения aspect_ratio и image_size не перечислены (показаны только \"1:1\" и \"1K\").",
+  "Допустимые значения mime_type для картинки не перечислены (показан только \"image/jpeg\"); нет ли image/png — не сказано.",
+  "Как сгенерированная картинка выглядит в steps (тип content в model_output) — не показано; только упоминание .output_image со ссылкой на overview.",
+  "Id моделей Nano Banana в контенте нет; какая модель реально генерирует картинку в примере (gemini-3.8-flash) — не объяснено.",
+  "Для картинок не сказано, использовался ли раньше response_modalities (например [\"image\"]) и как он заменяется — показан только аудио-случай.",
+  "Нет примера массива response_format с текстом и картинкой одновременно.",
+  "Нет ничего про входные картинки, media_resolution, thinking у image-моделей, лимиты."
+ ],
+ "сомнения": [
+  "В метаданных партии у страницы модели gemini-3-pro-image и gemini-3.1-flash-image, но в html они встречаются только в alt-paths левого меню (обвязка), в контенте их нет.",
+  "Пример генерации картинки использует model \"gemini-3.8-flash\" — страница не подтверждает, что это image-модель; возможно, пример схематичный.",
+  "Страница обновлена 2026-09-04, но формулировки временные на май 2026 («Opt-in needed before May 26th», «will be removed on June 8, 2026») — статус legacy-схемы на дату страницы по тексту не подтверждён отдельно."
+ ]
+}

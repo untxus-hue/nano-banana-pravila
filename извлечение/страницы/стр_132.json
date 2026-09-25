@@ -1,0 +1,465 @@
+{
+ "id": 132,
+ "url": "https://docs.cloud.google.com/docs/generative-ai",
+ "заголовок": "Generative AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (строка 640 .txt; то же в html). meta article:published_time / datePublished в html нет.",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал страницы: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0 / Apache 2.0, ссылки 'About Google', 'Google Cloud terms'. Строки Copyright Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Обзорная хаб-страница 'Generative AI' в документации Google Cloud для разработчиков/архитекторов: карточки-ссылки на Vertex AI, Gemini Quickstart, GKE, RAG-архитектуры, LangChain. Около 90% текста — меню и подвал сайта. Содержательная часть (строки 531-638): оффер $300, разделы Model exploration and hosting, Prompt design and engineering, Grounding and RAG, Agents and function calling, Model customization and training, Related guides, Start building. Из image-моделей названа только Imagen (в списке 'Google Models on Vertex AI (Gemini, Imagen)'); Nano Banana / Gemini image не упоминаются. Термины страницы: prompt design, grounding, RAG, model tuning, Gen AI development flow (из alt диаграммы). Повторно подчёркнута связка grounding/RAG (много карточек про векторные хранилища). Дата: Last updated 2026-09-22.",
+ "модели_на_странице": [
+  "Gemini (без версии)",
+  "Imagen",
+  "PaLM 2 (в описании Vertex AI Studio)"
+ ],
+ "структура": [
+  "Верхнее меню Google Cloud",
+  "Левое меню-каталог продуктов",
+  "Generative AI (заголовок)",
+  "Get started for free",
+  "Learn about building generative AI applications",
+  "Gen AI tools",
+  "Gen AI development flow",
+  "Model exploration and hosting",
+  "Prompt design and engineering",
+  "Grounding and RAG",
+  "Agents and function calling",
+  "Model customization and training",
+  "Related guides and sites",
+  "Start building / Set up LangChain",
+  "Лицензия, Last updated",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close Get Started",
+   "итог": "ничего: обвязка сайта — верхнее меню Google Cloud (продукты, технологии, языки, Sign in, Start free, Documentation, More, Console), строки 1-61"
+  },
+  {
+   "n": 2,
+   "начало": "Google Cloud Documentation home Get started with Google Cloud",
+   "итог": "ничего: обвязка сайта — левое меню-каталог всех продуктов Google Cloud, строки 62-491"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started Get Started with Google Cloud Product List (повтор)",
+   "итог": "ничего: обвязка сайта — повтор верхнего меню, строки 492-526"
+  },
+  {
+   "n": 4,
+   "начало": "Home Documentation AI and ML Generative AI",
+   "итог": "ничего: хлебные крошки, строки 527-530"
+  },
+  {
+   "n": 5,
+   "начало": "Generative AI Documentation and resources for building",
+   "итог": "ничего: заголовок и подзаголовок страницы, строки 531-533"
+  },
+  {
+   "n": 6,
+   "начало": "Get started for free Start your proof of concept with $300",
+   "итог": "E-132-10 (строки 534-538)"
+  },
+  {
+   "n": 7,
+   "начало": "View free product offers Keep exploring with 20+ always-free products.",
+   "итог": "ничего: маркетинг без содержания про картинки (always-free продукты), строки 539-542"
+  },
+  {
+   "n": 8,
+   "начало": "Learn about building generative AI applications",
+   "итог": "ничего: заголовок раздела, строка 543"
+  },
+  {
+   "n": 9,
+   "начало": "Generative AI on Vertex AI Access Google's large generative AI models",
+   "итог": "ничего: навигационная карточка (test, tune, deploy — без содержания), строки 544-545"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini Quickstart See what it's like to send requests",
+   "итог": "ничего: навигационная карточка, строки 546-547"
+  },
+  {
+   "n": 11,
+   "начало": "AI/ML orchestration on GKE Leverage the power of GKE",
+   "итог": "ничего: не про генерацию картинок (инфраструктура GKE), строки 548-549"
+  },
+  {
+   "n": 12,
+   "начало": "When to use generative AI Identify whether generative AI",
+   "итог": "ничего: навигационная карточка, строки 550-551"
+  },
+  {
+   "n": 13,
+   "начало": "Develop a generative AI application Learn how to address",
+   "итог": "ничего: навигационная карточка, строки 552-553"
+  },
+  {
+   "n": 14,
+   "начало": "Code samples and sample applications View code samples",
+   "итог": "ничего: навигационная карточка, строки 554-555"
+  },
+  {
+   "n": 15,
+   "начало": "Generative AI glossary Learn about specific terms",
+   "итог": "ничего: навигационная карточка, строки 556-557"
+  },
+  {
+   "n": 16,
+   "начало": "Gen AI tools (html alt: List of generative AI tools including Vertex AI Studio…)",
+   "итог": "ничего: перечень инструментов консоли без содержания про картинки, строка 558 + alt в html"
+  },
+  {
+   "n": 17,
+   "начало": "Gen AI development flow (html alt: Diagram of the generative AI development flow…)",
+   "итог": "E-132-9 (строка 559 + alt диаграммы в html)"
+  },
+  {
+   "n": 18,
+   "начало": "Model exploration and hosting Google Cloud provides a set of state-of-the-art",
+   "итог": "E-132-1 (строки 560-561)"
+  },
+  {
+   "n": 19,
+   "начало": "Google Models on Vertex AI (Gemini, Imagen)",
+   "итог": "E-132-2 (строки 562-563)"
+  },
+  {
+   "n": 20,
+   "начало": "Other models in the Vertex AI Model Garden",
+   "итог": "ничего: OSS-модели, навигация, строки 564-565"
+  },
+  {
+   "n": 21,
+   "начало": "Text generation models via HuggingFace",
+   "итог": "ничего: не про генерацию картинок (текстовые модели HuggingFace), строки 566-567"
+  },
+  {
+   "n": 22,
+   "начало": "GPUs on Compute Engine Attach GPUs to VM instances",
+   "итог": "ничего: не про генерацию картинок (инфраструктура GPU), строки 568-569"
+  },
+  {
+   "n": 23,
+   "начало": "Prompt design and engineering Prompt design is the process",
+   "итог": "E-132-3 (строки 570-571)"
+  },
+  {
+   "n": 24,
+   "начало": "Vertex AI Studio Design, test, and customize your prompts",
+   "итог": "E-132-4 (строки 572-573)"
+  },
+  {
+   "n": 25,
+   "начало": "Overview of Prompting Strategies Learn the prompt-engineering workflow",
+   "итог": "ничего: навигационная карточка без содержания, строки 574-575"
+  },
+  {
+   "n": 26,
+   "начало": "Prompt Gallery View example prompts and responses",
+   "итог": "ничего: навигационная карточка без содержания, строки 576-577"
+  },
+  {
+   "n": 27,
+   "начало": "Grounding and RAG Grounding connects AI models to data sources",
+   "итог": "E-132-5 (строки 578-579)"
+  },
+  {
+   "n": 28,
+   "начало": "Vertex AI grounding You can ground Vertex AI models",
+   "итог": "E-132-6 (строки 580-581)"
+  },
+  {
+   "n": 29,
+   "начало": "Ground with Google Search Use Grounding with Google Search",
+   "итог": "E-132-7 (строки 582-583)"
+  },
+  {
+   "n": 30,
+   "начало": "Vector embeddings in AlloyDB / Cloud SQL and pgvector / BigQuery LangChain / Firestore / Memorystore",
+   "итог": "ничего: не про генерацию картинок (векторные хранилища для RAG), строки 584-594"
+  },
+  {
+   "n": 31,
+   "начало": "Agents and function calling Agents make it easy to design",
+   "итог": "ничего: не про генерацию картинок, строки 595-596"
+  },
+  {
+   "n": 32,
+   "начало": "Agent Search Leverage Google's foundation models / Vertex AI Function calling",
+   "итог": "ничего: не про генерацию картинок, строки 597-600"
+  },
+  {
+   "n": 33,
+   "начало": "Model customization and training Specialized tasks, such as training",
+   "итог": "E-132-8 (строки 601-602)"
+  },
+  {
+   "n": 34,
+   "начало": "Evaluate models in Vertex AI Evaluate the performance",
+   "итог": "ничего: навигационная карточка, строки 603-604"
+  },
+  {
+   "n": 35,
+   "начало": "Tune Vertex AI models General purpose foundation models can benefit from tuning",
+   "итог": "ничего: повтор мысли E-132-8 (tuning улучшает качество на специфичных задачах), строки 605-606"
+  },
+  {
+   "n": 36,
+   "начало": "Cloud TPU TPUs are Google's custom-developed ASICs",
+   "итог": "ничего: не про генерацию картинок, строки 607-608"
+  },
+  {
+   "n": 37,
+   "начало": "Related guides and sites … Infrastructure for a RAG-capable generative AI application",
+   "итог": "ничего: не про генерацию картинок (референс-архитектуры RAG), строки 609-621"
+  },
+  {
+   "n": 38,
+   "начало": "Start building Set up your development environment … Set up LangChain",
+   "итог": "ничего: не про генерацию картинок (языки SDK, LangChain), строки 622-638"
+  },
+  {
+   "n": 39,
+   "начало": "Except as otherwise noted, the content of this page is licensed",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности), строка 639"
+  },
+  {
+   "n": 40,
+   "начало": "Last updated 2026-09-22 UTC.",
+   "итог": "ничего: дата обновления (вынесена в дата_в_тексте), строка 640"
+  },
+  {
+   "n": 41,
+   "начало": "Products and pricing See all products … 日本語",
+   "итог": "ничего: обвязка сайта — подвал и переключатель языков, строки 641-687"
+  },
+  {
+   "n": 42,
+   "начало": "ДЛИННАЯ ДИСТАНЦИЯ (вся страница)",
+   "итог": "E-132-11"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-132-1",
+   "вид": "факт",
+   "утверждение_en": "Google Cloud provides state-of-the-art foundation models, including Gemini, through Vertex AI; third-party models can be deployed to Vertex AI Model Garden or self-hosted on GKE or Compute Engine.",
+   "цитата": "Google Cloud provides a set of state-of-the-art foundation models through Vertex AI, including Gemini. You can also deploy a third-party model to either Vertex AI Model Garden or self-host on GKE or Compute Engine.",
+   "источник_цитаты": "txt",
+   "раздел": "Model exploration and hosting",
+   "модели": [
+    "Gemini (семейство, без уточнения версии)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "Общий факт о платформе; про image-модели конкретно не сказано."
+  },
+  {
+   "код": "E-132-2",
+   "вид": "факт",
+   "утверждение_en": "Google models available on Vertex AI include Gemini and Imagen, which can be discovered, tested, customized and deployed from an ML model library.",
+   "цитата": "Google Models on Vertex AI (Gemini, Imagen)",
+   "источник_цитаты": "txt",
+   "раздел": "Model exploration and hosting",
+   "модели": [
+    "Gemini",
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Единственное место страницы, где названа модель генерации картинок (Imagen). Подпись карточки: 'Discover test, customize, and deploy Google models and assets from an ML model library.' Nano Banana / Gemini image не упомянуты."
+  },
+  {
+   "код": "E-132-3",
+   "вид": "объяснение",
+   "утверждение_en": "Prompt design is defined as authoring prompt and response pairs to give language models additional context and instructions; the page says these are fed to the model as a prompt dataset for pretraining, so the model responds with the instructions built in.",
+   "цитата": "Prompt design is the process of authoring prompt and response pairs to give language models additional context and instructions. After you author prompts, you feed them to the model as a prompt dataset for pretraining. When a model serves predictions, it responds with your instructions built in.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt design and engineering",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Общее определение для языковых моделей, не специфично для картинок. Формулировка смешивает prompt design с pretraining-датасетом — см. противоречия_внутри."
+  },
+  {
+   "код": "E-132-4",
+   "вид": "факт",
+   "утверждение_en": "Vertex AI Studio is the tool to design, test and customize prompts sent to Google's Gemini and PaLM 2 large language models.",
+   "цитата": "Design, test, and customize your prompts sent to Google's Gemini and PaLM 2 large language models (LLM).",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt design and engineering / Vertex AI Studio",
+   "модели": [
+    "Gemini",
+    "PaLM 2"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "промптинг"
+   ],
+   "заметка": "Упоминание PaLM 2 устарело относительно даты страницы (Last updated 2026-09-22) — см. сомнения."
+  },
+  {
+   "код": "E-132-5",
+   "вид": "объяснение",
+   "утверждение_en": "Grounding connects AI models to data sources to improve response accuracy and reduce hallucinations; RAG, a common grounding technique, searches for relevant information and adds it to the model's prompt so output is based on facts and up-to-date information.",
+   "цитата": "Grounding connects AI models to data sources to improve the accuracy of responses and reduce hallucinations. RAG, a common grounding technique, searches for relevant information and adds it to the model's prompt, ensuring output is based on facts and up-to-date information.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding and RAG",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Общее определение; для image-моделей не конкретизировано."
+  },
+  {
+   "код": "E-132-6",
+   "вид": "факт",
+   "утверждение_en": "Vertex AI models can be grounded with Google Search or with your own data stored in Agent Search.",
+   "цитата": "You can ground Vertex AI models with Google Search or with your own data stored in Agent Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding and RAG / Vertex AI grounding",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Какие именно модели (в т.ч. image) поддерживают grounding — не сказано."
+  },
+  {
+   "код": "E-132-7",
+   "вид": "объяснение",
+   "утверждение_en": "Grounding with Google Search connects the model to the up-to-date knowledge available on the internet.",
+   "цитата": "Use Grounding with Google Search to connect the model to the up-to-date knowledge available on the internet.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding and RAG / Ground with Google Search",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Общее описание, без привязки к картинкам."
+  },
+  {
+   "код": "E-132-8",
+   "вид": "объяснение",
+   "утверждение_en": "Specialized tasks (e.g., training on specific terminology) may need more than prompt design or grounding alone; in that case model tuning can improve performance, or you can train your own model.",
+   "цитата": "Specialized tasks, such as training a language model on specific terminology, might require more training than you can do with prompt design or grounding alone. In that scenario, you can use model tuning to improve performance, or train your own model.",
+   "источник_цитаты": "txt",
+   "раздел": "Model customization and training",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "другое"
+   ],
+   "заметка": "Общий принцип для языковых моделей; про тюнинг image-моделей ничего не сказано."
+  },
+  {
+   "код": "E-132-9",
+   "вид": "объяснение",
+   "утверждение_en": "The generative AI development flow has six stages — model selection (incl. Model Garden), prompt engineering (incl. prompt gallery, Vertex AI Studio, compare prompts, optimize prompt), tuning, optimization (incl. distillation), deployment and monitoring — with the first four forming a looping evaluation subcycle.",
+   "цитата": "Diagram of the generative AI development flow with six stages: model selection (including Model Garden), prompt engineering (including prompt gallery, Vertex AI Studio, compare prompts, and optimize prompt), tuning (including training and tuning), optimization (including distillation), deployment (including Model Registry, online prediction, and batch prediction), and monitoring. The model selection, prompt engineering, tuning, and optimization stages are part of a looping subcycle labeled Evaluation.",
+   "источник_цитаты": "html",
+   "раздел": "Gen AI development flow (alt диаграммы)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "другое"
+   ],
+   "заметка": "Есть только в alt картинки html; в .txt только заголовок 'Gen AI development flow'. Цикл prompt engineering ↔ evaluation — общий, не специфичен для картинок."
+  },
+  {
+   "код": "E-132-10",
+   "вид": "факт",
+   "утверждение_en": "Google Cloud offers new users $300 in free credit and free usage of 20+ products including AI APIs, with no automatic charges and no commitment.",
+   "цитата": "Start your proof of concept with $300 in free credit",
+   "источник_цитаты": "txt",
+   "раздел": "Get started for free",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Маркетинговый оффер Google Cloud в целом; соседние строки: 'Get free usage of 20+ popular products, including Compute Engine and AI APIs.' и 'No automatic charges, no commitment.' Про стоимость генерации картинок не сказано."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-132-11",
+   "вид": "приём",
+   "утверждение_en": "The page presents a ladder of methods: prompt design first, grounding (RAG / Google Search) to add facts, and tuning or custom training only when prompt design or grounding alone are insufficient.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница (Prompt design → Grounding → Model customization)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-132-3, E-132-5, E-132-8",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "grounding"
+   ],
+   "заметка": "Порядок разделов и фраза 'more training than you can do with prompt design or grounding alone' задают иерархию; для image-моделей не конкретизировано."
+  }
+ ],
+ "противоречия_внутри": [
+  "Prompt design определён как составление пар prompt/response, которые 'feed them to the model as a prompt dataset for pretraining' (E-132-3), а раздел Model customization противопоставляет prompt design обучению: задачам может потребоваться 'more training than you can do with prompt design or grounding alone' (E-132-8). Внутри страницы prompt design одновременно и датасет для обучения, и альтернатива обучению."
+ ],
+ "не_сказано": [
+  "Нет ни одного упоминания Nano Banana / Gemini image-моделей; из генерации картинок назван только Imagen, без описания.",
+  "Не сказано, какие модели (в т.ч. image) поддерживают grounding с Google Search.",
+  "Нет правил или примеров промптов — только ссылки на Overview of Prompting Strategies и Prompt Gallery."
+ ],
+ "сомнения": [
+  "Все единицы общие для генеративного ИИ на Vertex AI, не специфичны для картинок; ценность для правил image-промптинга низкая.",
+  "Vertex AI Studio описан как инструмент для 'Gemini and PaLM 2' при дате обновления 2026-09-22 — текст карточки, вероятно, устаревший.",
+  "E-132-9 цитирует alt диаграммы из html; в .txt этого текста нет.",
+  "E-132-10 (оффер $300) — общий маркетинг Google Cloud, включён как факт о ценах, к картинкам не относится напрямую."
+ ]
+}

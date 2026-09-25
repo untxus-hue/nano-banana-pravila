@@ -1,0 +1,460 @@
+{
+ "id": 138,
+ "url": "https://deepmind.google/technologies/synthid/",
+ "заголовок": "SynthID — Google DeepMind",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "deepmind.google",
+  "второй_признак": "og:site_name «Google DeepMind» и twitter:site @GoogleDeepMind в html; текст от лица Google («SynthID is our new watermarking tool», «we launched the SynthID Detector», «Google’s generative AI consumer products»); подвал «About Google / Google products / Privacy / Terms», форма подписки «I accept Google's Terms and Conditions». Явной строки ©Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Продуктовая страница Google DeepMind о SynthID для широкой аудитории (не для разработчиков). Объясняет, что SynthID встраивает невидимый водяной знак в ИИ-картинки/видео/аудио/текст Google-продуктов, для картинок: не меняет качество, ставится в момент создания, спроектирован переживать кроп/фильтры/сжатие. Даёт способ проверки: загрузить файл в чат Gemini и спросить, создан/изменён ли он Google AI; упоминает портал SynthID Detector (доступ через waitlist для тестеров). Конкретные модели генерации картинок в тексте не названы (Nano Banana только в меню сайта). Даты публикации/обновления нет; относительное «Earlier this year». Повторно подчёркивает: метка невидима/неощутима и не влияет на качество.",
+ "модели_на_странице": [
+  "не указано (Nano Banana упомянут только в меню сайта)"
+ ],
+ "структура": [
+  "шапка/меню сайта",
+  "SynthID — A tool to watermark and identify content generated through AI",
+  "What is SynthID?",
+  "How SynthID works (карусель: AI-generated image and video / audio / text)",
+  "Detecting SynthID watermarks in Gemini (How to verify in Gemini — видео)",
+  "SynthID Detector (waitlist)",
+  "подписка и подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::SynthID — Google DeepMind (строки 1-2)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Explore our (строки 3-277)",
+   "итог": "ничего: обвязка сайта (мега-меню deepmind.google: Models/Research/Science/About, продублировано дважды; «Nano Banana — Create and edit detailed images» только пунктом меню)"
+  },
+  {
+   "n": 3,
+   "начало": "SynthID A tool to watermark (строки 279-280)",
+   "итог": "E-138-1"
+  },
+  {
+   "n": 4,
+   "начало": "Try in Gemini (строка 282)",
+   "итог": "ничего: обвязка сайта (кнопка)"
+  },
+  {
+   "n": 5,
+   "начало": "Overview How it works Hands-on (строки 284-286)",
+   "итог": "ничего: обвязка сайта (вкладки страницы)"
+  },
+  {
+   "n": 6,
+   "начало": "What is SynthID? (строка 288)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 7,
+   "начало": "Generative AI can help us (строка 289)",
+   "итог": "ничего: маркетинг без содержания (вводная мотивировка: трудно отличить ИИ-контент)"
+  },
+  {
+   "n": 8,
+   "начало": "SynthID is our new watermarking (строка 291)",
+   "итог": "E-138-2"
+  },
+  {
+   "n": 9,
+   "начало": "How SynthID works (строка 293)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 10,
+   "начало": "SynthID embeds digital watermarks directly (строка 294)",
+   "итог": "E-138-3, E-138-4"
+  },
+  {
+   "n": 11,
+   "начало": "Slide 1 of 3 (строка 296)",
+   "итог": "ничего: обвязка сайта (счётчик карусели)"
+  },
+  {
+   "n": 12,
+   "начало": "AI-generated image and video (строка 298)",
+   "итог": "ничего: заголовок слайда"
+  },
+  {
+   "n": 13,
+   "начало": "SynthID adds an invisible digital (строка 300)",
+   "итог": "E-138-5, E-138-6, E-138-7, E-138-8"
+  },
+  {
+   "n": 14,
+   "начало": "AI-generated audio (строка 302)",
+   "итог": "ничего: заголовок слайда (аудио)"
+  },
+  {
+   "n": 15,
+   "начало": "SynthID embeds a watermark into (строка 304)",
+   "итог": "ничего: не про генерацию картинок (водяной знак аудио Lyria/NotebookLM); использован только как контраст в E-138-15"
+  },
+  {
+   "n": 16,
+   "начало": "AI generated-text (строка 306)",
+   "итог": "ничего: заголовок слайда (текст)"
+  },
+  {
+   "n": 17,
+   "начало": "We’ve expanded SynthID to watermarking (строка 308)",
+   "итог": "ничего: не про генерацию картинок (водяной знак текста через вероятности токенов)"
+  },
+  {
+   "n": 18,
+   "начало": "Detecting SynthID watermarks in Gemini (строка 310)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 19,
+   "начало": "Want to check if an (строка 311)",
+   "итог": "E-138-9"
+  },
+  {
+   "n": 20,
+   "начало": "Simply upload the image, video (строка 313)",
+   "итог": "E-138-10, E-138-11"
+  },
+  {
+   "n": 21,
+   "начало": "Try in Gemini / How to (строки 315-321)",
+   "итог": "ничего: обвязка сайта (кнопка, подпись к видео-демо, заглушки видео без текста)"
+  },
+  {
+   "n": 22,
+   "начало": "SynthID Detector Earlier this year (строки 323-324)",
+   "итог": "E-138-12"
+  },
+  {
+   "n": 23,
+   "начало": "We are currently collaborating with (строка 326)",
+   "итог": "E-138-13"
+  },
+  {
+   "n": 24,
+   "начало": "Join the early tester waitlist (строки 328-330)",
+   "итог": "ничего: ссылка и заглушка видео; содержание учтено в E-138-13"
+  },
+  {
+   "n": 25,
+   "начало": "Follow us Sign up for (строки 332-338)",
+   "итог": "ничего: обвязка сайта (подписка на рассылку)"
+  },
+  {
+   "n": 26,
+   "начало": "Build AI responsibly to benefit (строки 340-403)",
+   "итог": "ничего: обвязка сайта (подвал: Models/Research/Science/Products/About, About Google/Privacy/Terms)"
+  },
+  {
+   "n": 27,
+   "начало": "вся страница (длинная дистанция)",
+   "итог": "E-138-14, E-138-15, E-138-16"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-138-1",
+   "вид": "факт",
+   "утверждение_en": "SynthID is a Google tool to watermark and identify content generated through AI.",
+   "цитата": "A tool to watermark and identify content generated through AI",
+   "источник_цитаты": "txt",
+   "раздел": "SynthID (шапка страницы)",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-2",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID is a watermarking tool designed specifically for AI-generated content; it lets users identify AI-generated or AI-altered content, to foster transparency and trust in generative AI.",
+   "цитата": "SynthID is our new watermarking tool, designed specifically for AI-generated content. It empowers users to identify AI-generated (or altered) content, helping to foster transparency and trust in generative AI.",
+   "источник_цитаты": "txt",
+   "раздел": "What is SynthID?",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Охват «AI-generated (or altered)» — сформулирован шире, чем фактическая проверка (только Google AI), см. противоречия_внутри."
+  },
+  {
+   "код": "E-138-3",
+   "вид": "факт",
+   "утверждение_en": "SynthID embeds digital watermarks directly into AI-generated images (as well as audio, text and video), and these watermarks are embedded across Google's generative AI consumer products.",
+   "цитата": "SynthID embeds digital watermarks directly into AI-generated images, audio, text or video. The watermarks are embedded across Google’s generative AI consumer products",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сказано именно «consumer products»; про API/Vertex страница молчит (см. не_сказано)."
+  },
+  {
+   "код": "E-138-4",
+   "вид": "факт",
+   "утверждение_en": "SynthID watermarks are imperceptible to humans but can be detected by SynthID's technology.",
+   "цитата": "are imperceptible to humans – but can be detected by SynthID's technology",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-5",
+   "вид": "факт",
+   "утверждение_en": "SynthID adds an invisible digital watermark to an AI-generated image (or video segment).",
+   "цитата": "SynthID adds an invisible digital watermark to an AI-generated image (or video segment).",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works → AI-generated image and video",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-6",
+   "вид": "факт",
+   "утверждение_en": "The SynthID watermark does not change the image or video quality.",
+   "цитата": "The watermark doesn’t change the image or video quality.",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works → AI-generated image and video",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Значит, для качества картинки водяной знак SynthID не является фактором (по словам Google)."
+  },
+  {
+   "код": "E-138-7",
+   "вид": "факт",
+   "утверждение_en": "The SynthID watermark is added to an image at the moment the content is created.",
+   "цитата": "It’s added the moment content is created",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works → AI-generated image and video",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-8",
+   "вид": "факт",
+   "утверждение_en": "The image/video watermark is designed to withstand modifications such as cropping, adding filters, changing frame rates, or lossy compression.",
+   "цитата": "designed to stand up to modifications like cropping, adding filters, changing frame rates, or lossy compression",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID works → AI-generated image and video",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Формулировка осторожная: «designed to stand up to» — это цель проектирования, не гарантия сохранности метки после правок."
+  },
+  {
+   "код": "E-138-9",
+   "вид": "инструкция",
+   "утверждение_en": "To check whether an image, video or audio clip was generated or edited by Google AI, you can ask Gemini.",
+   "цитата": "Want to check if an image, video or audio clip was generated, or edited, by Google AI? Ask Gemini.",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting SynthID watermarks in Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-10",
+   "вид": "инструкция",
+   "утверждение_en": "Upload the image (or video/audio clip) to a Gemini chat and ask whether it was created or altered by Google AI.",
+   "цитата": "Simply upload the image, video or audio clip to your chat, and ask if it’s been created or altered by Google AI.",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting SynthID watermarks in Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Порядок действий: загрузить файл в чат → задать вопрос словами. Конкретной формулировки вопроса страница не даёт."
+  },
+  {
+   "код": "E-138-11",
+   "вид": "объяснение",
+   "утверждение_en": "When asked, Gemini checks the uploaded content for a SynthID watermark and tells you if it finds one.",
+   "цитата": "Gemini will check for a SynthID watermark, and let you know if it finds one.",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting SynthID watermarks in Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-12",
+   "вид": "факт",
+   "утверждение_en": "Google launched the SynthID Detector, a verification portal where you upload an image, video or audio file to verify whether it was watermarked with SynthID.",
+   "цитата": "we launched the SynthID Detector, a verification portal, to verify if a piece of content was watermarked with SynthID. Just upload an image, video or audio file.",
+   "источник_цитаты": "txt",
+   "раздел": "SynthID Detector",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Дата запуска дана только относительно: «Earlier this year» — год на странице не назван."
+  },
+  {
+   "код": "E-138-13",
+   "вид": "ограничение",
+   "утверждение_en": "The SynthID Detector portal is being tested with journalists and media professionals; general access is via an early tester waitlist.",
+   "цитата": "We are currently collaborating with journalists and media professionals to test the portal and collect their feedback.",
+   "источник_цитаты": "txt",
+   "раздел": "SynthID Detector",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Про waitlist — строка-ссылка «Join the early tester waitlist» сразу за абзацем. «currently» без даты."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-138-14",
+   "вид": "предупреждение",
+   "утверждение_en": "The Gemini check only tells you about a Google AI SynthID watermark: the question to ask is whether content was created or altered by Google AI, and Gemini reports only whether it finds a SynthID watermark; it is not a general AI-detector.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-138-9, E-138-10, E-138-11",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Страница нигде не говорит, что отсутствие метки означает «не ИИ»."
+  },
+  {
+   "код": "E-138-15",
+   "вид": "объяснение",
+   "утверждение_en": "For images the page makes a weaker robustness claim than for audio: image watermarks are 'designed to stand up to' modifications, while the audio paragraph says the watermark 'can't be altered by common modifications'; no guarantee is given that an image watermark survives edits.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-138-8 и абзаца про аудио (строка 304)",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-138-16",
+   "вид": "факт",
+   "утверждение_en": "Per this page, every image produced by Google's consumer generative AI products carries an invisible SynthID watermark from the moment of creation, with no stated quality cost; the page describes no user control over it.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-138-3, E-138-5, E-138-6, E-138-7",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Отсутствие настройки — вывод из молчания страницы, а не прямое утверждение."
+  }
+ ],
+ "противоречия_внутри": [
+  "Во вступлении SynthID «empowers users to identify AI-generated (or altered) content» — без ограничения, а проверка в Gemini отвечает только про «created or altered by Google AI» / наличие SynthID. Охват обещания шире охвата инструмента (E-138-2 vs E-138-10/E-138-11)."
+ ],
+ "не_сказано": [
+  "Какие модели генерации картинок ставят метку — Nano Banana/Gemini image models в тексте не названы.",
+  "Ставится ли SynthID на картинки из API/Vertex AI (сказано только «Google’s generative AI consumer products»).",
+  "Ничего о видимом водяном знаке и о C2PA/Content Credentials.",
+  "Нет данных о точности детекции, ложных срабатываниях и пределах (сильные правки, мелкие/простые картинки).",
+  "Не сказано, что означает отсутствие метки (что картинка не ИИ — не утверждается).",
+  "Не сказано, можно ли отключить или удалить метку.",
+  "Нет даты публикации/обновления; «Earlier this year» без года."
+ ],
+ "сомнения": [
+  "URL в партии /technologies/synthid/, а og:url в html — https://deepmind.google/models/synthid/ (видимо редирект); содержание одно.",
+  "В метаданных партии указаны модели gemini-2.5-flash-image/gemini-3-pro-image/gemini-3.1-flash-image, но сама страница их не называет — в единицах модели «не указано».",
+  "Дата не найдена ни в тексте, ни в meta html; «Earlier this year we launched the SynthID Detector» косвенно указывает на год запуска Detector, но год на странице не назван."
+ ]
+}

@@ -1,0 +1,855 @@
+{
+ "id": 199,
+ "url": "https://developers.googleblog.com/enable-on-demand-expertise-with-agent-skills-in-genkit-go/",
+ "заголовок": "Enable on-demand expertise with Agent Skills in Genkit Go",
+ "дата_в_тексте": "JULY 31, 2026 (в тексте); datePublished 2026-07-31 (JSON-LD)",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "Текст от лица Google о собственном фреймворке («we added support for Agent Skills in Genkit for TypeScript, Go, Dart, and Python»); автор Daniela Petruzalek, «Senior Developer Relations Engineer»; JSON-LD BreadcrumbList «Google for Developers Blog», логотип «Google for Developers», подвал Google Developer Program.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост Google Developers Blog (31.07.2026, Daniela Petruzalek) про Agent Skills в Genkit Go: progressive disclosure, SKILL.md, middleware, простой пример (рецепты на gemini-flash-latest). Про картинки: схема в посте сгенерирована Gemini 3.1 Flash Image; «более реалистичный пример» — приложение реставрации искусства на Gemini 3.1 Flash Image (Nano Banana 2): системная инструкция-персона «Renaissance» (сначала определить тип изображения → вызвать навык → точная реставрация → вернуть IMAGE + текст с названием навыков), короткий пользовательский промпт + картинка (data URI), ResponseModalities TEXT+IMAGE, три навыка по типам (drawings, paintings, photography), полный SKILL.md для живописи (минимальное вмешательство, запрет добавлять элементы, сохранение кракелюра, шаги лак → грязь → восполнение утрат), запуск на Ecce Homo, отчёт модели, предупреждение о недетерминированности. Основная тема — агентные навыки, не картинки.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», googleai/gemini-3.1-flash-image",
+  "нерелевантные: googleai/gemini-flash-latest (пример с рецептами)"
+ ],
+ "структура": [
+  "Вступление (раздувание контекста, Agent Skills в Genkit)",
+  "Brief Recap of Agent Skills (SKILL.md, frontmatter, схема progressive disclosure)",
+  "Agent Skills in Genkit Go (middleware, How it works)",
+  "Preparing the environment",
+  "Adding skills to a basic flow (рецепты)",
+  "A more realistic example (реставрация на Nano Banana 2: код, SKILL.md paintings, запуск, вывод, результат)",
+  "Best practices for skills",
+  "Get started"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Enable on-demand expertise with Agent (стр. 1-4)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Enable on-demand expertise… - Google Developers Blog / Community/Events Learn Blog (стр. 5-20)",
+   "итог": "ничего: обвязка сайта (шапка блога)"
+  },
+  {
+   "n": 3,
+   "начало": "Enable on-demand expertise with Agent Skills (стр. 21)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 4,
+   "начало": "JULY 31, 2026",
+   "итог": "ничего: дата публикации (учтена в дата_в_тексте и дата_единицы)"
+  },
+  {
+   "n": 5,
+   "начало": "Daniela Petruzalek Senior Developer Relations Engineer",
+   "итог": "ничего: автор (учтено в официальности)"
+  },
+  {
+   "n": 6,
+   "начало": "Share Facebook Twitter LinkedIn Mail",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 7,
+   "начало": "Large language model-based agents are increasingly",
+   "итог": "ничего: не про генерацию картинок (проблема раздувания контекста агентов)"
+  },
+  {
+   "n": 8,
+   "начало": "To address this, we added support",
+   "итог": "ничего: не про генерацию картинок (Agent Skills в Genkit; текст от лица Google — признак официальности)"
+  },
+  {
+   "n": 9,
+   "начало": "Brief Recap of Agent Skills",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 10,
+   "начало": "Agent skills operate on a principle",
+   "итог": "ничего: не про генерацию картинок (progressive disclosure, SKILL.md)"
+  },
+  {
+   "n": 11,
+   "начало": "Following the specification , this is",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 12,
+   "начало": "skill-name/ ├── SKILL.md (стр. 37-44)",
+   "итог": "ничего: код без промпта (структура папки навыка)"
+  },
+  {
+   "n": 13,
+   "начало": "And here is a skill frontmatter",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "--- name: adr-template (стр. 47-57)",
+   "итог": "ничего: пример frontmatter не про картинки"
+  },
+  {
+   "n": 15,
+   "начало": "At first, the agent harness will",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "This flow is summarized in the",
+   "итог": "ничего: вводная к схеме"
+  },
+  {
+   "n": 17,
+   "начало": "With progressive disclosure, token consumption is delayed… Diagram generated with Gemini 3.1 Flash Image.",
+   "итог": "E-199-1"
+  },
+  {
+   "n": 18,
+   "начало": "This progressive disclosure model offers three",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "Token efficiency : Genkit loads only",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "Lean implementation : Skills are a",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 21,
+   "начало": "Resource bundling : Skills can contain",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 22,
+   "начало": "Agent Skills in Genkit Go",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 23,
+   "начало": "To understand how Agent Skills operate",
+   "итог": "ничего: не про генерацию картинок (middleware Genkit)"
+  },
+  {
+   "n": 24,
+   "начало": "Model Wrapper (WrapModel): Fires once",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 25,
+   "начало": "Tool Wrapper (WrapTool): Fires once",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 26,
+   "начало": "Generate Wrapper (WrapGenerate): Fires once",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 27,
+   "начало": "Agent Skills build on this hook",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "Here is a code snippet demonstrating",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 29,
+   "начало": "resp, err := genkit.Generate(ctx, g, (стр. 78-84)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 30,
+   "начало": "How it works / Skill usage happens in three",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 31,
+   "начало": "Discovery : When initializing Genkit with",
+   "итог": "ничего: не про генерацию картинок (контекст механизма для E-199-19)"
+  },
+  {
+   "n": 32,
+   "начало": "Activation : When a user request",
+   "итог": "ничего: не про генерацию картинок (механизм use_skill; использован в выводе E-199-19)"
+  },
+  {
+   "n": 33,
+   "начало": "Execution : The full content of",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 34,
+   "начало": "Preparing the environment / Installing the SDK / go get (стр. 92-98)",
+   "итог": "ничего: не про генерацию картинок (установка SDK)"
+  },
+  {
+   "n": 35,
+   "начало": "Installing the Genkit CLI / This step is optional (стр. 99-106)",
+   "итог": "ничего: не про генерацию картинок (CLI)"
+  },
+  {
+   "n": 36,
+   "начало": "Adding skills to a basic flow / With the SDK installed",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "package main import ( \"context\" … recipeFlow (стр. 109-164)",
+   "итог": "ничего: код без промпта про картинки (рецепты, googleai/gemini-flash-latest)"
+  },
+  {
+   "n": 38,
+   "начало": "Note that we configure the Skills",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 39,
+   "начало": "Running the application with the word",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 40,
+   "начало": "$ go run main.go cheese … (стр. 168-225)",
+   "итог": "ничего: вывод рецепта"
+  },
+  {
+   "n": 41,
+   "начало": "Disclaimer: the recipe above was generated",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 42,
+   "начало": "You can view the skill content",
+   "итог": "ничего: ссылка на код"
+  },
+  {
+   "n": 43,
+   "начало": "A more realistic example / While the recipe flow demonstrates… Gemini 3.1 Flash Image (Nano Banana 2)",
+   "итог": "E-199-2"
+  },
+  {
+   "n": 44,
+   "начало": "package main / import ( \"context\" \"encoding/base64\" … (стр. 232-249)",
+   "итог": "ничего: код без промпта (импорты)"
+  },
+  {
+   "n": 45,
+   "начало": "// Input defines the schema… type Output struct (стр. 251-260)",
+   "итог": "E-199-7 (вход/выход — base64 data URI)"
+  },
+  {
+   "n": 46,
+   "начало": "func main() { // Configure logging… filePath := os.Args[1] (стр. 262-272)",
+   "итог": "ничего: код без промпта (логирование, аргументы)"
+  },
+  {
+   "n": 47,
+   "начало": "// Read and convert the image to a Base64 Data URI. (стр. 274-279)",
+   "итог": "E-199-7"
+  },
+  {
+   "n": 48,
+   "начало": "ctx := context.Background() / // 1. Initialize Genkit (стр. 281-287)",
+   "итог": "ничего: инициализация Genkit (плагины GoogleAI и Middleware)"
+  },
+  {
+   "n": 49,
+   "начало": "// 2. Define a Genkit Flow for actual image-to-image restoration. / // 3. Prompt the model… ResponseModalities (стр. 289-295)",
+   "итог": "E-199-3, E-199-4"
+  },
+  {
+   "n": 50,
+   "начало": "ai.WithSystem(\"You are Renaissance, a multimodal (стр. 296-301)",
+   "итог": "E-199-5, E-199-21"
+  },
+  {
+   "n": 51,
+   "начало": "ai.WithMessages( ai.NewUserMessage( ai.NewTextPart (стр. 302-307)",
+   "итог": "E-199-6, E-199-21"
+  },
+  {
+   "n": 52,
+   "начало": "// Load agent skills dynamically from the \"./skills\" directory. (стр. 308-310)",
+   "итог": "E-199-9, E-199-19"
+  },
+  {
+   "n": 53,
+   "начало": "if err != nil … return Output{ Text: resp.Text(), Image: resp.Media() (стр. 311-320)",
+   "итог": "E-199-7, E-199-8"
+  },
+  {
+   "n": 54,
+   "начало": "// 4. Run the flow with the prepared input. (стр. 322-327)",
+   "итог": "ничего: запуск flow"
+  },
+  {
+   "n": 55,
+   "начало": "// 5. Render the textual restoration plan (стр. 329-334)",
+   "итог": "E-199-8"
+  },
+  {
+   "n": 56,
+   "начало": "// 6. Parse, decode, and save the output image locally. (стр. 336-358)",
+   "итог": "E-199-7"
+  },
+  {
+   "n": 57,
+   "начало": "// 7. Print the completion confirmation. (стр. 360-364)",
+   "итог": "ничего: вывод сообщения"
+  },
+  {
+   "n": 58,
+   "начало": "This application is bundled with three skills:",
+   "итог": "E-199-9, E-199-21"
+  },
+  {
+   "n": 59,
+   "начало": "--- name: paintings description: Restoration protocol (стр. 367-386)",
+   "итог": "E-199-10, E-199-11, E-199-12, E-199-13, E-199-14, E-199-20"
+  },
+  {
+   "n": 60,
+   "начало": "Let's run this application giving it a painting",
+   "итог": "ничего: описание тестового входа (Ecce Homo до неудачной реставрации; картинка alt «ecce ecce»)"
+  },
+  {
+   "n": 61,
+   "начало": "Ecce Homo by Elías García Martínez, Public domain",
+   "итог": "ничего: подпись и лицензия картинки"
+  },
+  {
+   "n": 62,
+   "начало": "With this file saved as ecce_homo.png, run",
+   "итог": "ничего: команда запуска и общее требование GEMINI_API_KEY (имя .png при жёстком image/jpeg в коде — см. противоречия_внутри)"
+  },
+  {
+   "n": 63,
+   "начало": "go run main.go ecce_homo.png (стр. 393-395)",
+   "итог": "ничего: команда"
+  },
+  {
+   "n": 64,
+   "начало": "Here is the terminal output:",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 65,
+   "начало": "$ go run main.go ecce_homo.png / Running renaissanceFlow... / Restoration Plan (стр. 398-408)",
+   "итог": "E-199-15, E-199-20 (текст сгенерирован моделью — слова не Google)"
+  },
+  {
+   "n": 66,
+   "начало": "As indicated by the terminal output,",
+   "итог": "E-199-16, E-199-19"
+  },
+  {
+   "n": 67,
+   "начало": "Ecce Homo restored using Gemini 3.1 Flash Image.",
+   "итог": "E-199-17"
+  },
+  {
+   "n": 68,
+   "начало": "Please note that given the non-deterministic",
+   "итог": "E-199-18"
+  },
+  {
+   "n": 69,
+   "начало": "You can download the complete code",
+   "итог": "ничего: повтор единицы E-199-9 (предложение проверить навыки photographs/drawings) + ссылка"
+  },
+  {
+   "n": 70,
+   "начало": "Best practices for skills / Follow these practices",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 71,
+   "начало": "Write detailed descriptions : The YAML",
+   "итог": "ничего: не про генерацию картинок (общая практика Agent Skills: описание-триггер)"
+  },
+  {
+   "n": 72,
+   "начало": "Keep it focused : A skill should",
+   "итог": "ничего: не про генерацию картинок (общая практика Agent Skills)"
+  },
+  {
+   "n": 73,
+   "начало": "Deterministic Tooling : Bundle lightweight scripts",
+   "итог": "ничего: не про генерацию картинок (общая практика Agent Skills)"
+  },
+  {
+   "n": 74,
+   "начало": "Modularize resources : Use the references/",
+   "итог": "ничего: не про генерацию картинок (общая практика Agent Skills)"
+  },
+  {
+   "n": 75,
+   "начало": "Get started / Agent Skills provide a modular (стр. 424-430)",
+   "итог": "ничего: маркетинг и ссылки"
+  },
+  {
+   "n": 76,
+   "начало": "The Go Gopher mascot was created",
+   "итог": "ничего: лицензия маскота"
+  },
+  {
+   "n": 77,
+   "начало": "posted in: AI Cloud Tutorials Learn",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 78,
+   "начало": "Previous Next Related Posts … (стр. 441-459)",
+   "итог": "ничего: обвязка сайта (связанные посты)"
+  },
+  {
+   "n": 79,
+   "начало": "Connect Blog Bluesky … Privacy (стр. 461-492)",
+   "итог": "ничего: обвязка сайта (подвал Google for Developers)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-199-1",
+   "вид": "факт",
+   "утверждение_en": "The post's progressive-disclosure flow diagram was generated with Gemini 3.1 Flash Image.",
+   "цитата": "Diagram generated with Gemini 3.1 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "Brief Recap of Agent Skills (подпись к схеме)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "текст_в_кадре",
+    "другое"
+   ],
+   "заметка": "Пример реального применения NB2 Google-автором: техническая схема с подписями для блога. Промпт схемы не приведён. В html og:image страницы — файл «Gemini_Generated_Image_64bmkd64bm…» (обложка тоже сгенерирована Gemini, модель не названа)."
+  },
+  {
+   "код": "E-199-2",
+   "вид": "факт",
+   "утверждение_en": "The post presents a multi-modal art restoration application built with Genkit Go and Gemini 3.1 Flash Image (Nano Banana 2).",
+   "цитата": "Here is a multi-modal art restoration application built with Genkit Go and Gemini 3.1 Flash Image (Nano Banana 2):",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Соответствие имён: Gemini 3.1 Flash Image = Nano Banana 2. Сценарий image-to-image (реставрация)."
+  },
+  {
+   "код": "E-199-3",
+   "вид": "факт",
+   "утверждение_en": "In Genkit Go, the model is referenced as \"googleai/gemini-3.1-flash-image\" via the googlegenai plugin.",
+   "цитата": "googleai/gemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код renaissanceFlow",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Id без суффикса -preview; префикс googleai/ — от плагина Genkit GoogleAI (Gemini Developer API, ключ GEMINI_API_KEY)."
+  },
+  {
+   "код": "E-199-4",
+   "вид": "инструкция",
+   "утверждение_en": "To get both a textual explanation and the edited image, the call configures ResponseModalities TEXT and IMAGE.",
+   "цитата": "ResponseModalities: []string{\"TEXT\", \"IMAGE\"},",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код renaissanceFlow",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (комментарий в коде: «configure it to output both TEXT and IMAGE modalities»)",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-199-5",
+   "вид": "пример_промпта",
+   "утверждение_en": "System instruction for the restoration flow: a persona (\"Renaissance, a multimodal art restoration AI\") told to first analyze the image type, then invoke matching restoration skills, then perform a highly precise restoration and output the restored image, with a REQUIRED text part summarizing the process and naming the skills used.",
+   "цитата": "\"You are Renaissance, a multimodal art restoration AI. First, analyze the image to determine \"+\n\"the type of image, then invoke the corresponding restoration skills as appropriate. \"+\n\"Finally, perform a highly precise restoration and output the restored IMAGE. \"+\n\"REQUIRED: In your response, return a text part summarizing your process and \"+\n\"naming any skills used. \"",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код renaissanceFlow (ai.WithSystem)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Полный текст (конкатенация строк Go): «You are Renaissance, a multimodal art restoration AI. First, analyze the image to determine the type of image, then invoke the corresponding restoration skills as appropriate. Finally, perform a highly precise restoration and output the restored IMAGE. REQUIRED: In your response, return a text part summarizing your process and naming any skills used.» Структура: роль → порядок действий (First / then / Finally) → явное требование к составу ответа (текстовая часть + картинка) с маркером REQUIRED. IMAGE написано капсом как указание на модальность."
+  },
+  {
+   "код": "E-199-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "User message for the restoration: a short text instruction \"Please restore this image using the appropriate techniques.\" followed by the image as a media part (image/jpeg).",
+   "цитата": "ai.NewTextPart(\"Please restore this image using the appropriate techniques.\"),\nai.NewMediaPart(\"image/jpeg\", input.URL),",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код renaissanceFlow (ai.WithMessages)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Пользовательский промпт минимален; вся конкретика — в системной инструкции и в подгружаемом навыке (SKILL.md). Порядок частей: текст → картинка."
+  },
+  {
+   "код": "E-199-7",
+   "вид": "факт",
+   "утверждение_en": "In the Genkit Go example, the input image is passed as a base64 data URI (\"data:image/jpeg;base64,…\") and the output image comes back from resp.Media() as a data URI that is split on \";base64,\", decoded and saved as a PNG file.",
+   "цитата": "dataURI := \"data:image/jpeg;base64,\" + base64.StdEncoding.EncodeToString(data)",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код main",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (код: Output.Image — «Base64 image data URI»; strings.Split(result.Image, \";base64,\"); base + \"_restored.png\")",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "MIME-тип входа жёстко задан как image/jpeg, хотя в примере запускается ecce_homo.png — см. противоречия_внутри."
+  },
+  {
+   "код": "E-199-8",
+   "вид": "предупреждение",
+   "утверждение_en": "The example code handles the case where no separate textual explanation is returned, and checks that the text is actual text rather than raw image data, even though TEXT and IMAGE were requested.",
+   "цитата": "// 5. Render the textual restoration plan if it is actual text and not the raw image data.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / код main",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код и ветка «Restoration process completed (no separate textual explanation returned).»)",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Автор кода закладывает, что текстовая часть может отсутствовать или совпасть с данными картинки — ответ модели по составу частей не гарантирован. Прямо словами поста это не сказано."
+  },
+  {
+   "код": "E-199-9",
+   "вид": "приём",
+   "утверждение_en": "The restoration app bundles separate skills for drawings, paintings and photography, because each art style requires its own set of custom restoration instructions, loaded only when the matching image type is detected.",
+   "цитата": "This application is bundled with three skills: drawings, paintings, and photography, as each distinct art style requires its own set of custom instructions for restoration.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Детальные инструкции по типу изображения вынесены из основного промпта и подгружаются по требованию (механизм — Activation через инструмент use_skill, раздел How it works)."
+  },
+  {
+   "код": "E-199-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Full SKILL.md for the paintings skill: a description line (\"Restoration protocol for fine art paintings.\"), a minimal-intervention directive, three core conservation mandates (Absolute Fidelity, Anti-Modernization, Patina & Craquelure) and a three-step process (Varnish Correction, Soot & Grime Reduction, Inpaint Major Loss).",
+   "цитата": "---\nname: paintings\ndescription: Restoration protocol for fine art paintings.\n---\n\n# Painting restoration\n\nPerform direct, minimal-intervention restoration of fine art paintings. Prioritize historical integrity, original pigment depth, and surface textures over cosmetic modernization. Do not include any elements, nor introduce any techniques not present in the original piece.\n\n### 1. Core conservation mandates\n* **Absolute Fidelity:** Strictly forbidden to add new subjects, figures, scenery, details, or narrative elements under any circumstances.\n* **Anti-Modernization:** Retain original brushstroke characteristics. Do not flatten support textures.\n* **Patina & Craquelure:** Respect the natural crack network (craquelure) as part of the artwork's history. Do not fill or erase cracks unless they pose an active risk of paint loss.\n\n### 2. Step-by-step restoration process\n1. **Varnish Correction:** Gently balance aged, yellowed natural varnishes to recover original pigment chromaticity without forcing modern, high-contrast saturation.\n2. **Soot & Grime Reduction:** Isolate and lift surface grime while protecting delicate, thin underlying glaze layers.\n3. **Inpaint Major Loss:** Where paint layers are missing, use references from the surviving elements to bridge the gap. Replicate the original brush direction, speed, height, transparency, and light source.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / SKILL.md paintings",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Текст, который подгружается в контекст NB2 при активации навыка. Структура: frontmatter (name, description — триггер активации) → общая директива (минимальное вмешательство, приоритеты, запрет добавлять элементы) → «mandates» (жирные ярлыки + запреты «Strictly forbidden», «Do not») → нумерованный порядок шагов. Работу делают: явные запреты на добавление, сохранение признаков возраста, пошаговость, указание брать недостающее из сохранившихся частей."
+  },
+  {
+   "код": "E-199-11",
+   "вид": "приём",
+   "утверждение_en": "The painting skill constrains the edit with explicit prohibitions: minimal intervention, no new subjects, figures, scenery, details or narrative elements, and no elements or techniques not present in the original.",
+   "цитата": "Strictly forbidden to add new subjects, figures, scenery, details, or narrative elements under any circumstances.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / SKILL.md paintings / Core conservation mandates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Сопутствующая строка директивы: «Do not include any elements, nor introduce any techniques not present in the original piece.» Эффективность запрета страница не подтверждает — см. E-199-20."
+  },
+  {
+   "код": "E-199-12",
+   "вид": "приём",
+   "утверждение_en": "The painting skill asks to preserve signs of age and original technique: retain brushstroke characteristics, do not flatten support textures, respect the craquelure and do not fill or erase cracks unless they risk paint loss, and correct yellowed varnish without forcing modern, high-contrast saturation.",
+   "цитата": "Respect the natural crack network (craquelure) as part of the artwork's history. Do not fill or erase cracks unless they pose an active risk of paint loss.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / SKILL.md paintings",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Против «модернизации» реставрации: сохранить фактуру, трещины, глубину пигмента; цвет выравнивать мягко."
+  },
+  {
+   "код": "E-199-13",
+   "вид": "приём",
+   "утверждение_en": "For missing areas, the painting skill tells the model to inpaint from the surviving elements, replicating the original brush direction, speed, height, transparency and light source.",
+   "цитата": "Where paint layers are missing, use references from the surviving elements to bridge the gap. Replicate the original brush direction, speed, height, transparency, and light source.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / SKILL.md paintings / Step-by-step restoration process",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Источник для дорисовки — само изображение (сохранившиеся фрагменты), с перечнем признаков мазка и согласованием источника света."
+  },
+  {
+   "код": "E-199-14",
+   "вид": "приём",
+   "утверждение_en": "The painting skill orders the restoration as numbered steps: varnish correction first, then soot and grime reduction (protecting thin glaze layers), then inpainting of major loss.",
+   "цитата": "### 2. Step-by-step restoration process",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / SKILL.md paintings",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Порядок: очистка цвета → очистка поверхности → восстановление утрат."
+  },
+  {
+   "код": "E-199-15",
+   "вид": "факт",
+   "утверждение_en": "In the sample run, the model returned a text part summarizing its restoration process and naming the skill it used (paintings), alongside the restored image.",
+   "цитата": "* **Skills Used:** `paintings`.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example / вывод терминала",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (вывод программы; текст «Restoration Plan» сгенерирован моделью — слова не Google)",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "Требование REQUIRED из системной инструкции (E-199-5) в этом запуске выполнено."
+  },
+  {
+   "код": "E-199-16",
+   "вид": "факт",
+   "утверждение_en": "According to the author, the model correctly identified the image as a painting and activated the appropriate restoration skill.",
+   "цитата": "As indicated by the terminal output, the model correctly identified the image as a painting and activated the appropriate skill for restoration.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Один запуск на одной картинке (Ecce Homo, Elías García Martínez)."
+  },
+  {
+   "код": "E-199-17",
+   "вид": "факт",
+   "утверждение_en": "The restored Ecce Homo shown in the post was produced with Gemini 3.1 Flash Image.",
+   "цитата": "Ecce Homo restored using Gemini 3.1 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example (подпись к картинке)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "В html обе картинки (до/после) без содержательного alt («ecce ecce», «ecce»)."
+  },
+  {
+   "код": "E-199-18",
+   "вид": "предупреждение",
+   "утверждение_en": "Because large language models are non-deterministic, it may take a few tries to get a good restoration result; the restoration skill shown is an early effort that could use professional tuning.",
+   "цитата": "Please note that given the non-deterministic nature of large language models it might take a few tries for you to get a good result. The restoration skill presented here is also an early effort and could use professional tuning.",
+   "источник_цитаты": "txt",
+   "раздел": "A more realistic example",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-199-19",
+   "вид": "факт",
+   "утверждение_en": "In this example the image model itself works inside an agentic tool loop: with the skills middleware attached to the Gemini 3.1 Flash Image call, the model classifies the input image, calls use_skill to load the type-specific SKILL.md, and then outputs the restored image plus a text summary.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "A more realistic example + How it works",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-199-2, E-199-5, E-199-9, E-199-15, E-199-16 и описания стадии Activation («Genkit calls the use_skill tool»)",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "api_код",
+    "мультиход"
+   ],
+   "заметка": "Прямо «NB2 поддерживает вызов инструментов» не сказано; вывод из того, что навыки подключены к вызову image-модели (ai.WithUse в genkit.Generate с googleai/gemini-3.1-flash-image) и навык был активирован."
+  },
+  {
+   "код": "E-199-20",
+   "вид": "предупреждение",
+   "утверждение_en": "The model's own restoration report diverges from the skill's mandates: it says it minimized cracks and canvas weave (craquelure) and added antique parchment texture and refined scrollwork, while the skill forbids erasing cracks and adding details; the post does not comment on this.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "A more realistic example (SKILL.md vs вывод терминала)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-199-11, E-199-12, E-199-15, E-199-18",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Отчёт модели (стр. 402): «minimizing non-artistic cracks and visible canvas weave (craquelure)», «adding realistic, antique parchment texture and localized aging». Жёсткие запреты («Strictly forbidden», «Do not fill or erase cracks») не гарантируют соблюдения; оценка по самоотчёту, не по картинке."
+  },
+  {
+   "код": "E-199-21",
+   "вид": "приём",
+   "утверждение_en": "The example splits the prompt into layers: a general system persona and procedure, a minimal user instruction with the image, and detailed type-specific constraints stored in on-demand skill files.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "A more realistic example",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — «Gemini 3.1 Flash Image (Nano Banana 2)», в коде googleai/gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-199-5, E-199-6, E-199-9, E-199-10",
+   "дата_единицы": "2026-07-31",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Страница обосновывает это экономией токенов и фокусом модели (вводная часть поста), не качеством картинки."
+  }
+ ],
+ "противоречия_внутри": [
+  "Код жёстко помечает вход как «data:image/jpeg;base64,…» и NewMediaPart(\"image/jpeg\"), а пример запускается на файле ecce_homo.png — MIME-тип не соответствует файлу; пост это не комментирует.",
+  "SKILL.md запрещает стирать кракелюр и добавлять детали, а самоотчёт модели в том же посте говорит о минимизации трещин/переплетения холста и добавлении текстуры пергамента; автор при этом пишет, что модель «correctly identified… and activated the appropriate skill» (оценивает выбор навыка, не соблюдение запретов)."
+ ],
+ "не_сказано": [
+  "Промпт для схемы (E-199-1) не приведён.",
+  "Нет параметров изображения (соотношение сторон, размер) — выход сохраняется как PNG без настройки.",
+  "Не сказано прямо, что image-модель поддерживает вызов инструментов; это видно только по коду и результату.",
+  "Нет оценки качества реставрации, кроме одного примера; нет цен и лимитов."
+ ],
+ "сомнения": [
+  "Основная тема — Genkit/Agent Skills; релевантен один пример (как и отмечено в партии).",
+  "Текст «Restoration Plan» — генерация модели, не слова Google (помечено в E-199-15, E-199-20).",
+  "E-199-19 (агентный цикл внутри вызова image-модели) — вывод, а не прямое утверждение поста."
+ ]
+}

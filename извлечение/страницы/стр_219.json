@@ -1,0 +1,494 @@
+{
+ "id": 219,
+ "url": "https://www.skills.google/focuses/129387?parent=catalog",
+ "заголовок": "Explore the Multimodal Capabilities of Google AI Studio | Google Skills",
+ "дата_в_тексте": "Manual Last Updated August 18, 2026; Lab Last Tested August 18, 2026",
+ "официальность": {
+  "домен": "www.skills.google",
+  "второй_признак": "«Copyright 2026 Google LLC. All rights reserved. Google and the Google logo are trademarks of Google LLC.» (стр. 276 .txt).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Лабораторная Google Skills GSP1336 (вводный уровень, обновлена и проверена 18.08.2026) по мультимодальности Google AI Studio для роли «куратор музея». Четыре задачи: (1) генерация концепт-арта картинкой в Playground — единственная про изображения; (2) анализ 10-минутного видео; (3) сборка приложения Robotics Spatial Understanding из шаблона; (4) детекция объектов и правка кода приложения текстовой командой. Про картинки: модели генерации медиа отдельны, путь в UI (Playground → Run settings → Gemini tab → модель), один промпт-пример фотореалистичного лобби музея со скелетом T-Rex из светящихся кристаллов. Имя модели в тексте пустое (переменная лаборатории; ключ в html указывает на Flash-Lite Image).",
+ "модели_на_странице": [
+  "не названа в тексте; html-переменная gemini_flash_lite_image_model_name → Gemini Flash-Lite Image (вероятно gemini-3.1-flash-lite-image, Nano Banana 2 Lite)",
+  "нерелевантные: gemini_flash_model_id (переменная для видео)"
+ ],
+ "структура": [
+  "Overview",
+  "What you'll learn",
+  "Setup and requirements / Open Google AI Studio",
+  "Task 1. Generate images",
+  "Task 2. Prompt a model to analyze a long-format video",
+  "Task 3. Build a robotics spatial understanding app from a template",
+  "Task 4. Prompt the robotics spatial understanding app prototype",
+  "Congratulations!"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Explore the Multimodal Capabilities of Google AI (стр. 1)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Loading... No results found. dashboard (стр. 2-5)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 3,
+   "начало": "Explore the Multimodal Capabilities… / Apply your skills in Google Cloud console (стр. 6-7)",
+   "итог": "ничего: заголовок лабораторной"
+  },
+  {
+   "n": 4,
+   "начало": "—/100 Checkpoints Generate images Check my progress (стр. 8-27)",
+   "итог": "ничего: обвязка сайта (чекпоинты лабы, дважды)"
+  },
+  {
+   "n": 5,
+   "начало": "This lab may incorporate AI tools",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 6,
+   "начало": "This content is not yet optimized for mobile (стр. 29-30)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 7,
+   "начало": "GSP1336",
+   "итог": "ничего: обвязка сайта (id лабы)"
+  },
+  {
+   "n": 8,
+   "начало": "Overview / In this lab, you'll explore the powerful multimodal",
+   "итог": "ничего: контекст (роль куратора музея), без фактов о генерации"
+  },
+  {
+   "n": 9,
+   "начало": "Explore other content in the Gemini Enterprise Agent Ready (GEAR) program",
+   "итог": "ничего: ссылка на программу"
+  },
+  {
+   "n": 10,
+   "начало": "What you'll learn / In this lab, you will learn how to:",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 11,
+   "начало": "Prompt models to generate images.",
+   "итог": "ничего: пункт перечня (раскрыт в Task 1 — E-219-1..E-219-3)"
+  },
+  {
+   "n": 12,
+   "начало": "Prompt a model to analyze a long-format video.",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "Build a robotics spatial understanding app",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "Prompt the robotics spatial understanding app",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "Setup and requirements / Before you click the Start Lab (стр. 45-49)",
+   "итог": "ничего: обвязка сайта (правила лабораторий)"
+  },
+  {
+   "n": 16,
+   "начало": "This hands-on lab lets you do",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 17,
+   "начало": "To complete this lab, you need: / Access to a standard internet browser",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 18,
+   "начало": "Note: Use an Incognito (recommended) or private",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 19,
+   "начало": "Time to complete the lab—remember,",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 20,
+   "начало": "Note: Use only the student account",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 21,
+   "начало": "Open Google AI Studio / Click Start Lab (стр. 58-61)",
+   "итог": "ничего: вход в лабораторию"
+  },
+  {
+   "n": 22,
+   "начало": "Note : If this is a paid lab,",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 23,
+   "начало": "Open Google AI Studio in an Incognito window… Get Started (стр. 64-70)",
+   "итог": "ничего: вход в AI Studio"
+  },
+  {
+   "n": 24,
+   "начало": "Tip : For easier access, arrange",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 25,
+   "начало": "Copy the Username below… {{{user_0.username (стр. 73-80)",
+   "итог": "ничего: учётные данные лабы"
+  },
+  {
+   "n": 26,
+   "начало": "Copy the Password below… {{{user_0.password (стр. 81-88)",
+   "итог": "ничего: учётные данные лабы"
+  },
+  {
+   "n": 27,
+   "начало": "Accept any on-screen terms and conditions",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "You are now logged into Google",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "Task 1. Generate images / In this task, you act as the curator",
+   "итог": "E-219-1"
+  },
+  {
+   "n": 30,
+   "начало": "Generate concept art with Gemini image generation",
+   "итог": "ничего: подзаголовок (учтено в E-219-2)"
+  },
+  {
+   "n": 31,
+   "начало": "In the left navigation menu, click Playground (стр. 94-96)",
+   "итог": "E-219-2, E-219-5"
+  },
+  {
+   "n": 32,
+   "начало": "In the right-hand panel, open the Run settings (стр. 97-99)",
+   "итог": "E-219-2, E-219-5"
+  },
+  {
+   "n": 33,
+   "начало": "Navigate to the Gemini tab under Model selection , and select . (стр. 100-105)",
+   "итог": "E-219-2, E-219-4"
+  },
+  {
+   "n": 34,
+   "начало": "In the prompt input field, enter",
+   "итог": "ничего: вводная к промпту"
+  },
+  {
+   "n": 35,
+   "начало": "A photorealistic image of a futuristic",
+   "итог": "E-219-3"
+  },
+  {
+   "n": 36,
+   "начало": "Click Run and review the generated image.",
+   "итог": "ничего: шаг UI (часть инструкции E-219-2)"
+  },
+  {
+   "n": 37,
+   "начало": "For the pop-up, click Enable Google Drive (стр. 111-115)",
+   "итог": "ничего: не про генерацию картинок (сохранение промптов в Google Drive)"
+  },
+  {
+   "n": 38,
+   "начало": "Save your prompts and responses… Futuristic Museum Lobby… Check my progress (стр. 116-127)",
+   "итог": "ничего: не про генерацию картинок (сохранение промпта, проверка лабы)"
+  },
+  {
+   "n": 39,
+   "начало": "Task 2. Prompt a model to analyze / In this task, you'll research",
+   "итог": "ничего: не про генерацию картинок (анализ видео)"
+  },
+  {
+   "n": 40,
+   "начало": "In the left navigation menu, click Playground (стр. 130-132)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 41,
+   "начало": "In the right-hand panel, open the Run settings… currently set to (стр. 133-142)",
+   "итог": "ничего: выбор модели для видео (слова «currently set to» + переменная модели картинок использованы в выводе E-219-4)"
+  },
+  {
+   "n": 42,
+   "начало": "Click the attachment icon… Sample Media (стр. 143-152)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "Wait for the video to process.",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 44,
+   "начало": "Note: You'll notice a large token count",
+   "итог": "ничего: не про генерацию картинок (токены видео)"
+  },
+  {
+   "n": 45,
+   "начало": "In the text field above the video, enter… Please provide a summary (стр. 158-159)",
+   "итог": "ничего: промпт анализа видео, не картинки"
+  },
+  {
+   "n": 46,
+   "начало": "Click Run and review the model's text summary",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "Save your prompts and responses… Museum Exhibit Highlights (стр. 163-174)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "Task 3. Build a robotics spatial understanding app / In this task (стр. 175-176)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 49,
+   "начало": "In the left navigation menu, click Build > Gallery",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 50,
+   "начало": "Scroll through the gallery of app templates",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 51,
+   "начало": "Note: If the template is not visible",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 52,
+   "начало": "Click the Robotics Spatial Understanding template",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "The interface will load with the application's code… Check my progress (стр. 190-196)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "Task 4. Prompt the robotics spatial understanding app / In this task (стр. 197-198)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 55,
+   "начало": "Explore the app's features / In the app's Preview pane (стр. 199-202)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 56,
+   "начало": "Above the prompt box, ensure the 2D bounding boxes… mango (стр. 203-211)",
+   "итог": "ничего: не про генерацию картинок (детекция объектов)"
+  },
+  {
+   "n": 57,
+   "начало": "Note: A bounding box is a rectangle",
+   "итог": "ничего: не про генерацию картинок (определение bounding box)"
+  },
+  {
+   "n": 58,
+   "начало": "Finally, select the Points button",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "Modify the app with the Code Assistant (стр. 219-225)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 60,
+   "начало": "Make the bounding boxes red.",
+   "итог": "ничего: промпт правки кода приложения, не картинки"
+  },
+  {
+   "n": 61,
+   "начало": "Click Remix or press the assistant’s Send (стр. 227-233)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 62,
+   "начало": "Once the code has been updated… red (стр. 234-245)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 63,
+   "начало": "Optional Challenge: … Change the label text color to white? (стр. 246-257)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "Save your prompts and responses… Robotics Spatial Understanding… Congratulations! (стр. 258-266)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "Congratulations! You've successfully used Google AI Studio's",
+   "итог": "ничего: итог (содержит «generated concept art and video clips» — см. противоречия_внутри)"
+  },
+  {
+   "n": 66,
+   "начало": "Google Cloud training and certification (стр. 268-273)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 67,
+   "начало": "Manual Last Updated August 18, 2026 / Lab Last Tested August 18, 2026",
+   "итог": "ничего: даты (учтены в дата_в_тексте)"
+  },
+  {
+   "n": 68,
+   "начало": "Copyright 2026 Google LLC. All rights reserved.",
+   "итог": "ничего: обвязка сайта (копирайт — признак официальности)"
+  },
+  {
+   "n": 69,
+   "начало": "Home Catalog Paths Subscriptions… Before you begin (стр. 277-290)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 70,
+   "начало": "Labs create a Google Cloud project… Don't click End lab (стр. 291-312)",
+   "итог": "ничего: обвязка сайта (модальное окно правил лабы)"
+  },
+  {
+   "n": 71,
+   "начало": "This content is not currently available… your personal account. (стр. 313-323)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 72,
+   "начало": "In this lab, you'll explore… Permalink… Got It (стр. 324-337)",
+   "итог": "ничего: обвязка сайта (карточка лабы)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-219-1",
+   "вид": "факт",
+   "утверждение_en": "Generating concept art in this lab involves using models designed specifically for media generation.",
+   "цитата": "In this task, you act as the curator generating concept art for a new dinosaur exhibit. This involves using models designed specifically for media generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 1. Generate images",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Отделяет модели генерации медиа от моделей понимания (в Task 2 для видео выбирается другая модель)."
+  },
+  {
+   "код": "E-219-2",
+   "вид": "инструкция",
+   "утверждение_en": "To generate an image in Google AI Studio: open Playground from the left navigation, open the Run settings sidebar, click the default Gemini model, and under Model selection pick the image model on the Gemini tab; then type the prompt and click Run.",
+   "цитата": "Navigate to the\nGemini\ntab under\nModel selection\n, and select\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 1. Generate images / Generate concept art with Gemini image generation",
+   "модели": "не указано (имя модели в тексте пустое — переменная лаборатории)",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо (шаги 1-5 списка)",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Цитата показывает шаг выбора модели: в .txt после «select» имя модели отсутствует — в html на его месте <ql-variable key=\"project_0.startup_script.gemini_flash_lite_image_model_name\">. См. E-219-4."
+  },
+  {
+   "код": "E-219-3",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example concept-art prompt: \"A photorealistic image of a futuristic natural history museum lobby, with a giant T-Rex skeleton made of glowing blue crystals.\"",
+   "цитата": "A photorealistic image of a futuristic natural history museum lobby, with a giant T-Rex skeleton made of glowing blue crystals.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 1. Generate images / Generate concept art with Gemini image generation",
+   "модели": "не указано (в html — переменная gemini_flash_lite_image_model_name)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "В html — блок <ql-code-block language=\"text\">. Структура: стиль/медиум первым («A photorealistic image of») → место с эпохой («a futuristic natural history museum lobby») → главный объект с масштабом, материалом и светом («a giant T-Rex skeleton made of glowing blue crystals»). Одно предложение, без камеры, композиции, формата. Работу делает неожиданный материал главного объекта при фотореалистичном стиле."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-219-4",
+   "вид": "факт",
+   "утверждение_en": "The image model selected in Task 1 is not named in the rendered text; the page's HTML placeholder key \"gemini_flash_lite_image_model_name\" indicates a Gemini Flash-Lite image model is used for the concept-art generation in AI Studio.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Task 1. Generate images",
+   "модели": [
+    "Gemini Flash-Lite Image (вероятно gemini-3.1-flash-lite-image = Nano Banana 2 Lite) — вывод из ключа переменной, имя на странице не выведено"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-219-2, E-219-3 и html (<ql-variable key=\"project_0.startup_script.gemini_flash_lite_image_model_name\">, также «currently set to» в Task 2)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "Конкретная версия не видна; соответствие Nano Banana 2 Lite — по карте моделей задания, не по странице."
+  },
+  {
+   "код": "E-219-5",
+   "вид": "факт",
+   "утверждение_en": "In AI Studio the image model is chosen in the same Playground chat interface and Run settings model picker (Gemini tab) as the text/video model used in Task 2.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Task 1 + Task 2",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-219-2 и шагов Task 2 («open the Run settings sidebar and click the default Gemini model… Under Model selection, click on the Gemini tab»)",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Отдельной вкладки для картинок нет — модель картинок выбирается во вкладке Gemini."
+  }
+ ],
+ "противоречия_внутри": [
+  "Итог говорит «You generated concept art and video clips», но ни одна задача лабы не генерирует видео (Task 2 — анализ видео)."
+ ],
+ "не_сказано": [
+  "Имя модели картинок в тексте не отображается (пустое место после «select»).",
+  "Нет настроек изображения (соотношение сторон, разрешение) в Run settings и советов по промпту.",
+  "Нет лимитов и цен (лаба на временных учётных данных)."
+ ],
+ "сомнения": [
+  "Модель выведена из ключа ql-variable в html, не из текста; версия не известна.",
+  "Единиц мало: страница по сути одна задача с одним промптом (как отмечено в партии)."
+ ]
+}

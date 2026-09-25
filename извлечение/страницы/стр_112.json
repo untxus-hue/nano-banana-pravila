@@ -1,0 +1,358 @@
+{
+ "id": 112,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/set-output-resolution",
+ "заголовок": "Set output resolution  |  Vertex AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-18 UTC (подвал; meta published_time/datePublished нет); в тексте срок миграции June 30, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('We recommend updating your model endpoints before June 30, 2026')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая how-to страница старой документации Vertex AI (с баннером 'no longer being updated') о выборе разрешения вывода для Imagen 4: предупреждение о выводе из эксплуатации 14 image-эндпоинтов (imagegeneration, imagetext, Imagen 3, Imagen 4) с миграцией на gemini-2.5-flash-image до 30.06.2026; шаги в консоли Vertex AI Studio (aspect ratio, 1–4 результата, output resolution); REST predict с sampleImageSize '1K'/'2K' (по умолчанию 1K) и sampleCount 1–4; ответ — base64 PNG. Про Nano Banana-модели — только как цель миграции.",
+ "модели_на_странице": [
+  "imagen-4.0-generate-001",
+  "imagen-4.0-fast-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagen-3.0-*",
+  "imagegeneration@002…@006",
+  "imagetext@001",
+  "gemini-2.5-flash-image (замена)"
+ ],
+ "структура": [
+  "баннер Vertex AI docs no longer updated",
+  "Caution + таблица Discontinued endpoints",
+  "вступление (модели Imagen 4)",
+  "Console",
+  "REST (плейсхолдеры, URL, тело, curl, PowerShell, ответ)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in, вкладки Vertex AI, повтор меню продуктов), строки 1-95; меню короче и отличается от страниц Agent Platform (нет левого дерева)"
+  },
+  {
+   "n": 2,
+   "начало": "Vertex AI documentation is no",
+   "итог": "E-112-8"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Set output resolution', 'Stay organized'), строки 98-105"
+  },
+  {
+   "n": 4,
+   "начало": "Caution: The following table describes",
+   "итог": "E-112-1"
+  },
+  {
+   "n": 5,
+   "начало": "Discontinued endpointsRecommended endpoint migration imagegeneration@002gemini-2.5-flash-image",
+   "итог": "E-112-1 (таблица строк 109-123)"
+  },
+  {
+   "n": 6,
+   "начало": "Imagen on Vertex AI lets",
+   "итог": "E-112-2"
+  },
+  {
+   "n": 7,
+   "начало": "* {Console} In the Google",
+   "итог": "E-112-3 (строки 128-137: навигация и шаг промпта)"
+  },
+  {
+   "n": 8,
+   "начало": "Click chevron_forward Parameters, and then",
+   "итог": "E-112-3"
+  },
+  {
+   "n": 9,
+   "начало": "REST For more information about",
+   "итог": "ничего: ссылки на справку Imagen API (endpoints.predict, VisionGenerativeModel*), строки 145-151"
+  },
+  {
+   "n": 10,
+   "начало": "Before using any of the",
+   "итог": "ничего: вводная к плейсхолдерам; REGION, PROJECT_ID — не про картинки; TEXT_PROMPT — плейсхолдер без промпта, строки 152-161"
+  },
+  {
+   "n": 11,
+   "начало": "MODEL_VERSION: The Imagen model version",
+   "итог": "E-112-5"
+  },
+  {
+   "n": 12,
+   "начало": "IMAGE_RESOLUTION: The output image resolution.",
+   "итог": "E-112-5"
+  },
+  {
+   "n": 13,
+   "начало": "IMAGE_COUNT: The number of images",
+   "итог": "E-112-6"
+  },
+  {
+   "n": 14,
+   "начало": "HTTP method and URL: POST",
+   "итог": "E-112-4 (URL — html PRE 0)"
+  },
+  {
+   "n": 15,
+   "начало": "Request JSON body: { \"instances\":",
+   "итог": "E-112-4 (html PRE 1)"
+  },
+  {
+   "n": 16,
+   "начало": "To send your request, choose",
+   "итог": "ничего: код без промпта (curl; html PRE 2; заметка про gcloud auth), строки 189-208"
+  },
+  {
+   "n": 17,
+   "начало": "PowerShell Note: The following command",
+   "итог": "ничего: код без промпта (PowerShell; html PRE 3), строки 209-228"
+  },
+  {
+   "n": 18,
+   "начало": "The request returns image objects.",
+   "итог": "E-112-7 (JSON-ответ — html PRE 4)"
+  },
+  {
+   "n": 19,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-18 UTC), строки 243-245"
+  },
+  {
+   "n": 20,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 246-292"
+  },
+  {
+   "n": 21,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-112-9, E-112-10"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-112-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Listed image generation endpoints are deprecated (imagegeneration@002-@006, imagetext@001, imagen-3.0-capability-001/002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/002, imagen-4.0-fast-generate-001, imagen-4.0-generate-001, imagen-4.0-ultra-generate-001); for all of them the recommended migration is gemini-2.5-flash-image, and Google recommends updating model endpoints before June 30, 2026 to avoid service disruption.",
+   "цитата": "Caution: The following table describes image generation endpoints that\nare deprecated and their replacements. We recommend updating your model\nendpoints before June 30, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "Caution (таблица Discontinued endpoints)",
+   "модели": [
+    "imagegeneration@002…@006",
+    "imagetext@001",
+    "imagen-3.0-*",
+    "imagen-4.0-*",
+    "gemini-2.5-flash-image (замена)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо; список моделей — из таблицы строк 109-123",
+   "дата_единицы": "2026-06-30 (срок миграции)",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Все 14 эндпоинтов мигрируют на один gemini-2.5-flash-image (не на Gemini 3 image-модели). На дату сбора (2026-09-24) срок 30.06.2026 уже прошёл."
+  },
+  {
+   "код": "E-112-2",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI lets you set the output resolution of generated images with the Imagen 4 models imagen-4.0-generate-001 and imagen-4.0-fast-generate-001.",
+   "цитата": "Imagen on Vertex AI lets you set the output resolution of generated images when you\nuse the following Imagen 4 models:\nimagen-4.0-generate-001\nimagen-4.0-fast-generate-001",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В REST-разделе список моделей другой (generate + ultra) — см. противоречия."
+  },
+  {
+   "код": "E-112-3",
+   "вид": "инструкция",
+   "утверждение_en": "To set output resolution in the console: Vertex AI > Vertex AI Studio > Generate media > Image, choose Task 'Text-to-image', pick the Imagen model, enter a prompt, open Parameters and adjust Aspect ratio, Number of results (1 to 4) and Output resolution, then click Run.",
+   "цитата": "Click chevron_forward Parameters, and then adjust the following options:\nAspect ratio: Choose an aspect ratio from the available options.\nNumber of results: Adjust the slider to select 1 to 4 generated\nimages.\nOutput resolution: Choose an output resolution from the available\noptions.",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "Imagen (модель выбирается в списке)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "форматы_разрешение"
+   ],
+   "заметка": "Шаг промпта сформулирован как 'enter a prompt that describes how to edit the image' при задаче Text-to-image — похоже на копипаст (см. противоречия). Набор доступных aspect ratio/разрешений в тексте не перечислен."
+  },
+  {
+   "код": "E-112-4",
+   "вид": "инструкция",
+   "утверждение_en": "Via REST, send POST to https://REGION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/REGION/publishers/google/models/MODEL_VERSION:predict with body {\"instances\":[{\"prompt\":\"TEXT_PROMPT\"}],\"parameters\":{\"sampleImageSize\":\"IMAGE_RESOLUTION\",\"sampleCount\":IMAGE_COUNT}}.",
+   "цитата": "{\n\"instances\": [\n{\n\"prompt\": \"TEXT_PROMPT\"\n}\n],\n\"parameters\": {\n\"sampleImageSize\": \"IMAGE_RESOLUTION\",\n\"sampleCount\": IMAGE_COUNT\n}\n}",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; тело запроса сверено с html PRE 1",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Метод endpoints.predict (VisionGenerativeModelInstance/Params/Result) — API Imagen, не generateContent. Промпта-примера нет (плейсхолдер TEXT_PROMPT)."
+  },
+  {
+   "код": "E-112-5",
+   "вид": "лимит",
+   "утверждение_en": "sampleImageSize (IMAGE_RESOLUTION) accepts \"1K\" and \"2K\"; the default is \"1K\". Accepted MODEL_VERSION values when using sampleImageSize are imagen-4.0-generate-001 and imagen-4.0-ultra-generate-001.",
+   "цитата": "MODEL_VERSION:\nThe Imagen model version to use. The following are accepted\nvalues when using sampleImageSize:\nimagen-4.0-generate-001\nimagen-4.0-ultra-generate-001\nIMAGE_RESOLUTION: The output image\nresolution. The following are accepted:\n\"1K\"\n\"2K\"\nThe default setting is \"1K\".",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "4K для Imagen 4 на странице нет."
+  },
+  {
+   "код": "E-112-6",
+   "вид": "лимит",
+   "утверждение_en": "IMAGE_COUNT (sampleCount) — the number of images to generate — accepts values from 1 to 4.",
+   "цитата": "IMAGE_COUNT: The\nnumber of images to generate. The accepted range of values is 1\nto 4.",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "То же ограничение 1–4 в консоли (Number of results)."
+  },
+  {
+   "код": "E-112-7",
+   "вид": "факт",
+   "утверждение_en": "The predict request returns image objects as base64-encoded images in 'predictions', each with mimeType image/png and bytesBase64Encoded.",
+   "цитата": "The request returns image objects. In this example, two image objects are\nreturned, with two prediction objects as base64-encoded images.",
+   "источник_цитаты": "txt",
+   "раздел": "REST (ответ)",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; поля — из JSON-ответа (html PRE 4)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Формат выхода в примере — PNG."
+  },
+  {
+   "код": "E-112-8",
+   "вид": "предупреждение",
+   "утверждение_en": "Vertex AI documentation is no longer being updated; Vertex AI's services are now part of Gemini Enterprise Agent Platform, whose documentation has the most up-to-date information.",
+   "цитата": "Vertex AI documentation is no longer being updated\nVertex AI's services are now part of Gemini Enterprise Agent Platform. See the most up-to-date information in the Agent Platform documentation.",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Статус страницы: содержимое может быть устаревшим (хотя подвал говорит Last updated 2026-09-18)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-112-9",
+   "вид": "предупреждение",
+   "утверждение_en": "The resolution control this page documents belongs to Imagen 4 endpoints that the same page lists as deprecated, all with migration to gemini-2.5-flash-image; the page itself says nothing about setting resolution on the recommended replacement.",
+   "цитата": "imagen-4.0-generate-001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "imagen-4.0-*",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-112-1, E-112-2, E-112-5, E-112-8",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Практический смысл: инструкции страницы относятся к моделям на выводе из эксплуатации; для Nano Banana-моделей разрешение настраивается иначе (на этой странице не описано)."
+  },
+  {
+   "код": "E-112-10",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 output resolution on this page is limited to two sizes, 1K (default) and 2K, with 1 to 4 images per request in both console and REST.",
+   "цитата": "The default setting is \"1K\".",
+   "источник_цитаты": "txt",
+   "раздел": "Console / REST",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-112-3, E-112-5, E-112-6",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Вступление: разрешение задаётся для imagen-4.0-generate-001 и imagen-4.0-fast-generate-001; REST: при sampleImageSize допустимы imagen-4.0-generate-001 и imagen-4.0-ultra-generate-001 (fast не назван).",
+  "Console: выбрана задача Text-to-image, но шаг говорит 'enter a prompt that describes how to edit the image'.",
+  "Страница описывает настройку разрешения у моделей, которые на ней же объявлены устаревшими (миграция до 30.06.2026).",
+  "Баннер 'Vertex AI documentation is no longer being updated' при подвале 'Last updated 2026-09-18 UTC'."
+ ],
+ "не_сказано": [
+  "Как задать разрешение у рекомендованной замены gemini-2.5-flash-image (и у Gemini 3 image-моделей).",
+  "Точные пиксельные размеры 1K/2K при разных aspect ratio и список доступных aspect ratio.",
+  "Есть ли 4K у Imagen 4 (не упомянуто)."
+ ],
+ "сомнения": [
+  "Страница про Imagen 4, а не про Nano Banana; извлечено как есть, модели указаны явно."
+ ]
+}

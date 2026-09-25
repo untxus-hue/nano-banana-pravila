@@ -1,0 +1,706 @@
+{
+ "id": 178,
+ "url": "https://deepmind.google/blog/identifying-ai-generated-images-with-synthid/",
+ "заголовок": "Identifying AI-generated images with SynthID — Google DeepMind",
+ "дата_в_тексте": "2023-08-29 (в тексте 'August 29, 2023'; html article:published_time 2023-08-29, article:modified_time 2026-07-06)",
+ "официальность": {
+  "домен": "deepmind.google",
+  "второй_признак": "Авторы Sven Gowal, Pushmeet Kohli (meta author/article:author; Google DeepMind); og:site_name 'Google DeepMind'; текст от лица Google ('in partnership with Google Cloud , we’re launching'); благодарности 'across Google DeepMind and Google'; подвал 'About Google'. Строки копирайта нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Блог-пост Google DeepMind от 29.08.2023 о запуске беты SynthID вместе с Google Cloud для клиентов Vertex AI, использующих Imagen. Аудитория — широкая публика и клиенты облака. Моделей Gemini/Nano Banana на странице нет, только Imagen. Структура: анонс, зачем нужна идентификация, почему обычные водяные знаки не годятся, механизм (две обученные вместе модели, знак в пикселях), устойчивость к фильтрам/цвету/JPEG, три уровня уверенности, сравнение с метаданными, планы. Повторный акцент: знак незаметен, но распознаётся, и при этом 'not foolproof' / 'isn't perfect'. Термины: 'synthetic imagery', 'imperceptible watermark', 'three confidence levels'.",
+ "модели_на_странице": [
+  "Imagen (Vertex AI)"
+ ],
+ "структура": [
+  "Шапка: дата, авторы",
+  "Вступление (запуск беты, Vertex AI + Imagen)",
+  "New type of watermark for AI images",
+  "Robust and scalable approach (SynthID's combined approach: Watermarking / Identification; метаданные)",
+  "What’s next?",
+  "Note",
+  "Acknowledgements",
+  "Related posts, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Identifying AI-generated images with SynthID",
+   "итог": "ничего: служебная строка заголовка (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Identifying AI-generated images with SynthID — Google DeepMind",
+   "итог": "ничего: заголовок страницы (строка 2)"
+  },
+  {
+   "n": 3,
+   "начало": "Skip to main content Explore our next",
+   "итог": "ничего: обвязка сайта, строки 3-276; diff со стр_171 (строки 3-276) пустой — меню DeepMind совпадает до байта"
+  },
+  {
+   "n": 4,
+   "начало": "August 29, 2023 Science",
+   "итог": "ничего: дата и рубрика (учтены в дата_в_тексте)"
+  },
+  {
+   "n": 5,
+   "начало": "Identifying AI-generated images with SynthID Sven Gowal, Pushmeet Kohli",
+   "итог": "ничего: заголовок и авторы (использованы как признак официальности)"
+  },
+  {
+   "n": 6,
+   "начало": "Share Copied",
+   "итог": "ничего: обвязка (кнопки шаринга)"
+  },
+  {
+   "n": 7,
+   "начало": "New tool helps watermark and identify",
+   "итог": "E-178-1"
+  },
+  {
+   "n": 8,
+   "начало": "AI-generated images are becoming more popular every day.",
+   "итог": "ничего: вводный риторический вопрос без содержания"
+  },
+  {
+   "n": 9,
+   "начало": "Today, in partnership with Google Cloud",
+   "итог": "E-178-2, E-178-3"
+  },
+  {
+   "n": 10,
+   "начало": "SynthID is being released to a limited number",
+   "итог": "E-178-4"
+  },
+  {
+   "n": 11,
+   "начало": "Generative AI technologies are rapidly evolving",
+   "итог": "ничего: общая мотивация (синтетические картинки труднее отличить), без правила"
+  },
+  {
+   "n": 12,
+   "начало": "While generative AI can unlock huge creative potential",
+   "итог": "ничего: общая мотивация (риски дезинформации), без правила о генерации"
+  },
+  {
+   "n": 13,
+   "начало": "We’re committed to connecting people with high-quality",
+   "итог": "E-178-5"
+  },
+  {
+   "n": 14,
+   "начало": "SynthID generates an imperceptible digital watermark (подпись)",
+   "итог": "ничего: подпись к иллюстрации, повтор E-178-3"
+  },
+  {
+   "n": 15,
+   "начало": "Google Cloud is the first cloud provider",
+   "итог": "E-178-6"
+  },
+  {
+   "n": 16,
+   "начало": "SynthID isn’t foolproof against extreme image manipulations",
+   "итог": "E-178-7, E-178-8"
+  },
+  {
+   "n": 17,
+   "начало": "New type of watermark for AI images Watermarks are designs",
+   "итог": "ничего: заголовок раздела и историческая справка о водяных знаках без правила"
+  },
+  {
+   "n": 18,
+   "начало": "Traditional watermarks aren’t sufficient",
+   "итог": "E-178-9"
+  },
+  {
+   "n": 19,
+   "начало": "Finding the right balance between imperceptibility",
+   "итог": "E-178-10"
+  },
+  {
+   "n": 20,
+   "начало": "The watermark is detectable even after modifications (подпись)",
+   "итог": "ничего: подпись к иллюстрации, повтор E-178-11 (добавляет 'brightness', отмечено в заметке)"
+  },
+  {
+   "n": 21,
+   "начало": "html alt: An eight-panel grid showing different modified versions",
+   "итог": "E-178-22"
+  },
+  {
+   "n": 22,
+   "начало": "We designed SynthID so it doesn't compromise image quality",
+   "итог": "E-178-11"
+  },
+  {
+   "n": 23,
+   "начало": "SynthID uses two deep learning models",
+   "итог": "E-178-12"
+  },
+  {
+   "n": 24,
+   "начало": "Robust and scalable approach SynthID allows Vertex AI customers",
+   "итог": "E-178-13"
+  },
+  {
+   "n": 25,
+   "начало": "SynthID's combined approach:",
+   "итог": "ничего: заголовок списка"
+  },
+  {
+   "n": 26,
+   "начало": "Watermarking : SynthID can add an imperceptible",
+   "итог": "E-178-14"
+  },
+  {
+   "n": 27,
+   "начало": "Identification : By scanning an image",
+   "итог": "E-178-15"
+  },
+  {
+   "n": 28,
+   "начало": "SynthID can help assess how likely (подпись)",
+   "итог": "ничего: подпись к иллюстрации, повтор E-178-15"
+  },
+  {
+   "n": 29,
+   "начало": "This tool provides three confidence levels",
+   "итог": "E-178-16"
+  },
+  {
+   "n": 30,
+   "начало": "SynthID contributes to the broad suite",
+   "итог": "E-178-17"
+  },
+  {
+   "n": 31,
+   "начало": "When the metadata information is intact",
+   "итог": "E-178-18, E-178-19"
+  },
+  {
+   "n": 32,
+   "начало": "What’s next? To build AI-generated content responsibly",
+   "итог": "ничего: декларация намерений без содержания"
+  },
+  {
+   "n": 33,
+   "начало": "These approaches need to be robust and adaptable",
+   "итог": "ничего: декларация (сбор отзывов, развитие), без содержания"
+  },
+  {
+   "n": 34,
+   "начало": "SynthID could be expanded for use across other AI models",
+   "итог": "E-178-20"
+  },
+  {
+   "n": 35,
+   "начало": "Note: The model used for producing synthetic images",
+   "итог": "E-178-21"
+  },
+  {
+   "n": 36,
+   "начало": "Read the Google Cloud announcement",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 37,
+   "начало": "Acknowledgements This project was led by Sven Gowal",
+   "итог": "ничего: благодарности (признак официальности: Google DeepMind / Google Research / Google Cloud)"
+  },
+  {
+   "n": 38,
+   "начало": "Thanks to Nidhi Vyas and Zahra Ahmed",
+   "итог": "ничего: благодарности"
+  },
+  {
+   "n": 39,
+   "начало": "Watermarked image of a metallic butterfly (подпись)",
+   "итог": "ничего: подпись к картинке без промпта; alt 'AI-generated image of a metallic butterfly resting on a leaf' — тоже"
+  },
+  {
+   "n": 40,
+   "начало": "Related posts SynthID Learn more … Cookies management controls",
+   "итог": "ничего: обвязка сайта (связанные посты, подписка, подвал DeepMind), строки 336-420"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-178-1",
+   "вид": "факт",
+   "утверждение_en": "SynthID is a tool that watermarks and identifies synthetic images created by Imagen.",
+   "цитата": "New tool helps watermark and identify synthetic images created by Imagen",
+   "источник_цитаты": "txt",
+   "раздел": "подзаголовок",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Статья 2023 года; речь только об Imagen, не о Gemini/Nano Banana."
+  },
+  {
+   "код": "E-178-2",
+   "вид": "факт",
+   "утверждение_en": "On 2023-08-29 Google DeepMind, in partnership with Google Cloud, launched a beta version of SynthID for watermarking and identifying AI-generated images.",
+   "цитата": "Today, in partnership with Google Cloud , we’re launching a beta version of SynthID , a tool for watermarking and identifying AI-generated images.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Статус на дату статьи — beta."
+  },
+  {
+   "код": "E-178-3",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID embeds a digital watermark directly into the pixels of an image, imperceptible to the human eye but detectable for identification.",
+   "цитата": "This technology embeds a digital watermark directly into the pixels of an image, making it imperceptible to the human eye, but detectable for identification.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ключевой механизм: знак в пикселях, а не в метаданных (см. E-178-19)."
+  },
+  {
+   "код": "E-178-4",
+   "вид": "факт",
+   "утверждение_en": "At launch SynthID was released to a limited number of Vertex AI customers using Imagen, a text-to-image model that creates photorealistic images from input text.",
+   "цитата": "SynthID is being released to a limited number of Vertex AI customers using Imagen , one of our latest text-to-image models that uses input text to create photorealistic images.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Ограниченный доступ на момент запуска."
+  },
+  {
+   "код": "E-178-5",
+   "вид": "факт",
+   "утверждение_en": "SynthID is meant to let AI-generated images — and even some edited versions of them — be identified at a later date.",
+   "цитата": "Part of this responsibility is giving users more advanced tools for identifying AI-generated images so their images — and even some edited versions — can be identified at a later date.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'some edited versions' — не все правки сохраняют распознаваемость."
+  },
+  {
+   "код": "E-178-6",
+   "вид": "факт",
+   "утверждение_en": "SynthID was developed by Google DeepMind and refined in partnership with Google Research; Google Cloud is described as the first cloud provider to offer a tool for creating AI-generated images responsibly and identifying them.",
+   "цитата": "This technology is grounded in our approach to developing and deploying responsible AI, and was developed by Google DeepMind and refined in partnership with Google Research.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Утверждение про 'first cloud provider' — в предыдущем предложении того же абзаца."
+  },
+  {
+   "код": "E-178-7",
+   "вид": "ограничение",
+   "утверждение_en": "SynthID is not foolproof against extreme image manipulations.",
+   "цитата": "SynthID isn’t foolproof against extreme image manipulations, but it does provide a promising technical approach for empowering people and organisations to work with AI-generated content responsibly.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Какие манипуляции считаются 'extreme', не сказано."
+  },
+  {
+   "код": "E-178-8",
+   "вид": "факт",
+   "утверждение_en": "As of 2023, SynthID could evolve to other AI models and modalities beyond imagery, such as audio, video and text.",
+   "цитата": "This tool could also evolve alongside other AI models and modalities beyond imagery such as audio, video, and text.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Планы на момент 2023 года; 'could'."
+  },
+  {
+   "код": "E-178-9",
+   "вид": "объяснение",
+   "утверждение_en": "Traditional stamp-like watermarks are insufficient for AI images because they can easily be edited out; for example, a corner watermark can be cropped out with basic editing.",
+   "цитата": "Traditional watermarks aren’t sufficient for identifying AI-generated images because they’re often applied like a stamp on an image and can easily be edited out. For example, discrete watermarks found in the corner of an image can be cropped out with basic editing techniques.",
+   "источник_цитаты": "txt",
+   "раздел": "New type of watermark for AI images",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-10",
+   "вид": "объяснение",
+   "утверждение_en": "Watermark design must balance imperceptibility against robustness: highly visible watermarks pose aesthetic problems for creative or commercial use, while some earlier imperceptible watermarks are lost through simple edits like resizing.",
+   "цитата": "Finding the right balance between imperceptibility and robustness to image manipulations is difficult. Highly visible watermarks, often added as a layer with a name or logo across the top of an image, also present aesthetic challenges for creative or commercial purposes. Likewise, some previously developed imperceptible watermarks can be lost through simple editing techniques like resizing.",
+   "источник_цитаты": "txt",
+   "раздел": "New type of watermark for AI images",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-11",
+   "вид": "факт",
+   "утверждение_en": "SynthID is designed not to compromise image quality and to remain detectable after modifications such as adding filters, changing colours, and saving with lossy compression (most commonly JPEG).",
+   "цитата": "We designed SynthID so it doesn't compromise image quality, and allows the watermark to remain detectable, even after modifications like adding filters, changing colours, and saving with various lossy compression schemes — most commonly used for JPEGs.",
+   "источник_цитаты": "txt",
+   "раздел": "New type of watermark for AI images",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Подпись к иллюстрации добавляет изменение яркости: 'adding filters, changing colours and brightness'."
+  },
+  {
+   "код": "E-178-12",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID uses two deep learning models, one for watermarking and one for identifying, trained together on diverse images and optimised both for correct identification and for imperceptibility by visually aligning the watermark to the original content.",
+   "цитата": "SynthID uses two deep learning models — for watermarking and identifying — that have been trained together on a diverse set of images. The combined model is optimised on a range of objectives, including correctly identifying watermarked content and improving imperceptibility by visually aligning the watermark to the original content.",
+   "источник_цитаты": "txt",
+   "раздел": "New type of watermark for AI images",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Механизм: пара обученных вместе моделей; знак подстраивается под содержимое картинки."
+  },
+  {
+   "код": "E-178-13",
+   "вид": "факт",
+   "утверждение_en": "SynthID is not perfect, but Google's internal testing shows it is accurate against many common image manipulations.",
+   "цитата": "While this technology isn’t perfect, our internal testing shows that it’s accurate against many common image manipulations.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Цифр точности нет; основание — внутреннее тестирование Google."
+  },
+  {
+   "код": "E-178-14",
+   "вид": "факт",
+   "утверждение_en": "Watermarking: SynthID can add an imperceptible watermark to synthetic images produced by Imagen.",
+   "цитата": "Watermarking : SynthID can add an imperceptible watermark to synthetic images produced by Imagen.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach — SynthID's combined approach",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-15",
+   "вид": "объяснение",
+   "утверждение_en": "Identification: SynthID scans an image for its digital watermark and assesses the likelihood that the image was created by Imagen.",
+   "цитата": "Identification : By scanning an image for its digital watermark, SynthID can assess the likelihood of an image being created by Imagen.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach — SynthID's combined approach",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Результат — вероятность, а не бинарный ответ."
+  },
+  {
+   "код": "E-178-16",
+   "вид": "факт",
+   "утверждение_en": "SynthID identification returns one of three confidence levels; if a watermark is detected, part of the image is likely generated by Imagen.",
+   "цитата": "This tool provides three confidence levels for interpreting the results of watermark identification. If a digital watermark is detected, part of the image is likely generated by Imagen.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Названия трёх уровней и пороги на странице не даны. 'part of the image' — детекция может относиться к части картинки (например, после редактирования)."
+  },
+  {
+   "код": "E-178-17",
+   "вид": "объяснение",
+   "утверждение_en": "Metadata is one of the most widely used methods for identifying content: it stores information such as who created a file and when, and digital signatures in metadata can show if an image has been changed.",
+   "цитата": "One of the most widely used methods of identifying content is through metadata, which provides information such as who created it and when. This information is stored with the image file. Digital signatures added to metadata can then show if an image has been changed.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-18",
+   "вид": "ограничение",
+   "утверждение_en": "Metadata can be manually removed or lost when files are edited.",
+   "цитата": "However, metadata can be manually removed or even lost when files are edited.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-19",
+   "вид": "объяснение",
+   "утверждение_en": "Because SynthID's watermark is embedded in pixels, it is compatible with metadata-based identification and remains detectable even when metadata is lost.",
+   "цитата": "Since SynthID’s watermark is embedded in the pixels of an image, it’s compatible with other image identification approaches that are based on metadata, and remains detectable even when metadata is lost.",
+   "источник_цитаты": "txt",
+   "раздел": "Robust and scalable approach",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-20",
+   "вид": "факт",
+   "утверждение_en": "As of 2023, Google planned possible expansion of SynthID to other AI models, integration into more Google products, and availability to third parties in the near future.",
+   "цитата": "SynthID could be expanded for use across other AI models and we’re excited about the potential of integrating it into more Google products and making it available to third parties in the near future",
+   "источник_цитаты": "txt",
+   "раздел": "What’s next?",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Планы на дату статьи."
+  },
+  {
+   "код": "E-178-21",
+   "вид": "предупреждение",
+   "утверждение_en": "The model used to produce the synthetic images shown in the blog may differ from the model used on Imagen and Vertex AI.",
+   "цитата": "Note: The model used for producing synthetic images in this blog may be different from the model used on Imagen and Vertex AI.",
+   "источник_цитаты": "txt",
+   "раздел": "What’s next? — примечание",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Иллюстрации статьи не обязательно отражают продуктовую модель."
+  },
+  {
+   "код": "E-178-22",
+   "вид": "факт",
+   "утверждение_en": "The robustness illustration shows the watermarked butterfly image modified by blur, grayscale, blue tint, rotation, color filters, noise and brightness adjustments.",
+   "цитата": "An eight-panel grid showing different modified versions of a purple butterfly image, demonstrating variations like blur, grayscale, blue tint, rotation, color filters, noise, and brightness adjustments.",
+   "источник_цитаты": "html",
+   "раздел": "New type of watermark for AI images — иллюстрация",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо (alt-подпись иллюстрации в html)",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Alt перечисляет виды правок на иллюстрации; результат детекции по каждой правке в тексте не дан — прямо заявлены только фильтры, цвета, яркость, lossy-сжатие (E-178-11)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-178-23",
+   "вид": "предупреждение",
+   "утверждение_en": "Across the page SynthID detection is presented as probabilistic, not proof: it is 'not foolproof', 'isn't perfect', reports a likelihood with three confidence levels, and a detection means only that part of the image is likely AI-generated.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-178-7, E-178-13, E-178-15, E-178-16",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-24",
+   "вид": "объяснение",
+   "утверждение_en": "The page positions pixel watermarking and metadata as complementary layers: metadata is lost on edits, while the pixel watermark survives metadata loss but not extreme manipulation, so neither alone is complete.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-178-7, E-178-17, E-178-18, E-178-19",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-178-25",
+   "вид": "факт",
+   "утверждение_en": "As of the page date (2023-08-29) SynthID covered only Imagen images for a limited set of Vertex AI customers in beta; the page says nothing about Gemini or Nano Banana image models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "Imagen (Vertex AI)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-178-2, E-178-4, E-178-14",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "безопасность_водяной_знак",
+    "модели_сравнение"
+   ],
+   "заметка": "Для правил по Gemini-моделям страница даёт только механизм SynthID; применимость к Nano Banana — из других страниц."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не названы три уровня уверенности и их пороги.",
+  "Нет цифр точности детекции; только 'internal testing'.",
+  "Не сказано, какие манипуляции 'extreme'; про кадрирование сказано только для обычных видимых знаков, для SynthID — нет.",
+  "Не сказано, можно ли отключить водяной знак и влияет ли он на последующее редактирование картинки.",
+  "Ничего о Gemini/Nano Banana, C2PA, видимом водяном знаке."
+ ],
+ "сомнения": [
+  "Статья 2023 года про Imagen; к моделям Nano Banana относится только общий механизм SynthID (по пометке партии).",
+  "Статус 'beta' и ограниченный доступ актуальны на 2023-08-29; позднее состояние по этой странице неизвестно (html modified_time 2026-07-06, но текст выглядит неизменным)."
+ ]
+}

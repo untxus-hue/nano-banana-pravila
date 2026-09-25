@@ -1,0 +1,590 @@
+{
+ "id": 13,
+ "url": "https://ai.google.dev/gemini-api/docs/models",
+ "заголовок": "Models (index)",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.»; текст от лица Google («Our most intelligent Flash model», «we are limiting access»). Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Индекс всех моделей Gemini API для разработчиков (обновлён 23.09.2026): карточки моделей Gemini 3 со статусами, таблица имя→endpoint, разделы 2.5 (с примечанием об ограничении доступа к 2.5 только для прежних пользователей), аудио, генеративные медиа, музыка, агенты, специализированные, устаревшие, и правила именования версий (stable/preview/latest/experimental). Для картинок: три стабильные модели Gemini 3 — Nano Banana 2 (gemini-3.1-flash-image), Nano Banana 2 Lite (gemini-3.1-flash-lite-image), Nano Banana Pro (gemini-3-pro-image) — каждая описана дважды разными словами; Nano Banana (gemini-2.5-flash-image) в разделе 2.5; Imagen 4 отключён. Pro позиционирован как «professional design engine with a reasoning core» (4K, сложные макеты, точный текст).",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-2.5-flash-image (Nano Banana)",
+  "imagen-4.0-generate (Imagen 4, shut down)",
+  "прочие не-изобразительные модели (текст, аудио, видео, музыка, агенты, эмбеддинги, робототехника)"
+ ],
+ "структура": [
+  "Models (вступление)",
+  "Gemini 3 (карточки)",
+  "All Gemini 3 models (Model/Endpoint)",
+  "Gemini 2.5 Flash",
+  "Gemini 2.5 Flash-Lite",
+  "Gemini 2.5 Pro",
+  "Audio models",
+  "Generative media models",
+  "Music generation models",
+  "Tool and agent models",
+  "Specialized task models",
+  "Previous models",
+  "Model version name patterns (Stable, Preview, Latest, Experimental)",
+  "Model deprecations"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Models | Gemini API | Google AI for Developers / Skip to main content …",
+   "итог": "ничего: обвязка сайта (заголовок, языки, шапка)"
+  },
+  {
+   "n": 2,
+   "начало": "Docs / API reference / Gemini API … Feedback information",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 30-181)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available. / Home / Gemini API / Docs / Send feedback",
+   "итог": "ничего: обвязка сайта (баннер, хлебные крошки)"
+  },
+  {
+   "n": 4,
+   "начало": "Models / This guide introduces all the models",
+   "итог": "ничего: вводная фраза"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 3 / Stable / Gemini 3.8 Flash … Gemini 3.1 Flash-Lite (карточки)",
+   "итог": "ничего: не про генерацию картинок (текстовые, Live, TTS модели)"
+  },
+  {
+   "n": 6,
+   "начало": "Stable / 🍌🍌 / Nano Banana 2 / Powerful, high-efficiency",
+   "итог": "E-13-1"
+  },
+  {
+   "n": 7,
+   "начало": "Stable / 🍌 / Nano Banana 2 Lite / Ultra-low latency",
+   "итог": "E-13-2"
+  },
+  {
+   "n": 8,
+   "начало": "Stable / 🍌 / Nano Banana Pro / State-of-the-art image generation",
+   "итог": "E-13-3"
+  },
+  {
+   "n": 9,
+   "начало": "Stable / Gemini 3.5 Transcribe … Gemini Omni Flash (карточки)",
+   "итог": "ничего: не про генерацию картинок (Transcribe, 3.1 Pro, 3 Flash, Live Translate, Live, TTS, видео Omni)"
+  },
+  {
+   "n": 10,
+   "начало": "All Gemini 3 models / Model / Endpoint — строки текстовых/аудио моделей",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 11,
+   "начало": "Nano Banana 2 gemini-3.1-flash-image / Nano Banana 2 Lite … / Nano Banana Pro gemini-3-pro-image",
+   "итог": "E-13-4"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 2.5 Flash / Note: To ensure reliable performance … (1-й раз)",
+   "итог": "E-13-5"
+  },
+  {
+   "n": 13,
+   "начало": "Model / Description / Endpoint — Gemini 2.5 Flash",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "Nano Banana / State-of-the-art native image generation … gemini-2.5-flash-image",
+   "итог": "E-13-6"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini 2.5 Flash Live / Gemini 2.5 Flash TTS",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini 2.5 Flash-Lite / Note … (2-й раз) / таблица",
+   "итог": "ничего: повтор E-13-5; модель не про картинки"
+  },
+  {
+   "n": 17,
+   "начало": "Gemini 2.5 Pro / Note … (3-й раз) / таблица, Gemini 2.5 Pro TTS",
+   "итог": "ничего: повтор E-13-5; модели не про картинки"
+  },
+  {
+   "n": 18,
+   "начало": "Audio models / This section contains all audio models … (таблица)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "Generative media models / This section contains all generative media models",
+   "итог": "ничего: вводная строка раздела"
+  },
+  {
+   "n": 20,
+   "начало": "Nano Banana 2 / High-efficiency production-scale visual creation",
+   "итог": "E-13-7"
+  },
+  {
+   "n": 21,
+   "начало": "Nano Banana 2 Lite / Designed as the efficiency specialist",
+   "итог": "E-13-8"
+  },
+  {
+   "n": 22,
+   "начало": "Veo 3.1 / State-of-the-art cinematic video generation",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 23,
+   "начало": "Nano Banana Pro / A professional design engine",
+   "итог": "E-13-9"
+  },
+  {
+   "n": 24,
+   "начало": "Veo 3.1 Lite / Gemini Omni Flash",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 25,
+   "начало": "Nano Banana / State-of-the-art native image generation … (в Generative media)",
+   "итог": "ничего: повтор E-13-6"
+  },
+  {
+   "n": 26,
+   "начало": "Imagen 4 (Shut down) / Text-to-image model",
+   "итог": "E-13-10"
+  },
+  {
+   "n": 27,
+   "начало": "Music generation models … Lyria RealTime",
+   "итог": "ничего: не про генерацию картинок (музыка)"
+  },
+  {
+   "n": 28,
+   "начало": "Tool and agent models … Antigravity Agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "Specialized task models … Gemini Robotics ER 1.6",
+   "итог": "ничего: не про генерацию картинок (эмбеддинги, робототехника)"
+  },
+  {
+   "n": 30,
+   "начало": "Previous models / These models are deprecated … Gemini 3 Pro Preview (Shut down)",
+   "итог": "ничего: не про генерацию картинок (текстовые модели; противоречие «will be shut down soon» / «(Shut down)» — в противоречия_внутри)"
+  },
+  {
+   "n": 31,
+   "начало": "Model version name patterns / Gemini models are available in either stable, preview, latest, or experimental",
+   "итог": "ничего: перечень, раскрыт в E-13-11…E-13-15"
+  },
+  {
+   "n": 32,
+   "начало": "Note: The following list refers to the model string naming convention",
+   "итог": "E-13-11"
+  },
+  {
+   "n": 33,
+   "начало": "Stable / Points to a specific stable model … gemini-3.6-flash",
+   "итог": "E-13-12"
+  },
+  {
+   "n": 34,
+   "начало": "Preview / Points to a preview model … gemini-2.5-flash-preview-09-2025",
+   "итог": "E-13-13"
+  },
+  {
+   "n": 35,
+   "начало": "Latest / Points to the latest release … gemini-flash-latest",
+   "итог": "E-13-14"
+  },
+  {
+   "n": 36,
+   "начало": "Experimental / Points to an experimental model … subject to change.",
+   "итог": "E-13-15"
+  },
+  {
+   "n": 37,
+   "начало": "Model deprecations / For information about model deprecations, visit",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 38,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: подвал-лицензия — признак официальности"
+  },
+  {
+   "n": 39,
+   "начало": "Last updated 2026-09-23 UTC.",
+   "итог": "ничего: дата — вынесена в дата_в_тексте"
+  },
+  {
+   "n": 40,
+   "начало": "Need to tell us more? … Terms / Privacy / Manage cookies / языки",
+   "итог": "ничего: обвязка сайта (виджет отзывов, подвал)"
+  },
+  {
+   "n": 41,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-13-16, E-13-17"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-13-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 (stable) offers powerful, high-efficiency image generation and editing, optimized for speed and high-volume use cases.",
+   "цитата": "Nano Banana 2\nPowerful, high-efficiency image generation and editing, optimized for speed and high-volume use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 (карточки моделей)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус карточки — Stable (строка «Stable» перед значком 🍌🍌)."
+  },
+  {
+   "код": "E-13-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite (stable) offers ultra-low latency and cost-effective image generation and editing, designed for high-volume interactive use cases.",
+   "цитата": "Nano Banana 2 Lite\nUltra-low latency and cost-effective image generation and editing, designed for high-volume interactive use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 (карточки моделей)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус — Stable. Акцент: интерактивные сценарии с большим объёмом."
+  },
+  {
+   "код": "E-13-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (stable) is described as state-of-the-art image generation and editing for highly contextual native image creation.",
+   "цитата": "Nano Banana Pro\nState-of-the-art image generation and editing models for highly contextual native image creation.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 (карточки моделей)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус — Stable. «highly contextual» — сильная сторона Pro по этой карточке."
+  },
+  {
+   "код": "E-13-4",
+   "вид": "факт",
+   "утверждение_en": "API endpoints: Nano Banana 2 = gemini-3.1-flash-image; Nano Banana 2 Lite = gemini-3.1-flash-lite-image; Nano Banana Pro = gemini-3-pro-image.",
+   "цитата": "Nano Banana 2\ngemini-3.1-flash-image\nNano Banana 2 Lite\ngemini-3.1-flash-lite-image\nNano Banana Pro\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "All Gemini 3 models (таблица Model / Endpoint)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Соответствие маркетингового имени и строки модели."
+  },
+  {
+   "код": "E-13-5",
+   "вид": "ограничение",
+   "утверждение_en": "Access to the 2.5 models is limited to users who have actively used them in the past; they are not deprecated and continue to be served until further notice, and new projects should use the latest models (3.5 Flash-Lite or 3.8 Flash).",
+   "цитата": "To ensure reliable performance for everyone, we are limiting\n  access to the 2.5 models to users who have actively used them in the past.\n  These models are not deprecated and will continue to be served until further\n  notice through the API. For any new projects, use our latest models:\n  3.5 Flash-Lite or 3.8 Flash. This helps us maintain sufficient capacity for\n  both ongoing legacy workflows and new applications.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.5 Flash",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — выведено: модель входит в раздел «Gemini 2.5 Flash», к которому относится примечание",
+    "Gemini 2.5 models"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Примечание повторено трижды (разделы 2.5 Flash, 2.5 Flash-Lite, 2.5 Pro). Рекомендованные для новых проектов модели — текстовые; про замену Nano Banana ничего не сказано (см. E-13-17)."
+  },
+  {
+   "код": "E-13-6",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana (gemini-2.5-flash-image) is described as state-of-the-art native image generation and editing designed for fast, creative workflows.",
+   "цитата": "Nano Banana\nState-of-the-art native image generation and editing designed for fast, creative workflows.\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.5 Flash",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "То же описание повторено в разделе Generative media models."
+  },
+  {
+   "код": "E-13-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 (gemini-3.1-flash-image) is described as high-efficiency production-scale visual creation, combining the intelligence of the Gemini 3 series with lightning-fast generation speeds.",
+   "цитата": "High-efficiency production-scale visual creation, combining the intelligence of the Gemini 3 series with lightning-fast generation speeds.",
+   "источник_цитаты": "txt",
+   "раздел": "Generative media models",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Второе описание NB2 на странице (отличается формулировкой от карточки E-13-1)."
+  },
+  {
+   "код": "E-13-8",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite (gemini-3.1-flash-lite-image) is designed as the efficiency specialist of the image generation family, offering ultra-low latency and cost-effective image generation and editing.",
+   "цитата": "Designed as the efficiency specialist of the image generation family, offering ultra-low latency and cost-effective image generation and editing.",
+   "источник_цитаты": "txt",
+   "раздел": "Generative media models",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-13-9",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (gemini-3-pro-image) is described as a professional design engine with a reasoning core for studio-quality 4K visuals, complex layouts, and precise text rendering.",
+   "цитата": "A professional design engine with a reasoning core for studio-quality 4K visuals, complex layouts, and precise text rendering.",
+   "источник_цитаты": "txt",
+   "раздел": "Generative media models",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "текст_в_кадре"
+   ],
+   "заметка": "Сильные стороны Pro, названные явно: рассуждение, 4K, сложные макеты, точный текст."
+  },
+  {
+   "код": "E-13-10",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 (imagen-4.0-generate), a text-to-image model with fast and ultra-fast generation, is shut down.",
+   "цитата": "Imagen 4 (Shut down)\nText-to-image model featuring fast and ultra-fast generation (shut down).\nimagen-4.0-generate",
+   "источник_цитаты": "txt",
+   "раздел": "Generative media models",
+   "модели": [
+    "imagen-4.0-generate (Imagen 4)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Отключённая модель, оставлена в списке медиа-моделей."
+  },
+  {
+   "код": "E-13-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini models come in stable, preview, latest, or experimental versions; the naming convention listed is as of September 2025, and models released earlier may use different naming, so use the exact model string for older models.",
+   "цитата": "The following list refers to the model string naming convention as of\nSeptember, 2025. Models released prior to that may have different naming\nconventions. Refer to the exact model string if you are using an older model.",
+   "источник_цитаты": "txt",
+   "раздел": "Model version name patterns",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее для всех моделей Gemini, включая модели изображений."
+  },
+  {
+   "код": "E-13-12",
+   "вид": "правило",
+   "утверждение_en": "A stable model string points to a specific stable model that usually doesn't change; most production apps should use a specific stable model.",
+   "цитата": "Points to a specific stable model. Stable models usually don't change. Most\nproduction apps should use a specific stable model.",
+   "источник_цитаты": "txt",
+   "раздел": "Model version name patterns — Stable",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Три модели изображений Gemini 3 помечены на странице как Stable (E-13-1…E-13-3)."
+  },
+  {
+   "код": "E-13-13",
+   "вид": "факт",
+   "утверждение_en": "Preview models may be used for production, typically have billing enabled, might have more restrictive rate limits, and will be deprecated with at least 2 weeks notice.",
+   "цитата": "Points to a preview model which may be used for production. Preview models will\ntypically have billing enabled, might come with more restrictive rate limits and\nwill be deprecated with at least 2 weeks notice.",
+   "источник_цитаты": "txt",
+   "раздел": "Model version name patterns — Preview",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-13-14",
+   "вид": "предупреждение",
+   "утверждение_en": "A \"latest\" alias points to the latest release of a model variation (stable, preview or experimental) and is hot-swapped with every new release; for breaking changes a 2-week email notice is given before the version behind latest changes.",
+   "цитата": "Points to the latest release for a specific model variation. This can be a\nstable, preview or experimental release. This alias will get hot-swapped with\nevery new release of a specific model variation. For breaking changes, a\n2-week notice\nwill be provided through email before the version behind\nlatest is changed.",
+   "источник_цитаты": "txt",
+   "раздел": "Model version name patterns — Latest",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Алиас latest может сменить модель под вами."
+  },
+  {
+   "код": "E-13-15",
+   "вид": "предупреждение",
+   "утверждение_en": "Experimental models are typically not suitable for production, have more restrictive rate limits, are not stable, and endpoint availability is subject to change.",
+   "цитата": "Points to an experimental model which will typically be not be suitable for\nproduction use and come with more restrictive rate limits. We release\nexperimental models to gather feedback and get our latest updates into the hands\nof developers quickly.\nExperimental models are not stable and availability of model endpoints is\nsubject to change.",
+   "источник_цитаты": "txt",
+   "раздел": "Model version name patterns — Experimental",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Опечатка оригинала «will typically be not be» сохранена."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-13-16",
+   "вид": "объяснение",
+   "утверждение_en": "Across both descriptions of each image model, the page positions them as: Nano Banana Pro — professional design engine with a reasoning core (4K, complex layouts, precise text, highly contextual creation); Nano Banana 2 — high-efficiency, production-scale, speed and high volume with Gemini 3 intelligence; Nano Banana 2 Lite — efficiency specialist, ultra-low latency, cost-effective, high-volume interactive use; Nano Banana (2.5) — fast, creative workflows, with access limited to prior users.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Gemini 3 + Gemini 2.5 Flash + Generative media models",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-13-1, E-13-2, E-13-3, E-13-5, E-13-6, E-13-7, E-13-8, E-13-9",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сводная карта выбора модели по описаниям страницы; явной таблицы сравнения на странице нет."
+  },
+  {
+   "код": "E-13-17",
+   "вид": "правило",
+   "утверждение_en": "Because access to 2.5 models is limited to past users, a new project needing Gemini-API image generation would use one of the stable Gemini 3 image models (gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-3-pro-image); the page's own new-project recommendation names only text models.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Gemini 2.5 Flash (примечание) + All Gemini 3 models",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-13-4, E-13-5, E-13-10, E-13-12",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Прямо страница не рекомендует замену для Nano Banana; вывод из ограничения доступа и списка стабильных моделей изображений. Imagen 4 отключён (E-13-10)."
+  }
+ ],
+ "противоречия_внутри": [
+  "«Previous models»: «These models are deprecated and will be shut down soon», но каждая модель в таблице помечена «(Shut down)» — уже отключены.",
+  "Imagen 4 помечен «(Shut down)», но стоит в разделе Generative media models, а не в Previous models.",
+  "Одни и те же модели описаны в карточках и в Generative media models разными формулировками (NB2: «Powerful, high-efficiency image generation and editing…» против «High-efficiency production-scale visual creation…»; Pro: «State-of-the-art image generation and editing models…» против «A professional design engine…») — не противоречие, но разные акценты."
+ ],
+ "не_сказано": [
+  "Нет сравнительной таблицы возможностей моделей изображений (разрешения, соотношения, цены, лимиты) — только описания.",
+  "Не сказано, заменять ли Nano Banana (2.5) при ограничении доступа к 2.5 и на что; рекомендация для новых проектов — только текстовые модели.",
+  "Не указаны даты выхода моделей изображений и есть ли у них preview/latest-алиасы.",
+  "Gemini 2.0 Flash image-генерация не упоминается (2.0 Flash описан как текстовая модель, отключён)."
+ ],
+ "сомнения": [
+  "Привязка статуса «Stable» к карточке: в .txt статус стоит строкой перед значком и названием модели (порядок статус → значок → имя → описание → New); прочитано по этому шаблону.",
+  "Правила версий (E-13-11…E-13-15) общие для всех моделей Gemini; к моделям изображений применимы по смыслу, модель — «не указано»."
+ ]
+}

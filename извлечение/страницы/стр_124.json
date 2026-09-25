@@ -1,0 +1,438 @@
+{
+ "id": 124,
+ "url": "https://codelabs.developers.google.com/adk-gemini-a2ui",
+ "заголовок": "Build Rich Agentic Interfaces with ADK and A2UI  |  Google Codelabs",
+ "дата_в_тексте": "updated=\"2026-06-16T15:04:21Z\" (атрибут google-codelab в html); в тексте даты нет",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0; ссылка на репозиторий github.com/google/A2UI (организация google). Автор в html — authors=\"Daniela Petruzalek\", принадлежность к Google на странице не указана",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Codelab Google Codelabs для разработчиков агентов: агент генерации картинок на ADK (Python) с Nano Banana 2 (gemini-3.1-flash-image) в качестве инструмента generate_image и gemini-3.5-flash в качестве агента, затем простой FastAPI-фронтенд и переход на A2UI (декларативный UI от агента). Для генерации картинок существенны: код вызова (TEXT+IMAGE, первая inline_data-часть — картинка), два тестовых промпта, системный промпт Image Creator с шестью обязательными элементами промпта (Subject, environment, style, lighting, color, mood), workflow уточнения недостающих деталей до генерации, запрет примеров в итоговом промпте, выбор разрешения 1K/2K/4K и соотношения 1:1/16:9/9:16 в UI. Основной объём — настройка окружения, фронтенд, A2UI. Код в .txt склеен без пробелов — ключевой системный промпт читался по html.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3.5-flash (агент-оркестратор)"
+ ],
+ "структура": [
+  "1. Introduction",
+  "2. Setup",
+  "3. Create a new ADK agent",
+  "4. Create a simple frontend",
+  "5. Configure the agent to emit A2UI messages",
+  "6. Create a custom frontend for the agent",
+  "7. Congratulations! (production renderers, reference docs)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content / English …",
+   "итог": "ничего: обвязка сайта Codelabs (языки, Sign in; строки 1-25)"
+  },
+  {
+   "n": 2,
+   "начало": "Build Rich Agentic Interfaces with ADK and A2UI",
+   "итог": "ничего: заголовок (строка 26)"
+  },
+  {
+   "n": 3,
+   "начало": "1. Introduction",
+   "итог": "ничего: заголовок шага"
+  },
+  {
+   "n": 4,
+   "начало": "A2UI enables AI agents to generate",
+   "итог": "ничего: не про генерацию картинок (описание A2UI)"
+  },
+  {
+   "n": 5,
+   "начало": "In this hands-on lab you will first create",
+   "итог": "E-124-1"
+  },
+  {
+   "n": 6,
+   "начало": "What you'll learn Create an agent using ADK python",
+   "итог": "ничего: перечень тем"
+  },
+  {
+   "n": 7,
+   "начало": "Prerequisites Basic knowledge of AI agents",
+   "итог": "ничего: требования к участнику"
+  },
+  {
+   "n": 8,
+   "начало": "2. Setup Follow the instructions below … local environment … uv",
+   "итог": "ничего: настройка окружения"
+  },
+  {
+   "n": 9,
+   "начало": "Self-paced environment setup … Project name … Project ID … Project Number",
+   "итог": "ничего: создание проекта Google Cloud"
+  },
+  {
+   "n": 10,
+   "начало": "Caution: A project ID is globally unique",
+   "итог": "ничего: служебная оговорка"
+  },
+  {
+   "n": 11,
+   "начало": "Note: If you use a Gmail account",
+   "итог": "ничего: служебная оговорка"
+  },
+  {
+   "n": 12,
+   "начало": "Next, you'll need to enable billing",
+   "итог": "ничего: биллинг"
+  },
+  {
+   "n": 13,
+   "начало": "Start Cloud Shell … persistent 5GB home directory",
+   "итог": "ничего: Cloud Shell"
+  },
+  {
+   "n": 14,
+   "начало": "3. Create a new ADK agent … mkdir … uv init … gcloud services enable aiplatform",
+   "итог": "ничего: команды установки"
+  },
+  {
+   "n": 15,
+   "начало": "Initialize the ADK agent … uv run adk create --model gemini-3.5-flash --region global art_creator … WARNING: Secrets … uv run notes",
+   "итог": "ничего: создание каркаса агента (модель агента gemini-3.5-flash, регион global); не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Now that the basic agent structure is created … cloudshell workspace … Replace the content of art_creator/agent.py",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 17,
+   "начало": "art_creator/agent.py (generate_image + root_agent \"You are an art assistant\")",
+   "итог": "E-124-2"
+  },
+  {
+   "n": 18,
+   "начало": "You can now test the agent in ADK's development UI … uv run adk web … Web Preview",
+   "итог": "ничего: запуск Dev UI"
+  },
+  {
+   "n": 19,
+   "начало": "Use ADK's development UI to test the agent capabilities by giving it a few prompts",
+   "итог": "E-124-3, E-124-4 (вводная)"
+  },
+  {
+   "n": 20,
+   "начало": "Anime girl sleeping under a tree.",
+   "итог": "E-124-3"
+  },
+  {
+   "n": 21,
+   "начало": "Photograph of a cabin reflected in the lake.",
+   "итог": "E-124-4"
+  },
+  {
+   "n": 22,
+   "начало": "You should see the agent responding with text and the generated image.",
+   "итог": "E-124-2 (результат: текст + картинка)"
+  },
+  {
+   "n": 23,
+   "начало": "4. Create a simple frontend … FastAPI … main.py",
+   "итог": "ничего: веб-приложение (код без промпта картинок)"
+  },
+  {
+   "n": 24,
+   "начало": "Next, create the static directory … index.html … style.css … app.js",
+   "итог": "ничего: фронтенд (код)"
+  },
+  {
+   "n": 25,
+   "начало": "Test your web app by starting the FastAPI server … Web Preview",
+   "итог": "ничего: запуск"
+  },
+  {
+   "n": 26,
+   "начало": "5. Configure the agent to emit A2UI messages … A2uiSchemaManager",
+   "итог": "ничего: не про генерацию картинок (механизм A2UI-системного промпта)"
+  },
+  {
+   "n": 27,
+   "начало": "First, stop the FastAPI server … Modify art_creator/agent.py",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 28,
+   "начало": "art_creator/agent.py (A2uiSchemaManager, role/workflow/ui_description, gemini-3.5-flash)",
+   "итог": "E-124-5, E-124-6, E-124-7, E-124-8; generate_image — повтор E-124-2; прочие пункты ui_description (компоненты Card/Text/Image, без markdown, только A2UI JSON) — не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "Note how now the agent instructions are generated",
+   "итог": "ничего: пояснение к коду A2UI"
+  },
+  {
+   "n": 30,
+   "начало": "Test your web app … the agent is emitting JSON messages",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "6. Create a custom frontend for the agent … beginRendering, surfaceUpdate, dataModelUpdate … Note … static/app.js",
+   "итог": "ничего: рендеринг A2UI во фронтенде (код)"
+  },
+  {
+   "n": 32,
+   "начало": "Start the FastAPI app server again … talk to your fully dynamic A2UI Art Creator agent!",
+   "итог": "ничего: запуск"
+  },
+  {
+   "n": 33,
+   "начало": "7. Congratulations! … Build a production frontend … renderers table … Reference docs",
+   "итог": "ничего: итог и ссылки (A2UI renderers @a2ui/react, lit, angular, Flutter GenUI SDK)"
+  },
+  {
+   "n": 34,
+   "начало": "Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: обвязка (лицензия)"
+  },
+  {
+   "n": 35,
+   "начало": "Connect Blog Facebook … English …",
+   "итог": "ничего: обвязка (подвал, языки; строки 172-222)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-124-1",
+   "вид": "факт",
+   "утверждение_en": "The lab builds an image generation agent using Agent Development Kit (ADK) and Gemini 3.1 Flash Image (a.k.a. Nano Banana 2).",
+   "цитата": "In this hands-on lab you will first create an image generation agent using Agent Development Kit (ADK) and Gemini 3.1 Flash Image (a.k.a. Nano Banana 2).",
+   "источник_цитаты": "txt",
+   "раздел": "1. Introduction",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-124-2",
+   "вид": "инструкция",
+   "утверждение_en": "The generate_image tool calls client.models.generate_content with model gemini-3.1-flash-image, the text prompt as contents and response_modalities ['TEXT', 'IMAGE'] (Vertex AI, location defaulting to global), then takes the first inline_data part as the image bytes and saves it as a PNG artifact.",
+   "цитата": "response=client.models.generate_content(model=\"gemini-3.1-flash-image\",contents=prompt,config=types.GenerateContentConfig(response_modalities=['TEXT','IMAGE'],)",
+   "источник_цитаты": "txt",
+   "раздел": "3. Create a new ADK agent / art_creator/agent.py",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В вызов не передаются imageConfig (aspect ratio, размер) — только текст промпта. Докстринг инструмента: \"Generates a high-quality image based on the user's detailed description prompt.\" Инструкция первого агента (art assistant) — только маршрутизация к инструменту, про содержание промпта ничего."
+  },
+  {
+   "код": "E-124-3",
+   "вид": "пример_промпта",
+   "утверждение_en": "Test prompt for the image agent: 'Anime girl sleeping under a tree. Pastel colors. 16:9'",
+   "цитата": "Anime girl sleeping under a tree. Pastel colors. 16:9",
+   "источник_цитаты": "txt",
+   "раздел": "3. Create a new ADK agent",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "форматы_разрешение"
+   ],
+   "заметка": "Структура — рубленые фрагменты через точку: [стиль+субъект \"Anime girl\"] + [действие и место \"sleeping under a tree\"] → [палитра \"Pastel colors\"] → [соотношение сторон \"16:9\" прямо в тексте]. Параметров imageConfig инструмент не передаёт, поэтому 16:9 доходит до модели только как текст."
+  },
+  {
+   "код": "E-124-4",
+   "вид": "пример_промпта",
+   "утверждение_en": "Test prompt for the image agent: 'Photograph of a cabin reflected in the lake. Late afternoon. Nostalgic feeling.'",
+   "цитата": "Photograph of a cabin reflected in the lake. Late afternoon. Nostalgic feeling.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Create a new ADK agent",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: [медиум \"Photograph of\"] + [субъект и композиционный приём \"a cabin reflected in the lake\"] → [время суток = свет \"Late afternoon\"] → [настроение \"Nostalgic feeling\"]. Три коротких предложения, каждое — один элемент."
+  },
+  {
+   "код": "E-124-5",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "The image-creator agent's role description states that the image generation prompt should include: Subject, environment, style, lighting, color and mood, and that the agent should analyze the user's description and ask for missing details.",
+   "цитата": "\"You are a specialized Image Creator agent. \"\n        \"When given an image description, analyze the prompt and ask the user for any missing details. \"\n        \"The image generation prompt should include: \"\n        \"Subject, environment, style, lighting, color and mood. \"",
+   "источник_цитаты": "html",
+   "раздел": "5. Configure the agent to emit A2UI messages / art_creator/agent.py",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.5-flash (агент-оркестратор)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Шесть обязательных элементов промпта генерации: Subject, environment, style, lighting, color, mood. Это системный промпт агента-оркестратора (gemini-3.5-flash), который составляет промпт для Nano Banana 2."
+  },
+  {
+   "код": "E-124-6",
+   "вид": "приём",
+   "утверждение_en": "Workflow: when the user describes an image, do not generate it immediately; compare it with the ideal generation prompt and ask for missing details (only once per image, missing elements are acceptable), then combine the original prompt with the answers and call generate_image with the resulting prompt.",
+   "цитата": "\"2. if the user describes an image, DO NOT GENERATE IT IMMEDIATELY: compare with \"\n        \"   the ideal generation prompt and ask the user for any missing details using \"\n        \"   rich A2UI UI elements only. NOTE: only run this step once per image, if the user \"\n        \"   decides to not detail one or more elements it is ok. \"\n        \"3. combine the original prompt with the responses in the UI elements and call `generate_image` \"\n        \"   with the generated prompt. \"",
+   "источник_цитаты": "html",
+   "раздел": "5. Configure the agent to emit A2UI messages / art_creator/agent.py",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.5-flash (агент-оркестратор)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Приём \"уточни недостающие элементы до генерации\"; уточнение — один раз на картинку."
+  },
+  {
+   "код": "E-124-7",
+   "вид": "правило",
+   "утверждение_en": "The generated image prompt must not include examples, only the elements the user asked for.",
+   "цитата": "\"   DO NOT INCLUDE EXAMPLES IN THE GENERATED PROMPT, ONLY THE ELEMENTS THE USER ASKED FOR. \"",
+   "источник_цитаты": "html",
+   "раздел": "5. Configure the agent to emit A2UI messages / art_creator/agent.py",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.5-flash (агент-оркестратор)"
+   ],
+   "применимость": "промпт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Капсом в системном промпте агента; защищает от попадания примеров из UI-подсказок в итоговый промпт картинки."
+  },
+  {
+   "код": "E-124-8",
+   "вид": "факт",
+   "утверждение_en": "The app offers single-choice options for image resolution (1K, 2K or 4K) and aspect ratio (1:1, 16:9 or 9:16), and shows the final image in a card with the prompt that generated it and a 'Download PNG' button.",
+   "цитата": "\"Always include a single choice selection box for image resolution (1K, 2K or 4K) and one for \"\n        \"aspect ratio (1:1, 16:9 or 9:16). \"",
+   "источник_цитаты": "html",
+   "раздел": "5. Configure the agent to emit A2UI messages / art_creator/agent.py",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "продукт_ui"
+   ],
+   "заметка": "Выбор разрешения/соотношения передаётся в итоговый текстовый промпт (шаг 3 workflow), а не параметрами вызова — generate_image их не принимает."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-124-9",
+   "вид": "предупреждение",
+   "утверждение_en": "In this codelab the user's resolution (1K/2K/4K) and aspect-ratio (1:1/16:9/9:16) choices, like the '16:9' in the test prompt, reach Nano Banana 2 only as text inside the prompt: the generate_image tool passes no imageConfig, and the page does not show whether the model honours these textual settings.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-124-2, E-124-3, E-124-6, E-124-8",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-124-10",
+   "вид": "приём",
+   "утверждение_en": "Two-model pattern: a text LLM agent (gemini-3.5-flash) acts as prompt builder, eliciting the six elements (subject, environment, style, lighting, color, mood) plus resolution and aspect ratio, and composes the final prompt that is sent to Nano Banana 2.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3.5-flash (агент-оркестратор)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-124-1, E-124-2, E-124-5, E-124-6, E-124-8",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-124-11",
+   "вид": "объяснение",
+   "утверждение_en": "The page's sample prompts are short period-separated fragments that each cover one or two of the six elements (subject/action, colour or time of day as light, mood), and one of them appends the aspect ratio directly.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "3. Create a new ADK agent",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-124-3, E-124-4, E-124-5",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "ui_description требует выбора разрешения (1K/2K/4K) и соотношения сторон (1:1/16:9/9:16), но инструмент generate_image не принимает и не передаёт imageConfig — выбор может попасть к модели только текстом промпта."
+ ],
+ "не_сказано": [
+  "Не показано, соблюдает ли Nano Banana 2 разрешение/соотношение, заданные текстом в промпте.",
+  "Нет примера итогового промпта, собранного агентом из шести элементов.",
+  "Не указаны лимиты, цена, водяной знак.",
+  "Нет мультиходового редактирования (каждый вызов generate_image — новый generate_content)."
+ ],
+ "сомнения": [
+  "Автор указан только в атрибуте html; официальность подтверждена по подвалу Google Developers Site Policies и платформе Codelabs.",
+  "Системный промпт — для агента-оркестратора, а не для самой image-модели; шесть элементов — это требование codelab к составлению промпта, а не заявление Google о модели."
+ ]
+}

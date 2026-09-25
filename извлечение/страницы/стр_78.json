@@ -1,0 +1,781 @@
+{
+ "id": 78,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_3_image_gen.ipynb",
+ "заголовок": "gh-intro-gemini-3-image-gen (Gemini 3 Pro Image (Nano Banana Pro 🍌) Generation)",
+ "дата_в_тексте": "только 'Copyright 2025 Google LLC'",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий GoogleCloudPlatform/generative-ai)",
+  "второй_признак": "Строка '# Copyright 2025 Google LLC' + лицензия Apache 2.0; организация GoogleCloudPlatform. Автор — Katie Nguyen (GitHub katiemn).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальный вводный ноутбук Google Cloud для разработчиков по gemini-3-pro-image (Nano Banana Pro) через Google Gen AI SDK на Agent Platform (location global). Структура: обзор + предупреждение о большей задержке → setup → text-to-image (response_modalities, 10 соотношений, SynthID) → мысли → grounding поиском (только текстовые результаты) → размеры 1K/2K/4K → редактирование: локализация, мультиход в чате с пересылкой изображения, несколько рефов (число не указано). Повторяемые акценты: IMAGE в response_modalities, пропуск частей-мыслей, проверка finish_reason.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-2.5-flash-image (Nano Banana) — только для сравнения задержки"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Gemini 3 Pro Image (Nano Banana Pro 🍌) Generation (ссылки, автор)",
+  "Overview (+ NOTE о задержке)",
+  "Get started (SDK, auth, libraries, project, model)",
+  "Image generation: Text-to-image; See the thoughts; Grounding with search results; Image sizes",
+  "Image editing: Localization; Multi-turn image editing (chat); Multiple reference images"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2025 Google LLC # Licensed",
+   "итог": "ничего: копирайт и лицензия (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Gemini 3 Pro Image (Nano Banana Pro 🍌) Generation",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "<table align=\"left\"> … Share to:",
+   "итог": "ничего: обвязка (ссылки и шаринг)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | … Katie Nguyen",
+   "итог": "ничего: автор"
+  },
+  {
+   "n": 5,
+   "начало": "## Overview This notebook will show you",
+   "итог": "E-78-1, E-78-2"
+  },
+  {
+   "n": 6,
+   "начало": "In this tutorial, you'll learn how … (список сценариев)",
+   "итог": "ничего: оглавление сценариев"
+  },
+  {
+   "n": 7,
+   "начало": "**NOTE:** Expect higher latency when using",
+   "итог": "E-78-3"
+  },
+  {
+   "n": 8,
+   "начало": "## Get started / ### Install Google Gen AI SDK",
+   "итог": "ничего: установка SDK"
+  },
+  {
+   "n": 9,
+   "начало": "%pip install --upgrade --quiet google-genai",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 10,
+   "начало": "### Authenticate your notebook environment",
+   "итог": "ничего: аутентификация"
+  },
+  {
+   "n": 11,
+   "начало": "import sys … auth.authenticate_user()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 12,
+   "начало": "### Import libraries / import warnings …",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 13,
+   "начало": "### Set Google Cloud project information To get started",
+   "итог": "ничего: настройка проекта"
+  },
+  {
+   "n": 14,
+   "начало": "import os … LOCATION = \"global\" … genai.Client(enterprise=True",
+   "итог": "ничего: код без промпта (клиент Agent Platform, location global)"
+  },
+  {
+   "n": 15,
+   "начало": "### Load the model MODEL_ID = \"gemini-3-pro-image\"",
+   "итог": "ничего: код без промпта (ID модели в картине)"
+  },
+  {
+   "n": 16,
+   "начало": "## Image generation / ### Text-to-image In the cell below",
+   "итог": "ничего: вводная к списку аргументов"
+  },
+  {
+   "n": 17,
+   "начало": "- `prompt`: A text only user message",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 18,
+   "начало": "- `config`: A config for specifying",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 19,
+   "начало": "- `response_modalities`: To generate an image,",
+   "итог": "E-78-4"
+  },
+  {
+   "n": 20,
+   "начало": "- `ImageConfig`: Set the `aspect_ratio`.",
+   "итог": "E-78-5"
+  },
+  {
+   "n": 21,
+   "начало": "All generated images include a [SynthID",
+   "итог": "E-78-6"
+  },
+  {
+   "n": 22,
+   "начало": "prompt = \"\"\" Generate an infographic of a seasonal produce guide",
+   "итог": "E-78-7"
+  },
+  {
+   "n": 23,
+   "начало": "### See the thoughts This is a thinking model",
+   "итог": "E-78-8"
+  },
+  {
+   "n": 24,
+   "начало": "for part in response.parts: if part.thought:",
+   "итог": "ничего: код без промпта (реализует E-78-8)"
+  },
+  {
+   "n": 25,
+   "начало": "### Grounding with search results With this model",
+   "итог": "E-78-9, E-78-10"
+  },
+  {
+   "n": 26,
+   "начало": "To display the grounding data, use",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 27,
+   "начало": "def print_grounding_data(",
+   "итог": "E-78-11"
+  },
+  {
+   "n": 28,
+   "начало": "Next, you'll create a Google Search tool",
+   "итог": "ничего: вводная к E-78-12"
+  },
+  {
+   "n": 29,
+   "начало": "prompt = \"\"\" Search for and visualize the current weather",
+   "итог": "E-78-12, E-78-13"
+  },
+  {
+   "n": 30,
+   "начало": "### Image sizes Nano Banana Pro supports",
+   "итог": "E-78-14"
+  },
+  {
+   "n": 31,
+   "начало": "prompt = \"\"\" Generate a close up headshot",
+   "итог": "E-78-15"
+  },
+  {
+   "n": 32,
+   "начало": "## Image editing You can also edit",
+   "итог": "E-78-16"
+  },
+  {
+   "n": 33,
+   "начало": "### Localization You can also translate",
+   "итог": "E-78-17"
+  },
+  {
+   "n": 34,
+   "начало": "!wget … flying-sneakers.png … display(Image(",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 35,
+   "начало": "with open(starting_image, \"rb\") … Change the text in this infographic",
+   "итог": "E-78-18"
+  },
+  {
+   "n": 36,
+   "начало": "### Multi-turn image editing (chat) In this",
+   "итог": "E-78-19"
+  },
+  {
+   "n": 37,
+   "начало": "chat = client.chats.create( … Create an image of a clear perfume bottle",
+   "итог": "E-78-20"
+  },
+  {
+   "n": 38,
+   "начало": "Now, you'll include the previous image",
+   "итог": "E-78-21"
+  },
+  {
+   "n": 39,
+   "начало": "response = chat.send_message( … Make the perfume bottle purple",
+   "итог": "E-78-22"
+  },
+  {
+   "n": 40,
+   "начало": "### Multiple reference images With Nano Banana Pro,",
+   "итог": "E-78-23"
+  },
+  {
+   "n": 41,
+   "начало": "Run the following cell to visualize",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 42,
+   "начало": "from io import BytesIO … image_urls = [ … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 43,
+   "начало": "The process for sending the request",
+   "итог": "E-78-24"
+  },
+  {
+   "n": 44,
+   "начало": "response = client.models.generate_content( … Generate an image of a woman sitting in a living room",
+   "итог": "E-78-25"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-78-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is a generalist multimodal model offering image generation and conversational image editing.",
+   "цитата": "This model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can show its work, letting you see the thought process behind the generated output.",
+   "цитата": "Nano Banana Pro is also able to show its work, allowing you to see the 'thought process' behind the generated output.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "В отличие от ноутбуков NB2/Lite, здесь не упомянута настройка thinking level."
+  },
+  {
+   "код": "E-78-3",
+   "вид": "предупреждение",
+   "утверждение_en": "Expect higher latency with Nano Banana Pro than with Gemini 2.5 Flash Image (Nano Banana) because of its more advanced capabilities.",
+   "цитата": "Expect higher latency when using this model compared to Gemini 2.5 Flash Image (Nano Banana) as a result of the more advanced capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana) — для сравнения"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Чисел задержки нет."
+  },
+  {
+   "код": "E-78-4",
+   "вид": "правило",
+   "утверждение_en": "To generate an image, IMAGE must be included in response_modalities; to get both text and images specify IMAGE and TEXT.",
+   "цитата": "`response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list. To get both text and images, specify `IMAGE` and `TEXT`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-5",
+   "вид": "факт",
+   "утверждение_en": "Valid aspect ratios for Nano Banana Pro: 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9.",
+   "цитата": "`ImageConfig`: Set the `aspect_ratio`. Valid ratios are: 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "10 соотношений; 1:4, 4:1, 1:8, 8:1 в списке нет."
+  },
+  {
+   "код": "E-78-6",
+   "вид": "факт",
+   "утверждение_en": "All generated images include a SynthID watermark.",
+   "цитата": "All generated images include a [SynthID watermark](https://deepmind.google/technologies/synthid/).",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-7",
+   "вид": "пример_промпта",
+   "утверждение_en": "Infographic prompt: a seasonal produce guide with months, a fun category name per season and detailed produce illustrations.",
+   "цитата": "Generate an infographic of a seasonal produce guide. Include the months and a fun category name for each season as well as detailed illustrations of the produce.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "промптинг"
+   ],
+   "заметка": "Разбор: 'Generate an infographic of' + тема → 'Include' + перечень обязательных элементов (месяцы, придуманное название категории на сезон, детальные иллюстрации). Текст для инфографики модель сочиняет сама ('a fun category name'). 16:9, IMAGE+TEXT."
+  },
+  {
+   "код": "E-78-8",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is a thinking model; you can inspect the thoughts that led to the image (thought parts can include text or images).",
+   "цитата": "This is a thinking model, you can check the thoughts that led to the image being produced.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / See the thoughts",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Из кода: for part in response.parts: if part.thought: part.text или part.inline_data (изображение). Никакой thinking_config в запросе не передаётся."
+  },
+  {
+   "код": "E-78-9",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can generate responses grounded in Google Search results.",
+   "цитата": "With this model, you can also generate responses that are grounded in the results of a Google Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-10",
+   "вид": "ограничение",
+   "утверждение_en": "Nano Banana Pro is grounded only on text search results, not on images found on Google Search.",
+   "цитата": "Note that the model is only grounded on text results and not images that can be found on Google Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Поиска по изображениям для Pro нет."
+  },
+  {
+   "код": "E-78-11",
+   "вид": "факт",
+   "утверждение_en": "Grounding metadata exposes grounding supports, grounding chunks (web, retrieved context, maps — with uri, title, place_id, text), web search queries, search entry point and retrieval queries.",
+   "цитата": "if hasattr(context, \"place_id\") and context.place_id:",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Из хелпера print_grounding_data (response.candidates[0].grounding_metadata). Индексы цитат — в байтах UTF-8 (комментарий кода 'Citation indexes are in bytes')."
+  },
+  {
+   "код": "E-78-12",
+   "вид": "инструкция",
+   "утверждение_en": "Create a Google Search tool (types.Tool(google_search=types.GoogleSearch())) and include it in the tools parameter.",
+   "цитата": "google_search = types.Tool(google_search=types.GoogleSearch())",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Без search_types — только веб-поиск (текст)."
+  },
+  {
+   "код": "E-78-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Search-grounded prompt: search for and visualize San Francisco's 5-day forecast as a clean modern chart, plus what to wear each day.",
+   "цитата": "Search for and visualize the current weather forecast for the next 5 days in San Francisco in a clean, modern weather chart. Add a visual of what I could wear each day.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Разбор: две операции подряд ('Search for and visualize') + актуальные данные (текущий прогноз, 5 дней, город) + форма ('clean, modern weather chart') → отдельным предложением производный визуальный слой ('what I could wear each day'), требующий рассуждения по данным. 21:9, TEXT+IMAGE."
+  },
+  {
+   "код": "E-78-14",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro supports image sizes 1K, 2K, and 4K.",
+   "цитата": "Nano Banana Pro supports the following image sizes: `1K`, `2K`, or `4K`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Image sizes",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В коде: types.ImageConfig(aspect_ratio='1:1', image_size='2K'). 512 для Pro не упоминается."
+  },
+  {
+   "код": "E-78-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Minimal prompt used to test image size: a close up headshot of a person.",
+   "цитата": "Generate a close up headshot of a person.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Image sizes",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: 'Generate' + план ('close up headshot') + неопределённый субъект. Выбор портрета крупным планом — для оценки детализации при 2K."
+  },
+  {
+   "код": "E-78-16",
+   "вид": "инструкция",
+   "утверждение_en": "To edit images with this model, pass the original image as part of the prompt.",
+   "цитата": "You can also edit images with this model, simply pass the original image as part of the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-17",
+   "вид": "факт",
+   "утверждение_en": "Text in images can be translated through image editing.",
+   "цитата": "You can also translate the text in images through image editing.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Localization",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Localization prompt: change the text in this infographic from English to Spanish.",
+   "цитата": "Change the text in this infographic from English to Spanish.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Localization",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Разбор: 'Change the text in this infographic' + исходный и целевой языки. В конфиге только image_size='1K', aspect_ratio не задан."
+  },
+  {
+   "код": "E-78-19",
+   "вид": "факт",
+   "утверждение_en": "You can generate a starting image and iteratively alter aspects of it by chatting with the model.",
+   "цитата": "In this next section, you'll generate a starting image and iteratively alter certain aspects of the image by chatting with the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "В коде: client.chats.create(model=..., config=GenerateContentConfig(response_modalities=['TEXT','IMAGE']))."
+  },
+  {
+   "код": "E-78-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Starting chat prompt: a clear perfume bottle sitting on a vanity.",
+   "цитата": "Create an image of a clear perfume bottle sitting on a vanity.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Разбор: 'Create an image of' + объект с материалом ('clear') + место. Минимальная сцена под последующие правки."
+  },
+  {
+   "код": "E-78-21",
+   "вид": "приём",
+   "утверждение_en": "Include the previous image data in the next chat message together with the new text prompt to update the previously generated image.",
+   "цитата": "Now, you'll include the previous image data in a new message in the existing chat, along with a new text prompt, to update the previously generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "В коде: байты из part.inline_data прошлого ответа → types.Part.from_bytes(data, mime_type='image/png') + текст, через chat.send_message."
+  },
+  {
+   "код": "E-78-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up chat edit: make the perfume bottle purple and add a vase of hydrangeas next to it.",
+   "цитата": "Make the perfume bottle purple and add a vase of hydrangeas next to the bottle.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Разбор: изменение атрибута ('Make the perfume bottle purple') + добавление объекта с привязкой к существующему ('next to the bottle'). Объект назван тем же словом, что в первом промпте."
+  },
+  {
+   "код": "E-78-23",
+   "вид": "факт",
+   "утверждение_en": "With Nano Banana Pro you can include multiple reference images in a request to generate a new image preserving the content of the originals.",
+   "цитата": "With Nano Banana Pro, you can include multiple reference images in a request to generate a new image that preserves the content of the original images.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Максимальное число рефов на этой странице не указано; в примере — 6."
+  },
+  {
+   "код": "E-78-24",
+   "вид": "инструкция",
+   "утверждение_en": "Provide multiple Part.from_uri instances, one for each reference image.",
+   "цитата": "The main difference is that you will provide multiple `Part.from_uri` instances, one for each reference image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "Six-reference prompt: a woman and a man in a living room wearing sneakers, the woman in a white armchair with a blue suitcase.",
+   "цитата": "Generate an image of a woman sitting in a living room with a man, both wearing sneakers. The woman is sitting in a white armchair with a blue suitcase next to her.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Разбор: каждый из 6 рефов (woman, suitcase, armchair, man-in-field, shoes, living-room) упомянут в тексте по содержанию с отличительным признаком ('white armchair', 'blue suitcase'), связи заданы позицией ('sitting in', 'next to her', 'with a man', 'both wearing sneakers'). Рефы перед текстом, без нумерации. 16:9."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-78-26",
+   "вид": "объяснение",
+   "утверждение_en": "Every reference image supplied is mentioned in the text by its content and linked to the others by spatial relations; no ordinal references ('first image') are used anywhere in the notebook.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Localization + Multi-turn + Multiple reference images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-78-18, E-78-22, E-78-25",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-27",
+   "вид": "объяснение",
+   "утверждение_en": "Most prompts start with an operation verb (Generate, Search for and visualize, Change, Create, Make) and are one or two sentences; chat edits combine two changes in one message.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-78-7, E-78-13, E-78-15, E-78-18, E-78-20, E-78-22, E-78-25",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-78-28",
+   "вид": "объяснение",
+   "утверждение_en": "Unlike its thought-reading code, the notebook never passes a thinking configuration for Nano Banana Pro; thoughts are read from the response of a plain request.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Text-to-image + See the thoughts",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-78-2, E-78-7, E-78-8",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Можно ли регулировать уровень мышления у Pro — страница не говорит."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не указано максимальное число референсных изображений для Pro (в примере 6).",
+  "Нет параметров thinking (уровень, include_thoughts) — только чтение мыслей.",
+  "Нет 512px и экстремальных соотношений — не сказано явно, что их нет (списки просто их не содержат).",
+  "Нет чисел задержки, цен, квот, регионов кроме global.",
+  "Нет фильтра prominent people и других политик кроме SynthID.",
+  "Нет правил составления промптов — только примеры."
+ ],
+ "сомнения": [
+  "ID модели в ноутбуке — 'gemini-3-pro-image' (без суффикса -preview); принято как Nano Banana Pro по заголовку."
+ ]
+}

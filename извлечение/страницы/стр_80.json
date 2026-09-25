@@ -1,0 +1,1641 @@
+{
+ "id": 80,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/use-cases/spatial-understanding/object_detection_and_editing.ipynb",
+ "заголовок": "Detecting and Editing Visual Objects with Gemini (gh-object-detection-and-editing-ipynb)",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "raw.githubusercontent.com / репозиторий GoogleCloudPlatform/generative-ai",
+  "второй_признак": "строка '# Copyright 2026 Google LLC' в первой ячейке ноутбука + организация GoogleCloudPlatform в URL; автор Laurent Picard (принадлежность к Google на странице не указана)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Технический Jupyter-ноутбук Google Cloud (Apache 2.0, Copyright 2026 Google LLC) для разработчиков на Python/Gen AI SDK. Первая половина — open-vocabulary детекция объектов (иллюстраций в фото книг, электронных компонентов) текстовыми моделями Gemini со структурированным выводом box_2d; это не генерация картинок. Вторая половина — конвейер редактирования вырезанных объектов моделями Nano Banana: реставрация (restoration), колоризация/трансформация стиля (colorization), 'кинематизация' (cinematization). Модели: для редактирования gemini-2.5-flash-image (по умолчанию, GA), gemini-3-pro-image и gemini-3.1-flash-image (помечены Preview). Даты в тексте нет, только копирайт 2026. Собственные термины: imperative vs declarative/descriptive prompt, key-value prompt, 'closed' vs 'open' prompts, full-bleed, degree of freedom. Повторные акценты: промпт генерик-но-специфичный; явные оговорки сохранения деталей ('preserving every original detail', 'without any additions'); ссылка на тип визуала несёт семантику (композицию); низкая случайность (temperature 0, top_p 0, seed 42) для детерминированной реставрации.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-2.5-flash / gemini-2.5-pro / gemini-3.5-flash / gemini-3.1-pro-preview (только детекция, не генерация картинок)",
+  "Veo (упомянут как потребитель референсов)"
+ ],
+ "структура": [
+  "Overview",
+  "Challenge",
+  "Setup (Python packages, Gemini API, Gen AI SDK, Image test suite, Gemini models, Helpers)",
+  "Detecting visual objects",
+  "Text extraction and dynamic labeling",
+  "Generalizing object detection",
+  "Editing visual objects",
+  "Restoring visual objects",
+  "Colorization",
+  "Cinematization",
+  "Conclusion",
+  "More!"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2026 Google LLC",
+   "итог": "ничего: обвязка (лицензия Apache 2.0; использована как признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Detecting and Editing Visual Objects",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "<table align=\"left\"> Open in Colab / Colab Enterprise / Workbench / GitHub; Share to",
+   "итог": "ничего: обвязка сайта (кнопки открыть/поделиться)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | Laurent Picard",
+   "итог": "ничего: обвязка (автор)"
+  },
+  {
+   "n": 5,
+   "начало": "## Overview + intro image",
+   "итог": "ничего: заголовок и обложка"
+  },
+  {
+   "n": 6,
+   "начало": "Traditional computer vision models are typically",
+   "итог": "ничего: не про генерацию картинок (детекция)"
+  },
+  {
+   "n": 7,
+   "начало": "In this exploration, we'll test",
+   "итог": "ничего: не про генерацию картинок (open-vocabulary detection)"
+  },
+  {
+   "n": 8,
+   "начало": "Once the visual objects are detected,",
+   "итог": "E-80-1"
+  },
+  {
+   "n": 9,
+   "начало": "## Challenge: We are dealing with unstructured",
+   "итог": "ничего: постановка задачи детекции (виды искажений), не правило"
+  },
+  {
+   "n": 10,
+   "начало": "Our challenge is to build a",
+   "итог": "ничего: цель ноутбука, маркетинг без содержания"
+  },
+  {
+   "n": 11,
+   "начало": "## Setup / Python packages: We'll use the following",
+   "итог": "ничего: обвязка (список пакетов)"
+  },
+  {
+   "n": 12,
+   "начало": "%pip install --quiet \"google-genai>=1.68.0\"",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 13,
+   "начало": "To use the Gemini API, we",
+   "итог": "ничего: обвязка (Agent Platform vs AI Studio, переменные окружения)"
+  },
+  {
+   "n": 14,
+   "начало": "> For preview models, the location",
+   "итог": "E-80-2"
+  },
+  {
+   "n": 15,
+   "начало": "> Learn more about setting up / getting a Gemini API key",
+   "итог": "ничего: обвязка (ссылки)"
+  },
+  {
+   "n": 16,
+   "начало": "You can store your environment configuration",
+   "итог": "ничего: обвязка (таблица хранения настроек)"
+  },
+  {
+   "n": 17,
+   "начало": "Define the following environment detection functions + код check_environment",
+   "итог": "ничего: код без промпта (настройка окружения)"
+  },
+  {
+   "n": 18,
+   "начало": "To send Gemini requests, create a",
+   "итог": "ничего: код без промпта (клиент)"
+  },
+  {
+   "n": 19,
+   "начало": "Let's define a list of images",
+   "итог": "ничего: код без промпта (тестовые изображения, кредиты)"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini comes in different versions. We",
+   "итог": "E-80-3"
+  },
+  {
+   "n": 21,
+   "начало": "- For object detection: Gemini 2.5",
+   "итог": "ничего: не про генерацию картинок (модели детекции)"
+  },
+  {
+   "n": 22,
+   "начало": "Now, let's add core helper classes (код MultimodalModel/ImageModel)",
+   "итог": "E-80-4"
+  },
+  {
+   "n": 23,
+   "начало": "код generate_content / check_client_for_model",
+   "итог": "E-80-2 (комментарий в коде подтверждает)"
+  },
+  {
+   "n": 24,
+   "начало": "код display_response_info",
+   "итог": "ничего: код без промпта (печать токенов/finish_reason)"
+  },
+  {
+   "n": 25,
+   "начало": "код generate_image: contents = [*sources, prompt.strip()]",
+   "итог": "E-80-5"
+  },
+  {
+   "n": 26,
+   "начало": "код check_get_output_image_from_response",
+   "итог": "E-80-6, E-80-7"
+  },
+  {
+   "n": 27,
+   "начало": "код get_thinking_config",
+   "итог": "ничего: thinking-настройки только для моделей детекции; для image-моделей возвращает None (дефолт)"
+  },
+  {
+   "n": 28,
+   "начало": "код get_retrier / should_retry_request (429, 1 QPM)",
+   "итог": "ничего: ретраи для воркшопа с временной квотой 1 QPM, не правило image-моделей"
+  },
+  {
+   "n": 29,
+   "начало": "To perform visual object detection, craft",
+   "итог": "ничего: не про генерацию картинок (промптинг детекции)"
+  },
+  {
+   "n": 30,
+   "начало": "OBJECT_DETECTION_PROMPT = Detect every illustration",
+   "итог": "ничего: не про генерацию картинок — промпт детекции для текстовой модели (вывод JSON)"
+  },
+  {
+   "n": 31,
+   "начало": "- Bounding boxes are very useful",
+   "итог": "ничего: не про генерацию (польза bbox)"
+  },
+  {
+   "n": 32,
+   "начало": "- Typically, for Gemini models, a",
+   "итог": "E-80-8"
+  },
+  {
+   "n": 33,
+   "начало": "- We're also requesting to extract",
+   "итог": "ничего: не про генерацию (метаданные детекции)"
+  },
+  {
+   "n": 34,
+   "начало": "To automate response processing, it's convenient (Pydantic, response_schema, response.parsed)",
+   "итог": "ничего: не про генерацию картинок (structured output детекции)"
+  },
+  {
+   "n": 35,
+   "начало": "код object detection helpers: CROP_MARGIN_PX",
+   "итог": "E-80-10"
+  },
+  {
+   "n": 36,
+   "начало": "код denormalize_bounding_boxes docstring",
+   "итог": "E-80-9"
+  },
+  {
+   "n": 37,
+   "начало": "код detect_objects / get_object_detection_config / save / matplotlib",
+   "итог": "ничего: код без промпта (детекция, temperature 0 для детекции)"
+  },
+  {
+   "n": 38,
+   "начало": "Let's start simple: can we detect",
+   "итог": "ничего: демонстрация детекции"
+  },
+  {
+   "n": 39,
+   "начало": "> This works nicely. The bounding",
+   "итог": "ничего: результат детекции"
+  },
+  {
+   "n": 40,
+   "начало": "Now, let's check the detection of",
+   "итог": "ничего: демонстрация детекции"
+  },
+  {
+   "n": 41,
+   "начало": "> Remarks: bounding boxes precise; no false positives; granularity by prompt",
+   "итог": "ничего: не про генерацию (детекция)"
+  },
+  {
+   "n": 42,
+   "начало": "What about slightly warped visuals? / This doesn't make a difference",
+   "итог": "ничего: результат детекции"
+  },
+  {
+   "n": 43,
+   "начало": "What about the tilted visuals / Each visual is perfectly detected",
+   "итог": "ничего: результат детекции"
+  },
+  {
+   "n": 44,
+   "начало": "Finally, let's check the detection on",
+   "итог": "ничего: демонстрация детекции"
+  },
+  {
+   "n": 45,
+   "начало": "> Page curvature and other distortions",
+   "итог": "E-80-11"
+  },
+  {
+   "n": 46,
+   "начало": "## Text extraction and dynamic labeling: In addition to localizing",
+   "итог": "ничего: не про генерацию (метаданные детекции)"
+  },
+  {
+   "n": 47,
+   "начало": "код display_detection_data",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 48,
+   "начало": "In the museum guidebook, the dynamic labeling / paintings / Denver",
+   "итог": "ничего: не про генерацию (результаты подписей)"
+  },
+  {
+   "n": 49,
+   "начало": "> If you have a closer look",
+   "итог": "ничего: не про генерацию (логика порядка чтения подписей)"
+  },
+  {
+   "n": 50,
+   "начало": "In the Alice's Adventures in Wonderland book page, there was",
+   "итог": "ничего: не про генерацию"
+  },
+  {
+   "n": 51,
+   "начало": "## Generalizing object detection: We can use the same principles",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 52,
+   "начало": "Let's see how we can detect electronic components + ELECTRONIC_COMPONENT_DETECTION_PROMPT",
+   "итог": "ничего: не про генерацию картинок — промпт детекции (media_resolution ULTRA_HIGH для детекции)"
+  },
+  {
+   "n": 53,
+   "начало": "> Remarks: Large and tiny components are detected",
+   "итог": "ничего: не про генерацию (детекция, media resolution)"
+  },
+  {
+   "n": 54,
+   "начало": "Here's a consolidated view of the",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 55,
+   "начало": "> Remarks: text orientations; original line breaks; closed labeling; thinking_config levels",
+   "итог": "ничего: не про генерацию картинок (советы по детекции, thinking для Gemini 3 Flash)"
+  },
+  {
+   "n": 56,
+   "начало": "This demonstrates the versatility of the approach.",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 57,
+   "начало": "## Editing visual objects: Now that we can detect",
+   "итог": "E-80-12"
+  },
+  {
+   "n": 58,
+   "начало": "Our object editing functions will follow",
+   "итог": "ничего: описание структуры кода"
+  },
+  {
+   "n": 59,
+   "начало": "код object_editing_function: DEFAULT_EDITING_CONFIG, config None valid",
+   "итог": "E-80-13"
+  },
+  {
+   "n": 60,
+   "начало": "Now, let's define a first editing",
+   "итог": "ничего: переход"
+  },
+  {
+   "n": 61,
+   "начало": "## Restoring: For this restoration step, we",
+   "итог": "E-80-14"
+  },
+  {
+   "n": 62,
+   "начало": "An image editing prompt is based",
+   "итог": "E-80-15, E-80-16"
+  },
+  {
+   "n": 63,
+   "начало": "Our test suite is mostly composed",
+   "итог": "E-80-17"
+  },
+  {
+   "n": 64,
+   "начало": "Here is a possible restoration function",
+   "итог": "ничего: вводная к примеру (повтор E-80-18)"
+  },
+  {
+   "n": 65,
+   "начало": "RESTORATION_PROMPT = - Isolate and straighten",
+   "итог": "E-80-18, E-80-19"
+  },
+  {
+   "n": 66,
+   "начало": "Let's try to restore the illustration + restore_objects(Source.incunable)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 67,
+   "начало": "> We now have a nice restoration",
+   "итог": "E-80-20"
+  },
+  {
+   "n": 68,
+   "начало": "What about the illustrations from the museum guidebook? / All good!",
+   "итог": "ничего: демонстрация без содержания"
+  },
+  {
+   "n": 69,
+   "начало": "What about the slightly warped visuals? restore_objects(Source.paintings)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 70,
+   "начало": "> Remarks: - Notice how, on the last painting",
+   "итог": "E-80-21"
+  },
+  {
+   "n": 71,
+   "начало": "- We requested to fit the canvas",
+   "итог": "E-80-22"
+  },
+  {
+   "n": 72,
+   "начало": "- This example shows famous paintings",
+   "итог": "E-80-23"
+  },
+  {
+   "n": 73,
+   "начало": "In the Denver architecture book, the",
+   "итог": "E-80-24"
+  },
+  {
+   "n": 74,
+   "начало": "Here's an example of a descriptive prompt",
+   "итог": "ничего: вводная (повтор E-80-24)"
+  },
+  {
+   "n": 75,
+   "начало": "tilted_visual_prompt = An upright, high-fidelity rendition",
+   "итог": "E-80-25"
+  },
+  {
+   "n": 76,
+   "начало": "> Remarks: - To get these results",
+   "итог": "E-80-26"
+  },
+  {
+   "n": 77,
+   "начало": "- The native visual understanding automatically",
+   "итог": "E-80-27"
+  },
+  {
+   "n": 78,
+   "начало": "- Notice how the consistency is preserved",
+   "итог": "E-80-28"
+  },
+  {
+   "n": 79,
+   "начало": "- The results, with this rather generic",
+   "итог": "E-80-29"
+  },
+  {
+   "n": 80,
+   "начало": "In this last test, the input visual",
+   "итог": "ничего: вводная к примеру (описание задачи)"
+  },
+  {
+   "n": 81,
+   "начало": "Here's an example of a key-value prompt",
+   "итог": "E-80-30 (термин 'key-value prompt' отражён в заметке)"
+  },
+  {
+   "n": 82,
+   "начало": "warped_visual_prompt = - Task: Digital extraction",
+   "итог": "E-80-30"
+  },
+  {
+   "n": 83,
+   "начало": "> It is really impressive that such",
+   "итог": "E-80-31, E-80-32, E-80-33"
+  },
+  {
+   "n": 84,
+   "начало": "Now, let's add a colorization step",
+   "итог": "ничего: переход"
+  },
+  {
+   "n": 85,
+   "начало": "## Colorization: Our restoration step respected the",
+   "итог": "E-80-34"
+  },
+  {
+   "n": 86,
+   "начало": "Here is a possible colorization function",
+   "итог": "ничего: вводная (повтор E-80-35)"
+  },
+  {
+   "n": 87,
+   "начало": "COLORIZATION_PROMPT = Colorize this image in",
+   "итог": "E-80-35"
+  },
+  {
+   "n": 88,
+   "начало": "Let's modernize our 1485 illustration + colorize(Source.incunable)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 89,
+   "начало": "> All details are preserved, as",
+   "итог": "E-80-36"
+  },
+  {
+   "n": 90,
+   "начало": "Let's colorize our museum guidebook illustrations",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 91,
+   "начало": "> Our prompt is very open",
+   "итог": "E-80-37"
+  },
+  {
+   "n": 92,
+   "начало": "What about our Denver buildings?",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 93,
+   "начало": "> As requested, they all look",
+   "итог": "E-80-38"
+  },
+  {
+   "n": 94,
+   "начало": "It's possible to go further by",
+   "итог": "E-80-39"
+  },
+  {
+   "n": 95,
+   "начало": "Let's make our Alice drawing into a watercolor + watercolor_prompt",
+   "итог": "E-80-40"
+  },
+  {
+   "n": 96,
+   "начало": "What about making it a traditional painting? + painting_prompt",
+   "итог": "E-80-41"
+  },
+  {
+   "n": 97,
+   "начало": "We can also change image compositions.",
+   "итог": "E-80-42, E-80-43"
+  },
+  {
+   "n": 98,
+   "начало": "Let's see how we can detect engravings + detect_objects/restore_objects(Source.engravings)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 99,
+   "начало": "visual_to_digital_graphic_prompt = Transform this visual",
+   "итог": "E-80-44"
+  },
+  {
+   "n": 100,
+   "начало": "We can also transform the same engravings into photos + visual_to_photo_prompt",
+   "итог": "E-80-45"
+  },
+  {
+   "n": 101,
+   "начало": "> As photos are generally full-bleed,",
+   "итог": "E-80-46"
+  },
+  {
+   "n": 102,
+   "начало": "It's really up to our imagination,",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 103,
+   "начало": "Let's add a final step to",
+   "итог": "ничего: переход"
+  },
+  {
+   "n": 104,
+   "начало": "## Cinematization: We've used rather closed prompts",
+   "итог": "E-80-47, E-80-48"
+  },
+  {
+   "n": 105,
+   "начало": "Here is a possible generic cinematization function + CINEMATIZATION_PROMPT",
+   "итог": "E-80-49"
+  },
+  {
+   "n": 106,
+   "начало": "Let's cinematize the Alice's Adventures drawing",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 107,
+   "начало": "> This looks like a high-budget",
+   "итог": "E-80-50"
+  },
+  {
+   "n": 108,
+   "начало": "Let's test the workflow on a page from the Wonderful Wizard of Oz (detect/restore/cinematize)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 109,
+   "начало": "> The cast for a new movie",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 110,
+   "начало": "Cinematic images have various use cases: - These cinematized stills",
+   "итог": "E-80-51"
+  },
+  {
+   "n": 111,
+   "начало": "- As they are photorealistic representations",
+   "итог": "ничего: маркетинг без содержания (варианты использования)"
+  },
+  {
+   "n": 112,
+   "начало": "- You can use them in many",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 113,
+   "начало": "## Conclusion: - Gemini's native spatial understanding",
+   "итог": "ничего: не про генерацию (итоги детекции)"
+  },
+  {
+   "n": 114,
+   "начало": "- We tested the detection of illustrations / straight, tilted, warped",
+   "итог": "ничего: не про генерацию (итоги детекции)"
+  },
+  {
+   "n": 115,
+   "начало": "- The core implementation was straightforward / This solution is very flexible / structured outputs",
+   "итог": "ничего: не про генерацию (итоги кода детекции)"
+  },
+  {
+   "n": 116,
+   "начало": "- Then, Nano Banana allows you",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 117,
+   "начало": "- We tested a workflow with restoration",
+   "итог": "ничего: повтор E-80-52 / E-80-53"
+  },
+  {
+   "n": 118,
+   "начало": "- The possibilities seem really endless",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 119,
+   "начало": "## More! - Run this other Nano Banana notebook ...",
+   "итог": "ничего: обвязка (ссылки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-80-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana models can be used to restore and creatively transform visual objects extracted from photos.",
+   "цитата": "Once the visual objects are detected, we'll extract them and then use Gemini's image editing capabilities (specifically the Nano Banana models) to restore and creatively transform them.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": "Nano Banana models (без уточнения версии)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "вводный тезис ноутбука"
+  },
+  {
+   "код": "E-80-2",
+   "вид": "ограничение",
+   "утверждение_en": "On Agent Platform (Vertex AI), preview models require the location to be set to global; generally available models can use the closest Google model endpoint location.",
+   "цитата": "For preview models, the location must be set to `global`. For generally available models, we can choose the closest location among the",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini API",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В коде (check_client_for_model) комментарий 'Preview models are only available on the \"global\" location'. Какие image-модели preview — см. E-80-4."
+  },
+  {
+   "код": "E-80-3",
+   "вид": "факт",
+   "утверждение_en": "For object editing, the notebook lists Gemini 2.5 Flash Image, Gemini 3 Pro Image and Gemini 3.1 Flash Image, also known as Nano Banana, Nano Banana Pro and Nano Banana 2.",
+   "цитата": "For object editing: Gemini 2.5 Flash Image, Gemini 3 Pro Image, or Gemini 3.1 Flash Image (also known as Nano Banana 🍌, Nano Banana Pro 🍌, and Nano Banana 2 🍌).",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini models",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "соответствие имён: 2.5 Flash Image = Nano Banana, 3 Pro Image = Nano Banana Pro, 3.1 Flash Image = Nano Banana 2"
+  },
+  {
+   "код": "E-80-4",
+   "вид": "факт",
+   "утверждение_en": "In the notebook code, gemini-2.5-flash-image is grouped as Generally Available and is the default editing model, while gemini-3-pro-image and gemini-3.1-flash-image are grouped under Preview.",
+   "цитата": "GEMINI_3_PRO_IMAGE = \"gemini-3-pro-image\"  # Nano Banana Pro",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из комментариев '# Generally Available (GA)' / '# Preview' и строки 'DEFAULT = GEMINI_2_5_FLASH_IMAGE' в классе ImageModel",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "статус на момент ноутбука; дата неизвестна (копирайт 2026). Строки в коде: GEMINI_2_5_FLASH_IMAGE под '# Generally Available (GA)', GEMINI_3_PRO_IMAGE и GEMINI_3_1_FLASH_IMAGE под '# Preview'."
+  },
+  {
+   "код": "E-80-5",
+   "вид": "приём",
+   "утверждение_en": "The notebook's image-editing helper sends the source image(s) first and the text prompt last in the contents list.",
+   "цитата": "contents = [*sources, prompt.strip()]",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код)",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "порядок 'картинки, потом текст' — так сделано в ноутбуке; страница не утверждает, что он обязателен"
+  },
+  {
+   "код": "E-80-6",
+   "вид": "факт",
+   "утверждение_en": "When parsing an image-model response, the notebook displays any text parts and takes the first image part, expecting a single output image.",
+   "цитата": "break  # There should be a single image",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из кода check_get_output_image_from_response",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "ответ может содержать текстовые части рядом с картинкой; при отсутствии candidates код печатает prompt_feedback.block_reason и block_reason_message"
+  },
+  {
+   "код": "E-80-7",
+   "вид": "факт",
+   "утверждение_en": "If a response has no candidates, the reason can be read from response.prompt_feedback.block_reason and block_reason_message.",
+   "цитата": "if block_reason := response.prompt_feedback.block_reason:",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из кода",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "диагностика блокировки запроса в коде; текст страницы это не комментирует"
+  },
+  {
+   "код": "E-80-8",
+   "вид": "факт",
+   "утверждение_en": "For Gemini models, a box_2d bounding box typically represents coordinates normalized to a (0, 0, 1000, 1000) space for a (0, 0, width, height) input image.",
+   "цитата": "Typically, for Gemini models, a `box_2d` bounding box represents coordinates normalized to a `(0, 0, 1000, 1000)` space for a `(0, 0, width, height)` input image.",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting visual objects",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "относится к текстовым моделям детекции (не к image-моделям); полезно для пайплайна детекция -> вырезка -> редактирование"
+  },
+  {
+   "код": "E-80-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini returns box_2d as [y1, x1, y2, x2] normalized to 0-1000; the notebook converts it to [x1, y1, x2, y2] in pixel coordinates for Pillow.",
+   "цитата": "- Before: [y1, x1, y2, x2] normalized to 0-1000, as returned by Gemini",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting visual objects",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (docstring в коде)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "порядок y перед x; модели детекции, не image"
+  },
+  {
+   "код": "E-80-10",
+   "вид": "приём",
+   "утверждение_en": "The notebook adds a small pixel margin around each detected object when cropping, to give more context for a better understanding of spatial distortions before editing.",
+   "цитата": "# Margin added to detected/cropped objects, giving more context for a better understanding of spatial distortions",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (комментарий в коде; CROP_MARGIN_PX = 10)",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "вырезка с запасом 10 px подаётся как входная картинка в модель редактирования"
+  },
+  {
+   "код": "E-80-11",
+   "вид": "факт",
+   "утверждение_en": "You can ask for a 'segmentation mask' in the prompt and get a base64-encoded PNG where each pixel gives the 0-255 probability it belongs to the object within the bounding box.",
+   "цитата": "you can also ask for a \"segmentation mask\" in the prompt and you'll get a base64-encoded PNG (each pixel giving the 0-255 probability it belongs to the object within the bounding box).",
+   "источник_цитаты": "txt",
+   "раздел": "Detecting visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "возможность моделей понимания изображений (не image-генерации); ссылка на segmentation doc"
+  },
+  {
+   "код": "E-80-12",
+   "вид": "факт",
+   "утверждение_en": "The notebook uses Gemini 2.5 Flash Image (Nano Banana) by default for editing, describing it as a state-of-the-art image generation and editing model.",
+   "цитата": "For this, we'll use Gemini 2.5 Flash Image (also known as Nano Banana 🍌) by default, a state-of-the-art image generation and editing model.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-13",
+   "вид": "приём",
+   "утверждение_en": "The notebook's default editing config requests only image output via response_modalities=['IMAGE']; passing no config is also valid and uses the model endpoint default config.",
+   "цитата": "DEFAULT_EDITING_CONFIG = GenerateContentConfig(response_modalities=[\"IMAGE\"])",
+   "источник_цитаты": "txt",
+   "раздел": "Editing visual objects",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код); вторая часть из комментария 'Note: \"config is None\" is valid and will use the model endpoint default config'",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "каждый вырезанный объект отправляется отдельным запросом (цикл по source_images)"
+  },
+  {
+   "код": "E-80-14",
+   "вид": "правило",
+   "утверждение_en": "For a restoration step, craft a prompt that is generic enough to cover most use cases but specific enough to account for restoration needs.",
+   "цитата": "For this restoration step, we need to craft a prompt that is generic enough (to cover most use cases) but also specific enough (to take into account restoration needs).",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-15",
+   "вид": "объяснение",
+   "утверждение_en": "An image editing prompt is natural language, typically imperative (describing the actions to perform on the input) or declarative (describing the expected output).",
+   "цитата": "An image editing prompt is based on natural language, typically using imperative or declarative instructions. With an imperative prompt, you describe the actions to perform on the input, while with a declarative prompt, you describe the expected output.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "определение терминов страницы; далее 'declarative' называется также 'descriptive'"
+  },
+  {
+   "код": "E-80-16",
+   "вид": "объяснение",
+   "утверждение_en": "Imperative and declarative editing prompts are both possible and give equivalent results; the choice is a matter of preference as long as the prompt makes sense.",
+   "цитата": "Both are possible and will provide equivalent results. Your choice is really a matter of preference, as long as the prompt makes sense.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "ср. E-80-24: для сложной геометрии descriptive писать проще"
+  },
+  {
+   "код": "E-80-17",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana models understand photographic and paper artifacts in book photos and can edit accordingly, which simplifies the prompt.",
+   "цитата": "The Nano Banana models understand these subtleties and can edit images accordingly, which simplifies the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "Nano Banana models (без уточнения версии)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "'these subtleties' = various photographic and paper artifacts"
+  },
+  {
+   "код": "E-80-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Imperative restoration prompt as a bullet list: isolate and straighten on pure white, clean artifacts while preserving details, center and scale to fit with minimal symmetrical margins without distortion or cropping.",
+   "цитата": "- Isolate and straighten the visual on a pure white background, excluding any surrounding text.\n- Clean up all physical artifacts and noise while preserving every original detail.\n- Center the result and scale it to fit the canvas with minimal, symmetrical margins, ensuring no distortion or cropping.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Структура: 3 императивных пункта = 3 группы операций: (1) изоляция+выпрямление+фон+исключение текста, (2) чистка артефактов + оговорка сохранения ('while preserving every original detail'), (3) геометрия кадра: центр, масштаб, поля, запрет искажения/обрезки. Работу делают глаголы-действия и явные запреты ('excluding', 'ensuring no distortion or cropping'). Модель по умолчанию NB (DEFAULT)."
+  },
+  {
+   "код": "E-80-19",
+   "вид": "приём",
+   "утверждение_en": "For more deterministic restoration outputs, the notebook uses low randomness: temperature 0.0, top_p 0.0, seed 42, with image-only response modality.",
+   "цитата": "# Default config with low randomness for more deterministic restoration outputs",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код RESTORATION_CONFIG)",
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "значения: temperature=0.0, top_p=0.0, seed=42, response_modalities=['IMAGE']; для колоризации/кинематизации используется DEFAULT_EDITING_CONFIG без этих настроек"
+  },
+  {
+   "код": "E-80-20",
+   "вид": "приём",
+   "утверждение_en": "A generic restoration prompt ('clean up all physical artifacts') may leave some artifacts; it could be made more specific to remove more or fewer artifacts.",
+   "цитата": "Note that our prompt is generic (_\"clean up all physical artifacts\"_) and could be made more specific to remove more or fewer artifacts.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "пример оставшихся артефактов: обесцвечивание бумаги на мече, растёкшиеся чернила на доспехах"
+  },
+  {
+   "код": "E-80-21",
+   "вид": "факт",
+   "утверждение_en": "In restoration, an occluding object (a bookmark) was removed and the hidden part inpainted to complete the painting.",
+   "цитата": "Notice how, on the last painting, the orange bookmark is properly removed and the hidden part inpainted to complete the painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "наблюдение на одном примере"
+  },
+  {
+   "код": "E-80-22",
+   "вид": "предупреждение",
+   "утверждение_en": "A request to fit the canvas with minimal, symmetrical margins leaves a degree of freedom: depending on the aspect ratio and type of the visual, results can have different white margins.",
+   "цитата": "Depending on the aspect ratio and type of the visual, this degree of freedom can result in different white margins.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "форматы_разрешение"
+   ],
+   "заметка": "'degree of freedom' — термин ноутбука для неопределённости промпта"
+  },
+  {
+   "код": "E-80-23",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana does not fetch any reference images and only uses the provided input; private paintings would be restored the same way as famous ones.",
+   "цитата": "Nano Banana does not fetch any reference images and only uses the provided input. If these were photos of private paintings, they would be restored in the same way.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (контекст: gemini-2.5-flash-image по умолчанию)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "важно: модель не подтягивает известный оригинал (Ван Гог) из памяти/сети"
+  },
+  {
+   "код": "E-80-24",
+   "вид": "приём",
+   "утверждение_en": "When several geometric transformations are involved and an imperative prompt detailing all operations is hard to write, a descriptive prompt that directly describes the expected output can be more straightforward.",
+   "цитата": "When several geometric transformations are involved, it can be challenging to craft an imperative prompt that details all the operations to perform. Instead, a descriptive prompt can be more straightforward by directly describing the expected output.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "Descriptive restoration prompt for tilted visuals: an upright, high-fidelity rendition isolated on pure white, filling the canvas with minimal uniform margins, clean, sharp and free of artifacts.",
+   "цитата": "An upright, high-fidelity rendition of the visual isolated against a pure white background, filling the canvas with minimal uniform margins. The output is clean, sharp, and free of physical artifacts.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Структура: описание результата (declarative), без глаголов-действий: 1-е предложение — объект+ориентация ('upright')+качество+фон+заполнение кадра; 2-е — свойства результата. Работу делают слова-состояния 'upright' и 'filling the canvas' вместо перечня геометрических коррекций (см. E-80-26)."
+  },
+  {
+   "код": "E-80-26",
+   "вид": "приём",
+   "утверждение_en": "Requesting an 'upright' visual 'filling the canvas' proved more straightforward than trying to account for all possible geometric corrections.",
+   "цитата": "the prompt focuses on requesting an \"upright\" visual \"filling the canvas\", which proves more straightforward to write than trying to account for all possible geometric corrections.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-27",
+   "вид": "объяснение",
+   "утверждение_en": "Native visual understanding automatically identifies the content type (photo, illustration, etc.) and the kinds of artifacts, allowing precise restorations out of the box.",
+   "цитата": "The native visual understanding automatically identifies the content type (photo, illustration, etc.) and the different artifacts (photographic, paper, printing, scanning…), allowing for precise restorations out of the box.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-28",
+   "вид": "факт",
+   "утверждение_en": "With a generic restoration prompt, the original medium of each visual is preserved: an illustration stays an illustration and photographs keep their photographic style.",
+   "цитата": "Notice how the consistency is preserved: the last visual is restored as an illustration, while the first visuals maintain their photographic style.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "наблюдение на примере"
+  },
+  {
+   "код": "E-80-29",
+   "вид": "приём",
+   "утверждение_en": "Beyond a generic prompt, it is possible to be more specific and request particular lighting, styles, colors.",
+   "цитата": "It is, of course, possible to be more specific and request particular lighting, styles, colors…",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-30",
+   "вид": "пример_промпта",
+   "утверждение_en": "Key-value restoration prompt for warped illustrations: Task, Subject, Corrections, Background, Border, Position as separate key-value lines.",
+   "цитата": "- Task: Digital extraction\n- Subject: Entire illustration within the outer sketchy lines\n- Corrections: Page curl, perspective distortion\n- Background: Pure white\n- Border: Sharp, perfect rectangle\n- Position: Center",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Третья форма промпта на странице — 'key-value prompt' (так названо во вводной фразе 'Here's an example of a key-value prompt focusing on restoring warped illustrations'). Порядок ключей: задача -> границы объекта -> какие искажения исправить -> фон -> форма рамки -> позиция. Коррекции названы терминами ('Page curl, perspective distortion'), а не описанием операций."
+  },
+  {
+   "код": "E-80-31",
+   "вид": "предупреждение",
+   "утверждение_en": "The key-value warped-restoration prompt is not fully stable and can generate less optimal results; it would benefit from being more precise.",
+   "цитата": "Note that this prompt is not fully stable and can generate less optimal results (it would benefit from being more precise).",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-32",
+   "вид": "приём",
+   "утверждение_en": "For complex transformations, craft prompts iteratively, going from the most difficult operation to the last details.",
+   "цитата": "If you have complex transformations, craft your prompts iteratively, going from the most difficult operation to the last details, and you might be pleasantly surprised.",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "порядок доводки: от самой трудной операции к деталям"
+  },
+  {
+   "код": "E-80-33",
+   "вид": "приём",
+   "утверждение_en": "Complex transformations can instead be processed in a couple of successive, easier steps, or with a larger model such as Nano Banana 2 or Nano Banana Pro.",
+   "цитата": "It's also possible to process the transformations in a couple of successive, easier steps, or to use a large model (e.g., Nano Banana 2 or Nano Banana Pro).",
+   "источник_цитаты": "txt",
+   "раздел": "Restoring visual objects",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": "страница называет Nano Banana 2 'large model' наряду с Pro — в сравнении с Nano Banana (2.5 Flash Image)"
+  },
+  {
+   "код": "E-80-34",
+   "вид": "приём",
+   "утверждение_en": "Recent image editing models excel at transforming image styles, starting with colors; this can generally be done directly with a simple, precise instruction.",
+   "цитата": "Recent image editing models excel at transforming image styles, starting with colors. This can generally be performed directly with a simple, precise instruction.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Colorization prompt: colorize in a modern book illustration style while maintaining all original details without any additions.",
+   "цитата": "Colorize this image in a modern book illustration style, maintaining all original details without any additions.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Структура: глагол-действие + целевой стиль + оговорка сохранения ('maintaining all original details') + запрет добавлений ('without any additions'). Одно предложение."
+  },
+  {
+   "код": "E-80-36",
+   "вид": "факт",
+   "утверждение_en": "Colorization can naturally fix some artifacts remaining after restoration, while preserving details as requested.",
+   "цитата": "Notice how the colorization can naturally fix some remaining artifacts (e.g., the paper discoloration in the sword or the ink bleed in the armor).",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "наблюдение; перед этим: 'All details are preserved, as requested in the prompt.'"
+  },
+  {
+   "код": "E-80-37",
+   "вид": "объяснение",
+   "утверждение_en": "A very open colorization prompt that only specifies a style can generate very creative colorizations.",
+   "цитата": "Our prompt is very open as it only specifies \"modern book illustration style\". This can generate very creative colorizations, but they all seem to make perfect sense.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-38",
+   "вид": "факт",
+   "утверждение_en": "A style request ('modern illustration') is applied even to visuals that originated from noisy photos.",
+   "цитата": "As requested, they all look like modern illustrations, including the first visuals (originating from noisy photos).",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-39",
+   "вид": "приём",
+   "утверждение_en": "It is possible to go beyond colorizing and transform the image into something significantly different.",
+   "цитата": "It's possible to go further by not only \"colorizing\" but also \"transforming\" the image into something significantly different.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-40",
+   "вид": "пример_промпта",
+   "утверждение_en": "Short transformation prompt: transform this visual into a warm, watercolor painting.",
+   "цитата": "Transform this visual into a warm, watercolor painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Структура: 'Transform this visual into' + прилагательное настроения + медиум. Минимальный промпт смены медиума."
+  },
+  {
+   "код": "E-80-41",
+   "вид": "пример_промпта",
+   "утверждение_en": "Short transformation prompt: transform this visual into a traditional painting.",
+   "цитата": "Transform this visual into a traditional painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Та же рамка 'Transform this visual into …', только медиум без прилагательного настроения."
+  },
+  {
+   "код": "E-80-42",
+   "вид": "объяснение",
+   "утверждение_en": "Some compositions are implied by default depending on context: illustrations often have margins, while photos generally have edge-to-edge (full-bleed) compositions.",
+   "цитата": "Depending on the context, some compositions are more or less implied by default. For example, illustrations often have margins, while photos generally have edge-to-edge (full-bleed in the printing world) compositions.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-43",
+   "вид": "приём",
+   "утверждение_en": "When possible, refer to a type of visual, which intrinsically brings a lot of semantics to the context, and adjust the instructions accordingly.",
+   "цитата": "When possible, it's interesting to refer to a type of visual (which intrinsically brings a lot of semantics to the context) and adjust the instructions accordingly.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-44",
+   "вид": "пример_промпта",
+   "утверждение_en": "Transformation prompt into a full-color flat digital graphic, explicitly extending the content for a full-bleed effect.",
+   "цитата": "Transform this visual into a full-color, flat digital graphic, extending the content for a full-bleed effect.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: рамка 'Transform this visual into' + тип визуала ('flat digital graphic') + явная композиционная инструкция ('extending the content for a full-bleed effect'), т.к. у графики по умолчанию подразумеваются поля (см. E-80-42)."
+  },
+  {
+   "код": "E-80-45",
+   "вид": "пример_промпта",
+   "утверждение_en": "Transformation prompt into a high-end, modern camera photograph, without any composition instruction.",
+   "цитата": "Transform this visual into a high-end, modern camera photograph.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Композиция не указана намеренно: фото по умолчанию full-bleed (см. E-80-46)."
+  },
+  {
+   "код": "E-80-46",
+   "вид": "правило",
+   "утверждение_en": "As photos are generally full-bleed, a prompt that transforms a visual into a photo does not need to specify a composition.",
+   "цитата": "As photos are generally full-bleed, the prompt does not need to specify a composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-47",
+   "вид": "объяснение",
+   "утверждение_en": "'Closed' prompts use specific instructions and constraints to control outputs; 'open' prompts let the model generate in full creative mode.",
+   "цитата": "We've used rather \"closed\" prompts so far, crafting specific instructions and constraints to control the outputs. It's possible to go even further with \"open\" prompts and generate images in full creative mode.",
+   "источник_цитаты": "txt",
+   "раздел": "Cinematization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "термины страницы"
+  },
+  {
+   "код": "E-80-48",
+   "вид": "приём",
+   "утверждение_en": "It can be useful to refer to photographic or cinematographic terminology, as it encompasses many visual techniques.",
+   "цитата": "Notably, it can be interesting to refer to photographic or cinematographic terminology as it encompasses many visual techniques.",
+   "источник_цитаты": "txt",
+   "раздел": "Cinematization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-49",
+   "вид": "пример_промпта",
+   "утверждение_en": "Open cinematization prompt: reimagine this image as a joyful, modern live-action cinematic movie still with professional lighting and composition.",
+   "цитата": "Reimagine this image as a joyful, modern live-action cinematic movie still featuring professional lighting and composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Cinematization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: глагол 'Reimagine' (открытое преобразование) + настроение ('joyful') + жанр/медиум ('modern live-action cinematic movie still') + общие ('professional lighting and composition') без конкретики. Работу делает кинотермин 'movie still'."
+  },
+  {
+   "код": "E-80-50",
+   "вид": "объяснение",
+   "утверждение_en": "An open cinematic prompt has many degrees of freedom but is likely to yield sharp-focus foreground figures, gradual background blur, 'golden hour' lighting and detailed textures.",
+   "цитата": "There are lots of degrees of freedom in the prompt, but you're likely to get foreground figures in sharp focus, a gradual background blur, \"golden hour\" lighting (a magical ingredient for many cinematographers), and detailed textures.",
+   "источник_цитаты": "txt",
+   "раздел": "Cinematization",
+   "модели": [
+    "Nano Banana (gemini-2.5-flash-image)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "что модель подставляет по умолчанию на слово 'cinematic movie still'"
+  },
+  {
+   "код": "E-80-51",
+   "вид": "приём",
+   "утверждение_en": "Cinematized stills can serve as reference images for video generation models like Veo.",
+   "цитата": "These cinematized stills can be perfect \"reference images\" for video generation models like Veo.",
+   "источник_цитаты": "txt",
+   "раздел": "Cinematization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "ссылка на Generate Veo videos from reference images"
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-80-52",
+   "вид": "приём",
+   "утверждение_en": "The notebook splits editing into a chain of simple single-purpose steps (restore, then colorize/transform or cinematize), each taking the previous step's output image as input, rather than one complex prompt.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-80-18, E-80-35, E-80-49, E-80-33 и структуры object_editing_function (source_step -> target_step)",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "цитаты нет: структура кода и разделов"
+  },
+  {
+   "код": "E-80-53",
+   "вид": "объяснение",
+   "утверждение_en": "Three prompt forms are demonstrated for the same editing task: imperative bullet list, declarative/descriptive sentence(s), and key-value list; the page ties the choice to how easy the transformation is to describe.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-80-15, E-80-16, E-80-18, E-80-25, E-80-30, E-80-24",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-54",
+   "вид": "приём",
+   "утверждение_en": "Fidelity-oriented edit prompts on this page consistently include an explicit preservation/no-addition clause ('while preserving every original detail', 'maintaining all original details without any additions').",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-80-18, E-80-35",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "креативные промпты (watercolor, cinematization) таких оговорок не содержат"
+  },
+  {
+   "код": "E-80-55",
+   "вид": "приём",
+   "утверждение_en": "Deterministic low-randomness settings are used only for the fidelity step (restoration); the creative steps (colorization, transformation, cinematization) use the default config.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-80-19, E-80-13",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-80-56",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Transformation prompts on the page share the frame 'Transform this visual into <type of visual>[, composition instruction].' with composition added only when the target visual type does not imply it.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Colorization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-80-40, E-80-41, E-80-44, E-80-45, E-80-42, E-80-46",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Мягкое напряжение (не противоречие): E-80-16 утверждает, что императивный и декларативный промпты дают эквивалентный результат и выбор — дело вкуса; позже E-80-24/E-80-26 рекомендуют descriptive для сложной геометрии — но как более простой в написании, а не как дающий иной результат.",
+  "Текст (раздел Gemini API) говорит, что preview-модели требуют location=global; но функция check_client_for_model переключает на global только модели, чьё имя оканчивается на '-preview', а ID image-моделей под комментарием '# Preview' ('gemini-3-pro-image', 'gemini-3.1-flash-image') этим суффиксом не оканчиваются (см. E-80-2, E-80-4).",
+  "Для детекции: константа GEMINI_3_FLASH = \"gemini-3.5-flash\", а текст говорит 'with Gemini 3 Flash' — несоответствие имени и ID (не про генерацию картинок)."
+ ],
+ "не_сказано": [
+  "Не задаётся aspect ratio / разрешение выходной картинки (image_config не используется); поля и формат вывода остаются 'degree of freedom' (E-80-22).",
+  "Не сказано, влияет ли порядок 'картинка до текста' на результат — просто так сделано в коде (E-80-5).",
+  "Нет ничего про водяной знак/SynthID, цены, лимиты image-моделей.",
+  "Не сравнивается качество NB / NB2 / NB Pro на этих задачах, кроме совета взять 'large model' для сложных трансформаций (E-80-33).",
+  "Не объясняется, почему выбраны temperature 0 / top_p 0 / seed 42 именно для image-модели и насколько они делают вывод воспроизводимым."
+ ],
+ "сомнения": [
+  "Даты публикации нет; статус Preview у gemini-3-pro-image / gemini-3.1-flash-image может быть устаревшим (другие страницы партии говорят о GA).",
+  "Раздел детекции (box_2d, segmentation mask) — про текстовые модели Gemini, не про image-модели; взято как 'другое', т.к. это вход в пайплайн редактирования.",
+  "Многие 'факты' (E-80-21, E-80-28, E-80-36, E-80-38) — наблюдения автора на единичных примерах, не гарантии."
+ ]
+}

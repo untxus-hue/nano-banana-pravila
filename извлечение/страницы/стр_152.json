@@ -1,0 +1,611 @@
+{
+ "id": 152,
+ "url": "https://developers.googleblog.com/en/gemini-2-5-flash-image-now-ready-for-production-with-new-aspect-ratios/",
+ "заголовок": "Gemini 2.5 Flash Image now ready for production with new aspect ratios",
+ "дата_в_тексте": "OCT. 2, 2025 (в тексте); JSON-LD datePublished 2025-10-02",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "авторы — сотрудники Google: Alisa Fortin, Naina Raisinghani (GenAI Product), Seth Odoom — Product Manager; Guillaume Vernade — Gemini Developer Advocate; текст от лица Google («Our state-of-the-art image generation and editing model»); заголовок сайта «Google Developers Blog». Строки © Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "GA-анонс Gemini 2.5 Flash Image в Google Developers Blog (для разработчиков): модель готова к продакшену; новые функции — 10 соотношений сторон (явный список по группам Landscape/Square/Portrait/Flexible) и вывод только изображения. Истории партнёров: Cartwheel (Pose Mode — 3D-позы + модель: ракурсы и позы с сохранением знаний о мире), Volley (игра Wit's End: портреты, сцены, мультиперсонажные композиции, итеративные правки голосом/чатом, латентность <10 с). Build mode AI Studio и примеры приложений (Bananimate, Enhance, Fit check). Цена $0.039 за изображение = $30/1M выходных токенов. Рабочий пример Python: промпт-редактирование фото «в 1980-е», aspect_ratio=\"16:9\" через ImageConfig, response_modalities=[\"IMAGE\"]. Термины: «image-only output», «Pose Mode», «slot machine user experience», «build mode».",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image; «Nano Banana» в описаниях приложений; «Gemini 2.5 Flash» — для прочих модальностей в ценах)"
+ ],
+ "структура": [
+  "Заголовок/дата/авторы",
+  "Вступление (GA, возможности, доступ, 10 соотношений сторон)",
+  "What people are building (Cartwheel, Volley, хакатоны)",
+  "Start building (docs, build mode, примеры приложений, цена, пример кода)",
+  "Related Posts / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 2.5 Flash Image now ready … - Google Developers Blog (строки 1-4)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Community/Events Learn Blog YouTube Search (строки 5-13)",
+   "итог": "ничего: обвязка сайта (меню)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 2.5 Flash Image now ready (строка 14)",
+   "итог": "ничего: заголовок статьи, содержание учтено в E-152-1, E-152-2"
+  },
+  {
+   "n": 4,
+   "начало": "OCT. 2, 2025 (строка 15)",
+   "итог": "ничего: метаданные (дата публикации)"
+  },
+  {
+   "n": 5,
+   "начало": "Alisa Fortin Product Manager Naina (строки 16-24)",
+   "итог": "ничего: метаданные авторов (учтено в официальности)"
+  },
+  {
+   "n": 6,
+   "начало": "Share Facebook Twitter LinkedIn Mail (строки 25-29)",
+   "итог": "ничего: обвязка сайта (Share)"
+  },
+  {
+   "n": 7,
+   "начало": "Our state-of-the-art image generation and",
+   "итог": "E-152-1, E-152-2"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini 2.5 Flash Image empowers users (строки 31-37)",
+   "итог": "E-152-3, E-152-4"
+  },
+  {
+   "n": 9,
+   "начало": "Further expanding creative possibilities, the model",
+   "итог": "E-152-5"
+  },
+  {
+   "n": 10,
+   "начало": "Supported ratios include: Landscape … Flexible (строки 39-43)",
+   "итог": "E-152-6"
+  },
+  {
+   "n": 11,
+   "начало": "Created images with different aspect ratios",
+   "итог": "ничего: подпись к иллюстрации"
+  },
+  {
+   "n": 12,
+   "начало": "What people are building",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 13,
+   "начало": "Cartwheel is harnessing AI to move (строки 46-47)",
+   "итог": "E-152-7"
+  },
+  {
+   "n": 14,
+   "начало": "“ Other models couldn't render characters (строки 48-51)",
+   "итог": "E-152-8"
+  },
+  {
+   "n": 15,
+   "начало": "Link to Youtube Video (visible only (строки 52-53)",
+   "итог": "ничего: обвязка сайта (заглушка видео)"
+  },
+  {
+   "n": 16,
+   "начало": "Volley , the creators of the (строки 54-55)",
+   "итог": "E-152-9"
+  },
+  {
+   "n": 17,
+   "начало": "“The model demonstrates state-of-the-art rule-following",
+   "итог": "E-152-10"
+  },
+  {
+   "n": 18,
+   "начало": "Link to Youtube Video (visible only (строки 57-58)",
+   "итог": "ничего: обвязка сайта (заглушка видео)"
+  },
+  {
+   "n": 19,
+   "начало": "It's been incredible to see the (строки 59-63)",
+   "итог": "ничего: маркетинг/сообщество (хакатоны Kaggle и Cerebral Valley, сферы применения без правил)"
+  },
+  {
+   "n": 20,
+   "начало": "Start building",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 21,
+   "начало": "Developers can begin building with Gemini (строки 65-73)",
+   "итог": "ничего: навигация к docs/cookbook, повтор E-152-2 и E-152-4"
+  },
+  {
+   "n": 22,
+   "начало": "Building with Gemini 2.5 Flash Image (строки 74-76)",
+   "итог": "E-152-11, E-152-12"
+  },
+  {
+   "n": 23,
+   "начало": "Bananimate : Create animated GIFs … Fit (строки 77-82)",
+   "итог": "E-152-13"
+  },
+  {
+   "n": 24,
+   "начало": "Gemini 2.5 Flash Image is priced (строки 83-85)",
+   "итог": "E-152-14"
+  },
+  {
+   "n": 25,
+   "начало": "Here is a sample code to",
+   "итог": "ничего: ввод к коду"
+  },
+  {
+   "n": 26,
+   "начало": "[код] from google import genai … (строки 87-95)",
+   "итог": "E-152-15 (строки импорта и client = genai.Client() — код без промпта)"
+  },
+  {
+   "n": 27,
+   "начало": "[код] response = client.models.generate_content( (строки 97-106)",
+   "итог": "E-152-16, E-152-17, E-152-18"
+  },
+  {
+   "n": 28,
+   "начало": "[код] for part in response.parts: (строки 108-111)",
+   "итог": "E-152-19"
+  },
+  {
+   "n": 29,
+   "начало": "Python Copied (строки 112-113)",
+   "итог": "ничего: обвязка сайта (виджет кода)"
+  },
+  {
+   "n": 30,
+   "начало": "We are continually amazed by the",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 31,
+   "начало": "posted in: AI Previous Next Related (строки 115-129)",
+   "итог": "ничего: обвязка сайта (теги, навигация, связанные посты от сентября 2026)"
+  },
+  {
+   "n": 32,
+   "начало": "Connect Blog Bluesky … Privacy (строки 130-160)",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-152-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image, Google's image generation and editing model, is generally available and ready for production environments.",
+   "цитата": "Our state-of-the-art image generation and editing model which has captured the imagination of the world, Gemini 2.5 Flash Image 🍌, is now generally available, ready for production environments",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "GA-статус на дату публикации. Эмодзи 🍌 в цитате — связь с именем Nano Banana (в тексте ниже «Nano Banana» используется в описаниях приложений)."
+  },
+  {
+   "код": "E-152-2",
+   "вид": "факт",
+   "утверждение_en": "With GA, Gemini 2.5 Flash Image gained a wider range of aspect ratios and the ability to specify image-only output.",
+   "цитата": "comes with new features like a wider range of aspect ratios in addition to being able to specify image-only output.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "«Image-only output» в прозе не раскрыт; в коде ниже это response_modalities=[\"IMAGE\"] (см. E-152-18). Повторено в разделе Start building."
+  },
+  {
+   "код": "E-152-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image can blend multiple images, maintain consistent characters for storytelling, perform targeted edits with natural language, and use Gemini's world knowledge for image generation and modification.",
+   "цитата": "Gemini 2.5 Flash Image empowers users to seamlessly blend multiple images, maintain consistent characters for richer storytelling, perform targeted edits with natural language, and leverage Gemini's extensive world knowledge for image generation and modification.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Четыре опорные возможности модели; число смешиваемых изображений не указано."
+  },
+  {
+   "код": "E-152-4",
+   "вид": "факт",
+   "утверждение_en": "The model is accessible through the Gemini API on Google AI Studio and on Vertex AI for enterprise use.",
+   "цитата": "The model is accessible through the\nGemini API\non\nGoogle AI Studio\nand on\nVertex AI\nfor enterprise use.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "api_код"
+   ],
+   "заметка": "Цитата с переносами строк .txt."
+  },
+  {
+   "код": "E-152-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image supports 10 aspect ratios, covering formats from cinematic landscapes to vertical social media posts.",
+   "цитата": "Further expanding creative possibilities, the model now supports 10 different aspect ratios. This allows for effortless content creation across various formats, from cinematic landscapes to vertical social media posts.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-152-6",
+   "вид": "лимит",
+   "утверждение_en": "Supported aspect ratios for Gemini 2.5 Flash Image: Landscape 21:9, 16:9, 4:3, 3:2; Square 1:1; Portrait 9:16, 3:4, 2:3; Flexible 5:4, 4:5.",
+   "цитата": "Supported ratios include:\nLandscape: 21:9, 16:9, 4:3, 3:2\nSquare: 1:1\nPortrait: 9:16, 3:4, 2:3\nFlexible: 5:4, 4:5",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Полный закрытый список (4+1+3+2 = 10, сходится с E-152-5). Группировка страницы: Landscape / Square / Portrait / Flexible (5:4 и 4:5 названы «Flexible»). Пиксельные размеры для соотношений не даны."
+  },
+  {
+   "код": "E-152-7",
+   "вид": "факт",
+   "утверждение_en": "Cartwheel combined its 3D posing tool with Gemini 2.5 Flash Image ('Pose Mode') to give artists direct control over character pose and consistency, moving beyond the 'slot machine user experience' of many image generators.",
+   "цитата": "is harnessing AI to move beyond the \"slot machine user experience\" of many image generators, giving artists direct control to bring their creative vision to life. After months of building their \"Pose Mode\" feature and finding that other models failed to deliver, the team found a solution in the Gemini 2.5 Flash Image. By combining Cartwheel's 3D posing tool with Gemini 2.5 Flash Image, they have created a powerful new image creation system that delivers unparalleled character control and consistency.",
+   "источник_цитаты": "txt",
+   "раздел": "What people are building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Текст Google о партнёре. Приём по сути: поза задаётся внешним 3D-инструментом (визуальный референс позы), а модель рендерит персонажа. Как именно поза передаётся в модель — не сказано. Термин «slot machine user experience» — генерация наугад без контроля."
+  },
+  {
+   "код": "E-152-8",
+   "вид": "факт",
+   "утверждение_en": "Per Cartwheel's co-founder, other models could not render characters from arbitrary camera angles or stay faithful to a pose without sacrificing world knowledge; Gemini 2.5 Flash Image was the first that could do both.",
+   "цитата": "Other models couldn't render characters from arbitrary camera angles or maintain faithfulness to a pose without sacrificing \"world knowledge\". The new Gemini 2.5 Flash Image model was the first that could provide both.",
+   "источник_цитаты": "txt",
+   "раздел": "What people are building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "модели_сравнение"
+   ],
+   "заметка": "Утверждение партнёра (Andrew Carr, Cartwheel), не Google; процитировано на странице Google."
+  },
+  {
+   "код": "E-152-9",
+   "вид": "факт",
+   "утверждение_en": "Volley uses Gemini 2.5 Flash Image in its game Wit's End to generate and edit visuals in-session: character portraits, dynamic scene stills, multi-character compositions, and quick iterative edits from chat or voice.",
+   "цитата": ", the creators of the AI powered dungeon crawler Wit's End, use Gemini 2.5 Flash Image to generate and edit visuals in-session—character portraits, dynamic scene stills, multi-character compositions, and quick iterative edits from chat or voice.",
+   "источник_цитаты": "txt",
+   "раздел": "What people are building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Текст Google о партнёре; показательные классы задач (портреты, стоп-кадры сцен, композиции из нескольких персонажей, итеративные правки)."
+  },
+  {
+   "код": "E-152-10",
+   "вид": "факт",
+   "утверждение_en": "Per Volley's CTO, the model shows strong rule-following to aesthetic guidance with latency under 10 seconds, enabling live applications such as letting players pick styles and refine outputs in multi-turn loops.",
+   "цитата": "The model demonstrates state-of-the-art rule-following to aesthetic guidance while retaining latency under <10s, unlocking many live applications, for example, letting players select styles and refine outputs in multi-turn loops.",
+   "источник_цитаты": "txt",
+   "раздел": "What people are building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "стиль"
+   ],
+   "заметка": "Утверждение партнёра (James Wilsterman, Volley), не Google. Латентность «under <10s» — наблюдение партнёра, не SLA."
+  },
+  {
+   "код": "E-152-11",
+   "вид": "факт",
+   "утверждение_en": "In Google AI Studio's build mode you can create and remix custom AI-powered apps from a single prompt and deploy directly from AI Studio or save the code to GitHub, for free.",
+   "цитата": "Building with Gemini 2.5 Flash Image is easy with Google AI Studio’s “\nbuild mode\n.” Instantly create and remix custom AI-powered apps from a single prompt, like \"Build me an image editing app with filters.\" When you're ready, deploy your creation directly from AI Studio or save the code to GitHub—all for free.",
+   "источник_цитаты": "txt",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Про построение приложений, не про генерацию картинок напрямую. Цитата с переносами строк .txt."
+  },
+  {
+   "код": "E-152-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example build-mode prompt for generating an image-editing app: \"Build me an image editing app with filters.\"",
+   "цитата": "\"Build me an image editing app with filters.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Это промпт для AI Studio build mode (генерация кода приложения), а НЕ промпт для генерации изображения. Структура: повелительное «Build me» + тип приложения + одна ключевая функция. Показывает, что одной фразы достаточно для каркаса."
+  },
+  {
+   "код": "E-152-13",
+   "вид": "факт",
+   "утверждение_en": "Example AI Studio apps built with Nano Banana: Bananimate (animated GIFs from your images and prompts), Enhance (a creative upscaler that infinitely zooms into photos), Fit check (a virtual fitting room: upload a photo of yourself and an outfit).",
+   "цитата": "Bananimate\n: Create animated GIFs with Nano Banana from your images and prompts.\nEnhance\n: Infinitely zoom into any photography with our creative upscaler. See if you can find the easter-egg (hint: 🍌)\nFit check\n: Upload a photo of yourself and an outfit to see how it looks on you. A virtual fitting room powered by Nano Banana.",
+   "источник_цитаты": "txt",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": "Fit check — пример композиции из двух входов (человек + одежда). Enhance назван «creative upscaler» — т.е. дорисовка, а не точное увеличение. Здесь модель названа «Nano Banana»."
+  },
+  {
+   "код": "E-152-14",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is priced at $0.039 per image, at $30.00 per 1 million output tokens; pricing for other input and output modalities follows standard Gemini 2.5 Flash pricing.",
+   "цитата": "Gemini 2.5 Flash Image is priced at $0.039 per image, with a rate of $30.00 per 1 million output tokens. Pricing for other input and output modalities aligns with the standard Gemini 2.5 Flash\npricing\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Цена на дату публикации. Ссылка pricing → ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash-image."
+  },
+  {
+   "код": "E-152-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example edit prompt used with an input photo: \"Create a photograph of the subject in this image as if they were living in the 1980s. The photograph should capture the distinct fashion, hairstyles, and overall atmosphere of that time period.\"",
+   "цитата": "prompt = \"Create a photograph of the subject in this image as if they were living in the 1980s. The photograph should capture the distinct fashion, hairstyles, and overall atmosphere of that time period.\"",
+   "источник_цитаты": "html",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Разбор: 1) медиум результата первым («Create a photograph»); 2) ссылка на субъект входного изображения указанием («the subject in this image») — субъект не описывается словами, берётся с фото; 3) преобразование-сценарий («as if they were living in the 1980s»); 4) второе предложение перечисляет, что должно передать эпоху: мода, причёски, общая атмосфера («should capture»). Работу делает связка «субъект из фото + эпоха + конкретные признаки эпохи». Цитата — строка кода из <pre> html (включая «prompt = »)."
+  },
+  {
+   "код": "E-152-16",
+   "вид": "инструкция",
+   "утверждение_en": "In the Python SDK, call client.models.generate_content with model=\"gemini-2.5-flash-image\" and pass the text prompt and the input image together in contents (here as [prompt, image]).",
+   "цитата": "model=\"gemini-2.5-flash-image\",\n    contents=[prompt, image],",
+   "источник_цитаты": "html",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "ID модели в коде — «gemini-2.5-flash-image» (GA, без суффикса preview). В примере текст идёт перед изображением; обязательность порядка не утверждается."
+  },
+  {
+   "код": "E-152-17",
+   "вид": "инструкция",
+   "утверждение_en": "Set the output aspect ratio via config=types.GenerateContentConfig(image_config=types.ImageConfig(aspect_ratio=\"16:9\")).",
+   "цитата": "image_config=types.ImageConfig(\n            aspect_ratio=\"16:9\",",
+   "источник_цитаты": "html",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Параметр aspect_ratio в ImageConfig — строка из списка E-152-6. В примере соотношение задано и при редактировании входного фото (выход 16:9 при произвольном входе)."
+  },
+  {
+   "код": "E-152-18",
+   "вид": "инструкция",
+   "утверждение_en": "Request image-only output by setting response_modalities=[\"IMAGE\"] in GenerateContentConfig.",
+   "цитата": "response_modalities=[\"IMAGE\"],",
+   "источник_цитаты": "html",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Это и есть анонсированная опция «image-only output» (E-152-2) — связь выведена по коду, в прозе параметр не назван."
+  },
+  {
+   "код": "E-152-19",
+   "вид": "инструкция",
+   "утверждение_en": "Read the generated image from the response by iterating response.parts, checking part.inline_data is not None, and converting with part.as_image().",
+   "цитата": "for part in response.parts:\n  if part.inline_data is not None:\n    generated_image = part.as_image()",
+   "источник_цитаты": "html",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Изображение возвращается как inline_data в частях ответа."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-152-20",
+   "вид": "факт",
+   "утверждение_en": "The page's two prices imply roughly 1,300 output tokens per generated image ($0.039 ÷ $30 per 1M tokens).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Start building",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-152-14 (арифметика: 0.039 / 30 × 1 000 000 = 1300)",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Число токенов на картинку на странице прямо не названо; это расчёт."
+  },
+  {
+   "код": "E-152-21",
+   "вид": "объяснение",
+   "утверждение_en": "The announced 'image-only output' feature (prose) corresponds to response_modalities=[\"IMAGE\"] in the code sample; the prose never names the parameter and the code never names the feature.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-152-2, E-152-18",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Какие из 10 соотношений сторон новые, а какие были до GA — не уточнено; соотношение по умолчанию не названо.",
+  "Пиксельные размеры/разрешение для каждого соотношения не даны.",
+  "Число токенов на изображение прямо не названо (выводится из цен, E-152-20).",
+  "Нет упоминания SynthID/водяного знака, лимитов на число входных изображений, квот.",
+  "Как в Cartwheel поза передаётся модели (изображение-референс или иное) — не раскрыто."
+ ],
+ "сомнения": [
+  "Утверждения E-152-8 и E-152-10 — слова партнёров (Cartwheel, Volley), не Google; сохранены как цитируемые на официальной странице.",
+  "Родственная страница id 341 — тот же пост по другому URL (сравнение не делалось по условию задачи)."
+ ]
+}

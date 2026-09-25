@@ -1,0 +1,713 @@
+{
+ "id": 247,
+ "url": "https://support.google.com/gemini/answer/16275805?hl=en",
+ "заголовок": "Gemini Apps limits & upgrades for Google AI subscribers - Gemini Apps Help",
+ "дата_в_тексте": "нет даты публикации/обновления (в html «Last updated» только в JS-шаблоне без значения); в тексте: «Starting on May 17, 2026 there will be changes to usage limits»; подвал «©2026 Google»",
+ "официальность": {
+  "домен": "support.google.com (Gemini Apps Help)",
+  "второй_признак": "подвал «©2026 Google» + Privacy Policy/Terms of Service; текст от лица Google («we may at times have to cap the number of prompts»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справка Gemini Apps для владельцев личных аккаунтов о лимитах использования по тарифам (без плана / AI Plus / AI Pro / AI Ultra). Структура: уведомление об изменении лимитов с 17.05.2026, принцип compute-based лимитов (окно 5 часов + недельный потолок), возраст, списки стран для тарифов, таблица множителей лимитов, описание текстовых моделей Gemini 3 и уровней thinking, контекстные окна, таблица доступности функций (значения — только значками в html), что делать при исчерпании, изменение лимитов, как смотреть расход. По изображениям — две строки таблицы функций: «Image generation with Nano Banana 2» (все тарифы) и «Redo images with Nano Banana Pro» (только платные), плюс общее «media generation consume more of your usage». Промптов нет. Повторяющийся акцент — лимиты могут меняться.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "Gemini 3 Flash-Lite / Gemini 3 Flash / Gemini 3 Pro (текстовые чат-модели)"
+ ],
+ "структура": [
+  "Обвязка справки",
+  "Notification (17.05.2026)",
+  "Вступление: compute-based лимиты",
+  "Important: личные аккаунты",
+  "What you need (возраст)",
+  "Where Google AI Plus is available (список)",
+  "Where Google AI Pro & Google AI Ultra are available (список)",
+  "Tip (поездки, Ultra)",
+  "Gemini app access and limits: Usage limits (таблица)",
+  "About Gemini 3 models: модели, Thinking level, Tip, Model Access (таблица)",
+  "Context windows (таблица)",
+  "Feature availability (таблица, значения в html)",
+  "More info about limits: при исчерпании, изменения лимитов, как узнать о близости лимита, зачем большой контекст",
+  "Навигация справки и подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini Apps limits & upgrades … Skip to main content … Help Center Community",
+   "итог": "ничего: обвязка (заголовок, шапка справки, строки 1-20)"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Apps limits & upgrades for Google AI subscribers",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 3,
+   "начало": "Notification / Starting on May 17, 2026 there will be changes",
+   "итог": "E-247-1"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini Apps have compute-based usage limits",
+   "итог": "E-247-2, E-247-3"
+  },
+  {
+   "n": 5,
+   "начало": "You can upgrade to a Google AI plan for expanded access",
+   "итог": "E-247-4"
+  },
+  {
+   "n": 6,
+   "начало": "Learn more about availalble subscriptions",
+   "итог": "ничего: ссылка (опечатка «availalble» в оригинале)"
+  },
+  {
+   "n": 7,
+   "начало": "Important: This article is for users managing Gemini Apps for a personal Google Account",
+   "итог": "E-247-5"
+  },
+  {
+   "n": 8,
+   "начало": "What you need / To use Gemini Apps with a Google AI plan in most countries",
+   "итог": "E-247-6"
+  },
+  {
+   "n": 9,
+   "начало": "To use Gemini Apps … European Economic Area, Switzerland, or the United Kingdom",
+   "итог": "E-247-6"
+  },
+  {
+   "n": 10,
+   "начало": "Some features may not be available for users under the age of 18 or 13",
+   "итог": "E-247-7"
+  },
+  {
+   "n": 11,
+   "начало": "Where Google AI Plus is available / Åland Islands … Zimbabwe",
+   "итог": "E-247-8 (список стран, строки 42-210)"
+  },
+  {
+   "n": 12,
+   "начало": "Where Google AI Pro & Google AI Ultra are available / Albania … Zimbabwe",
+   "итог": "E-247-8 (список стран, строки 211-372)"
+  },
+  {
+   "n": 13,
+   "начало": "Tip: If you travel from a country where Google AI Ultra is available",
+   "итог": "E-247-9"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini app access and limits / Important: Gemini Apps limits may change.",
+   "итог": "E-247-10"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini Apps usage limits are designed to ensure an optimal experience",
+   "итог": "E-247-11"
+  },
+  {
+   "n": 16,
+   "начало": "Usage limits / Plan / Limit / Without an AI plan / Standard limits … AI Ultra",
+   "итог": "E-247-12"
+  },
+  {
+   "n": 17,
+   "начало": "About Gemini 3 models / Important: Model names, versions, and availability may change.",
+   "итог": "E-247-13"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini Flash-Lite is an efficient workhorse model",
+   "итог": "ничего: описание текстовой чат-модели, генерация изображений не затронута"
+  },
+  {
+   "n": 19,
+   "начало": "Gemini Flash is a more powerful model",
+   "итог": "ничего: описание текстовой чат-модели"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini Pro is our most advanced model … response time for Gemini 3 Pro prompts will take longer",
+   "итог": "ничего: описание текстовой чат-модели (понимание изображений упомянуто, генерация — нет)"
+  },
+  {
+   "n": 21,
+   "начало": "Thinking level / Standard thinking / Extended thinking / Deep think (AI Ultra only)",
+   "итог": "ничего: уровни рассуждения чат-моделей; связь с генерацией изображений не указана"
+  },
+  {
+   "n": 22,
+   "начало": "Tip: More advanced models and higher thinking levels consume more of your usage.",
+   "итог": "E-247-14"
+  },
+  {
+   "n": 23,
+   "начало": "Model Access / Plan / Gemini 3 Flash-lite / Gemini 3 Flash / Gemini 3 Pro … Yes",
+   "итог": "ничего: доступ к текстовым моделям (все тарифы — Yes), изображения не затронуты"
+  },
+  {
+   "n": 24,
+   "начало": "Context windows / When you upload files to Gemini Apps … Plan / Context window / 32k tokens",
+   "итог": "E-247-15"
+  },
+  {
+   "n": 25,
+   "начало": "Feature availability / Some features are only available with Google AI subscription plans.",
+   "итог": "E-247-16"
+  },
+  {
+   "n": 26,
+   "начало": "таблица: Canvas / Gems / Storybook / Connected Apps / Quizzes & flashcards / Audio overviews / Screen automation / Slide generation / Deep Research",
+   "итог": "ничего: не функции изображений (по html — во всех тарифах Checkmark); Storybook и Slide generation могут включать картинки, но страница этого не говорит"
+  },
+  {
+   "n": 27,
+   "начало": "таблица: Daily brief / Gemini Spark",
+   "итог": "ничего: не функции изображений (по html Daily brief — с Plus, Gemini Spark — с Pro)"
+  },
+  {
+   "n": 28,
+   "начало": "таблица: Image generation with Nano Banana 2",
+   "итог": "E-247-17"
+  },
+  {
+   "n": 29,
+   "начало": "таблица: Redo images with Nano Banana Pro",
+   "итог": "E-247-18"
+  },
+  {
+   "n": 30,
+   "начало": "таблица: Video generation / Music generation / Scheduled actions / Early access to features / Priority access to some new features",
+   "итог": "ничего: видео/музыка/прочее, не изображения (по html: Video с Plus, Music все, Scheduled с Plus, приоритетный доступ — платные)"
+  },
+  {
+   "n": 31,
+   "начало": "More info about limits / What you can do when you reach a usage limit",
+   "итог": "E-247-19"
+  },
+  {
+   "n": 32,
+   "начало": "If you reach your five hour or weekly usage limits you can upgrade",
+   "итог": "E-247-19"
+  },
+  {
+   "n": 33,
+   "начало": "Learn how to upgrade",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 34,
+   "начало": "Usage limit changes / Limits may change without notice",
+   "итог": "E-247-20"
+  },
+  {
+   "n": 35,
+   "начало": "Important: For users without a Google AI plan, some features that require more compute",
+   "итог": "E-247-21"
+  },
+  {
+   "n": 36,
+   "начало": "If capacity changes, limits for users without a Google AI plan may be limited before",
+   "итог": "E-247-21"
+  },
+  {
+   "n": 37,
+   "начало": "How to tell if you’re close to a limit … To view your usage limits: Visit gemini.google.com … Usage Limits",
+   "итог": "E-247-22"
+  },
+  {
+   "n": 38,
+   "начало": "Why you might want a larger context window / with a 1M token context window",
+   "итог": "E-247-23"
+  },
+  {
+   "n": 39,
+   "начало": "If you exceed the context window, this could lead to responses",
+   "итог": "E-247-24"
+  },
+  {
+   "n": 40,
+   "начало": "Need more help? … Help 1 of 18 … 18 of 18 Use the Gemini app for Windows",
+   "итог": "ничего: обвязка (навигация по справке, строки 489-530)"
+  },
+  {
+   "n": 41,
+   "начало": "©2026 Google / Privacy Policy / Terms of Service / Language …",
+   "итог": "ничего: подвал (копирайт учтён в официальности; строки 531-636, включая служебные true/false)"
+  },
+  {
+   "n": 42,
+   "начало": "длинная дистанция: роль NB2 и NB Pro в Gemini Apps и общий пул лимитов",
+   "итог": "E-247-25"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-247-1",
+   "вид": "факт",
+   "утверждение_en": "Usage limits for Gemini Apps change starting May 17, 2026.",
+   "цитата": "Starting on May 17, 2026 there will be changes to usage limits for Gemini Apps.",
+   "источник_цитаты": "txt",
+   "раздел": "Notification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-17 (дата вступления изменений)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Ссылка «Learn more about these changes» ведёт на /gemini/answer/17004136 (html). Что именно меняется, на странице не сказано."
+  },
+  {
+   "код": "E-247-2",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini Apps usage limits are compute-based and factor in prompt complexity, the models and features used, and chat length.",
+   "цитата": "Gemini Apps have compute-based usage limits that determine how much you can interact with Gemini tools and features. These limits factor in the complexity of your prompt, the models and features you use, and the length of your chat.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимит — общий «вычислительный» бюджет, а не счётчик картинок; длинный чат (например, многоходовое редактирование) расходует больше."
+  },
+  {
+   "код": "E-247-3",
+   "вид": "лимит",
+   "утверждение_en": "The Gemini Apps usage limit refreshes every 5 hours until the weekly limit is reached.",
+   "цитата": "Your limit refreshes every 5 hours until you reach your weekly limit.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Два уровня: 5-часовое окно и недельный потолок."
+  },
+  {
+   "код": "E-247-4",
+   "вид": "факт",
+   "утверждение_en": "Upgrading to a Google AI plan expands access to features and models in Gemini Apps; these upgrades are part of select Google One paid plans for personal accounts.",
+   "цитата": "You can upgrade to a Google AI plan for expanded access to features and models in Gemini Apps. Gemini Apps upgrades are part of select Google One paid plans for personal accounts.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-5",
+   "вид": "ограничение",
+   "утверждение_en": "This article's limits apply to Gemini Apps on personal Google Accounts; work or school accounts are covered elsewhere.",
+   "цитата": "This article is for users managing Gemini Apps for a personal Google Account.",
+   "источник_цитаты": "txt",
+   "раздел": "Important",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимиты Workspace (рабочие/учебные аккаунты) здесь не описаны."
+  },
+  {
+   "код": "E-247-6",
+   "вид": "ограничение",
+   "утверждение_en": "Using Gemini Apps with a Google AI plan requires age 13+ (or the applicable local age) in most countries, and 18+ in the EEA, Switzerland and the UK.",
+   "цитата": "To use Gemini Apps with a Google AI plan in the European Economic Area, Switzerland, or the United Kingdom, you must be 18 years of age or older.",
+   "источник_цитаты": "txt",
+   "раздел": "What you need",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Порог 13+ для большинства стран — строки 35-37 .txt («must be 13 (or / the applicable age in your country / ) or over.») разбиты ссылкой, поэтому в цитату взята цельная строка про EEA/CH/UK."
+  },
+  {
+   "код": "E-247-7",
+   "вид": "ограничение",
+   "утверждение_en": "Some Gemini Apps features may be unavailable to users under 18 or under 13 (or the applicable local age).",
+   "цитата": "Some features may not be available for users under the age of 18 or 13 (or",
+   "источник_цитаты": "txt",
+   "раздел": "What you need",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "продукт_ui",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Какие именно функции (в т.ч. генерация изображений) — не сказано."
+  },
+  {
+   "код": "E-247-8",
+   "вид": "факт",
+   "утверждение_en": "Google AI Plus and Google AI Pro/Ultra are each available in an enumerated list of countries; the two lists differ slightly.",
+   "цитата": "Where Google AI Pro & Google AI Ultra are available",
+   "источник_цитаты": "txt",
+   "раздел": "Where Google AI Plus is available / Where Google AI Pro & Google AI Ultra are available",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Plus — 168 стран/территорий (строки 43-210), Pro & Ultra — 161 (строки 212-372). Только в Plus: French Guiana, New Caledonia, Saint Barthélemy, Saint Martin, Saint Pierre and Miquelon, Svalbard and Jan Mayen, Wallis and Futuna, Åland Islands. Только в Pro/Ultra: Caribbean Netherlands. Russia и China нет ни в одном списке."
+  },
+  {
+   "код": "E-247-9",
+   "вид": "ограничение",
+   "утверждение_en": "If you travel from a country where Google AI Ultra is available to one where it is not, you cannot upgrade or use Ultra until you return, though Ultra notifications may still appear.",
+   "цитата": "you won’t be able to upgrade or use Ultra until you return to a country where Ultra is supported.",
+   "источник_цитаты": "txt",
+   "раздел": "Tip",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-10",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini Apps limits may change, and access may be limited based on testing, experimentation or availability.",
+   "цитата": "Gemini Apps limits may change. Access is subject to change or may be limited based on testing, experimentation, or availability.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini app access and limits / Important",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-11",
+   "вид": "объяснение",
+   "утверждение_en": "Google may cap the number of prompts and conversations, or the use of some features, within a specific timeframe to ensure an optimal experience for everyone.",
+   "цитата": "This means we may at times have to cap the number of prompts and conversations you can have, or how much you can use some features, within a specific timeframe.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini app access and limits",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-12",
+   "вид": "лимит",
+   "утверждение_en": "Usage limits by plan: no plan = standard limits; AI Plus = 2x standard; AI Pro = 4x standard; AI Ultra = 5x or 20x higher than AI Pro depending on subscription.",
+   "цитата": "5x or 20x higher than AI Pro limits depending on your subscription",
+   "источник_цитаты": "txt",
+   "раздел": "Usage limits (таблица)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Таблица строки 380-389. База Ultra — лимиты AI Pro, а не стандартные: 5x/20x от 4x = 20x/80x стандарта (арифметика — вывод, не текст). Абсолютных чисел нет."
+  },
+  {
+   "код": "E-247-13",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini model names, versions and availability may change.",
+   "цитата": "Model names, versions, and availability may change.",
+   "источник_цитаты": "txt",
+   "раздел": "About Gemini 3 models / Important",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Относится ко всем моделям раздела; для имён Nano Banana 2 / Pro в таблице функций логично то же, но прямо сказано только здесь."
+  },
+  {
+   "код": "E-247-14",
+   "вид": "лимит",
+   "утверждение_en": "More advanced models and higher thinking levels consume more of the Gemini Apps usage allowance.",
+   "цитата": "More advanced models and higher thinking levels consume more of your usage.",
+   "источник_цитаты": "txt",
+   "раздел": "About Gemini 3 models / Tip",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "thinking"
+   ],
+   "заметка": "Речь о чат-моделях Gemini 3 и уровнях Standard/Extended/Deep think; влияние на генерацию изображений не указано."
+  },
+  {
+   "код": "E-247-15",
+   "вид": "лимит",
+   "утверждение_en": "Gemini Apps context window by plan: 32k tokens without a plan, 128k with AI Plus, 1 million tokens with AI Pro and AI Ultra.",
+   "цитата": "A larger context window allows Gemini Apps to work with longer prompts and chats.",
+   "источник_цитаты": "txt",
+   "раздел": "Context windows (таблица)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "мультиход"
+   ],
+   "заметка": "Значения из таблицы строк 433-440. Про изображения прямо не сказано; для длинных многоходовых чатов с картинками это общий потолок чата."
+  },
+  {
+   "код": "E-247-16",
+   "вид": "лимит",
+   "утверждение_en": "Some Gemini Apps features are available only with Google AI plans, and features such as media generation or Deep Research consume more of the usage allowance.",
+   "цитата": "Some features are only available with Google AI subscription plans. Some features (like media generation or Deep Research) will consume more of your usage.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "«media generation» включает генерацию изображений — прямо названа как дорогая по лимиту."
+  },
+  {
+   "код": "E-247-17",
+   "вид": "факт",
+   "утверждение_en": "Image generation with Nano Banana 2 is available in Gemini Apps on every tier, including users without a Google AI plan (AI Plus, Pro and Ultra also included).",
+   "цитата": "Image generation with Nano Banana 2",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability (таблица)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Значения ячеек только в html: во всех четырёх колонках img alt=\"Checkmark\". Ссылка строки — /gemini/answer/14286560."
+  },
+  {
+   "код": "E-247-18",
+   "вид": "ограничение",
+   "утверждение_en": "'Redo images with Nano Banana Pro' is not available without a Google AI plan; it is available on AI Plus, AI Pro and AI Ultra.",
+   "цитата": "Redo images with Nano Banana Pro",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability (таблица)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Значения ячеек только в html: колонка «Without a Google AI plan» — img alt=\"\" (пустой значок), остальные три — alt=\"Checkmark\". Ссылка строки — /gemini/answer/14286560#redo_image."
+  },
+  {
+   "код": "E-247-19",
+   "вид": "факт",
+   "утверждение_en": "Gemini Apps subscribers who reach their limit can continue the conversation with Flash-Lite; otherwise users can upgrade to a higher-limit plan or wait for the five-hour or weekly limit to refresh.",
+   "цитата": "If you have a Google AI subscription and reach your limit, you can continue your conversation with Flash-Lite.",
+   "источник_цитаты": "txt",
+   "раздел": "More info about limits / What you can do when you reach a usage limit",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Flash-Lite — текстовая модель; продолжение генерации картинок после лимита не обещано."
+  },
+  {
+   "код": "E-247-20",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini Apps limits may change without notice, including due to capacity constraints or large increases in activity.",
+   "цитата": "Limits may change without notice, including due to capacity constraints. When there’s a large increase in activity in Gemini Apps, we may change limits to maintain a high standard of quality.",
+   "источник_цитаты": "txt",
+   "раздел": "Usage limit changes",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-21",
+   "вид": "ограничение",
+   "утверждение_en": "For users without a Google AI plan, compute-heavy features such as Deep Research may be unavailable during high demand, and their limits may be reduced before those of paying users.",
+   "цитата": "If capacity changes, limits for users without a Google AI plan may be limited before users with a plan.",
+   "источник_цитаты": "txt",
+   "раздел": "Usage limit changes / Important",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Пример в тексте — Deep Research; генерация изображений как «compute-heavy» прямо не названа здесь, но в E-247-16 названа «media generation» как дорогая."
+  },
+  {
+   "код": "E-247-22",
+   "вид": "инструкция",
+   "утверждение_en": "Gemini Apps notifies you when you are close to your limit and, once reached, when it will refresh; to view usage limits, go to gemini.google.com, then Settings (bottom left), then Usage Limits.",
+   "цитата": "Gemini Apps will notify you when you're close to your limit based on your plan's level. When you reach your limit, Gemini Apps gives you another notification that tells you when your limit will refresh.",
+   "источник_цитаты": "txt",
+   "раздел": "How to tell if you’re close to a limit & when it refreshes",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Путь в интерфейсе — строки 480-485 .txt."
+  },
+  {
+   "код": "E-247-23",
+   "вид": "факт",
+   "утверждение_en": "A 1M-token context window lets Gemini understand up to 1,500 pages of text or 30,000 lines of code.",
+   "цитата": "For example, with a 1M token context window, Gemini can understand up to 1,500 pages of text or 30,000 lines of code.",
+   "источник_цитаты": "txt",
+   "раздел": "Why you might want a larger context window",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Не про изображения; эквивалент токенов для картинок не дан."
+  },
+  {
+   "код": "E-247-24",
+   "вид": "предупреждение",
+   "утверждение_en": "Exceeding the context window can lead to responses that ignore part of the provided content or miss connections and details, especially for prompts needing attention to details scattered through large files.",
+   "цитата": "If you exceed the context window, this could lead to responses that don’t take into account all the content provided or miss connections or details throughout the content.",
+   "источник_цитаты": "txt",
+   "раздел": "Why you might want a larger context window",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "мультиход"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-247-25",
+   "вид": "факт",
+   "утверждение_en": "In Gemini Apps, standard image generation is Nano Banana 2 for every tier, while Nano Banana Pro appears only as a paid 'Redo images' option, and all image generation draws on the shared compute-based usage pool rather than a separate image count.",
+   "цитата": "Some features (like media generation or Deep Research) will consume more of your usage.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability + Вступление (целиком)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-247-2, E-247-16, E-247-17, E-247-18",
+   "дата_единицы": "не датировано (страница без даты; ©2026 Google; упомянуто изменение лимитов с 17.05.2026)",
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "Сводка по всей странице: отдельных чисел по картинкам нет; Pro — не генератор по умолчанию, а опция «переделать»."
+  }
+ ],
+ "длинная_дистанция": [
+  "E-247-25: в Gemini Apps базовая генерация картинок — Nano Banana 2 на всех тарифах, а Nano Banana Pro доступен лишь как опция «Redo images» для платных; всё тратится из общего compute-пула, отдельной квоты картинок нет.",
+  "Раздел «About Gemini 3 models» перечисляет только текстовые модели; модели изображений появляются исключительно в таблице функций — связь выбранной чат-модели/thinking-уровня с качеством или стоимостью картинок не описана.",
+  "Ключевые данные о картинках (кто имеет доступ) существуют только как значки-галочки в html; в .txt таблица функций превращается в голый список названий.",
+  "Страница нигде не даёт абсолютных чисел (ни запросов, ни картинок) — только множители относительно «standard limits».",
+  "Множитель Ultra задан от базы AI Pro, остальные — от стандартных лимитов; смешение баз легко прочитать неверно."
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Сколько изображений (или какой долей лимита) стоит одна генерация Nano Banana 2 / Nano Banana Pro.",
+  "Что такое «Redo images» и чем отличается от обычной генерации (есть только ссылка на /gemini/answer/14286560#redo_image).",
+  "Разрешение/качество изображений по тарифам, наличие водяного знака.",
+  "Что меняется с 17.05.2026 (только ссылка).",
+  "Продолжает ли работать генерация изображений после исчерпания лимита у подписчика (обещано только продолжение чата с Flash-Lite).",
+  "Какие функции скрыты для пользователей младше 18/13."
+ ],
+ "сомнения": [
+  "Статус «без плана» для Redo with Nano Banana Pro определён по пустому alt=\"\" значка (тот же src, что в других ячейках «нет»); галочки — alt=\"Checkmark\". Интерпретация пустого значка как «недоступно» — по контрасту, текста «No» нет.",
+  "Страница не датирована; содержимое актуально на момент снимка (2026, после ввода Nano Banana 2)."
+ ]
+}

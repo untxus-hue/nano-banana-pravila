@@ -1,0 +1,530 @@
+{
+ "id": 3,
+ "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-image",
+ "заголовок": "Gemini 3.1 Flash image",
+ "дата_в_тексте": "Last updated 2026-09-03 UTC (страница); Latest update February 2026 (модель)",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.»; ссылка на model card deepmind.google. Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели в документации Gemini API для разработчиков: Gemini 3.1 Flash Image (Nano Banana 2) — позиционирование (качество + разговорное редактирование, массовая цена, низкая задержка; скоростная пара к Gemini 3 Pro Image), список ключевых обновлений (разрешения 0.5K/2K/4K при дефолте 1K; Image Search Grounding с thinking вкл/выкл; соотношения 1:4, 4:1, 1:8, 8:1; улучшения соблюдения соотношения, качества/консистентности, многоязычного текста) и таблица свойств (код модели, типы входа/выхода, лимиты токенов, поддерживаемые/неподдерживаемые возможности, способы потребления, версия). Примеров промптов и кода нет.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Gemini 3 Pro Image — только как контрпара)"
+ ],
+ "структура": [
+  "Вступление",
+  "Key updates",
+  "Documentation (ссылка)",
+  "Таблица свойств: Model code, Supported data types, Token limits, Capabilities, Consumption options, Versions, Latest update, Model card"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3.1 Flash image | Gemini API | Google AI for Developers",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English Deutsch …",
+   "итог": "ничего: обвязка сайта (языки, шапка: Get API key, Cookbook, Community, Sign in)"
+  },
+  {
+   "n": 3,
+   "начало": "Docs / API reference / Gemini API … Feedback information",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 30-181)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3.8 Flash is now available. Try it out",
+   "итог": "ничего: обвязка сайта (баннер, не про картинки)"
+  },
+  {
+   "n": 5,
+   "начало": "Home / Gemini API / Docs / Send feedback",
+   "итог": "ничего: обвязка сайта (хлебные крошки)"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3.1 Flash image",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 7,
+   "начало": "Nano Banana 2 provides high-quality image generation",
+   "итог": "E-3-1, E-3-2"
+  },
+  {
+   "n": 8,
+   "начало": "Key updates: / New output resolution options:",
+   "итог": "E-3-3"
+  },
+  {
+   "n": 9,
+   "начало": "New Image Search Grounding: / Integration of both text and image",
+   "итог": "E-3-4"
+  },
+  {
+   "n": 10,
+   "начало": "Supported with Thinking on or off",
+   "итог": "E-3-5"
+  },
+  {
+   "n": 11,
+   "начало": "New 1:4, 4:1, 1:8 and 8:1 aspect ratios",
+   "итог": "E-3-6"
+  },
+  {
+   "n": 12,
+   "начало": "Improved aspect ratio adherence",
+   "итог": "E-3-7"
+  },
+  {
+   "n": 13,
+   "начало": "Improved image quality and consistency",
+   "итог": "E-3-8"
+  },
+  {
+   "n": 14,
+   "начало": "Improved i18n text rendering",
+   "итог": "E-3-9"
+  },
+  {
+   "n": 15,
+   "начало": "Try in Google AI Studio",
+   "итог": "ничего: ссылка-кнопка"
+  },
+  {
+   "n": 16,
+   "начало": "Documentation / Visit the Image generation page",
+   "итог": "ничего: ссылка на страницу Image generation"
+  },
+  {
+   "n": 17,
+   "начало": "gemini-3.1-flash-image / Property / Description / Model code",
+   "итог": "E-3-10"
+  },
+  {
+   "n": 18,
+   "начало": "Supported data types / Inputs / Output",
+   "итог": "E-3-11"
+  },
+  {
+   "n": 19,
+   "начало": "Token limits [*] / Input token limit / Output token limit",
+   "итог": "E-3-12"
+  },
+  {
+   "n": 20,
+   "начало": "Capabilities / Audio generation … URL context",
+   "итог": "E-3-13, E-3-14"
+  },
+  {
+   "n": 21,
+   "начало": "Consumption options / Batch API / Flex inference / Priority inference",
+   "итог": "E-3-15"
+  },
+  {
+   "n": 22,
+   "начало": "Versions / Read the model version patterns / Stable / Latest update",
+   "итог": "E-3-16"
+  },
+  {
+   "n": 23,
+   "начало": "Model card / Model card",
+   "итог": "ничего: ссылка на model card DeepMind"
+  },
+  {
+   "n": 24,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: подвал-лицензия — признак официальности"
+  },
+  {
+   "n": 25,
+   "начало": "Last updated 2026-09-03 UTC.",
+   "итог": "ничего: дата обновления — вынесена в дата_в_тексте"
+  },
+  {
+   "n": 26,
+   "начало": "Need to tell us more? / [[[\"Easy to understand\" …",
+   "итог": "ничего: обвязка сайта (виджет отзывов)"
+  },
+  {
+   "n": 27,
+   "начало": "Terms / Privacy / Manage cookies / English …",
+   "итог": "ничего: обвязка сайта (подвал, языки)"
+  },
+  {
+   "n": 28,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-3-17, E-3-18"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-3-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 (Gemini 3.1 Flash Image) provides high-quality image generation and conversational editing at a mainstream price point and low latency.",
+   "цитата": "Nano Banana 2\nprovides high-quality image generation and conversational\nediting at a mainstream price point and low latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (Gemini 3.1 Flash image)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Позиционирование: качество + разговорное редактирование при массовой цене и низкой задержке. Числа цены/задержки здесь нет. Цитата содержит переносы строк .txt."
+  },
+  {
+   "код": "E-3-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is the high-efficiency counterpart to Gemini 3 Pro Image, optimized for speed and high-volume developer use cases.",
+   "цитата": "It serves as the\nhigh-efficiency counterpart to\nGemini 3 Pro Image\n, optimized for speed and\nhigh-volume developer use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (Gemini 3.1 Flash image)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Gemini 3 Pro Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Выбор модели: NB2 — скорость и большие объёмы; Pro — «контрпара» (чем Pro лучше, страница не говорит)."
+  },
+  {
+   "код": "E-3-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image adds output resolution options 0.5K, 2K and 4K; the default is 1K.",
+   "цитата": "New output resolution options:\nNew support for 0.5K, 2K and 4K, default 1K",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Итого 4 уровня: 0.5K, 1K (по умолчанию), 2K, 4K. Имя параметра конфигурации не названо."
+  },
+  {
+   "код": "E-3-4",
+   "вид": "факт",
+   "утверждение_en": "New Image Search Grounding integrates both text and image search results to inform generation with real-time web data.",
+   "цитата": "New Image Search Grounding:\nIntegration of both text and image search results to inform generation with\nreal-time web data",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Grounding не только текстовым, но и графическим поиском."
+  },
+  {
+   "код": "E-3-5",
+   "вид": "факт",
+   "утверждение_en": "Image Search Grounding is supported with Thinking on or off.",
+   "цитата": "Supported with Thinking on or off",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "thinking"
+   ],
+   "заметка": "Пункт вложен под «New Image Search Grounding»."
+  },
+  {
+   "код": "E-3-6",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image adds new extreme aspect ratios 1:4, 4:1, 1:8 and 8:1.",
+   "цитата": "New 1:4, 4:1, 1:8 and 8:1 aspect ratios",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Полный список поддерживаемых соотношений на странице не дан — только новые."
+  },
+  {
+   "код": "E-3-7",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image has improved aspect ratio adherence.",
+   "цитата": "Improved aspect ratio adherence",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Базовая модель для сравнения («improved» относительно чего) не названа."
+  },
+  {
+   "код": "E-3-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image has improved image quality and consistency.",
+   "цитата": "Improved image quality and consistency",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Базовая модель для сравнения не названа."
+  },
+  {
+   "код": "E-3-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image has improved i18n (multilingual) text rendering.",
+   "цитата": "Improved i18n text rendering",
+   "источник_цитаты": "txt",
+   "раздел": "Key updates",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "i18n — рендер текста на разных языках в изображении."
+  },
+  {
+   "код": "E-3-10",
+   "вид": "факт",
+   "утверждение_en": "The model code is gemini-3.1-flash-image (stable version).",
+   "цитата": "Model code\ngemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка «Stable: gemini-3.1-flash-image» в разделе Versions подтверждает (E-3-16)."
+  },
+  {
+   "код": "E-3-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image accepts Text, Image, Video, and PDF as input and outputs Image and Text.",
+   "цитата": "Inputs\nText, Image, Video, and PDF\nOutput\nImage and Text",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Вход включает видео и PDF; выход — изображение и текст."
+  },
+  {
+   "код": "E-3-12",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image has an input token limit of 131,072 and an output token limit of 32,768.",
+   "цитата": "Input token limit\n131,072\nOutput token limit\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сноска [*] ведёт на /gemini-api/docs/tokens."
+  },
+  {
+   "код": "E-3-13",
+   "вид": "факт",
+   "утверждение_en": "Supported capabilities of Gemini 3.1 Flash Image: Image generation, Search grounding, and Thinking.",
+   "цитата": "Image generation\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "thinking"
+   ],
+   "заметка": "Поддержаны три возможности из таблицы: Image generation, Search grounding, Thinking (строки «Search grounding / Supported», «Thinking / Supported»). Цитата — первая из трёх строк."
+  },
+  {
+   "код": "E-3-14",
+   "вид": "ограничение",
+   "утверждение_en": "Not supported on Gemini 3.1 Flash Image: audio generation, caching, code execution, file search, function calling, grounding with Google Maps, Live API, structured outputs, and URL context.",
+   "цитата": "Function calling\nNot supported\nGrounding with Google Maps\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "grounding"
+   ],
+   "заметка": "Полный список «Not supported»: Audio generation, Caching, Code execution, File search, Function calling, Grounding with Google Maps, Live API, Structured outputs, URL context. Цитата — фрагмент таблицы."
+  },
+  {
+   "код": "E-3-15",
+   "вид": "факт",
+   "утверждение_en": "Consumption options for Gemini 3.1 Flash Image: Batch API is supported; Flex inference and Priority inference are not supported.",
+   "цитата": "Batch API\nSupported\nFlex inference\nNot supported\nPriority inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Способы потребления."
+  },
+  {
+   "код": "E-3-16",
+   "вид": "факт",
+   "утверждение_en": "The stable version is gemini-3.1-flash-image, with latest update February 2026.",
+   "цитата": "Stable:\ngemini-3.1-flash-image\ncalendar_month\nLatest update\nFebruary 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица свойств gemini-3.1-flash-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "«Latest update» относится к модели; сама страница обновлена 2026-09-03."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-3-17",
+   "вид": "факт",
+   "утверждение_en": "Thinking on Gemini 3.1 Flash Image is switchable (it can be on or off), as implied by the capability table (Thinking: Supported) together with the note that Image Search Grounding works \"with Thinking on or off\".",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Key updates + таблица",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-3-5, E-3-13",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Как включается/выключается thinking и что по умолчанию — на странице нет."
+  },
+  {
+   "код": "E-3-18",
+   "вид": "объяснение",
+   "утверждение_en": "The page names the grounding feature \"Image Search Grounding\" (text + image search results) in Key updates but lists only \"Search grounding: Supported\" and \"Grounding with Google Maps: Not supported\" in the table; image search is not a separate table row.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Key updates + таблица",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-3-4, E-3-13, E-3-14",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Терминологическое расхождение между разделами; предположительно одна и та же возможность Google Search grounding, расширенная поиском по картинкам."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Полный список поддерживаемых соотношений сторон не дан — только новые (1:4, 4:1, 1:8, 8:1).",
+  "Не сказано, относительно какой модели «Improved …» (aspect ratio adherence, quality, consistency, i18n text).",
+  "Нет цены (только «mainstream price point»), нет числовой задержки, нет rate limits.",
+  "Не сказано, как управлять thinking (уровни, по умолчанию) и имена параметров разрешения/соотношения.",
+  "Не указано максимальное число входных изображений, водяной знак/SynthID, ограничения безопасности.",
+  "Чем Gemini 3 Pro Image лучше NB2 — не сказано."
+ ],
+ "сомнения": [
+  "«Latest update February 2026» (модель) и «Last updated 2026-09-03» (страница) — разные даты разных сущностей.",
+  "Цитаты таблицы содержат переносы строк .txt (структура таблицы разложена по строкам)."
+ ]
+}

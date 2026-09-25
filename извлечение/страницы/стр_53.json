@@ -1,0 +1,1140 @@
+{
+ "id": 53,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+ "заголовок": "Gemini Enterprise Agent Platform release notes  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC; записи с March 31, 2026 по September 22, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: лицензия CC BY 4.0 / Apache 2.0 со ссылкой на Google Developers Site Policies; ссылки 'Google Cloud terms', 'About Google'; записи от лица Google ('We recommend that you update your model endpoints'). Строки 'Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Лента release notes Gemini Enterprise Agent Platform (бывш. Vertex AI) для клиентов Google Cloud; ~57% строк — меню/дерево API. Хронология 31.03–22.09.2026, записи с метками Feature/Change/Deprecated/Breaking/Fixed/Security/Announcement/Issue. Про image-модели 6 записей: 06.05 (preview-апгрейды: 4K, max 1 thought image, image_size '512', thinking Minimal по умолчанию для Flash), 28.05 (GA NB2 и NB Pro, 4K и видео-вход Flash в Preview, деприкейшен preview-эндпоинтов + таблица миграции), 17.07 (preview-эндпоинты ретайрнуты; 'Nano Banana preview models'), 31.08 (4K GA для обеих, видео-вход GA для Flash, мульти-регионы us/eu для Flash), 14.09 (2.5 Flash Image: ретайр продлён до 15.03.2027, миграция на 3.1 Flash-Lite Image; ретайр Lite ≥ 28.06.2027). Плюс 22.04 — переименование Vertex AI в Agent Platform. Промптов и кодовых блоков нет (0 <pre>; <code> — ID моделей, mediaResolution).",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-3.1-flash-image-preview",
+  "gemini-3-pro-image-preview",
+  "gemini-2.5-flash-image",
+  "gemini-3.1-flash-lite-image",
+  "gemini-3-flash-image (так в тексте записи 17.07)"
+ ],
+ "структура": [
+  "(вводная)",
+  "September 22 … September 01, 2026",
+  "August 31 … August 04, 2026",
+  "July 29 … July 01, 2026",
+  "June 30 … June 01, 2026",
+  "May 28 … May 06, 2026",
+  "April 28 – April 22, 2026 (naming changes, initial release)",
+  "March 31, 2026"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini Enterprise Agent Platform release notes |",
+   "итог": "ничего: обвязка сайта (заголовок, верхнее меню, дерево API-справочника, строки 1-2437)"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Enterprise Agent Platform release notes Stay",
+   "итог": "ничего: заголовок страницы и виджет"
+  },
+  {
+   "n": 3,
+   "начало": "This page documents production updates to",
+   "итог": "ничего: описание назначения страницы и ссылки на другие ленты"
+  },
+  {
+   "n": 4,
+   "начало": "September 22, 2026 Feature Anthropic's Claude",
+   "итог": "ничего: не про генерацию картинок (Claude Opus 5.5)"
+  },
+  {
+   "n": 5,
+   "начало": "September 21, 2026 Fixed CodeMender updates",
+   "итог": "ничего: не про генерацию картинок (CodeMender v0.9.0)"
+  },
+  {
+   "n": 6,
+   "начало": "September 18, 2026 Feature xAI's Grok",
+   "итог": "ничего: не про генерацию картинок (Grok 4.6 GA)"
+  },
+  {
+   "n": 7,
+   "начало": "Breaking Agent Platform SDK for Python",
+   "итог": "ничего: не про генерацию картинок (SDK 2.0.1)"
+  },
+  {
+   "n": 8,
+   "начало": "September 17, 2026 Feature Gemini Omni",
+   "итог": "ничего: не про генерацию картинок (видео-генерация Omni Flash)"
+  },
+  {
+   "n": 9,
+   "начало": "September 16, 2026 Feature CodeMender updates",
+   "итог": "ничего: не про генерацию картинок (CodeMender v0.8.0)"
+  },
+  {
+   "n": 10,
+   "начало": "September 15, 2026 Feature Reinforcement learning",
+   "итог": "ничего: не про генерацию картинок (RL fine-tuning)"
+  },
+  {
+   "n": 11,
+   "начало": "September 14, 2026 Deprecated Gemini model",
+   "итог": "ничего: вводная фраза записи, содержание — в пунктах 12-13"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 2.5 Flash Image ( gemini-2.5-flash-image",
+   "итог": "E-53-1, E-53-2"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini 3.1 Flash-Lite Image ( gemini-3.1-flash-lite-image",
+   "итог": "E-53-3"
+  },
+  {
+   "n": 14,
+   "начало": "For more information, see Gemini model",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 15,
+   "начало": "Fixed CodeMender updates (v0.7.0) This",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Feature Cyber Verification Program for Claude",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "September 10, 2026 Feature Provisioned Throughput:",
+   "итог": "ничего: не про генерацию картинок (заказы PT, общее)"
+  },
+  {
+   "n": 18,
+   "начало": "September 09, 2026 Feature Computer Use",
+   "итог": "ничего: не про генерацию картинок (sandboxes)"
+  },
+  {
+   "n": 19,
+   "начало": "Feature Priority PayGo now supports the",
+   "итог": "ничего: не про генерацию картинок (общая опция потребления, image-модели не названы)"
+  },
+  {
+   "n": 20,
+   "начало": "Feature Agent Gateway supports multiple Agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 21,
+   "начало": "Feature Agent Gateway supports VPC Service",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 22,
+   "начало": "September 08, 2026 Feature Agent connectivity",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 23,
+   "начало": "September 02, 2026 Feature Gemini 3.8",
+   "итог": "ничего: не про генерацию картинок (Gemini 3.8 Flash GA)"
+  },
+  {
+   "n": 24,
+   "начало": "Feature Provisioned Throughput support for Gemini",
+   "итог": "ничего: не про генерацию картинок (PT для Omni)"
+  },
+  {
+   "n": 25,
+   "начало": "Feature Deferred tier for autonomous agent",
+   "итог": "ничего: не про генерацию картинок (deferred tier для агентов)"
+  },
+  {
+   "n": 26,
+   "начало": "Fixed CodeMender updates (v0.6.0) This",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 27,
+   "начало": "September 01, 2026 Feature Anthropic's Claude",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "Change Embedding SKUs are changing Memory",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "Feature Agentic video processing now available",
+   "итог": "ничего: не про генерацию картинок (видео-понимание Gemini 3.5 Pro+, параметр media_processing для видео-входа)"
+  },
+  {
+   "n": 30,
+   "начало": "Change Pricing updates for agent metering",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "August 31, 2026 Feature Gemini 3.1",
+   "итог": "ничего: вводная фраза записи ('feature updates and expanded endpoint availability'), содержание — в пунктах 32-34"
+  },
+  {
+   "n": 32,
+   "начало": "Multi-region endpoint support : Gemini 3.1",
+   "итог": "E-53-4"
+  },
+  {
+   "n": 33,
+   "начало": "4K image output in GA :",
+   "итог": "E-53-5"
+  },
+  {
+   "n": 34,
+   "начало": "Video inputs in GA : Image",
+   "итог": "E-53-6"
+  },
+  {
+   "n": 35,
+   "начало": "For more information, see the following:",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 36,
+   "начало": "Feature IAM Unified Access Policies are",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "August 27, 2026 Feature CodeMender updates",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "Feature Gemini Omni 1.1 Flash is",
+   "итог": "ничего: не про генерацию картинок (Omni 1.1 Flash — видео-модель; 'image' лишь в перечне задач без деталей)"
+  },
+  {
+   "n": 39,
+   "начало": "August 24, 2026 Feature GLM 5.2",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 40,
+   "начало": "August 21, 2026 Feature xAI's Grok",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 41,
+   "начало": "August 18, 2026 Feature CodeMender updates",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 42,
+   "начало": "August 15, 2026 Feature Monitor semantic",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "Feature AlphaFold 3 is generally available",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 44,
+   "начало": "August 13, 2026 Feature Gemini 3.7",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 45,
+   "начало": "Feature Agent Runtime: ADK telemetry metrics",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 46,
+   "начало": "August 12, 2026 Feature CodeMender CLI:",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "August 04, 2026 Feature Process-level sandboxing",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "July 29, 2026 Feature Gemini Enterprise:",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 49,
+   "начало": "July 24, 2026 Feature Anthropic's Claude",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 50,
+   "начало": "July 21, 2026 Feature Gemini 3.6",
+   "итог": "ничего: не про генерацию картинок (Gemini 3.6 Flash / 3.5 Flash-Lite, их breaking changes по sampling/penalty/turn structure к image-моделям не отнесены)"
+  },
+  {
+   "n": 51,
+   "начало": "Feature CodeMender available in Public Preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 52,
+   "начало": "Deprecated Open model endpoint deprecations The",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "Announcement CodeMender is available in Public",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "July 20, 2026 Security Security update",
+   "итог": "ничего: не про генерацию картинок (SSRF в Agent Studio)"
+  },
+  {
+   "n": 55,
+   "начало": "July 17, 2026 Breaking Gemini 3.1",
+   "итог": "E-53-7, E-53-8"
+  },
+  {
+   "n": 56,
+   "начало": "July 15, 2026 Feature Memory Bank",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 57,
+   "начало": "July 09, 2026 Feature Retirement for",
+   "итог": "ничего: не про генерацию картинок (текстовые preview-модели)"
+  },
+  {
+   "n": 58,
+   "начало": "July 08, 2026 Deprecated Grok 4.1",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "Feature Memory Bank IngestEvents is generally",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 60,
+   "начало": "Feature Memory Bank support for Gemini",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 61,
+   "начало": "July 06, 2026 Feature AlphaGenome released",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 62,
+   "начало": "July 01, 2026 Feature Provisioned Throughput:",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 63,
+   "начало": "June 30, 2026 Feature Anthropic's Claude",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "June 29, 2026 Feature Gemini 3.5",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "Feature Semantic Governance Policies available in",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 66,
+   "начало": "Feature Provisioned Throughput: Email notifications GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 67,
+   "начало": "June 26, 2026 Feature New Provisioned",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 68,
+   "начало": "June 25, 2026 Announcement Administrative correction",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 69,
+   "начало": "June 24, 2026 Feature AI security",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 70,
+   "начало": "Feature Model Armor for Agent Gateway",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 71,
+   "начало": "June 22, 2026 Change Supervised fine-tuning",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 72,
+   "начало": "Feature Provisioned Throughput support for supervised",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 73,
+   "начало": "June 18, 2026 Feature Agent Gateway",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 74,
+   "начало": "Feature Agent Observability is generally available",
+   "итог": "ничего: не про генерацию картинок (рекомендация хранить мультимодальные payload-логи в GCS — про логирование агентов)"
+  },
+  {
+   "n": 75,
+   "начало": "Feature Agent Registry is generally available",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 76,
+   "начало": "Feature The Agent Identity API (",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "June 17, 2026 Feature Memory Bank",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 78,
+   "начало": "June 15, 2026 Feature Reinforcement Learning",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 79,
+   "начало": "June 09, 2026 Feature Anthropic's Claude",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 80,
+   "начало": "June 02, 2026 Announcement Updates to",
+   "итог": "ничего: не про генерацию картинок (обновление доков abuse monitoring/ZDR без содержания)"
+  },
+  {
+   "n": 81,
+   "начало": "June 01, 2026 Breaking Gemini 2.0",
+   "итог": "ничего: не про генерацию картинок (Gemini 2.0 Flash/Flash-Lite, image-варианты не названы)"
+  },
+  {
+   "n": 82,
+   "начало": "May 28, 2026 Feature Agent Platform",
+   "итог": "E-53-9"
+  },
+  {
+   "n": 83,
+   "начало": "With this release, Gemini 3.1 Flash",
+   "итог": "E-53-10"
+  },
+  {
+   "n": 84,
+   "начало": "Also supported in this release, Gemini",
+   "итог": "E-53-11, E-53-12"
+  },
+  {
+   "n": 85,
+   "начало": "For more information, see the following:",
+   "итог": "E-53-13"
+  },
+  {
+   "n": 86,
+   "начало": "Deprecated Agent Platform Gemini 3.1 Flash",
+   "итог": "E-53-14"
+  },
+  {
+   "n": 87,
+   "начало": "The following are the discontinued endpoints",
+   "итог": "E-53-15"
+  },
+  {
+   "n": 88,
+   "начало": "Feature Anthropic's Claude Opus 4.8",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 89,
+   "начало": "May 27, 2026 Feature User ID",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 90,
+   "начало": "May 26, 2026 Feature The Gemini",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "Feature Agent Platform Sandboxes Additional Agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 92,
+   "начало": "Feature Identify the agents with the",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 93,
+   "начало": "May 20, 2026 Change Supervised fine-tuning",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 94,
+   "начало": "Change Set media resolution at a",
+   "итог": "ничего: не про генерацию картинок (Part-level mediaResolution и MEDIA_RESOLUTION_ULTRA_HIGH — для данных SFT; image-модели тюнинг не поддерживают)"
+  },
+  {
+   "n": 95,
+   "начало": "May 19, 2026 Feature Gemini 3.5",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 96,
+   "начало": "Feature Manage agent revisions and traffic",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 97,
+   "начало": "Feature Manage and discover agent skills",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 98,
+   "начало": "Feature Managed Agents API on Agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 99,
+   "начало": "Feature AI Content Detection API available",
+   "итог": "ничего: без содержания (только название и ссылка; что детектирует — не сказано)"
+  },
+  {
+   "n": 100,
+   "начало": "Feature Provisioned Throughput for Gemini now",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 101,
+   "начало": "Change Memory Bank and Sessions support",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 102,
+   "начало": "May 14, 2026 Feature Priority PayGo",
+   "итог": "ничего: не про генерацию картинок (общая опция потребления)"
+  },
+  {
+   "n": 103,
+   "начало": "May 11, 2026 Change You can",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 104,
+   "начало": "May 08, 2026 Change Gemini Distillation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 105,
+   "начало": "Change Improvements to the Provisioned Throughput",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 106,
+   "начало": "May 07, 2026 Change Gemini 3.1",
+   "итог": "ничего: не про генерацию картинок (текстовая 3.1 Flash-Lite)"
+  },
+  {
+   "n": 107,
+   "начало": "Change You can purchase Provisioned Throughput",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 108,
+   "начало": "May 06, 2026 Fixed Fixed an",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 109,
+   "начало": "Change Agent Platform Gemini 3.1 Flash",
+   "итог": "ничего: вводная фраза записи, содержание — в пунктах 110-113"
+  },
+  {
+   "n": 110,
+   "начало": "Upgrades to improve 4K outputs and",
+   "итог": "E-53-16"
+  },
+  {
+   "n": 111,
+   "начало": "Gemini 3.1 Flash Image Preview and",
+   "итог": "E-53-17"
+  },
+  {
+   "n": 112,
+   "начало": "The image_size parameter for Gemini 3.1",
+   "итог": "E-53-18"
+  },
+  {
+   "n": 113,
+   "начало": "The default thinking level for Gemini",
+   "итог": "E-53-19"
+  },
+  {
+   "n": 114,
+   "начало": "April 28, 2026 Feature Improved transcription",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 115,
+   "начало": "Feature Asynchronous function calling with Live",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 116,
+   "начало": "April 22, 2026 Change Vertex AI",
+   "итог": "E-53-20"
+  },
+  {
+   "n": 117,
+   "начало": "Click to expand naming changes list",
+   "итог": "ничего: строки таблицы переименований (Vertex AI Studio→Agent Studio, Vertex AI Media Studio→Agent Media Studio и т.д.) — учтены в E-53-20"
+  },
+  {
+   "n": 118,
+   "начало": "Change Initial release of Gemini Enterprise",
+   "итог": "ничего: не про генерацию картинок (Agent Runtime, Sessions, Memory Bank, Agent Identity/Gateway/Registry, Embedding 2, Deep Research, MCP)"
+  },
+  {
+   "n": 119,
+   "начало": "Change Google Cloud console navigation :",
+   "итог": "E-53-21"
+  },
+  {
+   "n": 120,
+   "начало": "Issue The following known issues affect",
+   "итог": "ничего: не про генерацию картинок (audio_track_extraction в Embedding 2)"
+  },
+  {
+   "n": 121,
+   "начало": "March 31, 2026 Security Security update",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 122,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности)"
+  },
+  {
+   "n": 123,
+   "начало": "Last updated 2026-09-22 UTC. Need",
+   "итог": "ничего: дата страницы и виджет отзыва"
+  },
+  {
+   "n": 124,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-53-1",
+   "вид": "предупреждение",
+   "утверждение_en": "As of September 14, 2026, Gemini 2.5 Flash Image is deprecated and scheduled for retirement on March 15, 2027, extended from October 2, 2026.",
+   "цитата": "Deprecated and scheduled for retirement on March 15, 2027 (extended from October 2, 2026).",
+   "источник_цитаты": "txt",
+   "раздел": "September 14, 2026 — Deprecated — Gemini model deprecation and retirement date updates",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата записи 14.09.2026; прежняя дата ретайра — 02.10.2026."
+  },
+  {
+   "код": "E-53-2",
+   "вид": "инструкция",
+   "утверждение_en": "Users of Gemini 2.5 Flash Image should migrate to Gemini 3.1 Flash-Lite Image (gemini-3.1-flash-lite-image).",
+   "цитата": "Migrate to\nGemini 3.1 Flash-Lite Image\n(\ngemini-3.1-flash-lite-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "September 14, 2026 — Deprecated — Gemini model deprecation and retirement date updates",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повелительное наклонение; целевая модель — Lite, а не 3.1 Flash Image."
+  },
+  {
+   "код": "E-53-3",
+   "вид": "факт",
+   "утверждение_en": "As of September 14, 2026, the retirement date of Gemini 3.1 Flash-Lite Image is scheduled for June 28, 2027 or later.",
+   "цитата": "Retirement date is scheduled for June 28, 2027 or later.",
+   "источник_цитаты": "txt",
+   "раздел": "September 14, 2026 — Deprecated — Gemini model deprecation and retirement date updates",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-53-4",
+   "вид": "факт",
+   "утверждение_en": "As of August 31, 2026, Gemini 3.1 Flash Image is available on the US (us) and EU (eu) multi-region endpoints for model availability, ML processing, Provisioned Throughput and PayGo Standard.",
+   "цитата": "is now available on US (\nus\n) and EU (\neu\n) multi-region endpoints for model availability, ML processing, Provisioned Throughput, and PayGo Standard.",
+   "источник_цитаты": "txt",
+   "раздел": "August 31, 2026 — Feature — Gemini 3.1 Flash Image and Gemini 3 Pro Image updates",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Мульти-регионы объявлены только для Flash Image, не для Pro."
+  },
+  {
+   "код": "E-53-5",
+   "вид": "факт",
+   "утверждение_en": "As of August 31, 2026, generating 4K resolution images is generally available for both Gemini 3.1 Flash Image and Gemini 3 Pro Image.",
+   "цитата": "Generating 4K resolution images is now\nGenerally Available (GA)\nfor both\nGemini 3.1 Flash Image\nand\nGemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "August 31, 2026 — Feature — Gemini 3.1 Flash Image and Gemini 3 Pro Image updates",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "С 28.05.2026 по 31.08.2026 4K был в Preview (E-53-10)."
+  },
+  {
+   "код": "E-53-6",
+   "вид": "факт",
+   "утверждение_en": "As of August 31, 2026, image generation from video inputs is generally available for Gemini 3.1 Flash Image.",
+   "цитата": "Image generation from video inputs is now\nGenerally Available (GA)\nfor\nGemini 3.1 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "August 31, 2026 — Feature — Gemini 3.1 Flash Image and Gemini 3 Pro Image updates",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Только Flash Image; для Pro на странице видео-вход не объявлен."
+  },
+  {
+   "код": "E-53-7",
+   "вид": "предупреждение",
+   "утверждение_en": "The Nano Banana preview models gemini-3.1-flash-image-preview and gemini-3-pro-image-preview were retired on July 17, 2026 and are no longer accessible.",
+   "цитата": "The Nano Banana preview models\ngemini-3.1-flash-image-preview\nand\ngemini-3-pro-image-preview\nhave been retired and are no longer accessible.",
+   "источник_цитаты": "txt",
+   "раздел": "July 17, 2026 — Breaking — Gemini 3.1 Flash Image Preview and 3 Pro Image Preview are retired",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Здесь preview-модели прямо названы 'Nano Banana preview models'."
+  },
+  {
+   "код": "E-53-8",
+   "вид": "инструкция",
+   "утверждение_en": "Code that used the retired preview models must be updated to use gemini-3.1-flash-image or, as written, gemini-3-flash-image.",
+   "цитата": "Update your code to use either\ngemini-3.1-flash-image\nor\ngemini-3-flash-image\ninstead.",
+   "источник_цитаты": "txt",
+   "раздел": "July 17, 2026 — Breaking — Gemini 3.1 Flash Image Preview and 3 Pro Image Preview are retired",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-flash-image (так в тексте; вероятно опечатка вместо gemini-3-pro-image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "ID 'gemini-3-flash-image' подтверждён и в html; таблица миграции от 28.05 указывает gemini-3-pro-image (см. противоречия)."
+  },
+  {
+   "код": "E-53-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image and Gemini 3 Pro Image became generally available on Gemini Enterprise Agent Platform on May 28, 2026.",
+   "цитата": "Gemini Enterprise Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image\nare\nGenerally\nAvailable",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-53-10",
+   "вид": "факт",
+   "утверждение_en": "With the May 28, 2026 GA release, Gemini 3.1 Flash Image and Gemini 3 Pro Image supported 4K image outputs in Preview.",
+   "цитата": "With this release, Gemini 3.1 Flash Image and Gemini 3 Pro Image support 4K\nimage outputs in\nPreview",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Позже переведено в GA 31.08.2026 (E-53-5)."
+  },
+  {
+   "код": "E-53-11",
+   "вид": "факт",
+   "утверждение_en": "With the May 28, 2026 release, Gemini 3.1 Flash Image supported video inputs in Preview.",
+   "цитата": "Also supported in this release, Gemini 3.1 Flash Image supports video inputs in\nPreview",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Позже GA 31.08.2026 (E-53-6)."
+  },
+  {
+   "код": "E-53-12",
+   "вид": "приём",
+   "утверждение_en": "Video inputs can be used with Gemini 3.1 Flash Image to generate thumbnails or representative images of videos.",
+   "цитата": "You can use\nvideo inputs to generate thumbnails or representative images of videos.",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": "Единственный названный сценарий применения видео-входа: превью/обложка/репрезентативный кадр."
+  },
+  {
+   "код": "E-53-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image is named Nano Banana 2 and Gemini 3 Pro Image is named Nano Banana Pro.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana\n2)\nGemini 3 Pro Image (Nano Banana\nPro)",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Из текста ссылок 'For more information'."
+  },
+  {
+   "код": "E-53-14",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview were deprecated on May 28, 2026, and Google recommended updating model endpoints before July 17, 2026 to avoid service disruption.",
+   "цитата": "Image Preview are deprecated. We recommend that you update your model endpoints\nbefore July 17, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Deprecated — Agent Platform Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview deprecation",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-53-15",
+   "вид": "инструкция",
+   "утверждение_en": "The recommended endpoint migration is gemini-3.1-flash-image-preview to gemini-3.1-flash-image and gemini-3-pro-image-preview to gemini-3-pro-image.",
+   "цитата": "gemini-3.1-flash-image-preview\ngemini-3.1-flash-image\ngemini-3-pro-image-preview\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Deprecated — Agent Platform Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview deprecation",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Таблица 'Discontinued endpoints / Recommended endpoint migration'; в txt колонки идут построчно."
+  },
+  {
+   "код": "E-53-16",
+   "вид": "факт",
+   "утверждение_en": "On May 6, 2026, Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview received upgrades to improve 4K outputs and efficiency.",
+   "цитата": "Upgrades to improve 4K outputs and efficiency in both models",
+   "источник_цитаты": "txt",
+   "раздел": "May 06, 2026 — Change — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-53-17",
+   "вид": "ограничение",
+   "утверждение_en": "Since May 6, 2026, Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview return a maximum of 1 thought image.",
+   "цитата": "Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview will now\nreturn a maximum of 1 thought image.",
+   "источник_цитаты": "txt",
+   "раздел": "May 06, 2026 — Change — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Термин 'thought image' (промежуточная картинка в процессе thinking) на странице не определён."
+  },
+  {
+   "код": "E-53-18",
+   "вид": "факт",
+   "утверждение_en": "Since May 6, 2026, the image_size parameter for Gemini 3.1 Flash Image Preview accepts \"512\", \"512p\", \"512P\", \"512PX\" or \"512px\" to generate 0.5MP resolution output images.",
+   "цитата": "The image_size parameter for Gemini 3.1 Flash Image Preview now accepts\n\"512\", \"512p\", \"512P\", \"512PX\", \"512px\" to generate 0.5MP resolution output\nimages.",
+   "источник_цитаты": "txt",
+   "раздел": "May 06, 2026 — Change — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Имя параметра — image_size; пять допустимых написаний значения 512."
+  },
+  {
+   "код": "E-53-19",
+   "вид": "факт",
+   "утверждение_en": "Since May 6, 2026, the default thinking level for Gemini 3.1 Flash Image Preview is Minimal.",
+   "цитата": "The default thinking level for Gemini 3.1 Flash Image Preview changed to\nMinimal.",
+   "источник_цитаты": "txt",
+   "раздел": "May 06, 2026 — Change — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Прежний дефолт не назван."
+  },
+  {
+   "код": "E-53-20",
+   "вид": "факт",
+   "утверждение_en": "On April 22, 2026, Vertex AI features were renamed for Gemini Enterprise Agent Platform; for example Vertex AI Studio became Agent Studio, Vertex AI Media Studio became Agent Media Studio, and (Gemini/Veo) on Vertex AI became (Gemini/Veo) on Agent Platform.",
+   "цитата": "The table below lists all of the features that have been transitioned from Vertex AI and what their new names are in Agent Platform.",
+   "источник_цитаты": "txt",
+   "раздел": "April 22, 2026 — Change — Vertex AI to Gemini Enterprise Agent Platform naming changes / Initial release",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Нужно для сопоставления старых названий в других источниках (Vertex AI Studio = Agent Studio)."
+  },
+  {
+   "код": "E-53-21",
+   "вид": "факт",
+   "утверждение_en": "Console navigation under Agent Platform (formerly Vertex AI) was reorganized, and bookmarked links continue to work via automatic redirects.",
+   "цитата": "Bookmarked links will continue to\nwork via automatic redirects.",
+   "источник_цитаты": "txt",
+   "раздел": "April 22, 2026 — Change — Vertex AI to Gemini Enterprise Agent Platform naming changes / Initial release",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Объясняет, почему старые URL vertex-ai/... ведут на страницы Agent Platform."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-53-22",
+   "вид": "факт",
+   "утверждение_en": "Release timeline for Nano Banana 2 and Nano Banana Pro on this page: May 6, 2026 preview upgrades (4K, 1 thought image, 512 size, Minimal thinking default for Flash); May 28 GA with 4K and Flash video input in Preview and preview endpoints deprecated; July 17 preview endpoints retired; August 31 4K GA for both, Flash video input GA and us/eu multi-region for Flash.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "May 06 – August 31, 2026",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-53-4, E-53-5, E-53-6, E-53-7, E-53-9, E-53-10, E-53-11, E-53-14, E-53-16, E-53-17, E-53-18, E-53-19",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сводная хронология по записям страницы."
+  },
+  {
+   "код": "E-53-23",
+   "вид": "предупреждение",
+   "утверждение_en": "The page gives two different successors for gemini-3-pro-image-preview: the May 28 migration table says gemini-3-pro-image, while the July 17 note says gemini-3-flash-image, which does not appear anywhere else on the page.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Deprecated — Agent Platform Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview deprecation / July 17, 2026 — Breaking — Gemini 3.1 Flash Image Preview and 3 Pro Image Preview are retired",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-53-8, E-53-15",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Скорее всего опечатка в записи от 17.07; надёжнее таблица миграции."
+  },
+  {
+   "код": "E-53-24",
+   "вид": "ограничение",
+   "утверждение_en": "On this page, image generation from video input is announced only for Gemini 3.1 Flash Image (Preview May 28, GA August 31, 2026); no entry announces it for Gemini 3 Pro Image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026 — Feature — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image / August 31, 2026 — Feature — Gemini 3.1 Flash Image and Gemini 3 Pro Image updates",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-53-6, E-53-11",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Наблюдение об отсутствии записи, не утверждение Google о неподдержке."
+  },
+  {
+   "код": "E-53-25",
+   "вид": "предупреждение",
+   "утверждение_en": "The 512 image_size values and the Minimal default thinking level were announced for the Gemini 3.1 Flash Image Preview model only; the page does not say whether they carried over to the GA gemini-3.1-flash-image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "May 06, 2026 — Change — Agent Platform Gemini 3.1 Flash Image and Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-53-18, E-53-19, E-53-9",
+   "тема": [
+    "thinking",
+    "форматы_разрешение"
+   ],
+   "заметка": "Переносить эти дефолты на GA-модель без проверки нельзя."
+  }
+ ],
+ "противоречия_внутри": [
+  "Преемник gemini-3-pro-image-preview: таблица миграции 28.05 — gemini-3-pro-image; запись 17.07 — 'gemini-3-flash-image' (E-53-15 vs E-53-8)."
+ ],
+ "не_сказано": [
+  "Нет записи о выпуске/GA gemini-3.1-flash-lite-image (Nano Banana 2 Lite), хотя 14.09 она названа целью миграции и дана её дата ретайра.",
+  "Нет записи о выпуске gemini-2.5-flash-image (лента начинается 31.03.2026).",
+  "Не сказано, перенесены ли на GA-модели изменения от 06.05 для preview (512, дефолт thinking Minimal, максимум 1 thought image).",
+  "Не определено, что такое 'thought image'.",
+  "Видео-вход для Gemini 3 Pro Image ни в одной записи не объявлен.",
+  "Мульти-регионы us/eu объявлены только для Flash Image; для Pro — ничего.",
+  "Что будет с запросами к 2.5 Flash Image после 15.03.2027, не сказано; цен нет."
+ ],
+ "сомнения": [
+  "'gemini-3-flash-image' в записи 17.07 — вероятная опечатка (в html то же самое).",
+  "'512' названо '0.5MP resolution'; квадрат 512×512 ≈ 0.26 МП, так что '0.5MP' может означать '0.5K' — страница это не поясняет.",
+  "Ведомость построена по записям ленты (одна строка на запись, для записей про image-модели — по пунктам), а не по каждому абзацу внутри нерелевантных записей.",
+  "Второй признак официальности — стандартный подвал Google, строки 'Google LLC' нет."
+ ]
+}

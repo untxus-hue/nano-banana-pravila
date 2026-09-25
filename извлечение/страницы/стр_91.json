@@ -1,0 +1,809 @@
+{
+ "id": 91,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-responsible-ai",
+ "заголовок": "Gemini image generation and responsible AI  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал страницы: лицензионная строка 'For details, see the Google Developers Site Policies' + ссылки 'About Google', 'Google Cloud terms'; og:site_name 'Google Cloud Documentation'. Строки 'Copyright Google LLC' на странице нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая справочная страница Google Cloud (Gemini Enterprise Agent Platform) для разработчиков, вызывающих генерацию картинок Gemini через API. Модели конкретно не названы — говорится обобщённо о 'Agent Platform's image generation capabilities' / 'Gemini image generation'. Структура: вступление про многоуровневую защиту и список запретов Generative AI Prohibited Use Policy; описание двух путей отказа (отказ модели текстом с FinishReason STOP vs блокировка фильтром: BlockedReason в PromptFeedback для промпта, FinishReason IMAGE_SAFETY/IMAGE_PROHIBITED_CONTENT для ответа); раздел 'Safety filter code categories' с форматом raiFilteredReason и таблицей кодов (13 категорий, отдельно коды для входа-промпта и выхода-картинки); 'What's next?'. Собственные термины: Model refusal, Safety filter blocking, support codes, Content filtered: prompt input / image output. Повторные акценты: 'photorealistic' для знаменитостей; зависимость части фильтров от настроек запроса ('API request settings or allowlisting', 'request safety settings', 'safety filters you configure').",
+ "модели_на_странице": [
+  "не указано в содержании (обобщённо 'Gemini image generation'); в меню сайта: 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image"
+ ],
+ "структура": [
+  "Gemini image generation and responsible AI (вступление, Prohibited Use Policy, Model refusal, Safety filter blocking)",
+  "Safety filter code categories (формат raiFilteredReason + таблица кодов)",
+  "What's next?"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in), строки 1-53"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Enterprise Agent Platform Start free",
+   "итог": "ничего: обвязка сайта (вкладки продукта), строки 54-69"
+  },
+  {
+   "n": 3,
+   "начало": "Overview Beginner's guide Get started",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 70-998; в меню видны пункты 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image, 'Provisioned Throughput for Gemini 3 (Nano Banana) models' — это навигация, не содержание страницы)"
+  },
+  {
+   "n": 4,
+   "начало": "Get Started Get Started with Google",
+   "итог": "ничего: обвязка сайта (дубль верхнего меню), строки 999-1036"
+  },
+  {
+   "n": 5,
+   "начало": "Agent Platform Generative AI Home Documentation",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback), строки 1037-1041"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini image generation and responsible AI",
+   "итог": "ничего: заголовок страницы и служебная кнопка 'Stay organized with collections'"
+  },
+  {
+   "n": 7,
+   "начало": "To ensure a safe and responsible",
+   "итог": "E-91-1"
+  },
+  {
+   "n": 8,
+   "начало": "All users must adhere to the",
+   "итог": "E-91-2"
+  },
+  {
+   "n": 9,
+   "начало": "Relates to child sexual abuse or",
+   "итог": "E-91-3"
+  },
+  {
+   "n": 10,
+   "начало": "Facilitates violent extremism or terrorism.",
+   "итог": "E-91-4"
+  },
+  {
+   "n": 11,
+   "начало": "Facilitates non-consensual intimate imagery.",
+   "итог": "E-91-5"
+  },
+  {
+   "n": 12,
+   "начало": "Facilitates self-harm.",
+   "итог": "E-91-6"
+  },
+  {
+   "n": 13,
+   "начало": "Is sexually explicit.",
+   "итог": "E-91-7"
+  },
+  {
+   "n": 14,
+   "начало": "Constitutes hate speech.",
+   "итог": "E-91-8"
+  },
+  {
+   "n": 15,
+   "начало": "Promotes harassment or bullying.",
+   "итог": "E-91-9"
+  },
+  {
+   "n": 16,
+   "начало": "When provided with an unsafe prompt,",
+   "итог": "E-91-10"
+  },
+  {
+   "n": 17,
+   "начало": "Model refusal: If a prompt is",
+   "итог": "E-91-11"
+  },
+  {
+   "n": 18,
+   "начало": "Safety filter blocking: If the prompt",
+   "итог": "E-91-12"
+  },
+  {
+   "n": 19,
+   "начало": "If the response is identified as",
+   "итог": "E-91-13"
+  },
+  {
+   "n": 20,
+   "начало": "Safety filter code categories",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 21,
+   "начало": "Depending on the safety filters you",
+   "итог": "E-91-14"
+  },
+  {
+   "n": 22,
+   "начало": "{ \"raiFilteredReason\": \"ERROR_MESSAGE. Support codes",
+   "итог": "E-91-15 (кодовый блок <pre>, без промпта; формат поля)"
+  },
+  {
+   "n": 23,
+   "начало": "The listed code corresponds to a",
+   "итог": "E-91-16"
+  },
+  {
+   "n": 24,
+   "начало": "Error codeSafety categoryDescriptionContent filtered: prompt input",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 25,
+   "начало": "58061214 17301594Child Detects child content",
+   "итог": "E-91-17"
+  },
+  {
+   "n": 26,
+   "начало": "29310472 15236754Celebrity Detects a photorealistic",
+   "итог": "E-91-18"
+  },
+  {
+   "n": 27,
+   "начало": "62263041Dangerous contentDetects content that's potentially",
+   "итог": "E-91-19"
+  },
+  {
+   "n": 28,
+   "начало": "57734940 22137204HateDetects hate-related topics",
+   "итог": "E-91-20"
+  },
+  {
+   "n": 29,
+   "начало": "74803281 29578790 42876398OtherDetects other",
+   "итог": "E-91-21"
+  },
+  {
+   "n": 30,
+   "начало": "39322892People/Face Detects a person or",
+   "итог": "E-91-22"
+  },
+  {
+   "n": 31,
+   "начало": "92201652Personal information Detects Personally Identifiable",
+   "итог": "E-91-23"
+  },
+  {
+   "n": 32,
+   "начало": "89371032 49114662 72817394Prohibited contentDetects a",
+   "итог": "E-91-24"
+  },
+  {
+   "n": 33,
+   "начало": "90789179 63429089 43188360SexualDetects content",
+   "итог": "E-91-25"
+  },
+  {
+   "n": 34,
+   "начало": "78610348ToxicDetects toxic topics or content",
+   "итог": "E-91-26"
+  },
+  {
+   "n": 35,
+   "начало": "61493863 56562880ViolenceDetects violence-related content",
+   "итог": "E-91-27"
+  },
+  {
+   "n": 36,
+   "начало": "32635315VulgarDetects vulgar topics or content",
+   "итог": "E-91-28"
+  },
+  {
+   "n": 37,
+   "начало": "64151117Celebrity or child Detects photorealistic",
+   "итог": "E-91-29"
+  },
+  {
+   "n": 38,
+   "начало": "What's next? See the following links",
+   "итог": "ничего: ссылки на соседние страницы (Generate/Edit images, limitations, best practices), без содержания"
+  },
+  {
+   "n": 39,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, 'Last updated 2026-09-22 UTC' — использовано в дате и официальности)"
+  },
+  {
+   "n": 40,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-91-1",
+   "вид": "факт",
+   "утверждение_en": "Agent Platform's image generation capabilities use a multi-layered safety approach designed to prevent the creation of inappropriate content, including sexually explicit, dangerous, violent, hateful, or toxic material.",
+   "цитата": "Agent Platform's image\ngeneration capabilities are equipped with a multi-layered safety approach. This\nis designed to prevent the creation of inappropriate content, including sexually\nexplicit, dangerous, violent, hateful, or toxic material.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вступление страницы; модели не названы, речь об image generation на Agent Platform в целом."
+  },
+  {
+   "код": "E-91-2",
+   "вид": "правило",
+   "утверждение_en": "All users must adhere to the Generative AI Prohibited Use Policy, which strictly forbids generating the content listed below it.",
+   "цитата": "All users must adhere to the Generative AI Prohibited Use Policy. This policy\nstrictly forbids the generation of content that:",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Единственное место страницы с 'must'. Сам список запретов — E-91-3…E-91-9."
+  },
+  {
+   "код": "E-91-3",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that relates to child sexual abuse or exploitation.",
+   "цитата": "Relates to child sexual abuse or exploitation.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-4",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that facilitates violent extremism or terrorism.",
+   "цитата": "Facilitates violent extremism or terrorism.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-5",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that facilitates non-consensual intimate imagery.",
+   "цитата": "Facilitates non-consensual intimate imagery.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-6",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that facilitates self-harm.",
+   "цитата": "Facilitates self-harm.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-7",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that is sexually explicit.",
+   "цитата": "Is sexually explicit.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-8",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that constitutes hate speech.",
+   "цитата": "Constitutes hate speech.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-9",
+   "вид": "ограничение",
+   "утверждение_en": "The Prohibited Use Policy forbids generating content that promotes harassment or bullying.",
+   "цитата": "Promotes harassment or bullying.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пункт списка запретов политики (см. E-91-2)."
+  },
+  {
+   "код": "E-91-10",
+   "вид": "объяснение",
+   "утверждение_en": "When given an unsafe prompt, the model might refuse to generate an image, or the prompt or the generated response might be blocked by safety filters.",
+   "цитата": "When provided with an unsafe prompt, the model might refuse to generate an\nimage, or the prompt or generated response might be blocked by our safety\nfilters.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вводит два разных механизма: отказ самой модели и блокировку фильтром (раскрыты в E-91-11…E-91-13). Источник пишет 'might'."
+  },
+  {
+   "код": "E-91-11",
+   "вид": "объяснение",
+   "утверждение_en": "If a prompt is potentially unsafe, the model might refuse to process the request; it usually returns a text response saying it can't generate unsafe images, and the FinishReason is STOP.",
+   "цитата": "Model refusal: If a prompt is potentially unsafe, the model might refuse to\nprocess the request. If this happens, the model usually gives a text\nresponse saying it can't generate unsafe images. The\nFinishReason is STOP.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Отказ модели не выглядит как ошибка: finishReason = STOP, вместо картинки текст. 'usually' — не гарантия."
+  },
+  {
+   "код": "E-91-12",
+   "вид": "факт",
+   "утверждение_en": "If a safety filter identifies the prompt as potentially harmful, the API returns BlockedReason in PromptFeedback.",
+   "цитата": "If the prompt is identified as potentially harmful by a safety filter,\nthe API returns BlockedReason in\nPromptFeedback.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Блокировка на входе (промпт) — сигнал в PromptFeedback.BlockedReason."
+  },
+  {
+   "код": "E-91-13",
+   "вид": "факт",
+   "утверждение_en": "If a safety filter identifies the response as potentially harmful, the API response includes a FinishReason of IMAGE_SAFETY, IMAGE_PROHIBITED_CONTENT, or similar.",
+   "цитата": "If the response is identified as potentially harmful by a safety filter,\nthe API response includes a FinishReason of\nIMAGE_SAFETY, IMAGE_PROHIBITED_CONTENT, or\nsimilar.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Блокировка на выходе (картинка) — сигнал в FinishReason; список значений открытый ('or similar')."
+  },
+  {
+   "код": "E-91-14",
+   "вид": "факт",
+   "утверждение_en": "Depending on the safety filters you configure, the output may contain a safety reason code.",
+   "цитата": "Depending on the safety filters you configure, your output may contain a safety\nreason code similar to the following:",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Подразумевает, что фильтры настраиваемы пользователем; сами настройки на странице не названы."
+  },
+  {
+   "код": "E-91-15",
+   "вид": "факт",
+   "утверждение_en": "The safety reason code is returned in a raiFilteredReason field as an error message followed by 'Support codes:' and a numeric code.",
+   "цитата": "\"raiFilteredReason\": \"ERROR_MESSAGE. Support codes: 56562880\"",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Кодовый блок (<pre>) без промпта: формат поля. Код 56562880 в примере совпадает с кодом Violence/output (E-91-27)."
+  },
+  {
+   "код": "E-91-16",
+   "вид": "факт",
+   "утверждение_en": "Each listed support code corresponds to a specific harmful category, per a code-to-category mapping table.",
+   "цитата": "The listed code corresponds to a specific harmful category. The\ncode-to-category mappings are as follows:",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Вводит таблицу: столбцы Error code / Safety category / Description / Content filtered (prompt input or image output)."
+  },
+  {
+   "код": "E-91-17",
+   "вид": "факт",
+   "утверждение_en": "Child category: detects child content that isn't allowed due to the API request settings or allowlisting; prompt input code 58061214, image output code 17301594.",
+   "цитата": "Detects child content that isn't allowed due to the API request\nsettings or allowlisting.\ninput (prompt): 58061214\noutput (image): 17301594",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Формулировка 'isn't allowed due to the API request settings or allowlisting' означает, что допустимость детского контента зависит от настроек/allowlist, а не абсолютный запрет изображения детей."
+  },
+  {
+   "код": "E-91-18",
+   "вид": "факт",
+   "утверждение_en": "Celebrity category: detects a photorealistic representation of a celebrity in the request; prompt input code 29310472, image output code 15236754.",
+   "цитата": "Detects a photorealistic representation of a celebrity in the request.\ninput (prompt): 29310472\noutput (image): 15236754",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Описание квалифицировано словом 'photorealistic'."
+  },
+  {
+   "код": "E-91-19",
+   "вид": "факт",
+   "утверждение_en": "Dangerous content category (code 62263041): detects content that's potentially dangerous in nature; applies to prompt input.",
+   "цитата": "62263041Dangerous contentDetects content that's potentially dangerous in nature.input (prompt)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "В .txt ячейки таблицы склеены: код прилип к названию категории. Только вход (prompt)."
+  },
+  {
+   "код": "E-91-20",
+   "вид": "факт",
+   "утверждение_en": "Hate category: detects hate-related topics or content; prompt input code 57734940, image output code 22137204.",
+   "цитата": "22137204HateDetects hate-related topics or content.input (prompt): 57734940\noutput (image): 22137204",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Склейка ячеек в .txt."
+  },
+  {
+   "код": "E-91-21",
+   "вид": "факт",
+   "утверждение_en": "Other category: detects other miscellaneous safety issues with the request; prompt input code 42876398, image output codes 29578790 and 74803281.",
+   "цитата": "42876398OtherDetects other miscellaneous safety issues with the request.input (prompt): 42876398\noutput (image): 29578790, 74803281",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Категория-корзина без раскрытия содержимого."
+  },
+  {
+   "код": "E-91-22",
+   "вид": "факт",
+   "утверждение_en": "People/Face category (code 39322892): detects a person or face when it isn't allowed due to the request safety settings; applies to image output.",
+   "цитата": "39322892People/Face\nDetects a person or face when it isn't allowed due to the request safety\nsettings.\noutput (image)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Условная категория: зависит от safety settings запроса. Только выход (image)."
+  },
+  {
+   "код": "E-91-23",
+   "вид": "факт",
+   "утверждение_en": "Personal information category (code 92201652): detects Personally Identifiable Information (PII) in the text, such as credit card numbers or home addresses; applies to prompt input.",
+   "цитата": "92201652Personal information\nDetects Personally Identifiable Information (PII) in the text, such as\ncredit card numbers, home addresses, or other similar\ninformation.\ninput (prompt)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Только вход (prompt), 'in the text'."
+  },
+  {
+   "код": "E-91-24",
+   "вид": "факт",
+   "утверждение_en": "Prohibited content category: detects a request for prohibited content; prompt input code 89371032, image output codes 49114662 and 72817394.",
+   "цитата": "72817394Prohibited contentDetects a request for prohibited content.input (prompt): 89371032\noutput (image): 49114662, 72817394",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Соответствует FinishReason IMAGE_PROHIBITED_CONTENT по смыслу (связь на странице явно не проведена)."
+  },
+  {
+   "код": "E-91-25",
+   "вид": "факт",
+   "утверждение_en": "Sexual category: detects content that's sexual in nature; prompt input code 90789179, image output codes 63429089 and 43188360.",
+   "цитата": "43188360SexualDetects content that's sexual in nature.input (prompt): 90789179\noutput (image): 63429089, 43188360",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Склейка ячеек в .txt."
+  },
+  {
+   "код": "E-91-26",
+   "вид": "факт",
+   "утверждение_en": "Toxic category (code 78610348): detects toxic topics or content in the text; applies to prompt input.",
+   "цитата": "78610348ToxicDetects toxic topics or content in the text.input (prompt)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Только вход (prompt)."
+  },
+  {
+   "код": "E-91-27",
+   "вид": "факт",
+   "утверждение_en": "Violence category: detects violence-related content from the image or text; prompt input code 61493863, image output code 56562880.",
+   "цитата": "56562880ViolenceDetects violence-related content from the image or text.input (prompt): 61493863\noutput (image): 56562880",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "'from the image or text' — фильтр смотрит и на картинку, и на текст."
+  },
+  {
+   "код": "E-91-28",
+   "вид": "факт",
+   "утверждение_en": "Vulgar category (code 32635315): detects vulgar topics or content from the text; applies to prompt input.",
+   "цитата": "32635315VulgarDetects vulgar topics or content from the text.input (prompt)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Только вход (prompt)."
+  },
+  {
+   "код": "E-91-29",
+   "вид": "факт",
+   "утверждение_en": "Celebrity or child category (code 64151117): detects photorealistic representation of a celebrity or child that violates Google's safety policies; applies to both prompt input and image output.",
+   "цитата": "64151117Celebrity or child\nDetects photorealistic representation of a celebrity or child that\nviolates Google's safety policies.\ninput (prompt)\noutput (image)",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Отдельная комбинированная категория поверх Child (E-91-17) и Celebrity (E-91-18); снова 'photorealistic'."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-91-30",
+   "вид": "предупреждение",
+   "утверждение_en": "A model refusal is returned as a text response with FinishReason STOP, while filter blocks surface as BlockedReason or IMAGE_SAFETY-type finish reasons; so STOP alone does not mean an image was produced, and a pipeline should check whether an image part is actually present.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini image generation and responsible AI",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-91-11, E-91-12, E-91-13",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Вывод из сопоставления трёх описанных путей; прямо на странице не сформулирован."
+  },
+  {
+   "код": "E-91-31",
+   "вид": "факт",
+   "утверждение_en": "Across the table, Dangerous content, Personal information, Toxic and Vulgar are filtered only on prompt input, People/Face only on image output, and Child, Celebrity, Hate, Other, Prohibited content, Sexual, Violence and Celebrity-or-child on both.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-91-17, E-91-18, E-91-19, E-91-20, E-91-21, E-91-22, E-91-23, E-91-24, E-91-25, E-91-26, E-91-27, E-91-28, E-91-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сводка по столбцу 'Content filtered' таблицы."
+  },
+  {
+   "код": "E-91-32",
+   "вид": "объяснение",
+   "утверждение_en": "Several filters are conditional on request configuration: safety codes depend on the filters you configure, child content is blocked when not allowed by API request settings or allowlisting, and people/faces are blocked when not allowed by request safety settings; the page does not name these settings.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-91-14, E-91-17, E-91-22",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Показывает, что часть фильтров не абсолютна, а управляется настройками; какими — страница не говорит."
+  },
+  {
+   "код": "E-91-33",
+   "вид": "факт",
+   "утверждение_en": "Both celebrity-related filter descriptions are qualified by 'photorealistic' representation; the page does not state how non-photorealistic depictions are treated.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-91-18, E-91-29",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Акцент повторён дважды (Celebrity и Celebrity or child). Не выводить отсюда разрешение для непохожих на фото стилей — страница этого не говорит."
+  },
+  {
+   "код": "E-91-34",
+   "вид": "факт",
+   "утверждение_en": "The example support code 56562880 in the raiFilteredReason sample is the Violence image-output code from the mapping table.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Safety filter code categories",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-91-15, E-91-27",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Проверка согласованности примера и таблицы: совпадает."
+  }
+ ],
+ "противоречия_внутри": [
+  "не найдено. Есть перекрытие без пояснения: отдельные категории Child (58061214/17301594) и Celebrity (29310472/15236754) плюс комбинированная 'Celebrity or child' (64151117) — страница не объясняет, когда срабатывает какая."
+ ],
+ "не_сказано": [
+  "Не названы конкретные модели (Nano Banana / Nano Banana 2 / Pro / Lite) и различия фильтров между ними.",
+  "Не названы настройки (параметры запроса), которыми управляются фильтры Child и People/Face, и как получить allowlisting.",
+  "Не сказано, в каком поле ответа generateContent появляется raiFilteredReason и как он соотносится с FinishReason/BlockedReason.",
+  "Нет упоминания SynthID, водяного знака или Content Credentials, хотя страница о responsible AI (в меню есть отдельный пункт Content Credentials).",
+  "Нет советов, как переформулировать промпт после отказа, и не сказано, тарифицируются ли заблокированные запросы.",
+  "Не объяснено, почему у Dangerous content, Personal information, Toxic, Vulgar есть только код входа, а у People/Face только код выхода."
+ ],
+ "сомнения": [
+  "В html og:url = https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/gemini-image-responsible-ai — это URL страницы id 292; вероятно, vertex-ai URL перенаправлен и 91 и 292 — один и тот же документ.",
+  "Второй признак официальности — лицензионная строка подвала и ссылки Google Cloud terms/About Google, а не строка Copyright Google LLC.",
+  "Ячейки таблицы в .txt склеены (номер кода прилипает к названию категории, например '62263041Dangerous content'); цитаты взяты как есть, с переводами строк (\\n) ровно как в .txt.",
+  "Долгие единицы E-91-30…E-91-34 без цитаты (источник_цитаты 'нет') — это выводы, не текст страницы."
+ ]
+}

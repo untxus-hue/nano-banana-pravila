@@ -1,0 +1,1173 @@
+{
+ "id": 52,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/2-5-flash-image",
+ "заголовок": "Gemini 2.5 Flash Image  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC; Release date: October 2, 2025; retirement March 15, 2027",
+ "официальность": {
+  "домен": "docs.cloud.google.com (canonical совпадает с url)",
+  "второй_признак": "подвал: лицензия CC BY 4.0 / Apache 2.0 со ссылкой на Google Developers Site Policies; ссылки 'Google Cloud terms', 'About Google'. Строки 'Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 2.5 Flash Image в документации Gemini Enterprise Agent Platform; для разработчиков Google Cloud. Меню ~95%; содержание (строки 1043-1230): баннер Deprecated (ретайр 15.03.2027, мигрировать на 3.1 Flash-Lite Image), позиционирование (цена/производительность, на базе Gemini 2.5 Flash), 1290 токенов на сгенерированную картинку, модальности (без видео/аудио), контекст 32,768, без thinking/context caching/grounding, лимиты: 3 входные картинки, 10 выходных, 10 соотношений сторон, 3 документа по 3 страницы, topK фиксирован 64, региональные эндпоинты US/Europe, GA 02.10.2025. Разрешений (1K/2K/4K) нет. Имя 'Nano Banana' не упоминается. Промптов/кода нет (0 <pre>). Повторный акцент — деприкейшен.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image",
+  "gemini-3.1-flash-lite-image (как цель миграции)",
+  "Gemini 2.5 Flash (как база)"
+ ],
+ "структура": [
+  "Deprecated",
+  "(intro)",
+  "Image generation specifications",
+  "Model ID",
+  "Modalities",
+  "Token limits",
+  "Capabilities",
+  "Tools",
+  "Consumption options",
+  "Input size limit",
+  "Technical specifications (Image, Text)",
+  "Parameter defaults",
+  "Supported regions",
+  "Versions",
+  "Security controls"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 2.5 Flash Image | Gemini",
+   "итог": "ничего: заголовок документа (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню и левое дерево документации, строки 2-999; diff — идентично стр. 42)"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started Get Started with Google",
+   "итог": "ничего: обвязка сайта (повтор меню и хлебные крошки, строки 1000-1042)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 2.5 Flash Image Stay organized",
+   "итог": "ничего: заголовок страницы и виджет (содержательное имя модели — в E-52-1)"
+  },
+  {
+   "n": 5,
+   "начало": "Deprecated: Gemini 2.5 Flash Image is",
+   "итог": "E-52-2, E-52-3"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 2.5 Flash Image is optimized",
+   "итог": "E-52-4"
+  },
+  {
+   "n": 7,
+   "начало": "Gemini 2.5 Flash Image uses the",
+   "итог": "E-52-5"
+  },
+  {
+   "n": 8,
+   "начало": "Image generation specifications Generating images with",
+   "итог": "E-52-6"
+  },
+  {
+   "n": 9,
+   "начало": "Try in Agent Studio Deploy example",
+   "итог": "ничего: обвязка (кнопки-ссылки)"
+  },
+  {
+   "n": 10,
+   "начало": "Note: \"Deploy example app\" requires a",
+   "итог": "ничего: не про генерацию картинок (демо-приложение)"
+  },
+  {
+   "n": 11,
+   "начало": "Model ID gemini-2.5-flash-image",
+   "итог": "E-52-1"
+  },
+  {
+   "n": 12,
+   "начало": "Modalities description Text Input and output",
+   "итог": "E-52-7"
+  },
+  {
+   "n": 13,
+   "начало": "mic_off Audio Not supported videocam_off",
+   "итог": "E-52-8"
+  },
+  {
+   "n": 14,
+   "начало": "Token limits Context window 32,768",
+   "итог": "E-52-9"
+  },
+  {
+   "n": 15,
+   "начало": "Maximum output tokens 32,768",
+   "итог": "E-52-10"
+  },
+  {
+   "n": 16,
+   "начало": "Capabilities Thinking Not supported",
+   "итог": "E-52-11"
+  },
+  {
+   "n": 17,
+   "начало": "System instructions Supported",
+   "итог": "E-52-12"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini Live API Not supported Structured",
+   "итог": "E-52-13"
+  },
+  {
+   "n": 19,
+   "начало": "Context caching Not supported",
+   "итог": "E-52-14"
+  },
+  {
+   "n": 20,
+   "начало": "Count Tokens Supported",
+   "итог": "E-52-15"
+  },
+  {
+   "n": 21,
+   "начало": "RAG Engine Not supported Chat",
+   "итог": "E-52-16"
+  },
+  {
+   "n": 22,
+   "начало": "Image generation Image generation Supported",
+   "итог": "E-52-17"
+  },
+  {
+   "n": 23,
+   "начало": "Edit images Edit images, Multi-turn",
+   "итог": "E-52-18"
+  },
+  {
+   "n": 24,
+   "начало": "Interleaved images and text Supported",
+   "итог": "E-52-19"
+  },
+  {
+   "n": 25,
+   "начало": "Content Credentials (C2PA) Supported",
+   "итог": "E-52-20"
+  },
+  {
+   "n": 26,
+   "начало": "Virtual try-on Not supported",
+   "итог": "E-52-21"
+  },
+  {
+   "n": 27,
+   "начало": "Tools Grounding Not supported Code",
+   "итог": "E-52-22"
+  },
+  {
+   "n": 28,
+   "начало": "Consumption options Provisioned Throughput Supported",
+   "итог": "E-52-23"
+  },
+  {
+   "n": 29,
+   "начало": "Pay-as-you-go Standard PayGo Supported",
+   "итог": "E-52-24"
+  },
+  {
+   "n": 30,
+   "начало": "Fixed quota Not supported",
+   "итог": "E-52-25"
+  },
+  {
+   "n": 31,
+   "начало": "Input size limit 500 MB",
+   "итог": "E-52-26"
+  },
+  {
+   "n": 32,
+   "начало": "Technical specifications Image photo Maximum images",
+   "итог": "E-52-27"
+  },
+  {
+   "n": 33,
+   "начало": "Maximum file size per file for",
+   "итог": "E-52-28"
+  },
+  {
+   "n": 34,
+   "начало": "Maximum file size per file from",
+   "итог": "E-52-29"
+  },
+  {
+   "n": 35,
+   "начало": "Maximum number of output images per",
+   "итог": "E-52-30"
+  },
+  {
+   "n": 36,
+   "начало": "Supported aspect ratios: 1:1, 3:2",
+   "итог": "E-52-31"
+  },
+  {
+   "n": 37,
+   "начало": "Supported MIME types: image/png ,",
+   "итог": "E-52-32"
+  },
+  {
+   "n": 38,
+   "начало": "Text description Maximum number of files",
+   "итог": "E-52-33"
+  },
+  {
+   "n": 39,
+   "начало": "Maximum file size per file for the API",
+   "итог": "E-52-34"
+  },
+  {
+   "n": 40,
+   "начало": "Supported MIME types: application/pdf ,",
+   "итог": "E-52-35"
+  },
+  {
+   "n": 41,
+   "начало": "Parameter defaults tune Temperature: 0.0-2.0",
+   "итог": "E-52-36"
+  },
+  {
+   "n": 42,
+   "начало": "topP: 0.0-1.0 (default 0.95)",
+   "итог": "E-52-37"
+  },
+  {
+   "n": 43,
+   "начало": "topK: 64 (fixed)",
+   "итог": "E-52-38"
+  },
+  {
+   "n": 44,
+   "начало": "candidateCount: 1",
+   "итог": "E-52-39"
+  },
+  {
+   "n": 45,
+   "начало": "Supported regions Model availability Global:",
+   "итог": "E-52-40"
+  },
+  {
+   "n": 46,
+   "начало": "ML processing United States: Multi-region",
+   "итог": "E-52-41"
+  },
+  {
+   "n": 47,
+   "начало": "Versions gemini-2.5-flash-image Launch stage: GA",
+   "итог": "E-52-42"
+  },
+  {
+   "n": 48,
+   "начало": "Retirement date: March 15, 2027",
+   "итог": "E-52-43"
+  },
+  {
+   "n": 49,
+   "начало": "Security controls Online prediction Data residency",
+   "итог": "E-52-44"
+  },
+  {
+   "n": 50,
+   "начало": "See Security controls for more information.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 51,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности)"
+  },
+  {
+   "n": 52,
+   "начало": "Last updated 2026-09-22 UTC. Need",
+   "итог": "ничего: дата страницы (в дата_в_тексте) и виджет отзыва (JSON-строка кнопок, строка 1241)"
+  },
+  {
+   "n": 53,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал, строки 1242-1286; идентичен стр. 42)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-52-1",
+   "вид": "факт",
+   "утверждение_en": "The model ID for Gemini 2.5 Flash Image is gemini-2.5-flash-image.",
+   "цитата": "Model ID\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Model ID",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Имя 'Nano Banana' на странице не встречается."
+  },
+  {
+   "код": "E-52-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 Flash Image is deprecated and will be retired on March 15, 2027.",
+   "цитата": "Gemini 2.5 Flash Image is deprecated and will be retired on March 15, 2027.",
+   "источник_цитаты": "txt",
+   "раздел": "Deprecated",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Баннер Deprecated в начале страницы."
+  },
+  {
+   "код": "E-52-3",
+   "вид": "инструкция",
+   "утверждение_en": "Users of Gemini 2.5 Flash Image should migrate to Gemini 3.1 Flash-Lite Image.",
+   "цитата": "Migrate to\nGemini 3.1 Flash-Lite Image",
+   "источник_цитаты": "txt",
+   "раздел": "Deprecated",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повелительное наклонение в уведомлении о деприкейшене; целевая модель — Flash-Lite Image (Nano Banana 2 Lite)."
+  },
+  {
+   "код": "E-52-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+   "цитата": "Gemini 2.5 Flash Image is optimized for image understanding and\ngeneration and offers a balance of price and performance.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-5",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.5 Flash Image uses the speed and cost-effectiveness of Gemini 2.5 Flash to provide fast and efficient image generation and editing.",
+   "цитата": "Gemini 2.5 Flash Image uses the speed and cost-effectiveness of\nGemini 2.5 Flash to provide fast and efficient image generation and\nediting capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Модель построена на базе Gemini 2.5 Flash."
+  },
+  {
+   "код": "E-52-6",
+   "вид": "факт",
+   "утверждение_en": "Generating images with Gemini 2.5 Flash Image consumes 1290 tokens for each image generated.",
+   "цитата": "Generating images with Gemini 2.5 Flash Image consumes 1290 tokens for\neach image generated.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Одно число на картинку; таблицы по разрешениям нет."
+  },
+  {
+   "код": "E-52-7",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image supports text and image as both input and output modalities.",
+   "цитата": "Text\nInput and output\nphoto\nImage\nInput and output",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-8",
+   "вид": "ограничение",
+   "утверждение_en": "Audio and video are not supported modalities for Gemini 2.5 Flash Image.",
+   "цитата": "Audio\nNot supported\nvideocam_off\nVideo\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-9",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image has a context window of 32,768 tokens.",
+   "цитата": "Context window\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-10",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image has a maximum of 32,768 output tokens.",
+   "цитата": "Maximum output tokens\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-11",
+   "вид": "ограничение",
+   "утверждение_en": "Thinking is not supported by Gemini 2.5 Flash Image.",
+   "цитата": "Thinking\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-12",
+   "вид": "факт",
+   "утверждение_en": "System instructions are supported by Gemini 2.5 Flash Image.",
+   "цитата": "System instructions\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-13",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Live API and structured output are not supported by Gemini 2.5 Flash Image.",
+   "цитата": "Gemini Live API\nNot supported\nStructured output\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-14",
+   "вид": "ограничение",
+   "утверждение_en": "Context caching is not supported by Gemini 2.5 Flash Image.",
+   "цитата": "Context caching\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-15",
+   "вид": "факт",
+   "утверждение_en": "Count Tokens is supported for Gemini 2.5 Flash Image.",
+   "цитата": "Count Tokens\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-16",
+   "вид": "ограничение",
+   "утверждение_en": "RAG Engine, chat completions, tuning and URL context are not supported by Gemini 2.5 Flash Image.",
+   "цитата": "RAG Engine\nNot supported\nChat completions\nNot supported\nTuning\nNot supported\nURL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-17",
+   "вид": "факт",
+   "утверждение_en": "Image generation is supported by Gemini 2.5 Flash Image.",
+   "цитата": "Image generation\nImage generation\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Генерации из видео-входа в строке нет."
+  },
+  {
+   "код": "E-52-18",
+   "вид": "факт",
+   "утверждение_en": "Image editing, including multi-turn image editing, is supported by Gemini 2.5 Flash Image.",
+   "цитата": "Edit images, Multi-turn image editing\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-19",
+   "вид": "факт",
+   "утверждение_en": "Interleaved images and text output is supported by Gemini 2.5 Flash Image.",
+   "цитата": "Interleaved images and text\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-20",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials (C2PA) are supported by Gemini 2.5 Flash Image.",
+   "цитата": "Content Credentials (C2PA)\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-21",
+   "вид": "ограничение",
+   "утверждение_en": "Virtual try-on is not supported by Gemini 2.5 Flash Image.",
+   "цитата": "Virtual try-on\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-22",
+   "вид": "ограничение",
+   "утверждение_en": "Grounding, code execution and function calling are not supported by Gemini 2.5 Flash Image.",
+   "цитата": "Grounding\nNot supported\nCode execution\nNot supported\nFunction calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-23",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput and batch inference are supported consumption options for Gemini 2.5 Flash Image.",
+   "цитата": "Provisioned Throughput\nSupported\nBatch inference\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-24",
+   "вид": "факт",
+   "утверждение_en": "Pay-as-you-go is supported only as Standard PayGo for Gemini 2.5 Flash Image.",
+   "цитата": "Pay-as-you-go\nStandard PayGo\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Flex PayGo в строке не указан."
+  },
+  {
+   "код": "E-52-25",
+   "вид": "ограничение",
+   "утверждение_en": "Fixed quota is not supported as a consumption option for Gemini 2.5 Flash Image.",
+   "цитата": "Fixed quota\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-26",
+   "вид": "лимит",
+   "утверждение_en": "The input size limit for Gemini 2.5 Flash Image is 500 MB.",
+   "цитата": "Input size limit\n500 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Input size limit",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-27",
+   "вид": "лимит",
+   "утверждение_en": "A single Gemini 2.5 Flash Image prompt can include at most 3 images.",
+   "цитата": "Maximum images per prompt:\n      3",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Максимум 3 входных (референсных) изображения."
+  },
+  {
+   "код": "E-52-28",
+   "вид": "лимит",
+   "утверждение_en": "Each image file sent as inline data or uploaded directly through the console can be at most 7 MB.",
+   "цитата": "Maximum file size per file for inline data or direct uploads through the console:\n      7 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-29",
+   "вид": "лимит",
+   "утверждение_en": "Each image file read from Google Cloud Storage can be at most 30 MB.",
+   "цитата": "Maximum file size per file from Google Cloud Storage:\n      30 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-30",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image can return at most 10 output images per prompt.",
+   "цитата": "Maximum number of output images per prompt:\n      10",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Явное число, а не токен-лимит."
+  },
+  {
+   "код": "E-52-31",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image supports the aspect ratios 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9 and 21:9.",
+   "цитата": "1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "10 соотношений; нет 1:4/4:1/1:8/8:1/9:21."
+  },
+  {
+   "код": "E-52-32",
+   "вид": "факт",
+   "утверждение_en": "Supported image MIME types are image/png, image/jpeg, image/webp, image/heic and image/heif.",
+   "цитата": "image/png\n,\nimage/jpeg\n,\nimage/webp\n,\nimage/heic\n,\nimage/heif",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-33",
+   "вид": "лимит",
+   "утверждение_en": "A Gemini 2.5 Flash Image prompt can include at most 3 text/document files, with at most 3 pages per file.",
+   "цитата": "Maximum number of files per prompt:\n      3\nMaximum number of pages per file:\n      3",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-34",
+   "вид": "лимит",
+   "утверждение_en": "Document files can be up to 50 MB (application/pdf) or 7 MB (text/plain) for API or Cloud Storage imports, and 7 MB for direct uploads through the console.",
+   "цитата": "Maximum file size per file for the API or Cloud Storage imports:\n      50 MB(application/pdf) or 7 MB(text/plain)\nMaximum file size per file for direct uploads through the console:\n      7 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-35",
+   "вид": "факт",
+   "утверждение_en": "Supported document MIME types are application/pdf and text/plain.",
+   "цитата": "application/pdf\n,\ntext/plain",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-36",
+   "вид": "факт",
+   "утверждение_en": "Temperature for Gemini 2.5 Flash Image ranges from 0.0 to 2.0 with a default of 1.0.",
+   "цитата": "Temperature: 0.0-2.0 (default 1.0)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-37",
+   "вид": "факт",
+   "утверждение_en": "topP for Gemini 2.5 Flash Image ranges from 0.0 to 1.0 with a default of 0.95.",
+   "цитата": "topP: 0.0-1.0 (default 0.95)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-38",
+   "вид": "ограничение",
+   "утверждение_en": "topK for Gemini 2.5 Flash Image is fixed at 64.",
+   "цитата": "topK: 64 (fixed)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Параметр не настраивается."
+  },
+  {
+   "код": "E-52-39",
+   "вид": "факт",
+   "утверждение_en": "candidateCount for Gemini 2.5 Flash Image is 1.",
+   "цитата": "candidateCount: 1",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-40",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is available in global and in the listed US (us-central1, us-east1, us-east4, us-east5, us-south1, us-west1, us-west4) and Europe (europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west4, europe-west8) regions.",
+   "цитата": "Global:\nglobal\nUnited States:\nus-central1\n,\nus-east1\n,\nus-east4\n,\nus-east5\n,\nus-south1\n,\nus-west1\n,\nus-west4\nEurope:\neurope-central2\n,\neurope-north1\n,\neurope-southwest1\n,\neurope-west1\n,\neurope-west4\n,\neurope-west8",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-41",
+   "вид": "факт",
+   "утверждение_en": "ML processing for Gemini 2.5 Flash Image happens in the United States multi-region or the Europe multi-region.",
+   "цитата": "ML processing\nUnited States:\nMulti-region\nEurope:\nMulti-region",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-42",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image is at GA launch stage with a release date of October 2, 2025.",
+   "цитата": "Launch stage: GA\nRelease date: October 2, 2025",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-52-43",
+   "вид": "факт",
+   "утверждение_en": "The retirement date of gemini-2.5-flash-image is March 15, 2027.",
+   "цитата": "Retirement date: March 15, 2027",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Совпадает с баннером Deprecated."
+  },
+  {
+   "код": "E-52-44",
+   "вид": "факт",
+   "утверждение_en": "Data residency, CMEK, VPC-SC and AXT security controls are listed for online prediction and batch inference.",
+   "цитата": "Online prediction\nData residency\nCMEK\nVPC-SC\nAXT\nBatch inference\nData residency\nCMEK\nVPC-SC\nAXT",
+   "источник_цитаты": "txt",
+   "раздел": "Security controls",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Context caching в блоке нет (он и не поддерживается)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-52-45",
+   "вид": "предупреждение",
+   "утверждение_en": "The page stresses deprecation twice with the same retirement date (March 15, 2027, in the banner and in Versions) and names Gemini 3.1 Flash-Lite Image as the migration target.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Deprecated / Versions",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-52-2, E-52-3, E-52-43",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повторный акцент страницы; даты согласованы."
+  },
+  {
+   "код": "E-52-46",
+   "вид": "объяснение",
+   "утверждение_en": "For Gemini 2.5 Flash Image the explicit cap of 10 output images is the binding limit: 10 images × 1290 tokens = 12,900 tokens, well below the 32,768 output-token limit.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications / Technical specifications / Token limits",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-52-6, E-52-10, E-52-30",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Арифметика, не утверждение Google."
+  },
+  {
+   "код": "E-52-47",
+   "вид": "ограничение",
+   "утверждение_en": "Compared within this card, reference inputs are tight: at most 3 images and 3 document files of up to 3 pages each per prompt, in a 32,768-token context, with no thinking and no grounding.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Capabilities / Tools",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-52-9, E-52-11, E-52-22, E-52-27, E-52-33",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сводка ограничений карточки; межмодельного сравнения не делается."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не перечислены поддерживаемые разрешения (1K/2K/4K) и размер выходной картинки в пикселях.",
+  "Не сказано, сколько токенов стоит входная картинка — только 1290 токенов на сгенерированную.",
+  "Не названа модель как 'Nano Banana'.",
+  "Нет API-параметров для aspect ratio и дефолтного соотношения.",
+  "Нет цен в деньгах, промптинг-рекомендаций и примеров промптов.",
+  "SynthID не упомянут — только C2PA.",
+  "Не сказано, что будет с запросами после 15.03.2027 (ошибка/редирект)."
+ ],
+ "сомнения": [
+  "Текст этой страницы извлечён иначе, чем у стр. 42/50/51 (значения на отдельных строках с отступом, MIME через строки ','); цитаты взяты с этими переводами строк и отступами буквально.",
+  "Второй признак официальности — стандартный подвал Google, строки 'Google LLC' нет."
+ ]
+}

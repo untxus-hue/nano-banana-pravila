@@ -1,0 +1,875 @@
+{
+ "id": 75,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb",
+ "заголовок": "gh-intro-gemini-2-5-image-gen (Gemini 2.5 Flash Image (Nano Banana 🍌) Generation)",
+ "дата_в_тексте": "NOTE: 'On October 2, 2026, Gemini 2.5 Flash Image will be retired on Gemini Enterprise Agent Platform'; копирайт 2025",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий GoogleCloudPlatform/generative-ai)",
+  "второй_признак": "Строка '# Copyright 2025 Google LLC' + лицензия Apache 2.0; организация GoogleCloudPlatform. Автор — Katie Nguyen (GitHub katiemn), принадлежность на странице не указана.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальный вводный ноутбук Google Cloud для разработчиков по Gemini 2.5 Flash Image (gemini-2.5-flash-image, Nano Banana) через Google Gen AI SDK на Agent Platform (enterprise=True, location global). В начале — предупреждение о выводе модели 2 октября 2026 и совет перейти на Nano Banana 2 / Pro. Структура: обзор → setup → генерация (text-to-image с ImageConfig/aspect_ratio и candidate_count; SynthID; проверка finish_reason) → текст+картинки вперемешку → редактирование (кастомизация субъекта, перенос стиля интерьера, мультиход в чате с переводом надписи, несколько рефов с подписью). Руководства по составлению промптов нет — короткие промпты-примеры и параметры вызова. Повторяемые акценты: IMAGE в response_modalities обязателен; формат только через ImageConfig.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana)",
+  "Gemini 3.1 Flash Image (Nano Banana 2) — как замена",
+  "Gemini 3 Pro Image (Nano Banana Pro) — как замена"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Gemini 2.5 Flash Image (Nano Banana 🍌) Generation + NOTE о выводе модели",
+  "ссылки/шаринг, автор",
+  "Overview",
+  "Get started (SDK, auth, libraries, project, model)",
+  "Image generation: Text to image; Text to image and text",
+  "Image editing: Subject customization; Style transfer; Multi-turn image editing; Multiple reference images"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2025 Google LLC # Licensed",
+   "итог": "ничего: копирайт и лицензия (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Gemini 2.5 Flash Image (Nano Banana 🍌) Generation",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "> **NOTE:** On October 2, 2026,",
+   "итог": "E-75-1"
+  },
+  {
+   "n": 4,
+   "начало": "<table align=\"left\"> … Open in Colab … Share to:",
+   "итог": "ничего: обвязка (ссылки и шаринг)"
+  },
+  {
+   "n": 5,
+   "начало": "| Author | … Katie Nguyen",
+   "итог": "ничего: автор"
+  },
+  {
+   "n": 6,
+   "начало": "## Overview Gemini 2.5 Flash Image is",
+   "итог": "E-75-2"
+  },
+  {
+   "n": 7,
+   "начало": "In this tutorial, you'll learn how … (список сценариев)",
+   "итог": "ничего: оглавление сценариев (раскрыты ниже)"
+  },
+  {
+   "n": 8,
+   "начало": "## Get started / ### Install Google Gen AI SDK",
+   "итог": "ничего: установка SDK"
+  },
+  {
+   "n": 9,
+   "начало": "%pip install --upgrade --quiet google-genai",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 10,
+   "начало": "### Authenticate your notebook environment (Colab only)",
+   "итог": "ничего: аутентификация"
+  },
+  {
+   "n": 11,
+   "начало": "import sys if \"google.colab\" in sys.modules:",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 12,
+   "начало": "### Import libraries / ### Set Google Cloud project information",
+   "итог": "ничего: настройка проекта (учтено в E-75-3)"
+  },
+  {
+   "n": 13,
+   "начало": "import os … client = genai.Client(enterprise=True",
+   "итог": "E-75-3"
+  },
+  {
+   "n": 14,
+   "начало": "### Load the image model MODEL_ID = \"gemini-2.5-flash-image\"",
+   "итог": "ничего: код без промпта (ID модели учтён в картине)"
+  },
+  {
+   "n": 15,
+   "начало": "## Image generation First, you'll send",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 16,
+   "начало": "### Text to image In the cell below, you'll call",
+   "итог": "ничего: вводная к списку аргументов"
+  },
+  {
+   "n": 17,
+   "начало": "- `model`: The ID of the model",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 18,
+   "начало": "- `contents`: This is your prompt,",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 19,
+   "начало": "- `config`: A config for specifying",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 20,
+   "начало": "- `response_modalities`: To generate an image,",
+   "итог": "E-75-4"
+  },
+  {
+   "n": 21,
+   "начало": "- `ImageConfig`: Set the `aspect_ratio`. Valid",
+   "итог": "E-75-5"
+  },
+  {
+   "n": 22,
+   "начало": "- `candidate_count`: The number of candidates",
+   "итог": "E-75-6"
+  },
+  {
+   "n": 23,
+   "начало": "All generated images include a [SynthID",
+   "итог": "E-75-7"
+  },
+  {
+   "n": 24,
+   "начало": "response = client.models.generate_content( … a cartoon infographic",
+   "итог": "E-75-8, E-75-9"
+  },
+  {
+   "n": 25,
+   "начало": "### Text to image and text In addition",
+   "итог": "E-75-10"
+  },
+  {
+   "n": 26,
+   "начало": "For example, you could ask the",
+   "итог": "E-75-11"
+  },
+  {
+   "n": 27,
+   "начало": "Let's try out the interleaved text",
+   "итог": "ничего: вводная к примеру"
+  },
+  {
+   "n": 28,
+   "начало": "You'll notice that in the prompt",
+   "итог": "E-75-12, E-75-13"
+  },
+  {
+   "n": 29,
+   "начало": "response = client.models.generate_content( … peanut butter",
+   "итог": "E-75-14"
+  },
+  {
+   "n": 30,
+   "начало": "## Image editing Gemini 2.5 Flash Image can",
+   "итог": "E-75-15"
+  },
+  {
+   "n": 31,
+   "начало": "### Subject customization Let's try out",
+   "итог": "ничего: вводная к примеру E-75-17"
+  },
+  {
+   "n": 32,
+   "начало": "#### Download the dog image The following",
+   "итог": "ничего: загрузка файла"
+  },
+  {
+   "n": 33,
+   "начало": "!wget … dog-1.jpg / subject_image = … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 34,
+   "начало": "#### Send the request Since you're including",
+   "итог": "E-75-16"
+  },
+  {
+   "n": 35,
+   "начало": "with open(subject_image, \"rb\") … Create a pencil sketch",
+   "итог": "E-75-17"
+  },
+  {
+   "n": 36,
+   "начало": "### Style transfer In this next example,",
+   "итог": "ничего: вводная к примеру E-75-18"
+  },
+  {
+   "n": 37,
+   "начало": "#### Download the living room image",
+   "итог": "ничего: загрузка файла"
+  },
+  {
+   "n": 38,
+   "начало": "!wget … living-room.png / style_image = … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 39,
+   "начало": "#### Send the request / with open(style_image … Using the concepts",
+   "итог": "E-75-18"
+  },
+  {
+   "n": 40,
+   "начало": "### Multi-turn image editing In this next",
+   "итог": "E-75-19"
+  },
+  {
+   "n": 41,
+   "начало": "Rather than using local images in",
+   "итог": "ничего: пояснение про файлы в Cloud Storage"
+  },
+  {
+   "n": 42,
+   "начало": "perfume_url = ( … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 43,
+   "начало": "#### Start a chat In this next",
+   "итог": "E-75-20"
+  },
+  {
+   "n": 44,
+   "начало": "chat = client.chats.create … change the perfume color",
+   "итог": "E-75-21"
+  },
+  {
+   "n": 45,
+   "начало": "Now, you'll include the previous image",
+   "итог": "E-75-22, E-75-23"
+  },
+  {
+   "n": 46,
+   "начало": "response = chat.send_message( … inscribe the word flowers",
+   "итог": "E-75-24"
+  },
+  {
+   "n": 47,
+   "начало": "### Multiple reference images When editing images",
+   "итог": "E-75-25"
+  },
+  {
+   "n": 48,
+   "начало": "Run the following cell to visualize",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 49,
+   "начало": "person_url = ( … suitcase_url … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 50,
+   "начало": "Now, you'll send the request. The only",
+   "итог": "E-75-26"
+  },
+  {
+   "n": 51,
+   "начало": "response = client.models.generate_content( … the woman pulling the suitcase",
+   "итог": "E-75-27"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-75-1",
+   "вид": "предупреждение",
+   "утверждение_en": "On October 2, 2026, Gemini 2.5 Flash Image will be retired on Gemini Enterprise Agent Platform and can no longer be used; use Gemini 3.1 Flash Image (Nano Banana 2) or Gemini 3 Pro Image (Nano Banana Pro) instead.",
+   "цитата": "On October 2, 2026, Gemini 2.5 Flash Image will be retired on Gemini Enterprise Agent Platform. After this date, you will be unable to use this model. Please use Gemini 3.1 Flash Image (Nano Banana 2) or Gemini 3 Pro Image (Nano Banana Pro) instead.",
+   "источник_цитаты": "txt",
+   "раздел": "(заголовок, NOTE)",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата вывода из эксплуатации — именно на Gemini Enterprise Agent Platform."
+  },
+  {
+   "код": "E-75-2",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is a generalist multimodal model offering image generation and conversational image editing, letting you create or edit images with interwoven text.",
+   "цитата": "Gemini 2.5 Flash Image is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities. This enables you to converse with Gemini and create or edit images with interwoven text.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-3",
+   "вид": "факт",
+   "утверждение_en": "The notebook calls the model through the Google Gen AI SDK on Agent Platform (client with enterprise=True, a project and location 'global').",
+   "цитата": "client = genai.Client(enterprise=True, project=PROJECT_ID, location=LOCATION)",
+   "источник_цитаты": "txt",
+   "раздел": "Get started / Set Google Cloud project information",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "LOCATION = \"global\"; нужен проект с включённым Agent Platform API."
+  },
+  {
+   "код": "E-75-4",
+   "вид": "правило",
+   "утверждение_en": "To generate an image, IMAGE must be included in the response_modalities list.",
+   "цитата": "`response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'must' — требование API."
+  },
+  {
+   "код": "E-75-5",
+   "вид": "факт",
+   "утверждение_en": "Aspect ratio is set via ImageConfig(aspect_ratio=...); valid ratios are 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9.",
+   "цитата": "`ImageConfig`: Set the `aspect_ratio`. Valid ratios are: \"1:1\", \"3:2\", \"2:3\", \"3:4\", \"4:3\", \"4:5\", \"5:4\", \"9:16\", \"16:9\", \"21:9\"",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "10 соотношений; экстремальных (1:4, 4:1, 1:8, 8:1) нет."
+  },
+  {
+   "код": "E-75-6",
+   "вид": "факт",
+   "утверждение_en": "candidate_count sets the number of candidates to generate.",
+   "цитата": "`candidate_count`: The number of candidates to generate.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В примерах всегда candidate_count=1."
+  },
+  {
+   "код": "E-75-7",
+   "вид": "факт",
+   "утверждение_en": "All generated images include a SynthID watermark.",
+   "цитата": "All generated images include a [SynthID watermark](https://deepmind.google/technologies/synthid/).",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Minimal text-to-image prompt: a cartoon infographic on flying sneakers (9:16, IMAGE only).",
+   "цитата": "a cartoon infographic on flying sneakers",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Разбор: стиль ('cartoon') + формат ('infographic') + тема. Пять слов, без глагола; формат кадра — только в конфиге (aspect_ratio='9:16')."
+  },
+  {
+   "код": "E-75-9",
+   "вид": "приём",
+   "утверждение_en": "Check the candidate's finish_reason; if it is not STOP, the image was not generated and the reason should be surfaced as a prompt content error.",
+   "цитата": "# Check for errors if an image is not generated",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Из кода: if response.candidates[0].finish_reason != FinishReason.STOP: raise ValueError(f\"Prompt Content Error: {reason}\"). Какие бывают причины — не сказано."
+  },
+  {
+   "код": "E-75-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini can create interleaved sequences of images and text.",
+   "цитата": "In addition to generating images, Gemini can also create interleaved sequences of images and text.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image and text",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-11",
+   "вид": "факт",
+   "утверждение_en": "Interleaved output examples: a banana bread recipe with images of cooking stages, or images of wildflowers with titles and descriptions.",
+   "цитата": "For example, you could ask the model to generate a recipe for banana bread with images showing different stages of the cooking process. Or, you could ask the model to generate images of different wildflowers with accompanying titles and descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image and text",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Идеи задач, не готовые промпты."
+  },
+  {
+   "код": "E-75-12",
+   "вид": "приём",
+   "утверждение_en": "Asking in the prompt for both text and an image for each step encourages the model to create interleaved text and images.",
+   "цитата": "You'll notice that in the prompt we ask the model to generate both text and images for each step. This encourages the model to create interleaved text and images.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image and text",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "'encourages' — повышает вероятность, не гарантирует."
+  },
+  {
+   "код": "E-75-13",
+   "вид": "инструкция",
+   "утверждение_en": "Set response_modalities=[\"TEXT\", \"IMAGE\"] to get both modalities in the response.",
+   "цитата": "Also, make sure to set `response_modalities=[\"TEXT\", \"IMAGE\"]` so you'll get both modalities in the response.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image and text",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'make sure' — обязательное условие для получения обеих модальностей."
+  },
+  {
+   "код": "E-75-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "Interleaved tutorial prompt: three steps, each with numbered title, explanation and an illustrating image labeled only with the step number.",
+   "цитата": "Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps. For each step, provide a title with the number of the step, an explanation, and also generate an image to illustrate the content. Label each image with the step number but no other words.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text to image and text",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Разбор: формат ('tutorial') + тема + точное число шагов → структура каждого шага (заголовок с номером, объяснение, изображение) → ограничение текста на картинке ('step number but no other words'). 4:3, TEXT+IMAGE."
+  },
+  {
+   "код": "E-75-15",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image can generate image-to-image outputs from multiple reference images, useful for character consistency, logos, style transfer, and inserting or removing objects.",
+   "цитата": "Gemini 2.5 Flash Image can generate image-to-image outputs from multiple reference images. This is useful for tasks like ensuring character consistency, generating logos, transferring styles, and inserting or removing objects.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-16",
+   "вид": "инструкция",
+   "утверждение_en": "Local image data is included in the request contents with Part.from_bytes.",
+   "цитата": "Since you're including data from a local image in the request, you'll need to include `Part.from_bytes` to the request `contents`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Subject customization",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В коде: Part.from_bytes(data=image, mime_type='image/jpeg') перед текстом."
+  },
+  {
+   "код": "E-75-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Subject-customization prompt: a pencil sketch of this dog wearing a cowboy hat in a western-themed setting.",
+   "цитата": "Create a pencil sketch image of this dog wearing a cowboy hat in a western-themed setting.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Subject customization",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Разбор: 'Create' + стиль/медиум ('a pencil sketch image') + 'of this dog' (субъект из рефа) + добавленный аксессуар + сеттинг. Части: [image, text], 1:1, IMAGE only."
+  },
+  {
+   "код": "E-75-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Style-transfer prompt: using the concepts, colors and themes of this living room, generate a kitchen and dining room with the same aesthetic.",
+   "цитата": "Using the concepts, colors, and themes from this living room generate a kitchen and dining room with the same aesthetic.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Style transfer",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "рефы"
+   ],
+   "заметка": "Разбор: что взять из рефа ('concepts, colors, and themes') + реф ('this living room') + что создать (другое помещение) + критерий ('the same aesthetic'). Перенос стиля интерьера на другое пространство, а не перерисовка того же содержания. 21:9."
+  },
+  {
+   "код": "E-75-19",
+   "вид": "факт",
+   "утверждение_en": "You can supply a starting image and iteratively alter aspects of it by chatting with the model.",
+   "цитата": "In this next section, you supply a starting image and iteratively alter certain aspects of the image by chatting with Gemini 2.5 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-20",
+   "вид": "инструкция",
+   "утверждение_en": "Start a chat to continuously edit images by talking with Gemini; use Part.from_uri for reference images stored in Cloud Storage.",
+   "цитата": "In this next step, you'll start a chat so you can continuously edit your images by talking with Gemini. Since you're now using reference images stored in Cloud Storage, you'll use `Part.from_uri` in the `message` content.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "В коде: chat = client.chats.create(model=MODEL_ID); chat.send_message(message=[Part.from_uri(file_uri='gs://...', mime_type=...), text], config=...)."
+  },
+  {
+   "код": "E-75-21",
+   "вид": "пример_промпта",
+   "утверждение_en": "First chat edit prompt: change the perfume color to a light purple.",
+   "цитата": "change the perfume color to a light purple",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Разбор: 'change' + объект + атрибут ('color') + новое значение. Строчными буквами, без точки. 3:2, IMAGE only."
+  },
+  {
+   "код": "E-75-22",
+   "вид": "приём",
+   "утверждение_en": "In the next chat turn, include the previously generated image data in the new message along with the new text prompt to update that image.",
+   "цитата": "Now, you'll include the previous image data in a new message in the existing chat, along with a new text prompt, to update the previously generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Изображение пересылается явно (Part.from_bytes с байтами прошлого ответа), хотя беседа уже идёт в том же chat."
+  },
+  {
+   "код": "E-75-23",
+   "вид": "факт",
+   "утверждение_en": "Gemini can handle different languages when writing words into the image.",
+   "цитата": "since Gemini is able to handle different languages, let's ask for the word in French.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "Second chat edit prompt: inscribe the word 'flowers' in French on the bottle in a delicate white cursive font.",
+   "цитата": "inscribe the word flowers in French on the perfume bottle in a delicate white cursive font",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Разбор: глагол 'inscribe' + слово (по-английски, без кавычек) + язык назначения ('in French' — модель сама переводит) + место на объекте + стиль шрифта (насыщенность, цвет, начертание)."
+  },
+  {
+   "код": "E-75-25",
+   "вид": "факт",
+   "утверждение_en": "When editing, you can supply multiple input images to create new ones, and ask Gemini to supply accompanying text.",
+   "цитата": "When editing images with Gemini 2.5 Flash Image, you can also supply multiple input images to create new ones.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Пример: изображение женщины и чемодана + подпись для соцсетей."
+  },
+  {
+   "код": "E-75-26",
+   "вид": "инструкция",
+   "утверждение_en": "For multiple references, supply one Part.from_uri instance per reference image.",
+   "цитата": "The only difference from previous image editing calls is that you'll supply multiple `Part.from_uri` instances depending on the number of reference images you have.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-27",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-reference prompt: the woman pulling the suitcase in an airport, plus a separate short social-media caption.",
+   "цитата": "Generate an image of the woman pulling the suitcase in an airport. Separately, write a short caption for this image that would be suitable for a social media post.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Разбор: 'Generate an image of' + субъект из рефа ('the woman') + действие с объектом из другого рефа ('pulling the suitcase') + место → отдельным предложением текстовый вывод ('Separately, write a short caption'). Рефы названы по содержанию, не по порядку (в contents сначала чемодан, потом женщина). TEXT+IMAGE, 9:16."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-75-28",
+   "вид": "объяснение",
+   "утверждение_en": "Every call in the notebook fixes the output shape through ImageConfig(aspect_ratio) — 9:16, 4:3, 1:1, 21:9, 3:2 — and no prompt mentions format or size in words.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-75-5, E-75-8, E-75-14, E-75-17, E-75-18, E-75-21, E-75-27",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-29",
+   "вид": "объяснение",
+   "утверждение_en": "response_modalities is chosen per task: ['IMAGE'] when only a picture is needed, ['TEXT', 'IMAGE'] when interleaved steps or a caption are requested in the prompt.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-75-4, E-75-8, E-75-13, E-75-14, E-75-17, E-75-27",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-30",
+   "вид": "приём",
+   "утверждение_en": "Reference images are always placed before the text in contents, and prompts refer to them by content with demonstratives ('this dog', 'this living room', 'the woman', 'the suitcase', 'the perfume bottle') rather than by index.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Image editing (все подразделы)",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-75-16, E-75-17, E-75-18, E-75-21, E-75-24, E-75-27",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-75-31",
+   "вид": "объяснение",
+   "утверждение_en": "Two multi-turn mechanisms are combined in the notebook: a chat session (client.chats.create) and explicitly re-sending the previous output image bytes with the next instruction.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Multi-turn image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image, Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-75-20, E-75-22",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Ноутбук не объясняет, нужна ли явная пересылка при наличии истории чата."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет параметра разрешения (image_size) — только aspect_ratio.",
+  "Не сказано, какие значения finish_reason бывают и что делать при каждом.",
+  "Нет лимита числа референсов.",
+  "Нет правил/рекомендаций по составлению промптов, в т.ч. для текста в кадре (кавычки, шрифты).",
+  "Нет упоминания ограничений на изображение людей и других политик.",
+  "Не объяснено, нужна ли явная пересылка изображения в чате, если история уже есть."
+ ],
+ "сомнения": [
+  "Дата вывода модели (2 октября 2026) взята из NOTE в начале ноутбука; в метаданных партии упомянуто, что в других источниках дата перенесена — на самой странице переноса нет.",
+  "Во втором ходе чата байты сгенерированного изображения передаются с mime_type 'image/jpeg' — формат ответа модели на странице не указан."
+ ]
+}

@@ -1,0 +1,4441 @@
+{
+ "id": 61,
+ "url": "https://docs.cloud.google.com/vertex-ai/docs/release-notes",
+ "заголовок": "Vertex AI release notes  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-24 UTC (подвал); последняя запись ленты — September 21, 2026; самая ранняя — March 01, 2019",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: «For details, see the Google Developers Site Policies» + лицензия CC BY 4.0 / Apache 2.0, «Last updated 2026-09-24 UTC», ссылки About Google / Google Cloud terms; текст написан от лица Google («We recommend…», «our most cost-efficient Veo»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальная лента release notes Vertex AI (Google Cloud Documentation), сводная по четырём продуктам: Agent Platform Workbench (бывш. Vertex AI Workbench / AI Platform Notebooks), Colab Enterprise, Generative AI on Vertex AI и Vertex AI (платформа). Период — от March 01, 2019 до September 21, 2026, 458 датированных записей в обратном хронологическом порядке; внутри записи — блоки продукта с версией API (v1/v2/v1beta1) и типом (Feature/Change/Deprecated/Announcement/Fixed/Security/Breaking). Большая часть объёма — повторяющиеся релизы образов Workbench («Installed latest packages from upstream dependencies», одни и те же фиксы по 2-4 раза), где «image» — образ ВМ/контейнера. Про генерацию картинок — 35 записей: жизненный цикл Imagen 1-4 (GA, превью, доступ по одобрению, SynthID по умолчанию, соотношения сторон, inpainting/outpainting/product editing, кастомизация по рефам, prompt rewriter, депрекейты), Virtual Try-On, Gemini-картинки (2.0 Flash image generation preview, 2.5 Flash Image preview→GA, 3.1 Flash Image public preview с рекомендацией Google) и сторонние image-модели Model Garden (Stable Diffusion, Flux, HiDream-I1, Qwen-Image и др.). Сквозной сюжет 2025-2026: всё семейство Imagen (включая Imagen 4 GA, кастомизацию и редактирование) уводится на gemini-2.5-flash-image, а отдельно Google рекомендует 3.1 Flash Image для генерации. Правил промптинга почти нет — есть только описание встроенного переписчика промптов Imagen 3. Nano Banana Pro (gemini-3-pro-image) и Nano Banana 2 Lite в ленте отсутствуют. После May 26, 2026 записей Generative AI нет — только Workbench; вверху баннер: документация Vertex AI больше не обновляется, сервисы переехали в Gemini Enterprise Agent Platform. По метаданным партии записи о генеративном ИИ дословно дублируют отдельную ленту Generative AI on Vertex AI release notes (id48); здесь это не сверялось.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-2.5-flash-image (Nano Banana)",
+  "gemini-2.5-flash-image-preview (Nano Banana, preview)",
+  "gemini-2.0-flash-preview-image-generation (Gemini 2.0 Flash image generation)",
+  "gemini-2.0-flash-image-generation-preview (так в таблице депрекейта)",
+  "gemini-2.5-flash-image-generation-preview (только в таблице депрекейта)",
+  "gemini-2.0-flash (multimodal outputs private preview)",
+  "imagegeneration@002 (Imagen 1)",
+  "imagegeneration@003",
+  "imagegeneration@004",
+  "imagegeneration@005 (Imagen 2)",
+  "imagegeneration@006 (Imagen 2)",
+  "imagetext@001",
+  "imagen-3.0-generate-001",
+  "imagen-3.0-fast-generate-001",
+  "imagen-3.0-generate-002",
+  "imagen-3.0-capability",
+  "imagen-3.0-capability-001",
+  "imagen-3.0-capability-002",
+  "Imagen 4 Generate Preview 05-20 / imagen-4.0-generate-preview-05-20",
+  "Imagen 4 Ultra Generate Experimental 05-20 / imagen-4.0-ultra-generate-exp-05-20",
+  "imagen-4.0-fast-generate-preview-05-20 (только в таблице депрекейта)",
+  "imagen-4.0-generate-preview-06-06",
+  "imagen-4.0-fast-generate-preview-06-06",
+  "imagen-4.0-ultra-generate-preview-06-06",
+  "imagen-4.0-generate-001",
+  "imagen-4.0-fast-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagen-product-recontext-preview-06-30",
+  "imagen-2.0-edit-preview-0627",
+  "imagen-4.0-ingredients-preview",
+  "virtual-try-on-preview-08-04",
+  "virtual-try-on-001",
+  "Qwen-Image",
+  "Qwen-Image-Edit",
+  "Qwen-Image-Edit-2509",
+  "HiDream-I1",
+  "Flux",
+  "Stable Diffusion 1.5 / 2.1 / XL",
+  "stabilityai/stable-diffusion-2-1",
+  "stable-diffusion-xl-base",
+  "SDXL-Turbo",
+  "Stable Diffusion XL LCM",
+  "Stable Diffusion XL lightning",
+  "Instant ID",
+  "Lama (Large mask inpainting)",
+  "timbrooks/instruct-pix2pix",
+  "controlnet"
+ ],
+ "структура": [
+  "Меню сайта Google Cloud Documentation и меню раздела Vertex AI (строки 1-116)",
+  "Баннер «Vertex AI documentation is no longer being updated» + хлебные крошки (117-123)",
+  "Заголовок «Vertex AI release notes», вступление, See also (Colab Enterprise / Generative AI on Vertex AI / Workbench release notes), feed (124-143)",
+  "Лента: 458 датированных записей, September 21, 2026 → March 01, 2019 (144-5363); запись = дата + блоки продукта (Agent Platform Workbench, Colab Enterprise, Generative AI on Vertex AI, Vertex AI) + версия API + тип изменения; таблицы депрекейтов в .txt склеены в строки «старый_эндпоинтзамена»",
+  "Подвал: лицензия, Google Developers Site Policies, Last updated 2026-09-24 UTC, ссылки Google Cloud / About Google, языки (5364-5408)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close Get Started (строки 1-116)",
+   "итог": "ничего: обвязка сайта Google Cloud (верхнее меню, языки, меню Vertex AI; меню повторено дважды)"
+  },
+  {
+   "n": 2,
+   "начало": "Vertex AI documentation is no longer being updated (строки 117-123)",
+   "итог": "ничего: баннер «документация Vertex AI больше не обновляется, сервисы — часть Gemini Enterprise Agent Platform» + хлебные крошки; учтено в картине и сомнениях"
+  },
+  {
+   "n": 3,
+   "начало": "Send feedback Vertex AI release notes Stay organized (строки 124-143)",
+   "итог": "ничего: заголовок и вступление (страница документирует production-обновления Vertex AI; ссылки на release notes Colab Enterprise / Generative AI on Vertex AI / Workbench; feed)"
+  },
+  {
+   "n": 4,
+   "начало": "September 21, 2026 Agent Platform Workbench v2 Change 20260920.00_p0 Release Change (строки 144-158)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 5,
+   "начало": "September 18, 2026 Agent Platform Workbench v2 Change 20260918-2230-rc0 Release Change (строки 159-179)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 6,
+   "начало": "September 14, 2026 Agent Platform Workbench v2 Change M150 Release Change (строки 180-186)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 7,
+   "начало": "September 13, 2026 Agent Platform Workbench v2 Change 20260911.00_p0 Release Change (строки 187-234)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 8,
+   "начало": "September 09, 2026 Agent Platform Workbench v2 Feature New configuration options (строки 235-257)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 9,
+   "начало": "September 08, 2026 Agent Platform Workbench v2 Fixed Scheduled upgrade metadata (строки 258-268)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 10,
+   "начало": "August 30, 2026 Agent Platform Workbench v2 Change 20260830-2330-rc0 Release Change (строки 269-324)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 11,
+   "начало": "August 23, 2026 Agent Platform Workbench v2 Change 20260823-2330-rc0 Release Change (строки 325-355)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 12,
+   "начало": "August 16, 2026 Agent Platform Workbench v2 Change 20260816-2330-rc0 Release Change (строки 356-396)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 13,
+   "начало": "August 09, 2026 Agent Platform Workbench v2 Change Installed latest packages (строки 397-427)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 14,
+   "начало": "August 02, 2026 Agent Platform Workbench v2 Change 20260802-2330-rc0 Release Change (строки 428-466)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 15,
+   "начало": "July 30, 2026 Agent Platform Workbench v2 Change M145 Release Change (строки 467-503)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 16,
+   "начало": "July 13, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 504-558)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Colab Enterprise)"
+  },
+  {
+   "n": 17,
+   "начало": "July 06, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 559-576)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 18,
+   "начало": "June 30, 2026 Agent Platform Workbench v2 Feature Python 3.12 base (строки 577-603)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 19,
+   "начало": "June 29, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 604-618)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 20,
+   "начало": "June 24, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 619-633)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 21,
+   "начало": "June 23, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 634-654)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 22,
+   "начало": "June 01, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 655-666)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 23,
+   "начало": "May 28, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 667-684)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 24,
+   "начало": "May 26, 2026 Colab Enterprise Feature Data Science Agent Generally available: (строки 685-701)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 25,
+   "начало": "May 25, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 702-719)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 26,
+   "начало": "May 11, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 720-731)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 27,
+   "начало": "May 04, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 732-746)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 28,
+   "начало": "April 27, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 747-758)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 29,
+   "начало": "April 20, 2026 Agent Platform Workbench v2 Feature Agent Platform Workbench (строки 759-788)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 30,
+   "начало": "April 17, 2026 Generative AI on Vertex AI v1 Feature RAG (строки 789-795)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 31,
+   "начало": "April 14, 2026 Generative AI on Vertex AI v1 Feature Anthropic's (строки 796-802)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 32,
+   "начало": "April 13, 2026 Colab Enterprise Feature Visualization cells Generally available: You (строки 803-812)",
+   "итог": "ничего: Colab visualization cells (графики), не картинки"
+  },
+  {
+   "n": 33,
+   "начало": "April 10, 2026 Colab Enterprise Feature SQL cells Generally available: You (строки 813-820)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 34,
+   "начало": "April 06, 2026 Generative AI on Vertex AI v1 Feature Metadata (строки 821-830)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 35,
+   "начало": "April 03, 2026 Generative AI on Vertex AI v1 Feature Gemma (строки 831-850)",
+   "итог": "ничего: Gemma 4 принимает картинки на вход, но генерирует только текст; RAG Serverless — не про генерацию картинок"
+  },
+  {
+   "n": 36,
+   "начало": "April 02, 2026 Generative AI on Vertex AI v1 Feature Veo (строки 851-865)",
+   "итог": "ничего: Veo 3.1 Lite (видео); даты вывода Gemini 2.5 Pro/Flash/Flash-Lite — текстовые модели, Flash Image не назван"
+  },
+  {
+   "n": 37,
+   "начало": "March 30, 2026 Agent Platform Workbench v2 Feature M140 release The (строки 866-884)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 38,
+   "начало": "March 25, 2026 Generative AI on Vertex AI v1 Feature Lyria (строки 885-897)",
+   "итог": "ничего: Lyria 3 (аудио)"
+  },
+  {
+   "n": 39,
+   "начало": "March 24, 2026 Generative AI on Vertex AI v1 Deprecated Imagen (строки 898-929)",
+   "итог": "E-61-1, E-61-2, E-61-3, E-61-4; вторая таблица той же записи — эндпоинты Veo (видео), не картинки"
+  },
+  {
+   "n": 40,
+   "начало": "March 16, 2026 Vertex AI v1 Deprecated Vertex Explainable AI is (строки 930-934)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 41,
+   "начало": "March 12, 2026 Generative AI on Vertex AI v1 Feature Partner (строки 935-942)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 42,
+   "начало": "March 05, 2026 Vertex AI v1 Announcement Vector Search 2.0 is (строки 943-959)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 43,
+   "начало": "March 03, 2026 Generative AI on Vertex AI v1 Deprecated Video (строки 960-984)",
+   "итог": "ничего: депрекейт превью-эндпоинтов Veo (видео) и Gemini 3.1 Flash-Lite (текст)"
+  },
+  {
+   "n": 44,
+   "начало": "February 26, 2026 Generative AI on Vertex AI v1 Feature Gemini (строки 985-996)",
+   "итог": "E-61-5, E-61-6, E-61-7"
+  },
+  {
+   "n": 45,
+   "начало": "February 23, 2026 Generative AI on Vertex AI v1 Deprecated Anthropic's (строки 997-1004)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 46,
+   "начало": "February 20, 2026 Agent Platform Workbench v2 Fixed Fixed a vulnerability (строки 1005-1010)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 47,
+   "начало": "February 19, 2026 Generative AI on Vertex AI v1 Feature Gemini (строки 1011-1021)",
+   "итог": "ничего: Gemini 3.1 Pro — картинки только как вход для рассуждения, без лимитов"
+  },
+  {
+   "n": 48,
+   "начало": "February 17, 2026 Generative AI on Vertex AI v1 Feature Anthropic's (строки 1022-1050)",
+   "итог": "E-61-8, E-61-9, E-61-10, E-61-11, E-61-12, E-61-13, E-61-14; Claude Sonnet 4.6 и депрекейт Feature Store — не картинки"
+  },
+  {
+   "n": 49,
+   "начало": "February 10, 2026 Generative AI on Vertex AI v1 Feature GLM (строки 1051-1058)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 50,
+   "начало": "February 04, 2026 Generative AI on Vertex AI v1 Feature Anthropic's (строки 1059-1065)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 51,
+   "начало": "January 29, 2026 Agent Platform Workbench v2 Feature M139 release The (строки 1066-1076)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 52,
+   "начало": "January 23, 2026 Generative AI on Vertex AI v1 Feature Virtual (строки 1077-1088)",
+   "итог": "E-61-15, E-61-16"
+  },
+  {
+   "n": 53,
+   "начало": "January 22, 2026 Generative AI on Vertex AI v1 Announcement Codestral (строки 1089-1093)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 54,
+   "начало": "January 21, 2026 Colab Enterprise Feature BigFrames, BigQuery ML, and Managed (строки 1094-1100)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 55,
+   "начало": "January 20, 2026 Generative AI on Vertex AI v1 Feature GLM (строки 1101-1108)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 56,
+   "начало": "January 16, 2026 Agent Platform Workbench v2 Feature Preview: The Gemini (строки 1109-1128)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 57,
+   "начало": "January 14, 2026 Agent Platform Workbench v2 Feature M138 release The (строки 1129-1141)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 58,
+   "начало": "January 13, 2026 Generative AI on Vertex AI v1 Feature Veo (строки 1142-1152)",
+   "итог": "ничего: Veo 3.1 reference-to-video 9:16 и апсемплинг — видео (рефы-картинки для видео, не генерация картинок)"
+  },
+  {
+   "n": 59,
+   "начало": "January 06, 2026 Generative AI on Vertex AI v1 Feature GLM (строки 1153-1160)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 60,
+   "начало": "January 05, 2026 Generative AI on Vertex AI v1 Deprecated Anthropic's (строки 1161-1168)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 61,
+   "начало": "December 18, 2025 Generative AI on Vertex AI v1 Feature The (строки 1169-1177)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 62,
+   "начало": "December 17, 2025 Colab Enterprise Feature Post-startup scripts Generally available (GA): (строки 1178-1203)",
+   "итог": "ничего: Colab post-startup GA, Cloud API Registry, Gemini 3 Flash (multimodal understanding) — не генерация"
+  },
+  {
+   "n": 63,
+   "начало": "December 16, 2025 Generative AI on Vertex AI v1 Change Updated (строки 1204-1233)",
+   "итог": "E-61-17; Agent Engine (цены, GA, регионы) — не картинки"
+  },
+  {
+   "n": 64,
+   "начало": "December 12, 2025 Agent Platform Workbench v2 Feature The following features (строки 1234-1248)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 65,
+   "начало": "December 10, 2025 Agent Platform Workbench v2 Feature M137 release The (строки 1249-1269)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 66,
+   "начало": "December 09, 2025 Agent Platform Workbench v2 Feature Generally available (GA): (строки 1270-1285)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 67,
+   "начало": "December 08, 2025 Generative AI on Vertex AI v1 Feature Veo (строки 1286-1295)",
+   "итог": "ничего: Veo 3.1 video extension (видео)"
+  },
+  {
+   "n": 68,
+   "начало": "December 02, 2025 Generative AI on Vertex AI v1 Feature The (строки 1296-1304)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 69,
+   "начало": "November 24, 2025 Generative AI on Vertex AI v1 Feature Anthropic's (строки 1305-1311)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 70,
+   "начало": "November 21, 2025 Agent Platform Workbench v2 Feature M136 release The (строки 1312-1322)",
+   "итог": "ничего: Workbench M136 — починка показа image outputs в ноутбуке, не генерация"
+  },
+  {
+   "n": 71,
+   "начало": "November 17, 2025 Agent Platform Workbench v2 Feature M135 release The (строки 1323-1364)",
+   "итог": "ничего: Veo 3.1 GA (видео, в т.ч. из картинки и первого/последнего кадра), LearnLM, Workbench M135"
+  },
+  {
+   "n": 72,
+   "начало": "November 13, 2025 Generative AI on Vertex AI v1 Feature Kimi (строки 1365-1376)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 73,
+   "начало": "November 11, 2025 Generative AI on Vertex AI v1 Deprecated Anthropic's (строки 1377-1384)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 74,
+   "начало": "November 10, 2025 Colab Enterprise Feature The default latest Python version (строки 1385-1389)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 75,
+   "начало": "November 07, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 1390-1414)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 76,
+   "начало": "November 04, 2025 Generative AI on Vertex AI v1 Feature MiniMax (строки 1415-1424)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 77,
+   "начало": "October 23, 2025 Generative AI on Vertex AI v1 Feature The (строки 1425-1432)",
+   "итог": "ничего: DeepSeek-OCR, Qwen3-VL, Earth AI — понимание картинок, не генерация"
+  },
+  {
+   "n": 78,
+   "начало": "October 21, 2025 Generative AI on Vertex AI v1 Security On (строки 1433-1448)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 79,
+   "начало": "October 20, 2025 Colab Enterprise Feature Visualization cells Preview: You can (строки 1449-1458)",
+   "итог": "ничего: Colab visualization cells preview (графики), не картинки"
+  },
+  {
+   "n": 80,
+   "начало": "October 16, 2025 Generative AI on Vertex AI v1 Feature Mistral's (строки 1459-1472)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 81,
+   "начало": "October 15, 2025 Generative AI on Vertex AI v1 Feature Anthropic's (строки 1473-1503)",
+   "итог": "ничего: Veo 3.1 preview (видео, reference image), Veo 2 вставка/удаление объектов в видео, Claude Haiku 4.5"
+  },
+  {
+   "n": 82,
+   "начало": "October 14, 2025 Colab Enterprise Feature SQL cells Preview: You can (строки 1504-1532)",
+   "итог": "E-61-18, E-61-19, E-61-20; Colab SQL cells — не картинки"
+  },
+  {
+   "n": 83,
+   "начало": "October 09, 2025 Agent Platform Workbench v2 Feature M134 release The (строки 1533-1562)",
+   "итог": "E-61-21; Workbench M134 — не картинки"
+  },
+  {
+   "n": 84,
+   "начало": "October 07, 2025 Colab Enterprise Feature Post-startup scripts Preview: You can (строки 1563-1585)",
+   "итог": "E-61-22; Colab post-startup scripts, Computer Use — не картинки"
+  },
+  {
+   "n": 85,
+   "начало": "October 06, 2025 Generative AI on Vertex AI v1 Change Updated (строки 1586-1598)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 86,
+   "начало": "October 03, 2025 Generative AI on Vertex AI v1 Feature Prompt (строки 1599-1605)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 87,
+   "начало": "October 02, 2025 Generative AI on Vertex AI v1 Announcement Gemini (строки 1606-1615)",
+   "итог": "E-61-23, E-61-24, E-61-25, E-61-26, E-61-27, E-61-28, E-61-29"
+  },
+  {
+   "n": 88,
+   "начало": "October 01, 2025 Agent Platform Workbench v2 Feature Generally available (GA): (строки 1616-1625)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 89,
+   "начало": "September 30, 2025 Generative AI on Vertex AI v1 Feature DeepSeek-V3.2-Exp (строки 1626-1634)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 90,
+   "начало": "September 25, 2025 Generative AI on Vertex AI v1 Announcement New (строки 1635-1641)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 91,
+   "начало": "September 24, 2025 Generative AI on Vertex AI v1 Deprecated Access (строки 1642-1646)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 92,
+   "начало": "September 23, 2025 Generative AI on Vertex AI v1 Announcement Gemini (строки 1647-1660)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 93,
+   "начало": "September 22, 2025 Generative AI on Vertex AI v1 Feature DeepSeek-V3.1-Terminus (строки 1661-1669)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 94,
+   "начало": "September 18, 2025 Generative AI on Vertex AI v1 Change Grounding (строки 1670-1682)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 95,
+   "начало": "September 17, 2025 Agent Platform Workbench v2 Feature M133 release The (строки 1683-1694)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 96,
+   "начало": "September 15, 2025 Generative AI on Vertex AI v1 Change Imagen (строки 1695-1706)",
+   "итог": "E-61-30; Vector Search storage-optimized — не картинки"
+  },
+  {
+   "n": 97,
+   "начало": "September 10, 2025 Generative AI on Vertex AI v1 Breaking Vertex (строки 1707-1731)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 98,
+   "начало": "September 09, 2025 Generative AI on Vertex AI v1 Feature EmbeddingGemma (строки 1732-1744)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 99,
+   "начало": "September 08, 2025 Generative AI on Vertex AI v1 Feature Veo (строки 1745-1753)",
+   "итог": "ничего: Veo 3 короткие видео 4/6/8 с (видео)"
+  },
+  {
+   "n": 100,
+   "начало": "September 03, 2025 Generative AI on Vertex AI v1 Change Vertex (строки 1754-1760)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 101,
+   "начало": "August 29, 2025 Agent Platform Workbench v2 Feature M132 release The (строки 1761-1789)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 102,
+   "начало": "August 26, 2025 Generative AI on Vertex AI v1 Announcement Gemini (строки 1790-1798)",
+   "итог": "E-61-31, E-61-32; tuning + Gen AI evaluation — не картинки"
+  },
+  {
+   "n": 103,
+   "начало": "August 21, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 1799-1819)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 104,
+   "начало": "August 14, 2025 Generative AI on Vertex AI v1 Announcement Imagen (строки 1820-1836)",
+   "итог": "E-61-33; Gemma 3 270M, Wan 2.2/2.1 — не взято (Wan по внешнему знанию видео-модели, лента их не описывает)"
+  },
+  {
+   "n": 105,
+   "начало": "August 13, 2025 Generative AI on Vertex AI v1 Feature Qwen3 (строки 1837-1849)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 106,
+   "начало": "August 08, 2025 Generative AI on Vertex AI v1 Feature Gemini (строки 1850-1854)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 107,
+   "начало": "August 07, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 1855-1867)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 108,
+   "начало": "August 06, 2025 Generative AI on Vertex AI v1 Feature OpenAI's (строки 1868-1881)",
+   "итог": "E-61-34, E-61-35; gpt-oss — не картинки"
+  },
+  {
+   "n": 109,
+   "начало": "August 05, 2025 Agent Platform Workbench v2 Feature Generally available: You (строки 1882-1889)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Colab Enterprise)"
+  },
+  {
+   "n": 110,
+   "начало": "August 04, 2025 Colab Enterprise Feature You can now use the (строки 1890-1893)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 111,
+   "начало": "July 29, 2025 Generative AI on Vertex AI v1 Announcement Veo (строки 1894-1898)",
+   "итог": "ничего: Veo 3 / Veo 3 Fast GA (видео)"
+  },
+  {
+   "n": 112,
+   "начало": "July 23, 2025 Generative AI on Vertex AI v1 Change Grounding (строки 1899-1903)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 113,
+   "начало": "July 22, 2025 Generative AI on Vertex AI v1 Announcement Gemini (строки 1904-1909)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 114,
+   "начало": "July 17, 2025 Generative AI on Vertex AI v1 Announcement Veo (строки 1910-1914)",
+   "итог": "ничего: Veo 3 upscaling 1080p (видео)"
+  },
+  {
+   "n": 115,
+   "начало": "July 16, 2025 Generative AI on Vertex AI v1 Feature Added (строки 1915-1923)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 116,
+   "начало": "July 14, 2025 Generative AI on Vertex AI v1 Feature Multimodal (строки 1924-1932)",
+   "итог": "ничего: Multimodal MedGemma 27B IT, MedSigLIP, T5Gemma — понимание, не генерация"
+  },
+  {
+   "n": 117,
+   "начало": "July 11, 2025 Vertex AI v1 Feature To reduce the cost (строки 1933-1939)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 118,
+   "начало": "July 10, 2025 Agent Platform Workbench v2 Feature M131 release The (строки 1940-1950)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 119,
+   "начало": "July 08, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 1951-1956)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 120,
+   "начало": "July 03, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 1957-1962)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 121,
+   "начало": "July 01, 2025 Vertex AI v1 Feature The global endpoint is (строки 1963-1967)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 122,
+   "начало": "June 30, 2025 Colab Enterprise Feature Preview: You can consume reservations (строки 1968-1984)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Vertex AI)"
+  },
+  {
+   "n": 123,
+   "начало": "June 27, 2025 Generative AI on Vertex AI v1 Feature Gemma (строки 1985-1995)",
+   "итог": "ничего: Gemma 3n, multimodal datasets — не генерация картинок"
+  },
+  {
+   "n": 124,
+   "начало": "June 26, 2025 Agent Platform Workbench v2 Feature M130 release The (строки 1996-2012)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 125,
+   "начало": "June 24, 2025 Generative AI on Vertex AI v1 Deprecated Starting (строки 2013-2027)",
+   "итог": "E-61-36, E-61-37; депрекейт Generative AI module в Vertex AI SDK — не картинки"
+  },
+  {
+   "n": 126,
+   "начало": "June 23, 2025 Generative AI on Vertex AI v1 Announcement Veo (строки 2028-2032)",
+   "итог": "ничего: Veo 2 first/last frame, video extension (видео)"
+  },
+  {
+   "n": 127,
+   "начало": "June 17, 2025 Generative AI on Vertex AI v1 Change Updated (строки 2033-2057)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 128,
+   "начало": "June 16, 2025 Generative AI on Vertex AI v1 Announcement The (строки 2058-2062)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 129,
+   "начало": "June 11, 2025 Generative AI on Vertex AI v1 Change Imagen (строки 2063-2072)",
+   "итог": "E-61-38, E-61-39"
+  },
+  {
+   "n": 130,
+   "начало": "June 10, 2025 Agent Platform Workbench v2 Feature Available in Preview: (строки 2073-2083)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 131,
+   "начало": "June 09, 2025 Generative AI on Vertex AI v1 Change Gemini (строки 2084-2089)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 132,
+   "начало": "June 05, 2025 Generative AI on Vertex AI v1 Feature Gemini (строки 2090-2095)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 133,
+   "начало": "June 03, 2025 Generative AI on Vertex AI v1 Announcement In (строки 2096-2106)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 134,
+   "начало": "May 28, 2025 Colab Enterprise Feature Python 3.11 is now available (строки 2107-2115)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 135,
+   "начало": "May 23, 2025 Generative AI on Vertex AI v1 Announcement Mistral (строки 2116-2120)",
+   "итог": "ничего: Mistral OCR — понимание документов"
+  },
+  {
+   "n": 136,
+   "начало": "May 22, 2025 Generative AI on Vertex AI v1 Announcement Anthropic's (строки 2121-2125)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 137,
+   "начало": "May 20, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 2126-2168)",
+   "итог": "E-61-40; Agent Engine, Live API, Gemini 2.5 Flash, эмбеддинги, thought summaries, Lyria 2, MedGemma, Veo 3 — не картинки"
+  },
+  {
+   "n": 138,
+   "начало": "May 15, 2025 Vertex AI v1 Announcement Vertex AI custom training (строки 2169-2179)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 139,
+   "начало": "May 14, 2025 Generative AI on Vertex AI v1 Deprecated MedLM (строки 2180-2184)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 140,
+   "начало": "May 07, 2025 Generative AI on Vertex AI v1 Feature Gemini (строки 2185-2192)",
+   "итог": "E-61-41; Seed parameter GA для семейства Gemini 2.5 — image-модель не названа, не взято"
+  },
+  {
+   "n": 141,
+   "начало": "May 05, 2025 Generative AI on Vertex AI v1 Change Grounding (строки 2193-2200)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 142,
+   "начало": "May 02, 2025 Generative AI on Vertex AI v1 Announcement The (строки 2201-2205)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 143,
+   "начало": "April 30, 2025 Generative AI on Vertex AI v1 Change Additional (строки 2206-2216)",
+   "итог": "E-61-42; Model Garden SDK/CLI, Llama 4, Llama Guard 4, Prompt Guard 2, Qwen3 — не картинки"
+  },
+  {
+   "n": 144,
+   "начало": "April 29, 2025 Colab Enterprise Feature Gemini in Colab Enterprise, which (строки 2217-2229)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 145,
+   "начало": "April 21, 2025 Colab Enterprise Feature The notebook gallery is now (строки 2230-2234)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 146,
+   "начало": "April 17, 2025 Generative AI on Vertex AI v1 Announcement Gemini (строки 2235-2239)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 147,
+   "начало": "April 16, 2025 Agent Platform Workbench v2 Feature M129 release The (строки 2240-2254)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 148,
+   "начало": "April 10, 2025 Generative AI on Vertex AI v1 Announcement Managed (строки 2255-2259)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 149,
+   "начало": "April 09, 2025 Generative AI on Vertex AI v1 Feature Vertex (строки 2260-2294)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 150,
+   "начало": "March 31, 2025 Colab Enterprise Feature Preview: You can switch to (строки 2295-2298)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 151,
+   "начало": "March 27, 2025 Vertex AI v1 Feature Generally available: To reduce (строки 2299-2304)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 152,
+   "начало": "March 26, 2025 Agent Platform Workbench v2 Feature The ability to (строки 2305-2315)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 153,
+   "начало": "March 25, 2025 Generative AI on Vertex AI v1 Feature DeepSeek-V3-0324, (строки 2316-2322)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 154,
+   "начало": "March 20, 2025 Agent Platform Workbench v2 Feature Encrypt your data-in-use (строки 2323-2331)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 155,
+   "начало": "March 17, 2025 Generative AI on Vertex AI v1 Announcement Mistral (строки 2332-2336)",
+   "итог": "ничего: Mistral Small 3.1 multimodal — понимание"
+  },
+  {
+   "n": 156,
+   "начало": "March 14, 2025 Generative AI on Vertex AI v1 Feature Judge (строки 2337-2341)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 157,
+   "начало": "March 13, 2025 Generative AI on Vertex AI v1 Announcement Context (строки 2342-2346)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 158,
+   "начало": "March 12, 2025 Agent Platform Workbench v2 Feature M128 release The (строки 2347-2374)",
+   "итог": "ничего: Workbench M128, fine-tuning LLM, Gemma 3, ShieldGemma 2, CogVideoX-2b — лента не описывает ShieldGemma 2 (по внешнему знанию — классификатор безопасности картинок) и CogVideoX (видео)"
+  },
+  {
+   "n": 159,
+   "начало": "March 11, 2025 Generative AI on Vertex AI v1 Change Gemini (строки 2375-2381)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 160,
+   "начало": "March 04, 2025 Generative AI on Vertex AI v1 Announcement Vertex (строки 2382-2390)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 161,
+   "начало": "February 27, 2025 Colab Enterprise Feature You can use Terraform resources (строки 2391-2397)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 162,
+   "начало": "February 25, 2025 Generative AI on Vertex AI v1 Feature Gemini (строки 2398-2403)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 163,
+   "начало": "February 24, 2025 Generative AI on Vertex AI v1 Announcement Anthropic's (строки 2404-2408)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 164,
+   "начало": "February 21, 2025 Generative AI on Vertex AI v1 Change PEFT (строки 2409-2425)",
+   "итог": "ничего: PEFT/fine-tuning LLM, PaliGemma 2 mix + сегментация, LLaVA Next — понимание картинок"
+  },
+  {
+   "n": 165,
+   "начало": "February 12, 2025 Generative AI on Vertex AI v1 Feature Deepseek-V3 (строки 2426-2433)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 166,
+   "начало": "February 11, 2025 Generative AI on Vertex AI v1 Announcement The (строки 2434-2438)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 167,
+   "начало": "February 07, 2025 Generative AI on Vertex AI v1 Feature deepseek-ai/deepseek-r1 (строки 2439-2449)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 168,
+   "начало": "February 05, 2025 Generative AI on Vertex AI v1 Feature Gemini (строки 2450-2461)",
+   "итог": "E-61-43; Gemini 2.0 Pro / 2.0 Flash-Lite — текст"
+  },
+  {
+   "n": 169,
+   "начало": "January 31, 2025 Generative AI on Vertex AI v1 Feature You (строки 2462-2471)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 170,
+   "начало": "January 30, 2025 Generative AI on Vertex AI v1 Deprecated Mistral (строки 2472-2476)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 171,
+   "начало": "January 29, 2025 Generative AI on Vertex AI v1 Feature New (строки 2477-2486)",
+   "итог": "E-61-44, E-61-45, E-61-46"
+  },
+  {
+   "n": 172,
+   "начало": "January 22, 2025 Generative AI on Vertex AI v1 Announcement LangChain (строки 2487-2497)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 173,
+   "начало": "January 21, 2025 Generative AI on Vertex AI v1 Deprecated Anthropic's (строки 2498-2502)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 174,
+   "начало": "January 17, 2025 Generative AI on Vertex AI v1 Feature Agent (строки 2503-2507)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 175,
+   "начало": "January 16, 2025 Agent Platform Workbench v2 Feature M127 release The (строки 2508-2527)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 176,
+   "начало": "December 20, 2024 Generative AI on Vertex AI v1 Change RAG (строки 2528-2548)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 177,
+   "начало": "December 18, 2024 Generative AI on Vertex AI v1 Feature Hex-LLM: (строки 2549-2563)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 178,
+   "начало": "December 17, 2024 Generative AI on Vertex AI v1 Feature You (строки 2564-2572)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 179,
+   "начало": "December 11, 2024 Generative AI on Vertex AI v1 Feature The (строки 2573-2577)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 180,
+   "начало": "December 10, 2024 Colab Enterprise Feature Gemini in Colab Enterprise, which (строки 2578-2609)",
+   "итог": "E-61-47, E-61-48, E-61-49, E-61-50, E-61-51, E-61-52; Colab: Gemini error fixing — не картинки"
+  },
+  {
+   "n": 181,
+   "начало": "December 06, 2024 Generative AI on Vertex AI v1 Security A (строки 2610-2614)",
+   "итог": "ничего: уязвимость VPC-SC при multimodal-запросах к Gemini — не про генерацию картинок"
+  },
+  {
+   "n": 182,
+   "начало": "December 02, 2024 Vertex AI v1 Feature Preview: You can consume (строки 2615-2621)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 183,
+   "начало": "November 21, 2024 Generative AI on Vertex AI v1 Feature The (строки 2622-2629)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 184,
+   "начало": "November 20, 2024 Agent Platform Workbench v2 Feature M126 release The (строки 2630-2655)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 185,
+   "начало": "November 08, 2024 Generative AI on Vertex AI v1 Feature Batch (строки 2656-2663)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 186,
+   "начало": "November 05, 2024 Generative AI on Vertex AI v1 Change We (строки 2664-2668)",
+   "итог": "ничего: продление Gemini 1.0 Pro / Pro Vision 001 — понимание"
+  },
+  {
+   "n": 187,
+   "начало": "November 04, 2024 Generative AI on Vertex AI v1 Announcement The (строки 2669-2675)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 188,
+   "начало": "October 31, 2024 Vertex AI v1 Feature PSC-I Egress is supported (строки 2676-2683)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 189,
+   "начало": "October 28, 2024 Generative AI on Vertex AI v1 Feature The (строки 2684-2703)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 190,
+   "начало": "October 25, 2024 Colab Enterprise Feature Colab Enterprise is now available (строки 2704-2712)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 191,
+   "начало": "October 22, 2024 Generative AI on Vertex AI v1 Announcement The (строки 2713-2717)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 192,
+   "начало": "October 18, 2024 Generative AI on Vertex AI v1 Announcement The (строки 2718-2722)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 193,
+   "начало": "October 09, 2024 Generative AI on Vertex AI v1 Feature The (строки 2723-2727)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 194,
+   "начало": "October 08, 2024 Vertex AI v1 Feature Vector Search Private Service (строки 2728-2734)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 195,
+   "начало": "October 04, 2024 Generative AI on Vertex AI v1 Change Added (строки 2735-2748)",
+   "итог": "E-61-53, E-61-54; HF-деплой, Prompt Guard, deployment settings, AI-помощник промптов Vertex AI Studio (общий, не про картинки) — не взято"
+  },
+  {
+   "n": 196,
+   "начало": "October 03, 2024 Colab Enterprise Feature Gemini in Colab Enterprise, which (строки 2749-2754)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 197,
+   "начало": "October 01, 2024 Generative AI on Vertex AI v1 Feature Grounding: (строки 2755-2761)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 198,
+   "начало": "September 30, 2024 Generative AI on Vertex AI v1 Feature Prompt (строки 2762-2766)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 199,
+   "начало": "September 26, 2024 Agent Platform Workbench v2 Feature M125 release The (строки 2767-2793)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 200,
+   "начало": "September 25, 2024 Generative AI on Vertex AI v1 Announcement The (строки 2794-2798)",
+   "итог": "ничего: Llama 3.2 90B (image reasoning) — понимание"
+  },
+  {
+   "n": 201,
+   "начало": "September 24, 2024 Generative AI on Vertex AI v1 Announcement New (строки 2799-2835)",
+   "итог": "ничего: Gemini 1.5 002; анализ картинок по ссылке и тюнинг на image-данных — вход/понимание, не генерация"
+  },
+  {
+   "n": 202,
+   "начало": "September 23, 2024 Colab Enterprise Feature You can now use customer-managed (строки 2836-2840)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 203,
+   "начало": "September 20, 2024 Generative AI on Vertex AI v1 Feature Add (строки 2841-2845)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 204,
+   "начало": "September 18, 2024 Generative AI on Vertex AI v1 Announcement Model (строки 2846-2850)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 205,
+   "начало": "September 17, 2024 Vertex AI v1 Feature To ensure that VM (строки 2851-2859)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 206,
+   "начало": "September 16, 2024 Vertex AI v1 Feature Schedule Vertex AI custom (строки 2860-2864)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 207,
+   "начало": "September 10, 2024 Agent Platform Workbench v2 Feature The ability to (строки 2865-2869)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 208,
+   "начало": "September 09, 2024 Vertex AI v1 Feature Ray cluster's autoscaling feature (строки 2870-2874)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 209,
+   "начало": "September 03, 2024 Generative AI on Vertex AI v1 Change Gemini (строки 2875-2879)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 210,
+   "начало": "August 30, 2024 Generative AI on Vertex AI v1 Feature Gen (строки 2880-2884)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 211,
+   "начало": "August 26, 2024 Generative AI on Vertex AI v1 Change For (строки 2885-2889)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 212,
+   "начало": "August 22, 2024 Generative AI on Vertex AI v1 Change AI21 (строки 2890-2895)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 213,
+   "начало": "August 20, 2024 Agent Platform Workbench v1 Feature M124 release The (строки 2896-2903)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 214,
+   "начало": "August 19, 2024 Agent Platform Workbench v2 Announcement The ability to (строки 2904-2908)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 215,
+   "начало": "August 14, 2024 Colab Enterprise Feature The notebook scheduler is now (строки 2909-2912)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 216,
+   "начало": "August 11, 2024 Vertex AI v1 Change Generative AI on Vertex (строки 2913-2917)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 217,
+   "начало": "August 09, 2024 Generative AI on Vertex AI v1 Announcement Gemini (строки 2918-2922)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 218,
+   "начало": "August 08, 2024 Agent Platform Workbench v2 Feature M124 release The (строки 2923-2944)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 219,
+   "начало": "August 05, 2024 Colab Enterprise Fixed Fixed an issue in which (строки 2945-2952)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 220,
+   "начало": "August 02, 2024 Generative AI on Vertex AI v1 Feature Vertex (строки 2953-2961)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 221,
+   "начало": "July 31, 2024 Generative AI on Vertex AI v1 Feature New (строки 2962-2984)",
+   "итог": "E-61-55, E-61-56, E-61-57, E-61-58; Gemma 2 2B, Qwen2, Phi-3, deployment settings — не картинки"
+  },
+  {
+   "n": 222,
+   "начало": "July 30, 2024 Generative AI on Vertex AI v1 Announcement See (строки 2985-2989)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 223,
+   "начало": "July 24, 2024 Agent Platform Workbench v1 Feature M123 release The (строки 2990-3002)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 224,
+   "начало": "July 23, 2024 Generative AI on Vertex AI v1 Announcement Llama (строки 3003-3008)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 225,
+   "начало": "July 16, 2024 Agent Platform Workbench v2 Feature M123 release The (строки 3009-3030)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Colab Enterprise)"
+  },
+  {
+   "n": 226,
+   "начало": "July 02, 2024 Generative AI on Vertex AI v1 Announcement Google's (строки 3031-3037)",
+   "итог": "ничего: Gemma 2, MaMMUT (VQA, retrieval, эмбеддинги) — понимание"
+  },
+  {
+   "n": 227,
+   "начало": "June 28, 2024 Generative AI on Vertex AI v1 Feature Launched (строки 3038-3061)",
+   "итог": "E-61-59, E-61-60; Hex-LLM, 36 embedding-моделей, Llama 3 notebooks, CMEK TPU — не картинки"
+  },
+  {
+   "n": 228,
+   "начало": "June 27, 2024 Generative AI on Vertex AI v1 Feature Context (строки 3062-3066)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 229,
+   "начало": "June 25, 2024 Generative AI on Vertex AI v1 Feature Controlled (строки 3067-3071)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 230,
+   "начало": "June 21, 2024 Agent Platform Workbench v2 Feature M122 release The (строки 3072-3087)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 231,
+   "начало": "June 20, 2024 Generative AI on Vertex AI v1 Announcement The (строки 3088-3096)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 232,
+   "начало": "June 18, 2024 Vertex AI v1 Deprecated Starting on September 15, (строки 3097-3108)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 233,
+   "начало": "June 17, 2024 Colab Enterprise Feature You can now use customer-managed (строки 3109-3117)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 234,
+   "начало": "June 11, 2024 Generative AI on Vertex AI v1 Change Upload (строки 3118-3123)",
+   "итог": "ничего: загрузка JPG и др. из Google Drive для мультимодальных промптов — вход, не генерация"
+  },
+  {
+   "n": 235,
+   "начало": "June 10, 2024 Colab Enterprise Feature Gemini in Colab Enterprise, which (строки 3124-3136)",
+   "итог": "ничего: не про картинки (Colab Enterprise/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 236,
+   "начало": "June 07, 2024 Agent Platform Workbench v2 Feature You can now (строки 3137-3141)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 237,
+   "начало": "June 03, 2024 Agent Platform Workbench v2 Feature You can now (строки 3142-3147)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 238,
+   "начало": "May 31, 2024 Generative AI on Vertex AI v1 Change Generative (строки 3148-3173)",
+   "итог": "ничего: региональные API, Claude 3.0 Opus, Model Monitoring v2 (visualization) — не про картинки"
+  },
+  {
+   "n": 239,
+   "начало": "May 28, 2024 Generative AI on Vertex AI v1 Feature Gemini (строки 3174-3183)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 240,
+   "начало": "May 24, 2024 Generative AI on Vertex AI v1 Announcement The (строки 3184-3188)",
+   "итог": "ничего: Gemini 1.5 Pro/Flash 001 GA (multimodal prompts) — понимание"
+  },
+  {
+   "n": 241,
+   "начало": "May 20, 2024 Generative AI on Vertex AI v1 Feature The (строки 3189-3197)",
+   "итог": "E-61-61, E-61-62; E5 embeddings — не картинки"
+  },
+  {
+   "n": 242,
+   "начало": "May 17, 2024 Agent Platform Workbench v2 Feature M121 release The (строки 3198-3224)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 243,
+   "начало": "May 14, 2024 Generative AI on Vertex AI v1 Announcement Gemini (строки 3225-3256)",
+   "итог": "ничего: Gemini 1.5 Flash preview, PaliGemma (captioning/VQA), grounding, batch, embeddings, Ray — понимание/не картинки"
+  },
+  {
+   "n": 244,
+   "начало": "April 30, 2024 Vertex AI v1 Feature Vertex AI custom training (строки 3257-3261)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 245,
+   "начало": "April 29, 2024 Agent Platform Workbench v1 Feature M120 release The (строки 3262-3268)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 246,
+   "начало": "April 25, 2024 Agent Platform Workbench v2 Feature M120 release The (строки 3269-3285)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 247,
+   "начало": "April 18, 2024 Generative AI on Vertex AI v1 Feature Meta's (строки 3286-3290)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 248,
+   "начало": "April 15, 2024 Vertex AI v1 Announcement Persistent resource for Vertex (строки 3291-3301)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 249,
+   "начало": "April 11, 2024 Generative AI on Vertex AI v1 Announcement Anthropic (строки 3302-3307)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 250,
+   "начало": "April 09, 2024 Generative AI on Vertex AI v1 Change Change (строки 3308-3376)",
+   "итог": "E-61-63, E-61-64, E-61-65, E-61-66, E-61-67, E-61-68, E-61-69; grounding, online evaluation, tuning, embeddings, system instructions, translation, Gemini 1.0 Pro 002, Studio side-by-side, CodeGemma, Gemini 1.5 Pro — не картинки"
+  },
+  {
+   "n": 251,
+   "начало": "April 02, 2024 Generative AI on Vertex AI v1 Feature Model (строки 3377-3383)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI)"
+  },
+  {
+   "n": 252,
+   "начало": "March 29, 2024 Agent Platform Workbench v1 Fixed M119 release The (строки 3384-3395)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Generative AI on Vertex AI)"
+  },
+  {
+   "n": 253,
+   "начало": "March 18, 2024 Agent Platform Workbench v2 Feature M118 release The (строки 3396-3421)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 254,
+   "начало": "March 08, 2024 Vertex AI v1 Feature Vertex AI Feature Store (строки 3422-3430)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 255,
+   "начало": "March 05, 2024 Vertex AI v1 Feature Create an empty index (строки 3431-3436)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 256,
+   "начало": "March 04, 2024 Vertex AI v1 Feature Vertex AI Prediction You (строки 3437-3442)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 257,
+   "начало": "February 29, 2024 Vertex AI v1 Feature Vector Search feature launch (строки 3443-3448)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 258,
+   "начало": "February 28, 2024 Agent Platform Workbench v2 Feature M117 release The (строки 3449-3460)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 259,
+   "начало": "February 27, 2024 Colab Enterprise Feature VPC Service Controls has general (строки 3461-3465)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 260,
+   "начало": "February 26, 2024 Vertex AI v1 Feature Structured logging support for (строки 3466-3475)",
+   "итог": "ничего: structured logging, grounding multimodal models на текстовые хранилища — не генерация"
+  },
+  {
+   "n": 261,
+   "начало": "February 21, 2024 Vertex AI v1 Feature Gemma open models are (строки 3476-3481)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 262,
+   "начало": "February 15, 2024 Vertex AI v1 Change The Vertex AI Gemini (строки 3482-3492)",
+   "итог": "ничего: Gemini 1.0 Pro / Pro Vision GA и регионы — понимание"
+  },
+  {
+   "n": 263,
+   "начало": "February 09, 2024 Vertex AI v1 Feature Multimodal embeddings video support (строки 3493-3500)",
+   "итог": "ничего: multimodal embeddings для видео — не генерация картинок"
+  },
+  {
+   "n": 264,
+   "начало": "February 08, 2024 Agent Platform Workbench v1 Feature M116 release The (строки 3501-3511)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 265,
+   "начало": "February 07, 2024 Vertex AI v1 Feature The following models have (строки 3512-3545)",
+   "итог": "E-61-70, E-61-71, E-61-72; LLaVA 1.5, PyTorch-ZipNeRF (3D из 2D-картинок), LLM, AutoGluon, Stable Video Diffusion Img2Vid XT (видео) — не генерация картинок, не взято"
+  },
+  {
+   "n": 266,
+   "начало": "February 05, 2024 Vertex AI v1 Feature Query an index from (строки 3546-3551)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 267,
+   "начало": "January 29, 2024 Vertex AI v1 Feature Vertex Prediction You can (строки 3552-3558)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 268,
+   "начало": "January 19, 2024 Agent Platform Workbench v2 Feature M115 release The (строки 3559-3578)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 269,
+   "начало": "January 16, 2024 Agent Platform Workbench v1 Deprecated Vertex AI Workbench (строки 3579-3585)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 270,
+   "начало": "January 12, 2024 Vertex AI v1 Feature Model tuning for the (строки 3586-3593)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 271,
+   "начало": "January 08, 2024 Vertex AI v1 Change AutoSxS evaluates LLMs side (строки 3594-3603)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 272,
+   "начало": "January 05, 2024 Vertex AI v1 Change Generative AI on Vertex (строки 3604-3609)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 273,
+   "начало": "December 29, 2023 Vertex AI v1 Change Vertex AI regional expansion (строки 3610-3615)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 274,
+   "начало": "December 27, 2023 Vertex AI v1 Change Vertex Prediction Quota for (строки 3616-3623)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 275,
+   "начало": "December 18, 2023 Vertex AI v1 Announcement Model Garden supports: Hyperparameter (строки 3624-3632)",
+   "итог": "E-61-73; OpenLLaMA, falcon, Mixtral — не картинки"
+  },
+  {
+   "n": 276,
+   "начало": "December 14, 2023 Agent Platform Workbench v1 Feature M114 release The (строки 3633-3652)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 277,
+   "начало": "December 13, 2023 Vertex AI v1 Feature Vertex AI Gemini models (строки 3653-3667)",
+   "итог": "E-61-74; Gemini Pro / Pro Vision preview (понимание картинок) — не взято"
+  },
+  {
+   "n": 278,
+   "начало": "December 12, 2023 Vertex AI v1 Feature Text embedding model 003 (строки 3668-3673)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 279,
+   "начало": "December 08, 2023 Vertex AI v1 Change Generative AI on Vertex (строки 3674-3682)",
+   "итог": "E-61-75"
+  },
+  {
+   "n": 280,
+   "начало": "December 06, 2023 Vertex AI v1 Feature Version @002 of the (строки 3683-3698)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 281,
+   "начало": "December 05, 2023 Vertex AI v1 Feature Grounding with Vertex AI (строки 3699-3707)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 282,
+   "начало": "December 01, 2023 Vertex AI v1 Change The following Vertex AI (строки 3708-3717)",
+   "итог": "E-61-76; LLaMA2/OpenLLaMA тюнинг, LoRA-рекомендации для LLM — не картинки"
+  },
+  {
+   "n": 283,
+   "начало": "November 30, 2023 Vertex AI v1 Feature The Unicorn model size (строки 3718-3725)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 284,
+   "начало": "November 24, 2023 Vertex AI v1 Feature ComputeToken API now available (строки 3726-3732)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 285,
+   "начало": "November 17, 2023 Vertex AI v1 Feature Vertex AI Feature Store (строки 3733-3745)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 286,
+   "начало": "November 16, 2023 Agent Platform Workbench v2 Feature M113 release The (строки 3746-3778)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 287,
+   "начало": "November 13, 2023 Vertex AI v1 Feature Numerical filtering available in (строки 3779-3785)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 288,
+   "начало": "November 10, 2023 Vertex AI v1 Feature Generative AI on Vertex (строки 3786-3791)",
+   "итог": "ничего: не про картинки (Generative AI on Vertex AI/Vertex AI)"
+  },
+  {
+   "n": 289,
+   "начало": "November 07, 2023 Vertex AI v1 Announcement Training on TPU VMs (строки 3792-3796)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 290,
+   "начало": "November 03, 2023 Vertex AI v1 Announcement New textembedding-gecko and textembedding-gecko-multilingual (строки 3797-3828)",
+   "итог": "E-61-77; ImageBind, OWL-ViT v2, DITO, BiomedCLIP (понимание/эмбеддинги), LLM — не взято"
+  },
+  {
+   "n": 291,
+   "начало": "November 02, 2023 Vertex AI v1 Change Generative AI support on (строки 3829-3834)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 292,
+   "начало": "October 30, 2023 Vertex AI v1 Security Deep Learning VM Images (строки 3835-3841)",
+   "итог": "ничего: уязвимость libwebp в Deep Learning VM Images («images» = образы ВМ)"
+  },
+  {
+   "n": 293,
+   "начало": "October 17, 2023 Vertex AI v1 Announcement Vertex AI Vector Search (строки 3842-3850)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 294,
+   "начало": "October 11, 2023 Colab Enterprise Feature Colab Enterprise is now generally (строки 3851-3861)",
+   "итог": "ничего: не про картинки (Colab Enterprise)"
+  },
+  {
+   "n": 295,
+   "начало": "October 10, 2023 Agent Platform Workbench v1 Feature M112 release The (строки 3862-3868)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 296,
+   "начало": "October 05, 2023 Vertex AI v1 Feature Ray on Vertex AI (строки 3869-3877)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 297,
+   "начало": "October 04, 2023 Vertex AI v1 Feature Model tuning for the (строки 3878-3895)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 298,
+   "начало": "October 03, 2023 Vertex AI v1 Security TorchServe is used to (строки 3896-3901)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 299,
+   "начало": "September 25, 2023 Agent Platform Workbench v2 Feature Vertex AI Workbench (строки 3902-3915)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 300,
+   "начало": "September 18, 2023 Agent Platform Workbench v1 Deprecated Debian 10 and (строки 3916-3920)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 301,
+   "начало": "September 14, 2023 Agent Platform Workbench v1 & v2 Feature M111 (строки 3921-3939)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 302,
+   "начало": "September 08, 2023 Vertex AI v1 Feature Vertex AI Prediction You (строки 3940-3945)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 303,
+   "начало": "September 06, 2023 Vertex AI v1 Change Vertex AI Prediction The (строки 3946-3968)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 304,
+   "начало": "September 01, 2023 Vertex AI v1 Change Pricing update The pricing (строки 3969-3974)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 305,
+   "начало": "August 31, 2023 Vertex AI v1 Feature Experiment management: The Google (строки 3975-3979)",
+   "итог": "ничего: визуализация экспериментов в консоли — не картинки"
+  },
+  {
+   "n": 306,
+   "начало": "August 29, 2023 Colab Enterprise Feature Colab Enterprise is now available (строки 3980-4050)",
+   "итог": "E-61-78; Colab Enterprise preview, PaLM/Codey, эмбеддинги, eval, пайплайны — не картинки"
+  },
+  {
+   "n": 307,
+   "начало": "August 28, 2023 Vertex AI v1 Feature Tabular Workflow for Forecasting (строки 4051-4055)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 308,
+   "начало": "August 22, 2023 Vertex AI v1 Feature Vertex AI custom training (строки 4056-4060)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 309,
+   "начало": "August 18, 2023 Vertex AI v1 Feature The Vertex AI Matching (строки 4061-4065)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 310,
+   "начало": "August 11, 2023 Vertex AI v1 Change Generative AI on Vertex (строки 4066-4070)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 311,
+   "начало": "August 10, 2023 Agent Platform Workbench v1 & v2 Feature M110 (строки 4071-4087)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 312,
+   "начало": "August 09, 2023 Vertex AI v1 Feature Imagen Multimodal embeddings available (строки 4088-4098)",
+   "итог": "E-61-79"
+  },
+  {
+   "n": 313,
+   "начало": "August 02, 2023 Vertex AI v1 Change Updated prebuilt images for (строки 4099-4105)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 314,
+   "начало": "August 01, 2023 Vertex AI v1 Feature The schedules API for (строки 4106-4112)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 315,
+   "начало": "July 28, 2023 Vertex AI v1 Change The learning_rate parameter in (строки 4113-4124)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 316,
+   "начало": "July 19, 2023 Agent Platform Workbench v2 Feature Vertex AI Workbench (строки 4125-4138)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 317,
+   "начало": "July 18, 2023 Vertex AI v1 Feature Model tuning updates for (строки 4139-4149)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 318,
+   "начало": "July 17, 2023 Vertex AI v1 Feature Imagen on Vertex AI (строки 4150-4177)",
+   "итог": "E-61-80, E-61-81; языки PaLM API — не картинки"
+  },
+  {
+   "n": 319,
+   "начало": "July 13, 2023 Vertex AI v1 Feature Support for batch text (строки 4178-4185)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 320,
+   "начало": "July 10, 2023 Vertex AI v1 Feature Support for PaLM 2 (строки 4186-4193)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 321,
+   "начало": "July 07, 2023 Vertex AI v1 Announcement GCSFuse support for custom (строки 4194-4198)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 322,
+   "начало": "July 06, 2023 Vertex AI v1 Feature Vertex AI model evaluation (строки 4199-4206)",
+   "итог": "ничего: vision error analysis для AutoML image classification — не генерация"
+  },
+  {
+   "n": 323,
+   "начало": "June 30, 2023 Vertex AI v1 Feature Vertex Explainable AI Support (строки 4207-4214)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 324,
+   "начало": "June 29, 2023 Vertex AI v1 Feature Vertex AI Codey APIs (строки 4215-4234)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 325,
+   "начало": "June 26, 2023 Agent Platform Workbench v1 Feature M109 release The (строки 4235-4246)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 326,
+   "начало": "June 20, 2023 Vertex AI v1 Feature A100 80GB accelerators are (строки 4247-4262)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 327,
+   "начало": "June 15, 2023 Vertex AI v1 Feature The chat-bison@001 model has (строки 4263-4267)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 328,
+   "начало": "June 09, 2023 Vertex AI v1 Announcement HIPAA compliance for Generative (строки 4268-4274)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 329,
+   "начало": "June 07, 2023 Vertex AI v1 Feature Vertex AI Codey APIs (строки 4275-4303)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 330,
+   "начало": "June 01, 2023 Vertex AI v1 Feature Vertex Prediction You can (строки 4304-4309)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 331,
+   "начало": "May 18, 2023 Vertex AI v1 Feature Vertex Prediction You can (строки 4310-4315)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 332,
+   "начало": "May 16, 2023 Vertex AI v1 Feature Vertex AI custom training (строки 4316-4322)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 333,
+   "начало": "May 10, 2023 Vertex AI v1 Feature Generative AI Support for (строки 4323-4343)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 334,
+   "начало": "May 09, 2023 Vertex AI v1 Feature Vertex AI Prediction You (строки 4344-4349)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 335,
+   "начало": "May 04, 2023 Agent Platform Workbench v1 Feature M108 release The (строки 4350-4356)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 336,
+   "начало": "April 14, 2023 Vertex AI v1 Feature Vertex AI Prediction You (строки 4357-4363)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 337,
+   "начало": "April 13, 2023 Agent Platform Workbench v1 Feature M107 release The (строки 4364-4376)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 338,
+   "начало": "April 06, 2023 Agent Platform Workbench v1 Feature M106 release The (строки 4377-4385)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 339,
+   "начало": "April 04, 2023 Vertex AI v1 Feature Vertex AI Pipelines is (строки 4386-4395)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 340,
+   "начало": "April 03, 2023 Vertex AI v1 Feature The Vertex AI Model (строки 4396-4400)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 341,
+   "начало": "March 31, 2023 Agent Platform Workbench v1 Feature M105 release The (строки 4401-4416)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 342,
+   "начало": "March 28, 2023 Vertex AI v1 Feature Vertex AI Pipelines cost (строки 4417-4421)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 343,
+   "начало": "March 27, 2023 Agent Platform Workbench v1 Feature M105 release The (строки 4422-4431)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 344,
+   "начало": "March 21, 2023 Vertex AI v1 Feature Vertex AI supports running (строки 4432-4445)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 345,
+   "начало": "March 20, 2023 Vertex AI v1 Feature Vertex AI Prediction You (строки 4446-4451)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 346,
+   "начало": "March 16, 2023 Agent Platform Workbench v1 Feature M104 release The (строки 4452-4468)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 347,
+   "начало": "March 03, 2023 Vertex AI v1 Change Pre-built containers to perform (строки 4469-4473)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 348,
+   "начало": "February 28, 2023 Vertex AI v1 Change A new custom training (строки 4474-4482)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 349,
+   "начало": "February 21, 2023 Agent Platform Workbench v1 Feature M104 update This (строки 4483-4490)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 350,
+   "начало": "February 14, 2023 Vertex AI v1 Feature Vertex AI Prediction Pre-built (строки 4491-4499)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 351,
+   "начало": "February 13, 2023 Vertex AI v1 Feature Support for resource-level IAM (строки 4500-4504)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 352,
+   "начало": "February 10, 2023 Vertex AI v1 Fixed When performing distributed training, (строки 4505-4509)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 353,
+   "начало": "February 09, 2023 Agent Platform Workbench v1 Feature M104 release The (строки 4510-4518)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 354,
+   "начало": "February 06, 2023 Vertex AI v1 Feature The Vertex AI Pipelines (строки 4519-4523)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 355,
+   "начало": "January 30, 2023 Agent Platform Workbench v1 Feature M103 release The (строки 4524-4532)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 356,
+   "начало": "January 26, 2023 Vertex AI v1 Feature Tabular Workflow for End-to-End (строки 4533-4537)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 357,
+   "начало": "January 18, 2023 Vertex AI v1 Change Vertex AI Explainability When (строки 4538-4543)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 358,
+   "начало": "January 11, 2023 Vertex AI v1 Change Vertex AI Matching Engine (строки 4544-4560)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 359,
+   "начало": "December 20, 2022 Vertex AI v1 Feature Vertex AI TensorFlow Profiler (строки 4561-4576)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 360,
+   "начало": "December 15, 2022 Agent Platform Workbench v1 Feature M102 release The (строки 4577-4585)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 361,
+   "начало": "December 09, 2022 Agent Platform Workbench v1 Feature M101 release The (строки 4586-4598)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 362,
+   "начало": "December 05, 2022 Vertex AI v1 Feature The Pipeline Templates feature (строки 4599-4603)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 363,
+   "начало": "November 30, 2022 Vertex AI v1 Feature AutoML image model updates (строки 4604-4613)",
+   "итог": "ничего: AutoML image classification/detection — не генерация"
+  },
+  {
+   "n": 364,
+   "начало": "November 18, 2022 Vertex AI v1 Feature Vertex AI Prediction You (строки 4614-4619)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 365,
+   "начало": "November 17, 2022 Vertex AI v1 Feature The Vertex AI Pipelines (строки 4620-4624)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 366,
+   "начало": "November 16, 2022 Vertex AI v1 Feature Vertex AI has added (строки 4625-4634)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 367,
+   "начало": "November 10, 2022 Vertex AI v1 Feature AutoML Image Classification Error (строки 4635-4644)",
+   "итог": "ничего: AutoML Image Classification Error Analysis — не генерация"
+  },
+  {
+   "n": 368,
+   "начало": "November 09, 2022 Vertex AI v1 Feature Feature Transform Engine is (строки 4645-4649)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 369,
+   "начало": "November 08, 2022 Agent Platform Workbench v1 Feature M100 release The (строки 4650-4660)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 370,
+   "начало": "November 04, 2022 Vertex AI v1 Feature Vertex ML Metadata You (строки 4661-4671)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 371,
+   "начало": "November 03, 2022 Vertex AI v1 Feature Vertex AI Prediction Custom (строки 4672-4677)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 372,
+   "начало": "October 27, 2022 Vertex AI v1 Feature Vertex AI Prediction You (строки 4678-4683)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 373,
+   "начало": "October 25, 2022 Agent Platform Workbench v1beta1 Breaking The v1beta1 version (строки 4684-4688)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 374,
+   "начало": "October 18, 2022 Agent Platform Workbench v1 Feature M98 release The (строки 4689-4701)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 375,
+   "начало": "October 12, 2022 Vertex AI v1 Feature Tabular Workflow for TabNet (строки 4702-4707)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 376,
+   "начало": "October 11, 2022 Vertex AI v1 Feature Vertex AI Feature Store (строки 4708-4712)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 377,
+   "начало": "October 10, 2022 Vertex AI v1 Feature The Vertex AI Model (строки 4713-4719)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 378,
+   "начало": "October 06, 2022 Vertex AI v1 Feature Incrementally train an AutoML (строки 4720-4725)",
+   "итог": "ничего: инкрементальное обучение AutoML image-моделей — не генерация"
+  },
+  {
+   "n": 379,
+   "начало": "October 05, 2022 Vertex AI v1 Feature Vertex AI Feature Store (строки 4726-4737)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 380,
+   "начало": "October 04, 2022 Vertex AI v1 Feature Vertex AI model evaluation (строки 4738-4743)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 381,
+   "начало": "September 26, 2022 Vertex AI v1 Feature Vertex AI Model Monitoring (строки 4744-4752)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 382,
+   "начало": "September 22, 2022 Vertex AI v1 Feature Vertex AI Matching Engine (строки 4753-4758)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 383,
+   "начало": "September 20, 2022 Agent Platform Workbench v1 Feature M96 release The (строки 4759-4777)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 384,
+   "начало": "September 14, 2022 Vertex AI v1 Feature You can now limit (строки 4778-4784)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 385,
+   "начало": "August 17, 2022 Agent Platform Workbench v1beta1 & v1 Feature M95 (строки 4785-4800)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 386,
+   "начало": "August 12, 2022 Vertex AI v1 Feature Vertex Explainable AI Vertex (строки 4801-4806)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 387,
+   "начало": "August 01, 2022 Vertex AI v1 Feature TensorFlow Profiler integration: Debug (строки 4807-4811)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 388,
+   "начало": "July 29, 2022 Vertex AI v1 Feature Vertex AI now offers (строки 4812-4816)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 389,
+   "начало": "July 18, 2022 Vertex AI v1 Feature NFS support for custom (строки 4817-4821)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 390,
+   "начало": "July 14, 2022 Vertex AI v1 Feature The Pipeline Templates feature (строки 4822-4831)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 391,
+   "начало": "July 12, 2022 Vertex AI v1 Change You can now use (строки 4832-4836)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 392,
+   "начало": "July 11, 2022 Vertex AI v1 Feature Vertex AI Pipelines now (строки 4837-4841)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 393,
+   "начало": "July 06, 2022 Vertex AI v1 Feature Tabular Workflows is available (строки 4842-4847)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 394,
+   "начало": "June 30, 2022 Vertex AI v1 Feature Feature: Vertex AI Experiments (строки 4848-4857)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 395,
+   "начало": "June 28, 2022 Vertex AI v1 Feature Vertex AI Forecasting is (строки 4858-4868)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 396,
+   "начало": "June 17, 2022 Vertex AI v1 Feature Support for IAM resource-level (строки 4869-4873)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 397,
+   "начало": "May 27, 2022 Agent Platform Workbench v1beta1 & v1 Feature M93 (строки 4874-4882)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 398,
+   "начало": "May 24, 2022 Vertex AI v1 Feature You can now configure (строки 4883-4887)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 399,
+   "начало": "May 18, 2022 Vertex AI v1 Feature The ability to configure (строки 4888-4892)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 400,
+   "начало": "May 12, 2022 Agent Platform Workbench v1beta1 & v1 Feature M91 (строки 4893-4904)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 401,
+   "начало": "April 26, 2022 Vertex AI v1 Feature You can now train (строки 4905-4909)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 402,
+   "начало": "April 21, 2022 Vertex AI v1 Feature You can now use (строки 4910-4914)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 403,
+   "начало": "April 06, 2022 Agent Platform Workbench v1beta1 & v1 Feature Vertex (строки 4915-4936)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 404,
+   "начало": "March 07, 2022 Vertex AI v1 Feature Google Cloud Pipeline Components (строки 4937-4947)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 405,
+   "начало": "February 16, 2022 Vertex AI v1 Feature You can now use (строки 4948-4952)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 406,
+   "начало": "February 10, 2022 Vertex AI v1 Change For Vertex AI featurestore (строки 4953-4957)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 407,
+   "начало": "January 04, 2022 Vertex AI v1 Feature You can now use (строки 4958-4962)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 408,
+   "начало": "December 23, 2021 Vertex AI v1 Change There are now three (строки 4963-4974)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 409,
+   "начало": "December 02, 2021 Vertex AI v1 Feature You can now use (строки 4975-4979)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 410,
+   "начало": "December 01, 2021 Vertex AI v1 Feature Vertex AI TensorBoard is (строки 4980-4984)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 411,
+   "начало": "November 19, 2021 Vertex AI v1 Feature The autopackaging feature of (строки 4985-4991)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 412,
+   "начало": "November 09, 2021 Vertex AI v1 Feature Vertex AI Pipelines is (строки 4992-4996)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 413,
+   "начало": "November 02, 2021 Vertex AI v1 Feature Using interactive shells to (строки 4997-5002)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 414,
+   "начало": "October 25, 2021 Vertex AI v1 Feature Vertex ML Metadata is (строки 5003-5007)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 415,
+   "начало": "October 11, 2021 Agent Platform Workbench v1beta1 & v1 Feature Vertex (строки 5008-5014)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 416,
+   "начало": "October 05, 2021 Vertex AI v1 Feature Vertex Feature Store is (строки 5015-5019)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 417,
+   "начало": "September 24, 2021 Vertex AI v1 Feature Vertex Matching Engine is (строки 5020-5024)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 418,
+   "начало": "September 21, 2021 Vertex AI v1 Feature Vertex AI Vizier is (строки 5025-5029)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 419,
+   "начало": "September 15, 2021 Vertex AI v1 Feature Vertex Explainable AI is (строки 5030-5034)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 420,
+   "начало": "September 13, 2021 Vertex AI v1 Feature You can use a (строки 5035-5039)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 421,
+   "начало": "September 10, 2021 Agent Platform Workbench v1beta1 & v1 Change Due (строки 5040-5052)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 422,
+   "начало": "August 30, 2021 Vertex AI v1 Feature You can now use (строки 5053-5057)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 423,
+   "начало": "August 24, 2021 Vertex AI v1 Feature The following tools for (строки 5058-5064)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 424,
+   "начало": "August 02, 2021 Vertex AI v1 Change Vertex Pipelines is available (строки 5065-5073)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 425,
+   "начало": "July 28, 2021 Vertex AI v1 Feature You can use the (строки 5074-5078)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 426,
+   "начало": "July 27, 2021 Vertex AI v1 Feature The following features are (строки 5079-5087)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 427,
+   "начало": "July 26, 2021 Agent Platform Workbench v1beta1 & v1 Change If (строки 5088-5092)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 428,
+   "начало": "July 20, 2021 Vertex AI v1 Feature Private endpoints for online (строки 5093-5099)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 429,
+   "начало": "July 19, 2021 Vertex AI v1 Feature You can now use (строки 5100-5105)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 430,
+   "начало": "July 14, 2021 Vertex AI v1 Feature You can now use (строки 5106-5110)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 431,
+   "начало": "July 08, 2021 Vertex AI v1 Feature You can now containerize (строки 5111-5115)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 432,
+   "начало": "June 25, 2021 Vertex AI v1 Feature You can now use (строки 5116-5120)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 433,
+   "начало": "June 18, 2021 Agent Platform Workbench v1 Feature Support for Compute (строки 5121-5125)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 434,
+   "начало": "June 11, 2021 Vertex AI v1 Feature You can now use (строки 5126-5132)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 435,
+   "начало": "May 18, 2021 Vertex AI v1 Announcement AI Platform (Unified) is (строки 5133-5163)",
+   "итог": "ничего: AI Platform (Unified) → Vertex AI, forecasting, регионы, TensorBoard (visualize) — не картинки"
+  },
+  {
+   "n": 436,
+   "начало": "May 03, 2021 Vertex AI v1 Feature You can now use (строки 5164-5172)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 437,
+   "начало": "April 27, 2021 Vertex AI v1 Feature AI Platform Vizier is (строки 5173-5177)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 438,
+   "начало": "April 15, 2021 Vertex AI v1 Feature The Python client library (строки 5178-5190)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 439,
+   "начало": "March 31, 2021 Vertex AI v1 Announcement AI Platform (Unified) is (строки 5191-5207)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 440,
+   "начало": "March 26, 2021 Agent Platform Workbench v1 Feature Cross Project Service (строки 5208-5212)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 441,
+   "начало": "March 15, 2021 Vertex AI v1 Feature You can now use (строки 5213-5217)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 442,
+   "начало": "March 04, 2021 Agent Platform Workbench v1 Change New Notebooks instances (строки 5218-5222)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 443,
+   "начало": "March 02, 2021 Vertex AI v1 Change CMEK compliance using the (строки 5223-5229)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 444,
+   "начало": "March 01, 2021 Vertex AI v1 Change The client library for (строки 5230-5235)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 445,
+   "начало": "February 25, 2021 Vertex AI v1 Feature AI Platform (Unified) now (строки 5236-5256)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 446,
+   "начало": "February 01, 2021 Agent Platform Workbench v1 Feature Notebooks Terraform Module (строки 5257-5265)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench/Vertex AI)"
+  },
+  {
+   "n": 447,
+   "начало": "January 23, 2021 Agent Platform Workbench v1 Feature Notebooks API supports (строки 5266-5272)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 448,
+   "начало": "January 19, 2021 Vertex AI v1 Feature Preview: Select AI Platform (строки 5273-5278)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 449,
+   "начало": "January 11, 2021 Vertex AI v1 Breaking The default boot disk (строки 5279-5284)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 450,
+   "начало": "January 06, 2021 Vertex AI v1 Feature You can now use (строки 5285-5289)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 451,
+   "начало": "December 17, 2020 Vertex AI v1 Feature AI Platform (Unified) now (строки 5290-5296)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 452,
+   "начало": "November 16, 2020 Vertex AI v1 Feature Preview release AI Platform (строки 5297-5303)",
+   "итог": "ничего: не про картинки (Vertex AI)"
+  },
+  {
+   "n": 453,
+   "начало": "September 21, 2020 Agent Platform Workbench v1 Feature AI Platform Notebooks (строки 5304-5316)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 454,
+   "начало": "March 31, 2020 Agent Platform Workbench v1beta1 Feature AI Platform Notebooks (строки 5317-5321)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 455,
+   "начало": "February 04, 2020 Agent Platform Workbench v1beta1 Feature VPC Service Controls (строки 5322-5326)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 456,
+   "начало": "February 03, 2020 Agent Platform Workbench v1beta1 Feature AI Platform Notebooks (строки 5327-5334)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 457,
+   "начало": "September 12, 2019 Agent Platform Workbench v1 Feature You can now (строки 5335-5339)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 458,
+   "начало": "September 09, 2019 Agent Platform Workbench v1beta1 Feature AI Platform Notebooks (строки 5340-5346)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench; «image» здесь — образ ВМ/контейнера)"
+  },
+  {
+   "n": 459,
+   "начало": "July 12, 2019 Agent Platform Workbench v1beta1 Change R upgraded to (строки 5347-5352)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 460,
+   "начало": "June 03, 2019 Agent Platform Workbench v1beta1 Feature You can now (строки 5353-5357)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 461,
+   "начало": "March 01, 2019 Agent Platform Workbench v1beta1 Feature AI Platform Notebooks (строки 5358-5363)",
+   "итог": "ничего: не про картинки (Agent Platform Workbench)"
+  },
+  {
+   "n": 462,
+   "начало": "(вся лента, проход длинная дистанция)",
+   "итог": "E-61-82, E-61-83, E-61-84, E-61-85, E-61-86, E-61-87, E-61-88, E-61-89, E-61-90, E-61-91, E-61-92, E-61-93, E-61-94, E-61-95, E-61-96, E-61-97 (длинная дистанция)"
+  },
+  {
+   "n": 463,
+   "начало": "Send feedback Except as otherwise noted (строки 5364-5366)",
+   "итог": "ничего: обвязка (лицензия CC BY 4.0 / Apache 2.0, Google Developers Site Policies, Last updated 2026-09-24 UTC) — учтено в официальности"
+  },
+  {
+   "n": 464,
+   "начало": "Products and pricing See all products (строки 5367-5408)",
+   "итог": "ничего: подвал Google Cloud (About Google, Privacy, Site terms, Google Cloud terms, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-61-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Imagen image generation GA endpoints are deprecated; Google recommends updating model endpoints before June 30, 2026, to avoid service disruption.",
+   "цитата": "Imagen generation GA endpoints deprecation\nThe following table describes image generation endpoints that are deprecated and\ntheir replacements. We recommend updating your model endpoints before June 30,\n2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "March 24, 2026",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@003",
+    "imagegeneration@004",
+    "imagegeneration@005",
+    "imagegeneration@006",
+    "imagetext@001",
+    "imagen-3.0-capability-001",
+    "imagen-3.0-capability-002",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-generate-002",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-24",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-2",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 4 GA endpoints imagen-4.0-fast-generate-001, imagen-4.0-generate-001 and imagen-4.0-ultra-generate-001 are discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "imagen-4.0-fast-generate-001gemini-2.5-flash-image\nimagen-4.0-generate-001gemini-2.5-flash-image\nimagen-4.0-ultra-generate-001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "March 24, 2026",
+   "модели": [
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-24",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-3",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 3 endpoints imagen-3.0-capability-001, imagen-3.0-capability-002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001 and imagen-3.0-generate-002 are discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "imagen-3.0-capability-001gemini-2.5-flash-image\nimagen-3.0-capability-002gemini-2.5-flash-image\nimagen-3.0-fast-generate-001gemini-2.5-flash-image\nimagen-3.0-generate-001gemini-2.5-flash-image\nimagen-3.0-generate-002gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "March 24, 2026",
+   "модели": [
+    "imagen-3.0-capability-001",
+    "imagen-3.0-capability-002",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-generate-002",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-24",
+   "тема": [
+    "модели_сравнение",
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "capability-модели (кастомизация/редактирование Imagen 3) тоже уводятся на gemini-2.5-flash-image"
+  },
+  {
+   "код": "E-61-4",
+   "вид": "факт",
+   "утверждение_en": "The legacy endpoints imagegeneration@002 through imagegeneration@006 and imagetext@001 are listed as discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "Discontinued endpointsRecommended endpoint migration\nimagegeneration@002gemini-2.5-flash-image\nimagegeneration@003gemini-2.5-flash-image\nimagegeneration@004gemini-2.5-flash-image\nimagegeneration@005gemini-2.5-flash-image\nimagegeneration@006gemini-2.5-flash-image\nimagetext@001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "March 24, 2026",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@003",
+    "imagegeneration@004",
+    "imagegeneration@005",
+    "imagegeneration@006",
+    "imagetext@001",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-24",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "таблица в .txt склеена: имя старого эндпоинта и имя замены идут подряд без пробела"
+  },
+  {
+   "код": "E-61-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (gemini-3.1-flash-image) is available in public preview.",
+   "цитата": "Gemini 3.1 Flash Image\nGemini 3.1 Flash Image (gemini-3.1-flash-image) is available\nin public preview.",
+   "источник_цитаты": "txt",
+   "раздел": "February 26, 2026",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-6",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image enables high-quality image generation with improved pricing and latency.",
+   "цитата": "This release enables high-quality image generation with improved pricing and\nlatency.",
+   "источник_цитаты": "txt",
+   "раздел": "February 26, 2026",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "сравнение без названия базовой модели и без цифр"
+  },
+  {
+   "код": "E-61-7",
+   "вид": "правило",
+   "утверждение_en": "Google recommends using Gemini 3.1 Flash Image when generating images.",
+   "цитата": "We recommend using Gemini 3.1 Flash Image when generating\nimages.",
+   "источник_цитаты": "txt",
+   "раздел": "February 26, 2026",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-8",
+   "вид": "предупреждение",
+   "утверждение_en": "Several image generation preview endpoints are deprecated; Google recommends updating model endpoints before March 19, 2026, to avoid service disruption.",
+   "цитата": "Image generation preview endpoints deprecation\nThe following table describes image generation endpoints that are deprecated and\ntheir replacements. We recommend updating your model endpoints before March 19,\n2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "gemini-2.0-flash-image-generation-preview",
+    "gemini-2.5-flash-image-generation-preview",
+    "imagen-4.0-generate-preview-05-20",
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06",
+    "imagen-4.0-fast-generate-preview-05-20",
+    "imagen-product-recontext-preview-06-30",
+    "imagen-2.0-edit-preview-0627",
+    "virtual-try-on-preview-08-04",
+    "imagen-4.0-ingredients-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-9",
+   "вид": "факт",
+   "утверждение_en": "The preview endpoint gemini-2.0-flash-image-generation-preview is discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "gemini-2.0-flash-image-generation-previewgemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "gemini-2.0-flash-image-generation-preview",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "ID записан как ...-image-generation-preview; в записи May 07, 2025 модель названа gemini-2.0-flash-preview-image-generation"
+  },
+  {
+   "код": "E-61-10",
+   "вид": "факт",
+   "утверждение_en": "The preview endpoint gemini-2.5-flash-image-generation-preview is discontinued, with imagen-4.0-generate-001 or gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "gemini-2.5-flash-image-generation-previewimagen-4.0-generate-001 or gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "gemini-2.5-flash-image-generation-preview",
+    "imagen-4.0-generate-001",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "такой ID нигде больше в ленте не объявлялся (превью 2.5 Flash Image объявлено как gemini-2.5-flash-image-preview)"
+  },
+  {
+   "код": "E-61-11",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 4 preview endpoints imagen-4.0-generate-preview-05-20, imagen-4.0-generate-preview-06-06, imagen-4.0-ultra-generate-preview-06-06 and imagen-4.0-fast-generate-preview-05-20 are discontinued, with imagen-4.0-generate-001 or gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "imagen-4.0-generate-preview-05-20imagen-4.0-generate-001 or gemini-2.5-flash-image\nimagen-4.0-generate-preview-06-06imagen-4.0-generate-001 or gemini-2.5-flash-image\nimagen-4.0-ultra-generate-preview-06-06imagen-4.0-generate-001 or gemini-2.5-flash-image\nimagen-4.0-fast-generate-preview-05-20imagen-4.0-generate-001 or gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "imagen-4.0-generate-preview-05-20",
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06",
+    "imagen-4.0-fast-generate-preview-05-20",
+    "imagen-4.0-generate-001",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-12",
+   "вид": "факт",
+   "утверждение_en": "The preview endpoints imagen-product-recontext-preview-06-30 and imagen-2.0-edit-preview-0627 are discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "imagen-product-recontext-preview-06-30gemini-2.5-flash-image\nimagen-2.0-edit-preview-0627gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "imagen-product-recontext-preview-06-30",
+    "imagen-2.0-edit-preview-0627",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "product recontext и edit-превью Imagen уводятся на Gemini — то есть редактирование/перепостановка товара ожидаются от gemini-2.5-flash-image"
+  },
+  {
+   "код": "E-61-13",
+   "вид": "факт",
+   "утверждение_en": "The preview endpoint virtual-try-on-preview-08-04 is discontinued, with virtual-try-on-001 as the recommended migration endpoint.",
+   "цитата": "virtual-try-on-preview-08-04virtual-try-on-001",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "virtual-try-on-preview-08-04",
+    "virtual-try-on-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-14",
+   "вид": "факт",
+   "утверждение_en": "The preview endpoint imagen-4.0-ingredients-preview is discontinued, with gemini-2.5-flash-image as the recommended migration endpoint.",
+   "цитата": "imagen-4.0-ingredients-previewgemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "imagen-4.0-ingredients-preview",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-17",
+   "тема": [
+    "модели_сравнение",
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "что такое ingredients-превью, лента не объясняет; по названию — сборка из ингредиентов/рефов (догадка, не факт)"
+  },
+  {
+   "код": "E-61-15",
+   "вид": "факт",
+   "утверждение_en": "Virtual Try-On is generally available (GA); the new endpoint virtual-try-on-001 replaces the previous endpoint virtual-try-on-preview-08-04.",
+   "цитата": "Virtual Try-On is now generally available\n(GA).\nThe new endpoint, virtual-try-on-001,\nreplaces the previous endpoint, virtual-try-on-preview-08-04.",
+   "источник_цитаты": "txt",
+   "раздел": "January 23, 2026",
+   "модели": [
+    "virtual-try-on-001",
+    "virtual-try-on-preview-08-04"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-01-23",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-16",
+   "вид": "правило",
+   "утверждение_en": "Google recommends changing to the new Virtual Try-On endpoint (virtual-try-on-001) as soon as possible.",
+   "цитата": "recommend changing to the new endpoint as soon as possible.",
+   "источник_цитаты": "txt",
+   "раздел": "January 23, 2026",
+   "модели": [
+    "virtual-try-on-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-01-23",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-17",
+   "вид": "факт",
+   "утверждение_en": "The Virtual Try-On model virtual-try-on-preview-08-04 was improved: latency is significantly reduced and quality is improved for shoes, body shape preservation, and product fidelity.",
+   "цитата": "Our Virtual Try-On model, virtual-try-on-preview-08-04, is\nimproved. Latency is significantly reduced and quality is improved for shoes,\nbody shape preservation, and product fidelity.",
+   "источник_цитаты": "txt",
+   "раздел": "December 16, 2025",
+   "модели": [
+    "virtual-try-on-preview-08-04"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-16",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-18",
+   "вид": "предупреждение",
+   "утверждение_en": "Imagen subject model and style model tuning will be removed on December 31, 2025.",
+   "цитата": "Imagen subject model and style model tuning will be removed on\nDecember 31, 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "October 14, 2025",
+   "модели": [
+    "Imagen (subject/style tuning)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-14",
+   "тема": [
+    "модели_сравнение",
+    "рефы",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-19",
+   "вид": "правило",
+   "утверждение_en": "Instead of Imagen subject and style fine-tuning, Google recommends Gemini 2.5 Flash Image, which supports most use cases that require fine-tuning.",
+   "цитата": "We recommend that you use\nGemini 2.5 Flash Image, which supports most use cases that require\nfine-tuning.",
+   "источник_цитаты": "txt",
+   "раздел": "October 14, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-14",
+   "тема": [
+    "рефы",
+    "стиль",
+    "модели_сравнение"
+   ],
+   "заметка": "ссылка ведёт на Edit images with Gemini — замена тюнинга предполагается через редактирование/рефы, а не обучение"
+  },
+  {
+   "код": "E-61-20",
+   "вид": "предупреждение",
+   "утверждение_en": "The Imagen 4 preview models imagen-4.0-generate-preview-06-06, imagen-4.0-ultra-generate-preview-06-06 and imagen-4.0-fast-generate-preview-06-06 will be removed on November 30, 2025; workflows should migrate before then to the GA models imagen-4.0-generate-001, imagen-4.0-ultra-generate-001 and imagen-4.0-fast-generate-001.",
+   "цитата": "The following Imagen 4 preview models will be removed on\nNovember 30, 2025:\nimagen-4.0-generate-preview-06-06,\nimagen-4.0-ultra-generate-preview-06-06, and\nimagen-4.0-fast-generate-preview-06-06. To avoid service\ndisruption, migrate all workflows that use Imagen 4 preview models before\nNovember 30, 2025, 2025, to the following Imagen 4 Generally\nAvailable models: imagen-4.0-generate-001,\nimagen-4.0-ultra-generate-001,\nimagen-4.0-fast-generate-001.",
+   "источник_цитаты": "txt",
+   "раздел": "October 14, 2025",
+   "модели": [
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06",
+    "imagen-4.0-fast-generate-preview-06-06",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "imagen-4.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-14",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "в тексте опечатка 'November 30, 2025, 2025'"
+  },
+  {
+   "код": "E-61-21",
+   "вид": "факт",
+   "утверждение_en": "Imagen's virtual try-on model virtual-try-on-preview-08-04 was updated on September 30, 2025, to more accurately preserve the person's body shape and the garment's identity.",
+   "цитата": "Imagen's virtual try-on model, virtual-try-on-preview-08-04\nwas updated on September 30, 2025, to more accurately preserve the person's\nbody shape and preserve the garment's identity.",
+   "источник_цитаты": "txt",
+   "раздел": "October 09, 2025",
+   "модели": [
+    "virtual-try-on-preview-08-04"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-09",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": "запись, на которую ссылается пометка 'This release note is incorrect' в записи August 06, 2025"
+  },
+  {
+   "код": "E-61-22",
+   "вид": "факт",
+   "утверждение_en": "The Qwen image models Qwen-Image, Qwen-Image-Edit and Qwen-Image-Edit-2509 are available in Model Garden.",
+   "цитата": "The following Qwen models are available in Model Garden:\nQwen-Image\nQwen-Image-Edit\nQwen-Image-Edit-2509",
+   "источник_цитаты": "txt",
+   "раздел": "October 07, 2025",
+   "модели": [
+    "Qwen-Image",
+    "Qwen-Image-Edit",
+    "Qwen-Image-Edit-2509"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-07",
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "сторонние модели; возможности в ленте не описаны"
+  },
+  {
+   "код": "E-61-23",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (gemini-2.5-flash-image) is generally available.",
+   "цитата": "Gemini 2.5 Flash Image (gemini-2.5-flash-image) is now generally available.",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-24",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 2.5 Flash Image GA release adds support for aspect ratio controls.",
+   "цитата": "This GA release adds support for aspect ratio controls",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "список допустимых соотношений не приведён"
+  },
+  {
+   "код": "E-61-25",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 2.5 Flash Image GA release adds support for an image-only response modality.",
+   "цитата": "image-only response modality",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "до GA (в превью) ответ, по-видимому, требовал текст+картинку — прямо не сказано"
+  },
+  {
+   "код": "E-61-26",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 2.5 Flash Image GA release adds regional endpoints and support for batch predictions.",
+   "цитата": "regional endpoints, support for batch predictions",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-27",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 2.5 Flash Image GA release supports image generation from multiple reference images.",
+   "цитата": "support for batch predictions, image generation from multiple reference images",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "число рефов не указано"
+  },
+  {
+   "код": "E-61-28",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 2.5 Flash Image GA release includes improved multi-turn image editing.",
+   "цитата": "multiple reference images, and improved multi-turn image editing",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-29",
+   "вид": "факт",
+   "утверждение_en": "The Google Gen AI SDK for C# (Preview) includes GenerateImagesAsync alongside GenerateContentAsync and GenerateContentStreamAsync.",
+   "цитата": "This release includes support for GenerateContentAsync, GenerateContentStreamAsync, GenerateImagesAsync",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "GenerateImagesAsync — метод Imagen-стиля (generate_images); Gemini-картинки идут через GenerateContent — это вывод, не текст ленты"
+  },
+  {
+   "код": "E-61-30",
+   "вид": "факт",
+   "утверждение_en": "Imagen's virtual try-on model virtual-try-on-preview-08-04 was improved to better preserve the person's body shape and the garment product's identity.",
+   "цитата": "We improved Imagen's virtual try-on model, virtual-try-on-preview-08-04, so that it is better at preserving the person's body shape and preserving the garment product's identity.",
+   "источник_цитаты": "txt",
+   "раздел": "September 15, 2025",
+   "модели": [
+    "virtual-try-on-preview-08-04"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-15",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-31",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (gemini-2.5-flash-image-preview) is available in Preview.",
+   "цитата": "Gemini 2.5 Flash Image (gemini-2.5-flash-image-preview) is available in Preview.",
+   "источник_цитаты": "txt",
+   "раздел": "August 26, 2025",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-32",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image Preview supports additional image generation and editing features such as image generation from multiple reference images and improved multi-turn image editing.",
+   "цитата": "Gemini 2.5 Flash Image Preview supports additional image generation and editing features such as image generation from multiple reference images and improved multi-turn image editing.",
+   "источник_цитаты": "txt",
+   "раздел": "August 26, 2025",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы",
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-33",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 is generally available and introduces three models: Imagen 4 Generate, Imagen 4 Fast Generate and Imagen 4 Ultra Generate.",
+   "цитата": "Imagen 4 is Generally Available.\nImagen 4 introduces the following models:\nImagen 4 Generate\nImagen 4 Fast Generate\nImagen 4 Ultra Generate",
+   "источник_цитаты": "txt",
+   "раздел": "August 14, 2025",
+   "модели": [
+    "Imagen 4 Generate",
+    "Imagen 4 Fast Generate",
+    "Imagen 4 Ultra Generate"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-14",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "ID моделей в записи нет; GA-ID imagen-4.0-*-001 названы в записях October 14, 2025 и March 24, 2026"
+  },
+  {
+   "код": "E-61-34",
+   "вид": "факт",
+   "утверждение_en": "Virtual try-on generates virtual try-on images from an image of a person and product photos that you provide; it is available in Preview.",
+   "цитата": "Virtual try-on lets you generate virtual try-on images from an image of a\nperson and product photos that you provide, and is available in Preview.",
+   "источник_цитаты": "txt",
+   "раздел": "August 06, 2025",
+   "модели": [
+    "Imagen virtual try-on"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-06",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "запись сама помечена как неверная (см. следующую единицу)"
+  },
+  {
+   "код": "E-61-35",
+   "вид": "предупреждение",
+   "утверждение_en": "The August 6, 2025 virtual try-on release note is marked by Google as incorrect, with a pointer to the October 9, 2025 entry.",
+   "цитата": "This release note is incorrect; see entry for October 9, 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "August 06, 2025",
+   "модели": [
+    "Imagen virtual try-on"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-06",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-36",
+   "вид": "предупреждение",
+   "утверждение_en": "Starting on June 24, 2025, Imagen versions 1 and 2, image captioning, and visual question answering are deprecated.",
+   "цитата": "Starting on June 24, 2025, Imagen versions 1 and 2, image captioning, and visual question answering are deprecated.",
+   "источник_цитаты": "txt",
+   "раздел": "June 24, 2025",
+   "модели": [
+    "Imagen 1",
+    "Imagen 2"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-37",
+   "вид": "ограничение",
+   "утверждение_en": "On September 24, 2025, image captioning, visual question answering, the Imagen 1 model imagegeneration@002, and the Imagen 2 models imagegeneration@005 and imagegeneration@006 will be removed.",
+   "цитата": "On September 24, 2025, the following features and models will be removed:\nimage captioning\nvisual question answering\nImagen 1 model imagegeneration@002\nImagen 2 models imagegeneration@005 and imagegeneration@006",
+   "источник_цитаты": "txt",
+   "раздел": "June 24, 2025",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@005",
+    "imagegeneration@006"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06-24",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "направление миграции — ссылка 'Migrate to Imagen 3'"
+  },
+  {
+   "код": "E-61-38",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 public preview models are updated to imagen-4.0-generate-preview-06-06, imagen-4.0-fast-generate-preview-06-06 and imagen-4.0-ultra-generate-preview-06-06.",
+   "цитата": "Imagen 4's public preview models are updated to the following:\nimagen-4.0-generate-preview-06-06\nimagen-4.0-fast-generate-preview-06-06\nimagen-4.0-ultra-generate-preview-06-06",
+   "источник_цитаты": "txt",
+   "раздел": "June 11, 2025",
+   "модели": [
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-fast-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06-11",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-39",
+   "вид": "предупреждение",
+   "утверждение_en": "To avoid service interruption, migrate from imagen-4.0-ultra-generate-exp-05-20 and imagen-4.0-generate-preview-05-20 before 2025-07-07.",
+   "цитата": "To avoid service interruption, migrate from imagen-4.0-ultra-generate-exp-05-20 and imagen-4.0-generate-preview-05-20 before 2025-07-07.",
+   "источник_цитаты": "txt",
+   "раздел": "June 11, 2025",
+   "модели": [
+    "imagen-4.0-ultra-generate-exp-05-20",
+    "imagen-4.0-generate-preview-05-20"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06-11",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-40",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 offers two Preview models, Imagen 4 Generate Preview 05-20 and Imagen 4 Ultra Generate Experimental 05-20, available in the API and Vertex AI Studio.",
+   "цитата": "Imagen 4\nImagen 4 offers two Preview models: Imagen 4 Generate Preview 05-20, and Imagen 4 Ultra Generate Experimental 05-20.\nFor more information, see\nGenerate images using text prompts and the\nGenerate images API.\nThe model is available in the API and Vertex AI Studio.",
+   "источник_цитаты": "txt",
+   "раздел": "May 20, 2025",
+   "модели": [
+    "Imagen 4 Generate Preview 05-20",
+    "Imagen 4 Ultra Generate Experimental 05-20"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-41",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash with image generation (gemini-2.0-flash-preview-image-generation) is available as a public preview offering.",
+   "цитата": "Gemini 2.0 Flash with image generation (gemini-2.0-flash-preview-image-generation) is now available as a public preview offering.",
+   "источник_цитаты": "txt",
+   "раздел": "May 07, 2025",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation (Gemini 2.0 Flash image generation)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-07",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-42",
+   "вид": "факт",
+   "утверждение_en": "HiDream-I1 is available in Model Garden.",
+   "цитата": "HiDream-I1, Llama Guard 4, Llama Prompt Guard 2, and Qwen3 are available in Model Garden.",
+   "источник_цитаты": "txt",
+   "раздел": "April 30, 2025",
+   "модели": [
+    "HiDream-I1"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-04-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "лента не называет HiDream-I1 image-моделью; то, что это text-to-image, — внешнее знание"
+  },
+  {
+   "код": "E-61-43",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 2.0 Flash is generally available for text-only outputs; multimodal outputs are still available only as a private preview.",
+   "цитата": "Gemini 2.0 Flash is now generally available for text-only outputs. Multimodal outputs are still available only as a private preview.",
+   "источник_цитаты": "txt",
+   "раздел": "February 05, 2025",
+   "модели": [
+    "gemini-2.0-flash"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-05",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "картинки прямо не названы; «multimodal outputs» по смыслу включает генерацию изображений (вывод)"
+  },
+  {
+   "код": "E-61-44",
+   "вид": "факт",
+   "утверждение_en": "A newer improved Imagen 3 image generation model, imagen-3.0-generate-002, is available to all users.",
+   "цитата": "New Imagen 3 image generation model available to users\nA newer improved Imagen 3 image generation model is now available to all users:\nimagen-3.0-generate-002",
+   "источник_цитаты": "txt",
+   "раздел": "January 29, 2025",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-01-29",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-45",
+   "вид": "объяснение",
+   "утверждение_en": "Prompt enhancement is an LLM-based prompt rewriter that adds details and descriptive language to the user's prompt, generally resulting in higher quality generated images.",
+   "цитата": "Prompt enhancement - The LLM-based prompt rewriter tool adds additional details and descriptive language to the prompt you provide, generally resulting in higher quality generated images.",
+   "источник_цитаты": "txt",
+   "раздел": "January 29, 2025",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-01-29",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-46",
+   "вид": "факт",
+   "утверждение_en": "For imagen-3.0-generate-002, prompt enhancement is configurable and enabled by default.",
+   "цитата": "This feature is configurable and is enabled by default.",
+   "источник_цитаты": "txt",
+   "раздел": "January 29, 2025",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-01-29",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "имя параметра не приведено"
+  },
+  {
+   "код": "E-61-47",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 image generation models imagen-3.0-generate-001 and imagen-3.0-fast-generate-001 (low latency model) are available to all users without requiring prior approval.",
+   "цитата": "Imagen 3 image generation models Generally Available to all users\nImagen 3 image generation models are now available to all users without requiring prior approval. These include the following image generation models:\nimagen-3.0-generate-001\nimagen-3.0-fast-generate-001 (low latency model)",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-48",
+   "вид": "ограничение",
+   "утверждение_en": "Prior image generation models imagegeneration@006, imagegeneration@005 and imagegeneration@002 still require approval to use.",
+   "цитата": "Prior image generation models (imagegeneration@006, imagegeneration@005, imagegeneration@002) still require approval to use.",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagegeneration@006",
+    "imagegeneration@005",
+    "imagegeneration@002"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-49",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 3 Customization model imagen-3.0-capability is available to approved users.",
+   "цитата": "Imagen 3 Customization model Generally Available to approved users\nImagen 3 Customization model is now available to approved users. This includes the following model:\nimagen-3.0-capability",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagen-3.0-capability"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-50",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen 3 Customization guides image generation with reference images (few-shot learning) and covers subject customization (product, person, animal companion), style customization, controlled customization (canny edge and scribble) and instruct customization (style transfer).",
+   "цитата": "Imagen 3 Customization lets you guide image generation by providing reference images (few-shot learning). Imagen 3 Customization lets you customize generated images for the following feature categories:\nSubject Customization (product, person, and animal companion)\nStyle Customization\nControlled Customization (canny edge and scribble)\nInstruct Customization (Style transfer)",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagen-3.0-capability"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-51",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 3 Editing model imagen-3.0-capability is available to approved users.",
+   "цитата": "Imagen 3 editing model Generally Available to approved users\nThe Imagen 3 Editing model is now available to approved users. This includes the following model:\nimagen-3.0-capability",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagen-3.0-capability"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-52",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen 3 Editing offers inpainting (add or remove content from a masked area), outpainting (expand a masked area) and product image editing (identify and maintain a primary product while changing the background or product position).",
+   "цитата": "This model offers the following additional features:\nInpainting - Add or remove content from a masked area of an image\nOutpainting - Expand a masked area of an image\nProduct image editing - Identify and maintain a primary product while changing the background or product position",
+   "источник_цитаты": "txt",
+   "раздел": "December 10, 2024",
+   "модели": [
+    "imagen-3.0-capability"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-12-10",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-53",
+   "вид": "факт",
+   "утверждение_en": "Dynamic LoRA serving was added for Llama 3.1 and Stable Diffusion XL.",
+   "цитата": "Added dynamic LoRA serving for Llama 3.1 and Stable Diffusion XL.",
+   "источник_цитаты": "txt",
+   "раздел": "October 04, 2024",
+   "модели": [
+    "Stable Diffusion XL"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-10-04",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-54",
+   "вид": "факт",
+   "утверждение_en": "Flux was added to Model Garden.",
+   "цитата": "Prompt Guard and Flux were added to Model Garden.",
+   "источник_цитаты": "txt",
+   "раздел": "October 04, 2024",
+   "модели": [
+    "Flux"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-10-04",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "лента не называет Flux image-моделью; это внешнее знание"
+  },
+  {
+   "код": "E-61-55",
+   "вид": "факт",
+   "утверждение_en": "The Imagen 3 image generation models imagen-3.0-generate-001 and the low-latency imagen-3.0-fast-generate-001 are generally available to approved users.",
+   "цитата": "New Imagen on Vertex AI image generation model and features\nThe Imagen 3 image generation models (imagen-3.0-generate-001 and the low-latency version imagen-3.0-fast-generate-001) are Generally Available to approved users.",
+   "источник_цитаты": "txt",
+   "раздел": "July 31, 2024",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-07-31",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-56",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 supports the aspect ratios 1:1, 3:4, 4:3, 9:16 and 16:9.",
+   "цитата": "Additional aspect ratios (1:1, 3:4, 4:3, 9:16, 16:9)",
+   "источник_цитаты": "txt",
+   "раздел": "July 31, 2024",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-07-31",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-57",
+   "вид": "факт",
+   "утверждение_en": "For Imagen 3, a SynthID digital watermark is enabled by default and watermark verification is available.",
+   "цитата": "Digital watermark (SynthID) enabled by default\nWatermark verification",
+   "источник_цитаты": "txt",
+   "раздел": "July 31, 2024",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-07-31",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-58",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 offers user-configurable safety features: a safety setting and a person/face setting.",
+   "цитата": "User-configurable safety features (safety setting, person/face setting)",
+   "источник_цитаты": "txt",
+   "раздел": "July 31, 2024",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-07-31",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-59",
+   "вид": "факт",
+   "утверждение_en": "Model Garden added 35 Hugging Face PyTorch models with verified deployment settings, such as stabilityai/stable-diffusion-2-1.",
+   "цитата": "35 Hugging Face PyTorch models with verified deployment settings such as stabilityai/stable-diffusion-2-1.",
+   "источник_цитаты": "txt",
+   "раздел": "June 28, 2024",
+   "модели": [
+    "stabilityai/stable-diffusion-2-1"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-06-28",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-60",
+   "вид": "факт",
+   "утверждение_en": "A notebook-based interactive workshop UI was added in Model Garden for image generative models such as stable-diffusion-xl-base, image inpainting and controlnet.",
+   "цитата": "A notebook-based interactive workshop UI was added in Model Garden for image generative models such as stable-diffusion-xl-base, image inpainting, controlnet.",
+   "источник_цитаты": "txt",
+   "раздел": "June 28, 2024",
+   "модели": [
+    "stable-diffusion-xl-base",
+    "controlnet"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-06-28",
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-61",
+   "вид": "факт",
+   "утверждение_en": "Instant ID, an identity preserving text-to-image generation model, was added to Model Garden.",
+   "цитата": "Instant ID: An identity preserving text-to-image generation model.",
+   "источник_цитаты": "txt",
+   "раздел": "May 20, 2024",
+   "модели": [
+    "Instant ID"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-20",
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-62",
+   "вид": "факт",
+   "утверждение_en": "Stable Diffusion XL lightning, a text-to-image model based on SDXL that requires fewer inference iterations, was added to Model Garden.",
+   "цитата": "Stable Diffusion XL lightning: A text-to-image generation model that is based on SDXL but requires fewer inference iterations.",
+   "источник_цитаты": "txt",
+   "раздел": "May 20, 2024",
+   "модели": [
+    "Stable Diffusion XL lightning"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-20",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-63",
+   "вид": "правило",
+   "утверждение_en": "For imagegeneration@006 the digital watermark is enabled by default; to use a seed value for deterministic output you must disable watermark generation by setting \"addWatermark\": false.",
+   "цитата": "For the new Imagen image generation model version 006 (imagegeneration@006) the seed field behavior has changed. For the v.006 model a digital watermark is enabled by default for image generation. To be able to use a seed value to get deterministic output you must disable digital watermark generation by setting the following parameter: \"addWatermark\": false.",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@006"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-64",
+   "вид": "ограничение",
+   "утверждение_en": "For imagegeneration@006 the seed field can't be used while the digital watermark is enabled.",
+   "цитата": "* The seed field can't be used while digital watermark is enabled.",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@006"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-65",
+   "вид": "факт",
+   "утверждение_en": "The 006 version of the Imagen 2 image editing model (imagegeneration@006) offers inpainting, outpainting and product image editing.",
+   "цитата": "The 006 version of the Imagen 2 image editing model (imagegeneration@006) is now available. This model offers the following additional features:\nInpainting - Add or remove content from a masked area of an image\nOutpainting - Expand a masked area of an image\nProduct image editing - Identify and maintain a primary product while changing the background or product position",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@006"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-66",
+   "вид": "факт",
+   "утверждение_en": "The 006 version of the Imagen 2 image generation model (imagegeneration@006) adds the aspect ratios 1:1, 3:4, 4:3, 9:16 and 16:9.",
+   "цитата": "The 006 version of the Imagen 2 image generation model (imagegeneration@006) is now available. This model offers the following additional features:\nAdditional aspect ratios (1:1, 3:4, 4:3, 9:16, 16:9)",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@006"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-67",
+   "вид": "факт",
+   "утверждение_en": "imagegeneration@006 has a SynthID digital watermark enabled by default, watermark verification, and new user-configurable safety features (safety setting, person/face setting).",
+   "цитата": "Digital watermark (SynthID) enabled by default\nWatermark verification*\nNew user-configurable safety features (safety setting, person/face setting)",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@006"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-68",
+   "вид": "факт",
+   "утверждение_en": "Regional APIs are available in 11 new countries for Gemini, Imagen, and embeddings.",
+   "цитата": "Regional APIs are available in 11 new countries for Gemini, Imagen, and embeddings.",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-69",
+   "вид": "факт",
+   "утверждение_en": "The US and EU have machine-learning processing boundaries for models including imagegeneration@005.",
+   "цитата": "US and EU have machine-learning processing boundaries for the gemini-1.0-pro-001, gemini-1.0-pro-002, gemini-1.0-pro-vision-001, and imagegeneration@005 models.",
+   "источник_цитаты": "txt",
+   "раздел": "April 09, 2024",
+   "модели": [
+    "imagegeneration@005"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-04-09",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-70",
+   "вид": "факт",
+   "утверждение_en": "Stable Diffusion XL LCM (Latent Consistency Model) was added to Model Garden; it enables faster, high-quality text-to-image generation with fewer steps.",
+   "цитата": "Stable Diffusion XL LCM: The Latent Consistency Model (LCM) enhances\ntext-to-image generation in Latent Diffusion Models by enabling faster\nand high-quality image creation with fewer steps.",
+   "источник_цитаты": "txt",
+   "раздел": "February 07, 2024",
+   "модели": [
+    "Stable Diffusion XL LCM"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-02-07",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-71",
+   "вид": "факт",
+   "утверждение_en": "Lama (Large mask inpainting) was added to Model Garden for resolution-robust image inpainting.",
+   "цитата": "Lama (Large mask inpainting): Use Large Mask Inpainting with fast Fourier\nconvolutions (FFCs), a high receptive field perceptual loss, and large\ntraining masks for resolution-robust image inpainting.",
+   "источник_цитаты": "txt",
+   "раздел": "February 07, 2024",
+   "модели": [
+    "Lama"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-02-07",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-72",
+   "вид": "факт",
+   "утверждение_en": "One-click deployment was added for more than 20 models with pre-trained OSS artifacts, including Salesforce/blip-image-captioning-base and timbrooks/instruct-pix2pix.",
+   "цитата": "Added one-click deployment button for more than 20 models with pre-trained\nOSS artifacts, including Salesforce/blip-image-captioning-base and\ntimbrooks/instruct-pix2pix.",
+   "источник_цитаты": "txt",
+   "раздел": "February 07, 2024",
+   "модели": [
+    "timbrooks/instruct-pix2pix",
+    "Salesforce/blip-image-captioning-base"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-02-07",
+   "тема": [
+    "редактирование",
+    "продукт_ui"
+   ],
+   "заметка": "instruct-pix2pix — редактирование по инструкции (внешнее знание; лента не описывает)"
+  },
+  {
+   "код": "E-61-73",
+   "вид": "факт",
+   "утверждение_en": "Model Garden added Latent Consistent Models and research-purpose-only SDXL-Turbo models to the Stable Diffusion XL notebooks.",
+   "цитата": "Latent Consistent Models, and research purpose only SDXL-Turbo models to stable diffusion XL notebooks.",
+   "источник_цитаты": "txt",
+   "раздел": "December 18, 2023",
+   "модели": [
+    "SDXL-Turbo",
+    "Stable Diffusion XL"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-12-18",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "SDXL-Turbo помечен как только для исследований"
+  },
+  {
+   "код": "E-61-74",
+   "вид": "факт",
+   "утверждение_en": "The 005 version of Imagen's image generation model (imagegeneration@005, Imagen 2) is generally available and is now the default for image generation tasks.",
+   "цитата": "Imagen 2 General Availability\nThe 005 version of Imagen's image generation model (imagegeneration@005) is now generally available (GA) for image generation tasks. This model version is now the default for image generation tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "December 13, 2023",
+   "модели": [
+    "imagegeneration@005"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-12-13",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-75",
+   "вид": "факт",
+   "утверждение_en": "The Access Transparency (AXT) security control is available for Imagen on Vertex AI online prediction and Imagen on Vertex AI tuning (and multimodal embeddings online prediction).",
+   "цитата": "The Access Transparency (AXT) security control is available for the following features:\nEmbeddings for Multimodal online prediction\nImagen on Vertex AI online prediction\nImagen on Vertex AI tuning",
+   "источник_цитаты": "txt",
+   "раздел": "December 08, 2023",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-12-08",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-76",
+   "вид": "факт",
+   "утверждение_en": "Model Garden updated default model deployment settings with L4 GPUs for models including Stable Diffusion 1.5, 2.1, and XL.",
+   "цитата": "Updated default model deployment settings with L4 GPUs, such as LLaMA2, falcon-instruct, openllama, Stable Diffusion 1.5, 2.1, and XL models.",
+   "источник_цитаты": "txt",
+   "раздел": "December 01, 2023",
+   "модели": [
+    "Stable Diffusion 1.5",
+    "Stable Diffusion 2.1",
+    "Stable Diffusion XL"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-12-01",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "в той же записи — бенчмарки тюнинга и сервинга Stable Diffusion 1.5 (строка 3717)"
+  },
+  {
+   "код": "E-61-77",
+   "вид": "факт",
+   "утверждение_en": "Inference for Stable Diffusion 1.5, 2.1, and XL models in Model Garden is up to 2 times faster compared with the original implementation.",
+   "цитата": "Inference speed up to 2 times faster compared with original implementation\nfor Stable Diffusion 1.5, 2.1, and XL models.",
+   "источник_цитаты": "txt",
+   "раздел": "November 03, 2023",
+   "модели": [
+    "Stable Diffusion 1.5",
+    "Stable Diffusion 2.1",
+    "Stable Diffusion XL"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-11-03",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-78",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI offers generally available subject model tuning (standard) and style model tuning, both as restricted access features.",
+   "цитата": "Imagen on Vertex AI now offers the following Generally Available (GA) features:\nSubject model tuning (standard)*\nStyle model tuning*\n* Restricted access feature.",
+   "источник_цитаты": "txt",
+   "раздел": "August 29, 2023",
+   "модели": [
+    "Imagen (subject/style tuning)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-29",
+   "тема": [
+    "рефы",
+    "стиль",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-79",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI multimodal embeddings are generally available, with different pricing for image input versus text input.",
+   "цитата": "Imagen Multimodal embeddings available in GA\nImagen on Vertex AI now offers the following GA feature:\nMultimodal embeddings\nThis feature incurs different pricing\nbased on if you use image input or text input. For more information, see the",
+   "источник_цитаты": "txt",
+   "раздел": "August 09, 2023",
+   "модели": [
+    "Imagen multimodal embeddings"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-08-09",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "эмбеддинги, не генерация; цифр цены нет"
+  },
+  {
+   "код": "E-61-80",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI offers GA image generation (text-to-image) and image editing as restricted access features, plus image visual captioning and visual question answering.",
+   "цитата": "Imagen on Vertex AI now offers the following Generally Available (GA) features:\nImage generation (text-to-image generation)*\nImage editing*\nImage visual captioning\nVisual Question Answering (VQA)\n* Restricted access feature.",
+   "источник_цитаты": "txt",
+   "раздел": "July 17, 2023",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-07-17",
+   "тема": [
+    "модели_сравнение",
+    "редактирование",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-81",
+   "вид": "ограничение",
+   "утверждение_en": "Imagen supports human face generation for image generation and image editing; it is enabled by default, except for images with children and/or celebrities.",
+   "цитата": "Imagen now supports human face generation for the following features:\nImage generation (text-to-image generation)*\nImage editing*\n* Restricted access feature.\nHuman face generation is enabled by default, except for images with children\nand/or celebrities. For more information, see the",
+   "источник_цитаты": "txt",
+   "раздел": "July 17, 2023",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2023-07-17",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-61-82",
+   "вид": "факт",
+   "утверждение_en": "On this page gemini-2.5-flash-image goes from Preview (as gemini-2.5-flash-image-preview, 2025-08-26) to GA (2025-10-02) and then becomes the named replacement for Imagen subject/style tuning (2025-10-14), for image generation preview endpoints (2026-02-17) and for every Imagen GA endpoint (2026-03-24); no deprecation or retirement of it is recorded.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-31, E-61-23, E-61-19, E-61-9, E-61-12, E-61-2, E-61-3, E-61-4",
+   "дата_единицы": "2025-08-26/2026-03-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-83",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image appears only once on the page, as a public preview with a Google recommendation to use it for generating images (2026-02-26); no GA, pricing figures or deprecation for it are recorded, and the later Imagen deprecation table (2026-03-24) still points to gemini-2.5-flash-image rather than to it.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-5, E-61-7, E-61-2",
+   "дата_единицы": "2026-02-26/2026-03-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "после 2026-05-26 в ленте нет ни одной записи Generative AI (только Workbench), поэтому отсутствие GA не доказывает, что GA не было"
+  },
+  {
+   "код": "E-61-84",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash image output on this page: multimodal outputs only in private preview when 2.0 Flash went GA for text (2025-02-05), public preview of gemini-2.0-flash-preview-image-generation (2025-05-07), then deprecation of the preview endpoint (written gemini-2.0-flash-image-generation-preview) with gemini-2.5-flash-image as replacement and a 2026-03-19 deadline (2026-02-17).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation (Gemini 2.0 Flash image generation)",
+    "gemini-2.0-flash-image-generation-preview",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-43, E-61-41, E-61-8, E-61-9",
+   "дата_единицы": "2025-02-05/2026-02-17",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-85",
+   "вид": "факт",
+   "утверждение_en": "Imagen 1/2 lifecycle on this page: imagegeneration@005 becomes GA and the default (2023-12-13), imagegeneration@006 adds editing, aspect ratios and default SynthID (2024-04-09), the imagegeneration@00x models remain approval-gated after Imagen 3 opens to all (2024-12-10), are deprecated on 2025-06-24 with removal on 2025-09-24, yet reappear in the 2026-03-24 deprecation table with a June 30, 2026 target.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@005",
+    "imagegeneration@006"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-74, E-61-65, E-61-66, E-61-67, E-61-48, E-61-36, E-61-37, E-61-4",
+   "дата_единицы": "2023-12-13/2026-03-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-86",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 lifecycle on this page: GA for approved users (2024-07-31), GA for all users plus the imagen-3.0-capability customization and editing model (2024-12-10), imagen-3.0-generate-002 with prompt enhancement (2025-01-29), and deprecation of all Imagen 3 endpoints in favour of gemini-2.5-flash-image (2026-03-24).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-002",
+    "imagen-3.0-capability",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-55, E-61-47, E-61-49, E-61-51, E-61-44, E-61-3",
+   "дата_единицы": "2024-07-31/2026-03-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-87",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 lifecycle on this page: Preview 05-20 models (2025-05-20), replaced by 06-06 previews with a 2025-07-07 migration deadline (2025-06-11), GA of Generate/Fast/Ultra (2025-08-14), preview removal set for 2025-11-30 (2025-10-14), preview endpoints listed as deprecated with a 2026-03-19 deadline (2026-02-17), and the GA models themselves deprecated in favour of gemini-2.5-flash-image (2026-03-24), about seven months after GA.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "imagen-4.0-*-preview-*",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-40, E-61-38, E-61-39, E-61-33, E-61-20, E-61-11, E-61-2",
+   "дата_единицы": "2025-05-20/2026-03-24",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-88",
+   "вид": "факт",
+   "утверждение_en": "Virtual Try-On lifecycle on this page: Preview (2025-08-06, entry flagged as incorrect), quality updates (2025-09-15, 2025-09-30 reported on 2025-10-09, 2025-12-16), GA as virtual-try-on-001 (2026-01-23) and deprecation of the preview endpoint (2026-02-17); virtual-try-on-001 is the only Imagen-family image product not redirected to Gemini in the 2026-03-24 table.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "virtual-try-on-preview-08-04",
+    "virtual-try-on-001"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-34, E-61-35, E-61-30, E-61-21, E-61-17, E-61-15, E-61-13, E-61-1",
+   "дата_единицы": "2025-08-06/2026-03-24",
+   "тема": [
+    "модели_сравнение",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-89",
+   "вид": "факт",
+   "утверждение_en": "Subject/style personalisation moves across the page from Imagen tuning (restricted GA, 2023-08-29) to Imagen 3 Customization with few-shot reference images (2024-12-10), to Gemini 2.5 Flash Image with multi-reference generation (2025-08-26, 2025-10-02) recommended as the replacement when Imagen tuning is removed (2025-10-14), and the capability endpoints are redirected to gemini-2.5-flash-image (2026-03-24).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "Imagen (subject/style tuning)",
+    "imagen-3.0-capability",
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-78, E-61-50, E-61-32, E-61-27, E-61-18, E-61-19, E-61-3",
+   "дата_единицы": "2023-08-29/2026-03-24",
+   "тема": [
+    "рефы",
+    "стиль",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-90",
+   "вид": "факт",
+   "утверждение_en": "Mask-based editing (inpainting, outpainting, product image editing) is listed for imagegeneration@006 (2024-04-09) and Imagen 3 Editing (2024-12-10); for Gemini image models the page only mentions improved multi-turn image editing (2025-08-26, 2025-10-02), yet Imagen edit and product-recontext previews are redirected to gemini-2.5-flash-image (2026-02-17).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagegeneration@006",
+    "imagen-3.0-capability",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-65, E-61-52, E-61-32, E-61-28, E-61-12",
+   "дата_единицы": "2024-04-09/2026-02-17",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-91",
+   "вид": "предупреждение",
+   "утверждение_en": "SynthID watermarking, watermark verification and person/face safety settings are documented on this page only for Imagen (imagegeneration@006 and Imagen 3); the page says nothing about watermarking or safety settings for Gemini image models.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagegeneration@006",
+    "imagen-3.0-generate-001",
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-63, E-61-64, E-61-67, E-61-57, E-61-58, E-61-81",
+   "дата_единицы": "2023-07-17/2026-02-26",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-92",
+   "вид": "факт",
+   "утверждение_en": "The only explicit aspect-ratio list on the page is 1:1, 3:4, 4:3, 9:16 and 16:9 (imagegeneration@006 and Imagen 3); Gemini 2.5 Flash Image GA only mentions 'aspect ratio controls' without listing values.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagegeneration@006",
+    "imagen-3.0-generate-001",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-66, E-61-56, E-61-24",
+   "дата_единицы": "2024-04-09/2025-10-02",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-93",
+   "вид": "факт",
+   "утверждение_en": "Access gating relaxes over time: Imagen generation/editing and tuning start as restricted access (2023-07-17, 2023-08-29), Imagen 3 goes from approved users (2024-07-31) to all users (2024-12-10) while customization, editing and older imagegeneration models stay approval-gated; no approval requirement is mentioned for any Gemini image model.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "Imagen",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-capability"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-80, E-61-78, E-61-55, E-61-47, E-61-48, E-61-49, E-61-51",
+   "дата_единицы": "2023-07-17/2024-12-10",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-94",
+   "вид": "факт",
+   "утверждение_en": "Third-party image generation/editing models appear in Model Garden throughout the page (Stable Diffusion 1.5/2.1/XL, LCM, SDXL-Turbo, SDXL LCM, Lama, instruct-pix2pix, Instant ID, SDXL lightning, SD 2.1, Flux, HiDream-I1, Qwen-Image/-Edit); none of them is deprecated on the page and none comes with prompting guidance.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "Stable Diffusion 1.5/2.1/XL",
+    "SDXL-Turbo",
+    "Instant ID",
+    "Flux",
+    "HiDream-I1",
+    "Qwen-Image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-77, E-61-76, E-61-73, E-61-70, E-61-71, E-61-72, E-61-61, E-61-62, E-61-59, E-61-60, E-61-53, E-61-54, E-61-42, E-61-22",
+   "дата_единицы": "2023-11-03/2025-10-07",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Flux и HiDream-I1 как image-модели — внешнее знание"
+  },
+  {
+   "код": "E-61-95",
+   "вид": "предупреждение",
+   "утверждение_en": "Because Imagen 3 prompt enhancement rewrites the submitted prompt with extra details and is enabled by default, the prompt actually used by imagen-3.0-generate-002 can differ from the one submitted unless the feature is turned off.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-45, E-61-46",
+   "дата_единицы": "2025-01-29",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "единственная на странице подсказка, касающаяся текста промпта для картинок"
+  },
+  {
+   "код": "E-61-96",
+   "вид": "факт",
+   "утверждение_en": "Notice periods in image deprecations on this page: preview endpoints get roughly one month (2025-06-11 to 2025-07-07; 2026-02-17 to 2026-03-19) or about seven weeks (2025-10-14 to 2025-11-30), while GA or feature removals get about 2.5 to 3 months (2025-06-24 to 2025-09-24; 2025-10-14 to 2025-12-31; 2026-03-24 to 2026-06-30).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "imagen-*",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-39, E-61-8, E-61-20, E-61-37, E-61-18, E-61-1",
+   "дата_единицы": "2025-06-11/2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-61-97",
+   "вид": "факт",
+   "утверждение_en": "The page never uses the name 'Nano Banana'; Gemini image models are always called 'Gemini <version> Flash Image' or 'Gemini 2.0 Flash with image generation' plus the model ID.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся лента",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)",
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-2.0-flash-preview-image-generation (Gemini 2.0 Flash image generation)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-61-31, E-61-23, E-61-5, E-61-41",
+   "дата_единицы": "2025-05-07/2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "imagegeneration@002/@005/@006: запись June 24, 2025 объявляет их удаление September 24, 2025, но таблица March 24, 2026 снова перечисляет их (и @003/@004, imagetext@001) как депрекейтнутые с рекомендацией обновиться до June 30, 2026.",
+  "Imagen 4 превью 06-06: запись October 14, 2025 — удаление November 30, 2025 и миграция на Imagen 4 GA; таблица February 17, 2026 — те же превью с дедлайном March 19, 2026 и заменой «imagen-4.0-generate-001 or gemini-2.5-flash-image»; а March 24, 2026 депрекейтит сами GA-модели Imagen 4.",
+  "Imagen 4 превью 05-20: June 11, 2025 — мигрировать до 2025-07-07; February 17, 2026 — imagen-4.0-generate-preview-05-20 в таблице с дедлайном March 19, 2026.",
+  "ID fast-превью Imagen 4: June 11 и October 14, 2025 называют imagen-4.0-fast-generate-preview-06-06, а таблица February 17, 2026 — imagen-4.0-fast-generate-preview-05-20, которое нигде не объявлялось (May 20, 2025 объявил только Generate Preview 05-20 и Ultra Generate Experimental 05-20); imagen-4.0-ultra-generate-exp-05-20 в таблице депрекейта отсутствует.",
+  "ID Gemini 2.0 image: May 07, 2025 — gemini-2.0-flash-preview-image-generation; February 17, 2026 — gemini-2.0-flash-image-generation-preview.",
+  "ID превью 2.5 Flash Image: August 26, 2025 — gemini-2.5-flash-image-preview; таблица February 17, 2026 — gemini-2.5-flash-image-generation-preview (с заменой, включающей imagen-4.0-generate-001, который через месяц сам депрекейтнут).",
+  "Рекомендуемая модель: February 26, 2026 — «We recommend using Gemini 3.1 Flash Image when generating images»; March 24, 2026 — все Imagen GA-эндпоинты мигрируют на gemini-2.5-flash-image, не на 3.1.",
+  "Virtual try-on: запись August 06, 2025 помечена «This release note is incorrect; see entry for October 9, 2025», но запись October 9, 2025 описывает не запуск превью, а обновление модели от September 30, 2025; при этом September 15, 2025 уже сообщает об улучшении той же модели.",
+  "imagegeneration@006 назван и «Imagen 2 image editing model», и «Imagen 2 image generation model» (April 09, 2024); imagen-3.0-capability — и Customization, и Editing (December 10, 2024), а в таблице March 24, 2026 фигурируют версии imagen-3.0-capability-001/-002, которые в ленте не объявлялись.",
+  "Опечатка в записи October 14, 2025: «November 30, 2025, 2025»."
+ ],
+ "не_сказано": [
+  "Нет ни одной записи о gemini-3-pro-image (Nano Banana Pro) — ни превью, ни GA.",
+  "Нет записей о gemini-3.1-flash-lite-image (Nano Banana 2 Lite).",
+  "Нет GA-записи для gemini-3.1-flash-image; есть только public preview (February 26, 2026).",
+  "Название «Nano Banana» не встречается ни разу.",
+  "Нет даты депрекейта/вывода для gemini-2.5-flash-image; запись April 02, 2026 о датах вывода Gemini 2.5 называет только 2.5 Pro, Flash-Lite и Flash.",
+  "Нет цен в цифрах для image-моделей (только «improved pricing» у 3.1 Flash Image и «different pricing» у мультимодальных эмбеддингов Imagen).",
+  "Нет разрешений/размеров картинок, лимитов на число и размер входных картинок и рефов, квот для image-моделей.",
+  "Нет списка соотношений сторон для Gemini image-моделей (только «aspect ratio controls»).",
+  "Нет упоминаний SynthID/водяного знака и safety-настроек для Gemini image-моделей.",
+  "Нет советов по промптингу картинок, кроме описания prompt rewriter Imagen 3.",
+  "Нет записей о запуске imagen-product-recontext-preview-06-30, imagen-2.0-edit-preview-0627, imagen-4.0-ingredients-preview, imagetext@001, imagegeneration@003/@004, imagen-3.0-capability-001/-002 — они появляются только в таблицах депрекейта.",
+  "Нет записи о первом превью Imagen и превью Imagen 3; Imagen впервые появляется сразу с GA-функциями (July 17, 2023).",
+  "Нет записей Generative AI после May 26, 2026 (только Workbench), хотя страница обновлена 2026-09-24.",
+  "Нет регионов доступности для image-моделей, кроме «regional endpoints» у 2.5 Flash Image GA и региональных API/ML-границ 2024 г. для Imagen/imagegeneration@005."
+ ],
+ "сомнения": [
+  "Страница дочитана целиком (строки 1-5408, все 458 записей); контекст не перегружен.",
+  "Баннер вверху: документация Vertex AI больше не обновляется, сервисы — часть Gemini Enterprise Agent Platform; актуальные записи о Gemini image-моделях могут жить уже в release notes Agent Platform. Отсутствие записей о 3 Pro Image / 3.1 Flash-Lite Image / GA 3.1 Flash Image здесь не значит, что их не было.",
+  "Flux, HiDream-I1, Stable Diffusion XL (October 04, 2024) лента не называет image-моделями; включены как image-модели по внешнему знанию (в заметках помечено).",
+  "ShieldGemma 2 (March 12, 2025) не взята: по внешнему знанию это классификатор безопасности картинок, но лента этого не говорит.",
+  "«Multimodal outputs» Gemini 2.0 Flash (February 05, 2025) отнесены к картинкам по смыслу; прямо картинки не названы.",
+  "Записи Veo (reference images, first/last frame, image-to-video) не превращены в единицы: это генерация видео, не картинок.",
+  "Входные картинки для понимания (Gemini Pro Vision, 1.5, 3.1 Pro, Gemma 4, PaliGemma, OCR-модели) не превращены в единицы: лимитов по входным картинкам в них нет.",
+  "Метаданные партии дают дату September 21, 2026 (последняя запись), в подвале — Last updated 2026-09-24 UTC.",
+  "Таблицы депрекейта в .txt склеены (например «imagen-4.0-generate-001gemini-2.5-flash-image»); цитаты взяты как есть, склейка — артефакт извлечения текста, а не опечатка Google."
+ ]
+}

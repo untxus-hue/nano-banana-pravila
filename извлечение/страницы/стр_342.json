@@ -1,0 +1,491 @@
+{
+ "id": 342,
+ "url": "https://deepmind.google/blog/watermarking-ai-generated-text-and-video-with-synthid",
+ "заголовок": "Watermarking AI-generated text and video with SynthID — Google DeepMind",
+ "дата_в_тексте": "May 14, 2024 (в тексте); meta article:published_time 2024-05-14T00:00:00+00:00, article:modified_time 2026-07-03T13:29:20; JSON-LD datePublished 2024-05-14, dateModified 2026-07-03",
+ "официальность": {
+  "домен": "deepmind.google (блог Google DeepMind)",
+  "второй_признак": "og:site_name «Google DeepMind», JSON-LD Organization «Google DeepMind» (publisher); текст от лица Google DeepMind («we launched SynthID», «our SynthID for image tool»); благодарности сотрудникам Google DeepMind и Google. Имя автора в JSON-LD пустое. Строки © Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост Google DeepMind (май 2024, для широкой и технической аудитории) о расширении SynthID на текст (Gemini app/web) и видео (Veo на VideoFX). Подробно объяснены механизм текстового водяного знака (модуляция вероятностей токенов) и его ограничения (лучше на длинных/вариативных ответах, слабее на фактологичных, теряет уверенность при полном переписывании/переводе), сравнение с классификаторами, и видео-метод (водяной знак в пикселях каждого кадра, «inspired by our SynthID for image tool»). Про изображения — только косвенно: SynthID запущен в 2023 (связанный пост «Identifying AI-generated images with SynthID», август 2023), видео-метод построен на методе для изображений и аудио. Nano Banana фигурирует лишь в меню сайта. Акцент: «imperceptible», «not a silver bullet», «building block».",
+ "модели_на_странице": [
+  "SynthID (text, video; упомянут SynthID for image)",
+  "Veo / VideoFX",
+  "Gemini app (текст)",
+  "Nano Banana — только в меню сайта"
+ ],
+ "структура": [
+  "Меню deepmind.google (дважды), меню продуктов",
+  "Дата, рубрика, заголовок, подзаголовок",
+  "Вступление (SynthID, расширение на текст и видео)",
+  "How text watermarking works",
+  "The benefits and limitations of this technique",
+  "How video watermarking works",
+  "Bringing SynthID to the broader AI ecosystem",
+  "Кнопки, Acknowledgements, Related posts, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Watermarking AI-generated text and video with SynthID — Google DeepMind (строка 1)",
+   "итог": "ничего: заголовок вкладки"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content … Nano Banana / Create and edit detailed images … Careers (строки 2-146)",
+   "итог": "ничего: обвязка сайта deepmind.google (меню, дважды); слоган меню «Nano Banana — Create and edit detailed images» — навигация на момент снимка, не содержание статьи 2024 года"
+  },
+  {
+   "n": 3,
+   "начало": "Build with GeminiTry Gemini … Build with Gemini Try Gemini (строки 147-169)",
+   "итог": "ничего: обвязка (меню продуктов, кнопки)"
+  },
+  {
+   "n": 4,
+   "начало": "May 14, 2024 Science / Watermarking AI-generated text and video with SynthID / Share Copied (строки 170-173)",
+   "итог": "ничего: дата, рубрика, заголовок (учтены в дате)"
+  },
+  {
+   "n": 5,
+   "начало": "Announcing our novel watermarking method for AI-generated text and video (строка 174)",
+   "итог": "ничего: подзаголовок-анонс, содержание раскрыто ниже"
+  },
+  {
+   "n": 6,
+   "начало": "Generative AI tools — and the large language model technologies behind them (строка 175)",
+   "итог": "ничего: общее вступление о популярности генеративного ИИ"
+  },
+  {
+   "n": 7,
+   "начало": "These technologies can be hugely beneficial … we launched SynthID (строка 176)",
+   "итог": "E-342-1"
+  },
+  {
+   "n": 8,
+   "начало": "Today, we’re expanding SynthID’s capabilities (строка 177)",
+   "итог": "E-342-2"
+  },
+  {
+   "n": 9,
+   "начало": "SynthID for text is designed to complement … SynthID for video builds upon our image and audio watermarking method (строка 178)",
+   "итог": "E-342-3, E-342-4"
+  },
+  {
+   "n": 10,
+   "начало": "SynthID isn’t a silver bullet … Later this summer, we’re planning to open-source (строка 179)",
+   "итог": "E-342-5 (план open-source — единицей E-342-15)"
+  },
+  {
+   "n": 11,
+   "начало": "How text watermarking works / Large language models generate sequences of text … Tokens are the building blocks (строки 180-182)",
+   "итог": "ничего: общее объяснение генерации текста токенами (текстовые промпты-примеры), не водяной знак и не изображения"
+  },
+  {
+   "n": 12,
+   "начало": "SynthID is designed to embed imperceptible watermarks directly into the text generation process (строка 183)",
+   "итог": "E-342-6"
+  },
+  {
+   "n": 13,
+   "начало": "Your browser does not support the video tag. / SynthID adjusts the probability score of tokens (строки 184-185)",
+   "итог": "ничего: подпись к анимации (повтор E-342-6)"
+  },
+  {
+   "n": 14,
+   "начало": "The final pattern of scores for both the model’s word choices (строка 186)",
+   "итог": "E-342-7"
+  },
+  {
+   "n": 15,
+   "начало": "The benefits and limitations of this technique / SynthID for text watermarking works best (строки 187-188)",
+   "итог": "E-342-8"
+  },
+  {
+   "n": 16,
+   "начало": "It performs well even under some transformations (строка 189)",
+   "итог": "E-342-9"
+  },
+  {
+   "n": 17,
+   "начало": "SynthID text watermarking is less effective on responses to factual prompts (строка 190)",
+   "итог": "E-342-10"
+  },
+  {
+   "n": 18,
+   "начало": "Many currently available AI detection tools use algorithms … classifiers (строка 191)",
+   "итог": "E-342-11"
+  },
+  {
+   "n": 19,
+   "начало": "SynthID works effectively on its own, but it can also be combined (строка 192)",
+   "итог": "E-342-12"
+  },
+  {
+   "n": 20,
+   "начало": "How video watermarking works / At this year’s I/O we announced Veo … aren't as widely available as image generation technologies (строки 193-194)",
+   "итог": "ничего: контекст анонса Veo (2024); замечание о распространённости генерации изображений — общее, без проверяемого содержания"
+  },
+  {
+   "n": 21,
+   "начало": "Videos are composed of individual frames or still images. So we developed (строка 195)",
+   "итог": "E-342-13"
+  },
+  {
+   "n": 22,
+   "начало": "Empowering people with knowledge … Starting today, all videos generated by Veo on VideoFX (строка 196)",
+   "итог": "E-342-14"
+  },
+  {
+   "n": 23,
+   "начало": "SynthID for video watermarking marks every frame of a generated video (строка 197)",
+   "итог": "ничего: подпись к иллюстрации (повтор E-342-13)"
+  },
+  {
+   "n": 24,
+   "начало": "Bringing SynthID to the broader AI ecosystem … This summer, we’re planning to publish (строки 198-200)",
+   "итог": "E-342-15"
+  },
+  {
+   "n": 25,
+   "начало": "Chat with Gemini Try Gemini Advanced Try Google Labs’ FX Suite (строки 201-203)",
+   "итог": "ничего: кнопки-ссылки"
+  },
+  {
+   "n": 26,
+   "начало": "Acknowledgements … Thanks to Nidhi Vyas and Zahra Ahmed (строки 204-208)",
+   "итог": "ничего: благодарности (учтены как признак официальности)"
+  },
+  {
+   "n": 27,
+   "начало": "Related posts Identifying AI-generated images with SynthID August 2023 … SynthID Learn more (строки 209-217)",
+   "итог": "ничего: ссылки на связанные посты; дата «August 2023» для SynthID изображений использована в заметке E-342-1"
+  },
+  {
+   "n": 28,
+   "начало": "Follow us … Cookies management controls (строки 218-261)",
+   "итог": "ничего: обвязка (подписка, подвал)"
+  },
+  {
+   "n": 29,
+   "начало": "[html] alt двух иллюстраций (текст с выделенными словами; кадры видео с жёлтой подводной лодкой)",
+   "итог": "ничего: декоративные alt-описания, повторяют смысл E-342-6 и E-342-13"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-342-1",
+   "вид": "факт",
+   "утверждение_en": "Google DeepMind launched SynthID, a digital toolkit for watermarking AI-generated content, in 2023, to address risks such as misinformation and phishing when AI-generated content is not properly identified.",
+   "цитата": "That’s why last year, we launched SynthID, our novel digital toolkit for watermarking AI-generated content.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "«last year» = 2023 (выведено из даты статьи 2024-05-14). В блоке Related posts: «Identifying AI-generated images with SynthID — August 2023» — т.е. первый запуск касался изображений. Мотивация (misinformation, phishing) — в том же абзаце."
+  },
+  {
+   "код": "E-342-2",
+   "вид": "факт",
+   "утверждение_en": "In May 2024 Google expanded SynthID to watermark AI-generated text in the Gemini app and web experience, and video generated by Veo.",
+   "цитата": "Today, we’re expanding SynthID’s capabilities to watermarking AI-generated text in the Gemini app and web experience, and video in Veo, our most capable generative video model.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "Gemini app (текст)",
+    "Veo (видео)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Про изображения — не в этом расширении (изображения покрывались раньше, см. E-342-1)."
+  },
+  {
+   "код": "E-342-3",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID for video builds on Google's existing image and audio watermarking method, extending it to all frames of generated videos.",
+   "цитата": "SynthID for video builds upon our image and audio watermarking method to include all frames in generated videos.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "Veo (видео)",
+    "SynthID for image (метод, без названия модели)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Косвенное свидетельство: у SynthID есть метод водяного знака для изображений, на котором основан видео-метод. Деталей метода для изображений на странице нет."
+  },
+  {
+   "код": "E-342-4",
+   "вид": "факт",
+   "утверждение_en": "Google states that SynthID embeds an imperceptible watermark without impacting the quality, accuracy, creativity or speed of text or video generation.",
+   "цитата": "This innovative method embeds an imperceptible watermark without impacting the quality, accuracy, creativity or speed of the text or video generation process.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "SynthID for text",
+    "SynthID for video (Veo)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Утверждение Google о невидимости и отсутствии влияния на качество — для текста и видео; для изображений на этой странице не сформулировано."
+  },
+  {
+   "код": "E-342-5",
+   "вид": "предупреждение",
+   "утверждение_en": "SynthID is not a silver bullet for identifying AI-generated content; Google presents it as a building block for more reliable AI identification tools.",
+   "цитата": "SynthID isn’t a silver bullet for identifying AI generated content, but is an important building block for developing more reliable AI identification tools",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Общее ограничение SynthID (без привязки к модальности)."
+  },
+  {
+   "код": "E-342-6",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID text watermarking embeds the watermark during generation by modulating the likelihood of tokens being generated (adding information to the token distribution), which Google says does not compromise quality, accuracy, creativity or speed.",
+   "цитата": "SynthID is designed to embed imperceptible watermarks directly into the text generation process. It does this by introducing additional information in the token distribution at the point of generation by modulating the likelihood of tokens being generated",
+   "источник_цитаты": "txt",
+   "раздел": "How text watermarking works",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Механизм ТОЛЬКО для текста (распределение токенов). На изображения не переносить."
+  },
+  {
+   "код": "E-342-7",
+   "вид": "объяснение",
+   "утверждение_en": "For text, the watermark is the pattern of the model's word-choice scores combined with the adjusted probability scores; detection compares it with expected patterns for watermarked and unwatermarked text.",
+   "цитата": "The final pattern of scores for both the model’s word choices combined with the adjusted probability scores are considered the watermark. This pattern of scores is compared with the expected pattern of scores for watermarked and unwatermarked text, helping SynthID detect if an AI tool generated the text or if it might come from other sources.",
+   "источник_цитаты": "txt",
+   "раздел": "How text watermarking works",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Детекция для текста."
+  },
+  {
+   "код": "E-342-8",
+   "вид": "ограничение",
+   "утверждение_en": "SynthID text watermarking works best when the model generates longer and more varied responses, such as essays, theater scripts or email variations.",
+   "цитата": "SynthID for text watermarking works best when a language model generates longer responses, and in diverse ways — like when it’s prompted to generate an essay, a theater script or variations on an email.",
+   "источник_цитаты": "txt",
+   "раздел": "The benefits and limitations of this technique",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Только текст."
+  },
+  {
+   "код": "E-342-9",
+   "вид": "ограничение",
+   "утверждение_en": "SynthID text watermarks survive some transformations (cropping pieces of text, modifying a few words, mild paraphrasing), but detection confidence can be greatly reduced when the text is thoroughly rewritten or translated.",
+   "цитата": "It performs well even under some transformations, such as cropping pieces of text, modifying a few words and mild paraphrasing. However, its confidence scores can be greatly reduced when an AI-generated text is thoroughly rewritten or translated to another language.",
+   "источник_цитаты": "txt",
+   "раздел": "The benefits and limitations of this technique",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Только текст; устойчивость водяного знака изображений к правкам на странице не обсуждается."
+  },
+  {
+   "код": "E-342-10",
+   "вид": "ограничение",
+   "утверждение_en": "SynthID text watermarking is less effective on responses to factual prompts or prompts with little expected variation, because there are fewer opportunities to adjust the token distribution without affecting accuracy.",
+   "цитата": "SynthID text watermarking is less effective on responses to factual prompts because there are fewer opportunities to adjust the token distribution without affecting the factual accuracy. This includes prompts like “What is the capital of France?” or queries where little or no variation is expected like “recite a William Wordsworth poem”.",
+   "источник_цитаты": "txt",
+   "раздел": "The benefits and limitations of this technique",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Только текст. Примеры в цитате — текстовые промпты, не промпты изображений."
+  },
+  {
+   "код": "E-342-11",
+   "вид": "объяснение",
+   "утверждение_en": "Many AI detection tools rely on classifiers, which often perform well only on particular tasks and can be unreliable across platforms and content types, leading to mislabeling (e.g., text wrongly flagged as AI-generated).",
+   "цитата": "Many currently available AI detection tools use algorithms for labeling and sorting data, known as classifiers. These classifiers often only perform well on particular tasks, which makes them less flexible.",
+   "источник_цитаты": "txt",
+   "раздел": "The benefits and limitations of this technique",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сравнение подходов: водяной знак vs классификаторы. Контекст — текст, но утверждение о классификаторах общее."
+  },
+  {
+   "код": "E-342-12",
+   "вид": "предупреждение",
+   "утверждение_en": "SynthID works on its own but can be combined with other AI detection approaches for better coverage; it is not built to directly stop motivated adversaries, though it makes malicious use of AI-generated content harder.",
+   "цитата": "SynthID works effectively on its own, but it can also be combined with other AI detection approaches to give better coverage across content types and platforms. While this technique isn’t built to directly stop motivated adversaries like cyberattackers or hackers from causing harm, it can make it harder to use AI-generated content for malicious purposes.",
+   "источник_цитаты": "txt",
+   "раздел": "The benefits and limitations of this technique",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сформулировано в разделе про текст, но как свойство SynthID в целом."
+  },
+  {
+   "код": "E-342-13",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID video watermarking, inspired by the SynthID image tool, embeds the watermark directly into the pixels of every video frame, imperceptible to the human eye but detectable for identification.",
+   "цитата": "So we developed a watermarking technique inspired by our SynthID for image tool. This technique embeds a watermark directly into the pixels of every video frame, making it imperceptible to the human eye, but detectable for identification.",
+   "источник_цитаты": "txt",
+   "раздел": "How video watermarking works",
+   "модели": [
+    "Veo (видео)",
+    "SynthID for image (инструмент)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Прямо — про видео: водяной знак в пикселях каждого кадра. Что SynthID для изображений тоже работает на уровне пикселей — только выводимо из «inspired by our SynthID for image tool», прямо не сказано."
+  },
+  {
+   "код": "E-342-14",
+   "вид": "факт",
+   "утверждение_en": "From May 14, 2024, all videos generated by Veo on VideoFX are watermarked with SynthID.",
+   "цитата": "Starting today, all videos generated by Veo on VideoFX will be watermarked by SynthID.",
+   "источник_цитаты": "txt",
+   "раздел": "How video watermarking works",
+   "модели": [
+    "Veo (VideoFX)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Видео, не изображения."
+  },
+  {
+   "код": "E-342-15",
+   "вид": "факт",
+   "утверждение_en": "Google planned (summer 2024) to publish a research paper on SynthID text watermarking and open-source it through the updated Responsible Generative AI Toolkit; the text technique is designed to be compatible with most AI text generation models.",
+   "цитата": "This summer, we’re planning to publish more about our text watermarking technology in a detailed research paper, and we’ll open-source SynthID text watermarking through our updated Responsible Generative AI Toolkit",
+   "источник_цитаты": "txt",
+   "раздел": "Bringing SynthID to the broader AI ecosystem",
+   "модели": [
+    "SynthID for text (модели генерации текста; Gemini app и web)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "План на дату статьи; только текст. Та же мысль — в конце абзаца строки 179 («Later this summer, we’re planning to open-source SynthID for text watermarking»)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-342-16",
+   "вид": "объяснение",
+   "утверждение_en": "The page shows SynthID as a family of modality-specific methods: text watermarking works through token probabilities, while video watermarking (derived from the image tool) works through pixels; the robustness limits described (short or factual outputs, full rewrites, translation) are tied to the token mechanism and are stated only for text, so they should not be assumed for images.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "SynthID (text, video, image)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-342-3, E-342-6, E-342-8, E-342-9, E-342-10, E-342-13",
+   "дата_единицы": "2024-05-14 (дата статьи)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Видно только при сопоставлении разделов о тексте и видео. Страница не сообщает устойчивость водяного знака изображений к кадрированию, сжатию, редактированию."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Как именно работает SynthID для изображений и насколько он устойчив к правкам (кадрирование, сжатие, фильтры, повторная генерация) — на странице нет.",
+  "Применяется ли SynthID к изображениям Gemini/Imagen/Nano Banana — на этой странице не сказано (статья 2024 года, до Nano Banana).",
+  "Как пользователю проверить наличие водяного знака (инструмент детекции) — не описано.",
+  "Влияние водяного знака на качество изображений — не сформулировано (утверждение «without impacting the quality» — только для текста и видео)."
+ ],
+ "сомнения": [
+  "Страница в основном про текст и видео; единицы E-342-6…E-342-10 и E-342-15 относятся только к тексту и помечены так в модели и заметке — переносить их на изображения нельзя.",
+  "dateModified 2026-07-03 при публикации 2024-05-14; меню сайта (Gemini Omni, Nano Banana) — состояние на момент снимка, не на дату статьи.",
+  "Планы «this summer» (open-source, статья) — на дату публикации; их исполнение страница не подтверждает."
+ ]
+}

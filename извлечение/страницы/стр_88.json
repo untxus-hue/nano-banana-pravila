@@ -1,0 +1,1919 @@
+{
+ "id": 88,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/image-understanding",
+ "заголовок": "Image understanding  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.»; ссылка на ноутбук в GitHub (Generative AI cookbook Google Cloud). Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница Google Cloud (Gemini Enterprise Agent Platform, бывший Vertex AI) о понимании изображений: как добавить одну или несколько картинок в запрос к Gemini и получить текстовый ответ. Для разработчиков на Vertex AI SDK (Python/Go/Node.js/Java), REST (curl/PowerShell) и консоли Agent Studio. Модели в примерах: gemini-3.5-flash, gemini-2.5-flash, gemini-3.1-pro-preview; из image-моделей названа только Gemini 3 Pro Image (токены). Структура: введение → пустая таблица поддерживаемых моделей → добавление картинок (одна: консоль с описанием параметров temperature/top-K/top-P/стоп-последовательностей, SDK, REST с Cloud Storage и base64; несколько: консоль, SDK, REST с few-shot по достопримечательностям) → токенизация изображений (media_resolution, токены Gemini 3 и Gemini 3 Pro Image, 258 токенов у старых моделей) → лучшие практики (одна картинка для чтения текста, картинка перед текстом, индексы картинок, разрешение, примеры, ориентация, резкость) → ограничения (модерация, пространственная точность, медицина, распознавание людей, галлюцинации). Повторные акценты: указывать mimeType, качество входных картинок. К генерации изображений страница относится косвенно (правила для входных картинок и токены Pro Image).",
+ "модели_на_странице": [
+  "gemini-3.5-flash",
+  "gemini-2.5-flash",
+  "gemini-3.1-pro-preview",
+  "gemini-3-pro-image (Gemini 3 Pro Image — только таблица токенов)",
+  "Gemini 3 models (обобщённо)",
+  "Gemini 1.5 (упоминание: top-K не поддерживается)",
+  "модели до Gemini 3 (Pan and Scan, 258 токенов)"
+ ],
+ "структура": [
+  "Шапка и левое меню документации",
+  "Image understanding (введение, ноутбук)",
+  "Supported models (таблица пуста)",
+  "Add images to a request — Single image (Console, Python, Go, Node.js, Java, REST: Image in Cloud Storage, Base64 image data)",
+  "Add images to a request — Multiple images (Console, Python, Go, Node.js, Java, REST)",
+  "Set optional model parameters",
+  "Image tokenization (Preview)",
+  "Best practices",
+  "Limitations",
+  "What's next",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content / Documentation / Get Started … Technology Areas … Console … Sign in (стр. 1-78)",
+   "итог": "ничего: обвязка сайта (шапка, меню продуктов и языков)"
+  },
+  {
+   "n": 2,
+   "начало": "Get started with Agent Platform … Code samples for all products (стр. 79-999)",
+   "итог": "ничего: обвязка сайта (левое меню документации; в нём ссылки на страницы «Generate images with Gemini», «Gemini image generation best practices/limitations» — сами страницы не входят в этот документ)"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started with Google Cloud … Home Documentation AI and ML Gemini Enterprise Agent Platform Models Send feedback Image understanding Stay organized with collections … Save and categorize content (стр. 1000-1044)",
+   "итог": "ничего: обвязка сайта (повтор шапки, хлебные крошки, заголовок страницы)"
+  },
+  {
+   "n": 4,
+   "начало": "To see an example of image understanding, run the \"Intro to Multimodal Use Cases with the Gemini API\" notebook",
+   "итог": "ничего: отсылка к ноутбуку (Colab / Workbench / GitHub)"
+  },
+  {
+   "n": 5,
+   "начало": "You can add images to Gemini requests to perform tasks that involve understanding",
+   "итог": "E-88-1"
+  },
+  {
+   "n": 6,
+   "начало": "Supported models (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 7,
+   "начало": "The following table lists the models that support image understanding: Models",
+   "итог": "Media details | MIME types|ничего: таблица в источнике пуста (только шапка) — см. сомнения"
+  },
+  {
+   "n": 8,
+   "начало": "For a list of languages supported by Gemini models, see … Design multimodal prompts … Firebase AI Logic client SDKs",
+   "итог": "ничего: отсылки к другим страницам"
+  },
+  {
+   "n": 9,
+   "начало": "Add images to a request (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 10,
+   "начало": "You can add a single image or multiple images in your request to Gemini.",
+   "итог": "E-88-2"
+  },
+  {
+   "n": 11,
+   "начало": "Single image (заголовок подраздела)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 12,
+   "начало": "The sample code in each of the following tabs shows a different way to identify what's in an image.",
+   "итог": "ничего: подводка к примерам"
+  },
+  {
+   "n": 13,
+   "начало": "Console: To send a multimodal prompt by using the Google Cloud console, do the following:",
+   "итог": "ничего: подводка к шагам интерфейса"
+  },
+  {
+   "n": 14,
+   "начало": "In the Agent Platform section of the Google Cloud console, go to the Agent Studio page. Go to Agent Studio",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 15,
+   "начало": "Click Open freeform.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 16,
+   "начало": "Optional: Configure the model and parameters: Model: Select a model. Region: Select the region",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 17,
+   "начало": "Temperature: … The temperature is used for sampling during response generation … Lower temperatures … A temperature of 0",
+   "итог": "E-88-3, E-88-4, E-88-5"
+  },
+  {
+   "n": 18,
+   "начало": "If the model returns a response that's too generic, too short, or the model gives a fallback response",
+   "итог": "E-88-6"
+  },
+  {
+   "n": 19,
+   "начало": "1.0 is the recommended starting value for temperature.",
+   "итог": "E-88-7"
+  },
+  {
+   "n": 20,
+   "начало": "Output token limit: … Maximum number of tokens that can be generated in the response.",
+   "итог": "E-88-8"
+  },
+  {
+   "n": 21,
+   "начало": "Add stop sequence: Optional. Enter a stop sequence",
+   "итог": "E-88-9"
+  },
+  {
+   "n": 22,
+   "начало": "Optional: To configure advanced parameters, click Advanced and configure as follows: Click to expand advanced configurations",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 23,
+   "начало": "Top-K: … (not supported for Gemini 1.5). Top-K changes how the model selects tokens for output.",
+   "итог": "E-88-10"
+  },
+  {
+   "n": 24,
+   "начало": "For each token selection step, the top-K tokens with the highest probabilities are sampled.",
+   "итог": "E-88-11"
+  },
+  {
+   "n": 25,
+   "начало": "Top-P: … Tokens are selected from most probable to the least",
+   "итог": "E-88-12"
+  },
+  {
+   "n": 26,
+   "начало": "Max responses: Use the slider or textbox to enter a value for the number of responses to generate.",
+   "итог": "ничего: элемент интерфейса без правила"
+  },
+  {
+   "n": 27,
+   "начало": "Streaming responses: Enable to print responses as they're generated.",
+   "итог": "ничего: элемент интерфейса без правила"
+  },
+  {
+   "n": 28,
+   "начало": "Safety filter threshold: Select the threshold of how likely you are to see responses that could be harmful.",
+   "итог": "E-88-13"
+  },
+  {
+   "n": 29,
+   "начало": "Enable Grounding: Grounding isn't supported for multimodal prompts.",
+   "итог": "E-88-14"
+  },
+  {
+   "n": 30,
+   "начало": "Click Insert Media, and select a source for your file.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 31,
+   "начало": "Upload: Select the file that you want to upload and click Open.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 32,
+   "начало": "By URL: Enter the URL of the file that you want to use and click Insert.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 33,
+   "начало": "Cloud Storage: Select the bucket and then the file from the bucket",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 34,
+   "начало": "Google Drive: Choose an account and give consent … total size of up to 10 MB. A single file can't exceed 7 MB.",
+   "итог": "E-88-15"
+  },
+  {
+   "n": 35,
+   "начало": "Click the file that you want to add. Click Select.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 36,
+   "начало": "The file thumbnail displays in the Prompt pane. … If your prompt data exceeds the token limit",
+   "итог": "E-88-16"
+  },
+  {
+   "n": 37,
+   "начало": "Enter your text prompt in the Prompt pane.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 38,
+   "начало": "Optional: To view the Token ID to text and Token IDs … Note: Media tokens aren't supported.",
+   "итог": "E-88-17"
+  },
+  {
+   "n": 39,
+   "начало": "Click Submit.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 40,
+   "начало": "Optional: To save your prompt to My prompts, click save_altSave.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 41,
+   "начало": "Optional: To get the Python code or a curl command for your prompt, click codeGet code.",
+   "итог": "ничего: шаг интерфейса консоли без правила"
+  },
+  {
+   "n": 42,
+   "начало": "Python: Install pip install --upgrade google-genai … Set environment variables … GOOGLE_GENAI_USE_ENTERPRISE=True",
+   "итог": "ничего: установка и настройка SDK (не про картинки)"
+  },
+  {
+   "n": 43,
+   "начало": "Python код: model=\"gemini-3.5-flash\", contents=[\"What is shown in this image?\", Part.from_uri(…scones.jpg, \"image/jpeg\")]",
+   "итог": "E-88-18, E-88-19"
+  },
+  {
+   "n": 44,
+   "начало": "Go: Learn how to install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 45,
+   "начало": "Go код: modelName := \"gemini-2.5-flash\", Text \"What is shown in this image?\" + FileData",
+   "итог": "ничего: повтор E-88-18, E-88-19 (другая модель — см. противоречия)"
+  },
+  {
+   "n": 46,
+   "начало": "Node.js: Install npm install @google/genai … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 47,
+   "начало": "Node.js код: contents: [image, 'What is shown in this image?'], model 'gemini-2.5-flash'",
+   "итог": "ничего: повтор E-88-18 (картинка первой)"
+  },
+  {
+   "n": 48,
+   "начало": "Java: Learn how to install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 49,
+   "начало": "Java код: modelId = \"gemini-2.5-flash\", Part.fromText + Part.fromUri",
+   "итог": "ничего: повтор E-88-18, E-88-19"
+  },
+  {
+   "n": 50,
+   "начало": "REST: After you set up your environment, you can use REST to test a text prompt.",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 51,
+   "начало": "You can include images that are stored in Cloud Storage or use base64-encoded image data.",
+   "итог": "E-88-20"
+  },
+  {
+   "n": 52,
+   "начало": "Image in Cloud Storage (подзаголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 53,
+   "начало": "Before using any of the request data, make the following replacements: PROJECT_ID: Your project ID.",
+   "итог": "ничего: подстановка параметров"
+  },
+  {
+   "n": 54,
+   "начало": "FILE_URI: … Cloud Storage bucket URI: The object must either be publicly readable or reside in the same Google Cloud project",
+   "итог": "E-88-21"
+  },
+  {
+   "n": 55,
+   "начало": "HTTP URL: The file URL must be publicly readable. You can specify one video file, one audio file, and up to 10 image files per request.",
+   "итог": "E-88-22, E-88-23"
+  },
+  {
+   "n": 56,
+   "начало": "YouTube video URL:The YouTube video must be either owned by the account … Only one YouTube video URL is supported per request.",
+   "итог": "E-88-24"
+  },
+  {
+   "n": 57,
+   "начало": "When specifying a fileURI, you must also specify the media type (mimeType) of the file. If VPC Service Controls is enabled",
+   "итог": "E-88-25, E-88-26"
+  },
+  {
+   "n": 58,
+   "начало": "If you don't have an image file in Cloud Storage, then you can use the following publicly available file: gs://…/scones.jpg",
+   "итог": "ничего: пример файла"
+  },
+  {
+   "n": 59,
+   "начало": "MIME_TYPE: The media type of the file … Click to expand MIME types: application/pdf … video/flv",
+   "итог": "E-88-27"
+  },
+  {
+   "n": 60,
+   "начало": "TEXT: The text instructions to include in the prompt. For example, What is shown in this image?",
+   "итог": "ничего: повтор E-88-18"
+  },
+  {
+   "n": 61,
+   "начало": "curl: Note: The following command assumes that you have logged in to the gcloud CLI …",
+   "итог": "ничего: обвязка инструкции CLI"
+  },
+  {
+   "n": 62,
+   "начало": "Save the request body in a file named request.json … cat > request.json << 'EOF' { \"contents\": { \"role\": \"USER\", \"parts\": [ { \"fileData\": … }, { \"text\": \"TEXT\" } ] } } EOF",
+   "итог": "E-88-28"
+  },
+  {
+   "n": 63,
+   "начало": "Then execute the following command to send your REST request: curl -X POST … gemini-3.5-flash:generateContent",
+   "итог": "ничего: повтор E-88-28 (эндпоинт в заметке)"
+  },
+  {
+   "n": 64,
+   "начало": "PowerShell: Note … request.json … Invoke-WebRequest …",
+   "итог": "ничего: повтор E-88-28 для другой оболочки"
+  },
+  {
+   "n": 65,
+   "начало": "You should receive a JSON response similar to the following. Response { \"candidates\": … \"promptTokenCount\": 265 …}",
+   "итог": "ничего: пример ответа модели (текстовое описание картинки, safetyRatings, usageMetadata)"
+  },
+  {
+   "n": 66,
+   "начало": "Base64 image data (подзаголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 67,
+   "начало": "LOCATION: The region to process the request. … us-central1 us-west4 …",
+   "итог": "ничего: не про генерацию картинок (список регионов)"
+  },
+  {
+   "n": 68,
+   "начало": "PROJECT_ID: Your project ID.",
+   "итог": "ничего: подстановка параметров"
+  },
+  {
+   "n": 69,
+   "начало": "B64_BASE_IMAGE: The base64 encoding of the image, PDF, or video to include inline in the prompt.",
+   "итог": "E-88-29"
+  },
+  {
+   "n": 70,
+   "начало": "MIME_TYPE: … application/pdf … video/flv",
+   "итог": "ничего: повтор E-88-27"
+  },
+  {
+   "n": 71,
+   "начало": "TEXT: … For example, What is shown in this image?.",
+   "итог": "ничего: повтор E-88-18"
+  },
+  {
+   "n": 72,
+   "начало": "curl: Note … request.json с \"inlineData\": { \"data\": \"B64_BASE_IMAGE\", \"mimeType\": \"MIME_TYPE\" } … curl -X POST …",
+   "итог": "ничего: повтор E-88-28 (inlineData вместо fileData — учтено в E-88-29)"
+  },
+  {
+   "n": 73,
+   "начало": "PowerShell: … inlineData … Invoke-WebRequest …",
+   "итог": "ничего: повтор для другой оболочки"
+  },
+  {
+   "n": 74,
+   "начало": "You should receive a JSON response similar to the following. Response { … }",
+   "итог": "ничего: пример ответа модели"
+  },
+  {
+   "n": 75,
+   "начало": "Note the following in the URL for this sample: Use the generateContent method … streamGenerateContent method.",
+   "итог": "E-88-30"
+  },
+  {
+   "n": 76,
+   "начало": "The multimodal model ID is located at the end of the URL before the method (for example, gemini-3.5-flash).",
+   "итог": "ничего: не про генерацию картинок (структура URL)"
+  },
+  {
+   "n": 77,
+   "начало": "When you use a regional API endpoint (for example, us-central1), the region from the endpoint URL determines where the request is processed.",
+   "итог": "ничего: не про генерацию картинок (маршрутизация по региону)"
+  },
+  {
+   "n": 78,
+   "начало": "Multiple images (заголовок подраздела)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 79,
+   "начало": "Each of the following tabs shows you a different way to include multiple images … An image of a popular city landmark / The media type of the image / Text indicating the city and landmark in the image",
+   "итог": "E-88-31"
+  },
+  {
+   "n": 80,
+   "начало": "The sample also takes in a third image and media type, but no text.",
+   "итог": "E-88-31"
+  },
+  {
+   "n": 81,
+   "начало": "These image samples work with all Gemini multimodal models.",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 82,
+   "начало": "Console (стр. 1580-1667): полный повтор шагов консоли из раздела Single image",
+   "итог": "ничего: повтор E-88-3…E-88-17 дословно"
+  },
+  {
+   "n": 83,
+   "начало": "Python: Install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 84,
+   "начало": "Python код: \"Generate a list of all the objects contained in both images.\", Part.from_uri(GCS) + Part.from_bytes(локальный файл)",
+   "итог": "E-88-32, E-88-33"
+  },
+  {
+   "n": 85,
+   "начало": "Go: Learn how to install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 86,
+   "начало": "Go код: Text \"Write an advertising jingle based on the items in both images.\" + FileData + InlineData, gemini-2.5-flash",
+   "итог": "E-88-34"
+  },
+  {
+   "n": 87,
+   "начало": "Node.js: Install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 88,
+   "начало": "Node.js код: contents: [image1, image2, 'Generate a list of all the objects contained in both images.']",
+   "итог": "ничего: повтор E-88-32 (картинки первыми)"
+  },
+  {
+   "n": 89,
+   "начало": "Java: Learn how to install … Set environment variables …",
+   "итог": "ничего: установка и настройка SDK"
+  },
+  {
+   "n": 90,
+   "начало": "Java код: Part.fromText(\"Generate a list of all the objects contained in both images\") + fromBytes + fromUri",
+   "итог": "ничего: повтор E-88-32, E-88-33"
+  },
+  {
+   "n": 91,
+   "начало": "REST: After you set up your environment, you can use REST to test a text prompt.",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 92,
+   "начало": "Before using any of the request data, make the following replacements: PROJECT_ID",
+   "итог": "ничего: подстановка параметров"
+  },
+  {
+   "n": 93,
+   "начало": "FILE_URI1: … Cloud Storage bucket URI … HTTP URL … YouTube video URL … mimeType … VPC Service Controls",
+   "итог": "ничего: повтор E-88-21…E-88-26"
+  },
+  {
+   "n": 94,
+   "начало": "If you don't have an image file … landmark1.png",
+   "итог": "ничего: пример файла"
+  },
+  {
+   "n": 95,
+   "начало": "MIME_TYPE: … For simplicity, this sample uses the same media type for all three input images.",
+   "итог": "ничего: повтор E-88-27"
+  },
+  {
+   "n": 96,
+   "начало": "TEXT1: The text instructions to include in the prompt. For example, city: Rome, Landmark: the Colosseum",
+   "итог": "E-88-35"
+  },
+  {
+   "n": 97,
+   "начало": "FILE_URI2: … (повтор правил URI) … landmark2.png",
+   "итог": "ничего: повтор E-88-21…E-88-26"
+  },
+  {
+   "n": 98,
+   "начало": "TEXT2: … For example, city: Beijing, Landmark: Forbidden City",
+   "итог": "E-88-35"
+  },
+  {
+   "n": 99,
+   "начало": "FILE_URI3: … (повтор правил URI) … landmark3.png",
+   "итог": "ничего: повтор E-88-21…E-88-26"
+  },
+  {
+   "n": 100,
+   "начало": "curl: Note … request.json: fileData FILE_URI1, text TEXT1, fileData FILE_URI2, text TEXT2, fileData FILE_URI3 … curl -X POST …",
+   "итог": "E-88-36"
+  },
+  {
+   "n": 101,
+   "начало": "PowerShell: … тот же request.json … Invoke-WebRequest …",
+   "итог": "ничего: повтор E-88-36 для другой оболочки"
+  },
+  {
+   "n": 102,
+   "начало": "You should receive a JSON response … \"text\": \"city: Rio de Janeiro, Landmark: Christ the Redeemer statue \\n\" … \"promptTokenCount\": 791",
+   "итог": "ничего: пример ответа (формат few-shot воспроизведён — учтено в E-88-35)"
+  },
+  {
+   "n": 103,
+   "начало": "Note the following in the URL for this sample: Use the generateContent method … streamGenerateContent",
+   "итог": "ничего: повтор E-88-30"
+  },
+  {
+   "n": 104,
+   "начало": "The multimodal model ID is located at the end of the URL … / When you use a regional API endpoint …",
+   "итог": "ничего: не про генерацию картинок (повтор пояснений к URL)"
+  },
+  {
+   "n": 105,
+   "начало": "Set optional model parameters: Each model has a set of optional parameters … see Content generation parameters.",
+   "итог": "ничего: отсылка к другой странице"
+  },
+  {
+   "n": 106,
+   "начало": "Image tokenization (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 107,
+   "начало": "Preview: This product or feature is subject to the \"Pre-GA Offerings Terms\" … Pre-GA products and features are available \"as is\"",
+   "итог": "E-88-37"
+  },
+  {
+   "n": 108,
+   "начало": "With Gemini 3 models, image tokenization uses a variable sequence length",
+   "итог": "E-88-38"
+  },
+  {
+   "n": 109,
+   "начало": "You can specify a media resolution for image and PDF inputs",
+   "итог": "E-88-39"
+  },
+  {
+   "n": 110,
+   "начало": "You can set media_resolution in generationConfig to apply low, medium, or high resolution to all media",
+   "итог": "E-88-40, E-88-41"
+  },
+  {
+   "n": 111,
+   "начало": "The following resolutions are available for Gemini 3 models:",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 112,
+   "начало": "MEDIA_RESOLUTION_ULTRA_HIGH: 2240 tokens for images",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 113,
+   "начало": "MEDIA_RESOLUTION_HIGH: 1120 tokens for images and PDFs",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 114,
+   "начало": "MEDIA_RESOLUTION_MEDIUM: 560 tokens for images and PDFs",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 115,
+   "начало": "MEDIA_RESOLUTION_LOW: 280 tokens for images and PDFs",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 116,
+   "начало": "MEDIA_RESOLUTION_UNSPECIFIED: 1120 tokens for images and 560 for PDFs (default)",
+   "итог": "E-88-42"
+  },
+  {
+   "n": 117,
+   "начало": "The following token counts apply to Gemini 3 Pro Image: Input images: 560 tokens per image",
+   "итог": "E-88-43"
+  },
+  {
+   "n": 118,
+   "начало": "Output images: 1K resolution: 1120 tokens per image (default)",
+   "итог": "E-88-44"
+  },
+  {
+   "n": 119,
+   "начало": "2K resolution: 1120 tokens per image",
+   "итог": "E-88-44"
+  },
+  {
+   "n": 120,
+   "начало": "4K resolution: 2000 tokens per image",
+   "итог": "E-88-44"
+  },
+  {
+   "n": 121,
+   "начало": "For models earlier than Gemini 3, each image is processed using Pan and Scan and costs 258 tokens.",
+   "итог": "E-88-45"
+  },
+  {
+   "n": 122,
+   "начало": "This code sample demonstrates how to adjust media_resolution: model=\"gemini-3.1-pro-preview\" … MEDIA_RESOLUTION_HIGH для картинки, MEDIA_RESOLUTION_LOW для видео",
+   "итог": "E-88-46, E-88-47"
+  },
+  {
+   "n": 123,
+   "начало": "Best practices (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 124,
+   "начало": "When using images, use the following best practices and information for the best results:",
+   "итог": "ничего: подводка к списку"
+  },
+  {
+   "n": 125,
+   "начало": "If you want to detect text in an image, use prompts with a single image",
+   "итог": "E-88-48"
+  },
+  {
+   "n": 126,
+   "начало": "If your prompt contains a single image, place the image before the text prompt in your request.",
+   "итог": "E-88-49"
+  },
+  {
+   "n": 127,
+   "начало": "If your prompt contains multiple images, and you want to refer to them later in your prompt … give each image an index before the image. Use a b c or image 1 image 2 image 3",
+   "итог": "E-88-50"
+  },
+  {
+   "n": 128,
+   "начало": "image 1 / image 2 / image 3 / Write a blogpost about my day using image 1 and image 2.",
+   "итог": "E-88-51"
+  },
+  {
+   "n": 129,
+   "начало": "Use images with higher resolution; they yield better results.",
+   "итог": "E-88-52"
+  },
+  {
+   "n": 130,
+   "начало": "Include a few examples in the prompt.",
+   "итог": "E-88-53"
+  },
+  {
+   "n": 131,
+   "начало": "Rotate images to their proper orientation before adding them to the prompt.",
+   "итог": "E-88-54"
+  },
+  {
+   "n": 132,
+   "начало": "Avoid blurry images.",
+   "итог": "E-88-55"
+  },
+  {
+   "n": 133,
+   "начало": "Limitations (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 134,
+   "начало": "While Gemini multimodal models are powerful in many multimodal use cases, it's important to understand the limitations",
+   "итог": "ничего: подводка к списку"
+  },
+  {
+   "n": 135,
+   "начало": "Content moderation: The models refuse to provide answers on images that violate our safety policies.",
+   "итог": "E-88-56"
+  },
+  {
+   "n": 136,
+   "начало": "Spatial reasoning: The models aren't precise at locating text or objects in images.",
+   "итог": "E-88-57"
+  },
+  {
+   "n": 137,
+   "начало": "Medical uses: The models aren't suitable for interpreting medical images",
+   "итог": "E-88-58"
+  },
+  {
+   "n": 138,
+   "начало": "People recognition: The models aren't meant to be used to identify people who aren't celebrities in images.",
+   "итог": "E-88-59"
+  },
+  {
+   "n": 139,
+   "начало": "Accuracy: The models might hallucinate or make mistakes when interpreting low-quality, rotated, or extremely low-resolution images.",
+   "итог": "E-88-60, E-88-61"
+  },
+  {
+   "n": 140,
+   "начало": "What's next: Start building with Gemini multimodal models - new customers get $300 in free Google Cloud credits",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 141,
+   "начало": "Learn how to send chat prompt requests.",
+   "итог": "ничего: отсылка к другой странице"
+  },
+  {
+   "n": 142,
+   "начало": "Learn about responsible AI best practices and Agent Platform's safety filters.",
+   "итог": "ничего: отсылка к другой странице"
+  },
+  {
+   "n": 143,
+   "начало": "Send feedback",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 144,
+   "начало": "Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … Google Developers Site Policies.",
+   "итог": "ничего: обвязка сайта (лицензия; использована как второй признак официальности)"
+  },
+  {
+   "n": 145,
+   "начало": "Last updated 2026-09-22 UTC.",
+   "итог": "ничего: дата обновления (вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 146,
+   "начало": "Products and pricing … Sign up for the Google Cloud newsletter Subscribe … 日本語 (стр. 2050-2094)",
+   "итог": "ничего: обвязка сайта (подвал, меню языков)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-88-1",
+   "вид": "факт",
+   "утверждение_en": "You can add images to Gemini requests to perform tasks that involve understanding the contents of the included images.",
+   "цитата": "You can add images to Gemini requests to perform tasks that involve\nunderstanding the contents of the included images.",
+   "источник_цитаты": "txt",
+   "раздел": "Image understanding (введение)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "Страница про понимание изображений (картинка на входе, ответ — текст), не про генерацию."
+  },
+  {
+   "код": "E-88-2",
+   "вид": "факт",
+   "утверждение_en": "You can add a single image or multiple images to a Gemini request.",
+   "цитата": "You can add a single image or multiple images in your request to Gemini.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-3",
+   "вид": "объяснение",
+   "утверждение_en": "Temperature is used for sampling during response generation (when topP and topK are applied) and controls the degree of randomness in token selection.",
+   "цитата": "Temperature controls the degree of randomness in token selection.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "Описание параметра в консоли для мультимодальных запросов на понимание; применимость к генерации картинок на странице не утверждается."
+  },
+  {
+   "код": "E-88-4",
+   "вид": "правило",
+   "утверждение_en": "Lower temperatures suit prompts that need a less open-ended or creative response, while higher temperatures can lead to more diverse or creative results.",
+   "цитата": "Lower temperatures are good for prompts that require a less open-ended or creative response, while\nhigher temperatures can lead to more diverse or creative results.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-5",
+   "вид": "факт",
+   "утверждение_en": "A temperature of 0 means the highest-probability tokens are always selected, so responses are mostly deterministic, though a small amount of variation is still possible.",
+   "цитата": "A temperature of 0\nmeans that the highest probability tokens are always selected. In this case, responses for a given\nprompt are mostly deterministic, but a small amount of variation is still possible.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-6",
+   "вид": "приём",
+   "утверждение_en": "If the model returns a response that is too generic, too short, or a fallback response, try increasing the temperature; if it enters infinite generation, increasing temperature to at least 0.1 may help.",
+   "цитата": "If the model returns a response that's too generic, too short, or the model gives a fallback\nresponse, try increasing the temperature. If the model enters infinite generation, increasing the\ntemperature to at least 0.1 may lead to improved results.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-7",
+   "вид": "правило",
+   "утверждение_en": "1.0 is the recommended starting value for temperature.",
+   "цитата": "1.0 is the\nrecommended starting value for temperature.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-8",
+   "вид": "факт",
+   "утверждение_en": "Output token limit is the maximum number of tokens generated in the response; a token is about four characters and 100 tokens are roughly 60-80 words; use lower values for shorter responses and higher values for potentially longer ones.",
+   "цитата": "Maximum number of tokens that can be generated in the response. A token is\napproximately four characters. 100 tokens correspond to roughly 60-80 words.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-9",
+   "вид": "факт",
+   "утверждение_en": "When the model encounters a stop sequence, generation stops; the stop sequence is not included in the response, and up to five stop sequences can be added.",
+   "цитата": "If the model encounters a\nstop sequence, the response generation stops. The stop sequence isn't\nincluded in the response, and you can add up to five stop sequences.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-10",
+   "вид": "объяснение",
+   "утверждение_en": "Top-K changes how the model selects output tokens: top-K of 1 picks the most probable token (greedy decoding), top-K of 3 picks among the three most probable using temperature; lower values give less random responses (not supported for Gemini 1.5).",
+   "цитата": "A top-K of\n1 means the next selected token is the most probable among all\ntokens in the model's vocabulary (also called greedy decoding), while a top-K of\n3 means that the next token is selected from among the three most\nprobable tokens by using temperature.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console (advanced)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "Пометка \"(not supported for Gemini 1.5)\"."
+  },
+  {
+   "код": "E-88-11",
+   "вид": "объяснение",
+   "утверждение_en": "At each token selection step, the top-K most probable tokens are sampled, then filtered by top-P, and the final token is selected by temperature sampling.",
+   "цитата": "For each token selection step, the top-K tokens with the highest\nprobabilities are sampled. Then tokens are further filtered based on top-P with\nthe final token selected using temperature sampling.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console (advanced)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "Порядок: top-K → top-P → temperature."
+  },
+  {
+   "код": "E-88-12",
+   "вид": "объяснение",
+   "утверждение_en": "Top-P selects tokens from most to least probable until their probabilities sum to the top-P value; for the least variable results, set top-P to 0.",
+   "цитата": "Tokens are selected from most probable to the least until the sum of their\nprobabilities equals the value of top-P. For the least variable results,\nset top-P to 0.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console (advanced)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-13",
+   "вид": "факт",
+   "утверждение_en": "In the console you can select a safety filter threshold that sets how likely you are to see potentially harmful responses.",
+   "цитата": "Safety filter threshold: Select the threshold of how likely you\nare to see responses that could be harmful.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console (advanced)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-14",
+   "вид": "ограничение",
+   "утверждение_en": "In the console, grounding isn't supported for multimodal prompts.",
+   "цитата": "Enable Grounding: Grounding isn't supported for multimodal\nprompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console (advanced)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "продукт_ui"
+   ],
+   "заметка": "Сказано в контексте понимания изображений в консоли Agent Studio; к генерации картинок с поиском (Nano Banana) страница это не относит."
+  },
+  {
+   "код": "E-88-15",
+   "вид": "лимит",
+   "утверждение_en": "When inserting media from Google Drive in the console, multiple files can total up to 10 MB and a single file can't exceed 7 MB.",
+   "цитата": "You can upload multiple files that\nhave a total size of up to 10 MB. A single file can't exceed\n7 MB.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Лимит относится к источнику Google Drive."
+  },
+  {
+   "код": "E-88-16",
+   "вид": "предупреждение",
+   "утверждение_en": "If the prompt data exceeds the token limit, the excess tokens are truncated and not included in processing.",
+   "цитата": "If your prompt data exceeds the\ntoken limit, the\ntokens are truncated and aren't included in processing your data.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Молчаливое усечение, без ошибки (по тексту консоли)."
+  },
+  {
+   "код": "E-88-17",
+   "вид": "ограничение",
+   "утверждение_en": "In the console token viewer (Token ID to text / Token IDs), media tokens aren't supported.",
+   "цитата": "Note: Media tokens aren't supported.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / Console",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-understanding example prompt sent with one image: \"What is shown in this image?\"",
+   "цитата": "What is shown in this image?",
+   "источник_цитаты": "html",
+   "раздел": "Add images to a request / Single image",
+   "модели": [
+    "gemini-3.5-flash",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "Промпт понимания, не генерации: вопрос + ссылка на картинку (\"this image\"). В Python текст идёт перед картинкой, в Node.js — после (см. противоречия с E-88-49)."
+  },
+  {
+   "код": "E-88-19",
+   "вид": "факт",
+   "утверждение_en": "In the Vertex AI SDK sample, an image in Cloud Storage is passed as Part.from_uri(file_uri=..., mime_type=...) inside contents of client.models.generate_content, alongside the text prompt.",
+   "цитата": "model=\"gemini-3.5-flash\",",
+   "источник_цитаты": "html",
+   "раздел": "Add images to a request / Single image / Python",
+   "модели": [
+    "gemini-3.5-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из кода Python (PRE #3)",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "generate_content (не Interactions API, как на странице id 1)."
+  },
+  {
+   "код": "E-88-20",
+   "вид": "факт",
+   "утверждение_en": "Images can be included in REST requests either from Cloud Storage or as base64-encoded image data.",
+   "цитата": "You can include images that are stored in Cloud Storage or use\nbase64-encoded image data.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Single image / REST",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-21",
+   "вид": "правило",
+   "утверждение_en": "A Cloud Storage file URI must point to an object that is either publicly readable or in the same Google Cloud project that sends the request.",
+   "цитата": "Cloud Storage bucket URI: The object must either be publicly readable or reside in\nthe same Google Cloud project that's sending the request.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-22",
+   "вид": "правило",
+   "утверждение_en": "An HTTP URL used as a file URI must be publicly readable.",
+   "цитата": "HTTP URL: The file URL must be publicly readable.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-23",
+   "вид": "лимит",
+   "утверждение_en": "Via HTTP URL you can specify one video file, one audio file, and up to 10 image files per request; audio files, video files, and documents can't exceed 15 MB.",
+   "цитата": "You can specify one video file, one\naudio file, and up to 10 image files per request. Audio files, video files, and documents can't\nexceed 15 MB.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Предел 15 MB назван для аудио, видео и документов — для изображений размер не указан."
+  },
+  {
+   "код": "E-88-24",
+   "вид": "лимит",
+   "утверждение_en": "A YouTube video URL must be public or owned by the signed-in account, and only one YouTube URL is supported per request.",
+   "цитата": "YouTube video URL:The YouTube video must be either owned by the account that you used\nto sign in to the Google Cloud console or be public. Only one YouTube video URL is supported per\nrequest.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-25",
+   "вид": "правило",
+   "утверждение_en": "When specifying a fileURI, you must also specify the media type (mimeType) of the file.",
+   "цитата": "When specifying a fileURI, you must also specify the media type\n(mimeType) of the file.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-26",
+   "вид": "ограничение",
+   "утверждение_en": "If VPC Service Controls is enabled, specifying a media file URL for fileURI is not supported.",
+   "цитата": "If VPC Service Controls is enabled, specifying a media file\nURL for fileURI is not supported.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-27",
+   "вид": "факт",
+   "утверждение_en": "Acceptable MIME types listed for data/fileUri include image/png, image/jpeg and image/webp for images, plus application/pdf, text/plain, several audio types (audio/mpeg, audio/mp3, audio/wav) and video types (video/mov, video/mpeg, video/mp4, video/mpg, video/avi, video/wmv, video/mpegps, video/flv).",
+   "цитата": "image/png\nimage/jpeg\nimage/webp",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST (MIME_TYPE)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (список, по одному типу на строку)",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-28",
+   "вид": "факт",
+   "утверждение_en": "The REST request body puts the image as a fileData part (fileUri + mimeType) and the text as a separate text part inside contents.parts (role USER), sent to .../publishers/google/models/<model>:generateContent on aiplatform.googleapis.com.",
+   "цитата": "https://aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/global/publishers/google/models/gemini-3.5-flash:generateContent",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Image in Cloud Storage",
+   "модели": [
+    "gemini-3.5-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из тела request.json и команды curl",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В REST картинка стоит перед текстом."
+  },
+  {
+   "код": "E-88-29",
+   "вид": "правило",
+   "утверждение_en": "For inline media, provide the base64 encoding of the image, PDF, or video in the request and also specify its media type (mimeType).",
+   "цитата": "The base64 encoding of the image, PDF, or video\nto include inline in the prompt. When including media inline, you must also specify the media\ntype (mimeType) of the data.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST / Base64 image data",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "В теле запроса — часть \"inlineData\": {\"data\": …, \"mimeType\": …}."
+  },
+  {
+   "код": "E-88-30",
+   "вид": "факт",
+   "утверждение_en": "The generateContent method returns the response after it is fully generated; to reduce perceived latency for a human audience, stream the response with streamGenerateContent.",
+   "цитата": "To reduce the perception of latency to a human audience, stream the response as it's being\ngenerated by using the",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / REST (Note the following in the URL)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее правило API, повторено в двух местах страницы."
+  },
+  {
+   "код": "E-88-31",
+   "вид": "приём",
+   "утверждение_en": "The multiple-images sample uses a few-shot pattern: two sets of (landmark image + its media type + text naming the city and landmark), then a third image with no text, and the model returns the city and landmark for the third image.",
+   "цитата": "The sample also takes in a third image and media type, but no text. The sample\nreturns a text response indicating the city and landmark in the third image.",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Multiple images",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Мультимодальный few-shot: пары «картинка → подпись» задают формат ответа. Реализовано только в REST-примере; SDK-примеры делают другое (см. противоречия)."
+  },
+  {
+   "код": "E-88-32",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-image example prompt: \"Generate a list of all the objects contained in both images.\"",
+   "цитата": "Generate a list of all the objects contained in both images.",
+   "источник_цитаты": "html",
+   "раздел": "Add images to a request / Multiple images",
+   "модели": [
+    "gemini-3.5-flash",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "Промпт понимания; обе картинки адресуются вместе (\"both images\"), без индексов. В Python текст первым, в Node.js картинки первыми."
+  },
+  {
+   "код": "E-88-33",
+   "вид": "факт",
+   "утверждение_en": "One request can mix an image referenced from Cloud Storage (Part.from_uri) with an image read from a local file and sent as bytes (Part.from_bytes).",
+   "цитата": "Part.from_bytes(data=local_file_img_bytes, mime_type=\"image/jpeg\")",
+   "источник_цитаты": "html",
+   "раздел": "Add images to a request / Multiple images / Python",
+   "модели": [
+    "gemini-3.5-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из кода Python (PRE #24), Go и Java",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-34",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-image example prompt (Go sample): \"Write an advertising jingle based on the items in both images.\"",
+   "цитата": "Write an advertising jingle based on the items in both images.",
+   "источник_цитаты": "html",
+   "раздел": "Add images to a request / Multiple images / Go",
+   "модели": [
+    "gemini-2.5-flash"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "Текстовая задача по содержимому двух картинок; текст идёт перед картинками."
+  },
+  {
+   "код": "E-88-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Few-shot caption format used with landmark images: \"city: Rome, Landmark: the Colosseum\" and \"city: Beijing, Landmark: Forbidden City\"; the model answers the third image in the same format (\"city: Rio de Janeiro, Landmark: Christ the Redeemer statue\").",
+   "цитата": "city: Rome, Landmark: the Colosseum",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Multiple images / REST",
+   "модели": [
+    "gemini-3.5-flash"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Структура «ключ: значение» после каждой картинки задаёт шаблон ответа; ответ модели в примере повторяет формат. Второй пример: \"city: Beijing, Landmark: Forbidden City\"."
+  },
+  {
+   "код": "E-88-36",
+   "вид": "факт",
+   "утверждение_en": "In the REST multi-image request, image and text parts are interleaved in order: image 1, text 1, image 2, text 2, image 3.",
+   "цитата": "\"text\": \"TEXT1\"",
+   "источник_цитаты": "txt",
+   "раздел": "Add images to a request / Multiple images / REST",
+   "модели": [
+    "gemini-3.5-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из тела request.json (fileData FILE_URI1, text TEXT1, fileData FILE_URI2, text TEXT2, fileData FILE_URI3)",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Каждая подпись идёт сразу ПОСЛЕ своей картинки (ср. E-88-50: индекс ставится ПЕРЕД картинкой)."
+  },
+  {
+   "код": "E-88-37",
+   "вид": "факт",
+   "утверждение_en": "The image tokenization feature (media resolution) is in Preview, subject to the Pre-GA Offerings Terms; Pre-GA features are available \"as is\" and might have limited support.",
+   "цитата": "Pre-GA products and features are available \"as is\" and might have limited support.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-38",
+   "вид": "объяснение",
+   "утверждение_en": "With Gemini 3 models, image tokenization uses a variable sequence length, which replaces the Pan and Scan method used in previous models for better quality and latency.",
+   "цитата": "With Gemini 3 models, image tokenization uses a variable sequence length,\nwhich replaces the Pan and Scan method used in previous models for better\nquality and latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом, не только image-модели)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-39",
+   "вид": "факт",
+   "утверждение_en": "You can specify a media resolution for image and PDF inputs, which affects how images are tokenized and how many tokens each image uses.",
+   "цитата": "You can specify a media resolution for image and PDF inputs, which affects\nhow images are tokenized and how many tokens are used for each image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-40",
+   "вид": "инструкция",
+   "утверждение_en": "Set media_resolution in generationConfig to apply low, medium, or high resolution to all media in the request, or set resolution on individual media parts, which overrides the top-level setting.",
+   "цитата": "You can set media_resolution in generationConfig to apply low, medium,\nor high resolution to all media in the request, or set resolution for\nindividual media parts, which will override the top-level setting.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-41",
+   "вид": "ограничение",
+   "утверждение_en": "The ultra_high media resolution can only be set for individual media parts (not in the top-level generationConfig).",
+   "цитата": "ultra_high resolution can only be set for individual media parts.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-42",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 media resolutions: ULTRA_HIGH 2240 tokens for images; HIGH 1120 tokens for images and PDFs; MEDIUM 560; LOW 280; UNSPECIFIED (default) 1120 tokens for images and 560 for PDFs.",
+   "цитата": "MEDIA_RESOLUTION_ULTRA_HIGH: 2240 tokens for images\nMEDIA_RESOLUTION_HIGH: 1120 tokens for images and PDFs\nMEDIA_RESOLUTION_MEDIUM: 560 tokens for images and PDFs\nMEDIA_RESOLUTION_LOW: 280 tokens for images and PDFs\nMEDIA_RESOLUTION_UNSPECIFIED: 1120 tokens for images and 560 for PDFs (default)",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "По умолчанию изображение на входе = 1120 токенов (для Gemini 3 в целом); для Gemini 3 Pro Image — отдельная цифра 560 (E-88-43)."
+  },
+  {
+   "код": "E-88-43",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 Pro Image, input images cost 560 tokens per image.",
+   "цитата": "Input images: 560 tokens per image",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": "Единственное место страницы, прямо касающееся модели генерации изображений."
+  },
+  {
+   "код": "E-88-44",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 Pro Image, output images cost 1120 tokens at 1K (default), 1120 tokens at 2K, and 2000 tokens at 4K.",
+   "цитата": "1K resolution: 1120 tokens per image (default)\n2K resolution: 1120 tokens per image\n4K resolution: 2000 tokens per image",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "1K — разрешение по умолчанию."
+  },
+  {
+   "код": "E-88-45",
+   "вид": "факт",
+   "утверждение_en": "For models earlier than Gemini 3, each image is processed using Pan and Scan and costs 258 tokens.",
+   "цитата": "For models earlier than Gemini 3, each image is processed using Pan\nand Scan and costs 258 tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tokenization",
+   "модели": [
+    "модели до Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-46",
+   "вид": "факт",
+   "утверждение_en": "Per-part media resolution is set in code with media_resolution=types.PartMediaResolution(level=...) on each Part; the sample uses HIGH for an image and LOW for a video in the same request.",
+   "цитата": "level=types.PartMediaResolutionLevel.MEDIA_RESOLUTION_HIGH",
+   "источник_цитаты": "html",
+   "раздел": "Image tokenization",
+   "модели": [
+    "gemini-3.1-pro-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из кода Python (PRE #37)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В примере .png-файл помечен mime_type \"image/jpeg\", второй Part используется без импорта — ошибки кода источника."
+  },
+  {
+   "код": "E-88-47",
+   "вид": "пример_промпта",
+   "утверждение_en": "Media-resolution example prompt (image + video input): \"When does the image appear in the video? What is the context?\"",
+   "цитата": "When does the image appear in the video? What is the context?",
+   "источник_цитаты": "html",
+   "раздел": "Image tokenization",
+   "модели": [
+    "gemini-3.1-pro-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое",
+    "рефы"
+   ],
+   "заметка": "Промпт понимания; текст идёт после обоих медиа-частей."
+  },
+  {
+   "код": "E-88-48",
+   "вид": "правило",
+   "утверждение_en": "To detect text in an image, prompts with a single image produce better results than prompts with multiple images.",
+   "цитата": "If you want to detect text in an image, use prompts with a single image to\nproduce better results than prompts with multiple images.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "текст_в_кадре"
+   ],
+   "заметка": "Про распознавание текста на входной картинке (понимание)."
+  },
+  {
+   "код": "E-88-49",
+   "вид": "правило",
+   "утверждение_en": "If the prompt contains a single image, place the image before the text prompt in the request.",
+   "цитата": "If your prompt contains a single image, place the image before the text\nprompt in your request.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Python/Go/Java-примеры этой же страницы ставят текст первым — см. противоречия."
+  },
+  {
+   "код": "E-88-50",
+   "вид": "приём",
+   "утверждение_en": "If the prompt contains multiple images that you want to refer to later (or have the model refer to), it can help to give each image an index before the image, such as a, b, c or image 1, image 2, image 3.",
+   "цитата": "If your prompt contains multiple images, and you want to refer to them\nlater in your prompt or have the model refer to them in the model response,\nit can help to give each image an index before the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "В txt варианты индексов слиплись (\"abc or image 1image 2image 3\"); по html это отдельные метки a / b / c и image 1 / image 2 / image 3."
+  },
+  {
+   "код": "E-88-51",
+   "вид": "пример_промпта",
+   "утверждение_en": "Indexed-images example: labels \"image 1\", \"image 2\", \"image 3\" placed before the images, then \"Write a blogpost about my day using image 1 and image 2. Then, give me ideas for tomorrow based on image 3.\"",
+   "цитата": "Write a blogpost about my day using image 1 and image 2. Then, give me ideas\nfor tomorrow based on image 3.",
+   "источник_цитаты": "html",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Структура: метка перед каждой картинкой → текст задания, ссылающийся на метки; разные картинки получают разные роли в задании (1 и 2 — для поста, 3 — для идей)."
+  },
+  {
+   "код": "E-88-52",
+   "вид": "правило",
+   "утверждение_en": "Use images with higher resolution; they yield better results.",
+   "цитата": "Use images with higher resolution; they yield better results.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-53",
+   "вид": "правило",
+   "утверждение_en": "Include a few examples in the prompt.",
+   "цитата": "Include a few examples in the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Пример few-shot с картинками — E-88-31, E-88-35."
+  },
+  {
+   "код": "E-88-54",
+   "вид": "правило",
+   "утверждение_en": "Rotate images to their proper orientation before adding them to the prompt.",
+   "цитата": "Rotate images to their proper orientation before adding them to the\nprompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-55",
+   "вид": "правило",
+   "утверждение_en": "Avoid blurry images.",
+   "цитата": "Avoid blurry images.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-56",
+   "вид": "ограничение",
+   "утверждение_en": "The models refuse to provide answers on images that violate Google's safety policies.",
+   "цитата": "Content moderation: The models refuse to provide answers\non images that violate our safety policies.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-57",
+   "вид": "ограничение",
+   "утверждение_en": "The models aren't precise at locating text or objects in images and might only return approximate object counts.",
+   "цитата": "Spatial reasoning: The models aren't precise at locating\ntext or objects in images. They might only return the approximated counts of\nobjects.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Про понимание изображений."
+  },
+  {
+   "код": "E-88-58",
+   "вид": "ограничение",
+   "утверждение_en": "The models aren't suitable for interpreting medical images (e.g. x-rays, CT scans) or providing medical advice.",
+   "цитата": "Medical uses: The models aren't suitable for interpreting\nmedical images (for example, x-rays and CT scans) or providing medical\nadvice.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-59",
+   "вид": "ограничение",
+   "утверждение_en": "The models aren't meant to be used to identify people who aren't celebrities in images.",
+   "цитата": "People recognition: The models aren't meant to be used to\nidentify people who aren't celebrities in images.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-60",
+   "вид": "предупреждение",
+   "утверждение_en": "The models might hallucinate or make mistakes when interpreting low-quality, rotated, or extremely low-resolution images.",
+   "цитата": "Accuracy: The models might hallucinate or make mistakes\nwhen interpreting low-quality, rotated, or extremely low-resolution images.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Обратная сторона рекомендаций E-88-52, E-88-54, E-88-55."
+  },
+  {
+   "код": "E-88-61",
+   "вид": "предупреждение",
+   "утверждение_en": "The models might also hallucinate when interpreting handwritten text in images and documents.",
+   "цитата": "The models might also hallucinate when interpreting handwritten text in\nimages documents.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "другое"
+   ],
+   "заметка": "В источнике пропущено \"and\": \"images documents\"."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-88-62",
+   "вид": "факт",
+   "утверждение_en": "The page covers images only as input to Gemini for text answers (image understanding); the only statements that directly concern an image-generation model are the Gemini 3 Pro Image token counts for input images (560) and output images (1K/2K 1120, 4K 2000).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-88-1, E-88-43, E-88-44 и состава разделов страницы",
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Остальные единицы (параметры, правила входных картинок, индексация) относятся к мультимодальному вводу; перенос на Nano Banana страница не утверждает."
+  },
+  {
+   "код": "E-88-63",
+   "вид": "приём",
+   "утверждение_en": "The page gives two ways to tie text to specific images in one prompt: an index label placed before each image (\"image 1\", \"a\"), which the text then references, and a caption part placed right after each image in a few-shot sequence (\"city: …, Landmark: …\") that sets the answer format.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Multiple images / Best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-88-31, E-88-35, E-88-36, E-88-50, E-88-51, E-88-53",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Индекс — ПЕРЕД картинкой; подпись few-shot — ПОСЛЕ картинки."
+  },
+  {
+   "код": "E-88-64",
+   "вид": "правило",
+   "утверждение_en": "Input image quality is a repeated emphasis: use higher-resolution, correctly oriented, non-blurry images, because low-quality, rotated, or very low-resolution images can cause hallucinations and mistakes.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Best practices / Limitations",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-88-52, E-88-54, E-88-55, E-88-60",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-88-65",
+   "вид": "факт",
+   "утверждение_en": "Image token cost depends on the model generation and settings on this page: 258 tokens per image before Gemini 3 (Pan and Scan); for Gemini 3, variable length set by media_resolution (280/560/1120/2240, default 1120 for images); for Gemini 3 Pro Image input, 560 tokens per image.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Image tokenization",
+   "модели": [
+    "Gemini 3 models (в целом)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "модели до Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-88-38, E-88-42, E-88-43, E-88-45",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": "Страница не поясняет, почему для Gemini 3 Pro Image входная картинка стоит 560, а по умолчанию для Gemini 3 — 1120, и влияет ли media_resolution на Pro Image."
+  }
+ ],
+ "противоречия_внутри": [
+  "Best practices: \"If your prompt contains a single image, place the image before the text prompt\" (E-88-49), а примеры Single image на Python, Go и Java ставят текст \"What is shown in this image?\" перед картинкой (картинка первой — только в Node.js и REST).",
+  "Раздел Multiple images описывает пример с тремя картинками достопримечательностей и подписями \"city/Landmark\" (E-88-31), но SDK-примеры (Python/Go/Node.js/Java) передают две картинки с другими задачами — \"Generate a list of all the objects contained in both images.\" и \"Write an advertising jingle…\" (E-88-32, E-88-34); описанию соответствует только REST.",
+  "Идентификаторы моделей различаются по вкладкам: Python и REST — gemini-3.5-flash, Go/Node.js/Java — gemini-2.5-flash, пример media_resolution — gemini-3.1-pro-preview.",
+  "MEDIA_RESOLUTION_UNSPECIFIED (по умолчанию) — 1120 токенов на изображение для Gemini 3 (E-88-42), а для Gemini 3 Pro Image входное изображение — 560 токенов (E-88-43); страница не объясняет расхождение."
+ ],
+ "не_сказано": [
+  "Таблица поддерживаемых моделей (Models | Media details | MIME types) пуста — какие модели поддерживают понимание изображений и с какими лимитами, на странице не сказано.",
+  "Не сказано, применимы ли правила этой страницы (картинка перед текстом, индексы, media_resolution) к моделям генерации изображений (Nano Banana).",
+  "Не указан предел размера для изображений (15 MB названы только для аудио, видео и документов) и предел числа изображений для inlineData и Cloud Storage (10 — только для HTTP URL).",
+  "Не сказано, влияет ли media_resolution на токены входных картинок у Gemini 3 Pro Image.",
+  "Для Gemini 3 image-моделей, кроме Pro Image, токены входа/выхода не приведены (3.1 Flash Image, 3.1 Flash Lite Image не упомянуты)."
+ ],
+ "сомнения": [
+  "Страница про понимание изображений (image как вход), а не про генерацию; сомнение партии подтверждается. Единицы извлечены, но почти все относятся к мультимодальному вводу.",
+  "Второй признак официальности — подвал: \"Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … see the Google Developers Site Policies\"; строки \"© Google LLC\" нет.",
+  "В txt перечисление индексов слиплось (\"abc or image 1image 2image 3\"); по html это метки a, b, c и image 1, image 2, image 3 (в E-88-50 учтено по html).",
+  "Код в txt склеен без пробелов (например \"fromgoogleimportgenai\"); код и промпты из кода читались и цитировались по html-блокам <pre> (текст без тегов, сущности декодированы).",
+  "Блок Console в разделе Multiple images — дословный повтор блока из Single image; в ведомости он учтён одной строкой с диапазоном строк 1580-1667.",
+  "Цитата E-88-23 содержит неразрывный пробел (U+00A0) в \"15 MB\" — так в исходном txt."
+ ]
+}

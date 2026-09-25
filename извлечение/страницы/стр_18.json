@@ -1,0 +1,631 @@
+{
+ "id": 18,
+ "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+ "заголовок": "Gemini deprecations | Gemini API | Google AI for Developers",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC (подвал; meta article:published_time/datePublished в html нет)",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0 + 'Last updated 2026-09-23 UTC'; текст от лица Google ('we no longer provide support', 'We will communicate the exact shutdown date'). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная таблица жизненного цикла моделей Gemini API для разработчиков: для каждой модели дата релиза, самая ранняя дата выключения и рекомендуемая замена; уже выключенные строки серые (только в html). Большая часть — текстовые/аудио/видео/embedding модели. Для картинок: stable gemini-3.1-flash-image и gemini-3-pro-image (релиз May 28, 2026, без даты выключения), их preview-ID (June 25, 2026), gemini-2.5-flash-image (October 2, 2026, замена — 3.1-flash-image-preview), старые preview 2.5/2.0 image (выключены), Imagen 3/4 (Imagen 4 → gemini-3.1-flash-image). Свои термины: deprecation, shutdown, earliest possible dates. Повторно подчёркнуто: даты — самые ранние возможные; для 2.5 — ограничение доступа (заметка повторена дважды). Nano Banana 2 Lite в таблицах отсутствует.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "gemini-3.1-flash-image-preview",
+  "gemini-3-pro-image-preview",
+  "gemini-2.5-flash-image",
+  "gemini-2.5-flash-image-preview",
+  "gemini-2.0-flash-preview-image-generation",
+  "imagen-4.0-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagen-4.0-fast-generate-001",
+  "imagen-3.0-generate-002",
+  "imagen-4.0-generate-preview-06-06",
+  "imagen-4.0-ultra-generate-preview-06-06"
+ ],
+ "структура": [
+  "Gemini deprecations (вступление, Note)",
+  "Gemini 3 models (+ Preview models)",
+  "Gemini 2.5 Pro models (Note + Preview models)",
+  "Gemini 2.5 Flash models (Note + Preview models)",
+  "Gemini 2.0 models (+ Preview models)",
+  "Live API models",
+  "Audio models",
+  "Embedding models",
+  "Imagen models (+ Preview models)",
+  "Veo models",
+  "Gemini Omni Flash models",
+  "Lyria models",
+  "Robotics models",
+  "Managed agents"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini deprecations | Gemini API |",
+   "итог": "ничего: обвязка сайта (заголовок, Skip to main content, выбор языка, Get API key/Cookbook/Community/Sign in), строки 1-37"
+  },
+  {
+   "n": 2,
+   "начало": "Get started Overview Get started API",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 38-181, идентично странице id 16)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: обвязка сайта (баннер о текстовой модели), строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: обвязка сайта (хлебные крошки, H1), строки 185-189"
+  },
+  {
+   "n": 5,
+   "начало": "This page lists the known deprecation",
+   "итог": "E-18-1"
+  },
+  {
+   "n": 6,
+   "начало": "Deprecation announcements are made on the",
+   "итог": "E-18-2"
+  },
+  {
+   "n": 7,
+   "начало": "Already-shutdown models are indicated with gray",
+   "итог": "E-18-3"
+  },
+  {
+   "n": 8,
+   "начало": "Note: The shutdown dates listed in",
+   "итог": "E-18-4"
+  },
+  {
+   "n": 9,
+   "начало": "Gemini 3 models Model Release date",
+   "итог": "ничего: не про генерацию картинок (заголовок таблицы и строки текстовых/TTS/Live моделей gemini-3.8-*, 3.7, 3.6, 3.5, строки 218-249)"
+  },
+  {
+   "n": 10,
+   "начало": "gemini-3.1-flash-image May 28, 2026 No",
+   "итог": "E-18-5"
+  },
+  {
+   "n": 11,
+   "начало": "gemini-3-pro-image May 28, 2026 No",
+   "итог": "E-18-6"
+  },
+  {
+   "n": 12,
+   "начало": "gemini-3.1-flash-lite May 7, 2026 May",
+   "итог": "ничего: не про генерацию картинок (текстовая gemini-3.1-flash-lite, строки 256-259)"
+  },
+  {
+   "n": 13,
+   "начало": "Preview models gemini-3.1-flash-tts-preview February 26,",
+   "итог": "ничего: не про генерацию картинок (TTS preview, строки 260-266)"
+  },
+  {
+   "n": 14,
+   "начало": "gemini-3.1-flash-image-preview February 26, 2026 June",
+   "итог": "E-18-7"
+  },
+  {
+   "n": 15,
+   "начало": "gemini-3.1-pro-preview February 19, 2026 No",
+   "итог": "ничего: не про генерацию картинок (текстовая 3.1 Pro preview, строки 271-273)"
+  },
+  {
+   "n": 16,
+   "начало": "gemini-3-pro-image-preview November 20, 2025",
+   "итог": "E-18-8"
+  },
+  {
+   "n": 17,
+   "начало": "gemini-3-flash-preview December 17, 2025 No",
+   "итог": "ничего: не про генерацию картинок (текстовые 3 Flash / 3 Pro / 3.1 Flash-Lite preview, строки 278-289)"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini 2.5 Pro models Note: To",
+   "итог": "ничего: не про генерацию картинок (раздел 2.5 Pro; текст заметки дословно повторён в разделе 2.5 Flash — см. E-18-9)"
+  },
+  {
+   "n": 19,
+   "начало": "Model Release date Shutdown date Recommended",
+   "итог": "ничего: не про генерацию картинок (таблица 2.5 Pro и её preview, строки 298-317)"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini 2.5 Flash models Note: To",
+   "итог": "E-18-9"
+  },
+  {
+   "n": 21,
+   "начало": "Model Release date Shutdown date Recommended",
+   "итог": "ничего: не про генерацию картинок (заголовок таблицы 2.5 Flash, строка gemini-2.5-flash, строки 326-332)"
+  },
+  {
+   "n": 22,
+   "начало": "gemini-2.5-flash-image October 2, 2025 October",
+   "итог": "E-18-10"
+  },
+  {
+   "n": 23,
+   "начало": "gemini-2.5-flash-lite July 22, 2025 No",
+   "итог": "ничего: не про генерацию картинок (2.5 Flash-Lite, preview 2.5 Flash/Flash-Lite, строки 337-348)"
+  },
+  {
+   "n": 24,
+   "начало": "gemini-2.5-flash-image-preview May 7, 2025",
+   "итог": "E-18-11"
+  },
+  {
+   "n": 25,
+   "начало": "gemini-2.5-flash-preview-09-25 September 25, 2025",
+   "итог": "ничего: не про генерацию картинок (текстовая preview, строки 353-356)"
+  },
+  {
+   "n": 26,
+   "начало": "Gemini 2.0 models Model Release date",
+   "итог": "ничего: не про генерацию картинок (gemini-2.0-flash/-001/-lite/-lite-001, строки 357-377)"
+  },
+  {
+   "n": 27,
+   "начало": "Preview models gemini-2.0-flash-preview-image-generation May 7,",
+   "итог": "E-18-12"
+  },
+  {
+   "n": 28,
+   "начало": "gemini-2.0-flash-lite-preview February 5, 2025",
+   "итог": "ничего: не про генерацию картинок (2.0 Flash-Lite preview, строки 383-390)"
+  },
+  {
+   "n": 29,
+   "начало": "Live API models Model Release date",
+   "итог": "ничего: не про генерацию картинок (Live API модели, строки 391-424)"
+  },
+  {
+   "n": 30,
+   "начало": "Audio models Model Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (Audio/TTS, строки 425-444)"
+  },
+  {
+   "n": 31,
+   "начало": "Embedding models Model Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (Embedding, строки 445-478)"
+  },
+  {
+   "n": 32,
+   "начало": "Imagen models Model Release date Shutdown",
+   "итог": "E-18-13"
+  },
+  {
+   "n": 33,
+   "начало": "imagen-3.0-generate-002 February 6, 2025 November",
+   "итог": "E-18-14"
+  },
+  {
+   "n": 34,
+   "начало": "Preview models imagen-4.0-generate-preview-06-06 June 24,",
+   "итог": "E-18-15"
+  },
+  {
+   "n": 35,
+   "начало": "Veo models Model Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (Veo — видео, строки 509-549)"
+  },
+  {
+   "n": 36,
+   "начало": "Gemini Omni Flash models Model Release",
+   "итог": "ничего: не про генерацию картинок (Gemini Omni Flash, строки 550-562)"
+  },
+  {
+   "n": 37,
+   "начало": "Lyria models Model Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (Lyria — музыка, строки 563-581)"
+  },
+  {
+   "n": 38,
+   "начало": "Robotics models Model Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (Robotics, строки 582-595)"
+  },
+  {
+   "n": 39,
+   "начало": "Managed agents Agent Release date Shutdown",
+   "итог": "ничего: не про генерацию картинок (managed agents antigravity, строки 596-608)"
+  },
+  {
+   "n": 40,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Site Policies, 'Last updated 2026-09-23 UTC' — использовано в дате, виджет отзывов, Terms/Privacy), строки 609-622"
+  },
+  {
+   "n": 41,
+   "начало": "English Deutsch Español – América Latina",
+   "итог": "ничего: обвязка сайта (выбор языка), строки 623-644"
+  },
+  {
+   "n": 42,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-18-16, E-18-17, E-18-18 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-18-1",
+   "вид": "объяснение",
+   "утверждение_en": "A \"deprecation\" is the announcement that a model is no longer supported and will be \"shut down\" in the near future; once shut down, it is completely turned off and the endpoint is no longer available.",
+   "цитата": "A \"\ndeprecation\n\" is the\nannouncement that we no longer provide support for a model, and that it will be\n\"\nshut down\n\" in the near future. Once a model is \"\nshutdown\n\", it is\ncompletely turned off, and the endpoint is no longer available.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini deprecations (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Определения терминов deprecation/shutdown, от которых зависит чтение всех строк таблиц. Первая фраза абзаца (страница перечисляет графики для stable (GA) и preview моделей и managed agents) — область действия, не правило."
+  },
+  {
+   "код": "E-18-2",
+   "вид": "факт",
+   "утверждение_en": "Deprecation announcements are made on the Release notes page; the announced earliest shutdown dates are tracked on the deprecations page.",
+   "цитата": "Deprecation announcements are made on the\nRelease notes\npage, and the announced earliest\nshutdown dates are tracked on this page.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini deprecations (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-18-3",
+   "вид": "факт",
+   "утверждение_en": "Already-shutdown models are indicated with gray backgrounds in the tables.",
+   "цитата": "Already-shutdown models are indicated with gray backgrounds.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini deprecations (вступление)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Серый фон виден только в html (class='row-gray'), в .txt его нет — статус строк ниже взят из html."
+  },
+  {
+   "код": "E-18-4",
+   "вид": "предупреждение",
+   "утверждение_en": "Shutdown dates in the tables indicate the earliest possible dates on which a model might be retired; Google will communicate the exact shutdown date with advance notice to allow a smooth transition to a replacement model.",
+   "цитата": "Note:\nThe\nshutdown dates listed in the table indicate the\nearliest possible\ndates\non which a model might be retired\n. We will communicate the exact\nshutdown date to users with advance notice to ensure a smooth transition\nto a replacement model.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini deprecations (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Меняет смысл всех дат Shutdown date: это нижняя граница, а не точная дата."
+  },
+  {
+   "код": "E-18-5",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image (Nano Banana 2, stable) was released May 28, 2026; no shutdown date announced.",
+   "цитата": "gemini-3.1-flash-image\nMay 28, 2026\nNo shutdown date announced",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 models",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "May 28, 2026 (release); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Стоит в основной (не Preview) части таблицы Gemini 3 models, т.е. stable/GA ID без суффикса -preview."
+  },
+  {
+   "код": "E-18-6",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image (Nano Banana Pro, stable) was released May 28, 2026; no shutdown date announced.",
+   "цитата": "gemini-3-pro-image\nMay 28, 2026\nNo shutdown date announced",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 models",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "May 28, 2026 (release); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-18-7",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image-preview (released February 26, 2026) has an earliest shutdown date of June 25, 2026; recommended replacement: gemini-3.1-flash-image.",
+   "цитата": "gemini-3.1-flash-image-preview\nFebruary 26, 2026\nJune 25, 2026\ngemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 models / Preview models",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "February 26, 2026 (release); June 25, 2026 (earliest shutdown); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строка НЕ серая, хотя дата June 25, 2026 уже прошла на 2026-09-23 (см. E-18-18)."
+  },
+  {
+   "код": "E-18-8",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image-preview (released November 20, 2025) has an earliest shutdown date of June 25, 2026; recommended replacement: gemini-3-pro-image.",
+   "цитата": "gemini-3-pro-image-preview\nNovember 20, 2025\nJune 25, 2026\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 models / Preview models",
+   "модели": [
+    "gemini-3-pro-image-preview",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "November 20, 2025 (release); June 25, 2026 (earliest shutdown); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строка НЕ серая."
+  },
+  {
+   "код": "E-18-9",
+   "вид": "ограничение",
+   "утверждение_en": "To ensure reliable performance, Google is limiting access to the 2.5 models to users who have actively used them in the past; these models are not deprecated and will continue to be served through the API until further notice. For new projects Google says to use its latest models (3.5 Flash-Lite or 3.8 Flash).",
+   "цитата": "To ensure reliable performance for everyone, we are limiting\n  access to the 2.5 models to users who have actively used them in the past.\n  These models are not deprecated and will continue to be served until further\n  notice through the API. For any new projects, use our latest models:\n  3.5 Flash-Lite or 3.8 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.5 Flash models",
+   "модели": [
+    "gemini-2.5-flash-image (раскрыто из контекста раздела: строка стоит в таблице Gemini 2.5 Flash models под этой заметкой)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из заметки раздела Gemini 2.5 Flash models + состава таблицы раздела",
+   "дата_единицы": "статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Заметка дословно повторена в разделе Gemini 2.5 Pro models. Модели замены в ней — текстовые (3.5 Flash-Lite, 3.8 Flash), не image. Распространяется ли ограничение доступа на gemini-2.5-flash-image, прямо не сказано — 'the 2.5 models' в разделе, где эта модель стоит. Противоречит строке E-18-10 (у неё есть дата shutdown)."
+  },
+  {
+   "код": "E-18-10",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image (original Nano Banana, released October 2, 2025) has an earliest shutdown date of October 2, 2026; recommended replacement: gemini-3.1-flash-image-preview.",
+   "цитата": "gemini-2.5-flash-image\nOctober 2, 2025\nOctober 2, 2026\ngemini-3.1-flash-image-preview",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.5 Flash models",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "October 2, 2025 (release); October 2, 2026 (earliest shutdown); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Рекомендованная замена — preview-ID, у которого собственная ранняя дата shutdown (June 25, 2026) раньше, чем у заменяемой модели (см. противоречия)."
+  },
+  {
+   "код": "E-18-11",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image-preview (released May 7, 2025) had a shutdown date of January 15, 2026 (shown as already shut down); replacement: gemini-2.5-flash-image.",
+   "цитата": "gemini-2.5-flash-image-preview\nMay 7, 2025\nJanuary 15, 2026\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.5 Flash models / Preview models",
+   "модели": [
+    "gemini-2.5-flash-image-preview",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "May 7, 2025 (release); January 15, 2026 (shutdown)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строка серая (row-gray) = уже выключена."
+  },
+  {
+   "код": "E-18-12",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.0-flash-preview-image-generation (released May 7, 2025) had a shutdown date of November 14, 2025 (shown as already shut down); replacement: gemini-2.5-flash-image.",
+   "цитата": "gemini-2.0-flash-preview-image-generation\nMay 7, 2025\nNovember 14, 2025\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 models / Preview models",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "May 7, 2025 (release); November 14, 2025 (shutdown)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строка серая."
+  },
+  {
+   "код": "E-18-13",
+   "вид": "факт",
+   "утверждение_en": "imagen-4.0-generate-001, imagen-4.0-ultra-generate-001 and imagen-4.0-fast-generate-001 (all released June 24, 2025) have an earliest shutdown date of August 17, 2026; recommended replacement for all three: gemini-3.1-flash-image.",
+   "цитата": "imagen-4.0-generate-001\nJune 24, 2025\nAugust 17, 2026\ngemini-3.1-flash-image\nimagen-4.0-ultra-generate-001\nJune 24, 2025\nAugust 17, 2026\ngemini-3.1-flash-image\nimagen-4.0-fast-generate-001\nJune 24, 2025\nAugust 17, 2026\ngemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen models",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "June 24, 2025 (release); August 17, 2026 (earliest shutdown); статус по состоянию на Last updated 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Все три Imagen 4 (включая Ultra) заменяются на Nano Banana 2, не на Pro. В html строки не серые, хотя дата прошла."
+  },
+  {
+   "код": "E-18-14",
+   "вид": "факт",
+   "утверждение_en": "imagen-3.0-generate-002 (released February 6, 2025) had a shutdown date of November 10, 2025 (shown as already shut down); replacement: imagen-4.0-generate-001.",
+   "цитата": "imagen-3.0-generate-002\nFebruary 6, 2025\nNovember 10, 2025\nimagen-4.0-generate-001",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen models",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-4.0-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "February 6, 2025 (release); November 10, 2025 (shutdown)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строка серая."
+  },
+  {
+   "код": "E-18-15",
+   "вид": "факт",
+   "утверждение_en": "imagen-4.0-generate-preview-06-06 and imagen-4.0-ultra-generate-preview-06-06 (released June 24, 2025) had a shutdown date of February 17, 2026 (shown as already shut down); replacements: imagen-4.0-generate-001 and imagen-4.0-ultra-generate-001 respectively.",
+   "цитата": "imagen-4.0-generate-preview-06-06\nJune 24, 2025\nFebruary 17, 2026\nimagen-4.0-generate-001\nimagen-4.0-ultra-generate-preview-06-06\nJune 24, 2025\nFebruary 17, 2026\nimagen-4.0-ultra-generate-001",
+   "источник_цитаты": "txt",
+   "раздел": "Imagen models / Preview models",
+   "модели": [
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "June 24, 2025 (release); February 17, 2026 (shutdown)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html строки серые."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-18-16",
+   "вид": "факт",
+   "утверждение_en": "All replacement paths for image-generation models on the page converge on the Gemini 3 image models: gemini-2.0-flash-preview-image-generation → gemini-2.5-flash-image → gemini-3.1-flash-image-preview → gemini-3.1-flash-image; all Imagen 4 GA models → gemini-3.1-flash-image; gemini-3-pro-image-preview → gemini-3-pro-image. gemini-3.1-flash-image (Nano Banana 2) is the default replacement target for non-Pro image models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation",
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "imagen-4.0-*"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-18-5, E-18-6, E-18-7, E-18-8, E-18-10, E-18-11, E-18-12, E-18-13",
+   "дата_единицы": "по состоянию на 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Цепочка собрана по колонке Recommended replacement."
+  },
+  {
+   "код": "E-18-17",
+   "вид": "правило",
+   "утверждение_en": "As of the page date, the only image-generation model IDs with no announced shutdown date are the stable gemini-3.1-flash-image and gemini-3-pro-image (released May 28, 2026); preview IDs and gemini-2.5-flash-image all carry shutdown dates, so production calls should use the stable IDs.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-18-5, E-18-6, E-18-7, E-18-8, E-18-10, E-18-4",
+   "дата_единицы": "по состоянию на 2026-09-23",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Рекомендация — вывод из таблиц, страница её так не формулирует."
+  },
+  {
+   "код": "E-18-18",
+   "вид": "предупреждение",
+   "утверждение_en": "Several image-model rows whose earliest shutdown date has already passed (gemini-3.1-flash-image-preview and gemini-3-pro-image-preview, June 25, 2026; imagen-4.0-*-001, August 17, 2026) are not grayed as shut down on the 2026-09-23 page; given that listed dates are only the earliest possible, these IDs may still respond but can be turned off at any time after notice.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "imagen-4.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-18-3, E-18-4, E-18-7, E-18-8, E-18-13 + классы row-gray в html",
+   "дата_единицы": "по состоянию на 2026-09-23",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Заметка раздела Gemini 2.5 Flash models: 'These models are not deprecated and will continue to be served until further notice' — но в таблице этого же раздела у gemini-2.5-flash-image стоит Shutdown date October 2, 2026 (E-18-9 vs E-18-10).",
+  "Для gemini-2.5-flash-image рекомендованная замена — gemini-3.1-flash-image-preview, у которой собственная ранняя дата выключения June 25, 2026 (раньше, чем October 2, 2026 у заменяемой) и собственная замена gemini-3.1-flash-image (E-18-10 vs E-18-7).",
+  "Серый фон ('already-shutdown') расставлен непоследовательно: veo-2.0-generate-001 (June 30, 2026) серая, а veo-3.0-generate-001 с той же датой — нет; image-preview строки (June 25, 2026) и imagen-4.0-*-001 (August 17, 2026) не серые при прошедшей дате. Частично объясняется заметкой 'earliest possible dates'."
+ ],
+ "не_сказано": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) не упомянута ни в одной таблице (ID встречается только в служебном alt-paths навигации html).",
+  "Нет даты выключения/статуса для gemini-3.1-flash-image-preview после June 25, 2026 — выключен ли он фактически, страница не говорит (строка не серая).",
+  "Не сказано, распространяется ли ограничение доступа к 2.5-моделям (для новых пользователей) на gemini-2.5-flash-image; модели-замены в заметке текстовые.",
+  "Не сказано, почему Imagen 4 Ultra заменяется на gemini-3.1-flash-image, а не на gemini-3-pro-image."
+ ],
+ "сомнения": [
+  "Статус «уже выключена» (серый фон) взят из html (class row-gray); в .txt этого признака нет.",
+  "E-18-9 отнесена к gemini-2.5-flash-image по контексту раздела, а не по прямому упоминанию; как_получено помечено как выведено.",
+  "дата_единицы для строк таблицы: указаны дата релиза и дата shutdown из строки + пометка 'по состоянию на Last updated 2026-09-23'."
+ ]
+}

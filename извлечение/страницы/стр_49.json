@@ -1,0 +1,1023 @@
+{
+ "id": 49,
+ "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+ "заголовок": "Agent Platform Pricing | Google Cloud",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "cloud.google.com",
+  "второй_признак": "подвал Google Cloud ('About Google', 'Privacy', 'Site terms', 'Google Cloud terms'), текст от лица Google ('Google Cloud is injecting a monthly billing credit…', 'Connect with our sales team'). Строка 'Copyright Google LLC' есть только во встроенном JS (лицензия скрипта), не в содержании.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальная страница цен Generative AI на Agent Platform (Vertex AI) для клиентов Google Cloud: большие таблицы цен за 1M токенов по уровням Standard / Priority / Flex-Batch и регионам Global / Non-global для Gemini 3, 2.5, 2.0, прочих моделей Google (Imagen, Veo, Lyria, embeddings, Omni), агентов, Provisioned Throughput, тюнинга и партнёрских моделей (Claude, Grok и др.). Для картинок: цены трёх Nano Banana 3-го поколения (2 Lite, 2, Pro) и 2.5 Flash Image, сноски с числом токенов на входную/выходную картинку по разрешениям (512/1K/2K/4K), 2.0 Flash Image Generation, цены Imagen 1-4 (генерация, редактирование, апскейл, Product Recontext, Virtual Try-On), цена grounding (в т.ч. Image Search). Своих терминов: Grounding Prompt / Grounding Query, long context rates (>200K), Non-global endpoints, GSU. Даты страницы в тексте нет.",
+ "модели_на_странице": [
+  "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+  "Gemini 3.1 Flash Image (Nano Banana 2)",
+  "Gemini 3 Pro Image (Nano Banana Pro)",
+  "Gemini 2.5 Flash Image",
+  "Gemini 2.0 Flash Image Generation",
+  "Imagen 4 Ultra / Imagen 4 / Imagen 4 Fast / Imagen 3 / Imagen 3 Fast / Imagen 2 / Imagen 1",
+  "много текстовых, аудио, видео и партнёрских моделей — не про картинки"
+ ],
+ "структура": [
+  "Cost of building and deploying AI models in Agent Platform (общие условия)",
+  "Google models: Gemini 3 (Standard / Priority / Flex-Batch, Pricing with grounding, сноски *–****)",
+  "Gemini 2.5 (Standard / Priority / Flex-Batch, grounding, сноски)",
+  "Gemini 2.0 (token-based / modality-based, grounding)",
+  "Other Google models: Gemini 3.5 Live Translate, Gemini 3.5 Transcribe, Gemini 1.5, Imagen, Veo, Lyria, Embedding costs, Gemini Omni",
+  "Agents (+ Pricing with grounding)",
+  "CodeMender",
+  "Gemma",
+  "MultiModal Embeddings",
+  "Pricing for Agent Platform code completion",
+  "Translation (Text)",
+  "Context Cache Storage price",
+  "Provisioned Throughput (+ Example cost calculation, 50% Promotional Credits)",
+  "Model Tuning",
+  "AlphaEvolve",
+  "Partner models (Claude, Grok, DeepSeek, MiniMax, Moonshot, Qwen, GLM, OpenAI, Llama, Mistral)",
+  "Request a custom quote",
+  "подвал Google Cloud"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Page Contents Gemini 3.8 Flash, Gemini",
+   "итог": "ничего: не про генерацию картинок (вводная цена текстовых Gemini 3.8/3.7/3.6 Flash и CodeMender), строки 1-2"
+  },
+  {
+   "n": 2,
+   "начало": "Cost of building and deploying AI",
+   "итог": "ничего: общая оговорка о валюте USD / SKU, строки 3-4"
+  },
+  {
+   "n": 3,
+   "начало": "You're charged only for requests that",
+   "итог": "E-49-1"
+  },
+  {
+   "n": 4,
+   "начало": "This page covers pricing for Generative",
+   "итог": "ничего: область страницы и Flexible Savings Plans, строки 6-7"
+  },
+  {
+   "n": 5,
+   "начало": "Google models Gemini 3 Standard ModelPriorityFlex/Batch",
+   "итог": "ничего: не про генерацию картинок (заголовки таблицы Standard и строки текстовых моделей 3.1 Pro Preview, 3.8/3.7/3.6 Flash, 3 Flash Preview, 3.5 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite), строки 8-201"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana",
+   "итог": "E-49-2"
+  },
+  {
+   "n": 7,
+   "начало": "Gemini 3.1 Flash Image (Nano Banana",
+   "итог": "E-49-3"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini 3 Pro Image (Nano Banana",
+   "итог": "E-49-4"
+  },
+  {
+   "n": 9,
+   "начало": "* Promotional pricing provided through 50%",
+   "итог": "ничего: сноска о промо-кредитах для текстовых моделей, строка 266"
+  },
+  {
+   "n": 10,
+   "начало": "Show discount options Model Type Region",
+   "итог": "ничего: не про генерацию картинок (таблица Priority, текстовые модели), строки 267-458"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana",
+   "итог": "E-49-5 (Priority, строки 459-500)"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 3 Pro Image (Nano Banana",
+   "итог": "E-49-6"
+  },
+  {
+   "n": 13,
+   "начало": "Show discount options Model Type Region",
+   "итог": "ничего: не про генерацию картинок (таблица Flex/Batch, текстовые модели), строки 514-717"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana",
+   "итог": "E-49-7"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini 3.1 Flash Image (Nano Banana",
+   "итог": "E-49-8"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini 3 Pro Image (Nano Banana",
+   "итог": "E-49-9"
+  },
+  {
+   "n": 17,
+   "начало": "Pricing with grounding Show discount options",
+   "итог": "E-49-10"
+  },
+  {
+   "n": 18,
+   "начало": "Grounding with Google Maps Includes 5,000",
+   "итог": "ничего: не про генерацию картинок (Maps grounding, Grounding with your data, Computer Use Tool, function declarations в Gemini 3.5), строки 803-817"
+  },
+  {
+   "n": 19,
+   "начало": "* For non-global endpoints, pricing will",
+   "итог": "E-49-11"
+  },
+  {
+   "n": 20,
+   "начало": "* If a query input context",
+   "итог": "E-49-12"
+  },
+  {
+   "n": 21,
+   "начало": "* Tuned model endpoint will be",
+   "итог": "ничего: не про генерацию картинок (тюнингованный endpoint 1.5× базы), строка 820"
+  },
+  {
+   "n": 22,
+   "начало": "** Gemini 3 Pro Image charges",
+   "итог": "E-49-13"
+  },
+  {
+   "n": 23,
+   "начало": "*** Gemini 3.1 Flash Image charges",
+   "итог": "E-49-14"
+  },
+  {
+   "n": 24,
+   "начало": "**** Gemini 3.1 Flash-Lite Image charges",
+   "итог": "E-49-15"
+  },
+  {
+   "n": 25,
+   "начало": "Gemini 2.5 StandardPriorityFlex/Batch Show discount options",
+   "итог": "ничего: не про генерацию картинок (2.5 Pro, Computer Use, 2.5 Flash), строки 824-857"
+  },
+  {
+   "n": 26,
+   "начало": "Gemini 2.5 Flash Image Input (text,",
+   "итог": "E-49-16"
+  },
+  {
+   "n": 27,
+   "начало": "Gemini 2.5 Flash Live API Input",
+   "итог": "ничего: не про генерацию картинок (Live API, 2.5 Flash Lite, заголовки Priority, 2.5 Pro/Flash Priority), строки 875-950"
+  },
+  {
+   "n": 28,
+   "начало": "Gemini 2.5 Flash Image Input (text,",
+   "итог": "E-49-17"
+  },
+  {
+   "n": 29,
+   "начало": "Gemini 2.5 Flash Live API 1M",
+   "итог": "ничего: не про генерацию картинок (Live API и 2.5 Flash Lite Priority, заголовки Flex/Batch, 2.5 Pro/Flash Flex), строки 961-1029"
+  },
+  {
+   "n": 30,
+   "начало": "Gemini 2.5 Flash Image Input (text,",
+   "итог": "E-49-18"
+  },
+  {
+   "n": 31,
+   "начало": "Gemini 2.5 Flash Live API 1M",
+   "итог": "ничего: не про генерацию картинок (Live API, Flash Lite Flex), строки 1035-1058"
+  },
+  {
+   "n": 32,
+   "начало": "Pricing with grounding Show discount options",
+   "итог": "ничего: не про генерацию картинок (grounding для 2.0 Flash / 2.5 Flash / Flash-Lite / 2.5 Pro: 1,500 и 10,000 промптов в день, $35 / $45 / $2.5 / Maps $25), строки 1059-1085"
+  },
+  {
+   "n": 33,
+   "начало": "* If a query input context",
+   "итог": "ничего: повтор E-49-12 и сноски о тюнинге/биллинге grounding для 2.5 (только при возврате источников), строки 1086-1088"
+  },
+  {
+   "n": 34,
+   "начало": "*** A 1024x1024 image consumes 1290",
+   "итог": "E-49-19"
+  },
+  {
+   "n": 35,
+   "начало": "**** Computer Use billing uses the",
+   "итог": "ничего: не про генерацию картинок (Computer Use, Live API context window, Proactive Audio, транскрипция), строки 1090-1093"
+  },
+  {
+   "n": 36,
+   "начало": "Gemini 2.0 Gemini 2.0 is billed",
+   "итог": "ничего: общий принцип токенов 2.0 и повтор правила о 400/500 (E-49-1), строки 1094-1105"
+  },
+  {
+   "n": 37,
+   "начало": "Gemini 2.0 Flash Input text $0.15$0.075",
+   "итог": "ничего: не про генерацию картинок (2.0 Flash, тюнинг), строки 1105-1113"
+  },
+  {
+   "n": 38,
+   "начало": "Gemini 2.0 Flash Image Generation Input",
+   "итог": "E-49-20"
+  },
+  {
+   "n": 39,
+   "начало": "Gemini 2.0 Flash Live API Input",
+   "итог": "ничего: не про генерацию картинок (2.0 Flash Live API, 2.0 Flash Lite; сноски валюты, эпох, 'PDFs are billed as image input', Live API 25/258 токенов), строки 1122-1147"
+  },
+  {
+   "n": 40,
+   "начало": "The below modality pricing is based",
+   "итог": "E-49-21"
+  },
+  {
+   "n": 41,
+   "начало": "Video input consumes 258 tokens per",
+   "итог": "ничего: не про генерацию картинок (видео/аудио токены, модальные цены 2.0 Flash и Flash Lite), строки 1151-1170 и 1185-1206"
+  },
+  {
+   "n": 42,
+   "начало": "Gemini 2.0 Flash Image Generation Input",
+   "итог": "E-49-21 (модальные цены 2.0 Flash Image Generation, строки 1171-1184)"
+  },
+  {
+   "n": 43,
+   "начало": "Price with Grounding Show discount options",
+   "итог": "ничего: не про генерацию картинок (grounding 2.0/2.5, Maps, сноски), строки 1207-1245"
+  },
+  {
+   "n": 44,
+   "начало": "Other Google models All Gemini models",
+   "итог": "E-49-22 (вступление раздела и правила посимвольного биллинга, строки 1246-1252)"
+  },
+  {
+   "n": 45,
+   "начало": "Gemini 3.5 Live Translate Show discount",
+   "итог": "ничего: не про генерацию картинок (Live Translate, Transcribe, Gemini 1.5/1.0 Pro, grounding 1.5), строки 1253-1359"
+  },
+  {
+   "n": 46,
+   "начало": "Imagen With Imagen on Agent Platform,",
+   "итог": "E-49-23"
+  },
+  {
+   "n": 47,
+   "начало": "Show discount options Model Feature Description",
+   "итог": "E-49-24"
+  },
+  {
+   "n": 48,
+   "начало": "Imagen 3 Image generation Generate an",
+   "итог": "E-49-25"
+  },
+  {
+   "n": 49,
+   "начало": "Imagen 1 Fine-tuning Enable a \"subject\"",
+   "итог": "E-49-26"
+  },
+  {
+   "n": 50,
+   "начало": "Imagen Visual Captioning Generate a short",
+   "итог": "ничего: не генерация картинок (Visual Captioning и Visual Q&A — понимание изображения, $0.0015), строки 1431-1443"
+  },
+  {
+   "n": 51,
+   "начало": "Imagen Product Recontext Re-imagine products in",
+   "итог": "E-49-27"
+  },
+  {
+   "n": 52,
+   "начало": "Veo Show discount options Model Feature",
+   "итог": "ничего: не про генерацию картинок (Veo — видео, в т.ч. из reference image), строки 1455-1561"
+  },
+  {
+   "n": 53,
+   "начало": "Lyria Lyria model family offers high-quality",
+   "итог": "ничего: не про генерацию картинок (Lyria, embeddings), строки 1562-1621"
+  },
+  {
+   "n": 54,
+   "начало": "Gemini Omni Model Type Token Price",
+   "итог": "ничего: не про генерацию картинок (Gemini Omni Flash — видео-выход; 1120 токенов на входную картинку для Omni), строки 1622-1635"
+  },
+  {
+   "n": 55,
+   "начало": "Agents StandardDeferred Model Type Price (/1M",
+   "итог": "ничего: не про генерацию картинок (Deep Research Agent), строки 1636-1659"
+  },
+  {
+   "n": 56,
+   "начало": "Pricing with grounding Show discount options",
+   "итог": "E-49-28"
+  },
+  {
+   "n": 57,
+   "начало": "CodeMender The pricing for CodeMender is",
+   "итог": "ничего: не про генерацию картинок (CodeMender, Gemma, MultiModal Embeddings, code completion, Translation), строки 1676-1874"
+  },
+  {
+   "n": 58,
+   "начало": "Context Cache Storage price for Explicit",
+   "итог": "ничего: не про генерацию картинок (хранение кэша; image-моделей в таблице нет; 2.0 modality storage, 1024x1024 = 1290 токенов — повтор), строки 1875-1981"
+  },
+  {
+   "n": 59,
+   "начало": "Provisioned Throughput Provisioned throughput assures throughput",
+   "итог": "ничего: не про генерацию картинок (GSU, пример расчёта на gemini-2.0-flash, промо-кредиты 3.x Flash), строки 1982-2009"
+  },
+  {
+   "n": 60,
+   "начало": "Model Tuning Model tuning is an",
+   "итог": "ничего: не про генерацию картинок (тюнинг Gemini/Gemma/Llama/Qwen, AlphaEvolve), строки 2010-2104"
+  },
+  {
+   "n": 61,
+   "начало": "Partner models on Agent Platform Partner",
+   "итог": "ничего: не про генерацию картинок (Claude, Grok, DeepSeek, MiniMax, Moonshot, Qwen, GLM, OpenAI, Llama, Mistral — цены текста; упоминаний image нет), строки 2105-3447"
+  },
+  {
+   "n": 62,
+   "начало": "Request a custom quote With Google",
+   "итог": "ничего: маркетинг без содержания (связаться с продажами), строки 3448-3450"
+  },
+  {
+   "n": 63,
+   "начало": "menu OverviewSolutionsProductsPricingResourcesDocsSupportContact us search",
+   "итог": "ничего: обвязка сайта (мега-меню Google Cloud, подвал About Google / Privacy / Site terms / Google Cloud terms, языки), строки 3451-4591"
+  },
+  {
+   "n": 64,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-49-29, E-49-30, E-49-31, E-49-32 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-49-1",
+   "вид": "правило",
+   "утверждение_en": "You are charged only for requests that return a 200 response code; requests returning other codes (4xx, 5xx) are not charged for input or output.",
+   "цитата": "You're charged only for requests that return a 200 response code. Requests returning any other response codes, such as 4xx and 5xx codes, aren't charged for the input or output.",
+   "источник_цитаты": "txt",
+   "раздел": "Cost of building and deploying AI models in Agent Platform",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Общее правило биллинга страницы; относится и к image-моделям (модели не названы)."
+  },
+  {
+   "код": "E-49-2",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite), Standard, Global: input (text, image, video) $0.25 per 1M tokens (cached $0.025), text output (response and reasoning) $1.50, image output $30.00 per 1M tokens.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nInput (text, image, video)\nGlobal\n$0.25\nN/A\n$0.025\nN/A\nText output (response and reasoning)\nGlobal\n$1.50\nN/A\nN/A\nN/A\nImage Output****\nGlobal\n$30.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Standard",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Колонки >200K — N/A; только Global. Сноска **** — токены на картинку (E-49-15)."
+  },
+  {
+   "код": "E-49-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2), Standard: input (text, image, video) $0.50 Global / $0.55 Non-global per 1M tokens (cached $0.05 / $0.055); text output $3.00 / $3.30; image output $60.00 Global / $66 Non-global per 1M tokens.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2)\nInput (text, image, video)\nGlobal\n$0.50\nN/A\n$0.05\nN/A\nNon-global\n$0.55\nN/A\n$0.055\nN/A\nText output (response and reasoning)\nGlobal\n$3.00\nN/A\nN/A\nN/A\nNon-global\n$3.30\nN/A\nN/A\nN/A\nImage Output***\nGlobal\n$60.00\nN/A\nN/A\nN/A\nNon-global\n$66",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Standard",
+   "модели": [
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Сноска *** — токены на картинку (E-49-14)."
+  },
+  {
+   "код": "E-49-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro), Standard, Global: input (text, image) $2.00 per 1M tokens for <=200K input and $4.00 for >200K (cached $0.20 / $0.40); text output $12.00 / $18.00; image output $120.00 per 1M tokens (both tiers).",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro)\nInput (text, image)\nGlobal\n$2.00$4.00$0.20$0.40\nText output (response and reasoning)\nGlobal\n$12.00$18.00\nN/A\nN/A\nImage Output**\nGlobal\n$120.00$120.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Standard",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Единственная image-модель с отдельной ценой для контекста >200K. Сноска ** — токены на картинку (E-49-13)."
+  },
+  {
+   "код": "E-49-5",
+   "вид": "ограничение",
+   "утверждение_en": "Priority pricing is N/A for Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) and Gemini 3.1 Flash Image (Nano Banana 2) — all their Priority cells are N/A.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nInput (text, image, video)\nGlobal\nN/A\nN/A\nN/A\nN/A\nText output (response and reasoning)\nGlobal\nN/A\nN/A\nN/A\nN/A\nImage Output****\nGlobal\nN/A\nN/A\nN/A\nN/A\nGemini 3.1 Flash Image (Nano Banana 2)\nInput (text, image, video)\nGlobal\nN/A\nN/A\nN/A\nN/A",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Priority",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Вывод: Priority-уровень доступен из image-моделей только Nano Banana Pro (по таблице)."
+  },
+  {
+   "код": "E-49-6",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro) with Priority, Global: input $3.60 (<=200K) / $7.20 (>200K) per 1M tokens (cached $0.36 / $0.72); text output $21.60 / $32.40; image output $216.00 per 1M tokens.",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro)\nInput (text, image, video, audio)\nGlobal\n$3.60$7.20$0.36$0.72\nText output (response and reasoning)\nGlobal\n$21.60$32.40\nN/A\nN/A\nImage Output**\nGlobal\n$216.00$216.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Priority",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Priority = 1.8× Standard. Тип входа здесь подписан (text, image, video, audio), в Standard — (text, image)."
+  },
+  {
+   "код": "E-49-7",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) with Flex/Batch, Global: input $0.125 per 1M tokens (cached $0.0125), text output $0.75, image output $15.00 per 1M tokens.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nInput (text, image, video)\nGlobal\n$0.125\nN/A\n$0.0125\nN/A\nText output (response and reasoning)\nGlobal\n$0.75\nN/A\nN/A\nN/A\nImage Output****\nGlobal\n$15.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Flex/Batch",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "50% от Standard."
+  },
+  {
+   "код": "E-49-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2) with Flex/Batch: input $0.25 Global / $0.275 Non-global per 1M tokens (cached $0.025 / $0.0275); text output $1.50 / $1.65; image output $30.00 Global / $33 Non-global per 1M tokens.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2)\nInput (text, image, video)\nGlobal\n$0.25\nN/A\n$0.025\nN/A\nNon-global\n$0.275\nN/A\n$0.0275\nN/A\nText output (response and reasoning)\nGlobal\n$1.50\nN/A\nN/A\nN/A\nNon-global\n$1.65\nN/A\nN/A\nN/A\nImage Output***\nGlobal\n$30.00\nN/A\nN/A\nN/A\nNon-global\n$33",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Flex/Batch",
+   "модели": [
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "50% от Standard."
+  },
+  {
+   "код": "E-49-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro) with Flex/Batch, Global: input (text, image) $1.00 (<=200K) / $2.00 (>200K) per 1M tokens, cached $0.10; text output $6.00 / $9.00; image output $60.00 per 1M tokens.",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro)\nInput (text, image)\nGlobal\n$1.00$2.00\n$0.10\nN/A\nText output (response and reasoning)\nGlobal\n$6.00$9.00\nN/A\nN/A\nImage Output***\nGlobal\n$60.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Flex/Batch",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "50% от Standard. У Image Output здесь сноска *** (сноска Nano Banana 2), а не ** — см. противоречия."
+  },
+  {
+   "код": "E-49-10",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search & Web Grounding for Enterprise for Gemini 3: 5,000 Grounding Queries per month at no charge, aggregated across all Gemini 3 models; beyond that $14 per 1,000 Grounding Queries; each individual Grounding Query is charged; billing starts January 5, 2026; input tokens provided by grounding are not charged.",
+   "цитата": "Includes 5,000 Grounding Queries per month at no charge, aggregated across all Gemini 3 models.\nGrounding Queries exceeding those limits are billed at $14 per 1,000 Grounding Queries.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / Pricing with grounding",
+   "модели": [
+    "all Gemini 3 models (родовая фраза; включает ли Gemini 3 image-модели — прямо не сказано)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "January 5, 2026 (начало биллинга)",
+   "тема": [
+    "цены",
+    "grounding"
+   ],
+   "заметка": "Рядом: 'You will be charged for each individual Grounding Query performed. Billing will start January 5, 2026.' и 'Input tokens provided by Grounding with Google Search or Web Grounding for Enterprise are not charged.'"
+  },
+  {
+   "код": "E-49-11",
+   "вид": "факт",
+   "утверждение_en": "Non-global endpoint pricing takes effect for generally available Gemini 3 and later model families starting July 1, 2026; before that, Global endpoint pricing applies to non-global endpoints.",
+   "цитата": "* For non-global endpoints, pricing will go into effect for the Generally available Gemini 3 and later families of all Google models starting on July 1, 2026. Before July 1, 2026, Global endpoint pricing applies to Non-global endpoints.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / сноски",
+   "модели": [
+    "Gemini 3 and later (GA)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "July 1, 2026",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Касается Non-global цен Nano Banana 2 ($0.55 / $3.30 / $66)."
+  },
+  {
+   "код": "E-49-12",
+   "вид": "правило",
+   "утверждение_en": "If a query input context is longer than 200K tokens, all tokens (input and output) are charged at long context rates.",
+   "цитата": "* If a query input context is longer than 200K tokens, all tokens (input and output) are charged at long context rates.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / сноски",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Из image-моделей колонку >200K имеет только Nano Banana Pro ($4.00 вход, $18.00 текст-выход; image-выход $120 в обеих колонках)."
+  },
+  {
+   "код": "E-49-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image charges 560 tokens per input image; output image cost scales by resolution: 1120 tokens ($0.134) for 1K and 2K (roughly 1MP and 4MP), and 2000 tokens ($0.24) for 4K (roughly 16MP).",
+   "цитата": "** Gemini 3 Pro Image charges 560 tokens per input image, with output image costs scaling by resolution: 1120 tokens ($0.134) for 1K and 2K (roughly 1MP and 4MP), and 2000 tokens ($0.24) for 4K (roughly 16MP).",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / сноски",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "1K и 2K стоят одинаково (1120 токенов). 512 для Pro не упомянут."
+  },
+  {
+   "код": "E-49-14",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image charges 1120 tokens per input image; output image cost scales by resolution: 747 tokens ($0.045) for 512 (~0.25MP), 1120 tokens ($0.067) for 1K (~1MP), 1680 tokens ($0.101) for 2K (~4MP), 2,520 tokens ($0.15) for 4K (~16MP).",
+   "цитата": "*** Gemini 3.1 Flash Image charges 1120 tokens per input image, with output image costs scaling by resolution: 747 tokens ($0.045) for 512 (roughly 0.25MP), 1120 tokens ($0.067) for 1K (roughly 1MP), 1680 tokens ($0.101) for 2K (roughly 4MP), and 2,520 tokens ($0.15) for 4K (roughly 16MP).",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / сноски",
+   "модели": [
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Цены в скобках — по Standard Global ($60/1M)."
+  },
+  {
+   "код": "E-49-15",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image charges 1120 tokens per input image, and 1120 tokens ($0.034) for 1K (roughly 1MP) output images.",
+   "цитата": "**** Gemini 3.1 Flash-Lite Image charges 1120 tokens per input image, and 1120 tokens ($0.034) for 1K (roughly 1MP) output images",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 3 / сноски",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Упомянут только выход 1K; другие размеры для Lite не указаны."
+  },
+  {
+   "код": "E-49-16",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image, Standard: input (text, image) $0.30 per 1M tokens, text output $2.50, image output $30.00 per 1M tokens.",
+   "цитата": "Gemini 2.5 Flash Image\nInput (text, image)***\n$0.30\nN/A\nN/A\nN/A\nText output (response and reasoning)\n$2.50\nN/A\nN/A\nN/A\nImage output***\n$30.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.5 / Standard",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-49-17",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 2.5 Flash Image has no Priority pricing (all cells N/A).",
+   "цитата": "Gemini 2.5 Flash Image\nInput (text, image)***\nN/A\nN/A\nN/A\nN/A\nText output (response and reasoning)\nN/A\nN/A\nN/A\nN/A\nImage output***\nN/A",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.5 / Priority",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-49-18",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image with Flex/Batch: input (text, image, video) $0.15 per 1M tokens, text output $1.25, image output $15.00 per 1M tokens.",
+   "цитата": "Gemini 2.5 Flash Image\nInput (text, image, video)***\n$0.15\nN/A\nText output (response and reasoning)\n$1.25\nN/A\nImage output***\n$15.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.5 / Flex/Batch",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Тип входа здесь (text, image, video), в Standard — (text, image)."
+  },
+  {
+   "код": "E-49-19",
+   "вид": "факт",
+   "утверждение_en": "A 1024x1024 image consumes 1290 tokens ($0.039 per 1K output image) for Gemini 2.5 Flash Image; per-image token count varies by image resolution.",
+   "цитата": "*** A 1024x1024 image consumes 1290 tokens ($0.039 per 1K output image). Per image token count varies by image resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.5 / сноски",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Та же сноска *** стоит и у входа 'Input (text, image)***'."
+  },
+  {
+   "код": "E-49-20",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash Image Generation (token-based): input tokens $0.15, input audio $1.00, input video $0.15, output text $0.60, output image tokens $30.00 per 1M tokens.",
+   "цитата": "Gemini 2.0 Flash Image Generation\nInput tokens\n$0.15\nInput audio tokens\n$1.00\nInput video tokens\n$0.15\nOutput text tokens\n$0.60\nOutput image tokens\n$30.00",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.0 / Token-based pricing",
+   "модели": [
+    "Gemini 2.0 Flash Image Generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-49-21",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash Image Generation (modality-based reference pricing): input image $0.0001935 per image, output image $0.04 per image; for reference, a 1024x1024 image consumes 1290 tokens, and actual billing is based only on tokens.",
+   "цитата": "The below modality pricing is based on average use cases for reference only. Actual billing will only be based on tokens:",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Gemini 2.0 / Modality-based pricing",
+   "модели": [
+    "Gemini 2.0 Flash Image Generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Строки таблицы: 'Gemini 2.0 Flash Image Generation … Input image ($/image) $0.0001935 … Output image image ($/image) $0.04'; сноска: 'For an 1024x1024 image, it consumes 1290 tokens. Per image token count varies by image resolution.'"
+  },
+  {
+   "код": "E-49-22",
+   "вид": "правило",
+   "утверждение_en": "Prediction requests that lead to filtered responses are charged for the input only (stated for \"Other Google models\" billed by modality).",
+   "цитата": "Prediction requests that lead to filtered responses are charged for the input only.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models / Other Google models",
+   "модели": [
+    "Other Google models (Gemini кроме 2.0 и 2.5, Imagen и др. — по контексту раздела)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Раздел начинается: 'All Gemini models other than Gemini 2.0 or Gemini 2.5 are billed based on modalities such as characters, images, video/audio seconds.' Применимо ли к Nano Banana (оплата по токенам) — не ясно."
+  },
+  {
+   "код": "E-49-23",
+   "вид": "объяснение",
+   "утверждение_en": "With Imagen on Agent Platform you can generate novel images and edit images based on text prompts, or edit only parts of images using a mask area you define, along with other capabilities.",
+   "цитата": "With Imagen on Agent Platform, you can generate novel images and edit images based on text prompts you provide, or edit only parts of images using a mask area you define along with a host of other capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Other Google models / Imagen",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-49-24",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 pricing per image: Imagen 4 Ultra generation $0.06; Imagen 4 generation $0.04; Imagen 4 Fast generation $0.02; Imagen 4 upscaling (increase resolution of a generated image to 2K, 3K and 4K) $0.06.",
+   "цитата": "Imagen 4 Ultra\nImage generation\nGenerate an image\nText prompt\nImage\n$0.06\nImagen 4\nUpscaling\nIncrease resolution of a generated image to 2K, 3K, and 4K\nImage\nImage\n$0.06\nImagen 4\nImage generation\nGenerate an image\nText prompt\nImage\n$0.04\nImagen 4 Fast\nImage generation\nGenerate an image\nText prompt\nImage\n$0.02",
+   "источник_цитаты": "txt",
+   "раздел": "Other Google models / Imagen",
+   "модели": [
+    "Imagen 4 Ultra",
+    "Imagen 4",
+    "Imagen 4 Fast"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": "Цена за 1 изображение (Price / 1 count)."
+  },
+  {
+   "код": "E-49-25",
+   "вид": "факт",
+   "утверждение_en": "Imagen 3 (generate, edit, customize an image) costs $0.04 per image; Imagen 3 Fast generation $0.02; Imagen 2/Imagen 1 generation $0.02 and editing (mask-free or mask approach) $0.02; Imagen 1 upscaling to 2k and 4k $0.003.",
+   "цитата": "Imagen 3\nImage generation\nGenerate an image\nEdit an image\nCustomize an image\nText prompt\nImage\n$0.04\nImagen 3 Fast\nImage generation\nGenerate an image\nText prompt\nImage\n$0.02",
+   "источник_цитаты": "txt",
+   "раздел": "Other Google models / Imagen",
+   "модели": [
+    "Imagen 3",
+    "Imagen 3 Fast",
+    "Imagen 2",
+    "Imagen 1"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "редактирование"
+   ],
+   "заметка": "Далее в таблице: 'Imagen 2, Imagen 1 Image generation … $0.02', 'Imagen 2, Imagen 1 Image editing Edit an image using mask free or mask approach Image/Text prompt Image $0.02', 'Imagen 1 Upscaling Increase resolution of a generated image to 2k and 4k … $0.003'."
+  },
+  {
+   "код": "E-49-26",
+   "вид": "факт",
+   "утверждение_en": "Imagen 1 fine-tuning enables a user-provided \"subject\" to be used in Imagen prompts (few-shot training) with subject(s) given a text identifier and 4-8 images per subject; priced per node hour.",
+   "цитата": "Imagen 1\nFine-tuning\nEnable a \"subject\" provided by the user to used in Imagen prompts (few shot training)\nSubject(s) with text identifier and 4-8 images per subject",
+   "источник_цитаты": "txt",
+   "раздел": "Other Google models / Imagen",
+   "модели": [
+    "Imagen 1"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Механизм субъекта с текстовым идентификатором и 4-8 рефами — Imagen 1, не Nano Banana."
+  },
+  {
+   "код": "E-49-27",
+   "вид": "факт",
+   "утверждение_en": "Imagen Product Recontext re-imagines products in a new scene from 1-3 images of the same product plus a text prompt describing the desired scene ($0.12 per image); Virtual Try-On creates images of people wearing different clothes from 1 image of a person and 1 image of clothing ($0.06).",
+   "цитата": "Product Recontext\nRe-imagine products in a new scene\n1-3 Images of the same product and a text prompt describing desired scene\nImage\n$0.12\nVirtual Try-On\nCreate images of people wearing different clothes\n1 image of a person and 1 image of clothing\nImage\n$0.06",
+   "источник_цитаты": "txt",
+   "раздел": "Other Google models / Imagen",
+   "модели": [
+    "Imagen (Product Recontext, Virtual Try-On)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Входные требования к рефам: 1-3 фото одного товара; 1 фото человека + 1 фото одежды."
+  },
+  {
+   "код": "E-49-28",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Web Search and Image Search (& Web Grounding for Enterprise): 5,000 search queries per month at no charge aggregated across all Gemini 3 models; beyond that $14 per 1,000 search queries, each individual search query charged; billing starts January 5, 2026.",
+   "цитата": "Grounding with Google Web Search and Image Search, & Web Grounding for Enterprise*\nIncludes 5,000 search queries per month at no charge, aggregated across all Gemini 3 models.",
+   "источник_цитаты": "txt",
+   "раздел": "Agents / Pricing with grounding",
+   "модели": [
+    "all Gemini 3 models (родовая фраза)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "January 5, 2026 (начало биллинга)",
+   "тема": [
+    "цены",
+    "grounding"
+   ],
+   "заметка": "Единственное место страницы, где Image Search назван в цене grounding; стоит в разделе Agents после Deep Research Agent. 'A customer-submitted request to Gemini may result in one or more queries to Google Search (or Web Grounding for Enterprise). You will be charged for each individual search query performed.'"
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-49-29",
+   "вид": "факт",
+   "утверждение_en": "Image-output price ladder per 1M tokens (Standard, Global): Nano Banana 2 Lite $30, Nano Banana (2.5 Flash Image) $30, Nano Banana 2 $60, Nano Banana Pro $120; Flex/Batch is exactly half ($15/$15/$30/$60); Priority exists only for Nano Banana Pro ($216, 1.8×). Per 1K image: Lite $0.034, 2.5 Flash Image $0.039, NB2 $0.067, Pro $0.134.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini 3 / Gemini 2.5",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)",
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)",
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-49-2, E-49-3, E-49-4, E-49-5, E-49-6, E-49-7, E-49-8, E-49-9, E-49-16, E-49-18, E-49-13, E-49-14, E-49-15, E-49-19",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-49-30",
+   "вид": "приём",
+   "утверждение_en": "For Nano Banana Pro, 2K output costs the same as 1K (1120 tokens each, $0.134), so requesting 2K instead of 1K carries no extra output cost; for Nano Banana 2 each step up in size costs more (512: 747, 1K: 1120, 2K: 1680, 4K: 2520 tokens).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini 3 / сноски",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)",
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-49-13, E-49-14",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Вывод из сносок; как совет страница это не формулирует."
+  },
+  {
+   "код": "E-49-31",
+   "вид": "факт",
+   "утверждение_en": "Input images are counted differently per model: Nano Banana Pro 560 tokens per input image, Nano Banana 2 and Nano Banana 2 Lite 1120 tokens, Gemini 2.5/2.0 Flash Image ~1290 tokens for 1024x1024; at list input prices one reference image costs about $0.00112 on Pro, $0.00056 on NB2 and $0.00028 on Lite.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini 3 / Gemini 2.5 / Gemini 2.0",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)",
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-49-13, E-49-14, E-49-15, E-49-4, E-49-3, E-49-2, E-49-19, E-49-21",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": "Денежные суммы посчитаны из токенов × цена входа Standard Global (<=200K); на странице этих сумм нет."
+  },
+  {
+   "код": "E-49-32",
+   "вид": "факт",
+   "утверждение_en": "Among image models only Nano Banana 2 lists Non-global prices (10% above Global: $0.55 vs $0.50 input, $66 vs $60 image output), effective from July 1, 2026; Nano Banana 2 Lite and Nano Banana Pro list only Global.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini 3",
+   "модели": [
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image, Nano Banana 2)",
+    "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Gemini 3 Pro Image, Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-49-3, E-49-8, E-49-2, E-49-4, E-49-11",
+   "дата_единицы": "July 1, 2026",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Nano Banana Pro: в Standard и Flex/Batch тип входа 'Input (text, image)', а в Priority — 'Input (text, image, video, audio)'.",
+  "Nano Banana Pro во Flex/Batch: у 'Image Output' стоит сноска *** (это сноска про Gemini 3.1 Flash Image), а не ** (сноска Pro), как в Standard/Priority.",
+  "Gemini 2.5 Flash Image: в Standard тип входа 'Input (text, image)***', во Flex/Batch — 'Input (text, image, video)***'.",
+  "Раздел Other Google models: 'All Gemini models other than Gemini 2.0 or Gemini 2.5 are billed based on modalities such as characters, images, video/audio seconds' — противоречит таблицам Gemini 3 (включая image-модели), где биллинг по 1M токенов.",
+  "Правило подсчёта grounding разное: для Gemini 3 — 'You will be charged for each individual Grounding Query performed', для Gemini 2.5/2.0/1.5 — 'Even if multiple Grounding Queries are sent, there is only one charge for a Grounding Prompt' (разные поколения, но одно и то же понятие считается по-разному)."
+ ],
+ "не_сказано": [
+  "Дата публикации/обновления страницы отсутствует.",
+  "Цена выходной картинки Nano Banana 2 Lite для размеров кроме 1K; Nano Banana Pro для 512.",
+  "Взимается ли плата за выход, если генерация картинки заблокирована (IMAGE_SAFETY и т.п.); правило «filtered responses are charged for the input only» дано только в разделе Other Google models.",
+  "Входят ли Gemini 3 image-модели в «all Gemini 3 models» для бесплатных 5,000 grounding-запросов; поддерживают ли они Image Search grounding.",
+  "Стоимость thinking-токенов image-моделей отдельно не выделена (входит в «Text output (response and reasoning)»).",
+  "Нет цен Priority для Nano Banana 2 / 2 Lite и 2.5 Flash Image (N/A) — доступен ли для них Priority вообще, не пояснено.",
+  "Не сказано, как считаются токены входной картинки при разных media resolution."
+ ],
+ "сомнения": [
+  "Метаданные партии называли страницу «компактные блоки цен»; фактически релевантные блоки разбросаны по трём таблицам уровней обслуживания и сноскам.",
+  "Суммы в E-49-31 (стоимость одного референса) рассчитаны мной из токенов × цена входа, на странице их нет — помечено как выведенное.",
+  "Большие блоки партнёрских моделей (строки 2106-3447) и мега-меню Google Cloud (строки 3449-4591) прочитаны как обвязка / не про картинки; в них нет упоминаний image (проверено поиском)."
+ ]
+}

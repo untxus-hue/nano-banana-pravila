@@ -1,0 +1,768 @@
+{
+ "id": 172,
+ "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/",
+ "заголовок": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
+ "дата_в_тексте": "Jun 30, 2026 (в тексте); meta article:published_time 2026-06-30, JSON-LD datePublished 2026-06-30T16:00:00+00:00, dateModified 2026-06-30T16:19:32",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "авторы — Alisa Fortin и Anish Nangia, Product Manager, Google DeepMind; текст от лица Google («Today, we’re making…», «our fastest…»); JSON-LD publisher Organization «Google».",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс блога Google (для разработчиков) двух моделей: Nano Banana 2 Lite (gemini-3.1-flash-lite-image) — самая быстрая и дешёвая в семействе (4 с text-to-image, $0.034 за 1K-изображение), рекомендуемая замена Nano Banana (2.5 Flash Image, «legacy»); и видео-модели Gemini Omni Flash (gemini-omni-flash-preview). Ключевой для правил раздел — «Understanding the Nano Banana family»: позиционирование Lite/NB2/Pro/NB по оси скорость↔точность. Далее связка Lite→Omni (картинка как референс для видео), Interactions API (до трёх последовательных правок), демо-приложения (Anywhere, Space Lift, Omni product studio), SynthID. Повторно подчёркнуты скорость, стоимость, масштаб и рекомендация миграции с 2.5 Flash Image на Lite. Раздел про Omni (видео) в единицы не выносился — не про генерацию картинок.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite / Gemini 3.1 Flash Lite Image)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-2.5-flash-image (Nano Banana, legacy)",
+  "gemini-omni-flash-preview (Gemini Omni Flash, видео)",
+  "Veo 3.1 Fast (только как ориентир цены видео)"
+ ],
+ "структура": [
+  "Заголовок/лид/авторы",
+  "Вступление (две модели)",
+  "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+  "Understanding the Nano Banana family",
+  "Experience … video editing and generation with Gemini Omni Flash (Limitations)",
+  "Build with both models today (демо-приложения; карусель цитат партнёров картинками)",
+  "Build with safety and transparency",
+  "Start your project today",
+  "Posted in / Related stories / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Start building with Nano Banana 2 (строки 1-2)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content … Links Images RSS feed … Newsletter (строки 4-213)",
+   "итог": "ничего: обвязка сайта (меню blog.google, повтор заголовка, Share, регионы)"
+  },
+  {
+   "n": 3,
+   "начало": "Breadcrumb Home Innovation & AI Models (строки 215-221)",
+   "итог": "ничего: обвязка сайта (хлебные крошки, заголовок)"
+  },
+  {
+   "n": 4,
+   "начало": "Jun 30, 2026 | (строка 223)",
+   "итог": "ничего: метаданные (дата публикации)"
+  },
+  {
+   "n": 5,
+   "начало": "x.com Facebook LinkedIn Mail Copy link (строки 225-229)",
+   "итог": "ничего: обвязка сайта (Share)"
+  },
+  {
+   "n": 6,
+   "начало": "We’re making it easier to experiment",
+   "итог": "ничего: лид, повтор E-172-1 (часть про Omni — не про картинки)"
+  },
+  {
+   "n": 7,
+   "начало": "Alisa Fortin Product Manager, Google DeepMind (строки 233-237)",
+   "итог": "ничего: метаданные авторов (учтено в официальности)"
+  },
+  {
+   "n": 8,
+   "начало": "Share x.com Facebook LinkedIn Mail (строки 239-245)",
+   "итог": "ничего: обвязка сайта (Share)"
+  },
+  {
+   "n": 9,
+   "начало": "Today, we’re making it faster and",
+   "итог": "ничего: связка-вступление без содержания"
+  },
+  {
+   "n": 10,
+   "начало": "Introducing Nano Banana 2 Lite: Our",
+   "итог": "E-172-1, E-172-2"
+  },
+  {
+   "n": 11,
+   "начало": "Bringing Gemini Omni Flash to developers:",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (доступность Omni Flash в AI Studio, Gemini API, Enterprise Agent Platform, Gemini app, Flow)"
+  },
+  {
+   "n": 12,
+   "начало": "Building with generative media is often",
+   "итог": "ничего: маркетинг без содержания (связка изображение→видео раскрыта в E-172-15)"
+  },
+  {
+   "n": 13,
+   "начало": "Nano Banana 2 Lite: our fastest",
+   "итог": "ничего: заголовок раздела (повтор E-172-1)"
+  },
+  {
+   "n": 14,
+   "начало": "Watch a side-by-side comparison of image",
+   "итог": "ничего: подпись к видео-сравнению Lite vs NB2; «simple prompt» не приведён (см. не_сказано)"
+  },
+  {
+   "n": 15,
+   "начало": "Nano Banana 2 Lite (gemini-3.1-flash-lite-image) is",
+   "итог": "E-172-3, E-172-4"
+  },
+  {
+   "n": 16,
+   "начало": "Performance benchmarks for Nano Banana 2",
+   "итог": "ничего: подпись к графику бенчмарков (Elo, латентность, цена за 1K); чисел в тексте нет (учтено в E-172-24)"
+  },
+  {
+   "n": 17,
+   "начало": "Nano Banana 2 Lite shines in:",
+   "итог": "ничего: вводная фраза списка"
+  },
+  {
+   "n": 18,
+   "начало": "Latency: Delivers text-to-image outputs in",
+   "итог": "E-172-5, E-172-6"
+  },
+  {
+   "n": 19,
+   "начало": "Cost-efficiency ($0.034 per 1K image):",
+   "итог": "E-172-7, E-172-8"
+  },
+  {
+   "n": 20,
+   "начало": "Despite prioritizing speed, Nano Banana 2",
+   "итог": "E-172-9"
+  },
+  {
+   "n": 21,
+   "начало": "Understanding the Nano Banana family",
+   "итог": "ничего: заголовок раздела (под ним в html — картинка-таблица сравнения Lite/NB2/Pro, текста нет)"
+  },
+  {
+   "n": 22,
+   "начало": "Nano Banana 2 Lite (Gemini 3.1",
+   "итог": "E-172-10"
+  },
+  {
+   "n": 23,
+   "начало": "Nano Banana 2 (Gemini 3.1 Flash",
+   "итог": "E-172-11"
+  },
+  {
+   "n": 24,
+   "начало": "Nano Banana Pro (Gemini 3 Pro",
+   "итог": "E-172-12"
+  },
+  {
+   "n": 25,
+   "начало": "Nano Banana (Gemini 2.5 Flash Image):",
+   "итог": "E-172-13"
+  },
+  {
+   "n": 26,
+   "начало": "To see the full list of",
+   "итог": "ничего: навигация (ссылка на developer docs)"
+  },
+  {
+   "n": 27,
+   "начало": "Alongside its release on developer platforms,",
+   "итог": "E-172-14"
+  },
+  {
+   "n": 28,
+   "начало": "Experience high-quality, cost-efficient video editing and",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (заголовок раздела)"
+  },
+  {
+   "n": 29,
+   "начало": "Watch as someone uses Gemini Omni",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (подпись к видео)"
+  },
+  {
+   "n": 30,
+   "начало": "At Google I/O we introduced Gemini",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (id gemini-omni-flash-preview; входы текст+изображение+видео; $0.10 за секунду видео = цена Veo 3.1 Fast)"
+  },
+  {
+   "n": 31,
+   "начало": "Omni Flash shines in: … Text and action synchronization (строки 278-282)",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (разговорное редактирование видео, мультимодальные референсы, знание мира, синхронизация текста с действием)"
+  },
+  {
+   "n": 32,
+   "начало": "For comprehensive benchmarking information, please visit",
+   "итог": "ничего: навигация (ссылка на страницу Gemini Omni)"
+  },
+  {
+   "n": 33,
+   "начало": "Limitations: Omni offers 10-second … (строки 286-290)",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (ограничения: 10-секундные ролики; нет аудио-референсов и продления сцен в API; видео-референсы до 3 с принимаются схемой, но не обрабатываются; ограничения консистентности персонажа при смене сцен/панорамах)"
+  },
+  {
+   "n": 34,
+   "начало": "Gemini Omni is available in public",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (public preview, ссылка на docs)"
+  },
+  {
+   "n": 35,
+   "начало": "Build with both models today",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 36,
+   "начало": "The real magic happens when you",
+   "итог": "E-172-15, E-172-16"
+  },
+  {
+   "n": 37,
+   "начало": "To help you get started we",
+   "итог": "ничего: вводная фраза к демо"
+  },
+  {
+   "n": 38,
+   "начало": "Anywhere is a demo app built",
+   "итог": "E-172-17"
+  },
+  {
+   "n": 39,
+   "начало": "Space Lift is a demo interior",
+   "итог": "E-172-18"
+  },
+  {
+   "n": 40,
+   "начало": "Omni product studio is a demo",
+   "итог": "E-172-19"
+  },
+  {
+   "n": 41,
+   "начало": "[только html] карусель цитат партнёров (Astrocade, HubX, Latitude, Stan, Magnific, Agent Opus, Cartwheel, Flora)",
+   "итог": "ничего: отзывы партнёров только картинками, текста нет ни в .txt, ни в html"
+  },
+  {
+   "n": 42,
+   "начало": "Build with safety and transparency",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 43,
+   "начало": "Built on Google’s secure infrastructure, Gemini",
+   "итог": "E-172-20, E-172-21 (последняя фраза — ссылка на материал о верификации)"
+  },
+  {
+   "n": 44,
+   "начало": "Start your project today",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 45,
+   "начало": "Nano Banana 2 Lite resources: … prompting guide (строки 305-308)",
+   "итог": "ничего: навигация (AI Studio playground, Gemini API docs, Nano Banana prompting guide → ai.google.dev/gemini-api/docs/image-generation#prompt-guide)"
+  },
+  {
+   "n": 46,
+   "начало": "Gemini Omni Flash resources: … (строки 309-312)",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni Flash) (навигация)"
+  },
+  {
+   "n": 47,
+   "начало": "Posted in: Gemini models Related stories (строки 314-365)",
+   "итог": "ничего: обвязка сайта (теги, связанные истории)"
+  },
+  {
+   "n": 48,
+   "начало": "Privacy Terms Help More of Google (строки 367-373)",
+   "итог": "ничего: обвязка сайта (подвал, регионы)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-172-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite is Google's fastest, most cost-efficient image model in the Nano Banana family, built for high throughput, speed and scale.",
+   "цитата": "Introducing Nano Banana 2 Lite: Our fastest, most cost-efficient image model in the Nano Banana family yet, built for high throughput, speed and scale.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "То же в лиде (строка 231) и заголовке раздела (строка 252: «our fastest most cost-efficient Gemini Image model»)."
+  },
+  {
+   "код": "E-172-2",
+   "вид": "факт",
+   "утверждение_en": "At launch Nano Banana 2 Lite is available in Google AI Studio, the Gemini API and Gemini Enterprise Agent Platform, and is rolling out in consumer surfaces including AI Mode in Search and the Gemini app.",
+   "цитата": "Nano Banana 2 Lite is available today in Google AI Studio , Gemini API and Gemini Enterprise Agent Platform . It is also rolling out today in Google consumer surfaces including AI Mode in Search, Gemini app and many other products .",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Разработческие поверхности: AI Studio, Gemini API, Gemini Enterprise Agent Platform. Цитата содержит пробелы перед точкой/запятой, как в .txt."
+  },
+  {
+   "код": "E-172-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite (model ID gemini-3.1-flash-lite-image) is designed for rapid ideation and high-velocity developer pipelines where speed and cost are the primary constraints.",
+   "цитата": "Nano Banana 2 Lite (gemini-3.1-flash-lite-image) is designed for rapid ideation and high-velocity developer pipelines where speed and cost are the primary constraints.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "ID модели для API: gemini-3.1-flash-lite-image (без суффикса preview в тексте; ссылка AI Studio тоже ?model=gemini-3.1-flash-lite-image). Критерий выбора: когда главные ограничения — скорость и стоимость."
+  },
+  {
+   "код": "E-172-4",
+   "вид": "правило",
+   "утверждение_en": "Google recommends Nano Banana 2 Lite as the replacement for developers currently using the first Nano Banana (gemini-2.5-flash-image); you can swap it now for immediate benefits across key performance dimensions.",
+   "цитата": "It’s our recommended replacement for developers currently using our first version of Nano Banana (gemini-2.5-flash-image), you can swap it out now for immediate benefits across key performance dimensions.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Рекомендация миграции: замена 2.5 Flash Image → именно Lite (не NB2). Повторена в E-172-13."
+  },
+  {
+   "код": "E-172-5",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite delivers text-to-image outputs in 4 seconds.",
+   "цитата": "Latency: Delivers text-to-image outputs in 4 seconds.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Условия замера (разрешение, размер промпта, регион) не указаны."
+  },
+  {
+   "код": "E-172-6",
+   "вид": "приём",
+   "утверждение_en": "Because of its ~4 s latency, Nano Banana 2 Lite is ideal for interactive prototyping and rapid visual drafting.",
+   "цитата": "This makes it ideal for interactive prototyping and rapid visual drafting.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-172-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite costs $0.034 per 1K image.",
+   "цитата": "Cost-efficiency ($0.034 per 1K image)",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Цена за изображение разрешения 1K; цены для других разрешений не приведены."
+  },
+  {
+   "код": "E-172-8",
+   "вид": "приём",
+   "утверждение_en": "Nano Banana 2 Lite is a cost-efficient choice for drafting, ideating, managing operational budgets or low-bandwidth usage.",
+   "цитата": "A cost-efficient choice for developers focused on drafting, ideating, managing operational budgets or low-bandwidth usage.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-172-9",
+   "вид": "факт",
+   "утверждение_en": "Despite prioritizing speed, Nano Banana 2 Lite retains reliable prompt adherence, strong character consistency and legible in-image text rendering.",
+   "цитата": "Despite prioritizing speed, Nano Banana 2 Lite retains reliable prompt adherence, strong character consistency and legible in-image text rendering.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "рефы"
+   ],
+   "заметка": "Уровень текста описан как «legible» (читаемый) — скромнее, чем формулировки для NB2/Pro на других страницах; сравнения с ними здесь нет."
+  },
+  {
+   "код": "E-172-10",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is built for speed, optimized for near-real-time, high-volume workflows where ultra-low latency is critical.",
+   "цитата": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image): Built for speed. Optimized for near-real-time, high-volume workflows where ultra-low latency is critical.",
+   "источник_цитаты": "txt",
+   "раздел": "Understanding the Nano Banana family",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Карта семейства: техн. имя Gemini 3.1 Flash Lite Image."
+  },
+  {
+   "код": "E-172-11",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 (Gemini 3.1 Flash Image) is the generalist workhorse: high quality at lower latency, the best balance of performance and cost.",
+   "цитата": "Nano Banana 2 (Gemini 3.1 Flash Image): The generalist workhorse. Delivers high quality at a lower latency, offering the best balance of performance and cost.",
+   "источник_цитаты": "txt",
+   "раздел": "Understanding the Nano Banana family",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-172-12",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (Gemini 3 Pro Image) is optimized for complex, professional use cases, with the most robust control and advanced reasoning for tasks where accuracy matters more than speed.",
+   "цитата": "Nano Banana Pro (Gemini 3 Pro Image): Optimized for complex, professional use cases. It provides the most robust control and advanced reasoning for tasks where accuracy is more important than speed.",
+   "источник_цитаты": "txt",
+   "раздел": "Understanding the Nano Banana family",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-172-13",
+   "вид": "правило",
+   "утверждение_en": "Nano Banana (Gemini 2.5 Flash Image) is Google's legacy model; Google recommends upgrading to Nano Banana 2 Lite for better quality, faster speeds and lower costs.",
+   "цитата": "Nano Banana (Gemini 2.5 Flash Image): Our legacy model. We recommend upgrading to Nano Banana 2 Lite for better quality, faster speeds and lower costs.",
+   "источник_цитаты": "txt",
+   "раздел": "Understanding the Nano Banana family",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус «legacy» для 2.5 Flash Image на 2026-06-30. Утверждается, что Lite лучше и по качеству, и по скорости, и по цене."
+  },
+  {
+   "код": "E-172-14",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite is also coming to Google consumer surfaces including AI Mode in Search, the Gemini app, NotebookLM, Google Photos, Stitch, Google Flow and Google Ads.",
+   "цитата": "Alongside its release on developer platforms, Nano Banana 2 Lite is also coming to Google consumer surfaces including AI Mode in Search, Gemini app, NotebookLM, Google Photos, Stitch, Google Flow, and Google Ads.",
+   "источник_цитаты": "txt",
+   "раздел": "Nano Banana 2 Lite: our fastest most cost-efficient Gemini Image model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Полный список потребительских поверхностей (в строке 248 — «AI Mode in Search, Gemini app and many other products»)."
+  },
+  {
+   "код": "E-172-15",
+   "вид": "приём",
+   "утверждение_en": "Chain the models: use Nano Banana 2 Lite for high-speed image generation, then pass the generated image as a reference to Gemini Omni Flash to animate it into a video.",
+   "цитата": "The real magic happens when you chain these models together. Use Nano Banana 2 Lite as a high-speed image generation model, then pass that image as a reference to Gemini Omni Flash to animate it into a high-quality video.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with both models today",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni-flash-preview (Gemini Omni Flash, видео)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Изображение от Lite — референс для видео-модели. Как именно передавать — не показано."
+  },
+  {
+   "код": "E-172-16",
+   "вид": "лимит",
+   "утверждение_en": "Using the Interactions API for these multi-turn experiences maintains session history and context, so users can stack up to three sequential edits.",
+   "цитата": "Plus, by using the Interactions API for these multi-turn experiences, you can maintain session history and context so users can stack up to three sequential edits.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with both models today",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni-flash-preview (Gemini Omni Flash, видео)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Неясно, относится ли «up to three sequential edits» к правкам изображений, видео или цепочке обеих моделей; контекст — связка Lite→Omni. Interactions API → ai.google.dev/api/interactions-api. Хранение истории сессии — задача Interactions API, а не клиента."
+  },
+  {
+   "код": "E-172-17",
+   "вид": "факт",
+   "утверждение_en": "In the 'Anywhere' demo, a selfie or uploaded photo is instantly placed by Nano Banana 2 Lite at dozens of iconic landmarks; Omni Flash then turns a chosen image into an animated clip.",
+   "цитата": "Anywhere is a demo app built to showcase the strong capabilities of both models. Take a selfie or upload a photo, and the app uses Nano Banana 2 Lite to instantly transport you to dozens of iconic landmarks. Then, when an image is clicked, Omni Flash is used to turn the generated image into an animated clip of the location.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with both models today",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni-flash-preview (Gemini Omni Flash, видео)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Сценарий: одно фото человека → много сцен с сохранением облика (Lite). Промпты демо не приведены."
+  },
+  {
+   "код": "E-172-18",
+   "вид": "факт",
+   "утверждение_en": "The 'Space Lift' demo lets you upload a room photo and automatically generates fully realized interior concepts across various design aesthetics with Nano Banana 2 Lite, then Omni shows the design as a video.",
+   "цитата": "Space Lift is a demo interior design app powered by Nano Banana 2 Lite and Gemini Omni, that lets you instantly reimagine any room by uploading a photo. The app automatically generates fully realized concepts across various design aesthetics. Once you find a look you love, tap the video button to watch Omni bring the design to life with a cinematic showcase, letting you experience your new space in motion before making it a reality.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with both models today",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni (Gemini Omni, видео)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Сценарий: фото помещения → серия вариантов в разных дизайн-эстетиках."
+  },
+  {
+   "код": "E-172-19",
+   "вид": "факт",
+   "утверждение_en": "The 'Omni product studio' demo converts static images created by Nano Banana 2 Lite into cinematic e-commerce videos created by Gemini Omni.",
+   "цитата": "Omni product studio is a demo app that converts static images created by Nano Banana 2 Lite into cinematic e-commerce videos created by Gemini Omni. This demo illustrates building interactive media by merging multimodal inputs through quick interaction with an image-to-video output.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with both models today",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni (Gemini Omni, видео)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Продуктовые кадры Lite как вход для видео."
+  },
+  {
+   "код": "E-172-20",
+   "вид": "факт",
+   "утверждение_en": "Gemini Omni and Nano Banana 2 Lite use SynthID watermarking.",
+   "цитата": "Built on Google’s secure infrastructure, Gemini Omni and Nano Banana 2 Lite use SynthID watermarking.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with safety and transparency",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-omni (Gemini Omni, видео)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "О видимом водяном знаке ничего не сказано."
+  },
+  {
+   "код": "E-172-21",
+   "вид": "факт",
+   "утверждение_en": "You can verify AI content through the Gemini app, Gemini in Chrome or Search.",
+   "цитата": "You can verify AI content through the Gemini app, Gemini in Chrome or Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with safety and transparency",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Поверхности проверки SynthID-контента на дату статьи."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-172-22",
+   "вид": "правило",
+   "утверждение_en": "Choose within the Nano Banana family by the primary constraint: Nano Banana 2 Lite when speed/cost/volume dominate (near-real-time, drafting), Nano Banana 2 as the default balance of quality, latency and cost, Nano Banana Pro when accuracy and control matter more than speed; Nano Banana (2.5 Flash Image) is legacy and should be upgraded to Lite.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Understanding the Nano Banana family",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-172-3, E-172-10, E-172-11, E-172-12, E-172-13",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Страница даёт характеристики каждой модели, но не формулирует правило выбора одной фразой; «default» для NB2 — моё сокращение формулировки «generalist workhorse … best balance»."
+  },
+  {
+   "код": "E-172-23",
+   "вид": "факт",
+   "утверждение_en": "The migration advice for Nano Banana (gemini-2.5-flash-image) is stated twice and both times points to Nano Banana 2 Lite, not Nano Banana 2, as the replacement.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-172-4, E-172-13",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повторённый акцент страницы."
+  },
+  {
+   "код": "E-172-24",
+   "вид": "факт",
+   "утверждение_en": "Only Nano Banana 2 Lite gets concrete numbers on this page (4 s latency, $0.034 per 1K image); latency, price and Elo figures for Nano Banana 2 and Pro exist only in chart images, not in text.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-172-5, E-172-7 и подписей к графикам (строки 258 и alt-тексты html)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Строка 248: Lite «is also rolling out today in Google consumer surfaces…», строка 272: Lite «is also coming to Google consumer surfaces…» — «выкатывается сегодня» vs «придёт»; списки поверхностей также различаются (короткий с «many other products» vs полный из 7 продуктов). Расхождение формулировок, не чисел."
+ ],
+ "не_сказано": [
+  "«Simple prompt» из видео-сравнения Lite vs NB2 не приведён.",
+  "Поддерживаемые разрешения/соотношения сторон для Lite, условия замера 4 с (разрешение, длина промпта) не даны; цена указана только для 1K.",
+  "Поддерживает ли Lite thinking, grounding, сколько референсов принимает — не сказано.",
+  "Числа латентности/цены/Elo для NB2 и Pro есть только на картинках-графиках.",
+  "Что считается «edit» в пределе «up to three sequential edits» и относится ли он к изображениям — не уточнено.",
+  "О видимом водяном знаке ничего не сказано (только SynthID)."
+ ],
+ "сомнения": [
+  "Предел «up to three sequential edits» (E-172-16) сформулирован для «these multi-turn experiences» связки Lite+Omni через Interactions API; переносить его на чистое редактирование изображений — с осторожностью.",
+  "Раздел про Gemini Omni Flash (видео) целиком помечен «не про генерацию картинок»; его факты (цены, ограничения) перечислены в ведомости, но единицами не оформлены.",
+  "В html карусель цитат партнёров — только изображения, текста нет."
+ ]
+}

@@ -1,0 +1,1513 @@
+{
+ "id": 163,
+ "url": "https://developers.googleblog.com/en/how-to-prompt-gemini-2-5-flash-image-generation-for-the-best-results/",
+ "заголовок": "How to prompt Gemini 2.5 Flash Image Generation for the best results",
+ "дата_в_тексте": "AUG. 28, 2025",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "авторы Philipp Schmid (Developer Relations Engineer), Logan Kilpatrick (Group Product Manager), Alisa Fortin (Product Manager) — сотрудники Google (компания в подписи не названа, но это официальный Google Developers Blog; логотип 'Google for Developers', подвал Google Developer Program / Terms / Privacy)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Гайд Google Developers Blog (28.08.2025) по промптингу Gemini 2.5 Flash Image для разработчиков и пользователей AI Studio. Модель одна — Gemini 2.5 Flash Image (имя 'Nano Banana' на странице не встречается). Структура: вступление (нативная мультимодальность, 5 режимов, главный принцип 'Describe the scene, don't just list keywords'); 'Creating images from text' — 6 сценариев, каждый с шаблоном (Template) и примером (Example prompt); 'Editing images with text' — 4 сценария правки с шаблоном и примером; 'Best practices' — 7 советов (hyper-specific, дрейф персонажа, контекст и намерение, итерации, semantic negative prompts, формат, язык камеры); 'Limitations'; ссылки. Собственные термины: semantic negative prompts, iterative refinement, inpainting, multi-image to image. Повторные акценты: описательный язык вместо ключевых слов, итерация в разговоре, явная фиксация того, что сохраняется при правке.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (названа 'Gemini 2.5 Flash Image' и местами 'Gemini 2.5 Flash')"
+ ],
+ "структура": [
+  "Вступление (key things you can do, fundamental principle)",
+  "Creating images from text: 1. Photorealistic scenes; 2. Stylized illustrations & stickers; 3. Accurate text in images; 4. Product mockups & commercial photography; 5. Minimalist & negative space design; 6. Sequential art",
+  "Editing images with text: 1. Adding & removing elements; 2. Inpainting; 3. Style transfer; 4. Advanced composition",
+  "Best practices",
+  "Limitations",
+  "What's next? Start creating!"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::How to prompt Gemini 2.5",
+   "итог": "ничего: заголовок и шапка Google Developers Blog (строки 1-19)"
+  },
+  {
+   "n": 2,
+   "начало": "How to prompt Gemini 2.5 Flash Image Generation (заголовок статьи)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 3,
+   "начало": "AUG. 28, 2025",
+   "итог": "ничего: дата (использована в дата_в_тексте)"
+  },
+  {
+   "n": 4,
+   "начало": "Philipp Schmid Developer Relations Engineer Logan",
+   "итог": "ничего: авторы (второй признак официальности) и кнопки Share"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 2.5 Flash Image is our",
+   "итог": "E-163-1, E-163-2"
+  },
+  {
+   "n": 6,
+   "начало": "Here are the key things you",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 7,
+   "начало": "Text-to-image: Generate high-quality images from",
+   "итог": "E-163-3"
+  },
+  {
+   "n": 8,
+   "начало": "Image + text-to-image (editing): Provide",
+   "итог": "E-163-4"
+  },
+  {
+   "n": 9,
+   "начало": "Multi-image to image (composition & style",
+   "итог": "E-163-5"
+  },
+  {
+   "n": 10,
+   "начало": "Iterative refinement: Have a conversation to",
+   "итог": "E-163-6"
+  },
+  {
+   "n": 11,
+   "начало": "Text rendering: Generate images that contain",
+   "итог": "E-163-7"
+  },
+  {
+   "n": 12,
+   "начало": "This guide will teach you how",
+   "итог": "ничего: вводная к принципу"
+  },
+  {
+   "n": 13,
+   "начало": "Describe the scene, don't just list",
+   "итог": "E-163-8, E-163-9"
+  },
+  {
+   "n": 14,
+   "начало": "You can try these with code",
+   "итог": "ничего: ссылки на документацию и AI Studio"
+  },
+  {
+   "n": 15,
+   "начало": "Creating images from text The most",
+   "итог": "ничего: заголовок раздела и вводная фраза без содержания"
+  },
+  {
+   "n": 16,
+   "начало": "1. Photorealistic scenes For realistic images,",
+   "итог": "E-163-10"
+  },
+  {
+   "n": 17,
+   "начало": "Template: A photorealistic [shot type] of",
+   "итог": "E-163-11"
+  },
+  {
+   "n": 18,
+   "начало": "Example prompt: A photorealistic close-up portrait",
+   "итог": "E-163-12"
+  },
+  {
+   "n": 19,
+   "начало": "Example output: A photorealistic close-up portrait...",
+   "итог": "ничего: подпись к картинке-результату (повтор начала E-163-12)"
+  },
+  {
+   "n": 20,
+   "начало": "2. Stylized illustrations & stickers To",
+   "итог": "E-163-13"
+  },
+  {
+   "n": 21,
+   "начало": "Template: A [style] sticker of a",
+   "итог": "E-163-14"
+  },
+  {
+   "n": 22,
+   "начало": "Example prompt: A kawaii-style sticker of",
+   "итог": "E-163-15"
+  },
+  {
+   "n": 23,
+   "начало": "Example output: A kawaii-style sticker of...",
+   "итог": "ничего: подпись к результату (повтор E-163-15)"
+  },
+  {
+   "n": 24,
+   "начало": "3. Accurate text in images Gemini",
+   "итог": "E-163-16, E-163-17"
+  },
+  {
+   "n": 25,
+   "начало": "Template: Create a [image type] for",
+   "итог": "E-163-18"
+  },
+  {
+   "n": 26,
+   "начало": "Example prompt: Create a modern, minimalist",
+   "итог": "E-163-19"
+  },
+  {
+   "n": 27,
+   "начало": "Example output: Create a modern, minimalist logo...",
+   "итог": "ничего: подпись к результату (повтор E-163-19)"
+  },
+  {
+   "n": 28,
+   "начало": "4. Product mockups & commercial photography",
+   "итог": "E-163-20"
+  },
+  {
+   "n": 29,
+   "начало": "Template: A high-resolution, studio-lit product",
+   "итог": "E-163-21"
+  },
+  {
+   "n": 30,
+   "начало": "Example prompt: A high-resolution, studio-lit product",
+   "итог": "E-163-22"
+  },
+  {
+   "n": 31,
+   "начало": "Example output: A high-resolution, studio-lit product...",
+   "итог": "ничего: подпись к результату (повтор E-163-22)"
+  },
+  {
+   "n": 32,
+   "начало": "5. Minimalist & negative space design",
+   "итог": "E-163-23"
+  },
+  {
+   "n": 33,
+   "начало": "Template: A minimalist composition featuring a",
+   "итог": "E-163-24"
+  },
+  {
+   "n": 34,
+   "начало": "Example prompt: A minimalist composition featuring",
+   "итог": "E-163-25"
+  },
+  {
+   "n": 35,
+   "начало": "Example output: A minimalist composition featuring...",
+   "итог": "ничего: подпись к результату (повтор E-163-25)"
+  },
+  {
+   "n": 36,
+   "начало": "6. Sequential art (comic panel /",
+   "итог": "E-163-26"
+  },
+  {
+   "n": 37,
+   "начало": "Template: A single comic book panel",
+   "итог": "E-163-27"
+  },
+  {
+   "n": 38,
+   "начало": "Example prompt: A single comic book",
+   "итог": "E-163-28"
+  },
+  {
+   "n": 39,
+   "начало": "Example output: A single comic book panel...",
+   "итог": "ничего: подпись к результату (повтор E-163-28)"
+  },
+  {
+   "n": 40,
+   "начало": "Editing images with text This is",
+   "итог": "E-163-29"
+  },
+  {
+   "n": 41,
+   "начало": "1. Image editing: Adding & removing",
+   "итог": "E-163-30, E-163-31"
+  },
+  {
+   "n": 42,
+   "начало": "Template: Using the provided image of",
+   "итог": "E-163-32"
+  },
+  {
+   "n": 43,
+   "начало": "Example prompt: Using the provided image of my cat",
+   "итог": "E-163-33"
+  },
+  {
+   "n": 44,
+   "начало": "Example input & output: (кот)",
+   "итог": "ничего: подпись к картинке без текста"
+  },
+  {
+   "n": 45,
+   "начало": "2. Inpainting: editing a specific area",
+   "итог": "E-163-34"
+  },
+  {
+   "n": 46,
+   "начало": "Template: Using the provided image, change",
+   "итог": "E-163-35"
+  },
+  {
+   "n": 47,
+   "начало": "Example prompt: Using the provided image of a living room",
+   "итог": "E-163-36"
+  },
+  {
+   "n": 48,
+   "начало": "Example input & output: (гостиная)",
+   "итог": "ничего: подпись к картинке без текста"
+  },
+  {
+   "n": 49,
+   "начало": "3. Style transfer Provide a photo",
+   "итог": "E-163-37"
+  },
+  {
+   "n": 50,
+   "начало": "Template: Transform the provided photograph of",
+   "итог": "E-163-38"
+  },
+  {
+   "n": 51,
+   "начало": "Example prompt: Transform the provided photograph",
+   "итог": "E-163-39"
+  },
+  {
+   "n": 52,
+   "начало": "Example input & output: (город)",
+   "итог": "ничего: подпись к картинке без текста"
+  },
+  {
+   "n": 53,
+   "начало": "4. Advanced composition: Combining multiple images",
+   "итог": "E-163-40"
+  },
+  {
+   "n": 54,
+   "начало": "Template: Create a new image by",
+   "итог": "E-163-41"
+  },
+  {
+   "n": 55,
+   "начало": "Example prompt: Create a professional e-commerce",
+   "итог": "E-163-42"
+  },
+  {
+   "n": 56,
+   "начало": "Example input & output: (платье)",
+   "итог": "ничего: подпись к картинке без текста"
+  },
+  {
+   "n": 57,
+   "начало": "Best practices As you build, here",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 58,
+   "начало": "Be hyper-specific: The more detail you",
+   "итог": "E-163-43"
+  },
+  {
+   "n": 59,
+   "начало": "Fix character consistency drifts: If you",
+   "итог": "E-163-44"
+  },
+  {
+   "n": 60,
+   "начало": "Provide context and intent: Explain the",
+   "итог": "E-163-45"
+  },
+  {
+   "n": 61,
+   "начало": "Iterate and refine: Don't expect a",
+   "итог": "E-163-46, E-163-47, E-163-48"
+  },
+  {
+   "n": 62,
+   "начало": "Use \"semantic negative prompts\": Instead of",
+   "итог": "E-163-49"
+  },
+  {
+   "n": 63,
+   "начало": "Aspect ratios: When editing, Gemini 2.5",
+   "итог": "E-163-50, E-163-51, E-163-52, E-163-53"
+  },
+  {
+   "n": 64,
+   "начало": "Control the camera: Use photographic and",
+   "итог": "E-163-54"
+  },
+  {
+   "n": 65,
+   "начало": "Limitations As we continue to develop",
+   "итог": "ничего: заголовок и вводная о прозрачности"
+  },
+  {
+   "n": 66,
+   "начало": "While Gemini 2.5 Flash Image is",
+   "итог": "E-163-55, E-163-56"
+  },
+  {
+   "n": 67,
+   "начало": "We are actively working to improve",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 68,
+   "начало": "What's next? Start creating! You now",
+   "итог": "ничего: призыв практиковаться, без содержания"
+  },
+  {
+   "n": 69,
+   "начало": "Explore Gemini in Google AI Studio",
+   "итог": "ничего: ссылка на AI Studio"
+  },
+  {
+   "n": 70,
+   "начало": "Read the official documentation : For",
+   "итог": "ничего: ссылка на документацию"
+  },
+  {
+   "n": 71,
+   "начало": "Review pricing : Understand the costs",
+   "итог": "ничего: ссылка на цены, цифр нет"
+  },
+  {
+   "n": 72,
+   "начало": "Try the Image Editing Applet :",
+   "итог": "ничего: ссылка на апплет"
+  },
+  {
+   "n": 73,
+   "начало": "posted in: AI Best Practices Learn",
+   "итог": "ничего: обвязка (теги, связанные посты 2026 г., подвал Google for Developers)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-163-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is described as Google's latest, fastest and most efficient natively multimodal model (as of Aug 28, 2025).",
+   "цитата": "Gemini 2.5 Flash Image is our latest, fastest, and most efficient natively multimodal model.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "'latest' — на дату статьи."
+  },
+  {
+   "код": "E-163-2",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.5 Flash Image was trained from the ground up to process text and images in a single, unified step, which enables conversational editing, multi-image composition and logical reasoning about image content.",
+   "цитата": "It was trained from the ground up to process text and images in a single, unified step. This allows for powerful capabilities beyond simple image generation, such as conversational editing, multi-image composition, and logical reasoning about image content.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Механизм: нативная мультимодальность объясняет, почему возможны разговорная правка и композиция."
+  },
+  {
+   "код": "E-163-3",
+   "вид": "факт",
+   "утверждение_en": "Text-to-image: the model generates high-quality images from simple or complex text descriptions.",
+   "цитата": "Text-to-image: Generate high-quality images from simple or complex text descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Режим 1 из 5."
+  },
+  {
+   "код": "E-163-4",
+   "вид": "факт",
+   "утверждение_en": "Image + text-to-image (editing): provide an image and use text prompts to add, remove or modify elements, change the style, or adjust colors.",
+   "цитата": "Image + text-to-image (editing): Provide an image and use text prompts to add, remove, or modify elements, change the style, or adjust colors.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Режим 2 из 5."
+  },
+  {
+   "код": "E-163-5",
+   "вид": "факт",
+   "утверждение_en": "Multi-image to image: use multiple input images to compose a new scene or transfer the style from one image to another.",
+   "цитата": "Multi-image to image (composition & style transfer): Use multiple input images to compose a new scene or transfer the style from one image to another.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Режим 3 из 5."
+  },
+  {
+   "код": "E-163-6",
+   "вид": "факт",
+   "утверждение_en": "Iterative refinement: have a conversation to progressively refine the image over multiple turns with small adjustments.",
+   "цитата": "Iterative refinement: Have a conversation to progressively refine your image over multiple turns, making small adjustments.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Режим 4 из 5."
+  },
+  {
+   "код": "E-163-7",
+   "вид": "факт",
+   "утверждение_en": "Text rendering: the model can generate images containing clear, well-placed text, ideal for logos, diagrams and posters.",
+   "цитата": "Text rendering: Generate images that contain clear and well-placed text, ideal for logos, diagrams, and posters.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Режим 5 из 5."
+  },
+  {
+   "код": "E-163-8",
+   "вид": "правило",
+   "утверждение_en": "Fundamental principle: describe the scene, don't just list keywords.",
+   "цитата": "Describe the scene, don't just list keywords.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Названо 'one fundamental principle' — главное правило статьи."
+  },
+  {
+   "код": "E-163-9",
+   "вид": "объяснение",
+   "утверждение_en": "Because the model's core strength is deep language understanding, a narrative, descriptive paragraph will almost always produce a better, more coherent image than a list of disconnected words.",
+   "цитата": "The model's core strength is its deep language understanding. A narrative, descriptive paragraph will almost always produce a better, more coherent image than a simple list of disconnected words.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Обоснование E-163-8; 'almost always' — осторожность источника."
+  },
+  {
+   "код": "E-163-10",
+   "вид": "приём",
+   "утверждение_en": "For realistic images, think like a photographer: mentioning camera angles, lens types, lighting and fine details guides the model toward a photorealistic result.",
+   "цитата": "For realistic images, think like a photographer. Mentioning camera angles, lens types, lighting, and fine details will guide the model toward a photorealistic result.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 1. Photorealistic scenes",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Словарь фотографа как рычаг фотореализма."
+  },
+  {
+   "код": "E-163-11",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 1. Photorealistic scenes'.",
+   "цитата": "A photorealistic [shot type] of [subject], [action or expression], set in [environment]. The scene is illuminated by [lighting description], creating a [mood] atmosphere. Captured with a [camera/lens details], emphasizing [key textures and details]. The image should be in a [aspect ratio] format.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 1. Photorealistic scenes",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "форматы_разрешение"
+   ],
+   "заметка": "Порядок слотов: 'A photorealistic [shot type] of [subject]' → действие/выражение → окружение → свет → настроение → камера/объектив → акцент на фактурах → формат последним предложением."
+  },
+  {
+   "код": "E-163-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 1. Photorealistic scenes'.",
+   "цитата": "A photorealistic close-up portrait of an elderly Japanese ceramicist with deep, sun-etched wrinkles and a warm, knowing smile. He is carefully inspecting a freshly glazed tea bowl. The setting is his rustic, sun-drenched workshop. The scene is illuminated by soft, golden hour light streaming through a window, highlighting the fine texture of the clay. Captured with an 85mm portrait lens, resulting in a soft, blurred background (bokeh). The overall mood is serene and masterful. Vertical portrait orientation.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 1. Photorealistic scenes",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Заполняет шаблон E-163-11: тип кадра + субъект с деталями внешности → действие → место → свет ('soft, golden hour light streaming through a window') с тем, что он подчёркивает → объектив ('85mm portrait lens') и его эффект (bokeh) → настроение → формат словами ('Vertical portrait orientation.')."
+  },
+  {
+   "код": "E-163-13",
+   "вид": "правило",
+   "утверждение_en": "For stickers, icons or assets, be explicit about the style and request a white background if you need one.",
+   "цитата": "be explicit about the style and remember to request a white background if you need one.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 2. Stylized illustrations & stickers",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Фон не подразумевается — его надо просить."
+  },
+  {
+   "код": "E-163-14",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 2. Stylized illustrations & stickers'.",
+   "цитата": "A [style] sticker of a [subject], featuring [key characteristics] and a [color palette]. The design should have [line style] and [shading style]. The background must be white.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 2. Stylized illustrations & stickers",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Слоты: стиль + 'sticker' + субъект → ключевые черты → палитра → тип линии → тип затенения → жёсткое требование фона ('The background must be white.')."
+  },
+  {
+   "код": "E-163-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 2. Stylized illustrations & stickers'.",
+   "цитата": "A kawaii-style sticker of a happy red panda wearing a tiny bamboo hat. It's munching on a green bamboo leaf. The design features bold, clean outlines, simple cel-shading, and a vibrant color palette. The background must be white.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 2. Stylized illustrations & stickers",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Стиль первым ('kawaii-style sticker') → субъект с аксессуаром → действие → линии ('bold, clean outlines') → затенение ('simple cel-shading') → палитра → 'The background must be white.'"
+  },
+  {
+   "код": "E-163-16",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image can render text within images.",
+   "цитата": "Gemini 2.5 Flash Image can render text within images.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 3. Accurate text in images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-17",
+   "вид": "правило",
+   "утверждение_en": "For text in images, be clear about the exact text you want, describe the font style, and set the overall design.",
+   "цитата": "Be clear about the exact text you want, describe the font style, and set the overall design.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 3. Accurate text in images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Три составляющие: точный текст, стиль шрифта, общий дизайн."
+  },
+  {
+   "код": "E-163-18",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 3. Accurate text in images'.",
+   "цитата": "Create a [image type] for [brand/concept] with the text \"[text to render]\" in a [font style]. The design should be [style description], with a [color scheme].",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 3. Accurate text in images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Слоты: тип изображения + бренд/концепт → текст в двойных кавычках → стиль шрифта → стиль дизайна → цветовая схема."
+  },
+  {
+   "код": "E-163-19",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 3. Accurate text in images'.",
+   "цитата": "Create a modern, minimalist logo for a coffee shop called 'The Daily Grind'. The text should be in a clean, bold, sans-serif font. The design should feature a simple, stylized icon of a coffee bean seamlessly integrated with the text. The color scheme is black and white.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 3. Accurate text in images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Тип и стиль ('modern, minimalist logo') + назначение + название в одинарных кавычках → шрифт отдельным предложением → иконка и её связь с текстом → цветовая схема. Кавычки одинарные, хотя в шаблоне двойные."
+  },
+  {
+   "код": "E-163-20",
+   "вид": "факт",
+   "утверждение_en": "The product-shot pattern is for clean, professional product shots for e-commerce, advertising or branding.",
+   "цитата": "Create clean, professional product shots for e-commerce, advertising, or branding.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 4. Product mockups & commercial photography",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Назначение шаблона E-163-21."
+  },
+  {
+   "код": "E-163-21",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 4. Product mockups & commercial photography'.",
+   "цитата": "A high-resolution, studio-lit product photograph of a [product description] on a [background surface/description]. The lighting is a [lighting setup, e.g., three-point softbox setup] to [lighting purpose]. The camera angle is a [angle type] to showcase [specific feature]. Ultra-realistic, with sharp focus on [key detail]. [Aspect ratio].",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 4. Product mockups & commercial photography",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "форматы_разрешение"
+   ],
+   "заметка": "Слоты: 'A high-resolution, studio-lit product photograph of' + продукт → поверхность/фон → схема света (пример в шаблоне: 'three-point softbox setup') с целью света → ракурс и что он показывает → 'Ultra-realistic, with sharp focus on' → формат."
+  },
+  {
+   "код": "E-163-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 4. Product mockups & commercial photography'.",
+   "цитата": "A high-resolution, studio-lit product photograph of a minimalist ceramic coffee mug in matte black, presented on a polished concrete surface. The lighting is a three-point softbox setup designed to create soft, diffused highlights and eliminate harsh shadows. The camera angle is a slightly elevated 45-degree shot to showcase its clean lines. Ultra-realistic, with sharp focus on the steam rising from the coffee. Square image.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 4. Product mockups & commercial photography",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Заполненный шаблон: у света указана цель ('to create soft, diffused highlights and eliminate harsh shadows'), у ракурса — угол ('slightly elevated 45-degree shot') и что показывает; фокус на детали (пар); формат словами ('Square image.')."
+  },
+  {
+   "код": "E-163-23",
+   "вид": "приём",
+   "утверждение_en": "Use a minimalist, negative-space composition to create backgrounds for websites, presentations or marketing materials where you plan to overlay text.",
+   "цитата": "Create backgrounds for websites, presentations, or marketing materials where you plan to overlay text.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 5. Minimalist & negative space design",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "текст_в_кадре"
+   ],
+   "заметка": "Назначение шаблона E-163-24: место под будущий текст."
+  },
+  {
+   "код": "E-163-24",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 5. Minimalist & negative space design'.",
+   "цитата": "A minimalist composition featuring a single [subject] positioned in the [bottom-right/top-left/etc.] of the frame. The background is a vast, empty [color] canvas, creating significant negative space. Soft, subtle lighting. [Aspect ratio].",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 5. Minimalist & negative space design",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "форматы_разрешение"
+   ],
+   "заметка": "Слоты: один субъект + его положение в кадре ('[bottom-right/top-left/etc.]') → пустой фон заданного цвета, 'significant negative space' → мягкий свет → формат."
+  },
+  {
+   "код": "E-163-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 5. Minimalist & negative space design'.",
+   "цитата": "A minimalist composition featuring a single, delicate red maple leaf positioned in the bottom-right of the frame. The background is a vast, empty off-white canvas, creating significant negative space for text. Soft, diffused lighting from the top left. Square image.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 5. Minimalist & negative space design",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Положение объекта задано словами ('bottom-right of the frame'), назначение пустоты названо ('negative space for text'), направление света ('from the top left'), формат 'Square image.'"
+  },
+  {
+   "код": "E-163-26",
+   "вид": "приём",
+   "утверждение_en": "For sequential art (storyboards, comic strips), build narratives panel by panel by focusing on clear scene descriptions.",
+   "цитата": "Create compelling visual narratives, panel by panel, ideal for developing storyboards, comic strips, or any form of sequential art by focusing on clear scene descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 6. Sequential art (comic panel / storyboard)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Панель за панелью, с ясным описанием сцены."
+  },
+  {
+   "код": "E-163-27",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Creating images from text / 6. Sequential art (comic panel / storyboard)'.",
+   "цитата": "A single comic book panel in a [art style] style. In the foreground, [character description and action]. In the background, [setting details]. The panel has a [dialogue/caption box] with the text \"[Text]\". The lighting creates a [mood] mood. [Aspect ratio].",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 6. Sequential art (comic panel / storyboard)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Слоты: 'A single comic book panel in a [art style] style' → передний план (персонаж + действие) → задний план → плашка диалога/подписи с текстом в двойных кавычках → свет и настроение → формат."
+  },
+  {
+   "код": "E-163-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Creating images from text / 6. Sequential art (comic panel / storyboard)'.",
+   "цитата": "A single comic book panel in a gritty, noir art style with high-contrast black and white inks. In the foreground, a detective in a trench coat stands under a flickering streetlamp, rain soaking his shoulders. In the background, the neon sign of a desolate bar reflects in a puddle. A caption box at the top reads \"The city was a tough place to keep secrets.\" The lighting is harsh, creating a dramatic, somber mood. Landscape.",
+   "источник_цитаты": "txt",
+   "раздел": "Creating images from text / 6. Sequential art (comic panel / storyboard)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Стиль с техникой ('gritty, noir art style with high-contrast black and white inks') → передний план → задний план → положение подписи ('A caption box at the top reads') + текст в кавычках → свет и настроение → формат одним словом ('Landscape.')."
+  },
+  {
+   "код": "E-163-29",
+   "вид": "факт",
+   "утверждение_en": "With Gemini 2.5 Flash Image you can provide one or more images alongside text prompts for editing, composition and style transfer.",
+   "цитата": "You can provide one or more images alongside your text prompts for editing, composition, and style transfer.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-30",
+   "вид": "инструкция",
+   "утверждение_en": "To add or remove elements, provide an image and simply describe the change you want.",
+   "цитата": "Provide an image and simply describe the change you want.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 1. Image editing: Adding & removing elements",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-31",
+   "вид": "объяснение",
+   "утверждение_en": "When editing, the model analyzes the original image's style, lighting and perspective to make the edit look natural and to maintain character consistency across a series of images.",
+   "цитата": "The model will analyze the original image's style, lighting, and perspective to make the edit look natural and maintain character consistency across a series of images.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 1. Image editing: Adding & removing elements",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": "Механизм правки: модель подстраивает правку под стиль, свет и перспективу оригинала."
+  },
+  {
+   "код": "E-163-32",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Editing images with text / 1. Image editing: Adding & removing elements'.",
+   "цитата": "Using the provided image of [subject], please [add/remove/modify] [element] to/from the scene. Ensure the change is [description of how the change should integrate].",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 1. Image editing: Adding & removing elements",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Слоты: 'Using the provided image of [subject], please [add/remove/modify] [element]' → как правка должна вписаться ('Ensure the change is …')."
+  },
+  {
+   "код": "E-163-33",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Editing images with text / 1. Image editing: Adding & removing elements'.",
+   "цитата": "Using the provided image of my cat, please add a small, knitted wizard hat on its head. Make it look like it's sitting comfortably and matches the soft lighting of the photo.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 1. Image editing: Adding & removing elements",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Ссылка на входное фото ('Using the provided image of my cat') → что добавить с деталями → как вписать: поза и совпадение со светом фото ('matches the soft lighting of the photo')."
+  },
+  {
+   "код": "E-163-34",
+   "вид": "факт",
+   "утверждение_en": "You can conversationally tell Gemini 2.5 Flash Image to edit only one part of an image while leaving the rest completely untouched (inpainting).",
+   "цитата": "You can conversationally tell Gemini 2.5 Flash Image to edit only one part of an image while leaving the rest completely untouched.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 2. Inpainting: editing a specific area",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Инпейнтинг без маски — словами."
+  },
+  {
+   "код": "E-163-35",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Editing images with text / 2. Inpainting: editing a specific area'.",
+   "цитата": "Using the provided image, change only the [specific element] to [new element/description]. Keep everything else in the image exactly the same, preserving the original style, lighting, and composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 2. Inpainting: editing a specific area",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Слоты: 'change only the [specific element] to [new element]' + явная оговорка сохранения ('Keep everything else in the image exactly the same, preserving the original style, lighting, and composition.')."
+  },
+  {
+   "код": "E-163-36",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Editing images with text / 2. Inpainting: editing a specific area'.",
+   "цитата": "Using the provided image of a living room, change only the blue sofa to be a vintage, brown leather chesterfield sofa. Keep the rest of the room, including the pillows on the sofa and the lighting, unchanged.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 2. Inpainting: editing a specific area",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "'change only' + что именно (синий диван) → на что (винтажный коричневый честерфилд) → перечень того, что оставить ('including the pillows on the sofa and the lighting, unchanged')."
+  },
+  {
+   "код": "E-163-37",
+   "вид": "инструкция",
+   "утверждение_en": "For style transfer, provide a photo and ask the model to recreate its content in a specific style or art movement.",
+   "цитата": "Provide a photo and ask the model to recreate its content in the specific style or art movement.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 3. Style transfer",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-38",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Editing images with text / 3. Style transfer'.",
+   "цитата": "Transform the provided photograph of [subject] into the artistic style of [artist/art style]. Preserve the original composition but render it with [description of stylistic elements].",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 3. Style transfer",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Слоты: 'Transform the provided photograph of [subject] into the artistic style of [artist/art style]' + 'Preserve the original composition but render it with [stylistic elements]'."
+  },
+  {
+   "код": "E-163-39",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Editing images with text / 3. Style transfer'.",
+   "цитата": "Transform the provided photograph of a modern city street at night into the artistic style of Vincent van Gogh's 'Starry Night'. Preserve the original composition of buildings and cars, but render all elements with swirling, impasto brushstrokes and a dramatic palette of deep blues and bright yellows.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 3. Style transfer",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Стиль назван через художника и конкретную картину ('Vincent van Gogh's 'Starry Night'') → что сохранить (композиция зданий и машин) → чем выразить стиль (мазки 'swirling, impasto' + палитра)."
+  },
+  {
+   "код": "E-163-40",
+   "вид": "факт",
+   "утверждение_en": "You can provide multiple images as context to create a brand-new composite scene, e.g. for product mockups or creative collages.",
+   "цитата": "Provide multiple images as context to create a brand new, composite scene. This is perfect for product mockups or creative collages.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 4. Advanced composition: Combining multiple images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-41",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt template for 'Editing images with text / 4. Advanced composition: Combining multiple images'.",
+   "цитата": "Create a new image by combining the elements from the provided images. Take the [element from image 1] and place it with/on the [element from image 2]. The final image should be a [description of the final scene].",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 4. Advanced composition: Combining multiple images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Слоты: 'Create a new image by combining the elements from the provided images' → 'Take the [element from image 1] and place it with/on the [element from image 2]' → описание итоговой сцены. Рефы адресуются порядковыми номерами."
+  },
+  {
+   "код": "E-163-42",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt for 'Editing images with text / 4. Advanced composition: Combining multiple images'.",
+   "цитата": "Create a professional e-commerce fashion photo. Take the blue floral dress from the first image and let the woman from the second image wear it. Generate a realistic, full-body shot of the woman wearing the dress, with the lighting and shadows adjusted to match an outdoor environment.",
+   "источник_цитаты": "txt",
+   "раздел": "Editing images with text / 4. Advanced composition: Combining multiple images",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Жанр результата первым ('professional e-commerce fashion photo') → перенос по номерам рефов ('from the first image', 'from the second image') → тип плана ('full-body shot') → подгонка света и теней под новую среду."
+  },
+  {
+   "код": "E-163-43",
+   "вид": "правило",
+   "утверждение_en": "Be hyper-specific: the more detail you provide, the more control you have; e.g. instead of 'fantasy armor', describe 'ornate elven plate armor, etched with silver leaf patterns, with a high collar and pauldrons shaped like falcon wings'.",
+   "цитата": "Be hyper-specific: The more detail you provide, the more control you have. Instead of \"fantasy armor,\" describe it: \"ornate elven plate armor, etched with silver leaf patterns, with a high collar and pauldrons shaped like falcon wings.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Пример показывает, чем раскрывать общее слово: тип, материал/отделка, узор, отдельные детали формы."
+  },
+  {
+   "код": "E-163-44",
+   "вид": "приём",
+   "утверждение_en": "If a character's features begin to drift after many iterative edits, you can restart a new conversation with a detailed description to retain consistency.",
+   "цитата": "Fix character consistency drifts: If you notice a character's features begin to drift after many iterative edits, you can restart a new conversation with a detailed description to retain consistency.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "Длинная цепочка правок вызывает дрейф черт персонажа; лечится новым разговором с подробным описанием."
+  },
+  {
+   "код": "E-163-45",
+   "вид": "правило",
+   "утверждение_en": "Provide context and intent: explain the purpose of the image; e.g. 'Create a logo for a high-end, minimalist skincare brand' yields better results than just 'Create a logo.'",
+   "цитата": "Provide context and intent: Explain the purpose of the image. For example, \"Create a logo for a high-end, minimalist skincare brand\" will yield better results than just \"Create a logo.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Назначение изображения — часть промпта."
+  },
+  {
+   "код": "E-163-46",
+   "вид": "правило",
+   "утверждение_en": "Iterate and refine: don't expect a perfect image on the first try; use the model's conversational nature to make small changes with follow-up prompts.",
+   "цитата": "Iterate and refine: Don't expect a perfect image on the first try. Use the conversational nature of the model to make small changes.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-47",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example follow-up prompt for iterative refinement.",
+   "цитата": "That's great, but can you make the lighting a bit warmer?",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разговорная уточняющая правка одного параметра (температура света)."
+  },
+  {
+   "код": "E-163-48",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example follow-up prompt for iterative refinement.",
+   "цитата": "Keep everything the same, but change the character's expression to be more serious.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Сначала оговорка сохранения, потом одно изменение."
+  },
+  {
+   "код": "E-163-49",
+   "вид": "приём",
+   "утверждение_en": "Use 'semantic negative prompts': instead of saying 'no cars', describe the desired scene positively, e.g. 'an empty, deserted street with no signs of traffic'.",
+   "цитата": "Use \"semantic negative prompts\": Instead of saying \"no cars,\" describe the desired scene positively: \"an empty, deserted street with no signs of traffic.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Отрицание переводится в описание желаемого состояния сцены."
+  },
+  {
+   "код": "E-163-50",
+   "вид": "факт",
+   "утверждение_en": "When editing, Gemini 2.5 Flash Image generally preserves the input image's aspect ratio.",
+   "цитата": "When editing, Gemini 2.5 Flash Image generally preserves the input image's aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices / Aspect ratios",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "редактирование"
+   ],
+   "заметка": "'generally' — не всегда."
+  },
+  {
+   "код": "E-163-51",
+   "вид": "приём",
+   "утверждение_en": "If the aspect ratio is not preserved during editing, be explicit in the prompt, e.g. 'Update the input image... Do not change the input aspect ratio.'",
+   "цитата": "If it doesn't, be explicit in your prompt: \"Update the input image... Do not change the input aspect ratio.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices / Aspect ratios",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "редактирование"
+   ],
+   "заметка": "Многоточие — в самом тексте источника (внутри примера), не сокращение цитаты."
+  },
+  {
+   "код": "E-163-52",
+   "вид": "факт",
+   "утверждение_en": "If you upload multiple images with different aspect ratios, the model adopts the aspect ratio of the last image provided.",
+   "цитата": "If you upload multiple images with different aspect ratios, the model will adopt the aspect ratio of the last image provided.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices / Aspect ratios",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "рефы"
+   ],
+   "заметка": "Порядок рефов определяет формат результата."
+  },
+  {
+   "код": "E-163-53",
+   "вид": "приём",
+   "утверждение_en": "If you need a specific ratio for a new image and prompting doesn't produce it, the best practice is to provide a reference image with the correct dimensions as part of the prompt.",
+   "цитата": "If you need a specific ratio for a new image and prompting doesn't produce it, the best practice is to provide a reference image with the correct dimensions as part of your prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices / Aspect ratios",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "рефы"
+   ],
+   "заметка": "Названо 'the best practice'. Параметр API для формата в статье не упоминается."
+  },
+  {
+   "код": "E-163-54",
+   "вид": "приём",
+   "утверждение_en": "Control the camera with photographic and cinematic language; terms like wide-angle shot, macro shot, low-angle perspective, 85mm portrait lens and Dutch angle give precise control over the final image.",
+   "цитата": "Control the camera: Use photographic and cinematic language to control the composition. Terms like wide-angle shot , macro shot , low-angle perspective , 85mm portrait lens , and Dutch angle give you precise control over the final image.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Термины в html оформлены как <code>."
+  },
+  {
+   "код": "E-163-55",
+   "вид": "ограничение",
+   "утверждение_en": "Achieving perfection on the first attempt with highly nuanced requests can require some iteration.",
+   "цитата": "achieving perfection on the first attempt with highly nuanced requests can require some iteration.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-163-56",
+   "вид": "ограничение",
+   "утверждение_en": "Generating complex typography or maintaining absolute consistency of character features across multiple images sometimes needs refinement through follow-up prompts.",
+   "цитата": "generating complex typography or maintaining absolute consistency of character features across multiple images sometimes needs refinement through follow-up prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "рефы"
+   ],
+   "заметка": "Две названные слабости: сложная типографика и абсолютная согласованность персонажа."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-163-57",
+   "вид": "объяснение",
+   "утверждение_en": "All six text-to-image templates are full descriptive sentences with slots, opening with the image type/medium (photorealistic shot, sticker, logo/image type, studio product photograph, minimalist composition, comic panel), then subject and details, then lighting/mood, and most end with an aspect-ratio slot; the filled examples end with orientation words ('Vertical portrait orientation.', 'Square image.', 'Landscape.').",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Creating images from text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-163-11, E-163-14, E-163-18, E-163-21, E-163-24, E-163-27, E-163-12, E-163-22, E-163-25, E-163-28",
+   "тема": [
+    "промптинг",
+    "форматы_разрешение"
+   ],
+   "заметка": "Структура согласована с принципом E-163-8 (описывать сцену, а не перечислять слова)."
+  },
+  {
+   "код": "E-163-58",
+   "вид": "факт",
+   "утверждение_en": "The article controls aspect ratio only through prompt wording, the input image's ratio when editing, the last uploaded image's ratio, or a correctly sized reference image; it never mentions an API parameter for aspect ratio.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Best practices / Aspect ratios",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-163-11, E-163-12, E-163-50, E-163-51, E-163-52, E-163-53",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Для gemini-2.5-flash-image на дату статьи."
+  },
+  {
+   "код": "E-163-59",
+   "вид": "приём",
+   "утверждение_en": "All editing templates explicitly reference the input ('Using the provided image…', 'Transform the provided photograph…', 'combining the elements from the provided images') and most state what must be preserved (everything else, original style, lighting, composition).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Editing images with text",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-163-32, E-163-35, E-163-38, E-163-41, E-163-36, E-163-39",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Повторяющаяся форма правок."
+  },
+  {
+   "код": "E-163-60",
+   "вид": "приём",
+   "утверждение_en": "Iteration is the page's repeated theme (a named capability, a best practice and both limitations), qualified by one caveat: after many iterative edits character features can drift, in which case restart a new conversation with a detailed description.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Best practices",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-163-6, E-163-44, E-163-46, E-163-55, E-163-56",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Итерация полезна, но длинная цепочка правок имеет цену."
+  }
+ ],
+ "противоречия_внутри": [
+  "Имя модели плавает: 'Gemini 2.5 Flash Image' и просто 'Gemini 2.5 Flash' ('What makes Gemini 2.5 Flash unique', 'better results from Gemini 2.5 Flash') — это разные модели в линейке, но статья их не различает.",
+  "Шаблон текста (E-163-18) ставит текст в двойные кавычки, а пример (E-163-19) — название в одинарные; не противоречие, а разнобой."
+ ],
+ "не_сказано": [
+  "Нет параметра API для формата/разрешения — только текст, формат входной картинки или реф нужного размера.",
+  "Нет чисел: сколько входных картинок можно подать, какие форматы поддерживаются, какие разрешения.",
+  "Нет упоминания SynthID/водяного знака, safety-фильтров, цен (только ссылка 'Review pricing').",
+  "Не сказано, после скольких правок начинается дрейф персонажа.",
+  "Нет кода, хотя статья для разработчиков (ссылка на документацию)."
+ ],
+ "сомнения": [
+  "Второй признак — подпись авторов-сотрудников Google без явного названия компании в подписи; принят вместе с брендингом Google for Developers.",
+  "Цитата E-163-51 содержит многоточие — это часть исходного примера ('Update the input image... Do not change…'), не сокращение.",
+  "Связанные посты в подвале датированы сентябрём 2026 — это снимок страницы 2026 г., сама статья от 28.08.2025."
+ ]
+}

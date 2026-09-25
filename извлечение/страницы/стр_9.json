@@ -1,0 +1,669 @@
+{
+ "id": 9,
+ "url": "https://ai.google.dev/gemini-api/docs/grounding",
+ "заголовок": "Grounding with Google Search",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0), 'Last updated 2026-09-23 UTC.'; текст от лица Google ('For billing purposes, we ignore ...')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Общий гайд Gemini API по Grounding with Google Search для разработчиков, на Interactions API: вводная и польза (точность, актуальность, цитаты), пример кода на 5 языках (gemini-3.8-flash, tools google_search), как работает (5 шагов: промпт → анализ → поиск → обработка → ответ), структура ответа (steps thought/google_search_call/google_search_result/model_output, url_citation-аннотации), извлечение цитат (код на 4 языках), цены (Gemini 3 — за каждый выполненный запрос, 2.5 и старше — за промпт), таблица поддерживаемых моделей (в т.ч. Gemini 3.1 Flash Image Preview и Gemini 3 Pro Image Preview), замечание про google_search_retrieval, комбинации инструментов. Про картинки — только две строки таблицы; всё остальное про текст. Повторно подчёркнуто: модель сама решает, искать ли и какие запросы.",
+ "модели_на_странице": [
+  "Gemini 3.1 Flash Image Preview",
+  "Gemini 3 Pro Image Preview",
+  "gemini-3.8-flash (примеры)",
+  "Gemini 3.8/3.7/3.6 Flash, 3.5 Flash-Lite, 3.5 Flash, 3.1 Pro Preview, 3 Flash Preview, 2.5 Pro, 2.5 Flash, 2.5 Flash-Lite, 2.0 Flash (таблица)"
+ ],
+ "структура": [
+  "Обвязка сайта (строки 2-188, идентична стр. 2)",
+  "Grounding with Google Search: вводная, польза, пример кода",
+  "How grounding with Google Search works",
+  "Understanding the grounding response",
+  "Attributing sources with inline citations",
+  "Pricing",
+  "Supported models (+ Note)",
+  "Supported tool combinations",
+  "What's next",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Grounding with Google Search | Gemini",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev, строки 2-181 — совпадает до байта со страницей 2 (diff строк 2-188)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 5,
+   "начало": "Grounding with Google Search",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "Grounding with Google Search connects the",
+   "итог": "E-9-1"
+  },
+  {
+   "n": 7,
+   "начало": "Grounding helps you build applications that",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 8,
+   "начало": "Increase factual accuracy: Reduce model hallucinations",
+   "итог": "E-9-2"
+  },
+  {
+   "n": 9,
+   "начало": "Access real-time information: Answer questions about",
+   "итог": "E-9-3"
+  },
+  {
+   "n": 10,
+   "начало": "Provide citations: Build user trust by",
+   "итог": "E-9-4"
+  },
+  {
+   "n": 11,
+   "начало": "Python from google import genai client",
+   "итог": "E-9-5 (кодовые блоки Python/JavaScript/Java/Go/REST, строки 204-547; промпт 'Who won the euro 2024?' — текстовый, не про картинки)"
+  },
+  {
+   "n": 12,
+   "начало": "How grounding with Google Search works",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 13,
+   "начало": "When you enable the google_search tool,",
+   "итог": "E-9-6 (схема img alt 'grounding-overview' — без текста)"
+  },
+  {
+   "n": 14,
+   "начало": "User Prompt: Your application sends a",
+   "итог": "ничего: вводный шаг схемы (промпт уходит с включённым google_search) — учтён в E-9-5, E-9-6"
+  },
+  {
+   "n": 15,
+   "начало": "Prompt Analysis: The model analyzes the",
+   "итог": "E-9-7"
+  },
+  {
+   "n": 16,
+   "начало": "Google Search: If needed, the model",
+   "итог": "E-9-8"
+  },
+  {
+   "n": 17,
+   "начало": "Search Results Processing: The model processes",
+   "итог": "E-9-9"
+  },
+  {
+   "n": 18,
+   "начало": "Grounded Response: The API returns a",
+   "итог": "E-9-10"
+  },
+  {
+   "n": 19,
+   "начало": "Understanding the grounding response When a",
+   "итог": "ничего: повтор E-9-10 (inline annotations в тексте ответа)"
+  },
+  {
+   "n": 20,
+   "начало": "{ \"steps\" : [ { \"type\"",
+   "итог": "ничего: пример JSON ответа (текстовый ответ про Euro 2024: thought, google_search_call, google_search_result, model_output с url_citation), строки 584-711; структура учтена в E-9-10"
+  },
+  {
+   "n": 21,
+   "начало": "The key fields in the response:",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 22,
+   "начало": "google_search_call : Contains the search queries",
+   "итог": "ничего: повтор E-9-10 (поле с выполненными запросами)"
+  },
+  {
+   "n": 23,
+   "начало": "google_search_result : Contains search_suggestions ,",
+   "итог": "E-9-11"
+  },
+  {
+   "n": 24,
+   "начало": "text with annotations : The model's synthesized",
+   "итог": "ничего: не про генерацию картинок (url_citation со start_index/end_index в тексте ответа)"
+  },
+  {
+   "n": 25,
+   "начало": "Grounding with Google Search can also",
+   "итог": "ничего: не про генерацию картинок (комбинация с URL context; image-модели не названы)"
+  },
+  {
+   "n": 26,
+   "начало": "Attributing sources with inline citations The",
+   "итог": "ничего: не про генерацию картинок (извлечение текстовых цитат)"
+  },
+  {
+   "n": 27,
+   "начало": "Python for step in interaction .",
+   "итог": "ничего: код без промпта (вывод цитат Python/JavaScript/Java/Go), строки 754-1676"
+  },
+  {
+   "n": 28,
+   "начало": "The output will show the text",
+   "итог": "ничего: пример вывода текстовых цитат, строки 1677-1684"
+  },
+  {
+   "n": 29,
+   "начало": "Pricing When you use Grounding with",
+   "итог": "E-9-12, E-9-13, E-9-14"
+  },
+  {
+   "n": 30,
+   "начало": "For detailed pricing information, see the",
+   "итог": "ничего: ссылка на страницу цен"
+  },
+  {
+   "n": 31,
+   "начало": "Supported models You can find full",
+   "итог": "ничего: вводная к таблице (ссылка на model overview)"
+  },
+  {
+   "n": 32,
+   "начало": "Model Grounding with Google Search",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 33,
+   "начало": "Gemini 3.8 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 34,
+   "начало": "Gemini 3.7 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 35,
+   "начало": "Gemini 3.6 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 36,
+   "начало": "Gemini 3.5 Flash-Lite ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 37,
+   "начало": "Gemini 3.5 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 38,
+   "начало": "Gemini 3.1 Flash Image Preview ✔️",
+   "итог": "E-9-15"
+  },
+  {
+   "n": 39,
+   "начало": "Gemini 3.1 Pro Preview ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 40,
+   "начало": "Gemini 3 Pro Image Preview ✔️",
+   "итог": "E-9-16"
+  },
+  {
+   "n": 41,
+   "начало": "Gemini 3 Flash Preview ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 42,
+   "начало": "Gemini 2.5 Pro ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 43,
+   "начало": "Gemini 2.5 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 44,
+   "начало": "Gemini 2.5 Flash-Lite ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 45,
+   "начало": "Gemini 2.0 Flash ✔️",
+   "итог": "ничего: строка таблицы — текстовая модель"
+  },
+  {
+   "n": 46,
+   "начало": "Note: Older models use a google_search_retrieval",
+   "итог": "E-9-17"
+  },
+  {
+   "n": 47,
+   "начало": "Supported tool combinations You can use",
+   "итог": "ничего: не про генерацию картинок (комбинации с code execution, URL context, Maps (Gemini 3.5 Flash+), function calling; image-модели не названы), строки 1743-1755"
+  },
+  {
+   "n": 48,
+   "начало": "What's next Learn about other available",
+   "итог": "ничего: ссылки на другие инструменты, строки 1756-1762"
+  },
+  {
+   "n": 49,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия, Google Developers Site Policies, Last updated 2026-09-23 (признак официальности), строки 1763-1771"
+  },
+  {
+   "n": 50,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал, языки, строки 1772-1797 (совпадает с хвостом стр. 2)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-9-1",
+   "вид": "объяснение",
+   "утверждение_en": "Grounding with Google Search connects the Gemini model to real-time web content and works with all available languages, allowing more accurate answers and verifiable sources beyond the model's knowledge cutoff.",
+   "цитата": "Grounding with Google Search connects the Gemini model to real-time web content",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding with Google Search (вводная)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Продолжение: 'and works with all available languages. This allows Gemini to provide more accurate answers and cite verifiable sources beyond its knowledge cutoff.' (строки 190-193). Общий текст, не специфичен для картинок; для image-моделей важен как механизм опоры на актуальные факты."
+  },
+  {
+   "код": "E-9-2",
+   "вид": "факт",
+   "утверждение_en": "Grounding can increase factual accuracy by basing responses on real-world information, reducing model hallucinations.",
+   "цитата": "Reduce model hallucinations by basing\nresponses on real-world information.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding with Google Search (вводная)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Пункт 'Increase factual accuracy'. Описано для ответов вообще."
+  },
+  {
+   "код": "E-9-3",
+   "вид": "факт",
+   "утверждение_en": "Grounding lets the model answer about recent events and topics (real-time information).",
+   "цитата": "Answer questions about recent events and\ntopics.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding with Google Search (вводная)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Пункт 'Access real-time information'."
+  },
+  {
+   "код": "E-9-4",
+   "вид": "факт",
+   "утверждение_en": "Grounding can provide citations, building user trust by showing the sources for the model's claims.",
+   "цитата": "Build user trust by showing the sources for the\nmodel's claims.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding with Google Search (вводная)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Пункт 'Provide citations'. Цитаты описаны для текстового ответа."
+  },
+  {
+   "код": "E-9-5",
+   "вид": "инструкция",
+   "утверждение_en": "Enable Grounding with Google Search by adding the google_search tool to the request, e.g. \"tools\": [{\"type\": \"google_search\"}] in an Interactions API call.",
+   "цитата": "\"tools\": [{\"type\": \"google_search\"}]",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding with Google Search (пример кода)",
+   "модели": [
+    "gemini-3.8-flash (в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Примеры (Python/JS/Java/Go/REST) используют client.interactions.create(model=\"gemini-3.8-flash\", input=\"Who won the euro 2024?\", tools=[{\"type\": \"google_search\"}]); REST — POST https://generativelanguage.googleapis.com/v1beta/interactions с заголовком x-goog-api-key. Пример для текстовой модели; для image-моделей тот же тип инструмента — вывод, не сказано прямо."
+  },
+  {
+   "код": "E-9-6",
+   "вид": "объяснение",
+   "утверждение_en": "When the google_search tool is enabled, the model handles the entire workflow of searching, processing and citing information automatically.",
+   "цитата": "tool, the model handles the entire workflow\nof searching, processing, and citing information automatically.",
+   "источник_цитаты": "txt",
+   "раздел": "How grounding with Google Search works",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Начало фразы: 'When you enable the google_search tool, ...' (строки 549-552). Рядом схема (img alt 'grounding-overview') без текста."
+  },
+  {
+   "код": "E-9-7",
+   "вид": "объяснение",
+   "утверждение_en": "The model analyzes the prompt and itself determines whether a Google Search can improve the answer.",
+   "цитата": "The model analyzes the prompt and determines if a\nGoogle Search can improve the answer.",
+   "источник_цитаты": "txt",
+   "раздел": "How grounding with Google Search works: Prompt Analysis",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Шаг 'User Prompt' (приложение шлёт промпт с включённым google_search) — вводный к этому шагу."
+  },
+  {
+   "код": "E-9-8",
+   "вид": "объяснение",
+   "утверждение_en": "If needed, the model automatically generates one or multiple search queries and executes them.",
+   "цитата": "If needed, the model automatically generates one or\nmultiple search queries and executes them.",
+   "источник_цитаты": "txt",
+   "раздел": "How grounding with Google Search works: Google Search",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Запросы формулирует модель, не пользователь."
+  },
+  {
+   "код": "E-9-9",
+   "вид": "объяснение",
+   "утверждение_en": "The model processes the search results, synthesizes the information and formulates a response.",
+   "цитата": "The model processes the search results,\nsynthesizes the information, and formulates a response.",
+   "источник_цитаты": "txt",
+   "раздел": "How grounding with Google Search works: Search Results Processing",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-9-10",
+   "вид": "факт",
+   "утверждение_en": "A grounded response includes the model's text answer with inline citation annotations, plus google_search_call and google_search_result steps containing the search queries and search suggestions.",
+   "цитата": "is grounded in the search results. This response includes the model's text",
+   "источник_цитаты": "txt",
+   "раздел": "How grounding with Google Search works: Grounded Response",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Строки 568-577. Структура описана для текстового ответа Interactions API (steps: thought, google_search_call, google_search_result, model_output). Для ответа с картинкой структура не описана."
+  },
+  {
+   "код": "E-9-11",
+   "вид": "правило",
+   "утверждение_en": "google_search_result contains search_suggestions, an HTML snippet for rendering search suggestions in your UI; full usage requirements for it are in the Terms of Service.",
+   "цитата": "for rendering search suggestions in your UI. Full usage requirements are",
+   "источник_цитаты": "txt",
+   "раздел": "Understanding the grounding response: key fields",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "продукт_ui"
+   ],
+   "заметка": "Полная фраза (строки 717-724): 'google_search_result: Contains search_suggestions, an HTML snippet for rendering search suggestions in your UI. Full usage requirements are detailed in the Terms of Service.' Сами требования на странице не приведены. google_search_call содержит выполненные моделью queries."
+  },
+  {
+   "код": "E-9-12",
+   "вид": "факт",
+   "утверждение_en": "When using Grounding with Google Search with Gemini 3, the project is billed for each search query the model decides to execute; multiple queries within one API call count as multiple billable uses.",
+   "цитата": "When you use Grounding with Google Search with Gemini 3, your project is billed\nfor each search query that the model decides to execute.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3 (все модели Gemini 3; в таблице поддержки среди них Gemini 3.1 Flash Image Preview и Gemini 3 Pro Image Preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "grounding"
+   ],
+   "заметка": "Пример: запросы \"UEFA Euro 2024 winner\" и \"Spain vs England Euro 2024 final score\" в одном вызове = два оплачиваемых использования. Модели 'Gemini 3' — раскрыто из фразы 'with Gemini 3' / 'Gemini 3 models'; image-модели Gemini 3 в этом абзаце не названы."
+  },
+  {
+   "код": "E-9-13",
+   "вид": "факт",
+   "утверждение_en": "For grounding billing, empty web search queries are ignored when counting unique queries.",
+   "цитата": "For billing purposes, we ignore the empty web search queries\nwhen counting unique queries.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3 (все модели Gemini 3; в таблице поддержки среди них Gemini 3.1 Flash Image Preview и Gemini 3 Pro Image Preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Подсчёт — по уникальным запросам."
+  },
+  {
+   "код": "E-9-14",
+   "вид": "факт",
+   "утверждение_en": "The per-query billing model applies only to Gemini 3 models; with Gemini 2.5 or older models, search grounding is billed per prompt.",
+   "цитата": "This billing model only applies to Gemini 3\nmodels; when you use search grounding with Gemini 2.5 or older models, your\nproject is billed per prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3",
+    "Gemini 2.5 и старше"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": "Цены не приведены — ссылка на страницу Gemini API pricing."
+  },
+  {
+   "код": "E-9-15",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image Preview supports Grounding with Google Search.",
+   "цитата": "Gemini 3.1 Flash Image Preview\n✔️",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models (таблица)",
+   "модели": [
+    "Gemini 3.1 Flash Image Preview (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Строка таблицы поддержки. Id модели не приведён; название — 'Preview'."
+  },
+  {
+   "код": "E-9-16",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image Preview supports Grounding with Google Search.",
+   "цитата": "Gemini 3 Pro Image Preview\n✔️",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models (таблица)",
+   "модели": [
+    "Gemini 3 Pro Image Preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Строка таблицы поддержки; название с 'Preview'."
+  },
+  {
+   "код": "E-9-17",
+   "вид": "правило",
+   "утверждение_en": "Older models use a google_search_retrieval tool; for all current models, use the google_search tool as shown in the examples.",
+   "цитата": "tool. For all current models,",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models (Note)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Полностью (строки 1736-1742): 'Note: Older models use a google_search_retrieval tool. For all current models, use the google_search tool as shown in the examples.' Какие модели 'older' — не перечислено."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-9-18",
+   "вид": "предупреждение",
+   "утверждение_en": "The only image-specific content on this page is that Gemini 3.1 Flash Image Preview and Gemini 3 Pro Image Preview are listed as supporting Grounding with Google Search; all mechanics, response fields and examples are described for text answers, so how grounding affects image output is not covered here.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 3.1 Flash Image Preview",
+    "Gemini 3 Pro Image Preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-9-10, E-9-15, E-9-16, E-9-5",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Страница общая про grounding; для картинок годится как описание механизма и биллинга."
+  },
+  {
+   "код": "E-9-19",
+   "вид": "факт",
+   "утверждение_en": "Because both image models listed as grounding-capable belong to the Gemini 3 family, their search grounding would fall under the per-executed-query billing rule rather than per-prompt billing.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 3.1 Flash Image Preview",
+    "Gemini 3 Pro Image Preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-9-12, E-9-14, E-9-15, E-9-16",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "grounding"
+   ],
+   "заметка": "Вывод: страница не пишет про image-модели в разделе Pricing явно; отнесение их к 'Gemini 3 models' — по названию в таблице."
+  },
+  {
+   "код": "E-9-20",
+   "вид": "объяснение",
+   "утверждение_en": "Grounding is not forced by the tool: with google_search enabled, the model decides from the prompt whether to search and which one or more queries to run, and each executed query is billed on Gemini 3.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-9-7, E-9-8, E-9-12",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Страница не даёт способа заставить модель искать или задать запросы самому."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Gemini 2.5 Flash Image (Nano Banana) и Gemini 3.1 Flash Lite Image в таблице поддержки не упомянуты — ни ✔️, ни отказа.",
+  "Как grounding влияет на генерируемую картинку и какова структура ответа image-модели с grounding (цитаты, search_suggestions) — не описано.",
+  "Нет image-примера с google_search; нет модельных id для image-моделей (только названия с 'Preview').",
+  "Конкретные цены за запрос не приведены (ссылка на pricing).",
+  "Не перечислено, какие модели считаются 'older' и используют google_search_retrieval.",
+  "Требования Terms of Service к показу search_suggestions на странице не раскрыты."
+ ],
+ "сомнения": [
+  "Страница по сути про текстовый grounding; image-единиц две (E-9-15, E-9-16), остальные единицы — общий механизм, применимость к картинкам не подтверждена страницей.",
+  "Названия image-моделей в таблице — с 'Preview'; соответствие стабильным id не сверялось (отдельный этап)."
+ ]
+}

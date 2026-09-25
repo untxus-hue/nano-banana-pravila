@@ -1,0 +1,813 @@
+{
+ "id": 11,
+ "url": "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash-image",
+ "заголовок": "Gemini 2.5 Flash image (Nano Banana)",
+ "дата_в_тексте": "Last updated 2026-09-03 UTC (страница); Latest update модели: October 2025; Knowledge cutoff: June 2025",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0) и 'Last updated 2026-09-03 UTC.'; текст от лица Google ('Our best engine')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 2.5 Flash Image (Nano Banana, id gemini-2.5-flash-image) в документации Gemini API для разработчиков. Вводная: 'best engine for high-velocity visual creation', лучше всего для массовой генерации, диалоговой правки и низкой задержки. Кнопка AI Studio, отсылка к гайду Image generation. Таблица: код модели, типы данных (вход/выход Image and Text), лимиты токенов 65,536/32,768, 12 возможностей (поддержана только Image generation; Search grounding и Thinking — нет), Batch API — да, Flex/Priority — нет, версии (Stable gemini-2.5-flash-image, Deprecated gemini-2.5-flash-image-preview), Latest update October 2025, Knowledge cutoff June 2025. Повторно подчёркнуты скорость и объём.",
+ "модели_на_странице": [
+  "Gemini 2.5 Flash Image",
+  "Nano Banana",
+  "gemini-2.5-flash-image",
+  "gemini-2.5-flash-image-preview (deprecated)"
+ ],
+ "структура": [
+  "Обвязка сайта (строки 2-181, идентична стр. 2)",
+  "Баннер, хлебные крошки",
+  "Заголовок + вводный абзац",
+  "Try in Google AI Studio",
+  "Documentation",
+  "Таблица gemini-2.5-flash-image: Model code, Supported data types, Token limits, Capabilities, Consumption options, Versions, Latest update, Knowledge cutoff",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 2.5 Flash image (Nano Banana) |",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev, строки 2-181 — совпадает до байта со страницей 2 (diff строк 2-188)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 2.5 Flash image (Nano Banana)",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "Our best engine for high-velocity visual",
+   "итог": "E-11-1, E-11-2"
+  },
+  {
+   "n": 7,
+   "начало": "Try in Google AI Studio",
+   "итог": "E-11-3"
+  },
+  {
+   "n": 8,
+   "начало": "Documentation Visit the Image generation guide",
+   "итог": "E-11-4"
+  },
+  {
+   "n": 9,
+   "начало": "gemini-2.5-flash-image Property Description",
+   "итог": "ничего: заголовок таблицы"
+  },
+  {
+   "n": 10,
+   "начало": "id_card Model code gemini-2.5-flash-image",
+   "итог": "E-11-5"
+  },
+  {
+   "n": 11,
+   "начало": "save Supported data types Inputs",
+   "итог": "E-11-6"
+  },
+  {
+   "n": 12,
+   "начало": "token_auto Token limits [*]",
+   "итог": "ничего: заголовок строки таблицы (сноска на /gemini-api/docs/tokens)"
+  },
+  {
+   "n": 13,
+   "начало": "Input token limit 65,536",
+   "итог": "E-11-7"
+  },
+  {
+   "n": 14,
+   "начало": "Output token limit 32,768",
+   "итог": "E-11-8"
+  },
+  {
+   "n": 15,
+   "начало": "handyman Capabilities",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 16,
+   "начало": "Audio generation Not supported",
+   "итог": "E-11-9"
+  },
+  {
+   "n": 17,
+   "начало": "Caching Not supported",
+   "итог": "E-11-10"
+  },
+  {
+   "n": 18,
+   "начало": "Code execution Not supported",
+   "итог": "E-11-11"
+  },
+  {
+   "n": 19,
+   "начало": "File search Not supported",
+   "итог": "E-11-12"
+  },
+  {
+   "n": 20,
+   "начало": "Function calling Not supported",
+   "итог": "E-11-13"
+  },
+  {
+   "n": 21,
+   "начало": "Grounding with Google Maps Not supported",
+   "итог": "E-11-14"
+  },
+  {
+   "n": 22,
+   "начало": "Image generation Supported",
+   "итог": "E-11-15"
+  },
+  {
+   "n": 23,
+   "начало": "Live API Not supported",
+   "итог": "E-11-16"
+  },
+  {
+   "n": 24,
+   "начало": "Search grounding Not supported",
+   "итог": "E-11-17"
+  },
+  {
+   "n": 25,
+   "начало": "Structured outputs Not supported",
+   "итог": "E-11-18"
+  },
+  {
+   "n": 26,
+   "начало": "Thinking Not supported",
+   "итог": "E-11-19"
+  },
+  {
+   "n": 27,
+   "начало": "URL context Not supported",
+   "итог": "E-11-20"
+  },
+  {
+   "n": 28,
+   "начало": "speed Consumption options",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 29,
+   "начало": "Batch API Supported",
+   "итог": "E-11-21"
+  },
+  {
+   "n": 30,
+   "начало": "Flex inference Not supported",
+   "итог": "E-11-22"
+  },
+  {
+   "n": 31,
+   "начало": "Priority inference Not supported",
+   "итог": "E-11-23"
+  },
+  {
+   "n": 32,
+   "начало": "123 Versions Read the model version",
+   "итог": "ничего: заголовок строки + ссылка на паттерны версий"
+  },
+  {
+   "n": 33,
+   "начало": "Stable: gemini-2.5-flash-image",
+   "итог": "E-11-24"
+  },
+  {
+   "n": 34,
+   "начало": "Deprecated: gemini-2.5-flash-image-preview",
+   "итог": "E-11-25"
+  },
+  {
+   "n": 35,
+   "начало": "calendar_month Latest update October 2025",
+   "итог": "E-11-26"
+  },
+  {
+   "n": 36,
+   "начало": "cognition_2 Knowledge cutoff June 2025",
+   "итог": "E-11-27"
+  },
+  {
+   "n": 37,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия и Google Developers Site Policies (признак официальности), строки 268-275"
+  },
+  {
+   "n": 38,
+   "начало": "Last updated 2026-09-03 UTC.",
+   "итог": "ничего: дата обновления страницы (в дата_в_тексте)"
+  },
+  {
+   "n": 39,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал и языки, строки 277-302 (совпадает с хвостом стр. 2)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-11-1",
+   "вид": "объяснение",
+   "утверждение_en": "Google calls Gemini 2.5 Flash Image its best engine for high-velocity visual creation, offering state-of-the-art speed and efficiency.",
+   "цитата": "Our best engine for high-velocity visual creation, offering state-of-the-art\nspeed and efficiency.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 2.5 Flash image (Nano Banana))",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Позиционирование на скорость и эффективность; подлежащее фразы — модель из заголовка (Gemini 2.5 Flash image (Nano Banana))."
+  },
+  {
+   "код": "E-11-2",
+   "вид": "правило",
+   "утверждение_en": "Gemini 2.5 Flash Image (Nano Banana) is best for high-volume generation, conversational image editing, and low-latency creative workflows that require native multimodal understanding.",
+   "цитата": "Gemini 2.5 Flash Image, also known as Nano Banana, is best\nfor high-volume generation, conversational image editing, and low-latency\ncreative workflows that require native multimodal understanding.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 2.5 Flash image (Nano Banana))",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "мультиход"
+   ],
+   "заметка": "Правило выбора модели: большие объёмы, многоходовая (диалоговая) правка, низкая задержка. Также фиксирует соответствие имён: Gemini 2.5 Flash Image = Nano Banana."
+  },
+  {
+   "код": "E-11-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image can be tried in Google AI Studio.",
+   "цитата": "Try in Google AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Кнопка ведёт на https://aistudio.google.com?model=gemini-2.5-flash-image (по html)."
+  },
+  {
+   "код": "E-11-4",
+   "вид": "факт",
+   "утверждение_en": "The model card is not exhaustive: Google directs readers to the Image generation guide for full coverage of features and capabilities.",
+   "цитата": "guide for full\ncoverage of features and capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Documentation",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Полная фраза: 'Visit the Image generation guide for full coverage of features and capabilities.' (строки 196-199; ссылка /gemini-api/docs/image-generation)."
+  },
+  {
+   "код": "E-11-5",
+   "вид": "факт",
+   "утверждение_en": "The model code for Gemini 2.5 Flash Image (Nano Banana) is gemini-2.5-flash-image.",
+   "цитата": "Model code\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-11-6",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image accepts image and text as input and produces image and text as output.",
+   "цитата": "Inputs\nImage and Text\nOutput\nImage and Text",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Supported data types",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Выход 'Image and Text' — ответ может содержать текст вместе с картинкой."
+  },
+  {
+   "код": "E-11-7",
+   "вид": "лимит",
+   "утверждение_en": "gemini-2.5-flash-image has an input token limit of 65,536.",
+   "цитата": "Input token limit\n65,536",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Token limits",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сноска [*] у 'Token limits' ведёт на /gemini-api/docs/tokens."
+  },
+  {
+   "код": "E-11-8",
+   "вид": "лимит",
+   "утверждение_en": "gemini-2.5-flash-image has an output token limit of 32,768.",
+   "цитата": "Output token limit\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Token limits",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-11-9",
+   "вид": "ограничение",
+   "утверждение_en": "Audio generation is not supported by gemini-2.5-flash-image.",
+   "цитата": "Audio generation\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-10",
+   "вид": "ограничение",
+   "утверждение_en": "Caching is not supported by gemini-2.5-flash-image.",
+   "цитата": "Caching\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-11",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution is not supported by gemini-2.5-flash-image.",
+   "цитата": "Code execution\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-12",
+   "вид": "ограничение",
+   "утверждение_en": "File search is not supported by gemini-2.5-flash-image.",
+   "цитата": "File search\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-13",
+   "вид": "ограничение",
+   "утверждение_en": "Function calling is not supported by gemini-2.5-flash-image.",
+   "цитата": "Function calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-14",
+   "вид": "ограничение",
+   "утверждение_en": "Grounding with Google Maps is not supported by gemini-2.5-flash-image.",
+   "цитата": "Grounding with Google Maps\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-15",
+   "вид": "факт",
+   "утверждение_en": "Image generation is supported by gemini-2.5-flash-image.",
+   "цитата": "Image generation\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-16",
+   "вид": "ограничение",
+   "утверждение_en": "The Live API is not supported by gemini-2.5-flash-image.",
+   "цитата": "Live API\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-17",
+   "вид": "ограничение",
+   "утверждение_en": "Search grounding (Grounding with Google Search) is not supported by gemini-2.5-flash-image.",
+   "цитата": "Search grounding\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-18",
+   "вид": "ограничение",
+   "утверждение_en": "Structured outputs are not supported by gemini-2.5-flash-image.",
+   "цитата": "Structured outputs\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-19",
+   "вид": "ограничение",
+   "утверждение_en": "Thinking is not supported by gemini-2.5-flash-image.",
+   "цитата": "Thinking\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-20",
+   "вид": "ограничение",
+   "утверждение_en": "URL context is not supported by gemini-2.5-flash-image.",
+   "цитата": "URL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Capabilities",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-11-21",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image can be used through the Batch API.",
+   "цитата": "Batch API\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-11-22",
+   "вид": "ограничение",
+   "утверждение_en": "Flex inference is not supported for gemini-2.5-flash-image.",
+   "цитата": "Flex inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-11-23",
+   "вид": "ограничение",
+   "утверждение_en": "Priority inference is not supported for gemini-2.5-flash-image.",
+   "цитата": "Priority inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Consumption options",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-11-24",
+   "вид": "факт",
+   "утверждение_en": "The stable version of the model is gemini-2.5-flash-image.",
+   "цитата": "Stable:\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Versions",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-11-25",
+   "вид": "предупреждение",
+   "утверждение_en": "The preview version gemini-2.5-flash-image-preview is deprecated.",
+   "цитата": "Deprecated:\ngemini-2.5-flash-image-preview",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Versions",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana, preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Дата вывода из эксплуатации на странице не указана."
+  },
+  {
+   "код": "E-11-26",
+   "вид": "факт",
+   "утверждение_en": "The latest update of gemini-2.5-flash-image is dated October 2025.",
+   "цитата": "Latest update\nOctober 2025",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Latest update",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата модели; страница обновлена 2026-09-03."
+  },
+  {
+   "код": "E-11-27",
+   "вид": "факт",
+   "утверждение_en": "The knowledge cutoff of gemini-2.5-flash-image is June 2025.",
+   "цитата": "Knowledge cutoff\nJune 2025",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-2.5-flash-image: Knowledge cutoff",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "При этом Search grounding не поддерживается (строка таблицы) — знания модели ограничены этой датой."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-11-28",
+   "вид": "ограничение",
+   "утверждение_en": "gemini-2.5-flash-image supports no tools and no thinking: of the 12 listed capabilities only Image generation is supported, so neither Google Search grounding nor any other tool can extend it beyond its June 2025 knowledge cutoff.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-11-9, E-11-10, E-11-11, E-11-12, E-11-13, E-11-14, E-11-15, E-11-16, E-11-17, E-11-18, E-11-19, E-11-20, E-11-27",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "thinking"
+   ],
+   "заметка": "Сводка таблицы + дата отсечки знаний."
+  },
+  {
+   "код": "E-11-29",
+   "вид": "объяснение",
+   "утверждение_en": "The card consistently positions Nano Banana on speed and volume (high-velocity, high-volume, low-latency, conversational editing) rather than reasoning, which matches Thinking being not supported.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-11-1, E-11-2, E-11-19",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Три слова про скорость в двух предложениях вводной."
+  },
+  {
+   "код": "E-11-30",
+   "вид": "правило",
+   "утверждение_en": "Use the stable model code gemini-2.5-flash-image; the -preview variant is listed as deprecated.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-11-5, E-11-24, E-11-25",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Страница не пишет 'используйте', только помечает preview как Deprecated."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет поддерживаемых разрешений, соотношений сторон, числа входных изображений — отослано на гайд Image generation.",
+  "Нет цены, rate limits, даты отключения deprecated-версии gemini-2.5-flash-image-preview.",
+  "Не сказано, как изображения считаются в токенах (сноска-ссылка на /gemini-api/docs/tokens).",
+  "Нет ссылки на Model card и нет упоминания SynthID/safety."
+ ],
+ "сомнения": [
+  "Строки таблицы переданы по одной единице на возможность; для свода их можно сгруппировать."
+ ]
+}

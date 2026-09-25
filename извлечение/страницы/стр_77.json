@@ -1,0 +1,695 @@
+{
+ "id": 77,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_3_1_flash_lite_image_gen.ipynb",
+ "заголовок": "gh-intro-gemini-3-1-flash-lite-image-gen (Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite 🍌) Generation)",
+ "дата_в_тексте": "только 'Copyright 2026 Google LLC'",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий GoogleCloudPlatform/generative-ai)",
+  "второй_признак": "Строка '# Copyright 2026 Google LLC' + лицензия Apache 2.0; организация GoogleCloudPlatform. Автор — Katie Nguyen (GitHub katiemn).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальный вводный ноутбук Google Cloud для разработчиков по gemini-3.1-flash-lite-image (Nano Banana 2 Lite) через Google Gen AI SDK на Agent Platform (location global). Модель позиционируется для низкой задержки и больших объёмов. Структура: обзор → setup → text-to-image (response_modalities, 14 соотношений, ThinkingConfig HIGH/MINIMAL; все изображения в 1K; C2PA + SynthID) → video-to-image → редактирование: одноходовое, мультиход в чате, несколько рефов (до 14, оптимально ≤3). Ключевые отличительные утверждения: только 1K; оптимальная консистентность при ≤3 рефах. Все примеры — IMAGE only.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite 🍌) Generation (ссылки, автор)",
+  "Overview",
+  "Get started (SDK, auth, libraries, project, model)",
+  "Image generation: Text-to-image; Video-to-image",
+  "Image editing: Single-turn image editing; Multi-turn image editing (chat); Multiple reference images"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2026 Google LLC # Licensed",
+   "итог": "ничего: копирайт и лицензия (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite 🍌) Generation",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "<table align=\"left\"> … Share to:",
+   "итог": "ничего: обвязка (ссылки и шаринг)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | … Katie Nguyen",
+   "итог": "ничего: автор"
+  },
+  {
+   "n": 5,
+   "начало": "## Overview This notebook will show you",
+   "итог": "E-77-1"
+  },
+  {
+   "n": 6,
+   "начало": "In this tutorial, you'll learn how … (список сценариев)",
+   "итог": "ничего: оглавление сценариев"
+  },
+  {
+   "n": 7,
+   "начало": "## Get started / ### Install Google Gen AI SDK",
+   "итог": "ничего: установка SDK"
+  },
+  {
+   "n": 8,
+   "начало": "%pip install --upgrade --quiet google-genai",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 9,
+   "начало": "### Authenticate your notebook environment",
+   "итог": "ничего: аутентификация"
+  },
+  {
+   "n": 10,
+   "начало": "import sys … auth.authenticate_user()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 11,
+   "начало": "### Import libraries / import warnings …",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 12,
+   "начало": "### Set Google Cloud project information To get started",
+   "итог": "ничего: настройка проекта"
+  },
+  {
+   "n": 13,
+   "начало": "import os … LOCATION = \"global\" … genai.Client(enterprise=True",
+   "итог": "ничего: код без промпта (клиент Agent Platform, location global; регионы для Lite не оговорены)"
+  },
+  {
+   "n": 14,
+   "начало": "### Load the model MODEL_ID = \"gemini-3.1-flash-lite-image\"",
+   "итог": "ничего: код без промпта (ID модели в картине)"
+  },
+  {
+   "n": 15,
+   "начало": "## Image generation / ### Text-to-image In the cell below",
+   "итог": "ничего: вводная к списку аргументов"
+  },
+  {
+   "n": 16,
+   "начало": "- `prompt`: A text-only user message",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 17,
+   "начало": "- `config`: A config for specifying",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 18,
+   "начало": "- `response_modalities`: To generate an image,",
+   "итог": "E-77-2"
+  },
+  {
+   "n": 19,
+   "начало": "- `ImageConfig`: Set the `aspect_ratio`.",
+   "итог": "E-77-3"
+  },
+  {
+   "n": 20,
+   "начало": "- `ThinkingConfig`: Set the `thinking_level`",
+   "итог": "E-77-4"
+  },
+  {
+   "n": 21,
+   "начало": "- `HIGH`: Allows the model to",
+   "итог": "E-77-5"
+  },
+  {
+   "n": 22,
+   "начало": "- `MINIMAL`: Constrains the model to",
+   "итог": "E-77-6"
+  },
+  {
+   "n": 23,
+   "начало": "All images from `gemini-3.1-flash-lite-image` are generated",
+   "итог": "E-77-7, E-77-8"
+  },
+  {
+   "n": 24,
+   "начало": "prompt = \"\"\" A cute French Bulldog wearing",
+   "итог": "E-77-9"
+  },
+  {
+   "n": 25,
+   "начало": "### Video-to-image / Nano Banana 2 Lite is also able",
+   "итог": "E-77-10"
+  },
+  {
+   "n": 26,
+   "начало": "Start by downloading and displaying a",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 27,
+   "начало": "!wget … animals.mp4 … display(Video(",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 28,
+   "начало": "with open(video_file, \"rb\") … Generate a postcard",
+   "итог": "E-77-11"
+  },
+  {
+   "n": 29,
+   "начало": "## Image editing You can also edit",
+   "итог": "E-77-12"
+  },
+  {
+   "n": 30,
+   "начало": "### Single-turn image editing Start by downloading",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 31,
+   "начало": "!wget … flowers.png … display(Image(",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 32,
+   "начало": "with open(starting_image, \"rb\") … Generate a doodle",
+   "итог": "E-77-13"
+  },
+  {
+   "n": 33,
+   "начало": "### Multi-turn image editing (chat) In this",
+   "итог": "E-77-14"
+  },
+  {
+   "n": 34,
+   "начало": "chat = client.chats.create( … Professional sports logo",
+   "итог": "E-77-15"
+  },
+  {
+   "n": 35,
+   "начало": "Now, you'll send a new message",
+   "итог": "E-77-16"
+  },
+  {
+   "n": 36,
+   "начало": "message = \"Change the tree to an umbrella.\"",
+   "итог": "E-77-17"
+  },
+  {
+   "n": 37,
+   "начало": "### Multiple reference images With Nano Banana 2 Lite,",
+   "итог": "E-77-18, E-77-19"
+  },
+  {
+   "n": 38,
+   "начало": "Run the following cell to visualize",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 39,
+   "начало": "from io import BytesIO … image_urls = [ … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 40,
+   "начало": "The process for sending the request",
+   "итог": "E-77-20"
+  },
+  {
+   "n": 41,
+   "начало": "response = client.models.generate_content( … A 3D stylized character render",
+   "итог": "E-77-21"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-77-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Lite Image is an image generation and editing model designed for low-latency, high-volume use cases.",
+   "цитата": "This is an image generation and editing model, designed for low-latency, high-volume use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-2",
+   "вид": "правило",
+   "утверждение_en": "To generate an image, IMAGE must be included in response_modalities; to get both text and images specify IMAGE and TEXT.",
+   "цитата": "`response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list. To get both text and images, specify `IMAGE` and `TEXT`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-3",
+   "вид": "факт",
+   "утверждение_en": "Valid aspect ratios for Nano Banana 2 Lite: 1:1, 3:2, 2:3, 3:4, 4:3, 1:4, 4:1, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9.",
+   "цитата": "`ImageConfig`: Set the `aspect_ratio`. Valid ratios are: 1:1, 3:2, 2:3, 3:4, 4:3, 1:4, 4:1, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "14 соотношений, включая 1:4, 4:1, 1:8, 8:1."
+  },
+  {
+   "код": "E-77-4",
+   "вид": "инструкция",
+   "утверждение_en": "Set ThinkingConfig thinking_level to HIGH or MINIMAL; set include_thoughts=True to view the model's thoughts.",
+   "цитата": "`ThinkingConfig`: Set the `thinking_level` to `HIGH` or `MINIMAL`, and if you'd like to view the model's thoughts, set `include_thoughts` to `True`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-5",
+   "вид": "объяснение",
+   "утверждение_en": "HIGH thinking allows more thinking tokens and suits complex prompts requiring deep reasoning.",
+   "цитата": "`HIGH`: Allows the model to use more tokens for thinking and is suitable for complex prompts requiring deep reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-6",
+   "вид": "объяснение",
+   "утверждение_en": "MINIMAL thinking constrains thinking tokens to a minimum and is best for low-complexity tasks.",
+   "цитата": "`MINIMAL`: Constrains the model to use as few tokens as possible for thinking and is best used for low-complexity tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-7",
+   "вид": "ограничение",
+   "утверждение_en": "All images from gemini-3.1-flash-lite-image are generated in 1K.",
+   "цитата": "All images from `gemini-3.1-flash-lite-image` are generated in **1K**",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Другого разрешения у Lite на этой странице нет; параметр image_size не упоминается."
+  },
+  {
+   "код": "E-77-8",
+   "вид": "факт",
+   "утверждение_en": "All Nano Banana 2 Lite images include both C2PA metadata and a SynthID watermark.",
+   "цитата": "include both [C2PA metadata](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/content-credentials) and a [SynthID watermark](https://deepmind.google/technologies/synthid/).",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Sticker-style prompt: a French Bulldog in a chef hat eating a California roll, pop-art sticker, flat vector, isolated on white.",
+   "цитата": "A cute French Bulldog wearing a tiny chef hat, joyfully eating a California roll. Bright, vivid colors, thick black outlines, pop art sticker style. High-contrast, 2D flat vector illustration, isolated on a solid white background.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Разбор: 1-е предложение — субъект + аксессуар + действие с эмоцией; далее хвост из дескрипторов через запятые: цвет → контуры → стиль ('pop art sticker style') → контраст и техника ('2D flat vector illustration') → фон ('isolated on a solid white background'). 3:2, IMAGE only, output_mime_type image/png, thinking MINIMAL с include_thoughts."
+  },
+  {
+   "код": "E-77-10",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite can generate images from a video by observing the frames.",
+   "цитата": "Nano Banana 2 Lite is also able to generate images from a video. The model observes the frames and generates new images based on the visual content.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "В коде: types.Part.from_bytes(data=video, mime_type='video/mp4') перед текстом."
+  },
+  {
+   "код": "E-77-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Video-to-image prompt: a postcard of the setting in this video.",
+   "цитата": "Generate a postcard of the setting in this video.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Разбор: 'Generate' + формат ('a postcard') + что взять из видео ('the setting'). IMAGE only."
+  },
+  {
+   "код": "E-77-12",
+   "вид": "инструкция",
+   "утверждение_en": "To edit images with this model, pass the original image as part of the prompt.",
+   "цитата": "You can also edit images with this model. Simply pass the original image as part of the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "В коде: Part.from_bytes(image, mime_type='image/png') перед текстом."
+  },
+  {
+   "код": "E-77-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Single-turn edit prompt: a doodle of the red flower in this image.",
+   "цитата": "Generate a doodle of the red flower in this image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Single-turn image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Разбор: 'Generate' + стиль ('a doodle') + выбор одного объекта из исходника по признаку ('the red flower in this image'). Результат — новая картинка по мотиву, а не правка исходника."
+  },
+  {
+   "код": "E-77-14",
+   "вид": "факт",
+   "утверждение_en": "You can generate a starting image and iteratively alter aspects of it by chatting with the model.",
+   "цитата": "In this next section, you'll generate a starting image and iteratively alter certain aspects of the image by chatting with the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "В коде: client.chats.create(model=..., config=GenerateContentConfig(response_modalities=['IMAGE']))."
+  },
+  {
+   "код": "E-77-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Logo prompt: sports logo for a fictitious team with mascot, action, prop, branding style, explicit color palette, vector art and typography, isolated on black.",
+   "цитата": "Professional sports logo for a fictitious Seattle basketball team called the Seattle Sasquatch. A stylized, fierce Bigfoot mascot bursting out from behind a basketball, holding a pine tree. Modern athletic branding, sharp angles, bold clean outlines. Color palette: moss green, cedar brown, and copper. Vector art, athletic typography, isolated on a solid black background.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Разбор: тип изделия + назначение + вымышленное имя (текст логотипа подразумевается, без кавычек) → маскот + действие + реквизит → стиль бренда (углы, контуры) → 'Color palette:' с тремя цветами → техника ('Vector art'), типографика, фон. Реквизит 'pine tree' потом заменяется во втором ходе."
+  },
+  {
+   "код": "E-77-16",
+   "вид": "инструкция",
+   "утверждение_en": "Send a new message in the existing chat to update the previously generated image.",
+   "цитата": "Now, you'll send a new message in the existing chat to update the previously generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Во втором ходе отправляется только текст."
+  },
+  {
+   "код": "E-77-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up chat edit: change the tree to an umbrella.",
+   "цитата": "Change the tree to an umbrella.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Разбор: 'Change' + объект, названный словом из первого промпта ('the tree') + замена. Одна правка, пять слов."
+  },
+  {
+   "код": "E-77-18",
+   "вид": "лимит",
+   "утверждение_en": "With Nano Banana 2 Lite you can include up to 14 reference images in a request to generate a new image preserving the content of the originals.",
+   "цитата": "With Nano Banana 2 Lite, you can include up to 14 reference images in a request to generate a new image that preserves the content of the original images.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-19",
+   "вид": "предупреждение",
+   "утверждение_en": "Consistency remains optimal when the number of input reference images is limited to 3.",
+   "цитата": "However, consistency remains optimal when the number of input reference images is limited to 3.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Технический предел 14, но для консистентности — не более 3 рефов."
+  },
+  {
+   "код": "E-77-20",
+   "вид": "инструкция",
+   "утверждение_en": "Provide multiple Part.from_uri instances, one for each reference image.",
+   "цитата": "The main difference is that you will provide multiple `Part.from_uri` instances, one for each reference image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-21",
+   "вид": "пример_промпта",
+   "утверждение_en": "Two-reference prompt: a 3D stylized character render of a cheerful woman and her dog, with style and composition descriptors.",
+   "цитата": "A 3D stylized character render of a cheerful woman and her cute dog sitting next to her. Vibrant colors, expressive eyes, clean solid-color background, centered avatar composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: медиум ('A 3D stylized character render of') + субъекты, соответствующие двум рефам (woman.jpeg, dog-ad-1.png), с расположением → хвост дескрипторов: цвет, глаза, фон, композиция ('centered avatar composition'). Рефы не нумеруются и не называются 'image'. 4:3, IMAGE only. Число рефов (2) в пределах рекомендованных 3."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-77-22",
+   "вид": "объяснение",
+   "утверждение_en": "All Nano Banana 2 Lite calls in the notebook request IMAGE only (never TEXT), and the one thinking example uses MINIMAL — consistent with the model's low-latency, high-volume positioning.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-77-1, E-77-6, E-77-9, E-77-11, E-77-13, E-77-14, E-77-21",
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "Прямого правила 'для Lite используйте MINIMAL' нет."
+  },
+  {
+   "код": "E-77-23",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Descriptive Lite prompts share a structure: one or two sentences with subject, attributes and action, followed by a comma-separated tail of style/technique descriptors that ends with an explicit plain background ('isolated on a solid white background', 'isolated on a solid black background', 'clean solid-color background').",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Text-to-image + Multi-turn + Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-77-9, E-77-15, E-77-21",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-77-24",
+   "вид": "объяснение",
+   "утверждение_en": "Edits and follow-ups refer to objects using the same nouns that appeared in the source prompt or image ('the tree', 'the red flower in this image', 'the setting in this video') and change one thing per message.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Video-to-image + Image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-77-11, E-77-13, E-77-17",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Оглавление обещает сценарий 'From a local image', а раздел называется 'Single-turn image editing' — расхождение названий, не содержания."
+ ],
+ "не_сказано": [
+  "Нет grounding (веб/поиск изображений), фильтра prominent people, параметра image_size — не сказано, поддерживаются ли они Lite (про размер — только 'generated in 1K').",
+  "Нет пиксельных размеров 1K по соотношениям.",
+  "Не сказано, какой thinking_level по умолчанию для Lite и нужен ли HIGH вообще.",
+  "Не сказано, почему консистентность падает при >3 рефах и насколько.",
+  "Нет цен/квот (хотя модель позиционирована как high-volume).",
+  "Нет правил составления промптов — только примеры."
+ ],
+ "сомнения": [
+  "Единица E-77-19 (оптимально ≤3 рефов) — формулировка 'remains optimal' трактована как рекомендация, не как лимит."
+ ]
+}

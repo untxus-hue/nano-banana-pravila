@@ -1,0 +1,841 @@
+{
+ "id": 8,
+ "url": "https://ai.google.dev/gemini-api/docs/thinking",
+ "заголовок": "Gemini thinking",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.» Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Общее руководство Gemini API по thinking для разработчиков (Interactions API): что такое thought steps (signature обязательна, summary опциональна и может состоять из текста и/или изображений), отличие от generateContent, включение thought summaries (thinking_summaries), стриминг мыслей через SSE, управление глубиной thinking_level с таблицей уровней по моделям (из моделей изображений — только gemini-3.1-flash-lite-image: по умолчанию minimal, уровни minimal/high), взаимодействие с max_output_tokens, thought signatures в мультиходе (stateful рекомендуется; в stateless — пересылать блоки мыслей без изменений, в т.ч. подписи Google Search), цена (мысли оплачиваются полностью), best practices. Код во всех 5 языках — текстовые запросы, промптов изображений нет. Термины: thought step, signature, summary, thinking_summaries, thinking_level, stateful/stateless mode.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — единственная модель изображений, в таблице thinking-уровней",
+  "текстовые модели: gemini-3.8-flash, gemini-3.8-pro (в Go-коде), gemini-3.7-flash, gemini-3.6-flash, gemini-3.5-flash-lite, gemini-3.5-flash, gemini-3.1-pro-preview, gemini-3-flash-preview, gemini-3-pro-preview, gemini-2.5-pro, gemini-2.5-flash, gemini-2.5-flash-lite"
+ ],
+ "структура": [
+  "Gemini thinking (вступление, таблица полей thought step, Note про generateContent)",
+  "Interactions with thinking",
+  "Thought summaries",
+  "Streaming with thinking",
+  "Controlling thinking (таблица уровней)",
+  "Token limits and max_output_tokens",
+  "Thought signatures (Stateful mode (Recommended); Stateless mode)",
+  "Pricing",
+  "Best practices",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini thinking | Gemini API | Google AI for Developers / Skip to main content …",
+   "итог": "ничего: обвязка сайта (заголовок, языки, шапка)"
+  },
+  {
+   "n": 2,
+   "начало": "Docs / API reference / Gemini API … Feedback information",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 30-181)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available. / Home / Gemini API / Docs / Send feedback",
+   "итог": "ничего: обвязка сайта (баннер, хлебные крошки)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini thinking / The Gemini 3 and 2.5 series models",
+   "итог": "E-8-1"
+  },
+  {
+   "n": 5,
+   "начало": "When you use a thinking model, Gemini reasons",
+   "итог": "E-8-2"
+  },
+  {
+   "n": 6,
+   "начало": "Every thought step contains two fields: / Field Required Description / signature",
+   "итог": "E-8-3"
+  },
+  {
+   "n": 7,
+   "начало": "summary / ❌ No / An array of content (text and/or images)",
+   "итог": "E-8-4"
+  },
+  {
+   "n": 8,
+   "начало": "Note: The Interactions API handles thoughts … / - In the generateContent API",
+   "итог": "E-8-5"
+  },
+  {
+   "n": 9,
+   "начало": "- In the Interactions API, thoughts are a first-class",
+   "итог": "E-8-6"
+  },
+  {
+   "n": 10,
+   "начало": "Interactions with thinking / Initiating an interaction",
+   "итог": "E-8-7"
+  },
+  {
+   "n": 11,
+   "начало": "Код: Python / JavaScript / Java / Go / REST (Occam's Razor)",
+   "итог": "ничего: код без промпта изображения (текстовый запрос; Go использует gemini-3.8-pro — см. противоречия)"
+  },
+  {
+   "n": 12,
+   "начало": "Thought summaries / Thought summaries provide insights … enable thought summaries with thinking_summaries",
+   "итог": "E-8-8"
+  },
+  {
+   "n": 13,
+   "начало": "Код: Python / JavaScript / Java / Go / REST (sum of first 50 primes, thinking_summaries auto)",
+   "итог": "ничего: код без промпта изображения; повтор E-8-8 (Go-блок вместо thinking_summaries задаёт ThinkingLevel low — см. противоречия)"
+  },
+  {
+   "n": 14,
+   "начало": "A thought block may contain only a signature … Simple requests / thinking_summaries: \"none\" / Certain thought content types",
+   "итог": "E-8-9"
+  },
+  {
+   "n": 15,
+   "начало": "Your code should always handle thought blocks",
+   "итог": "E-8-10"
+  },
+  {
+   "n": 16,
+   "начало": "Streaming with thinking / Use streaming … Delta type / thought_summary / thought_signature",
+   "итог": "E-8-11"
+  },
+  {
+   "n": 17,
+   "начало": "Код: Python / JavaScript / Java / Go / REST (Alice, Bob, Carol, stream)",
+   "итог": "ничего: код без промпта изображения (стриминг текстового ответа; Go-блок без стрима — см. противоречия)"
+  },
+  {
+   "n": 18,
+   "начало": "The streaming response uses Server-Sent Events … event: interaction.created … data: [DONE]",
+   "итог": "ничего: пример SSE-потока без промпта изображения; повтор E-8-11, поле total_thought_tokens — повтор E-8-24"
+  },
+  {
+   "n": 19,
+   "начало": "Controlling thinking / Gemini models engage in dynamic thinking",
+   "итог": "E-8-12"
+  },
+  {
+   "n": 20,
+   "начало": "Таблица: Model / Default Thinking / Levels Supported — строки gemini-3.8-flash … gemini-3.1-pro-preview",
+   "итог": "ничего: не про генерацию картинок (текстовые модели)"
+  },
+  {
+   "n": 21,
+   "начало": "gemini-3.1-flash-lite-image / On (minimal) / minimal, high",
+   "итог": "E-8-13"
+  },
+  {
+   "n": 22,
+   "начало": "Таблица: gemini-3-flash-preview … gemini-2.5-flash-lite",
+   "итог": "ничего: не про генерацию картинок (текстовые модели)"
+  },
+  {
+   "n": 23,
+   "начало": "Код: Python / JavaScript / Java / Go / REST (3 famous physicists, thinking_level low)",
+   "итог": "E-8-14 (цитата из REST-блока html; Go-блок — стрим с gemini-3.8-pro и high, см. противоречия)"
+  },
+  {
+   "n": 24,
+   "начало": "Token limits and max_output_tokens / The max_output_tokens generation parameter",
+   "итог": "E-8-15"
+  },
+  {
+   "n": 25,
+   "начало": "If the model hits this limit while reasoning … instead of setting a small max_output_tokens.",
+   "итог": "E-8-16, E-8-17"
+  },
+  {
+   "n": 26,
+   "начало": "Thought signatures / Thought signatures are encrypted representations",
+   "итог": "E-8-18 (фраза «The Interactions API makes handling thought signatures much simpler…» — без содержания)"
+  },
+  {
+   "n": 27,
+   "начало": "Stateful mode (Recommended) / By default, when you use the Interactions API",
+   "итог": "E-8-19"
+  },
+  {
+   "n": 28,
+   "начало": "Stateless mode / If you are managing the conversation state yourself … You MUST always resend",
+   "итог": "E-8-20"
+  },
+  {
+   "n": 29,
+   "начало": "You should NOT remove or modify thought blocks",
+   "итог": "E-8-21"
+  },
+  {
+   "n": 30,
+   "начало": "When switching models within a session",
+   "итог": "E-8-22"
+  },
+  {
+   "n": 31,
+   "начало": "Note: Built-in tools such as Google Search",
+   "итог": "E-8-23"
+  },
+  {
+   "n": 32,
+   "начало": "Pricing / When thinking is turned on, response pricing",
+   "итог": "E-8-24"
+  },
+  {
+   "n": 33,
+   "начало": "Код: Python / JavaScript / Java / Go (usage.total_thought_tokens)",
+   "итог": "ничего: код без промпта изображения; повтор E-8-24 (Go-блок — двухходовый пример с Google Search, не про цену — см. противоречия)"
+  },
+  {
+   "n": 34,
+   "начало": "Thinking models generate full thoughts … Pricing is based on the full thought tokens",
+   "итог": "E-8-25"
+  },
+  {
+   "n": 35,
+   "начало": "Note: Because max_output_tokens applies to the combined total",
+   "итог": "ничего: повтор E-8-15, E-8-16"
+  },
+  {
+   "n": 36,
+   "начало": "You can learn more about tokens in the Token counting guide.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 37,
+   "начало": "Best practices / Use thinking models efficiently … Review reasoning",
+   "итог": "E-8-26"
+  },
+  {
+   "n": 38,
+   "начало": "Control thinking budget / Simple tasks / Moderate tasks / Complex tasks",
+   "итог": "E-8-27"
+  },
+  {
+   "n": 39,
+   "начало": "What's next / Text generation / Function calling / Gemini 3 guide",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 40,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies",
+   "итог": "ничего: подвал-лицензия — признак официальности"
+  },
+  {
+   "n": 41,
+   "начало": "Last updated 2026-09-23 UTC.",
+   "итог": "ничего: дата — вынесена в дата_в_тексте"
+  },
+  {
+   "n": 42,
+   "начало": "Need to tell us more? … Terms / Privacy / Manage cookies / языки",
+   "итог": "ничего: обвязка сайта (виджет отзывов, подвал)"
+  },
+  {
+   "n": 43,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-8-28, E-8-29"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-8-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 and 2.5 series models use a \"thinking process\" that significantly improves their reasoning and multi-step planning abilities.",
+   "цитата": "\"thinking process\" that significantly improves their reasoning and multi-step\nplanning abilities, making them highly effective for complex tasks such as\ncoding, advanced mathematics, and data analysis.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini thinking (вступление)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Общий документ о thinking; про изображения прямо не говорится, кроме отдельных мест (E-8-4, E-8-9, E-8-11, E-8-13)."
+  },
+  {
+   "код": "E-8-2",
+   "вид": "объяснение",
+   "утверждение_en": "With a thinking model, Gemini reasons internally before responding; the Interactions API surfaces this reasoning via dedicated thought steps that appear chronologically in the steps array.",
+   "цитата": "When you use a thinking model, Gemini reasons internally before responding. The Interactions API surfaces this reasoning via",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini thinking (вступление)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Шаги типа «thought» идут в массиве «steps» вместе с function calls, user inputs, model outputs."
+  },
+  {
+   "код": "E-8-3",
+   "вид": "факт",
+   "утверждение_en": "Every thought step has a required `signature` field: an encrypted representation of the model's internal reasoning state, always present even when the model performs minimal reasoning.",
+   "цитата": "An encrypted representation of the model's internal reasoning state. Always present, even when the model performs minimal reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица полей thought step",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Поле signature — обязательное (✅ Yes)."
+  },
+  {
+   "код": "E-8-4",
+   "вид": "факт",
+   "утверждение_en": "The optional `summary` field of a thought step is an array of content (text and/or images) summarizing the reasoning; it may be empty depending on the thinking_summaries config, whether the model reasoned enough, or the content type — e.g., image latents may not have text summaries.",
+   "цитата": "An array of content (text and/or images) summarizing the reasoning. May be empty depending on the\nthinking_summaries\nconfig, whether the model performed enough reasoning, or the content type (for example, image latents may not have text summaries).",
+   "источник_цитаты": "txt",
+   "раздел": "Таблица полей thought step",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Важно для моделей изображений: сводки мыслей могут быть изображениями; «image latents» могут не иметь текстовой сводки. Модель в этом месте не названа."
+  },
+  {
+   "код": "E-8-5",
+   "вид": "факт",
+   "утверждение_en": "In the generateContent API there are no dedicated thought blocks; signatures are metadata that can be attached to any part, such as inside functionCall parts or the final part of a response.",
+   "цитата": "API, there are no dedicated thought blocks. Because of this, signatures are metadata that can be attached to any part, such as living inside\nfunctionCall\nparts or the final part of a response.",
+   "источник_цитаты": "txt",
+   "раздел": "Note (Interactions API vs generateContent)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Для generateContent подпись может висеть на любой части ответа (про части-изображения прямо не сказано)."
+  },
+  {
+   "код": "E-8-6",
+   "вид": "факт",
+   "утверждение_en": "In the Interactions API, thoughts are dedicated thought steps and signatures appear only on thought steps or built-in tool steps (like google_search_call / google_search_result) — never on user inputs, model outputs, or standard function calls.",
+   "цитата": "They never appear on user inputs, model outputs, or standard function calls.",
+   "источник_цитаты": "txt",
+   "раздел": "Note (Interactions API vs generateContent)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Полная фраза: «signatures are limited exclusively to two known locations, thought steps, or built-in tool steps (like google_search_call / google_search_result)» — в .txt разбита по строкам на инлайн-коде; цитирована завершающая фраза."
+  },
+  {
+   "код": "E-8-7",
+   "вид": "инструкция",
+   "утверждение_en": "To use thinking, specify one of the models with thinking support in the `model` field; otherwise the request is like any other interaction.",
+   "цитата": "Initiating an interaction with a thinking model is similar to any other interaction request. Specify one of the",
+   "источник_цитаты": "txt",
+   "раздел": "Interactions with thinking",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Код-примеры раздела — текстовый запрос (Occam's Razor), не про картинки."
+  },
+  {
+   "код": "E-8-8",
+   "вид": "факт",
+   "утверждение_en": "By default only the final output is returned; thought summaries can be enabled with the `thinking_summaries` setting (set to \"auto\" in the examples, inside generation_config).",
+   "цитата": "By default, only the final output is returned. You can enable thought summaries",
+   "источник_цитаты": "txt",
+   "раздел": "Thought summaries",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Значение «auto» — из кодовых блоков (generation_config={\"thinking_summaries\": \"auto\"}); значение «none» — отключение (E-8-9)."
+  },
+  {
+   "код": "E-8-9",
+   "вид": "факт",
+   "утверждение_en": "A thought block may contain only a signature and no summary for simple requests (not enough reasoning), when thinking_summaries is \"none\", or for certain thought content types such as images, which may not have text summaries.",
+   "цитата": "Certain thought content types, such as images, may not have text summaries",
+   "источник_цитаты": "txt",
+   "раздел": "Thought summaries",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Три случая пустой сводки; третий касается изображений. Предыдущие пункты: «Simple requests, where the model didn't reason enough to generate a summary», «thinking_summaries: \"none\", where summaries are explicitly disabled»."
+  },
+  {
+   "код": "E-8-10",
+   "вид": "правило",
+   "утверждение_en": "Your code should always handle thought blocks where `summary` is empty or absent.",
+   "цитата": "Your code should always handle thought blocks where\nsummary\nis empty or absent.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought summaries",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Формулировка «should always» — сильная рекомендация."
+  },
+  {
+   "код": "E-8-11",
+   "вид": "факт",
+   "утверждение_en": "When streaming, thought blocks are delivered via Server-Sent Events with two delta types: `thought_summary` (text or image summary content, one or more incremental deltas) and `thought_signature` (the cryptographic signature, sent as the last delta before step.stop).",
+   "цитата": "Use streaming to receive incremental thought summaries during generation.\nThought blocks are delivered using Server-Sent Events (SSE) with two distinct\ndelta types:\nDelta type\nContains\nWhen sent\nthought_summary\nText or image summary content\nOne or more deltas with incremental summary\nthought_signature\nThe cryptographic signature\nthe last delta before",
+   "источник_цитаты": "txt",
+   "раздел": "Streaming with thinking",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Сводка в потоке может быть изображением («Text or image summary content»). Пример SSE-потока в коде показывает поля usage, включая total_thought_tokens."
+  },
+  {
+   "код": "E-8-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini models use dynamic thinking by default, automatically adjusting reasoning effort to request complexity; this can be controlled with the `thinking_level` parameter.",
+   "цитата": "Gemini models engage in dynamic thinking by default, automatically adjusting\nthe amount of reasoning effort based on the complexity of the request. You can control this behavior using the\nthinking_level\nparameter.",
+   "источник_цитаты": "txt",
+   "раздел": "Controlling thinking",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-13",
+   "вид": "лимит",
+   "утверждение_en": "For gemini-3.1-flash-lite-image, thinking is on by default at the minimal level, and only the levels minimal and high are supported.",
+   "цитата": "gemini-3.1-flash-lite-image\nOn (minimal)\nminimal, high",
+   "источник_цитаты": "txt",
+   "раздел": "Controlling thinking (таблица моделей)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "Единственная модель изображений в таблице. Для сравнения у текстовых моделей обычно low/medium/high или minimal/low/medium/high; у lite-image — только два уровня. gemini-3-pro-image и gemini-3.1-flash-image в таблице отсутствуют."
+  },
+  {
+   "код": "E-8-14",
+   "вид": "инструкция",
+   "утверждение_en": "Set the thinking level in the Interactions API via generation_config, e.g. \"thinking_level\": \"low\".",
+   "цитата": "\"generation_config\": {\n      \"thinking_level\": \"low\"\n    }",
+   "источник_цитаты": "html",
+   "раздел": "Controlling thinking (код REST)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Цитата из REST-блока html. В Python: generation_config={\"thinking_level\": \"low\"}; Java: ThinkingLevel.LOW; Go: interactions.ThinkingLevelLow."
+  },
+  {
+   "код": "E-8-15",
+   "вид": "факт",
+   "утверждение_en": "`max_output_tokens` sets the maximum number of tokens a response can generate, including thought tokens; it is a hard cutoff enforced by the infrastructure and does not change how the model allocates its thinking budget (thinking_level).",
+   "цитата": "parameter sets the maximum number of tokens a response can generate, including\nthought tokens.\nWhen set, this parameter acts as a hard cutoff enforced by the infrastructure\nwithout changing how the model allocates its thinking budget",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits and max_output_tokens",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-16",
+   "вид": "предупреждение",
+   "утверждение_en": "If the model hits max_output_tokens while reasoning, it stops with status \"incomplete\" and returns truncated or empty output, while still billing for any thinking tokens generated.",
+   "цитата": "If the model hits this limit while reasoning, it stops generating with status\n\"incomplete\"\nand returns truncated or empty output (while still billing for\nany thinking tokens generated).",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits and max_output_tokens",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Для генерации изображений прямо не сказано, но механизм общий: малый max_output_tokens может дать пустой ответ при оплаченных мыслях."
+  },
+  {
+   "код": "E-8-17",
+   "вид": "правило",
+   "утверждение_en": "To reduce cost or latency without truncating responses, lower thinking_level (low or medium) instead of setting a small max_output_tokens.",
+   "цитата": "To reduce cost or latency without truncating\nresponses, lower\nthinking_level\n(\nlow\nor\nmedium\n) instead of setting a\nsmall\nmax_output_tokens\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits and max_output_tokens",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Для gemini-3.1-flash-lite-image уровней low/medium нет (E-8-13) — см. E-8-28."
+  },
+  {
+   "код": "E-8-18",
+   "вид": "факт",
+   "утверждение_en": "Thought signatures are encrypted representations of the model's internal reasoning and are required to maintain reasoning continuity across multi-turn interactions.",
+   "цитата": "Thought signatures are encrypted representations of the model's internal reasoning. They are required to maintain reasoning continuity across multi-turn interactions.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-19",
+   "вид": "правило",
+   "утверждение_en": "Recommended: use the Interactions API in stateful mode (store: true and previous_interaction_id in subsequent turns); the server then manages conversation state including all thought blocks and signatures, so you need do nothing about signatures.",
+   "цитата": "the server automatically manages the conversation state, including all thought blocks and signatures. In this mode, you do not need to do anything regarding signatures. They are handled entirely on the server side.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateful mode (Recommended)",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Раздел помечен «(Recommended)». Параметры: store: true, previous_interaction_id."
+  },
+  {
+   "код": "E-8-20",
+   "вид": "правило",
+   "утверждение_en": "In stateless mode (you pass the full history each request) you MUST always resend all thought blocks exactly as they were received from the model.",
+   "цитата": "You\nMUST\nalways resend all\nthought\nblocks exactly as they were received from the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateless mode",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": "Капс «MUST» — требование."
+  },
+  {
+   "код": "E-8-21",
+   "вид": "правило",
+   "утверждение_en": "Do NOT remove or modify thought blocks from the history, since they contain the signatures the model needs to continue its reasoning.",
+   "цитата": "You should\nNOT\nremove or modify thought blocks from the history, as they contain the signatures required for the model to continue its reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateless mode",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": "Сформулировано как «should NOT» с капсом."
+  },
+  {
+   "код": "E-8-22",
+   "вид": "правило",
+   "утверждение_en": "When switching models within a session, still resend the previous model's thought blocks; the backend manages compatibility.",
+   "цитата": "When switching models within a session, you should still resend the previous model's thought blocks. The backend manages compatibility.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateless mode",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-23",
+   "вид": "правило",
+   "утверждение_en": "Built-in tools such as Google Search can carry their own signatures on call/result blocks; in stateless mode you must also resend these tool result signatures in subsequent turns.",
+   "цитата": "Built-in tools such as Google Search can carry their own distinct signatures on the call/result blocks. In stateless mode, you must also resend these tool result signatures in subsequent turns.",
+   "источник_цитаты": "txt",
+   "раздел": "Stateless mode — Note",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "мультиход"
+   ],
+   "заметка": "Касается и grounding через Google Search (про изображения прямо не сказано)."
+  },
+  {
+   "код": "E-8-24",
+   "вид": "факт",
+   "утверждение_en": "When thinking is on, response pricing is the sum of output tokens and thinking tokens; the number of thinking tokens is in the total_thought_tokens field.",
+   "цитата": "When thinking is turned on, response pricing is the sum of output\ntokens and thinking tokens. You can get the total number of generated thinking\ntokens from the\ntotal_thought_tokens\nfield.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-25",
+   "вид": "факт",
+   "утверждение_en": "Pricing is based on the full thought tokens the model generates, even though only the summary is output by the API.",
+   "цитата": "Pricing is based on the full thought tokens the model needs to\ngenerate, despite only the summary being output from the API.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-8-26",
+   "вид": "приём",
+   "утверждение_en": "Review reasoning: analyze thought summaries to understand failures and improve prompts.",
+   "цитата": ": Analyze thought summaries to understand failures and improve prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "промптинг"
+   ],
+   "заметка": "Сводки мыслей — инструмент отладки промпта."
+  },
+  {
+   "код": "E-8-27",
+   "вид": "правило",
+   "утверждение_en": "Match thinking to task complexity: minimal or low for simple tasks (fact retrieval, classification), default for moderate tasks (comparing concepts, creative reasoning), maximum for complex tasks (advanced coding, math, multi-step planning); and prompt the model to think less for lengthy outputs to save tokens.",
+   "цитата": ": Use minimal or low thinking for fact retrieval or classification (e.g., \"Where was DeepMind founded?\").",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Три уровня: Simple → minimal/low; Moderate → default; Complex → maximum. Плюс «Control thinking budget: Prompt the model to think less for lengthy outputs to save tokens.» Примеры задач — текстовые, не про изображения."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-8-28",
+   "вид": "правило",
+   "утверждение_en": "For gemini-3.1-flash-lite-image the page's generic advice to lower thinking to \"low or medium\" cannot be applied literally: this model supports only minimal (its default) and high, so the only choices are the default minimal or raising to high.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Controlling thinking + Token limits + Best practices",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-8-13, E-8-17, E-8-27",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Сопоставление строки таблицы с общими советами. Прямо страница этого не говорит."
+  },
+  {
+   "код": "E-8-29",
+   "вид": "объяснение",
+   "утверждение_en": "For image-related thinking, thought summaries may be images or may be absent (\"text and/or images\", \"Text or image summary content\", \"image latents may not have text summaries\"), so code that reads summaries must not assume text is present.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Таблица полей + Thought summaries + Streaming",
+   "модели": [
+    "Gemini 3 and 2.5 series models (общая механика thinking; модели изображений в этом месте прямо не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-8-4, E-8-9, E-8-10, E-8-11",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Сводка трёх мест страницы, упоминающих изображения в мыслях."
+  }
+ ],
+ "противоречия_внутри": [
+  "Go-блок в «Interactions with thinking» использует модель gemini-3.8-pro, остальные языки — gemini-3.8-flash.",
+  "Go-блок в «Thought summaries» не включает thinking_summaries, а задаёт ThinkingLevel low с другим промптом (про физиков) — не соответствует разделу.",
+  "Go-блок в «Streaming with thinking» не стримит (обычный запрос с ThinkingLevel high и summaries), а стриминговый Go-пример стоит в «Controlling thinking» (gemini-3.8-pro).",
+  "Go-блок в «Pricing» — двухходовый пример с Google Search и PreviousInteractionID, а не вывод usage.",
+  "Best practices говорит о «maximum thinking», тогда как параметр thinking_level оперирует уровнями (high); «maximum» как значение не определено."
+ ],
+ "не_сказано": [
+  "В таблице thinking-уровней нет gemini-3-pro-image и gemini-3.1-flash-image — их уровни/умолчания на странице не указаны.",
+  "Не сказано, как thinking влияет на качество изображений и сколько мысленных токенов тратят модели изображений.",
+  "Не сказано прямо, что thought signatures нужны при мультиходовом редактировании изображений (правила даны для всех мультиходовых взаимодействий).",
+  "Не показано, как выглядит сводка мыслей-изображение и как её получить в generateContent.",
+  "Параметр thinking_budget (старый) не упоминается; только thinking_level."
+ ],
+ "сомнения": [
+  "Страница в основном не про изображения; большинство единиц — общая механика thinking, модель «не указано»/«Gemini 3 and 2.5 series». Прямо к моделям изображений относится только E-8-13 (и упоминания изображений в E-8-4, E-8-9, E-8-11).",
+  "Цитаты многих единиц содержат переносы строк .txt (инлайн-код разбит на отдельные строки); E-8-14 взята из html (REST-блок)."
+ ]
+}

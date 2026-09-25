@@ -1,0 +1,502 @@
+{
+ "id": 89,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-edit-images",
+ "заголовок": "Edit images with Gemini  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time в html нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0, ссылки About Google / Google Cloud terms",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Гайд Google Cloud (Gemini Enterprise Agent Platform) 'Edit images with Gemini' для разработчиков и пользователей консоли. Модели: 4 image-модели (3.1 Flash-Lite Image, 3.1 Flash Image, 3 Pro Image, 2.5 Flash Image). Структура: ноутбуки; заявление об улучшенном редактировании/мультиходе/менее строгих фильтрах; список моделей; Edit an image (Console + Python/Java/Go/Node.js/REST); Multi-turn image editing (модели, рекомендация 50MB, ссылки на ноутбуки и пример с thought signatures); What's next. Промпты: 'Edit this image to make it look like a cartoon.' (SDK) и 'Convert this photo to black and white, in a cartoonish style.' (REST). Параметры REST: imageConfig aspectRatio 16:9, imageSize 4K, imageOutputOptions.mimeType image/png, personGeneration allow_all. Код в .txt склеен — читался по html. Кода мультиходового редактирования на странице нет.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-2.5-flash-image (Nano Banana)"
+ ],
+ "структура": [
+  "Edit images with Gemini (ноутбуки, вступление, модели)",
+  "Edit an image (Console, Python, Java, Go, Node.js, REST)",
+  "Multi-turn image editing",
+  "What's next?"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (меню, левое меню, хлебные крошки; строки 1-1040; сверено diff — совпадает с навигацией стр. id 55)"
+  },
+  {
+   "n": 2,
+   "начало": "Send feedback Edit images with Gemini",
+   "итог": "ничего: служебная кнопка, заголовок, виджет коллекций (строки 1041-1044)"
+  },
+  {
+   "n": 3,
+   "начало": "To see examples of Edit",
+   "итог": "ничего: ссылки на три ноутбука (3.1 Flash Lite Image, 3.1 Flash Image, 3 Pro Image), строки 1045-1073"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini supports improved editing of",
+   "итог": "E-89-1"
+  },
+  {
+   "n": 5,
+   "начало": "The following Gemini models support",
+   "итог": "E-89-2"
+  },
+  {
+   "n": 6,
+   "начало": "For more information about model",
+   "итог": "ничего: ссылка на Gemini models"
+  },
+  {
+   "n": 7,
+   "начало": "Edit an image Console To edit",
+   "итог": "E-89-3"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini generates an edited version",
+   "итог": "E-89-4"
+  },
+  {
+   "n": 9,
+   "начало": "Python Install pip install --upgrade",
+   "итог": "E-89-5"
+  },
+  {
+   "n": 10,
+   "начало": "from google import genai … Edit this image to make it look like a cartoon (код Python)",
+   "итог": "E-89-6, E-89-7"
+  },
+  {
+   "n": 11,
+   "начало": "Java Learn how to install … ImageGenMmFlashEditImageWithTextAndImage",
+   "итог": "повтор E-89-6/E-89-7 (gemini-2.5-flash-image, Part.fromBytes image/png); пример ответа — E-89-8"
+  },
+  {
+   "n": 12,
+   "начало": "Go Learn how to install … generateImageMMFlashEditWithTextImg",
+   "итог": "повтор E-89-6/E-89-7 (gemini-2.5-flash-image; порядок частей: текст, затем картинка); пример ответа — E-89-8"
+  },
+  {
+   "n": 13,
+   "начало": "Node.js Install … Edit this image to make it look like a cartoon",
+   "итог": "E-89-8; промпт — повтор E-89-6 (без точки), картинка inlineData base64 перед текстом"
+  },
+  {
+   "n": 14,
+   "начало": "REST Run the following command … Convert this photo to black and white",
+   "итог": "E-89-9, E-89-10; safetySettings — те же значения примера (PROBABILITY / HARM_CATEGORY_DANGEROUS_CONTENT / BLOCK_MEDIUM_AND_ABOVE)"
+  },
+  {
+   "n": 15,
+   "начало": "For more information about model capabilities, including supported aspect ratios",
+   "итог": "ничего: ссылка (допустимые aspect ratio и разрешения — на странице Gemini models)"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini generates an image based (после REST)",
+   "итог": "повтор E-89-4"
+  },
+  {
+   "n": 17,
+   "начало": "Multi-turn image editing Multi-turn editing",
+   "итог": "E-89-11"
+  },
+  {
+   "n": 18,
+   "начало": "The following Gemini models support multi-turn",
+   "итог": "E-89-12"
+  },
+  {
+   "n": 19,
+   "начало": "We recommend limiting the entire",
+   "итог": "E-89-13"
+  },
+  {
+   "n": 20,
+   "начало": "To test out multi-turn image editing, see the following notebooks",
+   "итог": "ничего: ссылки на ноутбуки (3 Pro Image, 3.1 Flash Image, 3.1 Flash-Lite Image)"
+  },
+  {
+   "n": 21,
+   "начало": "To see code samples related to multi-turn",
+   "итог": "ничего: ссылка \"Example of multi-turn image editing using thought signatures\" для Gemini 3 Pro Image (используется в длинной дистанции)"
+  },
+  {
+   "n": 22,
+   "начало": "What's next? See the following links",
+   "итог": "ничего: ссылки (Generate images, best practices, limitations, responsible AI)"
+  },
+  {
+   "n": 23,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, Last updated 2026-09-22 UTC)"
+  },
+  {
+   "n": 24,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка (подвал, языки; строки 1170-1215)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-89-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini supports improved editing of images and multi-turn editing, and supports updated safety filters that provide a more flexible and less restrictive experience.",
+   "цитата": "Gemini supports improved editing of images and multi-turn editing, and\nsupports updated safety filters that provide a more flexible and less\nrestrictive experience.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Gemini",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Какие именно фильтры и в чём \"less restrictive\" — не раскрыто."
+  },
+  {
+   "код": "E-89-2",
+   "вид": "факт",
+   "утверждение_en": "The models that support image editing are gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image and gemini-2.5-flash-image.",
+   "цитата": "The following Gemini models support image editing:\nClick to expand supported models\ngemini-3.1-flash-lite-image\ngemini-3.1-flash-image\ngemini-3-pro-image\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Gemini",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-3",
+   "вид": "инструкция",
+   "утверждение_en": "In the console: open Agent Studio > Create prompt, click Switch model and pick a model, select 'Image and text' in the Outputs panel, click Insert media (add_photo_alternate) to add the image, write the edits you want in the Write a prompt text area, and click the Prompt (send) button.",
+   "цитата": "To edit images, do the following:\nOpen Agent Studio > Create prompt.\nClick Switch model and select one of the displayed models.\nIn the Outputs panel, select Image and text from the\ndrop-down menu.\nClick Insert media (add_photo_alternate) and select a source from\nthe menu, then follow the dialog's instructions.\nWrite what edits you want to make to the image in the Write a prompt\ntext area.\nClick the Prompt (send) button.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini generates an edited version of the provided image based on the description; this takes a few seconds but can be comparatively slower depending on capacity.",
+   "цитата": "Gemini generates an edited version of the provided image based on\nyour description. This process takes a few seconds, but can be\ncomparatively slower depending on capacity.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-5",
+   "вид": "инструкция",
+   "утверждение_en": "To use the Google Gen AI SDK with Vertex AI, set GOOGLE_CLOUD_PROJECT, GOOGLE_CLOUD_LOCATION=global and GOOGLE_GENAI_USE_ENTERPRISE=True.",
+   "цитата": "export GOOGLE_CLOUD_LOCATION=global\nexport GOOGLE_GENAI_USE_ENTERPRISE=True",
+   "источник_цитаты": "html",
+   "раздел": "Edit an image / Python",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Блок повторяется во всех вкладках SDK."
+  },
+  {
+   "код": "E-89-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Edit prompt example: an input image (Eiffel tower with fireworks) plus the instruction 'Edit this image to make it look like a cartoon.'",
+   "цитата": "Edit this image to make it look like a cartoon.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image / Python",
+   "модели": [
+    "gemini-3.1-flash-image (Python)",
+    "gemini-2.5-flash-image (Java, Go, Node.js)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Структура: \"Edit this image to make it look like <целевой стиль>\". Работу делают: глагол Edit + указание на приложенную картинку (\"this image\") + только целевое изменение (стиль); исходную сцену промпт не описывает. В Node.js тот же текст без точки в конце."
+  },
+  {
+   "код": "E-89-7",
+   "вид": "инструкция",
+   "утверждение_en": "To edit, send the input image and the text instruction as parts of the same generate_content request, with response_modalities [TEXT, IMAGE]; the edited image comes back as inline_data.",
+   "цитата": "contents=[image, \"Edit this image to make it look like a cartoon.\"],",
+   "источник_цитаты": "html",
+   "раздел": "Edit an image / Python",
+   "модели": "gemini-3.1-flash-image",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "api_код"
+   ],
+   "заметка": "Python: PIL-картинка перед текстом; Java: Part.fromBytes(..., \"image/png\") + Part.fromText; Node.js: inlineData base64 + text; Go: сначала текст, потом InlineData image/png."
+  },
+  {
+   "код": "E-89-8",
+   "вид": "объяснение",
+   "утверждение_en": "The example responses show how the model interprets a 'cartoon' edit: bolder outlines/lines, simplified details, slightly exaggerated proportions, and brighter, more saturated, vibrant colors, and it returns a short text describing the edit.",
+   "цитата": "// Okay, I will edit this image to give it a cartoonish style, with bolder outlines, simplified details, and more vibrant colors.",
+   "источник_цитаты": "html",
+   "раздел": "Edit an image / Node.js",
+   "модели": "gemini-2.5-flash-image",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Из комментариев \"Example response\": Node.js (цитата), Go (\"Simplified the Eiffel Tower with bolder lines and slightly exaggerated proportions\", \"Brightened and saturated the colors of the sky, fireworks, and foliage\"), Java (\"No problem! Here's the image in a cartoon style...\"). Полезно как словарь признаков стиля \"cartoon\" для промпта."
+  },
+  {
+   "код": "E-89-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "REST edit prompt example: an input photo (fileData, image/jpg) with the instruction 'Convert this photo to black and white, in a cartoonish style.'",
+   "цитата": "Convert this photo to black and white, in a cartoonish style.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image / REST",
+   "модели": "не указано (модель в ${API_ENDPOINT})",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Структура: \"Convert this photo to <цветовая трансформация>, in <стиль>\" — две правки в одной фразе: цвет (black and white) и стиль (cartoonish). Глагол Convert + \"this photo\" указывает на входной кадр."
+  },
+  {
+   "код": "E-89-10",
+   "вид": "инструкция",
+   "утверждение_en": "The REST edit example sets generationConfig.imageConfig with aspectRatio \"16:9\", imageSize \"4K\", imageOutputOptions.mimeType \"image/png\" and personGeneration \"allow_all\", with responseModalities [\"TEXT\", \"IMAGE\"].",
+   "цитата": "\"generationConfig\": { \"imageConfig\": { \"aspectRatio\": \"16:9\", \"imageSize\": \"4K\", \"responseModalities\": [\"TEXT\", \"IMAGE\"], \"imageOutputOptions\": { \"mimeType\": \"image/png\" }, \"personGeneration\": \"allow_all\" }, }",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image / REST",
+   "модели": "не указано (модель в ${API_ENDPOINT})",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "В примере responseModalities и personGeneration вложены внутрь imageConfig (в SDK-вкладках модальности — на уровне config); страница это не комментирует. Допустимые значения aspectRatio/imageSize — ссылка на Gemini models. Входной fileData с mimeType \"image/jpg\"."
+  },
+  {
+   "код": "E-89-11",
+   "вид": "объяснение",
+   "утверждение_en": "Multi-turn editing lets you respond to the model with changes after it displays an edited image response.",
+   "цитата": "Multi-turn editing lets you respond to the model with changes after it displays\nan edited image response.",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-turn image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-12",
+   "вид": "факт",
+   "утверждение_en": "The models that support multi-turn editing are gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image and gemini-2.5-flash-image.",
+   "цитата": "The following Gemini models support multi-turn editing:\nClick to expand supported models\ngemini-3.1-flash-lite-image\ngemini-3.1-flash-image\ngemini-3-pro-image\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-turn image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-13",
+   "вид": "лимит",
+   "утверждение_en": "Google recommends limiting the entire request file size to 50MB maximum.",
+   "цитата": "We recommend limiting the entire request file size to 50MB maximum.",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-turn image editing",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "мультиход"
+   ],
+   "заметка": "Стоит в разделе Multi-turn image editing; относится ли только к мультиходу — не уточнено."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-89-14",
+   "вид": "приём",
+   "утверждение_en": "Edit prompts on this page reference the attached image ('this image', 'this photo') and state only the target change (style and/or color treatment) with an imperative verb (Edit / Convert), without re-describing the scene.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-89-6, E-89-9",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-89-15",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 Pro Image, multi-turn image creation and editing is documented under 'Example of multi-turn image editing using thought signatures', i.e., multi-turn editing is tied to thought signatures; the page itself gives no multi-turn code.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-turn image editing",
+   "модели": "gemini-3-pro-image (Nano Banana Pro)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-89-11, E-89-12 и названия ссылки в строке 1156",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": "Вывод по названию ссылки (строки 1154-1156)."
+  },
+  {
+   "код": "E-89-16",
+   "вид": "факт",
+   "утверждение_en": "The order of the image and text parts is not fixed in the samples: Python, Java and Node.js put the image first, Go puts the text first; the page prescribes no order.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-89-7 и вкладок Java/Go/Node.js",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Вывод SDK-примеров сохраняется в 'bw-example-image.png' (black-and-white), хотя их промпт — только 'cartoon'; черно-белое есть лишь в REST-промпте.",
+  "В REST-примере responseModalities и personGeneration вложены внутрь imageConfig, тогда как в SDK-вкладках response_modalities задаются на уровне config.",
+  "Модель различается по вкладкам: Python — gemini-3.1-flash-image, Java/Go/Node.js — gemini-2.5-flash-image."
+ ],
+ "не_сказано": [
+  "Нет кода и описания механики мультиходового редактирования (только ссылки).",
+  "Не перечислены допустимые значения aspectRatio, imageSize, personGeneration, imageOutputOptions.mimeType.",
+  "Нет советов, как сохранить неизменными части кадра, нет масок/инпейнтинга.",
+  "Не указан лимит числа входных картинок.",
+  "Не раскрыто, что значит \"less restrictive\" для фильтров безопасности.",
+  "Не упомянуты SynthID/Content Credentials на отредактированных картинках."
+ ],
+ "сомнения": [
+  "mimeType \"image/jpg\" во входном fileData REST-примера — нестандартное написание (обычно image/jpeg); страница не поясняет.",
+  "Рекомендация 50MB стоит в разделе мультихода — неясно, общая ли она."
+ ]
+}

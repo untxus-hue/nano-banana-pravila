@@ -1,0 +1,927 @@
+{
+ "id": 325,
+ "url": "https://github.com/GoogleCloudPlatform/generative-ai/raw/refs/heads/main/gemini/nano-banana/nano_banana_recipes.ipynb",
+ "заголовок": "Nano Banana 🍌: Gemini 2.5 Flash Image Recipes (nano_banana_recipes.ipynb)",
+ "дата_в_тексте": "нет даты; '# Copyright 2025 Google LLC'",
+ "официальность": {
+  "домен": "github.com/GoogleCloudPlatform/generative-ai",
+  "второй_признак": "строка '# Copyright 2025 Google LLC' в первой ячейке + организация GoogleCloudPlatform; автор Chouaieb Nemri (github cnemri)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Ноутбук-сборник рецептов (Vertex AI, Python google-genai) для разработчиков: 12 коротких рецептов генерации и редактирования картинок моделью gemini-2.5-flash-image-preview (Nano Banana): генерация с нуля, управление соотношением сторон через пустой холст, outpainting, редактирование, style transfer, реставрация фото, несколько референсов, виртуальная примерка, перенос продукта в новую сцену, картинки с текстом (меню), консистентность персонажа по референсу, смена ракурса камеры. Каждая секция: заголовок + 1-2 предложения описания + код с промптом. Даты нет (копирайт 2025). Собственные приёмы: blank canvas (пустой PNG нужного размера) как носитель aspect ratio; упоминание входов по порядку/указательно ('the provided canvas', 'the second image'). Повторно подчёркивается: 'Render … on the provided canvas to match its 16:9 aspect ratio', естественность/бесшовность результата.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image-preview (Nano Banana; в заголовке 'Gemini 2.5 Flash Image', во вводной 'Gemini 2.5 Flash model')"
+ ],
+ "структура": [
+  "(лицензия)",
+  "Nano Banana 🍌: Gemini 2.5 Flash Image Recipes",
+  "Environment Setup (Authenticate, Configure Google Cloud Project)",
+  "Core Functions and Utilities",
+  "Recipe 1: Generate an Image from Scratch",
+  "Recipe 2: Aspect Ratio Control",
+  "Recipe 3: Image Outpainting",
+  "Recipe 4: Image Editing",
+  "Recipe 5: Style Transfer",
+  "Recipe 6: Photo Restoration",
+  "Recipe 7: Multiple Reference Images",
+  "Recipe 8: Virtual Try-On",
+  "Recipe 9: Product Recontextualization",
+  "Recipe 10: Images with Text",
+  "Recipe 11: Character Consistency",
+  "Recipe 12: Shifting Camera Perspective"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2025 Google LLC / Apache License",
+   "итог": "ничего: обвязка (лицензия; признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Nano Banana 🍌: Gemini 2.5 Flash Image Recipes",
+   "итог": "E-325-1"
+  },
+  {
+   "n": 3,
+   "начало": "Open in Colab / Colab Enterprise / Vertex AI Workbench / BigQuery Studio / GitHub / Share to",
+   "итог": "ничего: обвязка (кнопки)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | Chouaieb Nemri",
+   "итог": "ничего: обвязка (автор)"
+  },
+  {
+   "n": 5,
+   "начало": "Welcome to Nano Banana Recipes! This notebook offers",
+   "итог": "ничего: маркетинг без содержания (вводная)"
+  },
+  {
+   "n": 6,
+   "начало": "Each recipe is designed to be clear",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 7,
+   "начало": "## Environment Setup / %pip install",
+   "итог": "ничего: обвязка"
+  },
+  {
+   "n": 8,
+   "начало": "### Authenticate your notebook environment (Colab only) + код",
+   "итог": "ничего: обвязка"
+  },
+  {
+   "n": 9,
+   "начало": "### Configure Google Cloud Project: To use Vertex AI",
+   "итог": "ничего: обвязка (включить Vertex AI API)"
+  },
+  {
+   "n": 10,
+   "начало": "код PROJECT_ID / LOCATION = global / genai.Client(vertexai=True ...)",
+   "итог": "E-325-2"
+  },
+  {
+   "n": 11,
+   "начало": "## Core Functions and Utilities: This section contains",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 12,
+   "начало": "код MODEL_NAME / GENERATION_CONFIG",
+   "итог": "E-325-3"
+  },
+  {
+   "n": 13,
+   "начало": "код create_blank_canvas (aspect_ratios map)",
+   "итог": "E-325-4"
+  },
+  {
+   "n": 14,
+   "начало": "код generate_and_display_image",
+   "итог": "E-325-5"
+  },
+  {
+   "n": 15,
+   "начало": "## Recipe 1: This basic recipe demonstrates how",
+   "итог": "ничего: вводная (генерация по тексту — общее место)"
+  },
+  {
+   "n": 16,
+   "начало": "код Recipe 1: prompt = A futuristic cityscape",
+   "итог": "E-325-6"
+  },
+  {
+   "n": 17,
+   "начало": "## Recipe 2: Aspect Ratio Control: This recipe shows",
+   "итог": "E-325-7"
+  },
+  {
+   "n": 18,
+   "начало": "код Recipe 2: canvas 16:9 + prompt A cinematic, wide-angle shot",
+   "итог": "E-325-8"
+  },
+  {
+   "n": 19,
+   "начало": "## Recipe 3: Image Outpainting: Outpainting allows you",
+   "итог": "E-325-9"
+  },
+  {
+   "n": 20,
+   "начало": "код Recipe 3: source_image, canvas, prompt This is a creative outpainting task",
+   "итог": "E-325-10"
+  },
+  {
+   "n": 21,
+   "начало": "## Recipe 4: Image Editing: This recipe demonstrates",
+   "итог": "E-325-11"
+  },
+  {
+   "n": 22,
+   "начало": "код Recipe 4: prompt Please add a red bow tie",
+   "итог": "E-325-12"
+  },
+  {
+   "n": 23,
+   "начало": "## Recipe 5: Style Transfer: Style transfer applies",
+   "итог": "E-325-13"
+  },
+  {
+   "n": 24,
+   "начало": "код Recipe 5: prompt Turn this into a Vincent Van Gogh",
+   "итог": "E-325-14"
+  },
+  {
+   "n": 25,
+   "начало": "## Recipe 6: Photo Restoration: This recipe showcases",
+   "итог": "E-325-15"
+  },
+  {
+   "n": 26,
+   "начало": "код Recipe 6: prompt Restore and color this old photograph",
+   "итог": "E-325-16"
+  },
+  {
+   "n": 27,
+   "начало": "## Recipe 7: Multiple Reference Images: This recipe demonstrates",
+   "итог": "E-325-17"
+  },
+  {
+   "n": 28,
+   "начало": "код Recipe 7: ref_paths bedroom.png, items.png + prompt List all elements",
+   "итог": "E-325-18"
+  },
+  {
+   "n": 29,
+   "начало": "## Recipe 8: Virtual Try-On: This recipe showcases",
+   "итог": "E-325-19"
+  },
+  {
+   "n": 30,
+   "начало": "код Recipe 8: prompt Take the garment from the second image",
+   "итог": "E-325-20"
+  },
+  {
+   "n": 31,
+   "начало": "## Recipe 9: Product Recontextualization: This recipe is",
+   "итог": "E-325-21"
+  },
+  {
+   "n": 32,
+   "начало": "код Recipe 9: prompt Take the product in this image",
+   "итог": "E-325-22"
+  },
+  {
+   "n": 33,
+   "начало": "## Recipe 10: Images with Text: This recipe demonstrates",
+   "итог": "E-325-23"
+  },
+  {
+   "n": 34,
+   "начало": "код Recipe 10: prompt Create a Pizzeria menu",
+   "итог": "E-325-24"
+  },
+  {
+   "n": 35,
+   "начало": "## Recipe 11: Character Consistency: Maintaining character consistency",
+   "итог": "E-325-25"
+  },
+  {
+   "n": 36,
+   "начало": "код Recipe 11: canvas 9:16, user_ideas, contents parts",
+   "итог": "E-325-26, E-325-27, E-325-28, E-325-29, E-325-30, E-325-31"
+  },
+  {
+   "n": 37,
+   "начало": "## Recipe 12: Shifting Camera Perspective: This recipe demonstrates",
+   "итог": "E-325-32"
+  },
+  {
+   "n": 38,
+   "начало": "код Recipe 12: prompt aerial perspective of a camera",
+   "итог": "E-325-33"
+  },
+  {
+   "n": 39,
+   "начало": "metadata colab / kernelspec / nbformat",
+   "итог": "ничего: обвязка (метаданные ноутбука)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-325-1",
+   "вид": "факт",
+   "утверждение_en": "The notebook presents Nano Banana as Gemini 2.5 Flash Image.",
+   "цитата": "# Nano Banana 🍌: Gemini 2.5 Flash Image Recipes",
+   "источник_цитаты": "txt",
+   "раздел": "Заголовок",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "во вводной: 'leveraging the Gemini 2.5 Flash model'"
+  },
+  {
+   "код": "E-325-2",
+   "вид": "факт",
+   "утверждение_en": "The notebook creates a Vertex AI client with location 'global'.",
+   "цитата": "LOCATION = \\\"global\\\"",
+   "источник_цитаты": "txt",
+   "раздел": "Configure Google Cloud Project",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (код)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-3",
+   "вид": "факт",
+   "утверждение_en": "The notebook calls model 'gemini-2.5-flash-image-preview' with temperature=1, top_p=0.95, max_output_tokens=32768 and response_modalities ['TEXT','IMAGE'].",
+   "цитата": "MODEL_NAME = \\\"gemini-2.5-flash-image-preview\\\"",
+   "источник_цитаты": "txt",
+   "раздел": "Core Functions and Utilities",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (код GENERATION_CONFIG)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "значения выбраны автором ноутбука, обоснования нет"
+  },
+  {
+   "код": "E-325-4",
+   "вид": "приём",
+   "утверждение_en": "A helper creates a blank white PNG canvas for a chosen aspect ratio (1:1 1024x1024, 3:4 768x1024, 4:3 1024x768, 9:16 720x1280, 16:9 1280x720, or custom width/height) to pass as an image part.",
+   "цитата": "\\\"16:9\\\": (1280, 720),",
+   "источник_цитаты": "txt",
+   "раздел": "Core Functions and Utilities",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код create_blank_canvas)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "размеры — выбор ноутбука, а не заявленные размеры вывода модели"
+  },
+  {
+   "код": "E-325-5",
+   "вид": "факт",
+   "утверждение_en": "The helper displays the first inline_data image in the response and otherwise prints that no image was generated, i.e. a response may contain no image.",
+   "цитата": "print(\\\"No image was generated.\\\")",
+   "источник_цитаты": "txt",
+   "раздел": "Core Functions and Utilities",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из кода generate_and_display_image",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Text-to-image prompt: a futuristic cityscape at sunset with flying cars and towering, glowing skyscrapers.",
+   "цитата": "A futuristic cityscape at sunset, with flying cars and towering, glowing skyscrapers.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 1: Generate an Image from Scratch",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: субъект-сцена + время суток + 2 характерные детали. Одно предложение, без стиля/камеры."
+  },
+  {
+   "код": "E-325-7",
+   "вид": "приём",
+   "утверждение_en": "To control output aspect ratio, provide a blank canvas image with the desired dimensions; this guides the model to generate an image fitting that shape.",
+   "цитата": "By providing a blank canvas with specific dimensions, you can guide the model to generate an image that fits that shape.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 2: Aspect Ratio Control",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "в коде холст передаётся перед текстом: parts=[canvas, text]"
+  },
+  {
+   "код": "E-325-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Aspect-ratio prompt: cinematic wide-angle shot of a lone astronaut on a desolate alien planet under a nebula, rocky red surface, two moons, rendered on the provided canvas to match its 16:9 ratio.",
+   "цитата": "A cinematic, wide-angle shot of a lone astronaut standing on a desolate alien planet, looking up at a swirling, colorful nebula. The planet's surface is rocky and red, and two moons are visible in the sky. Render this scene on the provided canvas to match its 16:9 aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 2: Aspect Ratio Control",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: тип кадра/объектив ('cinematic, wide-angle shot') -> субъект+действие -> детали окружения -> явная техническая инструкция про холст и соотношение сторон последним предложением."
+  },
+  {
+   "код": "E-325-9",
+   "вид": "приём",
+   "утверждение_en": "Outpainting extends an existing image beyond its borders: pass the source image and a larger blank canvas, and the model fills the new areas.",
+   "цитата": "Outpainting allows you to extend an existing image beyond its original borders. This recipe takes a source image and a larger canvas and intelligently fills in the new areas.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 3: Image Outpainting",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "форматы_разрешение"
+   ],
+   "заметка": "порядок частей: source_image, canvas, text"
+  },
+  {
+   "код": "E-325-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Outpainting prompt: declare the task, extend the source image seamlessly to fill the whole blank canvas, continue the scene logically and stylistically, imagine what lies beyond the borders.",
+   "цитата": "This is a creative outpainting task. Take the provided source image and seamlessly extend it to fill the entire blank canvas. The new areas should logically and stylistically continue the scene from the original image. Imagine what might exist just beyond the borders of the original photo and bring it to life.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 3: Image Outpainting",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Структура: 1) называет тип задачи ('This is a creative outpainting task'), 2) операция со ссылкой на входы ('the provided source image', 'the entire blank canvas'), 3) критерий согласованности (логически и стилистически), 4) творческое разрешение."
+  },
+  {
+   "код": "E-325-11",
+   "вид": "факт",
+   "утверждение_en": "An existing image can be edited with a text prompt to add, remove, or change objects and backgrounds.",
+   "цитата": "You can add, remove, or change objects and backgrounds.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 4: Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "Edit prompt: add a red bow tie and black top hat to the person, change the background to an elegant ballroom with chandeliers, ensure additions look natural and blend seamlessly.",
+   "цитата": "Please add a red bow tie and a black top hat to the person in the image. Change the background to an elegant ballroom setting with chandeliers and ornate decorations. Ensure the additions look natural and blend seamlessly with the original image.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 4: Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Структура: добавления объектов (с цветом) -> замена фона (с деталями) -> критерий естественности ('Ensure … blend seamlessly'). Одна операция — одно предложение."
+  },
+  {
+   "код": "E-325-13",
+   "вид": "факт",
+   "утверждение_en": "Style transfer applies the artistic style of one image or artist to the content of another, e.g., turning a photograph into a painting in a famous artist's style.",
+   "цитата": "Style transfer applies the artistic style of one image or artist to the content of another.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 5: Style Transfer",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "Style transfer prompt: Turn this into a Vincent Van Gogh style painting.",
+   "цитата": "Turn this into a Vincent Van Gogh style painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 5: Style Transfer",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Структура: 'Turn this into' + художник + медиум. В этом рецепте текст передаётся ПЕРЕД картинкой (parts=[text, content_image])."
+  },
+  {
+   "код": "E-325-15",
+   "вид": "факт",
+   "утверждение_en": "The model can repair and enhance old or damaged photographs, including colorization and fixing imperfections.",
+   "цитата": "This recipe showcases the model's ability to repair and enhance old or damaged photographs, including colorization and fixing imperfections.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 6: Photo Restoration",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Restoration prompt: restore and color the old photograph as if taken by a modern digital camera; output only the extracted photograph, ignoring surroundings and filling the canvas.",
+   "цитата": "Restore and color this old photograph as if it was taken by a modern digital camera. Your output shall solely be extracted photograph. ignore surroundings and fill all canvas by the photograph.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 6: Photo Restoration",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Структура: операции + эталон качества через сравнение ('as if it was taken by a modern digital camera') + ограничение вывода (только само фото, без окружения, на весь кадр). Грамматика источника сохранена."
+  },
+  {
+   "код": "E-325-17",
+   "вид": "факт",
+   "утверждение_en": "The model can combine elements from multiple source images into a single coherent scene, identifying objects and concepts from different inputs and merging them.",
+   "цитата": "This recipe demonstrates how to combine elements from multiple source images into a single, coherent scene. The model can identify objects and concepts from different inputs and merge them.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 7: Multiple Reference Images",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "порядок частей: *ref_images, canvas, text"
+  },
+  {
+   "код": "E-325-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-reference prompt: list all elements of the provided images, then combine them into a consistent bedroom scene using the empty bedroom as base and preserving its camera angle, rendered on the blank canvas for 16:9.",
+   "цитата": "List all elements of the provided images, then create a new image that combines those elements into a consistent bedroom scene. Use empty bedroom as base preserving its camera angle. Render the final result on the provided blank canvas to ensure a 16:9 aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 7: Multiple Reference Images",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: сначала попросить перечислить элементы входов ('List all elements… then create'), затем задать базовую картинку и что сохранить из неё (ракурс), затем холст/aspect ratio."
+  },
+  {
+   "код": "E-325-19",
+   "вид": "факт",
+   "утверждение_en": "Virtual try-on: given an image of a model and an image of a garment, the model realistically dresses the person in the clothing.",
+   "цитата": "It takes an image of a model and an image of a garment and realistically dresses the model in the clothing.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 8: Virtual Try-On",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Try-on prompt: take the garment from the second image and place it realistically on the person in the first image, adjusting fit, lighting and shadows to look natural.",
+   "цитата": "Take the garment from the second image and realistically place it on the person in the first image. Adjust the fit, lighting, and shadows to make it look natural.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 8: Virtual Try-On",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: входы названы по порядку ('second image', 'first image'), соответствующему порядку parts=[model_image, garment_image, text]; затем что подогнать (посадка, свет, тени)."
+  },
+  {
+   "код": "E-325-21",
+   "вид": "факт",
+   "утверждение_en": "Product recontextualization takes a product image with a plain background and places it into a new, more appealing context, useful for marketing and advertising.",
+   "цитата": "It takes a product image with a plain background and places it into a new, more appealing context or scene.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 9: Product Recontextualization",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Product recontext prompt: place the product in a professionally styled kitchen on a marble countertop by a window with soft natural light; final image should look like a high-end advertisement.",
+   "цитата": "Take the product in this image and place it in a professionally styled kitchen setting, on a marble countertop next to a window with soft, natural light. The final image should look like a high-end advertisement.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 9: Product Recontextualization",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: взять субъект со входа -> сцена -> опора (поверхность) -> источник света и его характер -> жанр/цель результата ('should look like a high-end advertisement')."
+  },
+  {
+   "код": "E-325-23",
+   "вид": "факт",
+   "утверждение_en": "The model can generate images that include coherent and well-formatted text, such as a menu or a poster.",
+   "цитата": "This recipe demonstrates the model's ability to generate images that include coherent and well-formatted text, such as creating a menu or a poster.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 10: Images with Text",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "Text-in-image prompt: 'Create a Pizzeria menu with the following content:' followed by the exact menu text (name, tagline, sections, items with prices, descriptions, contact line).",
+   "цитата": "Create a Pizzeria menu with the following content:",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 10: Images with Text",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt строки промпта разделены JSON-разметкой ячейки, поэтому процитирована только первая строка)",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Полный промпт: 'Create a Pizzeria menu with the following content: The Artisan Crust Pizzeria / Crafted Pizza, Simply Delicious. / Our Signature Pizzas / Classic Margherita - $11 / $17 / San Marzano tomato, fresh mozzarella, basil. / Spicy Pepperoni - $12 / $18 / Tomato sauce, mozzarella, premium pepperoni. / Garden Veggie - $12 / $19 / Tomato sauce, mozzarella, bell peppers, onion, mushrooms, olives. / Smoky BBQ Chicken - $13 / $19 / BBQ sauce base, grilled chicken, mozzarella, red onion. / Beverages / Fountain Soda - $3 / Coca-Cola, Diet Coke, Sprite, Root Beer. / Bottled Water - $3 / Still or Sparkling. / Order Online or Call: 555-123-4567' (строки через перевод строки). Структура: тип документа + 'with the following content:' + весь текст дословно построчно в порядке вёрстки (заголовок, слоган, разделы, позиции с ценами и составом, контакты); стиль оформления не задан."
+  },
+  {
+   "код": "E-325-25",
+   "вид": "приём",
+   "утверждение_en": "Character consistency across scenes: pass a reference image of the character (plus a blank canvas for aspect ratio) and a new scene description to generate the same character in different contexts.",
+   "цитата": "This recipe shows how to use a reference image to generate new scenes with the same character in different contexts.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "вводная: 'Maintaining character consistency across multiple images is a common challenge.' Каждая сцена — отдельный независимый вызов с тем же референсом (не чат)."
+  },
+  {
+   "код": "E-325-26",
+   "вид": "пример_промпта",
+   "утверждение_en": "Wrapper instruction sent as its own text part: Use previous reference images of the character to generate the new scene.",
+   "цитата": "Use previous reference images of the character to generate the new scene",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Промпт собран из нескольких текстовых частей: parts=[image_part, canvas, 'Use previous reference images…', user_idea, 'make sure to use canvas for aspect ratio']. 'previous' указывает на картинку, идущую раньше в parts."
+  },
+  {
+   "код": "E-325-27",
+   "вид": "пример_промпта",
+   "утверждение_en": "Closing instruction sent as its own text part: make sure to use canvas for aspect ratio.",
+   "цитата": "make sure to use canvas for aspect ratio",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "холст 9:16 ('Portrait aspect ratio')"
+  },
+  {
+   "код": "E-325-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Scene idea: the character as US president signing an Artificial Intelligence Act and showing it to the camera.",
+   "цитата": "The character is US president signing Artificial Intelligence Act and showing it to the camera",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Форма всех сцен: 'The character is <роль> <действие> <место/деталь>'; субъект назван 'The character' без описания внешности."
+  },
+  {
+   "код": "E-325-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Scene idea: the character as a firefighter posing next to a fire truck in a city street.",
+   "цитата": "The character is a Firefighter posing next to a fire truck in a city street.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-30",
+   "вид": "пример_промпта",
+   "утверждение_en": "Scene idea: the character as a buddhist monk meditating on a mountain top during sunrise.",
+   "цитата": "The character is a buddhist monk meditating on a mountain top during sunrise",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-31",
+   "вид": "пример_промпта",
+   "утверждение_en": "Scene idea: the character as a plumber posing next to a van with plumbing tools, brand 'Nemri Plumbing'.",
+   "цитата": "The character is a plumber posing next to a van with plumbing tools (his brand is Nemri Plumbing)",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 11: Character Consistency",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "текст_в_кадре"
+   ],
+   "заметка": "бренд в скобках — предполагаемый текст на фургоне"
+  },
+  {
+   "код": "E-325-32",
+   "вид": "факт",
+   "утверждение_en": "An existing image can be regenerated from a different camera angle or perspective described in a text prompt.",
+   "цитата": "This recipe demonstrates how to take an existing image and regenerate it from a different camera angle or perspective, as described in a text prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 12: Shifting Camera Perspective",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-33",
+   "вид": "пример_промпта",
+   "утверждение_en": "Perspective prompt: aerial perspective of a camera looking down at the stressed candidate.",
+   "цитата": "aerial perspective of a camera looking down at the stressed candidate",
+   "источник_цитаты": "txt",
+   "раздел": "Recipe 12: Shifting Camera Perspective",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: только новая позиция камеры + направление взгляда + субъект по роли/состоянию; остальное берётся с входной картинки."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-325-34",
+   "вид": "приём",
+   "утверждение_en": "Aspect ratio in this notebook is always controlled by a blank canvas image paired with an explicit text instruction to render on that canvas; no aspect-ratio config parameter is used.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Recipes 2, 3, 7, 11",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-325-4, E-325-7, E-325-8, E-325-10, E-325-18, E-325-27",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "на момент ноутбука (preview-модель) — отдельного параметра в коде нет"
+  },
+  {
+   "код": "E-325-35",
+   "вид": "приём",
+   "утверждение_en": "Prompts consistently refer to inputs explicitly — 'the provided source image', 'the provided canvas', 'the first/second image', 'this image', 'previous reference images' — matching their order in the parts list.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-325-10, E-325-18, E-325-20, E-325-22, E-325-26",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-36",
+   "вид": "приём",
+   "утверждение_en": "Edit/composite prompts end with a result criterion: natural/seamless blending, natural fit/lighting/shadows, 'look like a high-end advertisement', or logical and stylistic continuation.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-325-10, E-325-12, E-325-20, E-325-22",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-325-37",
+   "вид": "объяснение",
+   "утверждение_en": "Part order is not uniform: most recipes put images before text, Recipe 5 puts text before the image, and Recipe 11 splits the prompt across several text parts; the page does not state that order matters.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image-preview (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-325-7, E-325-9, E-325-14, E-325-26",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Название модели: заголовок 'Gemini 2.5 Flash Image', вводная 'Gemini 2.5 Flash model', код 'gemini-2.5-flash-image-preview'.",
+  "Recipe 7: комментарий в коде 'In a real scenario, these files would exist. We'll use placeholders.', хотя пути ведут на реальные файлы в storage.googleapis.com.",
+  "Recipe 11: описание говорит 'use a reference image' (один), а текстовая часть — 'Use previous reference images' (мн. ч.); передаётся одна картинка + холст."
+ ],
+ "не_сказано": [
+  "Нет официального параметра aspect ratio / разрешения — только приём с холстом (E-325-34); не сказано, всегда ли модель следует холсту.",
+  "Нет лимита на число референс-картинок, нет цен, нет упоминания SynthID/водяного знака.",
+  "Не объяснён выбор temperature=1, top_p=0.95, max_output_tokens=32768.",
+  "Не сказано, как добиться стиля/шрифтов для текста в меню (E-325-24) — стиль оформления не задан вовсе."
+ ],
+ "сомнения": [
+  "Модель в коде — preview-версия ('gemini-2.5-flash-image-preview'); рецепты могли быть написаны до появления параметра aspect_ratio.",
+  "Промпт меню (E-325-24) и промпты в txt хранятся внутри JSON ноутбука (с \\\\n и кавычками) — цитата меню ограничена первой строкой, полный текст — в заметке.",
+  "Сцена 'US president signing Artificial Intelligence Act' с референсом реального/вымышленного лица — страница не комментирует политику изображения публичных фигур."
+ ]
+}

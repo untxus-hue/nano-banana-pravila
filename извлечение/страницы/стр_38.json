@@ -1,0 +1,209 @@
+{
+ "id": 38,
+ "url": "https://ai.google/prompts/sketch-the-world-around-you/",
+ "заголовок": "Sketch the world around you — Google AI",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "ai.google",
+  "второй_признак": "В html JSON-LD Organization «Google AI» с parentOrganization «Google» (https://www.google.com); подвал «About Google / Google Products / Privacy / Terms» со ссылками на policies.google.com; twitter:site @GoogleAI; меню от лица Google («For over 20 years, Google has worked to make AI helpful for everyone»). Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница галереи ai.google/prompts: под двумя копиями мега-меню и подвалом — один «Sample conversation»: пользовательский промпт карандашного скетча гнезда рыбы-фугу и картинка-ответ (в txt нет, в html alt «NB2_search_get_started_output_only»), подпись «Nano Banana 2 (Gemini 3.1 Flash Image)», кнопка «Try AI Mode in Search». Для широкой аудитории (потребительская витрина), без пояснений. Дата публикации/обновления не найдена ни в тексте, ни в meta/JSON-LD. Собственных терминов и повторяемых акцентов нет — страница состоит из одного примера.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2) — названа как «Nano Banana 2 (Gemini 3.1 Flash Image)»",
+  "Nano Banana (семейство, в меню сайта)"
+ ],
+ "структура": [
+  "Мега-меню ai.google (2 копии)",
+  "Шапка Google AI / Try Gemini",
+  "Заголовок «Sketch the world around you»",
+  "Sample conversation: промпт пользователя → картинка → подпись модели",
+  "Кнопка «Try AI Mode in Search»",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Sketch the world around you — Google",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, стр. 1-2)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content",
+   "итог": "ничего: обвязка сайта (ссылка доступности)"
+  },
+  {
+   "n": 3,
+   "начало": "Discover how AI can be helpful, from work (стр. 5-81)",
+   "итог": "ничего: обвязка сайта (мега-меню ai.google, первая копия: Products, Build — до пункта Nano Banana)"
+  },
+  {
+   "n": 4,
+   "начало": "Nano Banana / Create and edit detailed images (стр. 82-83)",
+   "итог": "E-38-3"
+  },
+  {
+   "n": 5,
+   "начало": "Gemma / Build responsible AI applications (стр. 85-164)",
+   "итог": "ничего: обвязка сайта (продолжение мега-меню: Gemma, Lyria, Code with AI, Research, Responsibility, About)"
+  },
+  {
+   "n": 6,
+   "начало": "Products / Discover how AI can be helpful (стр. 165-330)",
+   "итог": "ничего: обвязка сайта (вторая копия мега-меню; diff с стр. 5-164 — отличаются только метки разделов Build/Research/Responsibility/Societal impact/About и отсутствием хвоста Learn AI Skills/AI for human creativity; пункт Nano Banana (стр. 245-246) — повтор E-38-3)"
+  },
+  {
+   "n": 7,
+   "начало": "Try Gemini / Google AI / Learn about all our AI (стр. 332-362)",
+   "итог": "ничего: обвязка сайта (шапка: Google AI, DeepMind, Labs, Research, Products and apps, пункты меню, Try Gemini)"
+  },
+  {
+   "n": 8,
+   "начало": "Sketch the world around you (стр. 364)",
+   "итог": "ничего: заголовок страницы-примера (тема «скетч окружающего мира»; учтён в картине)"
+  },
+  {
+   "n": 9,
+   "начало": "Sample conversation",
+   "итог": "ничего: обвязка (заголовок блока диалога)"
+  },
+  {
+   "n": 10,
+   "начало": "Create a pencil sketch of a pufferfish",
+   "итог": "E-38-1, E-38-4"
+  },
+  {
+   "n": 11,
+   "начало": "− (кнопка свернуть картинки)",
+   "итог": "ничего: обвязка (кнопка UI; сама картинка в txt отсутствует, в html alt=NB2_search_get_started_output_only)"
+  },
+  {
+   "n": 12,
+   "начало": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+   "итог": "E-38-2"
+  },
+  {
+   "n": 13,
+   "начало": "Try AI Mode in Search",
+   "итог": "E-38-5"
+  },
+  {
+   "n": 14,
+   "начало": "Follow us / Making AI helpful for everyone (стр. 377-429)",
+   "итог": "ничего: обвязка сайта (подвал: Products/Build/Research/Responsibility/About, About Google, Privacy, Terms, Cookies)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-38-1",
+   "вид": "пример_промпта",
+   "утверждение_en": "Sample prompt shown for Nano Banana 2: a pencil sketch of a pufferfish nest, explicitly contrasted against a clean digital drawing and asking for visible pencil strokes and a dusty graphite look.",
+   "цитата": "Create a pencil sketch of a pufferfish nest. Not a clean digital drawing but something with visible pencil strokes and that dusty graphite look",
+   "источник_цитаты": "txt",
+   "раздел": "Sketch the world around you / Sample conversation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Структура: повелительное «Create» → медиум («a pencil sketch») → субъект («a pufferfish nest», реальный природный объект — круговые гнёзда рыбы-фугу на дне) → противопоставление нежелательного вида («Not a clean digital drawing but…») → физические признаки материала («visible pencil strokes», «that dusty graphite look»). Работу делает связка «чего не надо» + осязаемые признаки медиума (штрихи, графитная пыль), а не просто название стиля. Регистр разговорный, без камеры, света, композиции, формата. Промпт целиком одной строкой в .txt и в html (<p> в user_message)."
+  },
+  {
+   "код": "E-38-2",
+   "вид": "факт",
+   "утверждение_en": "The sample output on this page is labelled as produced by Nano Banana 2, which Google names as Gemini 3.1 Flash Image.",
+   "цитата": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+   "источник_цитаты": "txt",
+   "раздел": "Sketch the world around you / Sample conversation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Подпись под ответом (chat__footnote в html). Даёт официальное соответствие маркетингового и технического имени: Nano Banana 2 = Gemini 3.1 Flash Image."
+  },
+  {
+   "код": "E-38-3",
+   "вид": "факт",
+   "утверждение_en": "In Google AI's site navigation, Nano Banana is listed among Google DeepMind models as the model to create and edit detailed images.",
+   "цитата": "Nano Banana \nCreate and edit detailed images",
+   "источник_цитаты": "txt",
+   "раздел": "Меню сайта: Build → Discover models",
+   "модели": [
+    "Nano Banana (семейство, без версии)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строка из навигационного меню (раздел «Discover models — Build with cutting-edge Google DeepMind models»). Позиционирование семейства: создание И редактирование, акцент на детализированных изображениях. Маркетинговая формулировка, без конкретики."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-38-4",
+   "вид": "приём",
+   "утверждение_en": "The page's single showcased prompt steers style by naming the medium and then describing its physical marks (strokes, graphite dust) while explicitly rejecting the default rendering look (\"Not a clean digital drawing\"), rather than specifying camera, lighting, composition or format.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-38-1, E-38-2",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": "Страница сама правило не формулирует; вывод из того, что Google выбрал именно этот промпт как витрину для NB2. Приём «отрицание дефолтного вида + материальные признаки медиума» — наблюдение, не требование."
+  },
+  {
+   "код": "E-38-5",
+   "вид": "факт",
+   "утверждение_en": "The page pairs the Nano Banana 2 sample with a \"Try AI Mode in Search\" call to action, and the output image's alt text is \"NB2_search_get_started_output_only\", suggesting the sample is meant to be reproduced in AI Mode in Google Search.",
+   "цитата": "Try AI Mode in Search",
+   "источник_цитаты": "txt",
+   "раздел": "Sketch the world around you / кнопка под диалогом",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-38-2, кнопки «Try AI Mode in Search» и alt картинки NB2_search_get_started_output_only в html",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Прямо страница не говорит, что NB2 доступна в AI Mode — это вывод из CTA и имени файла-картинки («output_only» — показан только результат). Держать как гипотезу о продукте."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет пояснения, почему промпт работает, и нет советов по стилю скетча.",
+  "Не указаны соотношение сторон, разрешение, параметры вызова, число попыток или правки результата.",
+  "Не сказано, в каком продукте получен результат (только косвенно: CTA «Try AI Mode in Search» и alt картинки).",
+  "Нет даты публикации/обновления."
+ ],
+ "сомнения": [
+  "Дата отсутствует (в партии тоже null).",
+  "Alt «NB2_search_get_started_output_only» — внутреннее имя файла; вывод о продукте (AI Mode в Search) в E-38-5 — гипотеза.",
+  "«pufferfish nest» — реальный объект (круговые песчаные узоры фугу), но страница этого не поясняет; заметка E-38-1 содержит мою интерпретацию субъекта."
+ ]
+}

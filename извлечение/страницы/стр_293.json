@@ -1,0 +1,999 @@
+{
+ "id": 293,
+ "url": "https://support.google.com/gemini/answer/16722517",
+ "заголовок": "Verify AI-generated images, videos, and audio - Computer - Gemini Apps Help",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "support.google.com",
+  "второй_признак": "подвал страницы \"©2026 Google\" + ссылки Privacy Policy/Terms of Service; текст справки Gemini Apps от лица Google (\"Info by Google LLC\" как пример подписи). Строка Copyright Google LLC в html есть только внутри встроенного JS, не как признак страницы.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная статья Gemini Apps Help (вариант 'Computer') для конечных пользователей приложения Gemini: как проверить, создана ли/отредактирована ли картинка, видео или аудио ИИ. Модели генерации не названы (только 'Google's AI models'/'Google AI tools'). Структура: вступление (две технологии: SynthID и Content Credentials), What you need, Upload your content (лимиты файла, приём кропа скриншота, шаги загрузки, вопросы-примеры), About the verification results (SynthID / Content Credentials), Other ways to identify AI-generated content (визуальные артефакты, обратный поиск, метаданные), FAQ по SynthID (устойчивость знака, водяной знак vs метаданные, квота 10 проверок/24ч), FAQ по Content Credentials (C2PA, что делают/не делают, ошибки: изменено, несовместимо — версии 2.2+, нераспознано). Собственные термины: SynthID, Content Credentials, C2PA, 'digital passport', 'Not enough details to watermark', 'Likely too small an edit'. Повторяется формула 'created or edited'. Дата публикации/обновления не найдена ни в тексте, ни в html.",
+ "модели_на_странице": [
+  "не названы: только 'Google's AI models' / 'Google AI tools'"
+ ],
+ "структура": [
+  "Verify AI-generated images, videos, and audio (вступление)",
+  "What you need",
+  "Upload your content for verification",
+  "About the verification results (For SynthID / For Content Credentials)",
+  "Other ways to identify AI-generated content",
+  "Common questions about SynthID",
+  "Common questions about Content Credentials",
+  "Related resources (обвязка)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Verify AI-generated images, videos, and audio - Computer",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Gemini Apps",
+   "итог": "ничего: обвязка сайта Help Center (шапка, меню, строки 2-20)"
+  },
+  {
+   "n": 3,
+   "начало": "Verify AI-generated images, videos, and audio",
+   "итог": "ничего: заголовок статьи (строка 21)"
+  },
+  {
+   "n": 4,
+   "начало": "You can use the verification tool",
+   "итог": "E-293-1"
+  },
+  {
+   "n": 5,
+   "начало": "There are two technologies used",
+   "итог": "ничего: вводная фраза к списку, содержание в следующих пунктах"
+  },
+  {
+   "n": 6,
+   "начало": "SynthID: Uses invisible watermarks",
+   "итог": "E-293-2"
+  },
+  {
+   "n": 7,
+   "начало": "Content Credentials: A technology that",
+   "итог": "E-293-3"
+  },
+  {
+   "n": 8,
+   "начало": "Important: Verification with Content Credentials",
+   "итог": "E-293-4"
+  },
+  {
+   "n": 9,
+   "начало": "What you need To use AI",
+   "итог": "E-293-5"
+  },
+  {
+   "n": 10,
+   "начало": "Learn how to sign in",
+   "итог": "ничего: ссылка на другую справку"
+  },
+  {
+   "n": 11,
+   "начало": "Important: You can only choose",
+   "итог": "E-293-6"
+  },
+  {
+   "n": 12,
+   "начало": "Videos need to be less than",
+   "итог": "E-293-7"
+  },
+  {
+   "n": 13,
+   "начало": "If you're taking a screenshot",
+   "итог": "E-293-8"
+  },
+  {
+   "n": 14,
+   "начало": "On your computer, go to",
+   "итог": "E-293-9"
+  },
+  {
+   "n": 15,
+   "начало": "Click Add files / Upload Files / Photos / Add from Drive",
+   "итог": "E-293-9 (шаги 2-5 того же списка)"
+  },
+  {
+   "n": 16,
+   "начало": "Tip: To add files from",
+   "итог": "E-293-10"
+  },
+  {
+   "n": 17,
+   "начало": "Learn about your Gemini Apps",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 18,
+   "начало": "Ask a verification question such",
+   "итог": "E-293-11"
+  },
+  {
+   "n": 19,
+   "начало": "About the verification results Important:",
+   "итог": "E-293-12"
+  },
+  {
+   "n": 20,
+   "начало": "Content Credentials can help provide",
+   "итог": "E-293-13"
+  },
+  {
+   "n": 21,
+   "начало": "After the verification process is",
+   "итог": "ничего: служебная фраза (Gemini выдаст ответ) без правила"
+  },
+  {
+   "n": 22,
+   "начало": "For SynthID If a SynthID",
+   "итог": "E-293-14"
+  },
+  {
+   "n": 23,
+   "начало": "If a SynthID watermark isn’t",
+   "итог": "E-293-15"
+  },
+  {
+   "n": 24,
+   "начало": "In some cases it isn’t",
+   "итог": "E-293-16, E-293-17 (вводная к списку причин)"
+  },
+  {
+   "n": 25,
+   "начало": "\"Not enough details to watermark\"",
+   "итог": "E-293-16"
+  },
+  {
+   "n": 26,
+   "начало": "\"Likely too small an edit\"",
+   "итог": "E-293-17"
+  },
+  {
+   "n": 27,
+   "начало": "For video files, Gemini will",
+   "итог": "ничего: не про картинки (детекция по частям видео)"
+  },
+  {
+   "n": 28,
+   "начало": "For Content Credentials If the",
+   "итог": "E-293-18"
+  },
+  {
+   "n": 29,
+   "начало": "Media composition. / Edit history. / Whether or not AI was used.",
+   "итог": "E-293-18 (пункты списка)"
+  },
+  {
+   "n": 30,
+   "начало": "Other ways to identify AI-generated",
+   "итог": "E-293-19"
+  },
+  {
+   "n": 31,
+   "начало": "Look for visual artifacts: Examine",
+   "итог": "E-293-19"
+  },
+  {
+   "n": 32,
+   "начало": "Inconsistent or garbled text within",
+   "итог": "E-293-20"
+  },
+  {
+   "n": 33,
+   "начало": "Errors in small details, such",
+   "итог": "E-293-21"
+  },
+  {
+   "n": 34,
+   "начало": "Inconsistent shadows and lighting.",
+   "итог": "E-293-22"
+  },
+  {
+   "n": 35,
+   "начало": "Repetitive patterns that seem unnatural.",
+   "итог": "E-293-23"
+  },
+  {
+   "n": 36,
+   "начало": "Reverse image search: Use reverse",
+   "итог": "ничего: не про генерацию картинок (метод проверки чужого контента обратным поиском)"
+  },
+  {
+   "n": 37,
+   "начало": "Metadata analysis: If you have",
+   "итог": "ничего: не про генерацию картинок (EXIF-анализ исходного файла; про наличие/отсутствие EXIF у генераций страница ничего не говорит)"
+  },
+  {
+   "n": 38,
+   "начало": "Traces of editing software: Metadata",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 39,
+   "начало": "Common questions about SynthID What",
+   "итог": "E-293-24"
+  },
+  {
+   "n": 40,
+   "начало": "Learn more about SynthID",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 41,
+   "начало": "Why did Google create SynthID?",
+   "итог": "ничего: мотивировка (прозрачность) без правила или факта о генерации"
+  },
+  {
+   "n": 42,
+   "начало": "Can SynthID still be used",
+   "итог": "E-293-25, E-293-26"
+  },
+  {
+   "n": 43,
+   "начало": "What is the difference between",
+   "итог": "E-293-27"
+  },
+  {
+   "n": 44,
+   "начало": "Is there a limit to",
+   "итог": "E-293-28"
+  },
+  {
+   "n": 45,
+   "начало": "Common questions about Content Credentials",
+   "итог": "E-293-29"
+  },
+  {
+   "n": 46,
+   "начало": "How do Content Credentials help",
+   "итог": "E-293-30"
+  },
+  {
+   "n": 47,
+   "начало": "What Content Credentials don’t do",
+   "итог": "E-293-31"
+  },
+  {
+   "n": 48,
+   "начало": "How does Content Credentials info",
+   "итог": "E-293-32"
+  },
+  {
+   "n": 49,
+   "начало": "If available, the Content Credentials",
+   "итог": "E-293-33"
+  },
+  {
+   "n": 50,
+   "начало": "What do these Content Credential",
+   "итог": "E-293-34"
+  },
+  {
+   "n": 51,
+   "начало": "Incompatible or unsupported: Gemini Apps",
+   "итог": "E-293-35, E-293-36"
+  },
+  {
+   "n": 52,
+   "начало": "Unrecognized: A file may contain",
+   "итог": "E-293-37"
+  },
+  {
+   "n": 53,
+   "начало": "Related resources Use Gemini Apps",
+   "итог": "ничего: обвязка сайта (связанные ссылки, выбор платформы, \"Need more help\", список 18 статей, подвал ©2026 Google, языки, служебные строки; строки 135-291)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-293-1",
+   "вид": "факт",
+   "утверждение_en": "Signed-in users can use the verification tool within the Gemini App to help identify images, videos, and audio generated or edited by AI models.",
+   "цитата": "You can use the verification tool available within the Gemini App for signed-in users, to help identify images, videos, and audio generated or edited by AI models.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify AI-generated images, videos, and audio",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-2",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID uses invisible watermarks to determine if images, videos, and audio were generated or edited specifically by Google's AI models.",
+   "цитата": "SynthID:\nUses invisible watermarks to determine if images, videos, and audio were generated or edited specifically by Google's AI models.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify AI-generated images, videos, and audio",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Одна из двух технологий проверки. Модели генерации не названы, только \"Google's AI models\"."
+  },
+  {
+   "код": "E-293-3",
+   "вид": "объяснение",
+   "утверждение_en": "Content Credentials act like a digital passport documenting the digital content's origin and history, and are used for both AI and non-AI content.",
+   "цитата": "Content Credentials:\nA technology that acts like a digital passport, documenting the digital content's origin and history, and is used for both AI and non-AI content.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify AI-generated images, videos, and audio",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-4",
+   "вид": "ограничение",
+   "утверждение_en": "Verification with Content Credentials is available at gemini.google.com and in the Gemini app for Android; it will be available in the Gemini app for iOS soon.",
+   "цитата": "Verification with Content Credentials is available at\ngemini.google.com\nand in the Gemini app for Android.  It will be available in the Gemini app for iOS soon.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify AI-generated images, videos, and audio",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Состояние на момент страницы, даты нет."
+  },
+  {
+   "код": "E-293-5",
+   "вид": "ограничение",
+   "утверждение_en": "To use AI verification you need a personal account or qualified Workspace account, the latest version of the Gemini App if you use the app, and to be signed in to Gemini Apps.",
+   "цитата": "To use AI verification, you need:\nA personal account or qualified Workspace account\nThe latest version of the Gemini App if you use the app to verify content.\nTo be signed in to Gemini Apps.",
+   "источник_цитаты": "txt",
+   "раздел": "What you need",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-6",
+   "вид": "лимит",
+   "утверждение_en": "Only a single image, video, or audio file can be chosen for verification at a time, and it should have a file size of 100 MB or less.",
+   "цитата": "You can only choose a single image, video, or audio file to verify at a time, and it should have a file size of 100 MB or less.",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-7",
+   "вид": "лимит",
+   "утверждение_en": "Videos to verify need to be less than 90 seconds each and audio files less than 1 hour each.",
+   "цитата": "Videos need to be less than 90 seconds each, and audio files need to be less than 1 hour each",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Не про картинки (видео/аудио); сохранено, т.к. входит в тот же блок лимитов проверки."
+  },
+  {
+   "код": "E-293-8",
+   "вид": "приём",
+   "утверждение_en": "When verifying a screenshot of an image, crop tight around the image to get maximum accuracy and don't upload a collage of multiple distinct images.",
+   "цитата": "If you're taking a screenshot of an image to verify, make sure to crop tight around the image to get maximum accuracy, and don’t upload a collage of multiple distinct images.",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-9",
+   "вид": "инструкция",
+   "утверждение_en": "On a computer, go to gemini.google.com, click Add files, then upload from device (Upload Files), from Google Photos (More Uploads > Photos), or from Google Drive (Add from Drive).",
+   "цитата": "On your computer, go to\nhttps://gemini.google.com\n.\nClick Add files\n.\nTo upload a supported file from your device click Upload Files\n.\nTo upload a supported file from Google photos, click\nMore Uploads\nPhotos\n.\nTo add a supported file from your Google Drive, click Add from Drive",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-10",
+   "вид": "ограничение",
+   "утверждение_en": "To add files from Drive you need Keep Activity on and Google Workspace connected to Gemini Apps.",
+   "цитата": "To add files from your Drive, you need to have Keep Activity on and connect Google Workspace to Gemini Apps. If it’s not connected, you'll get the option to connect it.",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-11",
+   "вид": "инструкция",
+   "утверждение_en": "After uploading, ask a verification question such as \"Was this image/video/audio created or edited by Google AI?\", \"Is this AI-generated?\" or \"Is this a real video?\".",
+   "цитата": "Ask a verification question such as:\n\"Was this image/video/audio created or edited by Google AI?\"\n\"Is this AI-generated?\"\n\"Is this a real video?\"",
+   "источник_цитаты": "txt",
+   "раздел": "Upload your content for verification",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Это примеры запросов к Gemini для проверки, не промпты генерации картинок; поэтому вид \"инструкция\", а не пример_промпта."
+  },
+  {
+   "код": "E-293-12",
+   "вид": "ограничение",
+   "утверждение_en": "Although other companies have started to adopt SynthID watermarks, Gemini can currently only recognize content created by Google AI tools.",
+   "цитата": "While other companies have started to adopt SynthID watermarks, Gemini can currently only recognize content created by Google AI tools.",
+   "источник_цитаты": "txt",
+   "раздел": "About the verification results",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-13",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials can provide info about the origin and history of content and whether AI tools were used to create or edit it.",
+   "цитата": "Content Credentials can help provide info about origin and history of content and whether AI tools were used to create or edit it.",
+   "источник_цитаты": "txt",
+   "раздел": "About the verification results",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-14",
+   "вид": "факт",
+   "утверждение_en": "If a SynthID watermark is detected, all or part of the image or video was created or edited by Google's AI models.",
+   "цитата": "If a SynthID watermark is detected, it means all or part of the image or video was created or edited by Google's AI models.",
+   "источник_цитаты": "txt",
+   "раздел": "For SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Важно: водяной знак ставится и на отредактированные ИИ Google части."
+  },
+  {
+   "код": "E-293-15",
+   "вид": "факт",
+   "утверждение_en": "If a SynthID watermark isn't detected, the image or video wasn't created or edited by Google AI, but it could have been created by other AI systems.",
+   "цитата": "If a SynthID watermark isn’t detected, it means the image or video wasn’t created or edited by Google AI, but it could have been created by other AI systems.",
+   "источник_цитаты": "txt",
+   "раздел": "For SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-16",
+   "вид": "ограничение",
+   "утверждение_en": "In some cases it isn't clear whether an image or video was created or edited by Google AI; one common reason is \"Not enough details to watermark\" (e.g., very simple or abstract content).",
+   "цитата": "In some cases it isn’t clear if the image or video was created or edited by Google AI or not. Some common reasons for this are:\n\"Not enough details to watermark\" (e.g., very simple or abstract content).",
+   "источник_цитаты": "txt",
+   "раздел": "For SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Следствие для генерации: очень простые/абстрактные картинки могут не нести надёжно детектируемый знак."
+  },
+  {
+   "код": "E-293-17",
+   "вид": "ограничение",
+   "утверждение_en": "Another common reason for an unclear result is \"Likely too small an edit\": minor alterations might not carry a detectable watermark.",
+   "цитата": "\"Likely too small an edit\" (minor alterations might not carry a detectable watermark).",
+   "источник_цитаты": "txt",
+   "раздел": "For SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-18",
+   "вид": "факт",
+   "утверждение_en": "If content contains Content Credentials, Gemini shows a summary of media composition, edit history, and whether or not AI was used.",
+   "цитата": "If the content contains Content Credentials, you can view a summary of:\nMedia composition.\nEdit history.\nWhether or not AI was used.",
+   "источник_цитаты": "txt",
+   "раздел": "For Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-19",
+   "вид": "объяснение",
+   "утверждение_en": "Besides verification in the Gemini app, potentially AI-generated content can be identified by examining images and videos for inconsistencies or errors that are common in AI-generated content.",
+   "цитата": "While content verification in the Gemini app can be a powerful tool, you can also use other methods to identify potentially AI-generated content:\nLook for visual artifacts:\nExamine images and videos for inconsistencies or errors that are common in AI-generated content. These can include:",
+   "источник_цитаты": "txt",
+   "раздел": "Other ways to identify AI-generated content",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Список типичных артефактов ИИ-картинок (следующие единицы) полезен генератору как список известных слабых мест для проверки кадра."
+  },
+  {
+   "код": "E-293-20",
+   "вид": "предупреждение",
+   "утверждение_en": "Inconsistent or garbled text within the image or video is a common error in AI-generated content.",
+   "цитата": "Inconsistent or garbled text within the image or video.",
+   "источник_цитаты": "txt",
+   "раздел": "Other ways to identify AI-generated content",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Как_получено: пункт списка \"common in AI-generated content\"."
+  },
+  {
+   "код": "E-293-21",
+   "вид": "предупреждение",
+   "утверждение_en": "Errors in small details, such as hands, teeth, or background elements, are common in AI-generated content.",
+   "цитата": "Errors in small details, such as hands, teeth, or background elements.",
+   "источник_цитаты": "txt",
+   "раздел": "Other ways to identify AI-generated content",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-22",
+   "вид": "предупреждение",
+   "утверждение_en": "Inconsistent shadows and lighting are common in AI-generated content.",
+   "цитата": "Inconsistent shadows and lighting.",
+   "источник_цитаты": "txt",
+   "раздел": "Other ways to identify AI-generated content",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-23",
+   "вид": "предупреждение",
+   "утверждение_en": "Repetitive patterns that seem unnatural are common in AI-generated content.",
+   "цитата": "Repetitive patterns that seem unnatural.",
+   "источник_цитаты": "txt",
+   "раздел": "Other ways to identify AI-generated content",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-24",
+   "вид": "факт",
+   "утверждение_en": "SynthID embeds digital watermarks directly into content generated by Google's AI models; currently it can verify whether images, videos, or audio were created or edited by Google AI tools.",
+   "цитата": "SynthID is a tool that embeds digital watermarks directly into content generated by Google's AI models. Currently, it can be used to verify whether images, videos, or audio files were created or edited by Google AI tools.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-25",
+   "вид": "факт",
+   "утверждение_en": "The SynthID watermark will usually still exist even if the image, video, or audio is re-scaled, re-colored, compressed or altered in other ways.",
+   "цитата": "The digital watermark will usually still exist even if the image, video, or audio is re-scaled, re-colored, compressed or altered in other ways.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-26",
+   "вид": "предупреждение",
+   "утверждение_en": "There's still a chance that after many alterations the SynthID watermark won't be detected.",
+   "цитата": "However, there's still a chance that after many alterations the watermark won’t be detected.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-27",
+   "вид": "объяснение",
+   "утверждение_en": "Watermarks are embedded directly into content, are used for verification and are not visible to users; metadata lets content creators add additional context with original files.",
+   "цитата": "Watermarks are embedded directly into content and used for verification purposes. The digital watermarks are not visible to users. Metadata allows content creators to add additional context with original files to provide more information about the content. Both watermarks and metadata are used to increase transparency around AI-generated content.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about SynthID",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-28",
+   "вид": "лимит",
+   "утверждение_en": "There is a usage quota of approximately 10 image checks, 10 video checks (up to 5 minutes total), and 10 audio checks (up to 3 hours total) within any 24-hour rolling window; the Gemini App notifies you when you reach these limits.",
+   "цитата": "There’s a usage quota of approximately 10 image checks, 10 video checks (up to 5 minutes total), and 10 audio checks (up to 3 hours total) within any 24-hour rolling window. If you reach these limits, the Gemini App will notify you.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about SynthID",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Квота проверок, не генераций. \"approximately\" — число приблизительное."
+  },
+  {
+   "код": "E-293-29",
+   "вид": "объяснение",
+   "утверждение_en": "Content Credentials provide media history and transparency, including whether AI was involved; it is an industry standard developed by the Coalition for Content Provenance and Authenticity (C2PA) and supported by many products from different companies.",
+   "цитата": "are a technology that provides media history and transparency, including whether AI was involved in the creation of the content. It is an industry standard developed by the Coalition for Content Provenance and Authenticity (C2PA), and is supported by many products from different companies.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-30",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials provide details about the origin and history of content through a cross-device, cross-app standard, and information from the app or device maker about AI or non-AI tools used to create or edit a file.",
+   "цитата": "Provide details about the origin and history of content through a standard that works across devices and apps from different companies.\nProvide information from the app or device maker about AI or non-AI tools used to create or edit an image, video, or audio file.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-31",
+   "вид": "ограничение",
+   "утверждение_en": "Content Credentials don't tell you if a file is definitely AI-generated; the origin and history information is to be used together with the content itself to make informed decisions.",
+   "цитата": "Tell you if an image, video, or audio file is definitely AI-generated, but you can use the origin and history information with the content itself to make informed decisions.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-32",
+   "вид": "ограничение",
+   "утверждение_en": "Content Credentials verification is available for files from devices and apps that support compatible versions of the Content Credentials format.",
+   "цитата": "Content Credentials verification is available for image, video, or audio files from devices and apps that support compatible versions of the Content Credentials format.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-33",
+   "вид": "факт",
+   "утверждение_en": "When available, Content Credentials show the company that provided and cryptographically signed the information, e.g. \"Info by Google LLC\"; the result may list more than one company.",
+   "цитата": "Show the company that provided and cryptographically signed the information. For example, “Info by Google LLC” shows that Google provided the information.\nThe result may list more than one company.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-34",
+   "вид": "предупреждение",
+   "утверждение_en": "Content Credentials are built on history maintained and signed by each editor of the file; if the media history was tampered with or modified without an appropriate update of the C2PA data, an error occurs and the Credentials may be shown as invalid.",
+   "цитата": "If Gemini Apps attempt to verify Content Credentials but there’s an issue, they may display a message saying that the Credentials are invalid. This could be due to these common errors:\nIncorrectly modified:\nContent Credentials are built on history that’s maintained and signed by each editor of the file. If the media history was tampered with or modified without an appropriate update of the C2PA data, an error occurs.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-35",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Apps support Content Credentials versions 2.2 and later from products on the C2PA Conforming Products List; credentials from products outside that list may not be considered valid or trusted.",
+   "цитата": "Gemini Apps supports Content Credentials versions 2.2 and later, from products on the\nC2PA Conforming Products List\n. Credentials from products outside that list may not be considered valid or trusted.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-36",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Apps don't support Content Credentials metadata stored remotely, separate from the file.",
+   "цитата": "Additionally, some third-party Content Credentials apps store the metadata remotely, separate from the image, video, or audio file; Gemini Apps don’t support remote metadata.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-37",
+   "вид": "факт",
+   "утверждение_en": "A file may contain malformed Content Credentials when the generating app had a bug; Gemini Apps may detect but not interpret them in some cases.",
+   "цитата": "A file may contain malformed Content Credentials when the app that generated the file experienced a bug. Gemini Apps may detect the Credentials, but can’t interpret them in some cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Common questions about Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-293-38",
+   "вид": "объяснение",
+   "утверждение_en": "The page presents two complementary provenance mechanisms for Google-generated images: SynthID, an invisible watermark in the pixels that usually survives rescaling, recoloring and compression but is recognized only for Google AI, and Content Credentials (C2PA), a signed cross-industry metadata history that becomes invalid if the file is modified without updating the C2PA data.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-293-2, E-293-3, E-293-25, E-293-34, E-293-12",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Связка двух механизмов; цитаты нет — вывод по странице."
+  },
+  {
+   "код": "E-293-39",
+   "вид": "объяснение",
+   "утверждение_en": "A negative result is weak evidence: simple or abstract images, very small edits and heavily altered files may not show a detectable SynthID watermark, and other companies' watermarks are not recognized.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-293-12, E-293-15, E-293-16, E-293-17, E-293-26",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-293-40",
+   "вид": "факт",
+   "утверждение_en": "The page repeatedly frames coverage as 'created or edited', indicating that content only partly edited by Google AI (not just fully generated content) carries the watermark or AI-use record.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-293-1, E-293-2, E-293-14, E-293-24, E-293-13",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Повторный акцент страницы."
+  }
+ ],
+ "противоречия_внутри": [
+  "Напряжение между E-293-15 (нет знака — значит не создано/не отредактировано Google AI) и E-293-16/E-293-17/E-293-26 (простой контент, малая правка или много изменений могут не дать детектируемого знака): строка 72 звучит категоричнее, чем допускают строки 73-75 и 104."
+ ],
+ "не_сказано": [
+  "Не названы конкретные модели генерации (Nano Banana и др.) и не сказано явно, что все их выходы несут SynthID и Content Credentials — только общая формула \"content generated by Google's AI models\".",
+  "Не сказано, можно ли отключить SynthID или Content Credentials при генерации.",
+  "Не сказано, сохраняет ли скриншот Content Credentials (дан только совет кропать скриншот для точности, что относится к SynthID-проверке).",
+  "Нет ни одного промпта генерации картинок; визуальные артефакты даны как признаки ИИ, без советов, как их избегать в промпте.",
+  "Не указано, как отличаются лимиты проверки для подписчиков разных тарифов."
+ ],
+ "сомнения": [
+  "В метаданных партии для страницы указаны модели 'Nano Banana', 'SynthID', но слово 'Nano Banana' не найдено ни в .txt, ни в .html (grep).",
+  "Даты на странице нет; состояние \"iOS soon\" без даты.",
+  "Страница — вариант справки для платформы Computer; для Android/iPhone шаги могут отличаться (есть переключатель платформ)."
+ ]
+}

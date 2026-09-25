@@ -1,0 +1,329 @@
+{
+ "id": 159,
+ "url": "https://research.google/blog/google-research-2025-bolder-breakthroughs-bigger-impact/",
+ "заголовок": "Google Research 2025: Bolder breakthroughs, bigger impact",
+ "дата_в_тексте": "December 18, 2025 (в тексте под заголовком); в html data-blog-publish-date=\"20251218\"; meta article:published_time / JSON-LD datePublished / «Last updated» отсутствуют",
+ "официальность": {
+  "домен": "research.google (блог Google Research)",
+  "второй_признак": "автор Yossi Matias, Vice President & Head of Google Research, «on behalf of the Google Research team»; текст от лица Google Research («our research», «we introduced»); подвал с разделами Google AI / Google Cloud / Google DeepMind / Google Labs и ссылками About Google / Privacy / Terms. Строки © Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Годовой обзор Google Research за 2025 год (широкая аудитория: исследователи, партнёры, публика). Охват огромный: эффективность и фактичность генеративных моделей, generative UI, квантовые вычисления, научные агенты, биология/нейронаука, Earth AI и погода, здоровье, образование, алгоритмы, архитектуры. Генерации изображений касаются три места: подпись «This image was created with Nano Banana» к таймлайну года; абзац о расширении исследований фактичности на изображения, которые улучшают качество Veo, Imagen и Nano Banana (плюс работы по точности text-to-image и подписей к изображениям); абзац о моделировании rich human feedback, улучшившем качество text-to-image в Imagen 3, Google Ads (генерация и редактирование креативов) и виртуальной примерке. Акцент страницы — «magic cycle of research»: исследования → продукты. Правил промптинга для изображений нет.",
+ "модели_на_странице": [
+  "Nano Banana (без версии; ссылка в html — на анонс Gemini 2.5 Flash Image)",
+  "Imagen / Imagen 3",
+  "Veo",
+  "Gemini 3 / Gemini 3 Pro (текст)",
+  "Gemma, MedGemma, VaultGemma, LearnLM, TimesFM, WeatherNext 2, MetNet, NeuralGCM, C2S-Scale и др. (не про изображения)"
+ ],
+ "структура": [
+  "Меню research.google (дважды), хлебные крошки",
+  "Заголовок, дата, автор, вступление",
+  "Изображение-таймлайн с подписью (Nano Banana)",
+  "Advancing generative models to be more efficient, factual, multilingual and multi-cultural",
+  "Introducing interactive interfaces with generative UI",
+  "Quantum computing: The next frontier",
+  "Accelerating scientific discovery",
+  "Advancing science — from biology to genomics to neuroscience",
+  "Enabling planetary intelligence and crisis resilience",
+  "Advancing Health AI",
+  "Advancing learning and education",
+  "Advancing ML foundations and algorithmic research",
+  "Introducing novel architectures",
+  "Collaborating with the research ecosystem",
+  "AI as an amplifier of human ingenuity",
+  "Acknowledgements, Labels, Other posts, alt-подписи, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Google Research 2025 … (строки 1-2)",
+   "итог": "ничего: заголовок вкладки"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content … Explore our many areas of focus … Google Labs Try our AI experiments … About (строки 3-191)",
+   "итог": "ничего: обвязка сайта research.google (меню, дважды)"
+  },
+  {
+   "n": 3,
+   "начало": "Search Home Blog Google Research 2025: Bolder breakthroughs, bigger impact (строки 193-197)",
+   "итог": "ничего: поиск, хлебные крошки, заголовок"
+  },
+  {
+   "n": 4,
+   "начало": "December 18, 2025 / Yossi Matias, Vice President & Head of Google Research (строки 199-200)",
+   "итог": "ничего: дата и автор (учтены в дате и официальности)"
+  },
+  {
+   "n": 5,
+   "начало": "In 2025, the magic cycle of research accelerated. (строка 202)",
+   "итог": "ничего: лид-вступление"
+  },
+  {
+   "n": 6,
+   "начало": "Google Research teams have invested over the years (строка 204)",
+   "итог": "ничего: общие слова о стратегии исследований"
+  },
+  {
+   "n": 7,
+   "начало": "This was quite a year! Our foundational AI breakthroughs (строка 205)",
+   "итог": "ничего: обзорный перечень направлений года, без конкретики по изображениям"
+  },
+  {
+   "n": 8,
+   "начало": "A look back at some of Google Research's 2025 moments … This image was created with Nano Banana. (строка 207)",
+   "итог": "E-159-1"
+  },
+  {
+   "n": 9,
+   "начало": "Advancing generative models … speculative decoding … LAVA (строки 209-210)",
+   "итог": "ничего: эффективность инференса и планировщик ВМ"
+  },
+  {
+   "n": 10,
+   "начало": "Equally critical, our pioneering research on LLM factuality … ECLeKTic (строка 211)",
+   "итог": "ничего: фактичность текстовых LLM (Gemini 3, SimpleQA, FACTS)"
+  },
+  {
+   "n": 11,
+   "начало": "We also explored the role of sufficient context in retrieval augmented generation (строка 212)",
+   "итог": "ничего: RAG, LLM Re-Ranker"
+  },
+  {
+   "n": 12,
+   "начало": "We evaluated leading LLMs on the FACTS Benchmark Suite (строка 214)",
+   "итог": "ничего: подпись к таблице фактичности текстовых моделей"
+  },
+  {
+   "n": 13,
+   "начало": "With the rise of multimodal content, we’ve expanded our work on factuality to images (строка 216)",
+   "итог": "E-159-2, E-159-3"
+  },
+  {
+   "n": 14,
+   "начало": "Our long-running multilinguality research helped Gemma … TUNA (строка 217)",
+   "итог": "ничего: мультиязычность и социокультурная адаптация языковых моделей, изображений не касается"
+  },
+  {
+   "n": 15,
+   "начало": "Introducing interactive interfaces with generative UI … dynamic view (строки 219-220)",
+   "итог": "ничего: generative UI (интерфейсы генерируются кодом), не модель изображений"
+  },
+  {
+   "n": 16,
+   "начало": "Watch the film Link to Youtube Video (строки 222-224)",
+   "итог": "ничего: обвязка (видео)"
+  },
+  {
+   "n": 17,
+   "начало": "Example of generative UI capabilities in dynamic view … “ Create a Van Gogh gallery with life context for each piece. ” (строка 226)",
+   "итог": "ничего: пример промпта для generative UI (dynamic view в Gemini app), не для генерации изображений"
+  },
+  {
+   "n": 18,
+   "начало": "play silent looping video … mute video (строки 228-230)",
+   "итог": "ничего: обвязка (управление видео)"
+  },
+  {
+   "n": 19,
+   "начало": "Example of generative UI capabilities in AI Mode … “ Show me how rna polymerase works … ” (строка 232)",
+   "итог": "ничего: пример промпта для generative UI в AI Mode, не для генерации изображений"
+  },
+  {
+   "n": 20,
+   "начало": "Quantum computing: The next frontier … Link to Youtube Video (строки 234-239)",
+   "итог": "ничего: квантовые вычисления"
+  },
+  {
+   "n": 21,
+   "начало": "Accelerating scientific discovery … AI co-scientist … (строки 241-248)",
+   "итог": "ничего: научные агенты"
+  },
+  {
+   "n": 22,
+   "начало": "Advancing science — from biology to genomics to neuroscience … LICONN … ZAPBench … (строки 250-257)",
+   "итог": "ничего: геномика и нейронаука; «image analysis and ML tools for connectomics» — анализ микроскопии, не генерация"
+  },
+  {
+   "n": 23,
+   "начало": "Enabling planetary intelligence and crisis resilience … Earth AI … FireSat … WeatherNext 2 … NeuralGCM (строки 259-271)",
+   "итог": "ничего: геопространственные и погодные модели"
+  },
+  {
+   "n": 24,
+   "начало": "Advancing Health AI … AMIE … MedGemma … (строки 273-280)",
+   "итог": "ничего: медицинские модели"
+  },
+  {
+   "n": 25,
+   "начало": "Advancing learning and education … LearnLM … Learn Your Way … AI Quests (строки 282-291)",
+   "итог": "ничего: образование"
+  },
+  {
+   "n": 26,
+   "начало": "Advancing ML foundations and algorithmic research … rich human feedback improved text-to-image generation quality (строки 293-294)",
+   "итог": "E-159-4"
+  },
+  {
+   "n": 27,
+   "начало": "The impact of our algorithmic research … TimesFM … Mobility AI … Traffic Simulation API (строки 295-301)",
+   "итог": "ничего: прогнозирование временных рядов и транспорт"
+  },
+  {
+   "n": 28,
+   "начало": "Additionally, we’ve explored a range of topics in economics … privacy … VaultGemma (строки 303-304)",
+   "итог": "ничего: экономика, приватность"
+  },
+  {
+   "n": 29,
+   "начало": "Introducing novel architectures … Nested Learning … Titans … MIRAS … MUVERA … graph foundational models (строки 306-311)",
+   "итог": "ничего: архитектуры ML и поиск"
+  },
+  {
+   "n": 30,
+   "начало": "Collaborating with the research ecosystem … (строки 313-316)",
+   "итог": "ничего: сотрудничество, хабы, конференции"
+  },
+  {
+   "n": 31,
+   "начало": "AI as an amplifier of human ingenuity … (строки 318-321)",
+   "итог": "ничего: заключение"
+  },
+  {
+   "n": 32,
+   "начало": "Watch the film … Acknowledgements … With thanks to everyone (строки 323-329)",
+   "итог": "ничего: видео и благодарности"
+  },
+  {
+   "n": 33,
+   "начало": "Labels: Year in Review … Other posts of interest … × ❮ ❯ (строки 331-353)",
+   "итог": "ничего: обвязка (метки и другие посты)"
+  },
+  {
+   "n": 34,
+   "начало": "A satellite map … Two Google Research banners … MIRAS Framework … A timeline of Google Research’s 2025 moments … FACTS Score (строки 355-363)",
+   "итог": "ничего: alt-подписи изображений статьи; alt таймлайна (строка 361) относится к E-159-1 и новых сведений не даёт; таблица FACTS — фактичность текстовых моделей"
+  },
+  {
+   "n": 35,
+   "начало": "Follow us … Explore our other initiatives … Cookies management controls × (строки 365-422)",
+   "итог": "ничего: обвязка (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-159-1",
+   "вид": "факт",
+   "утверждение_en": "The timeline image summarizing Google Research's 2025 moments in this post was created with Nano Banana.",
+   "цитата": "A look back at some of Google Research's 2025 moments realized in collaboration with many teams across Google. This image was created with Nano Banana.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (подпись к изображению-таймлайну)",
+   "модели": [
+    "Nano Banana (версия не указана)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-18 (дата статьи)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Пример реального применения Google: иллюстрация-таймлайн для годового обзора (alt: «A timeline of Google Research’s 2025 moments»). Сам промпт, версия модели (статья от 18.12.2025 — уже после выхода Nano Banana Pro) и степень ручной доработки не указаны; содержимое картинки (есть ли в ней текст) по .txt не проверить."
+  },
+  {
+   "код": "E-159-2",
+   "вид": "факт",
+   "утверждение_en": "Google Research expanded its factuality work to images, audio, video, 3D environments and LLM-generated applications, and says this work helps improve the quality of Google's video and image model families, including Veo, Imagen and Nano Banana.",
+   "цитата": "With the rise of multimodal content, we’ve expanded our work on factuality to images, audio, video, 3D environments and LLM-generated applications. This work helps to improve the quality of Google’s video and image model families, including Veo , Imagen and Nano Banana .",
+   "источник_цитаты": "txt",
+   "раздел": "Advancing generative models to be more efficient, factual, multilingual and multi-cultural",
+   "модели": [
+    "Nano Banana (ссылка в html ведёт на анонс blog.google/products/gemini/updated-image-editing-model/ — Gemini 2.5 Flash Image)",
+    "Imagen",
+    "Veo"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-18 (дата статьи)",
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Что значит «factuality» применительно к изображениям — не раскрыто. Какая версия Nano Banana — по тексту не сказано; по ссылке в html — анонс Gemini 2.5 Flash Image (август 2025)."
+  },
+  {
+   "код": "E-159-3",
+   "вид": "факт",
+   "утверждение_en": "Google Research's latest work includes making text-to-image generation and image captions more accurate.",
+   "цитата": "Our latest research includes making text-to-image generation and image captions more accurate,",
+   "источник_цитаты": "txt",
+   "раздел": "Advancing generative models to be more efficient, factual, multilingual and multi-cultural",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-18 (дата статьи)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "В html ссылки: text-to-image generation → arxiv.org/abs/2504.17502; image captions → arxiv.org/pdf/2506.07631. Методы не пересказаны. Точность подписей к изображениям (captions) важна для обучения T2I — но страница этого не говорит."
+  },
+  {
+   "код": "E-159-4",
+   "вид": "факт",
+   "утверждение_en": "Google Research's predictive modeling of rich human feedback improved text-to-image generation quality in products including Imagen 3, creative generation and editing in Google Ads, and virtual try-on for shopping; the research was also extended to video generation quality.",
+   "цитата": "And our state-of-the-art predictive modeling of rich human feedback improved text-to-image generation quality in products, including Imagen3 , creative generation and editing in Google Ads, and virtual try on for shopping.",
+   "источник_цитаты": "txt",
+   "раздел": "Advancing ML foundations and algorithmic research",
+   "модели": [
+    "Imagen 3 (на странице «Imagen3»)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-18 (дата статьи)",
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Ссылка «predictive modeling» → research.google/blog/rich-human-feedback-for-text-to-image-generation/ (html). Nano Banana в этом абзаце не упомянут. Видео: «Wizard of Oz film launch at Sphere» — не про изображения."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-159-5",
+   "вид": "объяснение",
+   "утверждение_en": "Taken together, the post attributes quality gains in Google's image generation models to two research lines — multimodal factuality (including more accurate text-to-image generation and image captions) and predictive modeling of rich human feedback — but it names Nano Banana only in the factuality line and Imagen 3 only in the human-feedback line.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "Nano Banana (без версии)",
+    "Imagen 3",
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-159-2, E-159-3, E-159-4",
+   "дата_единицы": "2025-12-18 (дата статьи)",
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Видно только при сопоставлении двух разнесённых абзацев (строки 216 и 294). Перенос «rich human feedback» на Nano Banana страница не утверждает."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Что означает «factuality» для изображений (соответствие промпту, фактическая корректность изображённого, текст в кадре) — не раскрыто.",
+  "Какая версия Nano Banana имеется в виду (в подписи к таймлайну и в абзаце о фактичности) — в тексте не сказано; ссылка в html ведёт на анонс Gemini 2.5 Flash Image.",
+  "Промпт, по которому создан таймлайн, и была ли ручная доработка — не приведены.",
+  "Никаких правил промптинга, лимитов, форматов или цен для моделей изображений на странице нет."
+ ],
+ "сомнения": [
+  "Страница по сути не про генерацию изображений; все единицы — исследовательско-продуктовые факты без практических приёмов.",
+  "Утверждения «helps to improve the quality» — общие, без метрик; вклад конкретных работ в Nano Banana не измерен на странице."
+ ]
+}

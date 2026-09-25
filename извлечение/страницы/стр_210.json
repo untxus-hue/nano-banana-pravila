@@ -1,0 +1,898 @@
+{
+ "id": 210,
+ "url": "https://support.google.com/docs/answer/15559808?hl=en",
+ "заголовок": "Generate an image with Gemini in Google Docs (Workspace Experiments) - Google Docs Editors Help",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "support.google.com",
+  "второй_признак": "подвал «©2026 Google» со ссылками Privacy Policy / Terms of Service; справочный центр Google Docs Editors Help; текст от лица Google («submit feedback to let us know», «Google uses Workspace Experiments data…»).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справка Google Docs Editors Help о генерации и правке картинок Gemini в Docs в рамках Workspace Experiments (тестовая программа для личных аккаунтов; только десктоп и английский). Генерация — промпт в нижней панели, Accept. Главное содержательное: таблица «цель → промпт» для инфографики, горизонтального таймлайна, 4-шагового флоучарта и mind map (промпты опираются на содержимое документа и указывают место вставки); правка — промпт или prompt starter («Swap [object] with…»), пример «Make the lighting darker.», пакетная правка нескольких картинок одним промптом. Большой блок про приватность: не класть личное в промпты и отзывы, данные хранятся и могут читаться людьми. Модель не названа.",
+ "модели_на_странице": [
+  "не указано (Gemini in Docs, модель картинок не названа)"
+ ],
+ "структура": [
+  "шапка справочного центра",
+  "Generate an image with Gemini in Google Docs (Workspace Experiments) + Feature availability",
+  "Generate an image with Gemini (+ таблица «If your goal is / prompt like»)",
+  "Edit an image with Gemini (+ таблица «If your goal is / You should»)",
+  "Give feedback on generated images",
+  "Learn about Workspace Experiments feature suggestions",
+  "Learn how Workspace Experiments data in Google Docs is collected",
+  "Related resources / список статей / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generate an image with Gemini (строка 1)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Google (строки 2-24)",
+   "итог": "ничего: обвязка сайта (шапка справочного центра; до байта совпадает со строками 2-24 страницы 209 — проверено diff)"
+  },
+  {
+   "n": 3,
+   "начало": "Generate an image with Gemini (строка 25)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 4,
+   "начало": "Feature availability This feature requires (строки 26-29)",
+   "итог": "E-210-1 (строка 28 — ссылка, ничего)"
+  },
+  {
+   "n": 5,
+   "начало": "Google Workspace Experiments, which is (строки 30-32)",
+   "итог": "E-210-2 (строка 31 — ссылка, ничего)"
+  },
+  {
+   "n": 6,
+   "начало": "This feature is currently available (строка 33)",
+   "итог": "E-210-3"
+  },
+  {
+   "n": 7,
+   "начало": "If you don’t have access (строка 34)",
+   "итог": "E-210-4"
+  },
+  {
+   "n": 8,
+   "начало": "Learn how to generate an (строки 35-37)",
+   "итог": "ничего: ссылки без содержания"
+  },
+  {
+   "n": 9,
+   "начало": "Generate an image with Gemini (строка 38; в html GIF-демо без alt)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 10,
+   "начало": "You can ask Gemini to (строка 39)",
+   "итог": "E-210-5"
+  },
+  {
+   "n": 11,
+   "начало": "On your computer, open a (строки 40-47)",
+   "итог": "E-210-6"
+  },
+  {
+   "n": 12,
+   "начало": "If your goal is: You (строки 48-51)",
+   "итог": "ничего: заголовок таблицы"
+  },
+  {
+   "n": 13,
+   "начало": "Generate professional infographics \"Visualize my (строки 52-53)",
+   "итог": "E-210-7"
+  },
+  {
+   "n": 14,
+   "начало": "Add a visual timeline to (строки 54-55)",
+   "итог": "E-210-8"
+  },
+  {
+   "n": 15,
+   "начало": "Create a step-by-step process guide (строки 56-57)",
+   "итог": "E-210-9"
+  },
+  {
+   "n": 16,
+   "начало": "Build a high-level Mind Map (строки 58-59)",
+   "итог": "E-210-10"
+  },
+  {
+   "n": 17,
+   "начало": "Edit an image with Gemini (строка 60)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 18,
+   "начало": "You can ask Gemini to (строка 61)",
+   "итог": "E-210-11"
+  },
+  {
+   "n": 19,
+   "начало": "On your computer, open a (строки 62-66)",
+   "итог": "E-210-12"
+  },
+  {
+   "n": 20,
+   "начало": "In the bottom bar, describe (строка 67)",
+   "итог": "E-210-12, E-210-13, E-210-14"
+  },
+  {
+   "n": 21,
+   "начало": "Optional. To find edit suggestions, (строки 68-70)",
+   "итог": "E-210-14"
+  },
+  {
+   "n": 22,
+   "начало": "Click or enter. To insert (строки 71-75)",
+   "итог": "E-210-15"
+  },
+  {
+   "n": 23,
+   "начало": "If your goal is: You (строки 76-77)",
+   "итог": "ничего: заголовок таблицы"
+  },
+  {
+   "n": 24,
+   "начало": "Edit an object in an (строки 78-82)",
+   "итог": "E-210-16, E-210-17"
+  },
+  {
+   "n": 25,
+   "начало": "Edit the prompt in the (строка 83)",
+   "итог": "E-210-18"
+  },
+  {
+   "n": 26,
+   "начало": "Implement the same edit into (строки 84-85)",
+   "итог": "E-210-19, E-210-20"
+  },
+  {
+   "n": 27,
+   "начало": "Give feedback on generated images (строка 86)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 28,
+   "начало": "Google Workspace with Gemini constantly (строка 87)",
+   "итог": "E-210-21"
+  },
+  {
+   "n": 29,
+   "начало": "If you get a suggestion (строка 88)",
+   "итог": "E-210-22"
+  },
+  {
+   "n": 30,
+   "начало": "Because feedback may be human (строка 89)",
+   "итог": "E-210-23"
+  },
+  {
+   "n": 31,
+   "начало": "On your computer, below the (строки 90-102)",
+   "итог": "E-210-24"
+  },
+  {
+   "n": 32,
+   "начало": "To provide general feedback on (строки 103-106)",
+   "итог": "ничего: служебная процедура общего отзыва о функции (Help → Help Docs improve), не про генерацию"
+  },
+  {
+   "n": 33,
+   "начало": "To report a legal issue, (строки 107-109)",
+   "итог": "ничего: ссылка на процедуру без содержания"
+  },
+  {
+   "n": 34,
+   "начало": "Learn about Workspace Experiments feature (строка 110)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 35,
+   "начало": "Workspace Experiments feature suggestions don’t (строки 111-112)",
+   "итог": "ничего: общий дисклеймер (взгляды Google, не профессиональный совет), не про генерацию картинок"
+  },
+  {
+   "n": 36,
+   "начало": "Workspace Experiments features may suggest (строка 113)",
+   "итог": "E-210-25"
+  },
+  {
+   "n": 37,
+   "начало": "Don’t include personal, confidential, or (строка 114)",
+   "итог": "E-210-26"
+  },
+  {
+   "n": 38,
+   "начало": "Google uses Workspace Experiments data (строка 115)",
+   "итог": "E-210-27"
+  },
+  {
+   "n": 39,
+   "начало": "Your Workspace Experiments Data may (строка 116)",
+   "итог": "E-210-28"
+  },
+  {
+   "n": 40,
+   "начало": "Generated images are for use (строка 117)",
+   "итог": "E-210-29"
+  },
+  {
+   "n": 41,
+   "начало": "Workspace Experiments generated images are (строка 118)",
+   "итог": "E-210-30"
+  },
+  {
+   "n": 42,
+   "начало": "Learn how Workspace Experiments data (строки 119-127)",
+   "итог": "E-210-31"
+  },
+  {
+   "n": 43,
+   "начало": "Related resources Get started with (строки 128-135)",
+   "итог": "ничего: обвязка сайта (связанные ресурсы, сообщество)"
+  },
+  {
+   "n": 44,
+   "начало": "true Help 1 of 24 (строки 136-187)",
+   "итог": "ничего: обвязка сайта (список 24 статей Workspace Experiments, промо Prompt Guide)"
+  },
+  {
+   "n": 45,
+   "начало": "©2026 Google Privacy Policy Terms (строки 188-254)",
+   "итог": "ничего: обвязка сайта (подвал; совпадает с подвалом страницы 209 кроме служебного числа-идентификатора — проверено diff)"
+  },
+  {
+   "n": 46,
+   "начало": "вся страница (длинная дистанция)",
+   "итог": "E-210-32, E-210-33, E-210-34, E-210-35"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-210-1",
+   "вид": "ограничение",
+   "утверждение_en": "Generating images with Gemini in Google Docs (Workspace Experiments) requires an eligible Google Workspace or Google AI plan.",
+   "цитата": "This feature requires an eligible Google Workspace or Google AI plan.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-2",
+   "вид": "факт",
+   "утверждение_en": "Google Workspace Experiments is a trusted tester program for personal accounts to try new AI features.",
+   "цитата": "Google Workspace Experiments, which is a trusted tester program for personal accounts to try new AI features.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-3",
+   "вид": "ограничение",
+   "утверждение_en": "The feature is currently available on desktop and in English only.",
+   "цитата": "This feature is currently available on desktop and in English only.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "промптинг"
+   ],
+   "заметка": "«currently» без даты. Английский — язык интерфейса/промптов."
+  },
+  {
+   "код": "E-210-4",
+   "вид": "факт",
+   "утверждение_en": "Without access to personalization in Help me create, the experience will look different.",
+   "цитата": "If you don’t have access to personalization when using Help me create, your experience will look different.",
+   "источник_цитаты": "txt",
+   "раздел": "Feature availability",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Что именно отличается — не объяснено."
+  },
+  {
+   "код": "E-210-5",
+   "вид": "факт",
+   "утверждение_en": "You can ask Gemini to create images or infographics to support your content directly within a Google Docs document.",
+   "цитата": "You can ask Gemini to create images or infographics to support your content, directly within your document.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-6",
+   "вид": "инструкция",
+   "утверждение_en": "To generate: open a document in Google Docs on a computer, write a prompt describing the image you want in the bottom bar, then select Accept to insert it.",
+   "цитата": "Write a prompt describing the image you want.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "промптинг"
+   ],
+   "заметка": "Строка 43 «At the bottom bar» + иконка (в html без alt); вставка — «select Accept» (строки 45-47)."
+  },
+  {
+   "код": "E-210-7",
+   "вид": "пример_промпта",
+   "утверждение_en": "Goal \"Generate professional infographics\" — prompt: \"Visualize my document by creating an infographic summarizing key ideas and insert it at the top\"",
+   "цитата": "\"Visualize my document by creating an infographic summarizing key ideas and insert it at the top\"",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Структура: глагол («Visualize») + источник содержания («my document») + формат («an infographic») + что отобрать («summarizing key ideas») + размещение («insert it at the top»). Таблица подана как «You should use a prompt like» — рекомендация."
+  },
+  {
+   "код": "E-210-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Goal \"Add a visual timeline to a project\" — prompt: \"Create a visual horizontal project timeline based on the dates in this document and insert it below the introduction.\"",
+   "цитата": "\"Create a visual horizontal project timeline based on the dates in this document and insert it below the introduction.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: глагол («Create») + формат с ориентацией («visual horizontal project timeline») + опора на данные документа («based on the dates in this document») + размещение («below the introduction»). Ориентация задана явно."
+  },
+  {
+   "код": "E-210-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Goal \"Create a step-by-step process guide\" — prompt: \"Generate a visual 4-step flowchart showing the onboarding process described in this text and place it in the 'Workflow' section.\"",
+   "цитата": "\"Generate a visual 4-step flowchart showing the onboarding process described in this text and place it in the 'Workflow' section.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: глагол («Generate») + формат с числом шагов («4-step flowchart») + содержание из текста («the onboarding process described in this text») + размещение по названию раздела («in the 'Workflow' section»). Число шагов задано явно."
+  },
+  {
+   "код": "E-210-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Goal \"Build a high-level Mind Map\" — prompt: \"Visualize the main themes of this brainstorm as a mind map with a central node and radiating branches.\"",
+   "цитата": "\"Visualize the main themes of this brainstorm as a mind map with a central node and radiating branches.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: глагол («Visualize») + что отобрать («the main themes of this brainstorm») + формат («as a mind map») + описание композиции («with a central node and radiating branches»). Размещения в этом примере нет — единственный из четырёх."
+  },
+  {
+   "код": "E-210-11",
+   "вид": "факт",
+   "утверждение_en": "You can ask Gemini to edit your images or infographics in Google Docs.",
+   "цитата": "You can ask Gemini to edit your images or infographics.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-12",
+   "вид": "инструкция",
+   "утверждение_en": "To edit: click on an image, select the icon at its bottom-left corner, and in the bottom bar describe how you want to change the image.",
+   "цитата": "In the bottom bar, describe how you want to change the image, for example:",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Строки 65-66: «Click on an image and select [иконка без alt] on its bottom-left corner.»"
+  },
+  {
+   "код": "E-210-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example edit prompt: \"Make the lighting darker.\"",
+   "цитата": "\"Make the lighting darker.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Повелительный глагол («Make») + один параметр (lighting) + направление изменения (darker). Правка одного свойства без пересказа всей картинки."
+  },
+  {
+   "код": "E-210-14",
+   "вид": "факт",
+   "утверждение_en": "Instead of typing, you can select one of the edit suggestions; to find them, click More and select a prompt starter.",
+   "цитата": "Optional. To find edit suggestions, click",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Строка 67: «Or you can also select one of the suggestions.»; строки 69-70: «More» + иконка «Down arrow» + «to select a prompt starter.»"
+  },
+  {
+   "код": "E-210-15",
+   "вид": "инструкция",
+   "утверждение_en": "Submit the edit prompt by clicking the send icon or pressing enter, then select Accept to insert the edits.",
+   "цитата": "To insert the edits, select",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Строки 71-75; иконка отправки без alt, у Accept — иконка «Checkmark»."
+  },
+  {
+   "код": "E-210-16",
+   "вид": "инструкция",
+   "утверждение_en": "To edit an object in an existing image: select the image, click More, select the \"Swap [object] with…\" starter, and edit the prompt in the prompt box.",
+   "цитата": "Edit an object in an existing image",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Шаги в строках 79-83 (в html соединены иконками alt «and then»)."
+  },
+  {
+   "код": "E-210-17",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt starter for object edits: \"Swap [object] with…\"",
+   "цитата": "Select \"Swap [object] with…\"",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Шаблон из интерфейса: глагол замены + слот объекта + на что заменить."
+  },
+  {
+   "код": "E-210-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example object-swap prompt: \"Swap the arrow pointing up in the picture for a red arrow pointing down\"",
+   "цитата": "\"Swap the arrow pointing up in the picture for a red arrow pointing down\"",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Структура: глагол («Swap») + однозначная идентификация исходного объекта по признаку («the arrow pointing up in the picture») + новый объект с изменёнными признаками (цвет «red», направление «pointing down»). Работу делает уточнение, какой именно объект менять."
+  },
+  {
+   "код": "E-210-19",
+   "вид": "приём",
+   "утверждение_en": "To apply the same edit to all images at once, select the images and write a single prompt.",
+   "цитата": "Select the images and write a prompt like:",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Цель в таблице: «Implement the same edit into all images at once»."
+  },
+  {
+   "код": "E-210-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example batch edit prompt: \"Change the background to the corporate colors: blue and white.\"",
+   "цитата": "\"Change the background to the corporate colors: blue and white.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Edit an image with Gemini → таблица «If your goal is»",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Структура: глагол («Change») + зона правки («the background») + цель через понятие + явное раскрытие («the corporate colors: blue and white»). Называние конкретных цветов после двоеточия снимает неоднозначность «corporate colors»."
+  },
+  {
+   "код": "E-210-21",
+   "вид": "предупреждение",
+   "утверждение_en": "Google Workspace with Gemini constantly learns and may not be able to support your request.",
+   "цитата": "Google Workspace with Gemini constantly learns and may not be able to support your request.",
+   "источник_цитаты": "txt",
+   "раздел": "Give feedback on generated images",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-22",
+   "вид": "факт",
+   "утверждение_en": "If a suggestion is inaccurate or makes you feel unsafe you can submit feedback; feedback can be used to enhance AI-assisted Workspace features and expand Google's AI efforts.",
+   "цитата": "If you get a suggestion that's inaccurate or makes you feel unsafe, you can submit feedback to let us know. Your feedback can be used to enhance AI-assisted Workspace features and expand Google efforts in AI.",
+   "источник_цитаты": "txt",
+   "раздел": "Give feedback on generated images",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-23",
+   "вид": "предупреждение",
+   "утверждение_en": "Because feedback may be human readable, do not submit data that contains personal, confidential, or sensitive information.",
+   "цитата": "Because feedback may be human readable, please do not submit data that contains personal, confidential, or sensitive information.",
+   "источник_цитаты": "txt",
+   "раздел": "Give feedback on generated images",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-24",
+   "вид": "инструкция",
+   "утверждение_en": "To give feedback, select Good suggestion or Bad suggestion below the generated image, choose in the pop-up whether to share outputs with the feedback (you can uncheck it), and for Bad suggestion select the issue, click Next, add details and Submit.",
+   "цитата": "In the pop-up window, select if you want to share outputs along with your feedback. If you don't want to share it, you can uncheck it.",
+   "источник_цитаты": "txt",
+   "раздел": "Give feedback on generated images",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-25",
+   "вид": "предупреждение",
+   "утверждение_en": "Workspace Experiments features may suggest inaccurate or inappropriate information.",
+   "цитата": "Workspace Experiments features may suggest inaccurate or inappropriate information.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-26",
+   "вид": "правило",
+   "утверждение_en": "Don't include personal, confidential, or sensitive information in your prompts.",
+   "цитата": "Don’t include personal, confidential, or sensitive information in your prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-27",
+   "вид": "факт",
+   "утверждение_en": "Google uses Workspace Experiments data and metrics to provide, improve and develop products, services and machine learning technologies across Google.",
+   "цитата": "Google uses Workspace Experiments data and metrics to provide, improve, and develop products, services, and machine learning technologies across Google.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-28",
+   "вид": "факт",
+   "утверждение_en": "Workspace Experiments data may be read, rated, annotated and reviewed by human reviewers; Google-selected input and resulting output are aggregated and/or pseudonymized before human review unless provided as part of feedback.",
+   "цитата": "Your Workspace Experiments Data may also be read, rated, annotated, and reviewed by human reviewers.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Оговорка про агрегацию/псевдонимизацию — следующее предложение той же строки 116."
+  },
+  {
+   "код": "E-210-29",
+   "вид": "ограничение",
+   "утверждение_en": "Images generated in Google Docs (Workspace Experiments) are for use only within Google Docs.",
+   "цитата": "Generated images are for use only within Google Docs.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-30",
+   "вид": "предупреждение",
+   "утверждение_en": "Workspace Experiments generated images are designed to bring your imagination to life in Google Docs and may not represent real-world situations.",
+   "цитата": "Workspace Experiments generated images are designed to bring your imagination to life in Google Docs, and may not represent real-world situations.",
+   "источник_цитаты": "txt",
+   "раздел": "Learn about Workspace Experiments feature suggestions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-31",
+   "вид": "факт",
+   "утверждение_en": "When you use \"Generate an image\" in Google Docs, Google uses and stores the prompts you enter or select, the image styles you select, the generated images, and your feedback on them.",
+   "цитата": "When you use “Generate an image” in Google Docs, Google uses and stores the following data:",
+   "источник_цитаты": "txt",
+   "раздел": "Learn how Workspace Experiments data in Google Docs is collected",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Перечень — строки 121-124. Упоминание «Image styles you select» подразумевает выбор стиля, хотя в инструкции на этой странице его нет."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-210-32",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Document-aware visual prompts in the goal table follow one pattern: [action verb: Visualize/Create/Generate] + [visual format, optionally with orientation or step count] + [which content from the document to use] + [where to insert it in the document].",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-210-7, E-210-8, E-210-9, E-210-10",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Слот размещения есть в 3 из 4 примеров (нет в mind map). Шаблон на странице явно не сформулирован."
+  },
+  {
+   "код": "E-210-33",
+   "вид": "приём",
+   "утверждение_en": "For infographics, timelines, flowcharts and mind maps in Docs, the prompts point Gemini to the document's own content (\"my document\", \"the dates in this document\", \"the process described in this text\", \"this brainstorm\") instead of restating the content in the prompt.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-210-7, E-210-8, E-210-9, E-210-10",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-34",
+   "вид": "объяснение",
+   "утверждение_en": "Edit prompts on the page are short imperatives that name the target (lighting, a specific arrow, the background) and the concrete new value (darker, red and pointing down, blue and white); the same edit prompt can be applied to several selected images at once.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-210-13, E-210-18, E-210-19, E-210-20",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-210-35",
+   "вид": "предупреждение",
+   "утверждение_en": "The page repeatedly stresses privacy: keep personal, confidential and sensitive information out of prompts and feedback, because prompts, selected styles, generated images and feedback are stored and may be read by human reviewers.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "выведено из E-210-23, E-210-26, E-210-28, E-210-31",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Шаблон-стартер называется «Swap [object] with…» (E-210-17), а пример в той же ячейке построен как «Swap … for …» (E-210-18) — предлог отличается; мелкое расхождение формулировок.",
+  "В списке хранимых данных есть «Image styles you select» (E-210-31), но в инструкции генерации на этой странице выбор стиля не описан."
+ ],
+ "не_сказано": [
+  "Какая модель генерирует картинки — не названа.",
+  "Соотношение сторон, разрешение, количество вариантов на один запрос — не указано.",
+  "Насколько точно воспроизводится текст в инфографике/таймлайне — не обсуждается.",
+  "Лимиты/квоты не указаны.",
+  "Водяные знаки/SynthID не упомянуты.",
+  "Что отличается без «personalization» в Help me create — не объяснено.",
+  "Что значит «for use only within Google Docs» — можно ли скачать картинку."
+ ],
+ "сомнения": [
+  "Дата на странице не найдена (только ©2026).",
+  "Строка 34 упоминает «Help me create», а процедура описывает «bottom bar» — неясно, одно ли это место интерфейса.",
+  "Иконки в шагах (bottom bar, кнопка правки у угла, отправка) в html без alt — названия кнопок восстановить нельзя."
+ ]
+}

@@ -1,0 +1,290 @@
+{
+ "id": 195,
+ "url": "https://blog.google/products/shopping/studio-quality-digital-try-on/",
+ "заголовок": "Google virtual try on shopping feature adds new studio-quality images",
+ "дата_в_тексте": "Dec 11, 2025 (в html: article:published_time 2025-12-11; datePublished 2025-12-11T14:00:00+00:00; dateModified 2025-12-11T15:41:15)",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "автор Lilian Rincon, VP of Product, Consumer Shopping (Google); JSON-LD publisher = Organization «Google»; текст от лица Google («our virtual try on tool», «our Gemini 2.5 Flash Image model»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткий продуктовый анонс blog.google (11.12.2025) для покупателей в США: виртуальная примерочная Google Shopping теперь принимает селфи — Nano Banana (прямо названа «our Gemini 2.5 Flash Image model») генерирует полноростовую цифровую версию человека; пользователь загружает селфи, выбирает размер одежды, получает несколько студийных изображений и выбирает одно; alt-text демо-видео подтверждает порядок шагов. Промптов, лимитов, параметров нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana, «our Gemini 2.5 Flash Image model»)"
+ ],
+ "структура": [
+  "H1, автор, дата",
+  "Абзац 1: что нового (селфи → полноростовая версия)",
+  "Абзац 2: как пользоваться, альтернативы",
+  "Абзац 3: ссылка и Shopping Graph"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Google virtual try on shopping feature adds new studio-quality images",
+   "итог": "ничего: обвязка — title (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Innovation & AI Products & platforms",
+   "итог": "ничего: обвязка — меню blog.google и выбор региона (строки 2-194); diff со страницей 177 (строки 2-196): совпадает до байта, кроме строки 1 (title)"
+  },
+  {
+   "n": 3,
+   "начало": "Breadcrumb Home Products & Platforms Products Shopping",
+   "итог": "ничего: обвязка — хлебные крошки (строки 195-199)"
+  },
+  {
+   "n": 4,
+   "начало": "Generate a digital version of yourself to virtually try on clothes.",
+   "итог": "ничего: заголовок H1; содержание раскрыто в E-195-2"
+  },
+  {
+   "n": 5,
+   "начало": "Lilian Rincon VP of Product, Consumer Shopping Dec 11, 2025",
+   "итог": "ничего: метаданные — автор и дата (строки 203-206), использованы в официальности"
+  },
+  {
+   "n": 6,
+   "начало": "Say goodbye to bad dressing room lighting and awkward outfit selfies.",
+   "итог": "E-195-1, E-195-2, E-195-3"
+  },
+  {
+   "n": 7,
+   "начало": "Simply upload a selfie at g.co/shop/tryon , select your usual clothing size",
+   "итог": "E-195-4, E-195-5, E-195-6"
+  },
+  {
+   "n": 8,
+   "начало": "Make your image now at google.com/shopping/tryon",
+   "итог": "E-195-7"
+  },
+  {
+   "n": 9,
+   "начало": "html: видео «create try on photo» (alt-text с описанием сценария)",
+   "итог": "E-195-8"
+  },
+  {
+   "n": 10,
+   "начало": "Posted in: Shopping Gemini models",
+   "итог": "ничего: обвязка — рубрики"
+  },
+  {
+   "n": 11,
+   "начало": "Related stories Gemini models Gemini 3.8 text-to-speech says hello",
+   "итог": "ничего: обвязка — связанные статьи (строки 216-246)"
+  },
+  {
+   "n": 12,
+   "начало": "Privacy Terms Help More of Google",
+   "итог": "ничего: обвязка — подвал и выбор региона (строки 248-254)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-195-1",
+   "вид": "факт",
+   "утверждение_en": "Google names Nano Banana as its Gemini 2.5 Flash Image model.",
+   "цитата": "Nano Banana , our Gemini 2.5 Flash Image model,",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Прямое сопоставление имени и модели на странице. Пробел перед запятой — так в .txt (артефакт ссылки; в html «Nano Banana» → blog.google/products/gemini/updated-image-editing-model/)."
+  },
+  {
+   "код": "E-195-2",
+   "вид": "факт",
+   "утверждение_en": "In Google Shopping's virtual try-on, a user without a full-body photo can provide a selfie, and Nano Banana generates a full-body digital version of the user for trying on clothes.",
+   "цитата": "will generate a full body digital version of you for virtual try on.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "рефы",
+    "продукт_ui"
+   ],
+   "заметка": "Начало фразы: «Now if you don’t have a full body photo of yourself you can use a selfie and Nano Banana…». Пример генерации полного тела по одному селфи (лицо как референс)."
+  },
+  {
+   "код": "E-195-3",
+   "вид": "факт",
+   "утверждение_en": "The selfie-based try-on was launched for U.S. shoppers on December 11, 2025.",
+   "цитата": "Today U.S. shoppers have a new way to use our virtual try on tool",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Ссылка «virtual try on tool» → google.com/shopping/tryon."
+  },
+  {
+   "код": "E-195-4",
+   "вид": "инструкция",
+   "утверждение_en": "To create the try-on image: upload a selfie at g.co/shop/tryon and select your usual clothing size; Google then generates several studio-like images.",
+   "цитата": "Simply upload a selfie at g.co/shop/tryon , select your usual clothing size and we’ll generate several studio-like images.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 2",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "инструкция",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": "Вход: селфи + размер одежды. Роль размера (влияет ли на телосложение сгенерированной фигуры) не объяснена."
+  },
+  {
+   "код": "E-195-5",
+   "вид": "факт",
+   "утверждение_en": "From the several generated studio-like images, the user selects one to become the default try-on photo.",
+   "цитата": "Select one to make it your default try on photo, and start shopping.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 2",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Продуктовый приём: генерация нескольких кандидатов и выбор пользователем, а не один результат."
+  },
+  {
+   "код": "E-195-6",
+   "вид": "факт",
+   "утверждение_en": "Users can still try on clothes with a full-body photo or with a range of models with diverse body types instead of the selfie-generated version.",
+   "цитата": "If you prefer, you still have the option to virtually try on clothes using a full body photo or a range of models with diverse body types.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 2",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Альтернативные пути не связаны на странице с Nano Banana."
+  },
+  {
+   "код": "E-195-7",
+   "вид": "факт",
+   "утверждение_en": "The generated try-on image can be used to try on clothes from billions of product listings in Google's Shopping Graph, starting at google.com/shopping/tryon.",
+   "цитата": "start trying on clothes from billions of product listings from our Shopping Graph.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 3",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Начало: «Make your image now at google.com/shopping/tryon». Какая модель делает саму примерку одежды — не сказано; Nano Banana назван только для генерации цифровой версии человека."
+  },
+  {
+   "код": "E-195-8",
+   "вид": "факт",
+   "утверждение_en": "The page's demo video shows the flow: the user uploads a selfie, selects a clothing size and generates a lifelike digital avatar, then selects a garment (a grey cardigan) from a product list and the tool shows the avatar wearing it.",
+   "цитата": "A user uploads a selfie, selects a clothing size, and generates a lifelike digital avatar. They then select a grey cardigan from a product list, and the tool displays the avatar wearing the item.",
+   "источник_цитаты": "html",
+   "раздел": "Видео в теле статьи (alt-text, название «create try on photo»)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо (alt-text видео в html)",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "рефы",
+    "продукт_ui"
+   ],
+   "заметка": "Подтверждает порядок: селфи → размер → генерация аватара → выбор товара → показ на аватаре. Какая модель рендерит одежду на аватаре — не сказано."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-195-9",
+   "вид": "объяснение",
+   "утверждение_en": "The feature is an identity-preserving, reference-based generation flow: one selfie plus a clothing size produce several full-body, studio-like candidate images of the same person, from which the user picks one.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-195-2, E-195-4, E-195-5, E-195-8",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "рефы",
+    "продукт_ui"
+   ],
+   "заметка": "Сохранение сходства лица прямо не заявлено («digital version of you» подразумевает); роль размера одежды — не объяснена."
+  },
+  {
+   "код": "E-195-10",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana's role on the page is limited to generating the person's full-body image; the page does not attribute the garment try-on rendering itself to Nano Banana.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-195-2, E-195-7, E-195-8",
+   "дата_единицы": "2025-12-11",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Title — «studio-quality images», тело — «studio-like images»; разница формулировок, не по сути."
+ ],
+ "не_сказано": [
+  "Сколько именно изображений генерируется («several»).",
+  "Как размер одежды влияет на генерацию фигуры.",
+  "Есть ли водяной знак/SynthID на сгенерированных изображениях.",
+  "Требования к селфи (свет, ракурс, качество), ограничения по возрасту/регионам кроме США.",
+  "Какая модель выполняет саму примерку одежды."
+ ],
+ "сомнения": [
+  "Модель названа прямо — сопоставление надёжно; но это продуктовый сценарий Google Shopping, не API, промпт скрыт."
+ ]
+}

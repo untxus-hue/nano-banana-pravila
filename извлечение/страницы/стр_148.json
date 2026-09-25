@@ -1,0 +1,623 @@
+{
+ "id": 148,
+ "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-nano-banana-2/",
+ "заголовок": "Nano Banana 2: How developers can use the new AI image model",
+ "дата_в_тексте": "Feb 26, 2026 (в тексте); meta article:published_time 2026-02-26, JSON-LD datePublished 2026-02-26T16:00:00+00:00, dateModified 2026-03-19T17:48:18",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "авторы из Google DeepMind: Alisa Fortin (Product Manager, Google DeepMind), Bea Alessio (Group Product Manager, Google DeepMind); текст от лица Google («Today, we’re introducing»); JSON-LD publisher Organization «Google».",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс Nano Banana 2 (Gemini 3.1 Flash Image) для разработчиков в блоге Google (раздел Developer tools), авторы — продакт-менеджеры Google DeepMind. Перечень возможностей без кода и без промптов: visual grounding через веб-поиск картинок (демо Window Seat), надёжный рендер текста и in-image localization (демо Global Ad Localizer, локализует и визуал), креативный контроль: новые соотношения 4:1/1:4/8:1/1:8, новый уровень 512px рядом с 1K/2K/4K, более строгое следование сложным промптам, настраиваемые уровни thinking (Minimal по умолчанию vs High/Dynamic); демо Pet Passport (сохранение облика питомца с одного фото). Доступ: платный API-ключ (сказано дважды), Gemini API/AI Studio, Vertex AI, Antigravity, Firebase. Собственные термины: «visual grounding», «in-image localization», «Native aspect ratios», «Configurable thinking levels». Повторно подчёркнуты скорость/эффективность и масштаб (at scale).",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2 = «Gemini 3.1 Flash Image»)",
+  "«previous Flash image models» (без имени; по смыслу gemini-2.5-flash-image)"
+ ],
+ "структура": [
+  "Заголовок/лид/авторы",
+  "AI-generated summary",
+  "Вступление",
+  "Improved world knowledge",
+  "Advanced text rendering and localization",
+  "Greater creative control and consistency (Native aspect ratios; New 512px resolution; Improved instruction following; Configurable thinking levels; Pet Passport)",
+  "Built for production: what developers are saying (отзывы только картинками)",
+  "Build with Nano Banana 2 today",
+  "Posted in / Related stories / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Nano Banana 2: How developers can (строка 1)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Build with (строки 2-3)",
+   "итог": "E-148-1"
+  },
+  {
+   "n": 3,
+   "начало": "Innovation & AI … 台灣 (中文) (строки 4-209)",
+   "итог": "ничего: обвязка сайта (меню blog.google, повтор заголовка, Share, список регионов, Links/RSS/Newsletter)"
+  },
+  {
+   "n": 4,
+   "начало": "Breadcrumb Home Innovation & AI (строки 210-215)",
+   "итог": "ничего: обвязка сайта (хлебные крошки, повтор заголовка E-148-1)"
+  },
+  {
+   "n": 5,
+   "начало": "Feb 26, 2026 (строка 216)",
+   "итог": "ничего: метаданные (дата публикации, учтена в дата_в_тексте)"
+  },
+  {
+   "n": 6,
+   "начало": "| x.com Facebook LinkedIn Mail (строки 217-222)",
+   "итог": "ничего: обвязка сайта (Share)"
+  },
+  {
+   "n": 7,
+   "начало": "Our latest update to Nano Banana",
+   "итог": "ничего: лид, повтор E-148-2, E-148-4"
+  },
+  {
+   "n": 8,
+   "начало": "Alisa Fortin Product Manager, Google DeepMind (строки 224-227)",
+   "итог": "ничего: метаданные авторов (учтено в официальности)"
+  },
+  {
+   "n": 9,
+   "начало": "Share … Your browser does not support … 2X (строки 228-245)",
+   "итог": "ничего: обвязка сайта (Share, аудиоплеер «Listen to article», AI-озвучка)"
+  },
+  {
+   "n": 10,
+   "начало": "Read AI-generated summary Nano Banana 2 (строки 246-248)",
+   "итог": "ничего: AI-сводка страницы (Google AI), повтор E-148-2, E-148-18"
+  },
+  {
+   "n": 11,
+   "начало": "Today, we’re introducing Nano Banana 2 (строки 249-251)",
+   "итог": "E-148-2"
+  },
+  {
+   "n": 12,
+   "начало": "Here’s a look at the new (строки 252-256)",
+   "итог": "E-148-3"
+  },
+  {
+   "n": 13,
+   "начало": "Improved world knowledge",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 14,
+   "начало": "Nano Banana 2 leverages the Gemini",
+   "итог": "E-148-4"
+  },
+  {
+   "n": 15,
+   "начало": "To show this visual grounding in (строки 259-261)",
+   "итог": "E-148-5"
+  },
+  {
+   "n": 16,
+   "начало": "Advanced text rendering and localization",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 17,
+   "начало": "Building dynamic UI generators or creative",
+   "итог": "E-148-6"
+  },
+  {
+   "n": 18,
+   "начало": "Whether you're building applications that produce",
+   "итог": "E-148-7, E-148-8"
+  },
+  {
+   "n": 19,
+   "начало": "To show these capabilities, we built (строки 265-267)",
+   "итог": "E-148-9"
+  },
+  {
+   "n": 20,
+   "начало": "Greater creative control and consistency",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 21,
+   "начало": "Nano Banana 2 delivers speed and (строки 269-270)",
+   "итог": "E-148-10"
+  },
+  {
+   "n": 22,
+   "начало": "Native aspect ratios: Seamlessly generate (строки 271-274)",
+   "итог": "E-148-11"
+  },
+  {
+   "n": 23,
+   "начало": "New 512px resolution : Optimize for (строки 275-276)",
+   "итог": "E-148-12, E-148-13"
+  },
+  {
+   "n": 24,
+   "начало": "Improved instruction following: The model adheres (строки 277-278)",
+   "итог": "E-148-14"
+  },
+  {
+   "n": 25,
+   "начало": "Configurable thinking levels: You now have (строки 279-280)",
+   "итог": "E-148-15, E-148-16"
+  },
+  {
+   "n": 26,
+   "начало": "Our “ Pet Passport ” demo takes (строки 281-283)",
+   "итог": "E-148-17"
+  },
+  {
+   "n": 27,
+   "начало": "Built for production: what developers are saying",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 28,
+   "начало": "We are already seeing incredible innovation",
+   "итог": "ничего: маркетинг без содержания (ввод к отзывам партнёров)"
+  },
+  {
+   "n": 29,
+   "начало": "[только html] отзывы Whering, HubX, KLIPY, Emergent",
+   "итог": "ничего: отзывы партнёров (не Google), текст есть только в alt-атрибутах картинок-карусели html, в .txt отсутствует (HubX: снижение латентности 74-76%; Emergent: следование multi-constraint промптам; KLIPY: текст в мемах/стикерах, Image Search, кастомные соотношения; Whering: студийные ассеты из фото пользователей)"
+  },
+  {
+   "n": 30,
+   "начало": "[только html] alt «Gemini image benchmarks text-to-image»",
+   "итог": "ничего: картинка-график бенчмарка без чисел в тексте"
+  },
+  {
+   "n": 31,
+   "начало": "Build with Nano Banana 2 today",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 32,
+   "начало": "You can start building via a (строки 287-297)",
+   "итог": "E-148-18"
+  },
+  {
+   "n": 33,
+   "начало": "Jump right into the Gemini API (строки 298-306)",
+   "итог": "ничего: навигационные ссылки (docs, app gallery, AI Studio, cookbook Get_Started_Nano_Banana.ipynb)"
+  },
+  {
+   "n": 34,
+   "начало": "We’re excited to see what you",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 35,
+   "начало": "Posted in: AI Gemini models (строки 308-310)",
+   "итог": "ничего: обвязка сайта (теги)"
+  },
+  {
+   "n": 36,
+   "начало": "Related stories Google Research Google Beam (строки 311-356)",
+   "итог": "ничего: обвязка сайта (связанные истории, не про генерацию картинок)"
+  },
+  {
+   "n": 37,
+   "начало": "Privacy Terms Help More of Google (строки 357-392)",
+   "итог": "ничего: обвязка сайта (подвал, регионы)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-148-1",
+   "вид": "факт",
+   "утверждение_en": "Google positions Nano Banana 2 as 'our best image generation and editing model' at its launch for developers.",
+   "цитата": "Build with Nano Banana 2, our best image generation and editing model",
+   "источник_цитаты": "txt",
+   "раздел": "Заголовок статьи",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Формулировка заголовка (маркетинговая); Nano Banana Pro на странице не упоминается, поэтому сравнение «best» не раскрыто. Строка повторяется в .txt 3 раза (строки 3, 162, 215) — цитата взята с первого вхождения."
+  },
+  {
+   "код": "E-148-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is Gemini 3.1 Flash Image; it brings high-fidelity image generation and faster, advanced editing to the new Flash model, for visual creation at scale with a strong price-performance ratio.",
+   "цитата": "Today, we’re introducing\nNano Banana 2\n(Gemini 3.1 Flash Image), which brings high-fidelity image generation and faster, advanced editing to the new Flash model. It allows you to deploy sophisticated visual creation at scale with an amazing price-performance ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Лид (без заголовка)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Связка имени и техн. имени: Nano Banana 2 = Gemini 3.1 Flash Image; это Flash-модель. Цены на странице нет."
+  },
+  {
+   "код": "E-148-3",
+   "вид": "ограничение",
+   "утверждение_en": "A paid API key is required to use Nano Banana 2 in Google AI Studio.",
+   "цитата": "A paid api key is required to use the model on Google AI Studio.",
+   "источник_цитаты": "txt",
+   "раздел": "Лид (без заголовка)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Повторено в разделе «Build with Nano Banana 2 today» («You can start building via a paid api key»). Бесплатного уровня для модели в AI Studio по тексту нет (на дату публикации)."
+  },
+  {
+   "код": "E-148-4",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana 2 uses Gemini's world knowledge and images found via web search to create more detailed depictions inspired by real-life references.",
+   "цитата": "Nano Banana 2 leverages the Gemini model’s broad world knowledge to create enhanced visuals using images via web search. This allows developers to generate more detailed depictions inspired by real-life references.",
+   "источник_цитаты": "txt",
+   "раздел": "Improved world knowledge",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Механизм: поиск изображений в вебе как источник реальных референсов. Как включать (инструмент/параметр) — не сказано."
+  },
+  {
+   "код": "E-148-5",
+   "вид": "факт",
+   "утверждение_en": "Google calls this 'visual grounding'; its demo app 'Window Seat' uses Nano Banana 2's knowledge and web image search to create photorealistic window views inspired by world locations and live weather data.",
+   "цитата": "To show this visual grounding in action, we built an example app called “\nWindow Seat\n” that uses Nano Banana 2’s knowledge and web image search to create photorealistic window views inspired by world locations and live weather data.",
+   "источник_цитаты": "txt",
+   "раздел": "Improved world knowledge",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Термин страницы: «visual grounding». Демо в AI Studio (ссылка aistudio.google.com/apps/bundled/window_seat); сочетает веб-картинки и живые данные (погода)."
+  },
+  {
+   "код": "E-148-6",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 offers more reliable text rendering than previous Flash image models, aimed at use cases like dynamic UI generators and creative tools that need crisp, accurate text.",
+   "цитата": "Building dynamic UI generators or creative tools requires text that is crisp and accurate. Nano Banana 2 delivers an upgrade from previous Flash image models with more reliable text rendering.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced text rendering and localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение только с предыдущими Flash image-моделями (т.е. с 2.5 Flash Image), не с Pro."
+  },
+  {
+   "код": "E-148-7",
+   "вид": "факт",
+   "утверждение_en": "For apps producing images at scale or creative apps, text can now render with the same precision as the artwork.",
+   "цитата": "Whether you're building applications that produce images at scale or creative apps, text can now render with the same precision as the artwork.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced text rendering and localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Качественное утверждение без метрики."
+  },
+  {
+   "код": "E-148-8",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 supports in-image localization: generating or translating text across multiple languages directly within the image.",
+   "цитата": "Nano Banana 2 also supports in-image localization, allowing you to generate or translate text across multiple languages directly within the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced text rendering and localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Термин страницы: «in-image localization». Список языков не приведён."
+  },
+  {
+   "код": "E-148-9",
+   "вид": "факт",
+   "утверждение_en": "In the 'Global Ad Localizer' demo, translating an advertisement into different languages renders the translated text and also localizes the visuals, not only the text.",
+   "цитата": "To show these capabilities, we built a demo app “\nGlobal Ad Localizer\n” that translates an advertisement into different languages for international markets. Not only does this highlight the model's advanced in-image localization by rendering translated text, it simultaneously understands and localizes the visuals as well.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced text rendering and localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Важная деталь: локализация затрагивает и изображение (визуальные элементы под рынок), а не только перевод надписей. Если нужно менять только текст — это придётся оговаривать отдельно (на странице не сказано)."
+  },
+  {
+   "код": "E-148-10",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 delivers speed and visual fidelity, with vibrant lighting, richer textures and sharper details.",
+   "цитата": "delivers speed and visual fidelity, with vibrant lighting, richer textures and sharper details.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Качественное описание выхода; вводит список «advanced creative features»."
+  },
+  {
+   "код": "E-148-11",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 natively supports all existing aspect ratios for generation and editing and adds 4:1, 1:4, 8:1 and 1:8; the full list is in the docs.",
+   "цитата": "Seamlessly generate or edit images to fit your project requirement, with native support for all existing aspect ratios we have now added 4:1, 1:4, 8:1 and 1:8. Find the full list of\naspect ratios supported\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Новые экстремальные соотношения 4:1, 1:4, 8:1, 1:8. Полный список — только ссылкой на ai.google.dev/gemini-api/docs/image-generation#aspect_ratios_and_image_size. Распространяется и на редактирование («generate or edit»)."
+  },
+  {
+   "код": "E-148-12",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 adds a new 512px resolution tier alongside the 1K, 2K and 4K tiers.",
+   "цитата": "New 512px resolution\n: Optimize for efficiency. Joining our 1K, 2K and 4K offerings",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Четыре уровня разрешения: 512px, 1K, 2K, 4K. Какое по умолчанию — не сказано."
+  },
+  {
+   "код": "E-148-13",
+   "вид": "приём",
+   "утверждение_en": "Use the 512px tier to optimize for efficiency: it minimizes latency for rapid-fire iterations and heavy-duty pipelines.",
+   "цитата": "Optimize for efficiency. Joining our 1K, 2K and 4K offerings, this new resolution tier minimizes latency for rapid-fire iterations and heavy-duty pipelines.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Назначение уровня: быстрые итерации и массовые конвейеры; компромисс по качеству явно не описан."
+  },
+  {
+   "код": "E-148-14",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 adheres much more strictly to complex, multi-layered developer prompts, helping ensure the requested image is what gets generated.",
+   "цитата": "The model adheres much more strictly to complex, multi-layered developer prompts, helping to ensure the image your application requests is what is generated.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Сравнительная степень без базы сравнения (подразумеваются предыдущие модели)."
+  },
+  {
+   "код": "E-148-15",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 has configurable thinking levels: Minimal is the default, High/Dynamic are the alternatives.",
+   "цитата": "You now have more control over the model's reasoning. Adjust thinking levels (Minimal (default) vs. High/Dynamic)",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Минимальный уровень — по умолчанию. Запись «High/Dynamic» неоднозначна: два разных уровня или одно значение (см. сомнения)."
+  },
+  {
+   "код": "E-148-16",
+   "вид": "приём",
+   "утверждение_en": "Raise the thinking level so the model reasons through complex prompts before rendering; Google says this significantly improves output quality and prompt adherence.",
+   "цитата": "to allow the model to reason through complex prompts before rendering, significantly improving output quality and prompt adherence.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "промптинг"
+   ],
+   "заметка": "Выведенная связка: для сложных промптов уровень выше Minimal; цена по латентности прямо не названа, но default=Minimal в контексте «speed» и «efficiency»."
+  },
+  {
+   "код": "E-148-17",
+   "вид": "факт",
+   "утверждение_en": "The 'Pet Passport' demo takes a single photo of a pet and places it at famous landmarks around the world while maintaining the pet's appearance; it includes creative control settings for custom output.",
+   "цитата": "Pet Passport\n” demo takes a single photo of your pet and sends them on a global adventure to famous landmarks. It maintains your pet's appearance across different global destinations. For a truly custom output, we have included different creative controls settings.",
+   "источник_цитаты": "txt",
+   "раздел": "Greater creative control and consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Консистентность субъекта (животного) с одного фото через много сцен. Цитата начинается с середины строки (после «Our “»)."
+  },
+  {
+   "код": "E-148-18",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is available (with a paid API key) via the Gemini API in Google AI Studio, on Vertex AI for enterprise deployment, and in Google Antigravity and Firebase.",
+   "цитата": "You can start building via a paid api key with Nano Banana 2 today. The model is available now via the\nGemini API\nin\nGoogle AI Studio\n, for enterprise deployment on\nVertex AI\n. It is available for use in\nGoogle Antigravity\nand\nFirebase\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Build with Nano Banana 2 today",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "продукт_ui",
+    "api_код"
+   ],
+   "заметка": "Поверхности доступа. Повтор требования платного ключа (E-148-3)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-148-19",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana 2 exposes two latency-vs-quality levers on this page: resolution tier (512px for minimal latency, up to 4K) and thinking level (Minimal by default, High/Dynamic for complex prompts); the defaults lean toward speed and quality is opt-in.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-148-12, E-148-13, E-148-15, E-148-16",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "форматы_разрешение"
+   ],
+   "заметка": "Страница прямо не сводит рычаги вместе; значение разрешения по умолчанию не названо, поэтому «defaults lean toward speed» опирается только на thinking=Minimal."
+  },
+  {
+   "код": "E-148-20",
+   "вид": "факт",
+   "утверждение_en": "All three demo apps on the page (Window Seat, Global Ad Localizer, Pet Passport) pair image generation with outside context — web images and live weather, target languages/markets, famous landmarks — rather than pure text-to-image.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-148-5, E-148-9, E-148-17",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "рефы"
+   ],
+   "заметка": "Промпты этих демо на странице не приведены."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Цены нет, хотя подчёркнуто «amazing price-performance ratio».",
+  "Полный список соотношений сторон не приведён — только ссылка на docs; какие именно «existing aspect ratios» — не перечислено.",
+  "Разрешение по умолчанию не названо; качество 512px относительно 1K не описано.",
+  "Как включать web image search / grounding (инструмент, параметр) — не сказано; нет кода.",
+  "Строковый идентификатор модели для API (например, с суффиксом -preview) на странице не приведён.",
+  "Ни одного промпта-примера, в том числе к демо Window Seat / Global Ad Localizer / Pet Passport.",
+  "Nano Banana Pro не упомянут, хотя заголовок называет NB2 «our best image generation and editing model».",
+  "Нет упоминания SynthID/водяного знака."
+ ],
+ "сомнения": [
+  "«High/Dynamic» — неясно, два разных уровня thinking или одно значение с двумя именами.",
+  "Отзывы партнёров (в т.ч. цифра HubX 74-76% снижения латентности) присутствуют только в alt-атрибутах картинок html; в .txt их нет — единицами не оформлены (не Google, цитату нельзя проверить по .txt).",
+  "dateModified 2026-03-19 при публикации 2026-02-26 — страница правилась после выхода, что изменено — неизвестно.",
+  "Заголовок вкладки («Nano Banana 2: How developers can use the new AI image model») отличается от заголовка статьи («Build with Nano Banana 2, our best image generation and editing model»)."
+ ]
+}

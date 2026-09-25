@@ -1,0 +1,779 @@
+{
+ "id": 2,
+ "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3-pro-image",
+ "заголовок": "Gemini 3 Pro image",
+ "дата_в_тексте": "Last updated 2026-09-03 UTC (страница); Latest update модели: November 2025",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (контент под CC BY 4.0, код Apache 2.0) и 'Last updated 2026-09-03 UTC.'; ссылка на Model card deepmind.google",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 3 Pro image (Nano Banana Pro, id gemini-3-pro-image) в документации Gemini API для разработчиков. Структура: вводный абзац-позиционирование (reasoning-driven engine, best for complex graphic design, product mockups, data visualizations с точным текстом и grounding через Google Search), кнопка AI Studio, отсылка к странице Image generation за полным описанием, таблица свойств: код модели, типы данных, лимиты токенов, 12 возможностей, 3 способа потребления, версии, дата последнего обновления (November 2025), ссылка на Model card. Повторно подчёркнуты рассуждение (reasoning/Thinking) и grounding через Google Search. Страница обновлена 2026-09-03.",
+ "модели_на_странице": [
+  "Gemini 3 Pro image",
+  "Nano Banana Pro",
+  "gemini-3-pro-image"
+ ],
+ "структура": [
+  "Обвязка сайта (языки, верхнее меню, левое меню документации), строки 2-181",
+  "Баннер 'Gemini 3.8 Flash is now available'",
+  "Хлебные крошки",
+  "Заголовок + вводный абзац Nano Banana Pro",
+  "Try in Google AI Studio",
+  "Documentation",
+  "Таблица gemini-3-pro-image: Model code, Supported data types, Token limits, Capabilities, Consumption options, Versions, Latest update, Model card",
+  "Подвал (лицензия, Last updated, отзыв, языки)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3 Pro image | Gemini API",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev (выбор языка, верхнее меню), строки 2-37"
+  },
+  {
+   "n": 3,
+   "начало": "Get started Overview Get started API",
+   "итог": "ничего: обвязка сайта (левое меню документации: Models, Core capabilities, Agents, Tools, Live API, Optimization, Guides, Resources, Google AI Studio, Google Cloud Platform, Policies), строки 38-181; в меню пункты 'Nano Banana' и 'Image generation 🍌'"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта (не про генерацию картинок), строки 182-184"
+  },
+  {
+   "n": 5,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3 Pro image",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 7,
+   "начало": "Nano Banana Pro is a sophisticated",
+   "итог": "E-2-1, E-2-2"
+  },
+  {
+   "n": 8,
+   "начало": "Try in Google AI Studio",
+   "итог": "E-2-3"
+  },
+  {
+   "n": 9,
+   "начало": "Documentation Visit the Image generation page",
+   "итог": "E-2-4"
+  },
+  {
+   "n": 10,
+   "начало": "gemini-3-pro-image Property Description",
+   "итог": "ничего: заголовок таблицы"
+  },
+  {
+   "n": 11,
+   "начало": "id_card Model code gemini-3-pro-image",
+   "итог": "E-2-5"
+  },
+  {
+   "n": 12,
+   "начало": "save Supported data types Inputs",
+   "итог": "E-2-6"
+  },
+  {
+   "n": 13,
+   "начало": "token_auto Token limits [*]",
+   "итог": "ничего: заголовок строки таблицы (сноска ведёт на /gemini-api/docs/tokens)"
+  },
+  {
+   "n": 14,
+   "начало": "Input token limit 65,536",
+   "итог": "E-2-7"
+  },
+  {
+   "n": 15,
+   "начало": "Output token limit 32,768",
+   "итог": "E-2-8"
+  },
+  {
+   "n": 16,
+   "начало": "handyman Capabilities",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 17,
+   "начало": "Audio generation Not supported",
+   "итог": "E-2-9"
+  },
+  {
+   "n": 18,
+   "начало": "Caching Not supported",
+   "итог": "E-2-10"
+  },
+  {
+   "n": 19,
+   "начало": "Code execution Not supported",
+   "итог": "E-2-11"
+  },
+  {
+   "n": 20,
+   "начало": "File search Not supported",
+   "итог": "E-2-12"
+  },
+  {
+   "n": 21,
+   "начало": "Function calling Not supported",
+   "итог": "E-2-13"
+  },
+  {
+   "n": 22,
+   "начало": "Grounding with Google Maps Not supported",
+   "итог": "E-2-14"
+  },
+  {
+   "n": 23,
+   "начало": "Image generation Supported",
+   "итог": "E-2-15"
+  },
+  {
+   "n": 24,
+   "начало": "Live API Not supported",
+   "итог": "E-2-16"
+  },
+  {
+   "n": 25,
+   "начало": "Search grounding Supported",
+   "итог": "E-2-17"
+  },
+  {
+   "n": 26,
+   "начало": "Structured outputs Not supported",
+   "итог": "E-2-18"
+  },
+  {
+   "n": 27,
+   "начало": "Thinking Supported",
+   "итог": "E-2-19"
+  },
+  {
+   "n": 28,
+   "начало": "URL context Not supported",
+   "итог": "E-2-20"
+  },
+  {
+   "n": 29,
+   "начало": "speed Consumption options",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 30,
+   "начало": "Batch API Supported",
+   "итог": "E-2-21"
+  },
+  {
+   "n": 31,
+   "начало": "Flex inference Not supported",
+   "итог": "E-2-22"
+  },
+  {
+   "n": 32,
+   "начало": "Priority inference Not supported",
+   "итог": "E-2-23"
+  },
+  {
+   "n": 33,
+   "начало": "123 Versions Read the model version",
+   "итог": "ничего: заголовок строки + ссылка на паттерны версий"
+  },
+  {
+   "n": 34,
+   "начало": "Stable: gemini-3-pro-image",
+   "итог": "E-2-24"
+  },
+  {
+   "n": 35,
+   "начало": "calendar_month Latest update November 2025",
+   "итог": "E-2-25"
+  },
+  {
+   "n": 36,
+   "начало": "id_card Model card Model card",
+   "итог": "ничего: ссылка на Model card (deepmind.google/models/model-cards/gemini-3-pro-image/), содержимого на странице нет"
+  },
+  {
+   "n": 37,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия и Google Developers Site Policies (признак официальности), строки 268-275"
+  },
+  {
+   "n": 38,
+   "начало": "Last updated 2026-09-03 UTC.",
+   "итог": "ничего: дата обновления страницы (записана в дата_в_тексте)"
+  },
+  {
+   "n": 39,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, строки 277-278"
+  },
+  {
+   "n": 40,
+   "начало": "Terms Privacy Manage cookies English Deutsch",
+   "итог": "ничего: подвал сайта и список языков, строки 279-303"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-2-1",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana Pro (Gemini 3 Pro image) is a sophisticated reasoning-driven engine for professional-grade image editing and generation, offering studio-quality precision and advanced creative control.",
+   "цитата": "is a sophisticated reasoning-driven engine for\nprofessional-grade image editing and generation, offering studio-quality\nprecision and advanced creative control.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 3 Pro image)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Подлежащее 'Nano Banana Pro' — на строке 190 txt. Цитата с переносами строк как в txt (строки 191-193). 'reasoning-driven' согласуется с Thinking: Supported в таблице."
+  },
+  {
+   "код": "E-2-2",
+   "вид": "правило",
+   "утверждение_en": "Nano Banana Pro is best for complex graphic design, high-fidelity product mockups, and factual data visualizations that require accurate text rendering and real-world grounding via Google Search.",
+   "цитата": "Nano Banana Pro is best for complex\ngraphic design, high-fidelity product mockups, and factual data visualizations\nthat require accurate text rendering and real-world grounding via Google Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 3 Pro image)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "текст_в_кадре"
+   ],
+   "заметка": "Правило выбора модели: сложная графика, мокапы продуктов, фактические инфографики/визуализации данных, где нужен точный текст в кадре и опора на Google Search. Цитата с переносами строк (строки 193-195)."
+  },
+  {
+   "код": "E-2-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (gemini-3-pro-image) can be tried in Google AI Studio.",
+   "цитата": "Try in Google AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 3 Pro image)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Кнопка ведёт на https://aistudio.google.com?model=gemini-3-pro-image (по html)."
+  },
+  {
+   "код": "E-2-4",
+   "вид": "факт",
+   "утверждение_en": "The model card is not exhaustive: Google directs readers to the Image generation page for full coverage of the model's features and capabilities.",
+   "цитата": "page for full\ncoverage of features and capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Documentation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Полная фраза: 'Visit the Image generation page for full coverage of features and capabilities.' (строки 198-201, ссылка /gemini-api/docs/image-generation). Отсутствие на карточке разрешений/соотношений сторон/рефов объясняется этим."
+  },
+  {
+   "код": "E-2-5",
+   "вид": "факт",
+   "утверждение_en": "The model code for Gemini 3 Pro image (Nano Banana Pro) is gemini-3-pro-image.",
+   "цитата": "Model code\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Без суффикса -preview."
+  },
+  {
+   "код": "E-2-6",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image accepts image and text as input and produces image and text as output.",
+   "цитата": "Inputs\nImage and Text\nOutput\nImage and Text",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Supported data types",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Выход 'Image and Text' — ответ может содержать и текст, и картинку."
+  },
+  {
+   "код": "E-2-7",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3-pro-image has an input token limit of 65,536.",
+   "цитата": "Input token limit\n65,536",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Token limits",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сноска [*] у 'Token limits' ведёт на /gemini-api/docs/tokens; как считаются токены картинок, здесь не сказано."
+  },
+  {
+   "код": "E-2-8",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3-pro-image has an output token limit of 32,768.",
+   "цитата": "Output token limit\n32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Token limits",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-2-9",
+   "вид": "ограничение",
+   "утверждение_en": "Audio generation is not supported by gemini-3-pro-image.",
+   "цитата": "Audio generation\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-10",
+   "вид": "ограничение",
+   "утверждение_en": "Caching is not supported by gemini-3-pro-image.",
+   "цитата": "Caching\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-11",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution is not supported by gemini-3-pro-image.",
+   "цитата": "Code execution\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-12",
+   "вид": "ограничение",
+   "утверждение_en": "File search is not supported by gemini-3-pro-image.",
+   "цитата": "File search\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-13",
+   "вид": "ограничение",
+   "утверждение_en": "Function calling is not supported by gemini-3-pro-image.",
+   "цитата": "Function calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-14",
+   "вид": "ограничение",
+   "утверждение_en": "Grounding with Google Maps is not supported by gemini-3-pro-image.",
+   "цитата": "Grounding with Google Maps\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-15",
+   "вид": "факт",
+   "утверждение_en": "Image generation is supported by gemini-3-pro-image.",
+   "цитата": "Image generation\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-16",
+   "вид": "ограничение",
+   "утверждение_en": "The Live API is not supported by gemini-3-pro-image.",
+   "цитата": "Live API\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-17",
+   "вид": "факт",
+   "утверждение_en": "Search grounding (Grounding with Google Search) is supported by gemini-3-pro-image.",
+   "цитата": "Search grounding\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-18",
+   "вид": "ограничение",
+   "утверждение_en": "Structured outputs are not supported by gemini-3-pro-image.",
+   "цитата": "Structured outputs\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-19",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by gemini-3-pro-image.",
+   "цитата": "Thinking\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-20",
+   "вид": "ограничение",
+   "утверждение_en": "URL context is not supported by gemini-3-pro-image.",
+   "цитата": "URL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Capabilities",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-2-21",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image can be used through the Batch API.",
+   "цитата": "Batch API\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Consumption options",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-2-22",
+   "вид": "ограничение",
+   "утверждение_en": "Flex inference is not supported for gemini-3-pro-image.",
+   "цитата": "Flex inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Consumption options",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-2-23",
+   "вид": "ограничение",
+   "утверждение_en": "Priority inference is not supported for gemini-3-pro-image.",
+   "цитата": "Priority inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Consumption options",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-2-24",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image is offered as a stable version under the model code gemini-3-pro-image.",
+   "цитата": "Stable:\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Versions",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Других версий (preview/experimental) на карточке не перечислено. Паттерны версий — по ссылке 'model version patterns'."
+  },
+  {
+   "код": "E-2-25",
+   "вид": "факт",
+   "утверждение_en": "The latest update of gemini-3-pro-image is dated November 2025.",
+   "цитата": "Latest update\nNovember 2025",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3-pro-image: Latest update",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-11",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата модели, не страницы (страница обновлена 2026-09-03)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-2-26",
+   "вид": "объяснение",
+   "утверждение_en": "Real-world grounding for Nano Banana Pro means Google Search: the card lists Search grounding as supported but Grounding with Google Maps and URL context as not supported, matching the intro's 'real-world grounding via Google Search'.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-2-2, E-2-17, E-2-14, E-2-20",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Из инструментов карточка оставляет модели только поиск Google."
+  },
+  {
+   "код": "E-2-27",
+   "вид": "ограничение",
+   "утверждение_en": "Apart from Google Search grounding and thinking, gemini-3-pro-image supports none of the listed tool/agent features (function calling, code execution, URL context, file search, structured outputs, caching, Live API, Maps grounding, audio generation).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-2-9, E-2-10, E-2-11, E-2-12, E-2-13, E-2-14, E-2-15, E-2-16, E-2-17, E-2-18, E-2-19, E-2-20",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сводка таблицы: из 12 строк Supported только Image generation, Search grounding, Thinking."
+  },
+  {
+   "код": "E-2-28",
+   "вид": "объяснение",
+   "утверждение_en": "The intro's 'reasoning-driven engine' framing corresponds to Thinking being a supported capability of the model.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-2-1, E-2-19",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Карточка не говорит, можно ли управлять уровнем thinking у Pro."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет поддерживаемых разрешений, соотношений сторон, максимального числа входных/референсных изображений — отослано на страницу Image generation.",
+  "Нет цены, rate limits, knowledge cutoff.",
+  "Не сказано, как изображения считаются в токенах (только сноска-ссылка на /gemini-api/docs/tokens).",
+  "Нет управления уровнем thinking (есть только 'Thinking: Supported').",
+  "Не упоминаются SynthID/водяной знак и safety-настройки.",
+  "Не перечислены preview-версии (например, с суффиксом -preview) — только Stable: gemini-3-pro-image."
+ ],
+ "сомнения": [
+  "Строки таблицы переданы как отдельные единицы (по одной на возможность) — для свода их можно сгруппировать."
+ ]
+}

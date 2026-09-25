@@ -1,0 +1,546 @@
+{
+ "id": 164,
+ "url": "https://developers.googleblog.com/generate-images-gemini-2-0-flash-preview/",
+ "заголовок": "Create and edit images with Gemini 2.0 in preview",
+ "дата_в_тексте": "MAY 7, 2025 (в html JSON-LD datePublished 2025-05-07)",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "текст анонса от лица Google («we are excited to announce», «our API docs» со ссылкой на ai.google.dev); подвал с Google Developer Program и ссылками developers.google.com/terms/site-terms и policies.google.com/privacy; логотип «Google for Developers». Автор Kat Kampf, Product Manager (компания в подписи не названа)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс для разработчиков (Google Developers Blog, 7 мая 2025): генерация и правка картинок в Gemini 2.0 Flash переходит из experimental в preview под id gemini-2.0-flash-preview-image-generation через Gemini API (AI Studio, Vertex AI). Список улучшений относительно experimental (качество, текст, реже блоки фильтра), пять сценариев-витрин (рекontекстуализация товара, совместная правка, локальная правка диалогом, новые SKU с текстом, идеация) — все без промптов, и один пример кода на Python с response_modalities TEXT+IMAGE и промптом про макарон. Повторяющийся акцент — «conversational» генерация и правка.",
+ "модели_на_странице": [
+  "gemini-2.0-flash-preview-image-generation (Gemini 2.0 Flash, preview)",
+  "Gemini 2.0 Flash experimental version (упомянута как база сравнения)"
+ ],
+ "структура": [
+  "Вступление (анонс, id модели)",
+  "What's new in Gemini 2.0 Flash image generation",
+  "Gemini 2.0 Flash image generation in action (5 сценариев)",
+  "Start building with Gemini’s native image capabilities today (код)",
+  "Заключение",
+  "Related posts / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Create and edit images with Gemini",
+   "итог": "ничего: обвязка — title и заголовок сайта (строки 1-7)"
+  },
+  {
+   "n": 2,
+   "начало": "Community/Events Learn Blog YouTube Search",
+   "итог": "ничего: обвязка — меню Google Developers Blog (строки 9-19)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini / Google AI Studio",
+   "итог": "ничего: обвязка — рубрика"
+  },
+  {
+   "n": 4,
+   "начало": "Create and edit images with Gemini 2.0 in preview (H1)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 5,
+   "начало": "MAY 7, 2025",
+   "итог": "ничего: дата (использована в дата_в_тексте)"
+  },
+  {
+   "n": 6,
+   "начало": "Kat Kampf Product Manager Share",
+   "итог": "ничего: автор (в официальности) и кнопки Share (строки 27-32)"
+  },
+  {
+   "n": 7,
+   "начало": "Based on the enthusiasm from developers,",
+   "итог": "E-164-1"
+  },
+  {
+   "n": 8,
+   "начало": "Developers can start integrating conversational image",
+   "итог": "E-164-2"
+  },
+  {
+   "n": 9,
+   "начало": "What's new in Gemini 2.0 Flash (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 10,
+   "начало": "In addition to enabling higher rate",
+   "итог": "E-164-3"
+  },
+  {
+   "n": 11,
+   "начало": "Better visual quality (vs experimental version)",
+   "итог": "E-164-4"
+  },
+  {
+   "n": 12,
+   "начало": "More accurate text rendering (vs experimental",
+   "итог": "E-164-5"
+  },
+  {
+   "n": 13,
+   "начало": "Significantly reduced filter block rates (vs",
+   "итог": "E-164-6"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 2.0 Flash image generation in action (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 15,
+   "начало": "We have loved seeing the community",
+   "итог": "ничего: маркетинг без содержания (вводная к списку)"
+  },
+  {
+   "n": 16,
+   "начало": "1) Recontextualize products in new environments.",
+   "итог": "E-164-7"
+  },
+  {
+   "n": 17,
+   "начало": "[картинка html] alt: Gemini 2.0 image recontextualization",
+   "итог": "ничего: подпись к картинке, повтор E-164-7, промпта нет"
+  },
+  {
+   "n": 18,
+   "начало": "2) Collaboratively edit images in real-time.",
+   "итог": "E-164-8"
+  },
+  {
+   "n": 19,
+   "начало": "Try it today with the Gemini",
+   "итог": "E-164-9"
+  },
+  {
+   "n": 20,
+   "начало": "Sorry, your browser doesn't support playback (видео co-drawing)",
+   "итог": "ничего: обвязка — заглушка видео"
+  },
+  {
+   "n": 21,
+   "начало": "3) Edit specific parts of images",
+   "итог": "E-164-10"
+  },
+  {
+   "n": 22,
+   "начало": "[картинка html] alt: Gemini 2.0 Flash conversational image editing",
+   "итог": "ничего: подпись к картинке, повтор E-164-10, промпта нет"
+  },
+  {
+   "n": 23,
+   "начало": "4) Dynamically create new product SKUs",
+   "итог": "E-164-11"
+  },
+  {
+   "n": 24,
+   "начало": "[картинки html] alt: ...new product SKUs with image / ...result",
+   "итог": "ничего: подписи к картинкам, повтор E-164-11, промпта нет"
+  },
+  {
+   "n": 25,
+   "начало": "5) Ideate with Gemini 2.0 Flash",
+   "итог": "E-164-12"
+  },
+  {
+   "n": 26,
+   "начало": "Sorry, your browser doesn't support playback (видео ideate) (right click...)",
+   "итог": "ничего: обвязка — заглушка видео и подсказка открыть в новой вкладке"
+  },
+  {
+   "n": 27,
+   "начало": "Start building with Gemini’s native image (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 28,
+   "начало": "from google import genai (кодовый блок Python)",
+   "итог": "E-164-13, E-164-14"
+  },
+  {
+   "n": 29,
+   "начало": "Python Copied",
+   "итог": "ничего: обвязка кодового блока"
+  },
+  {
+   "n": 30,
+   "начало": "You can read more about image",
+   "итог": "ничего: ссылка на API docs и повтор E-164-2 (AI Studio и Vertex AI)"
+  },
+  {
+   "n": 31,
+   "начало": "We look forward to bringing further",
+   "итог": "E-164-15 (вторая фраза «We can’t wait to see…» — маркетинг)"
+  },
+  {
+   "n": 32,
+   "начало": "posted in: Gemini Google AI Studio",
+   "итог": "ничего: обвязка — теги (строки 84-95)"
+  },
+  {
+   "n": 33,
+   "начало": "Previous Next Related Posts",
+   "итог": "ничего: обвязка — связанные посты (строки 97-123), не про генерацию картинок"
+  },
+  {
+   "n": 34,
+   "начало": "Connect Blog Bluesky Instagram LinkedIn",
+   "итог": "ничего: обвязка — подвал (строки 125-156)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-164-1",
+   "вид": "факт",
+   "утверждение_en": "Image generation capabilities became available in preview with Gemini 2.0 Flash.",
+   "цитата": "we are excited to announce that Image Generation capabilities are now available in preview with Gemini 2.0 Flash .",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-07",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус preview на дату поста."
+  },
+  {
+   "код": "E-164-2",
+   "вид": "факт",
+   "утверждение_en": "Conversational image generation and editing is available via the Gemini API in Google AI Studio and Vertex AI with higher rate limits, using the model name gemini-2.0-flash-preview-image-generation.",
+   "цитата": "Developers can start integrating conversational image generation and editing with higher rate limits via the Gemini API in Google AI Studio and Vertex AI today using the model name “gemini-2.0-flash-preview-image-generation”.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-07",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Точный id модели для вызова. Генерация и правка названы «conversational»."
+  },
+  {
+   "код": "E-164-3",
+   "вид": "факт",
+   "утверждение_en": "Compared to the experimental version, the preview enables higher rate limits and (paid) pricing.",
+   "цитата": "In addition to enabling higher rate limits and pricing , we have also improved the model with:",
+   "источник_цитаты": "txt",
+   "раздел": "What's new in Gemini 2.0 Flash image generation",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "В html «higher rate limits» ведёт на ai.google.dev/gemini-api/docs/rate-limits, «pricing» — на ai.google.dev/gemini-api/docs/pricing; числа на странице не приведены. «pricing» трактую как появление платного тарифа — выведено из ссылки, в тексте прямо не сказано."
+  },
+  {
+   "код": "E-164-4",
+   "вид": "факт",
+   "утверждение_en": "The preview has better visual quality than the experimental version.",
+   "цитата": "Better visual quality (vs experimental version)",
+   "источник_цитаты": "txt",
+   "раздел": "What's new in Gemini 2.0 Flash image generation",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-164-5",
+   "вид": "факт",
+   "утверждение_en": "The preview renders text more accurately than the experimental version.",
+   "цитата": "More accurate text rendering (vs experimental version)",
+   "источник_цитаты": "txt",
+   "раздел": "What's new in Gemini 2.0 Flash image generation",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-164-6",
+   "вид": "факт",
+   "утверждение_en": "The preview has significantly reduced filter block rates compared to the experimental version.",
+   "цитата": "Significantly reduced filter block rates (vs experimental version)",
+   "источник_цитаты": "txt",
+   "раздел": "What's new in Gemini 2.0 Flash image generation",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "модели_сравнение"
+   ],
+   "заметка": "Фильтры безопасности блокируют реже; как именно — не раскрыто."
+  },
+  {
+   "код": "E-164-7",
+   "вид": "приём",
+   "утверждение_en": "Gemini 2.0 Flash can recontextualize products in new environments (place a product into a new scene).",
+   "цитата": "1) Recontextualize products in new environments.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Иллюстрация — картинка до/после (alt: «Gemini 2.0 image recontextualization: before and after»); промпт к ней не приведён."
+  },
+  {
+   "код": "E-164-8",
+   "вид": "факт",
+   "утверждение_en": "Images can be edited collaboratively in real time.",
+   "цитата": "2) Collaboratively edit images in real-time.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-164-9",
+   "вид": "инструкция",
+   "утверждение_en": "The Gemini Co-Drawing Sample App in AI Studio demonstrates collaborative real-time image editing.",
+   "цитата": "Try it today with the Gemini Co-Drawing Sample App in AI Studio.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "В html ссылка на aistudio.google.com/apps/bundled/gemini-co-drawing; видео-демо."
+  },
+  {
+   "код": "E-164-10",
+   "вид": "факт",
+   "утверждение_en": "Specific parts of an image can be edited conversationally without changing anything else.",
+   "цитата": "3) Edit specific parts of images conversationally, without changing anything else.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Локальная правка через диалог; иллюстрация до/после (alt: «Gemini 2.0 Flash conversational image editing - before and after»), промпт не показан."
+  },
+  {
+   "код": "E-164-11",
+   "вид": "приём",
+   "утверждение_en": "Gemini 2.0 Flash can dynamically create new product SKUs combining text rendering and image.",
+   "цитата": "4) Dynamically create new product SKUs with text rendering and image.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "рефы"
+   ],
+   "заметка": "Две картинки: исходная и результат (alt: «...new product SKUs with image», «...with text rendering - result»); промпт не показан."
+  },
+  {
+   "код": "E-164-12",
+   "вид": "приём",
+   "утверждение_en": "Gemini 2.0 Flash can be used as an ideation partner for images.",
+   "цитата": "5) Ideate with Gemini 2.0 Flash as your partner:",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash image generation in action",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Только видео, без текста и промптов."
+  },
+  {
+   "код": "E-164-13",
+   "вид": "инструкция",
+   "утверждение_en": "To get images from the model via the google-genai Python SDK, call client.models.generate_content with model gemini-2.0-flash-preview-image-generation and set config response_modalities to [\"TEXT\", \"IMAGE\"].",
+   "цитата": "response_modalities=[\"TEXT\", \"IMAGE\"]",
+   "источник_цитаты": "txt",
+   "раздел": "Start building with Gemini’s native image capabilities today",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Полный код: from google import genai; from google.genai import types; client = genai.Client(api_key=\"GEMINI_API_KEY\"); client.models.generate_content(model=..., contents=(...), config=types.GenerateContentConfig(response_modalities=[\"TEXT\", \"IMAGE\"])). Пример запрашивает обе модальности вместе; допустимость только IMAGE на странице не обсуждается."
+  },
+  {
+   "код": "E-164-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt asking for an interleaved text-and-image how-to: \"Show me how to bake a macaron with images.\"",
+   "цитата": "Show me how to bake a macaron with images.",
+   "источник_цитаты": "txt",
+   "раздел": "Start building with Gemini’s native image capabilities today",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Структура: просьба-инструкция («Show me how to…») + явное «with images». Работу делает указание на пошаговое объяснение с картинками — ответ ожидается смешанным (текст+картинки), что согласовано с response_modalities TEXT+IMAGE (E-164-13)."
+  },
+  {
+   "код": "E-164-15",
+   "вид": "факт",
+   "утверждение_en": "Google stated plans to bring further quality improvements, new capabilities and expanded rate limits for Gemini 2.0 Flash image generation.",
+   "цитата": "We look forward to bringing further quality improvements, new capabilities, and expanded rate limits soon.",
+   "источник_цитаты": "txt",
+   "раздел": "Заключение",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-07",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Намерение на дату поста; указывает, что лимиты preview были ещё ограничены."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-164-16",
+   "вид": "объяснение",
+   "утверждение_en": "The page frames Gemini 2.0 Flash image generation as native and conversational: images are produced by the same generate_content call as text (mixed response modalities), and editing is done by conversational instructions rather than a separate editing endpoint.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-164-2, E-164-10, E-164-13, E-164-14",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "мультиход"
+   ],
+   "заметка": "Отдельный endpoint или маска для правки нигде не упомянуты — вывод из отсутствия и из формулировок «conversational»/«native image capabilities»."
+  },
+  {
+   "код": "E-164-17",
+   "вид": "факт",
+   "утверждение_en": "All quality claims on the page (visual quality, text rendering, filter blocks) are relative to the earlier experimental version of the same model, not to other image models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "What's new in Gemini 2.0 Flash image generation",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-164-4, E-164-5, E-164-6",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет числовых rate limits и цен — только ссылки на docs/rate-limits и docs/pricing.",
+  "Нет разрешений, соотношений сторон, числа картинок за ответ.",
+  "Нет промптов к пяти сценариям-витринам (только картинки/видео).",
+  "Не сказано, можно ли просить только IMAGE в response_modalities; пример использует TEXT+IMAGE.",
+  "Код не показывает, как извлечь и сохранить картинку из ответа.",
+  "Нет упоминания SynthID/водяного знака и правил использования."
+ ],
+ "сомнения": [
+  "В партии модель записана как gemini-2.0-flash-image-preview, на странице id — gemini-2.0-flash-preview-image-generation; зафиксировано как на странице.",
+  "Трактовка «enabling … pricing» как появления платного тарифа — по ссылке на страницу цен, а не по тексту."
+ ]
+}

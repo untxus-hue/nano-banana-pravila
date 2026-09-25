@@ -1,0 +1,628 @@
+{
+ "id": 222,
+ "url": "https://www.skills.google/focuses/145020?parent=catalog",
+ "заголовок": "Generate Images with Nano Banana Pro on Agent Platform | Google Skills",
+ "дата_в_тексте": "Manual Last Updated May 22, 2026; Lab Last Tested January 30, 2026",
+ "официальность": {
+  "домен": "skills.google",
+  "второй_признак": "строка «Copyright 2026 Google LLC. All rights reserved. Google and the Google logo are trademarks of Google LLC.» в тексте страницы; лаба Google Cloud self-paced labs (GSP1363).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница лабораторной работы Google Skills (GSP1363) для разработчиков с базовым Python: работа с Nano Banana Pro на Agent Platform через Google Gen AI SDK в Jupyter (Workbench). Большая часть текста — процедура лабы (вход, таймер, чекпойнты). Содержательная часть — краткие описания разделов ноутбука: text-to-image с aspect ratio, просмотр «thought process», grounding через Google Search (прогноз погоды), размер изображения (2K), локализация текста в картинке, мультиходовое редактирование в чате, несколько референсов; предупреждение о более высокой задержке Pro против Nano Banana; совет при 429 ждать минуту. Самих промптов, кода и id модели на странице нет (название модели в тексте — пустые ql-variable).",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-2.5-flash-image (Nano Banana — только в сравнении задержки; раскрыто по названию)"
+ ],
+ "структура": [
+  "Checkpoints",
+  "Overview",
+  "Prerequisites",
+  "Objectives (NOTE о задержке)",
+  "Setup and requirements",
+  "Task 1. Open the notebook in Agent Platform Workbench",
+  "Task 2. Get started (Set up the notebook; Install the Google Gen AI SDK; Import libraries; Set Google Cloud project information; Load the Gemini model)",
+  "Task 3. Generate images (Implement text-to-image; See the thoughts; Ground with search results; Set image size)",
+  "Task 4. Edit images (Localize image text; Perform multi-turn image editing (chat); Reference multiple images)",
+  "Congratulations!",
+  "Next steps / Learn more",
+  "Before you begin (модальное окно)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generate Images with Nano Banana Pro on Agent Platform | Google Skills / Loading…",
+   "итог": "ничего: обвязка сайта (заголовок, служебные строки 1-6)"
+  },
+  {
+   "n": 2,
+   "начало": "Apply your skills in Google Cloud console / —/100 / Checkpoints …",
+   "итог": "ничего: обвязка лабы (список контрольных точек с баллами, повторён дважды, строки 7-63; использован для раздела «структура»)"
+  },
+  {
+   "n": 3,
+   "начало": "This lab may incorporate AI tools … desktop computer",
+   "итог": "ничего: обвязка сайта (служебные уведомления)"
+  },
+  {
+   "n": 4,
+   "начало": "GSP1363",
+   "итог": "ничего: номер лабы"
+  },
+  {
+   "n": 5,
+   "начало": "Overview / The model is a powerful, generalist",
+   "итог": "E-222-1, E-222-2"
+  },
+  {
+   "n": 6,
+   "начало": "In this lab, you use the model in Agent Platform",
+   "итог": "E-222-3"
+  },
+  {
+   "n": 7,
+   "начало": "Prerequisites / Before starting this lab … Workbench",
+   "итог": "ничего: требования к слушателю (Python, API, Jupyter) — не про генерацию картинок"
+  },
+  {
+   "n": 8,
+   "начало": "Objectives / You use the Google Gen AI SDK … Generate images / Edit images",
+   "итог": "E-222-4"
+  },
+  {
+   "n": 9,
+   "начало": "NOTE: Expect higher latency when using this model",
+   "итог": "E-222-5"
+  },
+  {
+   "n": 10,
+   "начало": "Setup and requirements / Before you click the Start Lab button … may incur charges to that account",
+   "итог": "ничего: обвязка лабы (таймер, инкогнито, учётная запись студента)"
+  },
+  {
+   "n": 11,
+   "начало": "How to start your lab and sign in … Click Next (username/password)",
+   "итог": "ничего: обвязка лабы (вход в консоль)"
+  },
+  {
+   "n": 12,
+   "начало": "Important: You must use the credentials … Do not sign up for free trials.",
+   "итог": "ничего: обвязка лабы"
+  },
+  {
+   "n": 13,
+   "начало": "After a few moments, the Google Cloud console opens … Search field.",
+   "итог": "ничего: обвязка лабы"
+  },
+  {
+   "n": 14,
+   "начало": "Task 1. Open the notebook in Agent Platform Workbench",
+   "итог": "ничего: процедура лабы (открыть JupyterLab), не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "Task 2. Get started / In this task, you first open the notebook",
+   "итог": "E-222-6"
+  },
+  {
+   "n": 16,
+   "начало": "Set up the notebook / Open the file … Select Kernel … Project ID is pre-configured",
+   "итог": "ничего: процедура лабы"
+  },
+  {
+   "n": 17,
+   "начало": "Note: If you experience a 429 response",
+   "итог": "E-222-7"
+  },
+  {
+   "n": 18,
+   "начало": "Install the Google Gen AI SDK for Python … section of the notebook",
+   "итог": "ничего: повтор E-222-6 (установка google-genai)"
+  },
+  {
+   "n": 19,
+   "начало": "Import libraries / Import the essential Python libraries … Install packages and import libraries.",
+   "итог": "ничего: повтор E-222-6 (google-genai client и утилиты отображения); отметка прогресса"
+  },
+  {
+   "n": 20,
+   "начало": "Set Google Cloud project information and create the client",
+   "итог": "ничего: повтор E-222-6"
+  },
+  {
+   "n": 21,
+   "начало": "Load the Gemini model / Define the specific model identifier",
+   "итог": "E-222-8 (далее — отметка прогресса)"
+  },
+  {
+   "n": 22,
+   "начало": "Task 3. Generate images / In this task, you explore the core creation",
+   "итог": "E-222-9 (последняя фраза «Run through the Generate images section…» — процедура)"
+  },
+  {
+   "n": 23,
+   "начало": "Implement text-to-image / In this section, you generate your first image",
+   "итог": "E-222-10 (дальше — процедура и отметка прогресса)"
+  },
+  {
+   "n": 24,
+   "начало": "See the thoughts / Here, you examine the internal reasoning",
+   "итог": "E-222-11"
+  },
+  {
+   "n": 25,
+   "начало": "Ground with search results / You can connect the model",
+   "итог": "E-222-12"
+  },
+  {
+   "n": 26,
+   "начало": "Set image size / You can adjust the resolution",
+   "итог": "E-222-13"
+  },
+  {
+   "n": 27,
+   "начало": "Task 4. Edit images / This task demonstrates how to modify",
+   "итог": "E-222-14 (localization и multi-turn — повтор E-222-15, E-222-16)"
+  },
+  {
+   "n": 28,
+   "начало": "Run through the Image editing section … localize text within images",
+   "итог": "ничего: процедура, повтор E-222-15, E-222-16"
+  },
+  {
+   "n": 29,
+   "начало": "Localize image text / You can modify text within an existing image",
+   "итог": "E-222-15"
+  },
+  {
+   "n": 30,
+   "начало": "Perform multi-turn image editing (chat) / You can use a chat session",
+   "итог": "E-222-16"
+  },
+  {
+   "n": 31,
+   "начало": "Reference multiple images / You can provide the model with a collection",
+   "итог": "E-222-17"
+  },
+  {
+   "n": 32,
+   "начало": "Congratulations! / You worked with the model in a Jupyter notebook",
+   "итог": "ничего: повтор E-222-3"
+  },
+  {
+   "n": 33,
+   "начало": "Next steps / Learn more / Check out the following resources … ADK Samples repository",
+   "итог": "ничего: список ссылок"
+  },
+  {
+   "n": 34,
+   "начало": "Google Cloud training and certification … Certifications help you validate",
+   "итог": "ничего: обвязка сайта (реклама обучения)"
+  },
+  {
+   "n": 35,
+   "начало": "Manual Last Updated May 22, 2026 / Lab Last Tested January 30, 2026",
+   "итог": "ничего: даты — вынесены в дата_в_тексте"
+  },
+  {
+   "n": 36,
+   "начало": "Copyright 2026 Google LLC. All rights reserved.",
+   "итог": "ничего: копирайт — признак официальности"
+  },
+  {
+   "n": 37,
+   "начало": "Home / Catalog / Paths … Manage cookies",
+   "итог": "ничего: обвязка сайта (подвал)"
+  },
+  {
+   "n": 38,
+   "начало": "Before you begin / Labs create a Google Cloud project … your personal account.",
+   "итог": "ничего: обвязка лабы (модальное окно запуска)"
+  },
+  {
+   "n": 39,
+   "начало": "In this lab, you use Nano Banana Pro, which is a highly capable",
+   "итог": "ничего: повтор E-222-1 (здесь модель названа явно)"
+  },
+  {
+   "n": 40,
+   "начало": "Duration: 4m setup · 60m access · 60m completion / AWS Region … Got It",
+   "итог": "ничего: метаданные лабы"
+  },
+  {
+   "n": 41,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-222-18, E-222-19"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-222-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities.",
+   "цитата": "model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "Подлежащее в .txt выпало (ql-variable). То же утверждение с явным названием — в карточке лабы: «In this lab, you use Nano Banana Pro, which is a highly capable, generalist, multimodal model. It provides top-tier image generation along with conversational features for editing images.»"
+  },
+  {
+   "код": "E-222-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can show its work, letting you see the 'thought process' behind the generated output.",
+   "цитата": "is also able to show its work, allowing you to see the 'thought process' behind the generated output.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Подлежащее — ql-variable «Nano Banana Pro». Раскрыто в разделе See the thoughts (E-222-11)."
+  },
+  {
+   "код": "E-222-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can be used in Agent Platform through the Google Gen AI SDK, covering both an image generation scenario and an image editing scenario.",
+   "цитата": "model in Agent Platform using the Google Gen AI SDK. You explore an image generation scenario and an image editing scenario.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Платформа — Agent Platform (Gemini Enterprise Agent Platform, Google Cloud); SDK — Google Gen AI SDK (google-genai)."
+  },
+  {
+   "код": "E-222-4",
+   "вид": "факт",
+   "утверждение_en": "With the Google Gen AI SDK you can generate images (from text, view the model's reasoning, use search grounding, adjust aspect ratios) and edit images (modify specific areas / localization, edit via multi-turn chat, use multiple reference images).",
+   "цитата": "Generate images: Create images from text, view the model's reasoning, use search grounding, and adjust aspect ratios.\nEdit images: Modify specific areas (localization), edit via chat (multi-turn), and multiple reference images.",
+   "источник_цитаты": "txt",
+   "раздел": "Objectives",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "Перечень возможностей, отработанных в лабе. Термин «localization» здесь определён как «Modify specific areas», а в Task 4 — как перевод текста в картинке (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-222-5",
+   "вид": "предупреждение",
+   "утверждение_en": "Expect higher latency with Nano Banana Pro than with Nano Banana, as a result of its more advanced capabilities.",
+   "цитата": "Expect higher latency when using this model compared to Nano Banana as a result of the more advanced capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Objectives — NOTE",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro, «this model»)",
+    "gemini-2.5-flash-image (Nano Banana) — выведено: названа «Nano Banana» в противопоставлении Pro"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Компромисс скорость/возможности: Pro медленнее базовой Nano Banana. Численных задержек нет."
+  },
+  {
+   "код": "E-222-6",
+   "вид": "инструкция",
+   "утверждение_en": "To use the model from a notebook: install the Google Gen AI SDK, import libraries, configure Google Cloud project credentials, initialize the genai client, and define the specific model version to use.",
+   "цитата": "It establishes the connection to Agent Platform by configuring the Google Cloud project credentials and initializing the genai client, and finally defines the specific",
+   "источник_цитаты": "txt",
+   "раздел": "Task 2. Get started",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Порядок подготовки к вызову. Конкретный идентификатор модели на странице не показан (ql-variable «model_name»); код — только в ноутбуке, которого на странице нет."
+  },
+  {
+   "код": "E-222-7",
+   "вид": "инструкция",
+   "утверждение_en": "If a notebook cell execution returns a 429 response, wait one minute before running the cell again.",
+   "цитата": "If you experience a 429 response from any of the notebook cell executions, wait one minute before running the cell again to proceed.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 2. Get started",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "429 — превышение лимита запросов; рекомендованная пауза 1 минута (для среды лабы)."
+  },
+  {
+   "код": "E-222-8",
+   "вид": "факт",
+   "утверждение_en": "Defining a specific model identifier ensures the notebook uses the correct model version for all image generation and editing tasks.",
+   "цитата": "Define the specific model identifier to be used throughout the lab. This ensures that the notebook interacts with the correct version of the",
+   "источник_цитаты": "txt",
+   "раздел": "Load the Gemini model",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сам идентификатор скрыт ql-variable."
+  },
+  {
+   "код": "E-222-9",
+   "вид": "факт",
+   "утверждение_en": "In image generation you can configure parameters such as aspect ratio and image resolution, and you can use the Google Search tool to generate images grounded in real-time information, such as weather forecasts.",
+   "цитата": "You learn how to generate images from text prompts while configuring parameters such as aspect ratio and image resolution. You also examine the model's \"thought process\" to understand its reasoning, and use the Google Search tool to generate images grounded in real-time information, such as weather forecasts.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 3. Generate images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "grounding"
+   ],
+   "заметка": "Вводный абзац задачи; детали — в подразделах E-222-10…E-222-13."
+  },
+  {
+   "код": "E-222-10",
+   "вид": "факт",
+   "утверждение_en": "In text-to-image generation, the aspect ratio setting controls the shape and layout of the final visual output.",
+   "цитата": "You configure specific settings, such as the aspect ratio, to control the shape and layout of the final visual output.",
+   "источник_цитаты": "txt",
+   "раздел": "Implement text-to-image",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Соотношение сторон влияет не только на форму, но и на компоновку («layout»). Допустимые значения на странице не перечислены."
+  },
+  {
+   "код": "E-222-11",
+   "вид": "объяснение",
+   "утверждение_en": "The model generates a step-by-step 'thought process' that you can view to understand how it interprets your prompt before creating the image.",
+   "цитата": "You view the step-by-step \"thought process\" the model generates to understand how it interprets your prompt before creating the image.",
+   "источник_цитаты": "txt",
+   "раздел": "See the thoughts",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Мысли модели отражают интерпретацию промпта до генерации; полезны для отладки промпта. Как включить показ мыслей (параметр) — на странице нет."
+  },
+  {
+   "код": "E-222-12",
+   "вид": "факт",
+   "утверждение_en": "You can connect the model to real-world information using a Google Search tool: the model retrieves up-to-date data (e.g., a weather forecast) and uses it to generate accurate, data-driven visuals.",
+   "цитата": "You can connect the model to real-world information using a Google Search tool. In this section, the model retrieves up-to-date data—such as a weather forecast—and uses it to generate accurate, data-driven visuals.",
+   "источник_цитаты": "txt",
+   "раздел": "Ground with search results",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Grounding через инструмент Google Search."
+  },
+  {
+   "код": "E-222-13",
+   "вид": "факт",
+   "утверждение_en": "You can adjust the resolution of the generated output by specifying a quality setting such as 2K, which controls the detail and file size of the resulting image.",
+   "цитата": "You can adjust the resolution of the generated output. In this section, you specify a desired quality setting, such as 2K, to control the detail and file size of the resulting image.",
+   "источник_цитаты": "txt",
+   "раздел": "Set image size",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Раздел ноутбука называется «Image sizes»; разрешение описано как «quality setting». Кроме 2K другие значения не названы."
+  },
+  {
+   "код": "E-222-14",
+   "вид": "факт",
+   "утверждение_en": "You can pass multiple reference images to the model to generate new outputs that preserve the style and context of the original inputs.",
+   "цитата": "Finally, you learn how to pass multiple reference images to the model to generate new outputs that preserve the style and context of the original inputs.",
+   "источник_цитаты": "txt",
+   "раздел": "Task 4. Edit images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Вводный абзац задачи редактирования; см. также E-222-17."
+  },
+  {
+   "код": "E-222-15",
+   "вид": "факт",
+   "утверждение_en": "You can modify text within an existing image: upload an image containing text and instruct the model to translate the content into a different language while preserving the original visual design.",
+   "цитата": "You can modify text within an existing image. In this section, you upload an image containing text and instruct the model to translate the content into a different language while preserving the original visual design.",
+   "источник_цитаты": "txt",
+   "раздел": "Localize image text",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Локализация = перевод текста в картинке с сохранением дизайна. Сам промпт не приведён."
+  },
+  {
+   "код": "E-222-16",
+   "вид": "приём",
+   "утверждение_en": "Use a chat session to refine an image iteratively: start with a base image and issue follow-up commands to change specific details (like colors or objects) without rewriting the entire prompt from scratch.",
+   "цитата": "You can use a chat session to refine an image iteratively. In this section, you start with a base image and issue follow-up commands to change specific details—like colors or objects—without needing to rewrite the entire prompt from scratch.",
+   "источник_цитаты": "txt",
+   "раздел": "Perform multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Мультиход: правки короткими последующими командами в чате вместо переписывания промпта."
+  },
+  {
+   "код": "E-222-17",
+   "вид": "факт",
+   "утверждение_en": "You can provide a collection of reference images to guide generation; the model combines elements and styles from these multiple sources to create a cohesive new scene.",
+   "цитата": "You can provide the model with a collection of reference images to guide the generation process. In this section, the model combines elements and styles from these multiple sources to create a cohesive new scene.",
+   "источник_цитаты": "txt",
+   "раздел": "Reference multiple images",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Максимальное число референсов на странице не указано."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-222-18",
+   "вид": "объяснение",
+   "утверждение_en": "The lab separates three editing modes for Nano Banana Pro: text localization in an existing image (translate while preserving design), multi-turn chat refinement (follow-up commands on a base image), and multi-reference composition (combine elements and styles from several images into one scene).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Task 4. Edit images (целиком)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-222-14, E-222-15, E-222-16, E-222-17",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Сводка трёх подразделов; страница не сравнивает режимы между собой."
+  },
+  {
+   "код": "E-222-19",
+   "вид": "факт",
+   "утверждение_en": "On this page the only concrete parameter value given is the 2K resolution; no aspect-ratio values, model id, prompts, or code are shown — they live in the notebook, which is not part of the page.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте на месте названия пустой ql-variable (key gemini_pro_image_model_name, placeholder «Nano Banana Pro»/«model_name»); явно названа в карточке лабы"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-222-6, E-222-8, E-222-10, E-222-13 и отсутствия <pre>/<code> в html",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Ограничение источника: лаба — оболочка вокруг ноутбука."
+  }
+ ],
+ "противоречия_внутри": [
+  "Термин «localization»: в Objectives — «Modify specific areas (localization)» (правка отдельных областей), в Task 4 и разделе Localize image text — перевод текста в изображении на другой язык с сохранением дизайна (E-222-4 против E-222-15).",
+  "Раздел про разрешение называется «Set image size» / «Image sizes», а сам параметр описан как «resolution» и «quality setting, such as 2K» (E-222-13) — разные слова для одного параметра."
+ ],
+ "не_сказано": [
+  "Нет ни одного промпта, фрагмента кода, имени параметра конфигурации или идентификатора модели — всё в ноутбуке, которого на странице нет; название модели в тексте подставляется ql-variable.",
+  "Не перечислены допустимые соотношения сторон и разрешения (кроме 2K).",
+  "Не сказано, как включить показ мыслей (параметр) и тарифицируются ли они.",
+  "Нет лимита на число референсов и числа ходов в чате.",
+  "Не указаны величина задержки Pro, цены, квоты (кроме совета при 429).",
+  "Нет упоминания водяного знака/SynthID и политики безопасности."
+ ],
+ "сомнения": [
+  "Цитаты E-222-1, E-222-2, E-222-3, E-222-6, E-222-8 начинаются/заканчиваются на месте пропущенного в .txt названия модели (ql-variable); модель восстановлена по placeholder «Nano Banana Pro» в html и по карточке лабы.",
+  "Задержка «compared to Nano Banana» — какой именно модели (2.5 Flash Image) не уточнено; в единице помечено как выведенное."
+ ]
+}

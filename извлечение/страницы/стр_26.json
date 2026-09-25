@@ -1,0 +1,661 @@
+{
+ "id": 26,
+ "url": "https://ai.google.dev/gemini-api/docs/interactions-overview",
+ "заголовок": "Interactions API (overview)",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC; в тексте: 'As of June 2026, it is Generally Available'",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0), 'Last updated 2026-09-23 UTC.'",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Обзор Interactions API для разработчиков: с июня 2026 GA и рекомендован для новых проектов, generateContent — legacy, но поддерживается; все новые модели/возможности — только здесь. Разделы: зачем (единый интерфейс, модели+агенты, серверное состояние, дешевле кэш), старт, гайды (включая Image generation с переключателем API), как работает (ресурс Interaction, шаги), серверное состояние (previous_interaction_id; tools/system_instruction/generation_config задаются заново каждый ход), хранение (store=true по умолчанию, 55 дней платно / 1 день бесплатно, store=false ломает previous_interaction_id и background), логи в AI Studio, лучшие практики (кэш, смешение агентов и моделей), таблица моделей (в т.ч. gemini-3-pro-image и gemini-3.1-flash-image), SDK (2.3.0+), ограничения (совместимость модальностей в многоходовом диалоге с примером gemini-3.1-flash-image; нет Batch, авто-function calling, explicit caching, custom safety settings). Примеры кода — только текстовые на gemini-3.8-flash.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Gemini 3 Pro Image)",
+  "gemini-3.1-flash-image (Gemini 3.1 Flash Image)",
+  "gemini-3.8-flash (примеры)",
+  "прочие текстовые/TTS/Gemma/Lyria модели и агенты Deep Research, Antigravity (таблица)"
+ ],
+ "структура": [
+  "Обвязка сайта (строки 2-188, идентична стр. 2)",
+  "Interactions API (вводная)",
+  "Why use the Interactions API?",
+  "Get started",
+  "Feature guides",
+  "How the Interactions API works (+ код)",
+  "Server-side state management (+ код)",
+  "Data storage and retention",
+  "View interactions in AI Studio",
+  "Best practices",
+  "Supported models & agents",
+  "SDKs",
+  "Limitations",
+  "Feedback",
+  "What's next",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Interactions API (overview) | Gemini API",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev, строки 2-181 — совпадает до байта со страницей 2 (diff строк 2-188)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 5,
+   "начало": "Interactions API",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "The Interactions API is the best",
+   "итог": "E-26-1"
+  },
+  {
+   "n": 7,
+   "начало": "Why use the Interactions API?",
+   "итог": "ничего: заголовок списка"
+  },
+  {
+   "n": 8,
+   "начало": "Universal interface for all applications :",
+   "итог": "ничего: общее преимущество API (картинки не названы; 'multimodal understanding' — про понимание)"
+  },
+  {
+   "n": 9,
+   "начало": "Single API for models and agents",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 10,
+   "начало": "New capabilities out of the box",
+   "итог": "ничего: общее перечисление (серверное состояние — E-26-5, background execution — не про картинки)"
+  },
+  {
+   "n": 11,
+   "начало": "Lower cost with higher cache hit",
+   "итог": "ничего: повтор E-26-10 (кэш в многоходовом диалоге)"
+  },
+  {
+   "n": 12,
+   "начало": "Where new features launch : Going forward,",
+   "итог": "E-26-2"
+  },
+  {
+   "n": 13,
+   "начало": "By default, the Interactions API stores",
+   "итог": "E-26-3"
+  },
+  {
+   "n": 14,
+   "начало": "Get started Set up your coding agent",
+   "итог": "ничего: ссылки на MCP/скилл/миграцию/старт, строки 235-257"
+  },
+  {
+   "n": 15,
+   "начало": "Feature guides Explore the specific capabilities",
+   "итог": "E-26-4"
+  },
+  {
+   "n": 16,
+   "начало": "Text generation Image generation Image understanding",
+   "итог": "ничего: список ссылок на гайды (наличие 'Image generation' учтено в E-26-4), строки 259-269"
+  },
+  {
+   "n": 17,
+   "начало": "How the Interactions API works The",
+   "итог": "ничего: общая модель ресурса Interaction (шаги thought/tool calls/model_output; create возвращает только шаги модели) — картинки не названы, строки 270-289"
+  },
+  {
+   "n": 18,
+   "начало": "When you make a call to interactions.create",
+   "итог": "ничего: код без промпта для картинок (текстовый пример gemini-3.8-flash 'Tell me a short story about a time-traveling lighthouse.', 5 языков), строки 290-598"
+  },
+  {
+   "n": 19,
+   "начало": "Server-side state management You can use",
+   "итог": "E-26-5"
+  },
+  {
+   "n": 20,
+   "начало": "Python from google import genai client",
+   "итог": "ничего: код без промпта для картинок (двухходовый текстовый диалог, 5 языков), строки 607-1080"
+  },
+  {
+   "n": 21,
+   "начало": "The previous_interaction_id parameter preserves only",
+   "итог": "E-26-6"
+  },
+  {
+   "n": 22,
+   "начало": "tools system_instruction generation_config (including thinking_level",
+   "итог": "ничего: перечень interaction-scoped параметров — учтён в E-26-6"
+  },
+  {
+   "n": 23,
+   "начало": "This means you must re-specify these",
+   "итог": "E-26-6, E-26-7"
+  },
+  {
+   "n": 24,
+   "начало": "Data storage and retention By default,",
+   "итог": "E-26-8"
+  },
+  {
+   "n": 25,
+   "начало": "Paid tier : The system retains",
+   "итог": "ничего: повтор E-26-8 (55 дней)"
+  },
+  {
+   "n": 26,
+   "начало": "Free tier : The system retains",
+   "итог": "ничего: повтор E-26-8 (1 день)"
+  },
+  {
+   "n": 27,
+   "начало": "If you don't want this, you",
+   "итог": "E-26-9"
+  },
+  {
+   "n": 28,
+   "начало": "For Paid Tier projects, you can",
+   "итог": "ничего: управление сроком хранения логов в AI Studio (7/14/28/55 дней) — не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "You can delete stored interactions at",
+   "итог": "ничего: удаление сохранённых interactions — не про генерацию картинок"
+  },
+  {
+   "n": 30,
+   "начало": "After the retention period expires, your",
+   "итог": "ничего: автоудаление после срока — не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "Interactions objects are processed according to",
+   "итог": "ничего: ссылка на условия"
+  },
+  {
+   "n": 32,
+   "начало": "View interactions in AI Studio The",
+   "итог": "ничего: просмотр логов в AI Studio — не про генерацию картинок, строки 1149-1157"
+  },
+  {
+   "n": 33,
+   "начало": "Best practices Cache hit rate :",
+   "итог": "E-26-10"
+  },
+  {
+   "n": 34,
+   "начало": "Mixing interactions : You have the",
+   "итог": "ничего: смешение агента Deep Research и модели — пример не про картинки (общее условие совместимости — E-26-14)"
+  },
+  {
+   "n": 35,
+   "начало": "Supported models & agents Model Name",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 36,
+   "начало": "Gemini 3.8 Flash Model gemini-3.8-flash ... Gemini 2.5 Flash-lite",
+   "итог": "ничего: строки таблицы текстовых моделей (3.8/3.7/3.6/3.5 Flash, 3.1 Pro Preview, 3.5/3.1 Flash-Lite, 3 Flash Preview, 2.5 Pro/Flash/Flash-lite), строки 1180-1212"
+  },
+  {
+   "n": 37,
+   "начало": "Gemini 3 Pro Image Model gemini-3-pro-image",
+   "итог": "E-26-11"
+  },
+  {
+   "n": 38,
+   "начало": "Gemini 3.1 Flash Image Model gemini-3.1-flash-image",
+   "итог": "E-26-12"
+  },
+  {
+   "n": 39,
+   "начало": "Gemini 3.1 Flash TTS Preview Model",
+   "итог": "ничего: строки таблицы не-image моделей и агентов (TTS, Gemma 4, Lyria 3.5/3 Clip/3 Pro, Deep Research, Antigravity), строки 1219-1245"
+  },
+  {
+   "n": 40,
+   "начало": "SDKs You can use latest version",
+   "итог": "E-26-13"
+  },
+  {
+   "n": 41,
+   "начало": "You can learn more about how",
+   "итог": "ничего: ссылка на страницу Libraries"
+  },
+  {
+   "n": 42,
+   "начало": "Limitations Remote MCP : Gemini 3 does",
+   "итог": "ничего: не про генерацию картинок (remote MCP)"
+  },
+  {
+   "n": 43,
+   "начало": "Multi-turn model compatibility : When mixing different",
+   "итог": "E-26-14"
+  },
+  {
+   "n": 44,
+   "начало": "The following features are supported by",
+   "итог": "ничего: вводная к списку (учтена в E-26-15, E-26-16)"
+  },
+  {
+   "n": 45,
+   "начало": "Batch API",
+   "итог": "E-26-15"
+  },
+  {
+   "n": 46,
+   "начало": "Automatic function calling (Python)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "Explicit caching : Note that server-side implicit",
+   "итог": "ничего: не про генерацию картинок (explicit caching; implicit — через previous_interaction_id)"
+  },
+  {
+   "n": 48,
+   "начало": "Safety settings : Custom safety settings",
+   "итог": "E-26-16"
+  },
+  {
+   "n": 49,
+   "начало": "Feedback Your feedback is critical to",
+   "итог": "ничего: призыв к обратной связи, строки 1297-1301"
+  },
+  {
+   "n": 50,
+   "начало": "What's next Try the Interactions API",
+   "итог": "ничего: ссылки, строки 1302-1308"
+  },
+  {
+   "n": 51,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия, Google Developers Site Policies, Last updated 2026-09-23 (признак официальности), строки 1309-1317"
+  },
+  {
+   "n": 52,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал, языки, строки 1318-1343 (совпадает с хвостом стр. 2)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-26-1",
+   "вид": "факт",
+   "утверждение_en": "As of June 2026 the Interactions API is Generally Available and recommended for all new projects; the original generateContent API is now considered legacy but remains fully supported.",
+   "цитата": "and agents. As of June 2026, it is Generally Available and recommended for all\nnew projects. While it is now considered legacy, the original",
+   "источник_цитаты": "txt",
+   "раздел": "Interactions API (вводная)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Продолжение: 'generateContent API remains fully supported.' (строки 193-195). Относится ко всем моделям, включая image-модели из таблицы поддержки."
+  },
+  {
+   "код": "E-26-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Going forward, all new models, multimodal capabilities, tools and agentic features will launch on the Interactions API.",
+   "цитата": ": Going forward, all new models, multimodal\ncapabilities, tools, and agentic features will launch on the Interactions\nAPI.",
+   "источник_цитаты": "txt",
+   "раздел": "Why use the Interactions API?: Where new features launch",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Следствие для картинок (вывод): новые image-возможности могут появляться только в Interactions API — страница этого прямо не пишет про картинки."
+  },
+  {
+   "код": "E-26-3",
+   "вид": "факт",
+   "утверждение_en": "The Interactions API stores requests by default so server-side state (previous_interaction_id) can be used; stateless behavior is opted into with store=false.",
+   "цитата": "By default, the Interactions API stores requests so you can leverage",
+   "источник_цитаты": "txt",
+   "раздел": "Why use the Interactions API? (абзац после списка)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Строки 226-234; подробности — раздел Data storage and retention (E-26-8, E-26-9)."
+  },
+  {
+   "код": "E-26-4",
+   "вид": "факт",
+   "утверждение_en": "The Image generation feature guide can be toggled between the generateContent API and the Interactions API.",
+   "цитата": "Explore the specific capabilities of the Interactions API through these guides. You can use the toggle on these pages to switch between generateContent and Interactions API:",
+   "источник_цитаты": "txt",
+   "раздел": "Feature guides",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'Image generation' — второй пункт списка гайдов (строка 260). Значит, генерация картинок доступна через оба API."
+  },
+  {
+   "код": "E-26-5",
+   "вид": "факт",
+   "утверждение_en": "Passing the id of a completed interaction as previous_interaction_id continues the conversation; the server retrieves the history so the full chat history need not be resent.",
+   "цитата": "parameter to continue the conversation. The server\nuses this ID to retrieve the conversation history, saving you from having to\nresend the entire chat history:",
+   "источник_цитаты": "txt",
+   "раздел": "Server-side state management",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Примеры кода (Python/JS/Java/Go/REST) — текстовый диалог gemini-3.8-flash ('Hi, my name is Phil.' → 'What is my name?'). Для многоходовой правки картинок механизм тот же — вывод, не сказано."
+  },
+  {
+   "код": "E-26-6",
+   "вид": "правило",
+   "утверждение_en": "previous_interaction_id preserves only the conversation history (inputs and outputs); tools, system_instruction and generation_config (including thinking_level, temperature, etc.) are interaction-scoped and must be re-specified in each new interaction to apply.",
+   "цитата": "This means you must re-specify these parameters in each new interaction if you\nwant them to apply.",
+   "источник_цитаты": "txt",
+   "раздел": "Server-side state management",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Перечень interaction-scoped параметров — строки 1086-1096. Для многоходовой работы с картинками: конфиг генерации (в т.ч. thinking_level) нужно передавать в каждом ходе; про image-специфичные поля конфига не сказано."
+  },
+  {
+   "код": "E-26-7",
+   "вид": "факт",
+   "утверждение_en": "Server-side state management is optional; you can operate statelessly by sending the full conversation history in each request.",
+   "цитата": "This server-side state management is optional; you can also\noperate in stateless mode by sending the full conversation history in each\nrequest.",
+   "источник_цитаты": "txt",
+   "раздел": "Server-side state management",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Цитата начинается с середины строки 1098 и идёт до строки 1100."
+  },
+  {
+   "код": "E-26-8",
+   "вид": "факт",
+   "утверждение_en": "By default the API stores all Interaction objects (store=true); paid-tier interactions are retained for 55 days and free-tier interactions for 1 day.",
+   "цитата": "By default, the API stores all Interaction objects (",
+   "источник_цитаты": "txt",
+   "раздел": "Data storage and retention",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строки 1102-1120: хранение нужно для previous_interaction_id, background execution и наблюдаемости. Paid tier — 55 days, Free tier — 1 day. Хранятся ли сгенерированные картинки внутри объектов — не сказано."
+  },
+  {
+   "код": "E-26-9",
+   "вид": "ограничение",
+   "утверждение_en": "Setting store=false opts out of storage for an interaction but is incompatible with background execution and prevents using previous_interaction_id for subsequent turns.",
+   "цитата": "management; you can opt out of storage for any interaction. However, note that",
+   "источник_цитаты": "txt",
+   "раздел": "Data storage and retention",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Полностью (строки 1121-1131): '... set store=false ... store=false is incompatible with background execution and prevents using previous_interaction_id for subsequent turns.' Для серверной многоходовой правки картинок нужен store=true."
+  },
+  {
+   "код": "E-26-10",
+   "вид": "приём",
+   "утверждение_en": "Continuing conversations with previous_interaction_id (stateful) lets the system more easily use implicit caching of the conversation history, improving performance and reducing costs; implicit caching works in both stateful and stateless modes.",
+   "цитата": "(stateful) to continue conversations allows the\nsystem to more easily utilize implicit caching for the conversation\nhistory, which improves performance and reduces costs.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices: Cache hit rate",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "цены"
+   ],
+   "заметка": "То же во вводном списке 'Lower cost with higher cache hit rates' (строки 218-221)."
+  },
+  {
+   "код": "E-26-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (gemini-3-pro-image) is a supported model in the Interactions API.",
+   "цитата": "Gemini 3 Pro Image\nModel\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models & agents (таблица)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Строка таблицы; id без -preview."
+  },
+  {
+   "код": "E-26-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (gemini-3.1-flash-image) is a supported model in the Interactions API.",
+   "цитата": "Gemini 3.1 Flash Image\nModel\ngemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models & agents (таблица)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Строка таблицы; id без -preview."
+  },
+  {
+   "код": "E-26-13",
+   "вид": "факт",
+   "утверждение_en": "The Interactions API is accessed with the latest Google GenAI SDKs: google-genai (Python) and @google/genai (JavaScript) from version 2.3.0 onwards, google.golang.org/genai (Go) and com.google.genai:google-genai (Java).",
+   "цитата": "You can use latest version of the Google GenAI SDKs in order to access",
+   "источник_цитаты": "txt",
+   "раздел": "SDKs",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Версии 2.3.0+ указаны только для Python и JavaScript (строки 1247-1265)."
+  },
+  {
+   "код": "E-26-14",
+   "вид": "ограничение",
+   "утверждение_en": "When mixing models in one conversation (stateful or stateless), each subsequent model must accept the previous model's output modalities as input; e.g., after generating an image with gemini-3.1-flash-image you cannot continue with a model that doesn't accept image inputs (a text-only model or a music model like Lyria).",
+   "цитата": ": When mixing different models in a\nconversation (either stateful or stateless), subsequent models must support\nthe output modalities of the previous models as input.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations: Multi-turn model compatibility",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — в примере",
+    "Lyria (как пример несовместимой модели)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": "Пример с картинкой — строки 1275-1280: 'if you generate an image using gemini-3.1-flash-image, you cannot continue that conversation with a model that doesn't accept image inputs'."
+  },
+  {
+   "код": "E-26-15",
+   "вид": "ограничение",
+   "утверждение_en": "The Batch API is supported by generateContent but not yet available in the Interactions API.",
+   "цитата": "not yet\navailable\nin the Interactions API:\nBatch API",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations: not yet available in the Interactions API",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Пункт списка после фразы 'The following features are supported by the generateContent API but are not yet available in the Interactions API:' (строки 1281-1287). Цитата — строки 1284-1287 (одиночная строка 'Batch API' есть и в меню сайта, поэтому взята с контекстом). Для пакетной генерации картинок — только через generateContent (вывод)."
+  },
+  {
+   "код": "E-26-16",
+   "вид": "ограничение",
+   "утверждение_en": "Custom safety settings are not supported in the Interactions API.",
+   "цитата": ": Custom safety\nsettings are not supported in the Interactions API.",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations: not yet available in the Interactions API",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Пороги safety для генерации картинок через Interactions API задать нельзя; в generateContent они есть (по формулировке списка)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-26-17",
+   "вид": "правило",
+   "утверждение_en": "For multi-turn image work in the Interactions API: chain turns with previous_interaction_id (which requires the default store=true), re-send tools, system_instruction and generation_config on every turn, and only hand an image-producing turn to a model that accepts image input.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-26-5, E-26-6, E-26-9, E-26-14",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Собрано из четырёх мест страницы; прямо для картинок сформулировано только требование совместимости модальностей."
+  },
+  {
+   "код": "E-26-18",
+   "вид": "предупреждение",
+   "утверждение_en": "Only two image models appear in the Interactions API support table (gemini-3-pro-image and gemini-3.1-flash-image); gemini-2.5-flash-image and gemini-3.1-flash-lite-image are not listed.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-26-11, E-26-12 (отсутствие других image-моделей в таблице)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Страница не говорит, что эти модели не поддерживаются, — их просто нет в списке."
+  },
+  {
+   "код": "E-26-19",
+   "вид": "объяснение",
+   "утверждение_en": "Custom safety thresholds and batch processing for image generation are available only through the legacy generateContent API, while all new models and features are to launch on the Interactions API.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-26-1, E-26-2, E-26-15, E-26-16",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Развилка выбора API для image-конвейера: не сформулирована страницей как совет."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет ни одного примера генерации картинки через Interactions API; все примеры — текст на gemini-3.8-flash.",
+  "Не сказано, в каком шаге/поле ответа приходит сгенерированное изображение и хранится ли оно в сохранённом Interaction.",
+  "Какие image-специфичные поля входят в generation_config (соотношение сторон, размер) — не указано; сказано только, что generation_config надо задавать в каждом ходе.",
+  "gemini-2.5-flash-image и gemini-3.1-flash-lite-image отсутствуют в таблице поддерживаемых моделей без пояснения.",
+  "Сроки появления Batch API и safety settings в Interactions API ('not yet') не названы."
+ ],
+ "сомнения": [
+  "Единицы про хранение и кэш (E-26-8, E-26-9, E-26-10) общие для API; к картинкам относятся через многоходовую правку, прямо страница картинки там не упоминает."
+ ]
+}

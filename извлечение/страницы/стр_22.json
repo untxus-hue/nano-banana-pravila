@@ -1,0 +1,1255 @@
+{
+ "id": 22,
+ "url": "https://raw.githubusercontent.com/google-gemini/cookbook/main/examples/Book_illustration.ipynb",
+ "заголовок": "Book illustration (cookbook example)",
+ "дата_в_тексте": "только 'Copyright 2026 Google LLC.'",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий google-gemini/cookbook)",
+  "второй_признак": "Строка '##### Copyright 2026 Google LLC.' + лицензия Apache 2.0; ссылка Colab на github.com/google-gemini/cookbook",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пример-ноутбук Gemini Cookbook 'Illustrating a book using Nano Banana and genMedia models' для разработчиков: конвейер, где текстовая Gemini (GEMINI_MODEL_ID) читает книгу (File API) или аудиокнигу, задаёт стиль и пишет структурированные промпты персонажей и глав, а модель изображений (IMAGE_MODEL_ID, по умолчанию gemini-3.1-flash-lite-image; варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image) рисует портреты и иллюстрации глав через цепочку Interactions API. Дополнительно Veo, Lyria 3.5, TTS и сведение в видео (не про генерацию картинок). Структура: setup → книга → чат → стиль → портреты → главы → Bonus (выборочные рефы без цепочки) → Veo → Lyria → TTS → микс → повтор конвейера на аудиокниге. Ключевые утверждения: ограничение на детей в EEA; модель изображений игнорирует system instructions; блок 'negative prompt' против текста/рамок/панелей; промпты персонажей ≥50 слов. Повторяемый акцент: консистентность персонажей через историю чата или явные рефы.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (по умолчанию)",
+  "gemini-3-pro-image-preview",
+  "gemini-3.1-flash-image-preview",
+  "gemini-2.5-flash-image",
+  "Nano Banana (обобщённо)",
+  "Imagen (прежняя версия ноутбука)",
+  "текстовые Gemini (gemini-3.8-flash и др.)",
+  "Veo 3.1, Lyria 3.5, Gemini TTS (не про картинки)"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Illustrating a book using Nano Banana and genMedia models (вступление, заметки о биллинге)",
+  "0/ Setup (API key, SDK, client, imports, Select models)",
+  "Illustrate a book: The Wind in the Willows",
+  "1/ Get a book and upload using the File API (+ system instructions)",
+  "2/ Start the chat",
+  "3/ Define a style",
+  "4/ Generate portraits of the main characters",
+  "5/ Illustrate the chapters of the book (+ Bonus: more granular control)",
+  "6/ Animate a chapter illustration with Veo",
+  "7/ Generate chapter music with Lyria 3.5",
+  "8/ Text-to-Speech narration",
+  "9/ Mix everything together",
+  "With an Audiobook: The Adventures of Chatterer the Red Squirrel (1/-5/)",
+  "Next Steps"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Copyright 2026 Google LLC.",
+   "итог": "ничего: копирайт (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# @title Licensed under the Apache",
+   "итог": "ничего: код без промпта (лицензия)"
+  },
+  {
+   "n": 3,
+   "начало": "# Illustrating a book using Nano Banana",
+   "итог": "ничего: заголовок ноутбука"
+  },
+  {
+   "n": 4,
+   "начало": "<a target=\"_blank\" href=\"https://colab.research.google.com/…",
+   "итог": "ничего: обвязка (ссылка Colab)"
+  },
+  {
+   "n": 5,
+   "начало": "In this guide, you are going",
+   "итог": "E-22-1"
+  },
+  {
+   "n": 6,
+   "начало": "You will also explore how to bring … Veo … Lyria 3.5 … TTS",
+   "итог": "ничего: не про генерацию картинок (Veo, Lyria, TTS)"
+  },
+  {
+   "n": 7,
+   "начало": "Each concept will be explained along",
+   "итог": "ничего: ссылки на другие материалы"
+  },
+  {
+   "n": 8,
+   "начало": "Note: for the sake of the notebook's size",
+   "итог": "ничего: служебная настройка ноутбука (см. противоречия_внутри: 3 vs 5 персонажей)"
+  },
+  {
+   "n": 9,
+   "начало": "Also note that this notebook used",
+   "итог": "ничего: история ноутбука (раньше Imagen), не правило"
+  },
+  {
+   "n": 10,
+   "начало": "> **Note:** [Enable billing](…) to use Image Generation",
+   "итог": "E-22-2, E-22-3"
+  },
+  {
+   "n": 11,
+   "начало": "> This notebook also includes optional sections",
+   "итог": "ничего: не про генерацию картинок (платные Veo/Lyria/TTS)"
+  },
+  {
+   "n": 12,
+   "начало": "## 0/ Setup This section install",
+   "итог": "ничего: заголовок и пояснение по запуску"
+  },
+  {
+   "n": 13,
+   "начало": "### Setup your API key To run",
+   "итог": "ничего: настройка ключа, не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "from google.colab import userdata",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 15,
+   "начало": "### Install SDK / %pip install -U -q \"google-genai>=2.24.0\"",
+   "итог": "E-22-4"
+  },
+  {
+   "n": 16,
+   "начало": "### Initialize SDK client With the new SDK",
+   "итог": "ничего: настройка SDK, не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "from google import genai … HttpRetryOptions",
+   "итог": "E-22-5"
+  },
+  {
+   "n": 18,
+   "начало": "### Imports Some imports to display",
+   "итог": "ничего: импорт библиотек"
+  },
+  {
+   "n": 19,
+   "начало": "import json from PIL import Image",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 20,
+   "начало": "### Select models Select the models",
+   "итог": "ничего: вводная (о платности — повтор E-22-2)"
+  },
+  {
+   "n": 21,
+   "начало": "You can also use the [`priority` service tier]",
+   "итог": "E-22-6"
+  },
+  {
+   "n": 22,
+   "начало": "IMAGE_MODEL_ID = \"gemini-3.1-flash-lite-image\"  # @param",
+   "итог": "E-22-7"
+  },
+  {
+   "n": 23,
+   "начало": "GEMINI_MODEL_ID … LYRIA_MODEL_ID … TTS_MODEL_ID … service_tier",
+   "итог": "ничего: выбор текстовых/аудио моделей и флагов, не про генерацию картинок (service_tier учтён в заметке E-22-6)"
+  },
+  {
+   "n": 24,
+   "начало": "For the sake of the notebook's size (and your billing",
+   "итог": "ничего: служебная настройка (см. противоречия_внутри)"
+  },
+  {
+   "n": 25,
+   "начало": "max_character_images = 5 … max_chapter_images = 3",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 26,
+   "начало": "# Illustrate a book: The Wind in the Willows",
+   "итог": "ничего: заголовок части"
+  },
+  {
+   "n": 27,
+   "начало": "## 1/ Get a book and upload using the File API",
+   "итог": "ничего: загрузка текста книги, не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "import requests … client.files.upload",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 29,
+   "начало": "Let's also define some more instructions",
+   "итог": "E-22-8"
+  },
+  {
+   "n": 30,
+   "начало": "system_instructions = \"\"\" There must be no text",
+   "итог": "E-22-9"
+  },
+  {
+   "n": 31,
+   "начало": "## 2/ Start the chat You are going to chain",
+   "итог": "E-22-10"
+  },
+  {
+   "n": 32,
+   "начало": "You should also define the format",
+   "итог": "E-22-11"
+  },
+  {
+   "n": 33,
+   "начало": "from pydantic import BaseModel class Prompt",
+   "итог": "ничего: код без промпта (реализует E-22-11)"
+  },
+  {
+   "n": 34,
+   "начало": "`client.interactions.create` starts the chat and",
+   "итог": "ничего: общее пояснение API"
+  },
+  {
+   "n": 35,
+   "начало": "# Start the conversation with the book content",
+   "итог": "E-22-12"
+  },
+  {
+   "n": 36,
+   "начало": "The first message sent to the model",
+   "итог": "ничего: пояснение, учтено в заметке E-22-12"
+  },
+  {
+   "n": 37,
+   "начало": "It could have been done during",
+   "итог": "ничего: пояснение, учтено в заметке E-22-12"
+  },
+  {
+   "n": 38,
+   "начало": "## 3/ Define a style If you want to test",
+   "итог": "E-22-13"
+  },
+  {
+   "n": 39,
+   "начало": "If you prefer to let Gemini choose",
+   "итог": "E-22-14"
+  },
+  {
+   "n": 40,
+   "начало": "style = \"\" # @param … if style==\"\":",
+   "итог": "E-22-15, E-22-16, E-22-17"
+  },
+  {
+   "n": 41,
+   "начало": "## 4/ Generate portraits of the main characters / You are now ready",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 42,
+   "начало": "Ask Gemini to describe each of",
+   "итог": "E-22-18"
+  },
+  {
+   "n": 43,
+   "начало": "characters_prompts_interaction = client.interactions.create(",
+   "итог": "E-22-19"
+  },
+  {
+   "n": 44,
+   "начало": "Now that you have the prompts, you",
+   "итог": "E-22-20"
+  },
+  {
+   "n": 45,
+   "начало": "Like before, for the sake of",
+   "итог": "E-22-21"
+  },
+  {
+   "n": 46,
+   "начало": "For an extensive explanation on the",
+   "итог": "ничего: ссылка на другой ноутбук"
+  },
+  {
+   "n": 47,
+   "начало": "* `prompt` is the prompt passed",
+   "итог": "E-22-22"
+  },
+  {
+   "n": 48,
+   "начало": "* `response_modalities=['Image']` because you only",
+   "итог": "E-22-23"
+  },
+  {
+   "n": 49,
+   "начало": "* `aspect_ratio=\"9:16\"` because you want",
+   "итог": "E-22-24"
+  },
+  {
+   "n": 50,
+   "начало": "Note that you could have used system instructions",
+   "итог": "E-22-25"
+  },
+  {
+   "n": 51,
+   "начало": "# TODO: try using the last interaction",
+   "итог": "ничего: код без промпта (комментарий)"
+  },
+  {
+   "n": 52,
+   "начало": "character_images = [] … You are going to generate portrait images",
+   "итог": "E-22-26, E-22-27"
+  },
+  {
+   "n": 53,
+   "начало": "## 5/ Illustrate the chapters of the book / After the characters",
+   "итог": "ничего: повтор E-22-11 (двухступенчатая схема для глав)"
+  },
+  {
+   "n": 54,
+   "начало": "chapters_prompts_interaction = client.interactions.create( … for each chapters",
+   "итог": "E-22-28"
+  },
+  {
+   "n": 55,
+   "начало": "chapters_image_interaction = client.interactions.create( … Starting from now",
+   "итог": "E-22-29, E-22-30"
+  },
+  {
+   "n": 56,
+   "начало": "### Bonus: Going further with more granular control",
+   "итог": "E-22-31"
+  },
+  {
+   "n": 57,
+   "начало": "class Chapter(BaseModel): … characters: list[str]",
+   "итог": "ничего: код без промпта (схема с полем characters)"
+  },
+  {
+   "n": 58,
+   "начало": "chapters_prompts_interaction … (Bonus-вариант)",
+   "итог": "ничего: повтор E-22-28 без фразы 'single image, not a multi-tiled page'"
+  },
+  {
+   "n": 59,
+   "начало": "# @title Character ref image finder",
+   "итог": "ничего: код без промпта (подбор рефов)"
+  },
+  {
+   "n": 60,
+   "начало": "Now let's generate the chapters's images",
+   "итог": "E-22-32"
+  },
+  {
+   "n": 61,
+   "начало": "for chapter in chapters: … Create this illustration for",
+   "итог": "E-22-33"
+  },
+  {
+   "n": 62,
+   "начало": "## 6/ Animate a chapter illustration with Veo",
+   "итог": "ничего: не про генерацию картинок (Veo)"
+  },
+  {
+   "n": 63,
+   "начало": "VEO_MODEL_ID = \"veo-3.1-lite-generate-preview\"",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "Use Gemini to generate a short animation prompt",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "if not I_understand_this_is_a_paid_API: … generate_videos (первая ячейка)",
+   "итог": "ничего: не про генерацию картинок (Veo)"
+  },
+  {
+   "n": 66,
+   "начало": "Alternatively you can also have Gemini",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 67,
+   "начало": "if not I_understand_this_is_a_paid_API: … create a prompt for Veo",
+   "итог": "ничего: не про генерацию картинок (промпт для Veo)"
+  },
+  {
+   "n": 68,
+   "начало": "## 7/ Generate chapter music with Lyria 3.5",
+   "итог": "ничего: не про генерацию картинок (Lyria)"
+  },
+  {
+   "n": 69,
+   "начало": "if not I_understand_this_is_a_paid_API: … Lyria 3.5",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 70,
+   "начало": "## 8/ Text-to-Speech narration",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 71,
+   "начало": "# @title Helper functions (just run",
+   "итог": "ничего: код без промпта (аудио)"
+  },
+  {
+   "n": 72,
+   "начало": "if not I_understand_this_is_a_paid_API: … DialogTurn … Extract the dialog",
+   "итог": "ничего: не про генерацию картинок (TTS-диалог)"
+  },
+  {
+   "n": 73,
+   "начало": "## 9/ Mix everything together",
+   "итог": "ничего: не про генерацию картинок (сведение видео)"
+  },
+  {
+   "n": 74,
+   "начало": "if ( not I_understand_this_is_a_paid_API … moviepy",
+   "итог": "ничего: код без промпта (сведение)"
+  },
+  {
+   "n": 75,
+   "начало": "# With an Audiobook: The Adventures of Chatterer",
+   "итог": "E-22-34"
+  },
+  {
+   "n": 76,
+   "начало": "## 1/ Get the audiobook and merge",
+   "итог": "ничего: подготовка аудио, не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "%pip install pydub … combined_audio",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 78,
+   "начало": "Now upload it using the File",
+   "итог": "ничего: загрузка файла"
+  },
+  {
+   "n": 79,
+   "начало": "audiobook = client.files.upload",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 80,
+   "начало": "## 2/ Start the chat Oonce again",
+   "итог": "ничего: повтор E-22-10, E-22-11"
+  },
+  {
+   "n": 81,
+   "начало": "from pydantic import BaseModel class Prompt (повтор)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 82,
+   "начало": "# Re-run this cell if you want to start anew.",
+   "итог": "ничего: повтор E-22-12 (вариант 'Here's an audiobook')"
+  },
+  {
+   "n": 83,
+   "начало": "## 3/ Define a style … futuristic style",
+   "итог": "ничего: повтор E-22-13, E-22-14"
+  },
+  {
+   "n": 84,
+   "начало": "style = \"futuristic, science fiction, utopia",
+   "итог": "E-22-35"
+  },
+  {
+   "n": 85,
+   "начало": "system_instructions = \"\"\" … Stay family-friendly",
+   "итог": "ничего: повтор E-22-9 (без оговорки 'Unless asked otherwise')"
+  },
+  {
+   "n": 86,
+   "начало": "## 4/ Generate portraits … You are now ready (аудиокнига)",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 87,
+   "начало": "interaction = client.interactions.create( … Can you describe the main characters and prepare",
+   "итог": "ничего: повтор E-22-19 (без '(only the adults)' и без 'at least 50 words')"
+  },
+  {
+   "n": 88,
+   "начало": "last_image_interaction = client.interactions.create( … Chatterer",
+   "итог": "ничего: повтор E-22-26, E-22-27"
+  },
+  {
+   "n": 89,
+   "начало": "## 5/ Illustrate the chapters … (аудиокнига)",
+   "итог": "ничего: повтор вводной"
+  },
+  {
+   "n": 90,
+   "начало": "interaction = client.interactions.create( … for each chapter of the book",
+   "итог": "ничего: повтор E-22-28 (сокращённый вариант)"
+  },
+  {
+   "n": 91,
+   "начало": "interaction = client.interactions.create( … Starting from now (аудиокнига)",
+   "итог": "ничего: повтор E-22-29, E-22-30"
+  },
+  {
+   "n": 92,
+   "начало": "# Next Steps **Useful documentation references:**",
+   "итог": "ничего: ссылки на документацию (модели названы: gemini-3.1-flash-image-preview, gemini-3-pro-image-preview)"
+  },
+  {
+   "n": 93,
+   "начало": "**Related examples:** … **Continue your discovery",
+   "итог": "ничего: ссылки"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-22-1",
+   "вид": "приём",
+   "утверждение_en": "Illustrate a book by combining Gemini features (long context, multimodality, structured output, File API, chat mode) with the Nano Banana image model.",
+   "цитата": "In this guide, you are going to use multiple Gemini features (long context, multimodality, structured output, file API, chat mode...) in conjunction with the [Nano Banana](../quickstarts/Get_Started_Nano_Banana.ipynb) image generation model to illustrate a book.",
+   "источник_цитаты": "txt",
+   "раздел": "(вступление ноутбука)",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Общая схема: текстовая модель читает книгу и пишет промпты, модель изображений рисует."
+  },
+  {
+   "код": "E-22-2",
+   "вид": "факт",
+   "утверждение_en": "Image generation requires enabling billing and is a pay-as-you-go feature.",
+   "цитата": "[Enable billing](https://ai.google.dev/gemini-api/docs/billing#enable-cloud-billing) to use Image Generation. This is a pay-as-you-go feature",
+   "источник_цитаты": "txt",
+   "раздел": "(вступление ноутбука)",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Ссылка на цены ведёт на якорь gemini-2.5-flash-image-preview."
+  },
+  {
+   "код": "E-22-3",
+   "вид": "факт",
+   "утверждение_en": "The billing requirement does not apply to gemini-2.5-flash-image (Nano Banana), which has a free tier.",
+   "цитата": "This does **not** apply if you use `gemini-2.5-flash-image` (Nano Banana) which has a free tier.",
+   "источник_цитаты": "txt",
+   "раздел": "(вступление ноутбука)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-4",
+   "вид": "факт",
+   "утверждение_en": "google-genai 2.24 or later is needed for the Interactions API used in this notebook.",
+   "цитата": "%pip install -U -q \"google-genai>=2.24.0\"  # 2.24+ for interactions API",
+   "источник_цитаты": "txt",
+   "раздел": "0/ Setup",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Из кодовой ячейки с комментарием."
+  },
+  {
+   "код": "E-22-5",
+   "вид": "приём",
+   "утверждение_en": "Configure client HTTP retries (e.g., 5 attempts with backoff) on status codes 429, 500, 502, 503 and 504.",
+   "цитата": "http_status_codes=[429, 500, 502, 503, 504]",
+   "источник_цитаты": "txt",
+   "раздел": "0/ Setup",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Из кода: types.HttpRetryOptions(attempts=5, initial_delay=2.0, max_delay=60.0, http_status_codes=[...]). Общая настройка клиента, не специфична для картинок."
+  },
+  {
+   "код": "E-22-6",
+   "вид": "факт",
+   "утверждение_en": "The priority service tier makes sure requests go through but costs twice as much.",
+   "цитата": "You can also use the [`priority` service tier](https://ai.google.dev/gemini-api/docs/priority-inference) to be certain your requests will go through (but be careful, it means they will be twice as expensive).",
+   "источник_цитаты": "txt",
+   "раздел": "0/ Setup / Select models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "В коде: service_tier с вариантами 'flex', 'standard', 'priority', передаётся в interactions.create."
+  },
+  {
+   "код": "E-22-7",
+   "вид": "факт",
+   "утверждение_en": "Image model options in this notebook: gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-3.1-flash-lite-image (default), gemini-2.5-flash-image.",
+   "цитата": "IMAGE_MODEL_ID = \"gemini-3.1-flash-lite-image\"  # @param [\"gemini-3-pro-image-preview\", \"gemini-3.1-flash-image-preview\", \"gemini-3.1-flash-lite-image\", \"gemini-2.5-flash-image\"]",
+   "источник_цитаты": "txt",
+   "раздел": "0/ Setup / Select models",
+   "модели": [
+    "gemini-3-pro-image-preview",
+    "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-lite-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Все четыре модели считаются применимыми к одному и тому же конвейеру."
+  },
+  {
+   "код": "E-22-8",
+   "вид": "приём",
+   "утверждение_en": "Define an extra block of instructions acting as 'system instructions' or a negative prompt telling the model what you do not want to see (e.g., text on the images).",
+   "цитата": "Let's also define some more instructions which will act as \"system instructions\" or a negative prompt to tell the model what you do not want to see (text on the images).",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 1/ Get a book and upload using the File API",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Страница прямо называет блок 'negative prompt'."
+  },
+  {
+   "код": "E-22-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example rules block for book illustrations: no text, not a cover page, full illustration without borders/titles/description, family-friendly uplifting colors unless asked otherwise, single image with no panels.",
+   "цитата": "There must be no text on the image, it should not look like a cover page.\n  It should be an full illustration with no borders, titles, nor description.\n  Unless asked otherwise, stay family-friendly with uplifting colors.\n  Each produced should be a simple image, no panels.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 1/ Get a book and upload using the File API",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Разбор: 4 строки-правила, каждая — запрет или рамка: нет текста/не обложка → полноформатная иллюстрация без рамок, заголовков, подписей → тон и палитра по умолчанию ('Unless asked otherwise' — оставлена возможность переопределить) → одна картинка без панелей. Формулировки отрицательные ('no text', 'no borders', 'no panels'). Передаётся в первом ходе чата изображений как 'Also follow those rules'."
+  },
+  {
+   "код": "E-22-10",
+   "вид": "приём",
+   "утверждение_en": "Chain interactions via their IDs so Gemini keeps the history of what you asked and you don't have to resend the book every time.",
+   "цитата": "You are going to chain interactions via their IDs here so that Gemini will keep the history of what you asked it, and also so that you don't have to send it the book every time.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 2/ Start the chat",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Относится к чату текстовой модели; для модели изображений тот же приём применён отдельной цепочкой (E-22-21)."
+  },
+  {
+   "код": "E-22-11",
+   "вид": "приём",
+   "утверждение_en": "Use Gemini with structured output (a schema with 'name' and 'prompt' fields) to generate the image prompts.",
+   "цитата": "You will mainly use Gemini to generate prompts so let's define a Pydantic model with two fields, a name and a prompt:",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 2/ Start the chat",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "В коде: response_format={'type':'text','mime_type':'application/json','schema':{'type':'array','items': Prompt.model_json_schema()}}."
+  },
+  {
+   "код": "E-22-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example opening message to the text model: give the book with minimal context and ask it to stay quiet until instructions follow.",
+   "цитата": "Here's a book, to illustrate using Nano Banana. Don't say anything for now, instructions will follow.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 2/ Start the chat",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Промпт к текстовой модели Gemini (генератор промптов для Nano Banana), не к модели изображений. Разбор: назначение ('to illustrate using Nano Banana') + указание не отвечать. Пояснение ноутбука: первое сообщение даёт контекст и, главное, саму книгу; разделение шагов — для ясности."
+  },
+  {
+   "код": "E-22-13",
+   "вид": "приём",
+   "утверждение_en": "If you want a specific style, write it down and also tell Gemini about it so it adapts the prompts it generates accordingly.",
+   "цитата": "If you want to test a specific style, just write it down and Gemini will use it. Still, tell Gemini about it so it will adapt the prompts it will generate accordingly.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 3/ Define a style",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-14",
+   "вид": "приём",
+   "утверждение_en": "Alternatively leave the style empty and ask Gemini to define a style fitting the book.",
+   "цитата": "If you prefer to let Gemini choose the best style for the book, leave the style empty and ask Gemini to define a style fitting to the book.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 3/ Define a style",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt asking the text model to define an art style fitting the story 'with a twist', returned as a reusable style prompt.",
+   "цитата": "Can you define a art style that would fit the story but with a twist? Just give us the prompt for the art syle that will added to the furture prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 3/ Define a style",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": "Промпт к текстовой модели Gemini (генератор промптов для Nano Banana), не к модели изображений. Разбор: просьба о стиле, подходящем к истории + 'with a twist' + формат ответа — только текст стиля для вставки в будущие промпты. Опечатки источника сохранены."
+  },
+  {
+   "код": "E-22-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example message informing the text model of a user-chosen art style to keep in mind for future prompts.",
+   "цитата": "The art style will be:\"{style}\". Keep that in mind when generating future prompts. Keep quiet for now, instructions will follow.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 3/ Define a style",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "мультиход"
+   ],
+   "заметка": "Промпт к текстовой модели Gemini (генератор промптов для Nano Banana), не к модели изображений. Шаблон с подстановкой {style}."
+  },
+  {
+   "код": "E-22-17",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Style wrapper added to image prompts: Follow this style: \"{style}\".",
+   "цитата": "Follow this style: \"{style}\"",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 3/ Define a style",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Из кода: style = f'Follow this style: \"{style}\" ' — стиль в кавычках после императива; затем вставляется в первый ход чата изображений."
+  },
+  {
+   "код": "E-22-18",
+   "вид": "ограничение",
+   "утверждение_en": "Nano Banana can't generate images of children in the EEA, so character descriptions should exclude children.",
+   "цитата": "excluding children as Nano Banana can't generate images of them in EEA",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так во фразе)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Региональное ограничение (Европейская экономическая зона). В промпте к текстовой модели это отражено как '(only the adults)'. Во второй части (аудиокнига о животных) ограничение не применяется."
+  },
+  {
+   "код": "E-22-19",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt asking the text model for detailed adult-character prompts (from the book's descriptions), each at least 50 words.",
+   "цитата": "Can you describe the main characters (only the adults) and prepare a prompt describing them with as much details as possible (use the descriptions from the book) so Nano Banana can generate images of them? Each prompt should be at least 50 words.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Промпт к текстовой модели Gemini (генератор промптов для Nano Banana), не к модели изображений. Разбор: кого описать (главные, только взрослые) + максимальная детализация + источник деталей (описания из книги) + назначение (для Nano Banana) + нижняя граница длины (≥50 слов). Ответ — JSON-массив {name, prompt}."
+  },
+  {
+   "код": "E-22-20",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana uses the same API as the text generation models.",
+   "цитата": "This model uses the same API as the text generation models.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-21",
+   "вид": "приём",
+   "утверждение_en": "For consistency, generate the character images in chat mode, in a chat instance separate from the text-model chat.",
+   "цитата": "Like before, for the sake of consistency, you are going to use chat mode, but within a different instance.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "Отдельная цепочка previous_interaction_id для модели изображений."
+  },
+  {
+   "код": "E-22-22",
+   "вид": "приём",
+   "утверждение_en": "The prompt passed to Nano Banana combines the Gemini-generated character description with the chosen style and the system-instruction rules.",
+   "цитата": "* `prompt` is the prompt passed down to Nano Banana. You're not just sending what Gemini has generate to describe the chacaters but also our style and our system instructions.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Сборка: описание + стиль + правила."
+  },
+  {
+   "код": "E-22-23",
+   "вид": "инструкция",
+   "утверждение_en": "Use response_modalities=['Image'] when you only want images.",
+   "цитата": "* `response_modalities=['Image']` because you only want images",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В самом коде этой ячейки параметр не передан (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-22-24",
+   "вид": "инструкция",
+   "утверждение_en": "Use aspect_ratio=\"9:16\" for portrait images.",
+   "цитата": "* `aspect_ratio=\"9:16\"` because you want portraits images",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В коде ячейки aspect_ratio не передаётся (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-22-25",
+   "вид": "предупреждение",
+   "утверждение_en": "The image model currently ignores system instructions, so pass them as a message instead.",
+   "цитата": "Note that you could have used system instructions but the model currently ignores them, so they are passed as a message instead.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": "'currently' — состояние на момент ноутбука. В разделе Bonus код всё же передаёт system_instruction=system_instructions (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-22-26",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "First turn of the image chat sets the project, the style and the rules before any per-character prompt.",
+   "цитата": "You are going to generate portrait images to illustrate The Wind in the Willows from Kenneth Grahame.\n      The style we want you to follow is: {style}\n      Also follow those rules: {system_instructions} # TODO: Sysyem instructions",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход",
+    "стиль"
+   ],
+   "заметка": "Разбор: роль и задача ('You are going to generate portrait images to illustrate' + книга + автор) → стиль ({style} = 'Follow this style: \"...\"') → правила ({system_instructions}). Комментарий '# TODO: Sysyem instructions' находится внутри f-строки и уходит в модель как текст (дефект кода)."
+  },
+  {
+   "код": "E-22-27",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Per-character image prompt template: Create an illustration for {name} following this description: {prompt}.",
+   "цитата": "Create an illustration for {character['name']} following this description: {character['prompt']}",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 4/ Generate portraits of the main characters",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Разбор: глагол 'Create' + 'an illustration for' + имя персонажа + 'following this description:' + сгенерированное описание (≥50 слов). Отправляется с previous_interaction_id в чате изображений."
+  },
+  {
+   "код": "E-22-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt asking the text model for one illustration prompt per chapter: single image not multi-tiled, very descriptive, naming characters and reusing character prompts, listing characters present.",
+   "цитата": "Now, for each chapters of the book, give me a prompt to illustrate what happens in it. It should be a single image, not a multi-tiled page. Be very descriptive, especially of the characters. Be very descriptive and remember to tell their name and to reuse the character prompts if they appear in the images. Also list all characters who appear in it.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Промпт к текстовой модели Gemini (генератор промптов для Nano Banana), не к модели изображений. Разбор: по промпту на главу → запрет мультипанели ('single image, not a multi-tiled page') → детализация персонажей → назвать имена и повторно вставлять ранее созданные промпты персонажей → список персонажей. Повтор 'Be very descriptive' дважды — акцент."
+  },
+  {
+   "код": "E-22-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example transition message to the image chat: start illustrating chapters, refer to previous character illustrations for consistency, but positions may change.",
+   "цитата": "Starting from now, we're going to illustrate the book's chapters. Don't forget to refer to your previous illustrations of the characters to keep the characters consistency, but feel free to change their position.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Разбор: смена задачи → явная отсылка к предыдущим изображениям персонажей в той же цепочке ради консистентности → разрешение менять позу/положение. Отправляется с previous_interaction_id последней портретной генерации."
+  },
+  {
+   "код": "E-22-30",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Per-chapter image prompt template in the chained image chat: Create an illustration for {chapter} using the previously generated characters following this description: {prompt}.",
+   "цитата": "Create an illustration for {chapter['name']} using the previously generated characters following this description: {chapter['prompt']}",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Разбор: как E-22-27, но с явной вставкой 'using the previously generated characters' — ссылка на изображения из истории чата."
+  },
+  {
+   "код": "E-22-31",
+   "вид": "приём",
+   "утверждение_en": "With many characters, ask the text model to list characters present in each chapter image and pass only those characters' images as references; also works for recurring locations and items.",
+   "цитата": "If you have a lot of characters, want to make sure the model is using the right references, you can ask it to list all characters present in each chapter image so that you can pass only those characters's images to the model. This would also work if you have reccuring locations, items, etc...",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book / Bonus: Going further with more granular control",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Выборочная подача рефов вместо всей истории."
+  },
+  {
+   "код": "E-22-32",
+   "вид": "приём",
+   "утверждение_en": "Generate chapter images with only the relevant reference images and without chaining.",
+   "цитата": "Now let's generate the chapters's images using the right reference images and no chaining.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book / Bonus: Going further with more granular control",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Альтернатива цепочке previous_interaction_id: каждый вызов самодостаточен, рефы подаются явно (text-часть первой, затем изображения)."
+  },
+  {
+   "код": "E-22-33",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Reference-based chapter prompt template: Create this illustration for {chapter}: {prompt} Use the provided images as references of what the characters look like.",
+   "цитата": "Create this illustration for {chapter['name']}:\n                {chapter['prompt']}\n              Use the provided images as references of what the characters look like.",
+   "источник_цитаты": "txt",
+   "раздел": "Illustrate a book / 5/ Illustrate the chapters of the book / Bonus: Going further with more granular control",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Разбор: задача + описание сцены → в конце явная роль рефов ('as references of what the characters look like'). В вызове также system_instruction=system_instructions, хотя ранее сказано, что модель их игнорирует."
+  },
+  {
+   "код": "E-22-34",
+   "вид": "приём",
+   "утверждение_en": "An audiobook can be used as the source material for generating illustration prompts (merged MP3 uploaded via the File API).",
+   "цитата": "This time, you are going to use an audiobook as the source",
+   "источник_цитаты": "txt",
+   "раздел": "With an Audiobook: The Adventures of Chatterer the Red Squirrel",
+   "модели": [
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Текстовая модель слушает аудио и пишет промпты; далее тот же конвейер."
+  },
+  {
+   "код": "E-22-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example keyword-list style string: futuristic, science fiction, utopia, saturated, neon lights.",
+   "цитата": "futuristic, science fiction, utopia, saturated, neon lights",
+   "источник_цитаты": "txt",
+   "раздел": "With an Audiobook: The Adventures of Chatterer the Red Squirrel / 3/ Define a style",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Разбор: список ключевых слов через запятую — жанр, сеттинг, насыщенность, источник света. Вставляется через обёртку 'Follow this style: \"...\"' (E-22-17)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-22-36",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Prompt assembly order used for the image model throughout the notebook: (1) a setup turn with task/book, style ('Follow this style: \"...\"') and rules block; (2) per-item turns 'Create an illustration for {name} [using the previously generated characters] following this description: {generated prompt}'.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "4/ и 5/ (обе части ноутбука)",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-22-9, E-22-17, E-22-22, E-22-26, E-22-27, E-22-30",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-37",
+   "вид": "объяснение",
+   "утверждение_en": "The notebook shows two alternative consistency mechanisms: implicit (chaining image turns with previous_interaction_id so earlier portraits are in context) and explicit (no chaining, passing only the selected character reference images per call).",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "4/, 5/ и Bonus",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-22-21, E-22-29, E-22-30, E-22-31, E-22-32, E-22-33",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-22-38",
+   "вид": "объяснение",
+   "утверждение_en": "The notebook repeatedly suppresses the same unwanted outputs for book illustration — text on the image, cover-page look, borders/titles, and multi-panel/tiled layouts — both in the rules block and in the chapter-prompt request.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "1/ + 5/",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-22-8, E-22-9, E-22-28",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Повторный акцент страницы; почему модель к этому склонна — не объяснено."
+  },
+  {
+   "код": "E-22-39",
+   "вид": "приём",
+   "утверждение_en": "Division of labor: a text Gemini model reads the long source (book or audiobook), fixes the style, and writes long detailed per-character and per-chapter prompts in structured JSON; the image model only receives these prompts plus style/rules.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "Nano Banana (так в тексте); IMAGE_MODEL_ID по умолчанию gemini-3.1-flash-lite-image, варианты gemini-3-pro-image-preview, gemini-3.1-flash-image-preview, gemini-2.5-flash-image",
+    "GEMINI_MODEL_ID — текстовая модель (по умолчанию gemini-3.8-flash)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-22-1, E-22-11, E-22-19, E-22-28, E-22-34",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Лимит персонажей: во вступлении '3 characters and 3 chapters', в разделе Select models — '5 characters and 3 chapters', и в коде max_character_images = 5.",
+  "В разделе 4/ сказано, что модель игнорирует system instructions и их передают сообщением (E-22-25), но в Bonus код передаёт system_instruction=system_instructions модели изображений (E-22-33).",
+  "Раздел 4/ перечисляет response_modalities=['Image'] и aspect_ratio=\"9:16\" для портретов (E-22-23, E-22-24), но в коде генерации портретов ни один из параметров не передан.",
+  "Первый ход чата изображений содержит внутри f-строки комментарий '# TODO: Sysyem instructions' (E-22-26) — он уходит в промпт как текст."
+ ],
+ "не_сказано": [
+  "Не указано, сколько референсных изображений можно передать в Bonus-подходе, и нет предупреждения о лимите.",
+  "Для ограничения на детей в EEA не сказано, каких моделей оно касается и есть ли другие ограничения на людей.",
+  "Не показаны сгенерированные промпты персонажей/глав (выходы ячеек отсутствуют) — видна только инструкция '≥50 слов'.",
+  "Нет параметров разрешения (image_size) и thinking; aspect_ratio описан, но не применён.",
+  "Нет упоминания водяного знака/SynthID.",
+  "Не объяснено, почему нужен запрет текста/панелей и чем чревато его отсутствие."
+ ],
+ "сомнения": [
+  "Промпты к текстовой модели (генерация стиля, описаний персонажей, промптов глав) оформлены как пример_промпта с пометкой — это не промпты к модели изображений, но определяют их содержание.",
+  "Модели в тексте называются обобщённо 'Nano Banana'; конкретная модель зависит от IMAGE_MODEL_ID.",
+  "Разделы Veo/Lyria/TTS/микс помечены как не про генерацию картинок целиком, хотя Veo использует иллюстрацию как стартовый кадр."
+ ]
+}

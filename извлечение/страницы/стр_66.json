@@ -1,0 +1,336 @@
+{
+ "id": 66,
+ "url": "https://cloud.google.com/blog/topics/developers-practitioners/agent-factory-recap-building-with-gemini-3-ai-studio-antigravity-and-nano-banana/",
+ "заголовок": "Agent Factory Recap: Building with Gemini 3, AI Studio, Antigravity, and Nano Banana | Google Cloud Blog",
+ "дата_в_тексте": "December 10, 2025 (в тексте); html: JSON-LD datePublished 2025-12-10, meta published_time 2025-12-11T18:30:27-0500 (на день позже)",
+ "официальность": {
+  "домен": "cloud.google.com (Google Cloud Blog)",
+  "второй_признак": "Авторы Amit Maraj («AI Developer Relations Engineer») и Paige Bailey («UTL - Developer Relations, Google DeepMind»); текст от лица команды подкаста Google The Agent Factory; подвал Google Cloud (Privacy, Terms).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Рекап эпизода видеоподкаста Google Cloud «The Agent Factory» с Paige Bailey (Google DeepMind) для разработчиков: Gemini 3, сборка приложения в AI Studio Build, редизайн сайта в IDE Antigravity по скриншотам, эволюция Gemini, пре-/пост-тренинг, Vending Bench. Про генерацию картинок — одна строка-праймер о Nano Banana Pro и один абзац «Creative Multimodality with Nano Banana» (игровые ассеты, ортографические чертежи для 3D, физические объяснялки; связка медиамоделей с search grounding). Остальное — не про генерацию картинок.",
+ "модели_на_странице": [
+  "Nano Banana Pro = gemini-3-pro-image (строковый id не дан)",
+  "Gemini 3 / Gemini 3 Pro (текстовые, не картинки)",
+  "Gemini Live (голос, не картинки)"
+ ],
+ "структура": [
+  "шапка (рубрика, заголовок, дата, авторы)",
+  "вступление",
+  "The Tech Stack - What is it? (Gemini 3, Antigravity, Nano Banana Pro)",
+  "The Factory Floor (Building \"Nordic Shield\" with Gemini 3; Redesigning a Website with Antigravity)",
+  "Paige Bailey on The Evolution of Gemini (The Three Stages of Gemini; Pre-Training vs. Post-Training; The \"Vending Bench\"; Creative Multimodality with Nano Banana)",
+  "Conclusion",
+  "Your turn to build",
+  "Connect with us",
+  "связанные статьи, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Developers & Practitioners (стр. 1)",
+   "итог": "ничего: рубрика блога"
+  },
+  {
+   "n": 2,
+   "начало": "Agent Factory Recap: Building with Gemini 3, AI Studio, Antigravity, and Nano Banana (стр. 2)",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 3,
+   "начало": "December 10, 2025 / Amit Maraj / AI Developer Relations Engineer / Paige Bailey / UTL - Developer Relations, Google DeepMind (стр. 3-7)",
+   "итог": "ничего: дата и авторы (признак официальности)"
+  },
+  {
+   "n": 4,
+   "начало": "Welcome back to The Agent Factory! … Paige Bailey … Gemini 3 model to the Antigravity IDE. (стр. 8)",
+   "итог": "ничего: вводка подкаста, не про генерацию картинок"
+  },
+  {
+   "n": 5,
+   "начало": "Google has been shipping at a breakneck pace … (стр. 9)",
+   "итог": "ничего: вводка, не про генерацию картинок"
+  },
+  {
+   "n": 6,
+   "начало": "This post guides you through the key ideas from our conversation … (стр. 10)",
+   "итог": "ничего: вводка"
+  },
+  {
+   "n": 7,
+   "начало": "The Tech Stack - What is it? / We tossed around a few new names … (стр. 11-12)",
+   "итог": "ничего: заголовок и вводка раздела"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini 3: The latest iteration of Google's model family … improved tool use and function calling. (стр. 13)",
+   "итог": "ничего: не про генерацию картинок (текстовая модель, tool use)"
+  },
+  {
+   "n": 9,
+   "начало": "Antigravity: Google's new AI-native IDE … screenshots to drive code changes. (стр. 14)",
+   "итог": "ничего: не про генерацию картинок (IDE)"
+  },
+  {
+   "n": 10,
+   "начало": "Nano Banana Pro: The newest iteration in the media generation series … (стр. 15)",
+   "итог": "E-66-1"
+  },
+  {
+   "n": 11,
+   "начало": "The Factory Floor / The Factory Floor is our segment for getting hands-on … (стр. 16-17)",
+   "итог": "ничего: заголовок и вводка сегмента"
+  },
+  {
+   "n": 12,
+   "начало": "Building \"Nordic Shield\" with Gemini 3 / Timestamp: 11:20 (стр. 18-19)",
+   "итог": "ничего: подзаголовок и таймкод"
+  },
+  {
+   "n": 13,
+   "начало": "Paige demonstrated the \"Build\" feature in AI Studio to create a complex React application … (стр. 20)",
+   "итог": "ничего: не про генерацию картинок (генерация приложения)"
+  },
+  {
+   "n": 14,
+   "начало": "The Prompt: Create an insurance cataloging app using the webcam and microphone … Google Search grounding. (стр. 21)",
+   "итог": "ничего: не про генерацию картинок (промпт для генерации кода приложения в AI Studio Build)"
+  },
+  {
+   "n": 15,
+   "начало": "The Process: Gemini 3 generated a React Native app … (стр. 22)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "The Result: The app, named \"Nordic Shield,\" successfully cataloged items … (стр. 23)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "Redesigning a Website with Antigravity / Timestamp: 30:27 (стр. 24-25)",
+   "итог": "ничего: подзаголовок и таймкод"
+  },
+  {
+   "n": 18,
+   "начало": "We shifted gears to look at Google's new IDE, Antigravity … using only screenshots as a guide. (стр. 26)",
+   "итог": "ничего: не про генерацию картинок (скриншоты как вход для правки кода)"
+  },
+  {
+   "n": 19,
+   "начало": "The Input: The existing codebase plus two screenshots of the desired visual style … (стр. 27)",
+   "итог": "ничего: не про генерацию картинок (вход IDE)"
+  },
+  {
+   "n": 20,
+   "начало": "The Implementation: Antigravity analyzed the images … task list and an implementation plan … (стр. 28)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 21,
+   "начало": "The Outcome: The IDE successfully refactored the site … \"jiggling pill\" UI elements … (стр. 29)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 22,
+   "начало": "Paige Bailey on The Evolution of Gemini / We sat down with Paige … (стр. 30-31)",
+   "итог": "ничего: заголовок и вводка раздела"
+  },
+  {
+   "n": 23,
+   "начало": "The Three Stages of Gemini / Timestamp: 2:49 (стр. 32-33)",
+   "итог": "ничего: подзаголовок и таймкод"
+  },
+  {
+   "n": 24,
+   "начало": "Paige outlined the clear evolutionary path of the Gemini family … Gemini 3 … is all about acting … (стр. 34)",
+   "итог": "ничего: не про генерацию картинок (история поколений Gemini)"
+  },
+  {
+   "n": 25,
+   "начало": "Pre-Training vs. Post-Training / Timestamp: 4:55 / We discussed the \"schooling\" … (стр. 35-37)",
+   "итог": "ничего: подзаголовок и вводка"
+  },
+  {
+   "n": 26,
+   "начало": "Pre-training is like sending the model to school … (стр. 38)",
+   "итог": "ничего: не про генерацию картинок (обучение моделей в общем)"
+  },
+  {
+   "n": 27,
+   "начало": "Post-training is \"on-the-job experience.\" … (стр. 39)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "The \"Vending Bench\" / Timestamp: 6:48 (стр. 40-41)",
+   "итог": "ничего: подзаголовок и таймкод"
+  },
+  {
+   "n": 29,
+   "начало": "Benchmarks are changing … Vending Bench … Gemini 3 Pro is generating around $5,462 per machine … (стр. 42)",
+   "итог": "ничего: не про генерацию картинок (агентный бенчмарк)"
+  },
+  {
+   "n": 30,
+   "начало": "Creative Multimodality with Nano Banana / Timestamp: 28:34 (стр. 43-44)",
+   "итог": "ничего: подзаголовок и таймкод"
+  },
+  {
+   "n": 31,
+   "начало": "We also touched on the creative side of the stack. Paige highlighted … Nano Banana Pro … game assets, orthographic blueprints … physics explainers. The key takeaway … search grounding … (стр. 45)",
+   "итог": "E-66-2, E-66-3"
+  },
+  {
+   "n": 32,
+   "начало": "Conclusion / It is incredible to see … deploy these agents directly to Google Cloud with a single click … (стр. 46-47)",
+   "итог": "ничего: заключение, не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "As Paige mentioned, the trajectory is exponential … (стр. 48)",
+   "итог": "ничего: маркетинговое заключение"
+  },
+  {
+   "n": 34,
+   "начало": "Your turn to build / If you haven't yet, head over to AI Studio or try out the Gemini API. (стр. 49-50)",
+   "итог": "ничего: призыв со ссылками"
+  },
+  {
+   "n": 35,
+   "начало": "Try the \"Vending Bench\" challenge yourself … / Let us know what you build! (стр. 51-52)",
+   "итог": "ничего: призыв, не про картинки"
+  },
+  {
+   "n": 36,
+   "начало": "Connect with us / Amit Maraj → LinkedIn, X, TikTok / Paige Bailey → LinkedIn, X (стр. 53-55)",
+   "итог": "ничего: обвязка (соцсети авторов)"
+  },
+  {
+   "n": 37,
+   "начало": "Posted in / Developers & Practitioners / Related articles … (стр. 56-70)",
+   "итог": "ничего: обвязка (рубрики и связанные статьи)"
+  },
+  {
+   "n": 38,
+   "начало": "Footer Links / Follow us / Google Cloud … Language … (стр. 71-79)",
+   "итог": "ничего: обвязка (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-66-1",
+   "вид": "факт",
+   "утверждение_en": "As of December 2025, Google describes Nano Banana Pro as the newest iteration in its media generation series, able to create high-fidelity images, voxel art and game assets.",
+   "цитата": "Nano Banana Pro: The newest iteration in the media generation series, capable of creating high-fidelity images, voxel art, and game assets.",
+   "источник_цитаты": "txt",
+   "раздел": "The Tech Stack - What is it? (стр. 15)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — на странице «Nano Banana Pro»"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-10",
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": "Краткий «праймер» в рекапе подкаста. Строковый id модели не дан."
+  },
+  {
+   "код": "E-66-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro has been used to generate game assets, orthographic blueprints for 3D modeling (such as castles) and detailed physics explainers.",
+   "цитата": "She shared examples of Nano Banana Pro being used to generate game assets, orthographic blueprints for 3D modeling (like castles), and detailed physics explainers.",
+   "источник_цитаты": "txt",
+   "раздел": "Paige Bailey on The Evolution of Gemini / Creative Multimodality with Nano Banana (стр. 45)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — на странице «Nano Banana Pro»"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-10",
+   "тема": [
+    "стиль",
+    "камера_свет_композиция",
+    "другое"
+   ],
+   "заметка": "Примеры из рассказа Paige Bailey (Google DeepMind), пересказаны автором Google. Самих промптов нет; «orthographic blueprints» — ортографические чертежи/виды для 3D-моделирования."
+  },
+  {
+   "код": "E-66-3",
+   "вид": "приём",
+   "утверждение_en": "Google's key takeaway is to combine media models such as Nano Banana Pro with search grounding to produce accurate, high-fidelity visual assets.",
+   "цитата": "The key takeaway is the power of combining these media models with search grounding to create accurate, high-fidelity visual assets.",
+   "источник_цитаты": "txt",
+   "раздел": "Paige Bailey on The Evolution of Gemini / Creative Multimodality with Nano Banana (стр. 45)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — на странице «Nano Banana Pro»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-10",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "«these media models» — по контексту абзаца Nano Banana Pro. Как включать grounding (инструмент, параметры) не описано. Предыдущее предложение: «when you combine reasoning with multimodal outputs, the possibilities explode»."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-66-4",
+   "вид": "приём",
+   "утверждение_en": "All three Nano Banana Pro examples are technical, accuracy-sensitive visuals (game assets, orthographic 3D blueprints, physics explainers), and the page ties their accuracy to search grounding: for factually accurate technical images, pair the image model with search grounding.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Creative Multimodality with Nano Banana",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — на странице «Nano Banana Pro»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-66-2, E-66-3",
+   "дата_единицы": "2025-12-10",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-66-5",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana Pro is framed as part of a reasoning-plus-multimodal-output stack rather than a standalone image generator.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "The Tech Stack + Creative Multimodality",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — на странице «Nano Banana Pro»"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-66-1, E-66-3",
+   "дата_единицы": "2025-12-10",
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "«when you combine reasoning with multimodal outputs, the possibilities explode»."
+  }
+ ],
+ "противоречия_внутри": [
+  "Заголовок раздела «Creative Multimodality with Nano Banana», а в тексте примеры относятся к «Nano Banana Pro» — имена семейства и конкретной модели смешаны.",
+  "Дата: в тексте и JSON-LD — December 10, 2025; meta published_time — 2025-12-11 (расхождение на день, вероятно часовой пояс/переиздание)."
+ ],
+ "не_сказано": [
+  "Нет ни одного промпта для Nano Banana Pro, ни параметров, ни способа включения search grounding.",
+  "Не дан строковый id модели, разрешения, цены, ограничения.",
+  "Не сказано, чем «voxel art» и «game assets» отличаются по приёмам промптинга; содержание картинки paige-nano-banana.png текстом не раскрыто."
+ ],
+ "сомнения": [
+  "Страница почти целиком не про генерацию изображений; всего 3 единицы, все с низкой детализацией (уровень «пересказ подкаста»).",
+  "Высказывания — пересказ слов Paige Bailey (Google DeepMind) автором Google; дословных цитат Paige нет."
+ ]
+}

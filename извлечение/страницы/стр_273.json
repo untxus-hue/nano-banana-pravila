@@ -1,0 +1,1203 @@
+{
+ "id": 273,
+ "url": "https://blog.google/products-and-platforms/products/gemini/prompting-tips-nano-banana-pro/",
+ "заголовок": "Nano Banana Pro image generation in Gemini: Prompt tips",
+ "дата_в_тексте": "Nov 20, 2025",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "автор Bea Alessio, Group Product Manager, Google DeepMind (строки 224-225); подвал Privacy/Terms, 'More of Google'",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Статья блога Google '7 tips to get the most out of Nano Banana Pro' (20.11.2025, автор — Group Product Manager Google DeepMind), для пользователей Gemini app и разработчиков. Модель — Nano Banana Pro (Gemini 3 Pro Image). Структура: вступление (основа Gemini 3, доступность, до 14 входных картинок 'varies by surface'); 'Establishing the vision' — шесть элементов промпта; 'Refining the details' — формат, камера и свет, текст, фактические ограничения, роли рефов Image A/B/C; 'Prompting examples' — 7 техник и 8 промптов; 'A note on current limitations' — 5 ограничений. Повторные акценты: конкретность, проверка фактов.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "Gemini 3 / 'Gemini 3 Pro' как основа"
+ ],
+ "структура": [
+  "Вступление",
+  "Establishing the vision: Story, subject and style",
+  "Refining the details: Camera, lighting and format",
+  "Prompting examples: A showcase of creative techniques",
+  "A note on current limitations"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Nano Banana Pro image generation in Gemini: Prompt tips",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content 7 tips",
+   "итог": "ничего: обвязка сайта blog.google (меню разделов, дубли, share, регионы, RSS), строки 2-209"
+  },
+  {
+   "n": 3,
+   "начало": "Breadcrumb Home Products & Platforms Products",
+   "итог": "ничего: хлебные крошки и заголовок статьи"
+  },
+  {
+   "n": 4,
+   "начало": "Nov 20, 2025 | x.com",
+   "итог": "ничего: дата (использована в дата_в_тексте) и share"
+  },
+  {
+   "n": 5,
+   "начало": "Our latest update to image generation",
+   "итог": "E-273-1"
+  },
+  {
+   "n": 6,
+   "начало": "Bea Alessio Group Product Manager, Google",
+   "итог": "ничего: автор (второй признак официальности)"
+  },
+  {
+   "n": 7,
+   "начало": "Share x.com Facebook LinkedIn Mail",
+   "итог": "ничего: share"
+  },
+  {
+   "n": 8,
+   "начало": "Read AI-generated summary Nano Banana Pro",
+   "итог": "ничего: автоматическая AI-сводка, повтор единиц E-273-2, E-273-3"
+  },
+  {
+   "n": 9,
+   "начало": "\"7 Tips to Get the Most",
+   "итог": "ничего: AI-сводка списком, повтор единиц E-273-6, E-273-13, E-273-19, E-273-21, E-273-30, E-273-38"
+  },
+  {
+   "n": 10,
+   "начало": "Explore other styles: General summary",
+   "итог": "ничего: переключатель сводки"
+  },
+  {
+   "n": 11,
+   "начало": "We’ve given Nano Banana a massive",
+   "итог": "E-273-2"
+  },
+  {
+   "n": 12,
+   "начало": "Available now in the Gemini app",
+   "итог": "E-273-3, E-273-4, E-273-5"
+  },
+  {
+   "n": 13,
+   "начало": "To get started with this powerful",
+   "итог": "ничего: ссылка на launch post"
+  },
+  {
+   "n": 14,
+   "начало": "Establishing the vision: Story, subject and",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 15,
+   "начало": "To achieve the best results and",
+   "итог": "E-273-6"
+  },
+  {
+   "n": 16,
+   "начало": "Subject: Who or what is in",
+   "итог": "E-273-7"
+  },
+  {
+   "n": 17,
+   "начало": "Composition: How is the shot framed?",
+   "итог": "E-273-8"
+  },
+  {
+   "n": 18,
+   "начало": "Action: What is happening?",
+   "итог": "E-273-9"
+  },
+  {
+   "n": 19,
+   "начало": "Location: Where does the scene take",
+   "итог": "E-273-10"
+  },
+  {
+   "n": 20,
+   "начало": "Style: What is the overall aesthetic?",
+   "итог": "E-273-11"
+  },
+  {
+   "n": 21,
+   "начало": "Editing Instructions: For modifying an existing",
+   "итог": "E-273-12"
+  },
+  {
+   "n": 22,
+   "начало": "Refining the details: Camera, lighting and",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 23,
+   "начало": "While simple prompts still work, achieving",
+   "итог": "E-273-13"
+  },
+  {
+   "n": 24,
+   "начало": "Composition and aspect ratio: Define the",
+   "итог": "E-273-14"
+  },
+  {
+   "n": 25,
+   "начало": "Camera and lighting details: Direct the",
+   "итог": "E-273-15"
+  },
+  {
+   "n": 26,
+   "начало": "Specific text integration: Clearly state what",
+   "итог": "E-273-16"
+  },
+  {
+   "n": 27,
+   "начало": "Factual constraints (for diagrams): Specify the",
+   "итог": "E-273-17"
+  },
+  {
+   "n": 28,
+   "начало": "Reference inputs: When using uploaded images,",
+   "итог": "E-273-18"
+  },
+  {
+   "n": 29,
+   "начало": "Prompting examples: A showcase of creative",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 30,
+   "начало": "Different prompting strategies can help you",
+   "итог": "ничего: вводная без содержания"
+  },
+  {
+   "n": 31,
+   "начало": "1. Generate visuals with incredible text",
+   "итог": "E-273-19"
+  },
+  {
+   "n": 32,
+   "начало": "2. Create with real-world knowledge: Built",
+   "итог": "E-273-20"
+  },
+  {
+   "n": 33,
+   "начало": "3. Translate and localize your ideas:",
+   "итог": "E-273-21"
+  },
+  {
+   "n": 34,
+   "начало": "Caption: A black and white storyboard",
+   "итог": "E-273-22 (подпись к примеру, учтена в заметке)"
+  },
+  {
+   "n": 35,
+   "начало": "Prompt: Create a storyboard for this",
+   "итог": "E-273-22"
+  },
+  {
+   "n": 36,
+   "начало": "Prompt: Create an image showing the",
+   "итог": "E-273-23"
+  },
+  {
+   "n": 37,
+   "начало": "Prompt: Create an infographic that shows",
+   "итог": "E-273-24"
+  },
+  {
+   "n": 38,
+   "начало": "Prompt: translate all the English text",
+   "итог": "E-273-25"
+  },
+  {
+   "n": 39,
+   "начало": "4. Use studio-quality control edits:",
+   "итог": "E-273-26"
+  },
+  {
+   "n": 40,
+   "начало": "5. Resize with precision: Experiment with",
+   "итог": "E-273-27, E-273-28"
+  },
+  {
+   "n": 41,
+   "начало": "6. Blend images and keep multiple",
+   "итог": "E-273-29, E-273-30"
+  },
+  {
+   "n": 42,
+   "начало": "7. Create and maintain your brand",
+   "итог": "E-273-31, E-273-32"
+  },
+  {
+   "n": 43,
+   "начало": "Prompt: Turn this scene into nighttime",
+   "итог": "E-273-33"
+  },
+  {
+   "n": 44,
+   "начало": "Prompt: Focus on the flowers",
+   "итог": "E-273-34"
+  },
+  {
+   "n": 45,
+   "начало": "Change the look and feel of",
+   "итог": "ничего: подпись к примеру смены формата, повтор единицы E-273-27"
+  },
+  {
+   "n": 46,
+   "начало": "Prompt: Combine these images into one",
+   "итог": "E-273-35"
+  },
+  {
+   "n": 47,
+   "начало": "Prompt 1: Create a smooth logo",
+   "итог": "E-273-36 (абзац 1)"
+  },
+  {
+   "n": 48,
+   "начало": "This technique, known as a calligram,",
+   "итог": "E-273-36 (абзац 2)"
+  },
+  {
+   "n": 49,
+   "начало": "The color palette reinforces the vintage",
+   "итог": "E-273-36 (абзац 3)"
+  },
+  {
+   "n": 50,
+   "начало": "Prompt 2: Now create identity system",
+   "итог": "E-273-37"
+  },
+  {
+   "n": 51,
+   "начало": "A note on current limitations As",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 52,
+   "начало": "Visual and text fidelity: Rendering small",
+   "итог": "E-273-38"
+  },
+  {
+   "n": 53,
+   "начало": "Data and factual accuracy: Always verify",
+   "итог": "E-273-39"
+  },
+  {
+   "n": 54,
+   "начало": "Translation and localization: Multilingual text generation",
+   "итог": "E-273-40"
+  },
+  {
+   "n": 55,
+   "начало": "Complex edits and image blending: Advanced",
+   "итог": "E-273-41"
+  },
+  {
+   "n": 56,
+   "начало": "Character features: While usually reliable, character",
+   "итог": "E-273-42"
+  },
+  {
+   "n": 57,
+   "начало": "We’re actively working to improve these",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 58,
+   "начало": "Related Article Introducing Nano Banana Pro",
+   "итог": "ничего: ссылка на связанную статью"
+  },
+  {
+   "n": 59,
+   "начало": "Posted in: Gemini App Gemini models",
+   "итог": "ничего: обвязка (теги, связанные истории, подвал Privacy/Terms, регионы)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-273-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (Gemini 3 Pro Image) is Google's update to image generation and editing, with advancements in text rendering, world knowledge and creative controls.",
+   "цитата": "Our latest update to image generation and editing, Nano Banana Pro (Gemini 3 Pro Image), includes advancements in text rendering, world knowledge, creative controls and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Лид статьи; соответствие имён."
+  },
+  {
+   "код": "E-273-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is built on Gemini 3 and is described as Google's most advanced image model to date (as of the Nov 20, 2025 post).",
+   "цитата": "Built on Gemini 3, Nano Banana Pro is our most advanced image model to date, ready to bridge the gap between imagination and professional execution.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "'to date' — на дату статьи."
+  },
+  {
+   "код": "E-273-3",
+   "вид": "факт",
+   "утверждение_en": "At launch, Nano Banana Pro was available in the Gemini app and starting to roll out in AI Studio, Vertex and more.",
+   "цитата": "Available now in the Gemini app and starting to roll out in AI Studio, Vertex and more",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro features state-of-the-art text rendering in multiple languages.",
+   "цитата": "it features state-of-the-art text rendering in over multiple languages",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "В источнике сбой 'in over multiple languages' — цитата дословно."
+  },
+  {
+   "код": "E-273-5",
+   "вид": "лимит",
+   "утверждение_en": "Nano Banana Pro can take up to 14 input images into a composition, with the number varying by surface.",
+   "цитата": "advanced controls like the ability to input up to 14 images into a composition (varies by surface).",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-6",
+   "вид": "правило",
+   "утверждение_en": "To achieve the best results and more nuanced creative control, include subject, composition, action, location, style and (for edits) editing instructions in the prompt.",
+   "цитата": "To achieve the best results and have more nuanced creative control, include the following elements in your prompt:",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Вводит шесть элементов промпта."
+  },
+  {
+   "код": "E-273-7",
+   "вид": "инструкция",
+   "утверждение_en": "Subject: state who or what is in the image, and be specific (e.g. a stoic robot barista with glowing blue optics).",
+   "цитата": "Subject:\nWho or what is in the image? Be specific. (e.g., a stoic robot barista with glowing blue optics; a fluffy calico cat wearing a tiny wizard hat).",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "'Be specific': существительное + отличительные признаки."
+  },
+  {
+   "код": "E-273-8",
+   "вид": "инструкция",
+   "утверждение_en": "Composition: state how the shot is framed (e.g. extreme close-up, wide shot, low angle shot, portrait).",
+   "цитата": "Composition:\nHow is the shot framed? (e.g., extreme close-up, wide shot, low angle shot, portrait).",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-9",
+   "вид": "инструкция",
+   "утверждение_en": "Action: state what is happening (e.g. brewing a cup of coffee, mid-stride running through a field).",
+   "цитата": "Action:\nWhat is happening? (e.g., brewing a cup of coffee, casting a magical spell, mid-stride running through a field).",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-10",
+   "вид": "инструкция",
+   "утверждение_en": "Location: state where the scene takes place (e.g. a futuristic cafe on Mars, a sun-drenched meadow at golden hour).",
+   "цитата": "Location:\nWhere does the scene take place? (e.g., a futuristic cafe on Mars, a cluttered alchemist's library, a sun-drenched meadow at golden hour).",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Время суток/свет может входить в описание места."
+  },
+  {
+   "код": "E-273-11",
+   "вид": "инструкция",
+   "утверждение_en": "Style: state the overall aesthetic (e.g. 3D animation, film noir, watercolor painting, photorealistic, 1990s product photography).",
+   "цитата": "Style:\nWhat is the overall aesthetic? (e.g., 3D animation, film noir, watercolor painting, photorealistic, 1990s product photography).",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-12",
+   "вид": "инструкция",
+   "утверждение_en": "Editing instructions: when modifying an existing image, be direct and specific (e.g. change the man's tie to green, remove the car in the background).",
+   "цитата": "Editing Instructions:\nFor modifying an existing image, be direct and specific. (e.g., change the man's tie to green, remove the car in the background)",
+   "источник_цитаты": "txt",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-13",
+   "вид": "объяснение",
+   "утверждение_en": "Simple prompts still work, but professional results require more specific instructions; consider advanced elements beyond the basics.",
+   "цитата": "While simple prompts still work, achieving professional results requires more specific instructions. When crafting your prompts, move beyond the basics and consider these advanced elements:",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-14",
+   "вид": "инструкция",
+   "утверждение_en": "Composition and aspect ratio: define the canvas, e.g. 'A 9:16 vertical poster' or 'A cinematic 21:9 wide shot'.",
+   "цитата": "Composition and aspect ratio:\nDefine the canvas. (e.g., \"A 9:16 vertical poster,\" \"A cinematic 21:9 wide shot.\")",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Формат — в тексте промпта вместе с типом носителя/плана."
+  },
+  {
+   "код": "E-273-15",
+   "вид": "инструкция",
+   "утверждение_en": "Camera and lighting details: direct the shot like a cinematographer, e.g. a low-angle shot with shallow depth of field (f/1.8), golden hour backlighting creating long shadows, cinematic color grading with muted teal tones.",
+   "цитата": "Camera and lighting details:\nDirect the shot like a cinematographer. (e.g., \"A low-angle shot with a shallow depth of field (f/1.8),\" \"Golden hour backlighting creating long shadows,\" \"Cinematic color grading with muted teal tones.\")",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-16",
+   "вид": "инструкция",
+   "утверждение_en": "Specific text integration: clearly state what text should appear and how it should look, e.g. the headline 'URBAN EXPLORER' rendered in bold, white, sans-serif font at the top.",
+   "цитата": "Specific text integration:\nClearly state what text should appear and how it should look. (e.g., \"The headline 'URBAN EXPLORER' rendered in bold, white, sans-serif font at the top.\")",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Роль текста + текст в кавычках + начертание + цвет + гарнитура + положение."
+  },
+  {
+   "код": "E-273-17",
+   "вид": "инструкция",
+   "утверждение_en": "Factual constraints (for diagrams): specify the need for accuracy and ensure your inputs are factual, e.g. 'A scientifically accurate cross-section diagram', 'Ensure historical accuracy for the Victorian era'.",
+   "цитата": "Factual constraints (for diagrams):\nSpecify the need for accuracy and ensure your inputs themselves are factual (e.g., \"A scientifically accurate cross-section diagram,\" \"Ensure historical accuracy for the Victorian era.\").",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-18",
+   "вид": "инструкция",
+   "утверждение_en": "Reference inputs: when using uploaded images, clearly define the role of each, e.g. 'Use Image A for the character's pose, Image B for the art style, and Image C for the background environment.'",
+   "цитата": "Reference inputs:\nWhen using uploaded images, clearly define the role of each. (e.g., \"Use Image A for the character's pose, Image B for the art style, and Image C for the background environment.\")",
+   "источник_цитаты": "txt",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Именование рефов буквами + роль каждого."
+  },
+  {
+   "код": "E-273-19",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro's sharp, legible text rendering helps create posters, intricate diagrams and detailed product mockups.",
+   "цитата": "1. Generate visuals with incredible text rendering:\nSharp, legible text helps you create impactful posters, intricate diagrams, and even detailed product mockups.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Техника 1."
+  },
+  {
+   "код": "E-273-20",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro uses Gemini 3's real-world knowledge and deep reasoning to deliver precise, detailed, rich image results.",
+   "цитата": "Built on\nGemini 3 Pro\n, Nano Banana uses Gemini 3’s real-world knowledge and deep reasoning capabilities to deliver precise, detailed, rich image results.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Техника 2; здесь 'Built on Gemini 3 Pro' и модель названа 'Nano Banana'."
+  },
+  {
+   "код": "E-273-21",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can generate localized text or translate text inside images, e.g. to show products in multiple languages or create posters and infographics for different regions.",
+   "цитата": "Generate localized text, or translate text inside images. See what products might look like in\nmultiple languages\n, ready for international markets, and create posters and infographics for use across different regions.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Техника 3."
+  },
+  {
+   "код": "E-273-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Create a storyboard for this scene",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Дейктик 'this scene' на загруженную картинку. Подпись (строка 287): раскадровка establishing shot, medium shot, close-up, POV shot — типы планов выбрала модель."
+  },
+  {
+   "код": "E-273-23",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Create an image showing the phrase \"How much wood would a woodchuck chuck if a woodchuck could chuck wood\" made out of wood chucked by a woodchuck.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Точная фраза в двойных кавычках + материал букв."
+  },
+  {
+   "код": "E-273-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Create an infographic that shows how to make elaichi chai",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Тип результата + тема; содержание из знаний модели."
+  },
+  {
+   "код": "E-273-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "translate all the English text on the three yellow and blue cans into Korean, while keeping everything else the same",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Правка перевода + 'while keeping everything else the same'."
+  },
+  {
+   "код": "E-273-26",
+   "вид": "факт",
+   "утверждение_en": "Studio-quality control edits let you directly influence lighting and camera settings such as angle, focus and color grading.",
+   "цитата": "4. Use studio-quality control edits:\nGet extensive controls for professional-grade results. Directly influence lighting and camera settings like angle, focus, color grading and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "редактирование"
+   ],
+   "заметка": "Техника 4."
+  },
+  {
+   "код": "E-273-27",
+   "вид": "приём",
+   "утверждение_en": "Experiment with different aspect ratios.",
+   "цитата": "Experiment with different aspect ratios",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Техника 5, часть 1."
+  },
+  {
+   "код": "E-273-28",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can generate crisp visuals at 1K, 2K or 4K resolution across various products.",
+   "цитата": "generate crisp visuals at 1K, 2K or 4K resolution across various products.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Техника 5, часть 2."
+  },
+  {
+   "код": "E-273-29",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can maintain the consistency and resemblance of multiple characters, even when they appear together in a group.",
+   "цитата": "Maintain the consistency and resemblance of multiple characters, even when they appear together in a group.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Число персонажей здесь не названо."
+  },
+  {
+   "код": "E-273-30",
+   "вид": "лимит",
+   "утверждение_en": "You can take up to 6 to 14 entirely unconnected images (input number varies by surface) and blend them to create something new.",
+   "цитата": "Take up to 6 to 14 (input number varies by surface) entirely unconnected images and blend them to create something new.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Диапазон 6–14 по поверхностям."
+  },
+  {
+   "код": "E-273-31",
+   "вид": "факт",
+   "утверждение_en": "You can render and apply designs with consistent brand styling to visualize concepts.",
+   "цитата": "Render and apply designs with consistent brand styling to visualize concepts easily.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Техника 7, часть 1."
+  },
+  {
+   "код": "E-273-32",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro can drape patterns, logos and artwork onto 3D objects and surfaces, from apparel to packaging, while preserving natural lighting and texture.",
+   "цитата": "Seamlessly drape patterns, logos, and artwork onto 3D objects and surfaces—from apparel to packaging—while preserving natural lighting and texture.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Техника 7, часть 2."
+  },
+  {
+   "код": "E-273-33",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Turn this scene into nighttime",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "редактирование"
+   ],
+   "заметка": "Правка времени суток; alt: 'Fox in the daytime and at night'."
+  },
+  {
+   "код": "E-273-34",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Focus on the flowers",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "редактирование"
+   ],
+   "заметка": "Правка фокуса; alt: 'A girl in focus and then flowers in focus'."
+  },
+  {
+   "код": "E-273-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Combine these images into one appropriately arranged cinematic image in 16:9 format and change the dress on the mannequin to the dress in the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование",
+    "форматы_разрешение"
+   ],
+   "заметка": "Сборка из нескольких картинок + формат 16:9 + точечная замена платья."
+  },
+  {
+   "код": "E-273-36",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Create a smooth logo in a graphic style is a vibrant and playful form of typographic illustration, deeply rooted in the retro aesthetics of the 1960s and 1970s loosely based on the sketch Its defining feature is a groovy, psychedelic-inspired typeface characterized by soft, rounded, and fluid letterforms. Don't exactly follow the sketch, get inspired from it. The letters are skillfully distorted, stretched, and compressed, abandoning rigid structure to flow together and form a cohesive, recognizable shape.\nThis technique, known as a calligram, masterfully merges text and image, where the word's form visually embodies its meaning. The word \"WAVE\" is artfully arranged into the fluid silhouette of a wave. The design is a clever visual pun, making the message instantly accessible and memorable.\nThe color palette reinforces the vintage feel, employing a simple two-toned scheme with warm, often muted or earthy colors light blue background and deep blue logo. This choice enhances the nostalgic charm of the artwork. The overall effect is one of whimsical nostalgia and clever graphic design. It’s a bold yet approachable style that communicates a simple, positive message through the seamless integration of shape and word, creating an immediate and delightful visual impact.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль",
+    "текст_в_кадре"
+   ],
+   "заметка": "Трёхабзацный промпт (>60 слов, цитата полная): задача + стиль с эпохой + 'Don't exactly follow the sketch, get inspired from it'; calligram и слово \"WAVE\"; палитра и итоговое впечатление. Шаг 1 из 2."
+  },
+  {
+   "код": "E-273-37",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt shown in 'Prompting examples: A showcase of creative techniques'.",
+   "цитата": "Now create identity system one by one, use 10 high quality mockups with variety of relevant products, ads, billboards, bus stop, etc. generate one at a time, 16:9 each",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "форматы_разрешение"
+   ],
+   "заметка": "Шаг 2: серия из 10 мокапов + 'generate one at a time, 16:9 each'."
+  },
+  {
+   "код": "E-273-38",
+   "вид": "ограничение",
+   "утверждение_en": "Rendering small text, fine details, and producing accurate spellings may not work perfectly.",
+   "цитата": "Visual and text fidelity:\nRendering small text, fine details, and producing accurate spellings may not work perfectly.",
+   "источник_цитаты": "txt",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-39",
+   "вид": "правило",
+   "утверждение_en": "Always verify the factual accuracy of data-driven visuals like diagrams and infographics.",
+   "цитата": "Data and factual accuracy:\nAlways verify the factual accuracy of data-driven visuals like diagrams and infographics.",
+   "источник_цитаты": "txt",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-40",
+   "вид": "ограничение",
+   "утверждение_en": "Multilingual text generation may make grammar mistakes or miss specific cultural nuances.",
+   "цитата": "Translation and localization:\nMultilingual text generation may make grammar mistakes or miss specific cultural nuances.",
+   "источник_цитаты": "txt",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-41",
+   "вид": "ограничение",
+   "утверждение_en": "Advanced editing tasks like blending or lighting changes can sometimes produce unnatural artifacts.",
+   "цитата": "Complex edits and image blending:\nAdvanced editing tasks like blending or lighting changes can sometimes produce unnatural artifacts.",
+   "источник_цитаты": "txt",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-42",
+   "вид": "ограничение",
+   "утверждение_en": "While usually reliable, character consistency across edits may vary.",
+   "цитата": "Character features:\nWhile usually reliable, character consistency across edits may vary.",
+   "источник_цитаты": "txt",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-273-43",
+   "вид": "объяснение",
+   "утверждение_en": "The recommended prompt structure (subject, composition, action, location, style, editing instructions, plus aspect ratio, camera/lighting, text, factual constraints, reference roles) is richer than the showcase prompts, which are mostly short commands relying on uploaded images.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-273-6, E-273-7, E-273-12, E-273-18, E-273-22, E-273-25, E-273-33, E-273-34, E-273-35",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-44",
+   "вид": "лимит",
+   "утверждение_en": "The number of input images depends on the surface: an upper bound of 14 in one place and a range of 6 to 14 in another, without saying which surface allows which.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Prompting examples: A showcase of creative techniques",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-273-5, E-273-30",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-45",
+   "вид": "правило",
+   "утверждение_en": "Specificity is the repeated demand: 'Be specific', 'be direct and specific', 'more specific instructions', 'clearly state' the text, 'clearly define the role' of each reference.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Establishing the vision: Story, subject and style",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-273-7, E-273-12, E-273-13, E-273-16, E-273-18",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-46",
+   "вид": "правило",
+   "утверждение_en": "Accuracy is handled on both sides: state the accuracy requirement and make inputs factual, then always verify data-driven outputs.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Refining the details: Camera, lighting and format",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-273-17, E-273-39",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-273-47",
+   "вид": "предупреждение",
+   "утверждение_en": "The showcased techniques (text rendering, translation, lighting edits, blending, multi-character consistency) are the same areas listed under current limitations.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "A note on current limitations",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-273-19, E-273-21, E-273-26, E-273-29, E-273-30, E-273-38, E-273-40, E-273-41, E-273-42",
+   "тема": [
+    "редактирование",
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Основа модели: 'Built on Gemini 3, Nano Banana Pro…' (строка 244) и 'Built on Gemini 3 Pro, Nano Banana uses Gemini 3’s…' (строки 280-282) — во втором месте модель названа 'Nano Banana'.",
+  "Число входных картинок: 'up to 14 … (varies by surface)' (строка 245) и 'up to 6 to 14 (input number varies by surface)' (строка 297)."
+ ],
+ "не_сказано": [
+  "На какой поверхности сколько входных картинок доступно (6 или 14).",
+  "Как задавать разрешение 1K/2K/4K и формат через API; кода нет.",
+  "Сколько персонажей удерживается — только 'multiple characters'.",
+  "Нет упоминания SynthID, цен, лимитов запросов, thinking."
+ ],
+ "сомнения": [
+  "html этой страницы байт-в-байт совпадает с html страницы id 155 (canonical https://blog.google/products-and-platforms/products/gemini/prompting-tips-nano-banana-pro/): это один документ под двумя URL. Единицы извлечены заново из своего .txt (отличается только разбивка строк), по содержанию совпадают со стр_155 — свести на этапе объединения.",
+  "AI-сводка (строки 232-240) сгенерирована автоматически — единицы из неё не извлекались.",
+  "WAVE-промпт (>60 слов) дан полностью по правилу для примеров."
+ ]
+}

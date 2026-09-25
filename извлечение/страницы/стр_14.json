@@ -1,0 +1,266 @@
+{
+ "id": 14,
+ "url": "https://ai.google.dev/gemini-api/docs/imagen",
+ "заголовок": "Generate images using Imagen",
+ "дата_в_тексте": "Last updated 2026-09-17 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0), 'Last updated 2026-09-17 UTC.'",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая страница документации Gemini API (бывший гайд по Imagen), теперь — уведомление об отключении Imagen и инструкция миграции на Nano Banana для разработчиков. Плашка deprecated, абзац 'Imagen is Google's legacy image generation model ... shut down', раздел 'Migrate to Nano Banana' из трёх пунктов (Model name: gemini-2.5-flash-image или модели Nano Banana 2 вроде gemini-3.1-flash-image; Method: generate_content вместо generate_images; Response handling: content parts с данными изображения), ссылка на гайд Image generation. Меню сайта урезано (без левого меню документации). Страница обновлена 2026-09-17.",
+ "модели_на_странице": [
+  "Imagen",
+  "Nano Banana",
+  "gemini-2.5-flash-image",
+  "Nano Banana 2",
+  "gemini-3.1-flash-image"
+ ],
+ "структура": [
+  "Обвязка сайта (языки, короткое верхнее меню), строки 2-33",
+  "Баннер, хлебные крошки",
+  "Заголовок",
+  "Плашка deprecated",
+  "Абзац об отключении",
+  "Migrate to Nano Banana (3 пункта)",
+  "Ссылка на Image generation guide",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generate images using Imagen | Gemini",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev (языки, короткое верхнее меню без левого меню документации — не совпадает со стр. 2), строки 2-33"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 34-36"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Send feedback",
+   "итог": "ничего: хлебные крошки, строки 37-39"
+  },
+  {
+   "n": 5,
+   "начало": "Generate images using Imagen",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "Imagen models are shut down. Use",
+   "итог": "E-14-1"
+  },
+  {
+   "n": 7,
+   "начало": "Imagen is Google's legacy image generation",
+   "итог": "E-14-2"
+  },
+  {
+   "n": 8,
+   "начало": "Migrate to Nano Banana",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 9,
+   "начало": "Migrate to Nano Banana for image",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 10,
+   "начало": "Model name : Use gemini-2.5-flash-image (or",
+   "итог": "E-14-3"
+  },
+  {
+   "n": 11,
+   "начало": "Method : Use client.models.generate_content instead",
+   "итог": "E-14-4"
+  },
+  {
+   "n": 12,
+   "начало": "Response handling : Nano Banana returns content",
+   "итог": "E-14-5"
+  },
+  {
+   "n": 13,
+   "начало": "See the Image generation guide for",
+   "итог": "ничего: ссылка на гайд Image generation (/gemini-api/docs/image-generation)"
+  },
+  {
+   "n": 14,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия и Google Developers Site Policies (признак официальности), строки 65-72"
+  },
+  {
+   "n": 15,
+   "начало": "Last updated 2026-09-17 UTC.",
+   "итог": "ничего: дата обновления страницы (в дата_в_тексте)"
+  },
+  {
+   "n": 16,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал и языки, строки 74-100"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-14-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Imagen models are shut down; use Nano Banana for image generation.",
+   "цитата": "Imagen models are shut down. Use Nano Banana for image generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images using Imagen (плашка deprecated)",
+   "модели": [
+    "Imagen (все модели Imagen)",
+    "Nano Banana"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "В html — блок <aside class=\"deprecated\">. Дата отключения на странице не указана (страница обновлена 2026-09-17)."
+  },
+  {
+   "код": "E-14-2",
+   "вид": "факт",
+   "утверждение_en": "Imagen is Google's legacy image generation model; it is now shut down and no longer available in the Gemini API.",
+   "цитата": "Imagen is Google's legacy image generation model. It is now shut down\nand no longer available in the Gemini API.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images using Imagen",
+   "модели": [
+    "Imagen (все модели Imagen)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Относится к Gemini API; про Vertex AI и другие продукты не сказано."
+  },
+  {
+   "код": "E-14-3",
+   "вид": "инструкция",
+   "утверждение_en": "When migrating from Imagen, use the model name gemini-2.5-flash-image (or Nano Banana 2 models such as gemini-3.1-flash-image) instead of Imagen model names.",
+   "цитата": ": Use\ngemini-2.5-flash-image\n(or Nano Banana 2 models such as\ngemini-3.1-flash-image\n) instead of Imagen model names.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate to Nano Banana: Model name",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Фиксирует соответствие: Nano Banana = gemini-2.5-flash-image; gemini-3.1-flash-image — одна из моделей Nano Banana 2 ('such as' — не единственная). Pro не назван."
+  },
+  {
+   "код": "E-14-4",
+   "вид": "инструкция",
+   "утверждение_en": "When migrating from Imagen, call client.models.generate_content instead of client.models.generate_images.",
+   "цитата": "client.models.generate_content\ninstead of\nclient.models.generate_images",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate to Nano Banana: Method",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Имена методов — Python SDK google-genai (client.models.*)."
+  },
+  {
+   "код": "E-14-5",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana returns content parts containing image data rather than a specific image response object, so response handling must change when migrating from Imagen.",
+   "цитата": ": Nano Banana returns content parts containing image data\ninstead of a specific image response object.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate to Nano Banana: Response handling",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Картинка приходит как часть (part) с данными изображения внутри контента ответа, а не отдельным объектом изображения, как у Imagen."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-14-6",
+   "вид": "правило",
+   "утверждение_en": "Migrating an Imagen integration to Nano Banana requires three coordinated changes: the model name, the call method (generate_content instead of generate_images), and response parsing (image data taken from content parts).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-14-3, E-14-4, E-14-5",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Страница даёт ровно эти три пункта миграции и отсылает к гайду Image generation за примерами."
+  },
+  {
+   "код": "E-14-7",
+   "вид": "предупреждение",
+   "утверждение_en": "The page gives no mapping for Imagen-specific request settings (e.g., number of images, aspect ratio or other generate_images config), so Imagen parameters cannot be carried over from this page alone.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Imagen (все модели Imagen)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-14-3, E-14-4 (отсутствие пунктов о параметрах)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Вывод из того, чего на странице нет; конкретные параметры Imagen на странице не названы — перечень в утверждении дан как пример того, что не покрыто."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Дата отключения Imagen и перечень конкретных id моделей Imagen.",
+  "Как перенести параметры generate_images (число картинок, соотношение сторон, негативные подсказки, генерация людей и т.п.) в generate_content.",
+  "Нет примеров кода миграции на самой странице — только отсылка к гайду.",
+  "Nano Banana Pro (gemini-3-pro-image) и Nano Banana 2 Lite как цели миграции не названы.",
+  "Касается ли отключение Vertex AI — не сказано (речь о Gemini API)."
+ ],
+ "сомнения": [
+  "Метаданные партии говорят 'Imagen отключён' — подтверждено текстом; дата публикации миграционной версии страницы неизвестна, есть только Last updated 2026-09-17."
+ ]
+}

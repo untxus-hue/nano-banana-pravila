@@ -1,0 +1,661 @@
+{
+ "id": 282,
+ "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal-response-generation",
+ "заголовок": "Generate images with Gemini  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "2026-09-22 ('Last updated 2026-09-22 UTC.')",
+ "официальность": {
+  "домен": "cloud.google.com (og:url: docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/image-generation)",
+  "второй_признак": "Подвал 'Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … see the Google Developers Site Policies'; подвал Google Cloud ('About Google', 'Google Cloud terms').",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница документации Gemini Enterprise Agent Platform (бывш. Vertex AI) для разработчиков: как генерировать картинки Gemini через консоль (Agent Studio, Outputs = 'Image and text') и через API (Python/Go/Node.js/Java/REST). Два раздела: обычная генерация (промпт Эйфелевой башни, REST — туториал с aspectRatio 16:9) и чередующиеся картинки с текстом (рецепт паэльи; консольный пример с явной схемой шагов и '1:1 aspect ratio' словами). Список моделей: gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image. Повторяется: 'process takes a few seconds, but can be comparatively slower depending on capacity'; во всех примерах response modalities = TEXT+IMAGE. Код в txt разбит по токену на строку — читался по html.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image",
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "gemini-2.5-flash-image"
+ ],
+ "структура": [
+  "Блок ноутбуков",
+  "Вступление + список моделей",
+  "Generate images: Console / Python / Go / Node.js / Java / REST",
+  "Generate interleaved images and text: список моделей, Console / Python / Java / Go / Node.js / REST",
+  "What's next?",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generate images with Gemini | Gemini Enterprise Agent Platform | Google Cloud Documentation",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close Get Started",
+   "итог": "ничего: обвязка сайта (верхнее меню, языки, боковое меню документации Agent Platform), строки 2-1042"
+  },
+  {
+   "n": 3,
+   "начало": "Generate images with Gemini Stay organized with collections",
+   "итог": "ничего: заголовок и служебная строка сайта"
+  },
+  {
+   "n": 4,
+   "начало": "To see examples of image generation with Gemini, run the following notebooks",
+   "итог": "E-282-1"
+  },
+  {
+   "n": 5,
+   "начало": "Open in Colab | Open in Colab Enterprise | … View on GitHub (×3)",
+   "итог": "ничего: ссылки на ноутбуки"
+  },
+  {
+   "n": 6,
+   "начало": "You can use Gemini to generate images from a text prompt.",
+   "итог": "E-282-2"
+  },
+  {
+   "n": 7,
+   "начало": "The following Gemini models support image generation: … gemini-2.5-flash-image",
+   "итог": "E-282-3"
+  },
+  {
+   "n": 8,
+   "начало": "For more information about Gemini model capabilities, see Gemini models",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 9,
+   "начало": "Generate images The following shows how to generate images",
+   "итог": "ничего: вводная к разделу"
+  },
+  {
+   "n": 10,
+   "начало": "For more information about best practices for prompting, see Design multimodal prompts",
+   "итог": "ничего: ссылка без содержания"
+  },
+  {
+   "n": 11,
+   "начало": "Console To generate images with Gemini, do the following: Open Agent Studio",
+   "итог": "E-282-4"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini generates an image based on your description. This process takes a few seconds",
+   "итог": "E-282-5"
+  },
+  {
+   "n": 13,
+   "начало": "Python Install pip install --upgrade google-genai … SDK reference documentation",
+   "итог": "ничего: установка SDK (html <pre> 0)"
+  },
+  {
+   "n": 14,
+   "начало": "Set environment variables to use the Google Gen AI SDK with Vertex AI: # Replace …",
+   "итог": "E-282-6"
+  },
+  {
+   "n": 15,
+   "начало": "import os from io import BytesIO … generate_content(model=\"gemini-3.1-flash-image\"",
+   "итог": "E-282-7, E-282-8 (html <pre> 2, строки 1143-1274)"
+  },
+  {
+   "n": 16,
+   "начало": "Go Learn how to install or update the Go … Set environment variables",
+   "итог": "ничего: установка SDK; переменные — повтор E-282-6"
+  },
+  {
+   "n": 17,
+   "начало": "import ( \"context\" … generateMMFlashWithText … gemini-2.5-flash-image",
+   "итог": "E-282-9, E-282-10; промпт — повтор E-282-8 (html <pre> 4, строки ~1300-1656)"
+  },
+  {
+   "n": 18,
+   "начало": "Node.js Install npm install @google/genai … Set environment variables",
+   "итог": "ничего: установка SDK; переменные — повтор E-282-6"
+  },
+  {
+   "n": 19,
+   "начало": "const fs = require('fs'); … generateContentStream … gemini-2.5-flash-image",
+   "итог": "E-282-11; промпт — повтор E-282-8; пример ответа — повтор E-282-10 (html <pre> 7, строки ~1666-2006)"
+  },
+  {
+   "n": 20,
+   "начало": "Java Learn how to install or update the Java … Set environment variables",
+   "итог": "ничего: установка SDK; переменные — повтор E-282-6"
+  },
+  {
+   "n": 21,
+   "начало": "import com.google.genai.Client; … ImageGenMmFlashWithText … gemini-2.5-flash-image",
+   "итог": "ничего: повтор E-282-9 (candidateCount 1 + safety), промпт — повтор E-282-8; пример ответа 'Here is the Eiffel Tower…' отмечен в E-282-10 (html <pre> 9, строки ~2017-2447)"
+  },
+  {
+   "n": 22,
+   "начало": "REST Run the following command in the terminal … curl -X POST … peanut butter … aspectRatio 16:9",
+   "итог": "E-282-12, E-282-13 (html <pre> 10, строки 2448-2497)"
+  },
+  {
+   "n": 23,
+   "начало": "Gemini generates an image based on your description. (после REST)",
+   "итог": "ничего: повтор E-282-5"
+  },
+  {
+   "n": 24,
+   "начало": "Generate interleaved images and text You can use Gemini to generate interleaved",
+   "итог": "E-282-14"
+  },
+  {
+   "n": 25,
+   "начало": "The following Gemini models support generating interleaved images and text",
+   "итог": "E-282-15"
+  },
+  {
+   "n": 26,
+   "начало": "Console To generate interleaved images with text responses, do the following",
+   "итог": "ничего: шаги консоли — повтор E-282-4; пример промпта — E-282-16"
+  },
+  {
+   "n": 27,
+   "начало": "Write a description … For example, \"Create a tutorial explaining how to make a peanut butter",
+   "итог": "E-282-16"
+  },
+  {
+   "n": 28,
+   "начало": "Gemini generates a response based on your description.",
+   "итог": "ничего: повтор E-282-5"
+  },
+  {
+   "n": 29,
+   "начало": "Python Install … Set environment variables (interleaved)",
+   "итог": "ничего: установка SDK; переменные — повтор E-282-6"
+  },
+  {
+   "n": 30,
+   "начало": "from google import genai … \"Generate an illustrated recipe for a paella.\" … paella-recipe.md",
+   "итог": "E-282-17, E-282-18 (html <pre> 13, строки ~2561-2712)"
+  },
+  {
+   "n": 31,
+   "начало": "Java … ImageGenMmFlashTextAndImageWithText … gemini-2.5-flash-image",
+   "итог": "ничего: повтор E-282-17 (промпт двумя Part.fromText) и E-282-18 (Markdown-сборка) (html <pre> 15)"
+  },
+  {
+   "n": 32,
+   "начало": "Go … generateMMFlashTxtImgWithText … gemini-2.5-flash-image",
+   "итог": "ничего: повтор E-282-17, E-282-18; CandidateCount 1 — как в E-282-9 (html <pre> 17)"
+  },
+  {
+   "n": 33,
+   "начало": "Node.js … savePaellaRecipe … gemini-2.5-flash-image",
+   "итог": "ничего: повтор E-282-17 (цитата взята отсюда), E-282-18 (html <pre> 20)"
+  },
+  {
+   "n": 34,
+   "начало": "REST Run the following command … paella … aspectRatio 16:9",
+   "итог": "ничего: повтор E-282-12 и E-282-17 (html <pre> 21, строки 4058-4108)"
+  },
+  {
+   "n": 35,
+   "начало": "Gemini generates an image based on your description. (после REST interleaved)",
+   "итог": "ничего: повтор E-282-5"
+  },
+  {
+   "n": 36,
+   "начало": "What's next? See the following links … Edit images with Gemini … best practices … responsible AI",
+   "итог": "ничего: ссылки на смежные страницы"
+  },
+  {
+   "n": 37,
+   "начало": "Send feedback Except as otherwise noted … Google Developers Site Policies … Last updated 2026-09-22 UTC.",
+   "итог": "ничего: подвал с лицензией и датой (учтены в официальности и дата_в_тексте)"
+  },
+  {
+   "n": 38,
+   "начало": "Need to tell us more? … Products and pricing … 한국어",
+   "итог": "ничего: обвязка сайта (форма отзыва, подвал Google Cloud), строки 4129-4176"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-282-1",
+   "вид": "факт",
+   "утверждение_en": "Google provides example notebooks for image generation in Agent Platform for Gemini 3.1 Flash Lite Image, Gemini 3.1 Flash Image and Gemini 3 Pro Image (Colab, Colab Enterprise, Agent Platform Workbench, GitHub).",
+   "цитата": "To see examples of image generation with Gemini,\n      run the following notebooks in the environment of your choice:\n\"Gemini 3.1 Flash Lite Image Generation in Agent Platform\":",
+   "источник_цитаты": "txt",
+   "раздел": "вступление (блок notebooks)",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Три ноутбука: 'Gemini 3.1 Flash Lite Image Generation…', 'Gemini 3.1 Flash Image Generation…', 'Gemini 3 Pro Image Generation in Agent Platform'. Для gemini-2.5-flash-image ноутбука в блоке нет."
+  },
+  {
+   "код": "E-282-2",
+   "вид": "факт",
+   "утверждение_en": "Gemini can generate images from a text prompt; supported interfaces include the Google Cloud console and the Agent Platform API.",
+   "цитата": "You can use Gemini to generate images from a text prompt. Supported\ninterfaces include the Google Cloud console and the Agent Platform API.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-282-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini models that support image generation: gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image and gemini-2.5-flash-image.",
+   "цитата": "The following Gemini models support image generation:\nClick to expand supported models\ngemini-3.1-flash-lite-image\ngemini-3.1-flash-image\ngemini-3-pro-image\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "вступление — supported models",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Список спрятан под 'Click to expand supported models'."
+  },
+  {
+   "код": "E-282-4",
+   "вид": "инструкция",
+   "утверждение_en": "To generate images in the console: open Agent Studio > Create prompt, click Switch model and pick a model, select 'Image and text' in the Outputs panel drop-down, write a description of the image in the 'Write a prompt' area, and click Prompt (send).",
+   "цитата": "In the\nOutputs\npanel, select\nImage and text\nfrom the\n    drop-down menu.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images — Console",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Ключевой шаг — выбор 'Image and text' в панели Outputs; полный порядок — строки 1095-1118."
+  },
+  {
+   "код": "E-282-5",
+   "вид": "факт",
+   "утверждение_en": "Image generation takes a few seconds but can be comparatively slower depending on capacity.",
+   "цитата": "Gemini generates an image based on your description. This\nprocess takes a few seconds, but can be comparatively slower depending on\ncapacity.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images — Console",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Та же фраза повторена после REST-примеров и в разделе interleaved ('Gemini generates a response…')."
+  },
+  {
+   "код": "E-282-6",
+   "вид": "инструкция",
+   "утверждение_en": "To use the Google Gen AI SDK with Vertex AI, the samples set GOOGLE_CLOUD_PROJECT, GOOGLE_CLOUD_LOCATION=global and GOOGLE_GENAI_USE_ENTERPRISE=True.",
+   "цитата": "export GOOGLE_CLOUD_LOCATION=global\nexport GOOGLE_GENAI_USE_ENTERPRISE=True",
+   "источник_цитаты": "html",
+   "раздел": "Generate images — Python/Go/Node.js/Java (Set environment variables)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Блок повторяется перед каждым примером кода (html <pre> 1, 3, 6, 8, 12, 14, 16, 19). Node.js-примеры при этом по умолчанию используют 'us-central1', если переменная не задана."
+  },
+  {
+   "код": "E-282-7",
+   "вид": "факт",
+   "утверждение_en": "In the Python sample, gemini-3.1-flash-image is called via generate_content with response_modalities=[Modality.TEXT, Modality.IMAGE]; returned parts are either text or inline_data image bytes, which the sample saves as PNG.",
+   "цитата": "response_modalities=[Modality.TEXT, Modality.IMAGE],",
+   "источник_цитаты": "html",
+   "раздел": "Generate images — Python",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "html <pre> 2. Картинка приходит как part.inline_data.data (байты)."
+  },
+  {
+   "код": "E-282-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Code-sample prompt: 'Generate an image of the Eiffel tower with fireworks in the background.'",
+   "цитата": "Generate an image of the Eiffel tower with fireworks in the background.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images — Python/Go/Node.js/Java",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: глагол-команда 'Generate an image of' + главный объект (Eiffel tower) + элемент фона ('with fireworks in the background'). Одна фраза, без стиля/света/композиции — демонстрирует API, а не технику промптинга. Один и тот же промпт в Python (3.1 Flash Image), Go, Node.js, Java (2.5 Flash Image)."
+  },
+  {
+   "код": "E-282-9",
+   "вид": "факт",
+   "утверждение_en": "The Java and Go samples pass candidateCount 1 and a safety setting with method PROBABILITY, category HARM_CATEGORY_DANGEROUS_CONTENT and threshold BLOCK_MEDIUM_AND_ABOVE when calling gemini-2.5-flash-image.",
+   "цитата": ".threshold(\"BLOCK_MEDIUM_AND_ABOVE\")",
+   "источник_цитаты": "html",
+   "раздел": "Generate images — Go/Java",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "html <pre> 9 (Java: один SafetySetting.builder() с тремя полями), <pre> 4 (Go: три отдельных SafetySetting, в каждом по одному полю — см. противоречия)."
+  },
+  {
+   "код": "E-282-10",
+   "вид": "объяснение",
+   "утверждение_en": "With TEXT and IMAGE response modalities the model can return accompanying text describing the image it will generate; the sample's example response reads 'I will generate an image of the Eiffel Tower at night, with a vibrant display of colorful fireworks…'.",
+   "цитата": "I will generate an image of the Eiffel Tower at night, with a vibrant display of",
+   "источник_цитаты": "html",
+   "раздел": "Generate images — Go/Node.js (Example response)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример ответа из комментариев кода: модель в тексте дорисовывает детали, которых не было в промпте (ночь, подсветка башни, 'festive atmosphere'). Java-пример: 'Here is the Eiffel Tower with fireworks in the background...'."
+  },
+  {
+   "код": "E-282-11",
+   "вид": "факт",
+   "утверждение_en": "The Node.js sample streams image generation with generateContentStream on gemini-2.5-flash-image, handling text chunks and image data chunks separately.",
+   "цитата": "const response = await client.models.generateContentStream({",
+   "источник_цитаты": "html",
+   "раздел": "Generate images — Node.js",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "html <pre> 7: chunk.text → текст, chunk.data → байты картинки, сохраняются по порядку."
+  },
+  {
+   "код": "E-282-12",
+   "вид": "факт",
+   "утверждение_en": "The REST sample sets the aspect ratio through generationConfig.imageConfig.aspectRatio (\"16:9\") together with responseModalities [\"TEXT\", \"IMAGE\"], posting to https://${API_ENDPOINT}:generateContent.",
+   "цитата": "\"generationConfig\": {\n\"responseModalities\": [\"TEXT\", \"IMAGE\"],\n\"imageConfig\": {\n\"aspectRatio\": \"16:9\",",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images — REST",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Модель в REST-примере не указана (скрыта в API_ENDPOINT). Тот же конфиг — в REST-примере раздела interleaved (строки 4094-4097)."
+  },
+  {
+   "код": "E-282-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "REST sample prompt in the plain image-generation section: 'Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps.'",
+   "цитата": "Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images — REST",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Структура: задача-формат ('Create a tutorial') + тема + количество шагов. По сути запрос на текст+картинки (как в разделе interleaved), при этом стоит в разделе 'Generate images' с aspectRatio 16:9."
+  },
+  {
+   "код": "E-282-14",
+   "вид": "приём",
+   "утверждение_en": "Gemini can generate interleaved images and text in one response — for example, an image for each step of a generated recipe — without separate requests to the model.",
+   "цитата": "You can use Gemini to generate interleaved images with text\nresponses. For example, you can generate images for each step of a\ngenerated recipe without having to make separate requests to the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate interleaved images and text",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-282-15",
+   "вид": "факт",
+   "утверждение_en": "Models that support interleaved image and text generation: gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image and gemini-2.5-flash-image.",
+   "цитата": "The following Gemini models support generating interleaved images\nand text:\nClick to expand supported models\ngemini-3.1-flash-lite-image\ngemini-3.1-flash-image\ngemini-3-pro-image\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Generate interleaved images and text — supported models",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Список совпадает со списком для обычной генерации."
+  },
+  {
+   "код": "E-282-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Console example prompt for interleaved output: a three-step peanut butter and jelly sandwich tutorial where each step has a numbered title, an explanation and a generated image, each image in a 1:1 aspect ratio.",
+   "цитата": "Create a tutorial\n    explaining how to make a peanut butter and jelly sandwich in three easy\n    steps. For each step, provide a title with the number of the step, an\n    explanation, and also generate an image, generate each image in a 1:1 aspect\n    ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate interleaved images and text — Console",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "форматы_разрешение"
+   ],
+   "заметка": "Структура: задача + тема + число шагов → явная схема каждого шага (title with the number of the step, explanation, image) → формат картинки прямо в тексте ('generate each image in a 1:1 aspect ratio'). Работу делает перечисление обязательных элементов каждого шага; соотношение сторон задано словами, а не конфигом. Цитата разбита на строки с отступами, как в txt."
+  },
+  {
+   "код": "E-282-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Code-sample prompt for interleaved output: 'Generate an illustrated recipe for a paella. Create images to go alongside the text as you generate the recipe.'",
+   "цитата": "Generate an illustrated recipe for a paella. Create images to go alongside the text as you generate the recipe",
+   "источник_цитаты": "txt",
+   "раздел": "Generate interleaved images and text — Python/Java/Go/Node.js/REST",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: задача ('illustrated recipe') + предмет + отдельная явная инструкция создавать картинки по ходу текста. Вторая фраза и делает вывод чередующимся. Цитата — строка Node.js-примера (без финальной точки); в Go/REST — с точкой; в Python две строковые литералы склеены без пробела ('paella.Create…'); в Java — две отдельные Part.fromText."
+  },
+  {
+   "код": "E-282-18",
+   "вид": "приём",
+   "утверждение_en": "To keep interleaved output in order, the samples iterate over response parts, write text parts into a Markdown file, save each inline image as a PNG and insert a Markdown image link at the same position.",
+   "цитата": "fp.write(f\"![image](example-image-{i+1}.png)\")",
+   "источник_цитаты": "html",
+   "раздел": "Generate interleaved images and text — Python",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "html <pre> 13 (Python), аналогично Java/Go/Node.js (<pre> 15, 17, 20). Пример ответа: 'A markdown page for a Paella recipe … includes detailed steps and several images illustrating the cooking process.'"
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-282-19",
+   "вид": "факт",
+   "утверждение_en": "Every code sample on the page requests images with response modalities set to both TEXT and IMAGE (never IMAGE alone) and treats the response as an ordered list of parts, each either text or inline image data.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-282-7, E-282-11, E-282-12, E-282-18",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Можно ли запросить только IMAGE, страница не говорит."
+  },
+  {
+   "код": "E-282-20",
+   "вид": "факт",
+   "утверждение_en": "The samples mix model generations: Python uses gemini-3.1-flash-image while Go, Node.js and Java use gemini-2.5-flash-image, and REST leaves the model to API_ENDPOINT.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-282-7, E-282-8, E-282-9, E-282-11, E-282-12, E-282-17",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-282-21",
+   "вид": "факт",
+   "утверждение_en": "Aspect ratio is shown two ways on the page: as config (imageConfig.aspectRatio \"16:9\" in REST) and as natural-language instruction inside the prompt ('generate each image in a 1:1 aspect ratio' in the console example); the page does not say which wins if they conflict.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-282-12, E-282-16",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-282-22",
+   "вид": "приём",
+   "утверждение_en": "The page's prompts are short task-style instructions: a verb plus subject and context, and for multi-part output an explicit per-item structure (numbered title, explanation, image) plus an explicit request to create images alongside the text.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-282-8, E-282-13, E-282-16, E-282-17",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Описательных сценических промптов (свет, камера, стиль) на странице нет."
+  }
+ ],
+ "противоречия_внутри": [
+  "Go-пример (html <pre> 4) задаёт SafetySettings как три отдельных записи {Method}, {Category}, {Threshold}, а Java/REST — одну настройку с тремя полями; по смыслу это одна настройка, Go-вариант выглядит ошибкой кода.",
+  "REST-пример в разделе 'Generate images' (E-282-13) использует промпт-туториал из раздела interleaved, тогда как остальные языки в том же разделе — промпт Эйфелевой башни (E-282-8).",
+  "В Python-примере interleaved две строки промпта склеены без пробела ('…for a paella.Create images…') и без финальной точки; в Go/REST/Java — с пробелом/отдельными частями."
+ ],
+ "не_сказано": [
+  "Нет списка допустимых aspectRatio и параметра размера/разрешения (imageSize) — показан только '16:9'.",
+  "Не сказано, можно ли запросить только IMAGE без TEXT.",
+  "Не сказано, сколько картинок модель выдаст в interleaved-ответе и как это контролировать (кроме слов в промпте).",
+  "Нет лимитов, цен, упоминания SynthID, thinking, grounding.",
+  "Не сказано, чем модели из списка отличаются и какую выбирать.",
+  "Советы по промптам вынесены на другие страницы ('Design multimodal prompts', 'Gemini image generation best practices')."
+ ],
+ "сомнения": [
+  "REST-JSON в примерах содержит висячие запятые ('\"aspectRatio\": \"16:9\",' перед '}'), строгий JSON-парсер их не примет — вероятно, неточность документации.",
+  "Модель в REST-примерах не указана (в API_ENDPOINT).",
+  "Код в .txt разбит по токену на строку; цитаты кода взяты из html (тег-очищенный текст <pre>)."
+ ]
+}

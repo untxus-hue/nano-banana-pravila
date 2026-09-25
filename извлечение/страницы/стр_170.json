@@ -1,0 +1,1229 @@
+{
+ "id": 170,
+ "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf",
+ "заголовок": "Gemini 2.5 Flash - Model Card (2.5 Flash and native capabilities – audio & image; PDF, заголовок из текста; в метаданных партии пуст)",
+ "дата_в_тексте": "Model card published/updated December, 2025 (строка 1); Last updated: December, 2025 (строка 24); результаты image — 'as of August 2025', LMArena #1 — 'as of August 25, 2025'",
+ "официальность": {
+  "домен": "storage.googleapis.com (бакет deepmind-media)",
+  "второй_признак": "текст от лица Google/Google DeepMind: 'Gemini 2.5 Flash is Google’s first fully hybrid reasoning model', 'we performed testing following the guidelines in Google DeepMind’s Frontier Safety Framework', 'in line with Google's commitment to advancing AI safely'. Автора и копирайта нет; официальность по бакету deepmind-media и тексту.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "PDF-модель-карточка Gemini 2.5 Flash с нативными возможностями (аудио и изображение), обновлена в декабре 2025. Большая часть — текстовая модель 2.5 Flash: гибридный reasoning (thinking вкл/выкл, бюджеты), входы (текст/изображения/аудио/видео, 1M), архитектура MoE, методика и таблица текстовых бенчмарков, безопасность (с таблицей текстовых оценок). Про генерацию изображений: 2.5 Flash Image = image-выход 2.5 Flash, лимит 32K токенов, методика оценки (GenAI-Bench, LMArena), две таблицы Elo (T2I: 3 строки; Editing: 7 строк) против Imagen 4 Ultra, GPT Image 1, FLUX.1 Kontext, Qwen Image Edit, Gemini Flash 2.0 Image (на август 2025), #1 LMArena на 25.08.2025, назначение (консистентность персонажей/стиля, редактирование промптом, знания о мире, high-res редактирование, multi-image fusion), ограничения (длинный текст, фактические мелкие детали), knowledge cutoff январь 2025.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Gemini Flash 2.5 Image)",
+  "gemini-2.5-flash (текстовая, с thinking)",
+  "gemini-2.0-flash image (Gemini Flash 2.0 Image)",
+  "Imagen 4 Ultra 06-06",
+  "ChatGPT 4o / GPT Image 1 (High), FLUX.1 Kontext [max], Qwen Image Edit (конкуренты)",
+  "текстовые конкуренты таблицы бенчмарков (o4-mini, Claude 3.7 Sonnet, Grok 3, DeepSeek R1)"
+ ],
+ "структура": [
+  "Model Information (Description, Inputs, Outputs, Architecture)",
+  "Model Data",
+  "Implementation and Sustainability",
+  "Evaluation (Approach, Results — текст; Approach/Results — Gemini 2.5 Flash Image: Text-to-Image, Image Editing)",
+  "Intended Usage and Limitations",
+  "Ethics and Safety (Evaluation Approach, Safety Policies, Training and Development Evaluation Results, Assurance Evaluations Results, Frontier Safety Assessment, Known Safety Limitations, Risks and Mitigations)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Model card published/updated December, 2025",
+   "итог": "ничего: дата — использована в дата_в_тексте"
+  },
+  {
+   "n": 2,
+   "начало": "2.5 Flash and native capabilities –audio & image Model Card",
+   "итог": "ничего: заголовок PDF (указывает, что карточка покрывает и нативную генерацию изображений)"
+  },
+  {
+   "n": 3,
+   "начало": "Model Cards are intended to provide",
+   "итог": "ничего: мета-описание жанра модель-карточки"
+  },
+  {
+   "n": 4,
+   "начало": "Technical Reports are similar to academic",
+   "итог": "ничего: отсылка к техотчёту Gemini 2.5"
+  },
+  {
+   "n": 5,
+   "начало": "Last updated: December, 2025",
+   "итог": "ничего: дата — использована в дата_в_тексте"
+  },
+  {
+   "n": 6,
+   "начало": "Model Information Description: Gemini 2.5 Flash is the next iteration",
+   "итог": "E-170-1, E-170-2"
+  },
+  {
+   "n": 7,
+   "начало": "Inputs: Text strings (e.g., a question,",
+   "итог": "E-170-3"
+  },
+  {
+   "n": 8,
+   "начало": "Outputs: ● Gemini 2.5 Flash: Text, with a 64K token output",
+   "итог": "E-170-4 (строка Text 64K учтена в утверждении как контекст)"
+  },
+  {
+   "n": 9,
+   "начало": "● Gemini 2.5 Flash Image: Image, with a 32K token output",
+   "итог": "E-170-4"
+  },
+  {
+   "n": 10,
+   "начало": "● Gemini 2.5 Flash Audio, Audio, with 32K token output",
+   "итог": "ничего: не про генерацию картинок (аудио-выход)"
+  },
+  {
+   "n": 11,
+   "начало": "Architecture: Gemini 2.5 models are sparse mixture-of-experts",
+   "итог": "ничего: не про генерацию картинок (архитектура MoE)"
+  },
+  {
+   "n": 12,
+   "начало": "Model Data Training Dataset: The pre-training dataset",
+   "итог": "ничего: не про генерацию картинок (данные обучения)"
+  },
+  {
+   "n": 13,
+   "начало": "Training Data Processing: Data filtering and",
+   "итог": "ничего: не про генерацию картинок (обработка данных)"
+  },
+  {
+   "n": 14,
+   "начало": "Implementation and Sustainability Hardware: Gemini 2.5 Flash and Gemini 2.5 Flash Image were trained",
+   "итог": "ничего: не про генерацию картинок (TPU)"
+  },
+  {
+   "n": 15,
+   "начало": "The efficiencies gained through the use",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Software: Training was done using JAX",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "Evaluation Note: all Evals results are only for Gemini 2.5 Flash",
+   "итог": "ничего: пояснение области оценок (текстовые оценки — только Gemini 2.5 Flash; image — отдельно ниже), учтено в картине"
+  },
+  {
+   "n": 18,
+   "начало": "Approach: Gemini 2.5 Flash was evaluated",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 19,
+   "начало": "● Gemini results: All Gemini 2.5 Flash scores are pass @1",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 20,
+   "начало": "● Non-Gemini results",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 21,
+   "начало": "● Thinking vs not-thinking: For Claude 3.7 Sonnet",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 22,
+   "начало": "● Single attempt vs multiple attempts",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 23,
+   "начало": "● Results sources: Where provider numbers",
+   "итог": "ничего: не про генерацию картинок (методика текстовых бенчмарков)"
+  },
+  {
+   "n": 24,
+   "начало": "Results: Gemini 2.5 Flash and 2.5 Flash Preview (09-2025)",
+   "итог": "ничего: не про генерацию картинок (вводная к таблице текстовых бенчмарков)"
+  },
+  {
+   "n": 25,
+   "начало": "Capability Benchmark1 Gemini 2.5 Flash Preview … (шапка)",
+   "итог": "ничего: не про генерацию картинок (шапка таблицы текстовых бенчмарков)"
+  },
+  {
+   "n": 26,
+   "начало": "1 We regularly update evaluation processes",
+   "итог": "ничего: сноска о несопоставимости с прошлыми карточками (текстовые бенчмарки)"
+  },
+  {
+   "n": 27,
+   "начало": "Humanity's Last Exam (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 28,
+   "начало": "GPQA diamond (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 29,
+   "начало": "AIME 2025 (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 30,
+   "начало": "LiveCodeBench v5 (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 31,
+   "начало": "Aider Polyglot (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 32,
+   "начало": "SWE-Bench Verified (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 33,
+   "начало": "SimpleQA (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 34,
+   "начало": "SimpleQA Verified (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 35,
+   "начало": "FACTS Grounding (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 36,
+   "начало": "MMMU (Visual reasoning) (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (понимание изображений, не генерация)"
+  },
+  {
+   "n": 37,
+   "начало": "Vibe-Eval (Image understanding) (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (понимание изображений, не генерация)"
+  },
+  {
+   "n": 38,
+   "начало": "MRCR v2 (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 39,
+   "начало": "MRCR v2 (8-needle) (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 40,
+   "начало": "Global MMLU (Lite) (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовый бенчмарк)"
+  },
+  {
+   "n": 41,
+   "начало": "* indicates evaluated on text problems only",
+   "итог": "ничего: сноска к текстовой таблице"
+  },
+  {
+   "n": 42,
+   "начало": "Approach: Gemini 2.5 Flash Image was evaluated / ● Human evaluations",
+   "итог": "E-170-5"
+  },
+  {
+   "n": 43,
+   "начало": "● Result Sources: human evaluations were conducted",
+   "итог": "E-170-6"
+  },
+  {
+   "n": 44,
+   "начало": "○ Text-to-Image: Overall Preference, …",
+   "итог": "E-170-6 (та же единица)"
+  },
+  {
+   "n": 45,
+   "начало": "○ Image Editing: Character, Creative, …",
+   "итог": "E-170-6 (та же единица)"
+  },
+  {
+   "n": 46,
+   "начало": "Results: Gemini 2.5 Flash Image demonstrated",
+   "итог": "ничего: вводная к таблицам ('as of August 2025' учтено в дата_единицы единиц таблиц)"
+  },
+  {
+   "n": 47,
+   "начало": "Text-to-Image: Capability Benchmark Gemini Flash 2.5 Image … (шапка)",
+   "итог": "E-170-7"
+  },
+  {
+   "n": 48,
+   "начало": "2 While the results reported above from LMArena",
+   "итог": "E-170-8"
+  },
+  {
+   "n": 49,
+   "начало": "T2I Overall Preference (LMArena)",
+   "итог": "E-170-9"
+  },
+  {
+   "n": 50,
+   "начало": "T2I Visual Quality (GenAI-Bench)",
+   "итог": "E-170-10"
+  },
+  {
+   "n": 51,
+   "начало": "Text-to-Image Alignment (GenAI-Bench)",
+   "итог": "E-170-11"
+  },
+  {
+   "n": 52,
+   "начало": "Image Editing: Capability Benchmark … (шапка)",
+   "итог": "E-170-12"
+  },
+  {
+   "n": 53,
+   "начало": "Editing Overall Preference (LMArena)",
+   "итог": "E-170-13"
+  },
+  {
+   "n": 54,
+   "начало": "Character",
+   "итог": "E-170-14"
+  },
+  {
+   "n": 55,
+   "начало": "Creative",
+   "итог": "E-170-15"
+  },
+  {
+   "n": 56,
+   "начало": "Infographics",
+   "итог": "E-170-16"
+  },
+  {
+   "n": 57,
+   "начало": "Object / Environment",
+   "итог": "E-170-17"
+  },
+  {
+   "n": 58,
+   "начало": "Product Recontextualization",
+   "итог": "E-170-18"
+  },
+  {
+   "n": 59,
+   "начало": "Stylization",
+   "итог": "E-170-19"
+  },
+  {
+   "n": 60,
+   "начало": "Benefit and Intended Usage: Gemini 2.5 Flash is well suited",
+   "итог": "ничего: не про генерацию картинок (cost-efficient thinking, well-rounded capabilities, agentic tool use — про текстовую 2.5 Flash)"
+  },
+  {
+   "n": 61,
+   "начало": "Gemini 2.5 Flash Image augments Gemini 2.5",
+   "итог": "E-170-20"
+  },
+  {
+   "n": 62,
+   "начало": "Additionally, Gemini 2.5 Flash Audio improves",
+   "итог": "ничего: не про генерацию картинок (аудио)"
+  },
+  {
+   "n": 63,
+   "начало": "Known Limitations: Gemini 2.5 Flash may exhibit",
+   "итог": "E-170-21, E-170-22, E-170-23 (фраза про Audio — не про картинки; отсылка к Ethics and Safety — без содержания)"
+  },
+  {
+   "n": 64,
+   "начало": "Ethics and Safety Evaluation Approach: Gemini 2.5",
+   "итог": "E-170-24"
+  },
+  {
+   "n": 65,
+   "начало": "Evaluation types included, but were not",
+   "итог": "E-170-25"
+  },
+  {
+   "n": 66,
+   "начало": "● Training/Development Evaluations",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 67,
+   "начало": "● Human Red Teaming",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 68,
+   "начало": "● Automated Red Teaming",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 69,
+   "начало": "● Assurance Evaluations",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 70,
+   "начало": "● Ethics & Safety Reviews",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 71,
+   "начало": "In addition, we performed testing following … (FSF)",
+   "итог": "E-170-25 (та же единица)"
+  },
+  {
+   "n": 72,
+   "начало": "Safety Policies: Gemini safety policies align",
+   "итог": "E-170-26"
+  },
+  {
+   "n": 73,
+   "начало": "1. Child sexual abuse and exploitation (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 74,
+   "начало": "2. Hate speech (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 75,
+   "начало": "3. Dangerous content (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 76,
+   "начало": "4. Harassment (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 77,
+   "начало": "5. Sexually explicit content (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 78,
+   "начало": "6. Medical advice (пункт списка)",
+   "итог": "E-170-26 (та же единица)"
+  },
+  {
+   "n": 79,
+   "начало": "Training and Development Evaluation Results: Results for some",
+   "итог": "ничего: не про генерацию картинок (вводная к таблице автоматических оценок безопасности текстовой 2.5 Flash)"
+  },
+  {
+   "n": 80,
+   "начало": "We have focused on improving instruction",
+   "итог": "E-170-27"
+  },
+  {
+   "n": 81,
+   "начало": "We expect variation in our automated",
+   "итог": "E-170-28"
+  },
+  {
+   "n": 82,
+   "начало": "We continue to improve our internal evaluations, including refining",
+   "итог": "ничего: заявление о совершенствовании оценок (несопоставимость с прошлыми карточками), без правила"
+  },
+  {
+   "n": 83,
+   "начало": "For safety evaluations, a decrease in",
+   "итог": "ничего: не про генерацию картинок (как читать таблицу)"
+  },
+  {
+   "n": 84,
+   "начало": "Gemini 2.5 Flash Preview Non-thinking … (шапка таблицы безопасности)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 85,
+   "начало": "Text to Text Safety (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовые оценки 2.5 Flash vs 2.0 Flash)"
+  },
+  {
+   "n": 86,
+   "начало": "Multilingual Safety (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовые оценки 2.5 Flash vs 2.0 Flash)"
+  },
+  {
+   "n": 87,
+   "начало": "Image to Text Safety (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (понимание изображений: image-to-text)"
+  },
+  {
+   "n": 88,
+   "начало": "Tone (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовые оценки 2.5 Flash vs 2.0 Flash)"
+  },
+  {
+   "n": 89,
+   "начало": "Instruction Following (строка таблицы)",
+   "итог": "ничего: не про генерацию картинок (текстовые оценки 2.5 Flash vs 2.0 Flash)"
+  },
+  {
+   "n": 90,
+   "начало": "Assurance Evaluations Results: We conduct baseline",
+   "итог": "E-170-29"
+  },
+  {
+   "n": 91,
+   "начало": "Frontier Safety Assessment: We evaluated Gemini 2.5 Pro Preview",
+   "итог": "ничего: не про генерацию картинок (frontier safety по 2.5 Pro Preview)"
+  },
+  {
+   "n": 92,
+   "начало": "Known Safety Limitations: The main safety limitations",
+   "итог": "ничего: не про генерацию картинок (тон текстовых ответов — 'preachy')"
+  },
+  {
+   "n": 93,
+   "начало": "Risks and Mitigations: Safety and responsibility",
+   "итог": "E-170-30"
+  },
+  {
+   "n": 94,
+   "начало": "3 The ordering of evaluations in this table",
+   "итог": "ничего: сноска 3 (упоминает '2.5 Flash-Lite model card' — см. противоречия)"
+  },
+  {
+   "n": 95,
+   "начало": "● dataset filtering (пункт списка)",
+   "итог": "E-170-30 (та же единица)"
+  },
+  {
+   "n": 96,
+   "начало": "● conditional pre-training (пункт списка)",
+   "итог": "E-170-30 (та же единица)"
+  },
+  {
+   "n": 97,
+   "начало": "● supervised fine-tuning (пункт списка)",
+   "итог": "E-170-30 (та же единица)"
+  },
+  {
+   "n": 98,
+   "начало": "● reinforcement learning from human and critic feedback (пункт списка)",
+   "итог": "E-170-30 (та же единица)"
+  },
+  {
+   "n": 99,
+   "начало": "● safety policies and desiderata (пункт списка)",
+   "итог": "E-170-30 (та же единица)"
+  },
+  {
+   "n": 100,
+   "начало": "● product-level mitigations such as safety filtering",
+   "итог": "E-170-30"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-170-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash is described as Google's first fully hybrid reasoning model: developers can turn thinking on or off and set thinking budgets to trade off quality, cost, and latency.",
+   "цитата": "Gemini 2.5 Flash is Google’s first fully\nhybrid reasoning model, giving developers the ability to turn a model’s thinking on or off. The\nmodel also allows developers to set thinking budgets to find the right tradeoff between quality,\ncost, and latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information — Description",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Сказано про Gemini 2.5 Flash; применимость thinking к image-выходу (2.5 Flash Image) в карточке не уточнена."
+  },
+  {
+   "код": "E-170-2",
+   "вид": "факт",
+   "утверждение_en": "The card describes native capabilities (image and audio) as additional outputs of Gemini 2.5 Flash, with modality-specific information marked inline as 'Gemini 2.5 Flash Image' or 'Gemini 2.5 Flash Audio'; deployment status is general availability.",
+   "цитата": "This model card describes the native capabilities (e.g. image and audio) as\nadditional outputs of Gemini 2.5 Flash; information specific to these modalities is specified in line\n(i.e. ‘Gemini 2.5 Flash Image’, 'Gemini 2.5 Flash Audio'). Deployment status continues to be “general\navailability.”",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information — Description",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Т.е. Gemini 2.5 Flash Image = image-выход модели Gemini 2.5 Flash; статус GA."
+  },
+  {
+   "код": "E-170-3",
+   "вид": "лимит",
+   "утверждение_en": "Inputs are text strings (e.g. a question, a prompt, documents to be summarized), images, audio, and video files, with a 1M token context window.",
+   "цитата": "Inputs: Text strings (e.g., a question, a prompt, document(s) to be summarized), images, audio,\nand video files, with a 1M token context window.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information — Inputs",
+   "модели": [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-image (как нативная возможность)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Входы перечислены один раз для всей карточки."
+  },
+  {
+   "код": "E-170-4",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image outputs an image, with a 32K token output (Gemini 2.5 Flash text: 64K; Gemini 2.5 Flash Audio: 32K).",
+   "цитата": "Gemini 2.5 Flash Image: Image, with a 32K token output",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information — Outputs",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "форматы_разрешение"
+   ],
+   "заметка": "Бюджет токенов выхода изображения; разрешения не указаны."
+  },
+  {
+   "код": "E-170-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image was evaluated with human evaluations of text-to-image quality aspects (overall preference, prompt-image alignment, visual appeal) and automatic metrics for prompt-image alignment and image quality.",
+   "цитата": "Approach: Gemini 2.5 Flash Image was evaluated using the methodology below:\n\n       ●​ Human evaluations of several different quality aspects of text-to-image generation were\n          conducted, including overall preference, prompt-image alignment and visual appeal.\n          Automatic evaluation metrics were used to measure prompt-image alignment and image\n          quality.",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Approach",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-6",
+   "вид": "факт",
+   "утверждение_en": "Human evaluations used GenAI-Bench and LMArena: text-to-image (Overall Preference, Visual Quality, Text-to-Image Alignment) and image editing (Character, Creative, Infographics, Object/Environment, Product Recontextualization, Stylization).",
+   "цитата": "Result Sources: human evaluations were conducted via GenAI-Bench and LMArena2, including\n          leaderboards reporting provider results on these benchmarks:\n              ○​ Text-to-Image: Overall Preference, Visual Quality, Text-to-Image Alignment\n              ○​ Image Editing: Character, Creative, Infographics, Object / Environment, Product\n                   Recontextualization, and Stylization",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Approach",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "Категории редактирования показывают поддерживаемые классы правок (в т.ч. Product Recontextualization)."
+  },
+  {
+   "код": "E-170-7",
+   "вид": "факт",
+   "утверждение_en": "Text-to-image results compare Gemini Flash 2.5 Image with Imagen 4 Ultra 06-06, ChatGPT 4o / GPT Image 1 (High), FLUX.1 Kontext [max], and Gemini Flash 2.0 Image.",
+   "цитата": "Capability                           Gemini Flash 2.5 Image   Imagen 4 Ultra       ChatGPT 4o /   FLUX.1 Kontext     Gemini Flash\n        Benchmark                                                      06-06                GPT Image 1    [max]              2.0 Image\n                                                                                            (High)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Text-to-Image (шапка)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)",
+    "Imagen 4 Ultra 06-06"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-8",
+   "вид": "факт",
+   "утверждение_en": "As of August 25, 2025, Gemini 2.5 Flash Image ranked #1 for Text-to-Image and Image Editing on LMArena (results not exhaustive of all evaluated models).",
+   "цитата": "While the results reported above from LMArena are not exhaustive of all evaluated models, Gemini 2.5 Flash Image ranked #1 for\nText-to-Image and Image Editing as of August 25, 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-25",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сноска 2."
+  },
+  {
+   "код": "E-170-9",
+   "вид": "факт",
+   "утверждение_en": "T2I Overall Preference (LMArena) Elo (Gemini Flash 2.5 Image / Imagen 4 Ultra 06-06 / GPT Image 1 (High) / FLUX.1 Kontext [max] / Gemini Flash 2.0 Image): 1147 / 1135 / 1129 / 1075 / 988.",
+   "цитата": "Overall Preference\n                                       1147                  1135     1129             1075         988\n (LMArena)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Text-to-Image",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-10",
+   "вид": "факт",
+   "утверждение_en": "T2I Visual Quality (GenAI-Bench) Elo (Gemini Flash 2.5 Image / Imagen 4 Ultra 06-06 / GPT Image 1 (High) / FLUX.1 Kontext [max] / Gemini Flash 2.0 Image): 1103 / 1094 / 1013 / 864 / 926.",
+   "цитата": "Visual Quality                        1103                  1094     1013             864          926\n (GenAI-Bench)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Text-to-Image",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-11",
+   "вид": "факт",
+   "утверждение_en": "Text-to-Image Alignment (GenAI-Bench) Elo (Gemini Flash 2.5 Image / Imagen 4 Ultra 06-06 / GPT Image 1 (High) / FLUX.1 Kontext [max] / Gemini Flash 2.0 Image): 1042 / 1053 / 1046 / 937 / 922.",
+   "цитата": "Text-to-Image\n Alignment                             1042                  1053     1046             937          922\n (GenAI-Bench)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Text-to-Image",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "промптинг",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-12",
+   "вид": "факт",
+   "утверждение_en": "Image editing results compare Gemini Flash 2.5 Image with ChatGPT 4o / GPT Image 1 (High), FLUX.1 Kontext [max], Qwen Image Edit, and Gemini Flash 2.0 Image.",
+   "цитата": "Capability             Gemini Flash 2.5 Image   ChatGPT 4o /   FLUX.1          Qwen Image   Gemini Flash\n     Benchmark                                        GPT Image 1    Kontext [max]   Edit         2.0 Image\n                                                      (High)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing (шапка)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-13",
+   "вид": "факт",
+   "утверждение_en": "Editing Overall Preference (LMArena) Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1362 / 1170 / 1191 / 1145 / 1093.",
+   "цитата": "Overall Preference\n                                      1362            1170           1191            1145         1093\n(LMArena)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-14",
+   "вид": "факт",
+   "утверждение_en": "Character Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1170 / 1059 / 1010 / 911 / 850.",
+   "цитата": "Character                             1170            1059           1010            911          850",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-15",
+   "вид": "факт",
+   "утверждение_en": "Creative Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1112 / 1057 / 968 / 983 / 879.",
+   "цитата": "Creative                               1112           1057           968             983          879",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-16",
+   "вид": "факт",
+   "утверждение_en": "Infographics Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1067 / 1029 / 967 / 1012 / 925.",
+   "цитата": "Infographics                          1067            1029           967             1012         925",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-17",
+   "вид": "факт",
+   "утверждение_en": "Object / Environment Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1064 / 1023 / 1002 / 1010 / 901.",
+   "цитата": "Object / Environment                  1064            1023           1002            1010         901",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-18",
+   "вид": "факт",
+   "утверждение_en": "Product Recontextualization Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1128 / 1032 / 943 / 1009 / 888.",
+   "цитата": "Product                                1128           1032           943             1009         888\nRecontextualization",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-19",
+   "вид": "факт",
+   "утверждение_en": "Stylization Elo (Gemini Flash 2.5 Image / GPT Image 1 (High) / FLUX.1 Kontext [max] / Qwen Image Edit / Gemini Flash 2.0 Image): 1062 / 1165 / 949 / 1091 / 733.",
+   "цитата": "Stylization                           1062            1165           949             1091         733",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image — Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.0-flash image (Gemini Flash 2.0 Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; погрешностей в карточке нет."
+  },
+  {
+   "код": "E-170-20",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image provides image generation with maintained character and style consistency, prompt-based image editing, native world knowledge, editing of high-quality, high-resolution images in a wide range of visual styles, and multi-image fusion.",
+   "цитата": "Gemini 2.5 Flash Image augments Gemini 2.5 Flash’s benefits and use cases, providing image\n\fgeneration with maintained character and style consistency, prompt-based image editing, native\nworld knowledge, editing of high-quality, high-resolution images in a wide range of visual styles,\nand multi-image fusion.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-21",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 2.5 Flash may show general foundation-model limitations such as hallucinations and limits in causal understanding, complex logical deduction and counterfactual reasoning; adherence to thinking budgets may not be consistent.",
+   "цитата": "Gemini 2.5 Flash may exhibit some of the general limitations of foundation\nmodels, such as hallucinations, and limitations around causal understanding, complex logical\ndeduction, and counterfactual reasoning. Adherence to thinking budgets may not be consistent.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Сказано про Gemini 2.5 Flash; для image-выхода отдельно не уточнено."
+  },
+  {
+   "код": "E-170-22",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 2.5 Flash Image may exhibit general limitations of text-to-image models such as long-form text rendering and factual representation of fine details in images.",
+   "цитата": "Gemini 2.5 Flash Image may exhibit some general limitations of text-to-image models such as\nlong-form text rendering and factual representation of fine details in images.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-23",
+   "вид": "факт",
+   "утверждение_en": "The knowledge cutoff date for Gemini 2.5 Flash and its native capabilities was January 2025.",
+   "цитата": "The knowledge cutoff date for Gemini 2.5 Flash and\nits native capabilities was January 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-01",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-24",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash and its native capabilities were developed with internal safety, security, and responsibility teams; evaluations and red teaming align with Google's AI Principles.",
+   "цитата": "Evaluation Approach: Gemini 2.5 Flash and its native capabilities were developed in partnership\nwith internal safety, security, and responsibility teams. A range of evaluations and red teaming\nactivities were conducted to help improve the model and inform decision-making. These\nevaluations and activities align with Google's AI Principles and responsible AI approach.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Evaluation Approach",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-25",
+   "вид": "факт",
+   "утверждение_en": "Safety evaluation types included training/development evaluations, human red teaming, automated red teaming at scale, assurance evaluations by independent evaluators, and ethics & safety reviews before release; testing also followed Google DeepMind's Frontier Safety Framework.",
+   "цитата": "Evaluation types included, but were not limited to:\n\n   ●​ Training/Development Evaluations including automated and human evaluations carried\n      out continuously throughout and after the model’s training, to monitor its progress and\n      performance\n   ●​ Human Red Teaming conducted by specialist teams across the policies and desiderata,\n      deliberately trying to spot weaknesses and ensure the model adheres to safety policies\n      and desired outcomes\n   ●​ Automated Red Teaming to dynamically evaluate Gemini for safety and security\n      considerations at scale, complementing human red teaming and static evaluations\n   ●​ Assurance Evaluations conducted by human evaluators independent of the model\n      development team, and assess responsibility and safety governance decisions\n   ●​ Ethics & Safety Reviews were conducted ahead of the model’s release\n\nIn addition, we performed testing following the guidelines in Google DeepMind’s Frontier Safety\nFramework (FSF).",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Evaluation Approach",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "В отличие от карточек Gemini 3: есть Automated Red Teaming."
+  },
+  {
+   "код": "E-170-26",
+   "вид": "правило",
+   "утверждение_en": "Gemini safety policies cover harmful content Google makes best efforts to prevent its generative models from generating: child sexual abuse and exploitation, hate speech, dangerous content, harassment, sexually explicit content, and medical advice contrary to scientific or medical consensus.",
+   "цитата": "Safety Policies: Gemini safety policies align with Google’s standard framework for the types of\nharmful content that we make best efforts to prevent our Generative AI models from generating,\nincluding the following types of harmful content:",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Safety Policies",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'make best efforts to prevent' — формулировка мягче, чем в карточках Gemini 3 ('aim to prevent'). Список — строки 393-399."
+  },
+  {
+   "код": "E-170-27",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 was trained to improve instruction following while prioritizing safety and minimizing unhelpful responses; new models are more willing to engage with prompts that previous models may have incorrectly refused.",
+   "цитата": "We have focused on improving instruction following (IF) abilities of Gemini 2.5. This means that we\ntrain Gemini to answer questions as accurately as possible, while prioritizing safety and minimising\nunhelpful responses. New models are more willing to engage with prompts that previous models\nmay have incorrectly refused.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Training and Development Evaluation Results",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Про Gemini 2.5 (текст); для image-выхода не уточнено."
+  },
+  {
+   "код": "E-170-28",
+   "вид": "факт",
+   "утверждение_en": "Manual review found safety-eval losses were overwhelmingly false positives or non-egregious, narrowly concentrated around explicit requests for sexually suggestive or hateful content, mostly in creative use-cases (e.g. historical fiction).",
+   "цитата": "Our manual review confirmed losses were\noverwhelmingly either a) false positives or b) not egregious and narrowly concentrated around\nexplicit requests to produce sexually suggestive content or hateful content, mostly in the context\nof creative use-cases (e.g. historical fiction).",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Training and Development Evaluation Results",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-29",
+   "вид": "факт",
+   "утверждение_en": "Baseline assurance evaluations looked at behavior within safety policies and modality-specific risk areas; for content safety policies, including child safety, safety performance was similar or improved compared to Gemini 2.0 Flash.",
+   "цитата": "Assurance Evaluations Results: We conduct baseline assurance evaluations to guide decisions\non model releases. These evaluations look at model behavior, including within the context of the\nsafety policies and modality-specific risk areas. High-level findings are fed back to the model team.\nFor content safety policies, including child safety, we saw similar or improved safety performance\ncompared to Gemini 2.0 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Assurance Evaluations Results",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'modality-specific risk areas' — упомянуты, но результаты по изображениям не приведены."
+  },
+  {
+   "код": "E-170-30",
+   "вид": "факт",
+   "утверждение_en": "Mitigations built into Gemini 2.5 Flash across the lifecycle include dataset filtering, conditional pre-training, supervised fine-tuning, reinforcement learning from human and critic feedback, safety policies and desiderata, and product-level mitigations such as safety filtering.",
+   "цитата": "product-level mitigations such as safety filtering",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Safety — Risks and Mitigations",
+   "модели": [
+    "Gemini 2.5 Flash (gemini-2.5-flash)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Цитата — последний пункт списка (строка 498); список разорван сноской 3 (строки 486-499). SynthID/C2PA не упомянуты."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-170-31",
+   "вид": "объяснение",
+   "утверждение_en": "As of August 2025, Gemini 2.5 Flash Image leads every image row except Text-to-Image Alignment (Imagen 4 Ultra 1053 and GPT Image 1 1046 vs 1042) and Stylization editing (GPT Image 1 1165 and Qwen Image Edit 1091 vs 1062); its largest lead is editing Overall Preference (1362 vs 1191, +171).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Evaluation — Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-170-9, E-170-10, E-170-11, E-170-13, E-170-14, E-170-15, E-170-16, E-170-17, E-170-18, E-170-19",
+   "дата_единицы": "2025-08",
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": "Разности посчитаны мной по таблицам."
+  },
+  {
+   "код": "E-170-32",
+   "вид": "правило",
+   "утверждение_en": "The card advertises consistency, prompt-based editing, world knowledge, high-resolution editing and multi-image fusion, but names long-form text rendering and factual fine details as limitations — keep in-image text short and verify fine factual details.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Intended Usage and Limitations",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-170-20, E-170-22",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Рекомендация сформулирована мной из двух разделов."
+  },
+  {
+   "код": "E-170-33",
+   "вид": "предупреждение",
+   "утверждение_en": "Thinking on/off and thinking budgets are described for Gemini 2.5 Flash, and all thinking-labeled benchmark columns are text benchmarks; the card never says whether the image output (Gemini 2.5 Flash Image) uses or supports thinking.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Model Information / Evaluation",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-2.5-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-170-1, E-170-2, E-170-21",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-170-34",
+   "вид": "факт",
+   "утверждение_en": "The only numeric limit given for image output is a 32K-token budget; the card mentions 'high-quality, high-resolution images' but states no resolutions or aspect ratios.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Model Information / Intended Usage",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-170-4, E-170-20",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Сноска 3 говорит о 'previous iterations of the 2.5 Flash-Lite model card', хотя документ — карточка 2.5 Flash (вероятно, копипаст).",
+  "Сноска 2 (E-170-8): 2.5 Flash Image '#1 for … Image Editing', но в таблице Stylization GPT Image 1 (1165) и Qwen Image Edit (1091) выше (1062) — #1 относится к общему рейтингу, не ко всем категориям."
+ ],
+ "не_сказано": [
+  "Не сказано, поддерживает ли image-выход thinking/бюджеты.",
+  "Нет разрешений и соотношений сторон.",
+  "Нет результатов безопасности для генерации изображений (таблица — text-to-text, multilingual, image-to-text).",
+  "Нет SynthID/C2PA.",
+  "Нет максимального числа входных изображений для multi-image fusion."
+ ],
+ "сомнения": [
+  "Большая часть документа — текстовая модель 2.5 Flash; строки текстовых бенчмарков помечены 'не про генерацию картинок'.",
+  "Документ — PDF без html; таблицы в .txt с разорванной вёрсткой, значения прочитаны по позициям столбцов.",
+  "Список мер Risks and Mitigations разорван сноской 3; цитата взята по последнему пункту."
+ ]
+}

@@ -1,0 +1,220 @@
+{
+ "id": 331,
+ "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/glanceboard-gemini-flash-nano-banana",
+ "заголовок": "Try Glanceboard, a vibe-coded way to organize your day",
+ "дата_в_тексте": "Jul 31, 2026 (в тексте); meta article:published_time 2026-07-31; JSON-LD datePublished 2026-07-31T19:00:00+00:00, dateModified 2026-07-31T19:24:42",
+ "официальность": {
+  "домен": "blog.google (The Keyword)",
+  "второй_признак": "текст от лица Google («We’re open-sourcing the code»); герой — «a creative technologist at Google»; код в организации google-gemini на GitHub (href в html); JSON-LD publisher Organization «Google», og:site_name «Google». Автор поста не указан (ни в тексте, ни в JSON-LD). Строки © Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткий пост блога Google (Short Post) о вайб-кодинг-проекте сотрудника Google: Glanceboard — приложение на Gemini 3.6 Flash и Nano Banana, которое каждое утро берёт семейный Google Calendar и погоду, просит Nano Banana нарисовать персонализированную иллюстрацию детей в одежде по погоде и выводит её на e-ink-дисплей (расписание, что надеть, что взять). Работает на локальном сервере; код открыт (github.com/google-gemini/glanceboard), предлагается собрать через Google Antigravity. Промптов, параметров и деталей генерации нет. В тексте опечатка «Nana Banana», имя героя дано как «Raph» и «Raphael».",
+ "модели_на_странице": [
+  "Nano Banana (версия не указана)",
+  "Gemini 3.6 Flash (текст)"
+ ],
+ "структура": [
+  "Меню blog.google (дважды), регионы, хлебные крошки",
+  "Заголовок (H1), дата",
+  "Текст из 4 абзацев: что это; как работает; где работает; открытый код",
+  "Видео-обзор (только в html)",
+  "Теги, Related stories, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Try Glanceboard, a vibe-coded way to organize your day (строка 1)",
+   "итог": "ничего: заголовок вкладки"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content … Newsletter (строки 2-192)",
+   "итог": "ничего: обвязка сайта blog.google (меню дважды, регионы, ссылки); побайтно совпадает со строками 2-192 стр. 328 (сверено diff)"
+  },
+  {
+   "n": 3,
+   "начало": "Breadcrumb Home Innovation & AI Models & research Gemini Models (строки 193-197)",
+   "итог": "ничего: хлебные крошки"
+  },
+  {
+   "n": 4,
+   "начало": "Simplify your morning with this vibe-coded schedule app. / Jul 31, 2026 (строки 198-199)",
+   "итог": "ничего: заголовок (H1) и дата (учтена)"
+  },
+  {
+   "n": 5,
+   "начало": "Tired of starting your morning staring at bright screens (строка 200)",
+   "итог": "E-331-1"
+  },
+  {
+   "n": 6,
+   "начало": "Every morning, Glanceboard checks Raph’s family Google Calendar (строка 201)",
+   "итог": "E-331-2, E-331-3"
+  },
+  {
+   "n": 7,
+   "начало": "Glanceboard operates on a lightweight local server (строка 202)",
+   "итог": "E-331-4"
+  },
+  {
+   "n": 8,
+   "начало": "Want to try Glanceboard yourself? We’re open-sourcing the code (строка 203)",
+   "итог": "E-331-5"
+  },
+  {
+   "n": 9,
+   "начало": "[html] uni-inline-image alt-text «Overview of Glanceboard» (видео «Schedule app», в .txt отсутствует)",
+   "итог": "ничего: видео-обзор без описания содержимого"
+  },
+  {
+   "n": 10,
+   "начало": "Posted in: Gemini models (строки 204-205)",
+   "итог": "ничего: обвязка (тег)"
+  },
+  {
+   "n": 11,
+   "начало": "Related stories … Gemini 3.8 text-to-speech … 3.8 Live … cyber defense … 3.8 Flash (строки 206-228)",
+   "итог": "ничего: обвязка (связанные истории, не про изображения)"
+  },
+  {
+   "n": 12,
+   "начало": "Privacy Terms Help More of Google … 台灣 (中文) (строки 229-264)",
+   "итог": "ничего: обвязка (подвал и регионы)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-331-1",
+   "вид": "факт",
+   "утверждение_en": "Glanceboard is a custom app built by Raph, a creative technologist at Google, using Gemini 3.6 Flash and Nano Banana.",
+   "цитата": "Raph, a creative technologist at Google, built a custom app called Glanceboard with Gemini 3.6 Flash and Nano Banana to transform that daily routine.",
+   "источник_цитаты": "txt",
+   "раздел": "Текст статьи, абзац 1",
+   "модели": [
+    "Nano Banana (версия не указана)",
+    "Gemini 3.6 Flash"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "Проект сотрудника Google (вайб-кодинг). Распределение ролей между Gemini 3.6 Flash и Nano Banana на странице не описано."
+  },
+  {
+   "код": "E-331-2",
+   "вид": "приём",
+   "утверждение_en": "Each morning Glanceboard reads the family's Google Calendar and the local weather, then prompts Nano Banana to generate a personalized illustration of the children wearing weather-appropriate clothes.",
+   "цитата": "Every morning, Glanceboard checks Raph’s family Google Calendar and the local weather. Then, it prompts Nana Banana to generate a personalized illustration of his children wearing forecast-friendly clothes.",
+   "источник_цитаты": "txt",
+   "раздел": "Текст статьи, абзац 2",
+   "модели": [
+    "Nano Banana (версия не указана; в тексте также опечатка «Nana Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Шаблон автоматизации: живые данные (календарь, погода) → промпт → персонализированная иллюстрация. Текст промпта не приведён; как обеспечено сходство детей (референсы?) — не сказано. «Nana Banana» — опечатка в оригинале, цитата сохраняет её дословно."
+  },
+  {
+   "код": "E-331-3",
+   "вид": "факт",
+   "утверждение_en": "The generated image is shown on an e-ink display so the family can see their schedule, what to wear and what to pack for the day.",
+   "цитата": "That image shows up on an e-ink display, letting Raphael’s family know their schedule, what to wear, and what to pack for the day.",
+   "источник_цитаты": "txt",
+   "раздел": "Текст статьи, абзац 2",
+   "модели": [
+    "Nano Banana (версия не указана; в тексте также опечатка «Nana Banana»)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "форматы_разрешение",
+    "другое"
+   ],
+   "заметка": "Иллюстрация служит носителем практической информации (расписание, одежда, что взять). Требования к изображению для e-ink (разрешение, цветность, контраст) — не сказаны."
+  },
+  {
+   "код": "E-331-4",
+   "вид": "факт",
+   "утверждение_en": "Glanceboard runs on a lightweight local server, with no cloud accounts or bright screens required.",
+   "цитата": "Glanceboard operates on a lightweight local server — no cloud accounts or bright screens required — offering a serene and personalized way to stay organized.",
+   "источник_цитаты": "txt",
+   "раздел": "Текст статьи, абзац 3",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Архитектура приложения, не генерация. При этом приложение использует Gemini 3.6 Flash и Nano Banana — как они вызываются без облачных аккаунтов, не объяснено (см. противоречия)."
+  },
+  {
+   "код": "E-331-5",
+   "вид": "факт",
+   "утверждение_en": "Google open-sourced Glanceboard's code (github.com/google-gemini/glanceboard) so users can ask Google Antigravity to build one; the repo has full build details and the hardware used.",
+   "цитата": "We’re open-sourcing the code so you can ask Google Antigravity to make you one, too. Get the full details on how to build it and the hardware he used in the GitHub repo.",
+   "источник_цитаты": "txt",
+   "раздел": "Текст статьи, абзац 4",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Адрес репозитория — из html (href https://github.com/google-gemini/glanceboard, организация google-gemini). Содержимое репозитория (промпты, код вызова Nano Banana) на странице не приведено."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-331-6",
+   "вид": "приём",
+   "утверждение_en": "The post illustrates a pattern where an image model is used as an information display: structured daily data (calendar events, weather) is turned into a prompt, and the resulting personalized illustration encodes practical information (what to wear, what to pack) visually for a low-power e-ink screen.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "Nano Banana (версия не указана; в тексте также опечатка «Nana Banana»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-331-2, E-331-3",
+   "дата_единицы": "2026-07-31 (дата статьи)",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Видно при сведении абзацев 2-3. Какая модель пишет промпт для Nano Banana (Gemini 3.6 Flash или шаблон в коде) — страница не говорит."
+  }
+ ],
+ "противоречия_внутри": [
+  "Опечатка: абзац 2 — «it prompts Nana Banana», в остальных местах (абзац 1, url) — «Nano Banana».",
+  "Имя героя: «Raph» (абзацы 1-2) и «Raphael» (абзацы 2-3) — по контексту одно лицо.",
+  "«Glanceboard operates on a lightweight local server — no cloud accounts … required», но приложение построено на Gemini 3.6 Flash и Nano Banana (облачные модели); как это совмещается, не объяснено."
+ ],
+ "не_сказано": [
+  "Текст промпта для Nano Banana и как он собирается из календаря и погоды — не приведён.",
+  "Как сохраняется сходство детей на ежедневных иллюстрациях (референс-фото, описание) — не сказано.",
+  "Роль Gemini 3.6 Flash в приложении — не сказано.",
+  "Формат/разрешение/цветность изображения под e-ink-дисплей — не сказаны.",
+  "Версия Nano Banana, стоимость ежедневной генерации, способ вызова (API-ключ и т.п.) — не сказаны; отсылка к GitHub-репозиторию."
+ ],
+ "сомнения": [
+  "Страница — пример применения (showcase), практических правил генерации нет; ценность только в шаблоне «данные → промпт → иллюстрация».",
+  "Содержимое GitHub-репозитория (google-gemini/glanceboard) не входит в сырьё и не проверено."
+ ]
+}

@@ -1,0 +1,1727 @@
+{
+ "id": 62,
+ "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+ "заголовок": "Gemini Enterprise release notes  |  Google Cloud Documentation",
+ "дата_в_тексте": "подвал: «Last updated 2026-09-22 UTC.»; самая новая запись датирована «September 29, 2026», самая старая — «January 31, 2025»; у каждой единицы — дата записи",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License… see the Google Developers Site Policies»; текст от лица Google («This page documents production updates to Gemini Enterprise»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Журнал изменений (release notes) Google Cloud для корпоративного продукта Gemini Enterprise (бывш. Agentspace) и Gemini/NotebookLM Enterprise, записи с января 2025 по сентябрь 2026. Аудитория — администраторы и пользователи Gemini Enterprise. Почти все записи — про коннекторы данных, агентов, наблюдаемость, биллинг и текстовые модели; про генерацию изображений — около десяти записей: общий переключатель генерации картинок/видео (вкл. по умолчанию, 2025-09), создание картинок из чата (2025-07), GA Nano Banana (Gemini 2.5 Flash Image) в Global/EU/US (2025-10), просмотр/скачивание и поиск сгенерированных картинок в Library, Nano Banana Pro в Preview через контрол «Enable image generation» (2025-11), GA Nano Banana Pro и Nano Banana 2 (выключены по умолчанию, только Global; 2026-06), Nano Banana 2 GA в us/eu (2026-08), слайды и инфографика в NotebookLM Enterprise и их несоответствие MLP в EU. Промптов, параметров, лимитов для картинок нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana / Gemini 2.5 Flash Image)",
+  "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "Veo 3 Fast, Veo 3.0, Veo 3.1 (видео)",
+  "текстовые Gemini 2.0/2.5/3/3.1/3.5/3.6/3.7/3.8 Flash и Pro — не про картинки"
+ ],
+ "структура": [
+  "Меню сайта",
+  "Вводная release notes",
+  "Записи по датам: September 29, 2026 … January 31, 2025 (типы Feature / Announcement / Change / Deprecated / Breaking / Fixed / Security)",
+  "Подвал (лицензия, Last updated)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation … Storage (строки 1-113)",
+   "итог": "ничего: обвязка сайта (меню Google Cloud Documentation, продублировано)"
+  },
+  {
+   "n": 2,
+   "начало": "Note: This documentation set is for (строка 114)",
+   "итог": "ничего: пометка об области документации (редакции Gemini Enterprise), не про генерацию картинок"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML … Save and categorize content (строки 115-123)",
+   "итог": "ничего: обвязка сайта (хлебные крошки, заголовок)"
+  },
+  {
+   "n": 4,
+   "начало": "This page documents production updates to (строки 124-135)",
+   "итог": "ничего: вводная о странице release notes"
+  },
+  {
+   "n": 5,
+   "начало": "September 29, 2026 — Feature: Gemini Enterprise: D&B Finance Analytics data store (Preview) (строки 137-146)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 6,
+   "начало": "September 22, 2026 — Feature: Gemini Enterprise: D&B Risk Analytics data store (строки 148-158)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 7,
+   "начало": "September 22, 2026 — Feature: Gemini Enterprise: New data store (Preview) (строки 159-164)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 8,
+   "начало": "September 21, 2026 — Feature: Gemini Enterprise: Transfer ownership of shared agents (строки 166-190)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 9,
+   "начало": "September 18, 2026 — Feature: Gemini Enterprise: Support for new actions (Preview) (строки 192-199)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 10,
+   "начало": "September 18, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 200-209)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 11,
+   "начало": "September 17, 2026 — Announcement: Gemini Enterprise: Gemini Code Assist availability update for subscriptions (строки 211-224)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 12,
+   "начало": "September 17, 2026 — Feature: Gemini Enterprise: Voice input for the chat box (строки 225-235)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "September 11, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 237-246)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "September 10, 2026 — Feature: Gemini Enterprise: Pay-as-you-go edition and AI developer tools available for all invoiced Cloud Billing accounts (строки 248-258)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "September 10, 2026 — Feature: Gemini Enterprise: Support for channel mentions and multi-turn conversations in the Gemini Enterprise app for Slack (строки 259-265)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "September 09, 2026 — Breaking: Gemini Notebook Enterprise: Website URL ingestion blocked by VPC Service Controls (строки 267-275)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "September 08, 2026 — Feature: Gemini Enterprise: Semantic search support in Google Cloud Marketplace (Preview) (строки 277-283)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 18,
+   "начало": "September 04, 2026 — Feature: Gemini Enterprise: Monday federated data store (GA) (строки 285-292)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "September 04, 2026 — Feature: Gemini Enterprise: Create and manage projects (строки 293-304)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "September 04, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 305-312)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 21,
+   "начало": "September 03, 2026 — Feature: Gemini Enterprise: Latency and error rate views for agents (строки 314-330)",
+   "итог": "ничего: не про генерацию картинок (мониторинг задержек; «media generation» лишь как разрез)"
+  },
+  {
+   "n": 22,
+   "начало": "September 03, 2026 — Feature: Gemini Enterprise: General availability of Workflow Builder (formerly Agent Designer) (строки 331-354)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 23,
+   "начало": "September 02, 2026 — Feature: Gemini Enterprise: Gemini 3.8 Flash available in Global, US, and EU regions (строки 356-362)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 24,
+   "начало": "September 01, 2026 — Feature: Gemini Enterprise: Overage controls available for all invoiced Cloud Billing (строки 364-375)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 25,
+   "начало": "August 31, 2026 — Feature: Gemini Enterprise: Support for federated data stores in Assured Workloads (строки 377-388)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 26,
+   "начало": "August 31, 2026 — Feature: Gemini Enterprise: Gemini 3.5 Flash regional availability in Canada (строки 389-393)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 27,
+   "начало": "August 31, 2026 — Feature: Gemini Enterprise: Gemini 3.1 Flash image available in US and EU multi-regions (строки 394-400)",
+   "итог": "E-62-1"
+  },
+  {
+   "n": 28,
+   "начало": "August 31, 2026 — Feature: Gemini Enterprise: Protect sensitive data with content policies (строки 401-412)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "August 28, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 414-426)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 30,
+   "начало": "August 26, 2026 — Feature: Gemini Enterprise: Updates to A2UI Material catalog component properties (строки 428-448)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "August 24, 2026 — Feature: Gemini Enterprise: D&B Commercial Graph data store (Preview) (строки 450-456)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 32,
+   "начало": "August 24, 2026 — Feature: Gemini Enterprise: Cloud Monitoring observability for data connectors (строки 457-472)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "August 21, 2026 — Feature: Gemini Enterprise: AI developer tools on Standard Emerging Market edition (строки 474-485)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 34,
+   "начало": "August 21, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Public Preview) (строки 486-500)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 35,
+   "начало": "August 20, 2026 — Feature: Gemini Enterprise: Antigravity for IDEs available in AI developer tools (строки 502-511)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 36,
+   "начало": "August 20, 2026 — Feature: Gemini Enterprise and Gemini Notebook Enterprise: Autocomplete for sharing (строки 512-532)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "August 20, 2026 — Feature: Gemini Enterprise: Google Identity support for third-party data stores (строки 533-546)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "August 18, 2026 — Feature: Gemini Enterprise: Google Sites federated connector (GA) (строки 548-555)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 39,
+   "начало": "August 18, 2026 — Feature: Gemini Enterprise: Gemini 3.6 Flash available in US and EU multi-regions (строки 556-575)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 40,
+   "начало": "August 18, 2026 — Feature: Gemini Enterprise: Access and configure AI developer tools (строки 576-595)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 41,
+   "начало": "August 17, 2026 — Feature: Gemini Enterprise: General availability for registering A2UI and A2A agents with Gemini Enterprise, including A2UI version v0.9 support (строки 597-610)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 42,
+   "начало": "August 14, 2026 — Feature: Gemini Enterprise: Gemini 3.7 Flash available in the mobile app (строки 612-623)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "August 13, 2026 — Feature: Gemini Enterprise: Create, upload, and share custom skills (строки 625-637)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 44,
+   "начало": "August 13, 2026 — Feature: Gemini Enterprise: Use Gemini 3.7 Flash (строки 638-656)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 45,
+   "начало": "August 13, 2026 — Announcement: Gemini Enterprise: Gemini 3.7 Flash availability in mobile app (строки 657-663)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 46,
+   "начало": "August 12, 2026 — Feature: Gemini Enterprise: GitHub connector with data federation (строки 665-674)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "August 12, 2026 — Feature: Gemini Enterprise: AlphaEvolve HPC solution (строки 675-683)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "August 11, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Public Preview) (строки 685-705)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 49,
+   "начало": "August 11, 2026 — Feature: Gemini Enterprise: Manage overages, spend limits, and costs for invoiced Cloud Billing accounts (строки 706-735)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 50,
+   "начало": "August 10, 2026 — Feature: Gemini Enterprise: Export user data to a CSV file (строки 737-743)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 51,
+   "начало": "August 07, 2026 — Change: Gemini Enterprise: Experimental agent telemetry aligned with OpenTelemetry generative AI semantic conventions (строки 745-758)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 52,
+   "начало": "August 07, 2026 — Feature: Gemini Enterprise: Custom MCP server data stores (строки 759-769)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "August 06, 2026 — Change: Gemini Enterprise: Description field removed from Custom MCP server data store (строки 771-781)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "August 06, 2026 — Announcement: Gemini Enterprise: Postponed removal of Gemini 3.5 Flash in the Global (строки 782-789)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 55,
+   "начало": "August 05, 2026 — Change: Gemini Enterprise: Clinical Trials data store no longer available (строки 791-796)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 56,
+   "начало": "August 04, 2026 — Feature: Gemini Enterprise: End-to-end tracing support for data connectors (строки 798-812)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 57,
+   "начало": "August 03, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Public Preview) (строки 814-840)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 58,
+   "начало": "August 01, 2026 — Feature: Gemini Enterprise: Pay for what you consume with the Pay-as-you-go edition (строки 842-855)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "July 29, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 857-872)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 60,
+   "начало": "July 28, 2026 — Feature: Gemini Enterprise: Microsoft Teams federated data store is generally available (строки 874-877)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 61,
+   "начало": "July 27, 2026 — Change: Gemini Enterprise: Web app user interface changes (строки 879-888)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 62,
+   "начало": "July 27, 2026 — Feature: Gemini Enterprise: Transparent thinking (строки 889-899)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 63,
+   "начало": "July 24, 2026 — Feature: Gemini Enterprise: Gemini 3.6 Flash in US multi-region (строки 901-911)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "July 24, 2026 — Feature: Gemini Enterprise: Create and edit documents and slides in Canvas (GA) (строки 912-924)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "July 22, 2026 — Feature: Gemini Enterprise: Support for unauthenticated Custom MCP Server data stores (Preview) (строки 926-933)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 66,
+   "начало": "July 21, 2026 — Feature: Gemini Enterprise: Gemini 3.6 Flash available in the Global region (строки 935-946)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 67,
+   "начало": "July 21, 2026 — Announcement: Gemini Enterprise: Gemini 3.5 Flash removal in the Global region (строки 947-954)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 68,
+   "начало": "July 16, 2026 — Feature: Gemini Enterprise: Bring Your Own Identity (BYOID) for mobile apps (GA) (строки 956-963)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 69,
+   "начало": "July 16, 2026 — Change: Gemini Notebook Enterprise: NotebookLM Enterprise renamed to Gemini Notebook Enterprise (строки 964-972)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 70,
+   "начало": "July 15, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Preview) (строки 974-993)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 71,
+   "начало": "July 15, 2026 — Feature: Gemini Enterprise: Action-filtering support for Jira Data Center data stores (Preview) (строки 994-998)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 72,
+   "начало": "July 14, 2026 — Announcement: Gemini Enterprise: Idea Generation agent removal (строки 1000-1009)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 73,
+   "начало": "July 09, 2026 — Announcement: Gemini Enterprise: Enable skills feature management toggle is (строки 1011-1022)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 74,
+   "начало": "July 09, 2026 — Feature: Gemini Enterprise: AlphaEvolve algorithm optimization agent (GA) (строки 1023-1035)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 75,
+   "начало": "July 07, 2026 — Feature: Gemini Enterprise: Managed organization policy constraints for data connectors (GA) (строки 1037-1048)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 76,
+   "начало": "July 06, 2026 — Feature: Gemini Enterprise: Support for Japan and UK regions (GA with allowlist) (строки 1050-1061)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "June 30, 2026 — Feature: Gemini Enterprise: Filters for Microsoft SharePoint data stores are generally available (GA) (строки 1063-1068)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 78,
+   "начало": "June 30, 2026 — Feature: Gemini Enterprise: Support for India and Singapore regions (GA with (строки 1069-1082)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 79,
+   "начало": "June 29, 2026 — Feature: Gemini Enterprise: Jira Data Center federated data store (строки 1084-1089)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 80,
+   "начало": "June 29, 2026 — Feature: Gemini Enterprise: Action-filtering support for Microsoft SharePoint and OneDrive data stores (Preview) (строки 1090-1095)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 81,
+   "начало": "June 29, 2026 — Feature: Gemini Enterprise: HubSpot federated data store (строки 1096-1101)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 82,
+   "начало": "June 26, 2026 — Feature: Gemini Enterprise: Confluence Data Center federated data store (строки 1103-1108)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 83,
+   "начало": "June 25, 2026 — Feature: Gemini Enterprise: Distribute licenses in the Google Cloud console (строки 1110-1117)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 84,
+   "начало": "June 25, 2026 — Feature: Gemini Enterprise: Governance for agents and MCP servers (строки 1118-1130)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 85,
+   "начало": "June 25, 2026 — Feature: Gemini Enterprise: New data store and support for new actions (Public Preview) (строки 1131-1151)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 86,
+   "начало": "June 25, 2026 — Feature: Gemini Enterprise: View agent identity (строки 1152-1159)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 87,
+   "начало": "June 24, 2026 — Feature: Gemini Enterprise: Observability for agents (GA) (строки 1161-1173)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 88,
+   "начало": "June 23, 2026 — Feature: Gemini Enterprise: Observability settings for Deep Research agents (Preview) (строки 1175-1185)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 89,
+   "начало": "June 18, 2026 — Feature: Gemini Enterprise: Workflow agents (GA with allowlist) (строки 1187-1201)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 90,
+   "начало": "June 17, 2026 — Feature: Gemini Enterprise: Create and manage skills (GA with allowlist) (строки 1203-1219)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "June 17, 2026 — Feature: Gemini Enterprise: Gemini Enterprise app for Slack (строки 1220-1229)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 92,
+   "начало": "June 16, 2026 — Feature: Gemini Enterprise: ServiceNow data store actions and federation (строки 1231-1240)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 93,
+   "начало": "June 15, 2026 — Feature: Gemini Enterprise: New data stores and support for new actions (Public Preview) (строки 1242-1260)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 94,
+   "начало": "June 15, 2026 — Feature: Gemini Enterprise: Observability settings for individual agents (Preview) (строки 1261-1271)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 95,
+   "начало": "June 12, 2026 — Feature: Gemini Enterprise mobile app: General availability (GA) for Google Identity users (строки 1273-1277)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 96,
+   "начало": "June 09, 2026 — Feature: Gemini Enterprise: Share agents with Google Groups (строки 1279-1285)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 97,
+   "начало": "June 08, 2026 — Announcement: Gemini Enterprise: Gemini 3.5 Flash feature management toggle is no longer available after June 16, 2026 (строки 1287-1292)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 98,
+   "начало": "June 05, 2026 — Feature: Gemini Enterprise: Asana data store (Preview) (строки 1294-1300)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 99,
+   "начало": "June 05, 2026 — Announcement: Gemini Enterprise: Administrator control for Gemini 3.5 Flash (строки 1301-1309)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 100,
+   "начало": "June 03, 2026 — Feature: Gemini Enterprise: DRZ and MLP compliance in the EU for Google NotebookLM Enterprise (строки 1311-1320)",
+   "итог": "E-62-2"
+  },
+  {
+   "n": 101,
+   "начало": "June 02, 2026 — Feature: Gemini Enterprise: Gemini 3 pro image (Nano Banana Pro) and Gemini 3.1 flash image (Nano Banana 2) for image generation (строки 1322-1335)",
+   "итог": "E-62-3, E-62-4, E-62-5, E-62-6"
+  },
+  {
+   "n": 102,
+   "начало": "June 01, 2026 — Announcement: Gemini Enterprise: Agent Designer migration to Gemini 3.5 Flash (строки 1337-1345)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 103,
+   "начало": "June 01, 2026 — Feature: Gemini Enterprise: Create and edit documents and slides in Canvas (строки 1346-1357)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 104,
+   "начало": "May 28, 2026 — Feature: Gemini Enterprise: Release of Core Assistant (General Availability) and new Trace and Metrics information for Core Assistant (Preview) (строки 1359-1371)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 105,
+   "начало": "May 27, 2026 — Feature: Gemini Enterprise: Slack data store (строки 1373-1380)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 106,
+   "начало": "May 26, 2026 — Feature: Gemini Enterprise: Filter support for Google Sites data stores (Preview) (строки 1382-1387)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 107,
+   "начало": "May 26, 2026 — Deprecated: Gemini Enterprise: Gemini Enterprise assist is deprecated (строки 1388-1392)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 108,
+   "начало": "May 26, 2026 — Feature: Gemini Enterprise: Data store for PagerDuty (Preview) (строки 1393-1397)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 109,
+   "начало": "May 26, 2026 — Announcement: Gemini Enterprise: Administrator control for Gemini 3.5 Flash (строки 1398-1408)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 110,
+   "начало": "May 20, 2026 — Deprecated: Google NotebookLM Enterprise: The Podcast API is deprecated (строки 1410-1414)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 111,
+   "начало": "May 19, 2026 — Feature: Gemini Enterprise: Data store for Crossbeam (Preview) (строки 1416-1419)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 112,
+   "начало": "May 19, 2026 — Feature: Gemini Enterprise: Use Gemini 3.5 Flash (GA) (строки 1420-1429)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 113,
+   "начало": "May 19, 2026 — Feature: Google NotebookLM Enterprise: Create slide decks and infographics (строки 1430-1434)",
+   "итог": "E-62-7"
+  },
+  {
+   "n": 114,
+   "начало": "May 17, 2026 — Feature: Gemini Enterprise: Agent Designer defaults to Gemini 3.1 Pro for US (строки 1436-1453)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 115,
+   "начало": "May 15, 2026 — Feature: Gemini Enterprise: New data stores (Public Preview) (строки 1455-1467)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 116,
+   "начало": "May 13, 2026 — Announcement: Correction: Gemini Enterprise: EU region for Gemini 3 models is coming soon (строки 1469-1473)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 117,
+   "начало": "May 12, 2026 — Feature: Gemini Enterprise: Data store for GitLab (Preview) (строки 1475-1478)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 118,
+   "начало": "May 08, 2026 — Feature: Gemini Enterprise: Box data store using data federation (строки 1480-1485)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 119,
+   "начало": "May 07, 2026 — Feature: Gemini Enterprise: Data store for Google Sites (Preview) (строки 1487-1491)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 120,
+   "начало": "May 07, 2026 — Security: Gemini Enterprise: Multiple API endpoints for the Integration Platform were inadvertently exposed. (строки 1492-1494)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 121,
+   "начало": "May 06, 2026 — Feature: Gemini Enterprise: New data stores (Public Preview) (строки 1496-1504)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 122,
+   "начало": "April 30, 2026 — Announcement: Gemini Enterprise: Access to Gemini 3.1 Pro and 3 Flash in Limited Availability (строки 1506-1516)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 123,
+   "начало": "April 28, 2026 — Feature: Gemini Enterprise: Custom MCP server data stores (строки 1518-1527)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 124,
+   "начало": "April 21, 2026 — Feature: Gemini Enterprise: View agent identity (Preview) (строки 1529-1536)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 125,
+   "начало": "April 21, 2026 — Feature: Gemini Enterprise: Register agents using A2UI and A2A with Gemini Enterprise (Preview) (строки 1537-1545)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 126,
+   "начало": "April 20, 2026 — Feature: Gemini Enterprise: Request access to Google Cloud Marketplace agents (Preview) (строки 1547-1554)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 127,
+   "начало": "April 20, 2026 — Feature: Gemini Enterprise: Register ADK agents hosted on Vertex AI Agent Engine (строки 1555-1563)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 128,
+   "начало": "April 15, 2026 — Feature: Gemini Enterprise: Use Gemini Enterprise Admin and Gemini Enterprise User IAM roles (строки 1565-1572)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 129,
+   "начало": "April 14, 2026 — Feature: Gemini Enterprise: New data stores (Public Preview) (строки 1574-1592)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 130,
+   "начало": "April 13, 2026 — Feature: Gemini Enterprise: Enhanced filtering for Google Chat data stores (Preview) (строки 1594-1597)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 131,
+   "начало": "April 07, 2026 — Feature: Gemini Enterprise: Dropbox federated data store (строки 1599-1602)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 132,
+   "начало": "April 03, 2026 — Feature: Gemini Enterprise: Jira and Confluence federated data stores (строки 1604-1610)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 133,
+   "начало": "April 02, 2026 — Feature: Google NotebookLM Enterprise: Autocomplete for email addresses and group (строки 1612-1626)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 134,
+   "начало": "April 01, 2026 — Feature: Gemini Enterprise: Data connector request count metric (строки 1628-1634)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 135,
+   "начало": "March 31, 2026 — Feature: Gemini Enterprise: Support for new actions (строки 1636-1644)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 136,
+   "начало": "March 31, 2026 — Feature: Gemini Enterprise: Connect Salesforce data using data federation (строки 1645-1650)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 137,
+   "начало": "March 31, 2026 — Feature: Gemini Enterprise: Federated connector error logs in Logs Explorer (строки 1651-1657)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 138,
+   "начало": "March 31, 2026 — Feature: Gemini Enterprise and Google NotebookLM Enterprise: BSI C5:2020 compliance (строки 1658-1661)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 139,
+   "начало": "March 30, 2026 — Feature: Gemini Enterprise: Include cross-domain documents feature for Google Drive (Preview) (строки 1663-1669)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 140,
+   "начало": "March 26, 2026 — Feature: Gemini Enterprise: Chat with files in the Google Drive connector (строки 1671-1677)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 141,
+   "начало": "March 24, 2026 — Feature: Gemini Enterprise: Enhanced filtering for Microsoft OneDrive data stores (Preview) (строки 1679-1682)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 142,
+   "начало": "March 24, 2026 — Feature: Gemini Enterprise: Get insights with the Data Insights agent (GA with allowlist) (строки 1683-1689)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 143,
+   "начало": "March 23, 2026 — Feature: Gemini Enterprise: Data connector for Docusign (Preview) (строки 1691-1695)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 144,
+   "начало": "March 17, 2026 — Feature: Gemini Enterprise: Grace period for license deactivation (строки 1697-1704)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 145,
+   "начало": "March 13, 2026 — Feature: Gemini Enterprise: Enhanced filtering for Microsoft SharePoint data stores (Preview) (строки 1706-1713)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 146,
+   "начало": "March 13, 2026 — Feature: Gemini Enterprise: Search generated images and videos (строки 1714-1721)",
+   "итог": "E-62-8"
+  },
+  {
+   "n": 147,
+   "начало": "March 12, 2026 — Feature: Gemini Enterprise: Observability settings (Preview) (строки 1723-1731)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 148,
+   "начало": "March 11, 2026 — Feature: Gemini Enterprise: Configure retention period for assistant chats (строки 1733-1737)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 149,
+   "начало": "March 11, 2026 — Feature: Gemini Enterprise: Support for new actions (строки 1738-1745)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 150,
+   "начало": "March 11, 2026 — Feature: Gemini Enterprise: Data connector for Google Chat (Preview) (строки 1746-1750)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 151,
+   "начало": "March 04, 2026 — Feature: Gemini Enterprise: Data connector for GitHub (Preview) (строки 1752-1756)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 152,
+   "начало": "March 04, 2026 — Feature: Gemini Enterprise: Support for new actions (Preview) (строки 1757-1766)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 153,
+   "начало": "March 04, 2026 — Fixed: Gemini Enterprise: Agent Designer model configuration fix (строки 1767-1771)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 154,
+   "начало": "March 04, 2026 — Feature: Gemini Enterprise: Chat with files in the Microsoft Outlook and Box connectors (строки 1772-1779)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 155,
+   "начало": "March 03, 2026 — Feature: Gemini Enterprise: Export assistant responses to Google Docs and Google Sheets (строки 1781-1786)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 156,
+   "начало": "March 03, 2026 — Feature: Gemini Enterprise: Use Veo 3.1 for video generation (строки 1787-1795)",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 157,
+   "начало": "February 26, 2026 — Feature: Gemini Enterprise: Support for new data stores (Preview) (строки 1797-1802)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 158,
+   "начало": "February 23, 2026 — Feature: Gemini Enterprise: Share agents created using Agent Designer (строки 1804-1815)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 159,
+   "начало": "February 23, 2026 — Feature: Gemini Enterprise: Sharing controls for employee-made agents (строки 1816-1822)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 160,
+   "начало": "February 23, 2026 — Feature: Gemini Enterprise: Share Google-made agents, custom agents, and employee-made (строки 1823-1836)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 161,
+   "начало": "February 19, 2026 — Feature: Gemini Enterprise: Use Gemini 3.1 Pro (Preview) (строки 1838-1850)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 162,
+   "начало": "February 19, 2026 — Feature: Gemini Enterprise: Support for new actions (строки 1851-1858)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 163,
+   "начало": "February 19, 2026 — Feature: Gemini Enterprise: Chat with files in the Microsoft SharePoint connector (строки 1859-1865)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 164,
+   "начало": "February 12, 2026 — Feature: Gemini Enterprise mobile app: Standard and Plus editions (GA with allowlist) (строки 1867-1875)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 165,
+   "начало": "February 09, 2026 — Feature: Gemini Enterprise: Data connector for Notion (Preview) (строки 1877-1881)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 166,
+   "начало": "February 06, 2026 — Feature: Gemini Enterprise: Data connector for Linear (Preview) (строки 1883-1887)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 167,
+   "начало": "February 06, 2026 — Feature: Gemini Enterprise: Welcome emails (строки 1888-1893)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 168,
+   "начало": "February 06, 2026 — Security: Gemini Enterprise: Security update (строки 1894-1913)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 169,
+   "начало": "February 04, 2026 — Feature: Gemini Enterprise and Google NotebookLM Enterprise: Usage audit logs available in Cloud Logging (строки 1915-1921)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 170,
+   "начало": "February 02, 2026 — Feature: Fine-grained access control for individual Gemini Enterprise apps (строки 1923-1929)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 171,
+   "начало": "January 30, 2026 — Feature: Gemini Enterprise: Support for new actions (строки 1931-1936)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 172,
+   "начало": "January 28, 2026 — Feature: Gemini Enterprise: Support for new data stores (Preview) (строки 1938-1945)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 173,
+   "начало": "January 27, 2026 — Change: Gemini Enterprise: Autocomplete turned off in the chat box (строки 1947-1952)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 174,
+   "начало": "January 26, 2026 — Announcement: Gemini Enterprise: Visual flow builder for existing agents (строки 1954-1961)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 175,
+   "начало": "January 23, 2026 — Feature: Gemini Enterprise: New actions in the unified view (строки 1963-1974)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 176,
+   "начало": "January 12, 2026 — Announcement: Agent Designer is generally available (GA). (строки 1976-1977)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 177,
+   "начало": "December 29, 2025 — Feature: Semantic search in sessions (строки 1979-1983)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 178,
+   "начало": "December 23, 2025 — Feature: Gemini Enterprise: Manage actions using the updated flow (Preview) (строки 1985-1993)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 179,
+   "начало": "December 19, 2025 — Feature: Gemini Enterprise: New actions available for data stores in the unified view (Preview) (строки 1995-2004)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 180,
+   "начало": "December 19, 2025 — Feature: Gemini Enterprise: Schedule agent executions for custom agents in Agent Designer (Preview) (строки 2005-2010)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 181,
+   "начало": "December 17, 2025 — Feature: Gemini Enterprise: View the pooled quota usage (Preview) (строки 2012-2016)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 182,
+   "начало": "December 17, 2025 — Feature: Gemini Enterprise: Use Gemini 3 Flash (Preview) (строки 2017-2024)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 183,
+   "начало": "December 15, 2025 — Feature: Gemini Enterprise: Get user-level metrics (Preview) (строки 2026-2031)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 184,
+   "начало": "December 12, 2025 — Feature: Gemini Enterprise: Unified data source creation and action flow (строки 2033-2051)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 185,
+   "начало": "December 11, 2025 — Feature: Gemini Enterprise: Monitor metrics for Google NotebookLM Enterprise (строки 2053-2058)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 186,
+   "начало": "December 11, 2025 — Feature: Google NotebookLM Enterprise: Gemini model upgrade (Preview) (строки 2059-2062)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 187,
+   "начало": "December 08, 2025 — Feature: Gemini Enterprise: Share custom agents registered with Gemini Enterprise (Preview) (строки 2064-2071)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 188,
+   "начало": "December 05, 2025 — Feature: Gemini Enterprise: Add agents from Google Cloud Marketplace (Preview) (строки 2073-2080)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 189,
+   "начало": "November 21, 2025 — Feature: Gemini Enterprise: Use Nano Banana Pro for image generation (Preview) (строки 2082-2090)",
+   "итог": "E-62-9"
+  },
+  {
+   "n": 190,
+   "начало": "November 21, 2025 — Feature: Gemini Enterprise: Save information as memories (строки 2091-2096)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 191,
+   "начало": "November 21, 2025 — Feature: Gemini Enterprise: Manage agents (Preview) (строки 2097-2102)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 192,
+   "начало": "November 19, 2025 — Feature: Gemini Enterprise: Enhanced Agent Designer with visual flow builder (Preview) (строки 2104-2115)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 193,
+   "начало": "November 18, 2025 — Feature: Gemini Enterprise: Use Gemini 3 Pro (Preview) (строки 2117-2124)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 194,
+   "начало": "November 18, 2025 — Feature: Gemini Enterprise: View generated images and videos (строки 2125-2129)",
+   "итог": "E-62-10"
+  },
+  {
+   "n": 195,
+   "начало": "November 18, 2025 — Feature: Gemini Enterprise: Microsoft OneDrive @mentions (строки 2130-2132)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 196,
+   "начало": "November 18, 2025 — Feature: Gemini Enterprise: Sources from model (строки 2133-2135)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 197,
+   "начало": "November 17, 2025 — Feature: Gemini Enterprise: Register ADK and A2A agents (строки 2137-2145)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 198,
+   "начало": "November 17, 2025 — Change: Gemini Enterprise: Authorize assistant actions from the chat box (строки 2146-2151)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 199,
+   "начало": "November 05, 2025 — Feature: Gemini Enterprise: Layout parser support for DOCX, PPTX, and XLSX (строки 2153-2159)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 200,
+   "начало": "October 31, 2025 — Feature: Gemini Enterprise: Hidden model thinking details (строки 2161-2164)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 201,
+   "начало": "October 21, 2025 — Change: Gemini Enterprise: Select individual connector instance (строки 2166-2170)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 202,
+   "начало": "October 09, 2025 — Announcement: Gemini Enterprise: Google Agentspace is part of Gemini Enterprise (строки 2172-2176)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 203,
+   "начало": "October 02, 2025 — Feature: Gemini Enterprise: Generate images using Nano Banana (строки 2178-2181)",
+   "итог": "E-62-11"
+  },
+  {
+   "n": 204,
+   "начало": "October 02, 2025 — Feature: Gemini Enterprise: Configure prompt chips (строки 2182-2187)",
+   "итог": "ничего: не про генерацию картинок (подсказки-промпты для чата в целом)"
+  },
+  {
+   "n": 205,
+   "начало": "September 26, 2025 — Feature: Gemini Enterprise: Manage image and video generation on the web app (строки 2189-2191)",
+   "итог": "E-62-12"
+  },
+  {
+   "n": 206,
+   "начало": "September 24, 2025 — Change: Gemini Enterprise: Interface updates (строки 2193-2197)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 207,
+   "начало": "September 24, 2025 — Feature: Gemini Enterprise: Knowledge base filter for catalog entities in ServiceNow connectors (строки 2198-2205)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 208,
+   "начало": "September 23, 2025 — Breaking: Gemini Enterprise: Change in ACLs for incidents in ServiceNow (строки 2207-2210)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 209,
+   "начало": "September 15, 2025 — Feature: Gemini Enterprise: Real-time sync (Preview) (строки 2212-2220)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 210,
+   "начало": "September 15, 2025 — Feature: Gemini Enterprise and Google NotebookLM Enterprise: Model Armor (строки 2221-2225)",
+   "итог": "ничего: не про генерацию картинок специально (фильтрация промптов/ответов в целом)"
+  },
+  {
+   "n": 211,
+   "начало": "September 11, 2025 — Change: Gemini Enterprise: Interface updates (строки 2227-2232)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 212,
+   "начало": "September 05, 2025 — Feature: Google NotebookLM Enterprise: Notebook creation and management using the API (строки 2234-2239)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 213,
+   "начало": "August 28, 2025 — Feature: Google NotebookLM Enterprise: Generate podcasts using the Podcast API (GA with allowlist) (строки 2241-2248)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 214,
+   "начало": "August 21, 2025 — Breaking: Full sync in SharePoint connector to avoid duplicate documents (строки 2250-2253)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 215,
+   "начало": "August 18, 2025 — Feature: Gemini Enterprise: Export analytics (строки 2255-2259)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 216,
+   "начало": "August 12, 2025 — Feature: Gemini Enterprise: Custom starter prompts for no-code agents (строки 2261-2265)",
+   "итог": "ничего: не про генерацию картинок (подсказки-промпты для чата в целом)"
+  },
+  {
+   "n": 217,
+   "начало": "August 01, 2025 — Feature: Gemini Enterprise: Agent for Idea Generation (Preview) (строки 2267-2272)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 218,
+   "начало": "August 01, 2025 — Feature: Gemini Enterprise: The Data agent (Private preview) (строки 2273-2275)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 219,
+   "начало": "July 31, 2025 — Announcement: Gemini Enterprise: General Availability (строки 2277-2279)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 220,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Enhanced analytics (строки 2280-2286)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 221,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Data stores that connect third-party data sources using (строки 2287-2294)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 222,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Alerts for third-party data stores (строки 2295-2299)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 223,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Personalization (строки 2300-2308)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 224,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Agent for Deep Research (строки 2309-2314)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 225,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Actions for Gmail and Google Calendar (строки 2315-2320)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 226,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Data stores that connect Google data sources (строки 2321-2327)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 227,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: App user interface and chat box updates (строки 2328-2337)",
+   "итог": "ничего: не про генерацию картинок (обновления интерфейса: агенты, инструменты)"
+  },
+  {
+   "n": 228,
+   "начало": "Create images. (строка 2338, пункт списка той же записи)",
+   "итог": "E-62-13"
+  },
+  {
+   "n": 229,
+   "начало": "Create DOCX, PDF, and PPTX … Create a calendar event (строки 2339-2373)",
+   "итог": "ничего: не про генерацию картинок (документы, видео Veo 3 Fast, файлы, поиск, действия)"
+  },
+  {
+   "n": 230,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Data stores that connect third-party data sources using data ingestion (строки 2374-2383)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 231,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Assist agent facilitates onboarding (строки 2384-2387)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 232,
+   "начало": "July 31, 2025 — Feature: Gemini Enterprise: Chrome Enterprise integration (строки 2388-2392)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 233,
+   "начало": "July 24, 2025 — Change: Gemini Enterprise: Rename Outlook events entity to calendar for federated search (строки 2394-2396)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 234,
+   "начало": "July 16, 2025 — Feature: Google NotebookLM Enterprise: Discover sources (строки 2398-2401)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 235,
+   "начало": "July 16, 2025 — Feature: Google NotebookLM Enterprise: Share notebooks with groups (строки 2402-2405)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 236,
+   "начало": "July 16, 2025 — Feature: Google NotebookLM Enterprise: Send email notifications when sharing a notebook (строки 2406-2410)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 237,
+   "начало": "July 15, 2025 — Deprecated: Gemini Enterprise: LLM system instructions removed from the app's assistant configurations (строки 2412-2414)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 238,
+   "начало": "July 14, 2025 — Feature: Gemini Enterprise: Optimized data ingestion (строки 2416-2418)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 239,
+   "начало": "July 11, 2025 — Change: Gemini Enterprise: Automatically fetch ServiceNow service portal URL suffix (строки 2420-2423)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 240,
+   "начало": "July 09, 2025 — Announcement: Gemini Enterprise: Quotas (строки 2425-2433)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 241,
+   "начало": "July 02, 2025 — Feature: Gemini Enterprise: Search for an exact match (строки 2435-2438)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 242,
+   "начало": "July 02, 2025 — Deprecated: Gemini Enterprise: \"Sync since\" parameter removed for data connectors (строки 2439-2444)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 243,
+   "начало": "July 02, 2025 — Feature: Gemini Enterprise: Automatically generate a title for new conversations or prompts (строки 2445-2447)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 244,
+   "начало": "June 26, 2025 — Feature: Gemini Enterprise: gemini-2.5-flash/answer_gen/v1 model (строки 2449-2453)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 245,
+   "начало": "June 25, 2025 — Feature: Gemini Enterprise: Full and incremental sync schedules for data connectors (строки 2455-2461)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 246,
+   "начало": "June 17, 2025 — Feature: Gemini Enterprise: Model selector on the web app search bar (строки 2463-2468)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 247,
+   "начало": "June 16, 2025 — Change: Gemini Enterprise: Custom search (строки 2470-2472)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 248,
+   "начало": "June 13, 2025 — Feature: Gemini Enterprise: App-level feature management (строки 2474-2483)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 249,
+   "начало": "June 12, 2025 — Change: Gemini Enterprise: Gemini model for chatting with the assistant (EU) (строки 2485-2487)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 250,
+   "начало": "June 11, 2025 — Fixed: Gemini Enterprise: Dialogflow agents in Agentspace assistants (строки 2489-2492)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 251,
+   "начало": "June 11, 2025 — Feature: Gemini Enterprise: No-code agents (строки 2493-2498)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 252,
+   "начало": "June 10, 2025 — Feature: Gemini Enterprise: Chat about uploaded content (строки 2500-2504)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 253,
+   "начало": "June 10, 2025 — Feature: Gemini Enterprise: No-code agents (строки 2505-2508)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 254,
+   "начало": "June 10, 2025 — Change: Gemini Enterprise: Gemini model for chatting with the assistant (строки 2509-2513)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 255,
+   "начало": "June 09, 2025 — Feature: Gemini Enterprise: Skip layout parsing for types of HTML content (строки 2515-2518)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 256,
+   "начало": "June 03, 2025 — Feature: Gemini Enterprise: Adjust autocomplete settings to reduce risk of PII leaks (Preview) (строки 2520-2523)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 257,
+   "начало": "May 30, 2025 — Feature: Gemini Enterprise: Suggest meeting times for Outlook Calendar events (строки 2525-2530)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 258,
+   "начало": "May 12, 2025 — Feature: Gemini Enterprise: Identity mapping (строки 2532-2536)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 259,
+   "начало": "May 08, 2025 — Change: Gemini Enterprise: App tier is determined by license type (строки 2538-2542)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 260,
+   "начало": "May 05, 2025 — Feature: Search notebooks from Gemini Enterprise apps (Preview) (строки 2544-2547)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 261,
+   "начало": "April 09, 2025 — Feature: Gemini Enterprise: Agents gallery (строки 2549-2552)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 262,
+   "начало": "April 09, 2025 — Feature: Gemini Enterprise: Agent Designer (Private Preview) (строки 2553-2559)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 263,
+   "начало": "April 09, 2025 — Feature: Gemini Enterprise: Idea Generation (Private Preview) (строки 2560-2566)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 264,
+   "начало": "April 02, 2025 — Feature: Google NotebookLM Enterprise: Support for Access Transparency is GA (строки 2568-2571)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 265,
+   "начало": "April 02, 2025 — Feature: Google NotebookLM Enterprise: CMEK for US and EU (GA) and CMEK with EKM and HSM (GA with allowlist) (строки 2572-2576)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 266,
+   "начало": "April 02, 2025 — Feature: Gemini Enterprise: VPC Service Controls are GA (строки 2577-2580)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 267,
+   "начало": "March 31, 2025 — Feature: Gemini Enterprise: CMEK for third-party connectors (строки 2582-2587)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 268,
+   "начало": "March 31, 2025 — Feature: Google NotebookLM Enterprise: HIPAA compliance (строки 2588-2591)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 269,
+   "начало": "March 25, 2025 — Feature: Gemini Enterprise: Return corpus images in answers and with follow-ups (Preview) (строки 2593-2597)",
+   "итог": "ничего: не генерация: возврат существующих изображений из хранилища в ответах"
+  },
+  {
+   "n": 270,
+   "начало": "March 25, 2025 — Feature: Gemini Enterprise: Generate and return charts in answers and with follow-ups (Preview) (строки 2598-2601)",
+   "итог": "ничего: не генерация изображений моделью: графики из данных в ответах API"
+  },
+  {
+   "n": 271,
+   "начало": "March 04, 2025 — Feature: Gemini Enterprise: Document-relevance scores for search results (строки 2603-2606)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 272,
+   "начало": "February 27, 2025 — Feature: Gemini Enterprise: Personalize responses from the answer method (строки 2608-2612)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 273,
+   "начало": "February 07, 2025 — Feature: Gemini Enterprise: Integration of NotebookLM Enterprise (строки 2614-2621)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 274,
+   "начало": "February 07, 2025 — Feature: Google NotebookLM Enterprise: Add content from Agentspace Enterprise to notebooks (строки 2622-2628)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 275,
+   "начало": "February 07, 2025 — Feature: Google NotebookLM Enterprise: Multi-regions (строки 2629-2634)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 276,
+   "начало": "January 31, 2025 — Change: Google NotebookLM Enterprise: License and user management (строки 2636-2639)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 277,
+   "начало": "Send feedback Except as otherwise noted … Last updated 2026-09-22 UTC. (строки 2640-2642)",
+   "итог": "ничего: подвал документации (лицензия CC BY 4.0, Google Developers Site Policies, дата обновления — использованы для официальности и даты)"
+  },
+  {
+   "n": 278,
+   "начало": "Products and pricing … 한국어 (строки 2643-2684)",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud)"
+  },
+  {
+   "n": 279,
+   "начало": "60 встроенных <code> в html (роли IAM, метрики, атрибуты)",
+   "итог": "ничего: код без промптов, не про генерацию картинок"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-62-1",
+   "вид": "факт",
+   "утверждение_en": "As of Aug 31, 2026, Gemini 3.1 Flash Image (Nano Banana 2) for image generation is generally available in the us and eu multi-regions of Gemini Enterprise.",
+   "цитата": "Gemini 3.1 Flash image (Nano Banana 2) for image generation is generally\navailable in the us and eu multi-regions.",
+   "источник_цитаты": "txt",
+   "раздел": "August 31, 2026 — Gemini Enterprise: Gemini 3.1 Flash image available in US and EU multi-regions",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-08-31",
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылки: Manage features on the web app; Data residency for Gemini Enterprise."
+  },
+  {
+   "код": "E-62-2",
+   "вид": "ограничение",
+   "утверждение_en": "In Gemini NotebookLM Enterprise (EU), Studio features such as slide deck, infographic and video overview are not ML-processing (MLP) compliant, unlike adding and chatting with sources.",
+   "цитата": "However, the\nDiscover Sources feature and Studio features, such as audio overview, slide\ndeck, infographic, video overview, mind map, and reports, are not MLP\ncompliant.",
+   "источник_цитаты": "txt",
+   "раздел": "June 03, 2026 — Gemini Enterprise: DRZ and MLP compliance in the EU for Google NotebookLM Enterprise",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-03",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Косвенно про генерацию визуалов (инфографика, слайды); модель не названа. Данные для инфографики в EU могут обрабатываться вне региона."
+  },
+  {
+   "код": "E-62-3",
+   "вид": "факт",
+   "утверждение_en": "As of June 2, 2026, Gemini 3.1 Flash Image (Nano Banana 2) and Gemini 3 Pro Image (Nano Banana Pro) are generally available for image generation in the Gemini Enterprise app.",
+   "цитата": "Gemini 3.1 flash image (Nano Banana 2) and Gemini 3 pro image\n(gemini-3.0-pro-image) are generally available (GA) in Gemini Enterprise app.",
+   "источник_цитаты": "txt",
+   "раздел": "June 02, 2026 — Gemini Enterprise: Gemini 3 pro image (Nano Banana Pro) and Gemini 3.1 flash image (Nano Banana 2) for image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-02",
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-62-4",
+   "вид": "факт",
+   "утверждение_en": "In this release note the Nano Banana Pro model ID is written as 'gemini-3.0-pro-image'.",
+   "цитата": "(gemini-3.0-pro-image)",
+   "источник_цитаты": "txt",
+   "раздел": "June 02, 2026 — Gemini Enterprise: Gemini 3 pro image (Nano Banana Pro) and Gemini 3.1 flash image (Nano Banana 2) for image generation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Расходится с ID «gemini-3-pro-image»; на странице в другом месте модель названа «Gemini 3 Pro Image» (строки 2084, 2087). Возможна опечатка Google — не использовать как ID без сверки."
+  },
+  {
+   "код": "E-62-5",
+   "вид": "ограничение",
+   "утверждение_en": "At GA (June 2, 2026) both Nano Banana Pro and Nano Banana 2 are turned off by default in the Gemini Enterprise app and available only in the Global region; an administrator enables them in the feature controls.",
+   "цитата": "Gemini 3 pro image (Nano Banana Pro): Turned off by default and is only available in the\nGlobal region.\nGemini 3.1 flash image (Nano Banana 2): Turned off by default and is only available in the\nGlobal region.",
+   "источник_цитаты": "txt",
+   "раздел": "June 02, 2026 — Gemini Enterprise: Gemini 3 pro image (Nano Banana Pro) and Gemini 3.1 flash image (Nano Banana 2) for image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)"
+   ],
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-02",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Для NB2 ограничение «только Global» снято 2026-08-31 (E-62-1); для NB Pro более поздней записи нет."
+  },
+  {
+   "код": "E-62-6",
+   "вид": "факт",
+   "утверждение_en": "If an administrator turned on Nano Banana 2 during its Public Preview, it remains turned on after GA.",
+   "цитата": "If an administrator turned on this model during\nits Public Preview, it remains turned on in GA in the\nGemini Enterprise app.",
+   "источник_цитаты": "txt",
+   "раздел": "June 02, 2026 — Gemini Enterprise: Gemini 3 pro image (Nano Banana Pro) and Gemini 3.1 flash image (Nano Banana 2) for image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-02",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Запись о Public Preview Nano Banana 2 на этой странице отсутствует."
+  },
+  {
+   "код": "E-62-7",
+   "вид": "факт",
+   "утверждение_en": "Gemini NotebookLM Enterprise can create slide decks and infographics (GA, May 19, 2026); usage limits apply.",
+   "цитата": "You can create slide decks and infographics using\nGoogle NotebookLM Enterprise. This feature is generally available (GA).\nFor more information on the usage limits, see Usage limits.",
+   "источник_цитаты": "txt",
+   "раздел": "May 19, 2026 — Google NotebookLM Enterprise: Create slide decks and infographics",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-19",
+   "тема": [
+    "продукт_ui",
+    "лимиты_квоты"
+   ],
+   "заметка": "Модель генерации не названа; числа лимитов — только по ссылке."
+  },
+  {
+   "код": "E-62-8",
+   "вид": "факт",
+   "утверждение_en": "Users can search their generated images and videos in the Gemini Enterprise assistant and directly in the Library (GA, March 13, 2026).",
+   "цитата": "You can search your generated images and videos in the Gemini Enterprise\nassistant. You can also search for items directly in the Library.",
+   "источник_цитаты": "txt",
+   "раздел": "March 13, 2026 — Gemini Enterprise: Search generated images and videos",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-13",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-62-9",
+   "вид": "инструкция",
+   "утверждение_en": "From Nov 21, 2025, Nano Banana Pro (Gemini 3 Pro Image) is available in Public Preview in Gemini Enterprise; to make it available, an admin must select 'Gemini 3 Pro Image (Preview)' in the 'Enable image generation' feature control.",
+   "цитата": "You can use Nano Banana Pro (Gemini 3 Pro Image) in Public Preview with\nGemini Enterprise for image generation. To make this available to users in your\nGemini Enterprise app, a Gemini Enterprise\nadmin must select Gemini 3 Pro Image (Preview) in the\nEnable image generation feature control.",
+   "источник_цитаты": "txt",
+   "раздел": "November 21, 2025 — Gemini Enterprise: Use Nano Banana Pro for image generation (Preview)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)"
+   ],
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-11-21",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Заменено GA-записью 2026-06-02 (E-62-3, E-62-5)."
+  },
+  {
+   "код": "E-62-10",
+   "вид": "факт",
+   "утверждение_en": "Users can view chats and download generated images and videos in the Library (Nov 18, 2025).",
+   "цитата": "You can view chats and download your generated images and videos using the Library.",
+   "источник_цитаты": "txt",
+   "раздел": "November 18, 2025 — Gemini Enterprise: View generated images and videos",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-11-18",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-62-11",
+   "вид": "факт",
+   "утверждение_en": "From Oct 2, 2025, image generation and editing with Nano Banana (Gemini 2.5 Flash Image) is generally available in Gemini Enterprise across the Global, EU and US multi-regions.",
+   "цитата": "Image generation and editing with Nano Banana (Gemini 2.5 Flash Image) is generally available (GA) in Gemini Enterprise across Global, EU, and US multi-regions.",
+   "источник_цитаты": "txt",
+   "раздел": "October 02, 2025 — Gemini Enterprise: Generate images using Nano Banana",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana / Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Ссылка «Generate an image» → /gemini/enterprise/docs/assistant-analyze#generate_an_image."
+  },
+  {
+   "код": "E-62-12",
+   "вид": "инструкция",
+   "утверждение_en": "Image and video generation are enabled by default in the Agentspace (Gemini Enterprise) web app; to turn them off, admins go to Configurations > Feature Management and turn off 'Enable video generation' and 'Enable image generation'.",
+   "цитата": "By default, image and video generation are enabled in the Agentspace web app. To turn off these features, admins must navigate to the Configurations > Feature Management tab, and turn off the Enable video generation and Enable image generation options.",
+   "источник_цитаты": "txt",
+   "раздел": "September 26, 2025 — Gemini Enterprise: Manage image and video generation on the web app",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-26",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "На 2025-09-26 — включено по умолчанию; ср. E-62-5 (NB Pro/NB2 на GA выключены по умолчанию)."
+  },
+  {
+   "код": "E-62-13",
+   "вид": "факт",
+   "утверждение_en": "Since the July 31, 2025 chat box update, users can create images from the Gemini Enterprise (Agentspace) chat box.",
+   "цитата": "Create images.",
+   "источник_цитаты": "txt",
+   "раздел": "July 31, 2025 — Gemini Enterprise: App user interface and chat box updates",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-07-31",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Пункт списка «Chat box and conversations». Модель не названа."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-62-14",
+   "вид": "факт",
+   "утверждение_en": "Chronology of image models in Gemini Enterprise per this page: Oct 2, 2025 Nano Banana (Gemini 2.5 Flash Image) GA in Global/EU/US; Nov 21, 2025 Nano Banana Pro in Public Preview; June 2, 2026 Nano Banana Pro and Nano Banana 2 GA, off by default, Global only; Aug 31, 2026 Nano Banana 2 GA in us/eu multi-regions. No later entry extends Nano Banana Pro beyond Global.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana / Gemini 2.5 Flash Image)",
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-62-11, E-62-9, E-62-3, E-62-5, E-62-1",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "Судьба Nano Banana (2.5) после GA новых моделей на странице не описана."
+  },
+  {
+   "код": "E-62-15",
+   "вид": "объяснение",
+   "утверждение_en": "Default state of image generation differs over time: in Sept 2025 image generation was on by default in the web app, while at GA in June 2026 Nano Banana Pro and Nano Banana 2 are off by default and must be enabled by an admin via feature controls.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro; в тексте также «gemini-3.0-pro-image»)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-62-12, E-62-5, E-62-9",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Разные переключатели: общий «Enable image generation» (2025) и выбор конкретной модели в нём (с 2025-11)."
+  }
+ ],
+ "противоречия_внутри": [
+  "Модель Nano Banana Pro названа в записи 2026-06-02 как «gemini-3.0-pro-image» (строка 1325), а в записи 2025-11-21 — «Gemini 3 Pro Image» (строки 2084, 2087); общепринятый ID — gemini-3-pro-image.",
+  "Подвал: «Last updated 2026-09-22 UTC», но на странице есть записи, датированные September 29, 2026 (и снимок сделан до этой даты) — даты записей и дата обновления не согласуются."
+ ],
+ "не_сказано": [
+  "Цены, квоты и лимиты на генерацию изображений в Gemini Enterprise — не приведены (для NotebookLM — только ссылка «Usage limits»).",
+  "SynthID/водяные знаки/C2PA для изображений Gemini Enterprise не упомянуты.",
+  "Разрешения, соотношения сторон, промпты — не упомянуты.",
+  "Была ли Nano Banana (2.5 Flash Image) выведена или заменена после GA Nano Banana Pro/2 — не сказано.",
+  "Отдельной записи о Public Preview Nano Banana 2 нет, хотя запись GA на неё ссылается (E-62-6).",
+  "Расширение Nano Banana Pro за пределы Global региона — не описано."
+ ],
+ "сомнения": [
+  "В поле партии дата «September 29, 2026» — это дата самой новой записи, а не публикации страницы; «Last updated 2026-09-22».",
+  "ID «gemini-3.0-pro-image» (E-62-4) — вероятно опечатка Google; как ID не использовать без сверки с документацией моделей.",
+  "Страница продуктовая (UI Gemini Enterprise), не API Gemini; переносить ограничения регионов и умолчаний на Gemini API/Vertex AI нельзя.",
+  "Записи про NotebookLM (E-62-2, E-62-7) касаются визуалов (инфографика, слайды) без названия модели — отнесены к генерации изображений условно."
+ ]
+}

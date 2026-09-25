@@ -1,0 +1,315 @@
+{
+ "id": 114,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/get-token-count",
+ "заголовок": "Use the Count Tokens API  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('we recommend that you use the integrated tokenizer of the Agent Platform SDK')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "How-to Google Cloud по countTokens API на Agent Platform: заметка о приблизительности подсчёта мультимодальных токенов (по media_resolution), рекомендация пользоваться встроенным токенизатором SDK, список поддерживаемых моделей (включая четыре image-модели), подсчёт в консоли Agent Studio, примеры кода Python/Go/Node.js/Java/REST для текста и для видео, бесплатность и лимит 3000 запросов/мин. Изображения фигурируют только в списке моделей и в заметке про оценку токенов входа; примеров с картинками нет.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "gemini-2.5-flash-image",
+  "gemini-3.5-flash и gemini-2.5-flash (в коде)",
+  "Omni, 3.8/3.7/3.6 Flash и др. в списке"
+ ],
+ "структура": [
+  "вступление + Note + Important",
+  "Supported models",
+  "Get the token count for a prompt (Console, Python, Go, Node.js, Java, REST, ответ)",
+  "Example for text with image or video",
+  "Pricing and quota",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in), строки 1-55"
+  },
+  {
+   "n": 2,
+   "начало": "Overview Studio Agents Models Notebooks",
+   "итог": "ничего: обвязка сайта — вкладки и левое меню раздела Agents (ADK, RAG Engine, Tokenizer, Vector Search, Agent Runtime, Sandbox, Govern, Optimize, Troubleshooting) и повтор меню продуктов, строки 56-387; меню отличается от страницы id 47 (раздел Agents, а не Models), прочитано целиком, про картинки ничего"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Use the Count Tokens API', 'Stay organized'), строки 388-396"
+  },
+  {
+   "n": 4,
+   "начало": "This page shows you how",
+   "итог": "ничего: вводная (как получить число токенов промпта через countTokens), строки 397-398"
+  },
+  {
+   "n": 5,
+   "начало": "Note: Token counts for multimodal",
+   "итог": "E-114-1"
+  },
+  {
+   "n": 6,
+   "начало": "Important: Instead of using the",
+   "итог": "E-114-2"
+  },
+  {
+   "n": 7,
+   "начало": "Supported models The following multimodal",
+   "итог": "E-114-3 (текстовые модели списка — ничего)"
+  },
+  {
+   "n": 8,
+   "начало": "Note:Agentic video understanding isn't supported",
+   "итог": "ничего: не про картинки (agentic video understanding), строки 428-429"
+  },
+  {
+   "n": 9,
+   "начало": "To learn more about model",
+   "итог": "ничего: ссылка на versions and lifecycle, строки 430-431"
+  },
+  {
+   "n": 10,
+   "начало": "Get the token count for",
+   "итог": "ничего: вводная фраза, строки 432-433"
+  },
+  {
+   "n": 11,
+   "начало": "Important: The input format for",
+   "итог": "E-114-4"
+  },
+  {
+   "n": 12,
+   "начало": "Console To get the token",
+   "итог": "E-114-5 (шаги консоли строки 436-448)"
+  },
+  {
+   "n": 13,
+   "начало": "Python Install pip install --upgrade",
+   "итог": "ничего: код без промпта для картинок (count_tokens для текста на gemini-3.5-flash), строки 449-456"
+  },
+  {
+   "n": 14,
+   "начало": "Go Learn how to install",
+   "итог": "ничего: код без промпта для картинок (текст, gemini-2.5-flash), строки 457-463"
+  },
+  {
+   "n": 15,
+   "начало": "Node.js Install npm install @google/genai",
+   "итог": "ничего: код без промпта для картинок (текст), строки 464-471"
+  },
+  {
+   "n": 16,
+   "начало": "Java Learn how to install",
+   "итог": "ничего: код без промпта для картинок (текст), строки 472-478"
+  },
+  {
+   "n": 17,
+   "начало": "REST To get the token",
+   "итог": "ничего: плейсхолдеры (LOCATION, PROJECT_ID, MODEL_ID, ROLE, TEXT) и тело запроса только с текстом, строки 479-518"
+  },
+  {
+   "n": 18,
+   "начало": "To send your request, choose",
+   "итог": "ничего: код без промпта (curl, PowerShell), строки 517-556"
+  },
+  {
+   "n": 19,
+   "начало": "You should receive a JSON",
+   "итог": "ничего: пример ответа для текста (totalTokens, totalBillableCharacters, promptTokensDetails modality TEXT), строки 557-568"
+  },
+  {
+   "n": 20,
+   "начало": "Example for text with image",
+   "итог": "ничего: код без промпта для картинок — несмотря на заголовок 'text with image or video', все примеры (Python, Go, Node.js, Java, REST) используют только видео pixel8.mp4, строки 569-608"
+  },
+  {
+   "n": 21,
+   "начало": "Pricing and quota There is",
+   "итог": "E-114-6"
+  },
+  {
+   "n": 22,
+   "начало": "What's next Learn how to",
+   "итог": "ничего: ссылки 'What's next', строки 612-617"
+  },
+  {
+   "n": 23,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 618-620"
+  },
+  {
+   "n": 24,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 621-665"
+  },
+  {
+   "n": 25,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-114-7"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-114-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Token counts for multimodal inputs (images, video, audio) are an estimation based on the chosen media_resolution, so the countTokens result may not match the final consumed tokens; accurate billing usage is only available after execution in the response's usage_metadata.",
+   "цитата": "Note: Token counts for multimodal inputs (images, video, audio) are an\nestimation based on the chosen media_resolution. As such, the result from\nthe countTokens API call may not match the final consumed tokens. The\naccurate usage for billing is only available after execution within the\nresponse's usage_metadata.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление (Note)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Касается входных изображений (в т.ч. референсов) — модели в этой заметке не названы."
+  },
+  {
+   "код": "E-114-2",
+   "вид": "приём",
+   "утверждение_en": "Instead of the countTokens API, Google recommends using the integrated tokenizer of the Agent Platform SDK to get the token count.",
+   "цитата": "Important: Instead of using the countTokens API, we recommend that you use\nthe integrated tokenizer of the Agent Platform SDK for getting the token count.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление (Important)",
+   "модели": [
+    "все модели из списка поддерживаемых countTokens (включая 4 image-модели) — правило общее"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-114-3",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-114-3",
+   "вид": "факт",
+   "утверждение_en": "The multimodal models that support getting an estimate of the prompt token count include the image models Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite), Gemini 3.1 Flash Image, Gemini 3 Pro Image and Gemini 2.5 Flash Image.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nGemini 3.1 Flash-Lite\nGemini 3.1 Flash Image\nGemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; 2.5 Flash Image — из того же списка (строка 426)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Список под 'Click to expand supported models'; также Omni, 3.8/3.7/3.6/3.5 Flash, 3.5 Flash-Lite, 3.1 Pro preview, 3.1 Flash-Lite, 3 Flash preview, 2.5 Pro/Flash-Lite/Flash."
+  },
+  {
+   "код": "E-114-4",
+   "вид": "факт",
+   "утверждение_en": "The input format for CountTokens depends on the model used; each input format is the same as the Predict input format.",
+   "цитата": "Important: The input format for CountTokens depends on the model you use. Each\ninput format is the same as the Predict input format.",
+   "источник_цитаты": "txt",
+   "раздел": "Get the token count for a prompt",
+   "модели": [
+    "все модели из списка поддерживаемых countTokens (включая 4 image-модели) — правило общее"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-114-3",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-114-5",
+   "вид": "факт",
+   "утверждение_en": "In Agent Studio (Open Freeform or Open Chat), the token count is calculated and displayed as you type in the Prompt pane and includes tokens in any input files; the Prompt tokenizer's 'Token ID to text' view does not support media tokens.",
+   "цитата": "The number of tokens is calculated and displayed as you type in the Prompt pane. It includes the number of tokens in any input files.",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "все модели из списка поддерживаемых countTokens (включая 4 image-модели) — правило общее"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-114-3",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "лимиты_квоты"
+   ],
+   "заметка": "Вторая часть — строка 446: 'Media tokens aren't supported.'"
+  },
+  {
+   "код": "E-114-6",
+   "вид": "лимит",
+   "утверждение_en": "There is no charge or quota restriction for using the CountTokens API; its maximum quota is 3000 requests per minute.",
+   "цитата": "There is no charge or quota restriction for using the CountTokens API. The\nmaximum quota for the CountTokens API is 3000 requests per minute.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing and quota",
+   "модели": [
+    "все модели из списка поддерживаемых countTokens (включая 4 image-модели) — правило общее"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-114-3",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Внутри фразы: 'no quota restriction' и тут же 'maximum quota … 3000 requests per minute' (см. противоречия)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-114-7",
+   "вид": "факт",
+   "утверждение_en": "For image models, countTokens gives only an estimate of PROMPT (input) tokens; the page offers no way to estimate tokens of generated image output, and all its code samples count text or video input, never images.",
+   "цитата": "The following multimodal models support getting an estimate of the prompt token\ncount:",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-114-1, E-114-3 и кодовых примеров (html PRE 2-25: только текст и видео pixel8.mp4)",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Для оценки стоимости генерации картинок (выходные токены изображения) страница ничего не даёт."
+  }
+ ],
+ "противоречия_внутри": [
+  "Pricing and quota: 'There is no charge or quota restriction' и в следующей фразе 'The maximum quota for the CountTokens API is 3000 requests per minute'.",
+  "Раздел 'Example for text with image or video' содержит только примеры с видео (pixel8.mp4), изображения нет.",
+  "Java-пример выдаёт totalTokens=16707, Python/Go — 16252 для того же видео (разные модели/тексты промпта: 'this video' vs 'the video')."
+ ],
+ "не_сказано": [
+  "Как посчитать токены для запроса с референс-изображениями к image-модели и сколько токенов стоит одна входная картинка (отсылка только к media_resolution).",
+  "Можно ли оценить токены выходного изображения до генерации.",
+  "Меняется ли подсчёт для image-моделей при разных media_resolution."
+ ],
+ "сомнения": [
+  "Общие единицы E-114-2, E-114-4, E-114-5, E-114-6 отнесены к image-моделям только через список поддерживаемых моделей (E-114-3)."
+ ]
+}

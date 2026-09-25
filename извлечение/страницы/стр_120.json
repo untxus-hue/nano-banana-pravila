@@ -1,0 +1,910 @@
+{
+ "id": 120,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images",
+ "заголовок": "Generate images using text prompts with Imagen on Vertex AI  |  Generative AI on Vertex AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-18 UTC (подвал; meta published_time/datePublished нет); в тексте срок миграции June 30, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('We recommend updating your model endpoints before June 30, 2026')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "How-to старой документации Vertex AI (баннер 'no longer being updated') по генерации картинок из текста моделями Imagen 3/4: предупреждение о выводе из эксплуатации всех Imagen-эндпоинтов с миграцией на gemini-2.5-flash-image до 30.06.2026; список text-to-image моделей; предупреждение про imagen-4.0-fast + enhanced prompts; шаги консоли Media Studio с примером промпта и водяным знаком; пример Gen AI SDK (generate_images, image_size 2K); REST predict с подробным списком опциональных параметров (addWatermark/SynthID, aspectRatio 5 форматов, enhancePrompt, RAI reason, safety attributes, mimeType, compressionQuality, personGeneration, safetySetting, seed, storageUri) и примеры ответа, включая поле enhanced prompt. Для Nano Banana — только как цель миграции.",
+ "модели_на_странице": [
+  "imagen-3.0-generate-002",
+  "imagen-3.0-generate-001",
+  "imagen-3.0-fast-generate-001",
+  "imagen-4.0-generate-001",
+  "imagen-4.0-fast-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagegeneration@002…@006",
+  "imagetext@001",
+  "imagen-3.0-capability-001/002",
+  "imagen-product-recontext-preview-06-30",
+  "Imagen 2 (в подписи)",
+  "gemini-2.5-flash-image (замена)"
+ ],
+ "структура": [
+  "баннер",
+  "Caution + таблица Discontinued endpoints",
+  "вступление (модели)",
+  "Before you begin (дублирован)",
+  "Set up authentication",
+  "Generate images with text: Important, Console, Python, REST (параметры, опциональные параметры, запрос, curl/PowerShell, ответы)",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in, вкладки Vertex AI/Generative AI on Vertex AI), строки 1-74"
+  },
+  {
+   "n": 2,
+   "начало": "Discover Overview of Generative AI",
+   "итог": "ничего: обвязка сайта — левое меню Generative AI on Vertex AI (в т.ч. заголовки Image generation with Gemini / Imagen, Configure aspect ratio, Omit content using a negative prompt, Generate deterministic images, Prompt and image attribute guide — без содержания) и повтор меню продуктов, строки 75-573; прочитано целиком"
+  },
+  {
+   "n": 3,
+   "начало": "Vertex AI documentation is no",
+   "итог": "E-120-28"
+  },
+  {
+   "n": 4,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок, 'Stay organized'), строки 577-586"
+  },
+  {
+   "n": 5,
+   "начало": "Caution: The following table describes",
+   "итог": "E-120-1 (таблица строк 590-604)"
+  },
+  {
+   "n": 6,
+   "начало": "You can use Imagen on",
+   "итог": "E-120-2"
+  },
+  {
+   "n": 7,
+   "начало": "For more information about writing",
+   "итог": "ничего: ссылки на prompt guide, model card, Vertex AI Studio, Colab, строки 614-618"
+  },
+  {
+   "n": 8,
+   "начало": "Before you begin Sign in",
+   "итог": "ничего: не про генерацию картинок (настройка проекта, биллинг, включение API; блок дублирован дважды: строки 620-648 и 649-672)"
+  },
+  {
+   "n": 9,
+   "начало": "Set up authentication for your",
+   "итог": "ничего: не про генерацию картинок (аутентификация Console/Python/REST; gcloud — html PRE 0), строки 673-703"
+  },
+  {
+   "n": 10,
+   "начало": "Generate images with text You",
+   "итог": "E-120-3"
+  },
+  {
+   "n": 11,
+   "начало": "Important:imagen-4.0-fast-generate-001 may generate undesireable",
+   "итог": "E-120-4"
+  },
+  {
+   "n": 12,
+   "начало": "Console 1. In the Google",
+   "итог": "E-120-5 (строки 711-726; ссылка сырым HTML — html PRE 1)"
+  },
+  {
+   "n": 13,
+   "начало": "In the Write your prompt",
+   "итог": "E-120-6"
+  },
+  {
+   "n": 14,
+   "начало": "For more information about writing",
+   "итог": "ничего: ссылка на Prompt and image attribute guide, строки 730-733"
+  },
+  {
+   "n": 15,
+   "начало": "A digital watermark is automatically",
+   "итог": "E-120-7"
+  },
+  {
+   "n": 16,
+   "начало": "You can select an image",
+   "итог": "E-120-7 (бейдж Digital watermark)"
+  },
+  {
+   "n": 17,
+   "начало": "Image detail view of a",
+   "итог": "E-120-8"
+  },
+  {
+   "n": 18,
+   "начало": "Python Install pip install --upgrade",
+   "итог": "ничего: установка SDK и переменные окружения (html PRE 2-3), строки 742-748"
+  },
+  {
+   "n": 19,
+   "начало": "In this sample you call",
+   "итог": "ничего: пояснение к примеру (устаревшее описание ImageGenerationModel/show() — см. противоречия), строки 749-754"
+  },
+  {
+   "n": 20,
+   "начало": "fromgoogleimportgenaifromgoogle.genai.typesimportGenerateImagesConfigclient=genai.Client()# TODO(developer):",
+   "итог": "E-120-9, E-120-10 (html PRE 4)"
+  },
+  {
+   "n": 21,
+   "начало": "REST For more information about",
+   "итог": "ничего: ссылки на Imagen API (endpoints.predict, VisionGenerativeModel*), строки 756-762"
+  },
+  {
+   "n": 22,
+   "начало": "Before using any of the",
+   "итог": "ничего: REGION, PROJECT_ID, MODEL_VERSION — не про картинки/ссылки, строки 763-773"
+  },
+  {
+   "n": 23,
+   "начало": "TEXT_PROMPT: The text prompt that",
+   "итог": "E-120-11"
+  },
+  {
+   "n": 24,
+   "начало": "IMAGE_COUNT: The number of images",
+   "итог": "E-120-12"
+  },
+  {
+   "n": 25,
+   "начало": "Additional optional parameters Use the",
+   "итог": "E-120-13 (html PRE 5)"
+  },
+  {
+   "n": 26,
+   "начало": "ADD_WATERMARK: boolean. Optional. Whether",
+   "итог": "E-120-14, E-120-15 (часть про seed)"
+  },
+  {
+   "n": 27,
+   "начало": "ASPECT_RATIO: string. Optional. A",
+   "итог": "E-120-16"
+  },
+  {
+   "n": 28,
+   "начало": "ENABLE_PROMPT_REWRITING: boolean. Optional. A",
+   "итог": "E-120-17"
+  },
+  {
+   "n": 29,
+   "начало": "INCLUDE_RAI_REASON: boolean. Optional. Whether",
+   "итог": "E-120-18"
+  },
+  {
+   "n": 30,
+   "начало": "INCLUDE_SAFETY_ATTRIBUTES: boolean. Optional. Whether",
+   "итог": "E-120-19"
+  },
+  {
+   "n": 31,
+   "начало": "MIME_TYPE: string. Optional. The",
+   "итог": "E-120-20"
+  },
+  {
+   "n": 32,
+   "начало": "COMPRESSION_QUALITY: integer. Optional. Only",
+   "итог": "E-120-21"
+  },
+  {
+   "n": 33,
+   "начало": "PERSON_SETTING: string. Optional. The",
+   "итог": "E-120-22"
+  },
+  {
+   "n": 34,
+   "начало": "SAFETY_SETTING: string. Optional. A",
+   "итог": "E-120-23"
+  },
+  {
+   "n": 35,
+   "начало": "SEED_NUMBER: integer. Optional. Any",
+   "итог": "E-120-15"
+  },
+  {
+   "n": 36,
+   "начало": "OUTPUT_STORAGE_URI: string. Optional. The",
+   "итог": "E-120-24"
+  },
+  {
+   "n": 37,
+   "начало": "HTTP method and URL: POST",
+   "итог": "E-120-25 (html PRE 6-7)"
+  },
+  {
+   "n": 38,
+   "начало": "To send your request, choose",
+   "итог": "ничего: код без промпта (curl, PowerShell; html PRE 8-9), строки 883-922"
+  },
+  {
+   "n": 39,
+   "начало": "The following sample response is",
+   "итог": "E-120-26 (html PRE 10)"
+  },
+  {
+   "n": 40,
+   "начало": "If you use a model",
+   "итог": "E-120-27 (html PRE 11)"
+  },
+  {
+   "n": 41,
+   "начало": "What's next Read articles about",
+   "итог": "ничего: ссылки на статьи (developer's guide Imagen 3, generative media tools, Custom Gems, Google DeepMind Imagen 3), строки 944-953"
+  },
+  {
+   "n": 42,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-18 UTC), строки 954-956"
+  },
+  {
+   "n": 43,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 957-1002"
+  },
+  {
+   "n": 44,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-120-29, E-120-30, E-120-31, E-120-32"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-120-1",
+   "вид": "предупреждение",
+   "утверждение_en": "The listed image generation endpoints (imagegeneration@002-@006, imagetext@001, imagen-3.0-capability-001/002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/002, imagen-4.0-fast/generate/ultra-generate-001) are deprecated, each with recommended migration to gemini-2.5-flash-image; Google recommends updating model endpoints before June 30, 2026 to avoid service disruption.",
+   "цитата": "Caution: The following table describes image generation endpoints that\nare deprecated and their replacements. We recommend updating your model\nendpoints before June 30, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "Caution (таблица Discontinued endpoints)",
+   "модели": [
+    "imagegeneration@002…@006",
+    "imagetext@001",
+    "imagen-3.0-*",
+    "imagen-4.0-*",
+    "gemini-2.5-flash-image (замена)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо; модели — из таблицы строк 590-604",
+   "дата_единицы": "2026-06-30 (срок миграции)",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Та же таблица, что на странице id 112. Все модели, документированные этой страницей, в ней же объявлены устаревшими."
+  },
+  {
+   "код": "E-120-2",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI can generate new images from a text prompt via the Google Cloud console and the Vertex AI API; text-to-image is supported by imagen-3.0-generate-002, imagen-3.0-generate-001, imagen-3.0-fast-generate-001, imagen-4.0-generate-001, imagen-4.0-fast-generate-001 and imagen-4.0-ultra-generate-001.",
+   "цитата": "The following models support generating images from text prompts:\nimagen-3.0-generate-002\nimagen-3.0-generate-001\nimagen-3.0-fast-generate-001\nimagen-4.0-generate-001\nimagen-4.0-fast-generate-001\nimagen-4.0-ultra-generate-001",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-3",
+   "вид": "факт",
+   "утверждение_en": "You can generate novel images using only descriptive text as an input.",
+   "цитата": "You can generate novel images using only descriptive text as an input.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images with text",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-4",
+   "вид": "предупреждение",
+   "утверждение_en": "imagen-4.0-fast-generate-001 may generate undesirable results if the prompt is complex and enhanced prompts are used; to fix this, avoid 'Help me write' in the Google Cloud console, or set enhancePrompt to false.",
+   "цитата": "Important:imagen-4.0-fast-generate-001 may generate undesireable\nresults if the prompt is complex and you use enhanced prompts. To fix this,\navoid using Help me write in Google Cloud console, or set enhancePrompt to\nfalse.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images with text (Important)",
+   "модели": [
+    "imagen-4.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Орфография источника 'undesireable' сохранена. Сложный промпт + переписывание промпта → плохой результат у fast-модели."
+  },
+  {
+   "код": "E-120-5",
+   "вид": "инструкция",
+   "утверждение_en": "In the console: Vertex AI > Media Studio, click Imagen; optionally in Settings choose Model, Aspect ratio, Number of results (1 to 4) and Output resolution, and a Region under Advanced options; enter a text prompt describing the images in 'Write your prompt' and click Generate.",
+   "цитата": "Optional: In the Settings pane, configure the following settings:\nModel: Choose a model from the available options.",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо; шаги строки 712-733",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Консольная ссылка на Media Studio в .txt попала сырым HTML (строка 714)."
+  },
+  {
+   "код": "E-120-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Console example prompt describing the image to generate: 'small boat on water in the morning watercolor illustration'.",
+   "цитата": "small boat on water in the morning\nwatercolor illustration",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Разбор: объект (small boat) + среда (on water) + время суток (in the morning) + медиум/стиль (watercolor illustration). Без запятых, без технических параметров, одна фраза."
+  },
+  {
+   "код": "E-120-7",
+   "вид": "факт",
+   "утверждение_en": "In the Google Cloud console a digital watermark is automatically added to generated images and cannot be disabled; watermarked images show a 'Digital watermark' badge in the Image detail window.",
+   "цитата": "A digital watermark is automatically added to generated images. You can't\ndisable digital watermark for image generation using the Google Cloud console.",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Бейдж — строка 737: 'Watermarked images contain a local_policeDigital watermark badge.'"
+  },
+  {
+   "код": "E-120-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Figure caption: an Image detail view of a watermarked image generated with Imagen 2 from the prompt 'small red boat on water in the morning watercolor illustration muted colors'.",
+   "цитата": "small\nred boat on water in the morning watercolor illustration muted\ncolors",
+   "источник_цитаты": "txt",
+   "раздел": "Console (подпись к рисунку)",
+   "модели": [
+    "Imagen 2 (так в подписи)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; alt картинки в html: 'A sample watermarked generated image using text'",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Разбор: тот же каркас, что E-120-6, плюс цвет объекта ('red') и цветовая обработка в конце ('muted colors'). Сгенерировано устаревшей Imagen 2."
+  },
+  {
+   "код": "E-120-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Gen AI SDK sample: client.models.generate_images(model='imagen-4.0-generate-001', prompt='A dog reading a newspaper', config=GenerateImagesConfig(image_size='2K')), then save generated_images[0].image.",
+   "цитата": "A dog reading a newspaper",
+   "источник_цитаты": "txt",
+   "раздел": "Python (Gen AI SDK)",
+   "модели": [
+    "imagen-4.0-generate-001"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; код прочитан по html PRE 4",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Разбор: минимальный промпт 'субъект + действие', без стиля и среды; разрешение задано параметром image_size='2K', не текстом промпта."
+  },
+  {
+   "код": "E-120-10",
+   "вид": "инструкция",
+   "утверждение_en": "In the Gen AI SDK, Imagen generation is called with client.models.generate_images and output size is set through GenerateImagesConfig(image_size=\"2K\").",
+   "цитата": "image=client.models.generate_images(model=\"imagen-4.0-generate-001\",prompt=\"A dog reading a newspaper\",config=GenerateImagesConfig(image_size=\"2K\",),)",
+   "источник_цитаты": "txt",
+   "раздел": "Python (Gen AI SDK)",
+   "модели": [
+    "imagen-4.0-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; сверено с html PRE 4",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "В коде output_file закомментирован, но используется — пример как есть упадёт (см. противоречия)."
+  },
+  {
+   "код": "E-120-11",
+   "вид": "правило",
+   "утверждение_en": "TEXT_PROMPT is the text prompt that guides what images the model generates and is required for both generation and editing.",
+   "цитата": "TEXT_PROMPT: The text prompt that guides what images the model\ngenerates. This field is required for both generation and editing.",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-12",
+   "вид": "лимит",
+   "утверждение_en": "IMAGE_COUNT (sampleCount), the number of images to generate, accepts 1 to 4.",
+   "цитата": "IMAGE_COUNT: The number of images to generate. The accepted range\nof values is 1 to 4.",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "То же в консоли: Number of results 1–4."
+  },
+  {
+   "код": "E-120-13",
+   "вид": "факт",
+   "утверждение_en": "Common optional Imagen parameters in the 'parameters' object include sampleCount, addWatermark, aspectRatio, enhancePrompt, includeRaiReason, includeSafetyAttributes, outputOptions (mimeType, compressionQuality), personGeneration, safetySetting, seed and storageUri; the list is not exhaustive.",
+   "цитата": "This list shows common optional parameters and isn't meant to be exhaustive.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; список параметров — html PRE 5",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-14",
+   "вид": "факт",
+   "утверждение_en": "addWatermark (boolean, optional) enables a watermark; any image generated with it true contains a digital SynthID that can verify a watermarked image; the default is true and must be set to false to disable it.",
+   "цитата": "ADD_WATERMARK: boolean. Optional. Whether to enable a watermark for generated images.\nAny image generated when the field is set to true contains a digital\nSynthID that you can use to verify\na watermarked image.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Дефолт — строка 804: 'If you omit this field, the default value of true is used; you must set the value to false to disable this feature.'"
+  },
+  {
+   "код": "E-120-15",
+   "вид": "правило",
+   "утверждение_en": "The seed (non-negative integer, accepted 1-2147483647) makes output images deterministic — the same seed always yields the same images — but it works only when addWatermark is set to false for models that support digital watermarking.",
+   "цитата": "SEED_NUMBER: integer. Optional. Any non-negative integer you provide to make output\nimages deterministic. Providing the same seed number always results in the same output images. If\nthe model you're using supports digital watermarking, you must set\n\"addWatermark\": false to use this field.\nAccepted integer values: 1 - 2147483647.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Повторено в ADD_WATERMARK: 'You can use the seed field to get deterministic output only when this field is set to false.'"
+  },
+  {
+   "код": "E-120-16",
+   "вид": "лимит",
+   "утверждение_en": "aspectRatio (optional) supports 1:1 (default, square), 3:4 (ads, social media), 4:3 (TV, photography), 16:9 (landscape) and 9:16 (portrait).",
+   "цитата": "ASPECT_RATIO: string. Optional. A generation mode parameter that controls aspect\nratio. Supported ratio values and their intended use:\n1:1 (default, square)\n3:4 (Ads, social media)\n4:3 (TV, photography)\n16:9 (landscape)\n9:16 (portrait)",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Указано назначение каждого формата."
+  },
+  {
+   "код": "E-120-17",
+   "вид": "объяснение",
+   "утверждение_en": "enhancePrompt (optional, default true) uses an LLM-based prompt rewriting feature to deliver higher quality images that better reflect the original prompt's intent; disabling it may impact image quality and prompt adherence.",
+   "цитата": "ENABLE_PROMPT_REWRITING: boolean. Optional. A parameter to use an LLM-based prompt\nrewriting feature to deliver higher quality images that better reflect the original\nprompt's intent. Disabling this feature may impact image quality and\nprompt adherence. Default value: true.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Ср. E-120-4: для imagen-4.0-fast со сложным промптом совет обратный — выключить."
+  },
+  {
+   "код": "E-120-18",
+   "вид": "факт",
+   "утверждение_en": "includeRaiReason (optional, default true) enables the Responsible AI filtered reason code in responses with blocked input or output.",
+   "цитата": "INCLUDE_RAI_REASON: boolean. Optional. Whether to enable the Responsible AI filtered reason\ncode in responses with blocked input or output. Default value:\ntrue.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-19",
+   "вид": "факт",
+   "утверждение_en": "includeSafetyAttributes (optional, default false) returns rounded Responsible AI scores for safety attributes on unfiltered input and output; categories: Death, Harm & Tragedy; Firearms & Weapons; Hate; Health; Illicit Drugs; Politics; Porn; Religion & Belief; Toxic; Violence; Vulgarity; War & Conflict.",
+   "цитата": "INCLUDE_SAFETY_ATTRIBUTES: boolean. Optional. Whether to enable rounded\nResponsible AI scores for a list of safety attributes in responses for unfiltered input and\noutput.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-20",
+   "вид": "факт",
+   "утверждение_en": "outputOptions.mimeType (optional) can be image/jpeg, image/gif, image/png, image/webp, image/bmp, image/tiff or image/vnd.microsoft.icon.",
+   "цитата": "MIME_TYPE: string. Optional. The MIME type of the content of the image. Available\nvalues:\nimage/jpeg\nimage/gif\nimage/png\nimage/webp\nimage/bmp\nimage/tiff\nimage/vnd.microsoft.icon",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В примерах ответа — image/png."
+  },
+  {
+   "код": "E-120-21",
+   "вид": "факт",
+   "утверждение_en": "outputOptions.compressionQuality (optional integer) applies only to JPEG output: values 0 to 100 where a higher number means more compression; default 75.",
+   "цитата": "COMPRESSION_QUALITY: integer. Optional. Only applies to JPEG output\nfiles. The level of detail the model preserves for images generated in JPEG file format. Values:\n0 to 100, where a higher number means more compression. Default:\n75.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Формулировка противоречива: 'level of detail the model preserves' и 'higher number means more compression' (см. противоречия)."
+  },
+  {
+   "код": "E-120-22",
+   "вид": "правило",
+   "утверждение_en": "personGeneration (optional) controls people/face generation: allow_all allows people including minors (default for Imagen 4 generation models, imagen-3.0-capability-001 and imagen-product-recontext-preview-06-30); allow_adult allows adults only, including celebrities (default for all other models); dont_allow disables people or faces.",
+   "цитата": "PERSON_SETTING: string. Optional. The safety setting that controls the type of\npeople or face generation the model allows. The default value is model-dependent.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": [
+    "Imagen 4 generation models",
+    "imagen-3.0-capability-001",
+    "imagen-product-recontext-preview-06-30",
+    "прочие Imagen"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо; значения — строки 844-849",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-23",
+   "вид": "правило",
+   "утверждение_en": "safetySetting (optional) sets safety filter thresholds for generated images: block_low_and_above (highest threshold, most images filtered; previously block_most), block_medium_and_above (default, balanced; previously block_some), block_only_high (fewest blocks, may increase objectionable content; previously block_few).",
+   "цитата": "SAFETY_SETTING: string. Optional. A setting that controls safety filter thresholds\nfor generated images.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо; значения — строки 852-861",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-24",
+   "вид": "факт",
+   "утверждение_en": "storageUri (optional) sets a Cloud Storage bucket for output images; if not provided, base64-encoded image bytes are returned in the response.",
+   "цитата": "OUTPUT_STORAGE_URI: string. Optional. The Cloud Storage bucket to store the output\nimages. If not provided, base64-encoded image bytes are returned in the response.",
+   "источник_цитаты": "txt",
+   "раздел": "REST — Additional optional parameters",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-25",
+   "вид": "инструкция",
+   "утверждение_en": "Via REST, POST to https://REGION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/REGION/publishers/google/models/MODEL_VERSION:predict with body {\"instances\":[{\"prompt\":\"TEXT_PROMPT\"}],\"parameters\":{\"sampleCount\":IMAGE_COUNT}}.",
+   "цитата": "{\n\"instances\": [\n{\n\"prompt\": \"TEXT_PROMPT\"\n}\n],\n\"parameters\": {\n\"sampleCount\": IMAGE_COUNT\n}\n}",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; html PRE 6-7",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Метод endpoints.predict (Imagen API), не generateContent."
+  },
+  {
+   "код": "E-120-26",
+   "вид": "факт",
+   "утверждение_en": "A request with sampleCount 2 returns two prediction objects with base64-encoded image bytes (mimeType image/png in the sample).",
+   "цитата": "The following sample response is for a request with \"sampleCount\":\n2. The response returns two prediction objects, with the generated\nimage bytes base64-encoded.",
+   "источник_цитаты": "txt",
+   "раздел": "REST (ответ)",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; html PRE 10",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-27",
+   "вид": "факт",
+   "утверждение_en": "With a model that supports prompt enhancement, each prediction in the response includes an additional 'prompt' field containing the enhanced prompt used for generation.",
+   "цитата": "If you use a model that supports prompt enhancement, the response includes an\nadditional prompt field with the enhanced prompt used for\ngeneration:",
+   "источник_цитаты": "txt",
+   "раздел": "REST (ответ)",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; html PRE 11",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Позволяет увидеть переписанный промпт."
+  },
+  {
+   "код": "E-120-28",
+   "вид": "предупреждение",
+   "утверждение_en": "Vertex AI documentation is no longer being updated; Vertex AI's services are now part of Gemini Enterprise Agent Platform, whose documentation has the most up-to-date information.",
+   "цитата": "Vertex AI documentation is no longer being updated\nVertex AI's services are now part of Gemini Enterprise Agent Platform. See the most up-to-date information in the Agent Platform documentation.",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Статус страницы: возможна устарелость."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-120-29",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Both natural-language example prompts on the page share one shape: [subject] + [setting] + [time of day] + [medium/style], optionally extended with a colour attribute of the subject and a colour treatment at the end ('small (red) boat on water in the morning watercolor illustration (muted colors)').",
+   "цитата": "red boat on water in the morning watercolor illustration muted",
+   "источник_цитаты": "txt",
+   "раздел": "Console",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-120-6, E-120-8 (и контраст с минимальным E-120-9)",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Страница сама не формулирует шаблон; это общая форма двух её примеров. Разрешение/формат в тексте промпта не пишутся — задаются параметрами (E-120-10, E-120-16)."
+  },
+  {
+   "код": "E-120-30",
+   "вид": "правило",
+   "утверждение_en": "Deterministic (seeded) Imagen output and watermarking are mutually exclusive: watermark (SynthID) is on by default and cannot be disabled in the console, while seed requires addWatermark=false — so reproducible images are only possible via the API with the watermark turned off.",
+   "цитата": "You can use the seed field to get\ndeterministic output only when this field is set to false.",
+   "источник_цитаты": "txt",
+   "раздел": "REST / Console",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-120-7, E-120-14, E-120-15",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-31",
+   "вид": "факт",
+   "утверждение_en": "By default Imagen rewrites prompts with an LLM (enhancePrompt=true), the rewritten prompt can be read back from the response's 'prompt' field, and for imagen-4.0-fast-generate-001 with complex prompts the page advises turning rewriting off.",
+   "цитата": "Default value: true.",
+   "источник_цитаты": "txt",
+   "раздел": "REST",
+   "модели": "Imagen (модели страницы; конкретная модель в этом месте не названа)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-120-4, E-120-17, E-120-27",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-120-32",
+   "вид": "факт",
+   "утверждение_en": "All Imagen text-to-image models this page documents are the same ones it lists as deprecated, with gemini-2.5-flash-image as the recommended replacement; the page gives no equivalent instructions for the replacement.",
+   "цитата": "imagen-4.0-ultra-generate-001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-120-1, E-120-2",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "SEED_NUMBER: 'Any non-negative integer' и 'Accepted integer values: 1 - 2147483647' (0 неотрицателен, но не принимается).",
+  "COMPRESSION_QUALITY: 'The level of detail the model preserves' и 'higher number means more compression' — направление шкалы неоднозначно.",
+  "Python: текст говорит 'call the generate_images method on the ImageGenerationModel… use the show() method', а код использует client.models.generate_images Gen AI SDK без show(); output_file закомментирован, но используется.",
+  "Подпись к рисунку: картинка сгенерирована Imagen 2 на странице про Imagen 3/4.",
+  "Страница учит пользоваться моделями, которые сама же объявляет устаревшими (миграция до 30.06.2026).",
+  "enhancePrompt по умолчанию true и 'disabling may impact quality', но для imagen-4.0-fast при сложном промпте советуется выключить.",
+  "Блок 'Before you begin' продублирован дважды подряд.",
+  "Баннер 'no longer being updated' при 'Last updated 2026-09-18 UTC'."
+ ],
+ "не_сказано": [
+  "Содержание prompt guide / 'Prompt and image attribute guide' — только ссылки.",
+  "Пиксельные размеры для aspect ratio и допустимые значения Output resolution в консоли; в REST-списке параметров нет sampleImageSize (есть только в Python image_size='2K').",
+  "Лимиты длины промпта и язык промпта (в меню есть 'Set text prompt language', здесь нет).",
+  "Какие параметры (seed, personGeneration, safetySetting, addWatermark) доступны у рекомендуемой замены gemini-2.5-flash-image.",
+  "Negative prompt — только в меню ('Omit content using a negative prompt')."
+ ],
+ "сомнения": [
+  "Страница про Imagen (не Nano Banana); извлечено полностью, модели указаны как есть.",
+  "Единицы E-120-11…E-120-24 без явной модели — параметры Imagen API для моделей страницы; модель в месте не названа."
+ ]
+}

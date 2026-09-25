@@ -1,0 +1,1343 @@
+{
+ "id": 41,
+ "url": "https://ai.google.dev/static/api/interactions.openapi.json",
+ "заголовок": "Gemini Interactions API — OpenAPI spec",
+ "дата_в_тексте": "Явной даты нет (\"x-google-revision\": \"0\", \"version\": \"v1beta\"). Косвенно: даты в примерах 2025-11-26 … 2026-08-19, заголовок Api-Revision: 2026-05-20 в примерах кода, агенты с суффиксами -12-2025 / -04-2026 / -05-2026.",
+ "официальность": {
+  "домен": "ai.google.dev (путь /static/api/)",
+  "второй_признак": "текст от лица Google в info.description: «Gemini is our most capable model, built from the ground up to be multimodal»; сервер https://generativelanguage.googleapis.com; упоминания «Google's voice catalog», «Google stores the voice». Копирайта и подвала нет (сырой JSON).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Машиночитаемая OpenAPI 3.0.3-спецификация Gemini Interactions API (v1beta) для разработчиков и генераторов SDK: 20 путей (interactions, agents, environments, credentials, triggers, voices, webhooks) и 184 схемы. Основная масса — агенты, окружения, инструменты, голоса, вебхуки. Про картинки: ImageResponseFormat (aspect_ratio — 14 значений, image_size 512/1K/2K/4K, delivery inline/uri, mime_type только image/jpeg), устаревшие ImageConfig / generation_config.image_config / response_modalities / response_mime_type, ImageContent для входных и выходных картинок (8 MIME-типов, resolution = MediaResolution low/medium/high/ultra_high), ImageDelta в стриминге, картинки в результатах инструментов и в сводках мыслей, image_search в Google Search, перечень моделей (gemini-2.5-flash-image, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image), thinking_level / thinking_summaries / seed в generation_config, учёт токенов по модальностям (пример: картинка на входе = 258 токенов). Примеров запроса на генерацию картинки нет — только пример ImageResponseFormat и пример понимания картинки. Собственные термины: Interaction, steps, ResponseFormat (полиморфный), delivery, MediaResolution, ModalityTokens, search_types, Api-Revision.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image",
+  "gemini-3-pro-image",
+  "nano-banana-pro-preview",
+  "gemini-3.1-flash-image",
+  "gemini-2.5-flash",
+  "gemini-2.5-pro",
+  "gemini-2.5-flash-lite",
+  "gemma-4-26b-a4b-it",
+  "gemma-4-31b-it",
+  "gemini-flash-latest",
+  "gemini-flash-lite-latest",
+  "gemini-pro-latest",
+  "gemini-3-flash-preview",
+  "gemini-3.1-pro-preview",
+  "gemini-3.1-pro-preview-customtools",
+  "gemini-3.1-flash-lite",
+  "gemini-3.5-flash",
+  "gemini-3.6-flash",
+  "gemini-3.7-flash",
+  "gemini-3.8-flash",
+  "lyria-3-clip-preview",
+  "lyria-3-pro-preview",
+  "gemini-robotics-er-1.6-preview",
+  "gemini-robotics-er-2-preview",
+  "gemini-2.5-computer-use-preview-10-2025 (пример ComputerUse)",
+  "агенты: deep-research-pro-preview-12-2025, deep-research-preview-04-2026, deep-research-max-preview-04-2026, antigravity-preview-05-2026"
+ ],
+ "структура": [
+  "openapi / info / servers",
+  "paths (20): upload environment files, agents, credentials, environments, interactions (+ examples и x-codeSamples), interactions/{id}, cancel, triggers, voices, webhooks",
+  "components.parameters / headers",
+  "components.schemas (184)",
+  "securitySchemes / security / x-speakeasy-globals / x-speakeasy-retries"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "{ \"openapi\": \"3.0.3\", \"info\": { \"title\": \"Gemini API\", \"description\": \"The Gemini Interactions API allows developers …\", \"version\": \"v1beta\", \"x-google-revision\": \"0\" }",
+   "итог": "ничего: шапка спецификации (текст от лица Google — признак официальности; «reasoning across text and images» — понимание, не генерация)"
+  },
+  {
+   "n": 2,
+   "начало": "\"servers\": [ generativelanguage.googleapis.com — Global Endpoint ]",
+   "итог": "ничего: общий адрес API"
+  },
+  {
+   "n": 3,
+   "начало": "paths: /upload/{api_version}/environments/{environment}/files/{path} (PUT StartEnvironmentFileUpload)",
+   "итог": "ничего: не про генерацию картинок (файлы окружений агентов)"
+  },
+  {
+   "n": 4,
+   "начало": "paths: /{api_version}/agents, /{api_version}/agents/{id}",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 5,
+   "начало": "paths: /{api_version}/credentials, /{api_version}/credentials/{id}",
+   "итог": "ничего: не про генерацию картинок (учётные данные)"
+  },
+  {
+   "n": 6,
+   "начало": "paths: /{api_version}/environments, /environments/{environment}/files/{path}, /environments/{id}",
+   "итог": "ничего: не про генерацию картинок (окружения)"
+  },
+  {
+   "n": 7,
+   "начало": "paths: /{api_version}/interactions POST CreateInteraction — summary, description, body oneOf(CreateAgentInteractionParams, CreateModelInteractionParams), 4XX/5XX",
+   "итог": "ничего: общая операция (параметры разобраны по схемам ниже)"
+  },
+  {
+   "n": 8,
+   "начало": "POST responses.200.examples: simple, multi_turn, function_calling, deep_research, antigravity, reuse_env",
+   "итог": "ничего: текстовые/агентные примеры ответа"
+  },
+  {
+   "n": 9,
+   "начало": "POST responses.200.examples.multimodal_image (\"Image Input\") — usage: image 258 tokens",
+   "итог": "E-41-38"
+  },
+  {
+   "n": 10,
+   "начало": "POST x-codeSamples simple, multi_turn (sh/python/javascript/java)",
+   "итог": "ничего: текстовые примеры (передача истории шагами — см. E-41-20)"
+  },
+  {
+   "n": 11,
+   "начало": "POST x-codeSamples multimodal_image (sh/python/javascript/java): text \"What is in this picture?\" + image BASE64 image/png",
+   "итог": "E-41-37"
+  },
+  {
+   "n": 12,
+   "начало": "POST x-codeSamples function_calling, deep_research, antigravity, reuse_env, with_sources, custom_agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "paths: /{api_version}/interactions/{id} DELETE / GET (include_input — deprecated, last_event_id, stream) + examples/codeSamples",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "paths: /{api_version}/interactions/{id}/cancel",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "paths: /{api_version}/triggers, /triggers/{id}, /triggers/{trigger_id}/executions",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "paths: /{api_version}/voices, /voices/{voicesId}",
+   "итог": "ничего: не про генерацию картинок (голоса)"
+  },
+  {
+   "n": 17,
+   "начало": "paths: /{api_version}/webhooks, /webhooks/{id}, :ping, :rotateSigningSecret",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 18,
+   "начало": "components.parameters (EnvironmentFile*, api_version, google_genai_user_project) / components.headers",
+   "итог": "ничего: служебные параметры"
+  },
+  {
+   "n": 19,
+   "начало": "Agent, AgentOption, AgentTool, AllowedTools, AllowlistEntry, AntigravityAgentConfig, DeepResearchAgentConfig, DynamicAgentConfig, ListAgentsResponse",
+   "итог": "ничего: не про генерацию картинок (агенты; visualization у Deep Research — не картинки генерации)"
+  },
+  {
+   "n": 20,
+   "начало": "Annotation, PlaceCitation, Places, ReviewSnippet, UrlCitation, SpeechAnnotation, WordInfo, TextAnnotationDelta, FileCitation (кроме media_id)",
+   "итог": "ничего: не про генерацию картинок (аннотации/цитаты)"
+  },
+  {
+   "n": 21,
+   "начало": "FileCitation.media_id: \"Media ID in-case of image citations, if applicable.\"",
+   "итог": "E-41-30"
+  },
+  {
+   "n": 22,
+   "начало": "AudioContent, AudioData, AudioDelta, AudioResponseFormat, SpeakerConfig, SpeechConfig, Pitch, PromptedVoice, ReplicatedVoice, Voice, VoiceType, CreateVoiceRequest, DeleteVoiceResponse, ListVoicesResponse, TranscriptionConfig, TranscriptionMode, SmartTranscriptionMode, VerbatimTranscriptionMode",
+   "итог": "ничего: не про генерацию картинок (аудио, голоса, транскрипция)"
+  },
+  {
+   "n": 23,
+   "начало": "CodeExecution, CodeExecutionCallArguments, CodeExecutionCallDelta, CodeExecutionCallStep, CodeExecutionCallStepArguments, CodeExecutionResultDelta, CodeExecutionResultStep, ComputerUse, FileSearch, FileSearchCallDelta, FileSearchCallStep, FileSearchResult, FileSearchResultDelta, FileSearchResultStep, Function, FunctionCallStep, ArgumentsDelta, GoogleMaps, GoogleMapsCallArguments, GoogleMapsCallDelta, GoogleMapsCallStep, GoogleMapsCallStepArguments, GoogleMapsResult, GoogleMapsResultDelta, GoogleMapsResultItem, GoogleMapsResultPlaces, GoogleMapsResultStep, McpServer, McpServerToolCallDelta, McpServerToolCallStep, UrlContext, UrlContextCallArguments, UrlContextCallDelta, UrlContextCallStep, UrlContextResult, UrlContextResultDelta, UrlContextResultStep, Tool, ToolChoiceConfig (+ x-codeSamples инструментов)",
+   "итог": "ничего: не про генерацию картинок (инструменты; ComputerUse.disabled_safety_policies — политика действий агента, не картинок)"
+  },
+  {
+   "n": 24,
+   "начало": "FunctionResultDelta, FunctionResultStep, McpServerToolResultDelta, McpServerToolResultStep — result: oneOf(array[ImageContent|TextContent], object, string)",
+   "итог": "E-41-29"
+  },
+  {
+   "n": 25,
+   "начало": "GoogleSearch.search_types: web_search / image_search (\"Image bytes are returned.\") + x-codeSamples google_search",
+   "итог": "E-41-27"
+  },
+  {
+   "n": 26,
+   "начало": "GoogleSearchCallStep.search_type (тот же enum) + example; GoogleSearchCallArguments, GoogleSearchCallDelta, GoogleSearchCallStepArguments, GoogleSearchResult, GoogleSearchResultDelta, GoogleSearchResultItem, GoogleSearchResultStep",
+   "итог": "E-41-27 (search_type — повтор); остальное — ничего: общая механика поиска"
+  },
+  {
+   "n": 27,
+   "начало": "GroundingToolCount: google_search = \"Grounding with Google Web Search and Image Search, & Web Grounding for Enterprise.\" / google_maps",
+   "итог": "E-41-28"
+  },
+  {
+   "n": 28,
+   "начало": "Content: oneOf AudioContent, DocumentContent, ImageContent, TextContent, VideoContent",
+   "итог": "E-41-19"
+  },
+  {
+   "n": 29,
+   "начало": "CreateAgentInteractionParams / CreateModelInteractionParams / Interaction — общие поля (agent, agent_config, background, created, environment, environment_id, errors, id, labels, model, previous_interaction_id, service_tier, status, steps, store, stream, system_instruction, tools, updated, usage, webhook_config)",
+   "итог": "ничего: общие поля interaction, не про картинки"
+  },
+  {
+   "n": 30,
+   "начало": "… .input → InteractionsInput",
+   "итог": "E-41-20"
+  },
+  {
+   "n": 31,
+   "начало": "… .response_format: \"Enforces that the generated response is a JSON object …\", oneOf(ResponseFormat, array)",
+   "итог": "E-41-10"
+  },
+  {
+   "n": 32,
+   "начало": "… .response_mime_type (deprecated): \"This is required if response_format is set.\"",
+   "итог": "E-41-13"
+  },
+  {
+   "n": 33,
+   "начало": "… .response_modalities (deprecated): \"The requested modalities of the response (TEXT, IMAGE, AUDIO).\"",
+   "итог": "E-41-11"
+  },
+  {
+   "n": 34,
+   "начало": "… .safety_settings → SafetySetting (схема отсутствует)",
+   "итог": "E-41-41"
+  },
+  {
+   "n": 35,
+   "начало": "… .generation_config → GenerationConfig",
+   "итог": "см. строки GenerationConfig ниже"
+  },
+  {
+   "n": 36,
+   "начало": "Credential, CredentialCreateParams, CredentialUpdateParams, CreateCredentialRequest, UpdateCredentialRequest, EnvironmentVariableConfig, EnvironmentVariableUpdateConfig, HttpBearerConfig, HttpBearerUpdateConfig, OAuth2Config, OAuth2UpdateConfig, InjectionLocation, ListCredentialsResponse",
+   "итог": "ничего: не про генерацию картинок (учётные данные)"
+  },
+  {
+   "n": 37,
+   "начало": "Environment, EnvironmentConfig, EnvironmentFile, EnvironmentNetworkEgressAllowlist, EnvVar, Source, CreateEnvironmentRequest, GetEnvironmentFilesResponse, ListEnvironmentsResponse, UploadEnvironmentFileRequest, UploadEnvironmentFileResponse",
+   "итог": "ничего: не про генерацию картинок (окружения агентов; \"image/png\" в EnvironmentFile.mime_type — пример метаданных файла)"
+  },
+  {
+   "n": 38,
+   "начало": "DocumentContent, DocumentDelta, VideoContent, VideoDelta, MediaProcessing, StaticMediaProcessing, ProcessingCallDelta, ProcessingCallStep, ProcessingResultDelta, ProcessingResultStep",
+   "итог": "ничего: не про генерацию картинок (документы, видео, серверная обработка медиа)"
+  },
+  {
+   "n": 39,
+   "начало": "Empty, Error, ErrorEvent",
+   "итог": "ничего: служебные схемы"
+  },
+  {
+   "n": 40,
+   "начало": "GenerationConfig.image_config (deprecated): \"Configuration for image interaction.\"",
+   "итог": "E-41-8"
+  },
+  {
+   "n": 41,
+   "начало": "GenerationConfig.max_output_tokens, speech_config, stop_sequences, tool_choice, transcription_config, video_config",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 42,
+   "начало": "GenerationConfig.seed: \"Seed used in decoding for reproducibility.\"",
+   "итог": "E-41-26"
+  },
+  {
+   "n": 43,
+   "начало": "GenerationConfig.thinking_level: \"The level of thought tokens that the model should generate.\"",
+   "итог": "E-41-24"
+  },
+  {
+   "n": 44,
+   "начало": "GenerationConfig.thinking_summaries + ThinkingSummaries (auto / none)",
+   "итог": "E-41-25"
+  },
+  {
+   "n": 45,
+   "начало": "ImageConfig (deprecated): aspect_ratio (14 значений), image_size (1K, 2K, 4K, 512)",
+   "итог": "E-41-7"
+  },
+  {
+   "n": 46,
+   "начало": "ImageContent: \"An image content block.\" — data, uri",
+   "итог": "E-41-14"
+  },
+  {
+   "n": 47,
+   "начало": "ImageContent.mime_type (8 форматов)",
+   "итог": "E-41-15"
+  },
+  {
+   "n": 48,
+   "начало": "ImageContent.resolution → MediaResolution",
+   "итог": "E-41-16"
+  },
+  {
+   "n": 49,
+   "начало": "ImageContent.examples (Image)",
+   "итог": "E-41-18"
+  },
+  {
+   "n": 50,
+   "начало": "ImageDelta (data, mime_type, resolution, uri) + StepDeltaData oneOf … ImageDelta …",
+   "итог": "E-41-21"
+  },
+  {
+   "n": 51,
+   "начало": "ImageResponseFormat: \"Configuration for image output format.\", type const image, required [type]",
+   "итог": "E-41-1"
+  },
+  {
+   "n": 52,
+   "начало": "ImageResponseFormat.aspect_ratio (14 значений)",
+   "итог": "E-41-2"
+  },
+  {
+   "n": 53,
+   "начало": "ImageResponseFormat.delivery (inline / uri)",
+   "итог": "E-41-3"
+  },
+  {
+   "n": 54,
+   "начало": "ImageResponseFormat.image_size (512, 1K, 2K, 4K)",
+   "итог": "E-41-4"
+  },
+  {
+   "n": 55,
+   "начало": "ImageResponseFormat.mime_type (image/jpeg)",
+   "итог": "E-41-5"
+  },
+  {
+   "n": 56,
+   "начало": "ImageResponseFormat.examples (Image Output: 16:9, 1K, image/jpeg)",
+   "итог": "E-41-6"
+  },
+  {
+   "n": 57,
+   "начало": "InteractionCompletedEvent, InteractionCreatedEvent, InteractionSseEvent, InteractionSseEventInteraction, InteractionSseStreamEvent, InteractionStatusUpdate, StepDelta, StepStart, StepStop, StepDeltaMetadata, StepDeltaData (прочие варианты)",
+   "итог": "ничего: общая механика стриминга, не про картинки"
+  },
+  {
+   "n": 58,
+   "начало": "ListTriggerExecutionsResponse, ListTriggersResponse, ListWebhooksResponse",
+   "итог": "ничего: служебные ответы списков"
+  },
+  {
+   "n": 59,
+   "начало": "MediaResolution: low, medium, high, ultra_high",
+   "итог": "E-41-17"
+  },
+  {
+   "n": 60,
+   "начало": "Usage (*_tokens_by_modality) + ModalityTokens",
+   "итог": "E-41-39"
+  },
+  {
+   "n": 61,
+   "начало": "Usage.total_thought_tokens",
+   "итог": "E-41-40"
+  },
+  {
+   "n": 62,
+   "начало": "Usage — прочие поля (grounding_tool_count, total_cached_tokens, total_input_tokens, total_output_tokens, total_tokens, total_tool_use_tokens)",
+   "итог": "ничего: общие счётчики (grounding_tool_count — в E-41-28)"
+  },
+  {
+   "n": 63,
+   "начало": "ModelOption — enum: gemini-2.5-flash-image, gemini-3-pro-image, nano-banana-pro-preview, gemini-3.1-flash-image (среди прочих)",
+   "итог": "E-41-31"
+  },
+  {
+   "n": 64,
+   "начало": "ModelOption — описание gemini-2.5-flash-image",
+   "итог": "E-41-32, E-41-33"
+  },
+  {
+   "n": 65,
+   "начало": "ModelOption — описания gemini-3-pro-image / nano-banana-pro-preview / gemini-3.1-flash-image",
+   "итог": "E-41-34, E-41-35"
+  },
+  {
+   "n": 66,
+   "начало": "ModelOption — описания остальных моделей (2.5 Flash/Pro, Gemma 4, *-latest, 3.x Flash, Lyria, Robotics)",
+   "итог": "ничего: не image-модели"
+  },
+  {
+   "n": 67,
+   "начало": "ModelOption — x-speakeasy-unknown-values: allow",
+   "итог": "E-41-36"
+  },
+  {
+   "n": 68,
+   "начало": "ModelOutputStep, UserInputStep, Step (oneOf шагов)",
+   "итог": "ничего: общая структура шагов (содержимое — Content, E-41-19)"
+  },
+  {
+   "n": 69,
+   "начало": "ResponseFormat: oneOf Audio/Image/Text/VideoResponseFormat, object",
+   "итог": "E-41-9"
+  },
+  {
+   "n": 70,
+   "начало": "ResponseModality: text, image, audio, video, document",
+   "итог": "E-41-12"
+  },
+  {
+   "n": 71,
+   "начало": "ServiceTier (flex, standard, priority)",
+   "итог": "ничего: не про генерацию картинок (уровень обслуживания)"
+  },
+  {
+   "n": 72,
+   "начало": "TextContent, TextDelta, TextResponseFormat",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 73,
+   "начало": "ThinkingLevel: minimal, low, medium, high",
+   "итог": "E-41-23"
+  },
+  {
+   "n": 74,
+   "начало": "ThoughtSignatureDelta, ThoughtStep, ThoughtSummaryDelta",
+   "итог": "ничего: общая схема thinking, не специфична для картинок"
+  },
+  {
+   "n": 75,
+   "начало": "ThoughtSummaryContent: oneOf ImageContent, TextContent",
+   "итог": "E-41-22"
+  },
+  {
+   "n": 76,
+   "начало": "Trigger, TriggerCreateParams, TriggerExecution, TriggerUpdate, RunTriggerRequest",
+   "итог": "ничего: не про генерацию картинок (триггеры)"
+  },
+  {
+   "n": 77,
+   "начало": "VideoConfig (text_to_video, image_to_video, reference_to_video, edit, extend)",
+   "итог": "ничего: генерация видео (картинки как вход для видео, не генерация картинок)"
+  },
+  {
+   "n": 78,
+   "начало": "VideoResponseFormat (16:9 / 9:16, 360p-4k)",
+   "итог": "ничего: видео"
+  },
+  {
+   "n": 79,
+   "начало": "Webhook, WebhookConfig, WebhookUpdate, SigningSecret, RotateSigningSecretRequest, RotateSigningSecretResponse, PingWebhookRequest, PingWebhookResponse",
+   "итог": "ничего: не про генерацию картинок (вебхуки; событие video.generated — видео)"
+  },
+  {
+   "n": 80,
+   "начало": "components.securitySchemes googleGenAIAuth (accessToken, apiKey x-goog-api-key, defaultHeaders) / security / x-speakeasy-globals / x-speakeasy-retries (408, 409, 429, 5XX; maxRetries 4)",
+   "итог": "ничего: аутентификация и настройки генератора SDK, не про картинки"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-41-1",
+   "вид": "факт",
+   "утверждение_en": "ImageResponseFormat is the configuration object for image output format; its only required field is type, fixed to \"image\".",
+   "цитата": "      \"ImageResponseFormat\": {\n        \"description\": \"Configuration for image output format.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Поля: aspect_ratio, delivery, image_size, mime_type, type (required=[type]). Входит в ResponseFormat (E-41-9)."
+  },
+  {
+   "код": "E-41-2",
+   "вид": "лимит",
+   "утверждение_en": "The image output aspect_ratio accepts exactly 14 values: 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1.",
+   "цитата": "            \"description\": \"The aspect ratio for the image output.\",\n            \"type\": \"string\",\n            \"enum\": [\n              \"1:1\",\n              \"2:3\",\n              \"3:2\",\n              \"3:4\",\n              \"4:3\",\n              \"4:5\",\n              \"5:4\",\n              \"9:16\",\n              \"16:9\",\n              \"21:9\",\n              \"1:8\",\n              \"8:1\",\n              \"1:4\",\n              \"4:1\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat.aspect_ratio",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Описания значений тривиальны («1:1 aspect ratio.»). Какая модель какие пропорции поддерживает, в схеме не указано; значение по умолчанию не указано."
+  },
+  {
+   "код": "E-41-3",
+   "вид": "факт",
+   "утверждение_en": "Image output delivery can be \"inline\" (image data returned inline in the response) or \"uri\" (image data returned as a URI).",
+   "цитата": "            \"description\": \"The delivery mode for the image output.\",\n            \"type\": \"string\",\n            \"enum\": [\n              \"inline\",\n              \"uri\"\n            ],\n            \"x-google-enum-descriptions\": [\n              \"Image data is returned inline in the response.\",\n              \"Image data is returned as a URI.\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat.delivery",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Значение по умолчанию не указано; срок жизни URI не описан."
+  },
+  {
+   "код": "E-41-4",
+   "вид": "лимит",
+   "утверждение_en": "The image output image_size accepts \"512\" (512px), \"1K\", \"2K\" and \"4K\".",
+   "цитата": "            \"description\": \"The size of the image output.\",\n            \"type\": \"string\",\n            \"enum\": [\n              \"512\",\n              \"1K\",\n              \"2K\",\n              \"4K\"\n            ],\n            \"x-google-enum-descriptions\": [\n              \"512px image size.\",\n              \"1K image size.\",\n              \"2K image size.\",\n              \"4K image size.\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat.image_size",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Размеры в пикселях расшифрованы только для 512 («512px image size.»); 1K/2K/4K — без пикселей. Поддержка по моделям и значение по умолчанию не указаны."
+  },
+  {
+   "код": "E-41-5",
+   "вид": "ограничение",
+   "утверждение_en": "The only allowed MIME type for image output is image/jpeg.",
+   "цитата": "            \"description\": \"The MIME type of the image output.\",\n            \"type\": \"string\",\n            \"enum\": [\n              \"image/jpeg\"\n            ],\n            \"x-google-enum-descriptions\": [\n              \"JPEG image format.\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat.mime_type",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Вход принимает 8 форматов (E-41-15), выход — только JPEG."
+  },
+  {
+   "код": "E-41-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image output format object: {\"type\": \"image\", \"aspect_ratio\": \"16:9\", \"image_size\": \"1K\", \"mime_type\": \"image/jpeg\"}.",
+   "цитата": "                \"type\": \"image\",\n                \"aspect_ratio\": \"16:9\",\n                \"image_size\": \"1K\",\n                \"mime_type\": \"image/jpeg\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageResponseFormat.examples (Image Output)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Это пример параметров вызова, не текстового промпта; вид выбран как ближайший («пример»)."
+  },
+  {
+   "код": "E-41-7",
+   "вид": "факт",
+   "утверждение_en": "The older ImageConfig schema (aspect_ratio, image_size) is marked deprecated; it offers the same 14 aspect ratios and sizes \"1K\", \"2K\", \"4K\", \"512\" (described as \"512 image size.\").",
+   "цитата": "          \"image_size\": {\n            \"enum\": [\n              \"1K\",\n              \"2K\",\n              \"4K\",\n              \"512\"\n            ],\n            \"x-google-enum-descriptions\": [\n              \"1K image size.\",\n              \"2K image size.\",\n              \"4K image size.\",\n              \"512 image size.\"\n            ]\n          }\n        },\n        \"deprecated\": true,",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Цитата покрывает image_size и флаг deprecated схемы; перечень aspect_ratio — стр. 6366-6398, совпадает с ImageResponseFormat."
+  },
+  {
+   "код": "E-41-8",
+   "вид": "правило",
+   "утверждение_en": "GenerationConfig.image_config (\"Configuration for image interaction.\") is deprecated.",
+   "цитата": "          \"image_config\": {\n            \"description\": \"Configuration for image interaction.\",\n            \"$ref\": \"#/components/schemas/ImageConfig\",\n            \"deprecated\": true",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GenerationConfig.image_config",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Флаг deprecated — рекомендация не использовать; прямой замены в описании поля не названо (замена — ImageResponseFormat, выведено, E-41-42)."
+  },
+  {
+   "код": "E-41-9",
+   "вид": "факт",
+   "утверждение_en": "ResponseFormat is polymorphic: one of AudioResponseFormat, ImageResponseFormat, TextResponseFormat, VideoResponseFormat, or a free-form object.",
+   "цитата": "      \"ResponseFormat\": {\n        \"type\": \"object\",\n        \"oneOf\": [\n          {\n            \"$ref\": \"#/components/schemas/AudioResponseFormat\"\n          },\n          {\n            \"$ref\": \"#/components/schemas/ImageResponseFormat\"\n          },\n          {\n            \"$ref\": \"#/components/schemas/TextResponseFormat\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пятый вариант — произвольный объект (additionalProperties: true)."
+  },
+  {
+   "код": "E-41-10",
+   "вид": "факт",
+   "утверждение_en": "The response_format field of an interaction takes either a single ResponseFormat or an array of ResponseFormat entries, although its description still says it enforces a JSON object complying with a JSON schema.",
+   "цитата": "\"description\": \"Enforces that the generated response is a JSON object that complies with the JSON schema specified in this field.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.CreateModelInteractionParams / CreateAgentInteractionParams / Interaction .response_format",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "oneOf(ResponseFormat, array[ResponseFormat]); описание устарело относительно полиморфной схемы (см. противоречия)."
+  },
+  {
+   "код": "E-41-11",
+   "вид": "факт",
+   "утверждение_en": "response_modalities — the requested response modalities (TEXT, IMAGE, AUDIO) — is deprecated.",
+   "цитата": "          \"response_modalities\": {\n            \"description\": \"The requested modalities of the response (TEXT, IMAGE, AUDIO).\",\n            \"type\": \"array\",\n            \"deprecated\": true,",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.CreateModelInteractionParams.response_modalities (то же в CreateAgentInteractionParams, Interaction)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Устаревший способ запросить картинку на выходе; повторён в трёх схемах."
+  },
+  {
+   "код": "E-41-12",
+   "вид": "факт",
+   "утверждение_en": "ResponseModality enumerates text, image, audio, video and document; \"image\" indicates the model should return images.",
+   "цитата": "\"Indicates the model should return images.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ResponseModality",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Тот же enum используется в ModalityTokens (учёт токенов по модальностям)."
+  },
+  {
+   "код": "E-41-13",
+   "вид": "факт",
+   "утверждение_en": "response_mime_type is deprecated, yet its description says it is required if response_format is set.",
+   "цитата": "            \"description\": \"The mime type of the response. This is required if response_format is set.\",\n            \"type\": \"string\",\n            \"deprecated\": true",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.CreateModelInteractionParams.response_mime_type",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Противоречие с deprecated и с mime_type внутри записей response_format (см. противоречия)."
+  },
+  {
+   "код": "E-41-14",
+   "вид": "факт",
+   "утверждение_en": "ImageContent is an image content block carrying the image either as data (base64 bytes, \"The image content.\") or as uri (\"The URI of the image.\"), plus mime_type and resolution.",
+   "цитата": "      \"ImageContent\": {\n        \"description\": \"An image content block.\",\n        \"type\": \"object\",\n        \"properties\": {\n          \"data\": {\n            \"description\": \"The image content.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageContent",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Тот же блок — для входных картинок (user_input) и для картинок в ответе (model_output), результатах инструментов и сводках мыслей."
+  },
+  {
+   "код": "E-41-15",
+   "вид": "лимит",
+   "утверждение_en": "Image content blocks accept the MIME types image/png, image/jpeg, image/webp, image/heic, image/heif, image/gif, image/bmp and image/tiff.",
+   "цитата": "            \"description\": \"The mime type of the image.\",\n            \"type\": \"string\",\n            \"enum\": [\n              \"image/png\",\n              \"image/jpeg\",\n              \"image/webp\",\n              \"image/heic\",\n              \"image/heif\",\n              \"image/gif\",\n              \"image/bmp\",\n              \"image/tiff\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageContent.mime_type",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Тот же список в ImageDelta."
+  },
+  {
+   "код": "E-41-16",
+   "вид": "факт",
+   "утверждение_en": "Each image content block can carry its own resolution setting of type MediaResolution.",
+   "цитата": "          \"resolution\": {\n            \"description\": \"The resolution of the media.\",\n            \"$ref\": \"#/components/schemas/MediaResolution\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageContent.resolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Настройка разрешения обработки на уровне отдельной картинки; влияние на токены не описано."
+  },
+  {
+   "код": "E-41-17",
+   "вид": "лимит",
+   "утверждение_en": "MediaResolution values are low, medium, high and ultra_high.",
+   "цитата": "      \"MediaResolution\": {\n        \"type\": \"string\",\n        \"enum\": [\n          \"low\",\n          \"medium\",\n          \"high\",\n          \"ultra_high\"\n        ],",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.MediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Описания тривиальны («Low resolution.» …). Используется в ImageContent, ImageDelta, VideoContent, VideoDelta. Значение по умолчанию и число токенов на уровень не указаны."
+  },
+  {
+   "код": "E-41-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "ImageContent example: {\"type\": \"image\", \"data\": \"BASE64_ENCODED_IMAGE\", \"mime_type\": \"image/png\"}.",
+   "цитата": "                \"type\": \"image\",\n                \"data\": \"BASE64_ENCODED_IMAGE\",\n                \"mime_type\": \"image/png\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageContent.examples (Image)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Пример структуры входной картинки, не текстового промпта."
+  },
+  {
+   "код": "E-41-19",
+   "вид": "факт",
+   "утверждение_en": "Content (the content block union) is one of AudioContent, DocumentContent, ImageContent, TextContent or VideoContent.",
+   "цитата": "      \"Content\": {\n        \"description\": \"The content of the response.\",\n        \"type\": \"object\",\n        \"oneOf\": [\n          {\n            \"$ref\": \"#/components/schemas/AudioContent\"\n          },\n          {\n            \"$ref\": \"#/components/schemas/DocumentContent\"\n          },\n          {\n            \"$ref\": \"#/components/schemas/ImageContent\"\n          },",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.Content",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-20",
+   "вид": "факт",
+   "утверждение_en": "Interaction input can be a single Content block, a list of Steps (StepList), a list of Content blocks (ContentList), or a plain string.",
+   "цитата": "      \"InteractionsInput\": {\n        \"description\": \"The input for the interaction.\",\n        \"oneOf\": [\n          {\n            \"$ref\": \"#/components/schemas/Content\"\n          },\n          {\n            \"title\": \"StepList\",\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/Step\"\n            }\n          },\n          {\n            \"title\": \"ContentList\",\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/Content\"\n            }\n          },\n          {\n            \"type\": \"string\"\n          }",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.InteractionsInput",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "ContentList — способ передать текст+картинки одним ходом (так в примере multimodal_image); StepList — передача истории шагами (пример multi_turn)."
+  },
+  {
+   "код": "E-41-21",
+   "вид": "факт",
+   "утверждение_en": "In streaming, image data arrives as an ImageDelta (data, mime_type, resolution, uri), one of the StepDeltaData variants.",
+   "цитата": "      \"ImageDelta\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"data\": {\n            \"type\": \"string\",\n            \"format\": \"byte\",\n            \"x-speakeasy-base64-input-mode\": \"file\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ImageDelta / StepDeltaData",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "У ImageDelta нет описания; mime_type — тот же список из 8 форматов, что у ImageContent."
+  },
+  {
+   "код": "E-41-22",
+   "вид": "факт",
+   "утверждение_en": "Thought summary items can be ImageContent or TextContent (ThoughtSummaryContent is a oneOf of the two).",
+   "цитата": "      \"ThoughtSummaryContent\": {\n        \"type\": \"object\",\n        \"oneOf\": [\n          {\n            \"$ref\": \"#/components/schemas/ImageContent\"\n          },\n          {\n            \"$ref\": \"#/components/schemas/TextContent\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ThoughtSummaryContent",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Когда в сводке мыслей появляется картинка, в схеме не объяснено."
+  },
+  {
+   "код": "E-41-23",
+   "вид": "факт",
+   "утверждение_en": "ThinkingLevel values are minimal (\"Little to no thinking.\"), low, medium and high.",
+   "цитата": "      \"ThinkingLevel\": {\n        \"type\": \"string\",\n        \"enum\": [\n          \"minimal\",\n          \"low\",\n          \"medium\",\n          \"high\"\n        ],\n        \"x-google-enum-descriptions\": [\n          \"Little to no thinking.\",\n          \"Low thinking level.\",\n          \"Medium thinking level.\",\n          \"High thinking level.\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ThinkingLevel",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Какие уровни доступны какой модели — не указано."
+  },
+  {
+   "код": "E-41-24",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig.thinking_level sets the level of thought tokens the model should generate.",
+   "цитата": "          \"thinking_level\": {\n            \"description\": \"The level of thought tokens that the model should generate.\",\n            \"$ref\": \"#/components/schemas/ThinkingLevel\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GenerationConfig.thinking_level",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "thinking_level остаётся в generation_config, тогда как настройки картинки ушли в response_format."
+  },
+  {
+   "код": "E-41-25",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig.thinking_summaries controls whether thought summaries are included in the response; values are auto and none.",
+   "цитата": "          \"thinking_summaries\": {\n            \"description\": \"Whether to include thought summaries in the response.\",\n            \"$ref\": \"#/components/schemas/ThinkingSummaries\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GenerationConfig.thinking_summaries / ThinkingSummaries",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Значения auto / none — в схеме ThinkingSummaries (стр. 8926-8934)."
+  },
+  {
+   "код": "E-41-26",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig.seed is the seed used in decoding for reproducibility.",
+   "цитата": "          \"seed\": {\n            \"description\": \"Seed used in decoding for reproducibility.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GenerationConfig.seed",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Действует ли seed для image-моделей и гарантирует ли повторяемость картинки — не сказано."
+  },
+  {
+   "код": "E-41-27",
+   "вид": "факт",
+   "утверждение_en": "The google_search tool's search_types can enable web_search (only text results are returned) and/or image_search (image bytes are returned).",
+   "цитата": "              \"enum\": [\n                \"web_search\",\n                \"image_search\"\n              ],\n              \"x-google-enum-descriptions\": [\n                \"Setting this field enables web search. Only text results are returned.\",\n                \"Setting this field enables image search. Image bytes are returned.\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GoogleSearch.search_types",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Тот же enum в GoogleSearchCallStep.search_type («The type of search grounding enabled.»). Какие модели поддерживают image_search — не указано."
+  },
+  {
+   "код": "E-41-28",
+   "вид": "факт",
+   "утверждение_en": "Usage counts grounding tool calls by type; the google_search type covers grounding with Google Web Search and Image Search, and Web Grounding for Enterprise.",
+   "цитата": "\"Grounding with Google Web Search and Image Search, & Web Grounding\\nfor Enterprise.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.GroundingToolCount (Usage.grounding_tool_count)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "лимиты_квоты"
+   ],
+   "заметка": "В цитате «\\n» — экранированный перевод строки в JSON-строке источника."
+  },
+  {
+   "код": "E-41-29",
+   "вид": "факт",
+   "утверждение_en": "A function tool result (and an MCP server tool result) can be an array of ImageContent / TextContent items, an object, or a string.",
+   "цитата": "          \"result\": {\n            \"description\": \"Required. The result of the tool call.\",\n            \"oneOf\": [\n              {\n                \"type\": \"array\",\n                \"items\": {\n                  \"oneOf\": [\n                    {\n                      \"$ref\": \"#/components/schemas/ImageContent\"\n                    },\n                    {\n                      \"$ref\": \"#/components/schemas/TextContent\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.FunctionResultStep.result (то же FunctionResultDelta, McpServerToolResultStep/Delta)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Картинки могут возвращаться модели из инструментов; для MCP описание: «Can be simple text or rich content.»"
+  },
+  {
+   "код": "E-41-30",
+   "вид": "факт",
+   "утверждение_en": "File citations carry a media_id for image citations, if applicable.",
+   "цитата": "\"description\": \"Media ID in-case of image citations, if applicable.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.FileCitation.media_id",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-31",
+   "вид": "факт",
+   "утверждение_en": "The Model enum lists the image model ids gemini-2.5-flash-image, gemini-3-pro-image, nano-banana-pro-preview and gemini-3.1-flash-image.",
+   "цитата": "          \"gemini-2.5-flash-image\",\n          \"gemini-3-flash-preview\",\n          \"gemini-3.1-pro-preview\",\n          \"gemini-3.1-pro-preview-customtools\",\n          \"gemini-3.1-flash-lite\",\n          \"gemini-3-pro-image\",\n          \"nano-banana-pro-preview\",\n          \"gemini-3.1-flash-image\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption (Model)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) в перечне отсутствует. В цитате между ними — текстовые модели списка."
+  },
+  {
+   "код": "E-41-32",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image is described as Google's native image generation model, optimized for speed, flexibility and contextual understanding.",
+   "цитата": "\"Our native image generation model, optimized for speed, flexibility, and contextual understanding. Text input and output is priced the same as 2.5 Flash.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption — x-speakeasy-enum-descriptions",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Имя Nano Banana в спецификации не используется."
+  },
+  {
+   "код": "E-41-33",
+   "вид": "факт",
+   "утверждение_en": "For gemini-2.5-flash-image, text input and output are priced the same as Gemini 2.5 Flash.",
+   "цитата": "Text input and output is priced the same as 2.5 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption — x-speakeasy-enum-descriptions",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Цена за выходную картинку не приведена."
+  },
+  {
+   "код": "E-41-34",
+   "вид": "факт",
+   "утверждение_en": "nano-banana-pro-preview is a model id described as \"Gemini 3 Pro Image Preview\", alongside gemini-3-pro-image (\"Gemini 3 Pro Image\").",
+   "цитата": "          \"Gemini 3 Pro Image\",\n          \"Gemini 3 Pro Image Preview\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption — x-speakeasy-enum-descriptions",
+   "модели": [
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сопоставление по порядку enum и описаний (7724↔7750, 7725↔7751). Единственное место, где «nano-banana» — часть id модели."
+  },
+  {
+   "код": "E-41-35",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image is described only as \"Gemini 3.1 Flash Image.\".",
+   "цитата": "\"Gemini 3.1 Flash Image.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption — x-speakeasy-enum-descriptions",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-36",
+   "вид": "факт",
+   "утверждение_en": "The Model enum allows unknown values, so model ids not listed in the enum can still be passed.",
+   "цитата": "        \"x-speakeasy-name-override\": \"Model\",\n        \"x-speakeasy-unknown-values\": \"allow\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.ModelOption",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из флага x-speakeasy-unknown-values: allow (директива генератора SDK)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Флаг генератора SDK, не текст документации; смысл «allow» — принимать значения вне enum."
+  },
+  {
+   "код": "E-41-37",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-input request example: input is a list with a text part \"What is in this picture?\" and an image part {\"type\": \"image\", \"data\": \"BASE64_ENCODED_IMAGE\", \"mime_type\": \"image/png\"} sent to gemini-3.6-flash.",
+   "цитата": "{ \\\"type\\\": \\\"image\\\", \\\"data\\\": \\\"BASE64_ENCODED_IMAGE\\\", \\\"mime_type\\\": \\\"image/png\\\" }",
+   "источник_цитаты": "txt",
+   "раздел": "paths./{api_version}/interactions.post — x-codeSamples multimodal_image",
+   "модели": [
+    "gemini-3.6-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Пример понимания картинки (не генерации); текст стоит перед картинкой. В цитате экранированные кавычки JSON-строки источника (Python-вариант)."
+  },
+  {
+   "код": "E-41-38",
+   "вид": "факт",
+   "утверждение_en": "In the Image Input response example, the input image is counted as 258 tokens under the image modality in input_tokens_by_modality (10 text tokens, 268 total input).",
+   "цитата": "                          {\n                            \"modality\": \"image\",\n                            \"tokens\": 258\n                          }",
+   "источник_цитаты": "txt",
+   "раздел": "paths./{api_version}/interactions.post — responses.200.examples.multimodal_image (Image Input)",
+   "модели": [
+    "gemini-3.6-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Значение из примера ответа, не норма; разрешение картинки в примере не указано."
+  },
+  {
+   "код": "E-41-39",
+   "вид": "факт",
+   "утверждение_en": "Usage reports token counts broken down by modality for input, output, cached and tool-use tokens (ModalityTokens: modality + tokens).",
+   "цитата": "          \"output_tokens_by_modality\": {\n            \"description\": \"A breakdown of output token usage by modality.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.Usage.*_tokens_by_modality / ModalityTokens",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Позволяет видеть отдельно токены выходных картинок (modality = image)."
+  },
+  {
+   "код": "E-41-40",
+   "вид": "факт",
+   "утверждение_en": "Usage.total_thought_tokens is the number of thought tokens for thinking models.",
+   "цитата": "\"description\": \"Number of tokens of thoughts for thinking models.\",",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.Usage.total_thought_tokens",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "лимиты_квоты"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-41",
+   "вид": "факт",
+   "утверждение_en": "Interactions accept a safety_settings array (\"Safety settings for the interaction.\") of SafetySetting items, but the SafetySetting schema is not defined in the specification.",
+   "цитата": "          \"safety_settings\": {\n            \"description\": \"Safety settings for the interaction.\",\n            \"type\": \"array\",\n            \"items\": {\n              \"$ref\": \"#/components/schemas/SafetySetting\"",
+   "источник_цитаты": "txt",
+   "раздел": "components.schemas.CreateModelInteractionParams.safety_settings (то же CreateAgentInteractionParams, Interaction)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Ссылка #/components/schemas/SafetySetting висит — схемы нет в файле (проверено разбором JSON)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-41-42",
+   "вид": "объяснение",
+   "утверждение_en": "The spec carries two parallel ways to set image output: the deprecated GenerationConfig.image_config (ImageConfig: aspect_ratio, image_size) and an ImageResponseFormat entry in response_format, which has the same 14 aspect ratios and 4 sizes and adds delivery (inline/uri) and mime_type (image/jpeg only); the non-deprecated path is response_format.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "ImageConfig vs ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-41-1, E-41-2, E-41-3, E-41-4, E-41-5, E-41-7, E-41-8",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-43",
+   "вид": "объяснение",
+   "утверждение_en": "Two parallel ways to request image output modality exist in the spec: the deprecated response_modalities list (with \"image\") and a response_format entry whose type is \"image\".",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "response_modalities vs ResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-41-9, E-41-11, E-41-12",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-44",
+   "вид": "ограничение",
+   "утверждение_en": "Input and output image formats are asymmetric: image content blocks accept eight MIME types (png, jpeg, webp, heic, heif, gif, bmp, tiff), but image output can only be requested as image/jpeg, so PNG output cannot be selected via ImageResponseFormat.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "ImageContent.mime_type vs ImageResponseFormat.mime_type",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-41-5, E-41-15",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-45",
+   "вид": "факт",
+   "утверждение_en": "The \"512\" image size means 512 px: the newer ImageResponseFormat describes it as \"512px image size.\" while the deprecated ImageConfig says only \"512 image size.\" and lists it last (1K, 2K, 4K, 512) instead of first.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "ImageConfig.image_size vs ImageResponseFormat.image_size",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-41-4, E-41-7",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-46",
+   "вид": "факт",
+   "утверждение_en": "The Model enum names only four image ids — gemini-2.5-flash-image, gemini-3-pro-image, its preview alias nano-banana-pro-preview, and gemini-3.1-flash-image — and omits gemini-3.1-flash-lite-image (Nano Banana 2 Lite); because unknown values are allowed, unlisted ids are not rejected by the SDK type itself.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "ModelOption",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "nano-banana-pro-preview",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image — отсутствует"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-41-31, E-41-34, E-41-36",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Принимает ли сервер gemini-3.1-flash-lite-image — из спецификации не следует."
+  },
+  {
+   "код": "E-41-47",
+   "вид": "объяснение",
+   "утверждение_en": "Image handling is split across two configuration blocks: output format (aspect_ratio, image_size, delivery, mime_type) in response_format, and model behavior (thinking_level, thinking_summaries, seed) in generation_config; input image resolution is set per image content block (ImageContent.resolution).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "CreateModelInteractionParams (response_format, generation_config, input)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-41-1, E-41-16, E-41-24, E-41-25, E-41-26",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "thinking",
+    "форматы_разрешение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-41-48",
+   "вид": "факт",
+   "утверждение_en": "Images can appear in every content position of the schema — user input, model output, streaming deltas, function/MCP tool results, and thought summaries — all using the same ImageContent block (data or uri, mime_type, resolution).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Content / Step / StepDeltaData / FunctionResult / ThoughtSummaryContent",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-41-14, E-41-19, E-41-20, E-41-21, E-41-22, E-41-29",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": null
+  }
+ ],
+ "противоречия_внутри": [
+  "Описание поля response_format («Enforces that the generated response is a JSON object that complies with the JSON schema…») противоречит его типу: ResponseFormat включает ImageResponseFormat, AudioResponseFormat, VideoResponseFormat (E-41-10 против E-41-9).",
+  "response_mime_type помечен deprecated, но описание говорит «This is required if response_format is set» (E-41-13); при этом MIME задаётся внутри записей response_format.",
+  "Размер «512»: ImageConfig — «512 image size.», ImageResponseFormat — «512px image size.»; порядок значений разный (E-41-7 против E-41-4).",
+  "Висящие ссылки: SafetySetting, CodeMenderAgentConfig, RetrievalCallStep, RetrievalResultStep упоминаются, но не определены в components.schemas.",
+  "Не про картинки: пример GoogleSearchCallStep использует arguments.query (строка), схема задаёт queries (массив); пример GoogleMapsResultStep содержит rating, которого нет в схеме; статус InteractionSseEventInteraction не содержит budget_exceeded / queued, в отличие от Interaction.status."
+ ],
+ "не_сказано": [
+  "Какие aspect_ratio и image_size поддерживает каждая image-модель; значения по умолчанию для aspect_ratio / image_size / delivery.",
+  "Размеры 1K / 2K / 4K в пикселях; сколько токенов стоит выходная картинка каждого размера.",
+  "Лимиты на число и размер входных картинок; сколько токенов даёт каждый уровень MediaResolution (есть только пример: 258 токенов).",
+  "Нет примера запроса на генерацию картинки (только пример объекта ImageResponseFormat).",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) отсутствует в перечне моделей.",
+  "Какие уровни thinking_level доступны image-моделям; действует ли seed на картинки.",
+  "Схема SafetySetting отсутствует; ничего про SynthID / водяные знаки.",
+  "Какие модели поддерживают image_search и что именно возвращается моделью при нём, кроме «Image bytes are returned»."
+ ],
+ "сомнения": [
+  "Файл — сырой JSON без подвала; официальность — по домену ai.google.dev и тексту от лица Google в info.description.",
+  "Сопоставление enum ModelOption с описаниями сделано по порядку элементов (x-speakeasy-enum-descriptions), явной связи в файле нет.",
+  "Флаг x-speakeasy-unknown-values: allow — директива генератора SDK; как ведёт себя сервер с неизвестными id моделей, из спецификации не следует.",
+  "Ведомость для 10 638 строк JSON сгруппирована: не про картинки — одна строка на группу путей/схем; схемы про картинки — по полям."
+ ]
+}

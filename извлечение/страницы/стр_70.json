@@ -1,0 +1,489 @@
+{
+ "id": 70,
+ "url": "https://codelabs.developers.google.com/gemini-object-detection-and-editing-notebook",
+ "заголовок": "Detecting and Editing Visual Objects with Gemini and Nano Banana  |  Google Codelabs",
+ "дата_в_тексте": "last-updated 2026-05-13T09:33:08Z (атрибут google-codelab-about в html; в .txt даты нет)",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "Подвал «Except as otherwise noted… see the Google Developers Site Policies» (стр. 101-107 .txt); в html автор кодлаба authors=\"Laurent Picard\" (принадлежность к Google на странице не указана); ноутбук лежит в github.com/GoogleCloudPlatform/generative-ai.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Кодлаб-обёртка (25 минут, автор Laurent Picard, обновлён 2026-05-13) к ноутбуку GoogleCloudPlatform/generative-ai …/spatial-understanding/object_detection_and_editing.ipynb. Для разработчиков на Python. Самих промптов и кода на странице нет: только цели (найти объекты Gemini → извлечь и восстановить Nano Banana → редактировать/стилизовать восстановленное), список навыков (imperative и descriptive промпты для редактирования, colorize, «cinematize»), требования (биллинг), оценка стоимости (<2 USD за 45 картинок 1K по 1,290 токенов), два пути доступа к API (Agent Platform, бывший Vertex AI / AI Studio) и способы открыть ноутбук. Собственные термины: «imperative / descriptive prompts», «cinematize». Версия Nano Banana не названа.",
+ "модели_на_странице": [
+  "Gemini (без версии) — детекция объектов",
+  "Nano Banana (без версии) — извлечение, реставрация, редактирование"
+ ],
+ "структура": [
+  "1. Overview (задачи, What you'll learn, What you'll need)",
+  "2. Before you begin (Option 1 Agent Platform / Option 2 AI Studio)",
+  "3. Run the notebook (Tool A Colab / Tool B Colab Enterprise, Workbench / Tool C GitHub)",
+  "4. Congratulations! (Learn more)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Detecting and Editing Visual Objects with Gemini",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, стр. 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English Deutsch",
+   "итог": "ничего: обвязка сайта (меню языков, Sign in, стр. 2-26)"
+  },
+  {
+   "n": 3,
+   "начало": "Detecting and Editing Visual Objects with Gemini",
+   "итог": "ничего: заголовок кодлаба (стр. 27; учтён в картине)"
+  },
+  {
+   "n": 4,
+   "начало": "1. Overview / In this lab, you",
+   "итог": "ничего: вводная фраза к списку"
+  },
+  {
+   "n": 5,
+   "начало": "1️⃣ Detect visual objects within images",
+   "итог": "E-70-1, E-70-14"
+  },
+  {
+   "n": 6,
+   "начало": "2️⃣ Extract and restore visual objects",
+   "итог": "E-70-2, E-70-14"
+  },
+  {
+   "n": 7,
+   "начало": "3️⃣ Edit and transform the restored",
+   "итог": "E-70-3, E-70-14"
+  },
+  {
+   "n": 8,
+   "начало": "Here are a few examples of",
+   "итог": "ничего: картинки-примеры без подписей (в html alt — хэш-имена файлов 1f2cadc1fd825c64.png и т.п.)"
+  },
+  {
+   "n": 9,
+   "начало": "What you'll learn",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 10,
+   "начало": "How to perform open-vocabulary object detection",
+   "итог": "E-70-4"
+  },
+  {
+   "n": 11,
+   "начало": "How to extract bounding boxes, captions,",
+   "итог": "E-70-4"
+  },
+  {
+   "n": 12,
+   "начало": "How to restore, clean up, and",
+   "итог": "E-70-5"
+  },
+  {
+   "n": 13,
+   "начало": "How to write imperative and descriptive",
+   "итог": "E-70-6"
+  },
+  {
+   "n": 14,
+   "начало": "How to creatively colorize and transform",
+   "итог": "E-70-7"
+  },
+  {
+   "n": 15,
+   "начало": "How to \"cinematize\" visuals into photorealistic",
+   "итог": "E-70-8"
+  },
+  {
+   "n": 16,
+   "начало": "What you'll need",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 17,
+   "начало": "Familiarity running Python in a notebook",
+   "итог": "ничего: не про генерацию картинок (навык работы с ноутбуком)"
+  },
+  {
+   "n": 18,
+   "начало": "A Google Cloud project or a",
+   "итог": "E-70-9"
+  },
+  {
+   "n": 19,
+   "начало": "ℹ️ The total cost to run",
+   "итог": "E-70-10, E-70-15"
+  },
+  {
+   "n": 20,
+   "начало": "Let's get started...",
+   "итог": "ничего: переходная фраза"
+  },
+  {
+   "n": 21,
+   "начало": "2. Before you begin / To use the Gemini API",
+   "итог": "E-70-11"
+  },
+  {
+   "n": 22,
+   "начало": "🛠️ Option 1 - Gemini API via Agent Platform",
+   "итог": "E-70-12"
+  },
+  {
+   "n": 23,
+   "начало": "🛠️ Option 2 - Gemini API via Google AI Studio",
+   "итог": "E-70-13"
+  },
+  {
+   "n": 24,
+   "начало": "3. Run the notebook / Choose your preferred tool; Tool A - Open the notebook in Colab",
+   "итог": "ничего: не про генерацию картинок (среда запуска ноутбука: Colab)"
+  },
+  {
+   "n": 25,
+   "начало": "🧰 Tool B - Open the notebook in Colab Enterprise",
+   "итог": "ничего: не про генерацию картинок (Colab Enterprise / Workbench)"
+  },
+  {
+   "n": 26,
+   "начало": "🧰 Tool C - Get the notebook from GitHub",
+   "итог": "ничего: не про генерацию картинок (свой Jupyter)"
+  },
+  {
+   "n": 27,
+   "начало": "🗺️ Notebook table of contents",
+   "итог": "ничего: навигация по ноутбуку"
+  },
+  {
+   "n": 28,
+   "начало": "🏁 Run the notebook / You are ready.",
+   "итог": "ничего: переходная фраза"
+  },
+  {
+   "n": 29,
+   "начало": "4. Congratulations! / Congratulations for completing",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 30,
+   "начало": "Learn more / Complete the Generating Consistent",
+   "итог": "ничего: ссылки на смежные материалы (кодлаб Consistent Imagery = id 71, Nano Banana recipes notebook, Agent Platform Prompt Gallery, Release Notes) — учтено в картине"
+  },
+  {
+   "n": 31,
+   "начало": "Except as otherwise noted, the content",
+   "итог": "ничего: обвязка сайта (лицензия; «Google Developers Site Policies» — признак официальности)"
+  },
+  {
+   "n": 32,
+   "начало": "[[[\"Easy to understand\",\"easyToUnderstand\"",
+   "итог": "ничего: обвязка сайта (форма отзыва)"
+  },
+  {
+   "n": 33,
+   "начало": "Connect / Blog / Facebook (стр. 109-159)",
+   "итог": "ничего: обвязка сайта (подвал Google Developers, меню языков)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-70-1",
+   "вид": "факт",
+   "утверждение_en": "In this lab, detecting visual objects within images is done with Gemini (not with the Nano Banana image model).",
+   "цитата": "1️⃣ Detect visual objects within images with Gemini",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Gemini (без версии, модель понимания)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "другое"
+   ],
+   "заметка": "Разделение ролей: локализация объекта — задача Gemini (spatial understanding), не модели генерации."
+  },
+  {
+   "код": "E-70-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is used to extract and restore visual objects found in images.",
+   "цитата": "2️⃣ Extract and restore visual objects with Nano Banana",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Nano Banana как инструмент извлечения объекта из фото и его реставрации; конкретная версия модели на странице не названа (код в ноутбуке object_detection_and_editing.ipynb)."
+  },
+  {
+   "код": "E-70-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is then used to edit and transform the restored objects.",
+   "цитата": "3️⃣ Edit and transform the restored objects with Nano Banana",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": "Редактирование применяется к уже восстановленному объекту, а не к исходному фото — см. порядок в E-70-14."
+  },
+  {
+   "код": "E-70-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini's spatial understanding supports open-vocabulary object detection, returning bounding boxes, captions and dynamic labels from natural-language prompts.",
+   "цитата": "How to perform open-vocabulary object detection using Gemini's spatial understanding\nHow to extract bounding boxes, captions, and dynamic labels using natural language prompts",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Gemini (без версии, модель понимания)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Не генерация, но входной шаг конвейера редактирования: рамки и подписи потом используются для вырезки объекта под Nano Banana. Две строки списка сведены в одну единицу."
+  },
+  {
+   "код": "E-70-5",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana can restore, clean up and straighten warped or vintage visual objects.",
+   "цитата": "How to restore, clean up, and straighten warped or vintage visual objects",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из задачи 2️⃣ того же раздела (restore with Nano Banana)",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Типы реставрации: очистка, выпрямление искривлённых (warped) объектов, работа со старыми (vintage) объектами."
+  },
+  {
+   "код": "E-70-6",
+   "вид": "приём",
+   "утверждение_en": "For image editing the lab teaches two prompt styles: imperative prompts and descriptive prompts.",
+   "цитата": "How to write imperative and descriptive prompts for image editing",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из контекста раздела (edit with Nano Banana)",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Собственные термины страницы: «imperative» (команда: сделай/убери/выпрями) и «descriptive» (описание желаемого результата). Определений и примеров на странице нет — они в ноутбуке."
+  },
+  {
+   "код": "E-70-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana can creatively colorize visuals and transform them into entirely new styles.",
+   "цитата": "How to creatively colorize and transform visuals into entirely new styles",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из задачи 3️⃣ того же раздела",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-70-8",
+   "вид": "объяснение",
+   "утверждение_en": "The lab uses the term \"cinematize\" for transforming visuals into photorealistic live-action movie stills.",
+   "цитата": "How to \"cinematize\" visuals into photorealistic live-action movie stills",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll learn",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель — из задачи 3️⃣ того же раздела",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Собственный термин страницы в кавычках: «cinematize» = перевод рисунка/объекта в фотореалистичный кадр игрового фильма."
+  },
+  {
+   "код": "E-70-9",
+   "вид": "ограничение",
+   "утверждение_en": "Running the lab requires a Google Cloud project or a Gemini API key with billing enabled.",
+   "цитата": "A Google Cloud project or a Gemini API key with billing enabled",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll need",
+   "модели": [
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Генерация изображений в этом лабе требует включённого биллинга (бесплатного ключа без биллинга недостаточно — так сформулировано требование, но причина не пояснена)."
+  },
+  {
+   "код": "E-70-10",
+   "вид": "факт",
+   "утверждение_en": "The whole lab costs less than 2 USD, for 45 generated 1K images of 1,290 tokens each.",
+   "цитата": "The total cost to run the lab from start to end is less than 2 USD (45 generated 1K images of 1,290 tokens each).",
+   "источник_цитаты": "txt",
+   "раздел": "1. Overview / What you'll need",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Ключевой факт: одна сгенерированная картинка 1K считается как 1,290 токенов. Версия модели в этом месте не названа (ноутбук не прочитан; в других источниках 1,290 токенов/картинку указывают для gemini-2.5-flash-image — сверить при сводке, на этой странице не сказано)."
+  },
+  {
+   "код": "E-70-11",
+   "вид": "факт",
+   "утверждение_en": "The Gemini API can be used in two main ways: via Agent Platform (formerly Vertex AI) with a Google Cloud project, or via Google AI Studio with a Gemini API key.",
+   "цитата": "(formerly Vertex AI) with a Google Cloud project",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Текст разбит ссылками на строки 47-55; цитата — фрагмент строки 52. Переименование: Vertex AI → Agent Platform."
+  },
+  {
+   "код": "E-70-12",
+   "вид": "инструкция",
+   "утверждение_en": "For the Agent Platform route, a Google Cloud project is needed and the Agent Platform API must be enabled for it.",
+   "цитата": "The Agent Platform API must be enabled for this project",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin / Option 1 - Gemini API via Agent Platform",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-70-13",
+   "вид": "инструкция",
+   "утверждение_en": "For the Google AI Studio route, a Gemini API key is required.",
+   "цитата": "Option 2 - Gemini API via Google AI Studio\nRequirement:\nA Gemini API key",
+   "источник_цитаты": "txt",
+   "раздел": "2. Before you begin / Option 2 - Gemini API via Google AI Studio",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-70-14",
+   "вид": "приём",
+   "утверждение_en": "The lab's editing workflow is ordered: first locate objects with Gemini, then extract and restore them with Nano Banana, and only then edit/transform the restored objects (colorize, restyle, cinematize).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "1. Overview (весь раздел)",
+   "модели": [
+    "Gemini",
+    "Nano Banana (без версии)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-70-1, E-70-2, E-70-3, E-70-5, E-70-7, E-70-8",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Порядок «найти → вырезать/восстановить → творчески менять» виден только из сопоставления трёх задач и списка навыков; как отдельное правило не сформулирован."
+  },
+  {
+   "код": "E-70-15",
+   "вид": "факт",
+   "утверждение_en": "From the stated budget, the lab implies an upper bound of roughly 0.044 USD per generated 1K image (under 2 USD for 45 images), including the lab's other calls.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "1. Overview / What you'll need",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-70-10 (2 / 45 ≈ 0.044)",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Арифметика моя; «less than 2 USD» — верхняя граница на весь лаб, включая вызовы детекции, так что цена одной картинки не выше этой оценки."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет ни одного промпта и ни строчки кода — всё в ноутбуке.",
+  "Не определено, чем «imperative» промпт отличается от «descriptive» и когда какой выбирать.",
+  "Не названа версия Nano Banana (и к какой модели относится цифра 1,290 токенов на 1K-картинку).",
+  "Нет форматов, соотношений сторон, параметров вызова."
+ ],
+ "сомнения": [
+  "Страница — лендинг кодлаба; реальный контент в ноутбуке object_detection_and_editing.ipynb (в партии упомянут id 80 как родственный, в эту партию он не входит).",
+  "Принадлежность автора (Laurent Picard) к Google на странице не указана; официальность подтверждена подвалом Google Developers Site Policies.",
+  "Модель для 1,290 токенов не названа — заметка E-70-10 содержит внешнюю подсказку для сверки, не факт страницы."
+ ]
+}

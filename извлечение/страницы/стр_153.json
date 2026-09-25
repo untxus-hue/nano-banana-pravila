@@ -1,0 +1,630 @@
+{
+ "id": 153,
+ "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf",
+ "заголовок": "Gemini 3 Pro - Model Card (заголовок в партии пуст; взят из строки 3 .txt)",
+ "дата_в_тексте": "Model Release: November 2025; Last Updated: May 2026 (строки 19-20). Результаты бенчмарков — 'as of November, 2025'; FSF — 'September-2025'.",
+ "официальность": {
+  "домен": "storage.googleapis.com (бакет deepmind-media)",
+  "второй_признак": "текст от лица Google DeepMind: 'See the Google DeepMind site for a comprehensive list of model cards', 'we perform testing following the guidelines in Google DeepMind’s Frontier Safety Framework', 'our latest Frontier Safety Framework', ссылки на Google’s Generative AI Prohibited Use Policy и Gemini API Additional Terms of Service. Строки Copyright нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальная карточка модели (PDF, 10 страниц) базовой Gemini 3 Pro — для разработчиков и регуляторов. Даты: релиз November 2025, обновлено May 2026. Разделы: Model Information (Description, Model dependencies, Inputs, Outputs, Architecture), Model Data, Implementation and Sustainability, Distribution, Evaluation (таблица результатов — картинка, в тексте отсутствует), Intended Usage and Limitations, Ethics and Content Safety (типы оценок, Safety Policies, таблица автоматических оценок, red teaming, Risks and Mitigations), Frontier Safety (таблица CCL). Image-генерация как таковая не описана: единственная связь — Gemini 3 Pro Image и Gemini 3.1 Flash Image названы потомками Gemini 3 Pro. Термины: Deep Think mode, sparse MoE, CCL, non-egregious, unjustified refusals. Повторно подчёркнуто сравнение с Gemini 2.5 Pro и что безопасность встроена на всех этапах.",
+ "модели_на_странице": [
+  "Gemini 3 Pro (основная)",
+  "Gemini 3 Pro Image (= Nano Banana Pro) — в перечне семейства",
+  "Gemini 3.1 Flash Image (= Nano Banana 2) — в перечне семейства",
+  "Gemini 3 Flash, Gemini 3.1 Pro, Gemini 3.1 Flash-Lite, Gemini 3.1 Flash Live, Gemini 3.5 Flash",
+  "Gemini 2.5 Pro (для сравнения)",
+  "2.5 Flash-Lite (в сноске)"
+ ],
+ "структура": [
+  "Вступление (назначение карточки, даты)",
+  "Model Information: Description; Model dependencies; Inputs; Outputs; Architecture",
+  "Model Data: Training Dataset; Training Data Processing",
+  "Implementation and Sustainability: Hardware; Software",
+  "Distribution",
+  "Evaluation: Approach; Results",
+  "Intended Usage and Limitations: Benefit and Intended Usage; Known Limitations; Acceptable Usage",
+  "Ethics and Content Safety: Evaluation Approach; Evaluation types; Safety Policies; Training and Development Evaluation Results; Human Red Teaming Results; Risks and Mitigations",
+  "Frontier Safety (таблица CCL)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3 Pro Model Card Gemini 3 Pro - Model Card",
+   "итог": "ничего: заголовок документа, строки 1-3"
+  },
+  {
+   "n": 2,
+   "начало": "Model Cards are intended to provide essential information on Gemini models",
+   "итог": "E-153-1 (строки 8-11)"
+  },
+  {
+   "n": 3,
+   "начало": "This model card includes more essential information about the Gemini 3 family",
+   "итог": "ничего: вступление без содержания (обещание большей прозрачности), строки 13-16"
+  },
+  {
+   "n": 4,
+   "начало": "Model Release: November 2025, Last Updated: May 2026",
+   "итог": "E-153-2 (строки 19-20)"
+  },
+  {
+   "n": 5,
+   "начало": "Model Information Description: Gemini 3 Pro is the next generation",
+   "итог": "E-153-3 (строки 24-31)"
+  },
+  {
+   "n": 6,
+   "начало": "Model dependencies: Gemini 3 Pro is not a modification or a fine-tune",
+   "итог": "E-153-4 (строки 33-37)"
+  },
+  {
+   "n": 7,
+   "начало": "Inputs: Text strings (e.g., a question, a prompt",
+   "итог": "E-153-5 (строки 39-40)"
+  },
+  {
+   "n": 8,
+   "начало": "Outputs: Text, with a 64K token output.",
+   "итог": "E-153-6 (строка 42)"
+  },
+  {
+   "n": 9,
+   "начало": "2 (номер страницы PDF)",
+   "итог": "ничего: номер страницы, строка 47; такие же номера 3-10 в строках 86, 128, 142, 180, 210, 266, 301, 339"
+  },
+  {
+   "n": 10,
+   "начало": "Architecture: : Gemini 3 Pro is a sparse mixture-of-experts",
+   "итог": "E-153-7 (строки 48-54)"
+  },
+  {
+   "n": 11,
+   "начало": "Model Data Training Dataset: The pre-training dataset was a large-scale",
+   "итог": "E-153-8 (строки 58-66)"
+  },
+  {
+   "n": 12,
+   "начало": "The training dataset also includes: publicly available datasets",
+   "итог": "E-153-8 (строки 68-74, та же единица)"
+  },
+  {
+   "n": 13,
+   "начало": "Training Data Processing: Data filtering and preprocessing",
+   "итог": "E-153-9 (строки 76-81)"
+  },
+  {
+   "n": 14,
+   "начало": "Implementation and Sustainability Hardware: Gemini 3 Pro was trained using Google’s Tensor Processing Units",
+   "итог": "ничего: не про генерацию картинок (железо обучения TPU), строки 87-99"
+  },
+  {
+   "n": 15,
+   "начало": "Software: Training was done using JAX and ML Pathways.",
+   "итог": "ничего: не про генерацию картинок, строка 101"
+  },
+  {
+   "n": 16,
+   "начало": "Distribution The Gemini family of models … Gemini App … Google Antigravity … Notebook LM",
+   "итог": "E-153-10 (строки 105-117)"
+  },
+  {
+   "n": 17,
+   "начало": "Our models are available to downstream providers via an application program interface",
+   "итог": "E-153-11 (строки 119-123)"
+  },
+  {
+   "n": 18,
+   "начало": "Evaluation Approach: Gemini 3 Pro was evaluated across a range of benchmarks",
+   "итог": "ничего: описание подхода к бенчмаркам без цифр, ссылка на evals-methodology (учтена в заметке E-153-12), строки 129-134"
+  },
+  {
+   "n": 19,
+   "начало": "Results: Gemini 3 Pro significantly outperforms Gemini 2.5 Pro",
+   "итог": "E-153-12 (строки 136-137; таблица — картинка PDF, в тексте нет)"
+  },
+  {
+   "n": 20,
+   "начало": "Intended Usage and Limitations Benefit and Intended Usage … agentic performance … algorithmic development",
+   "итог": "E-153-13 (строки 143-154)"
+  },
+  {
+   "n": 21,
+   "начало": "Known Limitations: Gemini 3 Pro may exhibit some of the general limitations",
+   "итог": "E-153-14 (строки 156-158)"
+  },
+  {
+   "n": 22,
+   "начало": "Acceptable Usage: Google’s Generative AI Prohibited Use Policy applies",
+   "итог": "E-153-15 (строки 160-165)"
+  },
+  {
+   "n": 23,
+   "начало": "Ethics and Content Safety Evaluation Approach: Gemini 3 Pro was developed in partnership",
+   "итог": "ничего: описание процесса оценки безопасности базовой модели, не правило для генерации, строки 169-175"
+  },
+  {
+   "n": 24,
+   "начало": "Evaluation types included but were not limited to: Training/Development Evaluations … Human Red Teaming … Automated Red Teaming … Ethics & Safety Reviews",
+   "итог": "ничего: перечень видов оценок (процесс), не правило для генерации, строки 181-191"
+  },
+  {
+   "n": 25,
+   "начало": "In addition, we perform testing following the guidelines in Google DeepMind’s Frontier Safety Framework",
+   "итог": "ничего: процесс (FSF), строки 193-194"
+  },
+  {
+   "n": 26,
+   "начало": "Safety Policies: Gemini’s safety policies aim to prevent … 1. Content related to child sexual abuse … 6. Medical advice",
+   "итог": "E-153-16 (строки 196-205)"
+  },
+  {
+   "n": 27,
+   "начало": "Training and Development Evaluation Results … Text to Text Safety -10.4% … Unjustified-refusals … +3.7%",
+   "итог": "E-153-17 (строки 211-241)"
+  },
+  {
+   "n": 28,
+   "начало": "We continue to improve our internal evaluations … not directly comparable",
+   "итог": "E-153-17 (оговорка к таблице, строки 243-246)"
+  },
+  {
+   "n": 29,
+   "начало": "We expect variation in our automated safety evaluations results … false positives",
+   "итог": "E-153-17 (оговорка, строки 248-250)"
+  },
+  {
+   "n": 30,
+   "начало": "1 The ordering of evaluations in this table has changed from previous iterations of the 2.5 Flash-Lite model card",
+   "итог": "ничего: сноска о порядке таблицы (см. противоречия_внутри — упоминание 2.5 Flash-Lite), строки 255-257"
+  },
+  {
+   "n": 31,
+   "начало": "2 For tone and instruction following, a positive percentage increase represents an improvement",
+   "итог": "E-153-17 (сноска о знаке метрик, строки 259-262)"
+  },
+  {
+   "n": 32,
+   "начало": "Human Red Teaming Results: We conduct manual red teaming … child safety … no egregious concerns",
+   "итог": "ничего: результат red teaming базовой модели, не правило для генерации картинок, строки 267-274"
+  },
+  {
+   "n": 33,
+   "начало": "Risks and Mitigations: Safety and responsibility was built into Gemini 3 Pro … product-level mitigations such as safety filtering.",
+   "итог": "E-153-18 (строки 276-285)"
+  },
+  {
+   "n": 34,
+   "начало": "The main risks for Gemini 3 Pro are: a) jailbreak vulnerability … b) possible degradation in multi-turn conversations.",
+   "итог": "E-153-19 (строки 287-288)"
+  },
+  {
+   "n": 35,
+   "начало": "Frontier Safety We evaluated Gemini 3 Pro as outlined in our latest Frontier Safety Framework (September-2025)",
+   "итог": "ничего: не про генерацию картинок (критические уровни CBRN/кибер/манипуляция/ML R&D/misalignment), строки 293-296"
+  },
+  {
+   "n": 36,
+   "начало": "Domain Key Results for Gemini 3 Pro CCL CCL reached? CBRN … Cybersecurity … Harmful Manipulation … Machine Learning R&D … Misalignment",
+   "итог": "ничего: не про генерацию картинок (таблица FSF), строки 302-328"
+  },
+  {
+   "n": 37,
+   "начало": "More details can be found in the Gemini 3 Pro Frontier Safety Framework Report. … Deep Think mode yielded results consistent",
+   "итог": "ничего: ссылка на отчёт и оговорка про Deep Think, не про картинки, строки 331-334"
+  },
+  {
+   "n": 38,
+   "начало": "ДЛИННАЯ ДИСТАНЦИЯ (вся карточка)",
+   "итог": "E-153-20"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-153-1",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini model cards provide essential information on Gemini models, including known limitations, mitigation approaches and safety performance, and may be updated from time to time (e.g., with updated evaluations as the model is revised).",
+   "цитата": "Model Cards are intended to provide essential information on Gemini models, including known",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строки 8-11. Значит, данные карточки (лимиты, риски) — снимок на дату Last Updated."
+  },
+  {
+   "код": "E-153-2",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 3 Pro model card states Model Release: November 2025 and Last Updated: May 2026.",
+   "цитата": "Last Updated: May 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "Model Release: November 2025; Last Updated: May 2026",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строка 19: 'Model Release: November 2025,' (далее невидимый символ U+200B)."
+  },
+  {
+   "код": "E-153-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro is a natively multimodal reasoning model and features Deep Think mode, an optional setting designed to enhance complex problem-solving performance at time of inference.",
+   "цитата": "Gemini 3 Pro now features Deep Think",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information / Description",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Строки 26-31; продолжение цитаты на след. строке: 'mode, an optional setting designed to enhance complex problem-solving performance at time of inference.' Про image-модели Deep Think не упомянут."
+  },
+  {
+   "код": "E-153-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro is not a fine-tune of a prior model; each subsequent model in the Gemini 3 Pro family is based on Gemini 3 Pro, and the family includes Gemini 3 Pro Image and Gemini 3.1 Flash Image (as well as Gemini 3 Flash, 3.1 Pro, 3.1 Flash-Lite, 3.1 Flash Live and 3.5 Flash).",
+   "цитата": "Each\nsubsequent model in the Gemini 3 Pro family is based on Gemini 3 Pro",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information / Model dependencies",
+   "модели": [
+    "gemini-3-pro-image (Gemini 3 Pro Image = Nano Banana Pro)",
+    "gemini-3.1-flash-image (Gemini 3.1 Flash Image = Nano Banana 2)",
+    "Gemini 3 Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строки 33-37. Единственное место карточки, связывающее её с image-моделями: Nano Banana Pro и Nano Banana 2 — потомки Gemini 3 Pro. Детали — 'see each model card for individual model details'. Gemini 3.1 Flash-Lite Image в перечне нет (есть только текстовая 3.1 Flash-Lite)."
+  },
+  {
+   "код": "E-153-5",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro accepts text strings, images, audio and video files as input, with a token context window of up to 1M.",
+   "цитата": "Inputs: Text strings (e.g., a question, a prompt, document(s) to be summarized), images, audio, and\nvideo files, with a token context window of up to 1M.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information / Inputs",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Относится к базовой Gemini 3 Pro; лимиты image-моделей здесь не приводятся."
+  },
+  {
+   "код": "E-153-6",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro outputs text only, with a 64K token output.",
+   "цитата": "Outputs: Text, with a 64K token output.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information / Outputs",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Базовая модель картинки не выдаёт — генерация изображений у потомков (Gemini 3 Pro Image), см. E-153-4."
+  },
+  {
+   "код": "E-153-7",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 Pro is a sparse mixture-of-experts transformer with native multimodal support for text, vision and audio inputs; sparse MoE activates a subset of parameters per token, decoupling total model capacity from per-token computation and serving cost.",
+   "цитата": "this allows them to decouple",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information / Architecture",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строки 48-54; ключевая фраза целиком: 'this allows them to decouple / total model capacity from computation and serving cost per token' (перенос строки). Механизм базовой модели; для image-потомков архитектура не описана."
+  },
+  {
+   "код": "E-153-8",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 3 Pro pre-training data included web documents, text, code, images, audio and video; post-training used instruction tuning, reinforcement learning and human-preference data, and training data also includes licensed data, user data under Google's terms and AI-generated synthetic data.",
+   "цитата": "The pre-training dataset was a large-scale, diverse collection of data encompassing a",
+   "источник_цитаты": "txt",
+   "раздел": "Model Data / Training Dataset",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строки 61-74, сводка. К правилам промптинга не относится; фиксирую как факт о данных."
+  },
+  {
+   "код": "E-153-9",
+   "вид": "факт",
+   "утверждение_en": "Training data processing included deduplication, honoring robots.txt, safety and quality filtering, including filtering content that is pornographic, violent, or violative of CSAM laws.",
+   "цитата": "including filtering content that is pornographic, violent, or violative of child sexual abuse material",
+   "источник_цитаты": "txt",
+   "раздел": "Model Data / Training Data Processing",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строки 76-81."
+  },
+  {
+   "код": "E-153-10",
+   "вид": "факт",
+   "утверждение_en": "The Gemini family including Gemini 3 Pro is distributed via the Gemini App, Google Cloud / Vertex AI, Google AI Studio, the Gemini API, Google AI Mode and Google Antigravity; other models in the Gemini 3 Pro family may also be available via NotebookLM.",
+   "цитата": "Other models in the Gemini 3 Pro model family may also be available via Notebook LM.",
+   "источник_цитаты": "txt",
+   "раздел": "Distribution",
+   "модели": [
+    "Gemini 3 Pro",
+    "прочие модели семейства Gemini 3 Pro (в т.ч. image) — 'may also be available'"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Строки 107-117; список каналов — маркированный перечень строк 110-115."
+  },
+  {
+   "код": "E-153-11",
+   "вид": "правило",
+   "утверждение_en": "Models are available to downstream providers via API subject to terms of use: for AI Studio and the Gemini API the Gemini API Additional Terms of Service apply; for Vertex AI, the Google Cloud Platform Terms of Service. No specific hardware or software is required to use the model.",
+   "цитата": "There is no required hardware or software to use the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Distribution",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строки 119-123. Требование — соблюдение условий использования соответствующей платформы."
+  },
+  {
+   "код": "E-153-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro significantly outperforms Gemini 2.5 Pro on benchmarks requiring enhanced reasoning and multimodal capabilities (results as of November 2025); the results table itself is not present in the text.",
+   "цитата": "Results as of November, 2025 are listed below:",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation / Results",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "November 2025",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Таблица результатов в PDF — картинка (стр. 5, pdfimages), в .txt её нет. Методология — deepmind.com/models/evals-methodology/gemini-3-pro."
+  },
+  {
+   "код": "E-153-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro is described as particularly well-suited for agentic performance, advanced coding, long context and/or multimodal understanding, and algorithmic development.",
+   "цитата": "applications that require:",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations / Benefit and Intended Usage",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строки 146-154; генерация изображений в назначении базовой модели не названа."
+  },
+  {
+   "код": "E-153-14",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 3 Pro may exhibit general foundation-model limitations such as hallucinations, occasional slowness or timeout issues, and has a knowledge cutoff of January 2025.",
+   "цитата": "The knowledge cutoff",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations / Known Limitations",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "knowledge cutoff: January 2025",
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Строки 156-158: '…such as hallucinations. There may also be occasional slowness or timeout issues. The knowledge cutoff / date for Gemini 3 Pro was January 2025.' Распространяется ли cutoff на Gemini 3 Pro Image — не сказано."
+  },
+  {
+   "код": "E-153-15",
+   "вид": "ограничение",
+   "утверждение_en": "Google's Generative AI Prohibited Use Policy applies; the model should not be integrated into systems that engage in dangerous or illicit activities, compromise the security of others' or Google's services, engage in sexually explicit, violent, hateful or harmful activities, or engage in misinformation, misrepresentation or misleading activities.",
+   "цитата": "Google’s Generative AI Prohibited Use Policy applies to uses of the model in",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations / Acceptable Usage",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строки 160-165; четыре категории систем, в которые модель не должна встраиваться."
+  },
+  {
+   "код": "E-153-16",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini's safety policies aim to prevent Google's generative AI models from generating harmful content, including CSAM and exploitation, hate speech, dangerous content, harassment, sexually explicit content, and medical advice contrary to scientific or medical consensus.",
+   "цитата": "Safety Policies: Gemini’s safety policies aim to prevent our Generative AI models from generating",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety / Safety Policies",
+   "модели": [
+    "Generative AI models Google (в целом, по формулировке 'our Generative AI models')"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строки 196-205; шесть категорий. Формулировка — про генеративные модели в целом, не только про Gemini 3 Pro."
+  },
+  {
+   "код": "E-153-17",
+   "вид": "факт",
+   "утверждение_en": "In automated safety evaluations vs Gemini 2.5 Pro, Gemini 3 Pro scored Text to Text Safety -10.4%, Multilingual Safety +0.2%, Image to Text Safety +3.1%, Tone +7.9% and Unjustified-refusals +3.7%; overall it is said to outperform 2.5 Pro on safety and tone while keeping unjustified refusals low.",
+   "цитата": "Gemini 3 Pro outperforms Gemini 2.5 Pro across both safety and tone, while keeping unjustified refusals",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety / Training and Development Evaluation Results",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "модели_сравнение"
+   ],
+   "заметка": "Строки 211-250; цифры из таблицы строк 225-240 (в .txt разделены многими пробелами, напр. 'Image to Text Safety … +3.1% (non-egregious)'). Image to Text — картинка на ВХОДЕ, не генерация. Цветовая разметка улучшение/регресс в тексте потеряна; для Tone и Unjustified-refusals сноска 2 говорит, что плюс = улучшение, для строк Safety направление знака в тексте не объяснено. Оценки не сравнимы с прежними карточками; ручной просмотр: потери — в основном false positives или не egregious."
+  },
+  {
+   "код": "E-153-18",
+   "вид": "факт",
+   "утверждение_en": "Safety mitigations for Gemini 3 Pro span pre-training, post-training and product level, including dataset filtering, conditional pre-training, supervised fine-tuning, RL from human and critic feedback, safety policies and desiderata, and product-level safety filtering.",
+   "цитата": "product-level mitigations such as safety filtering.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety / Risks and Mitigations",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строки 276-285. Продуктовый уровень фильтрации — объяснение, почему запрос может быть отклонён фильтром поверх модели."
+  },
+  {
+   "код": "E-153-19",
+   "вид": "предупреждение",
+   "утверждение_en": "The main risks for Gemini 3 Pro are jailbreak vulnerability (improved vs Gemini 2.5 Pro but still an open research problem) and possible degradation in multi-turn conversations.",
+   "цитата": "possible degradation in multi-turn conversations.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety / Risks and Mitigations",
+   "модели": [
+    "Gemini 3 Pro (базовая текстовая/reasoning-модель, не image-модель)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строки 287-288. Деградация в многоходовых диалогах заявлена для базовой модели; для многоходового редактирования картинок не проверено этим документом."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-153-20",
+   "вид": "факт",
+   "утверждение_en": "The card links image models to Gemini 3 Pro only by lineage (Gemini 3 Pro Image and Gemini 3.1 Flash Image are based on Gemini 3 Pro); all limitations and risks it lists (January 2025 knowledge cutoff, hallucinations, timeouts, multi-turn degradation, jailbreaks) are stated for Gemini 3 Pro, without saying whether they carry over to the image models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся карточка",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "Gemini 3 Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-153-4, E-153-14, E-153-19",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Связь с правилами для картинок — только через наследование; перенос ограничений на image-модели карточка не утверждает."
+  }
+ ],
+ "противоречия_внутри": [
+  "Сноска 1 к таблице безопасности карточки Gemini 3 Pro ссылается на 'previous iterations of the 2.5 Flash-Lite model card' — вероятно, перенесено из другой карточки.",
+  "Документ называет состав то 'Gemini 3 family of models' (строка 13), то 'Gemini 3 Pro family' (строки 34-35, 117), куда включены и Flash-модели и 3.5 Flash."
+ ],
+ "не_сказано": [
+  "Ни одного правила/параметра генерации изображений; лимиты Inputs/Outputs — только для базовой текстовой модели.",
+  "Не сказано, распространяются ли knowledge cutoff (January 2025), деградация в многоходовых диалогах и прочие ограничения на Gemini 3 Pro Image / Gemini 3.1 Flash Image.",
+  "SynthID/водяной знак не упомянут.",
+  "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) в перечне семейства отсутствует.",
+  "Таблица результатов бенчмарков в тексте отсутствует (в PDF — изображение)."
+ ],
+ "сомнения": [
+  "Карточка описывает базовую Gemini 3 Pro, а не image-модель; имя файла '…gemini-3-pro-image' вводит в заблуждение — релевантность для image-правил низкая.",
+  "Официальность: домен — общий хостинг storage.googleapis.com; принадлежность подтверждается только именем бакета deepmind-media и текстом от лица Google DeepMind.",
+  "E-153-17: направление знаков в строках Safety (−10.4%, +3.1%) без цветовой разметки PDF однозначно не читается.",
+  "Строки txt 340 в партии vs 339 по wc — расхождение на завершающий перевод строки."
+ ]
+}

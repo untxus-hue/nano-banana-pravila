@@ -1,0 +1,536 @@
+{
+ "id": 338,
+ "url": "https://developers.googleblog.com/experiment-with-gemini-20-flash-native-image-generation",
+ "заголовок": "Experiment with Gemini 2.0 Flash native image generation - Google Developers Blog",
+ "дата_в_тексте": "«MARCH 12, 2025» (строка 14); html: JSON-LD datePublished 2025-03-12",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "авторы Kat Kampf (Product Manager) и Nicole Brichtova (Product Manager, Google DeepMind); текст от лица Google («Today, we're making it available…»); код на официальном SDK google-genai",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс Google Developers Blog для разработчиков: нативный вывод изображений в Gemini 2.0 Flash (экспериментальная модель gemini-2.0-flash-exp) открыт для экспериментов в Google AI Studio и Gemini API. Четыре сильные стороны с видео: текст и картинки вместе (иллюстрированная история с консистентными персонажами, правки по отзыву), разговорное многоходовое редактирование, понимание мира (рецепт с картинками, оговорка о неполноте знаний), рендер длинного текста (сильнее конкурентов по внутренним бенчмаркам). Пример кода на Python с промптом-историей и response_modalities [\"Text\", \"Image\"]. Термины: native image output, interleaved text and image output. Модель — предшественник линейки Nano Banana.",
+ "модели_на_странице": [
+  "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+ ],
+ "структура": [
+  "Меню сайта",
+  "Рубрика, заголовок, дата, авторы",
+  "Вступление",
+  "1. Text and images together",
+  "2. Conversational image editing",
+  "3. World understanding",
+  "4. Text rendering",
+  "Start making images with Gemini today + код Python",
+  "Заключение",
+  "Теги, Related Posts, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Experiment with Gemini 2.0 Flash native (строки 1-2)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Community/Events Learn Blog YouTube Search (строки 3-11)",
+   "итог": "ничего: обвязка сайта (меню Google Developers Blog, продублировано)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini / Google AI Studio Experiment (строки 12-13)",
+   "итог": "ничего: рубрика и заголовок статьи"
+  },
+  {
+   "n": 4,
+   "начало": "MARCH 12, 2025 Kat KampfProduct Manager (строки 14-16)",
+   "итог": "ничего: дата и авторы (использованы для даты и официальности)"
+  },
+  {
+   "n": 5,
+   "начало": "Share Facebook Twitter LinkedIn Mail (строки 17-21)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 6,
+   "начало": "In December we first introduced native (строка 22)",
+   "итог": "E-338-1, E-338-2"
+  },
+  {
+   "n": 7,
+   "начало": "Gemini 2.0 Flash combines multimodal input, (строка 23)",
+   "итог": "E-338-3"
+  },
+  {
+   "n": 8,
+   "начало": "Here are some examples of where (строка 24)",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 9,
+   "начало": "1. Text and images together (строка 25)",
+   "итог": "ничего: заголовок пункта"
+  },
+  {
+   "n": 10,
+   "начало": "Use Gemini 2.0 Flash to tell (строка 26)",
+   "итог": "E-338-4, E-338-5"
+  },
+  {
+   "n": 11,
+   "начало": "Sorry, your browser doesn't support … Story and illustration generation (строки 27-28)",
+   "итог": "ничего: заглушка видео + подпись, повтор E-338-4"
+  },
+  {
+   "n": 12,
+   "начало": "2. Conversational image editing (строка 29)",
+   "итог": "ничего: заголовок пункта"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini 2.0 Flash helps you edit (строка 30)",
+   "итог": "E-338-6"
+  },
+  {
+   "n": 14,
+   "начало": "Sorry, your browser … Multi-turn conversation image editing (строки 31-32)",
+   "итог": "E-338-7"
+  },
+  {
+   "n": 15,
+   "начало": "3. World understanding (строка 33)",
+   "итог": "ничего: заголовок пункта"
+  },
+  {
+   "n": 16,
+   "начало": "Unlike many other image generation models, (строка 34)",
+   "итог": "E-338-8, E-338-9"
+  },
+  {
+   "n": 17,
+   "начало": "Sorry, your browser … Interleaved text and image output (строки 35-36)",
+   "итог": "E-338-10"
+  },
+  {
+   "n": 18,
+   "начало": "4. Text rendering (строка 37)",
+   "итог": "ничего: заголовок пункта"
+  },
+  {
+   "n": 19,
+   "начало": "Most image generation models struggle to (строка 38)",
+   "итог": "E-338-11, E-338-12"
+  },
+  {
+   "n": 20,
+   "начало": "Sorry, your browser … Image outputs with long text rendering (строки 39-40)",
+   "итог": "ничего: заглушка видео + подпись, повтор E-338-12"
+  },
+  {
+   "n": 21,
+   "начало": "Start making images with Gemini today (строка 41)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 22,
+   "начало": "Get started with Gemini 2.0 Flash (строка 42)",
+   "итог": "E-338-13"
+  },
+  {
+   "n": 23,
+   "начало": "Кодовый блок Python: from google import genai … (строки 43-55; html <pre>/<code>)",
+   "итог": "E-338-14, E-338-15"
+  },
+  {
+   "n": 24,
+   "начало": "Python Copied (строки 56-57)",
+   "итог": "ничего: обвязка сайта (метка языка, кнопка копирования)"
+  },
+  {
+   "n": 25,
+   "начало": "Whether you are building AI agents, (строка 58)",
+   "итог": "E-338-16"
+  },
+  {
+   "n": 26,
+   "начало": "posted in: Gemini Google AI Studio (строки 59-66)",
+   "итог": "ничего: обвязка сайта (теги)"
+  },
+  {
+   "n": 27,
+   "начало": "Previous Next Related Posts … (строки 67-81)",
+   "итог": "ничего: обвязка сайта (навигация, другие статьи)"
+  },
+  {
+   "n": 28,
+   "начало": "Connect Blog Bluesky … Privacy (строки 82-112)",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-338-1",
+   "вид": "факт",
+   "утверждение_en": "Native image output in Gemini 2.0 Flash was first introduced to trusted testers in December (2024) and on March 12, 2025 became available for developer experimentation in all regions supported by Google AI Studio.",
+   "цитата": "In December we first introduced native image output in Gemini 2.0 Flash to trusted testers. Today, we're making it available for developer experimentation across all regions currently supported by Google AI Studio.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03-12",
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "«December» — декабрь 2024 (по дате статьи)."
+  },
+  {
+   "код": "E-338-2",
+   "вид": "факт",
+   "утверждение_en": "The capability is tested with an experimental model version, gemini-2.0-flash-exp, in Google AI Studio and via the Gemini API.",
+   "цитата": "You can test this new capability using an experimental version of Gemini 2.0 Flash (gemini-2.0-flash-exp) in Google AI Studio and via the Gemini API.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03-12",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Модель-предшественник, не из целевого списка Nano Banana."
+  },
+  {
+   "код": "E-338-3",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.0 Flash creates images by combining multimodal input, enhanced reasoning and natural language understanding.",
+   "цитата": "Gemini 2.0 Flash combines multimodal input, enhanced reasoning, and natural language understanding to create images.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (без заголовка)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Генерация как родной выход языковой модели."
+  },
+  {
+   "код": "E-338-4",
+   "вид": "приём",
+   "утверждение_en": "Ask Gemini 2.0 Flash to tell a story and it will illustrate it with pictures, keeping characters and settings consistent throughout.",
+   "цитата": "Use Gemini 2.0 Flash to tell a story and it will illustrate it with pictures, keeping the characters and settings consistent throughout.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Text and images together",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "Консистентность персонажей и обстановки внутри одной истории."
+  },
+  {
+   "код": "E-338-5",
+   "вид": "приём",
+   "утверждение_en": "Give feedback and the model will retell the story or change the style of its drawings.",
+   "цитата": "Give it feedback and the model will retell the story or change the style of its drawings.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Text and images together",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-338-6",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash can edit images through many turns of natural-language dialogue, useful for iterating toward a perfect image or exploring different ideas.",
+   "цитата": "Gemini 2.0 Flash helps you edit images through many turns of a natural language dialogue, great for iterating towards a perfect image, or to explore different ideas together.",
+   "источник_цитаты": "txt",
+   "раздел": "2. Conversational image editing",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-338-7",
+   "вид": "факт",
+   "утверждение_en": "Multi-turn image editing in Google AI Studio maintains context throughout the conversation.",
+   "цитата": "Multi-turn conversation image editing maintaining context throughout the conversation in Google AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "2. Conversational image editing (подпись к видео)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Подпись к видео; сам ролик в сохранённой странице не воспроизводится."
+  },
+  {
+   "код": "E-338-8",
+   "вид": "объяснение",
+   "утверждение_en": "Unlike many other image generation models, Gemini 2.0 Flash uses world knowledge and enhanced reasoning to create the right image, which suits detailed realistic imagery such as illustrating a recipe.",
+   "цитата": "Unlike many other image generation models, Gemini 2.0 Flash leverages world knowledge and enhanced reasoning to create the right image. This makes it perfect for creating detailed imagery that’s realistic–like illustrating a recipe.",
+   "источник_цитаты": "txt",
+   "раздел": "3. World understanding",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-338-9",
+   "вид": "предупреждение",
+   "утверждение_en": "While the model strives for accuracy, like all language models its knowledge is broad and general, not absolute or complete.",
+   "цитата": "While it strives for accuracy, like all language models, its knowledge is broad and general, not absolute or complete.",
+   "источник_цитаты": "txt",
+   "раздел": "3. World understanding",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Оговорка о пределах знаний о мире — касается фактической точности изображений."
+  },
+  {
+   "код": "E-338-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash can produce interleaved text and image output, e.g., a recipe with images, in Google AI Studio.",
+   "цитата": "Interleaved text and image output for a recipe in Google AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "3. World understanding (подпись к видео)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Термин страницы: interleaved text and image output."
+  },
+  {
+   "код": "E-338-11",
+   "вид": "объяснение",
+   "утверждение_en": "Most image generation models struggle to render long sequences of text accurately, often producing poorly formatted or illegible characters or misspellings.",
+   "цитата": "Most image generation models struggle to accurately render long sequences of text, often resulting in poorly formatted or illegible characters, or misspellings.",
+   "источник_цитаты": "txt",
+   "раздел": "4. Text rendering",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Общее утверждение о классе моделей — типовые дефекты текста в кадре."
+  },
+  {
+   "код": "E-338-12",
+   "вид": "факт",
+   "утверждение_en": "Internal benchmarks show Gemini 2.0 Flash has stronger text rendering than leading competitive models, making it good for advertisements, social posts or invitations.",
+   "цитата": "Internal benchmarks show that 2.0 Flash has stronger rendering compared to leading competitive models, and great for creating advertisements, social posts, or even invitations.",
+   "источник_цитаты": "txt",
+   "раздел": "4. Text rendering",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03-12",
+   "тема": [
+    "текст_в_кадре",
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение по внутренним бенчмаркам Google, на дату статьи; бенчмарк не раскрыт."
+  },
+  {
+   "код": "E-338-13",
+   "вид": "инструкция",
+   "утверждение_en": "Get started with Gemini 2.0 Flash image generation via the Gemini API; more details are in the image generation docs.",
+   "цитата": "Get started with Gemini 2.0 Flash via the Gemini API. Read more about image generation in our docs.",
+   "источник_цитаты": "txt",
+   "раздел": "Start making images with Gemini today",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ссылка «docs» → ai.google.dev/gemini-api/docs/image-generation."
+  },
+  {
+   "код": "E-338-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "Code example prompt for an illustrated story: 'Generate a story about a cute baby turtle in a 3d digital art style. For each scene, generate an image.'",
+   "цитата": "\"Generate a story about a cute baby turtle in a 3d digital art style. \"\n\"For each scene, generate an image.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Start making images with Gemini today (код Python)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Промпт целиком (две склеенные строки Python): «Generate a story about a cute baby turtle in a 3d digital art style. For each scene, generate an image.» Структура: задача (story) + субъект (cute baby turtle) + стиль (3d digital art style) + отдельная инструкция о чередовании «For each scene, generate an image» — именно она просит картинку на каждую сцену. В .txt код идёт по строкам, в html — тот же блок <pre>."
+  },
+  {
+   "код": "E-338-15",
+   "вид": "инструкция",
+   "утверждение_en": "To get text and images in the response, call client.models.generate_content with model 'gemini-2.0-flash-exp' and config types.GenerateContentConfig(response_modalities=['Text', 'Image']).",
+   "цитата": "config=types.GenerateContentConfig(\nresponse_modalities=[\"Text\", \"Image\"]\n),",
+   "источник_цитаты": "txt",
+   "раздел": "Start making images with Gemini today (код Python)",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Python SDK google-genai: from google import genai; client = genai.Client(api_key=\"GEMINI_API_KEY\"); client.models.generate_content(model=\"gemini-2.0-flash-exp\", contents=(…), config=…). Регистр значений в примере — «Text», «Image». Требование в смысле: без модальности Image изображение не вернётся (вывод из назначения параметра; прямо не сказано)."
+  },
+  {
+   "код": "E-338-16",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash lets developers add both text and image generation with a single model; the native image output was experimental, with a production-ready version planned based on feedback.",
+   "цитата": "Gemini 2.0 Flash allows you to add text and image generation with just a single model. We're eager to see what developers create with native image output and your feedback will help us finalize a production-ready version soon.",
+   "источник_цитаты": "txt",
+   "раздел": "Start making images with Gemini today",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03-12",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Статус: экспериментальный, не production-ready на дату статьи."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-338-17",
+   "вид": "приём",
+   "утверждение_en": "Interleaved illustrated output needs two things on this page: the prompt explicitly asks for an image per unit of content ('For each scene, generate an image') and the call enables both modalities (response_modalities Text + Image).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-338-4, E-338-10, E-338-14, E-338-15",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-338-18",
+   "вид": "объяснение",
+   "утверждение_en": "The page frames native image generation as an output of the language model itself (one model for text and images), which is what enables world knowledge, conversation-based editing and story consistency; it pairs this with a caveat that the model's knowledge is not complete.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.0-flash-exp (Gemini 2.0 Flash native image generation, экспериментальная; предшественник Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-338-3, E-338-6, E-338-8, E-338-9, E-338-16",
+   "дата_единицы": null,
+   "тема": [
+    "другое",
+    "мультиход"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Как передавать входное изображение для правки в коде — не показано (пример только текст→история с картинками).",
+  "Соотношения сторон, разрешение, лимиты, цены — не упомянуты.",
+  "SynthID/водяной знак не упомянуты.",
+  "Какие именно конкурирующие модели и какой бенчмарк для текста — не раскрыто.",
+  "Сколько картинок можно получить за один ответ — не сказано."
+ ],
+ "сомнения": [
+  "Страница о gemini-2.0-flash-exp — экспериментальном предшественнике Nano Banana; переносить выводы на gemini-2.5/3/3.1 image модели без проверки нельзя.",
+  "Значения response_modalities в примере записаны как «Text», «Image»; важен ли регистр — страница не обсуждает, при сведении сверить с документацией API.",
+  "Сравнение текста с конкурентами — по внутренним бенчмаркам Google на март 2025."
+ ]
+}

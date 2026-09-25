@@ -1,0 +1,1781 @@
+{
+ "id": 45,
+ "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana",
+ "заголовок": "Ultimate prompting guide for Nano Banana | Google Cloud Blog",
+ "дата_в_тексте": "March 5, 2026",
+ "официальность": {
+  "домен": "cloud.google.com",
+  "второй_признак": "авторы поста: Khulan Davaajav — Product Marketing Manager, Google Cloud; Hussain Chinoy — Technical Solutions Manager",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост в блоге Google Cloud (5 марта 2026) — практический гайд по промптингу Nano Banana 2 (gemini-3.1-flash-image) и Nano Banana Pro (gemini-3-pro-image) для команд, работающих через API и Vertex AI. Структура: обзор Nano Banana 2 (веб-поиск, текст и переводы, 2K/4K, соотношения) → технические спецификации (контекстные окна, разрешения, соотношения, 14 рефов и MIME, документы, выход, knowledge cutoff, живые данные, C2PA + SynthID) → 4 базовых правила + «начинай со строгого глагола» → пять фреймворков: генерация без рефов (формула [Subject]+[Action]+[Location/context]+[Composition]+[Style]), с рефами ([Reference images]+[Relationship instruction]+[New scenario]), редактирование (semantic masking, композиция, перенос стиля), веб-поиск ([Source/Search request]+[Analytical task]+[Visual translation]), текст и локализация (кавычки, шрифт, перевод, text-first) → «промпт как у креативного директора» (свет, камера/объектив/фокус, цветокор/плёнка, материалы) → связки с Gemini, Veo, Lyria. Повторные акценты: направлять сцену вместо перечня ключевых слов, конкретика (материалы, свет, камера), разговорная итерация. Собственные термины: prompting frameworks, relationship instruction, semantic masking, text-first hack, visual DNA.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2; в спецификациях также «Gemini 3.1 Flash Image Preview»)",
+  "gemini-3-pro-image (Nano Banana Pro, Gemini 3 Pro Image)",
+  "Gemini 3 (как помощник для промптов)",
+  "Veo / Veo 3.1 (видео, упоминание)",
+  "Lyria (музыка, упоминание)"
+ ],
+ "структура": [
+  "Шапка и меню блога",
+  "Заголовок, дата, авторы",
+  "Промо-блок Gemini Enterprise / баннер Vertex AI",
+  "Вступление и оглавление",
+  "Model overview",
+  "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+  "Best practices for effective prompting",
+  "Five prompting frameworks — 1. Image generation (Text-to-image without references; Multimodal generation with references)",
+  "2. Image editing (Conversational editing; Composition and style transfer)",
+  "3. Real-time information from web search",
+  "4. Text rendering & localization",
+  "5. Prompting like a Creative Director (1. Design your lighting; 2. Choose your camera, lens, and focus; 3. Define the color grading and film stock; 4. Emphasize materiality and texture)",
+  "Go further (Gemini, Veo, Lyria)",
+  "Posted in / Related articles / Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Ultimate prompting guide for Nano Banana",
+   "итог": "Google Cloud Blog|ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Jump to Content / Cloud / Blog / Contact sales / Get started for free / Solutions & technology … Transform with Google Cloud (стр. 2-53)",
+   "итог": "ничего: обвязка сайта (шапка и меню рубрик блога)"
+  },
+  {
+   "n": 3,
+   "начало": "AI & Machine Learning",
+   "итог": "ничего: обвязка сайта (рубрика)"
+  },
+  {
+   "n": 4,
+   "начало": "The ultimate Nano Banana prompting guide",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 5,
+   "начало": "March 5, 2026",
+   "итог": "ничего: дата публикации (вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 6,
+   "начало": "Khulan Davaajav / Product Marketing Manager, Google Cloud / Hussain Chinoy / Technical Solutions Manager",
+   "итог": "ничего: авторы (использованы как второй признак официальности)"
+  },
+  {
+   "n": 7,
+   "начало": "Try Gemini Enterprise today / The front door to AI in the workplace / Try now",
+   "итог": "ничего: маркетинг без содержания (промо-блок)"
+  },
+  {
+   "n": 8,
+   "начало": "Vertex AI has evolved. We’ve launched Gemini Enterprise Agent Platform",
+   "итог": "ничего: не про генерацию картинок (баннер о переименовании платформы)"
+  },
+  {
+   "n": 9,
+   "начало": "Creating precise, high-quality images often involves endless trial and error.",
+   "итог": "ничего: маркетинг без содержания (вступление)"
+  },
+  {
+   "n": 10,
+   "начало": "Built on the Gemini 3 family of models, Nano Banana models apply deep reasoning",
+   "итог": "E-45-1"
+  },
+  {
+   "n": 11,
+   "начало": "We put together this guide to share exactly what we learned",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 12,
+   "начало": "What you’ll learn in this guide:",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 13,
+   "начало": "Model overview (пункт оглавления)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 14,
+   "начало": "Full breakdown of tech specs (пункт оглавления)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 15,
+   "начало": "Best practices for effective prompting (пункт оглавления)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 16,
+   "начало": "Prompting frameworks (пункт оглавления)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 17,
+   "начало": "How Nano Banana works with other creative models, Veo and Lyria. (пункт оглавления)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 18,
+   "начало": "Model overview (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 19,
+   "начало": "Nano Banana models are advanced image generation and editing models that use real-world knowledge",
+   "итог": "E-45-2"
+  },
+  {
+   "n": 20,
+   "начало": "More accurate visuals: Nano Banana 2 is powered by real-time information and images from web search.",
+   "итог": "E-45-3"
+  },
+  {
+   "n": 21,
+   "начало": "Fast, Pro-level features: We’ve unlocked premium features – from text rendering and translations, to upscaling to 2K/4K.",
+   "итог": "E-45-4"
+  },
+  {
+   "n": 22,
+   "начало": "Precision control: Generate or edit images to fit any project requirement, with native support for 16:9, 9:16, 2:1",
+   "итог": "E-45-5"
+  },
+  {
+   "n": 23,
+   "начало": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 24,
+   "начало": "Before diving into prompting, here is a breakdown of what the models can handle via the API and Vertex AI",
+   "итог": "E-45-6"
+  },
+  {
+   "n": 25,
+   "начало": "Context windows: Gemini 3.1 Flash Image (Nano Banana 2) supports a maximum of 131,072 input tokens",
+   "итог": "E-45-7, E-45-8, E-45-9"
+  },
+  {
+   "n": 26,
+   "начало": "Resolutions: Built-in generation capabilities for 1K, 2K, and 4K visuals.",
+   "итог": "E-45-10"
+  },
+  {
+   "n": 27,
+   "начало": "Aspect ratios: Both models support 1:1, 3:2, 2:3 …",
+   "итог": "E-45-11, E-45-12"
+  },
+  {
+   "n": 28,
+   "начало": "Image inputs: You can mix up to 14 reference object images in a single prompt.",
+   "итог": "E-45-13, E-45-14"
+  },
+  {
+   "n": 29,
+   "начало": "Document inputs: You can input text and pdf files.",
+   "итог": "E-45-15, E-45-16"
+  },
+  {
+   "n": 30,
+   "начало": "Outputs: Both models output text and images.",
+   "итог": "E-45-17"
+  },
+  {
+   "n": 31,
+   "начало": "Model knowledge base: Both models have a knowledge cutoff date of January 2025.",
+   "итог": "E-45-18"
+  },
+  {
+   "n": 32,
+   "начало": "Live data: Both models are powered by real-time information from web search",
+   "итог": "E-45-19"
+  },
+  {
+   "n": 33,
+   "начало": "Trust & safety: All generated images include C2PA Content Credentials and a SynthID watermark.",
+   "итог": "E-45-20"
+  },
+  {
+   "n": 34,
+   "начало": "To see top features examples, check out this blog.",
+   "итог": "ничего: отсылка к другой странице"
+  },
+  {
+   "n": 35,
+   "начало": "Best practices for effective prompting (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 36,
+   "начало": "When it comes to effective prompting, there’s a few ways to ensure",
+   "итог": "ничего: подводка к списку"
+  },
+  {
+   "n": 37,
+   "начало": "Be specific: Provide concrete details on subject, lighting, and composition.",
+   "итог": "E-45-21"
+  },
+  {
+   "n": 38,
+   "начало": "Use positive framing: Describe what you want, not what you don’t want",
+   "итог": "E-45-22"
+  },
+  {
+   "n": 39,
+   "начало": "Control the camera: Use photographic and cinematic terms like “low angle” and “aerial view”.",
+   "итог": "E-45-23"
+  },
+  {
+   "n": 40,
+   "начало": "Iterate: Refine images with follow-up prompts in a conversational manner.",
+   "итог": "E-45-24"
+  },
+  {
+   "n": 41,
+   "начало": "The key is to start a prompt with a strong verb",
+   "итог": "E-45-25"
+  },
+  {
+   "n": 42,
+   "начало": "Five prompting frameworks (заголовок раздела)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 43,
+   "начало": "1. Image generation (заголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 44,
+   "начало": "When generating an image, your prompt structure depends entirely on whether you are using reference images",
+   "итог": "E-45-26"
+  },
+  {
+   "n": 45,
+   "начало": "Text-to-image generation without references (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 46,
+   "начало": "When starting with a blank canvas, you are the director.",
+   "итог": "E-45-27"
+  },
+  {
+   "n": 47,
+   "начало": "Formula: [Subject] + [Action] + [Location/context] + [Composition] + [Style]",
+   "итог": "E-45-28"
+  },
+  {
+   "n": 48,
+   "начало": "Example prompt: [Subject] A striking fashion model wearing a tailored brown dress…",
+   "итог": "E-45-29"
+  },
+  {
+   "n": 49,
+   "начало": "Multimodal generation (generation with references) (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 50,
+   "начало": "Gemini allows you to combine multiple reference images to guide the final output.",
+   "итог": "E-45-30"
+  },
+  {
+   "n": 51,
+   "начало": "Formula: [Reference images] + [Relationship instruction] + [New scenario]",
+   "итог": "E-45-31"
+  },
+  {
+   "n": 52,
+   "начало": "Example Prompt: Using the attached napkin sketch as the structure…",
+   "итог": "E-45-32"
+  },
+  {
+   "n": 53,
+   "начало": "Note: Nano Banana generated the source images for the examples below, as well.",
+   "итог": "ничего: примечание к иллюстрациям (происхождение картинок-примеров)"
+  },
+  {
+   "n": 54,
+   "начало": "2. Image editing (заголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 55,
+   "начало": "Editing requires a different mindset than generating.",
+   "итог": "E-45-33"
+  },
+  {
+   "n": 56,
+   "начало": "Conversational editing (without new references) (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 57,
+   "начало": "When you generate an image and want to tweak it conversationally:",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 58,
+   "начало": "Semantic masking (inpainting): You can define a \"mask\" through text",
+   "итог": "E-45-34"
+  },
+  {
+   "n": 59,
+   "начало": "Prompting tip: Be explicit about what to keep exactly the same.",
+   "итог": "E-45-35"
+  },
+  {
+   "n": 60,
+   "начало": "Example prompt: “Remove the man from the photo”",
+   "итог": "E-45-36"
+  },
+  {
+   "n": 61,
+   "начало": "Composition and style transfer (with new references) (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 62,
+   "начало": "Bring new images into the prompt to alter an existing one:",
+   "итог": "ничего: подводка"
+  },
+  {
+   "n": 63,
+   "начало": "Adding elements: Upload a base image and an object image, and tell the model to combine them.",
+   "итог": "E-45-37"
+  },
+  {
+   "n": 64,
+   "начало": "Style transfer: Upload a photo and ask the model to recreate its exact content in a different artistic style",
+   "итог": "E-45-38"
+  },
+  {
+   "n": 65,
+   "начало": "Composition / Style transfer",
+   "итог": "ничего: подписи к картинкам"
+  },
+  {
+   "n": 66,
+   "начало": "3. Real-time information from web search (заголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 67,
+   "начало": "Gemini Image models can actively search the web to generate images based on real-time information.",
+   "итог": "E-45-39"
+  },
+  {
+   "n": 68,
+   "начало": "How prompting changes: Instead of describing a fictional scene, you instruct the model to retrieve real-world data",
+   "итог": "E-45-40"
+  },
+  {
+   "n": 69,
+   "начало": "The formula: [Source/Search request] + [Analytical task] + [Visual translation]",
+   "итог": "E-45-41"
+  },
+  {
+   "n": 70,
+   "начало": "Example prompt: [Search for current weather and date in San Francisco] + …",
+   "итог": "E-45-42"
+  },
+  {
+   "n": 71,
+   "начало": "prompted on Tuesday 3rd March",
+   "итог": "ничего: подпись к картинке (дата запуска примера)"
+  },
+  {
+   "n": 72,
+   "начало": "Nano Banana 2 is powered by real-time information and images from web search. This feature is coming soon to Vertex AI",
+   "итог": "E-45-43 (первое предложение — повтор E-45-3)"
+  },
+  {
+   "n": 73,
+   "начало": "4. Text rendering & localization (заголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 74,
+   "начало": "Nano Banana 2 and Nano Banana Pro excel at rendering sharp, legible text",
+   "итог": "E-45-44, E-45-45"
+  },
+  {
+   "n": 75,
+   "начало": "To get the best typographic results, follow these rules:",
+   "итог": "ничего: подводка к списку"
+  },
+  {
+   "n": 76,
+   "начало": "Use quotes: Enclose your desired words in quotes",
+   "итог": "E-45-46"
+  },
+  {
+   "n": 77,
+   "начало": "Choose a font: Describe the typography style or name of the font.",
+   "итог": "E-45-47"
+  },
+  {
+   "n": 78,
+   "начало": "Translate and localize: Write your prompt in one language and specify a target language",
+   "итог": "E-45-48"
+  },
+  {
+   "n": 79,
+   "начало": "Text-first hack: When generating text for an image, Gemini Image models work best if you first converse with it",
+   "итог": "E-45-49"
+  },
+  {
+   "n": 80,
+   "начало": "Example: A high-end, glossy commercial beauty shot of a sleek, minimalist nude-colored face moisturizer jar…",
+   "итог": "E-45-50"
+  },
+  {
+   "n": 81,
+   "начало": "“A typographic poster with a solid black background, bold letters spell \"New York\"…",
+   "итог": "E-45-51"
+  },
+  {
+   "n": 82,
+   "начало": "5. Prompting like a Creative Director (заголовок)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 83,
+   "начало": "To elevate your results from good to breathtaking, you need to stop typing keywords and start directing the scene.",
+   "итог": "E-45-52"
+  },
+  {
+   "n": 84,
+   "начало": "1. Design your lighting (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 85,
+   "начало": "Tell the model exactly how the scene is illuminated.",
+   "итог": "E-45-53"
+  },
+  {
+   "n": 86,
+   "начало": "Studio setups: Ask for a \"three-point softbox setup\" to evenly light a product.",
+   "итог": "E-45-54"
+  },
+  {
+   "n": 87,
+   "начало": "Dramatic effects: Prompt for \"Chiaroscuro lighting with harsh, high contrast\" or \"Golden hour backlighting creating long shadows\".",
+   "итог": "E-45-55"
+  },
+  {
+   "n": 88,
+   "начало": "2. Choose your camera, lens, and focus (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 89,
+   "начало": "Use specific hardware and photographic terminology to control the depth, distortion, and perspective",
+   "итог": "E-45-56"
+  },
+  {
+   "n": 90,
+   "начало": "Hardware: Dictate the exact camera type to change the visual DNA of the image. … GoPro … Fujifilm … disposable camera",
+   "итог": "E-45-57"
+  },
+  {
+   "n": 91,
+   "начало": "Lens: Force the perspective by explicitly requesting a \"low-angle shot with a shallow depth of field (f/1.8)\".",
+   "итог": "E-45-58"
+  },
+  {
+   "n": 92,
+   "начало": "3. Define the color grading and film stock (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 93,
+   "начало": "The texture and color of the final image set the emotional tone.",
+   "итог": "E-45-59"
+  },
+  {
+   "n": 94,
+   "начало": "If you want a nostalgic or gritty vibe, tell the model to render the image \"as if on 1980s color film, slightly grainy\".",
+   "итог": "E-45-60"
+  },
+  {
+   "n": 95,
+   "начало": "For a modern, moody aesthetic, ask for \"Cinematic color grading with muted teal tones\".",
+   "итог": "E-45-61"
+  },
+  {
+   "n": 96,
+   "начало": "4. Emphasize materiality and texture (заголовок)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 97,
+   "начало": "When generating logos, products, or characters, define their physical makeup.",
+   "итог": "E-45-62, E-45-63"
+  },
+  {
+   "n": 98,
+   "начало": "Go further (заголовок)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 99,
+   "начало": "Nano Banana Pro and Nano Banana 2 are designed to work seamlessly with our other generative creation models.",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 100,
+   "начало": "Nano Banana + Gemini: Gemini 3 can help you create prompts and with creative direction.",
+   "итог": "E-45-64"
+  },
+  {
+   "n": 101,
+   "начало": "Nano Banana + Veo: Create keyframes with Nano Banana to direct an animation, then use Veo",
+   "итог": "E-45-65"
+  },
+  {
+   "n": 102,
+   "начало": "Nano Banana + Veo + Lyria: Generate your project’s visuals, then add a custom AI soundtrack with Lyria.",
+   "итог": "ничего: не про генерацию картинок (саундтрек)"
+  },
+  {
+   "n": 103,
+   "начало": "Posted in AI & Machine Learning",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 104,
+   "начало": "Related articles … (стр. 233-245)",
+   "итог": "ничего: обвязка сайта (ссылки на другие статьи блога)"
+  },
+  {
+   "n": 105,
+   "начало": "Footer Links / Follow us / Google Cloud / … / 日本語 (стр. 246-259)",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-45-1",
+   "вид": "объяснение",
+   "утверждение_en": "Built on the Gemini 3 family of models, Nano Banana models apply deep reasoning capabilities to fully understand your prompt before generating an image.",
+   "цитата": "Built on the Gemini 3 family of models, Nano Banana models apply deep reasoning capabilities to fully understand your prompt before generating an image.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из следующего предложения (\"we spent weeks testing Nano Banana 2 and Nano Banana Pro\")",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana models are advanced image generation and editing models that use real-world knowledge and deep reasoning capabilities to deliver precise, rich visual results.",
+   "цитата": "Nano Banana models are advanced image generation and editing models that use real-world knowledge and deep reasoning capabilities to deliver precise, rich visual results.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is powered by real-time information and images from web search, which supports use cases such as educational tools, localized marketing, and travel apps.",
+   "цитата": "Nano Banana 2 is powered by real-time information and images from web search. This means better educational tools, localized marketing, travel apps, and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview / More accurate visuals",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Доступность на Vertex AI — \"coming soon\" (E-45-43)."
+  },
+  {
+   "код": "E-45-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 unlocks premium features previously associated with Pro, from text rendering and translations to upscaling to 2K/4K.",
+   "цитата": "We’ve unlocked premium features – from text rendering and translations, to upscaling to 2K/4K.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview / Fast, Pro-level features",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; \"Pro-level\" — из заголовка пункта",
+   "тема": [
+    "текст_в_кадре",
+    "форматы_разрешение"
+   ],
+   "заметка": "Слово \"upscaling\" к 2K/4K — формулировка блога; в спецификациях ниже (E-45-10) это \"generation capabilities for 1K, 2K, and 4K\"."
+  },
+  {
+   "код": "E-45-5",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 can generate or edit images with native support for aspect ratios such as 16:9, 9:16, 2:1 and more.",
+   "цитата": "Generate or edit images to fit any project requirement, with native support for 16:9, 9:16, 2:1, and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview / Precision control",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "2:1 отсутствует в списке соотношений раздела спецификаций (E-45-11, E-45-12) — см. противоречия."
+  },
+  {
+   "код": "E-45-6",
+   "вид": "предупреждение",
+   "утверждение_en": "The tech-spec breakdown covers what the models can handle via the API and Vertex AI; for the latest details, always check the official Gemini 3 Pro Image and Gemini 3.1 Flash Image documentation.",
+   "цитата": "for latest details, always check the official",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Блог сам указывает, что его спецификации вторичны по отношению к документации."
+  },
+  {
+   "код": "E-45-7",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2) supports a maximum of 131,072 input tokens.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2) supports a maximum of 131,072 input tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Context windows",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-8",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro) supports a maximum of 65,536 input tokens.",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro) supports a maximum of 65,536 input tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Context windows",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-9",
+   "вид": "лимит",
+   "утверждение_en": "Both Nano Banana 2 and Nano Banana Pro support a maximum of 32,768 output tokens.",
+   "цитата": "Both models support a maximum of 32,768 output tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Context windows",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; \"Both models\" раскрыто из предыдущего предложения",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-10",
+   "вид": "факт",
+   "утверждение_en": "Built-in generation for 1K, 2K and 4K visuals; Gemini 3.1 Flash Image adds the smaller 512px (0.5K) resolution.",
+   "цитата": "Built-in generation capabilities for 1K, 2K, and 4K visuals. Gemini 3.1 Flash Image adds the smaller 512px (0.5K) resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Resolutions",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-11",
+   "вид": "факт",
+   "утверждение_en": "Both Nano Banana 2 and Nano Banana Pro support the aspect ratios 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9.",
+   "цитата": "Both models support 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Aspect ratios",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image additionally supports the 1:4, 4:1, 1:8, and 8:1 aspect ratios.",
+   "цитата": "Gemini 3.1 Flash Image Preview also adds 1:4, 4:1, 1:8, and 8:1 aspect ratios.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Aspect ratios",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В тексте модель названа \"Gemini 3.1 Flash Image Preview\"."
+  },
+  {
+   "код": "E-45-13",
+   "вид": "лимит",
+   "утверждение_en": "You can mix up to 14 reference object images in a single prompt.",
+   "цитата": "You can mix up to 14 reference object images in a single prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Image inputs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Разбивки по типам рефов (объекты/персонажи/стиль) и по моделям здесь нет."
+  },
+  {
+   "код": "E-45-14",
+   "вид": "факт",
+   "утверждение_en": "Supported input image MIME types include image/png, image/jpeg, image/webp, image/heic, and image/heif.",
+   "цитата": "Supported MIME types include image/png, image/jpeg, image/webp, image/heic, and image/heif.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Image inputs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-15",
+   "вид": "факт",
+   "утверждение_en": "The models accept text and PDF files as document inputs.",
+   "цитата": "You can input text and pdf files.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Document inputs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-16",
+   "вид": "лимит",
+   "утверждение_en": "Maximum file size per document is 50 MB for API and Cloud Storage imports, or 7 MB for direct uploads through the Google Cloud console.",
+   "цитата": "The maximum file size per file is 50 MB for API and Cloud Storage imports, or 7 MB for direct uploads through the Google Cloud console.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Document inputs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; модели раскрыты из заголовка раздела",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сказано в пункте Document inputs; относится ли предел к картинкам, не сказано."
+  },
+  {
+   "код": "E-45-17",
+   "вид": "факт",
+   "утверждение_en": "Both models output text and images.",
+   "цитата": "Both models output text and images.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Outputs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; \"Both models\" раскрыто из заголовка раздела",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-18",
+   "вид": "факт",
+   "утверждение_en": "Both models have a knowledge cutoff date of January 2025.",
+   "цитата": "Both models have a knowledge cutoff date of January 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Model knowledge base",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; \"Both models\" раскрыто из заголовка раздела",
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Более поздние события модели знают только через веб-поиск (E-45-19)."
+  },
+  {
+   "код": "E-45-19",
+   "вид": "факт",
+   "утверждение_en": "Both models are powered by real-time information from web search.",
+   "цитата": ": Both models are powered by real-time information from web search",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Live data",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; \"Both models\" раскрыто из заголовка раздела",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Цитата начинается с двоеточия — в файле метка \"Live data\" стоит отдельной строкой."
+  },
+  {
+   "код": "E-45-20",
+   "вид": "факт",
+   "утверждение_en": "All generated images include C2PA Content Credentials and a SynthID watermark.",
+   "цитата": "All generated images include\nC2PA\nContent Credentials and a SynthID watermark.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs / Trust & safety",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Два механизма маркировки: метаданные C2PA Content Credentials и водяной знак SynthID."
+  },
+  {
+   "код": "E-45-21",
+   "вид": "правило",
+   "утверждение_en": "Be specific: provide concrete details on subject, lighting, and composition.",
+   "цитата": "Provide concrete details on subject, lighting, and composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-22",
+   "вид": "правило",
+   "утверждение_en": "Use positive framing: describe what you want, not what you don't want (e.g. \"empty street\" instead of \"no cars\").",
+   "цитата": "Describe what you want, not what you don’t want (e.g. “empty street” instead of “no cars”).",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-23",
+   "вид": "правило",
+   "утверждение_en": "Control the camera with photographic and cinematic terms like \"low angle\" and \"aerial view\".",
+   "цитата": "Use photographic and cinematic terms like “low angle” and “aerial view”.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-24",
+   "вид": "правило",
+   "утверждение_en": "Iterate: refine images with follow-up prompts in a conversational manner.",
+   "цитата": "Refine images with follow-up prompts in a conversational manner.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-25",
+   "вид": "правило",
+   "утверждение_en": "The key is to start a prompt with a strong verb that tells the model the primary operation you want to perform.",
+   "цитата": "The key is to start a prompt with a strong verb that tells the model the primary operation you want to perform.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Подано как главное (\"The key is\"). Формула и пример text-to-image на этой же странице начинаются с субъекта, а не с глагола — см. противоречия."
+  },
+  {
+   "код": "E-45-26",
+   "вид": "объяснение",
+   "утверждение_en": "The prompt structure for image generation depends on whether you are using reference images or relying solely on text.",
+   "цитата": "When generating an image, your prompt structure depends entirely on whether you are using reference images or relying solely on text.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Отсюда две разные формулы: E-45-28 (без рефов) и E-45-31 (с рефами)."
+  },
+  {
+   "код": "E-45-27",
+   "вид": "правило",
+   "утверждение_en": "For text-to-image without references, a simple list of keywords won't work; describe the scene narratively, acting as the director.",
+   "цитата": "When starting with a blank canvas, you are the director. A simple list of keywords won't cut it; you need to describe the scene narratively.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "\"you need to\" — сильная рекомендация."
+  },
+  {
+   "код": "E-45-28",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Text-to-image formula: [Subject] + [Action] + [Location/context] + [Composition] + [Style].",
+   "цитата": "[Subject] + [Action] + [Location/context] + [Composition] + [Style]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Порядок: субъект → действие → место/контекст → композиция (план, кадрирование) → стиль (включая носитель/плёнку и свет) последним."
+  },
+  {
+   "код": "E-45-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Text-to-image example following the formula with inline slot labels: a fashion model in a tailored brown dress (Subject), posing with a confident stance (Action), on a deep cherry red studio backdrop (Location), medium-full center-framed shot (Composition), fashion-editorial style on medium-format analog film with grain, high saturation and cinematic lighting (Style).",
+   "цитата": "[Subject] A striking fashion model wearing a tailored brown dress, sleek boots, and holding a structured handbag. [Action] Posing with a confident, statuesque stance, slightly turned. [Location/context] A seamless, deep cherry red studio backdrop. [Composition] Medium-full shot, center-framed. [Style] Fashion magazine style editorial, shot on medium-format analog film, pronounced grain, high saturation, cinematic lighting effect.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Каждый слот формулы E-45-28 — отдельное предложение, помеченное меткой в квадратных скобках. Субъект с деталями одежды/аксессуаров; действие с позой (\"slightly turned\"); фон одним точным описанием цвета; композиция терминами кадра (Medium-full shot, center-framed); стиль = жанр + носитель (medium-format analog film) + фактура (grain) + цвет + свет. Начинается с существительного, не с глагола. Нужно ли оставлять метки в реальном промпте, не сказано."
+  },
+  {
+   "код": "E-45-30",
+   "вид": "факт",
+   "утверждение_en": "Gemini lets you combine multiple reference images to guide the final output, which suits maintaining character consistency or merging a specific product into a new environment.",
+   "цитата": "Gemini allows you to combine multiple reference images to guide the final output. This is perfect for maintaining character consistency or merging a specific product into a new environment.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-31",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Generation-with-references formula: [Reference images] + [Relationship instruction] + [New scenario].",
+   "цитата": "[Reference images] + [Relationship instruction] + [New scenario]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Порядок: сначала назвать рефы и роль каждого, затем что с ними сделать (связь), затем новую сцену."
+  },
+  {
+   "код": "E-45-32",
+   "вид": "пример_промпта",
+   "утверждение_en": "Reference example: \"Using the attached napkin sketch as the structure and the attached fabric sample as the texture, transform this into a high-fidelity 3D armchair render. Place it in a sun-drenched, minimalist living room.\" (with slot labels inline).",
+   "цитата": "Using the attached napkin sketch as the structure and the attached fabric sample as the texture [References], transform this into a high-fidelity 3D armchair render [Relationship]. Place it in a sun-drenched, minimalist living room [New Scenario].",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Каждому рефу назначена роль (\"as the structure\", \"as the texture\") — так рефы различаются без номеров. Затем глагол преобразования и тип результата (\"transform this into a high-fidelity 3D armchair render\"), затем сцена. Метки слотов стоят после фрагментов, в отличие от E-45-29, где они перед ними."
+  },
+  {
+   "код": "E-45-33",
+   "вид": "правило",
+   "утверждение_en": "Editing requires a different mindset than generating: you already have a base image, so the prompt should focus on what is changing and what is staying the same.",
+   "цитата": "Editing requires a different mindset than generating. You already have a base image; your prompt needs to focus on what is changing and what is staying the same.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-34",
+   "вид": "приём",
+   "утверждение_en": "Semantic masking (inpainting): you can define a \"mask\" through text to edit a specific part of an image while leaving the rest untouched.",
+   "цитата": "You can define a \"mask\" through text to edit a specific part of an image while leaving the rest untouched.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-35",
+   "вид": "правило",
+   "утверждение_en": "When editing with semantic masking, be explicit about what to keep exactly the same.",
+   "цитата": "Be explicit about what to keep exactly the same.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Помечено как \"Prompting tip\"."
+  },
+  {
+   "код": "E-45-36",
+   "вид": "пример_промпта",
+   "утверждение_en": "Conversational-edit example prompt: \"Remove the man from the photo\".",
+   "цитата": "Remove the man from the photo",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Короткое поручение: глагол операции первым (remove) + объект + ссылка на исходник (\"the photo\"). Оговорки о сохранении нет, хотя совет рядом (E-45-35) её требует — см. противоречия."
+  },
+  {
+   "код": "E-45-37",
+   "вид": "инструкция",
+   "утверждение_en": "To add elements, upload a base image and an object image and tell the model to combine them.",
+   "цитата": "Upload a base image and an object image, and tell the model to combine them.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Composition and style transfer (with new references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-38",
+   "вид": "инструкция",
+   "утверждение_en": "For style transfer, upload a photo and ask the model to recreate its exact content in a different artistic style, e.g. turning a photo of a modern city street into a Van Gogh-style painting.",
+   "цитата": "Upload a photo and ask the model to recreate its exact content in a different artistic style, such as transforming a photo of a modern city street into a Van Gogh-style painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Composition and style transfer (with new references)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-39",
+   "вид": "факт",
+   "утверждение_en": "Gemini image models can actively search the web to generate images based on real-time information.",
+   "цитата": "Gemini Image models can actively search the web to generate images based on real-time information.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-40",
+   "вид": "правило",
+   "утверждение_en": "With web search, instead of describing a fictional scene, instruct the model to retrieve real-world data and then specify how to visualize it.",
+   "цитата": "Instead of describing a fictional scene, you instruct the model to retrieve real-world data and then specify how to visualize it.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-41",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Web-search formula: [Source/Search request] + [Analytical task] + [Visual translation].",
+   "цитата": "[Source/Search request] + [Analytical task] + [Visual translation]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Порядок: что найти → как обработать найденное (правило преобразования данных в сцену) → визуальная форма."
+  },
+  {
+   "код": "E-45-42",
+   "вид": "пример_промпта",
+   "утверждение_en": "Web-search example: search current weather and date in San Francisco, use the data to modify the scene (e.g. grey and rainy if raining), and visualize it as a miniature city-in-a-cup embedded in a realistic modern smartphone UI.",
+   "цитата": "[Search for current weather and date in San Francisco] + [Analytically, use this data to modify the scene (e.g., if raining, make it look grey and rainy)] + [Visualize this in a miniature city-in-a-cup concept embedded within a realistic, modern smartphone UI.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо; модель выведена из соседнего абзаца (E-45-43: \"Nano Banana 2 is powered by real-time information and images from web search\")",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Три блока формулы E-45-41 в квадратных скобках через \"+\": поиск (глагол Search) → условное правило преобразования данных (\"if raining, make it look grey and rainy\") → визуальная концепция (miniature city-in-a-cup в UI смартфона). Последняя скобка в источнике не закрыта. Подпись: \"prompted on Tuesday 3rd March\"."
+  },
+  {
+   "код": "E-45-43",
+   "вид": "ограничение",
+   "утверждение_en": "Real-time information and images from web search for Nano Banana 2 is described as coming soon to Vertex AI (as of the post).",
+   "цитата": "This feature is coming soon to Vertex AI, and will help your teams create more accurate visuals.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Состояние на дату поста (March 5, 2026). Первое предложение абзаца повторяет E-45-3."
+  },
+  {
+   "код": "E-45-44",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 and Nano Banana Pro excel at rendering sharp, legible text for posters, diagrams, and product mockups.",
+   "цитата": "Nano Banana 2 and Nano Banana Pro excel at rendering sharp, legible text for impactful posters, diagrams, and product mockups.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-45",
+   "вид": "факт",
+   "утверждение_en": "The models support multilingual text generation in over 10 languages.",
+   "цитата": "Furthermore, it supports state-of-the-art multilingual text generation in over 10 languages.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо; \"it\" раскрыто из предыдущего предложения",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Список языков не приведён."
+  },
+  {
+   "код": "E-45-46",
+   "вид": "правило",
+   "утверждение_en": "For typography, enclose the desired words in quotes (e.g. \"Happy Birthday\" or \"URBAN EXPLORER\").",
+   "цитата": "Enclose your desired words in quotes (e.g., \"Happy Birthday\" or \"URBAN EXPLORER\").",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Подано как одно из правил (\"follow these rules\")."
+  },
+  {
+   "код": "E-45-47",
+   "вид": "правило",
+   "утверждение_en": "Choose a font: describe the typography style or name the font, e.g. \"bold, white, sans-serif font\" or \"Century Gothic 12px font\".",
+   "цитата": "Describe the typography style or name of the font. Prompt for a \"bold, white, sans-serif font\" or \"Century Gothic 12px font\".",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Допускается и описание стиля, и имя гарнитуры, даже с кеглем в px."
+  },
+  {
+   "код": "E-45-48",
+   "вид": "приём",
+   "утверждение_en": "To translate and localize, write the prompt in one language and specify a target language for the text output.",
+   "цитата": "Write your prompt in one language and specify a target language for the text output.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-49",
+   "вид": "приём",
+   "утверждение_en": "Text-first hack: when generating text for an image, Gemini image models work best if you first converse with the model to generate the text concepts and then ask for an image with that text.",
+   "цитата": "When generating text for an image, Gemini Image models work best if you first converse with it to generate the text concepts, and then ask for an image with that text.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-50",
+   "вид": "пример_промпта",
+   "утверждение_en": "Typography example: a glossy commercial beauty shot of a moisturizer jar with three lines of text, each with exact wording in single quotes and a named font ('GLOW' in Brush Script, '10% OFF' in Impact, 'Your First Order' in Century Gothic), followed by an instruction to translate the text into Korean and Arabic.",
+   "цитата": "A high-end, glossy commercial beauty shot of a sleek, minimalist nude-colored face moisturizer jar resting on a warm studio background. The lighting is soft and radiant. Next to the product, render three lines of text with the following exact styling: For the top line, the word 'GLOW' in a flowing, elegant Brush Script font. For the middle line, the text '10% OFF' in a heavy, blocky Impact font. For the bottom line, the text 'Your First Order' in a thin, minimalist Century Gothic font.\" Then translate the text into Korean and Arabic.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "промптинг"
+   ],
+   "заметка": "Структура: жанр и качество кадра → продукт с материалом/цветом → фон → свет → блок текста: место (\"Next to the product\"), число строк, затем построчно позиция (top/middle/bottom) + точные слова в кавычках + описание шрифта + имя гарнитуры → перевод на другие языки. Перед \"Then translate…\" в источнике стоит закрывающая кавычка без открывающей — неясно, часть того же промпта это или следующий ход."
+  },
+  {
+   "код": "E-45-51",
+   "вид": "пример_промпта",
+   "утверждение_en": "Typography example: a black-background poster where the bold letters \"New York\" fill the center and act as a cut-out window, with a photo of the New York skyline visible ONLY inside the letterforms.",
+   "цитата": "A typographic poster with a solid black background, bold letters spell \"New York\", filling the center of the frame. The text acts as a cut-out window. A photograph of New York skyline is visible ONLY inside the letterforms.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Текст в кавычках; функция букв задана явно (\"acts as a cut-out window\"); ограничение выделено заглавными (\"ONLY inside the letterforms\"). Начинается с типа изображения, не с глагола."
+  },
+  {
+   "код": "E-45-52",
+   "вид": "правило",
+   "утверждение_en": "To prompt like a creative director, stop typing keywords and start directing the scene; the Gemini image models offer studio-quality controls.",
+   "цитата": "To elevate your results from good to breathtaking, you need to stop typing keywords and start directing the scene.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 5. Prompting like a Creative Director",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-53",
+   "вид": "правило",
+   "утверждение_en": "Design your lighting: tell the model exactly how the scene is illuminated.",
+   "цитата": "Tell the model exactly how the scene is illuminated.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-54",
+   "вид": "приём",
+   "утверждение_en": "For studio setups, ask for a \"three-point softbox setup\" to evenly light a product.",
+   "цитата": "Ask for a \"three-point softbox setup\" to evenly light a product.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Формула «термин + назначение»."
+  },
+  {
+   "код": "E-45-55",
+   "вид": "приём",
+   "утверждение_en": "For dramatic effects, prompt for \"Chiaroscuro lighting with harsh, high contrast\" or \"Golden hour backlighting creating long shadows\".",
+   "цитата": "Prompt for \"Chiaroscuro lighting with harsh, high contrast\" or \"Golden hour backlighting creating long shadows\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-56",
+   "вид": "правило",
+   "утверждение_en": "Use specific hardware and photographic terminology to control the depth, distortion, and perspective of the shot.",
+   "цитата": "Use specific hardware and photographic terminology to control the depth, distortion, and perspective of your shot .",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "В источнике пробел перед точкой (\"shot .\")."
+  },
+  {
+   "код": "E-45-57",
+   "вид": "приём",
+   "утверждение_en": "Dictate the exact camera type to change the visual DNA of the image: a GoPro for an immersive, distorted action feel, a Fujifilm camera for authentic color science, or a cheap disposable camera for a raw, nostalgic flash aesthetic.",
+   "цитата": "Dictate the exact camera type to change the visual DNA of the image. Ask for the shot to be taken on a",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (названия камер и их эффекты — на следующих строках файла)",
+   "тема": [
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": "Приём: марка/тип камеры как стилевой переключатель с указанием, какой эффект она даёт."
+  },
+  {
+   "код": "E-45-58",
+   "вид": "приём",
+   "утверждение_en": "Force the perspective by explicitly requesting a \"low-angle shot with a shallow depth of field (f/1.8)\"; for vast scale ask for a \"wide-angle lens\"; for intricate details specify a \"macro lens\".",
+   "цитата": "Force the perspective by explicitly requesting a \"low-angle shot with a shallow depth of field (f/1.8)\". If you need to show a vast scale, ask for a \"wide-angle lens\". For intricate details, specify a \"macro lens\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Допускается числовая диафрагма (f/1.8)."
+  },
+  {
+   "код": "E-45-59",
+   "вид": "объяснение",
+   "утверждение_en": "The texture and color of the final image set its emotional tone.",
+   "цитата": "The texture and color of the final image set the emotional tone.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-60",
+   "вид": "приём",
+   "утверждение_en": "For a nostalgic or gritty vibe, tell the model to render the image \"as if on 1980s color film, slightly grainy\".",
+   "цитата": "If you want a nostalgic or gritty vibe, tell the model to render the image \"as if on 1980s color film, slightly grainy\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-61",
+   "вид": "приём",
+   "утверждение_en": "For a modern, moody aesthetic, ask for \"Cinematic color grading with muted teal tones\".",
+   "цитата": "For a modern, moody aesthetic, ask for \"Cinematic color grading with muted teal tones\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-62",
+   "вид": "правило",
+   "утверждение_en": "When generating logos, products, or characters, define their physical makeup (materiality and texture).",
+   "цитата": "When generating logos, products, or characters, define their physical makeup.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 4. Emphasize materiality and texture",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-45-63",
+   "вид": "приём",
+   "утверждение_en": "Replace generic nouns with material descriptions: not just \"a suit jacket\" but \"navy blue tweed\"; instead of \"armor\", \"ornate elven plate armor, etched with silver leaf patterns\"; for a mockup specify the surface, like a \"minimalist ceramic coffee mug\".",
+   "цитата": "Don't just ask for a suit jacket; ask for \"navy blue tweed\". Instead of \"armor,\" describe \"ornate elven plate armor, etched with silver leaf patterns.\" If you are designing a mockup, specify the surface, like a \"minimalist ceramic coffee mug.\"",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 4. Emphasize materiality and texture",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Пары «родовое слово → материал/цвет/фактура»."
+  },
+  {
+   "код": "E-45-64",
+   "вид": "приём",
+   "утверждение_en": "Gemini 3 can help you create prompts and with creative direction for Nano Banana.",
+   "цитата": "Gemini 3 can help you create prompts and with creative direction.",
+   "источник_цитаты": "txt",
+   "раздел": "Go further / Nano Banana + Gemini",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "другое"
+   ],
+   "заметка": "Текстовая модель как помощник для написания промптов."
+  },
+  {
+   "код": "E-45-65",
+   "вид": "приём",
+   "утверждение_en": "Create keyframes with Nano Banana to direct an animation, then use Veo to generate the video between them.",
+   "цитата": "Create keyframes with Nano Banana to direct an animation, then use Veo to generate the video between them.",
+   "источник_цитаты": "txt",
+   "раздел": "Go further / Nano Banana + Veo",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Сценарий связки с видеомоделью; ссылка на Veo 3.1 prompting guide."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-45-66",
+   "вид": "приём",
+   "утверждение_en": "All three formulas on the page are written as bracketed slots joined by \"+\" and follow the same logic of \"what → how/relationship → visual form\"; the examples show slot labels inline in the prompt text (before the fragment in the text-to-image example, after it in the reference example, and as whole bracketed blocks in the web-search example).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Five prompting frameworks",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-45-28, E-45-29, E-45-31, E-45-32, E-45-41, E-45-42",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Страница не говорит, надо ли оставлять метки [Subject] и т.п. в настоящем промпте — они выглядят как пояснения авторов."
+  },
+  {
+   "код": "E-45-67",
+   "вид": "правило",
+   "утверждение_en": "The page repeatedly frames prompting as directing rather than listing keywords: describe the scene narratively as the director, stop typing keywords and start directing, and replace generic nouns with material descriptions.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Five prompting frameworks / Prompting like a Creative Director",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-45-27, E-45-52, E-45-62, E-45-63, E-45-21",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Повторяющийся акцент страницы."
+  },
+  {
+   "код": "E-45-68",
+   "вид": "приём",
+   "утверждение_en": "In the Creative Director section every recommended term is paired with its intended effect (e.g. \"three-point softbox setup\" to evenly light a product; GoPro for an immersive, distorted action feel; wide-angle lens to show vast scale; macro lens for intricate details; 1980s color film for a nostalgic or gritty vibe).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "5. Prompting like a Creative Director",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-45-54, E-45-55, E-45-57, E-45-58, E-45-60, E-45-61",
+   "тема": [
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": "Словарь по измерениям: свет → камера (железо) → объектив/фокус → цветокор/плёнка → материалы."
+  },
+  {
+   "код": "E-45-69",
+   "вид": "факт",
+   "утверждение_en": "Web-search grounding availability differs by statement on the page: the overview says Nano Banana 2 uses real-time information and images from web search, the specs say both Nano Banana 2 and Pro are powered by real-time web search, and the web-search section says the feature is coming soon to Vertex AI.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Model overview / Tech specs / 3. Real-time information from web search",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-45-3, E-45-19, E-45-43",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Картинки из поиска («and images») приписаны только Nano Banana 2."
+  }
+ ],
+ "противоречия_внутри": [
+  "\"The key is to start a prompt with a strong verb\" (E-45-25) против формулы text-to-image, начинающейся с [Subject] (E-45-28), и её примера, начинающегося с существительного (E-45-29); примеры с глаголом первым — только в рефах, поиске и правке (E-45-32, E-45-42, E-45-36).",
+  "Совет \"Be explicit about what to keep exactly the same\" (E-45-35) и пример к нему \"Remove the man from the photo\" (E-45-36) без какой-либо оговорки о сохранении.",
+  "Model overview: \"native support for 16:9, 9:16, 2:1, and more\" (E-45-5), а в спецификациях соотношения 2:1 нет ни у одной модели (E-45-11, E-45-12).",
+  "Model overview говорит о 2K/4K как об \"upscaling\" (E-45-4), спецификации — о встроенной генерации 1K/2K/4K (E-45-10)."
+ ],
+ "не_сказано": [
+  "Не сказано, как задавать соотношение сторон и разрешение: ни параметров API, ни формулировок в промпте.",
+  "Не сказано, нужно ли оставлять в промпте метки слотов в квадратных скобках ([Subject], [References] и т.д.).",
+  "Не приведён список \"over 10 languages\" для текста в кадре.",
+  "Nano Banana 2 Lite и оригинальный Nano Banana (gemini-2.5-flash-image) не упомянуты; спецификации только для Nano Banana 2 и Nano Banana Pro.",
+  "Нет разбивки лимита 14 рефов по типам (объекты/персонажи/стиль) и по моделям.",
+  "Не сказано, как включается веб-поиск (параметр/инструмент) — только формула промпта.",
+  "Ничего о thinking-режиме как параметре (уровни, оплата), кроме общего \"deep reasoning\"."
+ ],
+ "сомнения": [
+  "Второй признак официальности — авторы: Khulan Davaajav, \"Product Marketing Manager, Google Cloud\"; Hussain Chinoy, \"Technical Solutions Manager\" (организация у второго не указана). Строки \"© Google LLC\" в видимом тексте нет (\"Copyright 2024 Google, Inc\" встречается только внутри скрипта html).",
+  "Пост от March 5, 2026 — старше документации (страница id 1 обновлена 2026-09-23); спецификации могли устареть, блог сам отсылает к документации (E-45-6).",
+  "Модель в пункте Aspect ratios названа \"Gemini 3.1 Flash Image Preview\" — возможно, на момент поста это был preview-идентификатор.",
+  "Пример E-45-50: закрывающая кавычка без открывающей перед \"Then translate the text into Korean and Arabic.\" — неясно, это продолжение промпта или отдельный следующий ход.",
+  "Кодовых блоков <pre>/<code> на странице нет; видимый текст html совпадает с txt (проверено построчно), альт-тексты картинок — только URL.",
+  "Промпт-пример E-45-50 длиннее 60 слов — цитата содержит полный промпт по правилу для примеров."
+ ]
+}

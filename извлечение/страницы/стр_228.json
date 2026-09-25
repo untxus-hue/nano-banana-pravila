@@ -1,0 +1,980 @@
+{
+ "id": 228,
+ "url": "https://firebase.google.com/docs/ai-logic/imagen-models-migration",
+ "заголовок": "Migrate from Imagen to a Gemini Image model (\"Nano Banana\")  |  Firebase AI Logic",
+ "дата_в_тексте": "Last updated 2026-09-24 UTC (подвал страницы); дат публикации в html нет (meta article:published_time / datePublished отсутствуют)",
+ "официальность": {
+  "домен": "firebase.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies', лицензии CC BY 4.0 / Apache 2.0, ссылки Terms/Privacy Google; текст от лица Firebase (продукт Google) с отсылкой к Firebase Support. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Гайд Firebase AI Logic для разработчиков мобильных/веб-приложений: миграция с отключаемых моделей Imagen (shutdown 17.08.2026) на Gemini 3.x Image («Nano Banana»). Три части: 1) таблица замен Imagen→Gemini (Imagen 4 Fast→3.1 Flash Image c thinking MINIMAL, Imagen 4→3.1 Flash Image c thinking HIGH, Ultra→3 Pro Image, capability-001→3.1 Flash Image); 2) пары кода Before/After на 6 платформах (Swift, Kotlin, Java, Web, Dart, Unity) с одним промптом 'An astronaut riding a horse' — меняется класс модели, модальность IMAGE, ImageConfig.aspectRatio и вызов generateContent; 3) таблица замен параметров: водяной знак SynthID всегда, только PNG, negativePrompt нет, всегда 1 картинка (цикл вместо numberOfImages, candidateCount не работает), люди разрешены по умолчанию. Термины: 'Gemini 3.x Image models', 'Agent Platform Gemini API (formerly Vertex AI)'. Повторно подчёркивается: set response modality IMAGE; можно IMAGE+TEXT.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "gemini-2.5-flash-image (раскрыто из 'Gemini 2.5 models' в баннере)",
+  "imagen-4.0-fast-generate-001",
+  "imagen-4.0-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagen-3.0-capability-001",
+  "imagen-3.0-generate-002"
+ ],
+ "структура": [
+  "Баннеры (App Check, Model updates, Gemini 2.5 shutdown)",
+  "Migrate from Imagen to a Gemini Image model (вводная, сроки)",
+  "Replacement Gemini Image models (таблица)",
+  "Migrate your app > Generate an image from text (шаги + код Before/After: Swift, Kotlin, Java, Web, Dart, Unity)",
+  "Replacement configuration options > Safety settings",
+  "Replacement configuration options > Model configuration parameters (таблица)",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Migrate from Imagen to a Gemini",
+   "итог": "ничего: заголовок страницы (title)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Build Build",
+   "итог": "ничего: обвязка сайта Firebase — меню продуктов, языки, левое меню документации (строки 2-408)"
+  },
+  {
+   "n": 3,
+   "начало": "Starting November 2, 2026, Firebase App",
+   "итог": "E-228-1"
+  },
+  {
+   "n": 4,
+   "начало": "Model updates: The latest Gemini models",
+   "итог": "ничего: не про генерацию картинок (анонс текстовой модели Gemini 3.8 Flash)"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 2.5 models will shut down",
+   "итог": "E-228-2"
+  },
+  {
+   "n": 6,
+   "начало": "Firebase Documentation Firebase AI Logic AI",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback)"
+  },
+  {
+   "n": 7,
+   "начало": "Migrate from Imagen to a Gemini Image model (\"Nano Banana\") Stay organized",
+   "итог": "ничего: заголовок H1 и обвязка (Stay organized with collections)"
+  },
+  {
+   "n": 8,
+   "начало": "All Imagen models shut down on",
+   "итог": "E-228-3"
+  },
+  {
+   "n": 9,
+   "начало": "All Imagen models are deprecated and",
+   "итог": "E-228-4"
+  },
+  {
+   "n": 10,
+   "начало": "Before this shutdown date, to avoid",
+   "итог": "E-228-5"
+  },
+  {
+   "n": 11,
+   "начало": "If you have an urgent issue",
+   "итог": "ничего: контакт поддержки, не про генерацию"
+  },
+  {
+   "n": 12,
+   "начало": "Replacement Gemini Image models Review the",
+   "итог": "ничего: заголовок раздела и вводная к таблице"
+  },
+  {
+   "n": 13,
+   "начало": "Imagen model Gemini 3.x Image models",
+   "итог": "ничего: шапка таблицы замен"
+  },
+  {
+   "n": 14,
+   "начало": "imagen-4.0-fast-generate-001 gemini-3.1-flash-image (with thinking",
+   "итог": "E-228-6"
+  },
+  {
+   "n": 15,
+   "начало": "imagen-4.0-generate-001 gemini-3.1-flash-image (with",
+   "итог": "E-228-7"
+  },
+  {
+   "n": 16,
+   "начало": "imagen-4.0-ultra-generate-001 gemini-3-pro-image",
+   "итог": "E-228-8"
+  },
+  {
+   "n": 17,
+   "начало": "imagen-3.0-capability-001 gemini-3.1-flash-image",
+   "итог": "E-228-9"
+  },
+  {
+   "n": 18,
+   "начало": "Migrate your app This section shows",
+   "итог": "ничего: вводная к разделу"
+  },
+  {
+   "n": 19,
+   "начало": "Generate an image from text Click your",
+   "итог": "ничего: заголовок подраздела и переключатель провайдера (Gemini Developer API / Agent Platform) — обвязка"
+  },
+  {
+   "n": 20,
+   "начало": "To generate an image from text,",
+   "итог": "E-228-10"
+  },
+  {
+   "n": 21,
+   "начало": "Create a GenerativeModel instance (instead",
+   "итог": "E-228-11"
+  },
+  {
+   "n": 22,
+   "начало": "Update the model configuration options to",
+   "итог": "E-228-12"
+  },
+  {
+   "n": 23,
+   "начало": "Note that Gemini Image models can",
+   "итог": "E-228-13"
+  },
+  {
+   "n": 24,
+   "начало": "Swift Before import FirebaseAILogic",
+   "итог": "E-228-14"
+  },
+  {
+   "n": 25,
+   "начало": "Swift After import FirebaseAILogic",
+   "итог": "E-228-15, E-228-16"
+  },
+  {
+   "n": 26,
+   "начало": "Kotlin Before // Initialize the Gemini",
+   "итог": "ничего: код Imagen «до», промпт — повтор E-228-14"
+  },
+  {
+   "n": 27,
+   "начало": "Kotlin After // Initialize the Gemini",
+   "итог": "E-228-17"
+  },
+  {
+   "n": 28,
+   "начало": "Java Before // Initialize the Gemini",
+   "итог": "ничего: код Imagen «до», промпт — повтор E-228-14"
+  },
+  {
+   "n": 29,
+   "начало": "Java After // Initialize the Gemini",
+   "итог": "ничего: повтор E-228-15, E-228-16, E-228-17 (Java-синтаксис; ImageConfig(AspectRatio.LANDSCAPE_4x3, null) — см. сомнения)"
+  },
+  {
+   "n": 30,
+   "начало": "Web Before import { initializeApp }",
+   "итог": "E-228-18"
+  },
+  {
+   "n": 31,
+   "начало": "Web After import { initializeApp }",
+   "итог": "E-228-19, E-228-20"
+  },
+  {
+   "n": 32,
+   "начало": "Dart Before import 'package:firebase_ai/firebase_ai.dart'",
+   "итог": "ничего: код Imagen «до», промпт — повтор E-228-14"
+  },
+  {
+   "n": 33,
+   "начало": "Dart After import 'package:firebase_ai/firebase_ai.dart'",
+   "итог": "ничего: повтор E-228-15, E-228-16 (Dart-синтаксис, проверка inlineDataParts.isNotEmpty)"
+  },
+  {
+   "n": 34,
+   "начало": "Unity Before using Firebase.AI ;",
+   "итог": "ничего: код Imagen «до», промпт — повтор E-228-14"
+  },
+  {
+   "n": 35,
+   "начало": "Unity After using Firebase ; using",
+   "итог": "ничего: повтор E-228-15, E-228-16, E-228-17; фильтр MimeType == \"image/png\" учтён в ДД E-228-34"
+  },
+  {
+   "n": 36,
+   "начало": "Replacement configuration options This section describes",
+   "итог": "ничего: заголовок раздела и вводная"
+  },
+  {
+   "n": 37,
+   "начало": "Safety settings You configure the safety",
+   "итог": "E-228-21"
+  },
+  {
+   "n": 38,
+   "начало": "Model configuration parameters You configure Imagen",
+   "итог": "E-228-22, E-228-23"
+  },
+  {
+   "n": 39,
+   "начало": "As part of the GenerationConfig ,",
+   "итог": "ничего: повтор E-228-12, E-228-13 (IMAGE; опционально IMAGE и TEXT)"
+  },
+  {
+   "n": 40,
+   "начало": "Review the following table to understand",
+   "итог": "ничего: вводная и шапка таблицы параметров"
+  },
+  {
+   "n": 41,
+   "начало": "addWatermark Not supported Gemini Image models",
+   "итог": "E-228-24"
+  },
+  {
+   "n": 42,
+   "начало": "aspectRatio Use aspectRatio in an",
+   "итог": "E-228-25"
+  },
+  {
+   "n": 43,
+   "начало": "imageFormat Not supported Gemini Image models",
+   "итог": "E-228-26"
+  },
+  {
+   "n": 44,
+   "начало": "negativePrompt Not supported Note that negative",
+   "итог": "E-228-27, E-228-28"
+  },
+  {
+   "n": 45,
+   "начало": "numberOfImages Not supported Gemini Image models",
+   "итог": "E-228-29, E-228-30, E-228-31"
+  },
+  {
+   "n": 46,
+   "начало": "personGeneration Not supported By default,",
+   "итог": "E-228-32"
+  },
+  {
+   "n": 47,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал (лицензия CC BY 4.0 / Apache 2.0, Google Developers Site Policies, Last updated 2026-09-24 UTC — использовано для даты и официальности)"
+  },
+  {
+   "n": 48,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: обвязка сайта (виджет отзыва, ссылки подвала, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-228-1",
+   "вид": "факт",
+   "утверждение_en": "Starting November 2, 2026, Firebase App Check enforcement will be required to use Firebase AI Logic.",
+   "цитата": "Starting November 2, 2026, Firebase App Check enforcement will be\nrequired\nto use Firebase AI Logic.",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-11-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Касается всех вызовов Firebase AI Logic, включая генерацию картинок; не специфично для image-моделей."
+  },
+  {
+   "код": "E-228-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 models will shut down in October 2026 and new projects cannot start using them; to avoid service disruptions, update to a newer model such as gemini-3.1-flash-image.",
+   "цитата": "Gemini 2.5 models will shut down in\nOctober 2026\n(and new projects cannot start\n    using them). To avoid service disruptions, update to a newer model (like\ngemini-3.8-flash\nor\ngemini-3.1-flash-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы (Model updates)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-10",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "gemini-2.5-flash-image раскрыто из фразы 'Gemini 2.5 models' (сам id 2.5-image в баннере не назван); gemini-3.1-flash-image назван как пример замены. Хвост абзаца про Live API 2.5 не про картинки."
+  },
+  {
+   "код": "E-228-3",
+   "вид": "факт",
+   "утверждение_en": "All Imagen models shut down on August 17, 2026; as a replacement, apps can migrate to Gemini 3.x Image models (the \"Nano Banana\" models).",
+   "цитата": "All\nImagen\nmodels shut down on\n  August 17, 2026.\nAs a replacement, you can follow\n  this guide to migrate your apps to use\nGemini 3.x Image\nmodels (the \"Nano Banana\" models).",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate from Imagen to a Gemini Image model (\"Nano Banana\") (вводная)",
+   "модели": [
+    "imagen (все модели)",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-08-17",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Во вводной — «shut down on», в следующем абзаце — «as early as» (см. противоречия_внутри). Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-4",
+   "вид": "факт",
+   "утверждение_en": "All Imagen models are deprecated and will shut down as early as August 17, 2026; the deprecation applies across Google and for both the Gemini Developer API and the Agent Platform Gemini API (formerly Vertex AI).",
+   "цитата": "All\nImagen\nmodels are deprecated and will\nshut down as early as\nAugust 17, 2026\n. This deprecation and shutdown is applicable\nacross Google and for both the\nGemini Developer API\nand\nAgent Platform\nGemini API (formerly Vertex AI)\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate from Imagen to a Gemini Image model (\"Nano Banana\") (вводная)",
+   "модели": [
+    "imagen (все модели)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-08-17",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Agent Platform Gemini API = бывший Vertex AI (переименование зафиксировано самой страницей)."
+  },
+  {
+   "код": "E-228-5",
+   "вид": "правило",
+   "утверждение_en": "Before the Imagen shutdown date, to avoid service disruption, you should migrate apps from Imagen models to Gemini 3.x Image models.",
+   "цитата": "Before this shutdown date, to avoid service disruption, you should migrate your\napps from using\nImagen\nmodels to using\nGemini 3.x Image\nmodels\n(the \"Nano Banana\" models), as described in this guide.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate from Imagen to a Gemini Image model (\"Nano Banana\") (вводная)",
+   "модели": [
+    "imagen",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "'should' — рекомендация Google, не формальное требование; фактически вынуждено отключением. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-6",
+   "вид": "факт",
+   "утверждение_en": "Replacement mapping: imagen-4.0-fast-generate-001 is replaced by gemini-3.1-flash-image with thinking level MINIMAL.",
+   "цитата": "imagen-4.0-fast-generate-001\ngemini-3.1-flash-image\n(with thinking level\nMINIMAL\n)",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement Gemini Image models",
+   "модели": [
+    "imagen-4.0-fast-generate-001",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "Строка таблицы замен. Быстрая Imagen = NB2 с минимальным уровнем мышления."
+  },
+  {
+   "код": "E-228-7",
+   "вид": "факт",
+   "утверждение_en": "Replacement mapping: imagen-4.0-generate-001 is replaced by gemini-3.1-flash-image with thinking level HIGH.",
+   "цитата": "imagen-4.0-generate-001\ngemini-3.1-flash-image\n(with thinking level\nHIGH\n)",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement Gemini Image models",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "Строка таблицы замен. Стандартная Imagen 4 = NB2 с высоким уровнем мышления."
+  },
+  {
+   "код": "E-228-8",
+   "вид": "факт",
+   "утверждение_en": "Replacement mapping: imagen-4.0-ultra-generate-001 is replaced by gemini-3-pro-image.",
+   "цитата": "imagen-4.0-ultra-generate-001\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement Gemini Image models",
+   "модели": [
+    "imagen-4.0-ultra-generate-001",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Для Pro уровень мышления в таблице не указан."
+  },
+  {
+   "код": "E-228-9",
+   "вид": "факт",
+   "утверждение_en": "Replacement mapping: imagen-3.0-capability-001 is replaced by gemini-3.1-flash-image.",
+   "цитата": "imagen-3.0-capability-001\ngemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement Gemini Image models",
+   "модели": [
+    "imagen-3.0-capability-001",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "imagen-3.0-capability-001 — модель редактирования/кастомизации Imagen (назначение страницей не раскрыто — это внешнее знание); уровень мышления не указан."
+  },
+  {
+   "код": "E-228-10",
+   "вид": "инструкция",
+   "утверждение_en": "To migrate text-to-image generation, use an appropriate replacement Gemini Image model (such as gemini-3.1-flash-image).",
+   "цитата": "To generate an image from text, migrate your app by making the following\nchanges:\nUse an appropriate\nreplacement\nGemini\nImage model\n(such as\ngemini-3.1-flash-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Шаг 1 из списка миграции."
+  },
+  {
+   "код": "E-228-11",
+   "вид": "инструкция",
+   "утверждение_en": "Create a GenerativeModel instance instead of an ImagenModel instance when migrating to Gemini Image models.",
+   "цитата": "Create a\nGenerativeModel\ninstance (instead of an\nImagenModel\ninstance).",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Шаг 2. Модели не названы в пункте; по контексту раздела — Gemini Image models."
+  },
+  {
+   "код": "E-228-12",
+   "вид": "правило",
+   "утверждение_en": "Update the model configuration options to accommodate Gemini Image models; as part of this configuration, set a response modality of IMAGE.",
+   "цитата": "Update the\nmodel configuration options\nto accommodate\nGemini\nImage models.\nAs part of this configuration, set a response modality of\nIMAGE\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Шаг 3. Без модальности IMAGE картинка не вернётся (прямо страница этого не говорит — это смысл требования)."
+  },
+  {
+   "код": "E-228-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models can be configured to return both images and text.",
+   "цитата": "Note that\nGemini\nImage models can be configured to return both\nimages\nand\ntext.",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'can be configured' — возможность; повторено в разделе Model configuration parameters (IMAGE и TEXT)."
+  },
+  {
+   "код": "E-228-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "The migration samples use the same short text prompt \"An astronaut riding a horse\" for both the Imagen (before) and the Gemini Image (after) code.",
+   "цитата": "prompt",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text (кодовые блоки Before/After, все платформы)",
+   "модели": [
+    "imagen (IMAGEN_MODEL_NAME)",
+    "GEMINI_IMAGE_MODEL_NAME"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Промпт из 5 слов: субъект + действие, без стиля/света/камеры/формата. Один и тот же текст подаётся и в generateImages (Imagen), и в generateContent (Gemini) — страница не требует переписывать промпт при миграции. В Web/Dart-вариантах с точкой в конце."
+  },
+  {
+   "код": "E-228-15",
+   "вид": "инструкция",
+   "утверждение_en": "To generate an image with a Gemini Image model, call generateContent with the text prompt (instead of generateImages used for Imagen).",
+   "цитата": "// To generate an image, call `generateContent` with the text prompt.",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Swift After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Комментарий кода; в Before-блоках стоит generateImages. Одинаково во всех 6 платформах (Unity — GenerateContentAsync)."
+  },
+  {
+   "код": "E-228-16",
+   "вид": "инструкция",
+   "утверждение_en": "In the Gemini Image model setup, the GenerationConfig sets responseModalities to image and a nested ImageConfig sets the aspect ratio (landscape 4:3 in the samples).",
+   "цитата": "responseModalities: [.image],\n    imageConfig: ImageConfig(aspectRatio: .landscape4x3)",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Swift After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Во всех After-примерах одно и то же: IMAGE + aspectRatio LANDSCAPE_4x3. Значение 4:3 — пример, не рекомендация."
+  },
+  {
+   "код": "E-228-17",
+   "вид": "инструкция",
+   "утверждение_en": "Check whether the response finishReason is NO_IMAGE and handle the case where no images were generated.",
+   "цитата": "if (imageResponse.finishReason == FinishReason.NO_IMAGE) {\n  // Handle the case where no images were generated.",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Kotlin After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Та же проверка в Java/Web/Unity After; в Swift/Dart — проверка на пустые inlineDataParts. Страница не объясняет, почему модель может не вернуть картинку."
+  },
+  {
+   "код": "E-228-18",
+   "вид": "факт",
+   "утверждение_en": "For Imagen models (legacy), if fewer images were generated than were requested, the response filteredReason describes why they were filtered out.",
+   "цитата": "// If fewer images were generated than were requested,\n// then `filteredReason` will describe the reason they were filtered out.",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Web Before, Imagen)",
+   "модели": [
+    "imagen (IMAGEN_MODEL_NAME)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Фиксация как есть: поведение Imagen, не Gemini Image. Для Gemini аналог — FinishReason.NO_IMAGE / исключение блокировки."
+  },
+  {
+   "код": "E-228-19",
+   "вид": "факт",
+   "утверждение_en": "The generated image is returned as inline data with a mimeType and base64 data that the app uses to display it.",
+   "цитата": "// Use this mimeType and base64 data to display the image using your preferred tooling.",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Web After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Картинка приходит как inlineData part ответа generateContent."
+  },
+  {
+   "код": "E-228-20",
+   "вид": "предупреждение",
+   "утверждение_en": "A generateContent call to a Gemini Image model can fail because the prompt or candidate was blocked; the sample catches this as an error.",
+   "цитата": "console.error('Prompt or candidate was blocked:', err);",
+   "источник_цитаты": "html",
+   "раздел": "Migrate your app > Generate an image from text (Web After)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Выведено из обработчика catch в примере: блокировка промпта/кандидата проявляется ошибкой."
+  },
+  {
+   "код": "E-228-21",
+   "вид": "инструкция",
+   "утверждение_en": "Safety settings configured for Imagen with ImagenSafetySettings must be migrated to SafetySetting for Gemini Image models.",
+   "цитата": "You configure the safety settings for\nImagen\nmodels using\nImagenSafetySettings\n. However, for\nGemini\nImage models, you need to\nmigrate to using\nSafetySetting\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Safety settings",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "'you need to migrate' — требование."
+  },
+  {
+   "код": "E-228-22",
+   "вид": "инструкция",
+   "утверждение_en": "Imagen models are configured with ImagenGenerationConfig; for Gemini Image models, migrate to a GenerationConfig and optionally a nested ImageConfig.",
+   "цитата": "You configure\nImagen\nmodels with an\nImagenGenerationConfig\n. However,\nfor\nGemini\nImage models, you need to migrate to using a\nGenerationConfig\nand optionally a nested\nImageConfig",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-228-23",
+   "вид": "факт",
+   "утверждение_en": "The nested ImageConfig in Firebase AI Logic SDKs is available starting with the early May 2026 versions of the SDKs.",
+   "цитата": "(this is available starting with the early May 2026 versions of the SDKs).",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Версионное ограничение SDK: старые SDK не имеют ImageConfig (aspectRatio)."
+  },
+  {
+   "код": "E-228-24",
+   "вид": "факт",
+   "утверждение_en": "Imagen addWatermark is not supported on Gemini Image models: they always return generated images with a SynthID watermark.",
+   "цитата": "addWatermark\nNot supported\nGemini\nImage models always return generated images with a\n          SynthID watermark.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Водяной знак SynthID нельзя отключить параметром. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-25",
+   "вид": "инструкция",
+   "утверждение_en": "Instead of Imagen aspectRatio, use aspectRatio in an ImageConfig; supported values and code samples are in the \"Configure image generation\" section of the Gemini Image models guide.",
+   "цитата": "aspectRatio\nUse\naspectRatio\nin an\nImageConfig\nFor code samples and supported values, see\nConfigure image generation\nin the\nGemini\nImage models guide.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Список допустимых значений на этой странице не дан — отсылка на другой гайд. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-26",
+   "вид": "ограничение",
+   "утверждение_en": "Imagen imageFormat is not supported on Gemini Image models: they always return generated images in PNG format.",
+   "цитата": "imageFormat\nNot supported\nGemini\nImage models always return generated images in\n          PNG format.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Формат вывода не выбирается (нет JPEG/WebP). Согласуется с фильтром image/png в Unity-примере. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-27",
+   "вид": "ограничение",
+   "утверждение_en": "negativePrompt is not supported on Gemini Image models.",
+   "цитата": "negativePrompt\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Отдельного поля негативного промпта нет. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-28",
+   "вид": "факт",
+   "утверждение_en": "Negative prompts are a legacy feature and have not been supported since imagen-3.0-generate-002 or by any of the Imagen 4 models.",
+   "цитата": "Note that negative prompts are a legacy feature, and they haven't been\n          supported since\nimagen-3.0-generate-002\n(or by any of the\nImagen 4\nmodels).",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "imagen-3.0-generate-002",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Страница не предлагает замену (например, формулировку исключений в самом тексте промпта)."
+  },
+  {
+   "код": "E-228-29",
+   "вид": "ограничение",
+   "утверждение_en": "numberOfImages is not supported: Gemini Image models always return a single generated image.",
+   "цитата": "numberOfImages\nNot supported\nGemini\nImage models always return a single generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Одна картинка на вызов. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-30",
+   "вид": "приём",
+   "утверждение_en": "As a workaround for multiple images, you can run the generation in a loop to achieve the same result.",
+   "цитата": "As a workaround, you can run your generation in a loop to achieve the\n          same result.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-31",
+   "вид": "предупреждение",
+   "утверждение_en": "Candidate count does not work as a replacement for numberOfImages on Gemini Image models.",
+   "цитата": "Note that candidate count doesn't work as a replacement.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Т.е. candidateCount>1 не даёт нескольких картинок. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-32",
+   "вид": "факт",
+   "утверждение_en": "personGeneration is not supported as a parameter; by default, Gemini Image models allow generating images of people.",
+   "цитата": "personGeneration\nNot supported\nBy default,\nGemini\nImage models allow generating images of\n          people.",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Параметра для запрета/разрешения людей нет; по умолчанию люди разрешены. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-228-33",
+   "вид": "объяснение",
+   "утверждение_en": "The replacement table implies that gemini-3.1-flash-image exposes a thinking level setting with at least MINIMAL and HIGH values, where MINIMAL maps to the speed-oriented tier (Imagen 4 Fast) and HIGH to the standard tier (Imagen 4).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement Gemini Image models (вся таблица)",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-228-6, E-228-7",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "Страница не объясняет, что делает уровень мышления и как его задать; соответствие скорость/качество — вывод из сопоставления строк."
+  },
+  {
+   "код": "E-228-34",
+   "вид": "факт",
+   "утверждение_en": "Across the configuration table, a Gemini Image model call returns exactly one PNG image carrying a SynthID watermark, with people allowed by default; several images require several calls.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Replacement configuration options > Model configuration parameters (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-228-24, E-228-26, E-228-29, E-228-30, E-228-32",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сводный «контракт вывода» из строк таблицы; Unity-пример фильтрует parts по MimeType == \"image/png\" — согласуется. Модели раскрыты из фразы 'Gemini 3.x Image models' (шапка таблицы); Lite на странице не назван."
+  },
+  {
+   "код": "E-228-35",
+   "вид": "объяснение",
+   "утверждение_en": "All \"after\" samples on all six platforms configure the same two things — response modality IMAGE and an explicit aspect ratio (4:3) through ImageConfig — and switch the call from generateImages to generateContent; the prompt text itself is left unchanged.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Migrate your app > Generate an image from text",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-228-14, E-228-15, E-228-16, E-228-17",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Порядок миграции: модель → класс GenerativeModel → конфиг (IMAGE + ImageConfig) → generateContent → обработка NO_IMAGE/блокировки."
+  }
+ ],
+ "противоречия_внутри": [
+  "Сроки Imagen: вводная говорит 'All Imagen models shut down on August 17, 2026' (E-228-3), следующий абзац — 'will shut down as early as August 17, 2026' (E-228-4): точная дата vs «не раньше/уже с»."
+ ],
+ "не_сказано": [
+  "Не сказано, нужно ли переписывать промпты Imagen под Gemini: в примерах один и тот же текст.",
+  "Нет замены negativePrompt (как формулировать исключения в тексте промпта) — только констатация, что это legacy.",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) в таблице замен не упоминается.",
+  "Не перечислены допустимые значения aspectRatio и нет параметра разрешения/imageSize — отсылка на гайд 'Configure image generation'.",
+  "Не объяснено, что такое thinking level и как его задать в Firebase SDK, хотя таблица замен опирается на MINIMAL/HIGH.",
+  "Не сказано, почему может вернуться FinishReason.NO_IMAGE и что делать (повтор, переформулировка).",
+  "Для Agent Platform Gemini API в сохранённом html кода нет — только ярлык вкладки; все примеры на Gemini Developer API (googleAI backend).",
+  "Не описано редактирование картинок (image-to-image) при миграции с imagen-3.0-capability-001 — только текст→картинка."
+ ],
+ "сомнения": [
+  "Дата 'Last updated 2026-09-24 UTC' совпадает с датой сбора — это дата обновления, не публикации.",
+  "Java-пример: new ImageConfig(AspectRatio.LANDSCAPE_4x3, null) — второй аргумент не назван на странице (вероятно, размер изображения), в единицы не вынесено.",
+  "Модель gemini-3.8-flash в баннере — текстовая, к картинкам не относится; оставлена за бортом."
+ ]
+}

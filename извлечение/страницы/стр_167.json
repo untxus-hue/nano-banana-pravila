@@ -1,0 +1,1511 @@
+{
+ "id": 167,
+ "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Image-Model-Card.pdf",
+ "заголовок": "Gemini 3 Pro Image - Model Card (PDF, заголовок из текста; в метаданных партии пуст)",
+ "дата_в_тексте": "Model card published: November, 2025 (строка 1); Published / Model Release: November 2025 (строка 18)",
+ "официальность": {
+  "домен": "storage.googleapis.com (бакет deepmind-media)",
+  "второй_признак": "текст от лица Google/Google DeepMind: 'Gemini 3 Pro Image is now Google’s most advanced model for image generation', 'our most powerful AI image editing model yet', 'we perform testing following the guidelines in Google DeepMind’s Frontier Safety Framework', ссылка на 'Google DeepMind site'. Копирайта и автора нет; storage.googleapis.com сам по себе — общий хостинг, официальность держится на бакете deepmind-media и тексте.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "PDF-модель-карточка Gemini 3 Pro Image (Nano Banana Pro), ноябрь 2025, для разработчиков/оценщиков. Описание (Google's most advanced image model, ввод текст+изображения, контекст 1M, выход изображение 64K токенов, основа Gemini 3 Pro), методика оценки (human evals, новые и регрессионные наборы, список способностей: текст, стиль, персонажи, reasoning, factuality, инфографика, doodle-редактирование, мультиход, мульти-изображение: visual design, virtual try on, product recontextualization), две таблицы Elo (8 существующих и 8 новых способностей) против 2.5 Flash Image, GPT-Image 1, Seedream v4 4k, Flux Pro Kontext Max — всё для 'Search On'; назначение (4 пункта), известные ограничения (6 пунктов), knowledge cutoff январь 2025, безопасность. Повторный акцент: основа Gemini 3 Pro (5 раз).",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Gemini 3 Pro Image, Search On)",
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image)",
+  "Gemini 3 Pro (основа)",
+  "GPT-Image 1, Seedream v4 4k, Flux Pro Kontext Max (конкуренты)"
+ ],
+ "структура": [
+  "Model Information",
+  "Model Data",
+  "Implementation and Sustainability",
+  "Distribution",
+  "Evaluation (Approach, Results: Existing Capabilities, New Capabilities)",
+  "Intended Usage and Limitations (Benefit and Intended Usage, Known Limitations, Acceptable Usage)",
+  "Ethics and Content Safety (Evaluation Approach, Safety Policies, Frontier Safety Assessment, Risks and Mitigations)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Model card published: November, 2025",
+   "итог": "ничего: дата — использована в дата_в_тексте"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini 3 Pro Image Model Card Gemini 3 Pro Image - Model Card",
+   "итог": "ничего: заголовок PDF"
+  },
+  {
+   "n": 3,
+   "начало": "Model Cards are intended to provide",
+   "итог": "ничего: мета-описание жанра модель-карточки ('may be updated from time-to-time') — учтено в картине"
+  },
+  {
+   "n": 4,
+   "начало": "Published / Model Release: November 2025",
+   "итог": "ничего: дата — использована в дата_в_тексте"
+  },
+  {
+   "n": 5,
+   "начало": "Model Information Description: Gemini 3 Pro",
+   "итог": "E-167-1"
+  },
+  {
+   "n": 6,
+   "начало": "Model dependencies: Gemini 3 Pro Image",
+   "итог": "E-167-2"
+  },
+  {
+   "n": 7,
+   "начало": "Inputs: Text strings (e.g. a question,",
+   "итог": "E-167-3"
+  },
+  {
+   "n": 8,
+   "начало": "Outputs: Image, with a 64K token output",
+   "итог": "E-167-4"
+  },
+  {
+   "n": 9,
+   "начало": "Architecture: Gemini 3 Pro Image is based",
+   "итог": "ничего: повтор E-167-2 + отсылка к карточке Gemini 3 Pro"
+  },
+  {
+   "n": 10,
+   "начало": "1 (номер страницы PDF)",
+   "итог": "ничего: колонтитул PDF"
+  },
+  {
+   "n": 11,
+   "начало": "Model Data Training Dataset: Gemini 3",
+   "итог": "ничего: отсылка к карточке Gemini 3 Pro (данные)"
+  },
+  {
+   "n": 12,
+   "начало": "Training Data Processing: For more information",
+   "итог": "ничего: отсылка к карточке Gemini 3 Pro"
+  },
+  {
+   "n": 13,
+   "начало": "Implementation and Sustainability Hardware: Gemini 3",
+   "итог": "ничего: не про генерацию картинок (TPU)"
+  },
+  {
+   "n": 14,
+   "начало": "The efficiencies gained through the use",
+   "итог": "ничего: не про генерацию картинок (устойчивость)"
+  },
+  {
+   "n": 15,
+   "начало": "Software: Training was done using JAX",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Distribution Gemini 3 Pro Image is based",
+   "итог": "ничего: отсылка к карточке Gemini 3 Pro (каналы распространения не перечислены)"
+  },
+  {
+   "n": 17,
+   "начало": "Evaluation The following Evaluation approach and",
+   "итог": "ничего: вводная раздела"
+  },
+  {
+   "n": 18,
+   "начало": "Approach: Gemini 3 Pro Image was evaluated",
+   "итог": "ничего: вводная к списку методики"
+  },
+  {
+   "n": 19,
+   "начало": "2 (номер страницы PDF)",
+   "итог": "ничего: колонтитул PDF"
+  },
+  {
+   "n": 20,
+   "начало": "● Human evaluations of several different",
+   "итог": "E-167-5"
+  },
+  {
+   "n": 21,
+   "начало": "○ New capability sets: diverse T2I",
+   "итог": "E-167-6"
+  },
+  {
+   "n": 22,
+   "начало": "○ Regression sets: popular use cases",
+   "итог": "E-167-7"
+  },
+  {
+   "n": 23,
+   "начало": "● Capabilities / Benchmarks: human evaluations were",
+   "итог": "E-167-8"
+  },
+  {
+   "n": 24,
+   "начало": "○ Existing Capabilities: Text Rendering, …",
+   "итог": "E-167-8 (та же единица)"
+  },
+  {
+   "n": 25,
+   "начало": "○ New Capabilities: Multi character editing, …",
+   "итог": "E-167-8 (та же единица)"
+  },
+  {
+   "n": 26,
+   "начало": "Results: Gemini 3 Pro Image demonstrated",
+   "итог": "E-167-9"
+  },
+  {
+   "n": 27,
+   "начало": "Existing Capabilities: Capability Gemini 3 Pro … (Search On)",
+   "итог": "E-167-10"
+  },
+  {
+   "n": 28,
+   "начало": "Text Rendering",
+   "итог": "E-167-11"
+  },
+  {
+   "n": 29,
+   "начало": "Stylization",
+   "итог": "E-167-12"
+  },
+  {
+   "n": 30,
+   "начало": "Multi-Turn",
+   "итог": "E-167-13"
+  },
+  {
+   "n": 31,
+   "начало": "General Image Editing",
+   "итог": "E-167-14"
+  },
+  {
+   "n": 32,
+   "начало": "Character Editing",
+   "итог": "E-167-15"
+  },
+  {
+   "n": 33,
+   "начало": "Object/Env. Editing",
+   "итог": "E-167-16"
+  },
+  {
+   "n": 34,
+   "начало": "General Text-to-Image",
+   "итог": "E-167-17"
+  },
+  {
+   "n": 35,
+   "начало": "Regression sets / popular use cases",
+   "итог": "E-167-18"
+  },
+  {
+   "n": 36,
+   "начало": "3 (номер страницы PDF) / New Capabilities: / шапка",
+   "итог": "ничего: колонтитул PDF, подзаголовок и повтор шапки E-167-10"
+  },
+  {
+   "n": 37,
+   "начало": "Multi character editing",
+   "итог": "E-167-19"
+  },
+  {
+   "n": 38,
+   "начало": "Chart editing",
+   "итог": "E-167-20"
+  },
+  {
+   "n": 39,
+   "начало": "Text editing",
+   "итог": "E-167-21"
+  },
+  {
+   "n": 40,
+   "начало": "Factuality - Edu",
+   "итог": "E-167-22"
+  },
+  {
+   "n": 41,
+   "начало": "Multi-input 1-3",
+   "итог": "E-167-23"
+  },
+  {
+   "n": 42,
+   "начало": "Infographics",
+   "итог": "E-167-24"
+  },
+  {
+   "n": 43,
+   "начало": "Doodle editing",
+   "итог": "E-167-25"
+  },
+  {
+   "n": 44,
+   "начало": "Visual design",
+   "итог": "E-167-26"
+  },
+  {
+   "n": 45,
+   "начало": "Benefit and Intended Usage: Gemini 3",
+   "итог": "E-167-27"
+  },
+  {
+   "n": 46,
+   "начало": "● creation and editing of images with prof",
+   "итог": "E-167-28"
+  },
+  {
+   "n": 47,
+   "начало": "● generation of clear text for posters and",
+   "итог": "E-167-29"
+  },
+  {
+   "n": 48,
+   "начало": "● long context real-world knowledge",
+   "итог": "E-167-30"
+  },
+  {
+   "n": 49,
+   "начало": "● studio-quality control",
+   "итог": "E-167-31"
+  },
+  {
+   "n": 50,
+   "начало": "Known Limitations: Gemini 3 Pro Image",
+   "итог": "E-167-32, E-167-33"
+  },
+  {
+   "n": 51,
+   "начало": "Even though it leads across capabilities",
+   "итог": "ничего: вводная к списку ограничений ('Even though it leads across capabilities compared to other models')"
+  },
+  {
+   "n": 52,
+   "начало": "● Text rendering: poor in small text (ofte",
+   "итог": "E-167-34"
+  },
+  {
+   "n": 53,
+   "начало": "● Character consistency is not always perf",
+   "итог": "E-167-35"
+  },
+  {
+   "n": 54,
+   "начало": "● Masked/Doodle based editing: partial ins",
+   "итог": "E-167-36"
+  },
+  {
+   "n": 55,
+   "начало": "● When editing images: infrequent copying/",
+   "итог": "E-167-37"
+  },
+  {
+   "n": 56,
+   "начало": "4 (номер страницы PDF)",
+   "итог": "ничего: колонтитул PDF"
+  },
+  {
+   "n": 57,
+   "начало": "● Occasional confusion around spatial loca",
+   "итог": "E-167-38"
+  },
+  {
+   "n": 58,
+   "начало": "● Still limited in advanced capabilities w",
+   "итог": "E-167-39"
+  },
+  {
+   "n": 59,
+   "начало": "The knowledge cutoff date for Gemini",
+   "итог": "E-167-40"
+  },
+  {
+   "n": 60,
+   "начало": "Acceptable Usage: For more information about",
+   "итог": "ничего: отсылка к карточке Gemini 3 Pro"
+  },
+  {
+   "n": 61,
+   "начало": "Ethics and Content Safety Evaluation Approach: Gemini",
+   "итог": "E-167-41"
+  },
+  {
+   "n": 62,
+   "начало": "Evaluation types included but were not",
+   "итог": "E-167-42"
+  },
+  {
+   "n": 63,
+   "начало": "● Training/Development Evaluations (пункт списка)",
+   "итог": "E-167-42 (та же единица)"
+  },
+  {
+   "n": 64,
+   "начало": "● Human Red Teaming (пункт списка)",
+   "итог": "E-167-42 (та же единица)"
+  },
+  {
+   "n": 65,
+   "начало": "● Trust Assurance Evaluations (пункт списка)",
+   "итог": "E-167-42 (та же единица)"
+  },
+  {
+   "n": 66,
+   "начало": "● Ethics & Safety Reviews (пункт списка)",
+   "итог": "E-167-42 (та же единица)"
+  },
+  {
+   "n": 67,
+   "начало": "In addition, we perform testing following",
+   "итог": "E-167-43"
+  },
+  {
+   "n": 68,
+   "начало": "Safety Policies: Gemini’s safety policies are",
+   "итог": "E-167-44"
+  },
+  {
+   "n": 69,
+   "начало": "1. Content related to child sexual (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 70,
+   "начало": "2. Hate speech (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 71,
+   "начало": "3. Dangerous content (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 72,
+   "начало": "4. Harassment (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 73,
+   "начало": "5. Sexually explicit content (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 74,
+   "начало": "6. Medical advice that runs contrary (пункт списка)",
+   "итог": "E-167-44 (та же единица)"
+  },
+  {
+   "n": 75,
+   "начало": "5 (номер страницы PDF)",
+   "итог": "ничего: колонтитул PDF"
+  },
+  {
+   "n": 76,
+   "начало": "We continue to improve our internal",
+   "итог": "E-167-45"
+  },
+  {
+   "n": 77,
+   "начало": "Frontier Safety Assessment: We evaluated Gemini",
+   "итог": "E-167-46"
+  },
+  {
+   "n": 78,
+   "начало": "Risks and Mitigations: Safety and responsibility",
+   "итог": "E-167-47"
+  },
+  {
+   "n": 79,
+   "начало": "● dataset filtering (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 80,
+   "начало": "● conditional pre-training (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 81,
+   "начало": "● supervised fine-tuning (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 82,
+   "начало": "● reinforcement learning from human and critic feedback (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 83,
+   "начало": "● safety policies and desiderata (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 84,
+   "начало": "● product-level mitigations such as safety filtering (пункт списка)",
+   "итог": "E-167-47 (та же единица)"
+  },
+  {
+   "n": 85,
+   "начало": "6 (номер страницы PDF)",
+   "итог": "ничего: колонтитул PDF"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-167-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is the next generation in the Gemini series of natively multimodal reasoning models and is described as Google's most advanced model for image generation; it can comprehend inputs from text and images.",
+   "цитата": "Description: Gemini 3 Pro Image is the next generation in the Gemini series of models, a suite of\nhighly-capable, natively multimodal, reasoning models. Gemini 3 Pro Image is now Google’s most\nadvanced model for image generation and can comprehend vast datasets, challenging problems from\ndifferent information sources, including text and images.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Позиционирование на ноябрь 2025."
+  },
+  {
+   "код": "E-167-2",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is based on Gemini 3 Pro.",
+   "цитата": "Model dependencies: Gemini 3 Pro Image is based on Gemini 3 Pro.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повторено в Architecture, Training Dataset, Distribution."
+  },
+  {
+   "код": "E-167-3",
+   "вид": "лимит",
+   "утверждение_en": "Inputs are text strings (e.g. a question, a prompt, documents to be summarized) and images, with a token context window of up to 1M.",
+   "цитата": "Inputs: Text strings (e.g. a question, a prompt, document(s) to be summarized), images, with a token\ncontext window of up to 1M.",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Число входных изображений не указано."
+  },
+  {
+   "код": "E-167-4",
+   "вид": "лимит",
+   "утверждение_en": "Output is an image, with a 64K token output.",
+   "цитата": "Outputs: Image, with a 64K token output",
+   "источник_цитаты": "txt",
+   "раздел": "Model Information",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Текстовый выход отдельно не назван; разрешения не указаны."
+  },
+  {
+   "код": "E-167-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image was evaluated with human evaluations of several quality aspects of image generation, with prompt sets in two categories.",
+   "цитата": "Human evaluations of several different quality aspects of image generation were conducted.\n       Prompt sets for human evaluations were in two broad categories:",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-6",
+   "вид": "факт",
+   "утверждение_en": "New capability sets are diverse T2I and editing evals covering text, style, character, reasoning, factuality, infographics, ink (doodle) based editing, multi-turn, and multi-image (visual design, virtual try on, product recontextualization, etc.).",
+   "цитата": "New capability sets: diverse T2I and editing evals are curated, covering a wide range of\n              capabilities, e.g. text, style, character, reasoning, factuality, infographics, ink (doodle)\n              based editing, multi-turn, multi-image (visual design, virtual try on, product\n              recontextualization, etc.)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "Косвенно перечисляет поддерживаемые классы задач, в т.ч. virtual try on и product recontextualization в мульти-изображении."
+  },
+  {
+   "код": "E-167-7",
+   "вид": "факт",
+   "утверждение_en": "Regression sets use popular use cases observed on Gemini 2.5 Flash Image, to ensure Gemini 3 Pro Image shows no noticeable regression.",
+   "цитата": "Regression sets: popular use cases observed on Gemini 2.5 Flash Image, to ensure\n              Gemini 3 Pro Image does not show noticeable regression.",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Approach",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-8",
+   "вид": "факт",
+   "утверждение_en": "Benchmarks: existing capabilities — Text Rendering, Stylization, Multi-Turn, General Image Editing, Character Editing, Object/Environment Editing, Generate Text-to-Image and Regressions; new capabilities — Multi character editing, Chart editing, Text editing, Factuality - Edu, Multi-input, Infographics, Doodle editing and Visual design.",
+   "цитата": "Capabilities / Benchmarks: human evaluations were conducted on these benchmarks:\n          ○​ Existing Capabilities: Text Rendering, Stylization, Multi-Turn, General Image Editing,\n              Character Editing, Object/Environment Editing, Generate Text-to-Image and\n              Regressions.\n          ○​ New Capabilities: Multi character editing, Chart editing, Text editing, Factuality - Edu,\n              Multi-input, Infographics, Doodle editing and Visual design.",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "'Chart editing' и 'Text editing' — редактирование графиков и текста на изображениях как отдельные способности."
+  },
+  {
+   "код": "E-167-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image leads on Elo across all new capabilities and regression sets, with significant margins in complex tasks such as multi-character, chart and text editing, and improves substantially in style compared to Gemini 2.5 Flash Image.",
+   "цитата": "Results: Gemini 3 Pro Image demonstrated strong performance and leads on Elo score across all new\ncapabilities and regression sets. It leads with significant margins in complex tasks, e.g. multi-character,\nchart and text editing. It improves substantially in style compared to Gemini 2.5 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-10",
+   "вид": "факт",
+   "утверждение_en": "Results tables compare Gemini 3 Pro Image with Search On against Gemini 2.5 Flash Image, GPT-Image 1, Seedream v4 4k and Flux Pro Kontext Max.",
+   "цитата": "Capability             Gemini 3 Pro     Gemini 2.5        GPT-Image 1      Seedream v4       Flux Pro\nBenchmark              Image            Flash Image                        4k                Kontext Max\n                       (Search On)",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — шапка таблиц",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "grounding"
+   ],
+   "заметка": "Все числа Pro в карточке — для конфигурации '(Search On)'; результатов без поиска нет. Шапка таблицы New Capabilities (строки 146-148) та же."
+  },
+  {
+   "код": "E-167-11",
+   "вид": "факт",
+   "утверждение_en": "Text Rendering Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1198±18 / 997±10 / 1150±14 / 1019±13 / 854±13.",
+   "цитата": "Text Rendering         1198 ± 18         997 ± 10         1150 ± 14         1019 ± 13        854 ± 13",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-12",
+   "вид": "факт",
+   "утверждение_en": "Stylization Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1098±11 / 933±7 / 1069±9 / 991±9 / 908±11.",
+   "цитата": "Stylization            1098 ± 11         933 ± 7          1069 ± 9          991 ± 9          908 ± 11",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-13",
+   "вид": "факт",
+   "утверждение_en": "Multi-Turn Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1186±19 / 1045±24 / 1079±32 / 990±32 / 889±37.",
+   "цитата": "Multi-Turn             1186 ± 19         1045 ± 24        1079 ± 32         990 ± 32         889 ± 37",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-14",
+   "вид": "факт",
+   "утверждение_en": "General Image Editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1127±13 / 996±8 / 1011±13 / 965±12 / 902±13.",
+   "цитата": "General Image          1127 ± 13         996 ± 8          1011 ± 13         965 ± 12         902 ± 13\nEditing",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-15",
+   "вид": "факт",
+   "утверждение_en": "Character Editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1176±16 / 1075±8 / 1016±10 / 889±10 / 843±10.",
+   "цитата": "Character Editing      1176 ± 16         1075 ± 8         1016 ± 10         889 ± 10         843 ± 10",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-16",
+   "вид": "факт",
+   "утверждение_en": "Object/Env. Editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1102±19 / 1025±9 / 930±12 / 983±13 / 961±10.",
+   "цитата": "Object/Env. Editing    1102 ± 19         1025 ± 9         930 ± 12          983 ± 13         961 ± 10",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-17",
+   "вид": "факт",
+   "утверждение_en": "General Text-to-Image Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1094±16 / 1037±8 / 1025±9 / 1011±9 / 907±9.",
+   "цитата": "General                1094 ± 16                                            1011 ± 9\n                                         1037 ± 8         1025 ± 9                           907 ± 9\nText-to-Image",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строка таблицы в .txt разорвана на 3 строки; значения разнесены по столбцам по позиции в строке: 1011±9 стоит под столбцом Seedream, 1037±8 — под Gemini 2.5 Flash Image, 1025±9 — под GPT-Image 1, 907±9 — под Flux. Реконструкция моя."
+  },
+  {
+   "код": "E-167-18",
+   "вид": "факт",
+   "утверждение_en": "Regression sets / popular use cases Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1128±19 / 1086±9 / 1039±13 / 900±11 / 847±14.",
+   "цитата": "Regression sets /      1128 ± 19         1086 ± 9         1039 ± 13         900 ± 11         847 ± 14\npopular use cases",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — Existing Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-19",
+   "вид": "факт",
+   "утверждение_en": "Multi character editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1213±16 / 950±10 / 997±13 / 840±19 / -.",
+   "цитата": "Multi character\n                         1213 ± 16       950 ± 10         997 ± 13         840 ± 19         -\n editing",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-20",
+   "вид": "факт",
+   "утверждение_en": "Chart editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1209±18 / 971±10 / 994±16 / 934±16 / 893±15.",
+   "цитата": "Chart editing           1209 ± 18       971 ± 10         994 ± 16         934 ± 16         893 ± 15",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-21",
+   "вид": "факт",
+   "утверждение_en": "Text editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1202±23 / 1001±10 / 996±14 / 860±15 / 943±12.",
+   "цитата": "Text editing            1202 ± 23       1001 ± 10        996 ± 14         860 ± 15         943 ± 12",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-22",
+   "вид": "факт",
+   "утверждение_en": "Factuality - Edu Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1169±25 / 1050±11 / 1084±25 / 969±22 / 884±26.",
+   "цитата": "Factuality - Edu        1169 ± 25       1050 ± 11        1084 ± 25        969 ± 22         884 ± 26",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-23",
+   "вид": "факт",
+   "утверждение_en": "Multi-input 1-3 Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1109±16 / 993±8 / 970±12 / 928±11 / -.",
+   "цитата": "Multi-input 1-3         1109 ± 16       993 ± 8          970 ± 12         928 ± 11         -",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-24",
+   "вид": "факт",
+   "утверждение_en": "Infographics Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1268±17 / 1162±11 / 1087±12 / 1049±12 / 824±15.",
+   "цитата": "Infographics            1268 ± 17       1162 ± 11        1087 ± 12        1049 ± 12        824 ± 15",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "grounding"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-25",
+   "вид": "факт",
+   "утверждение_en": "Doodle editing Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1106±14 / 1038±7 / 955±9 / 1017±9 / 884±9.",
+   "цитата": "Doodle editing          1106 ± 14       1038 ± 7         955 ± 9          1017 ± 9         884 ± 9",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-26",
+   "вид": "факт",
+   "утверждение_en": "Visual design Elo (Gemini 3 Pro Image (Search On) / Gemini 2.5 Flash Image / GPT-Image 1 / Seedream v4 4k / Flux Pro Kontext Max): 1104±16 / 1083±7 / 1028±11 / 1038±12 / 907±11.",
+   "цитата": "Visual design           1104 ± 16       1083 ± 7         1028 ± 11        1038 ± 12        907 ± 11",
+   "источник_цитаты": "txt",
+   "раздел": "Evaluation — Results — New Capabilities",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок значений по столбцам шапки; ± — погрешность."
+  },
+  {
+   "код": "E-167-27",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is described as Google's most powerful AI image editing model yet, able to use Gemini's real-world knowledge to deliver precise results, from complex infographics to historically accurate scenes.",
+   "цитата": "Benefit and Intended Usage: Gemini 3 Pro Image is our most powerful AI image editing model yet,\ncapable of using Gemini’s real-world knowledge to deliver precise results, from complex infographics to\nhistorically accurate scenes.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-28",
+   "вид": "факт",
+   "утверждение_en": "It is well-suited for creation and editing of images with professional levels of precision and control.",
+   "цитата": "creation and editing of images with professional levels of precision and control",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Пункт списка 'well-suited for applications that require'."
+  },
+  {
+   "код": "E-167-29",
+   "вид": "факт",
+   "утверждение_en": "It is well-suited for generation of clear text for posters and intricate diagrams.",
+   "цитата": "generation of clear text for posters and intricate diagrams",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Пункт списка 'well-suited for applications that require'."
+  },
+  {
+   "код": "E-167-30",
+   "вид": "факт",
+   "утверждение_en": "It is well-suited for applications requiring long context real-world knowledge.",
+   "цитата": "long context real-world knowledge",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Пункт списка 'well-suited for applications that require'."
+  },
+  {
+   "код": "E-167-31",
+   "вид": "факт",
+   "утверждение_en": "It is well-suited for studio-quality control.",
+   "цитата": "studio-quality control",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Benefit and Intended Usage",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Пункт списка 'well-suited for applications that require'."
+  },
+  {
+   "код": "E-167-32",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini 3 Pro Image may exhibit general limitations of foundation models, such as hallucinations.",
+   "цитата": "Known Limitations: Gemini 3 Pro Image may exhibit some of the general limitations of foundation\nmodels, such as hallucinations.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-33",
+   "вид": "ограничение",
+   "утверждение_en": "There may be occasional slowness or timeout issues.",
+   "цитата": "There may also be occasional slowness or timeout issues.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-34",
+   "вид": "ограничение",
+   "утверждение_en": "Text rendering is poor in small text (often blurry in the 1k model), long paragraphs, and page-length text.",
+   "цитата": "Text rendering: poor in small text (often blurry in 1k model), long paragraphs, page length",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "форматы_разрешение"
+   ],
+   "заметка": "'1k model' — выход 1K, где мелкий текст часто размыт."
+  },
+  {
+   "код": "E-167-35",
+   "вид": "ограничение",
+   "утверждение_en": "Character consistency is not always perfect between input images and the generated output image.",
+   "цитата": "Character consistency is not always perfect between input images and generated output image",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-36",
+   "вид": "ограничение",
+   "утверждение_en": "Masked/doodle-based editing shows partial instruction following and persistent ink.",
+   "цитата": "Masked/Doodle based editing: partial instruction following and persistent ink",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-37",
+   "вид": "ограничение",
+   "утверждение_en": "When editing images, the model infrequently copies/pastes from the user's input image to the generated image.",
+   "цитата": "When editing images: infrequent copying/pasting from user's input image to generated image",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-38",
+   "вид": "ограничение",
+   "утверждение_en": "There is occasional confusion around spatial localisation (e.g. left/right).",
+   "цитата": "Occasional confusion around spatial localisation (e.g. left/right etc.)",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция",
+    "промптинг"
+   ],
+   "заметка": "Строка после разрыва страницы PDF."
+  },
+  {
+   "код": "E-167-39",
+   "вид": "ограничение",
+   "утверждение_en": "The model is still limited in advanced capabilities with world knowledge, 3D reasoning and factuality.",
+   "цитата": "Still limited in advanced capabilities with world knowledge, 3D reasoning and factuality",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-40",
+   "вид": "факт",
+   "утверждение_en": "The knowledge cutoff date for Gemini 3 Pro Image was January 2025.",
+   "цитата": "The knowledge cutoff date for Gemini 3 Pro Image was January 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "Intended Usage and Limitations — Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-01",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-41",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image was developed with internal safety and responsibility teams; evaluations and red teaming align with Google's AI Principles and Generative AI policies (e.g. the Gen AI Prohibited Use Policy and the Gemini API Additional Terms of Service).",
+   "цитата": "These evaluations and activities align with Google's AI Principles\nand responsible AI approach, as well as Google's Generative AI policies (e.g. Gen AI Prohibited Use\nPolicy and the Gemini API Additional Terms of Service).",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Evaluation Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-42",
+   "вид": "факт",
+   "утверждение_en": "Safety evaluation types included training/development evaluations, human red teaming, trust assurance evaluations by evaluators outside the development team, and ethics & safety reviews before release.",
+   "цитата": "Training/Development Evaluations including automated and human evaluations carried out\n       continuously throughout and after the model’s training, to monitor its progress and\n       performance;\n    ●​ Human Red Teaming conducted by specialist teams across the policies and desiderata,\n       deliberately trying to spot weaknesses and ensure the model adheres to safety policies and\n       desired outcomes;\n    ●​ Trust Assurance Evaluations conducted by evaluators who sit outside of the model\n       development team, used to independently assess responsibility and safety governance\n       decisions;\n    ●​ Ethics & Safety Reviews were conducted ahead of the model’s release.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Evaluation Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-43",
+   "вид": "факт",
+   "утверждение_en": "Google also performs testing following Google DeepMind's Frontier Safety Framework (FSF).",
+   "цитата": "In addition, we perform testing following the guidelines in Google DeepMind’s Frontier Safety\nFramework (FSF).",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Evaluation Approach",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-44",
+   "вид": "правило",
+   "утверждение_en": "Gemini's safety policies aim to prevent generating harmful content including CSAM and exploitation, hate speech, dangerous content, harassment, sexually explicit content, and medical advice contrary to scientific or medical consensus.",
+   "цитата": "Safety Policies: Gemini’s safety policies are based on Google’s standard framework, which aim to\nprevent our Generative AI models from generating harmful content, including:",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Safety Policies",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сам список — строки 238-247 (разорван колонтитулом страницы 5)."
+  },
+  {
+   "код": "E-167-45",
+   "вид": "факт",
+   "утверждение_en": "Google continues to refine automated safety evaluations to reduce false positives and negatives and updates query sets.",
+   "цитата": "We continue to improve our internal evaluations, including refining automated evaluations to reduce\nfalse positives and negatives, as well as update query sets to ensure balance and maintain a high\nstandard of results.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Safety Policies",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-46",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro was evaluated for frontier safety and did not reach any critical capability levels in the Frontier Safety Framework.",
+   "цитата": "Frontier Safety Assessment: We evaluated Gemini 3 Pro for Frontier Safety and reported the results in\nthe Gemini 3 Pro Frontier Safety Framework Report, finding that it did not reach any critical capability\nlevels outlined in our Frontier Safety Framework.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Frontier Safety Assessment",
+   "модели": [
+    "Gemini 3 Pro (основа)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Оценивалась базовая Gemini 3 Pro, не image-модель; к практике генерации не относится."
+  },
+  {
+   "код": "E-167-47",
+   "вид": "факт",
+   "утверждение_en": "Mitigations across the lifecycle include dataset filtering, conditional pre-training, supervised fine-tuning, reinforcement learning from human and critic feedback, safety policies and desiderata, and product-level mitigations such as safety filtering.",
+   "цитата": "Risks and Mitigations: Safety and responsibility was built into Gemini 3 Pro Image throughout the\ntraining and deployment lifecycle, including pre-training, post-training, and product-level mitigations.\nMitigations include, but are not limited to:\n\n    ●​   dataset filtering;\n    ●​   conditional pre-training;\n    ●​   supervised fine-tuning;\n    ●​   reinforcement learning from human and critic feedback;\n    ●​   safety policies and desiderata;\n    ●​   product-level mitigations such as safety filtering.",
+   "источник_цитаты": "txt",
+   "раздел": "Ethics and Content Safety — Risks and Mitigations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "SynthID/C2PA в карточке не упомянуты."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-167-48",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 Pro Image (Search On) is ahead of every compared model on all 16 benchmark rows; the largest margins over the next model are Multi character editing (+216), Chart editing (+215) and Text editing (+201), the smallest are Visual design (+21), Stylization (+29), Regression sets (+42) and Text Rendering (+48 over GPT-Image 1).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Evaluation — Results",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-167-11, E-167-12, E-167-13, E-167-14, E-167-15, E-167-16, E-167-17, E-167-18, E-167-19, E-167-20, E-167-21, E-167-22, E-167-23, E-167-24, E-167-25, E-167-26, E-167-9",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование",
+    "текст_в_кадре"
+   ],
+   "заметка": "Разности посчитаны мной по таблицам; согласуется с абзацем Results."
+  },
+  {
+   "код": "E-167-49",
+   "вид": "предупреждение",
+   "утверждение_en": "All Gemini 3 Pro Image scores are reported for the 'Search On' configuration; the card gives no results with search off, so the numbers may not describe calls without search.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Evaluation — Results",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-167-10",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-50",
+   "вид": "правило",
+   "утверждение_en": "The card lists clear text for posters and diagrams as an intended use and Text Rendering/Text editing as top scores, yet names small text (often blurry at 1k), long paragraphs and page-length text as weak: in-image text works best short and prominent, and small text is a known risk at 1K.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Intended Usage and Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-167-29, E-167-11, E-167-21, E-167-34",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "форматы_разрешение"
+   ],
+   "заметка": "Рекомендация сформулирована мной из текста карточки."
+  },
+  {
+   "код": "E-167-51",
+   "вид": "предупреждение",
+   "утверждение_en": "Doodle editing is benchmarked as a new capability, but the same card lists partial instruction following and persistent ink in masked/doodle edits, occasional copy-paste of the input image and left/right confusion — so doodle/mask and spatially-worded edits need verification.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Evaluation / Known Limitations",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-167-25, E-167-36, E-167-37, E-167-38",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-167-52",
+   "вид": "факт",
+   "утверждение_en": "Multi-input editing was benchmarked only for 1–3 input images ('Multi-input 1-3'); the card gives no maximum number of input images.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Evaluation — Results",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-167-23, E-167-3",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Прямых противоречий не найдено. Абзац Results ('leads on Elo across all new capabilities and regression sets') согласуется с таблицами."
+ ],
+ "не_сказано": [
+  "Нет результатов Pro без поиска (все — 'Search On').",
+  "Нет разрешений/соотношений сторон как параметров (только '1k model' в ограничениях).",
+  "Каналы распространения не перечислены (отсылка к карточке Gemini 3 Pro).",
+  "Нет максимального числа входных изображений.",
+  "Нет SynthID/C2PA, цен, квот."
+ ],
+ "сомнения": [
+  "Документ — PDF без html; строка General Text-to-Image в .txt разорвана по столбцам, значения восстановлены мной по позиции (см. заметку к единице).",
+  "По метаданным партии Known Limitations почти дословно совпадает с карточками id166 и id169 — сведение на следующем этапе.",
+  "Домен storage.googleapis.com — общий хостинг Google Cloud Storage; официальность — по бакету deepmind-media и тексту от лица Google."
+ ]
+}

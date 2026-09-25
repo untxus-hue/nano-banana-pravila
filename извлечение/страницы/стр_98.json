@@ -1,0 +1,1156 @@
+{
+ "id": 98,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/safety",
+ "заголовок": "Safety (Responsible AI)  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал страницы и html); даты публикации нет",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензионная строка CC BY 4.0/Apache 2.0, ссылки 'About Google', 'Google Cloud terms'; текст от лица платформы ('Our deployed models', 'Google has invested in comprehensive safety evaluations'). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница раздела Govern документации Gemini Enterprise Agent Platform для разработчиков/администраторов, строящих агентов и приложения на Gemini. Описывает риски (контент, бренд, выравнивание, безопасность/приватность) и слоистую защиту: дефолтные нефильтруемые фильтры, настраиваемые content filters с порогами, системные инструкции, Sensitive Data Protection (DLP), Model Armor, Gemini как фильтр, комбинированный подход, C2PA Content Credentials; затем — непрерывная оценка безопасности. Про генерацию изображений — только C2PA (Gemini 3 Pro Image во вступлении; 'supported models' в таблице) и мультимодальность Gemini-фильтра. Повторные акценты: связка content filters + system instructions (дважды), 'модель может не следовать инструкциям / атакующий может взломать' (дважды), цена каждого слоя — cost/latency. Термины: 'non-configurable filters', 'Recitation' (копирайт), 'Gemini as a filter', 'Combined approach'.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (как 'Gemini 3 Pro Image model', в контексте C2PA)",
+  "Gemini Flash / Flash-Lite (как модели-фильтры, не image)",
+  "Gemini models (обобщённо)"
+ ],
+ "структура": [
+  "Safety (Responsible AI) — вступление",
+  "Potential safety risks and mitigation strategies",
+  "Available safety tools in Agent Platform for Gemini (таблица: Default settings / Configurable Filters / System Instructions / Sensitive Data Protection / Model Armor / Gemini as a Filter / Combined approach / C2PA Content Credentials)",
+  "Continuous safety evaluation",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in), строки 1-53"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Enterprise Agent Platform Start free",
+   "итог": "ничего: обвязка сайта (вкладки продукта), строки 54-69"
+  },
+  {
+   "n": 3,
+   "начало": "Overview Get an API key Get started",
+   "итог": "ничего: обвязка сайта (левое меню документации Agent Platform: агенты, RAG, Vector Search, Runtime, Govern, Optimize), строки 70-346"
+  },
+  {
+   "n": 4,
+   "начало": "Get Started Get Started with Google",
+   "итог": "ничего: обвязка сайта (повтор верхнего меню и хлебные крошки Home/Documentation/AI and ML/…/Agents), строки 347-392"
+  },
+  {
+   "n": 5,
+   "начало": "Send feedback Safety (Responsible AI) Stay",
+   "итог": "ничего: обвязка сайта (заголовок страницы, кнопки Send feedback / Stay organized with collections), строки 392-396"
+  },
+  {
+   "n": 6,
+   "начало": "Generative AI models like Gemini require",
+   "итог": "E-98-1"
+  },
+  {
+   "n": 7,
+   "начало": "When deploying Gemini models, it's crucial",
+   "итог": "E-98-2"
+  },
+  {
+   "n": 8,
+   "начало": "Content risks: These can include",
+   "итог": "E-98-3"
+  },
+  {
+   "n": 9,
+   "начало": "Brand safety risks: Generated content",
+   "итог": "E-98-4"
+  },
+  {
+   "n": 10,
+   "начало": "Alignment risks: Generated content may",
+   "итог": "E-98-5"
+  },
+  {
+   "n": 11,
+   "начало": "Security and privacy risks: Generated",
+   "итог": "E-98-6"
+  },
+  {
+   "n": 12,
+   "начало": "Our deployed models offer various features",
+   "итог": "ничего: вводная фраза к списку, содержание — в следующих пунктах"
+  },
+  {
+   "n": 13,
+   "начало": "The default model and non-configurable",
+   "итог": "E-98-7"
+  },
+  {
+   "n": 14,
+   "начало": "System instructions provide direct guidance",
+   "итог": "E-98-8"
+  },
+  {
+   "n": 15,
+   "начало": "Content filters allow you to set",
+   "итог": "E-98-9"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini as a filter offers an",
+   "итог": "E-98-10"
+  },
+  {
+   "n": 17,
+   "начало": "Sensitive Data Protection specifically addresses the",
+   "итог": "E-98-11"
+  },
+  {
+   "n": 18,
+   "начало": "Model Armor provides enterprise-grade protection",
+   "итог": "E-98-12"
+  },
+  {
+   "n": 19,
+   "начало": "Content Credentials add cryptographically signed",
+   "итог": "E-98-13"
+  },
+  {
+   "n": 20,
+   "начало": "Available safety tools in Agent Platform",
+   "итог": "ничего: вводная фраза раздела ('understanding how each works… will help you build a tailored safety solution'), без самостоятельного содержания"
+  },
+  {
+   "n": 21,
+   "начало": "ApproachHow it worksProtection providedRisksWhen to use",
+   "итог": "ничего: шапка таблицы (столбцы Approach / How it works / Protection provided / Risks / When to use); в .txt ячейки слиты в строки"
+  },
+  {
+   "n": 22,
+   "начало": "Default settings: Gemini + non-configurable filters / Gemini models are inherently designed",
+   "итог": "E-98-14"
+  },
+  {
+   "n": 23,
+   "начало": "Baseline protection against Child sexual abuse",
+   "итог": "ничего: повтор E-98-14 (ячейка 'Protection provided')"
+  },
+  {
+   "n": 24,
+   "начало": "Gemini's default safety might not meet",
+   "итог": "E-98-15"
+  },
+  {
+   "n": 25,
+   "начало": "Workflows where no malicious input is",
+   "итог": "E-98-16"
+  },
+  {
+   "n": 26,
+   "начало": "Configurable Filters Gemini's prebuilt content filters",
+   "итог": "E-98-17, E-98-18"
+  },
+  {
+   "n": 27,
+   "начало": "Robust against violations for predefined categories,",
+   "итог": "ничего: повтор E-98-17/E-98-18 (ячейка 'Protection provided')"
+  },
+  {
+   "n": 28,
+   "начало": "Lacks fine-grained customization beyond threshold",
+   "итог": "E-98-19, E-98-20"
+  },
+  {
+   "n": 29,
+   "начало": "Provide a base level of safety",
+   "итог": "E-98-21"
+  },
+  {
+   "n": 30,
+   "начало": "System Instructions You can instruct the",
+   "итог": "E-98-22"
+  },
+  {
+   "n": 31,
+   "начало": "Customizable for content/brand safety, can be",
+   "итог": "ничего: повтор E-98-22 (ячейка 'Protection provided', оценка 'can be highly effective')"
+  },
+  {
+   "n": 32,
+   "начало": "The model can hallucinate or not",
+   "итог": "E-98-23"
+  },
+  {
+   "n": 33,
+   "начало": "Applications or agents requiring adherence to",
+   "итог": "E-98-24"
+  },
+  {
+   "n": 34,
+   "начало": "Sensitive Data Protection for custom block",
+   "итог": "E-98-25"
+  },
+  {
+   "n": 35,
+   "начало": "Input protection: Before sending user prompts",
+   "итог": "E-98-26"
+  },
+  {
+   "n": 36,
+   "начало": "Output protection: If there's a risk",
+   "итог": "E-98-27"
+  },
+  {
+   "n": 37,
+   "начало": "Robust filtering for profanities or custom words / Adds latency. Can lead to over-blocking.",
+   "итог": "E-98-28"
+  },
+  {
+   "n": 38,
+   "начало": "Model Armor Model Armor is a",
+   "итог": "E-98-29"
+  },
+  {
+   "n": 39,
+   "начало": "Prompt injection and jailbreak filtering, content",
+   "итог": "ничего: повтор E-98-12 (ячейка 'Protection provided'; дополнительно названо 'safe browsing')"
+  },
+  {
+   "n": 40,
+   "начало": "Cost and latency.Paid offering for customers",
+   "итог": "E-98-30"
+  },
+  {
+   "n": 41,
+   "начало": "Gemini as a Filter You can use",
+   "итог": "E-98-31, E-98-32"
+  },
+  {
+   "n": 42,
+   "начало": "Highly robust and customizable for content/brand safety, drift, hallucination; multimodal (Gemini as a Filter)",
+   "итог": "ничего: повтор E-98-32 (ячейка 'Protection provided')"
+  },
+  {
+   "n": 43,
+   "начало": "Additional cost and latency. Chance of",
+   "итог": "E-98-33"
+  },
+  {
+   "n": 44,
+   "начало": "Provide a custom level of safety",
+   "итог": "E-98-34"
+  },
+  {
+   "n": 45,
+   "начало": "Combined approach: configurable filters + system instructions",
+   "итог": "E-98-35"
+  },
+  {
+   "n": 46,
+   "начало": "Highly robust and customizable for content/brand safety, drift, hallucination; multimodal (Combined)",
+   "итог": "ничего: повтор E-98-32 (ячейка 'Protection provided' комбинированного подхода)"
+  },
+  {
+   "n": 47,
+   "начало": "Additional cost and latency. Provide a robust",
+   "итог": "E-98-36"
+  },
+  {
+   "n": 48,
+   "начало": "C2PA Content Credentials For supported models,",
+   "итог": "E-98-37"
+  },
+  {
+   "n": 49,
+   "начало": "Transparency about content origin; helps users",
+   "итог": "ничего: повтор E-98-37 (ячейка 'Protection provided')"
+  },
+  {
+   "n": 50,
+   "начало": "Use of non-compliant tools can compromise",
+   "итог": "E-98-38"
+  },
+  {
+   "n": 51,
+   "начало": "Media generation use cases, where transparency",
+   "итог": "E-98-39"
+  },
+  {
+   "n": 52,
+   "начало": "Continuous safety evaluation is crucial for",
+   "итог": "E-98-40"
+  },
+  {
+   "n": 53,
+   "начало": "To achieve these benefits, you can",
+   "итог": "E-98-41"
+  },
+  {
+   "n": 54,
+   "начало": "The scope of your evaluation should",
+   "итог": "E-98-42"
+  },
+  {
+   "n": 55,
+   "начало": "Tools like Agent Platform's Gen AI",
+   "итог": "E-98-43"
+  },
+  {
+   "n": 56,
+   "начало": "What's next Overview Policies Get an",
+   "итог": "ничего: ссылки на соседние страницы (Policies, Security controls, Evaluate your agents), без содержания"
+  },
+  {
+   "n": 57,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия CC BY 4.0 / Apache 2.0, Google Developers Site Policies, 'Last updated 2026-09-22 UTC' — использовано в дате и официальности)"
+  },
+  {
+   "n": 58,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-98-1",
+   "вид": "объяснение",
+   "утверждение_en": "Generative AI models like Gemini require robust safety measures to mitigate risks such as generating harmful content, leaking sensitive information, or being misused; Agent Platform provides a suite of tools and practices for holistic safety.",
+   "цитата": "Generative AI models like Gemini require robust safety measures to\nmitigate risks such as generating harmful content, leaking sensitive\ninformation, or being misused.",
+   "источник_цитаты": "txt",
+   "раздел": "Safety (Responsible AI)",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вступление; речь о Gemini-моделях вообще, image-модели не выделены."
+  },
+  {
+   "код": "E-98-2",
+   "вид": "правило",
+   "утверждение_en": "When deploying Gemini models, identify and mitigate potential risks proactively; a multi-layered approach to safety is described as critical.",
+   "цитата": "When deploying Gemini models, it's crucial to identify and mitigate\nvarious potential risks. A proactive approach to understanding these risks\nallows for more effective implementation of safety measures. A multi-layered\napproach to safety is critical",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'crucial'/'critical' — сильная формулировка, но это совет по построению защиты, не обязательное условие API; сила = рекомендация."
+  },
+  {
+   "код": "E-98-3",
+   "вид": "объяснение",
+   "утверждение_en": "Content risks include harmful content, profanity and sexualization, and violence and gore.",
+   "цитата": "Content risks: These can include content that's harmful, profanity and\nsexualization, and violence and gore.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Классификация рисков, применима и к генерации изображений, но на странице не привязана к картинкам."
+  },
+  {
+   "код": "E-98-4",
+   "вид": "объяснение",
+   "утверждение_en": "Brand safety risks: generated content may not align with your brand's tone or values, may endorse competitors or inappropriate products, or may cause reputational damage.",
+   "цитата": "Brand safety risks: Generated content may not align with your brand's\ntone or values, it may endorse competitors or inappropriate products, or\ngenerate content that can result in reputational damage.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-5",
+   "вид": "объяснение",
+   "утверждение_en": "Alignment risks: generated content may be irrelevant or inaccurate.",
+   "цитата": "Alignment risks: Generated content may be irrelevant or inaccurate.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-6",
+   "вид": "объяснение",
+   "утверждение_en": "Security and privacy risks: generated content may leak sensitive training data or prompts, and adversarial users may try to force the model to override safety protocols.",
+   "цитата": "Security and privacy risks: Generated content may leak sensitive\ntraining data or prompts, or adversarial users may attempt to force the\nmodel to override safety protocols or behave in unintended ways.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-7",
+   "вид": "факт",
+   "утверждение_en": "The default model and non-configurable filters provide a general safety net.",
+   "цитата": "The default model and non-configurable filters provide a general safety net.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Первый слой из семи перечисленных."
+  },
+  {
+   "код": "E-98-8",
+   "вид": "факт",
+   "утверждение_en": "System instructions provide direct guidance to the model on preferred behavior and topics to avoid.",
+   "цитата": "System instructions\nprovide direct guidance to the model on preferred behavior and topics to\navoid.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-9",
+   "вид": "факт",
+   "утверждение_en": "Content filters let you set specific thresholds for common harm types.",
+   "цитата": "Content filters\nallow you to set specific thresholds for common harm types.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Детали порогов — E-98-17."
+  },
+  {
+   "код": "E-98-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini as a filter offers an advanced, customizable checkpoint for complex or nuanced safety concerns that earlier layers might miss or that need context-aware evaluation.",
+   "цитата": "Gemini as a filter\noffers an advanced, customizable checkpoint for complex or nuanced safety\nconcerns that might be missed by the preceding layers or require more\ncontext-aware evaluation.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Порядок перечисления задаёт слоистость: Gemini-фильтр ловит то, что пропустили 'preceding layers'."
+  },
+  {
+   "код": "E-98-11",
+   "вид": "факт",
+   "утверждение_en": "Sensitive Data Protection addresses the risk of sensitive data leakage when the model has access to sensitive data, and enables custom block lists.",
+   "цитата": "Sensitive Data Protection\nspecifically addresses the critical risk of sensitive data leakage, in case\nthe model has access to sensitive data. It also enables the ability to\ncreate custom block lists.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-12",
+   "вид": "факт",
+   "утверждение_en": "Model Armor provides enterprise-grade protection against prompt injection and jailbreaks, content harms, sensitive data exposure, and malware detection.",
+   "цитата": "Model Armor provides\nenterprise-grade protection against prompt injection and jailbreaks, content\nharms, sensitive data exposure, and malware detection.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-13",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials add cryptographically signed C2PA metadata to images generated with the Gemini 3 Pro Image model, indicating they are AI-generated and giving a verifiable history of their origin.",
+   "цитата": "Content Credentials add\ncryptographically signed C2PA metadata to images generated\nusing the Gemini 3 Pro Image model, indicating that they are\nAI-generated and providing a verifiable history of their origin.",
+   "источник_цитаты": "txt",
+   "раздел": "Potential safety risks and mitigation strategies",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Единственное место страницы, где названа конкретная image-модель. В таблице ниже (E-98-37) то же сказано как 'For supported models' без перечня."
+  },
+  {
+   "код": "E-98-14",
+   "вид": "факт",
+   "утверждение_en": "Default settings include an independent protection layer, separate from the model, designed to prevent generating content related to Child Sexual Abuse Material (CSAM) or copyrighted content (Recitation); Gemini models are also designed with safety in mind even against adversarial prompts.",
+   "цитата": "The default settings include an\nindependent protection layer designed to prevent the generation of content related\nto Child Sexual Abuse Material (CSAM) or Copyrighted Content (Recitation).",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Default settings: Gemini + non-configurable filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейка 'How it works'. Предшествующие фразы ('inherently designed with safety and fairness in mind', 'Google has invested in comprehensive safety evaluations') — декларации без проверяемого содержания, учтены в утверждении, не цитатой."
+  },
+  {
+   "код": "E-98-15",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini's default safety might not meet your organization's needs: the model can hallucinate or not follow instructions, and motivated attackers may still succeed in jailbreaks and prompt injection.",
+   "цитата": "Gemini's default safety might not meet your organization's needs. The model can\nhallucinate or not follow instructions. Motivated attackers may still succeed in\njailbreaks and prompt injection",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Default settings: Gemini + non-configurable filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейка 'Risks'."
+  },
+  {
+   "код": "E-98-16",
+   "вид": "правило",
+   "утверждение_en": "Relying on default settings alone is suited to workflows where no malicious input is expected.",
+   "цитата": "Workflows where no malicious input is expected",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Default settings: Gemini + non-configurable filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейка 'When to use'."
+  },
+  {
+   "код": "E-98-17",
+   "вид": "факт",
+   "утверждение_en": "Configurable filters cover harm categories such as sexual, hate, harassment and dangerous content; a blocking threshold (e.g. BLOCK_LOW_AND_ABOVE, BLOCK_MEDIUM_AND_ABOVE, BLOCK_ONLY_HIGH) can be set per category based on probability and/or severity.",
+   "цитата": "You can configure blocking thresholds for each harm category\n(e.g., BLOCK_LOW_AND_ABOVE, BLOCK_MEDIUM_AND_ABOVE,\nBLOCK_ONLY_HIGH) based on the probability and/or severity of the harmful\ncontent.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Configurable Filters",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Названия порогов даны в <code> в html. Категории (sexual, hate, harassment, dangerous) — из предыдущего предложения той же ячейки."
+  },
+  {
+   "код": "E-98-18",
+   "вид": "факт",
+   "утверждение_en": "Configurable filters are an independent layer from the model, so they are robust against jailbreaks.",
+   "цитата": "These are an independent layer from the model so are robust against\njailbreaks.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Configurable Filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-19",
+   "вид": "ограничение",
+   "утверждение_en": "Configurable filters lack fine-grained customization beyond thresholds for predefined categories and may occasionally block benign content (false positives) or miss harmful content (false negatives).",
+   "цитата": "Lacks fine-grained customization beyond threshold settings for predefined categories.\nMay occasionally block benign content (false positives) or miss some harmful\ncontent (false negatives).",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Configurable Filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-20",
+   "вид": "ограничение",
+   "утверждение_en": "Configurable content filters are only available for response filtering, not prompt filtering.",
+   "цитата": "Only available for response filtering, not prompt\nfiltering.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Configurable Filters",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Важно для пайплайна: пороги фильтров не проверяют входной промпт."
+  },
+  {
+   "код": "E-98-21",
+   "вид": "правило",
+   "утверждение_en": "Configurable filters give a base level of safety for user-facing applications or agents; to ensure content and brand safety, pair content filters with system instructions.",
+   "цитата": "If your goal\nis to ensure content and brand safety, content filters should be paired with\nsystem instructions.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Configurable Filters",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'should be paired' — совет, условный ('If your goal is…')."
+  },
+  {
+   "код": "E-98-22",
+   "вид": "приём",
+   "утверждение_en": "You can instruct the model on your brand and content safety guidelines through system instructions or preambles, e.g. tell it \"don't answer questions related to politics\" or to adhere to specific brand voice and tone guidelines.",
+   "цитата": "You can instruct the model on your brand and content safety guidelines through\nsystem instructions or preambles. For example, you can tell the model \"don't\nanswer questions related to politics\" or to adhere to specific brand voice and\ntone guidelines.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — System Instructions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "промптинг"
+   ],
+   "заметка": "Пример текста системной инструкции дан в кавычках; для image-моделей не конкретизировано."
+  },
+  {
+   "код": "E-98-23",
+   "вид": "предупреждение",
+   "утверждение_en": "System instructions do not guarantee compliance: the model can hallucinate or not follow instructions, and motivated attackers may still succeed in jailbreaks and prompt injection.",
+   "цитата": "The model can hallucinate or not follow instructions. Motivated attackers may still\nsucceed in jailbreaks and prompt injection",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — System Instructions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Та же формулировка риска, что для Default settings (E-98-15), но применена к системным инструкциям."
+  },
+  {
+   "код": "E-98-24",
+   "вид": "правило",
+   "утверждение_en": "System instructions suit applications or agents requiring adherence to specific brand guidelines or nuanced content policies; to ensure content and brand safety, pair system instructions with content filters.",
+   "цитата": "Applications or agents requiring adherence to specific brand guidelines or nuanced\ncontent policies. If your goal is to ensure content and brand safety, system\ninstructions should be paired with content filters.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — System Instructions",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Зеркало E-98-21."
+  },
+  {
+   "код": "E-98-25",
+   "вид": "факт",
+   "утверждение_en": "The DLP API inspects text to identify and classify sensitive information via predefined and custom infoType detectors, can apply redaction, masking or tokenization, and can be used to block keywords.",
+   "цитата": "The DLP API can inspect text to identify and classify sensitive\ninformation based on a wide range of predefined and custom infoType detectors.\nOnce identified, it can apply de-identification techniques such as redaction,\nmasking, or tokenization. The DLP API can also be used to block\nkeywords.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Sensitive Data Protection for custom block lists",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Работает по тексту — к изображениям на выходе не применим; к текстовому промпту — да."
+  },
+  {
+   "код": "E-98-26",
+   "вид": "приём",
+   "утверждение_en": "Input protection: before sending user prompts or data to Gemini, pass the text through the DLP API to redact or mask sensitive information, so it is not processed or logged by the model.",
+   "цитата": "Input protection: Before sending user prompts or data to\nGemini, you can pass the text through the DLP API to\nredact or mask any sensitive information. This prevents sensitive data from being\nprocessed or logged by the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Sensitive Data Protection for custom block lists",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-27",
+   "вид": "приём",
+   "утверждение_en": "Output protection: if Gemini might inadvertently generate or reveal sensitive information, its output can be scanned by the DLP API before being sent to the user.",
+   "цитата": "Output protection: If there's a risk that\nGemini might inadvertently generate or reveal sensitive information\n(e.g., if it's summarizing source documents containing PII), the model's output\ncan be scanned by the DLP API before being sent to the user.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Sensitive Data Protection for custom block lists",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пример в скобках — суммаризация документов (текст), не картинки."
+  },
+  {
+   "код": "E-98-28",
+   "вид": "ограничение",
+   "утверждение_en": "Sensitive Data Protection adds latency and can lead to over-blocking; it is meant for agents that have access to sensitive data.",
+   "цитата": "Adds latency. Can lead to over-blocking.Sensitive Data Protection for agents that have access to sensitive data.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Sensitive Data Protection for custom block lists",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейки 'Protection provided'/'Risks'/'When to use' слиты в .txt в одну строку; строка про 'Robust filtering for profanities or custom words… sensitive data' — повтор E-98-25."
+  },
+  {
+   "код": "E-98-29",
+   "вид": "факт",
+   "утверждение_en": "Model Armor is a Google Cloud service that proactively screens LLM prompts and responses; it can be used whether AI is deployed on Google Cloud or other cloud providers.",
+   "цитата": "It works by proactively screening\nLLM prompts and responses, protecting against various risks and ensuring\nresponsible AI practices. Whether you are deploying AI in Google Cloud or other\ncloud providers, Model Armor can help you prevent malicious\ninput",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Model Armor",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "В отличие от configurable filters (только ответы), Model Armor проверяет и промпты."
+  },
+  {
+   "код": "E-98-30",
+   "вид": "ограничение",
+   "утверждение_en": "Model Armor adds cost and latency and is a paid offering for customers with enterprise needs.",
+   "цитата": "Cost and latency.Paid offering for customers with enterprise needs.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Model Armor",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-31",
+   "вид": "приём",
+   "утверждение_en": "Gemini as a filter: make a second call to a fast, cost-effective Gemini model (such as Gemini Flash or Flash-Lite) to evaluate whether user/tool input or the primary model's output is safe, with instructions to decide safe/unsafe based on your policies (content safety, brand safety, agent misalignment).",
+   "цитата": "This involves making a second call to a fast and cost-effective Gemini model\n(such as Gemini Flash or Flash-Lite) to evaluate whether the input from\na user or tool, or the output from your primary Gemini model, is safe. The\nfilter model is given instructions to decide if the content is safe or unsafe\nbased on your defined policies including content safety, brand safety, and agent\nmisalignment.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Gemini as a Filter",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Названы 'Gemini Flash or Flash-Lite' как модели-фильтры (не image-модели)."
+  },
+  {
+   "код": "E-98-32",
+   "вид": "факт",
+   "утверждение_en": "A Gemini filter model can analyze text, images, video, and audio, offering protection against content safety violations, brand safety issues, model drift, and hallucinations.",
+   "цитата": "This offers robust and highly customizable protection against\ncontent safety violations, brand safety issues, model drift, and hallucinations\nand can analyze text, images, video, and audio for a holistic understanding.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Gemini as a Filter",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Единственный слой таблицы, который прямо назван способным анализировать изображения."
+  },
+  {
+   "код": "E-98-33",
+   "вид": "ограничение",
+   "утверждение_en": "Using Gemini as a filter adds cost and latency, with a chance of extremely rare false negatives.",
+   "цитата": "Additional cost and latency. Chance of extremely rare false negatives.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Gemini as a Filter",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-34",
+   "вид": "правило",
+   "утверждение_en": "Gemini as a filter is for providing a custom level of safety for user-facing applications or agents.",
+   "цитата": "Provide a custom level of safety for user-facing applications or agents.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Gemini as a Filter",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейка 'When to use'."
+  },
+  {
+   "код": "E-98-35",
+   "вид": "приём",
+   "утверждение_en": "Combined approach: input and output redaction with Sensitive Data Protection, system instructions for brand and topic guidelines, configurable safety filters for predefined harms, and secondary inspection using Gemini as a filter.",
+   "цитата": "Combines multiple protective layers: input and output data redaction\nwith Sensitive Data Protection, system instructions for brand and topic\nguidelines, configurable safety filters for predefined harms, and\nsecondary inspection using Gemini as a filter.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Combined approach",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-36",
+   "вид": "правило",
+   "утверждение_en": "The combined approach adds cost and latency and is for a robust level of safety in user-facing applications or agents, especially where adversarial and malicious use is expected.",
+   "цитата": "Additional cost and latency.\nProvide a robust level of safety for user-facing applications or agents,\nespecially where adversarial and malicious use is expected.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — Combined approach",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейки 'Risks' + 'When to use'."
+  },
+  {
+   "код": "E-98-37",
+   "вид": "факт",
+   "утверждение_en": "For supported models, Agent Platform automatically adds cryptographically signed Content Credentials to generated images per the C2PA standard, indicating they are AI-generated and giving a verifiable history of their origin.",
+   "цитата": "For supported models, Gemini Enterprise Agent Platform automatically adds cryptographically\nsigned Content Credentials to generated images, indicating they are AI-generated and\nproviding a verifiable history of their origin according to the\nC2PA standard.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — C2PA Content Credentials",
+   "модели": "не указано (в разделе — 'supported models'; во вступлении, E-98-13, названа Gemini 3 Pro Image)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'automatically' — отдельно включать не нужно; перечня 'supported models' на странице нет, ссылка ведёт на /models/content-credentials."
+  },
+  {
+   "код": "E-98-38",
+   "вид": "предупреждение",
+   "утверждение_en": "Use of non-compliant tools can compromise file authenticity, and Content Credentials do not guarantee the trustworthiness of the media source.",
+   "цитата": "Use of non-compliant tools can compromise file authenticity;\ndoes not guarantee trustworthiness of media source.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — C2PA Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Косвенно: обработка сгенерированного файла несовместимыми с C2PA инструментами может нарушить подпись."
+  },
+  {
+   "код": "E-98-39",
+   "вид": "факт",
+   "утверждение_en": "C2PA Content Credentials are intended for media generation use cases where transparency about the origin and history of the file is important for user trust.",
+   "цитата": "Media generation use cases, where transparency about the origin and history\nof the file is important for user trust.",
+   "источник_цитаты": "txt",
+   "раздел": "Available safety tools in Agent Platform for Gemini — C2PA Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ячейка 'When to use'."
+  },
+  {
+   "код": "E-98-40",
+   "вид": "правило",
+   "утверждение_en": "Continuous safety evaluation is described as crucial because the AI landscape and misuse methods keep evolving; regular evaluations help identify vulnerabilities, assess mitigation effectiveness, and adapt to evolving risks.",
+   "цитата": "Continuous safety evaluation is crucial for AI systems. The AI landscape and\nmisuse methods are constantly evolving, making these evaluations essential.",
+   "источник_цитаты": "txt",
+   "раздел": "Continuous safety evaluation",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Общий совет по эксплуатации, не специфичен для картинок."
+  },
+  {
+   "код": "E-98-41",
+   "вид": "факт",
+   "утверждение_en": "Types of safety evaluations you can perform: development evaluations, assurance evaluations, red teaming, external evaluations, and benchmark testing.",
+   "цитата": "To achieve these benefits, you can perform various types of evaluations:\nDevelopment evaluations\nAssurance evaluations\nRed teaming\nExternal evaluations\nBenchmark testing",
+   "источник_цитаты": "txt",
+   "раздел": "Continuous safety evaluation",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-42",
+   "вид": "правило",
+   "утверждение_en": "The scope of safety evaluation should cover content safety, brand safety, relevance, bias and fairness, truthfulness, and robustness to adversarial attacks.",
+   "цитата": "The scope of your evaluation should cover several critical areas:\nContent safety\nBrand safety\nRelevance\nBias and fairness\nTruthfulness\nRobustness to adversarial attacks",
+   "источник_цитаты": "txt",
+   "раздел": "Continuous safety evaluation",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-98-43",
+   "вид": "правило",
+   "утверждение_en": "Tools like the Gen AI evaluation service can assist evaluation; iterative improvements based on evaluation findings are essential.",
+   "цитата": "Remember that iterative improvements, based on evaluation\nfindings, are essential for responsible AI development.",
+   "источник_цитаты": "txt",
+   "раздел": "Continuous safety evaluation",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-98-44",
+   "вид": "приём",
+   "утверждение_en": "Because configurable content filters act only on responses, screening of the incoming prompt must come from other layers the page lists as able to inspect inputs: DLP input protection, Model Armor (screens prompts), or Gemini as a filter (evaluates user/tool input).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Available safety tools in Agent Platform for Gemini",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-98-20, E-98-26, E-98-29, E-98-31",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сопоставление ячеек таблицы; прямо так не сформулировано."
+  },
+  {
+   "код": "E-98-45",
+   "вид": "приём",
+   "утверждение_en": "For an image generation app, the only layer on the page described as able to check generated images is Gemini as a filter (multimodal, can analyze images), done as a second call to a fast model such as Flash or Flash-Lite; DLP works on text only.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Available safety tools in Agent Platform for Gemini",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-98-25, E-98-31, E-98-32",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вывод из того, что DLP описан как 'inspect text', а мультимодальность названа только у Gemini-фильтра."
+  },
+  {
+   "код": "E-98-46",
+   "вид": "правило",
+   "утверждение_en": "The page repeats in both directions that content filters and system instructions should be paired when the goal is content and brand safety — neither is presented as sufficient alone.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Available safety tools in Agent Platform for Gemini",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-98-21, E-98-24",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Повторный акцент страницы."
+  },
+  {
+   "код": "E-98-47",
+   "вид": "объяснение",
+   "утверждение_en": "Every layer beyond the defaults is presented with a cost: DLP adds latency and over-blocking, Model Armor cost/latency, Gemini as a filter cost/latency, combined approach cost/latency; robustness is traded against cost and latency.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Available safety tools in Agent Platform for Gemini",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-98-28, E-98-30, E-98-33, E-98-36",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Общая закономерность столбца 'Risks'."
+  },
+  {
+   "код": "E-98-48",
+   "вид": "предупреждение",
+   "утверждение_en": "Both model-level controls (default Gemini behavior and system instructions) carry the same stated risk — the model can hallucinate or not follow instructions and can be jailbroken — while filters are called robust against jailbreaks because they are independent of the model.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Available safety tools in Agent Platform for Gemini",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-98-15, E-98-18, E-98-23",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Различие 'внутри модели' vs 'независимый слой' проходит через всю таблицу."
+  }
+ ],
+ "противоречия_внутри": [
+  "Прямых противоречий нет. Разная широта охвата C2PA: во вступлении — 'images generated using the Gemini 3 Pro Image model' (E-98-13), в таблице — 'For supported models' (E-98-37) без перечня; страница не уточняет, распространяется ли C2PA на Nano Banana 2 / Lite / 2.5 Flash Image."
+ ],
+ "не_сказано": [
+  "Не сказано, как пороги content filters (BLOCK_*) применяются к генерации изображений и есть ли для image-выхода отдельные категории (IMAGE_SAFETY и т.п.).",
+  "Не перечислены 'supported models' для C2PA.",
+  "Нет упоминания SynthID (невидимого водяного знака) — только C2PA-метаданные.",
+  "Нет примеров промптов/системных инструкций для image-моделей; пример системной инструкции только текстовый ('don't answer questions related to politics').",
+  "Не сказано, какие harm-категории у дефолтного нефильтруемого слоя, кроме CSAM и Recitation."
+ ],
+ "сомнения": [
+  "Страница почти целиком общеплатформенная (безопасность Gemini-агентов), к генерации картинок относится косвенно; единицы извлечены, так как применимы к image-пайплайну на Agent Platform, но модели в них — 'не указано'.",
+  "Смысловой родственник id99 (safety-overview) — вероятно, те же единицы появятся там в других формулировках; сводить на следующем этапе.",
+  "Ячейки таблицы в .txt слиты без разделителей (например 'over-blocking.Sensitive Data Protection'); цитаты сохранены как в .txt."
+ ]
+}

@@ -1,0 +1,567 @@
+{
+ "id": 31,
+ "url": "https://raw.githubusercontent.com/google-gemini/nano-banana-hackathon-kit/main/examples/javascript-getting-started.md",
+ "заголовок": "JavaScript getting started (hackathon kit)",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий google-gemini/nano-banana-hackathon-kit)",
+  "второй_признак": "организация google-gemini (официальная GitHub-организация Google Gemini) в адресе файла; текст ведёт на Google AI Studio и ai.google.dev. В самом файле нет копирайта и автора.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Markdown-гайд из хакатон-кита Nano Banana для JS/TS-разработчиков: установка @google/genai, ключ из AI Studio и пять примеров на модели gemini-2.5-flash-image-preview — генерация из текста, правка (текст + картинка), реставрация и колоризация старого фото, несколько входных картинок (надеть футболку), многоходовая правка в чате. Почти только код; ценное — пять коротких промптов-примеров и приём «изменение + что оставить как было». Конфигов генерации нет вовсе. Дата в тексте отсутствует.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana aka Gemini 2.5 Flash Image; в коде «gemini-2.5-flash-image-preview»)"
+ ],
+ "структура": [
+  "Using Nano Banana with JavaScript (+ More resources)",
+  "Installation",
+  "Image Generation from Text",
+  "Image Editing with Text and Image Inputs",
+  "Photo restoration with Nano Banana",
+  "Working with Multiple Input Images",
+  "Conversational Image Editing"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "## Using Nano Banana with JavaScript (строки 1-3)",
+   "итог": "E-31-1"
+  },
+  {
+   "n": 2,
+   "начало": "More resources: - Get an (строки 5-7)",
+   "итог": "E-31-2"
+  },
+  {
+   "n": 3,
+   "начало": "- [Nano Banana Gemini API docs] (строка 8)",
+   "итог": "ничего: ссылка на документацию"
+  },
+  {
+   "n": 4,
+   "начало": "## Installation Install the SDK (строки 10-16)",
+   "итог": "E-31-3"
+  },
+  {
+   "n": 5,
+   "начало": "When using TypeScript also install (строки 18-22)",
+   "итог": "E-31-3"
+  },
+  {
+   "n": 6,
+   "начало": "## Image Generation from Text (строка 24)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 7,
+   "начало": "import { GoogleGenAI } from (строки 26-33)",
+   "итог": "ничего: код без промпта (импорты, клиент с apiKey)"
+  },
+  {
+   "n": 8,
+   "начало": "const prompt = \"Create a photorealistic (строки 34-35)",
+   "итог": "E-31-5"
+  },
+  {
+   "n": 9,
+   "начало": "const response = await ai.models.generateContent({ (строки 37-40)",
+   "итог": "E-31-4"
+  },
+  {
+   "n": 10,
+   "начало": "for (const part of response.candidates[0].content.parts) (строки 41-53)",
+   "итог": "E-31-6"
+  },
+  {
+   "n": 11,
+   "начало": "## Image Editing with Text (строка 55)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 12,
+   "начало": "import { GoogleGenAI } from … readFileSync(\"cat.png\") (строки 57-66)",
+   "итог": "ничего: код без промпта (импорты, чтение cat.png в base64)"
+  },
+  {
+   "n": 13,
+   "начало": "const prompt = [ { text: `Using the image (строки 68-72)",
+   "итог": "E-31-8"
+  },
+  {
+   "n": 14,
+   "начало": "{ inlineData: { mimeType: \"image/png\", (строки 73-79)",
+   "итог": "E-31-7"
+  },
+  {
+   "n": 15,
+   "начало": "const response = await ai.models.generateContent({ (строки 81-97)",
+   "итог": "ничего: повтор E-31-4, E-31-6 (вызов и разбор ответа, файл cat2.png)"
+  },
+  {
+   "n": 16,
+   "начало": "## Photo restoration with Nano Banana (строка 99)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 17,
+   "начало": "import … readFileSync(\"lunch.jpg\"); // \"Lunch atop a Skyscraper, 1932\" (строки 101-110)",
+   "итог": "ничего: код без промпта (чтение lunch.jpg); расхождение jpg/png учтено в противоречия_внутри"
+  },
+  {
+   "n": 18,
+   "начало": "const prompt = [ { text: \"Restore and colorize (строки 112-120)",
+   "итог": "E-31-9"
+  },
+  {
+   "n": 19,
+   "начало": "const response = await ai.models.generateContent({ (строки 122-138)",
+   "итог": "ничего: повтор E-31-4, E-31-6 (файл lunch-restored.png)"
+  },
+  {
+   "n": 20,
+   "начало": "## Working with Multiple Input (строка 140)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 21,
+   "начало": "import … readFileSync(\"girl.png\") … readFileSync(\"tshirt.png\") (строки 142-154)",
+   "итог": "E-31-10"
+  },
+  {
+   "n": 22,
+   "начало": "const prompt = [ { text: \"Make the girl (строки 156-157)",
+   "итог": "E-31-11"
+  },
+  {
+   "n": 23,
+   "начало": "{ inlineData: … base64Image1 … base64Image2 (строки 158-170)",
+   "итог": "E-31-10"
+  },
+  {
+   "n": 24,
+   "начало": "const response = await ai.models.generateContent({ (строки 172-188)",
+   "итог": "ничего: повтор E-31-4, E-31-6 (файл girl-with-tshirt.png)"
+  },
+  {
+   "n": 25,
+   "начало": "## Conversational Image Editing (строка 190)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 26,
+   "начало": "import … const chat = ai.chats.create({model: (строки 192-203)",
+   "итог": "E-31-12"
+  },
+  {
+   "n": 27,
+   "начало": "const response1 = await chat.sendMessage({ (строки 205-216)",
+   "итог": "E-31-13"
+  },
+  {
+   "n": 28,
+   "начало": "const response2 = await chat.sendMessage({ (строки 218-226)",
+   "итог": "E-31-14"
+  },
+  {
+   "n": 29,
+   "начало": "вся страница (длинная дистанция)",
+   "итог": "E-31-15, E-31-16, E-31-17, E-31-18, E-31-19"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-31-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is also known as Gemini 2.5 Flash Image and can be used from JavaScript with the Google GenAI JS/TS SDK.",
+   "цитата": "Guide on how to use Nano Banana aka Gemini 2.5 Flash Image in JavaScript with the [Google GenAI JS/TS SDK](https://github.com/googleapis/js-genai).",
+   "источник_цитаты": "txt",
+   "раздел": "Using Nano Banana with JavaScript",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-31-2",
+   "вид": "инструкция",
+   "утверждение_en": "Get an API key from Google AI Studio to use the SDK.",
+   "цитата": "- Get an API key from [Google AI Studio](https://aistudio.google.com/).",
+   "источник_цитаты": "txt",
+   "раздел": "Using Nano Banana with JavaScript → More resources",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-31-3",
+   "вид": "инструкция",
+   "утверждение_en": "Install the SDK with npm install @google/genai; when using TypeScript, also install @types/node as a dev dependency.",
+   "цитата": "npm install @google/genai",
+   "источник_цитаты": "txt",
+   "раздел": "Installation",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для TypeScript: «npm install --save-dev @types/node» (строка 21)."
+  },
+  {
+   "код": "E-31-4",
+   "вид": "инструкция",
+   "утверждение_en": "For text-to-image, call ai.models.generateContent with model \"gemini-2.5-flash-image-preview\" and the prompt string as contents; no extra generation config is set in the example.",
+   "цитата": "    model: \"gemini-2.5-flash-image-preview\",\n    contents: prompt,",
+   "источник_цитаты": "txt",
+   "раздел": "Image Generation from Text",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В примере нет responseModalities/aspect ratio — только model и contents."
+  },
+  {
+   "код": "E-31-5",
+   "вид": "пример_промпта",
+   "утверждение_en": "Text-to-image example prompt: \"Create a photorealistic image of an orange cat with a green eyes, sitting on a couch.\"",
+   "цитата": "\"Create a photorealistic image of an orange cat with a green eyes, sitting on a couch.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Image Generation from Text",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: повелительный глагол («Create») + стиль/медиум («a photorealistic image of») + объект с признаками (orange cat, green eyes) + поза и место («sitting on a couch»). Грамматика «a green eyes» — как в оригинале."
+  },
+  {
+   "код": "E-31-6",
+   "вид": "объяснение",
+   "утверждение_en": "The response's parts can be text or inlineData; image data arrives base64-encoded in part.inlineData.data and is decoded and written to a file.",
+   "цитата": "      const imageData = part.inlineData.data;\n      const buffer = Buffer.from(imageData, \"base64\");",
+   "источник_цитаты": "txt",
+   "раздел": "Image Generation from Text",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Тот же цикл по response.candidates[0].content.parts повторяется во всех примерах."
+  },
+  {
+   "код": "E-31-7",
+   "вид": "инструкция",
+   "утверждение_en": "For image editing, pass contents as an array with a text part and an inlineData part carrying the base64 image and its mimeType.",
+   "цитата": "      inlineData: {\n        mimeType: \"image/png\",\n        data: base64Image,",
+   "источник_цитаты": "txt",
+   "раздел": "Image Editing with Text and Image Inputs",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "Текстовая часть идёт первой, картинка — после."
+  },
+  {
+   "код": "E-31-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-editing example prompt (with the cat image attached): \"Using the image of the cat, create a photorealistic, street-level view of the cat walking along a sidewalk in a New York City neighborhood, with the blurred legs of pedestrians and yellow cabs passing by in the background.\"",
+   "цитата": "Using the image of the cat, create a photorealistic,\nstreet-level view of the cat walking along a sidewalk in a\nNew York City neighborhood, with the blurred legs of pedestrians\nand yellow cabs passing by in the background.",
+   "источник_цитаты": "txt",
+   "раздел": "Image Editing with Text and Image Inputs",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: ссылка на вход («Using the image of the cat») + глагол + стиль («photorealistic») + точка съёмки («street-level view») + действие (walking along a sidewalk) + место (New York City neighborhood) + фон с приметой глубины резкости («the blurred legs of pedestrians») и узнаваемыми деталями («yellow cabs passing by in the background»). Кот переносится в новую сцену; размытие фона задано описанием, а не параметром камеры."
+  },
+  {
+   "код": "E-31-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Photo restoration example prompt (with an old photo attached): \"Restore and colorize this image from 1932\"",
+   "цитата": "{ text: \"Restore and colorize this image from 1932\" }",
+   "источник_цитаты": "txt",
+   "раздел": "Photo restoration with Nano Banana",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Два глагола-задачи («Restore and colorize») + ссылка на вход («this image») + датировка («from 1932») как контекст эпохи для раскраски. Файл — «Lunch atop a Skyscraper, 1932» (комментарий в коде)."
+  },
+  {
+   "код": "E-31-10",
+   "вид": "инструкция",
+   "утверждение_en": "For multiple input images, add several inlineData parts (one per image) after the text part in the contents array.",
+   "цитата": "  const imageData2 = fs.readFileSync(\"tshirt.png\");",
+   "источник_цитаты": "txt",
+   "раздел": "Working with Multiple Input Images",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Порядок в массиве: текст → girl.png → tshirt.png (строки 156-170)."
+  },
+  {
+   "код": "E-31-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-image example prompt (person image + t-shirt image): \"Make the girl wear this t-shirt. Leave the background unchanged.\"",
+   "цитата": "{ text: \"Make the girl wear this t-shirt. Leave the background unchanged.\" }",
+   "источник_цитаты": "txt",
+   "раздел": "Working with Multiple Input Images",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Структура: действие с двумя входами, названными по содержанию («the girl», «this t-shirt») + отдельное предложение, что сохранить («Leave the background unchanged.»)."
+  },
+  {
+   "код": "E-31-12",
+   "вид": "инструкция",
+   "утверждение_en": "For conversational (multi-turn) editing, create a chat with ai.chats.create({model}) and send successive messages with chat.sendMessage; the first message carries text plus the image, later ones can be text only.",
+   "цитата": "const chat = ai.chats.create({model: \"gemini-2.5-flash-image-preview\"});",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-31-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "First chat turn (with the cat image): \"Change the cat to a bengal cat, leave everything else the same.\"",
+   "цитата": "{ text: \"Change the cat to a bengal cat, leave everything else the same.\" }",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Структура: глагол замены + объект + на что («a bengal cat») + оговорка о сохранении всего остального («leave everything else the same»)."
+  },
+  {
+   "код": "E-31-14",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up chat turn, text only: \"The cat should wear a funny party hat\"",
+   "цитата": "message: \"The cat should wear a funny party hat\"",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational Image Editing",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Второй ход без повторной передачи картинки: опора на историю чата. Сформулирован как желаемое состояние («should wear»), а не команда."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-31-15",
+   "вид": "приём",
+   "утверждение_en": "Edit prompts in the guide pair the change with an explicit preservation clause (\"Leave the background unchanged.\", \"leave everything else the same.\").",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-31-11, E-31-13",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Как правило страница это не формулирует — видно по примерам."
+  },
+  {
+   "код": "E-31-16",
+   "вид": "приём",
+   "утверждение_en": "Input images are referred to in the prompt by their content rather than by position (\"the image of the cat\", \"the girl\", \"this t-shirt\", \"this image from 1932\").",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-31-8, E-31-9, E-31-11, E-31-13",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-31-17",
+   "вид": "факт",
+   "утверждение_en": "In every example with images, the text part comes first in the contents array and the image part(s) follow.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-31-7, E-31-9, E-31-10, E-31-12",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Обязателен ли такой порядок, страница не говорит."
+  },
+  {
+   "код": "E-31-18",
+   "вид": "факт",
+   "утверждение_en": "None of the examples sets any generation config (response modalities, aspect ratio, image size); model plus contents is enough to get image parts back.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-31-4, E-31-7, E-31-10, E-31-12",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-31-19",
+   "вид": "объяснение",
+   "утверждение_en": "In conversational editing the follow-up turn does not resend the image: the chat session carries the previous image and edits forward.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (в коде ID «gemini-2.5-flash-image-preview»)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-31-12, E-31-14",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "В примере реставрации читается файл lunch.jpg, а в inlineData указан mimeType \"image/png\" (строки 109, 116)."
+ ],
+ "не_сказано": [
+  "Параметры вывода: responseModalities, соотношение сторон, размер картинки — нигде не заданы и не обсуждаются.",
+  "Что делать, если ответ пришёл без картинки (только текст).",
+  "Сколько картинок можно передать на вход.",
+  "Водяные знаки/SynthID, цены, лимиты — не упомянуты.",
+  "Советы по промптингу — только примеры, без объяснений."
+ ],
+ "сомнения": [
+  "Официальность держится на организации google-gemini в адресе; в самом файле нет копирайта и автора.",
+  "Дата 2025-09-04 из метаданных партии в тексте не найдена.",
+  "Модель в коде — preview-идентификатор «gemini-2.5-flash-image-preview»; вероятно, устарел относительно «gemini-2.5-flash-image» (страница этого не говорит).",
+  "HTML-версии нет; код читался по .txt (не разбит по токенам)."
+ ]
+}

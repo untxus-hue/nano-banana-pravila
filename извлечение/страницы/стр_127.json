@@ -1,0 +1,251 @@
+{
+ "id": 127,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/overview",
+ "заголовок": "Generative AI beginner's guide  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('built-in safety features that promote the responsible use of our generative AI services')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Вводный гайд Google Cloud для начинающих: что такое генеративный ИИ и мультимодальные модели, какие способности нужны (тюнинг, доступ к внешней информации, блокировка вредного), и сквозной конвейер запроса — промпт, foundation-модели, кастомизация, augmentation (grounding/RAG/function calling), citation check, safety-фильтры, ответ; квикстарты. Около 95% файла — навигационное меню. Про картинки — определение промпта с изображениями, механизм safety-фильтров (общий) и ссылка-квикстарт 'Generate an image by using Gemini' на страницу Gemini 3.1 Flash Image.",
+ "модели_на_странице": [
+  "Gemini (семейство, без версий)",
+  "gemini-3.1-flash-image (только по ссылке квикстарта в html)"
+ ],
+ "структура": [
+  "вводная",
+  "Content generation (Learn new tasks / Access external information / Block harmful content)",
+  "Prompt",
+  "Foundation models",
+  "Model customization",
+  "Access external information",
+  "Citation check",
+  "Responsible AI and safety",
+  "Response",
+  "Get started"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта — верхнее меню, левое меню, повтор меню продуктов (строки 1-1035) совпадают до байта со страницей id 47 (проверено diff); в меню только заголовки 'Generate images with Gemini', 'Gemini image generation best practices/limitations' без содержания"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Generative AI beginner's guide', 'Stay organized'), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "This beginner's guide introduces you",
+   "итог": "ничего: вводная о назначении гайда, строки 1045-1046"
+  },
+  {
+   "n": 4,
+   "начало": "Generative AI (also known as",
+   "итог": "ничего: не про генерацию картинок (общее определение генеративного ИИ, LLM, мультимодальных моделей), строки 1047-1054"
+  },
+  {
+   "n": 5,
+   "начало": "Google provides the Gemini family",
+   "итог": "ничего: не про генерацию картинок (Gemini обрабатывает изображения на входе — описание семейства без генерации), строки 1055-1058"
+  },
+  {
+   "n": 6,
+   "начало": "Content generation In order for",
+   "итог": "ничего: вводная к списку, строки 1059-1061"
+  },
+  {
+   "n": 7,
+   "начало": "Learn how to perform new",
+   "итог": "ничего: не про генерацию картинок (тюнинг модели), строки 1062-1066"
+  },
+  {
+   "n": 8,
+   "начало": "Access external information: Generative AI",
+   "итог": "ничего: не про генерацию картинок (grounding и function calling для доступа к внешней информации; пример с чат-ботом), строки 1067-1074"
+  },
+  {
+   "n": 9,
+   "начало": "Block harmful content: Generative AI",
+   "итог": "ничего: повтор единицы E-127-3 (нужны safety-фильтры; пример про оскорбительный текст), строки 1075-1080"
+  },
+  {
+   "n": 10,
+   "начало": "Prompt The generative AI workflow",
+   "итог": "E-127-1"
+  },
+  {
+   "n": 11,
+   "начало": "Creating a prompt to get",
+   "итог": "E-127-2"
+  },
+  {
+   "n": 12,
+   "начало": "Agent Studio offers a prompt",
+   "итог": "ничего: не про генерацию картинок (инструмент управления промптами), строки 1093-1094"
+  },
+  {
+   "n": 13,
+   "начало": "Foundation models Prompts are sent",
+   "итог": "ничего: не про генерацию картинок (Gemini API: reasoning, чат, код, мультимодальные промпты; Model Garden), строки 1095-1102"
+  },
+  {
+   "n": 14,
+   "начало": "Model customization You can customize",
+   "итог": "ничего: не про генерацию картинок (тюнинг снижает цену/латентность за счёт упрощения промптов; image-модели не названы), строки 1103-1108"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini Enterprise Agent Platform also",
+   "итог": "ничего: не про генерацию картинок (оценка и деплой тюнингованной модели), строки 1109-1112"
+  },
+  {
+   "n": 16,
+   "начало": "Access external information Gemini Enterprise",
+   "итог": "ничего: не про генерацию картинок (Grounding, RAG, Function calling для текстовых ответов), строки 1113-1124"
+  },
+  {
+   "n": 17,
+   "начало": "Citation check After the response",
+   "итог": "ничего: не про генерацию картинок (цитаты для текста ответа), строки 1125-1129"
+  },
+  {
+   "n": 18,
+   "начало": "Responsible AI and safety The",
+   "итог": "E-127-3"
+  },
+  {
+   "n": 19,
+   "начало": "Response If the prompt and",
+   "итог": "ничего: не про генерацию картинок (возврат ответа, streaming), строки 1138-1142"
+  },
+  {
+   "n": 20,
+   "начало": "Get started Try one of",
+   "итог": "ничего: вводная к квикстартам; текстовый квикстарт — не про картинки, строки 1143-1148"
+  },
+  {
+   "n": 21,
+   "начало": "Generate an image by using",
+   "итог": "E-127-4"
+  },
+  {
+   "n": 22,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1151-1153"
+  },
+  {
+   "n": 23,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1154-1198"
+  },
+  {
+   "n": 24,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-127-5"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-127-1",
+   "вид": "объяснение",
+   "утверждение_en": "A prompt is a natural language request sent to a generative AI model to elicit a response; depending on the model, a prompt can contain text, images, videos, audio, documents and other modalities, or multiple modalities (multimodal).",
+   "цитата": "A prompt is a\nnatural language request sent to a generative AI model to elicit a response back. Depending\non the model, a prompt can contain text, images,\nvideos, audio, documents, and other modalities\nor even multiple modalities (multimodal).",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Общее определение промпта для всех моделей; image-модели не названы. Включает изображения во входе (основа для референсов)."
+  },
+  {
+   "код": "E-127-2",
+   "вид": "объяснение",
+   "утверждение_en": "Creating a prompt to get the desired response is called prompt design; it is a process of trial and error, but there are prompt design principles and strategies that can nudge the model to behave in the desired way.",
+   "цитата": "While prompt design is a process of trial and error, there are\nprompt design principles and strategies that you can use to nudge the\nmodel to behave in the desired way.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Сами принципы на странице не даны — только ссылка; общее для генеративных моделей."
+  },
+  {
+   "код": "E-127-3",
+   "вид": "объяснение",
+   "утверждение_en": "Safety filters are the last layer of checks before return: the platform checks both the prompt and the response for how much they belong to a safety category, and if the threshold is exceeded for one or more categories the response is blocked and a fallback response is returned.",
+   "цитата": "Gemini Enterprise Agent Platform checks both the prompt and response for how\nmuch the prompt or response belongs to a safety\ncategory. If the threshold is exceeded for one or more categories, the\nresponse is blocked and Gemini Enterprise Agent Platform returns a fallback\nresponse.",
+   "источник_цитаты": "txt",
+   "раздел": "Responsible AI and safety",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Механизм описан для генеративных ответов вообще; для картинок отдельно не оговорён."
+  },
+  {
+   "код": "E-127-4",
+   "вид": "факт",
+   "утверждение_en": "The beginner's guide points its 'Generate an image by using Gemini' quickstart (generate images from a text prompt) to the Gemini 3.1 Flash Image model page.",
+   "цитата": "Generate an image by using Gemini:\nGenerate images from a text prompt",
+   "источник_цитаты": "txt",
+   "раздел": "Get started",
+   "модели": [
+    "gemini-3.1-flash-image (по ссылке в html: /gemini-enterprise-agent-platform/models/gemini/3-1-flash-image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо; модель — из href в html",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Единственное место страницы, прямо про генерацию картинок; сам текст квикстарта на странице отсутствует."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-127-5",
+   "вид": "объяснение",
+   "утверждение_en": "The guide frames every generation request as one pipeline — prompt, foundation model, optional model customization and augmentation (grounding, RAG, function calling), citation check, safety filters as the last layer, then the response — described in text-centric terms; image generation appears only as a quickstart link.",
+   "цитата": "The last layer of checks that the prompt and response go through before\nbeing returned is the safety\nfilters.",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-127-1, E-127-3, E-127-4 и порядка разделов/alt-подписей схемы (Prompt, Foundation models, Model customization, Augmentation, Citation check, Responsible AI and safety, Response)",
+   "дата_единицы": null,
+   "тема": [
+    "другое",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Порядок этапов виден только по структуре страницы и alt-текстам картинок схемы (html)."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Сами принципы и стратегии prompt design (только упоминание и ссылка).",
+  "Как safety-фильтры работают для сгенерированных изображений (описание текстоцентричное: 'text that's offensive or insensitive').",
+  "Содержание страниц 'Gemini image generation best practices/limitations' — только заголовки в меню."
+ ],
+ "сомнения": [
+  "Единицы E-127-1…E-127-3 — общие определения для всех генеративных моделей, к image-генерации прямо не привязаны; извлечены как определения терминов (prompt, prompt design, safety filters)."
+ ]
+}

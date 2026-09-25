@@ -1,0 +1,997 @@
+{
+ "id": 16,
+ "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+ "заголовок": "Rate limits | Gemini API | Google AI for Developers",
+ "дата_в_тексте": "Last updated 2026-09-02 UTC (подвал страницы; meta article:published_time/datePublished в html нет)",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0 / Apache 2.0 + 'Last updated 2026-09-02 UTC'; og:site_name 'Google AI for Developers'; текст от лица Google ('We offer no guarantees…'). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница Gemini API о лимитах запросов для разработчиков (биллинг, тиры). Общая для всех моделей; про картинки — определение IPM (Images per minute) только для image-моделей Nano Banana и таблицы Batch enqueued tokens, где image-модели выделены группой Multi-modal generation models (🍌) по трём тирам. Своих терминов: RPM, TPM, RPD, IPM, TPD, spend-based rate limits (окно 10 минут), usage tier, billing tier cap, batch enqueued tokens, priority inference (0.3x). Повторно подчёркивает: активные лимиты смотреть в AI Studio, лимиты не гарантированы. Конкретных RPM/IPM по моделям на странице нет.",
+ "модели_на_странице": [
+  "Nano Banana (родовое имя в определении IPM)",
+  "Gemini 3.1 Flash Image Preview (= gemini-3.1-flash-image preview, Nano Banana 2)",
+  "Gemini 3.1 Flash Lite Image (= gemini-3.1-flash-lite-image, Nano Banana 2 Lite)",
+  "Gemini 3 Pro Image Preview (= gemini-3-pro-image preview, Nano Banana Pro)",
+  "Gemini 2.5 Flash Image Preview (= gemini-2.5-flash-image preview, Nano Banana)",
+  "Gemini 2.0 Flash Image"
+ ],
+ "структура": [
+  "Rate limits (вступление)",
+  "How rate limits work",
+  "Spend-based rate limits",
+  "Usage tiers",
+  "Gemini API rate limits",
+  "Priority inference rate limits",
+  "Batch API rate limits (Tier 1 / Tier 2 / Tier 3 tables)",
+  "How to upgrade to the next tier",
+  "Request a rate limit increase",
+  "Request paid tier rate limit increase"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Rate limits | Gemini API | Google",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, Skip to main content, выбор языка, Get API key/Cookbook/Community/Sign in), строки 1-37"
+  },
+  {
+   "n": 2,
+   "начало": "Get started Overview Get started API",
+   "итог": "ничего: обвязка сайта (левое меню документации, строки 38-181; пункты 'Nano Banana', 'Image generation 🍌', 'Media resolution' — навигация, не содержание)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: обвязка сайта (баннер-объявление о текстовой модели, строки 182-184), не про генерацию картинок"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: обвязка сайта (хлебные крошки и заголовок H1), строки 185-189"
+  },
+  {
+   "n": 5,
+   "начало": "Rate limits regulate the number of",
+   "итог": "E-16-1"
+  },
+  {
+   "n": 6,
+   "начало": "View your active rate limits in",
+   "итог": "E-16-2"
+  },
+  {
+   "n": 7,
+   "начало": "How rate limits work Rate limits",
+   "итог": "E-16-3"
+  },
+  {
+   "n": 8,
+   "начало": "Your usage is evaluated against each",
+   "итог": "E-16-4"
+  },
+  {
+   "n": 9,
+   "начало": "Rate limits are applied per project,",
+   "итог": "E-16-5, E-16-6"
+  },
+  {
+   "n": 10,
+   "начало": "Limits vary depending on the specific",
+   "итог": "E-16-7, E-16-8, E-16-9"
+  },
+  {
+   "n": 11,
+   "начало": "Rate limits are more restricted for",
+   "итог": "E-16-10"
+  },
+  {
+   "n": 12,
+   "начало": "Spend-based rate limits In addition to",
+   "итог": "E-16-11"
+  },
+  {
+   "n": 13,
+   "начало": "The following table shows the spend-based",
+   "итог": "E-16-12"
+  },
+  {
+   "n": 14,
+   "начало": "Usage tier Spend rate limit (per",
+   "итог": "E-16-13"
+  },
+  {
+   "n": 15,
+   "начало": "If you hit a spend-based rate",
+   "итог": "E-16-14, E-16-15"
+  },
+  {
+   "n": 16,
+   "начало": "Usage tiers Rate limits are tied",
+   "итог": "E-16-16"
+  },
+  {
+   "n": 17,
+   "начало": "The qualifications for Tiers 2 and",
+   "итог": "E-16-17"
+  },
+  {
+   "n": 18,
+   "начало": "Usage tier Qualification Billing tier cap",
+   "итог": "E-16-18"
+  },
+  {
+   "n": 19,
+   "начало": "While meeting the stated qualification criteria",
+   "итог": "E-16-19"
+  },
+  {
+   "n": 20,
+   "начало": "This system helps maintain the security",
+   "итог": "ничего: маркетинг без содержания (обоснование системы тиров)"
+  },
+  {
+   "n": 21,
+   "начало": "Gemini API rate limits Rate limits",
+   "итог": "E-16-20"
+  },
+  {
+   "n": 22,
+   "начало": "View your active rate limits in",
+   "итог": "ничего: повтор единицы E-16-2"
+  },
+  {
+   "n": 23,
+   "начало": "Specified rate limits are not guaranteed",
+   "итог": "E-16-21"
+  },
+  {
+   "n": 24,
+   "начало": "Priority inference rate limits Priority consumption",
+   "итог": "E-16-22"
+  },
+  {
+   "n": 25,
+   "начало": "Default rate limits are: 0.3x the",
+   "итог": "E-16-23"
+  },
+  {
+   "n": 26,
+   "начало": "Batch API rate limits Batch API",
+   "итог": "E-16-24"
+  },
+  {
+   "n": 27,
+   "начало": "Concurrent batch requests: 100 Input file",
+   "итог": "E-16-25"
+  },
+  {
+   "n": 28,
+   "начало": "Enqueued tokens per model: The Batch",
+   "итог": "E-16-26"
+  },
+  {
+   "n": 29,
+   "начало": "Tier 1 Model Batch enqueued tokens",
+   "итог": "ничего: не про генерацию картинок (Tier 1, текстовые/TTS модели Gemini 3.x/2.5/2.0 без image, строки 309-336, 339-346, 349-350)"
+  },
+  {
+   "n": 30,
+   "начало": "Gemini 2.5 Flash Image Preview 3,000,000",
+   "итог": "E-16-27 (строки 337-338 и 347-348)"
+  },
+  {
+   "n": 31,
+   "начало": "Multi-modal generation models Gemini 3.1 Flash",
+   "итог": "E-16-28"
+  },
+  {
+   "n": 32,
+   "начало": "Embedding models Gemini Embedding 500,000",
+   "итог": "ничего: не про генерацию картинок (Tier 1, embedding)"
+  },
+  {
+   "n": 33,
+   "начало": "Tier 2 Model Batch enqueued tokens",
+   "итог": "ничего: не про генерацию картинок (Tier 2, текстовые/TTS модели, строки 361-388, 391-398, 401-402)"
+  },
+  {
+   "n": 34,
+   "начало": "Gemini 2.5 Flash Image Preview 400,000,000",
+   "итог": "E-16-29 (строки 389-390 и 399-400)"
+  },
+  {
+   "n": 35,
+   "начало": "Multi-modal generation models Gemini 3.1 Flash",
+   "итог": "E-16-30"
+  },
+  {
+   "n": 36,
+   "начало": "Embedding models Gemini Embedding 5,000,000",
+   "итог": "ничего: не про генерацию картинок (Tier 2, embedding)"
+  },
+  {
+   "n": 37,
+   "начало": "Tier 3 Model Batch enqueued tokens",
+   "итог": "ничего: не про генерацию картинок (Tier 3, текстовые/TTS модели, строки 413-440, 443-450, 453-454)"
+  },
+  {
+   "n": 38,
+   "начало": "Gemini 2.5 Flash Image Preview 1,000,000,000",
+   "итог": "E-16-31 (строки 441-442 и 451-452)"
+  },
+  {
+   "n": 39,
+   "начало": "Multi-modal generation models Gemini 3.1 Flash",
+   "итог": "E-16-32"
+  },
+  {
+   "n": 40,
+   "начало": "Embedding models Gemini Embedding 10,000,000",
+   "итог": "ничего: не про генерацию картинок (Tier 3, embedding)"
+  },
+  {
+   "n": 41,
+   "начало": "How to upgrade to the next",
+   "итог": "E-16-33"
+  },
+  {
+   "n": 42,
+   "начало": "Request a rate limit increase Each",
+   "итог": "E-16-34"
+  },
+  {
+   "n": 43,
+   "начало": "Request paid tier rate limit increase",
+   "итог": "E-16-35"
+  },
+  {
+   "n": 44,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Site Policies, 'Last updated 2026-09-02 UTC' — использовано в дате и официальности, виджет отзывов, Terms/Privacy), строки 485-498"
+  },
+  {
+   "n": 45,
+   "начало": "English Deutsch Español – América Latina",
+   "итог": "ничего: обвязка сайта (выбор языка в подвале), строки 499-520"
+  },
+  {
+   "n": 46,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-16-36, E-16-37, E-16-38, E-16-39 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-16-1",
+   "вид": "объяснение",
+   "утверждение_en": "Rate limits regulate the number of requests you can make to the Gemini API within a given timeframe, to maintain fair usage, protect against abuse and maintain system performance.",
+   "цитата": "Rate limits regulate the number of requests you can make to the Gemini API\nwithin a given timeframe. These limits help maintain fair usage, protect against\nabuse, and help maintain system performance for all users.",
+   "источник_цитаты": "txt",
+   "раздел": "Rate limits (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Общее определение для всего Gemini API; распространяется и на image-модели, но они здесь не названы."
+  },
+  {
+   "код": "E-16-2",
+   "вид": "инструкция",
+   "утверждение_en": "Your active rate limits can be viewed in AI Studio.",
+   "цитата": "View your active rate limits in AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "Rate limits (вступление)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Ссылка-кнопка; повторяется дословно в разделе Gemini API rate limits (строка 283). Конкретных чисел RPM/IPM страница не даёт — они только в AI Studio."
+  },
+  {
+   "код": "E-16-3",
+   "вид": "факт",
+   "утверждение_en": "Rate limits are usually measured across three dimensions: requests per minute (RPM), input tokens per minute (TPM) and requests per day (RPD).",
+   "цитата": "Rate limits are usually measured across three dimensions:\nRequests per minute (\nRPM\n)\nTokens per minute (input) (\nTPM\n)\nRequests per day (\nRPD\n)",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "'usually' — не для всех моделей; для image-моделей добавляется IPM (E-16-8)."
+  },
+  {
+   "код": "E-16-4",
+   "вид": "правило",
+   "утверждение_en": "Usage is evaluated against each limit separately, and exceeding any one of them triggers a rate limit error (e.g., with an RPM limit of 20, the 21st request within a minute errors even if TPM is not exceeded).",
+   "цитата": "Your usage is evaluated against each limit, and exceeding any of them will\ntrigger a rate limit error. For example, if your RPM limit is 20, making 21\nrequests within a minute will result in an error, even if you haven't exceeded\nyour TPM or other limits.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимиты независимы: достаточно превысить любой один."
+  },
+  {
+   "код": "E-16-5",
+   "вид": "факт",
+   "утверждение_en": "Rate limits are applied per project, not per API key.",
+   "цитата": "Rate limits are applied per project, not per API key.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Следствие: несколько ключей в одном проекте не увеличивают лимит."
+  },
+  {
+   "код": "E-16-6",
+   "вид": "факт",
+   "утверждение_en": "Requests-per-day (RPD) quotas reset at midnight Pacific time.",
+   "цитата": "Requests per day (\nRPD\n)\nquotas reset at midnight Pacific time.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-7",
+   "вид": "факт",
+   "утверждение_en": "Limits vary depending on the specific model being used, and some limits only apply to specific models.",
+   "цитата": "Limits vary depending on the specific model being used, and some limits only\napply to specific models.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-8",
+   "вид": "лимит",
+   "утверждение_en": "Images per minute (IPM) is a rate-limit dimension calculated only for models capable of generating images (Nano Banana); it is conceptually similar to TPM.",
+   "цитата": "For example, Images per minute, or IPM, is only\ncalculated for models capable of generating images (Nano Banana), but is\nconceptually similar to TPM.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": [
+    "Nano Banana (семейство image-моделей, без уточнения версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Ключевая для картинок единица страницы. 'Nano Banana' здесь — родовое имя всех image-моделей, конкретные версии не названы. Числовых значений IPM на странице нет."
+  },
+  {
+   "код": "E-16-9",
+   "вид": "факт",
+   "утверждение_en": "Other (non-image) models might have a tokens-per-day (TPD) limit.",
+   "цитата": "Other models might have a token per day limit (TPD).",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "'Other models' — противопоставлено image-моделям в том же предложении; для картинок не относится, взято для полноты."
+  },
+  {
+   "код": "E-16-10",
+   "вид": "ограничение",
+   "утверждение_en": "Rate limits are more restricted for experimental and preview models.",
+   "цитата": "Rate limits are more restricted for experimental and preview models.",
+   "источник_цитаты": "txt",
+   "раздел": "How rate limits work",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Касается и preview-версий image-моделей (в таблицах страницы они подписаны Preview) — связь выведена в длинной дистанции (E-16-39)."
+  },
+  {
+   "код": "E-16-11",
+   "вид": "ограничение",
+   "утверждение_en": "In addition to RPM and TPM limits, the Gemini API enforces spend-based rate limits to protect against unexpected charges; whether they apply depends on billing history and usage tier (and account standing).",
+   "цитата": "In addition to requests per minute (RPM) and tokens per minute (TPM) limits, the\nGemini API enforces spend-based rate limits to protect against unexpected\ncharges. Whether these limits apply to your account depends on your billing\nhistory and\nusage tier\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Spend-based rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Ниже в том же разделе условие сформулировано как 'billing history and account standing'."
+  },
+  {
+   "код": "E-16-12",
+   "вид": "лимит",
+   "утверждение_en": "Spend-based rate limits are evaluated on a rolling 10-minute window: Free N/A, Tier 1 $10, Tier 2 $50, Tier 3 $200 per 10 minutes.",
+   "цитата": "These limits are evaluated on a rolling 10-minute\nwindow.",
+   "источник_цитаты": "txt",
+   "раздел": "Spend-based rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Числа из таблицы строк 230-239 (Usage tier / Spend rate limit (per 10 minutes)): Free N/A; Tier 1 $10; Tier 2 $50; Tier 3 $200. Цитата — фраза про окно; таблица — E-16-13."
+  },
+  {
+   "код": "E-16-13",
+   "вид": "лимит",
+   "утверждение_en": "Spend rate limit table (per 10 minutes): Free N/A, Tier 1 $10, Tier 2 $50, Tier 3 $200.",
+   "цитата": "Usage tier\nSpend rate limit (per 10 minutes)\nFree\nN/A\nTier 1\n$10\nTier 2\n$50\nTier 3\n$200",
+   "источник_цитаты": "txt",
+   "раздел": "Spend-based rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Для image-моделей с дорогим выходом (4K) этот потолок может достигаться раньше RPM — но страница этого не говорит."
+  },
+  {
+   "код": "E-16-14",
+   "вид": "факт",
+   "утверждение_en": "Hitting a spend-based rate limit makes the API return a 429 RESOURCE_EXHAUSTED error.",
+   "цитата": "If you hit a spend-based rate limit, the API returns a\n429 RESOURCE_EXHAUSTED\nerror.",
+   "источник_цитаты": "txt",
+   "раздел": "Spend-based rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-15",
+   "вид": "инструкция",
+   "утверждение_en": "To resolve a spend-based 429: wait and retry after a short period; reduce the rate of expensive requests (e.g., smaller context windows or shorter outputs); if you consistently hit it during normal usage, request a rate limit increase.",
+   "цитата": "To resolve this:\nWait and retry\nafter a short period.\nReduce the rate of expensive requests\n, for example by using smaller\ncontext windows or shorter outputs.\nIf you consistently hit this limit during normal usage,\nrequest a rate limit increase\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Spend-based rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Три шага в порядке страницы. Пример «shorter outputs» сформулирован для текста; про картинки (размер/число изображений) страница не говорит."
+  },
+  {
+   "код": "E-16-16",
+   "вид": "факт",
+   "утверждение_en": "Rate limits are tied to the project's usage tier; as API usage and spending increase, the project is automatically upgraded to a higher tier with increased rate limits.",
+   "цитата": "Rate limits are tied to the project's usage tier. As your API usage and spending\nincrease, you'll be automatically upgraded to a higher tier with increased rate\nlimits.",
+   "источник_цитаты": "txt",
+   "раздел": "Usage tiers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-17",
+   "вид": "факт",
+   "утверждение_en": "Qualifications for Tiers 2 and 3 are based on total cumulative spending on Google Cloud services (not only the Gemini API) for the billing account linked to the project.",
+   "цитата": "The qualifications for Tiers 2 and 3 are based on the total cumulative spending\non Google Cloud services (including, but not limited to, the Gemini API) for the\nbilling account linked to your project.",
+   "источник_цитаты": "txt",
+   "раздел": "Usage tiers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-18",
+   "вид": "лимит",
+   "утверждение_en": "Usage tier qualifications and billing tier caps: Free — active project or free trial, cap N/A; Tier 1 — set up and link an active billing account, cap $250; Tier 2 — paid $100 + 3 days from first successful payment, cap $2,000; Tier 3 — paid $1,000 + 30 days from first successful payment, cap $20,000 - $100,000+.",
+   "цитата": "Usage tier\nQualification\nBilling tier cap\nFree\nActive project\nor free trial\nN/A\nTier 1\nSet up and link an active billing account\n$250\nTier 2\nPaid $100 + 3 days from first successful payment\n$2,000\nTier 3\nPaid $1,000 + 30 days from first successful payment\n$20,000 - $100,000+",
+   "источник_цитаты": "txt",
+   "раздел": "Usage tiers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Таблица целиком одной единицей; смысл «Billing tier cap» на странице не раскрыт."
+  },
+  {
+   "код": "E-16-19",
+   "вид": "предупреждение",
+   "утверждение_en": "Meeting the stated qualification criteria is generally sufficient for a tier upgrade, but in rare cases an upgrade request may be denied based on other factors identified during review.",
+   "цитата": "While meeting the stated qualification criteria is generally\nsufficient for approval, in rare cases an upgrade request may be denied based on\nother factors identified during the review process.",
+   "источник_цитаты": "txt",
+   "раздел": "Usage tiers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-20",
+   "вид": "факт",
+   "утверждение_en": "Rate limits depend on a variety of factors (such as usage tier), can be viewed in Google AI Studio, and update automatically as tier and account status change.",
+   "цитата": "Rate limits depend on a variety of factors (such as your usage tier) and can be\nviewed in Google AI Studio. As your tier and account status change over time,\nyour rate limits will automatically update.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini API rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "Раздел, где ожидались таблицы лимитов по моделям, отсылает в AI Studio вместо чисел."
+  },
+  {
+   "код": "E-16-21",
+   "вид": "предупреждение",
+   "утверждение_en": "Specified rate limits are not guaranteed and actual capacity may vary.",
+   "цитата": "Specified rate limits are not guaranteed and actual capacity may vary.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini API rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-22",
+   "вид": "факт",
+   "утверждение_en": "Priority inference consumption has its own rate limits, although it is counted towards overall interactive traffic rate limits.",
+   "цитата": "Priority\nconsumption holds its own rate\nlimits even though consumption is counted towards overall interactive traffic\nrate limits.",
+   "источник_цитаты": "txt",
+   "раздел": "Priority inference rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Применимость Priority inference к image-моделям на странице не указана."
+  },
+  {
+   "код": "E-16-23",
+   "вид": "лимит",
+   "утверждение_en": "Default Priority inference rate limits are 0.3x the standard rate limit for each model and tier.",
+   "цитата": "Default rate limits are: 0.3x the\nstandard rate limit\nfor each model and tier",
+   "источник_цитаты": "txt",
+   "раздел": "Priority inference rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-24",
+   "вид": "факт",
+   "утверждение_en": "Batch API requests are subject to their own rate limits, separate from non-batch API calls.",
+   "цитата": "Batch API\nrequests are subject to their own rate\nlimits, separate from the non-batch API calls.",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-25",
+   "вид": "лимит",
+   "утверждение_en": "Batch API limits: 100 concurrent batch requests, 2GB input file size limit, 20GB file storage limit.",
+   "цитата": "Concurrent batch requests:\n100\nInput file size limit:\n2GB\nFile storage limit:\n20GB",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-26",
+   "вид": "объяснение",
+   "утверждение_en": "The Batch enqueued tokens table lists the maximum number of tokens that can be enqueued for batch processing across all active batch jobs for a given model.",
+   "цитата": "Enqueued tokens per model:\nThe\nBatch enqueued tokens\ntable lists the\nmaximum number of tokens that can be enqueued for batch processing across\nall your active batch jobs for a given model.",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимит — суммарно по всем активным batch-задачам на модель."
+  },
+  {
+   "код": "E-16-27",
+   "вид": "лимит",
+   "утверждение_en": "Tier 1 batch enqueued tokens: Gemini 2.5 Flash Image Preview 3,000,000; Gemini 2.0 Flash Image 3,000,000 (both listed under Text-out models).",
+   "цитата": "Gemini 2.5 Flash Image Preview\n3,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 1",
+   "модели": [
+    "gemini-2.5-flash-image (preview)",
+    "gemini-2.0-flash image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Вторая строка той же таблицы: 'Gemini 2.0 Flash Image\\n3,000,000' (строки 347-348). Обе старые image-модели стоят в группе Text-out models, не в Multi-modal generation models."
+  },
+  {
+   "код": "E-16-28",
+   "вид": "лимит",
+   "утверждение_en": "Tier 1 batch enqueued tokens for multi-modal generation models: Gemini 3.1 Flash Image Preview 1,000,000; Gemini 3.1 Flash Lite Image 2,000,000; Gemini 3 Pro Image Preview 2,000,000.",
+   "цитата": "Multi-modal generation models\nGemini 3.1 Flash Image Preview 🍌\n1,000,000\nGemini 3.1 Flash Lite Image 🍌\n2,000,000\nGemini 3 Pro Image Preview 🍌\n2,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 1",
+   "модели": [
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Nano Banana 2 (preview) = 1M, Nano Banana 2 Lite = 2M, Nano Banana Pro (preview) = 2M."
+  },
+  {
+   "код": "E-16-29",
+   "вид": "лимит",
+   "утверждение_en": "Tier 2 batch enqueued tokens: Gemini 2.5 Flash Image Preview 400,000,000; Gemini 2.0 Flash Image 400,000,000.",
+   "цитата": "Gemini 2.5 Flash Image Preview\n400,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 2",
+   "модели": [
+    "gemini-2.5-flash-image (preview)",
+    "gemini-2.0-flash image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка 2.0: 'Gemini 2.0 Flash Image\\n400,000,000' (строки 399-400)."
+  },
+  {
+   "код": "E-16-30",
+   "вид": "лимит",
+   "утверждение_en": "Tier 2 batch enqueued tokens for multi-modal generation models: Gemini 3.1 Flash Image Preview 250,000,000; Gemini 3.1 Flash Lite Image 270,000,000; Gemini 3 Pro Image Preview 270,000,000.",
+   "цитата": "Multi-modal generation models\nGemini 3.1 Flash Image Preview 🍌\n250,000,000\nGemini 3.1 Flash Lite Image 🍌\n270,000,000\nGemini 3 Pro Image Preview 🍌\n270,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 2",
+   "модели": [
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-31",
+   "вид": "лимит",
+   "утверждение_en": "Tier 3 batch enqueued tokens: Gemini 2.5 Flash Image Preview 1,000,000,000; Gemini 2.0 Flash Image 1,000,000,000.",
+   "цитата": "Gemini 2.5 Flash Image Preview\n1,000,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 3",
+   "модели": [
+    "gemini-2.5-flash-image (preview)",
+    "gemini-2.0-flash image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка 2.0: 'Gemini 2.0 Flash Image\\n1,000,000,000' (строки 451-452)."
+  },
+  {
+   "код": "E-16-32",
+   "вид": "лимит",
+   "утверждение_en": "Tier 3 batch enqueued tokens for multi-modal generation models: Gemini 3.1 Flash Image Preview 750,000,000; Gemini 3.1 Flash Lite Image 1,000,000,000; Gemini 3 Pro Image Preview 1,000,000,000.",
+   "цитата": "Multi-modal generation models\nGemini 3.1 Flash Image Preview 🍌\n750,000,000\nGemini 3.1 Flash Lite Image 🍌\n1,000,000,000\nGemini 3 Pro Image Preview 🍌\n1,000,000,000",
+   "источник_цитаты": "txt",
+   "раздел": "Batch API rate limits / Tier 3",
+   "модели": [
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-33",
+   "вид": "инструкция",
+   "утверждение_en": "To move from the Free tier to a paid tier you must first set up billing in AI Studio; once the project meets the criteria it is upgraded automatically (Free→Tier 1 typically instantly, later upgrades within 10 minutes); tiers can be checked on the AI Studio Projects page.",
+   "цитата": "To transition from the Free tier to a paid tier, you must first\nset up billing in AI Studio\n.\nOnce your project meets the\nspecified criteria\n, it will be\nautomatically upgraded to the next tier. Tier upgrades from the Free to Tier 1\nwill typically take effect instantly, and subsequent tier upgrades will take\neffect within 10 minutes.",
+   "источник_цитаты": "txt",
+   "раздел": "How to upgrade to the next tier",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "продукт_ui"
+   ],
+   "заметка": "'must' — единственное требование страницы. Хвост абзаца: 'Navigate to the Projects page in AI Studio to check your tiers.'"
+  },
+  {
+   "код": "E-16-34",
+   "вид": "факт",
+   "утверждение_en": "Each model variation has an associated rate limit (requests per minute, RPM); details are on the AI Studio Rate Limit page.",
+   "цитата": "Each model variation has an associated rate limit (requests per minute, RPM).\nFor details on those rate limits, see the\nAI Studio Rate Limit\npage.",
+   "источник_цитаты": "txt",
+   "раздел": "Request a rate limit increase",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-16-35",
+   "вид": "предупреждение",
+   "утверждение_en": "Google offers no guarantees about increasing a paid-tier rate limit, but will review the request.",
+   "цитата": "We offer no guarantees about increasing your rate limit, but we'll do our best\nto review your request.",
+   "источник_цитаты": "txt",
+   "раздел": "Request a rate limit increase",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Ссылка 'Request paid tier rate limit increase' + оговорка."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-16-36",
+   "вид": "ограничение",
+   "утверждение_en": "The page defines the image-specific IPM (images per minute) dimension but gives no IPM, RPM, TPM or RPD numbers for any image model; actual per-model limits must be looked up in AI Studio. The only image-model numbers on the page are batch enqueued token caps.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-16-8, E-16-2, E-16-20, E-16-34, E-16-28",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Описание партии обещало «таблицы RPM/TPM/RPD по тирам» — на странице их нет."
+  },
+  {
+   "код": "E-16-37",
+   "вид": "факт",
+   "утверждение_en": "Across all three tiers Gemini 3.1 Flash Image Preview (Nano Banana 2) has a lower batch enqueued-token cap than Gemini 3.1 Flash Lite Image and Gemini 3 Pro Image Preview (1M vs 2M, 250M vs 270M, 750M vs 1B), which are equal to each other.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Batch API rate limits",
+   "модели": [
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-16-28, E-16-30, E-16-32",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение трёх таблиц; страница причин не объясняет."
+  },
+  {
+   "код": "E-16-38",
+   "вид": "факт",
+   "утверждение_en": "Image models appear in the batch tables in two groups: older ones (Gemini 2.5 Flash Image Preview, Gemini 2.0 Flash Image) under \"Text-out models\" with the same caps as text Flash models, and the Gemini 3.x image models (marked 🍌) under a separate \"Multi-modal generation models\" group; Gemini 3 image models are listed only by preview names (3.1 Flash Image Preview, 3 Pro Image Preview), while 3.1 Flash Lite Image has no Preview suffix.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Batch API rate limits",
+   "модели": [
+    "gemini-2.5-flash-image (preview)",
+    "gemini-2.0-flash image",
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-16-27, E-16-28, E-16-29, E-16-31",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Стабильные имена gemini-3-pro-image / gemini-3.1-flash-image / gemini-2.5-flash-image на странице не встречаются."
+  },
+  {
+   "код": "E-16-39",
+   "вид": "предупреждение",
+   "утверждение_en": "Because the Gemini 3 image models are listed as Preview and the page states preview models have more restricted limits, image-generation limits for those preview IDs should be expected to be tighter than for stable models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (preview)",
+    "gemini-3-pro-image (preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-16-10, E-16-38",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Вывод, прямо на странице для картинок не сформулирован."
+  }
+ ],
+ "противоречия_внутри": [
+  "Мягкое расхождение: условие применения spend-based лимитов сформулировано дважды по-разному — 'depends on your billing history and usage tier' и через одно предложение 'depends on your billing history and account standing' (строки 221-229).",
+  "Мягкое расхождение: апгрейд тира описан как автоматический ('you'll be automatically upgraded'), но в той же секции говорится, что 'an upgrade request may be denied' — то есть подразумевается запрос/проверка.",
+  "'Rate limits are usually measured across three dimensions' (RPM/TPM/RPD) — далее страница вводит ещё IPM, TPD, spend-based и RPM на вариацию модели; противоречия нет, но 'три измерения' неполны для image-моделей."
+ ],
+ "не_сказано": [
+  "Нет ни одного числа IPM/RPM/TPM/RPD для image-моделей ни по одному тиру — только отсылка в AI Studio.",
+  "Не сказано, как считается IPM при запросе нескольких изображений в одном ответе, и учитываются ли входные картинки.",
+  "Не сказано, применима ли Priority inference к image-моделям.",
+  "Совет 'Reduce the rate of expensive requests' (для spend-лимита) дан на примере контекста/длины выхода; не сказано ничего про размер изображения (1K/2K/4K) как фактор стоимости и spend-лимита.",
+  "Стабильные ID image-моделей (gemini-3-pro-image, gemini-3.1-flash-image) в таблицах не фигурируют — только Preview-имена; лимиты для стабильных имён не указаны."
+ ],
+ "сомнения": [
+  "Описание партии ('Таблицы RPM/TPM/RPD и понятие IPM по тарифным уровням; конкретные числа лимитов по тирам') не соответствует сохранённому тексту: чисел RPM/TPM/RPD/IPM на странице нет, есть только batch enqueued tokens и spend-лимиты. Возможно, таблицы были в прежней версии страницы или подгружаются динамически.",
+  "Единицы E-16-27/29/31 процитированы по строке 2.5 Flash Image Preview; строка 2.0 Flash Image той же таблицы указана в заметке (цитата одна на единицу).",
+  "Единица E-16-12 и E-16-13 частично пересекаются (окно 10 минут и таблица) — разнесены, т.к. одна описывает механизм, другая — числа."
+ ]
+}

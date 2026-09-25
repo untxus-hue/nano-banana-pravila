@@ -1,0 +1,1381 @@
+{
+ "id": 5,
+ "url": "https://ai.google.dev/gemini-api/docs/changelog",
+ "заголовок": "Release notes (Gemini API changelog)",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC; записи с December 13 2023 по September 22, 2026",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "записи от первого лица владельца API ('Released our next-generation…', 'we are limiting access to the 2.5 models') + подвал 'Google Developers Site Policies'; явного копирайта Google LLC нет",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальные release notes Gemini API (ai.google.dev) — хронология изменений от декабря 2023 до 22 сентября 2026 в обратном порядке: запуски моделей, GA, депрекейты и отключения, изменения API, биллинга, инструментов. Для генерации картинок важны ~27 записей: линия Gemini-image (2.0 Flash experimental → 2.0 flash preview image generation → 2.5 Flash Image Preview → 2.5 Flash Image GA → 3 Pro Image Preview → Nano Banana 2 Preview → GA NB2 и Pro 28.05.2026 → GA NB2 Lite 30.06.2026), отключения preview-ID, линия Imagen 3/4 и её отключение 17.08.2026, снижение входных токенов картинки у 2.5 Flash Image (1290→258), video-to-image только у gemini-3.1-flash-image, депрекейт temperature/top_p/top_k, ограничение доступа к моделям 2.5. Остальное (TTS, Live, агенты, Veo, Lyria, эмбеддинги и т.д.) — не про генерацию картинок.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (NB2), gemini-3.1-flash-image-preview",
+  "gemini-3-pro-image (NB Pro), gemini-3-pro-image-preview",
+  "gemini-3.1-flash-lite-image (NB2 Lite)",
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image), gemini-2.5-flash-image-preview / 'Gemini 2.5 Image Preview'",
+  "gemini-2.0-flash-exp-image-generation, gemini-2.0-flash-preview-image-generation, Gemini 2.0 Flash Experimental",
+  "imagen-3.0-generate-002; imagen-4.0-generate/ultra/fast-001; imagen-4.0-*-preview-06-06",
+  "много не-image моделей (текст, TTS, Live, Veo, Lyria, Omni Flash, Robotics, Embeddings, Gemma)"
+ ],
+ "структура": [
+  "(навигация)",
+  "Release notes: This page documents updates to the Gemini API.",
+  "Записи по датам: September 22, 2026 … December 13 2023 (обратная хронология)",
+  "(подвал: лицензия, Last updated)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Release notes | Gemini API ... навигация / меню / Gemini 3.8 Flash is now available / Home / Send feedback",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 2,
+   "начало": "This page documents updates to the Gemini API.",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 3,
+   "начало": "September 22, 2026 — Gemini 3.8 Flash TTS / Flash-Lite TTS GA, Voices endpoint",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 4,
+   "начало": "September 18, 2026 — Gemini 2.5 models access update",
+   "итог": "E-5-1"
+  },
+  {
+   "n": 5,
+   "начало": "September 17, 2026 — Antigravity Agent 09-2026 (таблица инструментов)",
+   "итог": "ничего: не про генерацию картинок (агент)"
+  },
+  {
+   "n": 6,
+   "начало": "September 15, 2026 — Gemini 3.8 Live / Live Extended Thinking GA",
+   "итог": "ничего: не про генерацию картинок (Live)"
+  },
+  {
+   "n": 7,
+   "начало": "September 3, 2026 — Lyria 3.5 GA (text and image inputs)",
+   "итог": "ничего: не про генерацию картинок (музыка; картинка как вход)"
+  },
+  {
+   "n": 8,
+   "начало": "September 2, 2026 — Gemini 3.8 Flash GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 9,
+   "начало": "September 1, 2026 — Agentic video understanding",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 10,
+   "начало": "August 27, 2026 — Gemini Omni Flash GA (video extension, interpolation, resolution)",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 11,
+   "начало": "August 26, 2026 — Gemini 3.5 Transcribe GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 12,
+   "начало": "August 13, 2026 — Gemini 3.7 Flash GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "July 30, 2026 — Gemini Robotics ER 2 preview; ER 1.6 deprecation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "July 21, 2026 — Gemini 3.6 Flash and 3.5 Flash-Lite GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "July 21, 2026 — Deprecated parameters: temperature, top_p, top_k",
+   "итог": "E-5-2"
+  },
+  {
+   "n": 16,
+   "начало": "July 6, 2026 — Developer logs for Interactions API",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "June 30, 2026 — Gemini Omni Flash public preview",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 18,
+   "начало": "June 30, 2026 — Released gemini-3.1-flash-lite-image (Nano Banana 2 Lite) GA",
+   "итог": "E-5-3"
+  },
+  {
+   "n": 19,
+   "начало": "June 24, 2026 — Computer Use in Gemini 3.5 Flash",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "June 17, 2026 — Streaming for speech generation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 21,
+   "начало": "June 15, 2026 — Deprecation: image generation models shut down August 17, 2026 (Imagen 4 …)",
+   "итог": "E-5-4"
+  },
+  {
+   "n": 22,
+   "начало": "June 15, 2026 — Deprecation: Veo 2/3 models shut down June 30, 2026",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 23,
+   "начало": "June 15, 2026 — Deprecation: GMP Contextual View tool",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 24,
+   "начало": "June 1, 2026 — Gemini 2.0 models shut down (text)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 25,
+   "начало": "May 28, 2026 — Released gemini-3.1-flash-image and gemini-3-pro-image GA",
+   "итог": "E-5-5"
+  },
+  {
+   "n": 26,
+   "начало": "May 28, 2026 — Video-to-image generation support",
+   "итог": "E-5-6"
+  },
+  {
+   "n": 27,
+   "начало": "May 28, 2026 — Deprecation: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview",
+   "итог": "E-5-7"
+  },
+  {
+   "n": 28,
+   "начало": "May 25, 2026 — gemini-3.1-flash-lite-preview shut down",
+   "итог": "ничего: не про генерацию картинок (текстовая Lite)"
+  },
+  {
+   "n": 29,
+   "начало": "May 19, 2026 — gemini-3.5-flash GA; Managed Agents; Antigravity agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 30,
+   "начало": "May 7, 2026 — gemini-3.1-flash-lite GA; preview deprecation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "May 6, 2026 — Interactions API breaking change (outputs → steps)",
+   "итог": "ничего: не про генерацию картинок (общая схема API)"
+  },
+  {
+   "n": 32,
+   "начало": "May 5, 2026 — File Search multimodal (gemini-embedding-2)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "May 4, 2026 — Webhooks",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 34,
+   "начало": "April 30, 2026 — robotics-er-1.5 shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 35,
+   "начало": "April 22, 2026 — gemini-embedding-2 GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 36,
+   "начало": "April 21, 2026 — Deep Research agent versions",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "April 15, 2026 — Gemini 3.1 Flash TTS Preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "April 14, 2026 — robotics-er-1.6-preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 39,
+   "начало": "April 2, 2026 — Gemma 4",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 40,
+   "начало": "April 1, 2026 — Flex and Priority inference tiers",
+   "итог": "E-5-8"
+  },
+  {
+   "n": 41,
+   "начало": "March 31, 2026 — Veo 3.1 Lite Preview; 2.5 flash-lite preview shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 42,
+   "начало": "March 26, 2026 — gemini-3.1-flash-live-preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "March 25, 2026 — Lyria 3 (text and image inputs)",
+   "итог": "ничего: не про генерацию картинок (музыка)"
+  },
+  {
+   "n": 44,
+   "начало": "March 23, 2026 — Prepay and Postpay billing",
+   "итог": "ничего: не про генерацию картинок (биллинг общий)"
+  },
+  {
+   "n": 45,
+   "начало": "March 18, 2026 — Built-in tools + function calling; Maps grounding for Gemini 3",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 46,
+   "начало": "March 16, 2026 — Usage Tiers and spend caps",
+   "итог": "ничего: не про генерацию картинок (биллинг общий)"
+  },
+  {
+   "n": 47,
+   "начало": "March 12, 2026 — project-level spend caps",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "March 10, 2026 — gemini-embedding-2-preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 49,
+   "начало": "March 9, 2026 — Gemini 3 Pro Preview shut down",
+   "итог": "ничего: не про генерацию картинок (текстовая модель)"
+  },
+  {
+   "n": 50,
+   "начало": "March 3, 2026 — Gemini 3.1 Flash-Lite Preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 51,
+   "начало": "February 26, 2026 — Launched Nano Banana 2, Gemini 3.1 Flash Image Preview",
+   "итог": "E-5-9"
+  },
+  {
+   "n": 52,
+   "начало": "February 26, 2026 — Deprecation: gemini-3-pro-preview",
+   "итог": "ничего: не про генерацию картинок (текстовая модель)"
+  },
+  {
+   "n": 53,
+   "начало": "February 19, 2026 — Gemini 3.1 Pro Preview / customtools",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "February 18, 2026 — Deprecation of gemini-2.0-flash models",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 55,
+   "начало": "February 17, 2026 — shut down: gemini-2.5-flash-preview-09-25, imagen-4.0-*-preview-06-06",
+   "итог": "E-5-10"
+  },
+  {
+   "n": 56,
+   "начало": "January 29, 2026 — Computer Use in gemini-3 previews",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 57,
+   "начало": "January 21, 2026 — latest aliases changed",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 58,
+   "начало": "January 15, 2026 — Deprecation announcement (imagen-4.0-*-preview-06-06 to Feb 17)",
+   "итог": "E-5-10"
+  },
+  {
+   "n": 59,
+   "начало": "January 15, 2026 — gemini-2.5-flash-image-preview has been shut down",
+   "итог": "E-5-11"
+  },
+  {
+   "n": 60,
+   "начало": "January 14, 2026 — text-embedding-004 shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 61,
+   "начало": "January 13, 2026 — Veo 4k and portrait",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 62,
+   "начало": "January 12, 2026 — model lifecycle feature",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 63,
+   "начало": "January 8, 2026 — Cloud Storage / pre-signed URLs; file size limit 20MB → 100MB",
+   "итог": "E-5-12"
+  },
+  {
+   "n": 64,
+   "начало": "December 19, 2025 — total_reasoning_tokens renamed total_thought_tokens",
+   "итог": "ничего: не про генерацию картинок (учёт токенов Interactions API)"
+  },
+  {
+   "n": 65,
+   "начало": "December 17, 2025 — Gemini 3 Flash Preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 66,
+   "начало": "December 12, 2025 — native audio model",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 67,
+   "начало": "December 11, 2025 — Interactions API launched; Deep Research agent",
+   "итог": "ничего: не про генерацию картинок (общий API)"
+  },
+  {
+   "n": 68,
+   "начало": "December 10, 2025 — TTS enhancements",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 69,
+   "начало": "December 9, 2025 — Live API models shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 70,
+   "начало": "December 5, 2025 — Gemini 3 billing for Grounding with Google Search",
+   "итог": "E-5-13"
+  },
+  {
+   "n": 71,
+   "начало": "December 4, 2025 — Deprecation: gemini-2.5-flash-image-preview shut down January 15, 2026",
+   "итог": "E-5-11"
+  },
+  {
+   "n": 72,
+   "начало": "December 3, 2025 — text-embedding-004 deprecation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 73,
+   "начало": "November 20, 2025 — Released Gemini 3 Pro Image Preview",
+   "итог": "E-5-14"
+  },
+  {
+   "n": 74,
+   "начало": "November 18, 2025 — gemini-3-pro-preview (media resolution, thought signatures, thinking levels)",
+   "итог": "ничего: не про генерацию картинок (текстовая модель)"
+  },
+  {
+   "n": 75,
+   "начало": "November 11, 2025 — Deprecation: veo-3.0 previews (Nov 12)",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 76,
+   "начало": "November 11, 2025 — Deprecation: gemini-2.0-flash-exp-image-generation, gemini-2.0-flash-preview-image-generation (Nov 14)",
+   "итог": "E-5-15"
+  },
+  {
+   "n": 77,
+   "начало": "November 10, 2025 — imagen-3.0-generate-002 shut down",
+   "итог": "E-5-16"
+  },
+  {
+   "n": 78,
+   "начало": "November 6, 2025 — File Search API",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 79,
+   "начало": "November 4, 2025 — Gemini 2.5 Flash Image input token count 1290 → 258",
+   "итог": "E-5-17"
+  },
+  {
+   "n": 80,
+   "начало": "November 4, 2025 — Deprecation of 2.0/2.5 text previews",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 81,
+   "начало": "October 29, 2025 — logging and datasets",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 82,
+   "начало": "October 20, 2025 — Live API models shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 83,
+   "начало": "October 17, 2025 — Grounding with Google Maps GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 84,
+   "начало": "October 15, 2025 — Veo 3.1 (up to three reference images for video)",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 85,
+   "начало": "October 7, 2025 — Gemini 2.5 Computer Use Preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 86,
+   "начало": "October 2, 2025 — Launched Gemini 2.5 Flash Image GA",
+   "итог": "E-5-18"
+  },
+  {
+   "n": 87,
+   "начало": "September 29, 2025 — Gemini 1.5 models shut down",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 88,
+   "начало": "September 25, 2025 — Robotics ER 1.5; 2.5 flash previews",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 89,
+   "начало": "September 23, 2025 — native audio preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 90,
+   "начало": "September 16, 2025 — embedding deprecations",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "September 10, 2025 — Embeddings in Batch API",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 92,
+   "начало": "September 9, 2025 — Veo 3 GA",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 93,
+   "начало": "August 26, 2025 — Launched Gemini 2.5 Image Preview",
+   "итог": "E-5-19"
+  },
+  {
+   "n": 94,
+   "начало": "August 18, 2025 — URL context GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 95,
+   "начало": "August 14, 2025 — Imagen 4 Ultra, Standard and Fast GA",
+   "итог": "E-5-20"
+  },
+  {
+   "n": 96,
+   "начало": "August 7, 2025 — allow_adult in Image to Video",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 97,
+   "начало": "July 31, 2025 — Veo 3 image-to-video; Veo 3 Fast",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 98,
+   "начало": "July 22, 2025 — gemini-2.5-flash-lite",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 99,
+   "начало": "July 17, 2025 — veo-3.0-generate-preview",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 100,
+   "начало": "July 17, 2025 — Increased rate limits for Imagen 4 Standard and Ultra",
+   "итог": "E-5-21"
+  },
+  {
+   "n": 101,
+   "начало": "July 14, 2025 — gemini-embedding-001",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 102,
+   "начало": "July 7, 2025 — Batch Mode",
+   "итог": "ничего: не про генерацию картинок (общий API)"
+  },
+  {
+   "n": 103,
+   "начало": "June 26, 2025 — 2.5 pro previews redirect",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 104,
+   "начало": "June 24, 2025 — Imagen 4 Ultra and Standard Preview",
+   "итог": "E-5-22"
+  },
+  {
+   "n": 105,
+   "начало": "June 17, 2025 — gemini-2.5-pro / flash / flash-lite-preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 106,
+   "начало": "June 05, 2025 — gemini-2.5-pro-preview-06-05",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 107,
+   "начало": "May 27, 2025 — tuning no longer supported",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 108,
+   "начало": "May 20, 2025 — API updates (video preprocessing, multi-tool, async FC, URL context) и Model updates (2.5 flash preview, TTS, lyria-realtime, native audio, gemma-3n)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 109,
+   "начало": "May 7, 2025 — gemini-2.0-flash-preview-image-generation",
+   "итог": "E-5-23"
+  },
+  {
+   "n": 110,
+   "начало": "May 6, 2025 — gemini-2.5-pro-preview-05-06",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 111,
+   "начало": "April 17, 2025 — gemini-2.5-flash-preview-04-17",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 112,
+   "начало": "April 16, 2025 — context caching for 2.0 Flash",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 113,
+   "начало": "April 9, 2025 — veo-2.0-generate-001; Live API session management / VAD / media resolution / voices",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 114,
+   "начало": "April 4, 2025 — gemini-2.5-pro-preview-03-25",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 115,
+   "начало": "March 25, 2025 — gemini-2.5-pro-exp-03-25",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 116,
+   "начало": "March 12, 2025 — experimental Gemini 2.0 Flash capable of image generation and editing",
+   "итог": "E-5-24"
+  },
+  {
+   "n": 117,
+   "начало": "March 12, 2025 — gemma-3-27b-it; YouTube URLs as media source; inline video < 20MB",
+   "итог": "ничего: не про генерацию картинок (общий ввод медиа)"
+  },
+  {
+   "n": 118,
+   "начало": "March 11, 2025 — Gen AI SDK for TypeScript/JavaScript",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 119,
+   "начало": "March 7, 2025 — gemini-embedding-exp-03-07",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 120,
+   "начало": "February 28, 2025 — Search tool for gemini-2.0-pro-exp",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 121,
+   "начало": "February 25, 2025 — gemini-2.0-flash-lite GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 122,
+   "начало": "February 19, 2025 — additional regions",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 123,
+   "начало": "February 18, 2025 — Gemini 1.0 Pro no longer supported",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 124,
+   "начало": "February 11, 2025 — OpenAI libraries compatibility",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 125,
+   "начало": "February 6, 2025 — imagen-3.0-generate-002 GA in the Gemini API",
+   "итог": "E-5-25"
+  },
+  {
+   "n": 126,
+   "начало": "February 6, 2025 — Gen AI SDK for Java",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 127,
+   "начало": "February 5, 2025 — gemini-2.0-flash-001 GA text-only output",
+   "итог": "E-5-26"
+  },
+  {
+   "n": 128,
+   "начало": "February 5, 2025 — 2.0 pro exp, flash-lite preview, code execution file input, Python SDK GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 129,
+   "начало": "January 21, 2025 — gemini-2.0-flash-thinking-exp-01-21",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 130,
+   "начало": "December 19, 2024 — Gemini 2.0 Flash Thinking Mode",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 131,
+   "начало": "December 11, 2024 — Gemini 2.0 Flash Experimental: multimodal response generation (text, images, speech)",
+   "итог": "E-5-27"
+  },
+  {
+   "n": 132,
+   "начало": "November 21, 2024 — gemini-exp-1121; 1.5 flash aliases; top_k change",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 133,
+   "начало": "November 14, 2024 — gemini-exp-1114",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 134,
+   "начало": "November 8, 2024 — OpenAI libraries",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 135,
+   "начало": "October 31, 2024 — Grounding with Google Search",
+   "итог": "ничего: не про генерацию картинок (общий запуск grounding)"
+  },
+  {
+   "n": 136,
+   "начало": "October 3, 2024 — gemini-1.5-flash-8b-001",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 137,
+   "начало": "September 24, 2024 — 1.5 002 models; civic integrity safety filter; penalties",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 138,
+   "начало": "September 19, 2024 — AI Studio thumbs; Cloud credits",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 139,
+   "начало": "September 17, 2024 — Open in Colab",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 140,
+   "начало": "September 13, 2024 — compare mode",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 141,
+   "начало": "August 30, 2024 — JSON schema",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 142,
+   "начало": "August 27, 2024 — experimental 1.5 models",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 143,
+   "начало": "August 9, 2024 — PDF processing",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 144,
+   "начало": "August 5, 2024 — fine-tuning 1.5 Flash",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 145,
+   "начало": "August 1, 2024 — gemini-1.5-pro-exp-0801",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 146,
+   "начало": "July 12, 2024 — Gemini 1.0 Pro Vision removed",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 147,
+   "начало": "June 27, 2024 — 2M context; code execution",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 148,
+   "начало": "June 18, 2024 — context caching",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 149,
+   "начало": "June 12, 2024 — Gemini 1.0 Pro Vision deprecated",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 150,
+   "начало": "May 23, 2024 — Gemini 1.5 Pro / Flash GA",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 151,
+   "начало": "May 14, 2024 — 2M context waitlist; billing; File API video; parallel FC",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 152,
+   "начало": "May 10, 2024 — Gemini 1.5 Flash preview",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 153,
+   "начало": "April 9, 2024 — Gemini 1.5 Pro preview; text-embeddings-004; File API; multimodal prompting; system instructions; response_mime_type",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 154,
+   "начало": "March 19, 2024 — tuning Gemini 1.0 Pro",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 155,
+   "начало": "December 13 2023 — gemini-pro / pro-vision / embedding-001 / aqa; API versions; image as input modality; 1 candidate",
+   "итог": "ничего: не про генерацию картинок (2023, картинка только как вход)"
+  },
+  {
+   "n": 156,
+   "начало": "Send feedback / Except as otherwise noted … Last updated 2026-09-23 UTC. / Terms / Privacy / языки",
+   "итог": "ничего: обвязка (лицензия, дата, подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-5-1",
+   "вид": "ограничение",
+   "утверждение_en": "Access to Gemini 2.5 models is limited to users who actively used them in the past; the models are not deprecated and continue to be served until further notice; new projects should use the latest models.",
+   "цитата": "we are limiting access to the 2.5 models to users who have\nactively used them in the past. These models are not deprecated and will\ncontinue to be served until further notice through the API.",
+   "источник_цитаты": "txt",
+   "раздел": "September 18, 2026",
+   "модели": [
+    "Gemini 2.5 models (относится ли к gemini-2.5-flash-image — не уточнено)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "для новых проектов названы только текстовые '3.5 Flash-Lite or 3.8 Flash'; см. противоречия/сомнения"
+  },
+  {
+   "код": "E-5-2",
+   "вид": "факт",
+   "утверждение_en": "The sampling parameters temperature, top_p and top_k are deprecated (as of July 21, 2026).",
+   "цитата": "The sampling parameters\ntemperature\n,\ntop_p\nand\ntop_k\nare now deprecated.",
+   "источник_цитаты": "txt",
+   "раздел": "July 21, 2026",
+   "модели": "не указано (отсылка к 'Latest Gemini Model')",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "касается ли это image-моделей, не сказано; ноутбуки (стр_80, стр_325) используют temperature/top_p"
+  },
+  {
+   "код": "E-5-3",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) was released to general availability on June 30, 2026, as a built-in multimodal model optimized for ultra-low latency and cost-effective image generation and editing.",
+   "цитата": "(Nano Banana 2 Lite) to general\navailability (GA), our built-in multimodal model optimized for ultra-low\nlatency and cost-effective image generation and editing.",
+   "источник_цитаты": "txt",
+   "раздел": "June 30, 2026",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "preview-версии Lite в журнале нет"
+  },
+  {
+   "код": "E-5-4",
+   "вид": "предупреждение",
+   "утверждение_en": "Imagen 4 models imagen-4.0-generate-001, imagen-4.0-ultra-generate-001 and imagen-4.0-fast-generate-001 are deprecated and shut down on August 17, 2026 (entry heading: 'Imagen 4 and Gemini 3 Image models').",
+   "цитата": "Imagen 4 and Gemini 3 Image models\n:\nimagen-4.0-generate-001\nimagen-4.0-ultra-generate-001\nimagen-4.0-fast-generate-001",
+   "источник_цитаты": "txt",
+   "раздел": "June 15, 2026",
+   "модели": [
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "imagen-4.0-fast-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "дата отключения на строке выше: 'August 17, 2026'; какие 'Gemini 3 Image models' имеются в виду — не перечислено"
+  },
+  {
+   "код": "E-5-5",
+   "вид": "факт",
+   "утверждение_en": "On May 28, 2026, gemini-3.1-flash-image (Nano Banana 2) and gemini-3-pro-image (Nano Banana Pro) were released as the generally available versions of Gemini 3.1 Flash Image and Gemini 3 Pro Image.",
+   "цитата": "(Nano Banana Pro), the generally available (GA) versions of our native\nvisual models,",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-6",
+   "вид": "факт",
+   "утверждение_en": "Video-to-image: a video file (direct upload or public YouTube URL) can be passed as multimodal context with a text prompt to generate thumbnails, cinematic movie posters or summary infographics; supported exclusively on gemini-3.1-flash-image.",
+   "цитата": "You can now pass a video file (via\ndirect upload or as a public YouTube URL) as multimodal context alongside a\ntext prompt to generate high-quality thumbnails, cinematic movie posters, or\nsummary infographics. This feature is supported exclusively on the",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "ID на следующей строке: 'gemini-3.1-flash-image'"
+  },
+  {
+   "код": "E-5-7",
+   "вид": "предупреждение",
+   "утверждение_en": "gemini-3.1-flash-image-preview and gemini-3-pro-image-preview were deprecated (May 28, 2026) and shut down on June 25, 2026.",
+   "цитата": "models are deprecated\nand will be\nshut down\non June 25, 2026.",
+   "источник_цитаты": "txt",
+   "раздел": "May 28, 2026",
+   "модели": [
+    "gemini-3.1-flash-image-preview",
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "строки выше: 'The gemini-3.1-flash-image-preview and gemini-3-pro-image-preview'"
+  },
+  {
+   "код": "E-5-8",
+   "вид": "факт",
+   "утверждение_en": "Flex and Priority inference tiers were introduced on April 1, 2026 for optimizing cost or latency.",
+   "цитата": "inference tiers, offering more options\nfor optimizing cost or latency.",
+   "источник_цитаты": "txt",
+   "раздел": "April 1, 2026",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "начало: 'Introduced the new Flex and Priority'; в прайсе (стр_4) Flex/Priority есть у Pro и 2.5 Flash Image, нет у NB2/Lite"
+  },
+  {
+   "код": "E-5-9",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 (Gemini 3.1 Flash Image Preview) launched on February 26, 2026 as a high-efficiency model optimized for speed and high-volume use cases.",
+   "цитата": "Gemini 3.1 Flash Image Preview\n, a high-efficiency\nmodel optimized for speed and high-volume use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "February 26, 2026",
+   "модели": [
+    "gemini-3.1-flash-image-preview (Nano Banana 2 Preview)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-10",
+   "вид": "факт",
+   "утверждение_en": "imagen-4.0-generate-preview-06-06 and imagen-4.0-ultra-generate-preview-06-06 were shut down on February 17, 2026 (announced January 15, 2026).",
+   "цитата": "imagen-4.0-generate-preview-06-06\nimagen-4.0-ultra-generate-preview-06-06\nJanuary 29, 2026",
+   "источник_цитаты": "txt",
+   "раздел": "February 17, 2026",
+   "модели": [
+    "imagen-4.0-generate-preview-06-06",
+    "imagen-4.0-ultra-generate-preview-06-06"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "цитата захватывает следующий заголовок даты, чтобы указать на запись 17 февраля (та же пара ID повторена в записи 15 января)"
+  },
+  {
+   "код": "E-5-11",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image-preview was shut down as of January 15, 2026 (announced December 4, 2025).",
+   "цитата": "gemini-2.5-flash-image-preview\nmodel has been shut down.",
+   "источник_цитаты": "txt",
+   "раздел": "January 15, 2026",
+   "модели": [
+    "gemini-2.5-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "анонс 4 декабря 2025: 'will be shut down January 15, 2026'"
+  },
+  {
+   "код": "E-5-12",
+   "вид": "лимит",
+   "утверждение_en": "From January 8, 2026 the Gemini API accepts Cloud Storage buckets and public/private pre-signed URLs as data input, and the file size limit increased from 20MB to 100MB.",
+   "цитата": "The file size limit\nhas also increased from 20MB to 100MB.",
+   "источник_цитаты": "txt",
+   "раздел": "January 8, 2026",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "общий лимит входных файлов API (в т.ч. картинок-референсов — выведено)"
+  },
+  {
+   "код": "E-5-13",
+   "вид": "факт",
+   "утверждение_en": "Billing for Grounding with Google Search on Gemini 3 models began on January 5, 2026.",
+   "цитата": "Gemini 3 billing for\nGrounding with Google Search\nwill begin on January 5, 2026.",
+   "источник_цитаты": "txt",
+   "раздел": "December 5, 2025",
+   "модели": [
+    "Gemini 3 models"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-14",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image Preview (gemini-3-pro-image-preview) was released on November 20, 2025 as the next iteration to the Nano Banana model.",
+   "цитата": "next iteration to the Nano Banana model.",
+   "источник_цитаты": "txt",
+   "раздел": "November 20, 2025",
+   "модели": [
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "строки выше: 'Released Gemini 3 Pro Image Preview, gemini-3-pro-image-preview , the'"
+  },
+  {
+   "код": "E-5-15",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.0-flash-exp-image-generation and gemini-2.0-flash-preview-image-generation were scheduled for shutdown on November 14, 2025.",
+   "цитата": "November 14:\ngemini-2.0-flash-exp-image-generation\ngemini-2.0-flash-preview-image-generation",
+   "источник_цитаты": "txt",
+   "раздел": "November 11, 2025",
+   "модели": [
+    "gemini-2.0-flash-exp-image-generation",
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-16",
+   "вид": "факт",
+   "утверждение_en": "imagen-3.0-generate-002 was shut down on November 10, 2025; use Imagen 4 instead.",
+   "цитата": "The following model is shut down:\nimagen-3.0-generate-002\nUse\nImagen 4\ninstead.",
+   "источник_цитаты": "txt",
+   "раздел": "November 10, 2025",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-17",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 2.5 Flash Image, the input token count for images was reduced from 1290 to 258 (November 4, 2025), lowering the cost of image editing.",
+   "цитата": "token count for images has been reduced from 1290 to 258, lowering the cost\nof image editing.",
+   "источник_цитаты": "txt",
+   "раздел": "November 4, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "редактирование"
+   ],
+   "заметка": "начало: 'For Gemini 2.5 Flash Image , the input'"
+  },
+  {
+   "код": "E-5-18",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image became generally available on October 2, 2025.",
+   "цитата": "Launched Gemini 2.5 Flash Image GA:",
+   "источник_цитаты": "txt",
+   "раздел": "October 2, 2025",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-19",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Image Preview was launched on August 26, 2025 as the latest native image generation model.",
+   "цитата": "our latest native image generation model.",
+   "источник_цитаты": "txt",
+   "раздел": "August 26, 2025",
+   "модели": [
+    "Gemini 2.5 Image Preview (gemini-2.5-flash-image-preview — выведено из записи 4 декабря 2025)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-20",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 Ultra, Standard and Fast were released as generally available on August 14, 2025.",
+   "цитата": "Released Imagen 4 Ultra, Standard and Fast models as generally available",
+   "источник_цитаты": "txt",
+   "раздел": "August 14, 2025",
+   "модели": [
+    "Imagen 4 Ultra / Standard / Fast"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-21",
+   "вид": "факт",
+   "утверждение_en": "Rate limits for Imagen 4 Standard and Ultra were increased on July 17, 2025.",
+   "цитата": "Increased rate limits for Imagen 4 Standard and Ultra.",
+   "источник_цитаты": "txt",
+   "раздел": "July 17, 2025",
+   "модели": [
+    "Imagen 4 Standard / Ultra"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "цифры — на странице Rate limits, здесь не приведены"
+  },
+  {
+   "код": "E-5-22",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 Ultra and Standard Preview models were released on June 24, 2025.",
+   "цитата": "Released Imagen 4 Ultra and Standard Preview models.",
+   "источник_цитаты": "txt",
+   "раздел": "June 24, 2025",
+   "модели": [
+    "Imagen 4 Ultra / Standard Preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-23",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.0-flash-preview-image-generation was released on May 7, 2025 as a preview model for generating and editing images.",
+   "цитата": ", a preview model for\ngenerating and editing images.",
+   "источник_цитаты": "txt",
+   "раздел": "May 7, 2025",
+   "модели": [
+    "gemini-2.0-flash-preview-image-generation"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-24",
+   "вид": "факт",
+   "утверждение_en": "On March 12, 2025 an experimental Gemini 2.0 Flash model capable of image generation and editing was launched.",
+   "цитата": "model capable of image generation and editing.",
+   "источник_цитаты": "txt",
+   "раздел": "March 12, 2025",
+   "модели": [
+    "Gemini 2.0 Flash (experimental, image generation)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "ID в записи не назван; в записи 11 ноября 2025 фигурирует gemini-2.0-flash-exp-image-generation"
+  },
+  {
+   "код": "E-5-25",
+   "вид": "факт",
+   "утверждение_en": "imagen-3.0-generate-002 was released on February 6, 2025 as the generally available version of Imagen 3 in the Gemini API.",
+   "цитата": ", a generally available (GA) version of\nImagen 3 in the Gemini API",
+   "источник_цитаты": "txt",
+   "раздел": "February 6, 2025",
+   "модели": [
+    "imagen-3.0-generate-002"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-26",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.0-flash-001 (GA, February 5, 2025) supports text-only output.",
+   "цитата": "supports text-only output.",
+   "источник_цитаты": "txt",
+   "раздел": "February 5, 2025",
+   "модели": [
+    "gemini-2.0-flash-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "т.е. GA-версия 2.0 Flash не генерировала картинки"
+  },
+  {
+   "код": "E-5-27",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.0 Flash Experimental (December 11, 2024) listed multimodal response generation in the form of text, images and speech.",
+   "цитата": "Multimodal response generation in the form of text, images, and speech",
+   "источник_цитаты": "txt",
+   "раздел": "December 11, 2024",
+   "модели": [
+    "Gemini 2.0 Flash Experimental"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-5-28",
+   "вид": "факт",
+   "утверждение_en": "Gemini native image model lineage per this changelog: Gemini 2.0 Flash Experimental (Dec 2024) → experimental 2.0 Flash image generation (Mar 2025) → gemini-2.0-flash-preview-image-generation (May 2025) → Gemini 2.5 Image Preview (Aug 26, 2025) → Gemini 2.5 Flash Image GA (Oct 2, 2025) → Gemini 3 Pro Image Preview (Nov 20, 2025) → Nano Banana 2 Preview (Feb 26, 2026) → NB2 and NB Pro GA (May 28, 2026) → NB2 Lite GA (Jun 30, 2026).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-5-27, E-5-24, E-5-23, E-5-19, E-5-18, E-5-14, E-5-9, E-5-5, E-5-3",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-5-29",
+   "вид": "предупреждение",
+   "утверждение_en": "All preview IDs of Gemini image models listed here are shut down by the page date (2.0 image-generation IDs Nov 14, 2025; gemini-2.5-flash-image-preview Jan 15, 2026; gemini-3.1-flash-image-preview and gemini-3-pro-image-preview Jun 25, 2026), so current calls must use the GA IDs gemini-3.1-flash-image, gemini-3-pro-image or gemini-3.1-flash-lite-image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-5-15, E-5-11, E-5-7, E-5-5, E-5-3",
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "код с '-preview' ID (стр_107, стр_325, стр_326) по этой хронологии указывает на отключённые модели"
+  },
+  {
+   "код": "E-5-30",
+   "вид": "факт",
+   "утверждение_en": "Imagen line in the Gemini API: Imagen 3 GA (Feb 6, 2025) shut down Nov 10, 2025; Imagen 4 Preview (Jun 24, 2025) → GA (Aug 14, 2025) → shut down Aug 17, 2026; no replacement Imagen model is listed after that.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "Imagen 3",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-5-25, E-5-16, E-5-22, E-5-20, E-5-10, E-5-4",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Запись June 15, 2026: заголовок 'Imagen 4 and Gemini 3 Image models', но перечислены только три ID Imagen 4 (E-5-4); какие 'Gemini 3 Image models' отключаются — не сказано (при этом 28.05.2026 GA-версии Gemini 3 image только что выпущены).",
+  "Имя preview 2.5: 'Gemini 2.5 Image Preview' (26.08.2025, E-5-19) vs ID 'gemini-2.5-flash-image-preview' (записи 4 дек. 2025 и 15 янв. 2026)."
+ ],
+ "не_сказано": [
+  "В журнале нет записи о депрекейте/отключении gemini-2.5-flash-image (прайс стр_4 пишет: shut down October 2, 2026); запись 18.09.2026 говорит о моделях 2.5 'not deprecated' без уточнения, входит ли туда 2.5 Flash Image (E-5-1).",
+  "Нет записи о preview-версии Nano Banana 2 Lite — модель появляется сразу как GA (E-5-3).",
+  "Нет изменений цен image-моделей, кроме снижения входных токенов картинки у 2.5 Flash Image (E-5-17); нет записей про aspect ratio / 512px / 4K у image-моделей.",
+  "Не сказано, распространяется ли депрекейт temperature/top_p/top_k (E-5-2) на image-модели."
+ ],
+ "сомнения": [
+  "Официальность подтверждена по косвенному признаку (текст от лица владельца API + подвал Google Developers), явного копирайта нет.",
+  "Кросс-страничное расхождение: прайс (стр_4) — gemini-2.5-flash-image deprecated, отключение 2 октября 2026; журнал 18.09.2026 — модели 2.5 'not deprecated' (для каких именно 2.5 — не уточнено).",
+  "Цитата E-5-10 включает соседний заголовок даты 'January 29, 2026' для однозначности (та же пара ID есть и в записи 15 января)."
+ ]
+}

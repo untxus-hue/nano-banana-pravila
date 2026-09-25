@@ -1,0 +1,430 @@
+{
+ "id": 318,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/gemini-image-generation-best-practices",
+ "заголовок": "Gemini image generation best practices | Gemini Enterprise Agent Platform | Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time в html нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0, ссылки About Google / Google Cloud terms; текст от лица Google (\"we recommend that you pass thought signatures\")",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая страница Google Cloud (Gemini Enterprise Agent Platform) 'Gemini image generation best practices' для тех, кто пишет промпты генерации картинок в Gemini: список из восьми советов с примерами — конкретика, контекст и назначение, итерации follow-up промптами, пошаговые инструкции для сложных сцен, позитивная формулировка вместо запретов, управление камерой фото/кино-терминами, явная фраза 'create/generate an image of' (иначе модель может ответить текстом), передача thought signatures в мультиходе. Конкретные модели не названы (только 'Gemini', 'the multimodal model'; Nano Banana — только в меню сайта). Кода нет. Повторяющийся акцент — мультиход/итерации (пункты 3 и 8).",
+ "модели_на_странице": [
+  "не названы в содержании: 'Gemini', 'the multimodal model'; в меню сайта — 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image и пункт 'Provisioned Throughput for Gemini 3 (Nano Banana) models'"
+ ],
+ "структура": [
+  "Gemini image generation best practices (вступление + 8 пунктов: Be specific; Provide context and intent; Iterate and refine; Use step-by-step instructions; Describe what you want, not what you don't; Control the camera; Prompt for images; Pass Thought Signatures)",
+  "What's next?"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini image generation best practices | Gemini",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (меню, левое меню, хлебные крошки; строки 2-1041; сверено diff — совпадает с навигацией стр. id 55 со сдвигом на 1 строку). В меню есть \"Provisioned Throughput for Gemini 3 (Nano Banana) models\" — только ссылка"
+  },
+  {
+   "n": 3,
+   "начало": "Send feedback Gemini image generation best practices",
+   "итог": "ничего: служебная кнопка, заголовок, виджет коллекций (строки 1042-1045)"
+  },
+  {
+   "n": 4,
+   "начало": "To improve your image generation",
+   "итог": "ничего: вводная фраза к списку"
+  },
+  {
+   "n": 5,
+   "начало": "Be specific: More details give",
+   "итог": "E-318-1, E-318-2"
+  },
+  {
+   "n": 6,
+   "начало": "Provide context and intent: Explain",
+   "итог": "E-318-3, E-318-4"
+  },
+  {
+   "n": 7,
+   "начало": "Iterate and refine: Don't expect",
+   "итог": "E-318-5, E-318-6"
+  },
+  {
+   "n": 8,
+   "начало": "Use step-by-step instructions: For complex",
+   "итог": "E-318-7, E-318-8"
+  },
+  {
+   "n": 9,
+   "начало": "Describe what you want, not",
+   "итог": "E-318-9, E-318-10"
+  },
+  {
+   "n": 10,
+   "начало": "Control the camera: Guide the",
+   "итог": "E-318-11, E-318-12"
+  },
+  {
+   "n": 11,
+   "начало": "Prompt for images: Describe the",
+   "итог": "E-318-13, E-318-14"
+  },
+  {
+   "n": 12,
+   "начало": "Pass Thought Signatures: When using",
+   "итог": "E-318-15"
+  },
+  {
+   "n": 13,
+   "начало": "What's next? See the following links",
+   "итог": "ничего: ссылки (Generate images, Edit images, limitations, responsible AI)"
+  },
+  {
+   "n": 14,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, Last updated 2026-09-22 UTC)"
+  },
+  {
+   "n": 15,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка (подвал, языки; строки 1089-1134)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-318-1",
+   "вид": "правило",
+   "утверждение_en": "Be specific: more details give you more control over the generated image.",
+   "цитата": "Be specific: More details give you more control.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Be specific",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-2",
+   "вид": "пример_промпта",
+   "утверждение_en": "Instead of a vague prompt like \"fantasy armor\", use a detailed one: \"ornate elven plate armor, etched with silver leaf patterns, with a high collar and pauldrons shaped like falcon wings.\"",
+   "цитата": "instead of\n\"fantasy armor,\" try \"ornate elven plate armor, etched with silver leaf\npatterns, with a high collar and pauldrons shaped like falcon wings.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Be specific",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Структура детализации: [эпитет качества \"ornate\"] + [культура/стиль \"elven\"] + [тип \"plate armor\"] → [отделка и материал \"etched with silver leaf patterns\"] → [конкретные части с формой \"high collar\", \"pauldrons shaped like falcon wings\"]. Работу делают материалы, узор и сравнение формы с узнаваемым объектом."
+  },
+  {
+   "код": "E-318-3",
+   "вид": "правило",
+   "утверждение_en": "Provide context and intent: explain the purpose of the image to help the model understand the context.",
+   "цитата": "Provide context and intent: Explain the purpose of the image to help the\nmodel understand the context.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Provide context and intent",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-4",
+   "вид": "пример_промпта",
+   "утверждение_en": "\"Create a logo for a high-end, minimalist skincare brand\" works better than \"Create a logo.\"",
+   "цитата": "\"Create a logo for a high-end,\nminimalist skincare brand\" works better than \"Create a logo.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Provide context and intent",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Структура: [что создать \"Create a logo\"] + [для кого/зачем \"for a … skincare brand\"] + [позиционирование и эстетика \"high-end, minimalist\"]. Работу делает назначение, из которого модель выводит стиль."
+  },
+  {
+   "код": "E-318-5",
+   "вид": "правило",
+   "утверждение_en": "Iterate and refine: don't expect a perfect image on the first attempt; use follow-up prompts to make small changes.",
+   "цитата": "Iterate and refine: Don't expect a perfect image on your first attempt.\nUse follow-up prompts to make small changes",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Iterate and refine",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up refinement prompts: \"Make the lighting warmer\" or \"Change the character's expression to be more serious.\"",
+   "цитата": "\"Make the lighting\nwarmer\" or \"Change the character's expression to be more serious.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Iterate and refine",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура правки: повелительный глагол (Make / Change) + один элемент (lighting / character's expression) + направление изменения (warmer / more serious). Одна правка за ход, без пересказа сцены."
+  },
+  {
+   "код": "E-318-7",
+   "вид": "правило",
+   "утверждение_en": "Use step-by-step instructions: for complex scenes, split your request into steps.",
+   "цитата": "Use step-by-step instructions: For complex scenes, split your request\ninto steps.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Use step-by-step instructions",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Step-by-step prompt: \"First, create a background of a serene, misty forest at dawn. Then, in the foreground, add a moss-covered ancient stone altar. Finally, place a single, glowing sword on top of the altar.\"",
+   "цитата": "\"First, create a background of a serene, misty\nforest at dawn. Then, in the foreground, add a moss-covered ancient stone\naltar. Finally, place a single, glowing sword on top of the altar.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Use step-by-step instructions",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: маркеры порядка First / Then / Finally; слои идут от фона (background: forest at dawn, с настроением serene, misty) к переднему плану (foreground: altar) и к фокусному объекту (sword on top of the altar). Каждое предложение — один слой с явным пространственным указанием и глаголом действия (create / add / place)."
+  },
+  {
+   "код": "E-318-9",
+   "вид": "правило",
+   "утверждение_en": "Describe what you want, not what you don't: describe the scene positively instead of stating exclusions.",
+   "цитата": "Describe what you want, not what you don't: Instead of saying \"no cars\",\ndescribe the scene positively",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Describe what you want, not what you don't",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Instead of \"no cars\", say \"an empty, deserted street with no signs of traffic.\"",
+   "цитата": "Instead of saying \"no cars\",\ndescribe the scene positively by saying, \"an empty, deserted street with no\nsigns of traffic.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Describe what you want, not what you don't",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: вместо запрета объекта описано желаемое состояние сцены (empty, deserted street). Заметка: сама позитивная версия всё же содержит \"with no signs of traffic\" — правило нацелено на голый запрет (\"no cars\"), а не на полное отсутствие отрицаний."
+  },
+  {
+   "код": "E-318-11",
+   "вид": "правило",
+   "утверждение_en": "Control the camera: guide the camera view by using photographic and cinematic terms to describe the composition.",
+   "цитата": "Control the camera: Guide the camera view. Use photographic and\ncinematic terms to describe the composition",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Control the camera",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "Camera/composition terms to use: \"wide-angle shot\", \"macro shot\", or \"low-angle perspective\".",
+   "цитата": "\"wide-angle shot\",\n\"macro shot\", or \"low-angle perspective\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Control the camera",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Фрагменты промпта, а не полные промпты: тип объектива/плана (wide-angle, macro) и ракурс (low-angle perspective)."
+  },
+  {
+   "код": "E-318-13",
+   "вид": "правило",
+   "утверждение_en": "Prompt for images: describe the intent with phrases such as \"create an image of\" or \"generate an image of\".",
+   "цитата": "Prompt for images: Describe the intent by using phrases such as \"create\nan image of\" or \"generate an image of\".",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Prompt for images",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-14",
+   "вид": "предупреждение",
+   "утверждение_en": "Without such phrasing, the multimodal model might respond with text instead of the image.",
+   "цитата": "Otherwise, the multimodal model\nmight respond with text instead of the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Prompt for images",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Причина — модель мультимодальная (может отвечать текстом)."
+  },
+  {
+   "код": "E-318-15",
+   "вид": "правило",
+   "утверждение_en": "When using Gemini, Google recommends passing thought signatures back to the model during multi-turn image creation and editing to preserve reasoning context across interactions.",
+   "цитата": "When using\nGemini, we recommend that you pass thought signatures\nback to the model during multi-turn image creation and editing. This lets\nyou preserve reasoning context across interactions.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini image generation best practices / Pass Thought Signatures",
+   "модели": "Gemini (модель не уточнена)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": "Код — по ссылке \"Example of multi-turn image editing using thought signatures\" (на странице кода нет)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-318-16",
+   "вид": "приём",
+   "утверждение_en": "The page's own examples model a complete prompt workflow: state the image intent explicitly ('create an image of'), give purpose and concrete details, phrase exclusions as positive scene states, name the camera view, build complex scenes in ordered layers (background → foreground → focal object), then refine with one small change per follow-up turn.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-318-13, E-318-3, E-318-1, E-318-9, E-318-11, E-318-7, E-318-8, E-318-5",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Сводка восьми пунктов в порядок работы; сам порядок страница не задаёт — это упорядочивание по логике примеров."
+  },
+  {
+   "код": "E-318-17",
+   "вид": "правило",
+   "утверждение_en": "Iterative refinement through follow-up prompts is the recommended path to a good image, and in API use it depends on passing thought signatures back between turns to keep reasoning context.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "Gemini (модель не уточнена)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-318-5, E-318-6, E-318-15",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-318-18",
+   "вид": "объяснение",
+   "утверждение_en": "The positive-phrasing rule targets bare exclusions ('no cars'): the recommended rewrite describes the desired state of the scene (empty, deserted street), even though it still includes a qualifying 'with no signs of traffic'.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Describe what you want, not what you don't",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-318-9, E-318-10",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Нюанс, не прямое противоречие: пункт 'Describe what you want, not what you don't' в качестве позитивного примера даёт фразу с отрицанием 'with no signs of traffic'."
+ ],
+ "не_сказано": [
+  "Не названы модели и различия советов между ними.",
+  "Нет советов по длине промпта, тексту в кадре, стилю/медиуму, соотношению сторон и разрешению.",
+  "Нет советов по работе с референсными картинками и сохранению персонажа.",
+  "Не сказано, есть ли параметр негативного промпта.",
+  "Нет кода передачи thought signatures (только ссылка).",
+  "Не указано, сколько шагов допустимо в пошаговой инструкции."
+ ],
+ "сомнения": [
+  "Метаданные партии указывают модель 'Nano Banana' — в содержании её нет, только в пункте меню сайта.",
+  "В партии указано, что эта страница — дубль удалённой id 43; сверка с ней не делалась (вне партии)."
+ ]
+}

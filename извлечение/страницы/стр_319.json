@@ -1,0 +1,614 @@
+{
+ "id": 319,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/start",
+ "заголовок": "Get started with Gemini Enterprise Agent Platform | Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC (в тексте и в html); meta article:published_time/datePublished в html нет",
+ "официальность": {
+  "домен": "docs.cloud.google.com (Google Cloud Documentation)",
+  "второй_признак": "Подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … see the Google Developers Site Policies», ссылки About Google / Google Cloud terms; структура официальной документации Gemini Enterprise Agent Platform.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Quickstart официальной документации Google Cloud для разработчиков: установка Google Gen AI SDK (Python, Go, Node.js, Java, REST), аутентификация (ADC / API key), первый текстовый запрос, затем разделы «Generate images», «Understand images», «Use code execution». Про картинки — только раздел Generate images: требование responseModalities TEXT+IMAGE, запрет image-only вывода, один промпт-пример во всех SDK (Эйфелева башня), REST-пример с туториалом и aspectRatio 16:9, safety settings. Модели в коде: gemini-3.1-flash-image (Python), gemini-2.5-flash-image (остальные). Около 75% .txt — левое меню документации. Термины: responseModalities, inline_data, imageConfig, safetySettings, ADC.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2) — Python-пример генерации",
+  "gemini-2.5-flash-image (Nano Banana) — Go/Node.js/Java-примеры генерации",
+  "в меню: 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image; «Gemini 3 (Nano Banana) models»; Imagen documentation",
+  "текстовые: gemini-3.5-flash, gemini-2.5-flash, gemini-3-flash-preview (не картинки)"
+ ],
+ "структура": [
+  "верхнее меню и вкладки продукта",
+  "левое меню документации (стр. 77-1036)",
+  "Get started with Gemini Enterprise Agent Platform: Choose your authentication method (ADC / API key), Before you begin, Configure your project, Create local authentication credentials, Set up required roles",
+  "Install the SDK and set up your environment (Python, Go, Node.js, Java, REST)",
+  "Make your first request (текст)",
+  "Generate images (Python, Go, Node.js, Java, REST)",
+  "Understand images",
+  "Use code execution",
+  "What's next",
+  "подвал (лицензия, Last updated 2026-09-23)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Get started with Gemini Enterprise Agent Platform | Google Cloud Documentation (стр. 1)",
+   "итог": "ничего: заголовок вкладки"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / Documentation / … Technology Areas … / Console / English … Sign in (стр. 2-54)",
+   "итог": "ничего: обвязка (верхнее меню Google Cloud Docs и языки)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini Enterprise Agent Platform / Start free / Overview / Studio / Agents / Models … Console (стр. 55-76)",
+   "итог": "ничего: обвязка (вкладки продукта)"
+  },
+  {
+   "n": 4,
+   "начало": "Overview / Beginner's guide / Get started … Google Models … 3 Pro Image … 3.1 Flash Image … 2.5 Flash Image … 3.1 Flash-Lite Image … Virtual Try-On … (стр. 77-152)",
+   "итог": "ничего: обвязка (левое меню, список моделей); перечень image-моделей учтён в длинной дистанции E-319-18"
+  },
+  {
+   "n": 5,
+   "начало": "Partner Models … Claude … Grok … Mistral … Open Models … Build / Prompt design … Image generation: Generate images with Gemini … Gemini image generation limitations … Imagen documentation … Provisioned Throughput for Gemini 3 (Nano Banana) models … Samples and tutorials … Agent Platform / Generative AI (стр. 153-1036)",
+   "итог": "ничего: обвязка (левое меню документации); image-страницы меню учтены в E-319-18"
+  },
+  {
+   "n": 6,
+   "начало": "Home / Documentation / AI and ML / Gemini Enterprise Agent Platform / Models / Send feedback (стр. 1037-1042)",
+   "итог": "ничего: обвязка (хлебные крошки)"
+  },
+  {
+   "n": 7,
+   "начало": "Get started with Gemini Enterprise Agent Platform / Stay organized with collections … (стр. 1043-1045)",
+   "итог": "ничего: заголовок страницы и служебная строка"
+  },
+  {
+   "n": 8,
+   "начало": "This quickstart shows you how to install the Google Gen AI SDK … make your first API request. (стр. 1046-1047)",
+   "итог": "ничего: вводка quickstart, не специфично для картинок"
+  },
+  {
+   "n": 9,
+   "начало": "Choose your authentication method … ADC is the recommended method. / ADC (recommended)API key (стр. 1048-1051)",
+   "итог": "ничего: общая аутентификация, не специфично для картинок"
+  },
+  {
+   "n": 10,
+   "начало": "Before you begin — If you don't already have an API key … Go to Gemini Enterprise Agent Platform (стр. 1052-1057)",
+   "итог": "ничего: общая настройка (API-ключ)"
+  },
+  {
+   "n": 11,
+   "начало": "Set up ADC by using a setup script … MacOS/Linux bash <(curl … setup_adc.sh) / Windows powershell … (стр. 1058-1063)",
+   "итог": "ничего: общая настройка ADC"
+  },
+  {
+   "n": 12,
+   "начало": "Console manual steps — Configure your project … Enable the Agent Platform API … Install the Google Cloud CLI … gcloud init (стр. 1064-1101)",
+   "итог": "ничего: общая настройка проекта/биллинга/API"
+  },
+  {
+   "n": 13,
+   "начало": "In the Google Cloud console, on the project selector page … gcloud init (стр. 1102-1130)",
+   "итог": "ничего: дубль предыдущего блока (вторая вкладка), общая настройка"
+  },
+  {
+   "n": 14,
+   "начало": "Create local authentication credentials … gcloud auth application-default login … (стр. 1131-1138)",
+   "итог": "ничего: общая аутентификация"
+  },
+  {
+   "n": 15,
+   "начало": "Set up required roles … Agent Platform User (roles/aiplatform.user) … (стр. 1139-1151)",
+   "итог": "ничего: IAM-роли, не специфично для картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Install the SDK and set up your environment / Python: pip install --upgrade google-genai; env GOOGLE_CLOUD_LOCATION=global, GOOGLE_GENAI_USE_ENTERPRISE=True (стр. 1152-1159)",
+   "итог": "ничего: общая установка SDK"
+  },
+  {
+   "n": 17,
+   "начало": "Go: go get google.golang.org/genai; env … (стр. 1160-1164)",
+   "итог": "ничего: общая установка SDK"
+  },
+  {
+   "n": 18,
+   "начало": "Node.js: npm install @google/genai; env … (стр. 1165-1169)",
+   "итог": "ничего: общая установка SDK"
+  },
+  {
+   "n": 19,
+   "начало": "Java: Maven com.google.genai:google-genai 0.7.0; env … (стр. 1170-1182)",
+   "итог": "ничего: общая установка SDK"
+  },
+  {
+   "n": 20,
+   "начало": "REST: Set environment variables … MODEL_ID=\"gemini-2.5-flash\" … Replace GOOGLE_CLOUD_PROJECT_ID … (стр. 1183-1186)",
+   "итог": "ничего: общая настройка; MODEL_ID текстовой модели наследуется REST-примером картинок — см. E-319-16"
+  },
+  {
+   "n": 21,
+   "начало": "Make your first request — Use the generateContent method … request.py … (стр. 1187-1194)",
+   "итог": "ничего: первый текстовый запрос"
+  },
+  {
+   "n": 22,
+   "начало": "Python / Go / Node.js / Java / C# — код \"How does AI work?\" (стр. 1195-1204)",
+   "итог": "ничего: генерация текста (модели gemini-3.5-flash, gemini-2.5-flash, gemini-3-flash-preview), не про картинки"
+  },
+  {
+   "n": 23,
+   "начало": "REST — curl … \"Explain how AI works in a few words\" (стр. 1205-1211)",
+   "итог": "ничего: генерация текста"
+  },
+  {
+   "n": 24,
+   "начало": "The model returns a response. Note that the response is generated in sections with each section separately evaluated for safety. (стр. 1212-1213)",
+   "итог": "E-319-14"
+  },
+  {
+   "n": 25,
+   "начало": "When you use a regional API endpoint (for example, us-central1), the region from the endpoint URL determines where the request is processed … (стр. 1214-1217)",
+   "итог": "ничего: общий факт маршрутизации запросов по региону, не специфичен для картинок"
+  },
+  {
+   "n": 26,
+   "начало": "Generate images — Gemini can generate and process images conversationally. You can prompt Gemini with text, images … (стр. 1218-1222)",
+   "итог": "E-319-1"
+  },
+  {
+   "n": 27,
+   "начало": "You must include responseModalities: [\"TEXT\", \"IMAGE\"] in your configuration. Image-only output is not supported with these models. (стр. 1223-1224)",
+   "итог": "E-319-2, E-319-3"
+  },
+  {
+   "n": 28,
+   "начало": "Python — код: gemini-3.1-flash-image, \"Generate an image of the Eiffel tower with fireworks in the background.\", response_modalities TEXT+IMAGE, сохранение inline_data в PNG (стр. 1225-1226; читано по html)",
+   "итог": "E-319-4, E-319-5, E-319-6, E-319-13"
+  },
+  {
+   "n": 29,
+   "начало": "Go — код: gemini-2.5-flash-image, CandidateCount 1, SafetySettings, пример ответа «I will generate an image of the Eiffel Tower at night…» (стр. 1227-1229; читано по html)",
+   "итог": "E-319-4, E-319-7, E-319-8, E-319-9, E-319-13"
+  },
+  {
+   "n": 30,
+   "начало": "Node.js — код: generateContentStream, gemini-2.5-flash-image, location по умолчанию us-central1, запись чанков в PNG, пример ответа (стр. 1230-1231; читано по html)",
+   "итог": "E-319-4, E-319-7, E-319-10, E-319-13"
+  },
+  {
+   "n": 31,
+   "начало": "Java — код: gemini-2.5-flash-image, location global, candidateCount 1, safetySettings, пример ответа «Here is the Eiffel Tower…» (стр. 1232-1233; читано по html)",
+   "итог": "E-319-4, E-319-7, E-319-8, E-319-9, E-319-13"
+  },
+  {
+   "n": 32,
+   "начало": "REST — curl … \"Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps.\" … responseModalities TEXT+IMAGE, imageConfig aspectRatio 16:9, safetySettings … / The model returns a response. (стр. 1234-1241; читано по html)",
+   "итог": "E-319-11, E-319-12, E-319-9"
+  },
+  {
+   "n": 33,
+   "начало": "Understand images — Gemini can understand images as well. The following code uses the image generated in the previous section and uses a different model … (стр. 1242-1245)",
+   "итог": "ничего: понимание изображений (вход), не генерация; расхождение текста и кода — см. противоречия"
+  },
+  {
+   "n": 34,
+   "начало": "Python / Go / Node.js / Java — код \"What is shown in this image?\" с gs://cloud-samples-data/generative-ai/image/scones.jpg (стр. 1246-1253)",
+   "итог": "ничего: понимание изображений (gemini-3.5-flash, gemini-2.5-flash), не генерация"
+  },
+  {
+   "n": 35,
+   "начало": "Use code execution — The Gemini API code execution feature … (стр. 1254-1260)",
+   "итог": "ничего: не про генерацию картинок (исполнение кода)"
+  },
+  {
+   "n": 36,
+   "начало": "Python / Go / Node.js / Java — код Fibonacci с ToolCodeExecution (стр. 1261-1268)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "For more examples of code execution, check out the code execution documentation. (стр. 1269-1270)",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 38,
+   "начало": "What's next — Connect to the Knowledge MCP server / Vibe code an agent with ADK / Google Gen AI libraries / OpenAI libraries / Get started with Gemini 3 … / Explore Google models (стр. 1271-1292)",
+   "итог": "ничего: ссылки на другие руководства"
+  },
+  {
+   "n": 39,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies … / Last updated 2026-09-23 UTC. (стр. 1293-1295)",
+   "итог": "ничего: подвал (лицензия и дата — признак официальности)"
+  },
+  {
+   "n": 40,
+   "начало": "Products and pricing … About Google / Privacy … Sign up for the Google Cloud newsletter … English … 한국어 (стр. 1296-1341)",
+   "итог": "ничего: обвязка (подвал Google Cloud)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-319-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini can generate and process images conversationally; it can be prompted with text, images, or both for image tasks such as generation and editing.",
+   "цитата": "Gemini can generate and process images conversationally.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images (стр. 1218-1222)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "редактирование",
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Продолжение: «You can prompt Gemini with text, images, or a combination of both to achieve various image-related tasks, such as image generation and editing.» Модели в абзаце не названы; в коде раздела — gemini-3.1-flash-image и gemini-2.5-flash-image. Примера редактирования на странице нет."
+  },
+  {
+   "код": "E-319-2",
+   "вид": "правило",
+   "утверждение_en": "The generation config must include responseModalities [\"TEXT\", \"IMAGE\"] to get image output.",
+   "цитата": "You must include responseModalities: [\"TEXT\", \"IMAGE\"] in your",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images (стр. 1223)",
+   "модели": [
+    "не указано — «these models» — не названы явно; в примерах раздела gemini-3.1-flash-image и gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка 1223 заканчивается на «in your», продолжение на стр. 1224: «configuration.» В Python — response_modalities=[Modality.TEXT, Modality.IMAGE], в REST — \"responseModalities\": [\"TEXT\", \"IMAGE\"]."
+  },
+  {
+   "код": "E-319-3",
+   "вид": "ограничение",
+   "утверждение_en": "Image-only output (IMAGE modality without TEXT) is not supported with the image models used on this page.",
+   "цитата": "Image-only output is not supported with these models.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images (стр. 1224)",
+   "модели": [
+    "не указано — «these models» — не названы явно; в примерах раздела gemini-3.1-flash-image и gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Какие именно модели — не сказано. См. сомнения: утверждение, возможно, унаследовано от старой документации и может расходиться с другими официальными страницами — проверять перекрёстно."
+  },
+  {
+   "код": "E-319-4",
+   "вид": "пример_промпта",
+   "утверждение_en": "Google's quickstart image prompt is a single descriptive sentence naming a subject and a background element.",
+   "цитата": "Generate an image of the Eiffel tower with fireworks in the background.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images / код Python, Go, Node.js, Java (стр. 1226-1233)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере",
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Разбор: глагол-команда «Generate an image of» + объект (Эйфелева башня) + элемент фона (фейерверк). Нет стиля, камеры, света, формата — минимальный промпт для первого запроса. Судя по примеру ответа (E-319-7), модель сама достраивает детали: ночь, подсветка башни, башня как фокус композиции, праздничная атмосфера. Один и тот же промпт во всех 4 SDK-примерах."
+  },
+  {
+   "код": "E-319-5",
+   "вид": "инструкция",
+   "утверждение_en": "Python pattern: call client.models.generate_content with model gemini-3.1-flash-image, the text prompt, and GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE]); then loop over response parts and save image parts as PNG.",
+   "цитата": "response_modalities=[Modality.TEXT, Modality.IMAGE]",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Python (стр. 1225-1226)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Цитата — из html (текст кода без тегов подсветки). Клиент создаётся как genai.Client() (без HttpOptions v1, в отличие от текстового примера); картинка читается через PIL Image.open(BytesIO(part.inline_data.data)) и сохраняется в output_folder/example-image-eiffel-tower.png."
+  },
+  {
+   "код": "E-319-6",
+   "вид": "факт",
+   "утверждение_en": "The response is a list of parts: text parts carry text, and the generated image comes back as inline data (raw bytes) in a separate part.",
+   "цитата": "image = Image.open(BytesIO((part.inline_data.data)))",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Python, Go, Java (стр. 1226-1233)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере",
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Во всех примерах цикл по response.candidates[0].content.parts: if text → печать, elif inline_data → байты картинки в файл .png. Цитата из html."
+  },
+  {
+   "код": "E-319-7",
+   "вид": "факт",
+   "утверждение_en": "Along with the image, the model returns a text part that describes (and elaborates on) what it generates, as shown in the example responses.",
+   "цитата": "I will generate an image of the Eiffel Tower at night, with a vibrant display of",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Go и Node.js — Example response (стр. 1228-1231)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Полный пример ответа (Node.js): «I will generate an image of the Eiffel Tower at night, with a vibrant display of colorful fireworks exploding in the dark sky behind it. The tower will be illuminated, standing tall as the focal point of the scene, with the bursts of light from the fireworks creating a festive atmosphere.» Java: «Here is the Eiffel Tower with fireworks in the background...». Цитата из html."
+  },
+  {
+   "код": "E-319-8",
+   "вид": "инструкция",
+   "утверждение_en": "The Go and Java image examples request a single candidate (candidateCount 1).",
+   "цитата": "CandidateCount: int32(1)",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Go, Java (стр. 1228-1233)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Java: .candidateCount(1). Python, Node.js и REST candidateCount не задают. Почему 1 — не объяснено. Цитата из html."
+  },
+  {
+   "код": "E-319-9",
+   "вид": "инструкция",
+   "утверждение_en": "The image examples set a safety setting with method PROBABILITY, category HARM_CATEGORY_DANGEROUS_CONTENT and threshold BLOCK_MEDIUM_AND_ABOVE.",
+   "цитата": "\"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Go, Java, REST (стр. 1228-1240)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах",
+    "REST: MODEL_ID из переменной окружения (см. противоречия)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "REST: \"safetySettings\": { \"method\": \"PROBABILITY\", \"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\", \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\" }. Java — один SafetySetting с тремя полями; Go — три отдельных SafetySetting по одному полю (см. противоречия). Python и Node.js safety не задают — это пример, а не требование. Цитата из html."
+  },
+  {
+   "код": "E-319-10",
+   "вид": "инструкция",
+   "утверждение_en": "The Node.js image example uses streaming (generateContentStream) and writes each data chunk to a separate PNG file while logging text chunks.",
+   "цитата": "client.models.generateContentStream({",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Node.js (стр. 1230-1231)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Файлы именуются generate_content_streaming_image_${imageIndex++}.png — код рассчитан на несколько картинок в одном ответе. Регион по умолчанию в этом примере 'us-central1' (в настройке окружения — global). Цитата из html."
+  },
+  {
+   "код": "E-319-11",
+   "вид": "инструкция",
+   "утверждение_en": "Aspect ratio is set in generationConfig.imageConfig.aspectRatio, for example \"16:9\".",
+   "цитата": "\"aspectRatio\": \"16:9\"",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / REST (стр. 1234-1240)",
+   "модели": [
+    "не указано (REST использует ${MODEL_ID})"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Структура: \"generationConfig\": { \"responseModalities\": [\"TEXT\", \"IMAGE\"], \"imageConfig\": { \"aspectRatio\": \"16:9\" } }. Список допустимых значений на странице не дан. Цитата из html."
+  },
+  {
+   "код": "E-319-12",
+   "вид": "пример_промпта",
+   "утверждение_en": "A prompt asking for a short step-by-step tutorial, combined with TEXT and IMAGE response modalities, is Google's REST example of mixed text-and-image output.",
+   "цитата": "Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images / REST (стр. 1240)",
+   "модели": [
+    "не указано (REST использует ${MODEL_ID})"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": "Разбор: промпт не просит картинку явно — просит туториал из трёх шагов; картинки появляются за счёт responseModalities TEXT+IMAGE (иллюстрированный пошаговый ответ, чередование текста и изображений). Формат 16:9. В html строка промпта разорвана переносом внутри JSON-строки («peanut butter and / jelly sandwich»), в .txt — целиком. Какой ответ пришёл — не показано («The model returns a response.»)."
+  },
+  {
+   "код": "E-319-13",
+   "вид": "факт",
+   "утверждение_en": "The image-generation samples use model IDs gemini-3.1-flash-image (Python) and gemini-2.5-flash-image (Go, Node.js, Java) with the same request shape.",
+   "цитата": "modelName := \"gemini-2.5-flash-image\"",
+   "источник_цитаты": "html",
+   "раздел": "Generate images / Python, Go, Node.js, Java (стр. 1226-1233)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере",
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Python: model=\"gemini-3.1-flash-image\"; Node.js: model: 'gemini-2.5-flash-image'; Java: String modelId = \"gemini-2.5-flash-image\";. Nano Banana по имени в тексте страницы не назван. Цитата из html."
+  },
+  {
+   "код": "E-319-14",
+   "вид": "факт",
+   "утверждение_en": "A Gemini response is generated in sections, and each section is evaluated for safety separately.",
+   "цитата": "Note that the response is generated in sections",
+   "источник_цитаты": "txt",
+   "раздел": "Make your first request / REST (стр. 1212-1213)",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сказано в разделе текстового запроса, общее для ответов модели; к картинкам прямо не привязано. Продолжение на стр. 1213: «with each section separately evaluated for safety.» Для смешанного ответа текст+картинка это может объяснять частичную блокировку (вывод, не сказано)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-319-15",
+   "вид": "факт",
+   "утверждение_en": "Within one quickstart the image samples are not uniform: Python targets gemini-3.1-flash-image while Go, Node.js and Java still target gemini-2.5-flash-image, with the same generateContent + TEXT/IMAGE modalities shape, so the call pattern is shared across these image models.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Generate images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере",
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-319-5, E-319-13",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-319-16",
+   "вид": "предупреждение",
+   "утверждение_en": "The REST image request reuses the MODEL_ID variable set earlier to gemini-2.5-flash (a text model); to generate images via REST the MODEL_ID must be set to an image model, which the page does not say.",
+   "цитата": "MODEL_ID=\"gemini-2.5-flash\"",
+   "источник_цитаты": "html",
+   "раздел": "Install the SDK / REST + Generate images / REST",
+   "модели": [
+    "gemini-2.5-flash (текстовая, не картинки)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-319-11, E-319-12 и блока REST-переменных (стр. 1185)",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Цитата из html (блок переменных окружения REST, стр. 1185)."
+  },
+  {
+   "код": "E-319-17",
+   "вид": "правило",
+   "утверждение_en": "Client code must expect mixed output: since image-only output is not supported, responses contain text parts (often a description of the image) interleaved with inline image parts, possibly several images, and should iterate over all parts.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Generate images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id в Python-примере",
+    "gemini-2.5-flash-image (Nano Banana) — id в Go/Node.js/Java-примерах"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-319-2, E-319-3, E-319-6, E-319-7, E-319-10",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Все 5 примеров построены на цикле по parts / чанкам с разделением text vs inline_data."
+  },
+  {
+   "код": "E-319-18",
+   "вид": "факт",
+   "утверждение_en": "As of 2026-09-23 the Agent Platform docs navigation lists four Gemini image models (3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image), separate pages for image generation, video-to-image, editing, best practices, Virtual Try-On, limitations and responsible AI, and a page titled Provisioned Throughput for Gemini 3 (Nano Banana) models.",
+   "цитата": "Provisioned Throughput for Gemini 3 (Nano Banana) models",
+   "источник_цитаты": "txt",
+   "раздел": "левое меню документации (стр. 108-129, 300-317, 470)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из обвязки (левое меню), не из E-…",
+   "дата_единицы": "2026-09-23 (Last updated страницы)",
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "Выведено из обвязки (меню), а не из тела страницы. «Gemini 3 (Nano Banana) models» — меню приравнивает Gemini 3 image-модели к семейству Nano Banana."
+  }
+ ],
+ "противоречия_внутри": [
+  "Модели в разделе Generate images разнородны: Python — gemini-3.1-flash-image, Go/Node.js/Java — gemini-2.5-flash-image (legacy).",
+  "REST-пример генерации картинок использует ${MODEL_ID}, который выше задан как \"gemini-2.5-flash\" (текстовая модель) — в таком виде запрос шёл бы не к image-модели.",
+  "Раздел Understand images: текст говорит «uses the image generated in the previous section», а код читает gs://cloud-samples-data/generative-ai/image/scones.jpg.",
+  "Регион: в настройке окружения GOOGLE_CLOUD_LOCATION=global, а Node.js-пример картинок по умолчанию берёт 'us-central1'.",
+  "Safety settings: Java передаёт один SafetySetting с method/category/threshold, а Go — три отдельных SafetySetting по одному полю (похоже на ошибку примера). REST передаёт safetySettings объектом, а не массивом.",
+  "REST JSON для картинок содержит висячие запятые («\"aspectRatio\": \"16:9\",» и «},») и в html — перенос строки внутри строки промпта; как строгий JSON это невалидно (возможно, сервер терпим — на странице не сказано)."
+ ],
+ "не_сказано": [
+  "Какие именно модели подразумеваются под «these models» в запрете image-only вывода.",
+  "Нет параметра разрешения (imageSize / 1K-2K-4K) и списка допустимых aspectRatio.",
+  "Нет примера редактирования изображения, хотя вводка упоминает «generation and editing»; нет примера с входной картинкой-референсом.",
+  "Не упомянуты SynthID/водяной знак, квоты, цены, thinking.",
+  "Не показан реальный ответ на REST-промпт с туториалом («The model returns a response.»).",
+  "Слова «Nano Banana» в теле страницы нет — только в меню («Gemini 3 (Nano Banana) models»)."
+ ],
+ "сомнения": [
+  "«Image-only output is not supported with these models» — формулировка похожа на унаследованную из старой документации Gemini 2.0 Flash image generation; по памяти (не по этой странице) другие официальные страницы Gemini API показывают конфиги только с IMAGE для Nano Banana-моделей. Требует перекрёстной проверки с остальными страницами базы; здесь записано как есть.",
+  "Java-зависимость google-genai 0.7.0 — очень старая версия SDK для страницы, обновлённой 2026-09-23; примеры кода обновлены неравномерно.",
+  "Цитаты кода взяты из html (текст кода без тегов подсветки синтаксиса); в .txt код склеен без пробелов."
+ ]
+}

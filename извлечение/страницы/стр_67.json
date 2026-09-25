@@ -1,0 +1,614 @@
+{
+ "id": 67,
+ "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-2-5-flash-image-on-vertex-ai",
+ "заголовок": "Use Gemini 2.5 Flash Image (nano banana) on Vertex AI | Google Cloud Blog",
+ "дата_в_тексте": "August 26, 2025 (в html: JSON-LD datePublished 2025-08-26; article:published_time/dateModified/«Last updated» нет)",
+ "официальность": {
+  "домен": "cloud.google.com",
+  "второй_признак": "автор Jamie de Guerre, Senior Director, Outbound Product Management (Google Cloud); JSON-LD publisher = Organization «Google Cloud»; текст от лица Google («Today, we announced»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткий анонс в блоге Google Cloud (26.08.2025) о выходе Gemini 2.5 Flash Image (nano-banana) в preview на Vertex AI. Для разработчиков и предприятий. Три заявленные возможности: multi-image fusion, character & style consistency, conversational editing; встроенный SynthID. Основная часть — цитаты партнёров (Adobe, Poe, WPP, Freepik, Leonardo.ai) и абзац про Figma. Промптов, лимитов, цен, параметров нет. Повторяющиеся акценты: консистентность персонажа/объекта, итеративная правка, объединение нескольких изображений.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image, aka nano-banana; в ссылке id gemini-2.5-flash-image-preview)",
+  "«Gemini 2.5 models» (Figma, обобщённо)"
+ ],
+ "структура": [
+  "Заголовок, дата, автор",
+  "Вступление (анонс, SOTA)",
+  "Multi-image fusion",
+  "Character & style consistency",
+  "Conversational editing",
+  "Доступность в preview на Vertex AI + SynthID",
+  "Here’s how customers are leveraging Vertex AI… (Adobe, Poe, WPP, Freepik, Leonardo.ai, Figma)",
+  "Get started"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Use Gemini 2.5 Flash Image (nano banana) on Vertex AI | Google Cloud Blog",
+   "итог": "ничего: обвязка — title (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Jump to Content Cloud Blog Contact sales",
+   "итог": "ничего: обвязка — меню Google Cloud Blog (строки 2-53)"
+  },
+  {
+   "n": 3,
+   "начало": "AI & Machine Learning",
+   "итог": "ничего: рубрика (строка 54)"
+  },
+  {
+   "n": 4,
+   "начало": "Building next-gen visuals with Gemini 2.5 Flash Image (aka nano-banana) on Vertex AI",
+   "итог": "ничего: заголовок H1; сопоставление имени зафиксировано в E-67-1"
+  },
+  {
+   "n": 5,
+   "начало": "August 26, 2025 Jamie de Guerre Senior Director",
+   "итог": "ничего: метаданные — дата и автор (строки 56-58), использованы в официальности"
+  },
+  {
+   "n": 6,
+   "начало": "Try Gemini Enterprise today The front door to AI",
+   "итог": "ничего: обвязка — рекламный блок (строки 59-61)"
+  },
+  {
+   "n": 7,
+   "начало": "Today, we announced native image generation and editing",
+   "итог": "E-67-1, E-67-2, E-67-3"
+  },
+  {
+   "n": 8,
+   "начало": "Multi-image fusion: Combine different images",
+   "итог": "E-67-4, E-67-5"
+  },
+  {
+   "n": 9,
+   "начало": "Character & style consistency: Maintain the same subject",
+   "итог": "E-67-6, E-67-7"
+  },
+  {
+   "n": 10,
+   "начало": "Conversational editing: Edit images with simple",
+   "итог": "E-67-8, E-67-9"
+  },
+  {
+   "n": 11,
+   "начало": "Developers and enterprises can access Gemini 2.5 Flash Image in preview",
+   "итог": "E-67-10, E-67-11, E-67-12"
+  },
+  {
+   "n": 12,
+   "начало": "Here’s how customers are leveraging Vertex AI",
+   "итог": "ничего: заголовок раздела H3"
+  },
+  {
+   "n": 13,
+   "начало": "“With today’s addition of Google’s Gemini 2.5 Flash Image in Adobe Firefly",
+   "итог": "E-67-13 (слова не Google)"
+  },
+  {
+   "n": 14,
+   "начало": "html: встроенное видео YouTube (jKSGwoxn8Io) после цитаты Adobe",
+   "итог": "ничего: видео, содержимое в сырье отсутствует"
+  },
+  {
+   "n": 15,
+   "начало": "\"In our evaluation, Gemini 2.5 Flash Image showed notable strengths",
+   "итог": "E-67-14, E-67-15 (слова не Google)"
+  },
+  {
+   "n": 16,
+   "начало": "Example of an image application built in Poe to restore old images",
+   "итог": "E-67-16"
+  },
+  {
+   "n": 17,
+   "начало": "“Gemini 2.5 Flash Image an incredible addition",
+   "итог": "E-67-17 (слова не Google)"
+  },
+  {
+   "n": 18,
+   "начало": "“For anyone working with visual content",
+   "итог": "E-67-18 (слова не Google)"
+  },
+  {
+   "n": 19,
+   "начало": "“Editing requires the highest level of control",
+   "итог": "E-67-19 (слова не Google)"
+  },
+  {
+   "n": 20,
+   "начало": "Figma's AI image tools now include Google's Gemini 2.5 models",
+   "итог": "E-67-20"
+  },
+  {
+   "n": 21,
+   "начало": "Get started",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 22,
+   "начало": "Gemini 2.5 Flash Image is available in preview today on Vertex AI.",
+   "итог": "ничего: повтор E-67-10"
+  },
+  {
+   "n": 23,
+   "начало": "Dive into the documentation to start building with it today.",
+   "итог": "ничего: ссылка на документацию (href cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash#image), содержания нет"
+  },
+  {
+   "n": 24,
+   "начало": "html: изображения статьи (alt = только URL картинок)",
+   "итог": "ничего: alt содержит лишь адреса файлов, подписей нет"
+  },
+  {
+   "n": 25,
+   "начало": "Posted in AI & Machine Learning",
+   "итог": "ничего: обвязка — рубрика"
+  },
+  {
+   "n": 26,
+   "начало": "Related articles Systems Changing the game",
+   "итог": "ничего: обвязка — связанные статьи (строки 97-109)"
+  },
+  {
+   "n": 27,
+   "начало": "Footer Links Follow us Google Cloud",
+   "итог": "ничего: обвязка — подвал и выбор языка (строки 110-123)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-67-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (aka nano-banana) adds native image generation and editing to Gemini 2.5 Flash, positioned to deliver higher-quality images and more creative control.",
+   "цитата": "and editing in Gemini 2.5 Flash (aka nano-banana) to deliver higher-quality images and more powerful creative control.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "Определение имени: «nano-banana» = Gemini 2.5 Flash Image. Фраза начинается в строке 62-63 («Today, we announced native image generation»), ссылка ведёт на developers.googleblog.com/en/introducing-gemini-25-flash-image. В этом абзаце базовая модель названа «Gemini 2.5 Flash», в следующем предложении — «Gemini 2.5 Flash Image»."
+  },
+  {
+   "код": "E-67-2",
+   "вид": "факт",
+   "утверждение_en": "Google states that Gemini 2.5 Flash Image is state-of-the-art for both image generation and image editing (as of the announcement).",
+   "цитата": "Gemini 2.5 Flash Image is State-of-the-Art (SOTA) for both generation and image editing.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Маркетинговое утверждение на дату 26.08.2025, без бенчмарков на странице."
+  },
+  {
+   "код": "E-67-3",
+   "вид": "факт",
+   "утверждение_en": "For creative use cases the model can create richer, more dynamic visuals and can be used to edit images repeatedly until they are just right.",
+   "цитата": "For creative use cases, this means you can create richer, more dynamic visuals and edit images until they’re just right.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Намёк на итеративное доведение правками; количество итераций не ограничено и не описано."
+  },
+  {
+   "код": "E-67-4",
+   "вид": "факт",
+   "утверждение_en": "Multi-image fusion: the model can combine different images into one seamless new visual.",
+   "цитата": "Combine different images into one seamless new visual.",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-image fusion",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Подзаголовок «Multi-image fusion:» (строка 65)."
+  },
+  {
+   "код": "E-67-5",
+   "вид": "факт",
+   "утверждение_en": "Multiple reference images can be used to create a single unified image, e.g. for marketing, training or advertising.",
+   "цитата": "You can use multiple reference images to create a single, unified image for use cases such as marketing, training, or advertising.",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-image fusion",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Максимальное число рефов не названо."
+  },
+  {
+   "код": "E-67-6",
+   "вид": "факт",
+   "утверждение_en": "Character and style consistency: the model can keep the same subject or the same visual style across multiple generations.",
+   "цитата": "Maintain the same subject or visual style across multiple generations.",
+   "источник_цитаты": "txt",
+   "раздел": "Character & style consistency",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Форма — повелительная, но по смыслу это описание возможности, не требование."
+  },
+  {
+   "код": "E-67-7",
+   "вид": "факт",
+   "утверждение_en": "The same character or product can be placed in different scenes without losing its identity, which Google presents as an alternative to time-consuming fine-tuning.",
+   "цитата": "Easily place the same character or product in different scenes without losing their identity, saving you from time-consuming fine-tuning.",
+   "источник_цитаты": "txt",
+   "раздел": "Character & style consistency",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Механизм (через рефы в запросе) прямо не назван; вывод «консистентность без дообучения» — из «saving you from time-consuming fine-tuning»."
+  },
+  {
+   "код": "E-67-8",
+   "вид": "факт",
+   "утверждение_en": "Conversational editing: images can be edited with simple natural-language instructions.",
+   "цитата": "Edit images with simple, natural language instructions.",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational editing",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-67-9",
+   "вид": "факт",
+   "утверждение_en": "Example edit types given: removing a person from a group photo and fixing a small detail such as a stain, done through a simple conversation.",
+   "цитата": "From removing a person from a group photo to fixing a small detail like a stain, you can make changes through a simple conversation.",
+   "источник_цитаты": "txt",
+   "раздел": "Conversational editing",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Два класса правок: удаление объекта/человека и локальная ретушь мелкой детали. Готовых формулировок промптов нет."
+  },
+  {
+   "код": "E-67-10",
+   "вид": "факт",
+   "утверждение_en": "At announcement (Aug 26, 2025) Gemini 2.5 Flash Image was available in preview on Vertex AI for developers and enterprises.",
+   "цитата": "Developers and enterprises can access Gemini 2.5 Flash Image in preview today on",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (доступность)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Статус preview на дату страницы; повторено в «Get started» (строка 91)."
+  },
+  {
+   "код": "E-67-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image on Vertex AI has built-in SynthID watermarking, framed as supporting responsible and transparent use.",
+   "цитата": ", with built-in SynthID watermarking for responsible and transparent use.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление (доступность)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вид водяного знака (видимый/невидимый) и способ проверки не описаны."
+  },
+  {
+   "код": "E-67-12",
+   "вид": "факт",
+   "утверждение_en": "The launch link to Vertex AI Studio used the model id gemini-2.5-flash-image-preview.",
+   "цитата": "vertex-ai/studio/multimodal?model=gemini-2.5-flash-image-preview",
+   "источник_цитаты": "html",
+   "раздел": "Вступление (доступность), ссылка «Vertex AI»",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (href ссылки в html)",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "id модели дан только в адресе ссылки (console.cloud.google.com/vertex-ai/studio/multimodal?model=gemini-2.5-flash-image-preview), в тексте id нет. Суффикс -preview — статус на дату страницы."
+  },
+  {
+   "код": "E-67-13",
+   "вид": "факт",
+   "утверждение_en": "Adobe states Gemini 2.5 Flash Image was added to Adobe Firefly and Adobe Express.",
+   "цитата": "With today’s addition of Google’s Gemini 2.5 Flash Image in Adobe Firefly and Adobe Express",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Adobe)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Слова не Google: Hannah Elsakr, Adobe. Остальная часть цитаты — маркетинг Adobe без проверяемых сведений о модели."
+  },
+  {
+   "код": "E-67-14",
+   "вид": "факт",
+   "утверждение_en": "Poe (Quora) reports that in its evaluation the model maintained cross-edit coherence, preserving fine-grained visual details and higher-level scene semantics across multiple revision cycles.",
+   "цитата": "\"In our evaluation, Gemini 2.5 Flash Image showed notable strengths in maintaining cross‑edit coherence — preserving both fine‑grained visual details and higher‑level scene semantics across multiple revision cycles.",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Poe)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Слова не Google: Nick Huber, Poe (by Quora). Наблюдение партнёра, не заявление Google."
+  },
+  {
+   "код": "E-67-15",
+   "вид": "факт",
+   "утверждение_en": "Poe reports low response times for the model, enabling natural conversational editing loops and real-time image-based applications.",
+   "цитата": "Combined with its low response times, this enables more natural, conversational editing loops and supports deployment in real‑time image‑based applications on Poe and through our API.",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Poe)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "мультиход",
+    "модели_сравнение"
+   ],
+   "заметка": "Слова не Google (Poe). Цифр задержки нет."
+  },
+  {
+   "код": "E-67-16",
+   "вид": "факт",
+   "утверждение_en": "Example use case shown: an image application built in Poe that restores old images using Gemini 2.5 Flash Image.",
+   "цитата": "Example of an image application built in Poe to restore old images, using Gemini 2.5 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Poe), подпись к изображению",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Подпись к картинке на странице Google; сценарий — реставрация старых фото. Промпт приложения не дан."
+  },
+  {
+   "код": "E-67-17",
+   "вид": "факт",
+   "утверждение_en": "WPP reports the model can combine multiple products into single frames (retail) and maintains a high level of object consistency across frames (CPG).",
+   "цитата": "particularly retail, with its ability to combine multiple products into single frames, and CPG, where it maintains a high level of object consistency across frames.",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (WPP)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Слова не Google: Daniel Barak, WPP. Также сказано о планах интеграции в WPP Open."
+  },
+  {
+   "код": "E-67-18",
+   "вид": "факт",
+   "утверждение_en": "Freepik states that placing products, keeping styles aligned and ensuring character consistency can all be done in a single step, and that the model handles complex edits.",
+   "цитата": "Placing products, keeping styles aligned, and ensuring character consistency can all be done in a single step.",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Freepik)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы",
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Слова не Google: Joaquin Cuenca, Freepik. «single step» — одним запросом/проходом, по словам партнёра."
+  },
+  {
+   "код": "E-67-19",
+   "вид": "факт",
+   "утверждение_en": "Leonardo.Ai reports precise, iterative changes and that significant image adjustments can be made while retaining character and object consistency.",
+   "цитата": "It also exhibits extreme flexibility - allowing for significant adjustments to images while retaining character and object consistency.",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Leonardo.ai)",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": "Слова не Google: JJ Fiasson, Leonardo.ai. Предшествующая фраза: «delivering precise, iterative changes»."
+  },
+  {
+   "код": "E-67-20",
+   "вид": "факт",
+   "утверждение_en": "Figma's AI image tools include Google's Gemini 2.5 models, letting designers generate and refine images with text prompts.",
+   "цитата": "AI image tools now include Google's Gemini 2.5 models, enabling designers to generate and refine images using text prompts",
+   "источник_цитаты": "txt",
+   "раздел": "Customers (Figma)",
+   "модели": [
+    "Gemini 2.5 models (обобщённо; по контексту — gemini-2.5-flash-image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Текст Google (не цитата партнёра), но модель названа обобщённо «Gemini 2.5 models»."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-67-21",
+   "вид": "объяснение",
+   "утверждение_en": "The page positions three capability pillars for Gemini 2.5 Flash Image (multi-image fusion, character/style consistency, conversational editing), and every partner quote maps onto them: combining products into one frame, identity/object consistency across frames and edits, and iterative conversational edits.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-67-4, E-67-5, E-67-6, E-67-7, E-67-8, E-67-14, E-67-17, E-67-18, E-67-19",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "рефы",
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Сводка акцентов; новых фактов не добавляет."
+  },
+  {
+   "код": "E-67-22",
+   "вид": "объяснение",
+   "утверждение_en": "Multi-turn editing is framed as the core editing workflow: edit until just right, conversational edits, coherence preserved across multiple revision cycles, precise iterative changes.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-67-3, E-67-8, E-67-9, E-67-14, E-67-15, E-67-19",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Сохранение деталей между правками подтверждено только словами партнёров (Poe, Leonardo), не собственным заявлением Google."
+  }
+ ],
+ "противоречия_внутри": [
+  "Имя модели плавает: title — «Gemini 2.5 Flash Image (nano banana)», H1 — «(aka nano-banana)», первое предложение — «native image generation and editing in Gemini 2.5 Flash (aka nano-banana)», т.е. прозвище приписано то базовой Gemini 2.5 Flash, то Gemini 2.5 Flash Image. Противоречия по сути нет, неточность формулировки.",
+  "Абзац Figma говорит «Gemini 2.5 models», а не Gemini 2.5 Flash Image — неясно, какая именно модель в Figma."
+ ],
+ "не_сказано": [
+  "Нет ни одного примера промпта и ни одной формулировки инструкции правки.",
+  "Не указано максимальное число референсов для multi-image fusion.",
+  "Нет разрешений, соотношений сторон, лимитов, квот, цен.",
+  "Не описан SynthID: видимый или невидимый, как проверять, можно ли отключить.",
+  "id модели в тексте нет (только -preview в адресе ссылки); нет информации о дате GA.",
+  "Нет ограничений/ошибок модели (где консистентность ломается)."
+ ],
+ "сомнения": [
+  "Большая часть содержательных утверждений о качестве (сохранение деталей между правками, низкая задержка, консистентность продуктов) — слова партнёров, не Google.",
+  "Страница — preview-состояние на 26.08.2025; статус и id могли смениться позже."
+ ]
+}

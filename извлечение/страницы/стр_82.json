@@ -1,0 +1,230 @@
+{
+ "id": 82,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/quotas",
+ "заголовок": "Generative AI on Agent Platform quotas and system limits  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google Cloud ('Google Cloud uses quotas to help ensure fairness')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочник квот и system limits Generative AI на Agent Platform: общее о квотах Google Cloud, квоты tuned-моделей, эмбеддингов, Agent Runtime, мультимодального входа generateContent, generative media (Omni/Veo/Lyria), batch, Semantic Governance, RAG Engine, evaluation service, Pipelines. Про картинки — только одна строка квоты входа изображений (per base model and resolution) и то, что её повышают через account team. Квот генерации картинок (image-модели, Imagen) страница не содержит.",
+ "модели_на_странице": [
+  "gemini-embedding-001",
+  "gemini-embedding-2",
+  "textembedding-gecko",
+  "Gemini 2.5 Flash (judge)",
+  "Gemini Omni",
+  "Veo",
+  "Lyria",
+  "image-модели — только в левом меню навигации"
+ ],
+ "структура": [
+  "вводная о квотах",
+  "Tuned model quotas",
+  "Embedding limits",
+  "Agent Runtime quotas",
+  "Multimodal input quotas",
+  "Generative media quotas",
+  "Batch inference",
+  "Semantic Governance Policy quotas",
+  "RAG Engine",
+  "Gen AI evaluation service",
+  "Pipelines quotas",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта — верхнее меню, левое меню, повтор меню продуктов (строки 1-1035) совпадают до байта со страницей id 47 (проверено diff)"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок, 'Stay organized'), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "This document lists the quotas",
+   "итог": "ничего: вводная (квоты регулируемы, system limits фиксированы) — общее, не про картинки, строки 1045-1048"
+  },
+  {
+   "n": 4,
+   "начало": "Google Cloud uses quotas to",
+   "итог": "ничего: не про генерацию картинок (общее описание квот Google Cloud), строки 1049-1057"
+  },
+  {
+   "n": 5,
+   "начало": "The Cloud Quotas system does",
+   "итог": "ничего: не про генерацию картинок (функции Cloud Quotas), строки 1058-1063"
+  },
+  {
+   "n": 6,
+   "начало": "In most cases, when you",
+   "итог": "ничего: не про генерацию картинок (при превышении квоты задача падает — общее для всех ресурсов), строки 1064-1066"
+  },
+  {
+   "n": 7,
+   "начало": "Quotas generally apply at the",
+   "итог": "ничего: не про генерацию картинок (квоты на уровне проекта), строки 1067-1072"
+  },
+  {
+   "n": 8,
+   "начало": "There are also system limits",
+   "итог": "ничего: не про генерацию картинок (system limits неизменяемы; фраза повторена дважды), строки 1073-1076"
+  },
+  {
+   "n": 9,
+   "начало": "Tuned model quotas Tuned model",
+   "итог": "ничего: не про генерацию картинок (квота тюнингованных моделей = квота базовой), строки 1077-1079"
+  },
+  {
+   "n": 10,
+   "начало": "Embedding limits Requests for gemini-embedding-001",
+   "итог": "ничего: не про генерацию картинок (квоты эмбеддингов), строки 1080-1089"
+  },
+  {
+   "n": 11,
+   "начало": "Agent Runtime quotas The following",
+   "итог": "ничего: не про генерацию картинок (Agent Runtime, Memory Bank, Sandbox, A2A), строки 1090-1119"
+  },
+  {
+   "n": 12,
+   "начало": "Multimodal input quotas The following",
+   "итог": "E-82-1 (строки video/audio/document таблицы — ничего: не про изображения)"
+  },
+  {
+   "n": 13,
+   "начало": "To request a higher limit",
+   "итог": "E-82-2"
+  },
+  {
+   "n": 14,
+   "начало": "Generative media quotas To view",
+   "итог": "ничего: не про генерацию картинок (инструкция просмотра квот; метрики только для Gemini Omni, Veo, Lyria — см. E-82-3), строки 1133-1155"
+  },
+  {
+   "n": 15,
+   "начало": "Batch inference The quotas and",
+   "итог": "ничего: не про генерацию картинок (batch для Gemini без предопределённых квот; image-модели на странице не названы; то же на стр. id 58), строки 1156-1163"
+  },
+  {
+   "n": 16,
+   "начало": "Concurrent batch inference job quotas",
+   "итог": "ничего: не про генерацию картинок (textembedding_gecko), строки 1164-1169"
+  },
+  {
+   "n": 17,
+   "начало": "View and edit the quotas",
+   "итог": "ничего: не про генерацию картинок (инструкция консоли для textembedding_gecko), строки 1170-1182"
+  },
+  {
+   "n": 18,
+   "начало": "Semantic Governance Policy quotas The",
+   "итог": "ничего: не про генерацию картинок, строки 1183-1208"
+  },
+  {
+   "n": 19,
+   "начало": "RAG Engine on Gemini Enterprise",
+   "итог": "ничего: не про генерацию картинок (RAG Engine), строки 1209-1223"
+  },
+  {
+   "n": 20,
+   "начало": "Gen AI evaluation service The",
+   "итог": "ничего: не про генерацию картинок (evaluation service, judge Gemini 2.5 Flash), строки 1224-1247"
+  },
+  {
+   "n": 21,
+   "начало": "Gemini Enterprise Agent Platform Pipelines",
+   "итог": "ничего: не про генерацию картинок (Pipelines quotas), строки 1248-1250"
+  },
+  {
+   "n": 22,
+   "начало": "What's next Overview Standard PayGo",
+   "итог": "ничего: ссылки 'What's next', строки 1251-1260"
+  },
+  {
+   "n": 23,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1261-1263"
+  },
+  {
+   "n": 24,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1264-1308"
+  },
+  {
+   "n": 25,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-82-3"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-82-1",
+   "вид": "лимит",
+   "утверждение_en": "Multimodal input quotas apply to generateContent and streamGenerateContent requests per project in each region, enforced per base model and resolution; the image-input quota is 34,000,000 per minute per base model and resolution (metric aiplatform.googleapis.com/generate_content_image_input_per_base_model_id_and_resolution), and the same limits apply to the global endpoint via the corresponding ..._global metric.",
+   "цитата": "Generate content requests with image input per minute per base model and resolution34,000,000aiplatform.googleapis.com/generate_content_image_input_per_base_model_id_and_resolution",
+   "источник_цитаты": "txt",
+   "раздел": "Multimodal input quotas",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Единица измерения не указана: описание говорит 'requests with image input per minute', но величина 34 000 000 похожа на токены. Модели не названы ('per base model'); относится к любому generateContent с изображением на входе — страница не уточняет, считаются ли так референсы для image-моделей. Для сравнения: video 192 000 000, audio 11 000 000, document 1 200 000."
+  },
+  {
+   "код": "E-82-2",
+   "вид": "инструкция",
+   "утверждение_en": "To request a higher limit for the multimodal input quotas (including image input), contact your Google Cloud account team; they can't be increased from the Google Cloud console.",
+   "цитата": "To request a higher limit for these quotas, contact your Google Cloud account\nteam; they can't be increased from the Google Cloud console.",
+   "источник_цитаты": "txt",
+   "раздел": "Multimodal input quotas",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-82-3",
+   "вид": "факт",
+   "утверждение_en": "The only image-specific quota on this page is on image INPUT to generateContent/streamGenerateContent; the 'Generative media quotas' section names metrics only for Gemini Omni, Veo and Lyria, so the page gives no output quota metric for Gemini image-generation models or Imagen.",
+   "цитата": "Gemini Omni:\nglobal_generate_content_requests_per_minute_per_project_per_base_model\nVeo:\nlong_running_online_prediction_requests_per_base_model\nLyria:\nglobal_generate_content_requests_per_minute_per_project_per_base_model",
+   "источник_цитаты": "txt",
+   "раздел": "Multimodal input quotas / Generative media quotas",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-82-1 и раздела Generative media quotas (строки 1133-1155)",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Квоты image-моделей надо искать на других страницах; здесь их нет."
+  }
+ ],
+ "противоречия_внутри": [
+  "Таблица Multimodal input quotas: описание 'Generate content requests with image input per minute', а значение 34,000,000 — по величине это не число запросов (скорее токены); единица измерения на странице не названа.",
+  "Фраза о system limits повторена дважды подряд ('There are also system limits on Agent Platform resources… There are also limits on Gemini Enterprise Agent Platform resources').",
+  "Раздел 'Generative media quotas' без image-моделей, хотя в левом меню сайта есть раздел Image generation и страница PT для Gemini 3 (Nano Banana)."
+ ],
+ "не_сказано": [
+  "Квоты (RPM/IPM) на генерацию изображений для gemini-3-pro-image, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-2.5-flash-image и Imagen.",
+  "Считаются ли референс-изображения, передаваемые image-модели, в квоту image input и как влияет 'resolution' квоты (входной media_resolution?)."
+ ],
+ "сомнения": [
+  "E-82-1 — квота на вход изображений для любых Gemini-моделей через generateContent; к генерации картинок относится только косвенно (референсы)."
+ ]
+}

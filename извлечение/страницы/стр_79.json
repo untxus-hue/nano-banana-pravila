@@ -1,0 +1,1841 @@
+{
+ "id": 79,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/use-cases/media-generation/consistent_imagery_generation.ipynb",
+ "заголовок": "gh-consistent-imagery-generation-ipynb (Generating Consistent Imagery with Gemini 🍌)",
+ "дата_в_тексте": "'Copyright 2025-2026 Google LLC'; в тексте: архивное изображение создано 'in July 2024 with a beta version of Imagen 3'",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий GoogleCloudPlatform/generative-ai)",
+  "второй_признак": "Строка '# Copyright 2025-2026 Google LLC' + лицензия Apache 2.0; организация GoogleCloudPlatform. Автор — Laurent Picard (GitHub PicardParis), принадлежность на странице не указана.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Авторский ноутбук-челлендж Google Cloud (use-case, media generation) для разработчиков/креаторов: как оживить архивную картинку и сделать серию консистентных изображений на gemini-3.1-flash-lite-image (Nano Banana 2 Lite), 16:9, 1K, IMAGE only, без чата — через явные рефы. Структура: вызов → setup (Agent Platform или AI Studio; preview-модели только в global) → хелперы (порядок contents: картинки, затем текст; ретраи на 429) → ассеты: архив (Imagen 3 beta, 2024) → неудачное 'извлечение' как удаление фона → лист персонажа (front/back + рюкзак + подписи) → первая сцена-диорама → последовательные сцены (долина, лес, поляна, восхождение, вершина, мост, гамак) с заметками после каждой → граф ассетов → метаданные в PNG → выводы. Собственные термины: character sheet, accessory sheet, asset graph, 'Image 1:/Image 2:' адресация рефов, imperative vs descriptive prompt. Повторяемые акценты: явная нумерация рефов; наследование неуказанного; явное снятие реквизита; композиция вместо терминов графредактора.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "Imagen 3 (beta, для архивного изображения 2024)",
+  "larger Nano Banana models (упомянуты для 2K/4K)"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Generating Consistent Imagery with Gemini 🍌 (ссылки, автор)",
+  "Challenge",
+  "Setup (Python packages, Gemini API, Gen AI SDK)",
+  "Gemini model",
+  "Helpers",
+  "Assets (Reference archive, Asset extraction, Character sheet)",
+  "First scene",
+  "Successive scenes",
+  "Graph visualization (Directed graph, Asset graph, Asset metadata)",
+  "Challenge completed",
+  "More!"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2025-2026 Google LLC # Licensed",
+   "итог": "ничего: копирайт и лицензия (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Generating Consistent Imagery with Gemini 🍌",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "<table> … Share to:",
+   "итог": "ничего: обвязка (ссылки и шаринг)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | … Laurent Picard",
+   "итог": "ничего: автор"
+  },
+  {
+   "n": 5,
+   "начало": "--- ## 🔥 Challenge / ![intro image]",
+   "итог": "ничего: заголовок и иллюстрация"
+  },
+  {
+   "n": 6,
+   "начало": "We all have existing images worth",
+   "итог": "ничего: мотивационная вводная без правила"
+  },
+  {
+   "n": 7,
+   "начало": "So, can we breathe new life",
+   "итог": "ничего: риторический вопрос"
+  },
+  {
+   "n": 8,
+   "начало": "Let's take on this challenge with … 1️⃣ 2️⃣ 3️⃣",
+   "итог": "E-79-1"
+  },
+  {
+   "n": 9,
+   "начало": "For this, we'll explore the capabilities",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 10,
+   "начало": "## 🏁 Setup / ### 🐍 Python packages / We'll use the following packages",
+   "итог": "ничего: список пакетов"
+  },
+  {
+   "n": 11,
+   "начало": "%pip install --quiet \"google-genai>=2.12.1\"",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 12,
+   "начало": "### 🤝 Gemini API To use the Gemini API",
+   "итог": "E-79-2"
+  },
+  {
+   "n": 13,
+   "начало": "**🛠️ Option 1 - Gemini API via Agent Platform** … env vars",
+   "итог": "ничего: детали настройки (учтены в заметке E-79-2)"
+  },
+  {
+   "n": 14,
+   "начало": "> 💡 For preview models, the location",
+   "итог": "E-79-3"
+  },
+  {
+   "n": 15,
+   "начало": "> ℹ️ Learn more about setting up",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 16,
+   "начало": "**🛠️ Option 2 - Gemini API via Google AI Studio** … env vars",
+   "итог": "ничего: детали настройки (учтены в заметке E-79-2)"
+  },
+  {
+   "n": 17,
+   "начало": "💡 You can store your environment configuration … (таблица)",
+   "итог": "ничего: настройка окружения, не про генерацию картинок"
+  },
+  {
+   "n": 18,
+   "начало": "Define the following environment detection functions.",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 19,
+   "начало": "# @title {display-mode: \"form\"} … check_environment …",
+   "итог": "ничего: код без промпта (настройка окружения)"
+  },
+  {
+   "n": 20,
+   "начало": "### 🤖 Gen AI SDK To send Gemini requests",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 21,
+   "начало": "check_environment() client = genai.Client()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 22,
+   "начало": "## 🧠 Gemini model For this challenge, we'll select",
+   "итог": "E-79-4"
+  },
+  {
+   "n": 23,
+   "начало": "## 🛠️ Helpers Now, let's define some helper",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 24,
+   "начало": "NANO_BANANA_MODEL … RESPONSE_MODALITIES … ASPECT_RATIO … GENERATION_CONFIG",
+   "итог": "E-79-5, E-79-6, E-79-7"
+  },
+  {
+   "n": 25,
+   "начало": "def generate_content(sources: list[PIL_Image], prompt: str)",
+   "итог": "E-79-8"
+  },
+  {
+   "n": 26,
+   "начало": "def get_retrier() … def should_retry_request",
+   "итог": "E-79-9"
+  },
+  {
+   "n": 27,
+   "начало": "def display_markdown … def display_image",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 28,
+   "начало": "## 🖼️ Assets Let's define the assets",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 29,
+   "начало": "class AssetId(enum.StrEnum): … class Asset … def generate_image",
+   "итог": "ничего: код без промпта (структура ассетов; идея учтена в E-79-55)"
+  },
+  {
+   "n": 30,
+   "начало": "### 📦 Reference archive We can now fetch",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 31,
+   "начало": "ARCHIVE_URL = … load_archive()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 32,
+   "начало": "This archive image was generated in July 2024",
+   "итог": "E-79-10"
+  },
+  {
+   "n": 33,
+   "начало": "### ⛏️ Asset extraction Let's try to extract",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 34,
+   "начало": "prompt = \"Convert everything but the robot",
+   "итог": "E-79-11"
+  },
+  {
+   "n": 35,
+   "начало": "⚠️ The robot is extracted perfectly, but",
+   "итог": "E-79-12, E-79-13"
+  },
+  {
+   "n": 36,
+   "начало": "Let's go back to our archive to perform",
+   "итог": "E-79-14"
+  },
+  {
+   "n": 37,
+   "начало": "### 🪄 Character sheet Gemini has spatial understanding",
+   "итог": "E-79-15"
+  },
+  {
+   "n": 38,
+   "начало": "source_ids = [AssetId.ARCHIVE] prompt = \"\"\" - Scene: Character sheet",
+   "итог": "E-79-16"
+  },
+  {
+   "n": 39,
+   "начало": "💡 A few notes: - Our prompt focuses on the composition",
+   "итог": "E-79-17"
+  },
+  {
+   "n": 40,
+   "начало": "- Repeated generations will be consistent,",
+   "итог": "E-79-18"
+  },
+  {
+   "n": 41,
+   "начало": "- For simplicity, we directly included the backpack",
+   "итог": "E-79-19"
+  },
+  {
+   "n": 42,
+   "начало": "- To control the backpack's exact shape",
+   "итог": "E-79-20"
+  },
+  {
+   "n": 43,
+   "начало": "- Nano Banana 2 Lite can generate `1K` images",
+   "итог": "E-79-21, E-79-22"
+  },
+  {
+   "n": 44,
+   "начало": "- In the request configuration, we specified",
+   "итог": "E-79-23, E-79-24"
+  },
+  {
+   "n": 45,
+   "начало": "This new asset can now serve as a design reference",
+   "итог": "ничего: повтор E-79-14"
+  },
+  {
+   "n": 46,
+   "начало": "### ✨ First scene Let's get started with a mountain scene:",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 47,
+   "начало": "source_ids = [AssetId.ROBOT] … - Scene: Macro photography",
+   "итог": "E-79-25"
+  },
+  {
+   "n": 48,
+   "начало": "> 💡 The mountain shape is specified as \"dome-like\"",
+   "итог": "E-79-26"
+  },
+  {
+   "n": 49,
+   "начало": "It's important to spend some time on this first scene",
+   "итог": "E-79-27"
+  },
+  {
+   "n": 50,
+   "начало": "From now on, our generation inputs will typically",
+   "итог": "E-79-28"
+  },
+  {
+   "n": 51,
+   "начало": "### ✨ Successive scenes Let's get the robot down into a valley:",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 52,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.MOUNTAINS] … descended from the cliff",
+   "итог": "E-79-29"
+  },
+  {
+   "n": 53,
+   "начало": "> - The specific references to our input images",
+   "итог": "E-79-30, E-79-31"
+  },
+  {
+   "n": 54,
+   "начало": "> - On the other hand, since we didn't provide",
+   "итог": "E-79-32"
+  },
+  {
+   "n": 55,
+   "начало": "> - Here, we also tested different lighting",
+   "итог": "E-79-33"
+  },
+  {
+   "n": 56,
+   "начало": "Then, we can move forward with the story:",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 57,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.VALLEY] … continues its journey",
+   "итог": "E-79-34"
+  },
+  {
+   "n": 58,
+   "начало": "> - We can position the character, change",
+   "итог": "E-79-35"
+  },
+  {
+   "n": 59,
+   "начало": "> - The \"no longer holding the map\" instruction",
+   "итог": "E-79-36"
+  },
+  {
+   "n": 60,
+   "начало": "> - Since we didn't provide lighting details,",
+   "итог": "E-79-37"
+  },
+  {
+   "n": 61,
+   "начало": "Let's go through the forest:",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 62,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.FOREST] … emerges into a clearing",
+   "итог": "E-79-38"
+  },
+  {
+   "n": 63,
+   "начало": "> 💡 We changed the ground but didn't",
+   "итог": "E-79-39"
+  },
+  {
+   "n": 64,
+   "начало": "Now that the valley-forest sequence is over,",
+   "итог": "E-79-40"
+  },
+  {
+   "n": 65,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.MOUNTAINS] … - Scene: A medium-wide shot",
+   "итог": "E-79-41"
+  },
+  {
+   "n": 66,
+   "начало": "> 💡 The mountain close-up, inferred from",
+   "итог": "E-79-42"
+  },
+  {
+   "n": 67,
+   "начало": "Let's climb to the summit:",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 68,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.ASCENSION] … reaches the top",
+   "итог": "E-79-43"
+  },
+  {
+   "n": 69,
+   "начало": "> 💡 This is a logical follow-up but",
+   "итог": "ничего: оценка без правила"
+  },
+  {
+   "n": 70,
+   "начало": "Now, let's try something different to significantly recompose",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 71,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.SUMMIT] … - Remove the ice picks.",
+   "итог": "E-79-44"
+  },
+  {
+   "n": 72,
+   "начало": "> - This imperative prompt composes the scene",
+   "итог": "E-79-45"
+  },
+  {
+   "n": 73,
+   "начало": "> - A new mountain is added as instructed,",
+   "итог": "E-79-46"
+  },
+  {
+   "n": 74,
+   "начало": "> - The bridge attaches to the summits",
+   "итог": "E-79-47"
+  },
+  {
+   "n": 75,
+   "начало": "> - The \"Remove the ice picks\" instruction is there",
+   "итог": "E-79-48"
+  },
+  {
+   "n": 76,
+   "начало": "> - It's also possible to get the robot to walk",
+   "итог": "E-79-49, E-79-50"
+  },
+  {
+   "n": 77,
+   "начало": "Let's generate a final scene and let the robot",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 78,
+   "начало": "source_ids = [AssetId.ROBOT, AssetId.BRIDGE] … sleeping peacefully",
+   "итог": "E-79-51"
+  },
+  {
+   "n": 79,
+   "начало": "> - This time, the prompt is descriptive,",
+   "итог": "E-79-52"
+  },
+  {
+   "n": 80,
+   "начало": "> - The bridge-hammock transformation is really nice",
+   "итог": "E-79-53"
+  },
+  {
+   "n": 81,
+   "начало": "> - The robot's transformation is also impressive,",
+   "итог": "E-79-54"
+  },
+  {
+   "n": 82,
+   "начало": "We've illustrated our story with nine new, consistent images!",
+   "итог": "ничего: итоговая фраза"
+  },
+  {
+   "n": 83,
+   "начало": "## 🗺️ Graph visualization We now have a collection",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 84,
+   "начало": "### 🔗 Directed graph Our new assets are all related",
+   "итог": "E-79-55"
+  },
+  {
+   "n": 85,
+   "начало": "import networkx as nx … def build_graph",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 86,
+   "начало": "Let's place the most-used asset in the center",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 87,
+   "начало": "import matplotlib.pyplot as plt … display_basic_graph",
+   "итог": "ничего: код без промпта (визуализация)"
+  },
+  {
+   "n": 88,
+   "начало": "That's an accurate summary of our generation steps.",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 89,
+   "начало": "### 🌟 Asset graph Let's add custom `matplotlib` functions",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 90,
+   "начало": "# @title … yield_generation_graph_frames … display_generation_graph",
+   "итог": "ничего: код без промпта (визуализация графа)"
+  },
+  {
+   "n": 91,
+   "начало": "We can now display our generation graph: / display_generation_graph(asset_graph)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 92,
+   "начало": "### ℹ️ Asset metadata Have you ever generated something nice",
+   "итог": "ничего: риторический вопрос"
+  },
+  {
+   "n": 93,
+   "начало": "Our assets can be made self-sufficient by saving",
+   "итог": "E-79-56"
+  },
+  {
+   "n": 94,
+   "начало": "Let's add save-and-load functions, which might",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 95,
+   "начало": "# @title … def save_assets … def load_asset",
+   "итог": "ничего: код без промпта (реализует E-79-56)"
+  },
+  {
+   "n": 96,
+   "начало": "## 🚀 Challenge completed We generated a full set",
+   "итог": "ничего: вводная к выводам"
+  },
+  {
+   "n": 97,
+   "начало": "- This proves once again that a picture",
+   "итог": "ничего: общий вывод без конкретики"
+  },
+  {
+   "n": 98,
+   "начало": "- We can create or edit images purely through composition",
+   "итог": "ничего: повтор E-79-17"
+  },
+  {
+   "n": 99,
+   "начало": "- We can use descriptive or imperative instructions.",
+   "итог": "ничего: повтор E-79-45, E-79-52"
+  },
+  {
+   "n": 100,
+   "начало": "- The model's spatial understanding enables 3D manipulation.",
+   "итог": "E-79-57"
+  },
+  {
+   "n": 101,
+   "начало": "- We can add text to our outputs",
+   "итог": "E-79-58"
+  },
+  {
+   "n": 102,
+   "начало": "- Consistency can be preserved across various levels:",
+   "итог": "E-79-59"
+  },
+  {
+   "n": 103,
+   "начало": "- The generation process can still be iterative, but it feels",
+   "итог": "ничего: субъективная оценка скорости"
+  },
+  {
+   "n": 104,
+   "начало": "- It is now possible to breathe new life",
+   "итог": "ничего: маркетинг"
+  },
+  {
+   "n": 105,
+   "начало": "Possible next steps: - The process we followed is essentially",
+   "итог": "E-79-60"
+  },
+  {
+   "n": 106,
+   "начало": "- For the sake of clarity and exploration, the prompts",
+   "итог": "E-79-61"
+  },
+  {
+   "n": 107,
+   "начало": "- We described the scenes as if they were shot",
+   "итог": "E-79-62"
+  },
+  {
+   "n": 108,
+   "начало": "As a bonus, let's end with an animated version",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 109,
+   "начало": "display_generation_graph(asset_graph, animated=True)",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 110,
+   "начало": "## ➕ More! (ссылки)",
+   "итог": "ничего: ссылки"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-79-1",
+   "вид": "приём",
+   "утверждение_en": "Workflow for reusing an archive image: start from the archive image, extract a character into a brand-new reference image, then generate a series of images using only prompts and the new assets.",
+   "цитата": "Extract a character to create a brand-new reference image",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Три шага: архивное изображение → извлечение персонажа в новый реф → серия сцен только из промптов и новых ассетов."
+  },
+  {
+   "код": "E-79-2",
+   "вид": "факт",
+   "утверждение_en": "The Gemini API can be used via Agent Platform (formerly Vertex AI) with a Google Cloud project or via Google AI Studio with an API key; the Gen AI SDK provides a unified interface configurable by environment variables.",
+   "цитата": "The Google Gen AI SDK provides a unified interface to these APIs, and we can use environment variables for the configuration.",
+   "источник_цитаты": "txt",
+   "раздел": "Setup / Gemini API",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Переменные: GOOGLE_GENAI_USE_ENTERPRISE, GOOGLE_CLOUD_PROJECT, GOOGLE_CLOUD_LOCATION или GOOGLE_API_KEY."
+  },
+  {
+   "код": "E-79-3",
+   "вид": "правило",
+   "утверждение_en": "On Agent Platform, preview models require location 'global'; for generally available models you can pick the closest Google model endpoint location.",
+   "цитата": "For preview models, the location must be set to `global`.",
+   "источник_цитаты": "txt",
+   "раздел": "Setup / Gemini API",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'must' — требование. Для GA-моделей — ближайшая локация из списка Google model endpoint locations."
+  },
+  {
+   "код": "E-79-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) is the fastest and cheapest model in the Nano Banana family.",
+   "цитата": "we'll select the Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) model, the fastest and cheapest in the Nano Banana family",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini model",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-5",
+   "вид": "факт",
+   "утверждение_en": "You can add the TEXT response modality to get potential textual feedback (or in iterative chat mode); the notebook uses IMAGE only.",
+   "цитата": "# You can add the \"TEXT\" modality for potential textual feedback (or in iterative chat mode)",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "RESPONSE_MODALITIES = ['IMAGE']."
+  },
+  {
+   "код": "E-79-6",
+   "вид": "факт",
+   "утверждение_en": "Supported aspect ratios (Nano Banana 2 Lite): 1:1, 1:4, 4:1, 1:8, 8:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9.",
+   "цитата": "# Supported aspect ratios: 1:1, 1:4, 4:1, 1:8, 8:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Комментарий в коде; в конфиге ASPECT_RATIO = '16:9', image_size='1K'."
+  },
+  {
+   "код": "E-79-7",
+   "вид": "факт",
+   "утверждение_en": "The notebook sets output_mime_type='image/png' only when the client uses Agent Platform and leaves it None otherwise.",
+   "цитата": "output_mime_type=\"image/png\" if client.vertexai else None,",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Причина условия не объяснена; выводимо, что параметр рассчитан на Agent Platform (Vertex)."
+  },
+  {
+   "код": "E-79-8",
+   "вид": "факт",
+   "утверждение_en": "Input images are passed before the prompt text in contents; with no sources, the prompt alone is sent.",
+   "цитата": "contents = [*sources, prompt] if sources else prompt",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Порядок sources соответствует нумерации 'Image 1', 'Image 2' в промптах (source_ids = [ROBOT, <сцена>])."
+  },
+  {
+   "код": "E-79-9",
+   "вид": "приём",
+   "утверждение_en": "Retry requests on 429 (e.g., a temporary project with 1 QPM quota) and on specific 400 'try again' errors, with up to 7 attempts and incremental waits starting at 10 s.",
+   "цитата": "# Workshop: temporary project with 1 QPM quota",
+   "источник_цитаты": "txt",
+   "раздел": "Helpers",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Из кода: tenacity.Retrying(stop_after_attempt(7), wait_incrementing(start=10, increment=1)); 400 с ' try again ' — первый доступ проекта к Cloud Storage (provisioning сервис-агента)."
+  },
+  {
+   "код": "E-79-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Historic Imagen 3 (beta, July 2024) prompt for the archive image: a small hand-felted toy of a blue robot on a white background; at that time there was no determinism or consistency.",
+   "цитата": "On a white background, a small hand-felted toy of a blue robot. The felt is soft and cuddly […]",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Reference archive",
+   "модели": [
+    "Imagen 3 (beta)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Промпт приведён не полностью ('[…]' в источнике). Разбор: фон первым → субъект через материал и технику ('hand-felted toy') → тактильные свойства материала. Контекст ноутбука: 'there was absolutely no determinism or consistency at the time' — повторить персонажа тогда было нельзя."
+  },
+  {
+   "код": "E-79-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Background-removal style extraction prompt: convert everything but the robot to pure white pixels.",
+   "цитата": "Convert everything but the robot to pure white pixels.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Asset extraction",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Разбор: операция в терминах графического редактора ('Convert ... to pure white pixels'), объект задан исключением ('everything but the robot'). Ноутбук оценивает это как простое удаление фона и предлагает другой подход (E-79-12, E-79-13, E-79-14)."
+  },
+  {
+   "код": "E-79-12",
+   "вид": "правило",
+   "утверждение_en": "Instead of graphics-software terms, think in terms of image composition when prompting.",
+   "цитата": "This prompt uses terms from graphics software, whereas we can now think in terms of image composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Asset extraction",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-13",
+   "вид": "предупреждение",
+   "утверждение_en": "Traditional binary masks are not necessarily a good idea, because object edges and shadows convey significant details about shapes, textures, positions and lighting.",
+   "цитата": "It's also not necessarily a good idea to use traditional binary masks, as object edges and shadows convey significant details about shapes, textures, positions, and lighting.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Asset extraction",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Относится к подготовке рефов: вырезание на чистый фон теряет информацию краёв и теней."
+  },
+  {
+   "код": "E-79-14",
+   "вид": "приём",
+   "утверждение_en": "Perform an advanced extraction by directly generating a character sheet from the archive image instead of cutting out the subject.",
+   "цитата": "perform an advanced extraction instead and directly generate a character sheet",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Asset extraction",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Лист персонажа становится новым эталоном для всех следующих генераций."
+  },
+  {
+   "код": "E-79-15",
+   "вид": "факт",
+   "утверждение_en": "Gemini has spatial understanding, so it can provide different views of a subject while preserving its visual features.",
+   "цитата": "Gemini has spatial understanding, so it can provide different views while preserving visual features.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Используется для листа 'вид спереди / вид сзади'."
+  },
+  {
+   "код": "E-79-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Structured character-sheet prompt: scene, setting, left side front view with a new backpack, right side back view, and text captions/labels.",
+   "цитата": "- Scene: Character sheet of the robot, based on the provided image.\n- Setting: Isolated on a pure white background, razor-sharp focus, vibrant saturated colors, bright studio lighting.\n- Left Side: Straight-on front view of the robot wearing a small backpack made of warm chocolate-brown suede, with thin, matching straps around the shoulders.\n- Right Side: Straight-on back view of the robot wearing the same backpack. The backpack's flap is secured by a tiny, matte-brass, rounded-square ring buckle. The back of the robot's head must be completely seamless.\n- Text: Small sans-serif text. Centered at the top, a caption \"ROBOT CHARACTER SHEET\". At the bottom, label the left side \"FRONT VIEW\" and the right side \"BACK VIEW\".",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "текст_в_кадре",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: маркированный список с метками секций. Scene — тип изображения + привязка к рефу ('based on the provided image'); Setting — фон, фокус, цвет, свет; Left Side/Right Side — раскладка по сторонам кадра, ракурс ('Straight-on front/back view'), новый аксессуар с материалом и цветом ('warm chocolate-brown suede'), деталь застёжки; ограничение 'must be completely seamless' для невидимой в рефе стороны; Text — шрифт, позиция, точные надписи в двойных кавычках капсом. 16:9, 1K."
+  },
+  {
+   "код": "E-79-17",
+   "вид": "приём",
+   "утверждение_en": "Focus the prompt on the composition of the scene, a common practice in media studios.",
+   "цитата": "Our prompt focuses on the composition of the scene, a common practice in media studios.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-18",
+   "вид": "объяснение",
+   "утверждение_en": "Repeated generations stay consistent for all features visible in the provided image, but elements described only partially (left open to interpretation) vary between generations.",
+   "цитата": "Repeated generations will be consistent, preserving all robot features visible in the provided image. However, since we only described a few features of the backpack (e.g., a single buckle) and left the rest open to interpretation, we'll get slightly different backpacks.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Что есть в рефе — стабильно; новое и недоописанное — варьирует."
+  },
+  {
+   "код": "E-79-19",
+   "вид": "приём",
+   "утверждение_en": "In a production pipeline, put accessories in a separate accessory sheet rather than in the character sheet.",
+   "цитата": "For simplicity, we directly included the backpack in the character sheet. In a real production pipeline, we would likely make it part of a separate accessory sheet.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-20",
+   "вид": "приём",
+   "утверждение_en": "To control an accessory's exact shape and design, use a reference photo of the real object and instruct the model to transform it into the target style (e.g., 'transform the backpack into a stylized felt version').",
+   "цитата": "To control the backpack's exact shape and design, we could also use a reference photo of a real backpack and instruct Gemini to \"transform the backpack into a stylized felt version.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "'could' — возможность."
+  },
+  {
+   "код": "E-79-21",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite generates 1K images (1024 × 1024 at 1:1) or token-wise equivalent resolutions for the other supported aspect ratios.",
+   "цитата": "Nano Banana 2 Lite can generate `1K` images (`1024 × 1024` pixels at the `1:1` aspect ratio) or equivalent resolutions (token-wise) for other supported aspect ratios",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Размер для других соотношений — 'эквивалентный по токенам'."
+  },
+  {
+   "код": "E-79-22",
+   "вид": "факт",
+   "утверждение_en": "Larger Nano Banana models can generate 2K or 4K images.",
+   "цитата": "Larger Nano Banana models can generate `2K` or `4K` images.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "larger Nano Banana models (так во фразе)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Какие именно модели — не названо."
+  },
+  {
+   "код": "E-79-23",
+   "вид": "факт",
+   "утверждение_en": "With aspect_ratio='16:9', Nano Banana 2 Lite generates images of 1376 × 768 pixels.",
+   "цитата": "In the request configuration, we specified `aspect_ratio=\"16:9\"`, which generates images at `1376 × 768` pixels.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-24",
+   "вид": "правило",
+   "утверждение_en": "If aspect_ratio is omitted, Gemini uses the aspect ratio of the input image (the last one if several are provided) to select the closest supported aspect ratio.",
+   "цитата": "If this parameter is omitted, Gemini uses the aspect ratio of the input image (the last one if multiple are provided) to select the closest supported aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "Assets / Character sheet",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "рефы"
+   ],
+   "заметка": "Важно: берётся ПОСЛЕДНЕЕ входное изображение."
+  },
+  {
+   "код": "E-79-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "First-scene structured prompt: Image 1 role, scene as macro photography of a felt diorama, background, foreground with character placement and view, lighting.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Scene: Macro photography of a beautifully crafted miniature diorama.\n- Background: Soft focus on an infinite panoramic range of interspersed, dome-like smooth-felt mountains, in random shades of medium blue/green, all with curvy white snowcaps, extending over the entire horizon.\n- Foreground: On the bottom left, the robot stands on the edge of a medium-gray felt cliff, captured from a 3/4 rear view, looking out over a sea of clouds (made of white cotton).\n- Lighting: Studio, warm, clean and soft.",
+   "источник_цитаты": "txt",
+   "раздел": "First scene",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": "Разбор: 1) роль входного изображения ('Image 1: Reference robot character sheet'); 2) Scene — жанр съёмки + мир ('Macro photography of a beautifully crafted miniature diorama'); 3) Background — фокус, форма ('dome-like'), материал ('smooth-felt'), цвета, протяжённость; 4) Foreground — позиция в кадре ('On the bottom left'), действие, ракурс ('3/4 rear view'), материал облаков ('white cotton'); 5) Lighting — тип и характер. Материал назван у каждого элемента."
+  },
+  {
+   "код": "E-79-26",
+   "вид": "приём",
+   "утверждение_en": "Specify shapes in early scenes that later actions will need (mountains specified 'dome-like' so the character can later stand on a summit).",
+   "цитата": "The mountain shape is specified as \"dome-like\", so our character can stand on one of the summits later on.",
+   "источник_цитаты": "txt",
+   "раздел": "First scene",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Планирование серии наперёд."
+  },
+  {
+   "код": "E-79-27",
+   "вид": "правило",
+   "утверждение_en": "Spend time on the first scene because it has a cascading effect on the overall look of the story; refine the prompt or run it a few times to get the preferred variation.",
+   "цитата": "It's important to spend some time on this first scene, as it will have a cascading effect that defines the overall look of our story. Don't hesitate to refine the prompt or run it a couple of times to get your preferred variation.",
+   "источник_цитаты": "txt",
+   "раздел": "First scene",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-28",
+   "вид": "приём",
+   "утверждение_en": "For each subsequent scene, provide the character sheet for consistency plus a previous scene for context.",
+   "цитата": "From now on, our generation inputs will typically include the character sheet for consistency, along with a previous scene to provide context for the next step",
+   "источник_цитаты": "txt",
+   "раздел": "First scene",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Два рефа на вызов: эталон персонажа + сцена-контекст. Мультиход без чата — через явные рефы."
+  },
+  {
+   "код": "E-79-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Successive-scene prompt (valley): roles of Image 1 and Image 2, then new placement, view, prop, surroundings, background and a changed lighting.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- The robot has descended from the cliff into a gray felt valley. It stands in the center, seen directly from the back. It is holding/reading a felt map.\n- Large, smooth, round felt rocks in various beige/gray shades are visible on the sides.\n- Background: The distant infinite panoramic mountain range extending over the entire horizon. A thin layer of clouds obscures its base and the end of the valley.\n- Lighting: Golden hour light, soft and diffused.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: 'Image 1'/'Image 2' с ролями → переход сюжета ('has descended from the cliff into...') → позиция и ракурс ('in the center, seen directly from the back') → новый реквизит с материалом ('felt map') → окружение → фон → новый свет ('Golden hour'). Долина описана неточно — ноутбук отмечает вариативность (E-79-32)."
+  },
+  {
+   "код": "E-79-30",
+   "вид": "правило",
+   "утверждение_en": "Explicitly reference the input images in the prompt ('Image 1: …', 'Image 2: …'); without them 'the robot' could refer to any of the robots in the inputs, with them the model knows it is the same robot.",
+   "цитата": "The specific references to our input images (`\"Image 1:…\"` and `\"Image 2:…\"`) are important. Without them, \"the robot\" could refer to any of the three robots in the input images (two in the character sheet, one in the previous scene). With them, we indicate that it is the same robot.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Страница называет это 'important'. Нумерация соответствует порядку входных изображений."
+  },
+  {
+   "код": "E-79-31",
+   "вид": "приём",
+   "утверждение_en": "To prevent confusion (or if the model gets confused), be more specific with 'the [entity] from image [number]'.",
+   "цитата": "To prevent confusion (or if the model gets confused), we can be more specific with `\"the [entity] from image [number]\"`.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Шаблон адресации: 'the [entity] from image [number]'."
+  },
+  {
+   "код": "E-79-32",
+   "вид": "объяснение",
+   "утверждение_en": "Without a precise description (e.g., of the valley), repeated requests produce different creative results; pick a favorite or make the prompt more precise for greater determinism.",
+   "цитата": "On the other hand, since we didn't provide a precise description of the valley, repeated requests will produce different, interesting, and creative results (we can pick our favorite or make the prompt more precise for greater determinism).",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Точность описания = рычаг детерминизма."
+  },
+  {
+   "код": "E-79-33",
+   "вид": "факт",
+   "утверждение_en": "Changing the lighting significantly changes the whole scene.",
+   "цитата": "Here, we also tested different lighting, which significantly changes the whole scene.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-34",
+   "вид": "пример_промпта",
+   "утверждение_en": "Successive-scene prompt (forest): story progression, material of new elements, character position/view/pose, explicit removal of the map, and continuity of rocks with Image 2.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- The robot continues its journey through the valley and faces a dense wall of giant, thin trees hiding the entire background.\n- The trees are made of light/medium/dark green felt.\n- The robot is on the right, seen from a 3/4 rear angle, looking up at the trees. It is no longer holding the map. Instead, its arms are raised beside its ears.\n- In the bottom-left and bottom-right corners, rocks (similar to Image 2) are partially visible.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: действие сюжета → материал новых деревьев → позиция + ракурс + взгляд → явное снятие реквизита ('no longer holding the map') + новая поза рук → преемственность через ссылку на рефы ('similar to Image 2') с позицией в углах кадра. Свет не указан — наследуется (E-79-37)."
+  },
+  {
+   "код": "E-79-35",
+   "вид": "факт",
+   "утверждение_en": "You can position the character, change its point of view, and even 'animate' its arms for more expressiveness.",
+   "цитата": "We can position the character, change its point of view, and even \"animate\" its arms for more expressiveness.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-36",
+   "вид": "приём",
+   "утверждение_en": "State explicitly when a prop from the previous scene is gone ('no longer holding the map') so the model does not carry it over in an awkward or unwanted way.",
+   "цитата": "The \"no longer holding the map\" instruction prevents the model from carrying it over from the previous scene in an awkward or unwanted way (like having the robot drop the map on the ground).",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-37",
+   "вид": "объяснение",
+   "утверждение_en": "When lighting details are not provided, the light source, quality and direction are preserved from the previous scene.",
+   "цитата": "Since we didn't provide lighting details, the light source, quality, and direction are preserved from the previous scene.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "мультиход"
+   ],
+   "заметка": "Неуказанное наследуется из сцены-рефа."
+  },
+  {
+   "код": "E-79-38",
+   "вид": "пример_промпта",
+   "утверждение_en": "Successive-scene prompt (clearing): movement through the scene, new view, new ground material and explicit disappearance of rocks.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- The robot walks through the dense forest and emerges into a clearing, making its way between two trees.\n- The robot is in the center, now seen from the front.\n- The ground is made of green felt, with flat patches of white felt snow. Rocks are no longer visible.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Разбор: действие-переход → позиция + новый ракурс ('now seen from the front') → смена грунта с материалом → явное исчезновение прежнего элемента ('Rocks are no longer visible'). Лес и вид не описаны — модель в целом сохраняет деревья (E-79-39)."
+  },
+  {
+   "код": "E-79-39",
+   "вид": "объяснение",
+   "утверждение_en": "When only some elements are changed (e.g., the ground) and no further details are given for the view or other elements, the model will generally preserve most of them (e.g., the trees).",
+   "цитата": "We changed the ground but didn't provide additional details for the view or the forest: the model will generally preserve most of the trees.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "'generally', 'most' — не гарантия."
+  },
+  {
+   "код": "E-79-40",
+   "вид": "приём",
+   "утверждение_en": "To return to an earlier environment, use the original scene of that environment as the reference instead of the latest scene.",
+   "цитата": "Now that the valley-forest sequence is over, we can journey up to the mountains, using the original mountain scene as our reference to return to that environment:",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "В коде source_ids = [ROBOT, MOUNTAINS], хотя в промпте Image 2 всё ещё подписан 'Previous scene'."
+  },
+  {
+   "код": "E-79-41",
+   "вид": "пример_промпта",
+   "утверждение_en": "Structured scene prompt (ascension) with labeled Scene, Composition, Action & Details and Background sections.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- Scene: A medium-wide shot of the robot climbing a broad, dome-shaped, medium-green mountain.\n- Composition: The mountain is centered, with the robot on the left slope shown from a 3/4 rear angle.\n- Action & Details: The robot has both feet on the mountain and uses two miniature ice picks (felt, with brown handles and gray heads) to reach the summit, planting them into the bottom part of the white felt snowcap.\n- Background: The distant mountain range spans the entire horizon.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: Scene — план ('medium-wide shot') + действие + объект с формой ('dome-shaped', согласовано с E-79-26) и цветом; Composition — расположение в кадре + ракурс; Action & Details — поза, новый реквизит с материалом и цветами частей, точка контакта; Background — фон. Image 2 здесь — исходная горная сцена, не предыдущая."
+  },
+  {
+   "код": "E-79-42",
+   "вид": "факт",
+   "утверждение_en": "The model can infer a close-up of an element that appeared only as a blurred background in the reference scene.",
+   "цитата": "The mountain close-up, inferred from the blurred background, is pretty impressive.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Наблюдение по одному прогону."
+  },
+  {
+   "код": "E-79-43",
+   "вид": "пример_промпта",
+   "утверждение_en": "Successive-scene prompt (summit): reaching the top, new view, props planted in the snow, victory pose, and an explicit 'unchanged' constraint for face and hands.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- The robot reaches the top and stands on the summit, seen from the front.\n- It is no longer holding the ice picks, which are planted upright in the snow on either side.\n- It has both arms raised as a sign of victory. Its face and hands are unchanged.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Разбор: действие + ракурс → судьба реквизита решена явно (не в руках, воткнуты по обе стороны) → поза с назначением ('as a sign of victory') → явное сохранение ('Its face and hands are unchanged')."
+  },
+  {
+   "код": "E-79-44",
+   "вид": "пример_промпта",
+   "утверждение_en": "Imperative recomposition prompt (bridge): remove props, move and add mountains, suspend a felt bridge, place the character with a gesture, maintain background, set close-up view.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- Remove the ice picks.\n- Move the center mountain to the left edge of the image and add a slightly taller medium-blue mountain to the right edge.\n- Suspend a stylized felt bridge between the two mountains: its deck is made of stylized thick planks of plain felt in various wood shades.\n- Place the robot in the center of the bridge with one arm pointing toward the blue mountain.\n- Maintain the background.\n- View: Close-up.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "камера_свет_композиция",
+    "рефы"
+   ],
+   "заметка": "Разбор: каждый пункт — глагол-действие: Remove → Move/add (с позициями 'left edge', 'right edge' и относительным размером 'slightly taller') → Suspend (с материалом) → Place (позиция + жест) → Maintain (что сохранить) → View. Композиция задана действиями, а не описанием."
+  },
+  {
+   "код": "E-79-45",
+   "вид": "приём",
+   "утверждение_en": "An imperative prompt can compose the scene in terms of actions, which is sometimes easier than writing descriptions.",
+   "цитата": "This imperative prompt composes the scene in terms of actions. It's sometimes easier than writing descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-46",
+   "вид": "факт",
+   "утверждение_en": "An element added as instructed (a new mountain) came out both different and consistent with the scene.",
+   "цитата": "A new mountain is added as instructed, and it is both different and consistent.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Наблюдение по одному прогону."
+  },
+  {
+   "код": "E-79-47",
+   "вид": "факт",
+   "утверждение_en": "The inserted bridge attached to the summits plausibly and seemed to obey the laws of physics.",
+   "цитата": "The bridge attaches to the summits in a very plausible way and seems to obey the laws of physics.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Наблюдение по одному прогону ('seems')."
+  },
+  {
+   "код": "E-79-48",
+   "вид": "приём",
+   "утверждение_en": "Explicitly resolve the fate of existing props (e.g., 'Remove the ice picks'); otherwise the model must decide what to do with them, leading to random results.",
+   "цитата": "The \"Remove the ice picks\" instruction is there for a reason. Without it, the model would need to decide what to do with them (leave them planted, have the robot carry them, or something else entirely), leading to random results.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-49",
+   "вид": "ограничение",
+   "утверждение_en": "Getting a character to consistently face a given direction in a never-generated view (e.g., walking left to right seen from the side) is tricky.",
+   "цитата": "It's also possible to get the robot to walk on the bridge, seen from the side (which we haven't generated before), but getting it to consistently walk from left to right is tricky.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-50",
+   "вид": "приём",
+   "утверждение_en": "Add left and right views to the character sheet to fix inconsistent side views.",
+   "цитата": "Adding left and right views to the character sheet should fix this.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "'should fix' — ожидание, не проверено на странице."
+  },
+  {
+   "код": "E-79-51",
+   "вид": "пример_промпта",
+   "утверждение_en": "Descriptive final-scene prompt (hammock): character state and a replacement object described, with an explicit eye state.",
+   "цитата": "- Image 1: Reference robot character sheet.\n- Image 2: Previous scene.\n- The robot is sleeping peacefully in a comfortable brown-and-tan tartan hammock that has replaced the bridge.\n- Both of the robot's eyes are closed, in a \"sleeping\" state.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Разбор: описательная (не императивная) форма: состояние персонажа + новый объект с материалом/узором ('tartan') + явная замена ('that has replaced the bridge') → отдельный пункт на деталь, отличную от эталона ('Both of the robot's eyes are closed')."
+  },
+  {
+   "код": "E-79-52",
+   "вид": "факт",
+   "утверждение_en": "Descriptive prompts work just as well as imperative ones for scene changes.",
+   "цитата": "This time, the prompt is descriptive, and it works just as well as the previous imperative one.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-53",
+   "вид": "факт",
+   "утверждение_en": "Replacing an object (bridge → hammock) preserved its attachment points on the mountain summits.",
+   "цитата": "The bridge-hammock transformation is really nice and preserves the attachments on the mountain summits.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Наблюдение по одному прогону."
+  },
+  {
+   "код": "E-79-54",
+   "вид": "факт",
+   "утверждение_en": "The model rendered the character consistently in a pose and state (closed eyes) never seen before in the references.",
+   "цитата": "The robot's transformation is also impressive, as it hasn't been seen in this position before, nor with closed eyes.",
+   "источник_цитаты": "txt",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Наблюдение по одному прогону."
+  },
+  {
+   "код": "E-79-55",
+   "вид": "приём",
+   "утверждение_en": "Treat generated assets as a directed graph connected by 'generated from' links.",
+   "цитата": "Our new assets are all related, connected by one or more \"generated from\" links. In terms of data structures, this is a directed graph.",
+   "источник_цитаты": "txt",
+   "раздел": "Graph visualization / Directed graph",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "В коде: у каждого ассета id, source_ids, prompt, image; граф строится по source_ids."
+  },
+  {
+   "код": "E-79-56",
+   "вид": "приём",
+   "утверждение_en": "Make assets self-sufficient by saving the prompt and source asset IDs (ancestors) in the image metadata (e.g., PNG chunks).",
+   "цитата": "Our assets can be made self-sufficient by saving prompts and source asset IDs (ancestors) in the image metadata (e.g., in PNG chunks), allowing for full local storage and retrieval (without needing a database or worrying about lost prompts!).",
+   "источник_цитаты": "txt",
+   "раздел": "Graph visualization / Asset metadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "В коде: PngInfo().add_text('source_ids', ...), add_text('prompt', ...)."
+  },
+  {
+   "код": "E-79-57",
+   "вид": "факт",
+   "утверждение_en": "The model's spatial understanding enables 3D manipulation.",
+   "цитата": "The model's spatial understanding enables 3D manipulation.",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Итог ноутбука (повороты персонажа, новые ракурсы)."
+  },
+  {
+   "код": "E-79-58",
+   "вид": "факт",
+   "утверждение_en": "You can add text to outputs (e.g., a character sheet) and also refer to text in inputs (e.g., front/back view labels).",
+   "цитата": "We can add text to our outputs (character sheet) and also refer to text in our inputs (front/back views).",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "рефы"
+   ],
+   "заметка": "Явного промпта, ссылающегося на надписи FRONT VIEW/BACK VIEW, в ноутбуке нет."
+  },
+  {
+   "код": "E-79-59",
+   "вид": "факт",
+   "утверждение_en": "Consistency can be preserved across various levels: character, scene, texture, lighting, camera angle/type.",
+   "цитата": "Consistency can be preserved across various levels: character, scene, texture, lighting, camera angle/type",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-60",
+   "вид": "приём",
+   "утверждение_en": "The process is a generation pipeline that can be automated (changing a node regenerates its descendants) or used to generate variations in parallel (different aesthetics, audiences, simulations).",
+   "цитата": "The process we followed is essentially a generation pipeline. It can be adapted for automation (e.g., changing a node regenerates its descendants) or for generating multiple variations in parallel (e.g., the same set of images could be generated for different aesthetics, audiences, or simulations).",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-61",
+   "вид": "приём",
+   "утверждение_en": "In production, prompts could have a fixed structure with a standardized set of parameters (the notebook's prompts are intentionally simple).",
+   "цитата": "For the sake of clarity and exploration, the prompts are intentionally simple. In a production environment, they could have a fixed structure with a standardized set of parameters.",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-62",
+   "вид": "факт",
+   "утверждение_en": "Scenes were described as if shot in a photo studio; virtually any other artistic style is possible (photorealistic, abstract, 2D).",
+   "цитата": "We described the scenes as if they were shot in a photo studio. Virtually any other imaginable artistic style is possible",
+   "источник_цитаты": "txt",
+   "раздел": "Challenge completed",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-79-63",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Scene-prompt template used throughout: a bulleted list that first declares each input image's role ('- Image 1: Reference robot character sheet.', '- Image 2: Previous scene.'), then labeled sections as needed — Scene (shot type/genre), Setting/Background, Foreground/Composition (placement in frame + viewing angle), Action & Details, Lighting, View, Text.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Character sheet + First scene + Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-79-16, E-79-25, E-79-29, E-79-34, E-79-38, E-79-41, E-79-43, E-79-44, E-79-51",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Секции не обязательны: часть сцен пишется свободными пунктами после Image 1/2."
+  },
+  {
+   "код": "E-79-64",
+   "вид": "правило",
+   "утверждение_en": "Delta prompting for sequences: each successive prompt states only what changes (placement, view, pose, added/removed props, new materials) and relies on the references for everything unspecified, which is inherited (lighting, trees, background); anything that should disappear or change must be stated explicitly.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Successive scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-79-28, E-79-34, E-79-36, E-79-37, E-79-38, E-79-39, E-79-43, E-79-48",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-65",
+   "вид": "объяснение",
+   "утверждение_en": "Specificity is the page's lever of determinism: what is visible in references or described precisely stays stable; what is under-described (backpack details, valley, prop fate, unseen side views) varies between runs.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-79-18, E-79-32, E-79-48, E-79-49",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-66",
+   "вид": "объяснение",
+   "утверждение_en": "Every scene prompt carries a camera-view term (Straight-on front/back view, 3/4 rear view, seen directly from the back, seen from the front, medium-wide shot, View: Close-up) and an in-frame position (bottom left, center, on the right, left slope, left/right edge).",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Character sheet + scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-79-16, E-79-25, E-79-29, E-79-34, E-79-38, E-79-41, E-79-43, E-79-44",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-79-67",
+   "вид": "приём",
+   "утверждение_en": "The miniature felt-diorama style is kept consistent by naming a material for every new element (felt, smooth-felt, white cotton, suede, matte-brass, felt ice picks, felt planks, tartan) rather than restating the style.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Character sheet + scenes",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — модель ноутбука"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-79-16, E-79-25, E-79-29, E-79-34, E-79-38, E-79-41, E-79-44, E-79-51",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "В сцене восхождения (E-79-41) Image 2 подписан 'Previous scene', но по тексту и коду это исходная горная сцена MOUNTAINS (E-79-40), а не предыдущая CLEARING — метка описывает роль неточно.",
+  "Вывод 'refer to text in our inputs (front/back views)' (E-79-58) не подкреплён ни одним промптом ноутбука: сцены ссылаются на лист персонажа целиком ('Image 1: Reference robot character sheet'), а не на надписи FRONT VIEW/BACK VIEW."
+ ],
+ "не_сказано": [
+  "Не сказано, сколько рефов можно/оптимально подавать (в примерах 1-2).",
+  "Не сказано явно, что 'Image N' соответствует порядку входных изображений — это видно только из кода (sources перед текстом в порядке source_ids).",
+  "Нет thinking-настроек, seed, temperature — детерминизм управляется только точностью описания.",
+  "Нет пиксельных размеров для соотношений кроме 1:1 (1024×1024) и 16:9 (1376×768).",
+  "Нет правил текста в кадре кроме примера листа персонажа.",
+  "Нет упоминания SynthID/C2PA, политик, цен (кроме 'cheapest')."
+ ],
+ "сомнения": [
+  "В метаданных партии модель страницы указана как 'Nano Banana (по контексту — gemini-2.5-flash-image)', но в тексте ноутбука явно gemini-3.1-flash-lite-image (Nano Banana 2 Lite) — единицы привязаны к тексту.",
+  "Автор (Laurent Picard) без указания принадлежности; официальность — по копирайту Google LLC и репозиторию GoogleCloudPlatform.",
+  "Ряд единиц — наблюдения по одному прогону (E-79-42, E-79-46, E-79-47, E-79-53, E-79-54); помечены в заметках.",
+  "Промпт архивного изображения (E-79-10) в источнике обрезан ('[…]') и относится к Imagen 3, а не к Nano Banana."
+ ]
+}

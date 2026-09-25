@@ -1,0 +1,818 @@
+{
+ "id": 353,
+ "url": "https://labs.google/fx/tools/flow",
+ "заголовок": "Google Flow - AI Creative Studio for Video, Images & Custom Tools",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "labs.google (og:url https://flow.google.com/)",
+  "второй_признак": "текст от лица Google («Our image models excel at…», «Try Google Flow free of charge or upgrade to one of our plans»); строка «The Google Privacy Policy and Terms of Service apply»; инструменты с пометкой «Created by Google»; в html скрипт Google-бара с «Copyright Google LLC» (лицензионный комментарий JS — слабый признак).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Продуктовая лендинг-страница Google Flow (AI-студия для видео, картинок и собственных инструментов) для креаторов. Для картинок: карточка Nano Banana («precise editing control», сильные стороны — subject consistency, text rendering, enhanced reasoning), редактирование естественным языком, инструменты (Image Editor с слоями, Mockup, Shader Effects, Storyboard Studio; сторонние — Grid Architect, Scout360, Converge и др.). Главная фактура — тарифы: всем 50 кредитов в день, платные добавляют 200/1 000/10 000/25 000 в месяц ($4.99/$19.99/$99.99/$199.99), лимиты генерации картинок «higher/highest», апскейл 2K (free) / 4K (Ultra); Nano Banana Pro в бесплатном плане. Стоимость генерации в кредитах — только по ссылке. Дата публикации не указана; страница снята 2026-09-24. Много дублей каруселей.",
+ "модели_на_странице": [
+  "Nano Banana (карточка модели, версия не указана)",
+  "gemini-3-pro-image (Nano Banana Pro — в списке тарифа)",
+  "Gemini Omni / Gemini Omni Flash (видео)",
+  "Veo 3.1 (видео)",
+  "Gemini 3.1 Pro / 3.1 Pro Deep Think (в Gemini app по подписке)"
+ ],
+ "структура": [
+  "служебная пометка сборщика",
+  "шапка и навигация (Overview, Models, Capabilities, Tools, Flow Sessions, Pricing)",
+  "Our Models (карусель: Gemini Omni, Nano Banana, Veo 3.1)",
+  "Capabilities: Plan / Create / Refine",
+  "Tools (список инструментов ×2)",
+  "Flow Sessions (витрина фильмов)",
+  "Pricing (Free, Plus, Pro, Ultra $99.99, Ultra $199.99)",
+  "Questions? (FAQ из трёх вопросов)",
+  "Disclaimer и reCAPTCHA"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "https://labs.google/fx/tools/flow снято 2026-09-24 (строки 1-2)",
+   "итог": "ничего: служебная пометка сборщика (URL и дата снимка, не текст Google)"
+  },
+  {
+   "n": 2,
+   "начало": "Google Flow - AI Creative (строки 3-12)",
+   "итог": "ничего: обвязка сайта (заголовок, навигация)"
+  },
+  {
+   "n": 3,
+   "начало": "Google Flow Your AI creative (строки 13-14)",
+   "итог": "E-353-1"
+  },
+  {
+   "n": 4,
+   "начало": "Create with Google Flow Explore (строки 15-20)",
+   "итог": "ничего: обвязка сайта (кнопки, ссылки на подписки и FAQ)"
+  },
+  {
+   "n": 5,
+   "начало": "Features may vary by Google (строка 21)",
+   "итог": "E-353-2"
+  },
+  {
+   "n": 6,
+   "начало": "keyboard_arrow_down Unlock your best (строки 22-25)",
+   "итог": "ничего: обвязка сайта (иконки, слоган)"
+  },
+  {
+   "n": 7,
+   "начало": "Our Models Google Flow collaborates (строки 26-27)",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini Omni Create and edit (строки 28-31)",
+   "итог": "ничего: не про генерацию картинок (видео-модель Gemini Omni) + кнопки"
+  },
+  {
+   "n": 9,
+   "начало": "Nano Banana Powerful image generation (строки 32-35)",
+   "итог": "E-353-3, E-353-4 (строки 34-35 — кнопки)"
+  },
+  {
+   "n": 10,
+   "начало": "Veo 3.1 Veo delivers expanded (строки 36-39)",
+   "итог": "ничего: не про генерацию картинок (видео-модель Veo 3.1) + кнопки"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini Omni Create and edit (строки 40-87)",
+   "итог": "ничего: повтор E-353-3, E-353-4 и карточек Omni/Veo — дубли карусели (4 блока, до байта равны строкам 28-39, проверено diff)"
+  },
+  {
+   "n": 12,
+   "начало": "chevron_left chevron_right Capabilities (строки 88-91)",
+   "итог": "ничего: обвязка сайта (стрелки карусели, заголовок раздела, вкладка Plan)"
+  },
+  {
+   "n": 13,
+   "начало": "Meet your agent Your agent (строки 92-94)",
+   "итог": "E-353-5"
+  },
+  {
+   "n": 14,
+   "начало": "chevron_left chevron_right Meet your (строки 95-101)",
+   "итог": "ничего: повтор E-353-5 (дубль карусели)"
+  },
+  {
+   "n": 15,
+   "начало": "Create Create without bounds Turn (строки 102-105)",
+   "итог": "E-353-6"
+  },
+  {
+   "n": 16,
+   "начало": "chevron_left chevron_right Create without (строки 106-112)",
+   "итог": "ничего: повтор E-353-6 (дубль карусели)"
+  },
+  {
+   "n": 17,
+   "начало": "Refine Refine with confidence Use (строки 113-116)",
+   "итог": "E-353-7"
+  },
+  {
+   "n": 18,
+   "начало": "chevron_left chevron_right Refine with (строки 117-127)",
+   "итог": "ничего: повтор E-353-7 (дубль карусели) + вкладки Plan/Create/Refine и кнопка"
+  },
+  {
+   "n": 19,
+   "начало": "Tools Create tools using natural (строки 128-130)",
+   "итог": "E-353-8"
+  },
+  {
+   "n": 20,
+   "начало": "Created by Google Type Overlays (строки 131-138)",
+   "итог": "ничего: не про генерацию картинок (Type Overlays и Video Resizer — видео-инструменты)"
+  },
+  {
+   "n": 21,
+   "начало": "Image Editor Transform objects, add (строки 139-141)",
+   "итог": "E-353-9"
+  },
+  {
+   "n": 22,
+   "начало": "Storyboard Studio Write a script, (строки 142-144)",
+   "итог": "E-353-10"
+  },
+  {
+   "n": 23,
+   "начало": "Shader Effects Apply customizable visual (строки 145-147)",
+   "итог": "E-353-11"
+  },
+  {
+   "n": 24,
+   "начало": "Mockup Comp your image into (строки 148-150)",
+   "итог": "E-353-12"
+  },
+  {
+   "n": 25,
+   "начало": "Ribbit Perform videos live as (строки 151-153)",
+   "итог": "ничего: не про генерацию картинок (видео-перформанс)"
+  },
+  {
+   "n": 26,
+   "начало": "Converge Render your sketches Explore (строки 154-156)",
+   "итог": "E-353-13"
+  },
+  {
+   "n": 27,
+   "начало": "Character X-ray Develop your characters (строки 157-159)",
+   "итог": "E-353-14"
+  },
+  {
+   "n": 28,
+   "начало": "pixelBento Apply post-processing effects like (строки 160-162)",
+   "итог": "E-353-15"
+  },
+  {
+   "n": 29,
+   "начало": "Grid Architect Create image grids (строки 163-165)",
+   "итог": "E-353-16"
+  },
+  {
+   "n": 30,
+   "начало": "Scout360 Capture a 360 degree (строки 166-168)",
+   "итог": "E-353-17"
+  },
+  {
+   "n": 31,
+   "начало": "Explore Tools in Google Flow (строки 169-232)",
+   "итог": "ничего: повтор E-353-9…E-353-17 (второй список инструментов с авторами; авторство учтено в заметках) + стрелки и кнопка"
+  },
+  {
+   "n": 32,
+   "начало": "Flow Sessions Flow Sessions is (строки 233-236)",
+   "итог": "ничего: не про генерацию картинок (программа для художников Flow Sessions)"
+  },
+  {
+   "n": 33,
+   "начало": "Calvin Herbst COMBO & Charline (строки 237-269)",
+   "итог": "ничего: обвязка сайта (имена участников в карусели, повторы)"
+  },
+  {
+   "n": 34,
+   "начало": "Until We Meet Again Deep (строки 270-323)",
+   "итог": "ничего: не про генерацию картинок (витрина фильмов участников: названия, аннотации, авторы)"
+  },
+  {
+   "n": 35,
+   "начало": "Until We Meet Again Deep (строки 324-515)",
+   "итог": "ничего: повтор строк 276-323 (дубли карусели фильмов, 4 круга)"
+  },
+  {
+   "n": 36,
+   "начало": "chevron_left chevron_right Pricing Try (строки 516-519)",
+   "итог": "ничего: обвязка сайта (стрелки, заголовок Pricing, вводная фраза — содержание в E-353-18)"
+  },
+  {
+   "n": 37,
+   "начало": "Try Google Flow with a (строки 520-541)",
+   "итог": "E-353-18, E-353-19"
+  },
+  {
+   "n": 38,
+   "начало": "Google AI Plus $4.99/mo* Get (строки 542-555)",
+   "итог": "E-353-20"
+  },
+  {
+   "n": 39,
+   "начало": "Google AI Pro $19.99/mo* Get (строки 556-572)",
+   "итог": "E-353-21 (строки 567-572 — не про генерацию картинок: Gemini app, YouTube, хранилище)"
+  },
+  {
+   "n": 40,
+   "начало": "Google AI Ultra $99.99/mo* Get (строки 573-590)",
+   "итог": "E-353-22 (строки 586-590 — не про генерацию картинок)"
+  },
+  {
+   "n": 41,
+   "начало": "Google AI Ultra $199.99/mo* Get (строки 591-604)",
+   "итог": "E-353-23 (строки 600-604 — не про генерацию картинок)"
+  },
+  {
+   "n": 42,
+   "начало": "* Prices may vary by (строки 605-607)",
+   "итог": "E-353-24 (строки 606-607 — ссылка FAQ, ничего)"
+  },
+  {
+   "n": 43,
+   "начало": "Questions? Who is Google Flow (строки 608-610)",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 44,
+   "начало": "How much does it cost (строки 611-614)",
+   "итог": "E-353-25"
+  },
+  {
+   "n": 45,
+   "начало": "Where is Google Flow available? (строки 615-618)",
+   "итог": "ничего: ссылка без содержания (ограничение по регионам уже в E-353-2)"
+  },
+  {
+   "n": 46,
+   "начало": "Disclaimer: AI outputs may be (строка 619)",
+   "итог": "E-353-26"
+  },
+  {
+   "n": 47,
+   "начало": "This site is protected by (строки 620-624)",
+   "итог": "ничего: обвязка сайта (reCAPTCHA, Google Privacy Policy / Terms — признак официальности)"
+  },
+  {
+   "n": 48,
+   "начало": "вся страница (длинная дистанция)",
+   "итог": "E-353-27, E-353-28, E-353-29"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-353-1",
+   "вид": "факт",
+   "утверждение_en": "Google Flow is an AI creative studio built with Google's generative models.",
+   "цитата": "Your AI creative studio built with Google's advanced generative models.",
+   "источник_цитаты": "txt",
+   "раздел": "Google Flow (шапка)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-2",
+   "вид": "ограничение",
+   "утверждение_en": "Flow features may vary by Google AI subscription tier, platform (web vs. mobile), and region; the service is 18+.",
+   "цитата": "Features may vary by Google AI subscription tier, platform (web vs. mobile), and region. 18+.",
+   "источник_цитаты": "txt",
+   "раздел": "Google Flow (шапка)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-3",
+   "вид": "факт",
+   "утверждение_en": "In Flow, Nano Banana provides image generation and precise editing control.",
+   "цитата": "Powerful image generation and precise editing control.",
+   "источник_цитаты": "txt",
+   "раздел": "Our Models → Nano Banana",
+   "модели": [
+    "Nano Banana (семейство, версия не указана)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "Маркетинговое описание от Google."
+  },
+  {
+   "код": "E-353-4",
+   "вид": "факт",
+   "утверждение_en": "Google says its image models excel at subject consistency, text rendering and enhanced reasoning.",
+   "цитата": "Our image models excel at subject consistency, text rendering, enhanced reasoning, and much more.",
+   "источник_цитаты": "txt",
+   "раздел": "Our Models → Nano Banana",
+   "модели": [
+    "Nano Banana (семейство, версия не указана)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "текст_в_кадре"
+   ],
+   "заметка": "«Our image models» — множественное число, под карточкой Nano Banana; конкретные версии не названы. Заявление-реклама, без замеров."
+  },
+  {
+   "код": "E-353-5",
+   "вид": "факт",
+   "утверждение_en": "Flow includes an agent built with Gemini's intelligence and an understanding of your project, for exploring and iterating on ideas.",
+   "цитата": "Your agent in Google Flow is an intelligent, creative partner. It’s built with Gemini’s intelligence and a deep understanding of your project to help unlock some of your best work while you stay in the flow.",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities → Plan → Meet your agent",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-6",
+   "вид": "факт",
+   "утверждение_en": "Flow lets you create high-fidelity images and videos with Google's models, blending text, image and video inputs or building custom tools on an adaptable canvas.",
+   "цитата": "Create high-fidelity images and videos using Google’s advanced models",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities → Create → Create without bounds",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Смешение text/image/video входов в тексте привязано к Gemini Omni (видео-модель)."
+  },
+  {
+   "код": "E-353-7",
+   "вид": "факт",
+   "утверждение_en": "In Flow you can use natural language to perform complex, iterative edits on images and videos, tweak individual assets with professional controls, and scale those changes across the entire project.",
+   "цитата": "Use natural language to perform complex, iterative edits, tweak individual assets with professional controls, and easily scale those changes across your entire project.",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities → Refine → Refine with confidence",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Подпись под блоком: «Use natural language edit your images and videos» (с пропущенным «to»)."
+  },
+  {
+   "код": "E-353-8",
+   "вид": "факт",
+   "утверждение_en": "Flow lets you build, share and remix custom tools for your creative workflows using natural language.",
+   "цитата": "Build tools for your specific creative workflows. From creative tasks, like designing video effects, to hand drawn animations, to layering, you can build, share and remix tools directly in Google Flow.",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Create tools using natural language",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-9",
+   "вид": "факт",
+   "утверждение_en": "Flow's Image Editor tool (created by Google) is a layer-based editor to transform objects, add text, and adjust image sizing.",
+   "цитата": "Transform objects, add text, and adjust image sizing with a layer based editor",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Image Editor",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование",
+    "текст_в_кадре"
+   ],
+   "заметка": "Автор инструмента — Google (строки 180-184)."
+  },
+  {
+   "код": "E-353-10",
+   "вид": "факт",
+   "утверждение_en": "Flow's Storyboard Studio tool (created by Google) lets you write a script, create the cast, and visualize a storyboard.",
+   "цитата": "Write a script, create the cast, and visualize a storyboard",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Storyboard Studio",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": "Автор инструмента — Google."
+  },
+  {
+   "код": "E-353-11",
+   "вид": "факт",
+   "утверждение_en": "Flow's Shader Effects tool (created by Google) applies customizable visual filters to videos and images.",
+   "цитата": "Apply customizable visual filters to your videos and images",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Shader Effects",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "стиль"
+   ],
+   "заметка": "Автор инструмента — Google."
+  },
+  {
+   "код": "E-353-12",
+   "вид": "факт",
+   "утверждение_en": "Flow's Mockup tool (created by Google) composites your image into different environments.",
+   "цитата": "Comp your image into different environments",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Mockup",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Автор инструмента — Google."
+  },
+  {
+   "код": "E-353-13",
+   "вид": "факт",
+   "утверждение_en": "Flow's Converge tool renders your sketches.",
+   "цитата": "Render your sketches",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Converge",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Слова не Google по авторству инструмента: создатель Chris Maestas (строки 205-209); описание на странице Google."
+  },
+  {
+   "код": "E-353-14",
+   "вид": "факт",
+   "утверждение_en": "Flow's Character X-ray tool helps develop your characters and their backstory.",
+   "цитата": "Develop your characters and their backstory",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Character X-ray",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Инструмент не Google: создатель MetaPuppet."
+  },
+  {
+   "код": "E-353-15",
+   "вид": "факт",
+   "утверждение_en": "Flow's pixelBento tool applies post-processing effects like lo-fi and glitch.",
+   "цитата": "Apply post-processing effects like lo-fi and glitch",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → pixelBento",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "стиль"
+   ],
+   "заметка": "Инструмент не Google: создатель László Gaal."
+  },
+  {
+   "код": "E-353-16",
+   "вид": "факт",
+   "утверждение_en": "Flow's Grid Architect tool creates image grids and extracts individual images from them.",
+   "цитата": "Create image grids and extract individual images from them",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Grid Architect",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Инструмент не Google: создатель Henry Daubrez. Указывает на рабочий приём «сетка картинок → нарезка на отдельные кадры»."
+  },
+  {
+   "код": "E-353-17",
+   "вид": "факт",
+   "утверждение_en": "Flow's Scout360 tool captures a 360-degree environment from an image.",
+   "цитата": "Capture a 360 degree environment from an image",
+   "источник_цитаты": "txt",
+   "раздел": "Tools → Scout360",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Инструмент не Google: создатель PJ Ace."
+  },
+  {
+   "код": "E-353-18",
+   "вид": "лимит",
+   "утверждение_en": "Flow can be used free of charge with a Google Account and no Google AI subscription; the free tier includes 50 daily Google Flow credits.",
+   "цитата": "50 daily Google Flow credits",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Without a Google AI Subscription (Free of Charge)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Строки 519-527: «Try Google Flow free of charge…», «with a Google Account», «Without a Google AI Subscription», «Free of Charge». Строка «50 daily Google Flow credits» повторяется в каждом плане; цитата берётся по первому вхождению."
+  },
+  {
+   "код": "E-353-19",
+   "вид": "факт",
+   "утверждение_en": "The free Flow tier includes Nano Banana Pro and 2K image upscaling (along with Gemini Omni Flash, Veo 3.1, tools usage, agent, video features, Characters and Avatars).",
+   "цитата": "2K image upscaling",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Without a Google AI Subscription (Free of Charge)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "форматы_разрешение"
+   ],
+   "заметка": "Строка 529 «Nano Banana Pro» в списке Included Features бесплатного плана."
+  },
+  {
+   "код": "E-353-20",
+   "вид": "лимит",
+   "утверждение_en": "Google AI Plus ($4.99/mo) adds 200 monthly Google Flow credits on top of the 50 daily credits, plus Flow Tools creation, 1080p video upscaling, higher image generation limits and higher agent access.",
+   "цитата": "Higher image generation limits",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Google AI Plus",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Строки 542-555; «200 monthly Google Flow credits» на строке 549."
+  },
+  {
+   "код": "E-353-21",
+   "вид": "лимит",
+   "утверждение_en": "Google AI Pro ($19.99/mo) adds 1,000 monthly Google Flow credits on top of the 50 daily credits, everything in Plus, and available AI credit top-ups.",
+   "цитата": "1,000 monthly Google Flow credits",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Google AI Pro",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Строки 556-572; остальное («Gemini app with 3.1 Pro», YouTube, хранилище) не про генерацию картинок."
+  },
+  {
+   "код": "E-353-22",
+   "вид": "лимит",
+   "утверждение_en": "Google AI Ultra ($99.99/mo) adds 10,000 monthly Google Flow credits on top of the 50 daily credits, everything in Pro, 4K image and video upscaling, the highest image generation limits and the highest agent access.",
+   "цитата": "4K image and video upscaling",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Google AI Ultra ($99.99)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Строки 573-590; «10,000 monthly Google Flow credits» (строка 580), «Highest image generation limits» (строка 584)."
+  },
+  {
+   "код": "E-353-23",
+   "вид": "лимит",
+   "утверждение_en": "Google AI Ultra ($199.99/mo) adds 25,000 monthly Google Flow credits on top of the 50 daily credits and includes everything in Ultra $99.99.",
+   "цитата": "25,000 monthly Google Flow credits",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing → Google AI Ultra ($199.99)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Строки 591-604."
+  },
+  {
+   "код": "E-353-24",
+   "вид": "предупреждение",
+   "утверждение_en": "Flow plan prices may vary by market.",
+   "цитата": "* Prices may vary by market",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-25",
+   "вид": "факт",
+   "утверждение_en": "In Flow, generation costs vary across image, video and model selection; a per-generation cost breakdown by model is provided separately (linked).",
+   "цитата": "Costs vary across image, video and model selection. See",
+   "источник_цитаты": "txt",
+   "раздел": "Questions? → How much does it cost to generate images and videos?",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сама разбивка на странице отсутствует — только ссылка «here»."
+  },
+  {
+   "код": "E-353-26",
+   "вид": "предупреждение",
+   "утверждение_en": "AI outputs may be offensive or inaccurate.",
+   "цитата": "Disclaimer: AI outputs may be offensive or inaccurate.",
+   "источник_цитаты": "txt",
+   "раздел": "Questions? (подвал)",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-353-27",
+   "вид": "ограничение",
+   "утверждение_en": "From this page alone you cannot compute how many images a plan yields: plans are stated in credits, but the per-image credit cost (which varies by model and media) is only behind a link.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-353-18, E-353-20, E-353-21, E-353-22, E-353-23, E-353-25",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-28",
+   "вид": "факт",
+   "утверждение_en": "Every Flow plan, free or paid, has the same 50 daily credits; paid plans add a monthly credit pool on top (200 / 1,000 / 10,000 / 25,000) and step up image generation limits (higher → highest) and upscaling (2K image free, 4K image on Ultra).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-353-18, E-353-19, E-353-20, E-353-21, E-353-22, E-353-23",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-353-29",
+   "вид": "объяснение",
+   "утверждение_en": "Flow presents image editing through two routes: natural-language iterative edits (Refine) and manual/tool-based editing (layer-based Image Editor, Mockup compositing, filters, grids).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-353-7, E-353-9, E-353-11, E-353-12, E-353-16",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Карточка моделей называет «Nano Banana» и говорит «Our image models» (E-353-3, E-353-4), а список возможностей тарифа — только «Nano Banana Pro» (E-353-19); какая версия/версии реально работают в Flow, страница однозначно не говорит."
+ ],
+ "не_сказано": [
+  "Стоимость одной картинки в кредитах по моделям — только ссылка.",
+  "Какие версии Nano Banana доступны (Nano Banana 2 / оригинальный) — не сказано.",
+  "Разрешения и соотношения сторон генерации (кроме апскейла 2K/4K) не указаны.",
+  "Водяные знаки/SynthID не упомянуты.",
+  "Советов по промптингу нет.",
+  "Числовые значения «higher/highest image generation limits» не даны.",
+  "Список стран — только ссылка."
+ ],
+ "сомнения": [
+  "Дата публикации/обновления на странице отсутствует; строка «снято 2026-09-24 chrome dump-dom» — пометка сборщика, фиксирует состояние на дату снимка.",
+  "Два разных плана названы одинаково «Google AI Ultra» ($99.99 и $199.99).",
+  "«Copyright Google LLC» в html — лицензионный комментарий JS, а не подвал страницы; официальность подтверждается прежде всего текстом от лица Google и ссылкой на Google Privacy Policy/Terms.",
+  "Описания инструментов Converge, Character X-ray, pixelBento, Grid Architect, Scout360, Ribbit — инструменты сторонних авторов, размещены на странице Google."
+ ]
+}

@@ -1,0 +1,1036 @@
+{
+ "id": 12,
+ "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite-image",
+ "заголовок": "Gemini 3.1 Flash Lite image",
+ "дата_в_тексте": "Last updated 2026-09-03 UTC (страница); Latest update модели: June 2026",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0) и 'Last updated 2026-09-03 UTC.'; ссылка на Model card deepmind (model-cards/gemini-3-1-flash-lite-image)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 3.1 Flash Lite image (Nano Banana 2 Lite, id gemini-3.1-flash-lite-image) для разработчиков. Вводная: 'efficiency specialist' семейства, ультранизкая задержка (цель <2 с), сниженная стоимость TPU, массовые интерактивные и real-time сценарии. Key capabilities: <2 с end-to-end, чередование генерации и правки (Text -> Text + Image(s), Image + Text -> Text + Image(s)), оптимизация под 1K, 14 соотношений сторон (перечислено 10), быстрые многоходовые локальные правки, сохранение персонажа на уровне оригинального Nano Banana, image_size только 1024px (1K) — 2K/4K нет, SynthID (всегда) + C2PA. Таблица: вход Text/Image/Video/PDF, выход Image and Text, токены 65,536/4,096, Thinking — minimal и high, Search grounding — нет, Batch — да, Stable id, Latest update June 2026, Model card. Повторно подчёркнуты скорость и дешевизна.",
+ "модели_на_странице": [
+  "Gemini 3.1 Flash Lite image",
+  "Nano Banana 2 Lite",
+  "gemini-3.1-flash-lite-image",
+  "original Nano Banana (как эталон сохранения персонажа)"
+ ],
+ "структура": [
+  "Обвязка сайта (строки 2-181, идентична стр. 2)",
+  "Баннер, хлебные крошки",
+  "Заголовок + вводный абзац",
+  "Key capabilities (9 пунктов)",
+  "Try in Google AI Studio",
+  "Documentation",
+  "Таблица gemini-3.1-flash-lite-image: Model code, Supported data types, Token limits, Capabilities, Consumption options, Versions, Latest update, Model card",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3.1 Flash Lite image |",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev, строки 2-181 — совпадает до байта со страницей 2 (diff строк 2-188)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 3.1 Flash Lite image",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "Nano Banana 2 Lite is designed as",
+   "итог": "E-12-1, E-12-2"
+  },
+  {
+   "n": 7,
+   "начало": "Key capabilities:",
+   "итог": "ничего: заголовок списка"
+  },
+  {
+   "n": 8,
+   "начало": "Sub-2 second end-to-end latency",
+   "итог": "E-12-3"
+  },
+  {
+   "n": 9,
+   "начало": "Interleaved generation and editing with native",
+   "итог": "E-12-4"
+  },
+  {
+   "n": 10,
+   "начало": "Optimized for lower resolutions of 1K",
+   "итог": "E-12-5"
+  },
+  {
+   "n": 11,
+   "начало": "Supports a discrete set of 14",
+   "итог": "E-12-6"
+  },
+  {
+   "n": 12,
+   "начало": "Fast multi-turn local edits (swapping colors,",
+   "итог": "E-12-7"
+  },
+  {
+   "n": 13,
+   "начало": "Maintains high character alignment matching original",
+   "итог": "E-12-8"
+  },
+  {
+   "n": 14,
+   "начало": "New 1:1 , 3:2 , 2:3",
+   "итог": "E-12-9"
+  },
+  {
+   "n": 15,
+   "начало": "Supported image_size values: 1024px (1K).",
+   "итог": "E-12-10, E-12-11"
+  },
+  {
+   "n": 16,
+   "начало": "SynthID watermarking (Always On) + C2PA",
+   "итог": "E-12-12"
+  },
+  {
+   "n": 17,
+   "начало": "Try in Google AI Studio",
+   "итог": "E-12-13"
+  },
+  {
+   "n": 18,
+   "начало": "Documentation Visit the Image generation page",
+   "итог": "E-12-14"
+  },
+  {
+   "n": 19,
+   "начало": "gemini-3.1-flash-lite-image Property Description",
+   "итог": "ничего: заголовок таблицы"
+  },
+  {
+   "n": 20,
+   "начало": "id_card Model code gemini-3.1-flash-lite-image",
+   "итог": "E-12-15"
+  },
+  {
+   "n": 21,
+   "начало": "save Supported data types Inputs",
+   "итог": "E-12-16"
+  },
+  {
+   "n": 22,
+   "начало": "token_auto Token limits [*]",
+   "итог": "ничего: заголовок строки таблицы (сноска на /gemini-api/docs/tokens)"
+  },
+  {
+   "n": 23,
+   "начало": "Input token limit 65,536",
+   "итог": "E-12-17"
+  },
+  {
+   "n": 24,
+   "начало": "Output token limit 4,096",
+   "итог": "E-12-18"
+  },
+  {
+   "n": 25,
+   "начало": "handyman Capabilities",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 26,
+   "начало": "Audio generation Not supported",
+   "итог": "E-12-19"
+  },
+  {
+   "n": 27,
+   "начало": "Caching Not supported",
+   "итог": "E-12-20"
+  },
+  {
+   "n": 28,
+   "начало": "Code execution Not supported",
+   "итог": "E-12-21"
+  },
+  {
+   "n": 29,
+   "начало": "File search Not supported",
+   "итог": "E-12-22"
+  },
+  {
+   "n": 30,
+   "начало": "Function calling Not supported",
+   "итог": "E-12-23"
+  },
+  {
+   "n": 31,
+   "начало": "Grounding with Google Maps Not supported",
+   "итог": "E-12-24"
+  },
+  {
+   "n": 32,
+   "начало": "Image generation Supported",
+   "итог": "E-12-25"
+  },
+  {
+   "n": 33,
+   "начало": "Live API Not supported",
+   "итог": "E-12-26"
+  },
+  {
+   "n": 34,
+   "начало": "Search grounding Not supported",
+   "итог": "E-12-27"
+  },
+  {
+   "n": 35,
+   "начало": "Structured outputs Not supported",
+   "итог": "E-12-28"
+  },
+  {
+   "n": 36,
+   "начало": "Thinking Supported (minimal and high)",
+   "итог": "E-12-29"
+  },
+  {
+   "n": 37,
+   "начало": "URL context Not supported",
+   "итог": "E-12-30"
+  },
+  {
+   "n": 38,
+   "начало": "speed Consumption options",
+   "итог": "ничего: заголовок группы строк"
+  },
+  {
+   "n": 39,
+   "начало": "Batch API Supported",
+   "итог": "E-12-31"
+  },
+  {
+   "n": 40,
+   "начало": "Flex inference Not supported",
+   "итог": "E-12-32"
+  },
+  {
+   "n": 41,
+   "начало": "Priority inference Not supported",
+   "итог": "E-12-33"
+  },
+  {
+   "n": 42,
+   "начало": "123 Versions Read the model version",
+   "итог": "ничего: заголовок строки + ссылка на паттерны версий"
+  },
+  {
+   "n": 43,
+   "начало": "Stable: gemini-3.1-flash-lite-image",
+   "итог": "E-12-34"
+  },
+  {
+   "n": 44,
+   "начало": "calendar_month Latest update June 2026",
+   "итог": "E-12-35"
+  },
+  {
+   "n": 45,
+   "начало": "id_card Model card Model card",
+   "итог": "ничего: ссылка на Model card (deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/), содержимого на странице нет"
+  },
+  {
+   "n": 46,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия и Google Developers Site Policies (признак официальности), строки 309-316"
+  },
+  {
+   "n": 47,
+   "начало": "Last updated 2026-09-03 UTC.",
+   "итог": "ничего: дата обновления страницы (в дата_в_тексте)"
+  },
+  {
+   "n": 48,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал и языки, строки 318-343 (совпадает с хвостом стр. 2)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-12-1",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana 2 Lite is designed as the efficiency specialist of the image generation family, offering ultra-low latency and cost-effective image generation and editing.",
+   "цитата": "is designed as the efficiency specialist of the image\ngeneration family, offering ultra-low latency and cost-effective image\ngeneration and editing.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 3.1 Flash Lite image)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Подлежащее 'Nano Banana 2 Lite' — строка 190 txt. Соответствие имён: Gemini 3.1 Flash Lite image = Nano Banana 2 Lite."
+  },
+  {
+   "код": "E-12-2",
+   "вид": "правило",
+   "утверждение_en": "By targeting sub-2-second latency and significantly reduced TPU compute costs, Nano Banana 2 Lite is meant for high-volume interactive developer use cases and real-time consumer applications.",
+   "цитата": "By targeting a sub-2 second latency and significantly\nreduced TPU compute costs, this model enables high-volume interactive developer\nuse cases and real-time consumer applications.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (Gemini 3.1 Flash Lite image)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Правило выбора модели: массовые интерактивные сценарии и приложения реального времени. 'targeting' — целевой показатель, не гарантия."
+  },
+  {
+   "код": "E-12-3",
+   "вид": "факт",
+   "утверждение_en": "A key capability of Nano Banana 2 Lite is sub-2-second end-to-end latency.",
+   "цитата": "Sub-2 second end-to-end latency",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Во вводной это же сформулировано мягче: 'targeting a sub-2 second latency'. Здесь — 'end-to-end'."
+  },
+  {
+   "код": "E-12-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite supports interleaved generation and editing, natively handling Text -> Text + Image(s) and Image + Text -> Text + Image(s).",
+   "цитата": "with native support for Text -> Text + Image(s) and Image + Text -> Text + Image(s).",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "api_код"
+   ],
+   "заметка": "Пункт 'Interleaved generation and editing'. 'Image(s)' — во множественном числе: на выходе может быть несколько картинок вперемежку с текстом."
+  },
+  {
+   "код": "E-12-5",
+   "вид": "ограничение",
+   "утверждение_en": "Nano Banana 2 Lite is optimized for lower resolutions of 1K (1024x1024px).",
+   "цитата": "Optimized for lower resolutions\nof 1K (1024x1024px).",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-12-6",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite supports a discrete set of 14 aspect ratios, including standard formats.",
+   "цитата": "Supports a discrete set of\n14 aspect ratios\nincluding standard formats.",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Полный список 14 соотношений на странице не приведён — ниже перечислено только 10 (E-12-9). См. противоречия_внутри."
+  },
+  {
+   "код": "E-12-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite offers fast multi-turn local edits, such as swapping colors, sticker creation and background adjustments.",
+   "цитата": "Fast multi-turn local edits\n(swapping colors, sticker creation, background adjustments).",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Типы правок в скобках — примеры 'локальных' правок; про сложные/глобальные правки не сказано."
+  },
+  {
+   "код": "E-12-8",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite maintains high character alignment matching the original Nano Banana standards.",
+   "цитата": "Maintains high character alignment matching original Nano Banana standards.",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "'character alignment' — сохранение персонажа; уровень задан относительно оригинального Nano Banana (gemini-2.5-flash-image). Что именно измерялось — не сказано."
+  },
+  {
+   "код": "E-12-9",
+   "вид": "факт",
+   "утверждение_en": "New aspect ratios listed for Nano Banana 2 Lite: 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9.",
+   "цитата": "New\n1:1\n,\n3:2\n,\n2:3\n,\n3:4\n,\n4:3\n,\n4:5\n,\n5:4\n,\n9:16\n,\n16:9\n,\n21:9\naspect ratios.",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "В списке 10 значений при заявленных 14 (E-12-6). Слово 'New' не поясняет, относительно чего они новые. В html пункт списка: 'New 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 aspect ratios.'"
+  },
+  {
+   "код": "E-12-10",
+   "вид": "лимит",
+   "утверждение_en": "The only supported image_size value for Nano Banana 2 Lite is 1024px (1K).",
+   "цитата": "values:\n1024px\n(1K).",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Полностью: 'Supported image_size values: 1024px (1K).' Как именно записывать значение в запросе ('1024px' или '1K') — не уточнено."
+  },
+  {
+   "код": "E-12-11",
+   "вид": "ограничение",
+   "утверждение_en": "2K and 4K image sizes are unsupported on Nano Banana 2 Lite.",
+   "цитата": "(Note: 2K and 4K are unsupported).",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-12-12",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 Lite applies SynthID watermarking (always on) plus C2PA.",
+   "цитата": "SynthID watermarking (Always On) + C2PA",
+   "источник_цитаты": "txt",
+   "раздел": "Key capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Водяной знак SynthID нельзя отключить ('Always On'); C2PA — метаданные происхождения (подробностей нет)."
+  },
+  {
+   "код": "E-12-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Lite image can be tried in Google AI Studio.",
+   "цитата": "Try in Google AI Studio",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Кнопка ведёт на https://aistudio.google.com?model=gemini-3.1-flash-lite-image (по html)."
+  },
+  {
+   "код": "E-12-14",
+   "вид": "факт",
+   "утверждение_en": "The model card is not exhaustive: Google directs readers to the Image generation page for full coverage of features and capabilities.",
+   "цитата": "page for full\ncoverage of features and capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Documentation",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Полная фраза: 'Visit the Image generation page for full coverage of features and capabilities.' (строки 239-242)."
+  },
+  {
+   "код": "E-12-15",
+   "вид": "факт",
+   "утверждение_en": "The model code for Gemini 3.1 Flash Lite image (Nano Banana 2 Lite) is gemini-3.1-flash-lite-image.",
+   "цитата": "Model code\ngemini-3.1-flash-lite-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-12-16",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-lite-image accepts text, image, video and PDF as input and produces image and text as output.",
+   "цитата": "Inputs\nText, Image, Video, and PDF\nOutput\nImage and Text",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Supported data types",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Вход шире, чем 'Image and Text': принимаются видео и PDF. Как они используются для генерации — не сказано."
+  },
+  {
+   "код": "E-12-17",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3.1-flash-lite-image has an input token limit of 65,536.",
+   "цитата": "Input token limit\n65,536",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Token limits",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сноска [*] у 'Token limits' ведёт на /gemini-api/docs/tokens."
+  },
+  {
+   "код": "E-12-18",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3.1-flash-lite-image has an output token limit of 4,096.",
+   "цитата": "Output token limit\n4,096",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Token limits",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сколько картинок/текста помещается в 4,096 выходных токенов — не сказано."
+  },
+  {
+   "код": "E-12-19",
+   "вид": "ограничение",
+   "утверждение_en": "Audio generation is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Audio generation\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-20",
+   "вид": "ограничение",
+   "утверждение_en": "Caching is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Caching\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-21",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Code execution\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-22",
+   "вид": "ограничение",
+   "утверждение_en": "File search is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "File search\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-23",
+   "вид": "ограничение",
+   "утверждение_en": "Function calling is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Function calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-24",
+   "вид": "ограничение",
+   "утверждение_en": "Grounding with Google Maps is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Grounding with Google Maps\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-25",
+   "вид": "факт",
+   "утверждение_en": "Image generation is supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Image generation\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-26",
+   "вид": "ограничение",
+   "утверждение_en": "The Live API is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Live API\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-27",
+   "вид": "ограничение",
+   "утверждение_en": "Search grounding (Grounding with Google Search) is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Search grounding\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-28",
+   "вид": "ограничение",
+   "утверждение_en": "Structured outputs are not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "Structured outputs\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-29",
+   "вид": "лимит",
+   "утверждение_en": "Thinking is supported by gemini-3.1-flash-lite-image with two levels: minimal and high.",
+   "цитата": "Thinking\nSupported (minimal and high)",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Строка таблицы возможностей. Уровни thinking — только minimal и high; уровень по умолчанию не указан."
+  },
+  {
+   "код": "E-12-30",
+   "вид": "ограничение",
+   "утверждение_en": "URL context is not supported by gemini-3.1-flash-lite-image.",
+   "цитата": "URL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строка таблицы возможностей."
+  },
+  {
+   "код": "E-12-31",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-lite-image can be used through the Batch API.",
+   "цитата": "Batch API\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Consumption options",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-12-32",
+   "вид": "ограничение",
+   "утверждение_en": "Flex inference is not supported for gemini-3.1-flash-lite-image.",
+   "цитата": "Flex inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Consumption options",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-12-33",
+   "вид": "ограничение",
+   "утверждение_en": "Priority inference is not supported for gemini-3.1-flash-lite-image.",
+   "цитата": "Priority inference\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Consumption options",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Строка таблицы способов потребления."
+  },
+  {
+   "код": "E-12-34",
+   "вид": "факт",
+   "утверждение_en": "The model is offered as a stable version under the code gemini-3.1-flash-lite-image.",
+   "цитата": "Stable:\ngemini-3.1-flash-lite-image",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Versions",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-12-35",
+   "вид": "факт",
+   "утверждение_en": "The latest update of gemini-3.1-flash-lite-image is dated June 2026.",
+   "цитата": "Latest update\nJune 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Карточка модели gemini-3.1-flash-lite-image: Latest update",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата модели; страница обновлена 2026-09-03."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-12-36",
+   "вид": "правило",
+   "утверждение_en": "For Nano Banana 2 Lite, request only the 1K (1024px) image size; 2K and 4K cannot be requested and the model is optimized for 1K.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-12-5, E-12-10, E-12-11",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Три места страницы про разрешение согласованы: только 1K."
+  },
+  {
+   "код": "E-12-37",
+   "вид": "предупреждение",
+   "утверждение_en": "The page claims 14 supported aspect ratios but enumerates only 10 (1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9); the remaining four are not named on this page.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-12-6, E-12-9",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Не додумывать недостающие 4 значения по этой странице."
+  },
+  {
+   "код": "E-12-38",
+   "вид": "объяснение",
+   "утверждение_en": "Across the page, Nano Banana 2 Lite is framed around speed and cost (efficiency specialist, ultra-low latency, sub-2-second latency stated twice, reduced compute cost, high-volume and real-time use, fast local multi-turn edits) at 1K only, while keeping character alignment at original Nano Banana level.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-12-1, E-12-2, E-12-3, E-12-5, E-12-7, E-12-8",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повторный акцент: латентность упомянута в вводной и первым пунктом Key capabilities."
+  },
+  {
+   "код": "E-12-39",
+   "вид": "ограничение",
+   "утверждение_en": "Apart from image generation and thinking (minimal/high), gemini-3.1-flash-lite-image supports none of the listed tools or features: no Google Search or Maps grounding, URL context, function calling, code execution, file search, structured outputs, caching, Live API or audio generation.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-12-19, E-12-20, E-12-21, E-12-22, E-12-23, E-12-24, E-12-25, E-12-26, E-12-27, E-12-28, E-12-29, E-12-30",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Сводка таблицы возможностей."
+  }
+ ],
+ "противоречия_внутри": [
+  "Заявлено 'a discrete set of 14 aspect ratios', но в пункте 'New ... aspect ratios' перечислено 10 значений (1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9); остальные четыре не названы (проверено по html — скрытых элементов нет).",
+  "Задержка: во вводной 'targeting a sub-2 second latency' (цель), в Key capabilities 'Sub-2 second end-to-end latency' (как свойство) — разная сила формулировки."
+ ],
+ "не_сказано": [
+  "Какие ещё 4 соотношения сторон входят в заявленные 14.",
+  "Как записывать image_size в запросе ('1024px' или '1K').",
+  "Уровень thinking по умолчанию и как его задавать; только перечень minimal/high.",
+  "Как используются входные Video и PDF при генерации картинок.",
+  "Knowledge cutoff, цена, rate limits, максимальное число входных изображений.",
+  "Подробности C2PA (какие метаданные пишутся) и можно ли их отключить."
+ ],
+ "сомнения": [
+  "Строки таблицы возможностей переданы по одной единице; для свода можно сгруппировать."
+ ]
+}

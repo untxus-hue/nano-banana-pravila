@@ -1,0 +1,734 @@
+{
+ "id": 87,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/video-to-image-generation",
+ "заголовок": "Generate images from video with Gemini  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time в html нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0, ссылки About Google / Google Cloud terms; ссылки на Google Cloud Service Specific Terms",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Гайд Google Cloud (Gemini Enterprise Agent Platform), статус Preview: генерация картинки (например, миниатюры/инфографики) из видео. Для разработчиков и пользователей консоли. Модели: gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image. Структура: Preview-оговорка, ноутбуки, назначение и модели, консольные шаги (источники видео Upload/URL/YouTube/Cloud Storage/Drive с лимитами), Python-пример (YouTube-видео + 'Generate an infographic of the topics covered in this video.', TEXT+IMAGE), REST-шаблон (FILE_URI/MIME_TYPE/TEXT, лимиты URL, MIME-типы, curl/PowerShell), заметки про generateContent/streamGenerateContent и региональные эндпоинты. Большая часть REST-блока — шаблонный текст для мультимодальных запросов (пример TEXT 'What is in the video?'). Повторяющиеся акценты: владение/публичность источника (YouTube, Cloud Storage, HTTP), лимиты размеров.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "в шаблонной заметке: gemini-3.5-flash (пример ID)"
+ ],
+ "структура": [
+  "Generate images from video with Gemini (Preview, ноутбуки, модели)",
+  "Generate images from video — Console",
+  "Python",
+  "REST (curl, PowerShell, заметки об URL)",
+  "What's next?"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (меню, левое меню, хлебные крошки; строки 1-1040; сверено diff — совпадает с навигацией стр. id 55)"
+  },
+  {
+   "n": 2,
+   "начало": "Send feedback Generate images from video",
+   "итог": "ничего: служебная кнопка, заголовок, виджет коллекций (строки 1041-1044)"
+  },
+  {
+   "n": 3,
+   "начало": "Preview This product or feature",
+   "итог": "E-87-1"
+  },
+  {
+   "n": 4,
+   "начало": "To see examples of Image",
+   "итог": "ничего: ссылки на два ноутбука (Gemini 3.1 Flash Lite Image и 3.1 Flash Image Generation in Agent Platform), строки 1055-1074"
+  },
+  {
+   "n": 5,
+   "начало": "You can use Gemini to generate",
+   "итог": "E-87-2"
+  },
+  {
+   "n": 6,
+   "начало": "The following Gemini models support",
+   "итог": "E-87-3"
+  },
+  {
+   "n": 7,
+   "начало": "Generate images from video The following",
+   "итог": "ничего: заголовок и вводная раздела"
+  },
+  {
+   "n": 8,
+   "начало": "For more information about best",
+   "итог": "ничего: ссылка на Design multimodal prompts"
+  },
+  {
+   "n": 9,
+   "начало": "Console To generate images from video",
+   "итог": "E-87-4"
+  },
+  {
+   "n": 10,
+   "начало": "In the Agent Platform section … Go to Vertex AI Studio",
+   "итог": "E-87-4"
+  },
+  {
+   "n": 11,
+   "начало": "Upload Select the file that",
+   "итог": "ничего: шаг интерфейса без ограничений (часть E-87-4)"
+  },
+  {
+   "n": 12,
+   "начало": "By URL Enter the URL",
+   "итог": "ничего: шаг интерфейса без ограничений (часть E-87-4)"
+  },
+  {
+   "n": 13,
+   "начало": "YouTube Enter the URL of",
+   "итог": "E-87-5"
+  },
+  {
+   "n": 14,
+   "начало": "Cloud Storage Select the bucket",
+   "итог": "ничего: шаг интерфейса без ограничений (часть E-87-4)"
+  },
+  {
+   "n": 15,
+   "начало": "Google Drive Choose an account",
+   "итог": "E-87-6"
+  },
+  {
+   "n": 16,
+   "начало": "Click the file that you",
+   "итог": "ничего: шаги интерфейса (часть E-87-4)"
+  },
+  {
+   "n": 17,
+   "начало": "The file thumbnail displays in",
+   "итог": "E-87-7"
+  },
+  {
+   "n": 18,
+   "начало": "Write a description of the image … Click the Prompt (send)",
+   "итог": "E-87-4"
+  },
+  {
+   "n": 19,
+   "начало": "Gemini generates an image based",
+   "итог": "E-87-8"
+  },
+  {
+   "n": 20,
+   "начало": "Python Install pip install --upgrade",
+   "итог": "E-87-9"
+  },
+  {
+   "n": 21,
+   "начало": "from google import genai … Generate an infographic of the topics (код Python)",
+   "итог": "E-87-10, E-87-11"
+  },
+  {
+   "n": 22,
+   "начало": "REST After you set up your",
+   "итог": "ничего: шаблонная вводная (\"test a text prompt\"), см. противоречия"
+  },
+  {
+   "n": 23,
+   "начало": "Before using any of the request",
+   "итог": "ничего: вводная к списку замен"
+  },
+  {
+   "n": 24,
+   "начало": "PROJECT_ID: Your project ID.",
+   "итог": "ничего: служебная замена"
+  },
+  {
+   "n": 25,
+   "начало": "FILE_URI: The URI or URL",
+   "итог": "ничего: вводная к списку допустимых значений"
+  },
+  {
+   "n": 26,
+   "начало": "Cloud Storage bucket URI: The object",
+   "итог": "E-87-12"
+  },
+  {
+   "n": 27,
+   "начало": "HTTP URL: The file URL",
+   "итог": "E-87-13"
+  },
+  {
+   "n": 28,
+   "начало": "YouTube video URL:The YouTube video",
+   "итог": "E-87-14"
+  },
+  {
+   "n": 29,
+   "начало": "When specifying a fileURI, you",
+   "итог": "E-87-15"
+  },
+  {
+   "n": 30,
+   "начало": "If you don't have a video",
+   "итог": "ничего: образец файла gs://cloud-samples-data/video/animals.mp4 (служебный ресурс)"
+  },
+  {
+   "n": 31,
+   "начало": "MIME_TYPE: The media type of",
+   "итог": "E-87-16"
+  },
+  {
+   "n": 32,
+   "начало": "application/pdf … video/flv (16 строк списка)",
+   "итог": "E-87-16"
+  },
+  {
+   "n": 33,
+   "начало": "TEXT: The text instructions to",
+   "итог": "ничего: шаблонная замена; пример \"What is in the video?\" — вопрос, а не промпт генерации картинки (см. противоречия)"
+  },
+  {
+   "n": 34,
+   "начало": "To send your request, choose",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 35,
+   "начало": "curl Note: The following command assumes",
+   "итог": "ничего: служебная заметка про gcloud-авторизацию"
+  },
+  {
+   "n": 36,
+   "начало": "cat > request.json … \"fileData\" (тело запроса curl)",
+   "итог": "E-87-17"
+  },
+  {
+   "n": 37,
+   "начало": "Then execute the following command … curl -X POST",
+   "итог": "E-87-17"
+  },
+  {
+   "n": 38,
+   "начало": "PowerShell Note: … @' … Invoke-WebRequest",
+   "итог": "повтор E-87-17 (тот же запрос в PowerShell)"
+  },
+  {
+   "n": 39,
+   "начало": "Note the following in the URL … generateContent … streamGenerateContent",
+   "итог": "E-87-18"
+  },
+  {
+   "n": 40,
+   "начало": "The multimodal model ID is located",
+   "итог": "ничего: шаблонная заметка (пример ID gemini-3.5-flash — не image-модель; \"This sample might support other models as well\")"
+  },
+  {
+   "n": 41,
+   "начало": "When you use a regional API",
+   "итог": "E-87-19"
+  },
+  {
+   "n": 42,
+   "начало": "What's next? See the following links",
+   "итог": "ничего: ссылки (Edit images, best practices, responsible AI)"
+  },
+  {
+   "n": 43,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, Last updated 2026-09-22 UTC)"
+  },
+  {
+   "n": 44,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка (подвал, языки; строки 1291-1336)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-87-1",
+   "вид": "факт",
+   "утверждение_en": "Generating images from video is a Generative AI Preview offering subject to the Pre-GA Offerings Terms; customers may still use it for production or commercial purposes, disclose Generated Output to third parties and process personal data as outlined in the Cloud Data Processing Addendum, subject to their agreement.",
+   "цитата": "This product or feature is a Generative AI Preview offering, subject to the\n\"Pre-GA Offerings Terms\" of the\nGoogle Cloud Service Specific Terms. For this Generative AI Preview\noffering, Customers may elect to use it for production or commercial\npurposes, or disclose Generated Output to third-parties, and may process\npersonal data as outlined in the\nCloud Data Processing Addendum, subject to the obligations and\nrestrictions described in the agreement under which you access Google\nCloud.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video with Gemini (Preview)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Статус функции — Preview."
+  },
+  {
+   "код": "E-87-2",
+   "вид": "факт",
+   "утверждение_en": "Gemini can generate images from a video, which can be useful to create a thumbnail image for a video; supported interfaces are the Google Cloud console and the Agent Platform API.",
+   "цитата": "You can use Gemini to generate images from a video, which can be useful\nto create an image for a thumbnail for a video. Supported interfaces include\nthe Google Cloud console and the Agent Platform API.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video with Gemini",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-3",
+   "вид": "факт",
+   "утверждение_en": "The models that support image generation from a video are gemini-3.1-flash-lite-image, gemini-3.1-flash-image and gemini-3-pro-image.",
+   "цитата": "The following Gemini models support image generation from a\nvideo:\nClick to expand supported models\ngemini-3.1-flash-lite-image\ngemini-3.1-flash-image\ngemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video with Gemini",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "рефы"
+   ],
+   "заметка": "gemini-2.5-flash-image в списке нет."
+  },
+  {
+   "код": "E-87-4",
+   "вид": "инструкция",
+   "утверждение_en": "In the console: go to Agent Studio > Image, select a model in Model settings, click the add button in the Prompt text area and choose the video source (Upload, By URL, YouTube, Cloud Storage or Google Drive), then write a description of the image you want and click the Prompt (send) button.",
+   "цитата": "To generate images from video with Gemini, do the following:\nIn the Agent Platform section of the Google Cloud console, go to\nAgent Studio>Image.\nGo to Vertex AI Studio\nIn Model settings, select one of the displayed models.\nIn the Prompt text area, click the\naddadd button, and then\nselect the source of the video file:",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": "Шаги 1-3 процитированы; шаги \"Write a description…\" и \"Click the Prompt (send) button\" — строки 1121-1123."
+  },
+  {
+   "код": "E-87-5",
+   "вид": "ограничение",
+   "утверждение_en": "In the console, a YouTube video source can be any public video or a video owned by the account signed in to the Google Cloud console.",
+   "цитата": "You can use any public video or a video that's owned by the account that\nyou used to sign in to the Google Cloud console.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-6",
+   "вид": "лимит",
+   "утверждение_en": "From Google Drive you can upload multiple files with a total size of up to 10 MB, and a single file can't exceed 7 MB.",
+   "цитата": "You can upload multiple files that\nhave a total size of up to 10 MB. A single file can't exceed\n7 MB.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимит консольного импорта из Drive; при первом выборе нужно согласие на доступ Vertex AI Studio к аккаунту."
+  },
+  {
+   "код": "E-87-7",
+   "вид": "предупреждение",
+   "утверждение_en": "The prompt pane shows the file thumbnail and total token count; if the prompt data exceeds the token limit, the tokens are truncated and aren't included in processing.",
+   "цитата": "The file thumbnail displays in the Prompt pane. The total number of\ntokens also displays. If your prompt data exceeds the token limit, the\ntokens are truncated and aren't included in processing your data.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Значение лимита токенов на странице не указано."
+  },
+  {
+   "код": "E-87-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini generates an image based on the description; this takes a few seconds but can be comparatively slower depending on capacity.",
+   "цитата": "Gemini generates an image based on your description. This\nprocess takes a few seconds, but can be comparatively slower depending on\ncapacity.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Console",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-9",
+   "вид": "инструкция",
+   "утверждение_en": "To use the Google Gen AI SDK with Vertex AI, set GOOGLE_CLOUD_PROJECT, GOOGLE_CLOUD_LOCATION=global and GOOGLE_GENAI_USE_ENTERPRISE=True.",
+   "цитата": "export GOOGLE_CLOUD_LOCATION=global\nexport GOOGLE_GENAI_USE_ENTERPRISE=True",
+   "источник_цитаты": "html",
+   "раздел": "Generate images from video / Python",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Video-to-image prompt example: a YouTube video part followed by the text 'Generate an infographic of the topics covered in this video.'",
+   "цитата": "Generate an infographic of the topics covered in this video.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / Python",
+   "модели": "gemini-3.1-flash-image",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Структура: \"Generate <тип графики: infographic> of <что взять из видео: the topics covered> in this video\". Работу делают: явный тип вывода и ссылка \"this video\" на приложенную видео-часть, стоящую в contents перед текстом. Видео в примере — ролик \"The ABCs of agent building\" (YouTube)."
+  },
+  {
+   "код": "E-87-11",
+   "вид": "инструкция",
+   "утверждение_en": "Pass the video as a Part.from_uri(file_uri=..., mime_type=\"video/mp4\") placed before the text instruction in contents, and request response_modalities [TEXT, IMAGE].",
+   "цитата": "contents=[\n        Part.from_uri(\n            file_uri=video,\n            mime_type=\"video/mp4\"\n        ), \n        \"Generate an infographic of the topics covered in this video.\"\n    ],",
+   "источник_цитаты": "html",
+   "раздел": "Generate images from video / Python",
+   "модели": "gemini-3.1-flash-image",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "YouTube-URL передан с mime_type \"video/mp4\"; конфиг: GenerateContentConfig(response_modalities=[Modality.TEXT, Modality.IMAGE]); картинка из part.inline_data сохраняется как video-image.png."
+  },
+  {
+   "код": "E-87-12",
+   "вид": "ограничение",
+   "утверждение_en": "A Cloud Storage bucket URI used as FILE_URI must point to an object that is publicly readable or resides in the same Google Cloud project that sends the request.",
+   "цитата": "Cloud Storage bucket URI: The object must either be publicly\nreadable or reside in the same Google Cloud project that's sending the\nrequest.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-13",
+   "вид": "лимит",
+   "утверждение_en": "An HTTP URL file must be publicly readable; you can specify one video file, one audio file, and up to 10 image files per request, and audio files, video files and documents can't exceed 15 MB.",
+   "цитата": "HTTP URL: The file URL must be publicly readable. You can specify\none video file, one audio file, and up to 10 image files per request.\nAudio files, video files, and documents can't exceed 15 MB.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Лимит 15 MB назван для аудио/видео/документов; для картинок размер не указан."
+  },
+  {
+   "код": "E-87-14",
+   "вид": "ограничение",
+   "утверждение_en": "A YouTube video URL must be owned by the account signed in to the Google Cloud console or be public, and only one YouTube video URL is supported per request.",
+   "цитата": "YouTube video URL:The YouTube video must be either owned by the\naccount that you used to sign in to the Google Cloud console or be public.\nOnly one YouTube video URL is supported per request.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-15",
+   "вид": "правило",
+   "утверждение_en": "When specifying a fileURI you must also specify the media type (mimeType); if VPC Service Controls is enabled, specifying a media file URL for fileURI is not supported.",
+   "цитата": "When specifying a fileURI, you must also specify the media\ntype (mimeType) of the file. If VPC Service Controls is\nenabled, specifying a media file URL for fileURI is not\nsupported.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-16",
+   "вид": "факт",
+   "утверждение_en": "Acceptable MIME_TYPE values are application/pdf, audio/mpeg, audio/mp3, audio/wav, image/png, image/jpeg, image/webp, text/plain, video/mov, video/mpeg, video/mp4, video/mpg, video/avi, video/wmv, video/mpegps and video/flv.",
+   "цитата": "application/pdf\naudio/mpeg\naudio/mp3\naudio/wav\nimage/png\nimage/jpeg\nimage/webp\ntext/plain\nvideo/mov\nvideo/mpeg\nvideo/mp4\nvideo/mpg\nvideo/avi\nvideo/wmv\nvideo/mpegps\nvideo/flv",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Для картинок-входов: только png, jpeg, webp."
+  },
+  {
+   "код": "E-87-17",
+   "вид": "инструкция",
+   "утверждение_en": "The REST request body has contents with role USER and parts [ {fileData: {fileUri, mimeType}}, {text} ], sent with POST to https://aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/global/publishers/google/models/gemini-3.1-flash-image:generateContent.",
+   "цитата": "https://aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/global/publishers/google/models/gemini-3.1-flash-image:generateContent",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": "gemini-3.1-flash-image",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Тело запроса в примере НЕ содержит generationConfig/responseModalities (см. длинную дистанцию и противоречия). Цитата — URL эндпоинта; структура тела — строки 1204-1221."
+  },
+  {
+   "код": "E-87-18",
+   "вид": "приём",
+   "утверждение_en": "Use generateContent to get the response after it is fully generated; to reduce the perception of latency to a human audience, stream the response with streamGenerateContent.",
+   "цитата": "Use the\ngenerateContent\nmethod to request that the response is returned after it's fully generated.\nTo reduce the perception of latency to a human audience, stream the response as it's being\ngenerated by using the\nstreamGenerateContent\nmethod.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-19",
+   "вид": "факт",
+   "утверждение_en": "When you use a regional API endpoint (for example, us-central1), the region from the endpoint URL determines where the request is processed, and any conflicting location in the resource path is ignored.",
+   "цитата": "When you use a regional API endpoint (for example, us-central1), the region from the endpoint URL determines where the request is processed. Any conflicting location in the resource path is ignored.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images from video / REST",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-87-20",
+   "вид": "приём",
+   "утверждение_en": "Video-to-image pattern shown on the page: attach the video as a media part first, then give a short instruction naming the output type and what to extract from the video (e.g., an infographic of the topics covered), with IMAGE among the response modalities; the stated use case is a video thumbnail.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-87-2, E-87-10, E-87-11",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-21",
+   "вид": "предупреждение",
+   "утверждение_en": "The REST template on this page sends only fileData + text with no generationConfig/responseModalities and suggests the text 'What is in the video?'; unlike the Python sample (TEXT + IMAGE), it does not itself request image output.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "gemini-3.1-flash-image",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-87-17, E-87-11 и строк 1184-1187",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Не утверждается, что REST-запрос без responseModalities не вернёт картинку — страница этого не говорит; зафиксировано расхождение примеров."
+  },
+  {
+   "код": "E-87-22",
+   "вид": "лимит",
+   "утверждение_en": "Input limits differ by path: console Google Drive import allows 10 MB total and 7 MB per file; REST HTTP URLs allow 1 video, 1 audio and up to 10 images per request with audio/video/documents up to 15 MB; only one YouTube URL per request; prompt data over the token limit is truncated.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-87-6, E-87-13, E-87-14, E-87-7",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-87-23",
+   "вид": "факт",
+   "утверждение_en": "Unlike the model lists for text-to-image generation, this feature lists only the three Gemini 3 image models (no gemini-2.5-flash-image), and sample notebooks exist only for 3.1 Flash Lite Image and 3.1 Flash Image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-87-3 и списка ноутбуков (строки 1055-1074)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение с другими страницами не делается; вывод только по этой странице: 2.5 отсутствует, ноутбука для 3 Pro Image нет."
+  }
+ ],
+ "противоречия_внутри": [
+  "REST-вступление 'you can use REST to test a text prompt', пример TEXT 'What is in the video?' и тело запроса без responseModalities — в гайде по генерации картинок, где Python-пример явно просит TEXT+IMAGE.",
+  "Консоль: шаг 'go to Agent Studio>Image', а кнопка-ссылка названа 'Go to Vertex AI Studio'; в шаге Drive — согласие для 'Vertex AI Studio'.",
+  "Заметка к URL приводит пример ID 'gemini-3.5-flash', тогда как эндпоинт примера — gemini-3.1-flash-image."
+ ],
+ "не_сказано": [
+  "Нет советов, как формулировать промпт для кадра/миниатюры из видео (какой момент взять, стиль и т.п.).",
+  "Не указан размер/разрешение и aspect ratio выходной картинки, нет imageConfig.",
+  "Не указан лимит длительности видео и лимит токенов.",
+  "Не сказано, сохраняет ли результат лица/кадры из видео или только обобщает содержание.",
+  "Нет лимита размера для входных картинок (15 MB назван только для аудио/видео/документов)."
+ ],
+ "сомнения": [
+  "YouTube-URL передаётся с mime_type \"video/mp4\" — так в примере, объяснения нет.",
+  "Метаданные партии говорят \"15MB, до 10 картинок+1 видео+1 аудио, 1 YouTube URL\" — подтверждено текстом; эти лимиты относятся к REST-пути через HTTP URL."
+ ]
+}

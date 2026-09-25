@@ -1,0 +1,1248 @@
+{
+ "id": 115,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/provisioned-throughput/supported-models",
+ "заголовок": "Supported models  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал и html); даты публикации нет",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0, ссылки 'About Google', 'Google Cloud terms'; разделение 'Google models' / 'Partner models' от лица Google Cloud. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница Provisioned Throughput (PT) в документации Agent Platform для закупщиков ёмкости/инженеров: какие модели поддерживают PT, throughput на GSU, минимальный инкремент, burndown rates (сколько 'токенов PT' списывает каждый тип токена). Для генерации картинок значимы строки 4 image-моделей (gemini-3.1-flash-lite-image = Nano Banana 2 Lite, 4030 ток/с/GSU, output image ×120; gemini-3-pro-image 500, ×60; gemini-3.1-flash-image 2015, ×120; gemini-2.5-flash-image 2,690, ×100), Virtual Try-On (в изображениях), общие условия PT (только версионные ID, не алиасы; квоты Grounding не покрываются; batch не поддерживается; вызовы из других продуктов не гарантируются), таблица возможностей (API key, context caching, сроки заказа, spillover в PayGo, заголовок dedicated/shared) и поддержка global endpoint (все 4 image-модели). Остальное — текстовые/видео/партнёрские/open-модели и SFT. Термины: GSU, burndown rate, spillover, dedicated/shared.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image, Nano Banana 2 Lite)",
+  "gemini-3-pro-image (Gemini 3 Pro Image)",
+  "gemini-3.1-flash-image (Gemini 3.1 Flash Image)",
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image)",
+  "virtual-try-on-001 (Virtual Try-On)",
+  "прочие текстовые Gemini, Veo, Claude, open models — не про картинки"
+ ],
+ "структура": [
+  "Supported models — вступление",
+  "Google models (условия PT + таблица throughput/burndown)",
+  "Partner models",
+  "Open models",
+  "Available capabilities for Google and open models",
+  "Global endpoint model support (Google models / Open models)",
+  "Supervised fine-tuned model support",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню, языки, вкладки, левое меню Models, повтор верхнего меню), строки 1-1035; побайтно совпадают с меню id99 (сверено diff); в меню пункт 'Provisioned Throughput for Gemini 3 (Nano Banana) models' — навигация"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML Gemini",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Supported models', Stay organized), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "The following tables show the models",
+   "итог": "ничего: вводная фраза о содержании таблиц (учтено в картине)"
+  },
+  {
+   "n": 4,
+   "начало": "Provisioned Throughput only supports models that",
+   "итог": "E-115-1"
+  },
+  {
+   "n": 5,
+   "начало": "While Provisioned Throughput assures capacity for",
+   "итог": "E-115-2"
+  },
+  {
+   "n": 6,
+   "начало": "Moreover, Provisioned Throughput doesn't support models",
+   "итог": "E-115-3"
+  },
+  {
+   "n": 7,
+   "начало": "Provisioned Throughput doesn't support batch prediction",
+   "итог": "E-115-4"
+  },
+  {
+   "n": 8,
+   "начало": "The following table shows the throughput,",
+   "итог": "E-115-5"
+  },
+  {
+   "n": 9,
+   "начало": "To find out how many tokens",
+   "итог": "E-115-6"
+  },
+  {
+   "n": 10,
+   "начало": "ModelPer-second throughput per GSUUnitsMinimum GSU purchase incrementBurndown rates",
+   "итог": "ничего: шапка таблицы (Model / Per-second throughput per GSU / Units / Minimum GSU purchase increment / Burndown rates)"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini 3.8 Flash Cyber Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.8 Flash Cyber)"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 3.8 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.8 Flash)"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini Omni 1.1 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini Omni 1.1 Flash)"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 3.7 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.7 Flash)"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini 3.6 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.6 Flash)"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini 3.5 Flash-Lite Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.5 Flash-Lite)"
+  },
+  {
+   "n": 17,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) Latest supported version",
+   "итог": "E-115-7, E-115-8"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini 3 Pro Image Latest supported version",
+   "итог": "E-115-9, E-115-10"
+  },
+  {
+   "n": 19,
+   "начало": "Gemini 3.1 Flash Image Latest supported version",
+   "итог": "E-115-11, E-115-12"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini 3.5 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.5 Flash)"
+  },
+  {
+   "n": 21,
+   "начало": "Gemini 3.1 Flash-Lite Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.1 Flash-Lite)"
+  },
+  {
+   "n": 22,
+   "начало": "Gemini 3.1 Pro (preview) Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.1 Pro (preview))"
+  },
+  {
+   "n": 23,
+   "начало": "Gemini 3 Flash (preview) Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3 Flash (preview))"
+  },
+  {
+   "n": 24,
+   "начало": "Gemini 2.5 Pro Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Pro)"
+  },
+  {
+   "n": 25,
+   "начало": "Gemini 2.5 Flash Image Latest supported version",
+   "итог": "E-115-13, E-115-14"
+  },
+  {
+   "n": 26,
+   "начало": "Gemini 2.5 Flash Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Flash)"
+  },
+  {
+   "n": 27,
+   "начало": "Gemini 2.5 Flash-Lite Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Flash-Lite)"
+  },
+  {
+   "n": 28,
+   "начало": "Gemini 2.5 Flash with Gemini Live API native audio Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Flash with Gemini Live API native audio)"
+  },
+  {
+   "n": 29,
+   "начало": "Virtual Try-On Latest supported version",
+   "итог": "E-115-15"
+  },
+  {
+   "n": 30,
+   "начало": "Veo 3.1 Lite Generate Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: видео-модель Veo 3.1 Lite Generate)"
+  },
+  {
+   "n": 31,
+   "начало": "Veo 3.1 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: видео-модель Veo 3.1)"
+  },
+  {
+   "n": 32,
+   "начало": "Veo 3.1 Fast Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: видео-модель Veo 3.1 Fast)"
+  },
+  {
+   "n": 33,
+   "начало": "Veo 3 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: видео-модель Veo 3)"
+  },
+  {
+   "n": 34,
+   "начало": "Veo 3 Fast Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: видео-модель Veo 3 Fast)"
+  },
+  {
+   "n": 35,
+   "начало": "For information about a model's capabilities",
+   "итог": "ничего: ссылка на документацию моделей"
+  },
+  {
+   "n": 36,
+   "начало": "Request access: The model gemini-live-2.5-flash",
+   "итог": "ничего: не про генерацию картинок (доступ к gemini-live-2.5-flash)"
+  },
+  {
+   "n": 37,
+   "начало": "You can upgrade to new models",
+   "итог": "ничего: общая отсылка к странице Google models (доступность и даты снятия моделей)"
+  },
+  {
+   "n": 38,
+   "начало": "For more information about supported locations,",
+   "итог": "ничего: ссылка на Available locations"
+  },
+  {
+   "n": 39,
+   "начало": "Partner models The following table shows",
+   "итог": "ничего: не про генерацию картинок (вводная к таблице партнёрских моделей Claude)"
+  },
+  {
+   "n": 40,
+   "начало": "ModelThroughput per GSU (tokens/sec)Minimum GSU purchase… (partner)",
+   "итог": "ничего: шапка таблицы партнёрских моделей"
+  },
+  {
+   "n": 41,
+   "начало": "Anthropic's Claude Fable 5.1 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Fable 5.1)"
+  },
+  {
+   "n": 42,
+   "начало": "Anthropic's Claude Opus 5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 5)"
+  },
+  {
+   "n": 43,
+   "начало": "Anthropic's Claude Sonnet 5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Sonnet 5)"
+  },
+  {
+   "n": 44,
+   "начало": "Anthropic's Claude Fable 5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Fable 5)"
+  },
+  {
+   "n": 45,
+   "начало": "Anthropic's Claude Opus 4.8 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4.8)"
+  },
+  {
+   "n": 46,
+   "начало": "Anthropic's Claude Opus 4.7 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4.7)"
+  },
+  {
+   "n": 47,
+   "начало": "Anthropic's Claude Sonnet 4.6 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Sonnet 4.6)"
+  },
+  {
+   "n": 48,
+   "начало": "Anthropic's Claude Opus 4.6 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4.6)"
+  },
+  {
+   "n": 49,
+   "начало": "Anthropic's Claude Opus 4.5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4.5)"
+  },
+  {
+   "n": 50,
+   "начало": "Anthropic's Claude Sonnet 4.5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Sonnet 4.5)"
+  },
+  {
+   "n": 51,
+   "начало": "Anthropic's Claude Opus 4.1 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4.1)"
+  },
+  {
+   "n": 52,
+   "начало": "Anthropic's Claude Haiku 4.5 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Haiku 4.5)"
+  },
+  {
+   "n": 53,
+   "начало": "Anthropic's Claude Opus 4 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Opus 4)"
+  },
+  {
+   "n": 54,
+   "начало": "Anthropic's Claude Sonnet 4 on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude Sonnet 4)"
+  },
+  {
+   "n": 55,
+   "начало": "Anthropic's Claude 3.7 Sonnet (deprecated) on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3.7 Sonnet (deprecated))"
+  },
+  {
+   "n": 56,
+   "начало": "Anthropic's Claude 3.5 Sonnet v2 (deprecated) on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3.5 Sonnet v2 (deprecated))"
+  },
+  {
+   "n": 57,
+   "начало": "Anthropic's Claude 3.5 Haiku (deprecated) on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3.5 Haiku (deprecated))"
+  },
+  {
+   "n": 58,
+   "начало": "Anthropic's Claude 3 Opus on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3 Opus)"
+  },
+  {
+   "n": 59,
+   "начало": "Anthropic's Claude 3 Haiku (deprecated) on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3 Haiku (deprecated))"
+  },
+  {
+   "n": 60,
+   "начало": "Anthropic's Claude 3.5 Sonnet (deprecated) on Google Cloud",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Claude 3.5 Sonnet (deprecated))"
+  },
+  {
+   "n": 61,
+   "начало": "For information about supported locations, see Anthropic",
+   "итог": "ничего: не про генерацию картинок (регионы Claude)"
+  },
+  {
+   "n": 62,
+   "начало": "To order Provisioned Throughput for Anthropic",
+   "итог": "ничего: не про генерацию картинок (заказ PT для Claude через аккаунт-менеджера)"
+  },
+  {
+   "n": 63,
+   "начало": "Open models Preview This feature is",
+   "итог": "ничего: не про генерацию картинок (плашка Pre-GA для open models)"
+  },
+  {
+   "n": 64,
+   "начало": "The following table shows the throughput, … open models",
+   "итог": "ничего: не про генерацию картинок (вводная и шапка таблицы open models)"
+  },
+  {
+   "n": 65,
+   "начало": "DeepSeek-OCR Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: DeepSeek-OCR)"
+  },
+  {
+   "n": 66,
+   "начало": "DeepSeek-V3.2 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: DeepSeek-V3.2)"
+  },
+  {
+   "n": 67,
+   "начало": "Gemma 4 26B A4B IT Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemma 4 26B A4B IT)"
+  },
+  {
+   "n": 68,
+   "начало": "Kimi K2 Thinking Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Kimi K2 Thinking)"
+  },
+  {
+   "n": 69,
+   "начало": "Llama 3.3 70B Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Llama 3.3 70B)"
+  },
+  {
+   "n": 70,
+   "начало": "Llama 4 Maverick 17B-128E Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Llama 4 Maverick 17B-128E)"
+  },
+  {
+   "n": 71,
+   "начало": "Llama 4 Scout 17B-16E Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Llama 4 Scout 17B-16E)"
+  },
+  {
+   "n": 72,
+   "начало": "MiniMax M2 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: MiniMax M2)"
+  },
+  {
+   "n": 73,
+   "начало": "OpenAI gpt-oss 120B Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: OpenAI gpt-oss 120B)"
+  },
+  {
+   "n": 74,
+   "начало": "OpenAI gpt-oss 20B Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: OpenAI gpt-oss 20B)"
+  },
+  {
+   "n": 75,
+   "начало": "Qwen3 235B Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3 235B)"
+  },
+  {
+   "n": 76,
+   "начало": "Qwen3 Coder Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3 Coder)"
+  },
+  {
+   "n": 77,
+   "начало": "Qwen3-Next-80B Instruct Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3-Next-80B Instruct)"
+  },
+  {
+   "n": 78,
+   "начало": "Qwen3-Next-80B Thinking Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3-Next-80B Thinking)"
+  },
+  {
+   "n": 79,
+   "начало": "GLM 4.7 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: GLM 4.7)"
+  },
+  {
+   "n": 80,
+   "начало": "GLM 5 Latest supported version",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: GLM 5)"
+  },
+  {
+   "n": 81,
+   "начало": "Available capabilities for Google and open models / CapabilityGoogle modelsOpen models (preview)",
+   "итог": "ничего: заголовок и шапка таблицы возможностей"
+  },
+  {
+   "n": 82,
+   "начало": "Order through Google Cloud consoleYesYes",
+   "итог": "ничего: организационный факт заказа, не влияет на вызов/генерацию"
+  },
+  {
+   "n": 83,
+   "начало": "Supports global endpointsSee Global endpoint model support.",
+   "итог": "ничего: отсылка к разделу Global endpoint (единицы там)"
+  },
+  {
+   "n": 84,
+   "начало": "Supports supervised fine-tuned modelsYesNo",
+   "итог": "ничего: не про генерацию картинок (тюнинг)"
+  },
+  {
+   "n": 85,
+   "начало": "Supports API key usageYesNo",
+   "итог": "E-115-16"
+  },
+  {
+   "n": 86,
+   "начало": "Integrated with implicit context cachingYesNot applicable / explicit",
+   "итог": "E-115-17"
+  },
+  {
+   "n": 87,
+   "начало": "ML processingAvailable in specific regions.",
+   "итог": "ничего: отсылка к Single Zone Provisioned Throughput, без содержания для генерации"
+  },
+  {
+   "n": 88,
+   "начало": "Available order terms1 week, 1 month,",
+   "итог": "E-115-18"
+  },
+  {
+   "n": 89,
+   "начало": "Change order from the consoleYesNo",
+   "итог": "ничего: организационный факт управления заказом"
+  },
+  {
+   "n": 90,
+   "начало": "Order statuses: pending review, approved, active,",
+   "итог": "ничего: организационный факт (статусы заказа)"
+  },
+  {
+   "n": 91,
+   "начало": "Overages spillover to pay-as-you-go by defaultYesYes",
+   "итог": "E-115-19"
+  },
+  {
+   "n": 92,
+   "начало": "API header control: use \"dedicated\"",
+   "итог": "E-115-20"
+  },
+  {
+   "n": 93,
+   "начало": "Monitoring: metrics, dashboards, and alertingYesYes",
+   "итог": "ничего: организационный факт (мониторинг)"
+  },
+  {
+   "n": 94,
+   "начало": "Global endpoint model support Provisioned Throughput supports",
+   "итог": "E-115-21"
+  },
+  {
+   "n": 95,
+   "начало": "To assign Provisioned Throughput to the",
+   "итог": "E-115-22"
+  },
+  {
+   "n": 96,
+   "начало": "Google models with global endpoint support / The following table lists / ModelLatest supported model version",
+   "итог": "ничего: заголовок подраздела, вводная и шапка таблицы"
+  },
+  {
+   "n": 97,
+   "начало": "Gemini 3.8 Flash Cyber (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.8 Flash Cyber, global endpoint)"
+  },
+  {
+   "n": 98,
+   "начало": "Gemini 3.8 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.8 Flash, global endpoint)"
+  },
+  {
+   "n": 99,
+   "начало": "Gemini Omni 1.1 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini Omni 1.1 Flash, global endpoint)"
+  },
+  {
+   "n": 100,
+   "начало": "Gemini 3.7 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.7 Flash, global endpoint)"
+  },
+  {
+   "n": 101,
+   "начало": "Gemini 3.6 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.6 Flash, global endpoint)"
+  },
+  {
+   "n": 102,
+   "начало": "Gemini 3.5 Flash-Lite (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.5 Flash-Lite, global endpoint)"
+  },
+  {
+   "n": 103,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)gemini-3.1-flash-lite-image",
+   "итог": "E-115-23"
+  },
+  {
+   "n": 104,
+   "начало": "Gemini 3 Pro Imagegemini-3-pro-image",
+   "итог": "E-115-23 (та же единица)"
+  },
+  {
+   "n": 105,
+   "начало": "Gemini 3.1 Flash Imagegemini-3.1-flash-image",
+   "итог": "E-115-23 (та же единица)"
+  },
+  {
+   "n": 106,
+   "начало": "Gemini 3.5 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.5 Flash, global endpoint)"
+  },
+  {
+   "n": 107,
+   "начало": "Gemini 3.1 Flash-Lite (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.1 Flash-Lite, global endpoint)"
+  },
+  {
+   "n": 108,
+   "начало": "Gemini 3.1 Pro preview (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3.1 Pro preview, global endpoint)"
+  },
+  {
+   "n": 109,
+   "начало": "Gemini 3 Flash preview (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 3 Flash preview, global endpoint)"
+  },
+  {
+   "n": 110,
+   "начало": "Gemini 2.5 Pro (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Pro, global endpoint)"
+  },
+  {
+   "n": 111,
+   "начало": "Gemini 2.5 Flash Imagegemini-2.5-flash-image",
+   "итог": "E-115-24"
+  },
+  {
+   "n": 112,
+   "начало": "Gemini 2.5 Flash (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Flash, global endpoint)"
+  },
+  {
+   "n": 113,
+   "начало": "Gemini 2.5 Flash-Lite (global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Gemini 2.5 Flash-Lite, global endpoint)"
+  },
+  {
+   "n": 114,
+   "начало": "Open models with global endpoint support Preview",
+   "итог": "ничего: не про генерацию картинок (плашка Pre-GA, вводная и шапка таблицы open models)"
+  },
+  {
+   "n": 115,
+   "начало": "DeepSeek-OCR (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: DeepSeek-OCR, global endpoint)"
+  },
+  {
+   "n": 116,
+   "начало": "DeepSeek-V3.2 (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: DeepSeek-V3.2, global endpoint)"
+  },
+  {
+   "n": 117,
+   "начало": "Kimi K2 Thinking (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Kimi K2 Thinking, global endpoint)"
+  },
+  {
+   "n": 118,
+   "начало": "MiniMax M2 (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: MiniMax M2, global endpoint)"
+  },
+  {
+   "n": 119,
+   "начало": "OpenAI gpt-oss 120B (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: OpenAI gpt-oss 120B, global endpoint)"
+  },
+  {
+   "n": 120,
+   "начало": "Qwen3-Next-80B Instruct (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3-Next-80B Instruct, global endpoint)"
+  },
+  {
+   "n": 121,
+   "начало": "Qwen3-Next-80B Thinking (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: Qwen3-Next-80B Thinking, global endpoint)"
+  },
+  {
+   "n": 122,
+   "начало": "GLM 4.7 (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: GLM 4.7, global endpoint)"
+  },
+  {
+   "n": 123,
+   "начало": "GLM 5 (open, global endpoint)",
+   "итог": "ничего: не про генерацию картинок (строка таблицы: GLM 5, global endpoint)"
+  },
+  {
+   "n": 124,
+   "начало": "Supervised fine-tuned model support Preview This",
+   "итог": "ничего: не про генерацию картинок (плашка Pre-GA раздела о тюнинге)"
+  },
+  {
+   "n": 125,
+   "начало": "The following is supported for Google models that support supervised fine-tuning:",
+   "итог": "ничего: не про генерацию картинок (PT для SFT-версий; пример gemini-3.1-flash-lite)"
+  },
+  {
+   "n": 126,
+   "начало": "Supervised fine-tuned model endpoints and their",
+   "итог": "ничего: не про генерацию картинок (общая квота base + SFT)"
+  },
+  {
+   "n": 127,
+   "начало": "Starting with Gemini 3, burndown rates",
+   "итог": "ничего: не про генерацию картинок (надбавка burndown для SFT-инференса Gemini 3+)"
+  },
+  {
+   "n": 128,
+   "начало": "Prior to Gemini 3, supervised fine-tuned",
+   "итог": "ничего: не про генерацию картинок (SFT до Gemini 3)"
+  },
+  {
+   "n": 129,
+   "начало": "What's next Calculate Provisioned Throughput requirements.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 130,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies, 'Last updated 2026-09-22 UTC' — использовано в дате и официальности)"
+  },
+  {
+   "n": 131,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-115-1",
+   "вид": "правило",
+   "утверждение_en": "Provisioned Throughput only supports models called directly from your project by specific model version ID (e.g. gemini-2.0-flash-001), not by a model alias.",
+   "цитата": "To use\nProvisioned Throughput to make API calls to a model, you must use the\nspecific model version ID (for example, gemini-2.0-flash-001) and not a\nmodel version alias.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано (все модели таблицы; пример — gemini-2.0-flash-001)",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "'must' — жёсткое условие. Для image-моделей в таблице указаны версии gemini-3.1-flash-lite-image / gemini-3-pro-image / gemini-3.1-flash-image / gemini-2.5-flash-image."
+  },
+  {
+   "код": "E-115-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Provisioned Throughput assures capacity for model requests but doesn't include or bypass quotas for other tools such as Grounding; you might need to request additional quota for those tools separately.",
+   "цитата": "While Provisioned Throughput assures capacity for your model\nrequests, it doesn't include or bypass quotas for other tools that you\nmight use, such as Grounding. Depending\non the size of your workload, you might need to request additional quota for\nthese tools separately.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-3",
+   "вид": "ограничение",
+   "утверждение_en": "Provisioned Throughput doesn't support models called by other Agent Platform products (e.g. Vertex AI Agents, Agent Search); such calls are not guaranteed by the PT order.",
+   "цитата": "Moreover, Provisioned Throughput doesn't support\nmodels that are called by other Gemini Enterprise Agent Platform products, such as\nVertex AI Agents and Agent Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Пример на странице — Gemini 3.5 Flash через Agent Search."
+  },
+  {
+   "код": "E-115-4",
+   "вид": "ограничение",
+   "утверждение_en": "Provisioned Throughput doesn't support batch prediction calls.",
+   "цитата": "Provisioned Throughput doesn't support\nbatch prediction calls.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-5",
+   "вид": "объяснение",
+   "утверждение_en": "Per-second throughput is defined as prompt input plus generated output across all requests per second.",
+   "цитата": "Your\nper-second throughput is defined as your prompt input and generated output\nacross all requests per second.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Выход изображения входит в throughput через burndown (см. строки image-моделей)."
+  },
+  {
+   "код": "E-115-6",
+   "вид": "инструкция",
+   "утверждение_en": "To find out how many tokens a workload requires, use the SDK tokenizer or the countTokens API.",
+   "цитата": "To find out how many tokens your workload requires, refer to the SDK\ntokenizer or the\ncountTokens API.",
+   "источник_цитаты": "txt",
+   "раздел": "Google models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-7",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput for Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) (latest supported version gemini-3.1-flash-lite-image): 4030 tokens per second per GSU, minimum GSU purchase increment 1.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nLatest supported version: gemini-3.1-flash-lite-image\n4030Tokens1",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Ячейки таблицы в .txt слиты: число-единицы-инкремент ('4030Tokens1'). Единственная image-модель, у которой на странице дано прозвище (Nano Banana 2 Lite)."
+  },
+  {
+   "код": "E-115-8",
+   "вид": "факт",
+   "утверждение_en": "Burndown rates for gemini-3.1-flash-lite-image: 1 input text/image/video token = 1 token; 1 output response text token = 6 tokens; 1 output reasoning text token = 6 tokens; 1 output image token = 120 tokens.",
+   "цитата": "1 input text token = 1 token\n1 input image token = 1 token\n1 input video token = 1 token\n1 output response text token = 6 tokens\n1 output reasoning text token = 6 tokens\n1 output image token = 120 tokens\nGemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Цитата захватывает заголовок следующей строки ('Gemini 3 Pro Image') только для однозначной привязки к этой строке таблицы (тот же набор строк встречается у 3.1 Flash Image). Нет строк для audio input и caching."
+  },
+  {
+   "код": "E-115-9",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput for Gemini 3 Pro Image (latest supported version gemini-3-pro-image): 500 tokens per second per GSU, minimum GSU purchase increment 1.",
+   "цитата": "Gemini 3 Pro Image\nLatest supported version: gemini-3-pro-image\n500Tokens1",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Ячейки таблицы в .txt слиты: число-единицы-инкремент ('500Tokens1')."
+  },
+  {
+   "код": "E-115-10",
+   "вид": "факт",
+   "утверждение_en": "Burndown rates for gemini-3-pro-image: 1 input text/image/video token = 1 token; 1 output response text token = 6 tokens; 1 output reasoning text token = 6 tokens; 1 output image token = 60 tokens.",
+   "цитата": "1 output reasoning text token = 6 tokens\n1 output image token = 60 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3 Pro Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Входные строки (text/image/video = 1) и response text = 6 — как у соседних image-моделей; цитата взята по уникальной части строки (60)."
+  },
+  {
+   "код": "E-115-11",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput for Gemini 3.1 Flash Image (latest supported version gemini-3.1-flash-image): 2015 tokens per second per GSU, minimum GSU purchase increment 1.",
+   "цитата": "Gemini 3.1 Flash Image\nLatest supported version: gemini-3.1-flash-image\n2015Tokens1",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3.1 Flash Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Ячейки таблицы в .txt слиты: число-единицы-инкремент ('2015Tokens1'). Прозвище Nano Banana 2 на этой странице не названо."
+  },
+  {
+   "код": "E-115-12",
+   "вид": "факт",
+   "утверждение_en": "Burndown rates for gemini-3.1-flash-image: 1 input text/image/video token = 1 token; 1 output response text token = 6 tokens; 1 output reasoning text token = 6 tokens; 1 output image token = 120 tokens.",
+   "цитата": "1 input text token = 1 token\n1 input image token = 1 token\n1 input video token = 1 token\n1 output response text token = 6 tokens\n1 output reasoning text token = 6 tokens\n1 output image token = 120 tokens\nGemini 3.5 Flash",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 3.1 Flash Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Цитата захватывает заголовок следующей строки ('Gemini 3.5 Flash') для однозначной привязки. Совпадает с burndown NB2 Lite, но throughput вдвое ниже (2015 vs 4030)."
+  },
+  {
+   "код": "E-115-13",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput for Gemini 2.5 Flash Image (latest supported version gemini-2.5-flash-image): 2,690 tokens per second per GSU, minimum GSU purchase increment 1.",
+   "цитата": "Gemini 2.5 Flash Image\nLatest supported version: gemini-2.5-flash-image\n2,690Tokens1",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Ячейки таблицы в .txt слиты: число-единицы-инкремент ('2,690Tokens1')."
+  },
+  {
+   "код": "E-115-14",
+   "вид": "факт",
+   "утверждение_en": "Burndown rates for gemini-2.5-flash-image: 1 input text token = 1 token; 1 input image token = 1 token; 1 output text token = 9 tokens; 1 output image token = 100 tokens.",
+   "цитата": "1 input text token = 1 token\n1 input image token = 1 token\n1 output text token = 9 tokens\n1 output image token = 100 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "В отличие от Gemini 3 image-моделей: нет строки input video, текст выхода одной строкой (9, без деления response/reasoning)."
+  },
+  {
+   "код": "E-115-15",
+   "вид": "лимит",
+   "утверждение_en": "Provisioned Throughput for Virtual Try-On (virtual-try-on-001) is measured in images: 0.02 images per second per GSU, minimum increment 1; burndown '1 images per second = 0.02 tokens'.",
+   "цитата": "Virtual Try-On\nLatest supported version: virtual-try-on-001\n0.02Images1\n1 images per second = 0.02 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Google models — Virtual Try-On",
+   "модели": [
+    "virtual-try-on-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Image-генерирующая модель не из семейства Nano Banana; единица — Images, а не токены. Формулировка burndown на странице ('1 images per second = 0.02 tokens') выглядит несогласованной с единицей Images — зафиксировано как есть."
+  },
+  {
+   "код": "E-115-16",
+   "вид": "факт",
+   "утверждение_en": "For Google models, Provisioned Throughput supports API key usage (not supported for open models).",
+   "цитата": "Supports API key usageYesNo",
+   "источник_цитаты": "txt",
+   "раздел": "Available capabilities for Google and open models",
+   "модели": "не указано (Google models — обобщённо)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-17",
+   "вид": "факт",
+   "утверждение_en": "For Google models, Provisioned Throughput is integrated with implicit and explicit context caching.",
+   "цитата": "Integrated with implicit context cachingYesNot applicable\nIntegrated with explicit context cachingYesNot applicable",
+   "источник_цитаты": "txt",
+   "раздел": "Available capabilities for Google and open models",
+   "модели": "не указано (Google models — обобщённо)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "цены"
+   ],
+   "заметка": "В строках image-моделей в таблице burndown нет строк для caching tokens — см. длинную дистанцию."
+  },
+  {
+   "код": "E-115-18",
+   "вид": "факт",
+   "утверждение_en": "Available Provisioned Throughput order terms are 1 week, 1 month, 3 month, and 1 year.",
+   "цитата": "Available order terms1 week, 1 month, 3 month, and 1 year",
+   "источник_цитаты": "txt",
+   "раздел": "Available capabilities for Google and open models",
+   "модели": "не указано (Google models и open models)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-19",
+   "вид": "факт",
+   "утверждение_en": "Overages beyond Provisioned Throughput spill over to pay-as-you-go by default.",
+   "цитата": "Overages spillover to pay-as-you-go by defaultYesYes",
+   "источник_цитаты": "txt",
+   "раздел": "Available capabilities for Google and open models",
+   "модели": "не указано (Google models и open models)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-20",
+   "вид": "приём",
+   "утверждение_en": "An API header controls traffic: use \"dedicated\" to only use provisioned throughput or \"shared\" to only use pay-as-you-go.",
+   "цитата": "API header control: use \"dedicated\" to only use provisioned throughput or \"shared\" to only use pay-as-you-go",
+   "источник_цитаты": "txt",
+   "раздел": "Available capabilities for Google and open models",
+   "модели": "не указано (Google models и open models)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Имя заголовка на странице не приведено."
+  },
+  {
+   "код": "E-115-21",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput supports the global endpoint for Google and open models; traffic exceeding the PT quota uses the global endpoint by default.",
+   "цитата": "Traffic that exceeds the Provisioned Throughput quota uses the\nglobal endpoint, by default.",
+   "источник_цитаты": "txt",
+   "раздел": "Global endpoint model support",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-22",
+   "вид": "инструкция",
+   "утверждение_en": "To assign Provisioned Throughput to a model's global endpoint, select global as the region when placing the order.",
+   "цитата": "To assign Provisioned Throughput to the global endpoint of a model,\nselect global as the region when you place a Provisioned Throughput order.",
+   "источник_цитаты": "txt",
+   "раздел": "Global endpoint model support",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-115-23",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput supports the global endpoint for Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite, gemini-3.1-flash-lite-image), Gemini 3 Pro Image (gemini-3-pro-image) and Gemini 3.1 Flash Image (gemini-3.1-flash-image).",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)gemini-3.1-flash-lite-image\nGemini 3 Pro Imagegemini-3-pro-image\nGemini 3.1 Flash Imagegemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Global endpoint model support — Google models with global endpoint support",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Три смежные строки таблицы."
+  },
+  {
+   "код": "E-115-24",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput supports the global endpoint for Gemini 2.5 Flash Image (gemini-2.5-flash-image).",
+   "цитата": "Gemini 2.5 Flash Imagegemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Global endpoint model support — Google models with global endpoint support",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-115-25",
+   "вид": "объяснение",
+   "утверждение_en": "For every image model on the page, one output image token burns down far more PT capacity than any other token type: 120 tokens (gemini-3.1-flash-lite-image, gemini-3.1-flash-image), 100 (gemini-2.5-flash-image), 60 (gemini-3-pro-image), versus 1 per input token and 6–9 per output text token.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Google models",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-115-8, E-115-10, E-115-12, E-115-14",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сводка четырёх строк."
+  },
+  {
+   "код": "E-115-26",
+   "вид": "объяснение",
+   "утверждение_en": "Arithmetic from the table: if a GSU were spent only on output image tokens, it would cover about 8.3 output image tokens/s for gemini-3-pro-image (500/60), about 16.8 for gemini-3.1-flash-image (2015/120), about 33.6 for gemini-3.1-flash-lite-image (4030/120), and 26.9 for gemini-2.5-flash-image (2690/100).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Google models",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-115-7, E-115-8, E-115-9, E-115-10, E-115-11, E-115-12, E-115-13, E-115-14",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Мой расчёт (throughput / burndown), на странице не приведён; сколько токенов в одном изображении — на странице не сказано, поэтому в изображения/сек не переводится."
+  },
+  {
+   "код": "E-115-27",
+   "вид": "предупреждение",
+   "утверждение_en": "Image model rows list no caching-token burndown and no audio input, unlike most text Gemini rows, even though the capabilities table says PT for Google models is integrated with implicit and explicit context caching; the page does not say how cached input is counted for image models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Google models / Available capabilities",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-115-8, E-115-10, E-115-12, E-115-14, E-115-17",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Наблюдение по отсутствию строк."
+  },
+  {
+   "код": "E-115-28",
+   "вид": "правило",
+   "утверждение_en": "All four image models appear in both the PT throughput table and the global-endpoint table under specific version IDs, and PT requires calling them by that version ID rather than an alias.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Google models / Global endpoint model support",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-115-1, E-115-7, E-115-9, E-115-11, E-115-13, E-115-23, E-115-24",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Таблица возможностей: 'Overages spillover to pay-as-you-go by default'; раздел Global endpoint: 'Traffic that exceeds the Provisioned Throughput quota uses the global endpoint, by default' — два разных описания поведения при превышении, страница не объясняет, как они сочетаются.",
+  "Virtual Try-On: единица 'Images', но burndown записан как '1 images per second = 0.02 tokens'.",
+  "Формат чисел разный (2,690 у 2.5 Flash Image и 2690 у 2.5 Flash) — вероятно, без смысловой разницы."
+ ],
+ "не_сказано": [
+  "Не сказано, сколько output image tokens приходится на одно изображение и как это зависит от разрешения (1K/2K/4K) — пересчитать в изображения/сек по этой странице нельзя.",
+  "Для image-моделей не указаны burndown для кэшированного ввода и для audio input.",
+  "Прозвище Nano Banana дано только для Flash-Lite Image; для 3 Pro Image и 3.1 Flash Image — нет.",
+  "Имя HTTP-заголовка для режима dedicated/shared не приведено."
+ ],
+ "сомнения": [
+  "Страница в основном о закупке ёмкости, а не о промптинге; единицы — лимиты/цены платформы.",
+  "Строки 1-1035 (меню) побайтно совпадают с меню id99 — прочитаны при разборе id99, идентичность подтверждена diff.",
+  "Расчёт в E-115-26 — мой арифметический вывод, не текст Google."
+ ]
+}

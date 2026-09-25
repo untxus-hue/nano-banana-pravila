@@ -1,0 +1,432 @@
+{
+ "id": 329,
+ "url": "https://blog.google/innovation-and-ai/products/google-synthid-ai-content-detector",
+ "заголовок": "SynthID Detector: Identify content made with Google’s AI tools",
+ "дата_в_тексте": "May 20, 2025 (html: article:published_time 2025-05-20, datePublished 2025-05-20T17:45:00+00:00, dateModified 2026-01-16T17:31:57)",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "автор из Google: «Pushmeet Kohli, VP, Science and Strategic Initiatives, Google DeepMind»; текст от лица Google («Today we’re announcing»); JSON-LD publisher = Organization «Google». Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс блога Google (I/O 2025, 20.05.2025) от вице-президента Google DeepMind: портал SynthID Detector для проверки, есть ли в контенте (изображения, аудио, видео, текст), сделанном инструментами Google AI, водяной знак SynthID. Структура: вводная о подлинности; анонс портала; напоминание, что такое SynthID (невидимый, сохраняет качество, устойчив к трансформациям, расширен с картинок на текст/аудио/видео, модели Gemini/Imagen/Lyria/Veo, 10+ млрд единиц); как работает портал (загрузка → скан → подсветка областей; для изображений — области вероятного знака); раскатка ранним тестерам и лист ожидания; экосистема (открытый текстовый SynthID, NVIDIA Cosmos, GetReal Security); сноска: продукт в разработке, детекция видео и текста — позже. Модели Nano Banana не упоминаются (пост раньше их выхода).",
+ "модели_на_странице": [
+  "SynthID (технология)",
+  "Gemini, Imagen, Lyria, Veo (семейства без версий)",
+  "NVIDIA Cosmos preview NIM (видео, партнёр)"
+ ],
+ "структура": [
+  "Обвязка blog.google",
+  "Подзаголовок, автор, аудиоплеер",
+  "Вступление: анонс, SynthID, охват, 10 млрд",
+  "How SynthID Detector works (+ 3 шага, видео-иллюстрация)",
+  "Раскатка и лист ожидания",
+  "Expanding the SynthID ecosystem",
+  "Благодарности, коллекция I/O 2025, подписка",
+  "Сноска 1",
+  "Related stories / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "SynthID Detector: Identify content made with Google’s AI tools",
+   "итог": "ничего: заголовок вкладки (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / SynthID Detector — a new portal … / Innovation & AI … Feed",
+   "итог": "ничего: обвязка (шапка и мега-меню, строки 2-157; сверено diff с меню стр_327 — отличие только повтор заголовка в строке 3)"
+  },
+  {
+   "n": 3,
+   "начало": "SynthID Detector — a new portal … Share … Preferences … Breadcrumb … May 20, 2025",
+   "итог": "ничего: обвязка (шаринг, регионы, хлебные крошки, дата; строки 158-217)"
+  },
+  {
+   "n": 4,
+   "начало": "The SynthID Detector can help determine if an image created using Google AI",
+   "итог": "E-329-1"
+  },
+  {
+   "n": 5,
+   "начало": "Pushmeet Kohli / VP, Science and Strategic Initiatives, Google DeepMind",
+   "итог": "ничего: автор (учтён в официальности)"
+  },
+  {
+   "n": 6,
+   "начало": "Share … Your browser does not support the audio element … Speed0.75X1X1.5X2X",
+   "итог": "ничего: обвязка (шаринг, аудиоплеер; строки 221-233)"
+  },
+  {
+   "n": 7,
+   "начало": "html alt: a hero image including images like a dog swimming with goggles",
+   "итог": "ничего: декоративная обложка"
+  },
+  {
+   "n": 8,
+   "начало": "Advances in generative AI are making it possible for people to create content",
+   "итог": "ничего: вводная мотивация без фактов"
+  },
+  {
+   "n": 9,
+   "начало": "Today we’re announcing SynthID Detector, a verification portal",
+   "итог": "E-329-2"
+  },
+  {
+   "n": 10,
+   "начало": "When we launched SynthID — a state-of-the-art tool",
+   "итог": "E-329-3"
+  },
+  {
+   "n": 11,
+   "начало": "SynthID not only preserves the content’s quality",
+   "итог": "E-329-4, E-329-5, E-329-6"
+  },
+  {
+   "n": 12,
+   "начало": "How SynthID Detector works / When you upload an image, audio track, video or piece of text",
+   "итог": "E-329-7"
+  },
+  {
+   "n": 13,
+   "начало": "For audio, the portal pinpoints specific segments",
+   "итог": "E-329-7"
+  },
+  {
+   "n": 14,
+   "начало": "Here’s how the SynthID Detector works1 : Upload content / Scan for watermarks / View results",
+   "итог": "E-329-8"
+  },
+  {
+   "n": 15,
+   "начало": "html: видео alt «an MP4 video showing the SynthID Detector scanning a generated image of a camel walking on snow»",
+   "итог": "ничего: иллюстрация к E-329-7 (учтена в заметке)"
+  },
+  {
+   "n": 16,
+   "начало": "We are starting to roll this out to early testers today",
+   "итог": "E-329-9"
+  },
+  {
+   "n": 17,
+   "начало": "Expanding the SynthID ecosystem / To help grow a trusted ecosystem we’ve already open sourced SynthID text watermarking",
+   "итог": "ничего: открытый код водяного знака для текста, не изображения"
+  },
+  {
+   "n": 18,
+   "начало": "And earlier this year we took the first step … We partnered with NVIDIA",
+   "итог": "E-329-10"
+  },
+  {
+   "n": 19,
+   "начало": "At the same time, it’s important that other partners will be able to detect … GetReal Security",
+   "итог": "E-329-11"
+  },
+  {
+   "n": 20,
+   "начало": "Content transparency remains a complex challenge.",
+   "итог": "ничего: общая декларация без фактов"
+  },
+  {
+   "n": 21,
+   "начало": "The author would like to thank Miguel de Andrés-Clavera",
+   "итог": "ничего: благодарности"
+  },
+  {
+   "n": 22,
+   "начало": "Collection I/O 2025 … Get the latest news from Google in your inbox … privacy policy",
+   "итог": "ничего: обвязка (коллекция, подписка; строки 253-262)"
+  },
+  {
+   "n": 23,
+   "начало": "Posted in: AI Products / Google DeepMind",
+   "итог": "ничего: теги"
+  },
+  {
+   "n": 24,
+   "начало": "1 / Product in development; final product details may differ.",
+   "итог": "E-329-12"
+  },
+  {
+   "n": 25,
+   "начало": "Related stories … Privacy Terms Help … 台灣 (中文)",
+   "итог": "ничего: обвязка (связанные статьи и подвал, строки 268-332)"
+  },
+  {
+   "n": 26,
+   "начало": "длинная дистанция: результат детектора — по областям, SynthID не только у Google",
+   "итог": "E-329-13"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-329-1",
+   "вид": "факт",
+   "утверждение_en": "SynthID Detector can help determine whether an image created using Google AI contains a SynthID watermark.",
+   "цитата": "The SynthID Detector can help determine if an image created using Google AI contains a SynthID watermark.",
+   "источник_цитаты": "txt",
+   "раздел": "Подзаголовок",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-329-2",
+   "вид": "факт",
+   "утверждение_en": "Google announced SynthID Detector, a verification portal that identifies AI-generated content made with Google AI across modalities in one place and can highlight which parts of the content are more likely to be SynthID-watermarked.",
+   "цитата": "Today we’re announcing SynthID Detector, a verification portal to quickly and efficiently identify AI-generated content made with Google AI. The portal provides detection capabilities across different modalities in one place and provides essential transparency in the rapidly evolving landscape of generative media. It can also highlight which parts of the content are more likely to have been watermarked with SynthID.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-329-3",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID embeds imperceptible watermarks that enable identification of AI-generated content, aiming to help minimise misinformation and misattribution.",
+   "цитата": "When we launched SynthID — a state-of-the-art tool that embeds imperceptible watermarks and enables the identification of AI-generated content — our aim was to provide a suite of novel technical solutions to help minimise misinformation and misattribution.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "В html «When we launched SynthID» ссылается на deepmind.google/discover/blog/identifying-ai-generated-images-with-synthid/."
+  },
+  {
+   "код": "E-329-4",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID preserves content quality and acts as a robust watermark that remains detectable when content is shared or undergoes a range of transformations.",
+   "цитата": "SynthID not only preserves the content’s quality, it acts as a robust watermark that remains detectable even when the content is shared or undergoes a range of transformations.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Какие именно трансформации (кроп, сжатие, скриншот, перекраска) — не перечислено."
+  },
+  {
+   "код": "E-329-5",
+   "вид": "факт",
+   "утверждение_en": "SynthID, originally for AI-generated images only, now also covers AI-generated text, audio and video, including content from Google's Gemini, Imagen, Lyria and Veo models.",
+   "цитата": "While originally focused on AI-generated imagery only, we’ve since expanded SynthID to cover AI-generated text, audio and video content, including content generated by our Gemini, Imagen, Lyria and Veo models across Google.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "Gemini, Imagen, Lyria, Veo (семейства, без версий)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Модели названы семействами без версий; Nano Banana (Gemini image) на дату поста ещё не вышел, но «Gemini» в списке покрывает контент Gemini-моделей."
+  },
+  {
+   "код": "E-329-6",
+   "вид": "факт",
+   "утверждение_en": "Over 10 billion pieces of content had been watermarked with SynthID as of May 2025.",
+   "цитата": "Over 10 billion pieces of content have already been watermarked with SynthID.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-329-7",
+   "вид": "объяснение",
+   "утверждение_en": "When content made with Google's AI tools is uploaded, the portal scans it for a SynthID watermark and highlights the portions most likely watermarked; for images it indicates the areas where a watermark is most likely.",
+   "цитата": "For audio, the portal pinpoints specific segments where a SynthID watermark is detected, and for images, it indicates areas where a watermark is most likely.",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID Detector works",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строка 239: «When you upload an image … the portal will scan the media … highlight specific portions of the content most likely to be watermarked.» Детекция для изображений — по областям, не только да/нет. html: видео alt «SynthID Detector scanning a generated image of a camel walking on snow and determining whether parts of the image were generated using Google AI»."
+  },
+  {
+   "код": "E-329-8",
+   "вид": "инструкция",
+   "утверждение_en": "Using SynthID Detector takes three steps: upload the content, let the portal scan for watermarks, and view results that highlight the parts more likely to be watermarked.",
+   "цитата": "View results: The portal will present the results and if a SynthID watermark is detected, highlight which parts of the content are more likely to have been watermarked.",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID Detector works",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Шаги — строки 243-245 (Upload content / Scan for watermarks / View results). Сноска 1 к заголовку списка — E-329-12."
+  },
+  {
+   "код": "E-329-9",
+   "вид": "ограничение",
+   "утверждение_en": "At announcement, SynthID Detector was rolling out to early testers, with journalists, media professionals and researchers able to join a waitlist before broader availability.",
+   "цитата": "We are starting to roll this out to early testers today, before making it available more broadly. Journalists, media professionals and researchers can join our waitlist to gain access to the SynthID Detector.",
+   "источник_цитаты": "txt",
+   "раздел": "How SynthID Detector works",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Ссылка waitlist в html — Google Forms."
+  },
+  {
+   "код": "E-329-10",
+   "вид": "факт",
+   "утверждение_en": "Through a partnership with NVIDIA, videos generated by the NVIDIA Cosmos preview NIM microservice are SynthID-watermarked, so SynthID appears in some content not generated by Google.",
+   "цитата": "This means that more content across the web has SynthID embedded in it, not just content generated by Google.",
+   "источник_цитаты": "txt",
+   "раздел": "Expanding the SynthID ecosystem",
+   "модели": [
+    "NVIDIA Cosmos (видео, партнёр)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Текст Google о партнёре (NVIDIA). Для интерпретации детекции: SynthID ≠ строго «сделано Google»."
+  },
+  {
+   "код": "E-329-11",
+   "вид": "факт",
+   "утверждение_en": "Google announced a partnership with GetReal Security so other partners can detect SynthID-watermarked content.",
+   "цитата": "That’s why today we’re also announcing our partnership with GetReal Security, the world’s leading content verification platform.",
+   "источник_цитаты": "txt",
+   "раздел": "Expanding the SynthID ecosystem",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Характеристика «world’s leading» — слова Google о партнёре."
+  },
+  {
+   "код": "E-329-12",
+   "вид": "ограничение",
+   "утверждение_en": "SynthID Detector was a product in development whose final details may differ; video and text watermark detection were to roll out in the following weeks.",
+   "цитата": "Product in development; final product details may differ. Video and text watermark detection will be rolled out in the coming weeks.",
+   "источник_цитаты": "txt",
+   "раздел": "Сноска 1",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Следствие: на момент анонса работали детекция изображений и аудио."
+  },
+  {
+   "код": "E-329-13",
+   "вид": "объяснение",
+   "утверждение_en": "Because detection for images is region-based and SynthID can appear in non-Google content, a Detector result indicates which areas likely carry a SynthID watermark rather than proving the whole image was made by Google AI.",
+   "цитата": "It can also highlight which parts of the content are more likely to have been watermarked with SynthID.",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "SynthID / SynthID Detector (технология и портал, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-329-2, E-329-7, E-329-10",
+   "дата_единицы": "2025-05-20",
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Вывод: пометка по областям согласуется с частичными правками (ср. стр_327 — SynthID на правках Reimagine), а партнёрство NVIDIA показывает, что SynthID есть и вне Google."
+  }
+ ],
+ "длинная_дистанция": [
+  "E-329-13: для изображений детекция даёт области вероятного водяного знака, а SynthID встраивают и партнёры (NVIDIA) — результат детектора не равен «вся картинка сделана Google AI».",
+  "Текст основного раздела перечисляет все четыре модальности как загружаемые, а сноска говорит, что детекция видео и текста появится позже (см. противоречия_внутри).",
+  "Страница утверждает устойчивость SynthID к «range of transformations», но не даёт ни списка трансформаций, ни точности/ложных срабатываний.",
+  "Портал проверяет только SynthID; отсутствие знака не обсуждается (что это значит для контента не от Google или со слабым знаком)."
+ ],
+ "противоречия_внутри": [
+  "Строки 239 и 243 описывают загрузку «image, audio track, video or piece of text» как уже работающую, тогда как сноска 1 (строка 267) говорит, что детекция видео и текста будет раскатана «in the coming weeks». Не прямое противоречие, но на дату поста реально работали только изображения и аудио."
+ ],
+ "не_сказано": [
+  "Какие трансформации переживает водяной знак на изображениях и при каких он теряется.",
+  "Точность и частота ложноположительных/ложноотрицательных результатов.",
+  "Что означает отрицательный результат (нет знака) и как трактовать слабый знак.",
+  "Проверяет ли портал C2PA/метаданные наряду со SynthID.",
+  "Условия широкого доступа к порталу после раннего тестирования."
+ ],
+ "сомнения": [
+  "Пост датирован маем 2025, до моделей Nano Banana; прямых правил для них нет, но SynthID — тот же механизм маркировки изображений Gemini.",
+  "dateModified 2026-01-16: страница обновлялась, видимый текст датирован только 20.05.2025."
+ ]
+}

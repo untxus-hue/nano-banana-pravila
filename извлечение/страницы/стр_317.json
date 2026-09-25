@@ -1,0 +1,1882 @@
+{
+ "id": 317,
+ "url": "https://cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana?e=48754805",
+ "заголовок": "Ultimate prompting guide for Nano Banana | Google Cloud Blog",
+ "дата_в_тексте": "March 5, 2026 (в html JSON-LD datePublished 2026-03-06); в примере веб-поиска подпись 'prompted on Tuesday 3rd March'",
+ "официальность": {
+  "домен": "cloud.google.com (Google Cloud Blog)",
+  "второй_признак": "Авторы на странице: Khulan Davaajav, Product Marketing Manager, Google Cloud; Hussain Chinoy, Technical Solutions Manager. В html JSON-LD publisher = Organization 'Google Cloud'. Строки 'Copyright Google LLC' в тексте нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост Google Cloud Blog (март 2026) для практиков/разработчиков и креативных команд: итог недель тестов Nano Banana 2 и Nano Banana Pro. Модели названы явно: Gemini 3.1 Flash Image (Nano Banana 2) и Gemini 3 Pro Image (Nano Banana Pro); также обобщённые 'Nano Banana models', 'Gemini Image models', 'Gemini image models' для этих двух. Структура: вступление → Model overview (3 сильные стороны NB2) → тех-спецификации (окна токенов, разрешения, соотношения сторон, 14 рефов, MIME, размеры файлов, cutoff, веб-поиск, C2PA+SynthID) → 4 общих правила промптинга + 'strong verb' → пять фреймворков: генерация без рефов (формула 5 слотов), с рефами (формула 3 слота), редактирование (семантическая маска, добавление элементов, перенос стиля), веб-поиск (формула 3 слота), текст в кадре (4 правила + 2 примера) → 'Prompting like a Creative Director' (свет, камера/объектив, цветокор/плёнка, материалы) → связки с Gemini/Veo/Lyria. Собственные термины: 'semantic masking (inpainting)', 'Text-first hack', 'Relationship instruction', 'visual DNA', 'reference object images'. Повторяемый акцент: режиссура сцены профессиональной лексикой вместо ключевых слов.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "Gemini 3.1 Flash Image Preview (в пункте про соотношения сторон)",
+  "Gemini 3 (текстовая, для создания промптов)",
+  "Veo / Veo 3.1, Lyria (связки)"
+ ],
+ "структура": [
+  "The ultimate Nano Banana prompting guide (заголовок, дата, авторы)",
+  "вступление + оглавление",
+  "Model overview",
+  "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+  "Best practices for effective prompting",
+  "Five prompting frameworks: 1. Image generation (Text-to-image without references; Multimodal generation with references)",
+  "2. Image editing (Conversational editing; Composition and style transfer)",
+  "3. Real-time information from web search",
+  "4. Text rendering & localization",
+  "5. Prompting like a Creative Director (lighting; camera, lens, focus; color grading and film stock; materiality and texture)",
+  "Go further"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Ultimate prompting guide for Nano Banana / Jump to Content / меню (строки 1-52)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, меню Cloud Blog, рубрика)"
+  },
+  {
+   "n": 2,
+   "начало": "The ultimate Nano Banana prompting guide",
+   "итог": "ничего: заголовок статьи"
+  },
+  {
+   "n": 3,
+   "начало": "March 5, 2026",
+   "итог": "ничего: дата (в поле дата_в_тексте)"
+  },
+  {
+   "n": 4,
+   "начало": "Khulan Davaajav Product Marketing Manager… Hussain Chinoy",
+   "итог": "ничего: авторы (использованы как второй признак официальности)"
+  },
+  {
+   "n": 5,
+   "начало": "Try Gemini Enterprise today The front",
+   "итог": "ничего: рекламный баннер"
+  },
+  {
+   "n": 6,
+   "начало": "Vertex AI has evolved. We’ve launched",
+   "итог": "ничего: баннер о переименовании платформы, не про генерацию картинок"
+  },
+  {
+   "n": 7,
+   "начало": "Creating precise, high-quality images often involves",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 8,
+   "начало": "Built on the Gemini 3 family",
+   "итог": "E-317-1"
+  },
+  {
+   "n": 9,
+   "начало": "We put together this guide to",
+   "итог": "ничего: вводная фраза"
+  },
+  {
+   "n": 10,
+   "начало": "What you’ll learn in this guide: …(оглавление, 5 пунктов)",
+   "итог": "ничего: оглавление"
+  },
+  {
+   "n": 11,
+   "начало": "Model overview",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 12,
+   "начало": "Nano Banana models are advanced image",
+   "итог": "E-317-2"
+  },
+  {
+   "n": 13,
+   "начало": "More accurate visuals: Nano Banana 2",
+   "итог": "E-317-3"
+  },
+  {
+   "n": 14,
+   "начало": "Fast, Pro-level features: We’ve unlocked premium",
+   "итог": "E-317-4"
+  },
+  {
+   "n": 15,
+   "начало": "Precision control: Generate or edit images",
+   "итог": "E-317-5"
+  },
+  {
+   "n": 16,
+   "начало": "Breakdown of tech specs for Nano",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 17,
+   "начало": "Before diving into prompting, here is",
+   "итог": "E-317-6"
+  },
+  {
+   "n": 18,
+   "начало": "Context windows:Gemini 3.1 Flash Image (Nano",
+   "итог": "E-317-7, E-317-8"
+  },
+  {
+   "n": 19,
+   "начало": "Resolutions: Built-in generation capabilities for",
+   "итог": "E-317-9, E-317-10"
+  },
+  {
+   "n": 20,
+   "начало": "Aspect ratios: Both models support 1:1,",
+   "итог": "E-317-11, E-317-12"
+  },
+  {
+   "n": 21,
+   "начало": "Image inputs: You can mix up",
+   "итог": "E-317-13, E-317-14"
+  },
+  {
+   "n": 22,
+   "начало": "Document inputs: You can input text",
+   "итог": "E-317-15, E-317-16"
+  },
+  {
+   "n": 23,
+   "начало": "Outputs: Both models output text and",
+   "итог": "E-317-17"
+  },
+  {
+   "n": 24,
+   "начало": "Model knowledge base: Both models have",
+   "итог": "E-317-18"
+  },
+  {
+   "n": 25,
+   "начало": "Live data: Both models are powered",
+   "итог": "E-317-19"
+  },
+  {
+   "n": 26,
+   "начало": "Trust & safety:All generated images include",
+   "итог": "E-317-20"
+  },
+  {
+   "n": 27,
+   "начало": "To see top features examples, check",
+   "итог": "ничего: ссылка на другой пост"
+  },
+  {
+   "n": 28,
+   "начало": "Best practices for effective prompting",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 29,
+   "начало": "When it comes to effective prompting,",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 30,
+   "начало": "Be specific: Provide concrete details on",
+   "итог": "E-317-21"
+  },
+  {
+   "n": 31,
+   "начало": "Use positive framing: Describe what you",
+   "итог": "E-317-22"
+  },
+  {
+   "n": 32,
+   "начало": "Control the camera: Use photographic and",
+   "итог": "E-317-23"
+  },
+  {
+   "n": 33,
+   "начало": "Iterate: Refine images with follow-up prompts",
+   "итог": "E-317-24"
+  },
+  {
+   "n": 34,
+   "начало": "The key is to start a",
+   "итог": "E-317-25"
+  },
+  {
+   "n": 35,
+   "начало": "Five prompting frameworks",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 36,
+   "начало": "1. Image generation",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 37,
+   "начало": "When generating an image, your prompt",
+   "итог": "E-317-26"
+  },
+  {
+   "n": 38,
+   "начало": "Text-to-image generation without references",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 39,
+   "начало": "When starting with a blank canvas,",
+   "итог": "E-317-27"
+  },
+  {
+   "n": 40,
+   "начало": "Formula: [Subject] + [Action] +",
+   "итог": "E-317-28"
+  },
+  {
+   "n": 41,
+   "начало": "Example prompt:[Subject] A striking fashion model",
+   "итог": "E-317-29"
+  },
+  {
+   "n": 42,
+   "начало": "Multimodal generation (generation with references)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 43,
+   "начало": "Gemini allows you to combine multiple",
+   "итог": "E-317-30"
+  },
+  {
+   "n": 44,
+   "начало": "Formula: [Reference images] + [Relationship instruction]",
+   "итог": "E-317-31"
+  },
+  {
+   "n": 45,
+   "начало": "Example Prompt: Using the attached napkin",
+   "итог": "E-317-32"
+  },
+  {
+   "n": 46,
+   "начало": "Note: Nano Banana generated the source",
+   "итог": "ничего: служебное примечание о происхождении иллюстраций страницы"
+  },
+  {
+   "n": 47,
+   "начало": "2. Image editing",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 48,
+   "начало": "Editing requires a different mindset than",
+   "итог": "E-317-33"
+  },
+  {
+   "n": 49,
+   "начало": "Conversational editing (without new references)",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 50,
+   "начало": "When you generate an image and",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 51,
+   "начало": "Semantic masking (inpainting): You can define",
+   "итог": "E-317-34"
+  },
+  {
+   "n": 52,
+   "начало": "Prompting tip: Be explicit about what",
+   "итог": "E-317-35"
+  },
+  {
+   "n": 53,
+   "начало": "Example prompt: “Remove the man from",
+   "итог": "E-317-36"
+  },
+  {
+   "n": 54,
+   "начало": "Composition and style transfer (with new",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 55,
+   "начало": "Bring new images into the prompt",
+   "итог": "ничего: вводная к списку (смысл раскрыт в E-317-37, E-317-38)"
+  },
+  {
+   "n": 56,
+   "начало": "Adding elements: Upload a base image",
+   "итог": "E-317-37"
+  },
+  {
+   "n": 57,
+   "начало": "Style transfer: Upload a photo and",
+   "итог": "E-317-38"
+  },
+  {
+   "n": 58,
+   "начало": "Composition / Style transfer (две строки-подписи)",
+   "итог": "ничего: подписи к иллюстрациям"
+  },
+  {
+   "n": 59,
+   "начало": "3. Real-time information from web search",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 60,
+   "начало": "Gemini Image models can actively search",
+   "итог": "E-317-39"
+  },
+  {
+   "n": 61,
+   "начало": "How prompting changes: Instead of describing",
+   "итог": "E-317-40"
+  },
+  {
+   "n": 62,
+   "начало": "The formula: [Source/Search request] + [Analytical",
+   "итог": "E-317-41"
+  },
+  {
+   "n": 63,
+   "начало": "Example prompt: [Search for current weather",
+   "итог": "E-317-42"
+  },
+  {
+   "n": 64,
+   "начало": "prompted on Tuesday 3rd March",
+   "итог": "ничего: подпись к иллюстрации (учтена в заметке E-317-42)"
+  },
+  {
+   "n": 65,
+   "начало": "Nano Banana 2 is powered by",
+   "итог": "E-317-43"
+  },
+  {
+   "n": 66,
+   "начало": "4. Text rendering & localization",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 67,
+   "начало": "Nano Banana 2 and Nano Banana",
+   "итог": "E-317-44, E-317-45"
+  },
+  {
+   "n": 68,
+   "начало": "To get the best typographic results,",
+   "итог": "ничего: вводная к списку правил"
+  },
+  {
+   "n": 69,
+   "начало": "Use quotes: Enclose your desired words",
+   "итог": "E-317-46"
+  },
+  {
+   "n": 70,
+   "начало": "Choose a font: Describe the typography",
+   "итог": "E-317-47"
+  },
+  {
+   "n": 71,
+   "начало": "Translate and localize: Write your prompt",
+   "итог": "E-317-48"
+  },
+  {
+   "n": 72,
+   "начало": "Text-first hack: When generating text for",
+   "итог": "E-317-49"
+  },
+  {
+   "n": 73,
+   "начало": "Example: A high-end, glossy commercial beauty",
+   "итог": "E-317-50"
+  },
+  {
+   "n": 74,
+   "начало": "“A typographic poster with a solid",
+   "итог": "E-317-51"
+  },
+  {
+   "n": 75,
+   "начало": "5. Prompting like a Creative Director",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 76,
+   "начало": "To elevate your results from good",
+   "итог": "E-317-52"
+  },
+  {
+   "n": 77,
+   "начало": "1. Design your lighting",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 78,
+   "начало": "Tell the model exactly how the",
+   "итог": "E-317-53"
+  },
+  {
+   "n": 79,
+   "начало": "Studio setups: Ask for a \"three-point",
+   "итог": "E-317-54"
+  },
+  {
+   "n": 80,
+   "начало": "Dramatic effects: Prompt for \"Chiaroscuro lighting",
+   "итог": "E-317-55"
+  },
+  {
+   "n": 81,
+   "начало": "2. Choose your camera, lens, and",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 82,
+   "начало": "Use specific hardware and photographic terminology",
+   "итог": "E-317-56"
+  },
+  {
+   "n": 83,
+   "начало": "Hardware: Dictate the exact camera type",
+   "итог": "E-317-57"
+  },
+  {
+   "n": 84,
+   "начало": "Lens: Force the perspective by explicitly",
+   "итог": "E-317-58"
+  },
+  {
+   "n": 85,
+   "начало": "3. Define the color grading and",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 86,
+   "начало": "The texture and color of the",
+   "итог": "E-317-59"
+  },
+  {
+   "n": 87,
+   "начало": "If you want a nostalgic or",
+   "итог": "E-317-60"
+  },
+  {
+   "n": 88,
+   "начало": "For a modern, moody aesthetic, ask",
+   "итог": "E-317-61"
+  },
+  {
+   "n": 89,
+   "начало": "4. Emphasize materiality and texture",
+   "итог": "ничего: заголовок подраздела"
+  },
+  {
+   "n": 90,
+   "начало": "When generating logos, products, or characters,",
+   "итог": "E-317-62, E-317-63"
+  },
+  {
+   "n": 91,
+   "начало": "Go further",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 92,
+   "начало": "Nano Banana Pro and Nano Banana",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 93,
+   "начало": "Nano Banana + Gemini: Gemini 3",
+   "итог": "E-317-64"
+  },
+  {
+   "n": 94,
+   "начало": "Nano Banana + Veo: Create keyframes",
+   "итог": "E-317-65"
+  },
+  {
+   "n": 95,
+   "начало": "Nano Banana + Veo + Lyria: Generate",
+   "итог": "ничего: не про генерацию картинок (саундтрек Lyria)"
+  },
+  {
+   "n": 96,
+   "начало": "Posted in AI & Machine Learning / Related articles / Footer (строки 158-180)",
+   "итог": "ничего: обвязка сайта (рубрика, связанные статьи, подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-317-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana models are built on the Gemini 3 family and apply deep reasoning to fully understand the prompt before generating an image.",
+   "цитата": "Built on the Gemini 3 family of models, Nano Banana models apply deep reasoning capabilities to fully understand your prompt before generating an image.",
+   "источник_цитаты": "txt",
+   "раздел": "(вступление)",
+   "модели": [
+    "Nano Banana models (так во фразе)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "Следующая фраза: гайд основан на неделях тестов Nano Banana 2 и Nano Banana Pro."
+  },
+  {
+   "код": "E-317-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana models are advanced image generation and editing models that use real-world knowledge and deep reasoning to deliver precise, rich visual results.",
+   "цитата": "Nano Banana models are advanced image generation and editing models that use real-world knowledge and deep reasoning capabilities to deliver precise, rich visual results.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview",
+   "модели": [
+    "Nano Banana models (так во фразе)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is powered by real-time information and images from web search, enabling more accurate visuals (e.g., educational tools, localized marketing, travel apps).",
+   "цитата": "More accurate visuals: Nano Banana 2 is powered by real-time information and images from web search. This means better educational tools, localized marketing, travel apps, and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Именно NB2 и именно 'information and images'. Ср. E-317-19 (обе модели) и E-317-43 (coming soon to Vertex AI)."
+  },
+  {
+   "код": "E-317-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 unlocks premium features including text rendering and translations and upscaling to 2K/4K.",
+   "цитата": "Fast, Pro-level features: We’ve unlocked premium features – from text rendering and translations, to upscaling to 2K/4K.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "форматы_разрешение"
+   ],
+   "заметка": "Слово 'upscaling' — формулировка источника; в спецификациях (E-317-9) 2K/4K — встроенные разрешения генерации."
+  },
+  {
+   "код": "E-317-5",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 natively supports aspect ratios including 16:9, 9:16 and 2:1, among others.",
+   "цитата": "Precision control: Generate or edit images to fit any project requirement, with native support for 16:9, 9:16, 2:1, and more.",
+   "источник_цитаты": "txt",
+   "раздел": "Model overview",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "2:1 отсутствует в списке соотношений в разделе спецификаций (E-317-11, E-317-12) — см. противоречия_внутри."
+  },
+  {
+   "код": "E-317-6",
+   "вид": "инструкция",
+   "утверждение_en": "For the latest details on what the models can handle via the API and Vertex AI, always check the official Gemini 3 Pro Image and Gemini 3.1 Flash Image documentation.",
+   "цитата": "for latest details, always check the official Gemini 3 Pro Image and Gemini 3.1 Flash Image documentation",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сама страница признаёт, что спецификации могут устаревать."
+  },
+  {
+   "код": "E-317-7",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2) supports a maximum of 131,072 input tokens; Gemini 3 Pro Image (Nano Banana Pro) supports a maximum of 65,536 input tokens.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2) supports a maximum of 131,072 input tokens , while Gemini 3 Pro Image (Nano Banana Pro) supports a maximum of 65,536 input tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "У NB2 входное окно вдвое больше, чем у Pro."
+  },
+  {
+   "код": "E-317-8",
+   "вид": "лимит",
+   "утверждение_en": "Both models support a maximum of 32,768 output tokens.",
+   "цитата": "Both models support a maximum of 32,768 output tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-9",
+   "вид": "факт",
+   "утверждение_en": "Both models have built-in generation for 1K, 2K, and 4K resolutions.",
+   "цитата": "Resolutions: Built-in generation capabilities for 1K, 2K, and 4K visuals.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image additionally supports the smaller 512px (0.5K) resolution.",
+   "цитата": "Gemini 3.1 Flash Image adds the smaller 512px (0.5K) resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Только NB2, не Pro."
+  },
+  {
+   "код": "E-317-11",
+   "вид": "факт",
+   "утверждение_en": "Both models support aspect ratios 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9.",
+   "цитата": "Aspect ratios: Both models support 1:1, 3:2, 2:3, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "10 соотношений общих для обеих моделей."
+  },
+  {
+   "код": "E-317-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image Preview additionally supports 1:4, 4:1, 1:8, and 8:1 aspect ratios.",
+   "цитата": "Gemini 3.1 Flash Image Preview also adds 1:4, 4:1, 1:8, and 8:1 aspect ratios.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — во фразе 'Preview'"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "модели_сравнение"
+   ],
+   "заметка": "Названа версия 'Preview'. 2:1 (E-317-5) нет ни в одном из списков."
+  },
+  {
+   "код": "E-317-13",
+   "вид": "лимит",
+   "утверждение_en": "You can mix up to 14 reference object images in a single prompt.",
+   "цитата": "Image inputs: You can mix up to 14 reference object images in a single prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Термин 'reference object images'; разбивки объекты/люди на странице нет."
+  },
+  {
+   "код": "E-317-14",
+   "вид": "факт",
+   "утверждение_en": "Supported image input MIME types include image/png, image/jpeg, image/webp, image/heic, and image/heif.",
+   "цитата": "Supported MIME types include image/png, image/jpeg, image/webp, image/heic, and image/heif.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-15",
+   "вид": "факт",
+   "утверждение_en": "Text and PDF files can be used as document inputs.",
+   "цитата": "Document inputs: You can input text and pdf files.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-16",
+   "вид": "лимит",
+   "утверждение_en": "Maximum file size per file is 50 MB for API and Cloud Storage imports, or 7 MB for direct uploads through the Google Cloud console.",
+   "цитата": "The maximum file size per file is 50 MB for API and Cloud Storage imports, or 7 MB for direct uploads through the Google Cloud console.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Стоит в пункте Document inputs; к изображениям ли относится — не уточнено."
+  },
+  {
+   "код": "E-317-17",
+   "вид": "факт",
+   "утверждение_en": "Both models output text and images.",
+   "цитата": "Outputs: Both models output text and images.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-18",
+   "вид": "факт",
+   "утверждение_en": "Both models have a knowledge cutoff date of January 2025.",
+   "цитата": "Model knowledge base: Both models have a knowledge cutoff date of January 2025.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "grounding"
+   ],
+   "заметка": "Более свежие события — только через веб-поиск."
+  },
+  {
+   "код": "E-317-19",
+   "вид": "факт",
+   "утверждение_en": "Both models are powered by real-time information from web search.",
+   "цитата": "Live data: Both models are powered by real-time information from web search",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Ср. E-317-3 (только NB2, 'information and images') и E-317-43 ('coming soon to Vertex AI')."
+  },
+  {
+   "код": "E-317-20",
+   "вид": "факт",
+   "утверждение_en": "All generated images include C2PA Content Credentials and a SynthID watermark.",
+   "цитата": "Trust & safety:All generated images include C2PA Content Credentials and a SynthID watermark.",
+   "источник_цитаты": "txt",
+   "раздел": "Breakdown of tech specs for Nano Banana 2 and Nano Banana Pro",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "'All generated images' — без исключений."
+  },
+  {
+   "код": "E-317-21",
+   "вид": "правило",
+   "утверждение_en": "Be specific: provide concrete details on subject, lighting, and composition.",
+   "цитата": "Be specific: Provide concrete details on subject, lighting, and composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Раздел подан как 'guidelines'."
+  },
+  {
+   "код": "E-317-22",
+   "вид": "правило",
+   "утверждение_en": "Use positive framing: describe what you want, not what you don't want (e.g., 'empty street' instead of 'no cars').",
+   "цитата": "Use positive framing: Describe what you want, not what you don’t want (e.g. “empty street” instead of “no cars”).",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Замена отрицания на описание желаемого состояния."
+  },
+  {
+   "код": "E-317-23",
+   "вид": "правило",
+   "утверждение_en": "Control the camera: use photographic and cinematic terms like 'low angle' and 'aerial view'.",
+   "цитата": "Control the camera: Use photographic and cinematic terms like “low angle” and “aerial view”.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-24",
+   "вид": "правило",
+   "утверждение_en": "Iterate: refine images with follow-up prompts in a conversational manner.",
+   "цитата": "Iterate: Refine images with follow-up prompts in a conversational manner.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-25",
+   "вид": "правило",
+   "утверждение_en": "Start a prompt with a strong verb that tells the model the primary operation you want to perform.",
+   "цитата": "The key is to start a prompt with a strong verb that tells the model the primary operation you want to perform.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for effective prompting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Подано как 'The key is' — ключевой совет; но формула и пример text-to-image начинаются с субъекта, не с глагола (см. противоречия_внутри)."
+  },
+  {
+   "код": "E-317-26",
+   "вид": "правило",
+   "утверждение_en": "Prompt structure for image generation depends on whether you use reference images or rely solely on text.",
+   "цитата": "When generating an image, your prompt structure depends entirely on whether you are using reference images or relying solely on text.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Отсюда две разные формулы (E-317-28, E-317-31)."
+  },
+  {
+   "код": "E-317-27",
+   "вид": "правило",
+   "утверждение_en": "For text-to-image without references, a simple list of keywords is not enough; describe the scene narratively, as a director.",
+   "цитата": "When starting with a blank canvas, you are the director. A simple list of keywords won't cut it; you need to describe the scene narratively.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Сила по формулировке источника: 'you need to', 'won't cut it'."
+  },
+  {
+   "код": "E-317-28",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Text-to-image formula: [Subject] + [Action] + [Location/context] + [Composition] + [Style].",
+   "цитата": "Formula: [Subject] + [Action] + [Location/context] + [Composition] + [Style]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Порядок слотов: субъект → действие → место → композиция → стиль (стиль в конце)."
+  },
+  {
+   "код": "E-317-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example text-to-image prompt following the five-slot formula with slot labels inline (fashion model editorial).",
+   "цитата": "[Subject] A striking fashion model wearing a tailored brown dress, sleek boots, and holding a structured handbag. [Action] Posing with a confident, statuesque stance, slightly turned. [Location/context] A seamless, deep cherry red studio backdrop. [Composition] Medium-full shot, center-framed. [Style] Fashion magazine style editorial, shot on medium-format analog film, pronounced grain, high saturation, cinematic lighting effect.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Text-to-image generation without references",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Разбор: 5 предложений строго в порядке формулы, каждое помечено меткой слота в скобках. Субъект — через одежду/аксессуары с материалом и кроем; действие — поза ('statuesque stance, slightly turned'); место — бесшовный фон с точным цветом; композиция — тип плана + центрирование; стиль — жанр + носитель ('medium-format analog film') + зерно, насыщенность, свет. Начинается с существительного, не с глагола."
+  },
+  {
+   "код": "E-317-30",
+   "вид": "факт",
+   "утверждение_en": "Gemini can combine multiple reference images to guide the final output, useful for maintaining character consistency or merging a specific product into a new environment.",
+   "цитата": "Gemini allows you to combine multiple reference images to guide the final output. This is perfect for maintaining character consistency or merging a specific product into a new environment.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-31",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Multimodal (reference-based) generation formula: [Reference images] + [Relationship instruction] + [New scenario].",
+   "цитата": "Formula: [Reference images] + [Relationship instruction] + [New scenario]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Ключевой слот — 'Relationship instruction': роль каждого рефа."
+  },
+  {
+   "код": "E-317-32",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example reference-based prompt assigning a role to each attached image (sketch = structure, fabric = texture), then transforming and placing the result.",
+   "цитата": "Using the attached napkin sketch as the structure and the attached fabric sample as the texture [References], transform this into a high-fidelity 3D armchair render [Relationship]. Place it in a sun-drenched, minimalist living room [New Scenario].",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 1. Image generation / Multimodal generation (generation with references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Разбор: каждому вложению назначена роль ('as the structure', 'as the texture'); глагол операции 'transform this into' + тип результата ('high-fidelity 3D ... render'); отдельным предложением — новая сцена. Метки слотов стоят после фрагментов."
+  },
+  {
+   "код": "E-317-33",
+   "вид": "правило",
+   "утверждение_en": "Editing requires a different mindset than generating: the prompt should focus on what is changing and what is staying the same.",
+   "цитата": "Editing requires a different mindset than generating. You already have a base image; your prompt needs to focus on what is changing and what is staying the same.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). 'needs to' — сильная формулировка."
+  },
+  {
+   "код": "E-317-34",
+   "вид": "приём",
+   "утверждение_en": "Semantic masking (inpainting): you can define a 'mask' through text to edit a specific part of an image while leaving the rest untouched.",
+   "цитата": "Semantic masking (inpainting): You can define a \"mask\" through text to edit a specific part of an image while leaving the rest untouched.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Термин страницы: 'semantic masking' — маска задаётся словами, без рисования."
+  },
+  {
+   "код": "E-317-35",
+   "вид": "правило",
+   "утверждение_en": "When editing conversationally, be explicit about what to keep exactly the same.",
+   "цитата": "Prompting tip: Be explicit about what to keep exactly the same.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-36",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example semantic-masking edit prompt: remove the man from the photo.",
+   "цитата": "Remove the man from the photo",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Conversational editing (without new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Разбор: глагол-операция в начале ('Remove') + объект + 'from the photo'. Сам пример не перечисляет, что сохранить, хотя совет рядом этого требует (см. длинная_дистанция)."
+  },
+  {
+   "код": "E-317-37",
+   "вид": "инструкция",
+   "утверждение_en": "Adding elements: upload a base image and an object image, and tell the model to combine them.",
+   "цитата": "Adding elements: Upload a base image and an object image, and tell the model to combine them.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Composition and style transfer (with new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-38",
+   "вид": "инструкция",
+   "утверждение_en": "Style transfer: upload a photo and ask the model to recreate its exact content in a different artistic style (e.g., a modern city street as a Van Gogh-style painting).",
+   "цитата": "Style transfer: Upload a photo and ask the model to recreate its exact content in a different artistic style, such as transforming a photo of a modern city street into a Van Gogh-style painting.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 2. Image editing / Composition and style transfer (with new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Формулировка 'recreate its exact content' — содержание сохраняется, меняется только стиль."
+  },
+  {
+   "код": "E-317-39",
+   "вид": "факт",
+   "утверждение_en": "Gemini Image models can actively search the web to generate images based on real-time information.",
+   "цитата": "Gemini Image models can actively search the web to generate images based on real-time information.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "Gemini Image models (так во фразе); в разделе названа только Nano Banana 2"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-40",
+   "вид": "приём",
+   "утверждение_en": "With web search, instead of describing a fictional scene, instruct the model to retrieve real-world data and then specify how to visualize it.",
+   "цитата": "How prompting changes: Instead of describing a fictional scene, you instruct the model to retrieve real-world data and then specify how to visualize it.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "Gemini Image models (контекст раздела)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-41",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Web-search prompt formula: [Source/Search request] + [Analytical task] + [Visual translation].",
+   "цитата": "The formula: [Source/Search request] + [Analytical task] + [Visual translation]",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "Gemini Image models (контекст раздела)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Порядок: что найти → как интерпретировать данные → как показать."
+  },
+  {
+   "код": "E-317-42",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example web-search prompt: search current San Francisco weather/date, use the data to modify the scene, visualize as a miniature city-in-a-cup in a smartphone UI.",
+   "цитата": "[Search for current weather and date in San Francisco] + [Analytically, use this data to modify the scene (e.g., if raining, make it look grey and rainy)] + [Visualize this in a miniature city-in-a-cup concept embedded within a realistic, modern smartphone UI.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "Gemini Image models (контекст раздела)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Разбор: три части формулы в квадратных скобках, склеены '+'; 1) императив 'Search for' + что искать; 2) условная логика отображения данных ('if raining, make it look grey and rainy'); 3) визуальная метафора + носитель (смартфон-UI). Последняя скобка в источнике не закрыта. Подпись к иллюстрации: 'prompted on Tuesday 3rd March'."
+  },
+  {
+   "код": "E-317-43",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2's real-time web search feature is coming soon to Vertex AI.",
+   "цитата": "Nano Banana 2 is powered by real-time information and images from web search. This feature is coming soon to Vertex AI, and will help your teams create more accurate visuals.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 3. Real-time information from web search",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "продукт_ui"
+   ],
+   "заметка": "На дату статьи (март 2026) функция в Vertex AI ещё не доступна — расходится с E-317-19 и вступлением к спецификациям ('via the API and Vertex AI')."
+  },
+  {
+   "код": "E-317-44",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 and Nano Banana Pro excel at rendering sharp, legible text for posters, diagrams, and product mockups.",
+   "цитата": "Nano Banana 2 and Nano Banana Pro excel at rendering sharp, legible text for impactful posters, diagrams, and product mockups.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-45",
+   "вид": "факт",
+   "утверждение_en": "The models support multilingual text generation in over 10 languages.",
+   "цитата": "Furthermore, it supports state-of-the-art multilingual text generation in over 10 languages.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Список языков не приведён."
+  },
+  {
+   "код": "E-317-46",
+   "вид": "правило",
+   "утверждение_en": "Use quotes: enclose the desired words in quotes (e.g., \"Happy Birthday\" or \"URBAN EXPLORER\").",
+   "цитата": "Use quotes: Enclose your desired words in quotes (e.g., \"Happy Birthday\" or \"URBAN EXPLORER\").",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Страница вводит пункты как 'follow these rules' для лучшего типографского результата."
+  },
+  {
+   "код": "E-317-47",
+   "вид": "правило",
+   "утверждение_en": "Choose a font: describe the typography style or name the font, e.g., \"bold, white, sans-serif font\" or \"Century Gothic 12px font\".",
+   "цитата": "Choose a font: Describe the typography style or name of the font. Prompt for a \"bold, white, sans-serif font\" or \"Century Gothic 12px font\".",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Два способа: описание (насыщенность, цвет, класс шрифта) или имя гарнитуры, даже с кеглем."
+  },
+  {
+   "код": "E-317-48",
+   "вид": "приём",
+   "утверждение_en": "Translate and localize: write the prompt in one language and specify a target language for the text output.",
+   "цитата": "Translate and localize: Write your prompt in one language and specify a target language for the text output.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-49",
+   "вид": "приём",
+   "утверждение_en": "Text-first hack: when generating text for an image, the models work best if you first converse to generate the text concepts, then ask for an image with that text.",
+   "цитата": "Text-first hack: When generating text for an image, Gemini Image models work best if you first converse with it to generate the text concepts, and then ask for an image with that text.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "Gemini Image models (так во фразе)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "мультиход"
+   ],
+   "заметка": "Двухшаговый порядок: сначала текст в беседе, потом картинка."
+  },
+  {
+   "код": "E-317-50",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example product ad prompt with three lines of text, each with exact wording in quotes and a named font, followed by translation into Korean and Arabic.",
+   "цитата": "A high-end, glossy commercial beauty shot of a sleek, minimalist nude-colored face moisturizer jar resting on a warm studio background. The lighting is soft and radiant. Next to the product, render three lines of text with the following exact styling: For the top line, the word 'GLOW' in a flowing, elegant Brush Script font. For the middle line, the text '10% OFF' in a heavy, blocky Impact font. For the bottom line, the text 'Your First Order' in a thin, minimalist Century Gothic font.\" Then translate the text into Korean and Arabic.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "промптинг"
+   ],
+   "заметка": "Разбор: тип кадра ('commercial beauty shot') + продукт с материалом/цветом + фон → отдельное предложение про свет → позиция текста ('Next to the product') + 'exact styling' → построчно: позиция строки + точный текст в одинарных кавычках + описание + имя шрифта → последним шагом перевод. В источнике лишняя закрывающая двойная кавычка перед 'Then'. Кавычки одинарные, хотя правило приводит двойные."
+  },
+  {
+   "код": "E-317-51",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example typographic poster prompt: bold letters spell \"New York\" as a cut-out window showing the skyline only inside the letterforms.",
+   "цитата": "A typographic poster with a solid black background, bold letters spell \"New York\", filling the center of the frame. The text acts as a cut-out window. A photograph of New York skyline is visible ONLY inside the letterforms.",
+   "источник_цитаты": "txt",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Разбор: тип изображения + фон → текст в двойных кавычках + размещение ('filling the center of the frame') → роль текста ('acts as a cut-out window') → что видно и где, с ограничением капсом 'ONLY'. Капс используется для усиления ограничения."
+  },
+  {
+   "код": "E-317-52",
+   "вид": "правило",
+   "утверждение_en": "Stop typing keywords and start directing the scene to elevate results; the Gemini image models offer studio-quality controls.",
+   "цитата": "To elevate your results from good to breathtaking, you need to stop typing keywords and start directing the scene. The Gemini image models offer studio-quality controls.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director",
+   "модели": [
+    "Gemini image models (так во фразе)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Повторяет мысль E-317-27 (нарратив вместо ключевых слов) — повторный акцент страницы."
+  },
+  {
+   "код": "E-317-53",
+   "вид": "правило",
+   "утверждение_en": "Tell the model exactly how the scene is illuminated.",
+   "цитата": "Tell the model exactly how the scene is illuminated.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-54",
+   "вид": "приём",
+   "утверждение_en": "For studio setups, ask for a \"three-point softbox setup\" to evenly light a product.",
+   "цитата": "Studio setups: Ask for a \"three-point softbox setup\" to evenly light a product.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Готовая фраза для предметной съёмки."
+  },
+  {
+   "код": "E-317-55",
+   "вид": "приём",
+   "утверждение_en": "For dramatic effects, prompt for \"Chiaroscuro lighting with harsh, high contrast\" or \"Golden hour backlighting creating long shadows\".",
+   "цитата": "Dramatic effects: Prompt for \"Chiaroscuro lighting with harsh, high contrast\" or \"Golden hour backlighting creating long shadows\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 1. Design your lighting",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Формула фраз: тип света + характер/следствие ('creating long shadows')."
+  },
+  {
+   "код": "E-317-56",
+   "вид": "правило",
+   "утверждение_en": "Use specific hardware and photographic terminology to control the depth, distortion, and perspective of the shot.",
+   "цитата": "Use specific hardware and photographic terminology to control the depth, distortion, and perspective of your shot .",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-57",
+   "вид": "приём",
+   "утверждение_en": "Dictate the exact camera type to change the image's visual DNA: GoPro for immersive distorted action, Fujifilm for authentic color science, a cheap disposable camera for a raw nostalgic flash aesthetic.",
+   "цитата": "Hardware: Dictate the exact camera type to change the visual DNA of the image. Ask for the shot to be taken on a GoPro for an immersive, distorted action feel, a Fujifilm camera for authentic color science, or a cheap disposable camera for a raw, nostalgic flash aesthetic.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "стиль"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Камера = носитель стиля ('visual DNA')."
+  },
+  {
+   "код": "E-317-58",
+   "вид": "приём",
+   "утверждение_en": "Force perspective with lens terms: \"low-angle shot with a shallow depth of field (f/1.8)\"; \"wide-angle lens\" for vast scale; \"macro lens\" for intricate details.",
+   "цитата": "Lens: Force the perspective by explicitly requesting a \"low-angle shot with a shallow depth of field (f/1.8)\". If you need to show a vast scale, ask for a \"wide-angle lens\". For intricate details, specify a \"macro lens\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 2. Choose your camera, lens, and focus",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Числовая диафрагма (f/1.8) допускается в промпте."
+  },
+  {
+   "код": "E-317-59",
+   "вид": "объяснение",
+   "утверждение_en": "The texture and color of the final image set the emotional tone.",
+   "цитата": "The texture and color of the final image set the emotional tone.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-60",
+   "вид": "приём",
+   "утверждение_en": "For a nostalgic or gritty vibe, ask to render the image \"as if on 1980s color film, slightly grainy\".",
+   "цитата": "If you want a nostalgic or gritty vibe, tell the model to render the image \"as if on 1980s color film, slightly grainy\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-61",
+   "вид": "приём",
+   "утверждение_en": "For a modern, moody aesthetic, ask for \"Cinematic color grading with muted teal tones\".",
+   "цитата": "For a modern, moody aesthetic, ask for \"Cinematic color grading with muted teal tones\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 3. Define the color grading and film stock",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-62",
+   "вид": "правило",
+   "утверждение_en": "When generating logos, products, or characters, define their physical makeup: e.g., not just 'a suit jacket' but \"navy blue tweed\".",
+   "цитата": "When generating logos, products, or characters, define their physical makeup. Don't just ask for a suit jacket; ask for \"navy blue tweed\".",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 4. Emphasize materiality and texture",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro). Материал + цвет вместо родового названия."
+  },
+  {
+   "код": "E-317-63",
+   "вид": "приём",
+   "утверждение_en": "Replace generic nouns with material descriptions (e.g., \"ornate elven plate armor, etched with silver leaf patterns\"); for mockups specify the surface, like a \"minimalist ceramic coffee mug\".",
+   "цитата": "Instead of \"armor,\" describe \"ornate elven plate armor, etched with silver leaf patterns.\" If you are designing a mockup, specify the surface, like a \"minimalist ceramic coffee mug.\"",
+   "источник_цитаты": "txt",
+   "раздел": "5. Prompting like a Creative Director / 4. Emphasize materiality and texture",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "модели раскрыты из контекста страницы (гайд по тестам Nano Banana 2 и Nano Banana Pro)."
+  },
+  {
+   "код": "E-317-64",
+   "вид": "приём",
+   "утверждение_en": "Gemini 3 can help you create prompts and provide creative direction for Nano Banana.",
+   "цитата": "Nano Banana + Gemini: Gemini 3 can help you create prompts and with creative direction.",
+   "источник_цитаты": "txt",
+   "раздел": "Go further",
+   "модели": [
+    "Gemini 3 (текстовая модель)",
+    "Nano Banana (так во фразе)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-317-65",
+   "вид": "приём",
+   "утверждение_en": "Create keyframes with Nano Banana to direct an animation, then use Veo to generate the video between them.",
+   "цитата": "Nano Banana + Veo: Create keyframes with Nano Banana to direct an animation, then use Veo to generate the video between them.",
+   "источник_цитаты": "txt",
+   "раздел": "Go further",
+   "модели": [
+    "Nano Banana (так во фразе)",
+    "Veo"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Связка картинка→видео; ссылка на гайд Veo 3.1."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-317-66",
+   "вид": "объяснение",
+   "утверждение_en": "All three generation frameworks are written as bracketed slot sequences joined by '+', and two worked examples keep the bracketed slot labels inline in the prompt text itself.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Five prompting frameworks (1, 3)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-317-28, E-317-29, E-317-31, E-317-32, E-317-41, E-317-42",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Страница не говорит, надо ли оставлять метки '[Subject]' и т.п. в реальном промпте (см. не_сказано)."
+  },
+  {
+   "код": "E-317-67",
+   "вид": "объяснение",
+   "утверждение_en": "The 'strong verb first' rule is followed by operation prompts (edit 'Remove...', reference 'Using... transform', search 'Search for...') but not by the text-to-image formula and example, which open with the subject noun phrase.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Best practices + Five prompting frameworks",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-317-25, E-317-28, E-317-29, E-317-32, E-317-36, E-317-42",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Возможное согласование: глагол-операция важен, когда есть что менять/искать; при генерации с нуля ведущим слотом остаётся субъект. Это вывод, страница так не говорит."
+  },
+  {
+   "код": "E-317-68",
+   "вид": "правило",
+   "утверждение_en": "The page's repeated core emphasis is concreteness through professional vocabulary: narrative scene description instead of keyword lists, plus explicit lighting, camera/lens, color grading/film stock and material terms.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Best practices + Text-to-image + 5. Prompting like a Creative Director",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-317-21, E-317-23, E-317-27, E-317-52, E-317-53, E-317-56, E-317-59, E-317-62",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Мысль 'не ключевые слова, а режиссура' повторена дважды (E-317-27, E-317-52)."
+  },
+  {
+   "код": "E-317-69",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Text-in-image examples follow a consistent structure per text element: position (e.g., top/middle/bottom line, center of frame) + exact text in quotes + style adjectives + font name or class; translation is requested as a final separate step.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Five prompting frameworks / 4. Text rendering & localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-317-46, E-317-47, E-317-48, E-317-50, E-317-51",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "В примерах встречаются и одинарные ('GLOW'), и двойные (\"New York\") кавычки — страница не различает."
+  },
+  {
+   "код": "E-317-70",
+   "вид": "объяснение",
+   "утверждение_en": "Reference-based prompts in this guide assign an explicit role to each supplied image (structure, texture, base, object, content to restyle) rather than only listing images.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "1. Image generation (multimodal) + 2. Image editing (with new references)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — из контекста страницы",
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста страницы"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-317-31, E-317-32, E-317-37, E-317-38",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Слот 'Relationship instruction' — ядро мультимодальной формулы."
+  }
+ ],
+ "противоречия_внутри": [
+  "Соотношения сторон: в Model overview у NB2 заявлено '2:1' (E-317-5), но в спецификациях 2:1 нет ни в общем списке (E-317-11), ни в дополнительных для 3.1 Flash Image Preview (E-317-12).",
+  "Веб-поиск: спецификации говорят 'Both models are powered by real-time information from web search' (E-317-19) и что это возможности 'via the API and Vertex AI' (E-317-6), но Model overview и раздел 3 приписывают 'information and images from web search' только Nano Banana 2 (E-317-3) и сообщают, что функция 'coming soon to Vertex AI' (E-317-43).",
+  "'The key is to start a prompt with a strong verb' (E-317-25) — при этом формула text-to-image начинается с [Subject], а её пример — с существительного 'A striking fashion model' (E-317-28, E-317-29); также пример текстового плаката (E-317-51) и пример E-317-50 начинаются с существительного.",
+  "Совет 'Be explicit about what to keep exactly the same' (E-317-35) стоит рядом с примером 'Remove the man from the photo' (E-317-36), который ничего не говорит о сохраняемом.",
+  "Правило 'Use quotes' приводит двойные кавычки, пример E-317-50 использует одинарные ('GLOW', '10% OFF'); плюс в E-317-50 висящая закрывающая двойная кавычка."
+ ],
+ "не_сказано": [
+  "Nano Banana 2 Lite и оригинальная Nano Banana (gemini-2.5-flash-image) не упоминаются.",
+  "Нет имён параметров API (image_size, aspect_ratio, thinking и т.п.) — только перечни возможностей.",
+  "Не сказано, нужно ли оставлять метки слотов '[Subject]', '[References]' и т.п. в реальном промпте.",
+  "Не сказано, какие именно 'over 10 languages' поддерживаются для текста.",
+  "Лимит 14 рефов без разбивки на объекты/людей и без совета, сколько рефов оптимально.",
+  "Лимиты размера файлов даны в пункте Document inputs — не ясно, распространяются ли на изображения.",
+  "Нет цен, квот, латентности, thinking-настроек; нет упоминания негативного промпта как параметра (только 'positive framing').",
+  "Не сказано, как включать веб-поиск (инструмент/конфиг) — только формула промпта."
+ ],
+ "сомнения": [
+  "Для разделов без названия модели (Best practices, Creative Director, фреймворки 1-2) модели проставлены из контекста страницы (гайд по NB2 и Pro) с пометкой — это расширение, не прямое указание в абзаце.",
+  "'Gemini 3.1 Flash Image Preview' в пункте Aspect ratios — названа preview-версия; отнёс к NB2.",
+  "Совет 'always check the official ... documentation' помечен как рекомендация, хотя сформулирован императивом."
+ ]
+}

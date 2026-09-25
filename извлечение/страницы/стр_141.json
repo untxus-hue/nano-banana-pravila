@@ -1,0 +1,572 @@
+{
+ "id": 141,
+ "url": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/",
+ "заголовок": "Introducing Gemini 2.5 Flash Image, our state-of-the-art image model",
+ "дата_в_тексте": "AUG. 26, 2025 (под заголовком); html datePublished 2025-08-26",
+ "официальность": {
+  "домен": "developers.googleblog.com",
+  "второй_признак": "авторы из Google: Alisa Fortin (Product Manager), Guillaume Vernade (Gemini Developer Advocate), Kat Kampf (Product Manager), Ammaar Reshi (Product and Design Lead, AI Studio); Google Developers Blog, текст от лица Google ('we’re excited to introduce'); подвал Terms/Privacy, Google Developer Program.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Анонс Gemini 2.5 Flash Image (nano-banana) в блоге Google для разработчиков, 26.08.2025. Структура: вводная (4 возможности: смешение картинок, консистентность персонажа, точечные правки языком, знания мира; мотив — отзывы о 2.0 Flash; доступность API/AI Studio/Vertex; цена $30 за 1М выходных токенов, 1290 токенов = $0.039 за картинку); build mode AI Studio; разделы Maintain character consistency (плюс следование визуальным шаблонам), Prompt based image editing (список локальных правок), Native world knowledge (рукописные диаграммы, сложные правки за один шаг), Multi-image fusion; Get started (preview → stable, OpenRouter, fal.ai, SynthID); Python-пример generate_content с промптом и картинкой; признанные слабости (длинный текст, стабильность персонажа, мелкие детали).",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana; в коде gemini-2.5-flash-image-preview)",
+  "gemini-2.0-flash (native image generation)"
+ ],
+ "структура": [
+  "Вводная",
+  "Gemini 2.5 Flash Image in action (build mode)",
+  "Maintain character consistency",
+  "Prompt based image editing",
+  "Native world knowledge",
+  "Multi-image fusion",
+  "Get started building (+ Python-код)",
+  "Заключение",
+  "Related Posts / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Introducing Gemini 2.5 Flash Image, our",
+   "итог": "ничего: заголовок страницы и название блога"
+  },
+  {
+   "n": 2,
+   "начало": "Community/Events Learn Blog YouTube Search",
+   "итог": "ничего: обвязка блога (меню, хлебные крошки Gemini / Google AI Studio)"
+  },
+  {
+   "n": 3,
+   "начало": "Introducing Gemini 2.5 Flash Image, our state-of-the-art image model AUG. 26, 2025",
+   "итог": "ничего: заголовок и дата (использована как дата_в_тексте)"
+  },
+  {
+   "n": 4,
+   "начало": "Alisa Fortin Product Manager Guillaume Vernade",
+   "итог": "ничего: авторы (учтено в официальности), кнопки Share"
+  },
+  {
+   "n": 5,
+   "начало": "Today, we’re excited to introduce Gemini",
+   "итог": "E-141-1, E-141-2"
+  },
+  {
+   "n": 6,
+   "начало": "When we first launched native image",
+   "итог": "E-141-3"
+  },
+  {
+   "n": 7,
+   "начало": "This model is available right now",
+   "итог": "E-141-4, E-141-5"
+  },
+  {
+   "n": 8,
+   "начало": "(lmarena results come from https://lmarena.ai/leaderboard)",
+   "итог": "ничего: ссылка на лидерборд (сам график — картинка, чисел в тексте нет)"
+  },
+  {
+   "n": 9,
+   "начало": "Gemini 2.5 Flash Image in action",
+   "итог": "ничего: не про генерацию картинок (обновления build mode в AI Studio, деплой, GitHub)"
+  },
+  {
+   "n": 10,
+   "начало": "Try a prompt like “Build me an",
+   "итог": "ничего: промпт для build mode (генерация кода приложения), не промпт генерации картинки"
+  },
+  {
+   "n": 11,
+   "начало": "Maintain character consistency A fundamental challenge",
+   "итог": "E-141-6"
+  },
+  {
+   "n": 12,
+   "начало": "We built a template app in",
+   "итог": "ничего: ссылка на демо-приложение"
+  },
+  {
+   "n": 13,
+   "начало": "Sorry, your browser doesn't support playback",
+   "итог": "ничего: заглушка видео"
+  },
+  {
+   "n": 14,
+   "начало": "Beyond character consistency, the model is",
+   "итог": "E-141-7"
+  },
+  {
+   "n": 15,
+   "начало": "Prompt based image editing Gemini 2.5",
+   "итог": "E-141-8"
+  },
+  {
+   "n": 16,
+   "начало": "To show these capabilities in action,",
+   "итог": "ничего: ссылка на демо (UI и промпт-управление)"
+  },
+  {
+   "n": 17,
+   "начало": "Native world knowledge Historically, image generation",
+   "итог": "E-141-9"
+  },
+  {
+   "n": 18,
+   "начало": "To demonstrate this, we built a",
+   "итог": "E-141-10"
+  },
+  {
+   "n": 19,
+   "начало": "Sorry, your browser doesn't support playback (Example prompts",
+   "итог": "ничего: заглушка видео (промпты в видео, в тексте их нет)"
+  },
+  {
+   "n": 20,
+   "начало": "Multi-image fusion Gemini 2.5 Flash Image",
+   "итог": "E-141-11"
+  },
+  {
+   "n": 21,
+   "начало": "To showcase multi-image fusion, we built",
+   "итог": "ничего: ссылка на демо (учтено в заметке E-141-11)"
+  },
+  {
+   "n": 22,
+   "начало": "Sorry, your browser doesn't support playback (Sequences shortened)",
+   "итог": "ничего: заглушка видео"
+  },
+  {
+   "n": 23,
+   "начало": "Get started building Check out our",
+   "итог": "E-141-12"
+  },
+  {
+   "n": 24,
+   "начало": "All of the demo apps we",
+   "итог": "ничего: про демо-приложения AI Studio, не про генерацию"
+  },
+  {
+   "n": 25,
+   "начало": "OpenRouter.ai has partnered with us",
+   "итог": "E-141-13"
+  },
+  {
+   "n": 26,
+   "начало": "All images created or edited with",
+   "итог": "E-141-14"
+  },
+  {
+   "n": 27,
+   "начало": "from google import genai from PIL",
+   "итог": "E-141-15, E-141-16"
+  },
+  {
+   "n": 28,
+   "начало": "Python Copied",
+   "итог": "ничего: обвязка кодового блока"
+  },
+  {
+   "n": 29,
+   "начало": "We are actively working to improve",
+   "итог": "E-141-17"
+  },
+  {
+   "n": 30,
+   "начало": "We can’t wait to see what",
+   "итог": "ничего: концовка без содержания"
+  },
+  {
+   "n": 31,
+   "начало": "posted in: Gemini Google AI Studio",
+   "итог": "ничего: обвязка (рубрики, Related Posts, подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-141-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (aka nano-banana) is introduced as Google’s state-of-the-art image generation and editing model.",
+   "цитата": "Today, we’re excited to introduce\nGemini 2.5 Flash Image\n(aka nano-banana), our state-of-the-art image generation and editing model.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-2",
+   "вид": "факт",
+   "утверждение_en": "The model lets you blend multiple images into a single image, maintain character consistency for rich storytelling, make targeted transformations using natural language, and use Gemini's world knowledge to generate and edit images.",
+   "цитата": "This update enables you to blend multiple images into a single image, maintain character consistency for rich storytelling, make targeted transformations using natural language, and use Gemini's world knowledge to generate and edit images.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Четыре ключевые возможности, раскрытые ниже отдельными разделами."
+  },
+  {
+   "код": "E-141-3",
+   "вид": "факт",
+   "утверждение_en": "Native image generation first launched in Gemini 2.0 Flash, which users valued for low latency, cost-effectiveness and ease of use, but they asked for higher-quality images and more powerful creative control.",
+   "цитата": "When we first launched native image generation in Gemini 2.0 Flash earlier this year, you told us you loved its low latency, cost-effectiveness, and ease of use. But you also gave us feedback that you needed higher-quality images and more powerful creative control.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.0-flash (native image generation)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Мотивация 2.5 Flash Image — качество и контроль поверх 2.0 Flash."
+  },
+  {
+   "код": "E-141-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is available via the Gemini API and Google AI Studio for developers and Vertex AI for enterprise.",
+   "цитата": "This model is available right now via the\nGemini API\nand\nGoogle AI Studio\nfor developers and\nVertex AI",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is priced at $30.00 per 1 million output tokens, with each image being 1290 output tokens ($0.039 per image); all other input and output modalities follow Gemini 2.5 Flash pricing.",
+   "цитата": "Gemini 2.5 Flash Image is priced at $30.00 per 1 million output tokens with each image being 1290 output tokens ($0.039 per image). All other modalities on input and output follow Gemini 2.5 Flash",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Цена на дату публикации (26.08.2025)."
+  },
+  {
+   "код": "E-141-6",
+   "вид": "объяснение",
+   "утверждение_en": "Maintaining the appearance of a character or object across multiple prompts and edits is a fundamental challenge; the model can now place the same character into different environments, showcase a single product from multiple angles in new settings, or generate consistent brand assets while preserving the subject.",
+   "цитата": "A fundamental challenge in image generation is maintaining the appearance of a character or object across multiple prompts and edits. You can now place the same character into different environments, showcase a single product from multiple angles in new settings, or generate consistent brand assets, all while preserving the subject.",
+   "источник_цитаты": "txt",
+   "раздел": "Maintain character consistency",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-7",
+   "вид": "приём",
+   "утверждение_en": "The model is excellent at adhering to visual templates: developers generate real estate listing cards, uniform employee badges, or dynamic product mockups for an entire catalog from a single design template.",
+   "цитата": "Beyond character consistency, the model is also excellent at adhering to visual templates. We have already seen developers explore areas like real estate listing cards, uniform employee badges, or dynamic product mockups for an entire catalog—all from a single design template.",
+   "источник_цитаты": "txt",
+   "раздел": "Maintain character consistency",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Один шаблон дизайна → серия единообразных карточек."
+  },
+  {
+   "код": "E-141-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image enables targeted transformation and precise local edits with natural language — e.g. blur the background, remove a stain in a t-shirt, remove an entire person from a photo, alter a subject's pose, or add color to a black and white photo — with a simple prompt.",
+   "цитата": "Gemini 2.5 Flash Image enables targeted transformation and precise local edits with natural language. For example, the model can blur the background of an image, remove a stain in a t-shirt, remove an entire person from a photo, alter a subject's pose, add color to a black and white photo, or whatever else you can conjure up with a simple prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt based image editing",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Список типовых локальных правок одной фразой."
+  },
+  {
+   "код": "E-141-9",
+   "вид": "объяснение",
+   "утверждение_en": "Historically, image generation models excelled at aesthetic images but lacked a deep, semantic understanding of the real world; Gemini 2.5 Flash Image benefits from Gemini’s world knowledge, which unlocks new use cases.",
+   "цитата": "Historically, image generation models have excelled at aesthetic images, but lacked a deep, semantic understanding of the real world. With Gemini 2.5 Flash Image, the model benefits from Gemini’s world knowledge, which unlocks new use cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Native world knowledge",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-10",
+   "вид": "факт",
+   "утверждение_en": "A template app turns a simple canvas into an interactive education tutor, showing the model's ability to read and understand hand-drawn diagrams, help with real-world questions, and follow complex editing instructions in a single step.",
+   "цитата": "that turns a simple canvas into an interactive education tutor. It showcases the model's ability to read and understand hand-drawn diagrams, help with real world questions, and follow complex editing instructions in a single step.",
+   "источник_цитаты": "txt",
+   "раздел": "Native world knowledge",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "'follow complex editing instructions in a single step' — сложная правка одним промптом."
+  },
+  {
+   "код": "E-141-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image can understand and merge multiple input images: put an object into a scene, restyle a room with a color scheme or texture, and fuse images with a single prompt.",
+   "цитата": "Gemini 2.5 Flash Image can understand and merge multiple input images. You can put an object into a scene, restyle a room with a color scheme or texture, and fuse images with a single prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Multi-image fusion",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Демо: перетаскивание товаров в новую сцену → фотореалистичное слияние (строки 74-76)."
+  },
+  {
+   "код": "E-141-12",
+   "вид": "факт",
+   "утверждение_en": "At launch, the model was in preview via the Gemini API and Google AI Studio and was to become stable in the coming weeks.",
+   "цитата": "to start building with Gemini 2.5 Flash Image. The model is in preview today via the\nGemini API\nand\nGoogle AI Studio\nbut will be stable in the coming weeks.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started building",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-08-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Отсюда id в коде: gemini-2.5-flash-image-preview."
+  },
+  {
+   "код": "E-141-13",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is also offered through OpenRouter.ai (the first image-generating model among its 480+ live models) and fal.ai.",
+   "цитата": "OpenRouter.ai\nhas partnered with us to help bring Gemini 2.5 Flash Image to their 3M+ developers everywhere, today. This is the first model on OpenRouter – of the 480+ live today –that can generate images.\nWe're also excited to partner with\nfal.ai\n, a leading developer platform for generative media, to make Gemini 2.5 Flash Image available to the broader developer community.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started building",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-14",
+   "вид": "факт",
+   "утверждение_en": "All images created or edited with Gemini 2.5 Flash Image include an invisible SynthID digital watermark so they can be identified as AI-generated or edited.",
+   "цитата": "All images created or edited with Gemini 2.5 Flash Image will include an invisible\nSynthID digital watermark\n, so they can be identified as AI-generated or edited.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started building",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-141-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Code example prompt used together with an input image: \"Create a picture of my cat eating a nano-banana in a fancy restaurant under the gemini constellation\".",
+   "цитата": "Create a picture of my cat eating a nano-banana in a fancy restaurant under the gemini constellation",
+   "источник_цитаты": "txt",
+   "раздел": "Код-пример (Python)",
+   "модели": [
+    "gemini-2.5-flash-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Структура: 'Create a picture of' + субъект с входного фото, названный притяжательно ('my cat') + действие ('eating a nano-banana') + место ('in a fancy restaurant') + атмосферная деталь ('under the gemini constellation'). Внешность кота не описывается — берётся из прикреплённого изображения. Цитата есть и в txt, и в <pre>."
+  },
+  {
+   "код": "E-141-16",
+   "вид": "инструкция",
+   "утверждение_en": "API usage: call client.models.generate_content with model \"gemini-2.5-flash-image-preview\" and contents=[prompt, image]; iterate over response.candidates[0].content.parts, printing text parts and decoding inline_data parts as images.",
+   "цитата": "response = client.models.generate_content(\n    model=\"gemini-2.5-flash-image-preview\",\n    contents=[prompt, image],\n)",
+   "источник_цитаты": "html",
+   "раздел": "Код-пример (Python)",
+   "модели": [
+    "gemini-2.5-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ответ может содержать и текстовые, и картиночные части (if part.text / elif part.inline_data). Конфигурации (формат, модальности) в примере нет."
+  },
+  {
+   "код": "E-141-17",
+   "вид": "предупреждение",
+   "утверждение_en": "Google is actively working to improve long-form text rendering, even more reliable character consistency, and factual representation such as fine details in images.",
+   "цитата": "We are actively working to improve long-form text rendering, even more reliable character consistency, and factual representation like fine details in images.",
+   "источник_цитаты": "txt",
+   "раздел": "Заключение",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "рефы"
+   ],
+   "заметка": "Известные слабые места модели на момент запуска: длинный текст, стабильность персонажа, мелкие фактические детали."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-141-18",
+   "вид": "приём",
+   "утверждение_en": "For reference-based generation, the code passes the text prompt and the input image together in one contents list (prompt first, then image), and the prompt names the subject of the attached image only by a possessive reference (\"my cat\"), leaving its appearance to the image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Код-пример (Python)",
+   "модели": [
+    "gemini-2.5-flash-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-141-15, E-141-16",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Порядок частей — как в примере; страница не утверждает, что порядок обязателен."
+  },
+  {
+   "код": "E-141-19",
+   "вид": "объяснение",
+   "утверждение_en": "Because every output image is billed as a fixed 1290 output tokens, the per-image price ($0.039) does not depend on the prompt; any text the model returns alongside the image is billed separately under Gemini 2.5 Flash pricing.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Gemini 2.5 Flash Image (вводная)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-141-5, E-141-16",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "30 $ × 1290 / 1 000 000 = 0,0387 $ ≈ 0,039 $ — арифметика страницы сходится."
+  }
+ ],
+ "противоречия_внутри": [
+  "Консистентность персонажа подаётся как ключевое достижение (E-141-2, E-141-6), и в том же посте — как область, требующая доработки ('even more reliable character consistency', E-141-17): не противоречие, а оговорка об ограниченной надёжности."
+ ],
+ "не_сказано": [
+  "Нет управления форматом/разрешением и лимита числа входных картинок.",
+  "Нет советов по составлению промптов, кроме примера в коде.",
+  "Стабильный id модели не назван — только preview-id в коде.",
+  "Не упомянуты видимый водяной знак и thinking.",
+  "Не сказано, как добиться стабильного текста при известной слабости long-form text rendering."
+ ],
+ "сомнения": [
+  "Цена и статус preview — на дату публикации (26.08.2025); могли измениться.",
+  "Промпт из build mode ('Build me an image editing app...') не выделен в единицу — это промпт для генерации кода, а не картинки."
+ ]
+}

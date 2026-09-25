@@ -1,0 +1,1722 @@
+{
+ "id": 19,
+ "url": "https://ai.google.dev/api/generate-content",
+ "заголовок": "Generating content | Gemini API | Google AI for Developers (API reference)",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC (подвал; meta article:published_time/datePublished в html нет)",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0 (контент) / Apache 2.0 (код) + 'Last updated 2026-09-23 UTC'; эндпоинт generativelanguage.googleapis.com; страница — официальный REST-справочник. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "REST-справочник методов models.generateContent и models.streamGenerateContent Gemini API и всех их типов (запрос, ответ, Part/Blob, GenerationConfig, Tools, Live-настройки, auth_tokens) для разработчиков. Около 60% объёма — примеры кода на 5 языках (текст, понимание картинок/аудио/видео/PDF, чат, кэш, JSON, код, функции, параметры, safety, system instruction), ни одного примера генерации картинки; image-модели по имени нигде не названы (примеры на gemini-3.8-flash / gemini-2.0-flash). Для картинок важны поля: GenerationConfig.responseModalities (точное совпадение, пустой = только текст), imageConfig (aspectRatio 14 значений, дефолт от рефов; imageSize 512/1K/2K/4K, дефолт 1K), responseFormat.image (JPEG, INLINE/URI, те же 14 соотношений и 4 размера), mediaResolution (64/256 токенов), thinkingConfig/thinkingLevel (Gemini 3+), thoughtSignature, коды BlockReason/FinishReason для картинок (IMAGE_SAFETY, IMAGE_PROHIBITED_CONTENT, IMAGE_OTHER, NO_IMAGE, IMAGE_RECITATION), image-поиск для grounding, форматы входных картинок в Blob, displayName для ссылок на медиа. Повторяющийся мотив: «ошибка, если поле задано для модели, которая его не поддерживает».",
+ "модели_на_странице": [
+  "gemini-3.8-flash (все SDK-примеры, текстовая)",
+  "gemini-2.0-flash (curl-примеры)",
+  "'Gemini 3 or later models' (родовая фраза в thinkingLevel)",
+  "Gemini 2.5 / Gemini 3.1 (родово, в TurnCoverage Live API)",
+  "image-модели (Nano Banana) по имени не названы"
+ ],
+ "структура": [
+  "Generating content (вступление)",
+  "Method: models.generateContent (Endpoint, Path parameters, Request body, Example request: Text/Image/Audio/Video/PDF/Chat/Cache/Tuned Model/JSON Mode/Code execution/Function Calling/Generation config/Safety Settings/System Instruction, Response body)",
+  "Method: models.streamGenerateContent (то же, примеры Text/Image/Audio/Video/PDF/Chat)",
+  "GenerateContentResponse, PromptFeedback, BlockReason, UsageMetadata, ModelStatus, ModelStage",
+  "Candidate, FinishReason, Grounding* (GroundingMetadata, GroundingChunk, Web, Image, RetrievedContext, Maps …), LogprobsResult, UrlContextMetadata, CitationMetadata",
+  "HarmCategory, ModalityTokenCount, Modality, SafetyRating, HarmProbability, SafetySetting, HarmBlockThreshold, ServiceTier",
+  "Content, Part, Blob, FunctionCall/Response…, FileData, ExecutableCode, ToolCall, ToolType, ToolResponse, VideoMetadata, MediaResolution, Level, MediaProcessing, AudioTranscription…",
+  "Environment, Schema, Type, Tool, FunctionDeclaration, GoogleSearchRetrieval, GoogleSearch, SearchTypes, WebSearch, ImageSearch, ComputerUse, UrlContext, FileSearch, McpServer, GoogleMaps",
+  "REST Resource: auth_tokens (AuthToken, BidiGenerateContentSetup, GenerationConfig, Modality, SpeechConfig…, ThinkingConfig, ThinkingLevel, ImageConfig, MediaResolution, ResponseFormatConfig, TextResponseFormat, AudioResponseFormat, ImageResponseFormat, MimeType, Delivery, AspectRatio, ImageSize, TranslationConfig, AudioTranscriptionConfig, RealtimeInputConfig…, HistoryConfig)",
+  "Method: auth_tokens.create"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Generating content | Gemini API |",
+   "итог": "ничего: обвязка сайта (заголовок, выбор языка, Get API key/Cookbook/Community/Sign in), строки 1-37"
+  },
+  {
+   "n": 2,
+   "начало": "Overview API versions Core APIs Interactions",
+   "итог": "ничего: обвязка сайта (левое меню API reference), строки 38-67"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: обвязка сайта (баннер), строки 68-70"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API API reference Send",
+   "итог": "ничего: обвязка сайта (хлебные крошки, H1), строки 71-75"
+  },
+  {
+   "n": 5,
+   "начало": "The Gemini API supports content generation",
+   "итог": "ничего: вступление без правил (перечень возможностей и ссылки на гайды), строка 76"
+  },
+  {
+   "n": 6,
+   "начало": "Text generation Vision Audio Embeddings Long",
+   "итог": "ничего: обвязка сайта (ссылки на гайды и внутреннее оглавление метода), строки 77-107"
+  },
+  {
+   "n": 7,
+   "начало": "Generates a model response given an",
+   "итог": "ничего: общее описание метода ('Input capabilities differ between models, including tuned models'), не про генерацию картинок, строки 108-116"
+  },
+  {
+   "n": 8,
+   "начало": "Endpoint post https: / /generativelanguage.googleapis.com",
+   "итог": "E-19-1"
+  },
+  {
+   "n": 9,
+   "начало": "Path parameters model string Required. The",
+   "итог": "ничего: общий параметр пути (формат models/{model}), учтён в E-19-1, строки 125-135"
+  },
+  {
+   "n": 10,
+   "начало": "Request body The request body contains",
+   "итог": "E-19-2"
+  },
+  {
+   "n": 11,
+   "начало": "tools[] object ( Tool ) Optional.",
+   "итог": "ничего: не про генерацию картинок (tools/toolConfig: function calling, code execution), строки 149-181"
+  },
+  {
+   "n": 12,
+   "начало": "safetySettings[] object ( SafetySetting ) Optional.",
+   "итог": "E-19-3"
+  },
+  {
+   "n": 13,
+   "начало": "labels map (key: string, value: string)",
+   "итог": "ничего: не про генерацию картинок (метки запроса, safety_identifier), строки 206-216"
+  },
+  {
+   "n": 14,
+   "начало": "systemInstruction object ( Content ) Optional.",
+   "итог": "E-19-4"
+  },
+  {
+   "n": 15,
+   "начало": "generationConfig object ( GenerationConfig ) Optional.",
+   "итог": "ничего: ссылка на тип GenerationConfig (разобран ниже), строки 227-229"
+  },
+  {
+   "n": 16,
+   "начало": "cachedContent string Optional. The name",
+   "итог": "ничего: не про генерацию картинок (cachedContent, serviceTier, store), строки 230-243"
+  },
+  {
+   "n": 17,
+   "начало": "Example request Text Python from google",
+   "итог": "ничего: код без промпта про картинки (Text: 'Write a story about a magic backpack.' на 5 языках; html pre 0-4), строки 244-490"
+  },
+  {
+   "n": 18,
+   "начало": "Image Python from google import genai",
+   "итог": "E-19-5 (html pre 5-9, строки 491-~1100)"
+  },
+  {
+   "n": 19,
+   "начало": "Audio Python from google import genai",
+   "итог": "ничего: не про генерацию картинок (Audio: summary of audio file; pre 10-13)"
+  },
+  {
+   "n": 20,
+   "начало": "Video Python from google import genai",
+   "итог": "ничего: не про генерацию картинок (Video: describe/transcribe video; pre 14-17)"
+  },
+  {
+   "n": 21,
+   "начало": "PDF Python from google import genai",
+   "итог": "ничего: не про генерацию картинок (PDF: summary/poem; pre 18-20)"
+  },
+  {
+   "n": 22,
+   "начало": "Chat Python from google import genai",
+   "итог": "ничего: не про генерацию картинок (Chat: текстовый многоходовой диалог с history; механика — E-19-2; pre 21-25)"
+  },
+  {
+   "n": 23,
+   "начало": "Cache Python from google import genai",
+   "итог": "ничего: не про генерацию картинок (context caching; pre 26-28)"
+  },
+  {
+   "n": 24,
+   "начало": "Tuned Model Python # With Gemini",
+   "итог": "ничего: код без промпта (ссылка на миграцию SDK; pre 29)"
+  },
+  {
+   "n": 25,
+   "начало": "JSON Mode Python from google import",
+   "итог": "ничего: не про генерацию картинок (JSON schema output; pre 30-34)"
+  },
+  {
+   "n": 26,
+   "начало": "Code execution Python from google import",
+   "итог": "ничего: не про генерацию картинок (code execution; pre 35-37)"
+  },
+  {
+   "n": 27,
+   "начало": "Function Calling Python from google import",
+   "итог": "ничего: не про генерацию картинок (function calling; pre 38-42)"
+  },
+  {
+   "n": 28,
+   "начало": "Generation config Python from google import",
+   "итог": "ничего: код без image-параметров (candidate_count, stop_sequences, max_output_tokens, temperature, topP, topK для текста; pre 43-47) — отсутствие imageConfig в примерах вынесено в не_сказано"
+  },
+  {
+   "n": 29,
+   "начало": "Safety Settings Python from google import",
+   "итог": "ничего: текстовый пример safety settings (HATE_SPEECH BLOCK_MEDIUM_AND_ABOVE, HARASSMENT BLOCK_ONLY_HIGH; pre 48-52), механизм — повтор E-19-3"
+  },
+  {
+   "n": 30,
+   "начало": "System Instruction Python from google import",
+   "итог": "ничего: текстовый пример system instruction (pre 53-57), повтор E-19-4"
+  },
+  {
+   "n": 31,
+   "начало": "Response body If successful, the response",
+   "итог": "ничего: ссылка на тип GenerateContentResponse, строки 7738-7741"
+  },
+  {
+   "n": 32,
+   "начало": "Method: models.streamGenerateContent Endpoint Path parameters",
+   "итог": "ничего: не про генерацию картинок (streamed response того же запроса; оглавление), строки 7742-7760"
+  },
+  {
+   "n": 33,
+   "начало": "Endpoint post https: / /generativelanguage.googleapis.com",
+   "итог": "ничего: повтор единиц E-19-1, E-19-2, E-19-3, E-19-4 (тот же Request body для :streamGenerateContent), строки 7761-7887"
+  },
+  {
+   "n": 34,
+   "начало": "Example request Text Python from google",
+   "итог": "ничего: повтор примеров generateContent в потоковом варианте (Text/Image-понимание/Audio/Video/PDF/Chat; html pre 58-81), без генерации картинок, строки 7888-10961"
+  },
+  {
+   "n": 35,
+   "начало": "Response body If successful, the response",
+   "итог": "ничего: ссылка на поток GenerateContentResponse и оглавление, строки 10962-10975"
+  },
+  {
+   "n": 36,
+   "начало": "Response from the model supporting multiple",
+   "итог": "E-19-6"
+  },
+  {
+   "n": 37,
+   "начало": "Fields candidates[] object ( Candidate )",
+   "итог": "ничего: перечень полей ответа (candidates, promptFeedback, usageMetadata, modelVersion, responseId, modelStatus) и JSON-схема, строки 10991-11060"
+  },
+  {
+   "n": 38,
+   "начало": "PromptFeedback A set of the feedback",
+   "итог": "E-19-7"
+  },
+  {
+   "n": 39,
+   "начало": "BlockReason Specifies the reason why the",
+   "итог": "E-19-8"
+  },
+  {
+   "n": 40,
+   "начало": "UsageMetadata Metadata on the generation request's",
+   "итог": "E-19-9"
+  },
+  {
+   "n": 41,
+   "начало": "promptTokensDetails[] object ( ModalityTokenCount )",
+   "итог": "E-19-10"
+  },
+  {
+   "n": 42,
+   "начало": "JSON representation { \"promptTokenCount\" :",
+   "итог": "ничего: JSON-схема UsageMetadata, строки 11159-11230"
+  },
+  {
+   "n": 43,
+   "начало": "ModelStatus The status of the underlying",
+   "итог": "E-19-11"
+  },
+  {
+   "n": 44,
+   "начало": "Candidate JSON representation FinishReason GroundingAttribution",
+   "итог": "ничего: обвязка (оглавление раздела Candidate), строки 11291-11342"
+  },
+  {
+   "n": 45,
+   "начало": "A response candidate generated from the",
+   "итог": "ничего: поля Candidate общего назначения (content, finishReason 'If empty, the model has not stopped generating tokens', safetyRatings, citationMetadata для текста, tokenCount, grounding, logprobs, index, finishMessage) и JSON, строки 11343-11490"
+  },
+  {
+   "n": 46,
+   "начало": "FinishReason Defines the reason why the",
+   "итог": "ничего: общие коды остановки текста (STOP, MAX_TOKENS, SAFETY, RECITATION, LANGUAGE, OTHER, BLOCKLIST, PROHIBITED_CONTENT, SPII, MALFORMED_FUNCTION_CALL), строки 11492-11516"
+  },
+  {
+   "n": 47,
+   "начало": "IMAGE_SAFETY Token generation stopped because",
+   "итог": "E-19-12"
+  },
+  {
+   "n": 48,
+   "начало": "IMAGE_PROHIBITED_CONTENT Image generation stopped because",
+   "итог": "E-19-13"
+  },
+  {
+   "n": 49,
+   "начало": "IMAGE_OTHER Image generation stopped because",
+   "итог": "E-19-14"
+  },
+  {
+   "n": 50,
+   "начало": "NO_IMAGE The model was expected",
+   "итог": "E-19-15"
+  },
+  {
+   "n": 51,
+   "начало": "IMAGE_RECITATION Image generation stopped due",
+   "итог": "E-19-16"
+  },
+  {
+   "n": 52,
+   "начало": "UNEXPECTED_TOOL_CALL Model generated a tool",
+   "итог": "ничего: не про генерацию картинок (UNEXPECTED_TOOL_CALL, TOO_MANY_TOOL_CALLS), строки 11527-11530"
+  },
+  {
+   "n": 53,
+   "начало": "MISSING_THOUGHT_SIGNATURE Request has at least",
+   "итог": "E-19-17"
+  },
+  {
+   "n": 54,
+   "начало": "MALFORMED_RESPONSE Finished due to malformed",
+   "итог": "ничего: не про генерацию картинок (MALFORMED_RESPONSE, ESCALATION), строки 11533-11536"
+  },
+  {
+   "n": 55,
+   "начало": "PUP_LIMITED_DISABLED Indicates that token generation",
+   "итог": "E-19-18"
+  },
+  {
+   "n": 56,
+   "начало": "GroundingAttribution Attribution for a source",
+   "итог": "ничего: не про генерацию картинок (GroundingAttribution, AttributionSourceId, GroundingPassageId, SemanticRetrieverChunk), строки 11539-11670"
+  },
+  {
+   "n": 57,
+   "начало": "GroundingMetadata Metadata returned to client",
+   "итог": "E-19-19"
+  },
+  {
+   "n": 58,
+   "начало": "JSON representation { \"groundingChunks\" :",
+   "итог": "ничего: JSON-схема и SearchEntryPoint (renderedContent/sdkBlob для веб-поиска), строки 11703-11778"
+  },
+  {
+   "n": 59,
+   "начало": "GroundingChunk A GroundingChunk represents a",
+   "итог": "E-19-20"
+  },
+  {
+   "n": 60,
+   "начало": "Web Chunk from the web. Fields",
+   "итог": "ничего: не про картинки (Web chunk uri/title), строки 11838-11859"
+  },
+  {
+   "n": 61,
+   "начало": "Image Chunk from image search. Fields",
+   "итог": "E-19-21"
+  },
+  {
+   "n": 62,
+   "начало": "RetrievedContext Chunk from context retrieved by",
+   "итог": "ничего: не про генерацию картинок (RetrievedContext, CustomMetadata, StringList, Maps, PlaceAnswerSources, ReviewSnippet, GroundingSupport, Segment, RetrievalMetadata), строки 11896-12203"
+  },
+  {
+   "n": 63,
+   "начало": "JSON representation { \"googleSearchDynamicRetrievalScore\" :",
+   "итог": "ничего: не про генерацию картинок (LogprobsResult, TopCandidates, Candidate(logprobs), UrlContextMetadata, UrlMetadata, UrlRetrievalStatus), строки 12204-12353"
+  },
+  {
+   "n": 64,
+   "начало": "CitationMetadata JSON representation CitationSource JSON",
+   "итог": "ничего: не про генерацию картинок (цитирование текста/кода, license для GitHub), строки 12354-12411"
+  },
+  {
+   "n": 65,
+   "начало": "HarmCategory The category of a rating.",
+   "итог": "ничего: перечень категорий вреда (PaLM-категории и Gemini: HARASSMENT, HATE_SPEECH, SEXUALLY_EXPLICIT, DANGEROUS_CONTENT, CIVIC_INTEGRITY deprecated, JAILBREAK), повтор E-19-3, строки 12412-12454"
+  },
+  {
+   "n": 66,
+   "начало": "ModalityTokenCount JSON representation Modality Represents",
+   "итог": "E-19-10 (enum Modality с IMAGE, строки 12455-12494)"
+  },
+  {
+   "n": 67,
+   "начало": "SafetyRating JSON representation HarmProbability Safety",
+   "итог": "E-19-22"
+  },
+  {
+   "n": 68,
+   "начало": "SafetySetting JSON representation HarmBlockThreshold Safety",
+   "итог": "E-19-23"
+  },
+  {
+   "n": 69,
+   "начало": "ServiceTier Service tier of the request.",
+   "итог": "ничего: не про генерацию картинок (standard/flex/priority), строки 12591-12601"
+  },
+  {
+   "n": 70,
+   "начало": "Content JSON representation Part JSON",
+   "итог": "ничего: обвязка (оглавление раздела Content/Part), строки 12602-12641"
+  },
+  {
+   "n": 71,
+   "начало": "The base structured datatype containing multi-part",
+   "итог": "E-19-24"
+  },
+  {
+   "n": 72,
+   "начало": "Part A datatype containing media that",
+   "итог": "E-19-25"
+  },
+  {
+   "n": 73,
+   "начало": "thought boolean Optional. Indicates if the",
+   "итог": "E-19-26"
+  },
+  {
+   "n": 74,
+   "начало": "partMetadata object ( Struct format)",
+   "итог": "ничего: не про генерацию картинок (partMetadata для агентов), строки 12706-12710"
+  },
+  {
+   "n": 75,
+   "начало": "mediaResolution object ( MediaResolution )",
+   "итог": "E-19-27"
+  },
+  {
+   "n": 76,
+   "начало": "mediaProcessing enum ( MediaProcessing )",
+   "итог": "ничего: не про картинки (mediaProcessing только для видео, audioTranscription, speechMetadata), строки 12715-12734"
+  },
+  {
+   "n": 77,
+   "начало": "data Union type The following is",
+   "итог": "ничего: перечень типов данных Part (text, inlineData, functionCall/Response, fileData, executableCode, codeExecutionResult, toolCall/Response); inlineData/fileData разобраны в E-19-28, E-19-30; строки 12735-12931"
+  },
+  {
+   "n": 78,
+   "начало": "Blob Raw media bytes. Text should",
+   "итог": "E-19-28"
+  },
+  {
+   "n": 79,
+   "начало": "Supported file formats . // data",
+   "итог": "E-19-29"
+  },
+  {
+   "n": 80,
+   "начало": "FunctionCall A predicted FunctionCall returned",
+   "итог": "ничего: не про генерацию картинок (FunctionCall, FunctionResponse, FunctionResponsePart, FunctionResponseBlob — image/png, image/jpeg в ответах функций, Scheduling), строки 12966-13165"
+  },
+  {
+   "n": 81,
+   "начало": "FileData URI based data. Fields",
+   "итог": "E-19-30, E-19-29"
+  },
+  {
+   "n": 82,
+   "начало": "ExecutableCode Code generated by the",
+   "итог": "ничего: не про генерацию картинок (ExecutableCode, Language, CodeExecutionResult, Outcome), строки 13195-13302"
+  },
+  {
+   "n": 83,
+   "начало": "ToolCall A predicted server-side ToolCall",
+   "итог": "E-19-31"
+  },
+  {
+   "n": 84,
+   "начало": "ToolResponse The output from a",
+   "итог": "ничего: не про генерацию картинок (ToolResponse, VideoMetadata deprecated, fps (0.0, 24.0]), строки 13371-13458"
+  },
+  {
+   "n": 85,
+   "начало": "MediaResolution Media resolution for tokenization.",
+   "итог": "E-19-32"
+  },
+  {
+   "n": 86,
+   "начало": "MediaProcessing How the model processes",
+   "итог": "ничего: не про генерацию картинок (MediaProcessing для видео, AudioTranscription, WordInfo, SpeechMetadata), строки 13498-13600"
+  },
+  {
+   "n": 87,
+   "начало": "Environment JSON representation Status An",
+   "итог": "ничего: не про генерацию картинок (Environment агентов, Status, NetworkMode), строки 13601-13723"
+  },
+  {
+   "n": 88,
+   "начало": "Schema JSON representation Type The",
+   "итог": "ничего: не про генерацию картинок (Schema/Type для JSON-вывода и функций), строки 13724-13970"
+  },
+  {
+   "n": 89,
+   "начало": "Tool JSON representation FunctionDeclaration JSON",
+   "итог": "ничего: оглавление и общий перечень Tool (googleSearch 'Tool to support Google Search in Model. Powered by Google.' — детали в разделе GoogleSearch), строки 13968-14141"
+  },
+  {
+   "n": 90,
+   "начало": "FunctionDeclaration Structured representation of a",
+   "итог": "ничего: не про генерацию картинок (FunctionDeclaration, Behavior, GoogleSearchRetrieval, DynamicRetrievalConfig, Mode, CodeExecution), строки 14141-14300"
+  },
+  {
+   "n": 91,
+   "начало": "GoogleSearch GoogleSearch tool type. Tool",
+   "итог": "E-19-33"
+  },
+  {
+   "n": 92,
+   "начало": "Interval Represents a time interval, encoded",
+   "итог": "ничего: не про генерацию картинок (Interval, формат времени), строки 14332-14370"
+  },
+  {
+   "n": 93,
+   "начало": "SearchTypes Different types of search",
+   "итог": "E-19-34"
+  },
+  {
+   "n": 94,
+   "начало": "ComputerUse Computer Use tool type.",
+   "итог": "ничего: не про генерацию картинок (ComputerUse, Environment, SafetyPolicy, UrlContext, FileSearch, McpServer, StreamableHttpTransport, GoogleMaps), строки 14408-14622"
+  },
+  {
+   "n": 95,
+   "начало": "REST Resource: auth_tokens Resource: AuthToken",
+   "итог": "ничего: обвязка (оглавление ресурса auth_tokens), строки 14623-14687"
+  },
+  {
+   "n": 96,
+   "начало": "A request to create an ephemeral",
+   "итог": "ничего: не про генерацию картинок (AuthToken для Live API: expireTime, newSessionExpireTime, fieldMask, uses), строки 14688-14787"
+  },
+  {
+   "n": 97,
+   "начало": "BidiGenerateContentSetup Message to be sent",
+   "итог": "ничего: не про генерацию картинок (настройка Live API сессии, список неподдерживаемых полей generationConfig), строки 14787-14969"
+  },
+  {
+   "n": 98,
+   "начало": "GenerationConfig Configuration options for model",
+   "итог": "E-19-35"
+  },
+  {
+   "n": 99,
+   "начало": "stopSequences[] string Optional. The set",
+   "итог": "ничего: не про генерацию картинок (stopSequences до 5, responseMimeType/responseSchema/_responseJsonSchema/responseJsonSchema — формат ТЕКСТА), строки 14972-15065"
+  },
+  {
+   "n": 100,
+   "начало": "responseModalities[] enum ( Modality )",
+   "итог": "E-19-36, E-19-37"
+  },
+  {
+   "n": 101,
+   "начало": "candidateCount integer Optional. Number of",
+   "итог": "ничего: общие параметры сэмплинга (candidateCount дефолт 1, maxOutputTokens, temperature [0.0, 2.0], topP, topK, seed, presencePenalty, frequencyPenalty, responseLogprobs, logprobs [0, 20]) — связь с картинками на странице не указана, вынесено в не_сказано; строки 15073-15161"
+  },
+  {
+   "n": 102,
+   "начало": "enableEnhancedCivicAnswers boolean Optional. Enables enhanced",
+   "итог": "ничего: не про генерацию картинок (enableEnhancedCivicAnswers, speechConfig), строки 15162-15167"
+  },
+  {
+   "n": 103,
+   "начало": "thinkingConfig object ( ThinkingConfig )",
+   "итог": "E-19-38"
+  },
+  {
+   "n": 104,
+   "начало": "imageConfig object ( ImageConfig )",
+   "итог": "E-19-39"
+  },
+  {
+   "n": 105,
+   "начало": "mediaResolution enum ( MediaResolution )",
+   "итог": "E-19-40"
+  },
+  {
+   "n": 106,
+   "начало": "enableAffectiveDialog boolean Optional. If enabled,",
+   "итог": "ничего: не про генерацию картинок (affective dialog), строки 15182-15185"
+  },
+  {
+   "n": 107,
+   "начало": "responseFormat object ( ResponseFormatConfig )",
+   "итог": "E-19-41"
+  },
+  {
+   "n": 108,
+   "начало": "translationConfig object ( TranslationConfig )",
+   "итог": "ничего: не про генерацию картинок (translationConfig, audioTranscriptionConfig) и JSON-схема GenerationConfig, строки 15191-15338"
+  },
+  {
+   "n": 109,
+   "начало": "Modality Supported modalities of the response.",
+   "итог": "E-19-42"
+  },
+  {
+   "n": 110,
+   "начало": "SpeechConfig Config for speech generation",
+   "итог": "ничего: не про генерацию картинок (SpeechConfig, VoiceConfig, PrebuiltVoiceConfig, MultiSpeakerVoiceConfig, SpeakerVoiceConfig), строки 15352-15548"
+  },
+  {
+   "n": 111,
+   "начало": "ThinkingConfig Config for thinking features.",
+   "итог": "E-19-43"
+  },
+  {
+   "n": 112,
+   "начало": "thinkingLevel enum ( ThinkingLevel )",
+   "итог": "E-19-44"
+  },
+  {
+   "n": 113,
+   "начало": "ImageConfig Config for image generation",
+   "итог": "E-19-45"
+  },
+  {
+   "n": 114,
+   "начало": "imageSize string Optional. Specifies the",
+   "итог": "E-19-46"
+  },
+  {
+   "n": 115,
+   "начало": "MediaResolution Media resolution for the",
+   "итог": "E-19-47"
+  },
+  {
+   "n": 116,
+   "начало": "ResponseFormatConfig Configuration for the response",
+   "итог": "E-19-41 (структура ResponseFormatConfig, строки 15664-15700)"
+  },
+  {
+   "n": 117,
+   "начало": "TextResponseFormat Configuration for text output",
+   "итог": "ничего: не про генерацию картинок (TextResponseFormat, MimeType текста, AudioResponseFormat, MimeType/Delivery аудио), строки 15704-15808"
+  },
+  {
+   "n": 118,
+   "начало": "ImageResponseFormat Configuration for image output",
+   "итог": "E-19-48"
+  },
+  {
+   "n": 119,
+   "начало": "MimeType Supported MIME types for image",
+   "итог": "E-19-49"
+  },
+  {
+   "n": 120,
+   "начало": "Delivery Delivery mode for image output.",
+   "итог": "E-19-50"
+  },
+  {
+   "n": 121,
+   "начало": "AspectRatio Supported aspect ratios for image",
+   "итог": "E-19-51"
+  },
+  {
+   "n": 122,
+   "начало": "ImageSize Supported image sizes for image",
+   "итог": "E-19-52"
+  },
+  {
+   "n": 123,
+   "начало": "TranslationConfig Config for translation features.",
+   "итог": "ничего: не про генерацию картинок (TranslationConfig, AudioTranscriptionConfig, LanguageAuto/Hints, Mode, RealtimeInputConfig, AutomaticActivityDetection, Start/EndSensitivity, ActivityHandling, TurnCoverage, SessionResumptionConfig, ContextWindowCompressionConfig, SlidingWindow, HistoryConfig), строки 15920-16311"
+  },
+  {
+   "n": 124,
+   "начало": "Method: auth_tokens.create Endpoint Request body",
+   "итог": "ничего: не про генерацию картинок (создание эфемерного токена Live API), строки 16312-16396"
+  },
+  {
+   "n": 125,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Site Policies, 'Last updated 2026-09-23 UTC' — использовано в дате, виджет отзывов, Terms/Privacy), строки 16397-16410"
+  },
+  {
+   "n": 126,
+   "начало": "English Deutsch Español – América Latina",
+   "итог": "ничего: обвязка сайта (выбор языка), строки 16411-16431"
+  },
+  {
+   "n": 127,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-19-53, E-19-54, E-19-55, E-19-56, E-19-57, E-19-58 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-19-1",
+   "вид": "факт",
+   "утверждение_en": "Content is generated with a POST to https://generativelanguage.googleapis.com/v1beta/{model=models/*}:generateContent, where the model path parameter has the form models/{model}.",
+   "цитата": "Endpoint\npost\nhttps:\n/\n/generativelanguage.googleapis.com\n/v1beta\n/{model=models\n/*}:generateContent",
+   "источник_цитаты": "txt",
+   "раздел": "Method: models.generateContent / Endpoint",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общий метод генерации; то, что image-модели вызываются этим же методом, страница прямо не пишет, но ImageConfig — часть его GenerationConfig. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-2",
+   "вид": "факт",
+   "утверждение_en": "contents[] is required: for single-turn queries it is a single instance; for multi-turn queries like chat it is a repeated field containing the conversation history and the latest request.",
+   "цитата": "Required. The content of the current conversation with the model.\nFor single-turn queries, this is a single instance. For multi-turn queries like\nchat\n, this is a repeated field that contains the conversation history and the latest request.",
+   "источник_цитаты": "txt",
+   "раздел": "Method: models.generateContent / Request body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Механика многоходового диалога (история передаётся целиком в каждом запросе) — основа многоходового редактирования. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-3",
+   "вид": "правило",
+   "утверждение_en": "safetySettings[] is a list of unique SafetySetting instances (no more than one per category) enforced on both request contents and response candidates; the API blocks contents and responses that fail the thresholds, the list overrides defaults per category, and categories not listed use the default setting. Supported categories: HATE_SPEECH, SEXUALLY_EXPLICIT, DANGEROUS_CONTENT, HARASSMENT, CIVIC_INTEGRITY, JAILBREAK.",
+   "цитата": "This will be enforced on the\nGenerateContentRequest.contents\nand\nGenerateContentResponse.candidates\n. There should not be more than one setting for each\nSafetyCategory\ntype. The API will block any contents and responses that fail to meet the thresholds set by these settings.",
+   "источник_цитаты": "txt",
+   "раздел": "Method: models.generateContent / Request body / safetySettings[]",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Продолжение абзаца: 'This list overrides the default settings for each SafetyCategory specified in the safetySettings. If there is no SafetySetting for a given SafetyCategory provided in the list, the API will use the default safety setting for that category. Harm categories HARM_CATEGORY_HATE_SPEECH, HARM_CATEGORY_SEXUALLY_EXPLICIT, HARM_CATEGORY_DANGEROUS_CONTENT, HARM_CATEGORY_HARASSMENT, HARM_CATEGORY_CIVIC_INTEGRITY, HARM_CATEGORY_JAILBREAK are supported.' Отдельные image-категории не названы; как настройки влияют на IMAGE_SAFETY — не сказано. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-4",
+   "вид": "ограничение",
+   "утверждение_en": "systemInstruction (developer-set system instructions) is currently text only.",
+   "цитата": "Optional. Developer set\nsystem instruction(s)\n. Currently, text only.",
+   "источник_цитаты": "txt",
+   "раздел": "Method: models.generateContent / Request body / systemInstruction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": "Следствие: изображения (рефы) нельзя положить в system instruction — только в contents. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-5",
+   "вид": "приём",
+   "утверждение_en": "Images are passed as input parts alongside text: inline as base64 bytes in inline_data with a mime_type (e.g. image/jpeg), or uploaded via the Files API and referenced by URI; text and image are separate parts of the same user content.",
+   "цитата": "\"inline_data\": {\n          \"mime_type\":\"image/jpeg\",\n          \"data\": \"$(cat \"$TEMP_B64\")\"\n        }",
+   "источник_цитаты": "html",
+   "раздел": "Method: models.generateContent / Example request / Image",
+   "модели": [
+    "gemini-3.8-flash",
+    "gemini-2.0-flash (в curl-примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из примера на ПОНИМАНИЕ изображения (Image: Python/Node.js/Go/Shell/Java)",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Единственный пример с картинкой на странице — вход для понимания ('Tell me about this instrument' + organ.jpg), а не генерация. Node.js/Go используют files.upload + createPartFromUri/NewPartFromURI, Python — PIL.Image в списке contents, Java — Part.fromBytes(imageData, \"image/jpeg\"). Для image-моделей тот же механизм передачи рефов — вывод, прямо не сказано."
+  },
+  {
+   "код": "E-19-6",
+   "вид": "факт",
+   "утверждение_en": "The API returns either all requested candidates or none of them; it returns no candidates at all only if something was wrong with the prompt (check promptFeedback), and reports feedback on each candidate in finishReason and safetyRatings.",
+   "цитата": "The API:  - Returns either all requested candidates or none of them  - Returns no candidates at all only if there was something wrong with the  prompt (check\npromptFeedback\n)  - Reports feedback on each candidate in\nfinishReason\nand\nsafetyRatings\n.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerateContentResponse",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-7",
+   "вид": "инструкция",
+   "утверждение_en": "If promptFeedback.blockReason is set, the prompt was blocked and no candidates are returned; rephrase the prompt.",
+   "цитата": "Optional. If set, the prompt was blocked and no candidates are returned. Rephrase the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "PromptFeedback",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "промптинг"
+   ],
+   "заметка": "Единственная инструкция страницы, адресованная тексту промпта. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-8",
+   "вид": "факт",
+   "утверждение_en": "BlockReason IMAGE_SAFETY: candidates blocked due to unsafe image generation content (other prompt block reasons: SAFETY, OTHER, BLOCKLIST, PROHIBITED_CONTENT).",
+   "цитата": "IMAGE_SAFETY\nCandidates blocked due to unsafe image generation content.",
+   "источник_цитаты": "txt",
+   "раздел": "BlockReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Прочие причины блокировки промпта: SAFETY ('Inspect safetyRatings to understand which safety category blocked it'), OTHER (unknown), BLOCKLIST (terminology blocklist), PROHIBITED_CONTENT. IMAGE_SAFETY сформулирован про кандидатов, хотя enum описывает блокировку промпта (см. противоречия). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-9",
+   "вид": "факт",
+   "утверждение_en": "UsageMetadata reports thoughtsTokenCount (tokens of thoughts for thinking models) and totalTokenCount = prompt + thoughts + response candidates; candidatesTokenCount is the total across all generated candidates.",
+   "цитата": "Total token count for the generation request (prompt + thoughts + response candidates).",
+   "источник_цитаты": "txt",
+   "раздел": "UsageMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Рядом: 'thoughtsTokenCount — Output only. Number of tokens of thoughts for thinking models.' Думающие токены входят в итог. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-10",
+   "вид": "факт",
+   "утверждение_en": "Token usage is broken down per modality (TEXT, IMAGE, VIDEO, AUDIO, DOCUMENT) for request input, cached content, returned response and tool-use inputs via ModalityTokenCount lists.",
+   "цитата": "Output only. List of modalities that were returned in the response.",
+   "источник_цитаты": "txt",
+   "раздел": "UsageMetadata / ModalityTokenCount / Modality",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "candidatesTokensDetails[] — модальности ответа; enum Modality (Content Part modality): MODALITY_UNSPECIFIED, TEXT, IMAGE ('Image.'), VIDEO, AUDIO, DOCUMENT. Позволяет увидеть токены IMAGE в ответе. Числа токенов на картинку страница не даёт."
+  },
+  {
+   "код": "E-19-11",
+   "вид": "факт",
+   "утверждение_en": "ModelStatus reports the model stage and retirement time: EXPERIMENTAL is for experimental purposes only; PREVIEW is more mature than experimental; STABLE is considered stable and ready for production; LEGACY is on the path to deprecation and only existing customers can use it; RETIRED models cannot be used.",
+   "цитата": "STABLE\nModels in this stage are considered stable and ready for production use.\nLEGACY\nIf the model is on this stage, it means that this model is on the path to deprecation in near future. Only existing customers can use this model.",
+   "источник_цитаты": "txt",
+   "раздел": "ModelStatus / ModelStage",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Также: 'PREVIEW Models in this stage are more mature than experimental models.'; 'RETIRED Models in this stage are retired. These models cannot be used.'; DEPRECATED и UNSTABLE_EXPERIMENTAL помечены как deprecated. Поле responses.modelStatus позволяет программно узнать стадию (в т.ч. preview) image-модели. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-12",
+   "вид": "факт",
+   "утверждение_en": "FinishReason IMAGE_SAFETY: token generation stopped because generated images contain safety violations.",
+   "цитата": "IMAGE_SAFETY\nToken generation stopped because generated images contain safety violations.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-13",
+   "вид": "факт",
+   "утверждение_en": "FinishReason IMAGE_PROHIBITED_CONTENT: image generation stopped because generated images have other prohibited content.",
+   "цитата": "IMAGE_PROHIBITED_CONTENT\nImage generation stopped because generated images has other prohibited content.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-14",
+   "вид": "факт",
+   "утверждение_en": "FinishReason IMAGE_OTHER: image generation stopped because of other miscellaneous issue.",
+   "цитата": "IMAGE_OTHER\nImage generation stopped because of other miscellaneous issue.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-15",
+   "вид": "факт",
+   "утверждение_en": "FinishReason NO_IMAGE: the model was expected to generate an image, but none was generated.",
+   "цитата": "NO_IMAGE\nThe model was expected to generate an image, but none was generated.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Случай «модель ответила без картинки» выделен в отдельный код. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-16",
+   "вид": "факт",
+   "утверждение_en": "FinishReason IMAGE_RECITATION: image generation stopped due to recitation.",
+   "цитата": "IMAGE_RECITATION\nImage generation stopped due to recitation.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Что такое recitation для картинок, не раскрыто; для текста citationMetadata описывает 'passages that are \"recited\" from copyrighted material in the foundational LLM's training data'. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-17",
+   "вид": "факт",
+   "утверждение_en": "FinishReason MISSING_THOUGHT_SIGNATURE: the request has at least one thought signature missing.",
+   "цитата": "MISSING_THOUGHT_SIGNATURE\nRequest has at least one thought signature missing.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Связь с многоходовым редактированием картинок — вывод (E-19-56). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-18",
+   "вид": "факт",
+   "утверждение_en": "FinishReason PUP_LIMITED_DISABLED: token generation stopped because the user account is limited or disabled due to Prohibited Use Policy (PUP) violations.",
+   "цитата": "PUP_LIMITED_DISABLED\nIndicates that token generation stopped because the user account is limited or disabled due to Prohibited Use Policy (PUP) violations.",
+   "источник_цитаты": "txt",
+   "раздел": "FinishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-19",
+   "вид": "факт",
+   "утверждение_en": "GroundingMetadata includes imageSearchQueries[] — the image search queries used for grounding (alongside webSearchQueries[]).",
+   "цитата": "imageSearchQueries[]\nstring\nImage search queries used for grounding.",
+   "источник_цитаты": "txt",
+   "раздел": "GroundingMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-20",
+   "вид": "факт",
+   "утверждение_en": "A GroundingChunk can be a chunk from image search (field image), besides web, retrievedContext (file search) and maps.",
+   "цитата": "image\nobject (\nImage\n)\nOptional. Grounding chunk from image search.",
+   "источник_цитаты": "txt",
+   "раздел": "GroundingChunk",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-21",
+   "вид": "факт",
+   "утверждение_en": "An image-search grounding chunk carries sourceUri (the web page URI for attribution), imageUri (the image asset URL), title (title of the page the image is from) and domain (root domain of that page).",
+   "цитата": "Image\nChunk from image search.\nFields\nsourceUri\nstring\nThe web page URI for attribution.\nimageUri\nstring\nThe image asset URL.\ntitle\nstring\nThe title of the web page that the image is from.\ndomain\nstring",
+   "источник_цитаты": "txt",
+   "раздел": "GroundingChunk / Image",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Окончание описания domain: 'The root domain of the web page that the image is from, e.g. \"example.com\".' Поле sourceUri прямо названо 'for attribution'. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-22",
+   "вид": "объяснение",
+   "утверждение_en": "HarmProbability gives the probability of content being unsafe (NEGLIGIBLE, LOW, MEDIUM, HIGH); it does not indicate the severity of harm.",
+   "цитата": "The classification system gives the probability of the content being unsafe. This does not indicate the severity of harm for a piece of content.",
+   "источник_цитаты": "txt",
+   "раздел": "SafetyRating / HarmProbability",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-23",
+   "вид": "факт",
+   "утверждение_en": "HarmBlockThreshold: BLOCK_LOW_AND_ABOVE allows only NEGLIGIBLE; BLOCK_MEDIUM_AND_ABOVE allows NEGLIGIBLE and LOW; BLOCK_ONLY_HIGH allows NEGLIGIBLE, LOW and MEDIUM; BLOCK_NONE allows all content; OFF turns off the safety filter.",
+   "цитата": "BLOCK_LOW_AND_ABOVE\nContent with NEGLIGIBLE will be allowed.\nBLOCK_MEDIUM_AND_ABOVE\nContent with NEGLIGIBLE and LOW will be allowed.\nBLOCK_ONLY_HIGH\nContent with NEGLIGIBLE, LOW, and MEDIUM will be allowed.\nBLOCK_NONE\nAll content will be allowed.\nOFF\nTurn off the safety filter.",
+   "источник_цитаты": "txt",
+   "раздел": "SafetySetting / HarmBlockThreshold",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "'Passing a safety setting for a category changes the allowed probability that content is blocked.' Применимость к image-выходу не указана. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-24",
+   "вид": "правило",
+   "утверждение_en": "Content is an ordered list of Parts that constitute a single message (Parts may have different MIME types) plus a role, which must be 'user' or 'model'; role is useful to set for multi-turn conversations.",
+   "цитата": "Ordered\nParts\nthat constitute a single message. Parts may have different MIME types.\nrole\nstring\nOptional. The producer of the content. Must be either 'user' or 'model'.\nUseful to set for multi-turn conversations, otherwise can be left blank or unset.",
+   "источник_цитаты": "txt",
+   "раздел": "Content",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "'Ordered' — порядок частей (текст/картинки) в сообщении значим как структура. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-25",
+   "вид": "правило",
+   "утверждение_en": "A Part contains exactly one of the accepted data types and must have a fixed IANA MIME type identifying the media type and subtype if inlineData is filled with raw bytes.",
+   "цитата": "A\nPart\nmust have a fixed IANA MIME type identifying the type and subtype of the media if the\ninlineData\nfield is filled with raw bytes.",
+   "источник_цитаты": "txt",
+   "раздел": "Part",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-26",
+   "вид": "факт",
+   "утверждение_en": "A Part may be flagged thought (thought from the model) and may carry a thoughtSignature — an opaque base64 signature for the thought so it can be reused in subsequent requests.",
+   "цитата": "thoughtSignature\nstring (\nbytes\nformat)\nOptional. An opaque signature for the thought so it can be reused in subsequent requests.",
+   "источник_цитаты": "txt",
+   "раздел": "Part",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Рядом: 'thought boolean Optional. Indicates if the part is thought from the model.' Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-27",
+   "вид": "факт",
+   "утверждение_en": "Each Part can carry an optional mediaResolution for the input media.",
+   "цитата": "mediaResolution\nobject (\nMediaResolution\n)\nOptional. Media resolution for the input media.",
+   "источник_цитаты": "txt",
+   "раздел": "Part",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "То есть разрешение токенизации можно задавать поштучно для каждой входной картинки. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-28",
+   "вид": "факт",
+   "утверждение_en": "Blob holds raw media bytes (base64) with an IANA MIME type; supported image input types include image/png, image/jpeg, image/jpg, image/webp, image/heic, image/heif, image/gif, image/avif. Text should not be sent as raw bytes.",
+   "цитата": "Raw media bytes.\nText should not be sent as raw bytes, use the 'text' field.\nFields\nmimeType\nstring\nThe IANA standard MIME type of the source data. Examples of supported types: - Images: image/png, image/jpeg, image/jpg, image/webp, image/heic, image/heif, image/gif, image/avif",
+   "источник_цитаты": "txt",
+   "раздел": "Blob",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Это форматы ВХОДА (inlineData). Формат ВЫХОДА картинки — только JPEG (E-19-49). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-29",
+   "вид": "приём",
+   "утверждение_en": "A Blob (inline bytes) or FileData (URI) can have a displayName that names it for the model (e.g. \"my_blob.png\"); it is used as the reference identifier when verbalizationMode is set to REFERENCE_ONLY.",
+   "цитата": "displayName\nstring\nOptional. Specifies the name used to refer to this blob to the model (e.g. \"my_blob.png\"). Used as the blob reference identifier when\nverbalizationMode\nis set to\nREFERENCE_ONLY\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Blob / FileData",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Для FileData то же: 'Specifies the name used to refer to this file to the model (e.g. \"my_file.pdf\")'. Сам verbalizationMode на странице не определён. Применимость к рефам image-моделей не указана. "
+  },
+  {
+   "код": "E-19-30",
+   "вид": "факт",
+   "утверждение_en": "Media can be passed by URI via FileData: fileUri (required), optional mimeType and displayName.",
+   "цитата": "FileData\nURI based data.\nFields\nmimeType\nstring\nOptional. The IANA standard MIME type of the source data.\nfileUri\nstring\nRequired. URI.",
+   "источник_цитаты": "txt",
+   "раздел": "FileData",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-31",
+   "вид": "факт",
+   "утверждение_en": "ToolType GOOGLE_SEARCH_IMAGE is the image search tool and maps to Tool.google_search.search_types.image_search (GOOGLE_SEARCH_WEB maps to web_search).",
+   "цитата": "GOOGLE_SEARCH_IMAGE\nImage search tool, maps to Tool.google_search.search_types.image_search.",
+   "источник_цитаты": "txt",
+   "раздел": "ToolCall / ToolType",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-32",
+   "вид": "факт",
+   "утверждение_en": "Part-level MediaResolution sets the tokenization quality for given media, with levels MEDIA_RESOLUTION_LOW, MEDIUM, HIGH and ULTRA_HIGH.",
+   "цитата": "MediaResolution\nMedia resolution for tokenization.\nFields\nvalue\nUnion type\nThe media resolution level.",
+   "источник_цитаты": "txt",
+   "раздел": "MediaResolution / Level",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Уровни: 'MEDIA_RESOLUTION_LOW Media resolution set to low. MEDIA_RESOLUTION_MEDIUM ... MEDIA_RESOLUTION_HIGH ... MEDIA_RESOLUTION_ULTRA_HIGH Media resolution set to ultra high.' Числа токенов здесь не даны (в отличие от E-19-47). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-33",
+   "вид": "факт",
+   "утверждение_en": "GoogleSearch tool: searchTypes sets which search types are enabled; if not set, web search is enabled by default (timeRangeFilter can restrict results to a time range, requiring both start and end).",
+   "цитата": "searchTypes\nobject (\nSearchTypes\n)\nOptional. The set of search types to enable. If not set, web search is enabled by default.",
+   "источник_цитаты": "txt",
+   "раздел": "GoogleSearch",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Следствие: поиск по картинкам нужно включать явно (E-19-34). Про timeRangeFilter: 'If customers set a start time, they must set an end time (and vice versa).' Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-34",
+   "вид": "факт",
+   "утверждение_en": "SearchTypes: webSearch enables web search and returns only text results; imageSearch enables image search for grounding and returns image bytes.",
+   "цитата": "Optional. Enables web search. Only text results are returned.\nimageSearch\nobject (\nImageSearch\n)\nOptional. Enables image search. Image bytes are returned.",
+   "источник_цитаты": "txt",
+   "раздел": "SearchTypes / WebSearch / ImageSearch",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "'ImageSearch — Image search for grounding and related configurations.' Какие модели поддерживают imageSearch — не сказано."
+  },
+  {
+   "код": "E-19-35",
+   "вид": "предупреждение",
+   "утверждение_en": "Not all GenerationConfig parameters are configurable for every model.",
+   "цитата": "Configuration options for model generation and outputs. Not all parameters are configurable for every model.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общая оговорка ко всем полям ниже (temperature, seed, candidateCount и т.д.) — для image-моделей применимость полей не расписана."
+  },
+  {
+   "код": "E-19-36",
+   "вид": "правило",
+   "утверждение_en": "responseModalities[] lists the requested response modalities and must exactly match the modalities of the response; a model may support several combinations, and requesting a combination that matches none of them returns an error.",
+   "цитата": "Optional. The requested modalities of the response. Represents the set of modalities that the model can return, and should be expected in the response. This is an exact match to the modalities of the response.\nA model may have multiple combinations of supported modalities. If the requested modalities do not match any of the supported combinations, an error will be returned.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / responseModalities[]",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ключевое для генерации картинок поле; какие комбинации поддерживают image-модели, страница не перечисляет. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-37",
+   "вид": "правило",
+   "утверждение_en": "An empty responseModalities list is equivalent to requesting only text.",
+   "цитата": "An empty list is equivalent to requesting only text.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / responseModalities[]",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Значит, без явного указания модальности IMAGE картинка не запрашивается (вывод в длинной дистанции). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-38",
+   "вид": "ограничение",
+   "утверждение_en": "thinkingConfig configures thinking features; an error is returned if it is set for models that do not support thinking.",
+   "цитата": "thinkingConfig\nobject (\nThinkingConfig\n)\nOptional. Config for thinking features. An error will be returned if this field is set for models that don't support thinking.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / thinkingConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-39",
+   "вид": "ограничение",
+   "утверждение_en": "imageConfig is the config for image generation; an error is returned if it is set for models that do not support these config options.",
+   "цитата": "imageConfig\nobject (\nImageConfig\n)\nOptional. Config for image generation. An error will be returned if this field is set for models that don't support these config options.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / imageConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Какие модели поддерживают imageConfig — не сказано. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-40",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig.mediaResolution: if specified, the given media resolution is used.",
+   "цитата": "mediaResolution\nenum (\nMediaResolution\n)\nOptional. If specified, the media resolution specified will be used.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / mediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Уровень запроса (в отличие от Part.mediaResolution, E-19-27). Приоритет между ними не описан. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-41",
+   "вид": "факт",
+   "утверждение_en": "responseFormat configures the response output format per modality (text, audio, image) in a flat structure; each optional sub-field configures one output modality.",
+   "цитата": "Optional. Configuration for the response output format. Allows specifying output configuration per modality (text, audio, image) in a flat structure.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig / responseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "ResponseFormatConfig: 'This is a flat object where each optional sub-field configures a specific output modality.' Поля text / audio / image (ImageResponseFormat). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-42",
+   "вид": "факт",
+   "утверждение_en": "Response Modality IMAGE indicates the model should return images (alongside TEXT and AUDIO options).",
+   "цитата": "IMAGE\nIndicates the model should return images.",
+   "источник_цитаты": "txt",
+   "раздел": "Modality (GenerationConfig)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-43",
+   "вид": "факт",
+   "утверждение_en": "ThinkingConfig.includeThoughts controls whether thoughts are included in the response (returned only when available); thinkingBudget sets the number of thought tokens the model should generate.",
+   "цитата": "includeThoughts\nboolean\nIndicates whether to include thoughts in the response. If true, thoughts are returned only when available.\nthinkingBudget\ninteger\nThe number of thoughts tokens that the model should generate.",
+   "источник_цитаты": "txt",
+   "раздел": "ThinkingConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-44",
+   "вид": "правило",
+   "утверждение_en": "thinkingLevel (MINIMAL, LOW, MEDIUM, HIGH) controls the maximum depth of internal reasoning before responding; the default is model-dependent; it is recommended for Gemini 3 or later models and using it with earlier models results in an error.",
+   "цитата": "thinkingLevel\nenum (\nThinkingLevel\n)\nOptional. Controls the maximum depth of the model's internal reasoning process before it produces a response. The default value is model-dependent. Refer to the\nThinking levels guide\nfor more details. Recommended for Gemini 3 or later models. Use with earlier models results in an error.",
+   "источник_цитаты": "txt",
+   "раздел": "ThinkingConfig / ThinkingLevel",
+   "модели": [
+    "Gemini 3 or later models (родовая фраза; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Значения: 'MINIMAL Little to no thinking. LOW Low thinking level. MEDIUM Medium thinking level. HIGH High thinking level.' Для Gemini 2.5 Flash Image (earlier) — ошибка, вывод; прямо про image-модели не сказано."
+  },
+  {
+   "код": "E-19-45",
+   "вид": "факт",
+   "утверждение_en": "ImageConfig.aspectRatio sets the aspect ratio of the image to generate; supported: 1:1, 1:4, 4:1, 1:8, 8:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. If not specified, the model chooses a default aspect ratio based on any reference images provided.",
+   "цитата": "Optional. The aspect ratio of the image to generate. Supported aspect ratios:\n1:1\n,\n1:4\n,\n4:1\n,\n1:8\n,\n8:1\n,\n2:3\n,\n3:2\n,\n3:4\n,\n4:3\n,\n4:5\n,\n5:4\n,\n9:16\n,\n16:9\n, or\n21:9\n.\nIf not specified, the model will choose a default aspect ratio based on any reference images provided.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "рефы"
+   ],
+   "заметка": "14 соотношений (включая экстремальные 1:8/8:1, 1:4/4:1). Важный механизм: без явного aspectRatio формат берётся от рефов. Какой дефолт без рефов — не сказано. Поддержка всех 14 разными моделями не расписана. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-46",
+   "вид": "факт",
+   "утверждение_en": "ImageConfig.imageSize specifies the size of generated images; supported values 512, 1K, 2K, 4K; if not specified, the default 1K is used.",
+   "цитата": "imageSize\nstring\nOptional. Specifies the size of generated images. Supported values are\n512\n,\n1K\n,\n2K\n,\n4K\n. If not specified, the model will use default value\n1K\n.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Пиксельные размеры для каждого соотношения не даны; поддержка 512/4K по моделям не расписана. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-47",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig MediaResolution for input media: LOW = 64 tokens, MEDIUM = 256 tokens, HIGH = zoomed reframing with 256 tokens.",
+   "цитата": "MediaResolution\nMedia resolution for the input media.\nEnums\nMEDIA_RESOLUTION_UNSPECIFIED\nMedia resolution has not been set.\nMEDIA_RESOLUTION_LOW\nMedia resolution set to low (64 tokens).\nMEDIA_RESOLUTION_MEDIUM\nMedia resolution set to medium (256 tokens).\nMEDIA_RESOLUTION_HIGH\nMedia resolution set to high (zoomed reframing with 256 tokens).",
+   "источник_цитаты": "txt",
+   "раздел": "MediaResolution (GenerationConfig)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "HIGH не увеличивает число токенов (256), а меняет способ — «zoomed reframing». ULTRA_HIGH в этом enum нет (есть в Part-level Level, E-19-32). Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-48",
+   "вид": "факт",
+   "утверждение_en": "ImageResponseFormat (responseFormat.image) configures image output: mimeType, delivery, aspectRatio (enum) and imageSize (enum).",
+   "цитата": "ImageResponseFormat\nConfiguration for image output format.\nFields\nmimeType\nenum (\nMimeType\n)\nOptional. The MIME type of the image output.\ndelivery\nenum (\nDelivery\n)\nOptional. The delivery mode for the image output.\naspectRatio\nenum (\nAspectRatio\n)\nOptional. The aspect ratio for the image output.\nimageSize\nenum (\nImageSize\n)\nOptional. The size of the image output.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageResponseFormat",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Второй путь задать формат и размер (параллельно ImageConfig) — см. длинную дистанцию. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-49",
+   "вид": "ограничение",
+   "утверждение_en": "The only supported MIME type for image output in ImageResponseFormat is IMAGE_JPEG (JPEG image format).",
+   "цитата": "Supported MIME types for image output.\nEnums\nMIME_TYPE_UNSPECIFIED\nDefault value. This value is unused.\nIMAGE_JPEG\nJPEG image format.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageResponseFormat / MimeType",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "PNG/WebP для выхода не перечислены. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-50",
+   "вид": "факт",
+   "утверждение_en": "Image output delivery can be INLINE (image data returned inline in the response) or URI (image data returned as a URI).",
+   "цитата": "INLINE\nImage data is returned inline in the response.\nURI\nImage data is returned as a URI.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageResponseFormat / Delivery",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Срок жизни URI и что по умолчанию — не сказано. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-51",
+   "вид": "факт",
+   "утверждение_en": "AspectRatio enum for image output: 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1 (ASPECT_RATIO_ONE_BY_ONE … ASPECT_RATIO_FOUR_BY_ONE).",
+   "цитата": "AspectRatio\nSupported aspect ratios for image output.\nEnums\nASPECT_RATIO_UNSPECIFIED\nDefault value. This value is unused.\nASPECT_RATIO_ONE_BY_ONE\n1:1 aspect ratio.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageResponseFormat / AspectRatio",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Перечень строк 15874-15906: ONE_BY_ONE 1:1, TWO_BY_THREE 2:3, THREE_BY_TWO 3:2, THREE_BY_FOUR 3:4, FOUR_BY_THREE 4:3, FOUR_BY_FIVE 4:5, FIVE_BY_FOUR 5:4, NINE_BY_SIXTEEN 9:16, SIXTEEN_BY_NINE 16:9, TWENTY_ONE_BY_NINE 21:9, ONE_BY_EIGHT 1:8, EIGHT_BY_ONE 8:1, ONE_BY_FOUR 1:4, FOUR_BY_ONE 4:1. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  },
+  {
+   "код": "E-19-52",
+   "вид": "факт",
+   "утверждение_en": "ImageSize enum for image output: IMAGE_SIZE_FIVE_TWELVE (512px), IMAGE_SIZE_ONE_K (1K), IMAGE_SIZE_TWO_K (2K), IMAGE_SIZE_FOUR_K (4K).",
+   "цитата": "IMAGE_SIZE_FIVE_TWELVE\n512px image size.\nIMAGE_SIZE_ONE_K\n1K image size.\nIMAGE_SIZE_TWO_K\n2K image size.\nIMAGE_SIZE_FOUR_K\n4K image size.",
+   "источник_цитаты": "txt",
+   "раздел": "ImageResponseFormat / ImageSize",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Здесь 512 уточнено как '512px'. Модели на странице для этого поля не названы (image-модели нигде не упомянуты по имени)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-19-53",
+   "вид": "предупреждение",
+   "утверждение_en": "The page exposes two parallel ways to set image aspect ratio and size: generationConfig.imageConfig (string values; defaults: aspect ratio from reference images, size 1K) and generationConfig.responseFormat.image (enum values plus JPEG mimeType and INLINE/URI delivery); it does not say which takes precedence or whether both may be set together.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "ImageConfig / ResponseFormatConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-19-39, E-19-45, E-19-46, E-19-41, E-19-48, E-19-51, E-19-52",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Практически: задавать формат/размер одним способом. Наборы значений совпадают (14 соотношений, 4 размера)."
+  },
+  {
+   "код": "E-19-54",
+   "вид": "правило",
+   "утверждение_en": "To receive images, responseModalities must explicitly request a combination that includes IMAGE and is supported by the model; leaving it empty requests text only, and an unsupported combination returns an error.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "GenerationConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-19-36, E-19-37, E-19-42",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Формулировка «пустой список = только текст» делает явное указание IMAGE обязательным для картинки; допустимые комбинации для image-моделей на странице не даны."
+  },
+  {
+   "код": "E-19-55",
+   "вид": "инструкция",
+   "утверждение_en": "Image-generation failures surface at two levels: prompt-level promptFeedback.blockReason (incl. IMAGE_SAFETY; no candidates, rephrase the prompt) and candidate-level finishReason (IMAGE_SAFETY, IMAGE_PROHIBITED_CONTENT, IMAGE_RECITATION, IMAGE_OTHER, NO_IMAGE); a client should check both, since an empty or image-less response has a distinct code for each cause.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "PromptFeedback / BlockReason / FinishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-19-6, E-19-7, E-19-8, E-19-12, E-19-13, E-19-14, E-19-15, E-19-16",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Совет «Rephrase the prompt» страница даёт только для блокировки промпта; для finishReason картинок рекомендаций нет."
+  },
+  {
+   "код": "E-19-56",
+   "вид": "предупреждение",
+   "утверждение_en": "In multi-turn requests with thinking models, thought parts carry thoughtSignature meant to be reused in subsequent requests, and a request missing a signature ends with MISSING_THOUGHT_SIGNATURE; so conversation history sent back (e.g. for iterative image editing) should keep the model parts with their signatures intact.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Part / FinishReason / Content",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-19-2, E-19-24, E-19-26, E-19-17, E-19-44",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Страница не связывает это с image-моделями явно; вывод применим, если image-модель думающая (Gemini 3 — вывод из thinkingLevel)."
+  },
+  {
+   "код": "E-19-57",
+   "вид": "объяснение",
+   "утверждение_en": "Input-image token cost is controlled by mediaResolution, settable per Part or for the whole request: LOW 64 tokens, MEDIUM 256, HIGH zoomed reframing with 256 tokens (Part-level enum also lists ULTRA_HIGH).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Part / GenerationConfig / MediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-19-27, E-19-32, E-19-40, E-19-47",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "форматы_разрешение",
+    "цены"
+   ],
+   "заметка": "Приоритет Part vs GenerationConfig и стоимость ULTRA_HIGH не описаны."
+  },
+  {
+   "код": "E-19-58",
+   "вид": "факт",
+   "утверждение_en": "Image-search grounding is a distinct, opt-in path: GoogleSearch enables only web search by default; imageSearch must be enabled in searchTypes, returns image bytes, is reported as ToolType GOOGLE_SEARCH_IMAGE, and its results appear as image grounding chunks (with attribution sourceUri) and imageSearchQueries.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "GoogleSearch / SearchTypes / GroundingMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-19-33, E-19-34, E-19-31, E-19-19, E-19-20, E-19-21",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Какие модели (в т.ч. image) поддерживают imageSearch — не сказано."
+  }
+ ],
+ "противоречия_внутри": [
+  "Два определения MediaResolution: Part-level ('Media resolution for tokenization', уровни LOW/MEDIUM/HIGH/ULTRA_HIGH без чисел) и GenerationConfig-level ('Media resolution for the input media', LOW 64 / MEDIUM 256 / HIGH 'zoomed reframing with 256 tokens', без ULTRA_HIGH).",
+  "BlockReason описан как 'the reason why the prompt was blocked', но значение IMAGE_SAFETY сформулировано как 'Candidates blocked due to unsafe image generation content' — про кандидатов, не про промпт.",
+  "Поле tools[] в Request body: 'Supported Tools are Function and codeExecution', тогда как схема Tool перечисляет также googleSearch (с imageSearch), urlContext, fileSearch, mcpServers, googleMaps, computerUse.",
+  "Примеры одного и того же запроса используют разные модели: SDK-примеры — gemini-3.8-flash, Shell/curl — gemini-2.0-flash."
+ ],
+ "не_сказано": [
+  "Ни одна image-модель (Nano Banana, gemini-*-image) не названа; нет ни одного примера генерации или редактирования картинки — пример Image это понимание изображения.",
+  "Какие комбинации responseModalities поддерживают image-модели (например TEXT+IMAGE или только IMAGE).",
+  "Какие модели поддерживают imageConfig, 512 и 4K, все 14 соотношений; пиксельные размеры для соотношений; дефолтное соотношение при отсутствии рефов.",
+  "Приоритет imageConfig vs responseFormat.image; приоритет Part.mediaResolution vs GenerationConfig.mediaResolution.",
+  "Работают ли candidateCount, seed, temperature, topP/topK для image-моделей (есть только общая оговорка «Not all parameters are configurable for every model»).",
+  "В каком поле ответа приходит сгенерированная картинка (inlineData/fileData) — прямо не сказано; есть только Delivery INLINE/URI.",
+  "Максимальное число входных изображений и их размер/вес; сколько токенов стоит выходная картинка.",
+  "Водяной знак/SynthID не упоминается; как safetySettings влияют на IMAGE_SAFETY — не сказано.",
+  "Можно ли отключить thinking у image-моделей и какой thinkingLevel у них по умолчанию.",
+  "verbalizationMode (REFERENCE_ONLY) упомянут в displayName, но на странице не определён."
+ ],
+ "сомнения": [
+  "Единица E-19-5 взята из примера на понимание изображения (не генерацию) и обобщена на передачу рефов — помечена как выведенная.",
+  "Общие поля safety (E-19-3, E-19-22, E-19-23) и ModelStage (E-19-11) не связаны на странице с картинками; взяты как применимые ко всем вызовам generateContent, модели 'не указано'.",
+  "Примеры кода в .txt разбиты по токену на строку; прочитаны по html (<pre>, 170 блоков): блоки 0-57 generateContent, 58-81 streamGenerateContent (повтор тех же промптов), 82-169 JSON-схемы типов.",
+  "Параметры сэмплинга (temperature [0.0, 2.0], topP, topK, seed, penalties, candidateCount, maxOutputTokens) в ведомости помечены 'не про картинки', т.к. страница их с картинками не связывает; вопрос вынесен в не_сказано."
+ ]
+}

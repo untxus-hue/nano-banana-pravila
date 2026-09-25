@@ -1,0 +1,597 @@
+{
+ "id": 284,
+ "url": "https://github.com/google-gemini/nano-banana-hackathon-kit",
+ "заголовок": "GitHub - google-gemini/nano-banana-hackathon-kit: 🍌 The official starter kit for the Nano Banana Hackathon. Clone this repo to get building fast! · GitHub",
+ "дата_в_тексте": "2025-09-06 (дата старта хакатона в тексте; даты публикации/обновления README на странице нет)",
+ "официальность": {
+  "домен": "github.com",
+  "второй_признак": "репозиторий организации google-gemini; текст от лица Google ('we are unlocking ... our state-of-the-art image model'), событие 'hosted by Google DeepMind'. Копирайта Google LLC на странице нет (лицензия Apache-2.0, текст LICENSE не на странице).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "README стартового кита хакатона 'Nano Banana 48 Hour Challenge' (Google DeepMind + Kaggle, 6-7 сентября 2025) для участников-разработчиков. Модель — Gemini 2.5 Flash Image Preview (aka Nano Banana). Содержание: как получить ключ, ссылки на официальные доки/гайд промптинга/кукбуки/апплеты AI Studio, идеи применений (сохранение персонажа, e-commerce, маркетинг, фоторедакторы), правила подачи и критерии жюри, призы, даты, временный лимит 500 запросов на проект в день на бесплатном ключе. Своих промптов и технических правил генерации нет — всё про промптинг делегировано на ai.google.dev. Страница повторно подчёркивает 'продвинутые возможности' модели: правка словами, слияние, консистентность, знание мира.",
+ "модели_на_странице": [
+  "Gemini 2.5 Flash Image Preview (aka Nano Banana)",
+  "Gemini 2.5 Flash Image (то же, без 'Preview' в разделах подачи/жюри)"
+ ],
+ "структура": [
+  "Обвязка GitHub (меню, шапка репозитория, дерево файлов)",
+  "Вводная (Welcome, hackers!)",
+  "Go Bananas!",
+  "Quick Navigation",
+  "🚀 Get Started in 3 Steps",
+  "🎯 The Challenge",
+  "🛠️ Technical Resources (+ Partner Resources)",
+  "🏆 Submission & Judging (How to Submit, Submission Requirements, Judging Criteria)",
+  "🗓️ Timeline & Prizes (Prizes, Key Dates)",
+  "Notes About API Usage",
+  "💬 Getting Help & Discussion",
+  "About (сайдбар) и подвал GitHub"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "GitHub - google-gemini/nano-banana-hackathon-kit: 🍌 The official",
+   "итог": "ничего: заголовок страницы (организация google-gemini — признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to content Navigation Menu Sign",
+   "итог": "ничего: обвязка сайта GitHub (глобальное меню, алерты сессии), строки 2-118"
+  },
+  {
+   "n": 3,
+   "начало": "google-gemini / nano-banana-hackathon-kit Public Notifications",
+   "итог": "ничего: обвязка GitHub (шапка репозитория, вкладки, счётчики, список файлов .allstar/assets/examples/guides/LICENSE/README.md), строки 119-182"
+  },
+  {
+   "n": 4,
+   "начало": "Welcome, hackers! This repository is the",
+   "итог": "ничего: вводная о событии (использовано как признак официальности: hosted by Google DeepMind), строки 183-187"
+  },
+  {
+   "n": 5,
+   "начало": "Go Bananas!",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 6,
+   "начало": "For 48 hours, starting on September",
+   "итог": "E-284-1, E-284-2 (часть про призы $400,000 с Fal и ElevenLabs — ничего: призы конкурса)"
+  },
+  {
+   "n": 7,
+   "начало": "Nano Banana is about dynamic creation.",
+   "итог": "E-284-3 (вторая половина — призыв конкурса, ничего)"
+  },
+  {
+   "n": 8,
+   "начало": "Quick Navigation 🚀 Get Started in",
+   "итог": "ничего: оглавление страницы, строки 191-197"
+  },
+  {
+   "n": 9,
+   "начало": "🚀 Get Started in 3 Steps",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 10,
+   "начало": "Get Your Free API Key Follow",
+   "итог": "E-284-4"
+  },
+  {
+   "n": 11,
+   "начало": "Explore the Resources Clone this repository",
+   "итог": "ничего: организационное (клонировать репозиторий)"
+  },
+  {
+   "n": 12,
+   "начало": "Submit Your Project on Kaggle When",
+   "итог": "ничего: условия конкурса"
+  },
+  {
+   "n": 13,
+   "начало": "🎯 The Challenge",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 14,
+   "начало": "Your mission is to build a",
+   "итог": "ничего: постановка конкурсной задачи; фраза 'Think beyond simple text-to-image' учтена в E-284-17"
+  },
+  {
+   "n": 15,
+   "начало": "Consider applications that:",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 16,
+   "начало": "Enhance dynamic storytelling (e.g., consistent character",
+   "итог": "E-284-5"
+  },
+  {
+   "n": 17,
+   "начало": "Revolutionize e-commerce (e.g., virtual room",
+   "итог": "E-284-6"
+  },
+  {
+   "n": 18,
+   "начало": "Automate creative workflows (e.g., personalized",
+   "итог": "E-284-7"
+  },
+  {
+   "n": 19,
+   "начало": "Build the next generation of natural",
+   "итог": "E-284-8"
+  },
+  {
+   "n": 20,
+   "начало": "🛠️ Technical Resources",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 21,
+   "начало": "START HERE: Getting Your API Key",
+   "итог": "ничего: ссылка на внешний ноутбук (его содержания на странице нет)"
+  },
+  {
+   "n": 22,
+   "начало": "Use Nano banana : Learn of",
+   "итог": "ничего: ссылка на внешний ноутбук; возможность generate/edit — повтор E-284-3"
+  },
+  {
+   "n": 23,
+   "начало": "examples/ : Self-contained code snippets demonstrating",
+   "итог": "ничего: ссылки на примеры кода вне страницы (JavaScript Getting Started)"
+  },
+  {
+   "n": 24,
+   "начало": "🌐 Official Nano Banana Gemini API",
+   "итог": "E-284-9"
+  },
+  {
+   "n": 25,
+   "начало": "✍️ Prompting Guide & Strategies :",
+   "итог": "E-284-10"
+  },
+  {
+   "n": 26,
+   "начало": "🍳 Cookbooks (Advanced Recipes) : Python",
+   "итог": "ничего: ссылки наружу (Colab/AI Studio); расхождение подписи 'Image understanding' и ссылки на Image_out — в сомнения"
+  },
+  {
+   "n": 27,
+   "начало": "✨ Inspirational Applets : See what's",
+   "итог": "E-284-11"
+  },
+  {
+   "n": 28,
+   "начало": "Partner Resources 🤝 Explore the tools",
+   "итог": "ничего: ресурсы партнёров ElevenLabs и fal.ai (не про генерацию картинок Google), строки 248-263"
+  },
+  {
+   "n": 29,
+   "начало": "🏆 Submission & Judging Your project",
+   "итог": "ничего: условия конкурса (судят по видео-демо)"
+  },
+  {
+   "n": 30,
+   "начало": "How to Submit All submissions must",
+   "итог": "ничего: условия конкурса (kaggle.com/competitions/banana)"
+  },
+  {
+   "n": 31,
+   "начало": "Submission Requirements Your complete Kaggle submission",
+   "итог": "ничего: условия конкурса (видео до 2 минут, публичная ссылка на проект)"
+  },
+  {
+   "n": 32,
+   "начало": "✍️ Gemini Integration Write-up (max 200",
+   "итог": "ничего: условия конкурса (лимит 200 слов — конкурсный, не модели)"
+  },
+  {
+   "n": 33,
+   "начало": "Judging Criteria 💡 Innovation and",
+   "итог": "ничего: критерий жюри 40% (не про генерацию)"
+  },
+  {
+   "n": 34,
+   "начало": "⚙️ Technical Execution and Functionality (30%)",
+   "итог": "E-284-12"
+  },
+  {
+   "n": 35,
+   "начало": "📈 Potential Impact and Utility (20%)",
+   "итог": "ничего: критерии жюри 20% и 10% (не про генерацию), строки 284-289"
+  },
+  {
+   "n": 36,
+   "начало": "For the Special Technology Prize, these",
+   "итог": "ничего: условия спецприза ElevenLabs"
+  },
+  {
+   "n": 37,
+   "начало": "🗓️ Timeline & Prizes 💰 Prizes",
+   "итог": "ничего: призы конкурса, строки 291-301"
+  },
+  {
+   "n": 38,
+   "начало": "⏳ Key Dates Competition Starts :",
+   "итог": "ничего: даты конкурса (использованы как дата_единицы для E-284-1, E-284-2, E-284-13..15; противоречие часовых поясов — в противоречия_внутри), строки 302-311"
+  },
+  {
+   "n": 39,
+   "начало": "Notes About API Usage Please note",
+   "итог": "E-284-13"
+  },
+  {
+   "n": 40,
+   "начало": "Developers using a paid API key",
+   "итог": "E-284-14, E-284-15"
+  },
+  {
+   "n": 41,
+   "начало": "💬 Getting Help & Discussion All",
+   "итог": "ничего: организационное (форум Kaggle), строки 316-325"
+  },
+  {
+   "n": 42,
+   "начало": "About 🍌 The official starter kit",
+   "итог": "ничего: обвязка GitHub (сайдбар About/Resources/Stars/Forks), строки 326-349"
+  },
+  {
+   "n": 43,
+   "начало": "Footer © 2026 GitHub, Inc. Footer",
+   "итог": "ничего: подвал GitHub, строки 350-361"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-284-1",
+   "вид": "факт",
+   "утверждение_en": "Google describes Gemini 2.5 Flash Image Preview (aka Nano Banana) as its state-of-the-art image model (as of the September 2025 hackathon).",
+   "цитата": "putting Gemini 2.5 Flash Image Preview (aka Nano Banana), our state-of-the-art image model, into your hands",
+   "источник_цитаты": "txt",
+   "раздел": "Go Bananas!",
+   "модели": [
+    "Gemini 2.5 Flash Image Preview (aka Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Оценка 'state-of-the-art' — самоописание Google на дату хакатона. Статус модели на тот момент — Preview; id модели на странице не назван."
+  },
+  {
+   "код": "E-284-2",
+   "вид": "лимит",
+   "утверждение_en": "For the Nano Banana hackathon Google opened a special free tier of the Gemini API lasting 48 hours, starting September 6, 2025.",
+   "цитата": "For 48 hours, starting on September 6, 2025, we are unlocking a special 48-hour free tier of the Gemini API",
+   "источник_цитаты": "txt",
+   "раздел": "Go Bananas!",
+   "модели": [
+    "Gemini 2.5 Flash Image Preview (aka Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Временный разовый режим события, не постоянная квота. Размер квоты — см. E-284-13."
+  },
+  {
+   "код": "E-284-3",
+   "вид": "объяснение",
+   "утверждение_en": "Google frames Nano Banana's capabilities as dynamic creation: editing with words, blending realities, and access to Gemini's world knowledge.",
+   "цитата": "Nano Banana is about dynamic creation. Edit with words, blend realities, and access Gemini's unique world knowledge.",
+   "источник_цитаты": "txt",
+   "раздел": "Go Bananas!",
+   "модели": [
+    "Nano Banana (Gemini 2.5 Flash Image Preview)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Три опоры: правка словами (natural-language editing), смешение/слияние реальностей (многокартинное смешение), знание мира Gemini. Маркетинговая формулировка, но перечисляет возможности."
+  },
+  {
+   "код": "E-284-4",
+   "вид": "инструкция",
+   "утверждение_en": "To access Nano Banana on the Gemini API, create an API key following the API Key Guide.",
+   "цитата": "to create your API key to access Nano Banana on the Gemini API.",
+   "источник_цитаты": "txt",
+   "раздел": "🚀 Get Started in 3 Steps",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сам гайд по ключу — внешний ноутбук guides/01-getting-your-api-key.ipynb, на странице его содержания нет."
+  },
+  {
+   "код": "E-284-5",
+   "вид": "факт",
+   "утверждение_en": "Google suggests Nano Banana can support dynamic storytelling such as comics with a consistent character.",
+   "цитата": "Enhance dynamic storytelling (e.g., consistent character comics).",
+   "источник_цитаты": "txt",
+   "раздел": "🎯 The Challenge",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Подразумевает сохранение персонажа между кадрами (character consistency) как сильную сторону модели; как именно этого добиться — не сказано."
+  },
+  {
+   "код": "E-284-6",
+   "вид": "факт",
+   "утверждение_en": "Google suggests e-commerce uses such as virtual room placement or product visualization.",
+   "цитата": "Revolutionize e-commerce (e.g., virtual room placement or product visualization).",
+   "источник_цитаты": "txt",
+   "раздел": "🎯 The Challenge",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Размещение предмета в интерьере / визуализация товара — сценарий слияния изображений."
+  },
+  {
+   "код": "E-284-7",
+   "вид": "факт",
+   "утверждение_en": "Google suggests automating creative workflows, e.g., generating personalized marketing assets at scale.",
+   "цитата": "Automate creative workflows (e.g., personalized marketing assets at scale).",
+   "источник_цитаты": "txt",
+   "раздел": "🎯 The Challenge",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Сценарий, без технических деталей."
+  },
+  {
+   "код": "E-284-8",
+   "вид": "факт",
+   "утверждение_en": "Google suggests building natural-language photo editors with Nano Banana.",
+   "цитата": "Build the next generation of natural language photo editors.",
+   "источник_цитаты": "txt",
+   "раздел": "🎯 The Challenge",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Согласуется с 'Edit with words' (E-284-3)."
+  },
+  {
+   "код": "E-284-9",
+   "вид": "факт",
+   "утверждение_en": "The official Nano Banana Gemini API documentation is at ai.google.dev/gemini-api/docs/image-generation.",
+   "цитата": "https://ai.google.dev/gemini-api/docs/image-generation",
+   "источник_цитаты": "txt",
+   "раздел": "🛠️ Technical Resources",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Указатель на первоисточник; на самой странице содержания документации нет. Цитата — строка 227 txt (строка 231 содержит её же с #prompt-guide)."
+  },
+  {
+   "код": "E-284-10",
+   "вид": "факт",
+   "утверждение_en": "Google's prompting guide and strategies for Nano Banana are in the prompt-guide section of the image-generation documentation.",
+   "цитата": "Prompting Guide & Strategies",
+   "источник_цитаты": "txt",
+   "раздел": "🛠️ Technical Resources",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Ссылка: https://ai.google.dev/gemini-api/docs/image-generation#prompt-guide. Страница делегирует всё про промптинг туда; своих советов по промптам не даёт."
+  },
+  {
+   "код": "E-284-11",
+   "вид": "факт",
+   "утверждение_en": "Google AI Studio hosts inspirational Nano Banana applets: GemBooth, Home Canvas, Past Forward and PixShop.",
+   "цитата": ": See what's possible with these interactive demos.",
+   "источник_цитаты": "txt",
+   "раздел": "🛠️ Technical Resources",
+   "модели": [
+    "Nano Banana"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Названия апплетов — строки 244-247 txt; ссылки ведут на aistudio.google.com/apps/bundled/{gembooth,home_canvas,past_forward,pixshop}."
+  },
+  {
+   "код": "E-284-12",
+   "вид": "факт",
+   "утверждение_en": "Google names consistency, fusion and editing as the Gemini 2.5 Flash Image API's advanced features.",
+   "цитата": "How effectively does it utilize the API's advanced features (consistency, fusion, editing)?",
+   "источник_цитаты": "txt",
+   "раздел": "Judging Criteria",
+   "модели": [
+    "Gemini 2.5 Flash Image (Nano Banana; на странице без 'Preview')"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Из критерия жюри 'Technical Execution and Functionality (30%)'. Единственное место, где продвинутые возможности перечислены списком."
+  },
+  {
+   "код": "E-284-13",
+   "вид": "лимит",
+   "утверждение_en": "During the hackathon, the special Gemini API tier (for all API users) allowed 500 requests per project per day.",
+   "цитата": "Please note the special tier for the Gemini API (for all API users) - will allow\n500 requests per project per day.",
+   "источник_цитаты": "txt",
+   "раздел": "Notes About API Usage",
+   "модели": [
+    "не указано"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Цитата включает перенос строки, как в txt (строки 313-314). Модель в этом абзаце не названа; из контекста страницы — квота под Nano Banana. Действовало только в окне события."
+  },
+  {
+   "код": "E-284-14",
+   "вид": "факт",
+   "утверждение_en": "Developers using a paid API key pay for all of their usage, including during the hackathon special tier.",
+   "цитата": "Developers using a paid API key will pay for all of their usage.",
+   "источник_цитаты": "txt",
+   "раздел": "Notes About API Usage",
+   "модели": [
+    "не указано"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Бесплатный объём не применялся к платным ключам."
+  },
+  {
+   "код": "E-284-15",
+   "вид": "инструкция",
+   "утверждение_en": "To get the free 500 generations during the hackathon, use a free-tier API key.",
+   "цитата": "To get the free 500 generations, please use a free tier API key.",
+   "источник_цитаты": "txt",
+   "раздел": "Notes About API Usage",
+   "модели": [
+    "не указано"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Здесь '500 generations', в предыдущем предложении '500 requests' — страница приравнивает запрос к генерации без пояснения."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-284-16",
+   "вид": "предупреждение",
+   "утверждение_en": "All quotas stated on this page (a 48-hour free tier and 500 requests per project per day for free-tier keys) were specific to the Nano Banana hackathon of September 6-7, 2025 and are not presented as standing Gemini API limits.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 2.5 Flash Image Preview (aka Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-284-2, E-284-13, E-284-14, E-284-15",
+   "дата_единицы": "2025-09-06",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Страница-событие: цифры не переносить в постоянные правила лимитов."
+  },
+  {
+   "код": "E-284-17",
+   "вид": "объяснение",
+   "утверждение_en": "Across the page Google positions Nano Banana's distinctive strengths as going 'beyond simple text-to-image': natural-language editing, fusion/blending of images, character consistency, and Gemini's world knowledge.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 2.5 Flash Image Preview (aka Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-284-3, E-284-5, E-284-6, E-284-8, E-284-12",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "рефы"
+   ],
+   "заметка": "Фраза 'Think beyond simple text-to-image' — строка 210 txt; список возможностей повторён дважды: в 'Go Bananas!' (edit/blend/world knowledge) и в критериях жюри (consistency/fusion/editing)."
+  }
+ ],
+ "противоречия_внутри": [
+  "Название модели: в 'Go Bananas!' — 'Gemini 2.5 Flash Image Preview (aka Nano Banana)', в требованиях к подаче и критериях — 'Gemini 2.5 Flash Image' без 'Preview'.",
+  "Квота: '500 requests per project per day' (строка 314) и 'the free 500 generations' (строка 315) — запрос и генерация приравнены без пояснения.",
+  "Время дедлайна: 'September 7, 2025 (4:59 PM UTC, 11:59 PM PT)' — 4:59 PM UTC не равно 11:59 PM PT; при этом строка 311 говорит 'All deadlines are at 11:59 PM UTC ... unless otherwise noted'. Не про генерацию, но внутренняя несостыковка.",
+  "'48-hour free tier' при старте 12:01am UTC 6 сентября и дедлайне 4:59 PM UTC 7 сентября — окно подачи около 41 часа (если верить UTC-времени)."
+ ],
+ "не_сказано": [
+  "Строковый id модели (gemini-2.5-flash-image-preview) на странице не назван.",
+  "Нет ни одного примера промпта и ни одного совета по промптингу — всё делегировано на ai.google.dev/gemini-api/docs/image-generation#prompt-guide.",
+  "Нет данных о разрешении, соотношениях сторон, форматах, числе референсов, цене за картинку, водяном знаке/SynthID.",
+  "Не сказано, распространялась ли особая квота только на image-модель или на все модели Gemini API ('special tier for the Gemini API (for all API users)').",
+  "Не сказано, что было с квотой после окончания события."
+ ],
+ "сомнения": [
+  "Страница о завершившемся событии 2025 года; все цифры лимитов временные.",
+  "В 'Cookbooks' подписи 'Quickstart with Image understanding (Colab)' и 'Get Started with Image understanding (AI Studio)' ведут на Image_out.ipynb и get_started_image_out (генерация, а не понимание картинок) — подпись не соответствует ссылке (проверено по html).",
+  "Единицы E-284-5..8 — идеи применений из конкурсного задания, по силе это возможности, а не подтверждённые Google характеристики качества."
+ ]
+}

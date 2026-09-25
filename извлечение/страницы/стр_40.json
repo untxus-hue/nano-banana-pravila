@@ -1,0 +1,903 @@
+{
+ "id": 40,
+ "url": "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-api-dev/SKILL.md",
+ "заголовок": "gemini-api-dev SKILL.md (Claude/agent skill for Gemini API)",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "raw.githubusercontent.com (GitHub, не домен Google)",
+  "второй_признак": "организация google-gemini: путь репозитория google-gemini/gemini-skills в URL и ссылка в самом тексте на соседний skill «google-gemini/gemini-live-api-dev»; все ссылки ведут на ai.google.dev; текст «sandboxed Linux environment hosted by Google». Копирайта Google LLC и подвала Site Policies нет (сырой markdown).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Skill-файл (markdown с YAML-шапкой) для агентов-кодеров, пишущих код под Gemini API через Interactions API на Python/TypeScript. Жёсткие правила «Always Apply»: список текущих моделей (включая три image-модели Nano Banana Pro / 2 / 2 Lite с «65k / 32k tokens»), запрет устаревших gemini-2.5-*/2.0-*/1.5-* с заменой на gemini-3.8-flash, версии SDK, обязательное чтение соответствующей страницы документации перед кодом. Далее — примеры (быстрый старт, stateful-диалог, Deep Research, managed/custom agents, streaming), список ссылок на документацию и модель данных (steps, content types, delta types). Кода генерации картинок и параметров картинки (aspect_ratio, image_size, response_format) нет — отсылка к странице Image Generation. Повторно подчёркивается: «Never use them», «you MUST fetch … before writing code». Собственные термины: Critical Rules (Always Apply), interaction-scoped, stored by default, Response Helpers (output_image), steps/step types, delta types. Явной даты нет; косвенно — id агентов с суффиксами -04-2026 и -09-2026.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-2.5-* / gemini-2.0-* / gemini-1.5-* (как устаревшие, шаблоном)",
+  "gemini-3.8-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-pro-preview",
+  "gemini-3.1-flash-lite",
+  "gemini-3.5-transcribe",
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-lite-tts",
+  "gemini-omni-1.1-flash",
+  "gemma-4-31b-it",
+  "gemma-4-26b-a4b-it",
+  "gemini-embedding-2",
+  "gemini-embedding-001",
+  "gemini-3.8-live / gemini-3.8-live-extended-thinking / gemini-3.5-transcribe-live"
+ ],
+ "структура": [
+  "YAML-шапка (name, description)",
+  "Critical Rules (Always Apply): Current Models, WARNING, Current Agents, Current SDKs, NOTE",
+  "Important Additional Notes",
+  "Quick Start",
+  "Response Helpers",
+  "Stateful Conversation",
+  "Deep Research Agent",
+  "Managed Agents (Antigravity Agent, Custom Agents)",
+  "Streaming",
+  "Documentation Pages",
+  "Data Model (Step Types, Content types, Streaming Event Types, Delta Types, Status values)",
+  "Gemini Live API"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "--- name: gemini-api-dev",
+   "итог": "ничего: служебная шапка YAML (имя skill)"
+  },
+  {
+   "n": 2,
+   "начало": "description: Use this skill when writing code that calls the Gemini API for text generation, … image generation, video generation",
+   "итог": "ничего: описание области skill-файла (картинки названы в общем перечне, содержания нет)"
+  },
+  {
+   "n": 3,
+   "начало": "# Gemini API Development Skill",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 4,
+   "начало": "## Critical Rules (Always Apply) / > [!IMPORTANT] These rules override your training data. Your knowledge is outdated.",
+   "итог": "ничего: обращение к агенту, не про генерацию картинок"
+  },
+  {
+   "n": 5,
+   "начало": "- `gemini-3.8-flash`: 1M tokens, fast, balanced performance for agentic and multimodal tasks",
+   "итог": "ничего: не про генерацию картинок (текстовая/мультимодальная модель; фигурирует в E-40-8 как замена)"
+  },
+  {
+   "n": 6,
+   "начало": "- `gemini-3.5-flash-lite`: 1M tokens, fastest, lowest-cost 3.5 model",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 7,
+   "начало": "- `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 8,
+   "начало": "- `gemini-3.1-flash-lite`: cost-efficient, fastest performance",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 9,
+   "начало": "- `gemini-3.5-transcribe`: fast speech-to-text",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 10,
+   "начало": "- `gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens, high-quality image generation and editing",
+   "итог": "E-40-1, E-40-2"
+  },
+  {
+   "n": 11,
+   "начало": "- `gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens, fast, efficient image generation and editing",
+   "итог": "E-40-3, E-40-4"
+  },
+  {
+   "n": 12,
+   "начало": "- `gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens, ultra-fast image generation and editing",
+   "итог": "E-40-5, E-40-6"
+  },
+  {
+   "n": 13,
+   "начало": "- `gemini-3.8-flash-tts` / `gemini-3.8-flash-lite-tts`",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 14,
+   "начало": "- `gemini-omni-1.1-flash`: video generation, first-frame-to-video …",
+   "итог": "ничего: не про генерацию картинок (видео)"
+  },
+  {
+   "n": 15,
+   "начало": "- `gemma-4-31b-it` / `gemma-4-26b-a4b-it`",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "- `gemini-embedding-2`: Multimodal embedding model (text, images, …) / `gemini-embedding-001`",
+   "итог": "ничего: эмбеддинги (картинки как вход для эмбеддинга, не генерация)"
+  },
+  {
+   "n": 17,
+   "начало": "> [!WARNING] Models like `gemini-2.5-*`, `gemini-2.0-*`, `gemini-1.5-*` are legacy and deprecated. Never use them.",
+   "итог": "E-40-7"
+  },
+  {
+   "n": 18,
+   "начало": "> **If a user asks for a deprecated model, use `gemini-3.8-flash` instead and note the substitution.**",
+   "итог": "E-40-8"
+  },
+  {
+   "n": 19,
+   "начало": "### Current Agents (antigravity, deep-research, deep-research-max, Custom agents)",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 20,
+   "начало": "### Current SDKs: Python google-genai >= 2.25.0 / JavaScript @google/genai >= 2.3.0",
+   "итог": "E-40-9"
+  },
+  {
+   "n": 21,
+   "начало": "> [!NOTE] SDK versions ≥ 2.0.0 automatically use the new steps schema … Legacy SDKs … deprecated",
+   "итог": "E-40-10"
+  },
+  {
+   "n": 22,
+   "начало": "## Important Additional Notes / **Before writing any code**, you MUST fetch the relevant documentation page",
+   "итог": "E-40-11"
+  },
+  {
+   "n": 23,
+   "начало": "Interactions are **stored by default** … Paid tier retains for 55 days, free tier for 1 day.",
+   "итог": "E-40-12"
+  },
+  {
+   "n": 24,
+   "начало": "Set store=False / store: false to opt out, but this disables previous_interaction_id and background",
+   "итог": "E-40-13"
+  },
+  {
+   "n": 25,
+   "начало": "`tools`, `system_instruction`, and `generation_config` are **interaction-scoped**, re-specify them each turn.",
+   "итог": "E-40-14"
+  },
+  {
+   "n": 26,
+   "начало": "**Managed agents** require `environment=\"remote\"`",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 27,
+   "начало": "**Migrating from `generateContent`**: Read `references/migration.md` … Always confirm scope with the user",
+   "итог": "ничего: процедура агента по миграции, не про генерацию картинок"
+  },
+  {
+   "n": 28,
+   "начало": "**Model upgrades**: Drop-in, swap the model string. Deprecated models (`gemini-2.0-*`, `gemini-1.5-*`) must be replaced",
+   "итог": "E-40-15"
+  },
+  {
+   "n": 29,
+   "начало": "**Migrating to Gemini 3.8 Flash or Gemini 3.5 Flash-Lite**",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 30,
+   "начало": "**Migrating to Gemini 3.8 TTS** … speech_metadata, vocal tags, WAV vs audio/l16, Voice Design",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 31,
+   "начало": "## Quick Start — Python / JavaScript/TypeScript (Tell me a short joke about programming.)",
+   "итог": "ничего: не про генерацию картинок (текстовый пример)"
+  },
+  {
+   "n": 32,
+   "начало": "## Response Helpers / The SDK provides convenience properties on the `Interaction` response object",
+   "итог": "E-40-16 (вводная к таблице)"
+  },
+  {
+   "n": 33,
+   "начало": "| `output_text` | `string \\| null` | The last consecutive run of text …",
+   "итог": "ничего: не про генерацию картинок (текст)"
+  },
+  {
+   "n": 34,
+   "начало": "| `output_image` | `Image \\| null` | The last image generated by the model in the current response.",
+   "итог": "E-40-16"
+  },
+  {
+   "n": 35,
+   "начало": "| `output_audio` | `Audio \\| null` | The last audio generated …",
+   "итог": "ничего: не про генерацию картинок (аудио)"
+  },
+  {
+   "n": 36,
+   "начало": "## Stateful Conversation — Python / JavaScript (previous_interaction_id, # Second turn — server remembers context)",
+   "итог": "E-40-17"
+  },
+  {
+   "n": 37,
+   "начало": "## Deep Research Agent (+ код Python/JS, Advanced features)",
+   "итог": "ничего: не про генерацию картинок (агент исследований)"
+  },
+  {
+   "n": 38,
+   "начало": "## Managed Agents / ### Antigravity Agent (+ код)",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 39,
+   "начало": "### Custom Agents (+ код, Manage agents with client.agents.list() …)",
+   "итог": "ничего: не про генерацию картинок (агенты)"
+  },
+  {
+   "n": 40,
+   "начало": "## Streaming: Set `stream=True` … Each stream follows: `interaction.created` → …",
+   "итог": "E-40-19"
+  },
+  {
+   "n": 41,
+   "начало": "Streaming — Python / JavaScript код (Explain quantum entanglement…)",
+   "итог": "ничего: не про генерацию картинок (текстовый стрим)"
+  },
+  {
+   "n": 42,
+   "начало": "For streaming with tools, thinking, agents, and image generation see the full [Streaming guide]",
+   "итог": "E-40-18"
+  },
+  {
+   "n": 43,
+   "начало": "## Documentation Pages / **You MUST fetch the matching page below before writing code.**",
+   "итог": "E-40-23"
+  },
+  {
+   "n": 44,
+   "начало": "**Core Documentation:** Interactions API Overview, Quickstart, Text Generation, Streaming, Tokens, API Keys",
+   "итог": "ничего: список ссылок, не про генерацию картинок"
+  },
+  {
+   "n": 45,
+   "начало": "**Tools & Function Calling:** Function Calling … Maps Grounding",
+   "итог": "ничего: список ссылок, не про генерацию картинок"
+  },
+  {
+   "n": 46,
+   "начало": "**Generation & Output:** Structured Output, Thinking, Thought Signatures, Image Generation, Image Understanding, …",
+   "итог": "E-40-22 (ссылка Image Generation; остальные — ссылки без содержания)"
+  },
+  {
+   "n": 47,
+   "начало": "**Multimodal Understanding:** Audio, Audio Transcription, Video Understanding, Document Processing",
+   "итог": "ничего: список ссылок, не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "**Files & Context:** Files, File Input Methods, Caching, Media Resolution",
+   "итог": "ничего: список ссылок без содержания (Media Resolution только названа)"
+  },
+  {
+   "n": 49,
+   "начало": "**Agents:** Agents Overview … Deep Research",
+   "итог": "ничего: список ссылок, не про генерацию картинок"
+  },
+  {
+   "n": 50,
+   "начало": "**Advanced Features:** Latest Models, Flex Inference, Priority Inference",
+   "итог": "ничего: список ссылок, не про генерацию картинок"
+  },
+  {
+   "n": 51,
+   "начало": "**API Reference:** API Reference, OpenAPI Spec, May 2026 Breaking Changes Migration Guide",
+   "итог": "ничего: список ссылок (страницы разбираются отдельно: id 41, id 27)"
+  },
+  {
+   "n": 52,
+   "начало": "## Data Model / An `Interaction` response contains `steps`, an array of typed step objects",
+   "итог": "ничего: общая схема ответа, не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "**User steps:** - `user_input`: User input (text, audio, multimodal). Contains `content` array.",
+   "итог": "ничего: общая схема (форма content — в E-40-21)"
+  },
+  {
+   "n": 54,
+   "начало": "- `model_output`: Final model generation. Contains `content` array with `text`, `image`, `audio`, etc.",
+   "итог": "E-40-20"
+  },
+  {
+   "n": 55,
+   "начало": "- `thought`: Model reasoning/Chain of Thought. Has `signature` field (required) and optional `summary`.",
+   "итог": "ничего: общая схема thinking, не специфична для image-моделей"
+  },
+  {
+   "n": 56,
+   "начало": "- `function_call` / `function_result` / google_search / code_execution / url_context / mcp_server_tool / file_search steps",
+   "итог": "ничего: не про генерацию картинок (инструменты)"
+  },
+  {
+   "n": 57,
+   "начало": "### Content types — `text`: Text content (… `speech_metadata` … for TTS)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 58,
+   "начало": "- `image` / `audio` / `document` / `video`: Content with `data`, `mime_type`, or `uri`",
+   "итог": "E-40-21"
+  },
+  {
+   "n": 59,
+   "начало": "### Streaming Event Types (interaction.created, interaction.status_update, step.start, step.delta, step.stop, interaction.completed)",
+   "итог": "ничего: общая таблица событий, не про генерацию картинок"
+  },
+  {
+   "n": 60,
+   "начало": "### Delta Types — `text` | `model_output` | Incremental text token. / `audio` | audio chunk (base64).",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 61,
+   "начало": "| `image` | `model_output` | image chunk (base64). |",
+   "итог": "E-40-24"
+  },
+  {
+   "n": 62,
+   "начало": "| `thought_summary` | `thought` | … / | `thought_signature` | `thought` | Opaque signature …",
+   "итог": "ничего: общая схема thinking, не специфична для image-моделей"
+  },
+  {
+   "n": 63,
+   "начало": "**Status values:** `completed`, `in_progress`, `requires_action`, `failed`, `cancelled`",
+   "итог": "ничего: общая схема, не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "## Gemini Live API … install the **`google-gemini/gemini-live-api-dev`** skill",
+   "итог": "ничего: не про генерацию картинок (признак организации google-gemini учтён в официальности)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-40-1",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3-pro-image (Nano Banana Pro) is listed with a token figure of 65k / 32k.",
+   "цитата": "`gemini-3-pro-image` (Nano Banana Pro): 65k / 32k tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Что означают два числа (вход/выход), в файле не расшифровано; у текстовых моделей в том же списке одно число «1M tokens»."
+  },
+  {
+   "код": "E-40-2",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image (Nano Banana Pro) is described as the model for high-quality image generation and editing.",
+   "цитата": "high-quality image generation and editing",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ступень «качество» в линейке из трёх image-моделей."
+  },
+  {
+   "код": "E-40-3",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3.1-flash-image (Nano Banana 2) is listed with a token figure of 65k / 32k.",
+   "цитата": "`gemini-3.1-flash-image` (Nano Banana 2): 65k / 32k tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Расшифровки чисел нет (см. E-40-1)."
+  },
+  {
+   "код": "E-40-4",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image (Nano Banana 2) is described as fast, efficient image generation and editing.",
+   "цитата": "fast, efficient image generation and editing",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-40-5",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) is listed with a token figure of 65k / 32k.",
+   "цитата": "`gemini-3.1-flash-lite-image` (Nano Banana 2 Lite): 65k / 32k tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Расшифровки чисел нет (см. E-40-1)."
+  },
+  {
+   "код": "E-40-6",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-lite-image (Nano Banana 2 Lite) is described as ultra-fast image generation and editing.",
+   "цитата": "ultra-fast image generation and editing",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current Models (Use These)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-40-7",
+   "вид": "правило",
+   "утверждение_en": "Models matching gemini-2.5-*, gemini-2.0-* and gemini-1.5-* are legacy and deprecated and must never be used.",
+   "цитата": "Models like `gemini-2.5-*`, `gemini-2.0-*`, `gemini-1.5-*` are **legacy and deprecated**. Never use them.",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — WARNING после Current Models",
+   "модели": [
+    "gemini-2.5-*",
+    "gemini-2.0-*",
+    "gemini-1.5-*"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Шаблон gemini-2.5-* по форме охватывает и gemini-2.5-flash-image (оригинальный Nano Banana), хотя он здесь не назван поимённо (см. E-40-25). Правило адресовано агенту, пишущему код."
+  },
+  {
+   "код": "E-40-8",
+   "вид": "правило",
+   "утверждение_en": "If a user asks for a deprecated model, the agent should use gemini-3.8-flash instead and note the substitution.",
+   "цитата": "**If a user asks for a deprecated model, use `gemini-3.8-flash` instead and note the substitution.**",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — WARNING после Current Models",
+   "модели": [
+    "gemini-3.8-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Для запроса устаревшей image-модели замена на gemini-3.8-flash (в списке — модель для «agentic and multimodal tasks», не image-модель) не согласуется с наличием в том же списке image-моделей (см. E-40-25)."
+  },
+  {
+   "код": "E-40-9",
+   "вид": "факт",
+   "утверждение_en": "Current SDKs are Python google-genai >= 2.25.0 (pip install -U google-genai) and JavaScript/TypeScript @google/genai >= 2.3.0 (npm install @google/genai).",
+   "цитата": "- **Python**: `google-genai` >= `2.25.0` → `pip install -U google-genai`\n- **JavaScript/TypeScript**: `@google/genai` >= `2.3.0` → `npm install @google/genai`",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current SDKs",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее для всех вызовов, включая генерацию картинок; раздел назван «Critical Rules (Always Apply)»."
+  },
+  {
+   "код": "E-40-10",
+   "вид": "правило",
+   "утверждение_en": "SDK versions ≥ 2.0.0 automatically use the new steps schema and do not support the legacy schema; the legacy SDKs google-generativeai (Python) and @google/generative-ai (JS) are deprecated and must never be used.",
+   "цитата": "SDK versions ≥ 2.0.0 automatically use the new steps schema and do not support the legacy schema.\n> Legacy SDKs `google-generativeai` (Python) and `@google/generative-ai` (JS) are **deprecated**. Never use them.",
+   "источник_цитаты": "txt",
+   "раздел": "Critical Rules (Always Apply) — Current SDKs, NOTE",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-40-11",
+   "вид": "инструкция",
+   "утверждение_en": "Before writing any code, the agent must fetch the documentation page matching the user's task, because the skill's examples are minimal and the hosted docs contain the full API surface, parameters and edge cases.",
+   "цитата": "**Before writing any code**, you MUST fetch the relevant documentation page from the list below that matches the user's task. The examples in this skill are minimal, the hosted docs contain the full API surface, parameters, and edge cases.",
+   "источник_цитаты": "txt",
+   "раздел": "Important Additional Notes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для генерации картинок «matching page» — Image Generation (E-40-22). Повторено в разделе Documentation Pages (стр. 326)."
+  },
+  {
+   "код": "E-40-12",
+   "вид": "факт",
+   "утверждение_en": "Interactions are stored by default (store=True in Python, store: true in TypeScript); the paid tier retains them for 55 days and the free tier for 1 day.",
+   "цитата": "Interactions are **stored by default** (store=True in Python, store: true in TypeScript). Paid tier retains for 55 days, free tier for 1 day.",
+   "источник_цитаты": "txt",
+   "раздел": "Important Additional Notes",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Общее для всех interactions, в т.ч. с генерацией картинок."
+  },
+  {
+   "код": "E-40-13",
+   "вид": "ограничение",
+   "утверждение_en": "Setting store=False / store: false opts out of storage but disables previous_interaction_id and background=True / background: true.",
+   "цитата": "Set store=False / store: false to opt out, but this disables previous_interaction_id and background=True / background: true.",
+   "источник_цитаты": "txt",
+   "раздел": "Important Additional Notes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Для многоходовой правки картинок через previous_interaction_id хранение должно быть включено (выведено, см. E-40-27)."
+  },
+  {
+   "код": "E-40-14",
+   "вид": "правило",
+   "утверждение_en": "tools, system_instruction and generation_config are interaction-scoped and must be re-specified on each turn.",
+   "цитата": "`tools`, `system_instruction`, and `generation_config` are **interaction-scoped**, re-specify them each turn.",
+   "источник_цитаты": "txt",
+   "раздел": "Important Additional Notes",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Не сказано, относится ли то же к response_format (куда по новой схеме переехали настройки картинки) — см. не_сказано."
+  },
+  {
+   "код": "E-40-15",
+   "вид": "факт",
+   "утверждение_en": "Model upgrades are drop-in: swap the model string; deprecated models (gemini-2.0-*, gemini-1.5-*) must be replaced (see references/migration.md).",
+   "цитата": "**Model upgrades**: Drop-in, swap the model string. Deprecated models (`gemini-2.0-*`, `gemini-1.5-*`) must be replaced, see `references/migration.md`.",
+   "источник_цитаты": "txt",
+   "раздел": "Important Additional Notes",
+   "модели": [
+    "gemini-2.0-*",
+    "gemini-1.5-*"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Здесь в списке устаревших нет gemini-2.5-*, в отличие от WARNING (E-40-7) — см. противоречия."
+  },
+  {
+   "код": "E-40-16",
+   "вид": "факт",
+   "утверждение_en": "The SDK convenience property output_image (type Image | null) returns the last image generated by the model in the current response, as an object with data (base64) and mime_type.",
+   "цитата": "| `output_image` | `Image \\| null` | The last image generated by the model in the current response. Returns an object with `data` (base64) and `mime_type`. |",
+   "источник_цитаты": "txt",
+   "раздел": "Response Helpers",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Только последняя картинка ответа; при нескольких картинках остальные — из steps (выведено, E-40-28)."
+  },
+  {
+   "код": "E-40-17",
+   "вид": "факт",
+   "утверждение_en": "Passing previous_interaction_id of an earlier interaction makes the server remember the conversation context on the next turn.",
+   "цитата": "# Second turn — server remembers context",
+   "источник_цитаты": "txt",
+   "раздел": "Stateful Conversation",
+   "модели": [
+    "gemini-3.8-flash (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Пример текстовый («What is my name?»); механизм общий и применим к многоходовому диалогу, в т.ч. с картинками (прямо про картинки не сказано)."
+  },
+  {
+   "код": "E-40-18",
+   "вид": "факт",
+   "утверждение_en": "Streaming with image generation (as well as tools, thinking and agents) is covered in the full Streaming guide.",
+   "цитата": "For streaming with tools, thinking, agents, and image generation see the full [Streaming guide](https://ai.google.dev/gemini-api/docs/streaming.md.txt).",
+   "источник_цитаты": "txt",
+   "раздел": "Streaming",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Косвенно подтверждает, что генерация картинок поддерживает стриминг; детали — вне этого файла."
+  },
+  {
+   "код": "E-40-19",
+   "вид": "факт",
+   "утверждение_en": "With stream=True, each stream follows the event sequence interaction.created → (step.start → step.delta(s) → step.stop)+ → interaction.completed.",
+   "цитата": "Each stream follows: `interaction.created` → (`step.start` → `step.delta`(s) → `step.stop`)+ → `interaction.completed`.",
+   "источник_цитаты": "txt",
+   "раздел": "Streaming",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общая схема стриминга; картинки внутри неё приходят как delta типа image (E-40-24)."
+  },
+  {
+   "код": "E-40-20",
+   "вид": "факт",
+   "утверждение_en": "The model_output step is the final model generation and contains a content array with text, image, audio and other parts.",
+   "цитата": "`model_output`: Final model generation. Contains `content` array with `text`, `image`, `audio`, etc.",
+   "источник_цитаты": "txt",
+   "раздел": "Data Model — Step Types",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сгенерированная картинка — элемент content типа image в шаге model_output."
+  },
+  {
+   "код": "E-40-21",
+   "вид": "факт",
+   "утверждение_en": "image / audio / document / video content items (inside the content array of model_output and user_input steps) carry data, mime_type, or uri.",
+   "цитата": "`image` / `audio` / `document` / `video`: Content with `data`, `mime_type`, or `uri`",
+   "источник_цитаты": "txt",
+   "раздел": "Data Model — Content types (inside content array on model_output and user_input steps)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Та же форма и для входной картинки (user_input — например, референс для правки) и для выходной (model_output). Лимиты входных картинок не указаны."
+  },
+  {
+   "код": "E-40-22",
+   "вид": "инструкция",
+   "утверждение_en": "For image-generation code, the matching documentation page to fetch is Image Generation (https://ai.google.dev/gemini-api/docs/image-generation.md.txt); the hosted docs are the source of truth for parameters, types and edge cases.",
+   "цитата": "- [Image Generation](https://ai.google.dev/gemini-api/docs/image-generation.md.txt)",
+   "источник_цитаты": "txt",
+   "раздел": "Documentation Pages — Generation & Output",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из стр. 326 («You MUST fetch the matching page below before writing code») + пункта списка Image Generation",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В том же списке: Image Understanding, Thinking, Thought Signatures, Media Resolution, File Input Methods — ссылки без содержания."
+  },
+  {
+   "код": "E-40-23",
+   "вид": "правило",
+   "утверждение_en": "The hosted documentation pages are the source of truth for parameters, types and edge cases; the agent must fetch the matching page before writing code and not rely solely on the skill's examples.",
+   "цитата": "**You MUST fetch the matching page below before writing code.** These hosted docs are the source of truth for parameters, types, and edge cases — do not rely solely on the examples above.",
+   "источник_цитаты": "txt",
+   "раздел": "Documentation Pages",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Повтор E-40-11."
+  },
+  {
+   "код": "E-40-24",
+   "вид": "факт",
+   "утверждение_en": "In streaming, the image delta type belongs to the model_output step and carries an image chunk (base64).",
+   "цитата": "| `image` | `model_output` | image chunk (base64). |",
+   "источник_цитаты": "txt",
+   "раздел": "Data Model — Delta Types",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Размер/число чанков на картинку не указаны."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-40-25",
+   "вид": "предупреждение",
+   "утверждение_en": "The deprecation wildcard gemini-2.5-* also covers gemini-2.5-flash-image (the original Nano Banana), which is absent from the Current Models list; the skill's substitution rule would replace a requested deprecated model with gemini-3.8-flash, which is not one of the image models the same list offers, so for image requests the rule and the list point in different directions.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Critical Rules — Current Models + WARNING",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — только через шаблон gemini-2.5-*",
+    "gemini-3.8-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-40-7, E-40-8, E-40-2, E-40-4, E-40-6",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Прямо про замену image-модели ничего не сказано; вывод — из буквального применения шаблона."
+  },
+  {
+   "код": "E-40-26",
+   "вид": "факт",
+   "утверждение_en": "The three current image models form a ladder by description — high-quality (Nano Banana Pro), fast/efficient (Nano Banana 2), ultra-fast (Nano Banana 2 Lite) — while sharing the same listed token figure 65k / 32k.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Critical Rules — Current Models",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-40-1..E-40-6",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Цены, качество в цифрах и различия в поддержке параметров не приведены."
+  },
+  {
+   "код": "E-40-27",
+   "вид": "объяснение",
+   "утверждение_en": "For stateful multi-turn work through the Interactions API (for example iterative image edits), the chain relies on previous_interaction_id, which requires storage to stay enabled (store=True by default; retained 55 days paid / 1 day free), and generation_config must be re-sent on every turn.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Important Additional Notes + Stateful Conversation",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-40-12, E-40-13, E-40-14, E-40-17",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Что previous_interaction_id перестаёт работать после окончания срока хранения — прямо не сказано; картинки в этих пунктах не названы."
+  },
+  {
+   "код": "E-40-28",
+   "вид": "объяснение",
+   "утверждение_en": "A generated image can be read three ways: as an image content item in the model_output step, via the output_image helper (which returns only the last image of the response), or as base64 image deltas when streaming.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Response Helpers + Data Model",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-40-16, E-40-20, E-40-21, E-40-24",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Если модель вернула несколько картинок, остальные доступны только через steps/content (вывод из слова «last»)."
+  }
+ ],
+ "противоречия_внутри": [
+  "Список устаревших моделей расходится: WARNING (стр. 32) — gemini-2.5-*, gemini-2.0-*, gemini-1.5-*; пункт «Model upgrades» (стр. 59) — только gemini-2.0-*, gemini-1.5-* (E-40-7 против E-40-15). Для картинок существенно: оригинальный Nano Banana — gemini-2.5-flash-image.",
+  "Правило замены устаревшей модели на gemini-3.8-flash (E-40-8) при запросе устаревшей image-модели ведёт не к image-модели, хотя image-модели есть в том же списке (E-40-25).",
+  "Не про картинки: в таблице Streaming Event Types есть interaction.status_update, в описании последовательности стрима (стр. 286) его нет."
+ ],
+ "не_сказано": [
+  "Нет ни одного примера кода генерации или правки картинки; нет aspect_ratio, image_size, response_format / image_config — только ссылка на Image Generation.",
+  "Не расшифровано «65k / 32k tokens» (вход/выход?) для image-моделей.",
+  "gemini-2.5-flash-image (Nano Banana) поимённо не назван — ни как текущий, ни как устаревший.",
+  "Нет лимитов входных картинок (число референсов, размер), media resolution (только ссылка), thinking для image-моделей, цен.",
+  "Не сказано, нужно ли повторять response_format каждый ход, как generation_config (E-40-14).",
+  "Imagen не упоминается."
+ ],
+ "сомнения": [
+  "Официальность: домен GitHub raw, а не Google; признак — организация google-gemini (URL и ссылка в тексте). Юридической подписи Google на странице нет.",
+  "Явной даты нет; в метаданных партии дата 2026-09-23 — вероятно, дата сбора, не документа.",
+  "Файл — инструкция для агента-кодера (директивы «Never use», «you MUST»), а не документация по генерации картинок; правила сформулированы для поведения агента, не для промптов."
+ ]
+}

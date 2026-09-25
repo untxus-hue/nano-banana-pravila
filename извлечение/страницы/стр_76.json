@@ -1,0 +1,1129 @@
+{
+ "id": 76,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb",
+ "заголовок": "gh-intro-gemini-3-1-flash-image-gen (Gemini 3.1 Flash Image (Nano Banana 2 🍌) Generation)",
+ "дата_в_тексте": "только 'Copyright 2026 Google LLC'; в примере промпта упомянут '2026 Super Bowl'",
+ "официальность": {
+  "домен": "raw.githubusercontent.com (репозиторий GoogleCloudPlatform/generative-ai)",
+  "второй_признак": "Строка '# Copyright 2026 Google LLC' + лицензия Apache 2.0; организация GoogleCloudPlatform. Автор — Katie Nguyen (GitHub katiemn).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальный вводный ноутбук Google Cloud для разработчиков по gemini-3.1-flash-image (Nano Banana 2) через Google Gen AI SDK на Agent Platform. Структура: обзор → setup (регионы global/us/eu; поиск не регионализирован) → text-to-image (response_modalities, 14 соотношений, ThinkingConfig HIGH/MINIMAL, include_thoughts, SynthID, output_mime_type) → просмотр мыслей → фильтр известных людей (BLOCK_PROMINENT_PEOPLE) → grounding веб-поиском и поиском изображений → image_size 512/1K/2K/4K → video-to-image (файл и YouTube) → редактирование: локализация текста, мультиход в чате, до 14 рефов. Собственные термины: 'Prominent people filter', 'Localization', 'thinking level'. Повторяемый акцент: IMAGE в response_modalities, проверка finish_reason, пропуск частей-мыслей.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)"
+ ],
+ "структура": [
+  "Copyright + License",
+  "Gemini 3.1 Flash Image (Nano Banana 2 🍌) Generation (ссылки, автор)",
+  "Overview",
+  "Get started (SDK, auth, libraries, project + регионы, model)",
+  "Image generation: Text-to-image; See the thoughts; Prominent people; Grounding with web search results (+ image search); Image sizes; Video-to-image",
+  "Image editing: Localization; Multi-turn image editing (chat); Multiple reference images"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Copyright 2026 Google LLC # Licensed",
+   "итог": "ничего: копирайт и лицензия (второй признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# Gemini 3.1 Flash Image (Nano Banana 2 🍌) Generation",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 3,
+   "начало": "<table align=\"left\"> … Share to:",
+   "итог": "ничего: обвязка (ссылки и шаринг)"
+  },
+  {
+   "n": 4,
+   "начало": "| Author | … Katie Nguyen",
+   "итог": "ничего: автор"
+  },
+  {
+   "n": 5,
+   "начало": "## Overview This notebook will show you",
+   "итог": "E-76-1, E-76-2"
+  },
+  {
+   "n": 6,
+   "начало": "In this tutorial, you'll learn how … (список сценариев)",
+   "итог": "ничего: оглавление сценариев"
+  },
+  {
+   "n": 7,
+   "начало": "## Get started / ### Install Google Gen AI SDK",
+   "итог": "ничего: установка SDK"
+  },
+  {
+   "n": 8,
+   "начало": "%pip install --upgrade --quiet google-genai",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 9,
+   "начало": "### Authenticate your notebook environment",
+   "итог": "ничего: аутентификация"
+  },
+  {
+   "n": 10,
+   "начало": "import sys … auth.authenticate_user()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 11,
+   "начало": "### Import libraries / import warnings …",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 12,
+   "начало": "### Set Google Cloud project information To get started",
+   "итог": "ничего: настройка проекта"
+  },
+  {
+   "n": 13,
+   "начало": "**NOTE:** Nano Banana 2 is available",
+   "итог": "E-76-3, E-76-4"
+  },
+  {
+   "n": 14,
+   "начало": "import os … LOCATION = \"global\" # \"us\", \"eu\"",
+   "итог": "ничего: код без промпта (регионы учтены в E-76-3)"
+  },
+  {
+   "n": 15,
+   "начало": "### Load the model MODEL_ID = \"gemini-3.1-flash-image\"",
+   "итог": "ничего: код без промпта (ID модели в картине)"
+  },
+  {
+   "n": 16,
+   "начало": "## Image generation / ### Text-to-image In the cell below",
+   "итог": "ничего: вводная к списку аргументов"
+  },
+  {
+   "n": 17,
+   "начало": "- `prompt`: A text-only user message",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 18,
+   "начало": "- `config`: A config for specifying",
+   "итог": "ничего: общее описание аргумента"
+  },
+  {
+   "n": 19,
+   "начало": "- `response_modalities`: To generate an image,",
+   "итог": "E-76-5"
+  },
+  {
+   "n": 20,
+   "начало": "- `ImageConfig`: Set the `aspect_ratio`.",
+   "итог": "E-76-6"
+  },
+  {
+   "n": 21,
+   "начало": "- `ThinkingConfig`: Set the `thinking_level`",
+   "итог": "E-76-7"
+  },
+  {
+   "n": 22,
+   "начало": "- `HIGH`: Allows the model to",
+   "итог": "E-76-8"
+  },
+  {
+   "n": 23,
+   "начало": "- `MINIMAL`: Constrains the model to",
+   "итог": "E-76-9"
+  },
+  {
+   "n": 24,
+   "начало": "All generated images include a [SynthID",
+   "итог": "E-76-10"
+  },
+  {
+   "n": 25,
+   "начало": "prompt = \"\"\" A high-contrast, grainy black and white",
+   "итог": "E-76-11, E-76-12"
+  },
+  {
+   "n": 26,
+   "начало": "### See the thoughts Since this is",
+   "итог": "E-76-13"
+  },
+  {
+   "n": 27,
+   "начало": "for part in response.parts: if part.thought:",
+   "итог": "ничего: код без промпта (реализует E-76-13)"
+  },
+  {
+   "n": 28,
+   "начало": "### Prominent people You can block",
+   "итог": "E-76-14"
+  },
+  {
+   "n": 29,
+   "начало": "prompt = \"Generate an image of Beyonce\"",
+   "итог": "E-76-15, E-76-16"
+  },
+  {
+   "n": 30,
+   "начало": "### Grounding with web search results With this model",
+   "итог": "E-76-17"
+  },
+  {
+   "n": 31,
+   "начало": "To display the grounding data, use",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 32,
+   "начало": "def print_search_grounding_data(",
+   "итог": "E-76-18"
+  },
+  {
+   "n": 33,
+   "начало": "Next, you'll create a Google Search",
+   "итог": "E-76-19"
+  },
+  {
+   "n": 34,
+   "начало": "prompt = \"\"\" A cinematic, wide-angle illustration of the NFL",
+   "итог": "E-76-20"
+  },
+  {
+   "n": 35,
+   "начало": "Below, you'll do the same thing,",
+   "итог": "E-76-21"
+  },
+  {
+   "n": 36,
+   "начало": "prompt = \"Generate a watercolor image of the Lansdowne Bridge\"",
+   "итог": "E-76-22"
+  },
+  {
+   "n": 37,
+   "начало": "### Image sizes You can have Nano Banana 2",
+   "итог": "E-76-23"
+  },
+  {
+   "n": 38,
+   "начало": "prompt = \"\"\" Macro photography of a vibrant",
+   "итог": "E-76-24"
+  },
+  {
+   "n": 39,
+   "начало": "### Video-to-image / Nano Banana 2 is also able",
+   "итог": "E-76-25"
+  },
+  {
+   "n": 40,
+   "начало": "Start by downloading and displaying a",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 41,
+   "начало": "!wget … animals.mp4 … display(Video(",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 42,
+   "начало": "with open(video_file, \"rb\") … Generate an illustration of every animal",
+   "итог": "E-76-26"
+  },
+  {
+   "n": 43,
+   "начало": "You can also generate images from YouTube",
+   "итог": "E-76-27"
+  },
+  {
+   "n": 44,
+   "начало": "youtube_link = … Generate an infographic of the topics",
+   "итог": "E-76-28"
+  },
+  {
+   "n": 45,
+   "начало": "## Image editing You can also edit",
+   "итог": "E-76-29"
+  },
+  {
+   "n": 46,
+   "начало": "### Localization You can also translate",
+   "итог": "E-76-30"
+  },
+  {
+   "n": 47,
+   "начало": "!wget … city-street.png … display(Image(",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 48,
+   "начало": "with open(starting_image, \"rb\") … Change the text in this infographic",
+   "итог": "E-76-31"
+  },
+  {
+   "n": 49,
+   "начало": "### Multi-turn image editing (chat) In this",
+   "итог": "E-76-32"
+  },
+  {
+   "n": 50,
+   "начало": "chat = client.chats.create( … A minimalist overhead shot",
+   "итог": "E-76-33"
+  },
+  {
+   "n": 51,
+   "начало": "Now, you'll send a new message",
+   "итог": "E-76-34"
+  },
+  {
+   "n": 52,
+   "начало": "message = \"Change the poppies to white dahlias",
+   "итог": "E-76-35"
+  },
+  {
+   "n": 53,
+   "начало": "### Multiple reference images With Nano Banana 2,",
+   "итог": "E-76-36"
+  },
+  {
+   "n": 54,
+   "начало": "Run the following cell to visualize",
+   "итог": "ничего: служебная фраза"
+  },
+  {
+   "n": 55,
+   "начало": "from io import BytesIO … image_urls = [ … plt.show()",
+   "итог": "ничего: код без промпта"
+  },
+  {
+   "n": 56,
+   "начало": "The process for sending the request",
+   "итог": "E-76-37"
+  },
+  {
+   "n": 57,
+   "начало": "response = client.models.generate_content( … Generate an image of a woman wearing white pants",
+   "итог": "E-76-38"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-76-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2) is a generalist multimodal model offering image generation and conversational image editing.",
+   "цитата": "This model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-2",
+   "вид": "факт",
+   "утверждение_en": "The model can show its work: you can set the thinking level and see the thought process behind the generated output.",
+   "цитата": "It's also able to show its work, allowing you to set the thinking level and see the 'thought process' behind the generated output.",
+   "источник_цитаты": "txt",
+   "раздел": "Overview",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-3",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is available in the regions global, us, and eu.",
+   "цитата": "Nano Banana 2 is available in the following regions: `global`, `us`, and `eu`.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started / Set Google Cloud project information",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "В коде: LOCATION = \"global\" # \"us\", \"eu\"; client = genai.Client(enterprise=True, project=..., location=LOCATION)."
+  },
+  {
+   "код": "E-76-4",
+   "вид": "ограничение",
+   "утверждение_en": "Search grounding features are not regionalized.",
+   "цитата": "Search grounding features are not [regionalized](https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/supported-capabilities).",
+   "источник_цитаты": "txt",
+   "раздел": "Get started / Set Google Cloud project information",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Что это значит для выбора региона us/eu (обработка данных вне региона?) — не раскрыто."
+  },
+  {
+   "код": "E-76-5",
+   "вид": "правило",
+   "утверждение_en": "To generate an image, IMAGE must be included in response_modalities; to get both text and images specify IMAGE and TEXT.",
+   "цитата": "`response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list. To get both text and images, specify `IMAGE` and `TEXT`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-6",
+   "вид": "факт",
+   "утверждение_en": "Valid aspect ratios: 1:1, 3:2, 2:3, 3:4, 4:3, 1:4, 4:1, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9 (set via ImageConfig aspect_ratio).",
+   "цитата": "`ImageConfig`: Set the `aspect_ratio`. Valid ratios are: 1:1, 3:2, 2:3, 3:4, 4:3, 1:4, 4:1, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "14 соотношений, включая экстремальные 1:4, 4:1, 1:8, 8:1."
+  },
+  {
+   "код": "E-76-7",
+   "вид": "инструкция",
+   "утверждение_en": "Set ThinkingConfig thinking_level to HIGH or MINIMAL; set include_thoughts=True to view the model's thoughts.",
+   "цитата": "`ThinkingConfig`: Set the `thinking_level` to `HIGH` or `MINIMAL`, and if you'd like to view the model thoughts, set `include_thoughts` to `True`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "В коде: types.ThinkingConfig(include_thoughts=True, thinking_level=types.ThinkingLevel.HIGH)."
+  },
+  {
+   "код": "E-76-8",
+   "вид": "объяснение",
+   "утверждение_en": "HIGH thinking lets the model use more tokens for thinking and suits complex prompts requiring deep reasoning.",
+   "цитата": "`HIGH`: Allows the model to use more tokens for thinking and is suitable for complex prompts requiring deep reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-9",
+   "вид": "объяснение",
+   "утверждение_en": "MINIMAL thinking constrains the model to as few thinking tokens as possible and is best for low-complexity tasks.",
+   "цитата": "`MINIMAL`: Constrains the model to use as few tokens as possible for thinking and is best used for low-complexity tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-10",
+   "вид": "факт",
+   "утверждение_en": "All generated images include a SynthID watermark.",
+   "цитата": "All generated images include a [SynthID watermark](https://deepmind.google/technologies/synthid/).",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Street-photography prompt with a graphic overlay and a single word of text in a matching bubble font (STYLE).",
+   "цитата": "A high-contrast, grainy black and white street photography shot. A woman in dark sunglasses is captured in mid-stride with elegant motion blur. Overlaid on the image are large, white, pillowy bubble lines that curve around her to trace her silhouette. A word is added to the top of the image in the same white, bubble font: STYLE.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Разбор: 1) тип кадра + свойства плёнки/контраста ('high-contrast, grainy black and white street photography shot'); 2) субъект + деталь + момент движения + эффект ('elegant motion blur'); 3) графический слой поверх фото с формой и функцией ('trace her silhouette'); 4) текст: позиция ('top of the image') + шрифт через отсылку к уже описанному ('in the same white, bubble font') + само слово капсом после двоеточия, без кавычек. 3:2, TEXT+IMAGE, thinking HIGH."
+  },
+  {
+   "код": "E-76-12",
+   "вид": "факт",
+   "утверждение_en": "ImageConfig accepts output_mime_type (e.g., 'image/png') for the generated image.",
+   "цитата": "output_mime_type=\"image/png\",",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Text-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Из кода; другие значения не перечислены."
+  },
+  {
+   "код": "E-76-13",
+   "вид": "факт",
+   "утверждение_en": "Since this is a thinking model, you can inspect the thoughts that led to the image; thought parts are flagged part.thought and may contain text or images.",
+   "цитата": "Since this is a thinking model, you can check the thoughts that led to the image being produced.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / See the thoughts",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Из кода: for part in response.parts: if part.thought: part.text → Markdown, elif part.inline_data → Image — т.е. в мыслях бывают промежуточные изображения. При выводе результата части с part.thought пропускаются."
+  },
+  {
+   "код": "E-76-14",
+   "вид": "инструкция",
+   "утверждение_en": "Block photorealistic images of prominent people by setting prominent_people=types.ProminentPeople.BLOCK_PROMINENT_PEOPLE in ImageConfig.",
+   "цитата": "You can block the model from generating photorealistic images of prominent people by setting `prominent_people` to `types.ProminentPeople.BLOCK_PROMINENT_PEOPLE`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Prominent people",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Фильтр опциональный ('You can block'); касается фотореалистичных изображений известных людей. Поведение без настройки не описано."
+  },
+  {
+   "код": "E-76-15",
+   "вид": "пример_промпта",
+   "утверждение_en": "Test prompt for the prominent-people filter: generate an image of Beyonce.",
+   "цитата": "Generate an image of Beyonce",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Prominent people",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Разбор: прямой запрос изображения конкретной знаменитости — проверка блокировки при BLOCK_PROMINENT_PEOPLE; 1:1."
+  },
+  {
+   "код": "E-76-16",
+   "вид": "факт",
+   "утверждение_en": "When generation is blocked, the candidate's finish_reason is not STOP and a finish_message is available.",
+   "цитата": "print(response.candidates[0].finish_reason, response.candidates[0].finish_message)",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Prominent people",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Из кода: if finish_reason != types.FinishReason.STOP: print(finish_reason, finish_message). Значения причин не приведены."
+  },
+  {
+   "код": "E-76-17",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 can generate responses grounded in Google Search results.",
+   "цитата": "With this model, you can also generate responses that are grounded in the results of a Google Search.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-18",
+   "вид": "факт",
+   "утверждение_en": "Grounding metadata includes grounding supports, grounding chunks (web, retrieved context, maps, or image with title, source_uri, image_uri, domain), web_search_queries, image_search_queries and a search entry point.",
+   "цитата": "image_queries = getattr(grounding_metadata, \"image_search_queries\", []) or []",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Из хелпера print_search_grounding_data: response.candidates[0].grounding_metadata → grounding_supports, grounding_chunks (chunk.web / retrieved_context / maps / image), web_search_queries, image_search_queries, search_entry_point.rendered_content."
+  },
+  {
+   "код": "E-76-19",
+   "вид": "инструкция",
+   "утверждение_en": "For web-search grounding, create a Google Search tool with SearchTypes(web_search=WebSearch()) and include it in the tools parameter.",
+   "цитата": "Next, you'll create a Google Search tool and include it in the `tools` parameter of the following request to perform a web search.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Из кода: types.Tool(google_search=types.GoogleSearch(search_types=types.SearchTypes(web_search=types.WebSearch()))); config tools=[google_search]."
+  },
+  {
+   "код": "E-76-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Web-grounded prompt needing post-cutoff facts: a cinematic wide-angle illustration of the stadium of the team that won the 2026 Super Bowl.",
+   "цитата": "A cinematic, wide-angle illustration of the NFL team's stadium that won the 2026 Super Bowl. Digital art style with high-detail architecture.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "стиль"
+   ],
+   "заметка": "Разбор: тип кадра + медиум ('A cinematic, wide-angle illustration of') + объект, определённый через факт, который модель должна найти ('the NFL team's stadium that won the 2026 Super Bowl') → отдельным предложением стиль и уровень детализации. 21:9, thinking HIGH, TEXT+IMAGE."
+  },
+  {
+   "код": "E-76-21",
+   "вид": "инструкция",
+   "утверждение_en": "For image-search grounding, use the same Google Search tool with SearchTypes(image_search=ImageSearch()).",
+   "цитата": "Below, you'll do the same thing, except with an image search.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "Из кода: types.GoogleSearch(search_types=types.SearchTypes(image_search=types.ImageSearch()))."
+  },
+  {
+   "код": "E-76-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-search-grounded prompt naming a specific real landmark: a watercolor image of the Lansdowne Bridge.",
+   "цитата": "Generate a watercolor image of the Lansdowne Bridge",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "стиль"
+   ],
+   "заметка": "Разбор: 'Generate' + медиум ('watercolor') + точное имя реального объекта — поиск картинок даёт модели его реальный облик. 16:9, thinking HIGH."
+  },
+  {
+   "код": "E-76-23",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 can generate images with image_size 512, 1K, 2K, or 4K.",
+   "цитата": "You can have Nano Banana 2 generate images with an `image_size` of `512`, `1K`, `2K`, or `4K`.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Image sizes",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Значение записано как '512' (без 'px'). В коде: types.ImageConfig(aspect_ratio='1:1', image_size='4K')."
+  },
+  {
+   "код": "E-76-24",
+   "вид": "пример_промпта",
+   "утверждение_en": "4K macro prompt: macro photography of a teal and lime green chameleon on a mossy branch.",
+   "цитата": "Macro photography of a vibrant teal and lime green chameleon perched on a mossy branch.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Image sizes",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: жанр съёмки первым ('Macro photography of') + субъект с точными цветами + поза + опора. Выбран сюжет с мелкой фактурой под 4K."
+  },
+  {
+   "код": "E-76-25",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 can generate images from a video, observing the frames and generating new images based on the visual content.",
+   "цитата": "Nano Banana 2 is also able to generate images from a video. The model is able to observe the frames and generate new images based on the visual content.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "В коде: types.Part.from_bytes(data=video, mime_type='video/mp4') перед текстом."
+  },
+  {
+   "код": "E-76-26",
+   "вид": "пример_промпта",
+   "утверждение_en": "Video-to-image prompt: an illustration of every animal featured in this video.",
+   "цитата": "Generate an illustration of every animal featured in this video",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Разбор: 'Generate an illustration of' + охват ('every animal') + источник ('featured in this video'). Модель сама извлекает содержание из кадров."
+  },
+  {
+   "код": "E-76-27",
+   "вид": "инструкция",
+   "утверждение_en": "Images can also be generated from YouTube videos and Cloud Storage videos by providing file_uri and mime_type.",
+   "цитата": "You can also generate images from YouTube videos and videos in Cloud Storage. Simply provide the `file_uri` and `mime_type` in the request.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "В коде: types.Part.from_uri(file_uri=youtube_link, mime_type='video/mp4')."
+  },
+  {
+   "код": "E-76-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "YouTube-to-image prompt: an infographic of the topics covered in this video.",
+   "цитата": "Generate an infographic of the topics covered in this video",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation / Video-to-image",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "текст_в_кадре"
+   ],
+   "заметка": "Разбор: формат ('infographic') + содержание, извлекаемое из видео ('the topics covered')."
+  },
+  {
+   "код": "E-76-29",
+   "вид": "инструкция",
+   "утверждение_en": "To edit images with this model, pass the original image as part of the prompt.",
+   "цитата": "You can also edit images with this model; simply pass the original image as part of the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-30",
+   "вид": "факт",
+   "утверждение_en": "Text in images can be translated through image editing.",
+   "цитата": "You can also translate the text in images through image editing.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-31",
+   "вид": "пример_промпта",
+   "утверждение_en": "Localization edit prompt: change the text in this infographic from English to Japanese.",
+   "цитата": "Change the text in this infographic from English to Japanese.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Localization",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Разбор: 'Change the text in this infographic' + исходный язык + целевой язык. Ничего не сказано о сохранении остального."
+  },
+  {
+   "код": "E-76-32",
+   "вид": "факт",
+   "утверждение_en": "You can generate a starting image and iteratively alter aspects of it by chatting with the model.",
+   "цитата": "In this next section, you'll generate a starting image and iteratively alter certain aspects of the image by chatting with the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "В коде: client.chats.create(model=..., config=GenerateContentConfig(response_modalities=['TEXT','IMAGE']))."
+  },
+  {
+   "код": "E-76-33",
+   "вид": "пример_промпта",
+   "утверждение_en": "Starting chat prompt: minimalist overhead shot of two florist buckets on grey pavement with specified flowers.",
+   "цитата": "A minimalist overhead shot of two dense florist buckets on a smooth grey pavement. One contains a bouquet of pink baby's breath, and the other contains a cluster of pale blush poppies.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: стиль + ракурс ('A minimalist overhead shot of') + число и тип объектов + поверхность → содержимое каждого объекта по отдельности с цветом ('One contains ... the other contains ...'). Именованные объекты потом служат адресами правок."
+  },
+  {
+   "код": "E-76-34",
+   "вид": "инструкция",
+   "утверждение_en": "Send a new message in the existing chat to update the previously generated image.",
+   "цитата": "Now, you'll send a new message in the existing chat to update the previously generated image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "В этом ноутбуке во втором ходе отправляется только текст — изображение не пересылается."
+  },
+  {
+   "код": "E-76-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Follow-up chat edit: swap one flower type and add a third bucket in a specified corner.",
+   "цитата": "Change the poppies to white dahlias and add a third bucket of pink hydrangeas in the top right corner.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multi-turn image editing (chat)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Разбор: замена ('Change the poppies to white dahlias' — объект назван словом из первого промпта) + добавление ('add a third bucket of pink hydrangeas') + точное место в кадре ('in the top right corner'). Две правки в одном ходе."
+  },
+  {
+   "код": "E-76-36",
+   "вид": "лимит",
+   "утверждение_en": "With Nano Banana 2 you can include up to 14 reference images in a request to generate a new image that preserves the content of the originals.",
+   "цитата": "With Nano Banana 2, you can include up to 14 reference images in a request to generate a new image that preserves the content of the original images.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-37",
+   "вид": "инструкция",
+   "утверждение_en": "Provide multiple Part.from_uri instances, one for each reference image.",
+   "цитата": "The main difference is that you will provide multiple `Part.from_uri` instances, one for each reference image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-38",
+   "вид": "пример_промпта",
+   "утверждение_en": "Six-reference outfit prompt: a woman wearing the referenced garments and accessories, cropped as a cut-out on cardstock with a giant paperclip.",
+   "цитата": "Generate an image of a woman wearing white pants, a navy blue shirt, a cropped trench coat, and black boots. She's carrying a black bag. The outline of the woman is cropped against a piece of cardstock with a giant paperclip attached at the top.",
+   "источник_цитаты": "txt",
+   "раздел": "Image editing / Multiple reference images",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Разбор: 'Generate an image of' + субъект + перечень предметов одежды, каждый назван с цветом/кроем так, чтобы однозначно сопоставиться с одним рефом (woman, black-boots, black-bag, shirt, jacket, white-pants) → аксессуар отдельным предложением → подача ('cropped against a piece of cardstock with a giant paperclip'). Рефы идут перед текстом, по номерам не называются. 4:3."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-76-39",
+   "вид": "правило",
+   "утверждение_en": "When reading results from a thinking request, skip parts flagged part.thought: thought parts can themselves contain images, and the final image is the non-thought inline_data part.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Text-to-image + See the thoughts + Image sizes + Multi-turn",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-76-7, E-76-13",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Во всех ячейках вывода результата стоит 'if part.thought: continue'."
+  },
+  {
+   "код": "E-76-40",
+   "вид": "объяснение",
+   "утверждение_en": "Thinking HIGH with include_thoughts is used in the notebook exactly for the complex/grounded prompts (text-heavy composition, web search, image search) and not for simple sizing, video, localization or chat edits.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-76-8, E-76-9, E-76-11, E-76-20, E-76-22, E-76-24, E-76-31",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Согласуется с описанием HIGH/MINIMAL; прямого правила ноутбук не даёт."
+  },
+  {
+   "код": "E-76-41",
+   "вид": "приём",
+   "утверждение_en": "Grounding is used for two different needs: web search for facts the model cannot know (post-cutoff event: '2026 Super Bowl' winner), image search for the exact look of a named real object (Lansdowne Bridge); the prompt names the fact/object and leaves retrieval to the tool.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Grounding with web search results",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-76-17, E-76-19, E-76-20, E-76-21, E-76-22",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-42",
+   "вид": "объяснение",
+   "утверждение_en": "Descriptive generation prompts open with shot type or medium ('A high-contrast, grainy black and white street photography shot', 'A cinematic, wide-angle illustration', 'Macro photography of', 'A minimalist overhead shot of'), while operation prompts open with a verb ('Generate', 'Change').",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "весь ноутбук",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-76-11, E-76-20, E-76-22, E-76-24, E-76-26, E-76-31, E-76-33, E-76-35, E-76-38",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-76-43",
+   "вид": "объяснение",
+   "утверждение_en": "In all media-input calls (video, image edit, multi-reference) the media parts precede the text instruction, and the text refers to the media with 'this video' / 'this infographic' or by content.",
+   "цитата": "",
+   "источник_цитаты": "",
+   "раздел": "Video-to-image + Image editing",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-76-25, E-76-26, E-76-28, E-76-31, E-76-38",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "В коде примера с 14 рефами часть файлов .jpg объявлена с mime_type 'image/png' (black-boots.jpg, black-bag.jpg, shirt.jpg, white-pants.jpg) — несоответствие внутри кода, в тексте не обсуждается."
+ ],
+ "не_сказано": [
+  "Нет пиксельных размеров для 512/1K/2K/4K и не сказано, какое разрешение по умолчанию.",
+  "Не сказано, какой thinking_level по умолчанию, можно ли отключить thinking полностью.",
+  "Не описано, что именно возвращается при блокировке prominent people (значения finish_reason/finish_message), и что происходит без этой настройки.",
+  "Не раскрыто, что значит 'Search grounding features are not regionalized' для регионов us/eu.",
+  "Нет лимитов на длину/размер видео для video-to-image.",
+  "Нет правил составления промптов и текста в кадре — только примеры.",
+  "Нет цен и квот."
+ ],
+ "сомнения": [
+  "Значение image_size в тексте записано как '512' (без 'px'); как именно передавать строкой — в коде не показано (пример только '4K').",
+  "Ноутбук не указывает Pro/Lite — все единицы только про gemini-3.1-flash-image."
+ ]
+}

@@ -1,0 +1,1614 @@
+{
+ "id": 125,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/models/inference",
+ "заголовок": "Generate content with the Gemini API  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: лицензия CC BY 4.0 / Apache 2.0 со ссылкой на Google Developers Site Policies; примеры кода на официальном Google Gen AI SDK (from google import genai; google.golang.org/genai); ссылки 'Google Cloud terms', 'About Google'. Строки 'Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "API-справочник generateContent/streamGenerateContent для Gemini на Gemini Enterprise Agent Platform; для разработчиков. ~80% строк — меню/дерево API. Разделы: вводная, Get started, Supported models (предупреждение: много картинок = выше задержка), Parameter list: Request body (JSON-схема), contents/parts (inlineData, fileData, thought, thoughtSignature, videoMetadata, mediaProcessing, mediaResolution), blob (MIME, 'no limit on image resolution', 7 МБ inline), FileData (GCS/HTTP ≤10 картинок/YouTube), safetySetting, generationConfig (temperature, topP, topK, candidateCount, maxOutputTokens, stopSequences, penalties, responseMimeType/Schema, seed, logprobs, thinkingConfig, mediaResolution), Response body (finishReason, в т.ч. IMAGE_PROHIBITED_CONTENT и NO_IMAGE; safetyRatings; usageMetadata), Examples (текст, мультимодальный вход, стриминг). Image-модели не названы ни разу; параметров вывода картинок (imageConfig/aspectRatio/imageSize/responseModalities) на странице нет. Промптов генерации картинок нет; кодовые блоки (11 <pre>) — схемы и примеры текстовой генерации/понимания картинки.",
+ "модели_на_странице": [
+  "gemini-3.5-flash (примеры)",
+  "gemini-2.5-flash (Go-примеры)",
+  "Gemini 3.6 Flash и новее (предупреждение о sampling)",
+  "Gemini 3 (версии ≤3.5 Flash) — диапазон temperature",
+  "Gemini 2.5+ (thinkingConfig)",
+  "Gemini 3+ (биллинг документов как image-токенов)"
+ ],
+ "структура": [
+  "(intro)",
+  "Get started",
+  "Supported models",
+  "Parameter list / Request body",
+  "contents",
+  "parts",
+  "blob",
+  "FileData",
+  "functionCall",
+  "functionResponse",
+  "videoMetadata",
+  "safetySetting",
+  "harmCategory",
+  "harmBlockThreshold",
+  "harmBlockMethod",
+  "generationConfig",
+  "Response body",
+  "Examples (Text Generation, Using multimodal prompt, Streaming text response)",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (меню и дерево API-справочника, строки 1-2436; diff — идентично стр. 53)"
+  },
+  {
+   "n": 2,
+   "начало": "Generate content with the Gemini API",
+   "итог": "ничего: заголовок страницы и виджет"
+  },
+  {
+   "n": 3,
+   "начало": "Use generateContent or streamGenerateContent to",
+   "итог": "E-125-1"
+  },
+  {
+   "n": 4,
+   "начало": "The Gemini model family includes models",
+   "итог": "ничего: общее определение 'multimodal', не про генерацию картинок"
+  },
+  {
+   "n": 5,
+   "начало": "Get started To get started generating",
+   "итог": "ничего: навигация (создать аккаунт, ссылки на quickstart)"
+  },
+  {
+   "n": 6,
+   "начало": "Supported models All Gemini models support",
+   "итог": "ничего: общая фраза без содержания"
+  },
+  {
+   "n": 7,
+   "начало": "Note: Adding a lot of images",
+   "итог": "E-125-2"
+  },
+  {
+   "n": 8,
+   "начало": "Parameter list See examples for implementation",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 9,
+   "начало": "Request body {\"cachedContent\":string,\"contents\":[{\"role\":string,",
+   "итог": "E-125-3"
+  },
+  {
+   "n": 10,
+   "начало": "The request body contains data with",
+   "итог": "ничего: вводная фраза"
+  },
+  {
+   "n": 11,
+   "начало": "cachedContent Optional: string The name",
+   "итог": "ничего: не про генерацию картинок (кэш контекста)"
+  },
+  {
+   "n": 12,
+   "начало": "contents Required: Content The content of",
+   "итог": "E-125-4"
+  },
+  {
+   "n": 13,
+   "начало": "systemInstruction Optional: Content Instructions for",
+   "итог": "E-125-5, E-125-6, E-125-7"
+  },
+  {
+   "n": 14,
+   "начало": "Note: Only text should be used",
+   "итог": "E-125-8"
+  },
+  {
+   "n": 15,
+   "начало": "tools Optional. A piece of code",
+   "итог": "ничего: не про генерацию картинок (function calling)"
+  },
+  {
+   "n": 16,
+   "начало": "toolConfig Optional. See Function calling.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 17,
+   "начало": "safetySettings Optional: SafetySetting Per request",
+   "итог": "E-125-9"
+  },
+  {
+   "n": 18,
+   "начало": "generationConfig Optional: GenerationConfig Generation configuration",
+   "итог": "ничего: вводная (поля — ниже)"
+  },
+  {
+   "n": 19,
+   "начало": "labels Optional: string Metadata that",
+   "итог": "ничего: не про генерацию картинок (метки биллинга)"
+  },
+  {
+   "n": 20,
+   "начало": "contents The base structured data type",
+   "итог": "ничего: вводное определение role/parts (содержание — в пп. 21-22)"
+  },
+  {
+   "n": 21,
+   "начало": "role string The identity of the",
+   "итог": "E-125-10"
+  },
+  {
+   "n": 22,
+   "начало": "parts Part A list of ordered",
+   "итог": "E-125-11"
+  },
+  {
+   "n": 23,
+   "начало": "For limits on the inputs, such",
+   "итог": "ничего: ссылка на спецификации моделей и подсчёт токенов"
+  },
+  {
+   "n": 24,
+   "начало": "parts A data type containing media",
+   "итог": "ничего: вводная; 'text — A text prompt or code snippet' тривиально"
+  },
+  {
+   "n": 25,
+   "начало": "inlineData Optional: Blob Inline data in",
+   "итог": "E-125-12"
+  },
+  {
+   "n": 26,
+   "начало": "functionCall Optional: FunctionCall. It contains",
+   "итог": "ничего: не про генерацию картинок (function calling)"
+  },
+  {
+   "n": 27,
+   "начало": "functionResponse Optional: FunctionResponse. The result",
+   "итог": "ничего: не про генерацию картинок (function calling)"
+  },
+  {
+   "n": 28,
+   "начало": "thought Optional: boolean Indicates whether",
+   "итог": "E-125-13"
+  },
+  {
+   "n": 29,
+   "начало": "thoughtSignature Optional: string (bytes format)",
+   "итог": "E-125-14"
+  },
+  {
+   "n": 30,
+   "начало": "videoMetadata Optional: VideoMetadata For video",
+   "итог": "E-125-15"
+  },
+  {
+   "n": 31,
+   "начало": "The metadata should only be specified",
+   "итог": "E-125-16"
+  },
+  {
+   "n": 32,
+   "начало": "mediaProcessing Optional: string How the",
+   "итог": "E-125-17"
+  },
+  {
+   "n": 33,
+   "начало": "mediaResolution Optional: MediaResolution Per-part media",
+   "итог": "E-125-18, E-125-19"
+  },
+  {
+   "n": 34,
+   "начало": "blob Content blob. If possible send",
+   "итог": "ничего: общая рекомендация 'send as text rather than raw bytes' для данных, представимых текстом; к картинкам не относится"
+  },
+  {
+   "n": 35,
+   "начало": "mimeType string The media type of",
+   "итог": "E-125-20"
+  },
+  {
+   "n": 36,
+   "начало": "For more information, see Gemini audio",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 37,
+   "начало": "Text files must be UTF-8 encoded.",
+   "итог": "ничего: не про генерацию картинок (текстовые файлы)"
+  },
+  {
+   "n": 38,
+   "начало": "There is no limit on image",
+   "итог": "E-125-21"
+  },
+  {
+   "n": 39,
+   "начало": "data bytes The base64 encoding of",
+   "итог": "E-125-22"
+  },
+  {
+   "n": 40,
+   "начало": "Size limit: 7 MB for images",
+   "итог": "E-125-23"
+  },
+  {
+   "n": 41,
+   "начало": "FileData URI or web-URL data. Parameters",
+   "итог": "ничего: вводная FileData"
+  },
+  {
+   "n": 42,
+   "начало": "Cloud Storage bucket URI: The object",
+   "итог": "E-125-24"
+  },
+  {
+   "n": 43,
+   "начало": "HTTP URL: The file URL must",
+   "итог": "E-125-25"
+  },
+  {
+   "n": 44,
+   "начало": "YouTube video URL:The YouTube video must",
+   "итог": "E-125-26"
+  },
+  {
+   "n": 45,
+   "начало": "When specifying a fileURI, you must",
+   "итог": "E-125-27"
+  },
+  {
+   "n": 46,
+   "начало": "functionCall A predicted functionCall returned from",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "functionResponse The resulting output from a",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "videoMetadata Metadata describing the input video",
+   "итог": "ничего: startOffset/endOffset — повтор единицы E-125-15"
+  },
+  {
+   "n": 49,
+   "начало": "fps Optional: double The frame rate",
+   "итог": "E-125-28"
+  },
+  {
+   "n": 50,
+   "начало": "safetySetting Safety settings. Parameters category",
+   "итог": "E-125-29"
+  },
+  {
+   "n": 51,
+   "начало": "threshold Optional: HarmBlockThreshold The threshold for",
+   "итог": "E-125-30"
+  },
+  {
+   "n": 52,
+   "начало": "method Optional: HarmBlockMethod Specify if",
+   "итог": "E-125-31"
+  },
+  {
+   "n": 53,
+   "начало": "harmCategory Harm categories that block content.",
+   "итог": "ничего: повтор единицы E-125-29 (определения категорий)"
+  },
+  {
+   "n": 54,
+   "начало": "harmBlockThreshold Probability thresholds levels used",
+   "итог": "E-125-32"
+  },
+  {
+   "n": 55,
+   "начало": "harmBlockMethod A probability threshold that",
+   "итог": "E-125-33"
+  },
+  {
+   "n": 56,
+   "начало": "generationConfig Configuration settings used when",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 57,
+   "начало": "temperature Optional: float The range of",
+   "итог": "ничего: ссылка на список диапазонов по моделям"
+  },
+  {
+   "n": 58,
+   "начало": "The temperature is used for sampling",
+   "итог": "E-125-34, E-125-35"
+  },
+  {
+   "n": 59,
+   "начало": "If the model returns a response",
+   "итог": "E-125-36"
+  },
+  {
+   "n": 60,
+   "начало": "1.0 is the recommended starting value",
+   "итог": "E-125-37"
+  },
+  {
+   "n": 61,
+   "начало": "Range for Gemini 3 models versions",
+   "итог": "E-125-38"
+  },
+  {
+   "n": 62,
+   "начало": "Warning: For Gemini 3.6 Flash and",
+   "итог": "E-125-39"
+  },
+  {
+   "n": 63,
+   "начало": "topP Optional: float If specified, nucleus",
+   "итог": "E-125-40"
+  },
+  {
+   "n": 64,
+   "начало": "topK Optional: float Specifies the top-k",
+   "итог": "E-125-41"
+  },
+  {
+   "n": 65,
+   "начало": "candidateCount Optional: int The number of",
+   "итог": "E-125-42, E-125-43"
+  },
+  {
+   "n": 66,
+   "начало": "maxOutputTokens Optional: int Maximum number of",
+   "итог": "E-125-44"
+  },
+  {
+   "n": 67,
+   "начало": "stopSequences Optional: List[string] Specifies a",
+   "итог": "ничего: текстовый параметр (пример с кодом 'public static string reverse', максимум 5 строк) — не про картинки"
+  },
+  {
+   "n": 68,
+   "начало": "presencePenalty Optional: float Positive penalties.",
+   "итог": "ничего: текстовый параметр"
+  },
+  {
+   "n": 69,
+   "начало": "frequencyPenalty Optional: float Positive values",
+   "итог": "ничего: текстовый параметр"
+  },
+  {
+   "n": 70,
+   "начало": "responseMimeType Optional: string (enum) The",
+   "итог": "ничего: структурированный текстовый вывод (JSON mode, предупреждение о невалидном JSON) — не про картинки"
+  },
+  {
+   "n": 71,
+   "начало": "responseSchema Optional: schema The schema",
+   "итог": "ничего: структурированный текстовый вывод"
+  },
+  {
+   "n": 72,
+   "начало": "seed Optional: int When seed is",
+   "итог": "E-125-45"
+  },
+  {
+   "n": 73,
+   "начало": "responseLogprobs Optional: boolean If true,",
+   "итог": "ничего: текстовые logprobs (помечены deprecated для Gemini 3.x)"
+  },
+  {
+   "n": 74,
+   "начало": "logprobs Optional: int Returns the log",
+   "итог": "ничего: текстовые logprobs (deprecated для Gemini 3.x)"
+  },
+  {
+   "n": 75,
+   "начало": "audioTimestamp Optional: boolean Enables timestamp",
+   "итог": "ничего: не про генерацию картинок (аудио)"
+  },
+  {
+   "n": 76,
+   "начало": "thinkingConfig Optional: object Configuration for",
+   "итог": "E-125-46, E-125-47, E-125-48"
+  },
+  {
+   "n": 77,
+   "начало": "mediaResolution Optional: MediaResolution Controls how",
+   "итог": "ничего: повтор единиц E-125-18, E-125-19 (уровень generationConfig)"
+  },
+  {
+   "n": 78,
+   "начало": "Response body {\"candidates\":[{\"content\":{\"parts\":[{\"text\":string}]},",
+   "итог": "ничего: схема ответа, в parts только text — учтено в длинной дистанции E-125-60"
+  },
+  {
+   "n": 79,
+   "начало": "Response elementDescription modelVersionThe model and",
+   "итог": "ничего: modelVersion/text — не про картинки"
+  },
+  {
+   "n": 80,
+   "начало": "finishReason The reason why the",
+   "итог": "ничего: общее определение finishReason (значения — ниже)"
+  },
+  {
+   "n": 81,
+   "начало": "FINISH_REASON_STOP: Natural stop point of",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 82,
+   "начало": "FINISH_REASON_MAX_TOKENS: The maximum number of",
+   "итог": "E-125-49"
+  },
+  {
+   "n": 83,
+   "начало": "FINISH_REASON_SAFETY: Token generation was stopped",
+   "итог": "E-125-50"
+  },
+  {
+   "n": 84,
+   "начало": "FINISH_REASON_RECITATION: The token generation was",
+   "итог": "E-125-51"
+  },
+  {
+   "n": 85,
+   "начало": "FINISH_REASON_PROHIBITED_CONTENT: Token generation was",
+   "итог": "E-125-52"
+  },
+  {
+   "n": 86,
+   "начало": "FINISH_REASON_IMAGE_PROHIBITED_CONTENT: Token generation was",
+   "итог": "E-125-53"
+  },
+  {
+   "n": 87,
+   "начало": "FINISH_REASON_NO_IMAGE: Token generation was",
+   "итог": "E-125-54"
+  },
+  {
+   "n": 88,
+   "начало": "FINISH_REASON_SPII: Token generation was stopped",
+   "итог": "E-125-55"
+  },
+  {
+   "n": 89,
+   "начало": "FINISH_REASON_MALFORMED_FUNCTION_CALL: Candidates were blocked",
+   "итог": "ничего: не про картинки (function calling); OTHER/UNSPECIFIED — без содержания"
+  },
+  {
+   "n": 90,
+   "начало": "category The safety category to configure",
+   "итог": "ничего: повтор единицы E-125-29"
+  },
+  {
+   "n": 91,
+   "начало": "probability The harm probability levels in",
+   "итог": "E-125-56"
+  },
+  {
+   "n": 92,
+   "начало": "startIndex An integer that specifies where",
+   "итог": "ничего: поля цитирования текста (startIndex/endIndex/url/title/license/publicationDate)"
+  },
+  {
+   "n": 93,
+   "начало": "avgLogprobsAverage log probability of the candidate.",
+   "итог": "ничего: logprobs/token — текстовые поля"
+  },
+  {
+   "n": 94,
+   "начало": "promptTokenCountNumber of tokens in the request.",
+   "итог": "E-125-57"
+  },
+  {
+   "n": 95,
+   "начало": "Note: For billing purposes, tokens consumed",
+   "итог": "E-125-58"
+  },
+  {
+   "n": 96,
+   "начало": "Examples The following examples show how",
+   "итог": "ничего: вводная к примерам"
+  },
+  {
+   "n": 97,
+   "начало": "Text Generation Generate a text response",
+   "итог": "ничего: код без промпта картинки (текстовая генерация 'How does AI work?', Python / OpenAI / Go)"
+  },
+  {
+   "n": 98,
+   "начало": "Using multimodal prompt Generate a text",
+   "итог": "E-125-59"
+  },
+  {
+   "n": 99,
+   "начало": "Python (OpenAI) You can call the",
+   "итог": "ничего: повтор единицы E-125-59 (тот же пример через OpenAI-библиотеку и Go)"
+  },
+  {
+   "n": 100,
+   "начало": "Streaming text response Generate a streaming",
+   "итог": "ничего: код без промпта картинки (стриминг текста 'Why is the sky blue?')"
+  },
+  {
+   "n": 101,
+   "начало": "What's next Learn more about function",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 102,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности)"
+  },
+  {
+   "n": 103,
+   "начало": "Last updated 2026-09-22 UTC.",
+   "итог": "ничего: дата (в дата_в_тексте)"
+  },
+  {
+   "n": 104,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-125-1",
+   "вид": "факт",
+   "утверждение_en": "Content is generated with Gemini through the generateContent or streamGenerateContent methods.",
+   "цитата": "Use generateContent or streamGenerateContent to generate content with\nGemini.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общий метод; что им же генерируются картинки, страница не говорит."
+  },
+  {
+   "код": "E-125-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Adding a lot of images to a request increases response latency.",
+   "цитата": "Note: Adding a lot of images to a request increases response latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Прямое предупреждение о цене большого числа входных картинок (референсов) — задержка."
+  },
+  {
+   "код": "E-125-3",
+   "вид": "факт",
+   "утверждение_en": "The request body lists generationConfig fields including thinkingConfig (thinkingBudget, thinkingLevel), mediaProcessing and mediaResolution; parts can carry text, inlineData, fileData, thought, thoughtSignature, videoMetadata, mediaProcessing and mediaResolution.",
+   "цитата": "\"thinkingConfig\":{\"thinkingBudget\":integer,\"thinkingLevel\":enum},\"mediaProcessing\":string,\"mediaResolution\":MediaResolution}",
+   "источник_цитаты": "txt",
+   "раздел": "Request body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "thinking"
+   ],
+   "заметка": "Кодовый блок (html <pre> 0). В схеме НЕТ imageConfig, aspectRatio, imageSize, responseModalities."
+  },
+  {
+   "код": "E-125-4",
+   "вид": "факт",
+   "утверждение_en": "For single-turn queries contents holds a single instance; for multi-turn queries it is a repeated field containing the conversation history plus the latest request.",
+   "цитата": "For single-turn queries, this is a single instance. For multi-turn queries, this is a repeated field that contains conversation history and the latest request.",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / contents",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Механизм мультихода: история передаётся заново в каждом запросе."
+  },
+  {
+   "код": "E-125-5",
+   "вид": "объяснение",
+   "утверждение_en": "systemInstruction holds instructions that steer the model toward better performance, for example 'Answer as concisely as possible'.",
+   "цитата": "Instructions for the model to steer it toward better performance. For example, \"Answer as concisely as possible\" or \"Don't use technical terms in your response\".",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / systemInstruction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Примеры инструкций текстовые."
+  },
+  {
+   "код": "E-125-6",
+   "вид": "факт",
+   "утверждение_en": "System instruction text counts toward the token limit.",
+   "цитата": "The text strings count toward the token limit.",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / systemInstruction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-7",
+   "вид": "факт",
+   "утверждение_en": "The role field of systemInstruction is ignored and does not affect model performance.",
+   "цитата": "The role field of systemInstruction is ignored and doesn't affect the performance of the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / systemInstruction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-8",
+   "вид": "правило",
+   "утверждение_en": "Only text should be used in systemInstruction parts, and each part's content should be a separate paragraph.",
+   "цитата": "Note: Only text should be used in parts and content in each part should be in a separate paragraph.",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / systemInstruction",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "'should' — рекомендация; картинки в system instruction не класть."
+  },
+  {
+   "код": "E-125-9",
+   "вид": "факт",
+   "утверждение_en": "safetySettings are per-request settings for blocking unsafe content, enforced on the response candidates.",
+   "цитата": "Per request settings for blocking unsafe content.\nEnforced on GenerateContentResponse.candidates.",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / safetySettings",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-10",
+   "вид": "факт",
+   "утверждение_en": "The model role is used to insert the model's earlier messages into the conversation during multi-turn conversations.",
+   "цитата": "The model value is used to insert messages from the model into the conversation during multi-turn conversations.",
+   "источник_цитаты": "txt",
+   "раздел": "contents / role",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-11",
+   "вид": "факт",
+   "утверждение_en": "A message is a list of ordered parts, and different parts may have different MIME types.",
+   "цитата": "A list of ordered parts that make up\na single message. Different parts may have different\nIANA MIME types.",
+   "источник_цитаты": "txt",
+   "раздел": "contents / parts",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Порядок частей (текст и картинки) — упорядоченный список."
+  },
+  {
+   "код": "E-125-12",
+   "вид": "факт",
+   "утверждение_en": "Media can be supplied in a part either as inline raw bytes (inlineData) or as data stored in a file (fileData).",
+   "цитата": "inlineData\nOptional: Blob\nInline data in raw bytes.\nfileData\nOptional: fileData\nData stored in a file.",
+   "источник_цитаты": "txt",
+   "раздел": "parts",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-13",
+   "вид": "объяснение",
+   "утверждение_en": "The thought field indicates whether a part represents the model's thought process or reasoning.",
+   "цитата": "Indicates whether the part represents the model's thought process or reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / thought",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-14",
+   "вид": "факт",
+   "утверждение_en": "thoughtSignature is an opaque base64-encoded signature for a thought so it can be reused in subsequent requests.",
+   "цитата": "An opaque signature for the thought so it can be reused in subsequent requests. A base64-encoded string.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / thoughtSignature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Связь thinking и мультихода: подпись нужна для повторного использования мысли в следующих запросах."
+  },
+  {
+   "код": "E-125-15",
+   "вид": "приём",
+   "утверждение_en": "For video input, a clip can be selected with startOffset and endOffset and a frame rate set with fps; for example a 10-second clip starting at 1:00 at 10 fps uses startOffset 60 s, endOffset 70 s, fps 10.0.",
+   "цитата": "For video input, the start and end offset of the video in Duration\nformat, and the frame rate of the video . For example, to specify a 10\nsecond clip starting at 1:00 with a frame rate of 10 frames per second,\nset the following:\n\"startOffset\": { \"seconds\": 60 }\n\"endOffset\": { \"seconds\": 70 }\n\"fps\": 10.0",
+   "источник_цитаты": "txt",
+   "раздел": "parts / videoMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Кодовый фрагмент с параметрами; промпта нет."
+  },
+  {
+   "код": "E-125-16",
+   "вид": "правило",
+   "утверждение_en": "videoMetadata should only be specified when the video data is provided in inlineData or fileData.",
+   "цитата": "The metadata should only be specified while the video data is presented\nin inlineData or fileData.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / videoMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-17",
+   "вид": "ограничение",
+   "утверждение_en": "mediaProcessing (AGENTIC or STATIC) is only supported for Gemini models version 3.5 and higher; on unsupported models it falls back to STATIC fixed-rate frame extraction.",
+   "цитата": "Only supported for 3.5 and higher versioned Gemini models. If\nset for a request using an unsupported model, falls back to\nSTATIC.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / mediaProcessing",
+   "модели": [
+    "Gemini 3.5+"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Image-модели на версиях 3/3.1 по нумерации ниже 3.5 (выведение, страница их не называет)."
+  },
+  {
+   "код": "E-125-18",
+   "вид": "факт",
+   "утверждение_en": "Per-part mediaResolution controls how input media is processed and, if specified, overrides the mediaResolution setting in generationConfig.",
+   "цитата": "Per-part media resolution for the input media. Controls how input media is processed. If specified, this overrides the mediaResolution setting in generationConfig.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / mediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Приоритет: уровень части > уровень запроса."
+  },
+  {
+   "код": "E-125-19",
+   "вид": "объяснение",
+   "утверждение_en": "mediaResolution LOW reduces tokens per image or video, possibly losing detail but allowing longer videos in context; supported values are HIGH, MEDIUM and LOW.",
+   "цитата": "LOW reduces tokens per image/video, possibly losing detail\nbut allowing longer videos in context. Supported values: HIGH, MEDIUM, LOW.",
+   "источник_цитаты": "txt",
+   "раздел": "parts / mediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Компромисс токены ↔ детали входной картинки."
+  },
+  {
+   "код": "E-125-20",
+   "вид": "факт",
+   "утверждение_en": "Accepted input MIME types include image/png, image/jpeg and image/webp (alongside PDF, audio, text and video types).",
+   "цитата": "image/png\nimage/jpeg\nimage/webp",
+   "источник_цитаты": "txt",
+   "раздел": "blob / mimeType",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "В этом списке нет image/heic и image/heif."
+  },
+  {
+   "код": "E-125-21",
+   "вид": "факт",
+   "утверждение_en": "There is no limit on input image resolution.",
+   "цитата": "There is no limit on image resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "blob",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": "Про входные изображения."
+  },
+  {
+   "код": "E-125-22",
+   "вид": "правило",
+   "утверждение_en": "Inline media is sent as base64-encoded data, and the media type (mimeType) must also be specified.",
+   "цитата": "The base64 encoding of the image, PDF, or video\nto include inline in the prompt. When including media inline, you must also specify the media\ntype (mimeType) of the data.",
+   "источник_цитаты": "txt",
+   "раздел": "blob / data",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-23",
+   "вид": "лимит",
+   "утверждение_en": "Inline image data is limited to 7 MB.",
+   "цитата": "Size limit: 7 MB for images",
+   "источник_цитаты": "txt",
+   "раздел": "blob / data",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-24",
+   "вид": "правило",
+   "утверждение_en": "A Cloud Storage object given as fileUri must be publicly readable or reside in the same Google Cloud project that sends the request.",
+   "цитата": "Cloud Storage bucket URI: The object must either be publicly readable or reside in\nthe same Google Cloud project that's sending the request.",
+   "источник_цитаты": "txt",
+   "раздел": "FileData / fileUri",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-25",
+   "вид": "лимит",
+   "утверждение_en": "Files given by HTTP URL must be publicly readable; a request can include one video file, one audio file and up to 10 image files, and audio, video and documents cannot exceed 15 MB.",
+   "цитата": "HTTP URL: The file URL must be publicly readable. You can specify one video file, one\naudio file, and up to 10 image files per request. Audio files, video files, and documents can't\nexceed 15 MB.",
+   "источник_цитаты": "txt",
+   "раздел": "FileData / fileUri",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Потолок 10 картинок относится к HTTP-URL."
+  },
+  {
+   "код": "E-125-26",
+   "вид": "лимит",
+   "утверждение_en": "A YouTube video must be owned by the signed-in account or be public, and only one YouTube URL is supported per request.",
+   "цитата": "YouTube video URL:The YouTube video must be either owned by the account that you used\nto sign in to the Google Cloud console or be public. Only one YouTube video URL is supported per\nrequest.",
+   "источник_цитаты": "txt",
+   "раздел": "FileData / fileUri",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-27",
+   "вид": "правило",
+   "утверждение_en": "When specifying fileURI the mimeType must also be specified, and media file URLs are not supported when VPC Service Controls is enabled.",
+   "цитата": "When specifying a fileURI, you must also specify the media type\n(mimeType) of the file. If VPC Service Controls is enabled, specifying a media file\nURL for fileURI is not supported.",
+   "источник_цитаты": "txt",
+   "раздел": "FileData",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-28",
+   "вид": "лимит",
+   "утверждение_en": "The video fps sent to the model defaults to 1.0, must be greater than 0.0 and can be at most 24.0.",
+   "цитата": "The frame rate of the video sent to the model. Defaults to\n1.0 if not specified. The minimum accepted value is as low\nas, but not including, 0.0. The maximum value is\n24.0.",
+   "источник_цитаты": "txt",
+   "раздел": "videoMetadata / fps",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-29",
+   "вид": "факт",
+   "утверждение_en": "Configurable safety categories are sexually explicit, hate speech, harassment and dangerous content.",
+   "цитата": "HARM_CATEGORY_SEXUALLY_EXPLICIT\nHARM_CATEGORY_HATE_SPEECH\nHARM_CATEGORY_HARASSMENT\nHARM_CATEGORY_DANGEROUS_CONTENT",
+   "источник_цитаты": "txt",
+   "раздел": "safetySetting / category",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-30",
+   "вид": "факт",
+   "утверждение_en": "Safety thresholds are OFF, BLOCK_NONE, BLOCK_LOW_AND_ABOVE, BLOCK_MEDIUM_AND_ABOVE and BLOCK_ONLY_HIGH.",
+   "цитата": "OFF\nBLOCK_NONE\nBLOCK_LOW_AND_ABOVE\nBLOCK_MEDIUM_AND_ABOVE\nBLOCK_ONLY_HIGH",
+   "источник_цитаты": "txt",
+   "раздел": "safetySetting / threshold",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-31",
+   "вид": "факт",
+   "утверждение_en": "The safety method specifies whether the threshold uses the probability or the severity score; by default the probability score is used.",
+   "цитата": "Specify if the threshold is used for probability or severity score. If not specified, the threshold is used for probability score.",
+   "источник_цитаты": "txt",
+   "раздел": "safetySetting / method",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-32",
+   "вид": "объяснение",
+   "утверждение_en": "BLOCK_LOW_AND_ABOVE blocks more, BLOCK_ONLY_HIGH blocks less, BLOCK_NONE blocks none, and OFF switches safety off only if all categories are turned OFF.",
+   "цитата": "BLOCK_LOW_AND_ABOVE\nBlock low threshold and higher (i.e. block more).\nBLOCK_MEDIUM_AND_ABOVE\nBlock medium threshold and higher.\nBLOCK_ONLY_HIGH\nBlock only high threshold (i.e. block less).\nBLOCK_NONE\nBlock none.\nOFF\nSwitches off safety if all categories are turned OFF",
+   "источник_цитаты": "txt",
+   "раздел": "harmBlockThreshold",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-33",
+   "вид": "объяснение",
+   "утверждение_en": "The SEVERITY block method uses both probability and severity scores, while PROBABILITY uses only the probability score.",
+   "цитата": "SEVERITY\nThe harm block method uses both probability and severity scores.\nPROBABILITY\nThe harm block method uses the probability score.",
+   "источник_цитаты": "txt",
+   "раздел": "harmBlockMethod",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-34",
+   "вид": "объяснение",
+   "утверждение_en": "Temperature controls randomness in token selection: lower values suit less open-ended or creative responses, higher values can give more diverse or creative results.",
+   "цитата": "Temperature controls the degree of randomness in token selection.\nLower temperatures are good for prompts that require a less open-ended or creative response, while\nhigher temperatures can lead to more diverse or creative results.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Объяснение дано в терминах токенов/текста."
+  },
+  {
+   "код": "E-125-35",
+   "вид": "факт",
+   "утверждение_en": "A temperature of 0 always selects the highest-probability tokens, making responses mostly deterministic with a small amount of variation still possible.",
+   "цитата": "A temperature of 0\nmeans that the highest probability tokens are always selected. In this case, responses for a given\nprompt are mostly deterministic, but a small amount of variation is still possible.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-36",
+   "вид": "приём",
+   "утверждение_en": "If a response is too generic, too short or a fallback, try increasing the temperature; if the model enters infinite generation, raising temperature to at least 0.1 may help.",
+   "цитата": "If the model returns a response that's too generic, too short, or the model gives a fallback\nresponse, try increasing the temperature. If the model enters infinite generation, increasing the\ntemperature to at least 0.1 may lead to improved results.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'try' / 'may' — рекомендация; сформулировано для текстовых ответов."
+  },
+  {
+   "код": "E-125-37",
+   "вид": "правило",
+   "утверждение_en": "1.0 is the recommended starting value for temperature.",
+   "цитата": "1.0 is the\nrecommended starting value for temperature.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-38",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 models up to version 3.5 Flash, temperature ranges from 0.0 to 2.0 with a default of 1.0.",
+   "цитата": "Range for Gemini 3 models versions 3.5 Flash and lower: 0.0 - 2.0 (default: 1.0)",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": [
+    "Gemini 3 (версии до 3.5 Flash включительно)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Image-модели 3/3.1 попадают в этот диапазон версий по нумерации (выведение)."
+  },
+  {
+   "код": "E-125-39",
+   "вид": "предупреждение",
+   "утверждение_en": "For Gemini 3.6 Flash and later, custom temperature, topP and topK values are ignored and custom frequencyPenalty/presencePenalty values return an error, so these parameters should be removed.",
+   "цитата": "Warning: For Gemini 3.6 Flash and later models, custom values for sampling parameters (temperature, topP, and topK) aren't supported and are ignored if set",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / temperature",
+   "модели": [
+    "Gemini 3.6 Flash и новее"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Image-модели здесь не названы."
+  },
+  {
+   "код": "E-125-40",
+   "вид": "объяснение",
+   "утверждение_en": "topP (nucleus sampling) selects tokens from most to least probable until their probabilities sum to the topP value; lower values give less random responses; range 0.0-1.0.",
+   "цитата": "Tokens are selected from the most (see top-K) to least probable until the sum of their probabilities equals the top-P value.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / topP",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Диапазон: 'Range: 0.0 - 1.0'."
+  },
+  {
+   "код": "E-125-41",
+   "вид": "объяснение",
+   "утверждение_en": "topK makes the model consider only the k most probable next tokens, which can give more coherent and less random text.",
+   "цитата": "The model considers only the top k most probable tokens for\nthe next token.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / topK",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Описано для текста."
+  },
+  {
+   "код": "E-125-42",
+   "вид": "факт",
+   "утверждение_en": "candidateCount sets the number of response variations; output tokens of all candidates are charged, input tokens only once.",
+   "цитата": "The number of response variations to return. For each request, you're charged for the\noutput tokens of all candidates, but are only charged once for the input tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / candidateCount",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-43",
+   "вид": "ограничение",
+   "утверждение_en": "Multiple candidates is a Preview feature that works with generateContent but not streamGenerateContent.",
+   "цитата": "Specifying multiple candidates is a Preview feature that works with generateContent\n(streamGenerateContent is not supported).",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / candidateCount",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-44",
+   "вид": "факт",
+   "утверждение_en": "maxOutputTokens is the maximum number of tokens generated in the response; a token is about four characters and 100 tokens are roughly 60-80 words.",
+   "цитата": "Maximum number of tokens that can be generated in the response. A token is\napproximately four characters. 100 tokens correspond to roughly 60-80 words.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / maxOutputTokens",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Пересчёт в слова — для текста; про токены картинок здесь не сказано."
+  },
+  {
+   "код": "E-125-45",
+   "вид": "предупреждение",
+   "утверждение_en": "A fixed seed makes the model try to return the same response for repeated requests, but determinism is not guaranteed and changing the model or parameters such as temperature can still vary the response; the default seed is random.",
+   "цитата": "When seed is fixed to a specific value, the model makes a best effort to provide\nthe same response for repeated requests. Deterministic output isn't guaranteed.\nAlso, changing the model or parameter settings, such as the temperature, can\ncause variations in the response even when you use the same seed value. By\ndefault, a random seed value is used.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / seed",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-46",
+   "вид": "факт",
+   "утверждение_en": "thinkingConfig configures the model's thinking process for Gemini 2.5 and higher models.",
+   "цитата": "Configuration for the model's thinking process for Gemini 2.5 and higher models.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / thinkingConfig",
+   "модели": [
+    "Gemini 2.5+"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-47",
+   "вид": "факт",
+   "утверждение_en": "By default thinkingBudget lets the model automatically control how much it thinks, up to a maximum of 8,192 tokens.",
+   "цитата": "thinkingBudget: integer. By default, the model automatically controls how much it thinks up to a maximum of 8,192 tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / thinkingConfig",
+   "модели": [
+    "Gemini 2.5+"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-48",
+   "вид": "объяснение",
+   "утверждение_en": "thinkingLevel controls how much internal reasoning happens before the response; higher levels may improve quality on complex tasks but increase latency and cost; values are MINIMAL, LOW, MEDIUM and HIGH, with support varying by model.",
+   "цитата": "thinkingLevel: enum. Controls the amount of internal reasoning the model performs before generating a response. Higher levels may improve quality on complex tasks but increase latency and cost. Supported values are MINIMAL, LOW, MEDIUM, and HIGH (support varies by model).",
+   "источник_цитаты": "txt",
+   "раздел": "generationConfig / thinkingConfig",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Какие уровни у image-моделей — не сказано."
+  },
+  {
+   "код": "E-125-49",
+   "вид": "факт",
+   "утверждение_en": "finishReason FINISH_REASON_MAX_TOKENS means the maximum number of tokens specified in the request was reached.",
+   "цитата": "FINISH_REASON_MAX_TOKENS: The maximum number of tokens as specified in the request was reached.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-50",
+   "вид": "предупреждение",
+   "утверждение_en": "FINISH_REASON_SAFETY means generation stopped because the response was flagged for safety, and Candidate.content is empty if content filters block the output.",
+   "цитата": "FINISH_REASON_SAFETY: Token generation was stopped because the response was flagged for safety reasons. Note that Candidate.content is empty if content filters block the output.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Пустой content — признак блокировки фильтром."
+  },
+  {
+   "код": "E-125-51",
+   "вид": "факт",
+   "утверждение_en": "FINISH_REASON_RECITATION stops generation for unauthorized citations and FINISH_REASON_BLOCKLIST for blocked terms in the response.",
+   "цитата": "FINISH_REASON_RECITATION: The token generation was stopped because the response was flagged for unauthorized citations.\nFINISH_REASON_BLOCKLIST: Token generation was stopped because the response includes blocked terms.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-52",
+   "вид": "факт",
+   "утверждение_en": "FINISH_REASON_PROHIBITED_CONTENT means the response was flagged for prohibited content such as CSAM.",
+   "цитата": "FINISH_REASON_PROHIBITED_CONTENT: Token generation was stopped because the response was flagged for prohibited content, such as child sexual abuse material (CSAM).",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-53",
+   "вид": "факт",
+   "утверждение_en": "FINISH_REASON_IMAGE_PROHIBITED_CONTENT means generation stopped because the image provided in the prompt was flagged for prohibited content.",
+   "цитата": "FINISH_REASON_IMAGE_PROHIBITED_CONTENT: Token generation was stopped because the image provided in the prompt was flagged for prohibited content.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "рефы"
+   ],
+   "заметка": "Блокировка по ВХОДНОЙ картинке (референсу), не по результату."
+  },
+  {
+   "код": "E-125-54",
+   "вид": "факт",
+   "утверждение_en": "FINISH_REASON_NO_IMAGE means generation stopped because an image was expected in the prompt but none was provided.",
+   "цитата": "FINISH_REASON_NO_IMAGE: Token generation was stopped because an image was expected in the prompt, but none was provided.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Про отсутствие ожидаемой входной картинки."
+  },
+  {
+   "код": "E-125-55",
+   "вид": "факт",
+   "утверждение_en": "FINISH_REASON_SPII means the response was flagged for sensitive personally identifiable information.",
+   "цитата": "FINISH_REASON_SPII: Token generation was stopped because the response was flagged for sensitive personally identifiable information (SPII).",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / finishReason",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-56",
+   "вид": "факт",
+   "утверждение_en": "Response safety ratings report a probability level (NEGLIGIBLE, LOW, MEDIUM, HIGH) and a blocked flag indicating whether the model's input or output was blocked.",
+   "цитата": "HARM_PROBABILITY_UNSPECIFIED\nNEGLIGIBLE\nLOW\nMEDIUM\nHIGH\nblocked\nA boolean flag associated with a safety attribute that indicates if the\nmodel's input or output was blocked.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / safetyRatings",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-57",
+   "вид": "факт",
+   "утверждение_en": "usageMetadata reports promptTokenCount, candidatesTokenCount and totalTokenCount.",
+   "цитата": "promptTokenCountNumber of tokens in the request.\ncandidatesTokenCountNumber of tokens in the response(s).\ntotalTokenCountNumber of tokens in the request and response(s).",
+   "источник_цитаты": "txt",
+   "раздел": "Response body / usageMetadata",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "api_код"
+   ],
+   "заметка": "Склейка колонок в txt."
+  },
+  {
+   "код": "E-125-58",
+   "вид": "факт",
+   "утверждение_en": "For billing, tokens consumed by document inputs to Gemini 3 and later models are counted as image tokens.",
+   "цитата": "Note: For billing purposes, tokens consumed by document inputs to\nGemini 3 and later models are counted as image tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Response body",
+   "модели": [
+    "Gemini 3+"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-125-59",
+   "вид": "факт",
+   "утверждение_en": "In the Python Gen AI SDK an image is passed together with a text prompt in the contents list via Part.from_uri with a gs:// file_uri and a mime_type.",
+   "цитата": "contents=[\"What is shown in this image?\",Part.from_uri(file_uri=\"gs://cloud-samples-data/generative-ai/image/scones.jpg\",mime_type=\"image/jpeg\",),],)",
+   "источник_цитаты": "txt",
+   "раздел": "Examples / Using multimodal prompt",
+   "модели": [
+    "gemini-3.5-flash (в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Кодовый блок (html <pre> 5); задача примера — понимание картинки, не генерация; порядок: текст, затем картинка."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-125-60",
+   "вид": "предупреждение",
+   "утверждение_en": "This reference documents no image-output configuration: the request body has no imageConfig, aspectRatio, imageSize or responseModalities, and the response body lists only text parts, so it cannot serve as the source for image-output parameters.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Request body / Response body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-125-3, схемы Response body (строка 2893) и поиска по html (imageConfig/aspectRatio/imageSize/responseModalities — 0 вхождений)",
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Отсутствие, установленное по всей странице."
+  },
+  {
+   "код": "E-125-61",
+   "вид": "факт",
+   "утверждение_en": "Input images can reach the model three ways on this page: inline base64 with mimeType (up to 7 MB), a Cloud Storage URI (public or same project), or a public HTTP URL (up to 10 images per request); media URLs are unavailable under VPC Service Controls.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "blob / FileData",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-125-12, E-125-22, E-125-23, E-125-24, E-125-25, E-125-27",
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Сводка каналов подачи референсов."
+  },
+  {
+   "код": "E-125-62",
+   "вид": "объяснение",
+   "утверждение_en": "The page names two input-side costs of adding images: many images raise response latency, and media resolution sets tokens per image (LOW saves tokens but may lose detail; per-part settings override the request-level one).",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models / mediaResolution",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-125-2, E-125-18, E-125-19",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет imageConfig, aspectRatio, imageSize и responseModalities — ни в схеме запроса, ни в описании generationConfig.",
+  "В схеме ответа parts содержат только text — не описано, как возвращаются сгенерированные картинки (inlineData в ответе).",
+  "Не сказано, какие thinkingLevel поддерживают image-модели и можно ли отключить thinking у них.",
+  "Не сказано, сколько токенов стоит одна входная картинка при HIGH/MEDIUM/LOW mediaResolution.",
+  "Не сказано, как temperature/topP/seed влияют именно на генерацию изображений — все объяснения даны для текста.",
+  "Не упомянуты SynthID и C2PA."
+ ],
+ "сомнения": [
+  "Страница общая для всех Gemini (сомнение из партии подтверждено): все единицы с моделями 'не указано' применимы к image-моделям только в той мере, в какой image-модели принимают эти поля.",
+  "topK в описании помечен 'Optional: float', в схеме — number; для счётного параметра это странно, но на правила о картинках не влияет.",
+  "Список MIME-типов (image/png, jpeg, webp) короче, чем может быть в карточках моделей (heic/heif здесь нет) — межстраничное сравнение не делалось.",
+  "Второй признак официальности — стандартный подвал Google и официальный SDK в примерах; строки 'Google LLC' нет."
+ ]
+}

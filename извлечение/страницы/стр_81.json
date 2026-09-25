@@ -1,0 +1,200 @@
+{
+ "id": 81,
+ "url": "https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/use-cases/media-generation/README.md",
+ "заголовок": "",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "raw.githubusercontent.com",
+  "второй_признак": "Организация GoogleCloudPlatform (репозиторий generative-ai) в пути URL; картинка README лежит в бакете Google storage.googleapis.com/github-repo/generative-ai/. Строки копирайта или автора в самом файле нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "README папки gemini/use-cases/media-generation репозитория GoogleCloudPlatform/generative-ai: таблица из двух ноутбуков. (1) consistent_imagery_generation.ipynb «Generating Consistent Imagery with Nano Banana» — архивное изображение → извлечь персонажа в новый референс → серия консистентных картинок о пути персонажа. (2) nano_banana_recipes.ipynb «Nano Banana: Gemini 2.5 Flash Image Recipes» — практические примеры и best practices генерации и редактирования. Для разработчиков. Даты нет. Промптов и кода нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image» / «Gemini 2.5 Flash model»"
+ ],
+ "структура": [
+  "# Media Generation",
+  "## Featured Notebooks: таблица Notebook | Description (2 строки)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "# Media Generation",
+   "итог": "ничего: заголовок README"
+  },
+  {
+   "n": 2,
+   "начало": "## Featured Notebooks",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 3,
+   "начало": "NotebookDescription",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 4,
+   "начало": "./consistent_imagery_generation.ipynbGenerating Consistent Imagery with Nano",
+   "итог": "ничего: название ноутбука (даёт модель Nano Banana для строк 5-7); в html перед ним картинка graph_animated.gif с alt «animation showing the generation of consistent images» — подпись без правил"
+  },
+  {
+   "n": 5,
+   "начало": "Start from an archive image",
+   "итог": "E-81-2, E-81-6"
+  },
+  {
+   "n": 6,
+   "начало": "Extract a character to create a",
+   "итог": "E-81-3, E-81-6"
+  },
+  {
+   "n": 7,
+   "начало": "Generate a series of consistent images",
+   "итог": "E-81-4, E-81-6"
+  },
+  {
+   "n": 8,
+   "начало": "../../nano-banana/ nano_banana_recipes.ipynbNano Banana 🍌: Gemini 2.5",
+   "итог": "E-81-1"
+  },
+  {
+   "n": 9,
+   "начало": "This notebook offers a collection of",
+   "итог": "E-81-5"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-81-1",
+   "вид": "факт",
+   "утверждение_en": "The README equates Nano Banana with Gemini 2.5 Flash Image in the title of the recipes notebook.",
+   "цитата": "Nano Banana 🍌: Gemini 2.5 Flash Image Recipes",
+   "источник_цитаты": "txt",
+   "раздел": "Featured Notebooks / nano_banana_recipes.ipynb",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Соответствие имени: Nano Banana = Gemini 2.5 Flash Image (на момент README)."
+  },
+  {
+   "код": "E-81-2",
+   "вид": "приём",
+   "утверждение_en": "The consistent-imagery notebook starts from an archive image.",
+   "цитата": "Start from an archive image",
+   "источник_цитаты": "txt",
+   "раздел": "Featured Notebooks / Generating Consistent Imagery with Nano Banana 🍌",
+   "модели": [
+    "Nano Banana (в этой строке без версии; в соседней строке README Nano Banana = Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-81-3",
+   "вид": "приём",
+   "утверждение_en": "A character is extracted from the archive image to create a brand-new reference image.",
+   "цитата": "Extract a character to create a brand-new reference image",
+   "источник_цитаты": "txt",
+   "раздел": "Featured Notebooks / Generating Consistent Imagery with Nano Banana 🍌",
+   "модели": [
+    "Nano Banana (в этой строке без версии; в соседней строке README Nano Banana = Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Новый референс создаётся генерацией, а не вырезкой пикселей из архива (формулировка «brand-new»)."
+  },
+  {
+   "код": "E-81-4",
+   "вид": "приём",
+   "утверждение_en": "A series of consistent images is then generated to illustrate the character's journey.",
+   "цитата": "Generate a series of consistent images to illustrate the character's journey",
+   "источник_цитаты": "txt",
+   "раздел": "Featured Notebooks / Generating Consistent Imagery with Nano Banana 🍌",
+   "модели": [
+    "Nano Banana (в этой строке без версии; в соседней строке README Nano Banana = Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Серия — повествовательная («character's journey»): один персонаж в разных сценах."
+  },
+  {
+   "код": "E-81-5",
+   "вид": "факт",
+   "утверждение_en": "The Nano Banana recipes notebook offers practical examples and best practices for using the Gemini 2.5 Flash model for a variety of image generation and editing tasks.",
+   "цитата": "This notebook offers a collection of practical examples and best practices\nfor leveraging the Gemini 2.5 Flash model for a variety of image\ngeneration and editing tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Featured Notebooks / nano_banana_recipes.ipynb",
+   "модели": [
+    "gemini-2.5-flash-image (в тексте «Gemini 2.5 Flash model»)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "Указатель на ноутбук ../../nano-banana/nano_banana_recipes.ipynb; сами рецепты здесь не приведены. В описании модель названа без «Image» — см. противоречия_внутри."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-81-6",
+   "вид": "приём",
+   "утверждение_en": "For a consistent series, the featured workflow first creates a new reference image of the character from an archive image, then generates the whole series from that reference.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Featured Notebooks (вся таблица)",
+   "модели": [
+    "Nano Banana (в этой строке без версии; в соседней строке README Nano Banana = Gemini 2.5 Flash Image)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-81-2, E-81-3, E-81-4",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Якорь консистентности — сгенерированный референс, а не архивный исходник; прямо правилом не сформулировано, видно из порядка шагов."
+  }
+ ],
+ "противоречия_внутри": [
+  "Одна и та же модель названа «Gemini 2.5 Flash Image» в заголовке строки и «Gemini 2.5 Flash model» в описании (без «Image») — неточность наименования, не противоречие по сути."
+ ],
+ "не_сказано": [
+  "Нет самих промптов, приёмов консистентности, числа референсов, параметров вызова.",
+  "Не сказано, какой версией модели сделан ноутбук консистентности (строка называет только «Nano Banana»).",
+  "Нет даты."
+ ],
+ "сомнения": [
+  "Второй признак официальности — организация GoogleCloudPlatform в URL, а не текст на странице; внутри файла подписи Google нет.",
+  "Страница — индекс; реальный контент в ноутбуках."
+ ]
+}

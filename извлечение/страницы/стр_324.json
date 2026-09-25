@@ -1,0 +1,140 @@
+{
+ "id": 324,
+ "url": "https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/greeter.prompt",
+ "заголовок": "devrel-demos/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/greeter.prompt at main · GoogleCloudPlatform/devrel-demos · GitHub",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "github.com",
+  "второй_признак": "репозиторий организации GoogleCloudPlatform; meta description в html: 'This repo is for code that supports talks, blogs, and other activities the Google Cloud Developer Relations team engages in.' Копирайта Google LLC в самом файле нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Просмотр одного файла GitHub: Genkit-промпт greeter.prompt (15 строк, 354 байта) из кодлаба cloud-genkit-go-nano-banana репозитория GoogleCloudPlatform/devrel-demos. Для разработчиков кодлаба. Содержимое: YAML front matter (model: vertexai/gemini-2.5-flash, temperature 1.9, input schema name: string) и шаблон с ролями system/user, персона 'гильдия приветствующих'. Модель текстовая; к генерации изображений файл отношения не имеет, кроме того, что лежит в кодлабе про Nano Banana. Дат нет.",
+ "модели_на_странице": [
+  "vertexai/gemini-2.5-flash"
+ ],
+ "структура": [
+  "Обвязка GitHub (меню, шапка репозитория, хлебные крошки, метаданные файла)",
+  "Номера строк 1-15",
+  "Содержимое greeter.prompt: front matter + шаблон ролей",
+  "Подвал GitHub"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "devrel-demos/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/greeter.prompt at main",
+   "итог": "ничего: заголовок страницы (организация GoogleCloudPlatform — признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to content Navigation Menu Sign",
+   "итог": "ничего: обвязка сайта GitHub, строки 2-91 (то же меню, что на стр. 284/285, но в другом форматировании: пункт и подпись склеены в одну строку — байтово не совпадает, содержательно то же)"
+  },
+  {
+   "n": 3,
+   "начало": "GoogleCloudPlatform /devrel-demosPublic Notifications You",
+   "итог": "ничего: обвязка GitHub (шапка репозитория, вкладки, хлебные крошки, метаданные файла '15 lines (14 loc) · 354 Bytes', кнопки Raw/Blame), строки 92-154"
+  },
+  {
+   "n": 4,
+   "начало": "1 2 3 4 5 6",
+   "итог": "ничего: номера строк просмотрщика кода, строки 155-169"
+  },
+  {
+   "n": 5,
+   "начало": "--- model: vertexai/gemini-2.5-flash config: temperature:",
+   "итог": "E-324-1"
+  },
+  {
+   "n": 6,
+   "начало": "{{ role \"system\" }} You are a member",
+   "итог": "E-324-2 (текст персоны — ничего: не про генерацию картинок, текстовое приветствие)"
+  },
+  {
+   "n": 7,
+   "начало": "{{ role \"user\" }} Hi! I'm {{",
+   "итог": "E-324-2 (подстановка {{ name }})"
+  },
+  {
+   "n": 8,
+   "начало": "Footer © 2026 GitHub, Inc. Footer",
+   "итог": "ничего: подвал GitHub, строки 184-195"
+  },
+  {
+   "n": 9,
+   "начало": "You can’t perform that action at",
+   "итог": "ничего: служебное сообщение GitHub"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-324-1",
+   "вид": "факт",
+   "утверждение_en": "A Genkit .prompt file starts with a YAML front-matter block between '---' lines that sets the model (here vertexai/gemini-2.5-flash), generation config (here temperature: 1.9) and the input schema (here name: string); the prompt template follows.",
+   "цитата": "---\nmodel: vertexai/gemini-2.5-flash\nconfig:\ntemperature: 1.9\ninput:\nschema:\nname: string\n---",
+   "источник_цитаты": "txt",
+   "раздел": "greeter.prompt (front matter)",
+   "модели": [
+    "vertexai/gemini-2.5-flash (текстовая модель, не image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Не про генерацию картинок: файл из кодлаба cloud-genkit-go-nano-banana, но модель текстовая. Отступы YAML в txt потеряны; в html (rawLines) они есть: '  temperature: 1.9', '  schema:', '    name: string'. temperature 1.9 — значение для текстового 'приветствия', не рекомендация для картинок."
+  },
+  {
+   "код": "E-324-2",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "In a Genkit .prompt template, {{ role \"system\" }} and {{ role \"user\" }} mark system and user message sections, and {{ name }} inserts a value from the input schema.",
+   "цитата": "{{ role \"system\" }}",
+   "источник_цитаты": "txt",
+   "раздел": "greeter.prompt (тело шаблона)",
+   "модели": [
+    "vertexai/gemini-2.5-flash (текстовая модель, не image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Тело: {{ role \"system\" }} + персона-инструкция; {{ role \"user\" }} + 'Hi! I'm {{ name }}, nice to meet you!'. Синтаксис Handlebars-подобный; на странице не назван. Сам текст персоны — текстовое приветствие, к картинкам не относится."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-324-3",
+   "вид": "предупреждение",
+   "утверждение_en": "Despite sitting in the cloud-genkit-go-nano-banana codelab, this greeter.prompt targets the text model vertexai/gemini-2.5-flash and contains nothing specific to image generation; the codelab's image-related prompt file (glowup.prompt) is only listed in the file tree, not shown.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "vertexai/gemini-2.5-flash (текстовая модель, не image)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-324-1, E-324-2 и дерева файлов в html",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "В html (embeddedData) видны соседние файлы: prompts/glowup.prompt, каталоги 01_greeter, 02_greeter, 03_glowup — их содержимого на странице нет."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Ничего о генерации изображений: ни image-модели, ни параметров вывода картинки, ни промптов для картинок.",
+  "Содержимое glowup.prompt (вероятно, картиночной части кодлаба) на странице не показано — только имя файла в дереве (в html).",
+  "Нет дат, автора коммита и пояснений, зачем temperature 1.9."
+ ],
+ "сомнения": [
+  "Страница нерелевантна теме картинок; попала в сырьё из-за 'nano-banana' в пути. Единицы E-324-1, E-324-2 — только про формат Genkit-промптов.",
+  "Для правил картиночной генерации стоит отдельно взять glowup.prompt того же кодлаба, если он есть в сырье (его id мне неизвестен)."
+ ]
+}

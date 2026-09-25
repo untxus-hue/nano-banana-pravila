@@ -1,0 +1,499 @@
+{
+ "id": 129,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/edit-images-overview",
+ "заголовок": "Edit images with Imagen on Vertex AI  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-18 UTC (подвал и html); в тексте срок миграции 'before June 30, 2026'",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0, ссылки 'About Google', 'Google Cloud terms'; текст от лица Google ('We recommend updating your model endpoints'). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая обзорная страница устаревшей документации Vertex AI (плашка: документация больше не обновляется, сервисы перенесены в Agent Platform) о редактировании изображений Imagen. Для разработчиков на Imagen. Главное: предупреждение об отключении 14 эндпоинтов Imagen/imagegeneration/imagetext с единой целью миграции gemini-2.5-flash-image (срок June 30, 2026); Imagen поддерживает маск-редактирование (вставка/удаление объектов, расширение, замена фона); multi-turn editing — сильная сторона Gemini; locations; safety-фильтрация входа (текст+базовое изображение) и выхода (блок уменьшает число картинок); у моделей свои лимиты. Термины: mask-based editing, base image, discontinued/deprecated endpoints.",
+ "модели_на_странице": [
+  "Imagen: imagegeneration@002…@006, imagetext@001, imagen-3.0-capability-001/002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/002, imagen-4.0-fast-generate-001, imagen-4.0-generate-001, imagen-4.0-ultra-generate-001",
+  "gemini-2.5-flash-image (цель миграции)",
+  "Gemini models (обобщённо — multi-turn editing)"
+ ],
+ "структура": [
+  "Edit images with Imagen on Vertex AI — Caution + таблица миграции",
+  "вступление (mask-based editing, multi-turn у Gemini)",
+  "Types of available editing tools",
+  "Locations",
+  "Safety filtering",
+  "Model versions",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in, вкладки Vertex AI, повтор меню), строки 1-95"
+  },
+  {
+   "n": 2,
+   "начало": "Vertex AI documentation is no longer being updated",
+   "итог": "ничего: плашка статуса документации ('Vertex AI's services are now part of Gemini Enterprise Agent Platform') — не правило генерации, учтено в сомнениях"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML Vertex",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок, Stay organized), строки 98-105"
+  },
+  {
+   "n": 4,
+   "начало": "Caution: The following table describes image",
+   "итог": "E-129-1"
+  },
+  {
+   "n": 5,
+   "начало": "Discontinued endpointsRecommended endpoint migration",
+   "итог": "ничего: шапка таблицы (Discontinued endpoints / Recommended endpoint migration)"
+  },
+  {
+   "n": 6,
+   "начало": "imagegeneration@002gemini-2.5-flash-image",
+   "итог": "E-129-2"
+  },
+  {
+   "n": 7,
+   "начало": "imagegeneration@003gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 8,
+   "начало": "imagegeneration@004gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 9,
+   "начало": "imagegeneration@005gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 10,
+   "начало": "imagegeneration@006gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 11,
+   "начало": "imagetext@001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 12,
+   "начало": "imagen-3.0-capability-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 13,
+   "начало": "imagen-3.0-capability-002gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 14,
+   "начало": "imagen-3.0-fast-generate-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 15,
+   "начало": "imagen-3.0-generate-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 16,
+   "начало": "imagen-3.0-generate-002gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 17,
+   "начало": "imagen-4.0-fast-generate-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 18,
+   "начало": "imagen-4.0-generate-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 19,
+   "начало": "imagen-4.0-ultra-generate-001gemini-2.5-flash-image",
+   "итог": "E-129-2 (та же единица)"
+  },
+  {
+   "n": 20,
+   "начало": "Imagen on Vertex AI lets you",
+   "итог": "E-129-3"
+  },
+  {
+   "n": 21,
+   "начало": "Advanced multi-turn editing is a key",
+   "итог": "E-129-4"
+  },
+  {
+   "n": 22,
+   "начало": "Types of available editing tools Imagen supports mask-based",
+   "итог": "E-129-5, E-129-6"
+  },
+  {
+   "n": 23,
+   "начало": "Insert objects into an image (пункт списка)",
+   "итог": "E-129-6 (та же единица)"
+  },
+  {
+   "n": 24,
+   "начало": "Remove objects from an image (пункт списка)",
+   "итог": "E-129-6 (та же единица)"
+  },
+  {
+   "n": 25,
+   "начало": "Expand the content of an image (пункт списка)",
+   "итог": "E-129-6 (та же единица)"
+  },
+  {
+   "n": 26,
+   "начало": "Replace the background of an image (пункт списка)",
+   "итог": "E-129-6 (та же единица)"
+  },
+  {
+   "n": 27,
+   "начало": "Locations A location is a region",
+   "итог": "E-129-7"
+  },
+  {
+   "n": 28,
+   "начало": "Safety filtering Both input data and",
+   "итог": "E-129-8, E-129-9"
+  },
+  {
+   "n": 29,
+   "начало": "For more information about safety filtering",
+   "итог": "ничего: ссылка на Responsible AI and usage guidelines for Imagen"
+  },
+  {
+   "n": 30,
+   "начало": "Model versions There are multiple image",
+   "итог": "E-129-10"
+  },
+  {
+   "n": 31,
+   "начало": "What's next Insert objects into an",
+   "итог": "ничего: ссылки (Insert/Remove objects, Expand content, Edit product images)"
+  },
+  {
+   "n": 32,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies, 'Last updated 2026-09-18 UTC' — использовано в дате и официальности)"
+  },
+  {
+   "n": 33,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-129-1",
+   "вид": "предупреждение",
+   "утверждение_en": "The listed image generation endpoints are deprecated; Google recommends updating model endpoints before June 30, 2026, to avoid service disruption.",
+   "цитата": "Caution: The following table describes image generation endpoints that\nare deprecated and their replacements. We recommend updating your model\nendpoints before June 30, 2026, to avoid service disruption.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Imagen on Vertex AI — Caution",
+   "модели": "не указано (Imagen / imagegeneration / imagetext эндпоинты из таблицы ниже)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "'We recommend' — рекомендация, но с датой отключения. Страница обновлена 2026-09-18, т.е. после срока."
+  },
+  {
+   "код": "E-129-2",
+   "вид": "факт",
+   "утверждение_en": "The recommended migration for every listed discontinued endpoint (imagegeneration@002–@006, imagetext@001, imagen-3.0-capability-001/-002, imagen-3.0-fast-generate-001, imagen-3.0-generate-001/-002, imagen-4.0-fast-generate-001, imagen-4.0-generate-001, imagen-4.0-ultra-generate-001) is gemini-2.5-flash-image.",
+   "цитата": "imagegeneration@002gemini-2.5-flash-image\nimagegeneration@003gemini-2.5-flash-image\nimagegeneration@004gemini-2.5-flash-image\nimagegeneration@005gemini-2.5-flash-image\nimagegeneration@006gemini-2.5-flash-image\nimagetext@001gemini-2.5-flash-image\nimagen-3.0-capability-001gemini-2.5-flash-image\nimagen-3.0-capability-002gemini-2.5-flash-image\nimagen-3.0-fast-generate-001gemini-2.5-flash-image\nimagen-3.0-generate-001gemini-2.5-flash-image\nimagen-3.0-generate-002gemini-2.5-flash-image\nimagen-4.0-fast-generate-001gemini-2.5-flash-image\nimagen-4.0-generate-001gemini-2.5-flash-image\nimagen-4.0-ultra-generate-001gemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Imagen on Vertex AI — Caution",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@003",
+    "imagegeneration@004",
+    "imagegeneration@005",
+    "imagegeneration@006",
+    "imagetext@001",
+    "imagen-3.0-capability-001",
+    "imagen-3.0-capability-002",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-generate-002",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "14 строк таблицы, у всех одна цель миграции. Ячейки в .txt слиты без разделителя."
+  },
+  {
+   "код": "E-129-3",
+   "вид": "факт",
+   "утверждение_en": "Imagen on Vertex AI lets you edit Imagen-generated or existing images by specifying the part of the image to modify together with a text description of the updates (mask-based editing).",
+   "цитата": "Imagen on Vertex AI lets you edit Imagen-generated or existing\nimages. You can specify part of the image to modify in addition to a text\ndescription of the updates (mask-base editing).",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Imagen on Vertex AI",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "На странице опечатка 'mask-base editing'."
+  },
+  {
+   "код": "E-129-4",
+   "вид": "факт",
+   "утверждение_en": "Advanced multi-turn editing is a key strength of Gemini models (see Edit images with Gemini).",
+   "цитата": "Advanced multi-turn editing is a key strength of Gemini models.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images with Imagen on Vertex AI",
+   "модели": "не указано (Gemini models — обобщённо)",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": "Противопоставлено маск-редактированию Imagen; конкретная Gemini-модель не названа."
+  },
+  {
+   "код": "E-129-5",
+   "вид": "объяснение",
+   "утверждение_en": "Imagen supports mask-based editing, which lets you specify a targeted area to apply edits to; it is good for edits that apply to only parts of an image.",
+   "цитата": "Mask-based editing lets you\nspecify a targeted area to apply edits to. This method of editing is good for\nedits that apply to only parts of an image.",
+   "источник_цитаты": "txt",
+   "раздел": "Types of available editing tools",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-129-6",
+   "вид": "факт",
+   "утверждение_en": "Mask-based editing is useful for inserting objects into an image, removing objects from an image, expanding the content of an image, and replacing the background of an image.",
+   "цитата": "Mask-based editing is useful for the\nfollowing types of image edits:\nInsert objects into an image\nRemove objects from an image\nExpand the content of an image\nReplace the background of an image",
+   "источник_цитаты": "txt",
+   "раздел": "Types of available editing tools",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Четыре типа маск-правок."
+  },
+  {
+   "код": "E-129-7",
+   "вид": "факт",
+   "утверждение_en": "A location is a region you can specify in a request to control where data is stored at rest.",
+   "цитата": "A location is a region you can specify in a request to\ncontrol where data is stored at rest.",
+   "источник_цитаты": "txt",
+   "раздел": "Locations",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Список регионов — на странице Generative AI on Vertex AI locations."
+  },
+  {
+   "код": "E-129-8",
+   "вид": "факт",
+   "утверждение_en": "When you send an image editing request to Imagen, both input data and output content are checked for offensive material; offensive input from a text prompt or from a provided base image can be blocked.",
+   "цитата": "Both input data and output content are checked for offensive material when you\nsend an image editing request to Imagen. This means offensive\ninput data from a text prompt or from a base image you provide can be blocked.",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filtering",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Проверяется и текст промпта, и базовое изображение."
+  },
+  {
+   "код": "E-129-9",
+   "вид": "предупреждение",
+   "утверждение_en": "Offensive output images might also be blocked, which affects the number of generated images you get in a response.",
+   "цитата": "Similarly, offensive output images might also be blocked, affecting the number of generated images you get in a response.",
+   "источник_цитаты": "txt",
+   "раздел": "Safety filtering",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Следствие для пайплайна: ответ может содержать меньше изображений, чем запрошено."
+  },
+  {
+   "код": "E-129-10",
+   "вид": "факт",
+   "утверждение_en": "There are multiple image generation models you can use, and each may have limits specific to that model.",
+   "цитата": "There are multiple image generation models that you can use. Each model may have\nlimits that are specific to that model.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versions",
+   "модели": "не указано (Imagen models)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Сами лимиты — на странице Imagen models."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-129-11",
+   "вид": "правило",
+   "утверждение_en": "Every Imagen/imagegeneration endpoint on the page maps to one migration target, gemini-2.5-flash-image, and the page points editing needs to Gemini (multi-turn editing) rather than to Imagen's mask-based editing; the page itself does not say how mask-style edits are done with Gemini.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@003",
+    "imagegeneration@004",
+    "imagegeneration@005",
+    "imagegeneration@006",
+    "imagetext@001",
+    "imagen-3.0-capability-001",
+    "imagen-3.0-capability-002",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-generate-002",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-129-2, E-129-4, E-129-5",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-129-12",
+   "вид": "предупреждение",
+   "утверждение_en": "The migration deadline (June 30, 2026) is earlier than the page's 'Last updated 2026-09-18' and the table header already says 'Discontinued endpoints', so as of the page date these Imagen endpoints should be treated as no longer available.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Caution",
+   "модели": [
+    "imagegeneration@002",
+    "imagegeneration@003",
+    "imagegeneration@004",
+    "imagegeneration@005",
+    "imagegeneration@006",
+    "imagetext@001",
+    "imagen-3.0-capability-001",
+    "imagen-3.0-capability-002",
+    "imagen-3.0-fast-generate-001",
+    "imagen-3.0-generate-001",
+    "imagen-3.0-generate-002",
+    "imagen-4.0-fast-generate-001",
+    "imagen-4.0-generate-001",
+    "imagen-4.0-ultra-generate-001"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-129-1, E-129-2",
+   "дата_единицы": "2026-09-18",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Вывод из сопоставления даты в тексте и даты обновления страницы."
+  },
+  {
+   "код": "E-129-13",
+   "вид": "предупреждение",
+   "утверждение_en": "Both the text prompt and the input image are subject to safety blocking on input, and outputs can be dropped individually, so the number of returned images can be lower than requested.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Safety filtering",
+   "модели": [
+    "Imagen (без версии)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-129-8, E-129-9",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сжатие двух единиц в правило для пайплайна."
+  }
+ ],
+ "противоречия_внутри": [
+  "Caution называет эндпоинты 'deprecated' и рекомендует обновиться до June 30, 2026, а шапка таблицы — 'Discontinued endpoints'; при дате обновления 2026-09-18 срок уже прошёл.",
+  "Страница называется 'Edit images with Imagen' и описывает Imagen-редактирование как доступное, хотя все Imagen-эндпоинты в таблице помечены как discontinued."
+ ],
+ "не_сказано": [
+  "Не упомянуты Gemini 3 image-модели (Pro Image, 3.1 Flash Image, 3.1 Flash-Lite Image) — цель миграции только gemini-2.5-flash-image.",
+  "Не сказано, поддерживает ли Gemini маски или как на Gemini делать вставку/удаление/расширение/замену фона.",
+  "Нет примеров промптов и параметров редактирования.",
+  "Нет конкретных лимитов моделей — только отсылка к Imagen models."
+ ],
+ "сомнения": [
+  "Документация Vertex AI помечена как необновляемая; содержимое про Imagen устарело (эндпоинты отключены), ценность для правил Nano Banana — в таблице миграции и в тезисе о multi-turn у Gemini."
+ ]
+}

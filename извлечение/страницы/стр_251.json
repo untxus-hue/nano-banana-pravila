@@ -1,0 +1,759 @@
+{
+ "id": 251,
+ "url": "https://firebase.google.com/docs/ai-logic/model-parameters",
+ "заголовок": "Use model configuration to control responses  |  Firebase AI Logic",
+ "дата_в_тексте": "2026-09-24 ('Last updated 2026-09-24 UTC.'); в баннере — даты October 2026 (закрытие Gemini 2.5) и November 2, 2026 (App Check)",
+ "официальность": {
+  "домен": "firebase.google.com",
+  "второй_признак": "Подвал 'Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License … see the Google Developers Site Policies'.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница документации Firebase AI Logic для разработчиков мобильных/веб-приложений: как передавать GenerationConfig (и LiveGenerationConfig для Live API) и что значит каждый параметр. Про картинки: image-модели ('Nano Banana') используют GenerationConfig; для них обязателен responseModalities, imageConfig задаёт aspect ratio и resolution (по умолчанию 1:1, 1024x1024), а stopSequences, candidateCount, frequency/presence penalty и responseMimeType/responseSchema для них не применяются. Трижды повторён блок о неподдерживаемых temperature/top-K/top-P/penalties/candidate count для general-use Gemini 3.x. Баннер: закрытие Gemini 2.5 в октябре 2026 с рекомендацией перейти на gemini-3.1-flash-image; обязательный App Check с 2 ноября 2026. Примеры кода — только maxOutputTokens/stopSequences и Live-аудио, без промптов.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (названа как замена)",
+  "Gemini Image models ('Nano Banana') — категорией",
+  "Gemini 2.5 models (закрываются)",
+  "gemini-3.8-flash, gemini-3.7-flash, Gemini 3.x general-use (текстовые)",
+  "Gemini Live API models",
+  "TTS models"
+ ],
+ "структура": [
+  "Баннеры (App Check; Model updates; закрытие Gemini 2.5)",
+  "Вступление",
+  "GenerationConfig for Gemini models (+ код 6 языков)",
+  "LiveGenerationConfig for Gemini Live API models (+ код 6 языков)",
+  "Description of parameters: таблица параметров + Specialized configurations (Thinking, Response modalities, Image characteristics, Speech) + Note (structured output)",
+  "Temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count are unsupported (таблица)",
+  "Other options to control content generation",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Use model configuration to control responses | Firebase AI Logic",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Build Build Get to market",
+   "итог": "ничего: обвязка сайта (верхнее меню Firebase, языки), строки 2-74"
+  },
+  {
+   "n": 3,
+   "начало": "Firebase AI Logic Overview Fundamentals Add Firebase",
+   "итог": "ничего: обвязка сайта (боковое меню документации), строки 75-408"
+  },
+  {
+   "n": 4,
+   "начало": "Starting November 2, 2026, Firebase App Check enforcement will be",
+   "итог": "E-251-3"
+  },
+  {
+   "n": 5,
+   "начало": "Learn more. Model updates: The latest Gemini models, like Gemini 3.8 Flash",
+   "итог": "ничего: анонс новой текстовой модели без содержания для картинок (строки 412-418)"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 2.5 models will shut down in October 2026",
+   "итог": "E-251-1, E-251-2"
+  },
+  {
+   "n": 7,
+   "начало": "Any stable Gemini Live API 2.5 models are not impacted.",
+   "итог": "ничего: не про генерацию картинок (Live API)"
+  },
+  {
+   "n": 8,
+   "начало": "Learn more. Firebase Documentation Firebase AI Logic AI Send feedback",
+   "итог": "ничего: обвязка (хлебные крошки), строки 428-433"
+  },
+  {
+   "n": 9,
+   "начало": "Use model configuration to control responses Stay organized with collections",
+   "итог": "ничего: заголовок и служебная строка сайта"
+  },
+  {
+   "n": 10,
+   "начало": "In each call to a model, you can send along",
+   "итог": "E-251-4"
+  },
+  {
+   "n": 11,
+   "начало": "For the majority of use cases when accessing a Gemini model",
+   "итог": "ничего: общее различие GenerationConfig/LiveGenerationConfig; для картинок учтено в E-251-5"
+  },
+  {
+   "n": 12,
+   "начало": "This page shows how to set up the configuration",
+   "итог": "ничего: описание страницы"
+  },
+  {
+   "n": 13,
+   "начало": "arrow_downward Jump to Gemini config … Jump to Gemini Live API config",
+   "итог": "ничего: обвязка (якоря)"
+  },
+  {
+   "n": 14,
+   "начало": "GenerationConfig for Gemini models Click your Gemini API provider",
+   "итог": "ничего: заголовок раздела и переключатель провайдера (Gemini Developer API / Agent Platform Gemini API)"
+  },
+  {
+   "n": 15,
+   "начало": "Set a GenerationConfig for the majority of Gemini models, including",
+   "итог": "E-251-5"
+  },
+  {
+   "n": 16,
+   "начало": "The configuration is maintained for the lifetime of the GenerativeModel",
+   "итог": "E-251-6"
+  },
+  {
+   "n": 17,
+   "начало": "For the latest general-use Gemini 3.x models, the following parameters are now unsupported",
+   "итог": "E-251-7"
+  },
+  {
+   "n": 18,
+   "начало": "Temperature, top-K, or top-P : All the general-use",
+   "итог": "E-251-8"
+  },
+  {
+   "n": 19,
+   "начало": "Frequency penalty, presence penalty, and candidate count : Starting with gemini-3.7-flash",
+   "итог": "E-251-9"
+  },
+  {
+   "n": 20,
+   "начало": "Swift / Kotlin / Java / Web / Dart / Unity: Set the values of the parameters in a GenerationConfig + код",
+   "итог": "ничего: код без промпта (html <pre> 0-5: maxOutputTokens 200, stopSequences ['red'], имя модели-заглушка; для картинок ничего), строки 505-850"
+  },
+  {
+   "n": 21,
+   "начало": "You can find a description of each parameter in the next section",
+   "итог": "ничего: ссылка на следующий раздел"
+  },
+  {
+   "n": 22,
+   "начало": "You can experiment with prompts and model configurations using Google AI Studio",
+   "итог": "E-251-10"
+  },
+  {
+   "n": 23,
+   "начало": "LiveGenerationConfig for Gemini Live API models … код Swift/Kotlin/Java/Web/Dart/Unity",
+   "итог": "ничего: не про генерацию картинок (Live API, аудио-ответ, голос Fenrir; html <pre> 6-11), строки 857-1246"
+  },
+  {
+   "n": 24,
+   "начало": "You can find a description … You can experiment with prompts (второй раз)",
+   "итог": "ничего: повтор E-251-10"
+  },
+  {
+   "n": 25,
+   "начало": "Description of parameters The following table is a high-level overview",
+   "итог": "ничего: вводная к таблице ('Some parameters are only applicable for certain models')"
+  },
+  {
+   "n": 26,
+   "начало": "For the latest general-use Gemini 3.x models … fail with a 400 error (второй раз)",
+   "итог": "ничего: дословный повтор E-251-7, E-251-8, E-251-9 (строки 1255-1271)"
+  },
+  {
+   "n": 27,
+   "начало": "Parameter Description Limitations Default value",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 28,
+   "начало": "Audio timestamp audioTimestamp Enables timestamp understanding",
+   "итог": "ничего: не про генерацию картинок (аудио-вход)"
+  },
+  {
+   "n": 29,
+   "начало": "Max output tokens maxOutputTokens Specifies the maximum number",
+   "итог": "ничего: общий параметр, для image-моделей ничего не сказано (ограничений и значения по умолчанию нет — '---')"
+  },
+  {
+   "n": 30,
+   "начало": "Stop sequences stopSequences Specifies a list of strings",
+   "итог": "E-251-11"
+  },
+  {
+   "n": 31,
+   "начало": "Specialized configurations Thinking thinkingConfig",
+   "итог": "E-251-12"
+  },
+  {
+   "n": 32,
+   "начало": "Firebase AI Logic does not yet support setting a thinkingConfig for Live API",
+   "итог": "ничего: не про генерацию картинок (Live API)"
+  },
+  {
+   "n": 33,
+   "начало": "Response modalities responseModalities Specifies the type of output",
+   "итог": "E-251-13"
+  },
+  {
+   "n": 34,
+   "начало": "Image characteristics imageConfig Specifies the aspect ratio and resolution",
+   "итог": "E-251-14"
+  },
+  {
+   "n": 35,
+   "начало": "1:1 aspect ratio (square) 1024x1024 resolution",
+   "итог": "E-251-15"
+  },
+  {
+   "n": 36,
+   "начало": "Speech (voice) speechConfig Specifies the voice",
+   "итог": "ничего: не про генерацию картинок (TTS/Live, по умолчанию Puck)"
+  },
+  {
+   "n": 37,
+   "начало": "Note : The following configurations are also supported … responseMimeType and responseSchema",
+   "итог": "E-251-16"
+  },
+  {
+   "n": 38,
+   "начало": "Temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count are unsupported (третий раз)",
+   "итог": "ничего: дословный повтор E-251-7, E-251-8, E-251-9 (строки 1376-1393)"
+  },
+  {
+   "n": 39,
+   "начало": "Parameter Description Limitations Default value (вторая таблица)",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 40,
+   "начало": "Candidate count candidateCount Specifies the number of response variations",
+   "итог": "E-251-17"
+  },
+  {
+   "n": 41,
+   "начало": "Frequency penalty frequencyPenalty Controls the probability",
+   "итог": "E-251-18"
+  },
+  {
+   "n": 42,
+   "начало": "Presence penalty presencePenalty Controls the probability",
+   "итог": "E-251-19"
+  },
+  {
+   "n": 43,
+   "начало": "Temperature temperature Controls the degree of randomness",
+   "итог": "E-251-20"
+  },
+  {
+   "n": 44,
+   "начало": "Top-K topK Limits the number of highest probability words",
+   "итог": "ничего: то же, что E-251-20, для topK ('Setting topK is unsupported'; пометки про image-модели нет)"
+  },
+  {
+   "n": 45,
+   "начало": "Top-P topP Controls diversity of generated content",
+   "итог": "ничего: то же, что E-251-20, для topP ('Setting topP is unsupported'; пометки про image-модели нет)"
+  },
+  {
+   "n": 46,
+   "начало": "Other options to control content generation Learn more about prompt design",
+   "итог": "ничего: ссылка на prompt design без содержания"
+  },
+  {
+   "n": 47,
+   "начало": "Use safety settings to adjust the likelihood",
+   "итог": "E-251-21"
+  },
+  {
+   "n": 48,
+   "начало": "Set system instructions to steer the behavior",
+   "итог": "E-251-22"
+  },
+  {
+   "n": 49,
+   "начало": "Pass a response schema along with the prompt",
+   "итог": "ничего: не про картинки (структурированный вывод, для image-моделей не поддерживается — E-251-16)"
+  },
+  {
+   "n": 50,
+   "начало": "Send feedback Except as otherwise noted … Google Developers Site Policies … Last updated 2026-09-24 UTC.",
+   "итог": "ничего: подвал с лицензией и датой (учтены в официальности и дата_в_тексте)"
+  },
+  {
+   "n": 51,
+   "начало": "Need to tell us more? [[\"Easy to understand\" … 한국어",
+   "итог": "ничего: обвязка сайта (форма отзыва, подвал, языки), строки 1522-1571"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-251-1",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 models will shut down in October 2026 and new projects cannot start using them.",
+   "цитата": "Gemini 2.5 models will shut down in\nOctober 2026\n(and new projects cannot start\n    using them). To avoid service disruptions, update to a newer model (like",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы (Model updates)",
+   "модели": [
+    "Gemini 2.5 models (все; по контексту рекомендации заменить на gemini-3.1-flash-image затрагивает и gemini-2.5-flash-image — вывод)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "October 2026",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Баннер на странице с 'Last updated 2026-09-24'. Отдельно: 'Any stable Gemini Live API 2.5 models are not impacted.'"
+  },
+  {
+   "код": "E-251-2",
+   "вид": "инструкция",
+   "утверждение_en": "To avoid service disruptions, update from Gemini 2.5 models to a newer model such as gemini-3.8-flash or gemini-3.1-flash-image.",
+   "цитата": "    using them). To avoid service disruptions, update to a newer model (like\ngemini-3.8-flash\nor\ngemini-3.1-flash-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы (Model updates)",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3.8-flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "October 2026",
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "gemini-3.1-flash-image (Nano Banana 2) названа замещающей моделью для картинок."
+  },
+  {
+   "код": "E-251-3",
+   "вид": "правило",
+   "утверждение_en": "Starting November 2, 2026, Firebase App Check enforcement will be required to use Firebase AI Logic.",
+   "цитата": "Starting November 2, 2026, Firebase App Check enforcement will be\nrequired\nto use Firebase AI Logic.",
+   "источник_цитаты": "txt",
+   "раздел": "баннер страницы",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-11-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Касается всех вызовов через Firebase AI Logic, включая генерацию картинок."
+  },
+  {
+   "код": "E-251-4",
+   "вид": "факт",
+   "утверждение_en": "Each call to a model can carry a model configuration; each model supports different options, such as maxOutputTokens or specialized configs for thinking, response modalities, images or speech.",
+   "цитата": "In each call to a model, you can send along a model configuration to control how\nthe model generates a response. Each model supports different configuration\noptions, like setting\nmaxOutputTokens\nor specialized configs for thinking,\nresponse modalities, images, or speech.",
+   "источник_цитаты": "txt",
+   "раздел": "вступление",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-5",
+   "вид": "факт",
+   "утверждение_en": "GenerationConfig is used for the majority of Gemini models, including general-use models, image-generating ('Nano Banana') models and TTS models.",
+   "цитата": "Set a\nGenerationConfig\nfor the majority of\nGemini\nmodels, including\ngeneral-use models, image-generating models (\"Nano Banana\" models), and\ntext-to-speech (TTS) models.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для Live API используется LiveGenerationConfig — не про картинки."
+  },
+  {
+   "код": "E-251-6",
+   "вид": "инструкция",
+   "утверждение_en": "The configuration is kept for the lifetime of the GenerativeModel instance; to use a different config, create and use a new instance with that config.",
+   "цитата": "The configuration is maintained for the lifetime of the\nGenerativeModel\ninstance. If you want to use a different config, create and use a new instance\nwith a different config.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Практическое следствие для картинок: смена, например, imageConfig требует нового экземпляра модели (вывод из общего правила)."
+  },
+  {
+   "код": "E-251-7",
+   "вид": "правило",
+   "утверждение_en": "For the latest general-use Gemini 3.x models, temperature, top-K, top-P, frequency penalty, presence penalty and candidate count are unsupported and should be removed from app code.",
+   "цитата": "For the latest general-use\nGemini 3.x\nmodels, the following\n    parameters are now unsupported: temperature, top-K, top-P, frequency\n    penalty, presence penalty, and candidate count. Remove them from your app's\n    code.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": [
+    "general-use Gemini 3.x (текстовые модели общего назначения)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Область — 'general-use' Gemini 3.x; image-модели на странице выделены отдельной категорией. Этот же блок повторён дословно в разделе Description of parameters и перед таблицей неподдерживаемых параметров."
+  },
+  {
+   "код": "E-251-8",
+   "вид": "факт",
+   "утверждение_en": "All general-use Gemini 3.x models ignore temperature, top-K and top-P.",
+   "цитата": "Temperature, top-K, or top-P\n: All the general-use\nGemini 3.x\nmodels will ignore them.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": [
+    "general-use Gemini 3.x (текстовые модели общего назначения)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-9",
+   "вид": "предупреждение",
+   "утверждение_en": "Starting with gemini-3.7-flash, requests that set frequency penalty, presence penalty or candidate count fail with a 400 error.",
+   "цитата": "Frequency penalty, presence penalty, and candidate count\n:\n      Starting with\ngemini-3.7-flash\n, the request will\nfail\nwith a 400 error.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": [
+    "gemini-3.7-flash и новее"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-10",
+   "вид": "приём",
+   "утверждение_en": "Prompts and model configurations can be experimented with in Google AI Studio.",
+   "цитата": "You can experiment with prompts and model configurations using\nGoogle AI Studio\n.",
+   "источник_цитаты": "txt",
+   "раздел": "GenerationConfig for Gemini models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Та же фраза повторена в разделе LiveGenerationConfig (строки 1249-1251)."
+  },
+  {
+   "код": "E-251-11",
+   "вид": "ограничение",
+   "утверждение_en": "stopSequences is not applicable to Image models ('Nano Banana') or TTS models.",
+   "цитата": "Not applicable for\n          Image models (\"Nano Banana\") or\n          TTS models.",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Stop sequences",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-12",
+   "вид": "факт",
+   "утверждение_en": "thinkingConfig controls the model's thinking process: the amount of thinking via a thinking level (Gemini 3.x and later) and whether to include thought summaries; it is not applicable to TTS models.",
+   "цитата": "Thinking\nthinkingConfig\nControls the \"thinking process\" for the models when they're\n          generating a response.\nControl the amount of thinking that the model can do using a\nthinking level\n(\nGemini 3.x\nand later models).\nControl whether to include\nthought summaries\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Specialized configurations — Thinking",
+   "модели": [
+    "Gemini 3.x и новее (thinking level)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "В столбце ограничений исключены только TTS и Live API (в Firebase); image-модели не исключены. Значения по умолчанию — 'Depends on the model'."
+  },
+  {
+   "код": "E-251-13",
+   "вид": "правило",
+   "утверждение_en": "responseModalities specifies the output type (text, audio, images) and is only applicable — and required — when using Gemini Image ('Nano Banana') models, TTS models and Live API models.",
+   "цитата": "Response modalities\nresponseModalities\nSpecifies the type of output (like text, audio, or images).\nOnly applicable (and\nrequired\n) when using\nGemini\nImage models (\"Nano Banana\" models), TTS models, and\nLive API\nmodels.",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Specialized configurations — Response modalities",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для Nano Banana responseModalities обязателен. Значение по умолчанию в таблице — '---'."
+  },
+  {
+   "код": "E-251-14",
+   "вид": "факт",
+   "утверждение_en": "imageConfig specifies the aspect ratio and resolution of generated images and is only applicable to Gemini Image ('Nano Banana') models; supported values are listed on 'Configure image generation'.",
+   "цитата": "Image characteristics\nimageConfig\nSpecifies the aspect ratio and resolution of generated images.\nSupported values: See\nConfigure image generation\nOnly applicable when using\nGemini\nImage models (\"Nano Banana\"\n          models).",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Specialized configurations — Image characteristics",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "Список допустимых значений на этой странице не приведён — ссылка на отдельную страницу."
+  },
+  {
+   "код": "E-251-15",
+   "вид": "факт",
+   "утверждение_en": "The default imageConfig is a 1:1 (square) aspect ratio at 1024x1024 resolution.",
+   "цитата": "1:1 aspect ratio (square)\n1024x1024 resolution",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Image characteristics (Default value)",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Без imageConfig картинка будет квадратной 1024x1024 (по умолчанию). Для каких именно моделей — не уточнено."
+  },
+  {
+   "код": "E-251-16",
+   "вид": "ограничение",
+   "утверждение_en": "Structured output via responseMimeType and responseSchema is supported only for general-use text models, not for Gemini Image ('Nano Banana') models, TTS models or Live API models.",
+   "цитата": "Generating structured output (like JSON)\nis controlled by using the\nresponseMimeType\nand\nresponseSchema\nparameters.\nThese parameters are only supported for general-use text models\n      (\nnot\nfor\nGemini\nImage models (\"Nano Banana\" models),\n      TTS models, or\nLive API\nmodels).",
+   "источник_цитаты": "txt",
+   "раздел": "Description of parameters — Note",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-17",
+   "вид": "ограничение",
+   "утверждение_en": "candidateCount is not applicable to Image models ('Nano Banana'), to generateContentStream, TTS or Live API models; setting it is unsupported.",
+   "цитата": "Not applicable when using\ngenerateContentStream\n,\n          Image models (\"Nano Banana\"),\n          TTS models, or\nLive API\nmodels.",
+   "источник_цитаты": "txt",
+   "раздел": "Unsupported parameters — Candidate count",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Описание параметра: 1-8 вариантов, оплата выходных токенов всех кандидатов; но 'Setting candidateCount is unsupported'. Как получить несколько вариантов картинки — не сказано."
+  },
+  {
+   "код": "E-251-18",
+   "вид": "ограничение",
+   "утверждение_en": "frequencyPenalty is not applicable to Image models ('Nano Banana') or TTS models; setting it is unsupported.",
+   "цитата": "Not applicable for\n        Image models (\"Nano Banana\") or\n        TTS models.",
+   "источник_цитаты": "txt",
+   "раздел": "Unsupported parameters — Frequency penalty",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-19",
+   "вид": "ограничение",
+   "утверждение_en": "presencePenalty is not applicable to Image models ('Nano Banana') or TTS models; setting it is unsupported.",
+   "цитата": "Not applicable for\n        Image models (\"Nano Banana\") or\n        TTS models.",
+   "источник_цитаты": "txt",
+   "раздел": "Unsupported parameters — Presence penalty",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-251-20",
+   "вид": "факт",
+   "утверждение_en": "The parameter table states that setting temperature is unsupported; its default depends on the model.",
+   "цитата": "Setting\ntemperature\nis unsupported.",
+   "источник_цитаты": "txt",
+   "раздел": "Unsupported parameters — Temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В строке таблицы нет пометки про image-модели (в отличие от penalties/candidateCount); вводный текст ограничивает правило 'general-use Gemini 3.x'. Аналогично для topK (строки 1477-1479) и topP (строки 1487-1489)."
+  },
+  {
+   "код": "E-251-21",
+   "вид": "факт",
+   "утверждение_en": "Safety settings can be used to adjust the likelihood of responses that may be considered harmful, including hate speech and sexually explicit content.",
+   "цитата": "Use\nsafety settings\nto adjust the likelihood of getting responses that may be considered\n  harmful, including hate speech and sexually explicit content.",
+   "источник_цитаты": "txt",
+   "раздел": "Other options to control content generation",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Общий пункт, не специфичен для картинок."
+  },
+  {
+   "код": "E-251-22",
+   "вид": "факт",
+   "утверждение_en": "System instructions steer model behavior, acting like a preamble added before the model sees further instructions from the end user.",
+   "цитата": "Set\nsystem instructions\nto steer the behavior of the model. This feature is like a preamble that you\n  add before the model gets exposed to any further instructions from the end user.",
+   "источник_цитаты": "txt",
+   "раздел": "Other options to control content generation",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "промптинг"
+   ],
+   "заметка": "Общий пункт; применимость к image-моделям не указана."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-251-23",
+   "вид": "факт",
+   "утверждение_en": "For Nano Banana models the page's parameter surface is: responseModalities (required), imageConfig (aspect ratio and resolution, default 1:1 at 1024x1024), thinkingConfig (not excluded); explicitly not applicable are stopSequences, candidateCount, frequencyPenalty, presencePenalty, and responseMimeType/responseSchema.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Description of parameters",
+   "модели": [
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-251-11, E-251-12, E-251-13, E-251-14, E-251-15, E-251-16, E-251-17, E-251-18, E-251-19",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Применимость thinkingConfig к image-моделям выведена из отсутствия исключения, прямо не сказана. maxOutputTokens для картинок не комментируется."
+  },
+  {
+   "код": "E-251-24",
+   "вид": "факт",
+   "утверждение_en": "The page repeats the 'unsupported temperature/top-K/top-P/penalties/candidate count' block three times, always scoped to 'general-use Gemini 3.x' models, while Nano Banana models are treated as a separate category with their own per-row exclusions.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "general-use Gemini 3.x (текстовые модели общего назначения)",
+    "Gemini Image models (\"Nano Banana\" models) — модели не перечислены поимённо"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-251-7, E-251-8, E-251-9, E-251-17, E-251-18, E-251-19, E-251-20",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Строки таблицы для temperature/topK/topP говорят 'Setting … is unsupported' без оговорок (E-251-20), тогда как вводный текст ограничивает это 'general-use Gemini 3.x' моделями (E-251-7); для image-моделей по этим трём параметрам страница прямо ничего не говорит.",
+  "candidateCount описан как 'Supported values: 1 - 8', но в той же строке 'Setting candidateCount is unsupported' (E-251-17)."
+ ],
+ "не_сказано": [
+  "Не перечислены допустимые значения aspect ratio и resolution — только ссылка на 'Configure image generation'.",
+  "Не сказано, применим ли maxOutputTokens к image-моделям и как он влияет на картинки.",
+  "Не сказано прямо, поддерживают ли image-модели thinkingConfig (в ограничениях исключены только TTS и Live API).",
+  "Не сказано, работают ли temperature/topK/topP для Nano Banana-моделей.",
+  "Не сказано, как получить несколько вариантов картинки, если candidateCount не применим.",
+  "Нет ни одного примера кода с responseModalities или imageConfig.",
+  "Названия конкретных Nano Banana-моделей (кроме gemini-3.1-flash-image в баннере) не приведены."
+ ],
+ "сомнения": [
+  "Модель 'gemini-3.8-flash' и 'gemini-3.7-flash' — текстовые модели, упомянутые на странице; к картинкам относится только через правило о неподдерживаемых параметрах.",
+  "Дата 'Last updated 2026-09-24' совпадает с датой скачивания; баннеры отражают состояние на эту дату."
+ ]
+}

@@ -1,0 +1,685 @@
+{
+ "id": 279,
+ "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf",
+ "заголовок": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities",
+ "дата_в_тексте": "Явной даты публикации нет. «at the time of writing (June 2025)»; LMArena imported 2025-06-16; Gemini 2.5 Pro «up to version 06-17»; © 2025 Google. Метаданные PDF: CreationDate 2025-10-16 (дата сборки этой версии файла). html нет.",
+ "официальность": {
+  "домен": "storage.googleapis.com/deepmind-media (бакет Google DeepMind)",
+  "второй_признак": "Авторство «Gemini Team, Google»; «© 2025 Google. All rights reserved»; адрес gemini-report@google.com; текст от лица Google («we released», «our models»).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Технический отчёт Google (Gemini Team) о семействе Gemini 2.X (2.5 Pro, 2.5 Flash, 2.0 Flash, 2.0 Flash-Lite) для исследователей и разработчиков: архитектура MoE, данные, инфраструктура, thinking, улучшения по способностям, бенчмарки, пример Gemini Plays Pokémon, безопасность (политики, red teaming, Frontier Safety Framework), приложения. Про генерацию изображений — один абзац о экспериментальной Gemini 2.0 Flash Native Image Generation (март 2025: генерация и редактирование естественным языком, многошаговая диалоговая правка, чередование текста и картинок, все языки Gemini), строка Table 1 (image-вывод только у 2.0 Flash, experimental/preview), две ссылки на блоги, плюс визуал через код у 2.5 Pro (image→SVG с промптом-примером, визуализации, p5.js) и общие политики безопасности генеративных моделей. Весь остальной объём (~97%) — не про генерацию картинок; все «image»-бенчмарки — понимание.",
+ "модели_на_странице": [
+  "Gemini 2.0 Flash Native Image Generation (экспериментальная, март 2025) — предшественник Nano Banana",
+  "Gemini 2.0 Flash (Output modalities: Text, Image* в Table 1)",
+  "Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.0 Flash-Lite, Gemini 2.5 Flash-Lite, Gemini 2.0 Pro, Gemini 1.5 Pro/Flash, Gemini 2.5 TTS / Native Audio Dialog, Deep Think — не image-модели",
+  "Nano Banana / gemini-2.5-flash-image и Gemini 3 image-модели не упомянуты"
+ ],
+ "структура": [
+  "титул, аннотация",
+  "1. Introduction (+Table 1)",
+  "2. Model Architecture, Training and Dataset: 2.1 Architecture, 2.2 Dataset, 2.3 Training Infrastructure, 2.4 Post-training, 2.5 Thinking, 2.6 Capability-specific improvements (Code, Factuality, Long context, Multilinguality, Audio, Video, Deep Research), 2.7 The path to Gemini 2.5 (2.0 Pro, 2.0 Flash Native Image Generation, 2.5 Audio Generation, 2.5 Flash-Lite, 2.5 Pro Deep Think)",
+  "3. Quantitative evaluation (Tables 2-6)",
+  "4. Example use cases (4.1 Pokémon, 4.2 What else can Gemini 2.5 do?, 4.3 Gemini in Google Products)",
+  "5. Safety, Security, and Responsibility (5.1-5.8)",
+  "6. Discussion",
+  "References",
+  "7. Contributors and Acknowledgments",
+  "8. Appendix (8.1 Evaluation details, 8.2 Pokémon, 8.3 FSF correctness, 8.4 Image to Code Demo, 8.5 Long Context Video Demo)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning … / Gemini Team, Google (стр. 1-5)",
+   "итог": "ничего: заголовок и авторство (признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "Аннотация: In this report, we introduce the Gemini 2.X model family … (стр. 9-18)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 3,
+   "начало": "1. Introduction (стр. 22-45, 74-83)",
+   "итог": "ничего: не про генерацию картинок (обзор семейства, multimodal = понимание входов)"
+  },
+  {
+   "n": 4,
+   "начало": "Please send correspondence to gemini-report@google.com. / © 2025 Google. All rights reserved (стр. 49-51)",
+   "итог": "ничего: обвязка (копирайт — признак официальности)"
+  },
+  {
+   "n": 5,
+   "начало": "Table 1 — строки Input modalities … Output modalities … Knowledge cutoff (стр. 55-66)",
+   "итог": "E-279-1 (строка Output modalities; остальные строки — ничего: не про генерацию картинок)"
+  },
+  {
+   "n": 6,
+   "начало": "Table 1 | Comparison of Gemini 2.X model family … *currently limited to Experimental or Preview, see Section 2.7. Information accurate as of publication date. (стр. 68-71)",
+   "итог": "E-279-1"
+  },
+  {
+   "n": 7,
+   "начало": "2. Model Architecture, Training and Dataset / 2.1. Model Architecture + Figure 1 + Figure 2 (стр. 86-130, 145-160)",
+   "итог": "ничего: не про генерацию картинок (MoE, long context, обработка зрения для понимания, дистилляция)"
+  },
+  {
+   "n": 8,
+   "начало": "2.2. Dataset (стр. 133-137, 163-166)",
+   "итог": "ничего: не про генерацию картинок (изображения упомянуты как данные предобучения)"
+  },
+  {
+   "n": 9,
+   "начало": "2.3. Training Infrastructure + Figure 3 (стр. 169-235)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 10,
+   "начало": "2.4. Post-training (стр. 238-254)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 11,
+   "начало": "2.5. Thinking + Figure 4 (стр. 257-439)",
+   "итог": "ничего: не про генерацию картинок (thinking текстовых моделей)"
+  },
+  {
+   "n": 12,
+   "начало": "2.6. Capability-specific improvements — вводка и Code (стр. 442-480)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "Factuality (стр. 482-505)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "Long context (стр. 507-523)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "Multilinguality (стр. 525-535)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "Audio (стр. 537-546)",
+   "итог": "ничего: не про генерацию картинок (аудио)"
+  },
+  {
+   "n": 17,
+   "начало": "Video — … 66 instead of 258 visual tokens per frame … creating a p5.js animation … (стр. 548-557)",
+   "итог": "E-279-11 (остальное — понимание видео, ничего)"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini as an Agent: Deep Research + сноски 2-3 (low media resolution) (стр. 559-571)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "2.7. The path to Gemini 2.5 — вводка и Gemini 2.0 Pro (стр. 579-591)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini 2.0 Flash Native Image Generation Model (стр. 593)",
+   "итог": "ничего: заголовок подраздела (разбор ниже)"
+  },
+  {
+   "n": 21,
+   "начало": "In March 2025, we released an experimental version of Gemini 2.0 Flash Native Image Generation. (стр. 595)",
+   "итог": "E-279-2"
+  },
+  {
+   "n": 22,
+   "начало": "It has brought to the users new capabilities … image generation & image editing via natural-language prompting. (стр. 596-598)",
+   "итог": "E-279-3"
+  },
+  {
+   "n": 23,
+   "начало": "Capabilities such as multi-step conversational editing or interleaved text-image generation are very natural in such a setting, (стр. 598-599)",
+   "итог": "E-279-4"
+  },
+  {
+   "n": 24,
+   "начало": "and horizontal transfer related to multi-language coverage immediately allowed such experiences … (стр. 599-601)",
+   "итог": "E-279-5"
+  },
+  {
+   "n": 25,
+   "начало": "Native image generation turns Gemini into a multimodal creation partner … (стр. 601-603)",
+   "итог": "E-279-6"
+  },
+  {
+   "n": 26,
+   "начало": "For further information about Gemini 2.0 Flash Native Image Generation, please see our earlier blog posts (Kampf and Brichtova, 2025; Sharon, 2025) (стр. 603-604)",
+   "итог": "E-279-7"
+  },
+  {
+   "n": 27,
+   "начало": "Gemini 2.5 Audio Generation (стр. 606-621)",
+   "итог": "ничего: не про генерацию картинок (TTS и аудиодиалог)"
+  },
+  {
+   "n": 28,
+   "начало": "Gemini 2.5 Flash-Lite (стр. 623-638)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 29,
+   "начало": "Gemini 2.5 Pro Deep Think (стр. 640-649)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 30,
+   "начало": "3. Quantitative evaluation + Figure 5 + Table 2 (model IDs) + 3.1 Methodology + 3.2 Core capability results (стр. 659-775)",
+   "итог": "ничего: не про генерацию картинок (бенчмарки; «image understanding» — понимание)"
+  },
+  {
+   "n": 31,
+   "начало": "Table 3 (стр. 786-838)",
+   "итог": "ничего: не про генерацию картинок (Image Understanding: MMMU, Vibe-Eval, ZeroBench, BetterChartQA — понимание)"
+  },
+  {
+   "n": 32,
+   "начало": "3.3. Evaluation of Gemini 2.5 Pro against other LLMs + Audio/Video Understanding + Tables 4-6 (стр. 848-969)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "4. Example use cases / 4.1. Gemini Plays Pokémon + Figure 6 (стр. 979-1137)",
+   "итог": "ничего: не про генерацию картинок (агент; чтение экрана — понимание)"
+  },
+  {
+   "n": 34,
+   "начало": "4.2. What else can Gemini 2.5 do? — PDF script → tool, photo of bookshelf → app (стр. 1141-1144)",
+   "итог": "ничего: генерация приложений по входам, не картинок"
+  },
+  {
+   "n": 35,
+   "начало": "… convert images into a structural representation like HTML or SVG … image-to-svg task … (стр. 1144-1148)",
+   "итог": "E-279-8"
+  },
+  {
+   "n": 36,
+   "начало": "Furthermore, Gemini 2.5 Pro demonstrates strong skills in generating sophisticated simulations and visualizations … (стр. 1149-1155)",
+   "итог": "E-279-10"
+  },
+  {
+   "n": 37,
+   "начало": "Collectively, these examples illustrate … (стр. 1156-1160)",
+   "итог": "ничего: обобщение без нового факта"
+  },
+  {
+   "n": 38,
+   "начало": "4.3. Gemini in Google Products (стр. 1163-1169)",
+   "итог": "ничего: не про генерацию картинок (продукты с картинками не названы)"
+  },
+  {
+   "n": 39,
+   "начало": "5. Safety, Security, and Responsibility — вводка, Guideline, 5.1. Our Process (стр. 1179-1221)",
+   "итог": "ничего: общий процесс безопасности, не про картинки"
+  },
+  {
+   "n": 40,
+   "начало": "5.2. Safety policies — The Gemini safety policies align with Google’s standard framework … 1-6 (стр. 1231-1243)",
+   "итог": "E-279-12"
+  },
+  {
+   "n": 41,
+   "начало": "These policies apply across modalities … irrespective of input modality. (стр. 1245-1247)",
+   "итог": "E-279-13"
+  },
+  {
+   "n": 42,
+   "начало": "From a security standpoint … prompt injection attacks. (стр. 1248-1249)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "Desiderata, aka “helpfulness” — Help the user / Assume good intent (стр. 1251-1259)",
+   "итог": "ничего: общее поведение ответа, не специфично для картинок"
+  },
+  {
+   "n": 44,
+   "начало": "5.3. Training for Safety, Security, and Responsibility (стр. 1262-1304)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 45,
+   "начало": "5.4. Results on Training/Development Evaluations + Table 7 (Image-to-text Policy Violations) (стр. 1307-1362)",
+   "итог": "ничего: не про генерацию картинок (image-to-text — вход-изображение)"
+  },
+  {
+   "n": 46,
+   "начало": "5.5. Automated Red Teaming — For Safety + Table 8 (стр. 1325-1411)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 47,
+   "начало": "For Security — indirect prompt injection + Figure 7 + Table 9 (стр. 1414-1523)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "5.6. Memorization and Privacy + Figure 8 (стр. 1497-1590)",
+   "итог": "ничего: не про генерацию картинок (память текстов)"
+  },
+  {
+   "n": 49,
+   "начало": "5.7. Baseline Assurance — image to text violation rate, unfair bias in image understanding (стр. 1593-1638)",
+   "итог": "ничего: понимание изображений, не генерация"
+  },
+  {
+   "n": 50,
+   "начало": "Frontier Safety Framework Evaluations — CBRN, Cybersecurity, ML R&D, Deceptive Alignment, Table 10, Figures 9-12, Summary (стр. 1640-2058)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 51,
+   "начало": "5.8. External Safety Testing (стр. 2061-2199)",
+   "итог": "ничего: не про генерацию картинок (упомянуто, что в AI Studio фильтры безопасности можно ослабить — общее)"
+  },
+  {
+   "n": 52,
+   "начало": "6. Discussion (стр. 2209-2244)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "References — все, кроме двух ниже (стр. 2254-2407, 2411-2529, 2532-2618)",
+   "итог": "ничего: библиография"
+  },
+  {
+   "n": 54,
+   "начало": "K. Kampf and N. Brichtova. Experiment with Gemini 2.0 Flash native image generation, 2025 … (стр. 2408-2410)",
+   "итог": "E-279-7"
+  },
+  {
+   "n": 55,
+   "начало": "D. Sharon. Upload and edit your images directly in the Gemini app, 2025 … (стр. 2530-2531)",
+   "итог": "E-279-7"
+  },
+  {
+   "n": 56,
+   "начало": "7. Contributors and Acknowledgments — список имён и благодарности (стр. 2626-3602)",
+   "итог": "ничего: обвязка (список участников Google; проверено поиском — только имена и абзац благодарности)"
+  },
+  {
+   "n": 57,
+   "начало": "8. Appendix / 8.1. Evaluation additional details — Table 11 (стр. 3612-3806)",
+   "итог": "ничего: описание бенчмарков (image understanding — понимание)"
+  },
+  {
+   "n": 58,
+   "начало": "8.2. Gemini Plays Pokémon Additional Details + Figures 13-15 (стр. 3810-4160, 4179-4248)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "8.3. Frontier Safety Framework … Correctness Tests (стр. 4163-4173, 4251-4254)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 60,
+   "начало": "8.4. Image to Code Demo — We prompted Gemini 1.5 Pro and Gemini 2.5 Pro to generate an SVG representation … (стр. 4257-4259)",
+   "итог": "E-279-8"
+  },
+  {
+   "n": 61,
+   "начало": "Prompt: Please convert this image into SVG … / Figure 16 | Comparison … image-to-SVG reconstruction prompt. (стр. 4261-4272)",
+   "итог": "E-279-9"
+  },
+  {
+   "n": 62,
+   "начало": "8.5. Long Context Video Understanding Demo + Figure 17 + Table 12 (стр. 4282-4316)",
+   "итог": "ничего: понимание видео"
+  },
+  {
+   "n": 63,
+   "начало": "Колонтитулы «Gemini 2.5: Pushing the Frontier …» и номера страниц по всему файлу",
+   "итог": "ничего: обвязка"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-279-1",
+   "вид": "факт",
+   "утверждение_en": "In the Gemini 2.X family table, only Gemini 2.0 Flash lists Image as an output modality, and that image output was limited to Experimental or Preview at publication; Gemini 2.5 Flash and 2.5 Pro list only Text and Audio outputs.",
+   "цитата": "*currently limited to Experimental or Preview, see Section 2.7.",
+   "источник_цитаты": "txt",
+   "раздел": "Table 1 (стр. 55-71)",
+   "модели": [
+    "Gemini 2.0 Flash (Output modalities: «Text, Image*»)",
+    "Gemini 2.5 Flash / 2.5 Pro («Text, Audio*»)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "модели_сравнение",
+    "форматы_разрешение"
+   ],
+   "заметка": "Строка таблицы: «Output modalities Text Text Text Text, Image* Text, Audio* Text, Audio*» (1.5 Flash, 1.5 Pro, 2.0 Flash-Lite, 2.0 Flash, 2.5 Flash, 2.5 Pro). Подпись: «Information accurate as of publication date.» Таблица не содержит Gemini 2.5 Flash Image (Nano Banana)."
+  },
+  {
+   "код": "E-279-2",
+   "вид": "факт",
+   "утверждение_en": "Google released an experimental version of Gemini 2.0 Flash Native Image Generation in March 2025.",
+   "цитата": "In March 2025, we released an experimental version of Gemini 2.0 Flash Native Image Generation.",
+   "источник_цитаты": "txt",
+   "раздел": "2.7. The path to Gemini 2.5 / Gemini 2.0 Flash Native Image Generation Model (стр. 595)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Исторический предшественник семейства Nano Banana; ни одна из четырёх целевых моделей в отчёте не названа."
+  },
+  {
+   "код": "E-279-3",
+   "вид": "объяснение",
+   "утверждение_en": "Native image generation comes from a strong integration between the Gemini model and image-generation capabilities, which enables image generation and image editing through natural-language prompting.",
+   "цитата": "It has brought to the users new capabilities as a result of a strong integration between the Gemini",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Native Image Generation Model (стр. 596-598)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Продолжение: «model and image-generation capabilities, enabling new experiences related to image generation & image editing via natural-language prompting.» Механизм: генерация — свойство самой Gemini, а управление — обычным языком."
+  },
+  {
+   "код": "E-279-4",
+   "вид": "факт",
+   "утверждение_en": "In this native setting, multi-step conversational editing and interleaved text-image generation are natural capabilities.",
+   "цитата": "or interleaved text-image generation are very natural in such a setting",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Native Image Generation Model (стр. 598-599)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Полностью: «Capabilities such as multi-step conversational editing or interleaved text-image generation are very natural in such a setting». Приёмы (как вести многошаговую правку) не описаны."
+  },
+  {
+   "код": "E-279-5",
+   "вид": "факт",
+   "утверждение_en": "Because image generation is native to Gemini, its multi-language coverage transferred horizontally, so these image experiences worked immediately in all languages supported by Gemini models.",
+   "цитата": "to multi-language coverage immediately allowed such experiences to happen across all the languages",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Native Image Generation Model (стр. 599-601)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Полностью: «horizontal transfer related to multi-language coverage immediately allowed such experiences to happen across all the languages supported by the Gemini models.» Речь о языке промптов/опыта, про рендер текста в кадре на разных языках прямо не сказано — тема текст_в_кадре помечена условно."
+  },
+  {
+   "код": "E-279-6",
+   "вид": "объяснение",
+   "утверждение_en": "Native image generation turns Gemini into a multimodal creation partner that can express ideas through both text and images and move seamlessly between the two.",
+   "цитата": "Native image generation turns Gemini into a multimodal creation",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Native Image Generation Model (стр. 601-603)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Продолжение: «partner and enables Gemini to express ideas through both text and images, and to seamlessly move between the two.»"
+  },
+  {
+   "код": "E-279-7",
+   "вид": "факт",
+   "утверждение_en": "For details on Gemini 2.0 Flash native image generation the report points to two Google blog posts: Kampf and Brichtova 2025 (developers blog, experimenting with native image generation) and Sharon 2025 (uploading and editing images in the Gemini app).",
+   "цитата": "K. Kampf and N. Brichtova. Experiment with Gemini 2.0 Flash native image generation, 2025. URL",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Native Image Generation Model (стр. 603-604) + References (стр. 2408-2410, 2530-2531)",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025",
+   "тема": [
+    "другое",
+    "редактирование"
+   ],
+   "заметка": "URL: https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/ ; D. Sharon. Upload and edit your images directly in the Gemini app, 2025 — https://blog.google/products/gemini/image-editing/ . Указатели на первоисточники, содержание блогов в отчёте не пересказано."
+  },
+  {
+   "код": "E-279-8",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Pro can use its spatial understanding to convert images into structural representations such as HTML or SVG, and on an image-to-SVG task it reconstructs more visual detail and a spatial arrangement closer to the original than Gemini 1.5 Pro.",
+   "цитата": "underlying spatial understanding capability and convert images into a structural representation like",
+   "источник_цитаты": "txt",
+   "раздел": "4.2. What else can Gemini 2.5 do? (стр. 1144-1148) + 8.4. Image to Code Demo (стр. 4257-4259)",
+   "модели": [
+    "Gemini 2.5 Pro (текстовая модель; визуал через код, не image-модель)",
+    "Gemini 1.5 Pro (сравнение)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "другое",
+    "модели_сравнение"
+   ],
+   "заметка": "Это не генерация пикселей image-моделью, а генерация SVG/HTML-кода текстовой моделью по входной картинке. 8.4: «We prompted Gemini 1.5 Pro and Gemini 2.5 Pro to generate an SVG representation of an image and found Gemini 2.5 Pro generates better reconstructions.»"
+  },
+  {
+   "код": "E-279-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Google's image-to-SVG demo prompt asks the model to convert an input image into SVG while reconstructing the spatial arrangement of the objects.",
+   "цитата": "Please convert this image into\n                  SVG and try to reconstruct the\n                    spatial arrangement of the\n                              objects.",
+   "источник_цитаты": "txt",
+   "раздел": "8.4. Image to Code Demo / Figure 16 (стр. 4261-4272)",
+   "модели": [
+    "Gemini 2.5 Pro (текстовая модель; визуал через код, не image-модель)",
+    "Gemini 1.5 Pro (сравнение)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "промптинг",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Полный промпт (без переносов PDF): «Please convert this image into SVG and try to reconstruct the spatial arrangement of the objects.» Разбор: действие (convert into SVG) + явный критерий качества (reconstruct the spatial arrangement of the objects). Входная картинка и ответы моделей в .txt не видны (рисунок). Цитата сохранена с переносами и отступами из .txt."
+  },
+  {
+   "код": "E-279-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Pro can generate sophisticated simulations and visualizations through code, such as interactive solar-system models, a logo drawn with Fourier series, a custom cartography tool, and photorealistic 3D user interfaces generated from descriptive text and reference images.",
+   "цитата": "from descriptive text and reference images, complete with appropriate styling and interactivity",
+   "источник_цитаты": "txt",
+   "раздел": "4.2. What else can Gemini 2.5 do? (стр. 1149-1155)",
+   "модели": [
+    "Gemini 2.5 Pro (текстовая модель; визуал через код, не image-модель)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "другое",
+    "рефы"
+   ],
+   "заметка": "Визуал через код (веб-приложения/симуляции), не image-модель. Источники помечены в тексте «(source)» без URL в .txt. Референсные изображения здесь — вход для генерации интерфейса."
+  },
+  {
+   "код": "E-279-11",
+   "вид": "факт",
+   "утверждение_en": "From an input video, Gemini 2.5 can create a p5.js animation showing the video's key concepts, an application unlocked by its improved video understanding.",
+   "цитата": "creating a p5.js animation to show the key concepts from the video",
+   "источник_цитаты": "txt",
+   "раздел": "2.6. Capability-specific improvements / Video (стр. 548-557)",
+   "модели": [
+    "Gemini 2.5 (модели 2.5 без уточнения; визуал через код)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Анимация как p5.js-код, не генерация изображения image-моделью. В том же абзаце — 66 вместо 258 визуальных токенов на кадр (понимание видео, не генерация)."
+  },
+  {
+   "код": "E-279-12",
+   "вид": "правило",
+   "утверждение_en": "Gemini safety policies, aligned with Google's standard framework, prevent Google's generative AI models from generating child sexual abuse and exploitation content, hate speech, dangerous content, harassment, sexually explicit content, and medical advice contrary to scientific or medical consensus.",
+   "цитата": "AI models from generating specific types of harmful content, including:",
+   "источник_цитаты": "txt",
+   "раздел": "5.2. Policies and Desiderata / Safety policies (стр. 1231-1243)",
+   "модели": [
+    "не указано (Gemini, «our Generative AI models»)"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Список из 6 категорий: «1. Child sexual abuse and exploitation 2. Hate speech (e.g., dehumanizing members of protected groups) 3. Dangerous content (e.g., promoting suicide, or instructing in activities that could cause real-world harm) 4. Harassment (e.g., encouraging violence against people) 5. Sexually explicit content 6. Medical advice that runs contrary to scientific or medical consensus». В тексте опечатка «prevents our our Generative AI models». Картинки как выход прямо не названы."
+  },
+  {
+   "код": "E-279-13",
+   "вид": "правило",
+   "утверждение_en": "These safety policies apply across modalities, irrespective of the input modality.",
+   "цитата": "These policies apply across modalities.",
+   "источник_цитаты": "txt",
+   "раздел": "5.2. Policies and Desiderata / Safety policies (стр. 1245-1247)",
+   "модели": [
+    "не указано (Gemini)"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Продолжение: «For example, they are meant to minimize the extent to which Gemini generates outputs such as suicide instructions or revealing harmful personal data, irrespective of input modality.» Пример касается модальности ВХОДА; про изображение как выход прямо не сказано."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-279-14",
+   "вид": "факт",
+   "утверждение_en": "The report (written around June 2025) predates Nano Banana: the only image-output Gemini it mentions is the experimental Gemini 2.0 Flash native image generation, while Gemini 2.5 Flash is listed with text and audio output only; Gemini 2.5 Flash Image is not mentioned.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Table 1 + 2.7",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)",
+    "Gemini 2.5 Flash (без image-вывода в Table 1)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-279-1, E-279-2",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Полезно как граница по времени: сведения отчёта о картинках — до выхода gemini-2.5-flash-image."
+  },
+  {
+   "код": "E-279-15",
+   "вид": "объяснение",
+   "утверждение_en": "Google attributes conversational multi-turn editing, interleaved text-image output and immediate multilingual support to image generation being native to the Gemini model itself rather than a separate image model: capabilities of the language model transfer to image generation.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "2.7 / Gemini 2.0 Flash Native Image Generation Model",
+   "модели": [
+    "Gemini 2.0 Flash Native Image Generation (экспериментальная, предшественник Nano Banana; строковый id в отчёте не дан)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-279-3, E-279-4, E-279-5, E-279-6",
+   "дата_единицы": "2025-03",
+   "тема": [
+    "мультиход",
+    "редактирование",
+    "промптинг"
+   ],
+   "заметка": "Объяснение механизма, на котором стоит всё семейство Nano Banana: управление картинкой естественным языком внутри диалога."
+  },
+  {
+   "код": "E-279-16",
+   "вид": "ограничение",
+   "утверждение_en": "The report's safety policies are stated to cover Google's generative AI models across modalities, which by their wording would also cover image outputs, but the report gives no image-generation safety evaluation: all image-related safety results concern image-to-text (understanding).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "5.2 + 5.4 + 5.7",
+   "модели": [
+    "не указано (Gemini)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-279-12, E-279-13 и разделов 5.4/5.7 (Table 7, unfair bias)",
+   "дата_единицы": "2025-06 (время написания отчёта)",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Table 7 и раздел 5.7 оценивают только «Image-to-text» и ungrounded inferences в понимании изображений."
+  }
+ ],
+ "противоречия_внутри": [
+  "Table 1 приписывает вывод изображений самой Gemini 2.0 Flash («Text, Image*»), а раздел 2.7 описывает «Gemini 2.0 Flash Native Image Generation Model» как отдельную экспериментальную модель/версию — граница «модель vs. возможность модели» не определена.",
+  "Опечатка в разделе 5.2: «prevents our our Generative AI models»."
+ ],
+ "не_сказано": [
+  "Не дан строковый id экспериментальной image-модели (Table 2 перечисляет id только текстовых моделей).",
+  "Нет ни одного правила или примера промпта для генерации/редактирования изображений image-моделью; нет разрешений, соотношений сторон, лимитов, цен.",
+  "Не упомянуты SynthID/водяные знаки и оценки безопасности вывода изображений; все image-оценки — image-to-text.",
+  "Нет бенчмарков качества генерации изображений — только понимания.",
+  "Не упомянута Gemini 2.5 Flash Image (Nano Banana) и Gemini 3 image-модели — отчёт написан раньше."
+ ],
+ "сомнения": [
+  "Документ почти целиком не про генерацию изображений; про image-модель — один абзац о исторической экспериментальной Gemini 2.0 Flash Native Image Generation. Ценность для правил Nano Banana — в объяснении механизма (нативная генерация внутри Gemini) и в политике безопасности.",
+  "Единицы E-279-8…E-279-11 — визуал через код текстовой моделью (SVG, p5.js, визуализации), к image-моделям не относятся; заведены с пометкой низкой релевантности.",
+  "Дата: текст написан около июня 2025, файл PDF собран 2025-10-16 — возможна ревизия отчёта; в тексте ревизия не отмечена."
+ ]
+}

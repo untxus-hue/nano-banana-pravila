@@ -1,0 +1,876 @@
+{
+ "id": 176,
+ "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/8-ways-to-make-the-most-out-of-slide-decks-in-notebooklm/",
+ "заголовок": "8 ways to make the most out of Slide Decks in NotebookLM",
+ "дата_в_тексте": "Dec 16, 2025 (html: article:published_time 2025-12-16, datePublished 2025-12-16T21:00:00+00:00, dateModified тот же день)",
+ "официальность": {
+  "домен": "blog.google",
+  "второй_признак": "авторы из Google: «Tomas Vorel, Product Marketing Manager» и «Usama Bin Shafqat, Software Engineer, NotebookLM»; текст от лица Google («we introduced Nano Banana Pro , our latest Gemini image model»). Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Пост блога Google Labs (16.12.2025) для пользователей NotebookLM: как использовать Slide Decks, работающие на Nano Banana Pro в связке с creative agents NotebookLM. Восемь сценариев (Deep Research → слайды, черновые заметки, брейншторм по источникам, фирменный стиль по брендбуку, визуализация данных, сторибук из длинных документов, книга рецептов из фото, свободный стиль), у каждого — подпись к карусели и один промпт (повторён для каждого слайда карусели). В конце — ограничения доступа: 18+, два варианта длины/формата, у AI Ultra лимиты в 2 раза выше. Повторный акцент: колода строится из источников проекта.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro, «our latest Gemini image model»)",
+  "Gemini (world knowledge / world understanding, без версии)"
+ ],
+ "структура": [
+  "Вступление",
+  "1. Convert Deep Research into slides.",
+  "2. Generate slides from rough notes.",
+  "3. Brainstorm new ideas.",
+  "4. Refine your slides with brand styling.",
+  "5. Understand any topics faster with illustrations.",
+  "6. Convert dense and lengthy content into a beautiful storybook.",
+  "7. Turn photos into a recipe book.",
+  "8. Sketch out your plan in the style you prefer.",
+  "Get started today"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::8 ways to make the most",
+   "итог": "ничего: обвязка сайта (заголовок вкладки, строки 1-2)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / 8 ways … Feed",
+   "итог": "ничего: обвязка сайта (шапка и мега-меню blog.google, строки 4-187)"
+  },
+  {
+   "n": 3,
+   "начало": "8 ways to make the most … Share / Preferences / Breadcrumb",
+   "итог": "ничего: обвязка сайта (повтор заголовка, шаринг, регион, хлебные крошки, строки 189-221)"
+  },
+  {
+   "n": 4,
+   "начало": "Dec 16, 2025 |",
+   "итог": "ничего: дата публикации — вынесена в дата_в_тексте"
+  },
+  {
+   "n": 5,
+   "начало": "Nano Banana Pro makes NotebookLM ever more powerful",
+   "итог": "ничего: лид-подзаголовок, маркетинг без содержания"
+  },
+  {
+   "n": 6,
+   "начало": "Tomas Vorel / Product Marketing Manager / Usama Bin Shafqat",
+   "итог": "ничего: авторы (учтено в официальности)"
+  },
+  {
+   "n": 7,
+   "начало": "Share / Your browser does not support the audio … Speed",
+   "итог": "ничего: обвязка сайта (шаринг, аудиоплеер озвучки)"
+  },
+  {
+   "n": 8,
+   "начало": "Read AI-generated summary / NotebookLM now lets you create",
+   "итог": "ничего: автосводка сайта — пересказ E-176-1, E-176-6, E-176-14"
+  },
+  {
+   "n": 9,
+   "начало": "\"8 Ways to Make the Most Out of Slide Decks",
+   "итог": "ничего: автосводка сайта (bullet-версия) — пересказ E-176-6, E-176-11, E-176-14, E-176-17, E-176-19"
+  },
+  {
+   "n": 10,
+   "начало": "Explore other styles: General summary Bullet points",
+   "итог": "ничего: обвязка сайта (переключатель стиля сводки)"
+  },
+  {
+   "n": 11,
+   "начало": "A few weeks ago, we introduced Nano Banana Pro",
+   "итог": "E-176-1"
+  },
+  {
+   "n": 12,
+   "начало": "NotebookLM collapses the content creation process",
+   "итог": "ничего: маркетинг без содержания (single workflow, content previously limited to design teams)"
+  },
+  {
+   "n": 13,
+   "начало": "When you create Slide Decks in NotebookLM",
+   "итог": "E-176-2"
+  },
+  {
+   "n": 14,
+   "начало": "Here are a few of our favorite ways",
+   "итог": "ничего: переход к списку"
+  },
+  {
+   "n": 15,
+   "начало": "1. Convert Deep Research into slides. Dense research",
+   "итог": "E-176-3, E-176-4"
+  },
+  {
+   "n": 16,
+   "начало": "A set of slides on global New Year celebrations … Prompt: New Year (1-й)",
+   "итог": "E-176-5"
+  },
+  {
+   "n": 17,
+   "начало": "A set of slides on global New Year … (2-й)",
+   "итог": "ничего: повтор E-176-5 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 18,
+   "начало": "A set of slides on global New Year … (3-й)",
+   "итог": "ничего: повтор E-176-5 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 19,
+   "начало": "A set of slides on global New Year … (4-й)",
+   "итог": "ничего: повтор E-176-5 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 20,
+   "начало": "A set of slides on global New Year … (5-й)",
+   "итог": "ничего: повтор E-176-5 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 21,
+   "начало": "2. Generate slides from rough notes. Last-minute presentations",
+   "итог": "E-176-6, E-176-7 (фраза «Last-minute presentations create unnecessary stress. Avoid hours of design work» — маркетинг)"
+  },
+  {
+   "n": 22,
+   "начало": "Get your point across better … Prompt: Make the slides",
+   "итог": "E-176-8"
+  },
+  {
+   "n": 23,
+   "начало": "3. Brainstorm new ideas. You can also use slides",
+   "итог": "E-176-9"
+  },
+  {
+   "n": 24,
+   "начало": "A literary reimagining … Prompt: Briefly list (1-й)",
+   "итог": "E-176-10"
+  },
+  {
+   "n": 25,
+   "начало": "A literary reimagining … (2-й)",
+   "итог": "ничего: повтор E-176-10 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 26,
+   "начало": "A literary reimagining … (3-й)",
+   "итог": "ничего: повтор E-176-10 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 27,
+   "начало": "4. Refine your slides with brand styling. To polish",
+   "итог": "E-176-11, E-176-12"
+  },
+  {
+   "n": 28,
+   "начало": "A summary of 2025 NotebookLM news … Prompt: Create a branded deck (1-й)",
+   "итог": "E-176-13"
+  },
+  {
+   "n": 29,
+   "начало": "A summary of 2025 NotebookLM news … (2-й)",
+   "итог": "ничего: повтор E-176-13 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 30,
+   "начало": "A summary of 2025 NotebookLM news … (3-й)",
+   "итог": "ничего: повтор E-176-13 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 31,
+   "начало": "5. Understand any topics faster with illustrations. Using Gemini’s",
+   "итог": "E-176-14, E-176-15"
+  },
+  {
+   "n": 32,
+   "начало": "Data storytelling by translating global tourism … Prompt: Sleek design (1-й)",
+   "итог": "E-176-16"
+  },
+  {
+   "n": 33,
+   "начало": "Data storytelling … (2-й)",
+   "итог": "ничего: повтор E-176-16 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 34,
+   "начало": "Data storytelling … (3-й)",
+   "итог": "ничего: повтор E-176-16 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 35,
+   "начало": "6. Convert dense and lengthy content … NotebookLM handles",
+   "итог": "E-176-17"
+  },
+  {
+   "n": 36,
+   "начало": "Story on bridging cross-generational flavors … Prompt: Find similarities (1-й)",
+   "итог": "E-176-18"
+  },
+  {
+   "n": 37,
+   "начало": "Story on bridging cross-generational flavors … (2-й)",
+   "итог": "ничего: повтор E-176-18 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 38,
+   "начало": "Story on bridging cross-generational flavors … (3-й)",
+   "итог": "ничего: повтор E-176-18 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 39,
+   "начало": "7. Turn photos into a recipe book. Simply snap",
+   "итог": "E-176-19"
+  },
+  {
+   "n": 40,
+   "начало": "Digital baker approach … Prompt: Holiday themed overview (1-й)",
+   "итог": "E-176-20"
+  },
+  {
+   "n": 41,
+   "начало": "Digital baker approach … (2-й)",
+   "итог": "ничего: повтор E-176-20 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 42,
+   "начало": "Digital baker approach … (3-й)",
+   "итог": "ничего: повтор E-176-20 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 43,
+   "начало": "8. Sketch out your plan in the style you prefer.",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 44,
+   "начало": "Slides in your favorite editing software can be styled",
+   "итог": "E-176-21 (первая и последняя фразы — маркетинговая обвязка)"
+  },
+  {
+   "n": 45,
+   "начало": "A step-by-step plan to tackle new year's resolutions … Prompt: Create a deep green (1-й)",
+   "итог": "E-176-22"
+  },
+  {
+   "n": 46,
+   "начало": "A step-by-step plan … (2-й)",
+   "итог": "ничего: повтор E-176-22 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 47,
+   "начало": "A step-by-step plan … (3-й)",
+   "итог": "ничего: повтор E-176-22 (та же подпись и тот же промпт — следующий слайд карусели)"
+  },
+  {
+   "n": 48,
+   "начало": "Get started today / Slide Decks are available to all",
+   "итог": "E-176-23, E-176-24, E-176-25 (последние две фразы — маркетинг)"
+  },
+  {
+   "n": 49,
+   "начало": "Posted in: Google Labs",
+   "итог": "ничего: обвязка сайта (рубрика)"
+  },
+  {
+   "n": 50,
+   "начало": "Related stories … Lyria 3.5 in Google Flow Music",
+   "итог": "ничего: обвязка сайта (связанные статьи)"
+  },
+  {
+   "n": 51,
+   "начало": "Privacy / Terms / Help / More of Google … Global (English)",
+   "итог": "ничего: обвязка сайта (подвал)"
+  },
+  {
+   "n": 52,
+   "начало": "(вся страница — длинная дистанция)",
+   "итог": "E-176-26, E-176-27, E-176-28, E-176-29"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-176-1",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro, described as Google's latest Gemini image model, was introduced to NotebookLM with Infographics and Slide Decks; both features were later added to the mobile app and access was expanded.",
+   "цитата": "A few weeks ago, we introduced Nano Banana Pro , our latest Gemini image model, to NotebookLM with Infographics and Slide Decks. Since then, we’ve added both features to the mobile app and expanded access to more people.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-16 (пост)",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "«A few weeks ago» относительно поста 16.12.2025 (т.е. ~ноябрь 2025)."
+  },
+  {
+   "код": "E-176-2",
+   "вид": "объяснение",
+   "утверждение_en": "When creating Slide Decks in NotebookLM, you draw on Nano Banana Pro's visual capabilities combined with NotebookLM's own creative agents — the same underlying approach used for Audio and Video Overviews.",
+   "цитата": "When you create Slide Decks in NotebookLM, you’re drawing on the visual capabilities of Nano Banana Pro, but you’re also using NotebookLM’s own creative agents, the same underlying approach that makes Audio and Video Overviews so engaging. The combination is what gives you this powerful engine for visual storytelling.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "другое"
+   ],
+   "заметка": "Механизм: модель изображения — лишь часть; структуру колоды планируют агенты NotebookLM. Поэтому промпты-примеры ниже часто описывают задачу/содержание, а не отдельные слайды."
+  },
+  {
+   "код": "E-176-3",
+   "вид": "факт",
+   "утверждение_en": "NotebookLM can convert Deep Research reports into custom slide decks, uncovering metaphors and connections you might otherwise miss.",
+   "цитата": "NotebookLM solves this by converting Deep Research into custom slide decks, uncovering metaphors and connections you might otherwise miss.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Convert Deep Research into slides.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Сценарий: плотные исследования → визуальная колода."
+  },
+  {
+   "код": "E-176-4",
+   "вид": "инструкция",
+   "утверждение_en": "To turn research into slides: ask a question, run Deep Research, and request a deck in any format.",
+   "цитата": "Simply ask a question, run Deep Research and request a deck in any format.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Convert Deep Research into slides.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Порядок действий в UI NotebookLM."
+  },
+  {
+   "код": "E-176-5",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM slide-deck prompt (deck generated from Deep Research on global New Year celebrations): topic, then a style blend of magical/whimsical elements with festival scenes, then a constraint to respect local architecture and style.",
+   "цитата": "Prompt: New Year celebrations around the world. Blend magical, whimsical elements with celebratory festival scenes. Respect local architecture and style.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Convert Deep Research into slides.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Структура: тема фрагментом (без глагола) → стилевое смешение («Blend magical, whimsical elements with celebratory festival scenes») → ограничение-уважение к реальности («Respect local architecture and style»). Работу делает связка «фантазия + требование точности местного колорита». Подпись: «A set of slides on global New Year celebrations, generated from deep research.» — содержание пришло из Deep Research, промпт задаёт тему и визуальный тон. Цитата включает метку «Prompt:», т.к. промпт повторяется 5 раз в карусели."
+  },
+  {
+   "код": "E-176-6",
+   "вид": "инструкция",
+   "утверждение_en": "To build a deck from rough notes, either create a note in NotebookLM and add it as a source, or attach a rough draft from Google Slides; the source can be key points, an outline, or a stream-of-consciousness brainstorm, and handwritten notes can also be uploaded.",
+   "цитата": "either create a note in NotebookLM and add it as a source, or attach a rough draft from Google Slides. Jot down key points, an outline or a stream-of-consciousness brainstorm. You can even upload handwritten notes.",
+   "источник_цитаты": "txt",
+   "раздел": "2. Generate slides from rough notes.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "рефы"
+   ],
+   "заметка": "Допустимые виды источника для колоды: заметка NotebookLM, черновик Google Slides, рукописные заметки."
+  },
+  {
+   "код": "E-176-7",
+   "вид": "инструкция",
+   "утверждение_en": "Use the source to instruct NotebookLM to build a full slide deck.",
+   "цитата": "Use this source to instruct NotebookLM to build a full slide deck instantly.",
+   "источник_цитаты": "txt",
+   "раздел": "2. Generate slides from rough notes.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "«instantly» — маркетинговая формулировка."
+  },
+  {
+   "код": "E-176-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM restyling prompt (deck created from a rough slide deck and a text document): make the slides much prettier and more fun, Christmas-themed.",
+   "цитата": "Prompt: Make the slides much more pretty and fun, Christmas-themed",
+   "источник_цитаты": "txt",
+   "раздел": "2. Generate slides from rough notes.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "промптинг"
+   ],
+   "заметка": "Структура: глагол + объект («Make the slides») → общее эстетическое направление (pretty and fun) → тема оформления (Christmas-themed). Промпт только о стиле: содержание берётся из источников (подпись: «created from rough slide deck and text document»). Разговорная, неформальная формулировка без точки."
+  },
+  {
+   "код": "E-176-9",
+   "вид": "факт",
+   "утверждение_en": "Slides can be used to explore new ideas or concepts based on a project's sources; e.g., from a Jane Austen notebook Google generated a pitch deck for holiday-themed fan-fiction sequels with jacket covers and plot descriptions.",
+   "цитата": "You can also use slides to explore new ideas or concepts based on your project’s sources. For example, using our Featured Notebook on Jane Austen , we generated a pitch deck for holiday-themed fan-fiction sequels, complete with jacket covers and plot descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Brainstorm new ideas.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Колода как инструмент генерации идей по источникам, с визуальными обложками."
+  },
+  {
+   "код": "E-176-10",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM content-only prompt for a brainstorm pitch deck: list Christmas/New Year's events in the novels, propose three novella concepts, and for each outline the plot and its connection to the original book.",
+   "цитата": "Prompt: Briefly list any Christmas or New Year’s events mentioned in the novels. Provide three novella concepts based on these mentions. For each, outline the plot and its connection to the original book",
+   "источник_цитаты": "txt",
+   "раздел": "3. Brainstorm new ideas.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: три шага-инструкции по содержанию (перечислить → предложить 3 концепта → для каждого сюжет и связь с оригиналом). Ни слова о визуале — обложки и оформление колоды (подпись: «A literary reimagining presenting a visual pitch…», «complete with jacket covers») достраивает система. Показывает, что промпт колоды может быть чисто контентным."
+  },
+  {
+   "код": "E-176-11",
+   "вид": "инструкция",
+   "утверждение_en": "To polish an existing presentation, upload your slides to NotebookLM and ask it to enhance aesthetics, apply brand colors, or incorporate visuals from your sources.",
+   "цитата": "To polish an existing presentation, upload your slides to NotebookLM. Ask the tool to enhance aesthetics, apply brand colors or incorporate visuals from your sources.",
+   "источник_цитаты": "txt",
+   "раздел": "4. Refine your slides with brand styling.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "стиль"
+   ],
+   "заметка": "Три типа запросов на доработку: эстетика, фирменные цвета, визуалы из источников."
+  },
+  {
+   "код": "E-176-12",
+   "вид": "факт",
+   "утверждение_en": "NotebookLM applies your style guidelines to the deck, which the page says ensures the final product meets your standards.",
+   "цитата": "NotebookLM applies your style guidelines, ensuring the final product meets your standards.",
+   "источник_цитаты": "txt",
+   "раздел": "4. Refine your slides with brand styling.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "рефы"
+   ],
+   "заметка": "Утверждение маркетинговое по силе («ensuring»); механизм не раскрыт."
+  },
+  {
+   "код": "E-176-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM branded-deck prompt: create a deck summarizing 2025 launches and use an attached brandbook as the branding and styling reference.",
+   "цитата": "Prompt: Create a branded deck summarizing 2025 launches. Use the brandbook for branding and styling references",
+   "источник_цитаты": "txt",
+   "раздел": "4. Refine your slides with brand styling.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: задача (branded deck + тема) → отдельная фраза, называющая роль источника («Use the brandbook for branding and styling references»). Работу делает явное указание, какой источник для чего используется. Подпись: «A summary of 2025 NotebookLM news sourced from the internet styled with corporate identity by attaching a brandbook.»"
+  },
+  {
+   "код": "E-176-14",
+   "вид": "объяснение",
+   "утверждение_en": "Using Gemini's world knowledge, NotebookLM visualizes data through metaphors and visualizations, helping communicate documents full of numbers.",
+   "цитата": "Using Gemini’s world knowledge, NotebookLM visualizes data through powerful metaphors and visualizations. If you have documents full of numbers but are struggling to communicate your point across, NotebookLM can help.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Understand any topics faster with illustrations.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "продукт_ui"
+   ],
+   "заметка": "Знание мира Gemini используется для подбора метафор к данным."
+  },
+  {
+   "код": "E-176-15",
+   "вид": "приём",
+   "утверждение_en": "Applying familiar formats to complex concepts makes difficult content accessible without losing detail.",
+   "цитата": "By applying familiar formats to complex concepts, you make difficult content accessible without losing detail.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Understand any topics faster with illustrations.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Принцип визуализации данных: знакомые форматы/метафоры для сложных понятий."
+  },
+  {
+   "код": "E-176-16",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM data-visualization prompt: sleek design on a white background, visualize the deck's numbers in a range of real-world-related ways, infographic style with hard-hitting and inspirational figures.",
+   "цитата": "Prompt: Sleek design, white background. Visualise the numbers in the deck in a range of different ways that relate to the real world, use an infographic style with hard hitting and inspirational figures.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Understand any topics faster with illustrations.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Структура: стиль и фон первыми, фрагментами («Sleek design, white background.») → задача над данными источника («Visualise the numbers in the deck») → требование разнообразия и привязки к реальному миру → жанр (infographic style) → тон цифр (hard hitting and inspirational). Подпись: «Data storytelling by translating global tourism statistics into impactful infographics»."
+  },
+  {
+   "код": "E-176-17",
+   "вид": "факт",
+   "утверждение_en": "NotebookLM can convert long documents, a set of articles, or an entire book into a visual narrative.",
+   "цитата": "NotebookLM handles large documents with ease. Convert your long documents, set of articles or even your entire book into a beautifully visual narrative.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Convert dense and lengthy content into a beautiful storybook.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Объём исходников не ограничен числом на странице («with ease» — маркетинг)."
+  },
+  {
+   "код": "E-176-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM storybook prompt: find similarities between 19th- and 21st-century holiday recipes; white background, black text, explained with manga on every page, modern Japanese manga.",
+   "цитата": "Prompt: Find similarities between holiday recipes in 19th and 21st century. White background, black text, explained with manga on every page, modern Japanese manga",
+   "источник_цитаты": "txt",
+   "раздел": "6. Convert dense and lengthy content into a beautiful storybook.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "текст_в_кадре"
+   ],
+   "заметка": "Структура: задача по содержанию (сравнить рецепты двух эпох) → стиль фрагментами: фон, цвет текста, правило для каждой страницы («explained with manga on every page»), уточнение стиля («modern Japanese manga»). Работу делает правило «на каждой странице» — задаёт единообразие колоды. Подпись: «reinterpreting a 19th-century cookbook through modern manga»."
+  },
+  {
+   "код": "E-176-19",
+   "вид": "факт",
+   "утверждение_en": "You can photograph your holiday baking and have NotebookLM convert the photos into a recipe book, either relying on Gemini's world understanding to describe the recipes or uploading your notes.",
+   "цитата": "Simply snap a few pictures of your holiday baking and have NotebookLM convert it into a delightful recipe book. You can just use Gemini’s world understanding to describe the recipes, or upload your notes and NotebookLM will take care of the rest.",
+   "источник_цитаты": "txt",
+   "раздел": "7. Turn photos into a recipe book.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "продукт_ui"
+   ],
+   "заметка": "Фото как источник колоды; рецепты — либо из знаний Gemini, либо из заметок пользователя."
+  },
+  {
+   "код": "E-176-20",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM prompt combining photo and note sources: a holiday-themed overview of all the sweets baked in the pictures, referencing the recipe from the note.",
+   "цитата": "Prompt: Holiday themed overview of all the sweets baked from the pictures. Reference the recipe from the note.",
+   "источник_цитаты": "txt",
+   "раздел": "7. Turn photos into a recipe book.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Структура: тема+формат фрагментом (Holiday themed overview) → охват («all the sweets baked from the pictures») → отдельная фраза с ролью второго источника («Reference the recipe from the note»). Работу делает называние каждого источника по его роли (картинки → что показать, заметка → рецепт). Подпись: «Digital baker approach to transform kitchen photos into a professional holiday recipe guide»."
+  },
+  {
+   "код": "E-176-21",
+   "вид": "факт",
+   "утверждение_en": "In NotebookLM Slide Decks you can define any visual or creative style you want.",
+   "цитата": "You can define any visual or creative style you want and get to the design you’re after.",
+   "источник_цитаты": "txt",
+   "раздел": "8. Sketch out your plan in the style you prefer.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Стиль колоды свободный, задаётся промптом."
+  },
+  {
+   "код": "E-176-22",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example NotebookLM styled-deck prompt: a deep green \"blackboard\" design with white, yellow, and pink handwritten chalk text to help organize New Year's resolutions.",
+   "цитата": "Prompt: Create a deep green \"blackboard\" design using white, yellow, and pink handwritten chalk text to help organize New Year’s resolutions.",
+   "источник_цитаты": "txt",
+   "раздел": "8. Sketch out your plan in the style you prefer.",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "текст_в_кадре"
+   ],
+   "заметка": "Структура: метафора-носитель в кавычках с цветом («deep green \"blackboard\" design») → текст: перечень цветов + вид письма (handwritten chalk text) → назначение (organize New Year’s resolutions). Работу делают: название физического носителя в кавычках и точные цвета для текста. Подпись: «A step-by-step plan to tackle new year's resolutions, delivered as a school lecture.»"
+  },
+  {
+   "код": "E-176-23",
+   "вид": "ограничение",
+   "утверждение_en": "Slide Decks are available to all NotebookLM users over 18 years old.",
+   "цитата": "Slide Decks are available to all NotebookLM users over 18 years old.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started today",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-16",
+   "тема": [
+    "лимиты_квоты",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Возрастное ограничение доступа (18+)."
+  },
+  {
+   "код": "E-176-24",
+   "вид": "ограничение",
+   "утверждение_en": "For now, users have two options for length and format of Slide Decks.",
+   "цитата": "For now, users have two options for length and format.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started today",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12-16",
+   "тема": [
+    "лимиты_квоты",
+    "форматы_разрешение"
+   ],
+   "заметка": "Сами варианты не названы."
+  },
+  {
+   "код": "E-176-25",
+   "вид": "лимит",
+   "утверждение_en": "Users with the AI Ultra subscription can generate longer decks with two times higher limits (available since the week before the post).",
+   "цитата": "Since last week, users with the AI Ultra subscription can also generate longer decks with two times higher limits.",
+   "источник_цитаты": "txt",
+   "раздел": "Get started today",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-12 (за неделю до 16.12.2025)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Абсолютные значения лимитов не даны — только «в два раза выше»."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-176-26",
+   "вид": "приём",
+   "утверждение_en": "The page's NotebookLM prompts are short and often written as fragments (\"Sleek design, white background.\", \"White background, black text, …\", \"Holiday themed overview of…\"); they combine a content/task instruction with brief style descriptors rather than describing individual slides.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница (8 примеров)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-176-2, E-176-5, E-176-8, E-176-10, E-176-13, E-176-16, E-176-18, E-176-20, E-176-22",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Выведено из формы всех примеров; согласуется с E-176-2 (структуру колоды строят creative agents). Прямо не сформулировано."
+  },
+  {
+   "код": "E-176-27",
+   "вид": "приём",
+   "утверждение_en": "When a deck uses several sources, the example prompts name each source by its role (\"Use the brandbook for branding and styling references\", \"Reference the recipe from the note\", \"the sweets baked from the pictures\", \"the numbers in the deck\").",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-176-13, E-176-16, E-176-20",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Приём адресации источников по роли. Прямо правилом не названо."
+  },
+  {
+   "код": "E-176-28",
+   "вид": "факт",
+   "утверждение_en": "The page's examples span three prompt types: content-only (the Jane Austen brainstorm), style-only restyling (\"Make the slides much more pretty and fun, Christmas-themed\"), and mixed content+style (the rest); all produce designed decks.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-176-5, E-176-8, E-176-10, E-176-13, E-176-16, E-176-18, E-176-20, E-176-22",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Классификация по примерам; страница её не формулирует."
+  },
+  {
+   "код": "E-176-29",
+   "вид": "факт",
+   "утверждение_en": "The page repeatedly stresses sources as the input to Slide Decks — Deep Research, notes, Google Slides drafts, handwritten notes, uploaded slides, brandbooks, long documents/books, and photos.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — из контекста статьи: Slide Decks в NotebookLM работают на Nano Banana Pro + creative agents NotebookLM"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-176-4, E-176-6, E-176-9, E-176-11, E-176-17, E-176-19",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "продукт_ui"
+   ],
+   "заметка": "Повторяющийся акцент страницы: колода строится из источников проекта, промпт управляет задачей и стилем."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не названы два варианта «length and format» и абсолютные лимиты (сколько колод/слайдов); для AI Ultra — только «two times higher limits».",
+  "Нет сведений о соотношении сторон, разрешении, числе слайдов, языках текста на слайдах, редактируемости текста слайдов.",
+  "Не сказано, какие части колоды рисует Nano Banana Pro, а какие — creative agents (текст, структура).",
+  "Водяной знак/SynthID и политики безопасности не упомянуты (кроме возрастного ограничения 18+).",
+  "Нет советов, как писать промпт для колоды, — только примеры."
+ ],
+ "сомнения": [
+  "Промпты в карусели повторяются по 3-5 раз (по одному на слайд) — учтено одной единицей на пример, остальные в ведомости как повтор.",
+  "Цитаты промптов включают метку «Prompt:», поскольку одинаковый текст встречается несколько раз; сам промпт — текст после метки."
+ ]
+}

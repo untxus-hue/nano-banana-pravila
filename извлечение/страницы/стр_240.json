@@ -1,0 +1,554 @@
+{
+ "id": 240,
+ "url": "https://workspaceupdates.googleblog.com/2026/02/introducing-nano-banana-2-in-gemini-app.html",
+ "заголовок": "Google Workspace Updates: Introducing Nano Banana 2 in the Gemini app",
+ "дата_в_тексте": "February 26, 2026 (дата поста); Update (March 31, 2026) — обновление статьи",
+ "официальность": {
+  "домен": "workspaceupdates.googleblog.com",
+  "второй_признак": "подвал '© Google LLC | 1600 Amphitheatre Pkwy, Mountain View, CA 94043'; описание фида 'This official feed from the Google Workspace team'; текст от лица Google ('we’re rolling out ... our best image model yet').",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткий release note блога Google Workspace Updates (для админов и пользователей Workspace) о запуске Nano Banana 2 (Gemini 3.1 Flash Image) в Gemini app 26.02.2026, с обновлением от 31.03.2026 (генерация доступна <18, редактирование — только 18+). Структура: вводная; три «бывших Pro» функции (знание мира + веб-поиск, контроль формата/разрешения 1K бесплатно / 2K платно, точный текст и перевод); три улучшения против оригинальной Nano Banana (консистентность до 5 персонажей и 10 объектов, точное следование инструкциям, визуальное качество); Getting started, Rollout, Availability (NB2 заменяет NB Pro во всех режимах, Pro доступен через перегенерацию в меню «три точки»). Термины: 'Production-ready specs', 'Subject consistency'. Кода и промптов нет.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "Nano Banana Pro (gemini-3-pro-image)",
+  "Nano Banana (оригинальная, gemini-2.5-flash-image — id на странице не назван)"
+ ],
+ "структура": [
+  "Update (March 31, 2026)",
+  "Вводная",
+  "Advanced world knowledge",
+  "Production-ready specs",
+  "Precision text rendering and translation",
+  "Subject consistency",
+  "Precise instruction following",
+  "Visual fidelity upgrade",
+  "Getting started",
+  "Rollout pace",
+  "Availability",
+  "Resources",
+  "Useful Links / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Google Workspace Updates: Introducing Nano Banana",
+   "итог": "ничего: заголовок страницы (title)"
+  },
+  {
+   "n": 2,
+   "начало": "Products For Admins Help Center Release",
+   "итог": "ничего: обвязка блога (меню продуктов, строки 2-65; строка 8 — описание фида, учтено в официальности)"
+  },
+  {
+   "n": 3,
+   "начало": "February 26, 2026 Introducing Nano Banana",
+   "итог": "ничего: дата публикации и заголовок поста, метки Gemini App / Rapid Release / Scheduled Release (дата использована как дата_в_тексте)"
+  },
+  {
+   "n": 4,
+   "начало": "Update (March 31, 2026): We updated",
+   "итог": "E-240-1, E-240-2"
+  },
+  {
+   "n": 5,
+   "начало": "Starting today, we’re rolling out Nano",
+   "итог": "E-240-3"
+  },
+  {
+   "n": 6,
+   "начало": "Nano Banana 2, which replaces our",
+   "итог": "E-240-4"
+  },
+  {
+   "n": 7,
+   "начало": "Advanced world knowledge: Nano Banana 2",
+   "итог": "E-240-5, E-240-6"
+  },
+  {
+   "n": 8,
+   "начало": "Production-ready specs: Make attention-grabbing assets",
+   "итог": "E-240-7, E-240-8"
+  },
+  {
+   "n": 9,
+   "начало": "Precision text rendering and translation: Generate",
+   "итог": "E-240-9, E-240-10"
+  },
+  {
+   "n": 10,
+   "начало": "Nano Banana 2 also dramatically closes",
+   "итог": "E-240-11"
+  },
+  {
+   "n": 11,
+   "начало": "Subject consistency: Maintain character resemblance",
+   "итог": "E-240-12"
+  },
+  {
+   "n": 12,
+   "начало": "Precise instruction following: With enhanced",
+   "итог": "E-240-13"
+  },
+  {
+   "n": 13,
+   "начало": "Visual fidelity upgrade: Nano Banana 2",
+   "итог": "E-240-14"
+  },
+  {
+   "n": 14,
+   "начало": "Getting started Admins: There are no",
+   "итог": "E-240-15"
+  },
+  {
+   "n": 15,
+   "начало": "End users: Visit the Help Center",
+   "итог": "ничего: ссылка на Help Center"
+  },
+  {
+   "n": 16,
+   "начало": "Rollout pace Rapid Release and Scheduled",
+   "итог": "E-240-16"
+  },
+  {
+   "n": 17,
+   "начало": "Availability Nano Banana 2 will replace",
+   "итог": "E-240-17"
+  },
+  {
+   "n": 18,
+   "начало": "Workspace users who have had access",
+   "итог": "E-240-18"
+  },
+  {
+   "n": 19,
+   "начало": "Resources Keyword: Nano Banana 2: Closing",
+   "итог": "ничего: ссылки на другие материалы"
+  },
+  {
+   "n": 20,
+   "начало": "Useful Links Join the official community",
+   "итог": "ничего: обвязка блога (сообщество, What’s new, истории клиентов, подписка)"
+  },
+  {
+   "n": 21,
+   "начало": "Follow Google Workspace rss_feed Learning &",
+   "итог": "ничего: подвал (ссылки; © Google LLC — учтено в официальности)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-240-1",
+   "вид": "факт",
+   "утверждение_en": "Update (March 31, 2026): image generation with Nano Banana 2 in the Gemini app is now also available to users under 18 years of age.",
+   "цитата": "Update (March 31, 2026): We updated this article to reflect that image generation with Nano Banana 2 is now also available to users who are under 18 years of age.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app (Update)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-31",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-2",
+   "вид": "ограничение",
+   "утверждение_en": "Image editing with Nano Banana 2 in the Gemini app is still currently only available to users who are 18 years or older.",
+   "цитата": "Image editing with Nano Banana 2 is still currently only available to users who are 18 years or older.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app (Update)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "политика",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-03-31",
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Возрастное ограничение касается именно редактирования (в т.ч. загруженных фото); генерация — с 31.03.2026 и для <18."
+  },
+  {
+   "код": "E-240-3",
+   "вид": "факт",
+   "утверждение_en": "Starting February 26, 2026, Google rolled out Nano Banana 2 (Gemini 3.1 Flash Image), described as its best image model yet, to Workspace customers in the Gemini app.",
+   "цитата": "Starting today, we’re rolling out Nano Banana 2 (Gemini 3.1 Flash Image), our best image model yet, to Workspace customers in the Gemini app.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "'our best image model yet' — оценка Google на дату публикации."
+  },
+  {
+   "код": "E-240-4",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 replaces the previous Nano Banana model and brings the high-speed intelligence of Gemini Flash to visual generation, making once-exclusive Pro features accessible to a wider audience.",
+   "цитата": "Nano Banana 2, which replaces our previous Nano Banana model, brings the high-speed intelligence of Gemini Flash to visual generation, making once-exclusive Pro features accessible to a wider audience",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "Nano Banana (предыдущая)",
+    "Nano Banana Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Смысл: функции, раньше бывшие только у Pro, теперь в Flash-модели."
+  },
+  {
+   "код": "E-240-5",
+   "вид": "объяснение",
+   "утверждение_en": "Nano Banana 2 draws on the Gemini model's real-world knowledge base and is powered by real-time information and images from web search to more accurately render specific subjects.",
+   "цитата": "Nano Banana 2 pulls from the Gemini model’s real-world knowledge base and is powered by real-time information and images from web search to more accurately render specific subjects.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Advanced world knowledge",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Механизм точности конкретных объектов — знания модели + веб-поиск (текст и картинки) в реальном времени."
+  },
+  {
+   "код": "E-240-6",
+   "вид": "факт",
+   "утверждение_en": "This world knowledge lets users create infographics, turn notes into diagrams, and generate data visualizations with Nano Banana 2.",
+   "цитата": "This deep understanding also empowers you to create infographics, turn notes into diagrams, and generate data visualizations.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Advanced world knowledge",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 in the Gemini app gives full control over aspect ratios and resolutions, ranging from 1K for free users to 2K for paid users.",
+   "цитата": "Make attention-grabbing assets with full control over aspect ratios and resolutions—ranging from 1K for free and 2K for paid users.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Production-ready specs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "продукт_ui"
+   ],
+   "заметка": "4K для Gemini app здесь не упомянуто."
+  },
+  {
+   "код": "E-240-8",
+   "вид": "приём",
+   "утверждение_en": "Match the aspect ratio to the destination, e.g. a vertical format for a social media Story or a wide-screen format for a presentation backdrop, so visuals stay sharp and correctly sized.",
+   "цитата": "Your visuals will stay sharp and perfectly sized, whether you are generating a vertical social media Story or a wide-screen presentation backdrop.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Production-ready specs",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Сформулировано в тексте как обещание результата; как приём — выбор формата под площадку."
+  },
+  {
+   "код": "E-240-9",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 can generate accurate, legible text for infographics or marketing mockups.",
+   "цитата": "Generate accurate, legible text for infographics or marketing mockups.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Precision text rendering and translation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-10",
+   "вид": "факт",
+   "утверждение_en": "Users can translate and localize text within an image with Nano Banana 2.",
+   "цитата": "Users can even translate and localize text within an image to share your ideas globally.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Precision text rendering and translation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "редактирование"
+   ],
+   "заметка": "Перевод/локализация текста уже существующей картинки — это редактирование (для Gemini app — 18+, см. E-240-2)."
+  },
+  {
+   "код": "E-240-11",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 closes the gap between speed and beauty, delivering high-fidelity, photorealistic imagery, and improves on the original Nano Banana in the listed areas.",
+   "цитата": "Nano Banana 2 also dramatically closes the gap between speed and beauty, delivering high-fidelity, photorealistic imagery. Here’s what our newest model offers and has improved on from the original Nano Banana:",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "Nano Banana (оригинальная)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": "Вводная к списку улучшений относительно оригинальной Nano Banana."
+  },
+  {
+   "код": "E-240-12",
+   "вид": "лимит",
+   "утверждение_en": "Subject consistency: Nano Banana 2 maintains character resemblance of up to five characters and the fidelity of up to ten objects in a single workflow in the Gemini app, allowing storyboards and narratives without altering the appearance of the inputs.",
+   "цитата": "Maintain character resemblance of up to five characters and the fidelity of up to ten objects in a single workflow in the Gemini app, allowing you to storyboard and build narratives without altering the appearance of your inputs.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Subject consistency",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Числа привязаны к Gemini app ('in the Gemini app'): 5 персонажей + 10 объектов в одном рабочем процессе."
+  },
+  {
+   "код": "E-240-13",
+   "вид": "факт",
+   "утверждение_en": "With enhanced instruction following, Nano Banana 2 adheres more strictly to complex requests, capturing the specific nuances of the idea.",
+   "цитата": "With enhanced instruction following, the model adheres more strictly to your complex requests, capturing the specific nuances of your idea so the image you get is the image you asked for.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Precise instruction following",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Следствие для промптинга: детальные сложные запросы соблюдаются строже (формулировка Google)."
+  },
+  {
+   "код": "E-240-14",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 delivers vibrant lighting, richer textures and sharper details while maintaining high-quality aesthetics at Flash speed.",
+   "цитата": "Nano Banana 2 delivers vibrant lighting, richer textures, and sharper details, maintaining high-quality aesthetics at the speed expected from Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app > Visual fidelity upgrade",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-15",
+   "вид": "факт",
+   "утверждение_en": "There are no admin controls for the Nano Banana 2 feature in the Gemini app.",
+   "цитата": "Admins:\nThere are no admin controls for this feature.",
+   "источник_цитаты": "txt",
+   "раздел": "Getting started",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-16",
+   "вид": "факт",
+   "утверждение_en": "Rollout pace: available now for Rapid Release and Scheduled Release domains.",
+   "цитата": "Rapid Release and Scheduled Release domains:\nAvailable now",
+   "источник_цитаты": "txt",
+   "раздел": "Rollout pace",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-240-17",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 will replace Nano Banana Pro across the Fast, Thinking and Pro models for Google Workspace customers, Workspace Individual subscribers, and users with personal Google accounts signed in to the Gemini app.",
+   "цитата": "Nano Banana 2 will replace Nano Banana Pro across the Fast, Thinking and Pro models for Google Workspace customers, Workspace Individual subscribers, and users with personal Google accounts who are signed in to the Gemini app.",
+   "источник_цитаты": "txt",
+   "раздел": "Availability",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "Nano Banana Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "продукт_ui"
+   ],
+   "заметка": "NB2 становится моделью картинок по умолчанию во всех режимах Gemini app."
+  },
+  {
+   "код": "E-240-18",
+   "вид": "инструкция",
+   "утверждение_en": "Workspace users who have had access to Nano Banana Pro keep access to it for specialized tasks by regenerating images via the three-dot menu.",
+   "цитата": "Workspace users who have had access to Nano Banana Pro will keep access to Nano Banana Pro for specialized tasks by regenerating images via the three-dot menu.",
+   "источник_цитаты": "txt",
+   "раздел": "Availability",
+   "модели": [
+    "Nano Banana Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Какие именно 'specialized tasks' — не уточнено."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-240-19",
+   "вид": "приём",
+   "утверждение_en": "In the Gemini app, images are generated with Nano Banana 2 by default in every mode (Fast, Thinking, Pro); to use Nano Banana Pro for a specialized task, generate first and then regenerate the image with Pro from the three-dot menu.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Availability",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "Nano Banana Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-240-17, E-240-18",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок действий собран из двух соседних абзацев."
+  },
+  {
+   "код": "E-240-20",
+   "вид": "объяснение",
+   "утверждение_en": "The page frames Nano Banana 2 relative to both earlier models: versus the original Nano Banana it improves consistency, instruction following and fidelity; versus Nano Banana Pro it brings former Pro-only features (world knowledge, text rendering, resolution control) to a faster Flash model, while Pro remains for \"specialized tasks\".",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Introducing Nano Banana 2 in the Gemini app",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "Nano Banana (оригинальная)",
+    "Nano Banana Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-240-4, E-240-11, E-240-18",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Структура анонса: блок «once-exclusive Pro features» (3 пункта) + блок «improved on from the original Nano Banana» (3 пункта)."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет 4K и списка соотношений сторон — только '1K for free and 2K for paid users'.",
+  "Не сказано, какие 'specialized tasks' остаются за Nano Banana Pro.",
+  "Нет ни одного примера промпта и советов по формулировке.",
+  "Нет упоминания водяных знаков (SynthID/видимый) и лимитов/квот.",
+  "Не сказано, как подавать 5 персонажей и 10 объектов (сколько референсов за раз)."
+ ],
+ "сомнения": [
+  "Числа 'up to five characters and ... up to ten objects' явно привязаны к Gemini app ('in a single workflow in the Gemini app') — не обязательно совпадают с лимитами API.",
+  "Модель gemini-3.1-flash-image названа на странице только как 'Gemini 3.1 Flash Image'; id в тексте нет."
+ ]
+}

@@ -1,0 +1,475 @@
+{
+ "id": 55,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/content-credentials",
+ "заголовок": "Content Credentials  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time в html нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\" + лицензия CC BY 4.0/Apache 2.0, ссылки About Google / Google Cloud terms; текст утверждает подпись \"by Google LLC\"",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая справочная страница Google Cloud (Gemini Enterprise Agent Platform, раздел Safety) для разработчиков: что такое Content Credentials (C2PA), что они гарантируют и чего нет, как проверить, какие модели автоматически подписывают вывод. Основное содержание ~70 строк после огромного меню. Модели картинок: gemini-3.1-flash-lite-image, gemini-3-pro-image, gemini-3.1-flash-image, gemini-2.5-flash-image; плюс Omni, virtual-try-on, Veo, Lyria. Термины: Content Credentials, C2PA metadata, tamper-evident, C2PA-aware tools, 'Google Media Processing Services'. Повторяющийся акцент: подпись автоматическая и от Google LLC; C2PA подтверждает источник и целостность, а не правдивость.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-2.5-flash-image (Nano Banana)",
+  "gemini-omni-1.1-flash-preview",
+  "gemini-omni-flash-preview",
+  "virtual-try-on-001",
+  "veo-2.0/3.0/3.1 (13 id)",
+  "lyria-3-clip-preview",
+  "lyria-3-pro-preview",
+  "в блоке What's next: \"Nano Banana and Nano Banana Pro\""
+ ],
+ "структура": [
+  "Content Credentials (вступление)",
+  "How to Use Content Credentials",
+  "Verify Content Credentials",
+  "Supported models",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта Google Cloud (верхнее меню, левое меню документации Agent Platform, дубль меню, хлебные крошки; строки 1-1040). В меню есть пункты \"Provisioned Throughput for Gemini 3 (Nano Banana) models\", \"Gemini image generation limitations\" — только ссылки"
+  },
+  {
+   "n": 2,
+   "начало": "Send feedback Content Credentials Stay organized",
+   "итог": "ничего: служебная кнопка, заголовок статьи, виджет коллекций (строки 1041-1044)"
+  },
+  {
+   "n": 3,
+   "начало": "Content Credentials provide a transparent",
+   "итог": "E-55-1"
+  },
+  {
+   "n": 4,
+   "начало": "Coalition for Content Provenance and",
+   "итог": "E-55-2"
+  },
+  {
+   "n": 5,
+   "начало": "Content Credentials include information about",
+   "итог": "E-55-3"
+  },
+  {
+   "n": 6,
+   "начало": "How to Use Content Credentials",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 7,
+   "начало": "If you generate a media file",
+   "итог": "E-55-4"
+  },
+  {
+   "n": 8,
+   "начало": "On the other hand, if you're",
+   "итог": "E-55-5"
+  },
+  {
+   "n": 9,
+   "начало": "Note that C2PA doesn't classify",
+   "итог": "E-55-6"
+  },
+  {
+   "n": 10,
+   "начало": "Moreover, C2PA doesn't guarantee the",
+   "итог": "E-55-7"
+  },
+  {
+   "n": 11,
+   "начало": "Verify Content Credentials",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 12,
+   "начало": "To verify the Content Credentials",
+   "итог": "E-55-8"
+  },
+  {
+   "n": 13,
+   "начало": "If the media file was created",
+   "итог": "E-55-9"
+  },
+  {
+   "n": 14,
+   "начало": "Any modification to a C2PA-compliant",
+   "итог": "E-55-10"
+  },
+  {
+   "n": 15,
+   "начало": "Supported models",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 16,
+   "начало": "Content Credentials are supported by",
+   "итог": "E-55-11"
+  },
+  {
+   "n": 17,
+   "начало": "gemini-omni-1.1-flash-preview",
+   "итог": "E-55-13"
+  },
+  {
+   "n": 18,
+   "начало": "gemini-omni-flash-preview",
+   "итог": "E-55-13"
+  },
+  {
+   "n": 19,
+   "начало": "gemini-3.1-flash-lite-image",
+   "итог": "E-55-12"
+  },
+  {
+   "n": 20,
+   "начало": "gemini-3-pro-image",
+   "итог": "E-55-12"
+  },
+  {
+   "n": 21,
+   "начало": "gemini-3.1-flash-image",
+   "итог": "E-55-12"
+  },
+  {
+   "n": 22,
+   "начало": "gemini-2.5-flash-image",
+   "итог": "E-55-12"
+  },
+  {
+   "n": 23,
+   "начало": "virtual-try-on-001",
+   "итог": "E-55-13"
+  },
+  {
+   "n": 24,
+   "начало": "veo-2.0-generate-001 … veo-3.1-lite-generate-001 (13 строк)",
+   "итог": "E-55-13 (видео-модели, не про картинки; сведены)"
+  },
+  {
+   "n": 25,
+   "начало": "lyria-3-clip-preview / lyria-3-pro-preview",
+   "итог": "E-55-13 (музыка, не про картинки; сведены)"
+  },
+  {
+   "n": 26,
+   "начало": "What's next Guide Generate and",
+   "итог": "ничего: ссылка на гайд 'Generate and edit images with Gemini' (упоминает Nano Banana и Nano Banana Pro)"
+  },
+  {
+   "n": 27,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, Last updated 2026-09-22 UTC — дата вынесена)"
+  },
+  {
+   "n": 28,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка (подвал Google Cloud, языки; строки 1114-1159)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-55-1",
+   "вид": "объяснение",
+   "утверждение_en": "Content Credentials provide a transparent look into the origin and history of media files such as images, video files, audio files, and documents.",
+   "цитата": "Content Credentials provide a transparent look into the origin and history of\nmedia files, for example, images, video files, audio files, and documents.",
+   "источник_цитаты": "txt",
+   "раздел": "Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-2",
+   "вид": "объяснение",
+   "утверждение_en": "The C2PA technical specification for Content Credentials ('C2PA metadata') uses cryptographically signed metadata to provide secure, verifiable records of a media file's origin and changes; being signed, the information is tamper-evident.",
+   "цитата": "Coalition for Content Provenance and Authenticity (C2PA) is an open standards\norganization that has developed a technical specification for Content\nCredentials, called \"C2PA metadata\". This technology utilizes\ncryptographically signed metadata to provide secure and verifiable records\nof a media file's origin and any changes it's undergone. Being cryptographically\nsigned, this information is tamper-evident, helping you verify the authenticity\nof the media asset.",
+   "источник_цитаты": "txt",
+   "раздел": "Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-3",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials include information about the creation process, the tools used, and edits made to a media file; if an AI tool generates an image, the Content Credentials indicate that the image was AI-generated.",
+   "цитата": "Content Credentials include information about the creation process, the tools\nused, and edits that were made to a media file. For example, if you use an AI\ntool to generate an image, the Content Credentials will indicate that the image\nwas AI-generated.",
+   "источник_цитаты": "txt",
+   "раздел": "Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-4",
+   "вид": "факт",
+   "утверждение_en": "If you generate a media file such as an image using a supported Google model, Content Credentials are automatically added and signed by Google LLC.",
+   "цитата": "If you generate a media file, such as an image, using a supported Google model,\nContent Credentials are automatically added and signed by Google LLC.",
+   "источник_цитаты": "txt",
+   "раздел": "How to Use Content Credentials",
+   "модели": "не указано (поддерживаемые модели — в разделе Supported models)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Автоматически, без параметра запроса; способа отключить страница не называет."
+  },
+  {
+   "код": "E-55-5",
+   "вид": "факт",
+   "утверждение_en": "When viewing a file with Content Credentials in a C2PA-compatible application, you can see the file's history, such as the device, app, or service used to create and edit it.",
+   "цитата": "On the other hand, if you're viewing a file with Content Credentials in a\nC2PA-compatible application, you can view the file's history,\nsuch as the device, app, or service used to create and edit the file.",
+   "источник_цитаты": "txt",
+   "раздел": "How to Use Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-6",
+   "вид": "объяснение",
+   "утверждение_en": "C2PA doesn't classify media as 'real' or 'fake'; it authenticates the source of the information and ensures the content hasn't been tampered with, so even an AI-generated image is 'authentic' if it has valid Content Credentials describing how it was created or modified.",
+   "цитата": "Note that C2PA doesn't classify media as \"real\" or \"fake\". It\nfocuses on authenticating the source of the information and ensures that the\ncontent hasn't been tampered with. Even an AI-generated image is regarded as\n\"authentic\" if it has valid Content Credentials that describe how it was\ncreated or modified.",
+   "источник_цитаты": "txt",
+   "раздел": "How to Use Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-7",
+   "вид": "ограничение",
+   "утверждение_en": "C2PA doesn't guarantee the truthfulness of the assertions in the Content Credentials; the consumer of the media file is responsible for deciding whether its source or owner is trustworthy.",
+   "цитата": "Moreover, C2PA doesn't guarantee the\ntruthfulness of the assertions in the Content Credentials. The consumer of the\nmedia file is responsible for deciding whether the source or owner of file\nis trustworthy or not.",
+   "источник_цитаты": "txt",
+   "раздел": "How to Use Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-8",
+   "вид": "инструкция",
+   "утверждение_en": "To verify the Content Credentials for a media file, go to the Content Credentials website.",
+   "цитата": "To verify the Content Credentials for a media file, go to the\nContent Credentials website.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify Content Credentials",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-9",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials are verifiable if the media file was created, edited, and published using only C2PA-aware tools.",
+   "цитата": "If the media file was created, edited, and published using only\nC2PA-aware tools, the Content Credentials are verifiable.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-55-10",
+   "вид": "предупреждение",
+   "утверждение_en": "Any modification to a C2PA-compliant media file using a non-C2PA tool is considered tampering and results in a validation failure.",
+   "цитата": "Any modification to a C2PA-compliant media file using a\nnon-C2PA tool is considered tampering, resulting in a validation\nfailure.",
+   "источник_цитаты": "txt",
+   "раздел": "Verify Content Credentials",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Прямое следствие для пост-обработки сгенерированных картинок сторонними инструментами."
+  },
+  {
+   "код": "E-55-11",
+   "вид": "факт",
+   "утверждение_en": "All images or videos created or modified using the listed models are automatically digitally signed by Google LLC, with 'Google Media Processing Services' specified as the app or device used in the Content Credential.",
+   "цитата": "Content Credentials are supported by the following models. All images or\nvideos created or modified using the listed models are automatically digitally\nsigned by Google LLC. \"Google Media Processing Services\" is specified as the app\nor device used in the Content Credential.",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-2.5-flash-image (Nano Banana)",
+    "и другие модели списка"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "\"created or modified\" — подпись ставится и при редактировании."
+  },
+  {
+   "код": "E-55-12",
+   "вид": "факт",
+   "утверждение_en": "The Gemini image models supporting Content Credentials are gemini-3.1-flash-lite-image, gemini-3-pro-image, gemini-3.1-flash-image and gemini-2.5-flash-image.",
+   "цитата": "gemini-3.1-flash-lite-image\ngemini-3-pro-image\ngemini-3.1-flash-image\ngemini-2.5-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "модели_сравнение"
+   ],
+   "заметка": "Цитата — четыре строки списка подряд."
+  },
+  {
+   "код": "E-55-13",
+   "вид": "факт",
+   "утверждение_en": "Other models on the Content Credentials list are gemini-omni-1.1-flash-preview, gemini-omni-flash-preview, virtual-try-on-001, Veo 2.0/3.0/3.1 generate models, and lyria-3-clip-preview and lyria-3-pro-preview.",
+   "цитата": "gemini-omni-1.1-flash-preview\ngemini-omni-flash-preview",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": [
+    "gemini-omni-1.1-flash-preview",
+    "gemini-omni-flash-preview",
+    "virtual-try-on-001",
+    "veo-2.0/3.0/3.1 (13 id)",
+    "lyria-3-clip-preview",
+    "lyria-3-pro-preview"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "другое"
+   ],
+   "заметка": "Цитата покрывает первые две строки (omni); virtual-try-on-001 (строка 1092), 13 id Veo (1093-1105), 2 id Lyria (1106-1107) перечислены в ведомости."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-55-14",
+   "вид": "правило",
+   "утверждение_en": "Images produced or edited by the Nano Banana models on this platform carry Google-signed C2PA Content Credentials automatically; to keep them verifiable, any later processing must use only C2PA-aware tools, because editing with a non-C2PA tool counts as tampering and fails validation.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-55-4, E-55-11, E-55-12, E-55-9, E-55-10",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Сила оставлена \"факт\": страница описывает последствия, а не требует сохранять подпись."
+  },
+  {
+   "код": "E-55-15",
+   "вид": "объяснение",
+   "утверждение_en": "On this page Content Credentials are a provenance/integrity mechanism, not a truth or real-vs-fake classifier: they record that an image was AI-generated and by which service, and an AI image with valid credentials counts as 'authentic'.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-55-3, E-55-6, E-55-7",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "В разделе Supported models сказано 'All images or videos created or modified using the listed models are automatically digitally signed', но в списке есть музыкальные модели lyria-3-clip-preview и lyria-3-pro-preview (аудио), а вступление говорит о media files вообще, включая audio.",
+  "Блок What's next упоминает только 'Nano Banana and Nano Banana Pro', тогда как список поддерживаемых моделей содержит четыре image-модели (включая 3.1 Flash Image и 3.1 Flash-Lite Image)."
+ ],
+ "не_сказано": [
+  "Не сказано, можно ли отключить добавление Content Credentials.",
+  "Нет упоминания SynthID (невидимого водяного знака) — только C2PA-метаданные.",
+  "Не указана версия C2PA-спецификации.",
+  "Не сказано, какие популярные инструменты являются C2PA-aware и что происходит при простом пересохранении/сжатии файла.",
+  "Не описано, в каком формате/поле файла хранятся креденшелы и как они ведут себя при выдаче через API (base64)."
+ ],
+ "сомнения": [
+  "Страница не даёт URL \"Content Credentials website\" в тексте (только ссылка)."
+ ]
+}

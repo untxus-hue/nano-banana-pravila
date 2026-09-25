@@ -1,0 +1,229 @@
+{
+ "id": 327,
+ "url": "https://blog.google/feed/synthid-reimagine-magic-editor",
+ "заголовок": "Google Photos brings SynthID to Reimagine in Magic Editor",
+ "дата_в_тексте": "Feb 06, 2025 (html: article:published_time 2025-02-06, datePublished 2025-02-06T17:00:00+00:00, dateModified 2026-01-07T18:56:32)",
+ "официальность": {
+  "домен": "blog.google (раздел feed, короткий пост)",
+  "второй_признак": "текст от лица Google («We’re bringing SynthID…», «We'll continue gathering feedback»); JSON-LD publisher = Organization «Google»; автор не указан. Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Короткая заметка ленты blog.google (06.02.2025) для пользователей Google Photos: изображения, отредактированные генеративным ИИ через Reimagine в Magic Editor, начинают помечаться невидимым водяным знаком SynthID. Три абзаца: что такое SynthID и что он уже применяется к полностью сгенерированным картинкам (пример — Imagen); оговорка, что мелкие правки могут не помечаться и не обнаруживаться, и инструмент «About this image» для проверки; обещание дальнейших мер прозрачности. Эпоха до Nano Banana; модель Reimagine не названа.",
+ "модели_на_странице": [
+  "Imagen (text-to-image; ссылка на Imagen 3)",
+  "SynthID (технология водяного знака)",
+  "Reimagine в Magic Editor — модель не названа"
+ ],
+ "структура": [
+  "Обвязка blog.google",
+  "Заголовок, дата",
+  "Абзац 1: SynthID для Reimagine, определение, Imagen",
+  "Абзац 2: мелкие правки, About this image",
+  "Абзац 3: дальнейшие меры",
+  "Иллюстрация",
+  "Posted in / Related stories / подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Google Photos brings SynthID to Reimagine in Magic Editor",
+   "итог": "ничего: заголовок вкладки (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / Innovation & AI … Feed / []",
+   "итог": "ничего: обвязка (шапка и мега-меню, строки 2-157; сверено diff с меню стр.188 после нормализации пробелов — совпадает)"
+  },
+  {
+   "n": 3,
+   "начало": "Preferences / Global (English) … Links Images RSS feed Newsletter / Breadcrumb Home The latest news",
+   "итог": "ничего: обвязка (регионы, хлебные крошки, строки 158-195)"
+  },
+  {
+   "n": 4,
+   "начало": "We’re bringing SynthID to Reimagine in Magic Editor. / Feb 06, 2025",
+   "итог": "ничего: заголовок и дата (учтены в дата_в_тексте)"
+  },
+  {
+   "n": 5,
+   "начало": "Starting this week, Google Photos will begin using SynthID",
+   "итог": "E-327-1, E-327-2, E-327-3"
+  },
+  {
+   "n": 6,
+   "начало": "In some cases, edits made using Reimagine may be too small for SynthID",
+   "итог": "E-327-4, E-327-5"
+  },
+  {
+   "n": 7,
+   "начало": "We'll continue gathering feedback and evaluating additional solutions",
+   "итог": "E-327-6"
+  },
+  {
+   "n": 8,
+   "начало": "html: изображение, alt «A multicolored pinwheel design …»",
+   "итог": "ничего: декоративная иллюстрация (логотип-вертушка Photos)"
+  },
+  {
+   "n": 9,
+   "начало": "Posted in: Photos / AI Products",
+   "итог": "ничего: теги"
+  },
+  {
+   "n": 10,
+   "начало": "Related stories … Privacy Terms Help … Global (English) … 台灣 (中文)",
+   "итог": "ничего: обвязка (связанные статьи и подвал, строки 204-252)"
+  },
+  {
+   "n": 11,
+   "начало": "длинная дистанция: отсутствие SynthID не доказывает отсутствие правки",
+   "итог": "E-327-7"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-327-1",
+   "вид": "факт",
+   "утверждение_en": "From the week of Feb 6, 2025, Google Photos began marking images edited with generative AI via Reimagine in Magic Editor with a SynthID watermark.",
+   "цитата": "Starting this week, Google Photos will begin using SynthID",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": "не указано (Reimagine в Magic Editor; модель не названа)",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Полная фраза: «… to mark images edited with generative AI using Reimagine in Magic Editor.» (цитата разбита вставкой-определением SynthID в скобках). Ссылки html: SynthID → deepmind.google/technologies/synthid/, Reimagine → support.google.com/pixelcamera/answer/15209122."
+  },
+  {
+   "код": "E-327-2",
+   "вид": "объяснение",
+   "утверждение_en": "SynthID embeds an imperceptible digital watermark directly into AI-generated images, audio, text or video.",
+   "цитата": "(a technology that embeds an imperceptible, digital watermark directly into AI-generated images, audio, text or video)",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": [
+    "SynthID (технология, не модель генерации)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Водяной знак «внутри» контента, невидим глазу."
+  },
+  {
+   "код": "E-327-3",
+   "вид": "факт",
+   "утверждение_en": "SynthID is already used to watermark images created entirely by AI, such as those from Google's text-to-image model Imagen, helping people identify AI-generated content quickly and easily.",
+   "цитата": "You may have already seen SynthID used to watermark images created entirely by AI — like those made by Google’s text-to-image model, Imagen. This helps people identify AI-generated content quickly and easily.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 1",
+   "модели": [
+    "Imagen (text-to-image; по ссылке — Imagen 3)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ссылка html на Imagen → deepmind.google/technologies/imagen-3/ (т.е. Imagen 3 на дату поста)."
+  },
+  {
+   "код": "E-327-4",
+   "вид": "ограничение",
+   "утверждение_en": "Some Reimagine edits may be too small for SynthID to label and detect, for example changing the color of a small flower in the background.",
+   "цитата": "In some cases, edits made using Reimagine may be too small for SynthID to label and detect — like if you change the color of a small flower in the background of an image.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 2",
+   "модели": "не указано (Reimagine в Magic Editor; модель не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Порог маркировки зависит от масштаба правки: мелкие локальные правки могут остаться без SynthID."
+  },
+  {
+   "код": "E-327-5",
+   "вид": "инструкция",
+   "утверждение_en": "Use \"About this image\" to check whether an image has a SynthID watermark and to view its metadata.",
+   "цитата": "To learn more, you can use \"About this image,\" which shows if a SynthID watermark is present as well as an image’s metadata.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 2",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак",
+    "продукт_ui"
+   ],
+   "заметка": "Ссылка html: blog.google/products/search/google-about-this-image-update-july-2024/."
+  },
+  {
+   "код": "E-327-6",
+   "вид": "факт",
+   "утверждение_en": "Google said it would keep gathering feedback and evaluating additional solutions to improve transparency around AI edits in Google Photos.",
+   "цитата": "We'll continue gathering feedback and evaluating additional solutions for our users, while finding more ways to improve transparency around AI edits in Google Photos.",
+   "источник_цитаты": "txt",
+   "раздел": "Основной текст, абзац 3",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "В html «additional solutions» ведёт на пост о C2PA (blog.google/technology/ai/google-gen-ai-content-transparency-c2pa/), «transparency around AI edits» — на blog.google/products/photos/ai-editing-transparency/. Сам текст C2PA не называет."
+  },
+  {
+   "код": "E-327-7",
+   "вид": "предупреждение",
+   "утверждение_en": "Because small AI edits may escape SynthID labeling, the absence of a detected SynthID watermark does not by itself show that a photo was not AI-edited.",
+   "цитата": "edits made using Reimagine may be too small for SynthID to label and detect",
+   "источник_цитаты": "txt",
+   "раздел": "Абзацы 1-2 (целиком)",
+   "модели": "не указано (Reimagine в Magic Editor; модель не названа)",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-327-1, E-327-4, E-327-5",
+   "дата_единицы": "2025-02-06",
+   "тема": [
+    "безопасность_водяной_знак",
+    "редактирование"
+   ],
+   "заметка": "Вывод из сочетания «SynthID помечает правки» + «мелкие правки могут не помечаться/не обнаруживаться». Прямо на странице такой формулировки нет."
+  }
+ ],
+ "длинная_дистанция": [
+  "E-327-7: раз мелкие правки могут не получить SynthID, отсутствие найденного знака не доказывает, что правки ИИ не было.",
+  "Страница различает два случая маркировки: изображения, целиком созданные ИИ (Imagen), и фото, частично отредактированные ИИ (Reimagine); для второго случая надёжность маркировки зависит от размера правки.",
+  "О видимом водяном знаке для Reimagine не сказано ничего — речь только о невидимом SynthID.",
+  "dateModified 2026-01-07 при публикации 2025-02-06: страница обновлялась, но видимый текст датирован только 06.02.2025."
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Какая модель работает в Reimagine.",
+  "Есть ли видимая пометка на изображениях после Reimagine.",
+  "Где проходит порог «слишком маленькой» правки (площадь, характер правки).",
+  "Добавляются ли метаданные IPTC/C2PA (только ссылка «additional solutions»)."
+ ],
+ "сомнения": [
+  "Страница относится к эпохе Imagen/Magic Editor, до моделей Nano Banana; к ним напрямую не применима, но описывает механизм SynthID для правок.",
+  "Ограничение про мелкие правки сформулировано для Reimagine; распространяется ли оно на SynthID в правках других моделей — страница не говорит."
+ ]
+}

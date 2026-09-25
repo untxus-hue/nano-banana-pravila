@@ -1,0 +1,960 @@
+{
+ "id": 6,
+ "url": "https://ai.google.dev/gemini-api/docs/gemini-3",
+ "заголовок": "Gemini 3 developer guide",
+ "дата_в_тексте": "Last updated 2026-09-23 UTC (подвал .txt и html); meta published_time/datePublished в html не найдено",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: \"For details, see the Google Developers Site Policies\", лицензия CC BY 4.0 / Apache 2.0; текст от лица Google (\"our highest quality image generation model\")",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Общий девелоперский гайд Gemini API по семейству Gemini 3 (для разработчиков, Interactions API), помеченный как устаревший (Deprecation notice: смотреть What's new in Gemini 3.5 Flash). Основной объём — текстовые модели: thinking_level, temperature, thought signatures, structured outputs, code execution с картинками (анализ), multimodal function responses, миграция с 2.5, prompting best practices, FAQ. Для генерации картинок важны: раздел Meet the Gemini 3 series (Nano Banana Pro = Gemini 3 Pro Image, Nano Banana 2 = Gemini 3.1 Flash Image; таблица контекстов/цен), раздел Image generation (reasoning+grounding, 2K/4K и текст, google_search, Google Image Search только для 3.1 Flash Image, conversational editing на thought signatures, пример Tokyo weather infographic с response_format image 16:9 4K), и общий раздел Thought signatures. Код дан на 5 языках, в .txt разбит по токену — читался по html. Термины страницы: thought signatures, stateful/stateless mode, grounded generation, conversational editing. Повторяется акцент на default temperature 1.0 (в двух разделах).",
+ "модели_на_странице": [
+  "gemini-3-pro-image-preview (Nano Banana Pro, Gemini 3 Pro Image)",
+  "gemini-3.1-flash-image-preview (Nano Banana 2, Gemini 3.1 Flash Image)",
+  "текстовые: gemini-3.1-pro-preview, gemini-3-flash-preview, gemini-3.1-flash-lite, gemini-3.1-pro-preview-customtools; упоминание Gemini 2.5 Flash (сегментация), баннер Gemini 3.8 Flash, ссылка на Gemini 3.5 Flash"
+ ],
+ "структура": [
+  "Deprecation notice + вступление",
+  "Get started (код)",
+  "Meet the Gemini 3 series (+ таблица моделей)",
+  "New API features in Gemini 3: Level of thinking",
+  "Temperature",
+  "Thought signatures",
+  "Structured Outputs with tools",
+  "Image generation",
+  "Code Execution with images",
+  "Multimodal function responses",
+  "Combine built-in tools and function calling",
+  "Migration from Gemini 2.5",
+  "OpenAI compatibility",
+  "Prompting best practices",
+  "FAQ"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini 3 developer guide | Gemini API",
+   "итог": "ничего: заголовок страницы (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта (языки, верхнее меню, баннер \"Gemini 3.8 Flash is now available\", хлебные крошки, Send feedback; строки 2-39)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3 developer guide",
+   "итог": "ничего: заголовок статьи (строка 40)"
+  },
+  {
+   "n": 4,
+   "начало": "Deprecation notice: This page is",
+   "итог": "E-6-1"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 3 is our most",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 6,
+   "начало": "Explore our collection of Gemini",
+   "итог": "ничего: ссылка на приложения/маркетинг"
+  },
+  {
+   "n": 7,
+   "начало": "Get started with a few lines of code (Python/JavaScript/Java/Go/REST)",
+   "итог": "ничего: код без промпта картинок (текстовая модель gemini-3.1-pro-preview, запрос про race condition; строки 59-371)"
+  },
+  {
+   "n": 8,
+   "начало": "Meet the Gemini 3 series Gemini 3.1 Pro / Gemini 3 Flash",
+   "итог": "ничего: не про генерацию картинок (описание текстовых моделей)"
+  },
+  {
+   "n": 9,
+   "начало": "Nano Banana Pro (also known",
+   "итог": "E-6-2"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini 3.1 Flash-Lite is our",
+   "итог": "ничего: не про генерацию картинок (текстовая модель gemini-3.1-flash-lite, не Nano Banana 2 Lite)"
+  },
+  {
+   "n": 11,
+   "начало": "All Gemini 3 models are",
+   "итог": "E-6-3"
+  },
+  {
+   "n": 12,
+   "начало": "Model ID / Context Window / Knowledge Cutoff / Pricing",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 13,
+   "начало": "gemini-3.1-flash-lite 1M / 64k",
+   "итог": "ничего: не про картинки (строка таблицы текстовой модели)"
+  },
+  {
+   "n": 14,
+   "начало": "gemini-3.1-flash-image-preview 128k / 32k",
+   "итог": "E-6-4"
+  },
+  {
+   "n": 15,
+   "начало": "gemini-3.1-pro-preview 1M / 64k",
+   "итог": "ничего: не про картинки (строка таблицы)"
+  },
+  {
+   "n": 16,
+   "начало": "gemini-3-flash-preview 1M / 64k",
+   "итог": "ничего: не про картинки (строка таблицы)"
+  },
+  {
+   "n": 17,
+   "начало": "gemini-3-pro-image-preview 65k / 32k",
+   "итог": "E-6-5"
+  },
+  {
+   "n": 18,
+   "начало": "* Pricing is per 1 million",
+   "итог": "E-6-6"
+  },
+  {
+   "n": 19,
+   "начало": "** Image pricing varies by resolution",
+   "итог": "E-6-6"
+  },
+  {
+   "n": 20,
+   "начало": "For detailed limits, pricing, and",
+   "итог": "ничего: ссылка на страницу моделей"
+  },
+  {
+   "n": 21,
+   "начало": "New API features in Gemini 3",
+   "итог": "ничего: вводная фраза раздела"
+  },
+  {
+   "n": 22,
+   "начало": "Level of thinking Gemini 3 series",
+   "итог": "ничего: не про генерацию картинок (thinking_level описан для текстовых моделей; image-модели в таблице уровней отсутствуют, см. длинную дистанцию)"
+  },
+  {
+   "n": 23,
+   "начало": "Thinking Level table (minimal/low/medium/high)",
+   "итог": "ничего: не про картинки (колонки только 3.1 Pro, 3.1 Flash-Lite, 3 Flash)"
+  },
+  {
+   "n": 24,
+   "начало": "Python/JavaScript/Java/Go/REST thinking_level \"low\"",
+   "итог": "ничего: код без промпта картинок (строки 468-829)"
+  },
+  {
+   "n": 25,
+   "начало": "Important: You cannot use both thinking_level",
+   "итог": "ничего: не про картинки (параметры thinking текстовых моделей)"
+  },
+  {
+   "n": 26,
+   "начало": "Temperature For all Gemini 3",
+   "итог": "E-6-7"
+  },
+  {
+   "n": 27,
+   "начало": "While previous models often benefited",
+   "итог": "E-6-8"
+  },
+  {
+   "n": 28,
+   "начало": "Thought signatures Gemini 3 models",
+   "итог": "E-6-9"
+  },
+  {
+   "n": 29,
+   "начало": "Stateful Mode (Recommended) : When",
+   "итог": "E-6-10"
+  },
+  {
+   "n": 30,
+   "начало": "Stateless Mode : If you are",
+   "итог": "E-6-11"
+  },
+  {
+   "n": 31,
+   "начало": "For detailed information, see the Thought Signatures page",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 32,
+   "начало": "Structured Outputs with tools Gemini",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "Python/JavaScript/Java/Go/REST MatchResult schema",
+   "итог": "ничего: код без промпта картинок (строки 870-1754)"
+  },
+  {
+   "n": 34,
+   "начало": "Image generation Gemini 3.1 Flash",
+   "итог": "E-6-12, E-6-13"
+  },
+  {
+   "n": 35,
+   "начало": "New & improved capabilities:",
+   "итог": "ничего: подзаголовок списка"
+  },
+  {
+   "n": 36,
+   "начало": "4K & text rendering: Generate",
+   "итог": "E-6-14"
+  },
+  {
+   "n": 37,
+   "начало": "Grounded generation: Use the google_search",
+   "итог": "E-6-15, E-6-16"
+  },
+  {
+   "n": 38,
+   "начало": "Conversational editing: Multi-turn image editing",
+   "итог": "E-6-17, E-6-18"
+  },
+  {
+   "n": 39,
+   "начало": "For complete details on aspect ratios",
+   "итог": "ничего: ссылка на Image Generation guide"
+  },
+  {
+   "n": 40,
+   "начало": "Python (image generation, gemini-3-pro-image-preview)",
+   "итог": "E-6-19, E-6-21"
+  },
+  {
+   "n": 41,
+   "начало": "JavaScript (image generation)",
+   "итог": "повтор E-6-19/E-6-21: отличие — промпт \"Generate a visualization of the current weather in Tokyo.\" вместо \"an infographic\"; вывод через Buffer.from(interaction.output_image.data, \"base64\")"
+  },
+  {
+   "n": 42,
+   "начало": "Java (image generation)",
+   "итог": "повтор E-6-19/E-6-20/E-6-21: тот же промпт \"infographic\", enum ONE_HUNDRED_AND_SIXTY_NINE / FOUR_K"
+  },
+  {
+   "n": 43,
+   "начало": "Go (image generation)",
+   "итог": "повтор E-6-19/E-6-20/E-6-21: тот же промпт \"infographic\""
+  },
+  {
+   "n": 44,
+   "начало": "REST curl … \"response_format\": { \"type\": \"image\"",
+   "итог": "E-6-20 (промпт \"visualization\" — повтор E-6-19 с отличием)"
+  },
+  {
+   "n": 45,
+   "начало": "Example Response",
+   "итог": "ничего: картинка-результат (weather-tokyo.jpg, alt \"Weather Tokyo\") без текста"
+  },
+  {
+   "n": 46,
+   "начало": "Code Execution with images Gemini 3 Flash",
+   "итог": "ничего: не про генерацию картинок (анализ/обработка входной картинки кодом, Gemini 3 Flash)"
+  },
+  {
+   "n": 47,
+   "начало": "Use cases: Zoom and inspect / Visual math / Image annotation",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 48,
+   "начало": "To enable visual thinking, configure Code Execution",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 49,
+   "начало": "Python/JavaScript/Java/Go/REST expression pedals",
+   "итог": "ничего: код без промпта генерации (строки 2460-3689; запрос на анализ фото)"
+  },
+  {
+   "n": 50,
+   "начало": "For more details on code execution",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 51,
+   "начало": "Multimodal function responses Multimodal function calling",
+   "итог": "ничего: не про генерацию картинок (картинка как результат функции)"
+  },
+  {
+   "n": 52,
+   "начало": "Python/JavaScript/Java/Go/REST get_image tool",
+   "итог": "ничего: код без промпта генерации (строки 3699-5317)"
+  },
+  {
+   "n": 53,
+   "начало": "Combine built-in tools and function calling",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "Python/JavaScript/Java/Go getWeather",
+   "итог": "ничего: код без промпта картинок (строки 5326-6448)"
+  },
+  {
+   "n": 55,
+   "начало": "Migration from Gemini 2.5 Gemini",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 56,
+   "начало": "Thinking: If you were previously",
+   "итог": "ничего: не про картинки (миграция reasoning-промптов текстовых моделей)"
+  },
+  {
+   "n": 57,
+   "начало": "Temperature settings: If your existing",
+   "итог": "повтор E-6-7/E-6-8 (миграционная формулировка: убрать явный temperature и использовать дефолт 1.0)"
+  },
+  {
+   "n": 58,
+   "начало": "PDF & document understanding:",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "Token consumption: Migrating to Gemini",
+   "итог": "ничего: не про генерацию картинок (PDF/видео)"
+  },
+  {
+   "n": 60,
+   "начало": "Image segmentation: Image segmentation capabilities",
+   "итог": "ничего: не про генерацию (сегментация — анализ картинок; Gemini 3 Pro/Flash)"
+  },
+  {
+   "n": 61,
+   "начало": "Computer Use: Gemini 3 Pro",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 62,
+   "начало": "Tool support : Combining built-in",
+   "итог": "ничего: не про картинки (image-модели не названы)"
+  },
+  {
+   "n": 63,
+   "начало": "OpenAI compatibility For users utilizing",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 64,
+   "начало": "Prompting best practices Gemini 3",
+   "итог": "E-6-22"
+  },
+  {
+   "n": 65,
+   "начало": "Precise instructions: Be concise in",
+   "итог": "E-6-22"
+  },
+  {
+   "n": 66,
+   "начало": "Output verbosity: By default, Gemini",
+   "итог": "ничего: не про генерацию картинок (многословность текстовых ответов)"
+  },
+  {
+   "n": 67,
+   "начало": "Context management: When working with",
+   "итог": "ничего: не про генерацию картинок (порядок инструкций при больших текстовых/видео-контекстах)"
+  },
+  {
+   "n": 68,
+   "начало": "Learn more about prompt design",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 69,
+   "начало": "FAQ What is the knowledge",
+   "итог": "повтор E-6-4/E-6-5 (knowledge cutoff January 2025; совет использовать Search Grounding для свежих данных — ср. E-6-15)"
+  },
+  {
+   "n": 70,
+   "начало": "What are the context window",
+   "итог": "ничего: общий ответ для Gemini 3 (1M / 64k), противоречит строкам таблицы image-моделей — см. противоречия_внутри"
+  },
+  {
+   "n": 71,
+   "начало": "Is there a free tier",
+   "итог": "ничего: не про картинки (image-модели не названы)"
+  },
+  {
+   "n": 72,
+   "начало": "Will my old thinking_budget code",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 73,
+   "начало": "Does Gemini 3 support the Batch API",
+   "итог": "ничего: общий ответ про Gemini 3, image-модели не названы"
+  },
+  {
+   "n": 74,
+   "начало": "Is Context Caching supported?",
+   "итог": "ничего: общий ответ про Gemini 3, image-модели не названы"
+  },
+  {
+   "n": 75,
+   "начало": "Which tools are supported in",
+   "итог": "ничего: общий ответ про Gemini 3, image-модели не названы"
+  },
+  {
+   "n": 76,
+   "начало": "What is gemini-3.1-pro-preview-customtools?",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 77,
+   "начало": "Send feedback Except as otherwise noted",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies, \"Last updated 2026-09-23 UTC\" — дата вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 78,
+   "начало": "Need to tell us more? … Terms Privacy",
+   "итог": "ничего: обвязка (виджет отзыва, подвал, языки; строки 6596-6622)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-6-1",
+   "вид": "предупреждение",
+   "утверждение_en": "This page is deprecated and will be removed; the 'What's new in Gemini 3.5 Flash' guide holds the latest developer guidance, migration instructions, prompting best practices and feature overview for all Gemini 3.x models.",
+   "цитата": "This page is deprecated and will be removed.\n  See the\nWhat's new\n  in Gemini 3.5 Flash\nguide for the latest developer guidance, including\n  migration instructions, prompting best practices, and an updated feature\n  overview for all Gemini 3.x models.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 developer guide (Deprecation notice)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Статус всего источника: страница помечена устаревшей; все единицы страницы требуют сверки с актуальным гайдом."
+  },
+  {
+   "код": "E-6-2",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro (also known as Gemini 3 Pro Image) is Google's highest quality image generation model, and Nano Banana 2 (also known as Gemini 3.1 Flash Image) is the high-volume, high-efficiency, lower price-point equivalent.",
+   "цитата": "Nano Banana Pro (also known as Gemini 3 Pro Image) is our highest quality image\ngeneration model, and Nano Banana 2 (also known as Gemini 3.1 Flash Image) is\nthe high-volume, high-efficiency, lower price-point equivalent.",
+   "источник_цитаты": "txt",
+   "раздел": "Meet the Gemini 3 series",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-3",
+   "вид": "факт",
+   "утверждение_en": "All Gemini 3 models are currently in preview.",
+   "цитата": "All Gemini 3 models are currently in preview.",
+   "источник_цитаты": "txt",
+   "раздел": "Meet the Gemini 3 series",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "и текстовые модели Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Раскрыто из фразы \"All Gemini 3 models\": в разделе к серии отнесены Nano Banana Pro и Nano Banana 2. На момент страницы (обновлена 2026-09-23, но помечена устаревшей)."
+  },
+  {
+   "код": "E-6-4",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3.1-flash-image-preview has a 128k input / 32k output context window, a January 2025 knowledge cutoff, and is priced at $0.25 per 1M text input tokens and $0.067 image output.",
+   "цитата": "gemini-3.1-flash-image-preview\n128k / 32k\nJan 2025\n$0.25 (Text Input) / $0.067 (Image Output)**",
+   "источник_цитаты": "txt",
+   "раздел": "Meet the Gemini 3 series (таблица)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "\"$0.067 (Image Output)**\" — единица цены не указана явно (сноска * говорит \"per 1 million tokens unless otherwise noted\", сноска ** — цена картинки зависит от разрешения)."
+  },
+  {
+   "код": "E-6-5",
+   "вид": "лимит",
+   "утверждение_en": "gemini-3-pro-image-preview has a 65k input / 32k output context window, a January 2025 knowledge cutoff, and is priced at $2 per 1M text input tokens and $0.134 image output.",
+   "цитата": "$0.50 / $3\ngemini-3-pro-image-preview\n65k / 32k\nJan 2025\n$2 (Text Input) / $0.134 (Image Output)**",
+   "источник_цитаты": "txt",
+   "раздел": "Meet the Gemini 3 series (таблица)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "То же замечание о единице цены image output, что и у E-6-4."
+  },
+  {
+   "код": "E-6-6",
+   "вид": "факт",
+   "утверждение_en": "In the model table, pricing is per 1 million tokens unless otherwise noted, and image pricing varies by resolution (details on the pricing page).",
+   "цитата": "* Pricing is per 1 million tokens unless otherwise noted.\n** Image pricing varies by resolution. See the",
+   "источник_цитаты": "txt",
+   "раздел": "Meet the Gemini 3 series (таблица)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Сноски * и ** к таблице; модели выведены из того, что ** стоит только у двух image-строк."
+  },
+  {
+   "код": "E-6-7",
+   "вид": "правило",
+   "утверждение_en": "For all Gemini 3 models, Google strongly recommends keeping the temperature parameter at its default value of 1.0.",
+   "цитата": "For all Gemini 3 models, we strongly recommend keeping the temperature parameter\nat its default value of\n1.0\n.",
+   "источник_цитаты": "txt",
+   "раздел": "New API features in Gemini 3 / Temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Формула \"all Gemini 3 models\"; в разделе Meet the Gemini 3 series к серии отнесены и image-модели, но обоснование ниже про reasoning/математику текстовых моделей. Применимость к Nano Banana Pro/2 страницей прямо не подтверждена."
+  },
+  {
+   "код": "E-6-8",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 3's reasoning capabilities are optimized for the default temperature; setting it below 1.0 may lead to unexpected behavior such as looping or degraded performance, particularly in complex mathematical or reasoning tasks.",
+   "цитата": "While previous models often benefited from tuning temperature to control\ncreativity versus determinism, Gemini 3's reasoning capabilities are optimized\nfor the default setting. Changing the temperature (setting it below 1.0) may\nlead to unexpected behavior, such as looping or degraded performance,\nparticularly in complex mathematical or reasoning tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "New API features in Gemini 3 / Temperature",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Та же оговорка о применимости к image-моделям."
+  },
+  {
+   "код": "E-6-9",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 models use thought signatures, encrypted representations of the model's internal thought process, to maintain reasoning context across API calls.",
+   "цитата": "Gemini 3 models use thought signatures to maintain reasoning context across API calls. These signatures are encrypted representations of the model's internal thought process.",
+   "источник_цитаты": "txt",
+   "раздел": "New API features in Gemini 3 / Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Связано с разделом Image generation: conversational editing \"relies on Thought Signatures\" (E-6-16)."
+  },
+  {
+   "код": "E-6-10",
+   "вид": "инструкция",
+   "утверждение_en": "Stateful mode (recommended): when using the Interactions API with previous_interaction_id, the server automatically manages conversation history and thought signatures.",
+   "цитата": "Stateful Mode (Recommended)\n: When using the Interactions API in stateful mode (providing\nprevious_interaction_id\n), the server automatically manages conversation history and thought signatures.",
+   "источник_цитаты": "txt",
+   "раздел": "New API features in Gemini 3 / Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-11",
+   "вид": "правило",
+   "утверждение_en": "Stateless mode: if you manage conversation history manually, you must include thought blocks with their signatures in subsequent requests to validate authenticity.",
+   "цитата": "Stateless Mode\n: If you are managing conversation history manually, you must include thought blocks with their signatures in subsequent requests to validate authenticity.",
+   "источник_цитаты": "txt",
+   "раздел": "New API features in Gemini 3 / Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-12",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image and Gemini 3 Pro Image let you generate and edit images from text prompts.",
+   "цитата": "Gemini 3.1 Flash Image and Gemini 3 Pro Image let you generate and edit images\nfrom text prompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-13",
+   "вид": "объяснение",
+   "утверждение_en": "The image model uses reasoning to 'think' through a prompt and can retrieve real-time data, such as weather forecasts or stock charts, using Google Search grounding before generating high-fidelity images.",
+   "цитата": "It uses\nreasoning to \"think\" through a prompt and can retrieve real-time data—such as\nweather forecasts or stock charts—before using\nGoogle Search\ngrounding before generating high-fidelity\nimages.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "grounding"
+   ],
+   "заметка": "В тексте \"It uses\" в единственном числе после двух моделей; относится к обеим по контексту раздела."
+  },
+  {
+   "код": "E-6-14",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 3 image models can generate sharp, legible text and diagrams with up to 2K and 4K resolutions.",
+   "цитата": "4K & text rendering:\nGenerate sharp, legible text and diagrams with up\nto 2K and 4K resolutions.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "форматы_разрешение"
+   ],
+   "заметка": "Модели — из вводной раздела (3.1 Flash Image и 3 Pro Image)."
+  },
+  {
+   "код": "E-6-15",
+   "вид": "приём",
+   "утверждение_en": "Use the google_search tool to verify facts and generate imagery based on real-world information.",
+   "цитата": "Grounded generation:\nUse the\ngoogle_search\ntool to verify facts and\ngenerate imagery based on real-world information.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-16",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Image Search is available for Gemini 3.1 Flash Image.",
+   "цитата": "Grounding with Google\nImage\nSearch available for Gemini 3.1 Flash Image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Для Gemini 3 Pro Image не заявлено (длинная дистанция). Как включить — на странице не показано."
+  },
+  {
+   "код": "E-6-17",
+   "вид": "пример_промпта",
+   "утверждение_en": "Conversational editing is multi-turn image editing done by simply asking for changes, e.g. \"Make the background a sunset\".",
+   "цитата": "Conversational editing:\nMulti-turn image editing by simply asking for\nchanges (e.g., \"Make the background a sunset\").",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Пример правки в следующем ходе: короткая повелительная фраза \"Make the <элемент> <новое состояние>\" — называет только изменяемый элемент и целевое состояние, без повторного описания всей сцены."
+  },
+  {
+   "код": "E-6-18",
+   "вид": "объяснение",
+   "утверждение_en": "The conversational editing workflow relies on Thought Signatures to preserve visual context between turns.",
+   "цитата": "This workflow relies on\nThought Signatures\nto preserve visual context between turns.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-19",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example grounded image request: prompt 'Generate an infographic of the current weather in Tokyo.' sent to gemini-3-pro-image-preview with the google_search tool enabled.",
+   "цитата": "Generate an infographic of the current weather in Tokyo.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Структура: одна фраза \"Generate <тип вывода: infographic> of <данные реального времени: current weather> in <место>\". Работу делают: глагол генерации + явный тип графики (infographic) + запрос свежих данных, которые модель берёт через google_search. Во вкладках JavaScript и REST та же фраза с \"a visualization\" вместо \"an infographic\" (строки 1923, 2427)."
+  },
+  {
+   "код": "E-6-20",
+   "вид": "инструкция",
+   "утверждение_en": "In the Interactions API, image output is requested with response_format {\"type\": \"image\", \"aspect_ratio\": \"16:9\", \"image_size\": \"4K\"}, alongside tools [{\"type\": \"google_search\"}] for grounding.",
+   "цитата": "\"model\": \"gemini-3-pro-image-preview\",\n\"input\": \"Generate a visualization of the current weather in Tokyo.\",\n\"tools\": [{\"type\": \"google_search\"}],\n\"response_format\": {\n\"type\": \"image\",\n\"aspect_ratio\": \"16:9\",\n\"image_size\": \"4K\"\n}",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "REST-вариант (v1beta/interactions); в Java те же значения как enum ImageResponseFormatAspectRatio.ONE_HUNDRED_AND_SIXTY_NINE и ImageResponseFormatImageSize.FOUR_K, в Go — ImageResponseFormatAspectRatioOneHundredAndSixtyNine и ImageResponseFormatImageSize(\"4K\"). Значения aspect_ratio/image_size кроме 16:9 и 4K страница не перечисляет."
+  },
+  {
+   "код": "E-6-21",
+   "вид": "инструкция",
+   "утверждение_en": "The generated image is returned in interaction.output_image; its data field is base64-encoded and must be decoded (e.g., base64.b64decode) before saving.",
+   "цитата": "generated_image = interaction.output_image\nif generated_image:\n    image_data = base64.b64decode(generated_image.data)",
+   "источник_цитаты": "html",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Код Python из html. Java: interaction.outputImage() -> Optional<ImageContent>; Go: res.Interaction.GetOutputImage()."
+  },
+  {
+   "код": "E-6-22",
+   "вид": "правило",
+   "утверждение_en": "Gemini 3 is a reasoning model: be concise in input prompts, since it responds best to direct, clear instructions and may over-analyze verbose or overly complex prompt engineering techniques used for older models.",
+   "цитата": "Gemini 3 is a reasoning model, which changes how you should prompt.\nPrecise instructions:\nBe concise in your input prompts. Gemini 3 responds\nbest to direct, clear instructions. It may over-analyze verbose or overly\ncomplex prompt engineering techniques used for older models.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Раздел про Gemini 3 в целом, image-модели не названы; но раздел Image generation говорит, что image-модели тоже \"think\" через промпт. Применимость к Nano Banana — не подтверждена страницей, сохранено с этой оговоркой."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-6-23",
+   "вид": "правило",
+   "утверждение_en": "For multi-turn (conversational) image editing through the Interactions API, visual context depends on thought signatures: either use stateful mode with previous_interaction_id, where the server manages them, or, when managing history manually, send back the thought blocks with their signatures.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation + Thought signatures",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-6-18, E-6-10, E-6-11",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Связка раздела Image generation с общим разделом Thought signatures."
+  },
+  {
+   "код": "E-6-24",
+   "вид": "объяснение",
+   "утверждение_en": "The page's statements about the 'Gemini 3' family often do not cover the image models: the image models have much smaller context windows (128k/32k and 65k/32k) than the FAQ's 1M/64k, and the thinking_level table lists no image model. Generic Gemini 3 advice (thinking_level, temperature, prompting best practices) is therefore not confirmed for Nano Banana Pro / Nano Banana 2.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-6-4, E-6-5, E-6-7, E-6-22 и строк таблицы thinking_level / FAQ",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-25",
+   "вид": "объяснение",
+   "утверждение_en": "All image-generation examples on the page follow one pattern: a one-sentence prompt asking for a data-driven graphic (infographic/visualization) of real-time information, the google_search tool for grounding, and response_format fixing type image, a 16:9 aspect ratio and 4K size; only gemini-3-pro-image-preview is used in code.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-6-19, E-6-20, E-6-13, E-6-15",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-6-26",
+   "вид": "предупреждение",
+   "утверждение_en": "Image capabilities are described with 'up to 2K and 4K' and 'Grounding with Google Image Search' only for Gemini 3.1 Flash Image; the page gives no list of supported aspect ratios or sizes and points to the Image Generation guide, so model-by-model differences must be checked there.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)",
+    "gemini-3-pro-image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-6-14, E-6-16, E-6-20 и ссылки на Image Generation guide",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "grounding"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "FAQ: 'Gemini 3 models support a 1 million token input context window and up to 64k tokens of output' (строки 6531-6532) против таблицы: gemini-3.1-flash-image-preview 128k / 32k и gemini-3-pro-image-preview 65k / 32k (E-6-4, E-6-5).",
+  "Промпт примера различается по вкладкам: Python/Java/Go — 'Generate an infographic of the current weather in Tokyo.', JavaScript/REST — 'Generate a visualization of the current weather in Tokyo.'",
+  "'All Gemini 3 models are currently in preview' при баннере 'Gemini 3.8 Flash is now available' и отсылке к Gemini 3.5 Flash — страница устарела (Deprecation notice)."
+ ],
+ "не_сказано": [
+  "Не перечислены поддерживаемые aspect_ratio и image_size (показаны только 16:9 и 4K; отсылка к Image Generation guide).",
+  "Не сказано, поддерживают ли image-модели thinking_level и какой у них уровень мышления по умолчанию.",
+  "Не сказано прямо, распространяются ли рекомендация temperature=1.0 и Prompting best practices на image-модели.",
+  "Не показано, как включить Grounding with Google Image Search.",
+  "Не указана единица цены image output ($0.067 / $0.134) и зависимость от разрешения — только ссылка на pricing.",
+  "Nano Banana 2 Lite (gemini-3.1-flash-lite-image) и gemini-2.5-flash-image не упоминаются.",
+  "Нет ни одного совета по составлению промптов именно для картинок, нет упоминания SynthID/водяного знака.",
+  "Нет примера кода мультиходового редактирования картинки."
+ ],
+ "сомнения": [
+  "Страница помечена устаревшей (Deprecation notice) при Last updated 2026-09-23 — цифры и статусы (preview, цены) могут не соответствовать актуальным.",
+  "Цена $0.067/$0.134 за \"Image Output\" без единицы — вероятно за изображение базового разрешения, но страница этого не говорит.",
+  "Раздел Image generation называет две модели, но код только для gemini-3-pro-image-preview."
+ ]
+}

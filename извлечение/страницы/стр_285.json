@@ -1,0 +1,434 @@
+{
+ "id": 285,
+ "url": "https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart",
+ "заголовок": "GitHub - google-gemini/gemini-image-editing-nextjs-quickstart: Get started with native image generation and editing using Gemini 2.0 and Next.js · GitHub",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "github.com",
+  "второй_признак": "репозиторий организации google-gemini (github.com/google-gemini); ссылки на ai.google.dev и deepmind.google. Текста от лица Google ('we') и копирайта Google LLC на странице нет; демо размещено в личном Space huggingface.co/spaces/philschmid.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "README примера-приложения на Next.js для генерации и правки изображений моделью Gemini 2.0 Flash (id в коде gemini-2.0-flash-exp) — для разработчиков. Разделы: описание, How It Works (создание, правка, история диалога, скачивание), Basic request (JS-код прямого вызова API с примером промпта и responseModalities [\"Text\",\"Image\"]), Features, Getting Started (локальный запуск, .env с GEMINI_API_KEY), Deployment (Vercel, Docker), Technologies Used, License. Собственный термин — 'native image generation'. Повторно подчёркивается связка 'генерация + правка естественным языком + история диалога для итеративных уточнений'. Даты нет; Nano Banana не упоминается.",
+ "модели_на_странице": [
+  "Gemini 2.0 Flash",
+  "gemini-2.0-flash-exp (id в коде)"
+ ],
+ "структура": [
+  "Обвязка GitHub (меню, шапка репозитория, дерево файлов)",
+  "Gemini 2.0 Flash Image Generation and Editing (вступление, демо, ключ)",
+  "How It Works",
+  "Basic request (JS-код)",
+  "Features",
+  "Getting Started: Local Development",
+  "Deployment: Vercel, Docker",
+  "Technologies Used",
+  "License",
+  "About (сайдбар) и подвал GitHub"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "GitHub - google-gemini/gemini-image-editing-nextjs-quickstart: Get started",
+   "итог": "ничего: заголовок страницы (организация google-gemini — признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to content Navigation Menu Sign",
+   "итог": "ничего: обвязка сайта GitHub, строки 2-118 — совпадает до байта со страницей 284 (проверено diff)"
+  },
+  {
+   "n": 3,
+   "начало": "google-gemini / gemini-image-editing-nextjs-quickstart Public",
+   "итог": "ничего: обвязка GitHub (шапка репозитория, вкладки, счётчики, дерево файлов app/assets/components/lib/public/Dockerfile/...), строки 119-208"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 2.0 Flash Image Generation and",
+   "итог": "ничего: заголовок README"
+  },
+  {
+   "n": 5,
+   "начало": "Nextjs quickstart for to generating and",
+   "итог": "E-285-1 (часть 'maintaining conversation context...' — E-285-3); ссылка на демо Hugging Face Spaces — ничего"
+  },
+  {
+   "n": 6,
+   "начало": "demo.mov",
+   "итог": "ничего: видео-демо (содержимого нет в тексте)"
+  },
+  {
+   "n": 7,
+   "начало": "Get your GEMINI_API_KEY key here and",
+   "итог": "ничего: повтор E-285-8 (ключ API)"
+  },
+  {
+   "n": 8,
+   "начало": "How It Works:",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 9,
+   "начало": "Create Images : Generate images from",
+   "итог": "ничего: повтор E-285-1"
+  },
+  {
+   "n": 10,
+   "начало": "Edit Images : Upload an image",
+   "итог": "E-285-2"
+  },
+  {
+   "n": 11,
+   "начало": "Conversation History : Maintain context through",
+   "итог": "E-285-3"
+  },
+  {
+   "n": 12,
+   "начало": "Download Results : Save your generated",
+   "итог": "ничего: функция UI приложения (сохранение файла)"
+  },
+  {
+   "n": 13,
+   "начало": "Basic request",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 14,
+   "начало": "For developers who want to call",
+   "итог": "E-285-4"
+  },
+  {
+   "n": 15,
+   "начало": "const { GoogleGenerativeAI } = require(\"@google/generative-ai\");",
+   "итог": "E-285-4, E-285-5, E-285-6, E-285-7 (кодовый блок, строки 230-416 txt разбиты по токену — прочитан по html <pre>; импорт fs, try/catch, console.error — код без промпта)"
+  },
+  {
+   "n": 16,
+   "начало": "Features",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 17,
+   "начало": "🎨 Text-to-image generation with Gemini 2.0",
+   "итог": "ничего: повтор E-285-1"
+  },
+  {
+   "n": 18,
+   "начало": "🖌️ Image editing through natural language",
+   "итог": "ничего: повтор E-285-1, E-285-2"
+  },
+  {
+   "n": 19,
+   "начало": "💬 Conversation history for context-aware image",
+   "итог": "ничего: повтор E-285-3"
+  },
+  {
+   "n": 20,
+   "начало": "📱 Responsive UI built with Next.js",
+   "итог": "ничего: UI приложения, не про генерацию"
+  },
+  {
+   "n": 21,
+   "начало": "🔄 Seamless workflow between creation and",
+   "итог": "ничего: свойство UI приложения (переключение режимов)"
+  },
+  {
+   "n": 22,
+   "начало": "⚡ Uses Gemini 2.0 Flash Javascript",
+   "итог": "ничего: повтор E-285-4"
+  },
+  {
+   "n": 23,
+   "начало": "Getting Started Local Development First, set",
+   "итог": "ничего: запуск приложения (cp .env.example .env), строки 424-427"
+  },
+  {
+   "n": 24,
+   "начало": "Add your Google AI Studio API",
+   "итог": "E-285-8"
+  },
+  {
+   "n": 25,
+   "начало": "Then, install dependencies and run the",
+   "итог": "ничего: запуск приложения (npm install, npm run dev, localhost:3000), строки 437-442"
+  },
+  {
+   "n": 26,
+   "начало": "Deployment Vercel Docker Build the Docker",
+   "итог": "ничего: развёртывание приложения (docker build/run, --env-file), строки 443-457"
+  },
+  {
+   "n": 27,
+   "начало": "Technologies Used Next.js - React framework",
+   "итог": "ничего: стек приложения; строка 'Google Gemini 2.0 Flash - AI model for image generation and editing' — повтор E-285-1, строки 458-464"
+  },
+  {
+   "n": 28,
+   "начало": "License This project is licensed under",
+   "итог": "ничего: лицензия Apache 2.0, строки 465-468"
+  },
+  {
+   "n": 29,
+   "начало": "About Get started with native image",
+   "итог": "E-285-9"
+  },
+  {
+   "n": 30,
+   "начало": "ai.google.dev/gemini-api/docs/image-generation Topics gemini gemini-api",
+   "итог": "ничего: обвязка GitHub (ссылка, топики, сайдбар Resources/Stars/Forks), строки 471-494"
+  },
+  {
+   "n": 31,
+   "начало": "Footer © 2026 GitHub, Inc. Footer",
+   "итог": "ничего: подвал GitHub, строки 495-506"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-285-1",
+   "вид": "факт",
+   "утверждение_en": "The quickstart lets users generate images from text prompts or edit existing images through natural-language instructions with Gemini 2.0 Flash.",
+   "цитата": "It allows users to generate images from text prompts or edit existing images through natural language instructions",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 2.0 Flash Image Generation and Editing",
+   "модели": [
+    "Gemini 2.0 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Возможность модели показана через приложение-пример; модель — Gemini 2.0 Flash (в коде id gemini-2.0-flash-exp). Nano Banana на странице не упоминается."
+  },
+  {
+   "код": "E-285-2",
+   "вид": "инструкция",
+   "утверждение_en": "To edit an image, upload the image and provide instructions describing how to modify it.",
+   "цитата": ": Upload an image and provide instructions to modify it",
+   "источник_цитаты": "txt",
+   "раздел": "How It Works: Edit Images",
+   "модели": [
+    "Gemini 2.0 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Схема правки: исходная картинка + текстовая инструкция. Код правки на странице не показан."
+  },
+  {
+   "код": "E-285-3",
+   "вид": "приём",
+   "утверждение_en": "Keep conversation context (history) with the model so images can be refined iteratively.",
+   "цитата": ": Maintain context through a conversation with the AI for iterative refinements",
+   "источник_цитаты": "txt",
+   "раздел": "How It Works: Conversation History",
+   "модели": [
+    "Gemini 2.0 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Итеративное уточнение через многоходовый диалог; то же во вступлении ('maintaining conversation context for iterative refinements') и в Features ('context-aware image refinements'). Как именно передаётся история — не показано."
+  },
+  {
+   "код": "E-285-4",
+   "вид": "факт",
+   "утверждение_en": "The page's direct-API example uses the Google Generative AI JavaScript SDK (@google/generative-ai) to call the Gemini API.",
+   "цитата": "For developers who want to call the Gemini API directly, you can use the Google Generative AI JavaScript SDK:",
+   "источник_цитаты": "txt",
+   "раздел": "Basic request",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пакет в коде: require(\"@google/generative-ai\"); клиент new GoogleGenerativeAI(process.env.GEMINI_API_KEY)."
+  },
+  {
+   "код": "E-285-5",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example text-to-image prompt sent to gemini-2.0-flash-exp: a conversational request for a 3D-rendered pig with wings and a top hat flying over a happy futuristic sci-fi city with lots of greenery.",
+   "цитата": "\"Hi, can you create a 3d rendered image of a pig \" +\n    \"with wings and a top hat flying over a happy \" +\n    \"futuristic scifi city with lots of greenery?\"",
+   "источник_цитаты": "html",
+   "раздел": "Basic request (код)",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "Полный промпт: 'Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?'. Цитата — из атрибута data-snippet-clipboard-copy-content в html (строка разбита конкатенацией JS). Структура: разговорная просьба ('Hi, can you create') + носитель стиля ('3d rendered image') + субъект с атрибутами (pig with wings and a top hat) + действие (flying over) + окружение с настроением и деталями (happy futuristic scifi city with lots of greenery). Одно предложение, без параметров камеры/света."
+  },
+  {
+   "код": "E-285-6",
+   "вид": "правило",
+   "утверждение_en": "For Gemini 2.0 Flash image output, responseModalities in generationConfig must include \"Image\" so the model can generate images; the example sets it to [\"Text\", \"Image\"].",
+   "цитата": "// Set responseModalities to include \"Image\" so the model can generate",
+   "источник_цитаты": "txt",
+   "раздел": "Basic request (код)",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Код: getGenerativeModel({ model: \"gemini-2.0-flash-exp\", generationConfig: { responseModalities: [\"Text\", \"Image\"] } }). Регистр значений в коде — 'Text'/'Image' с заглавной."
+  },
+  {
+   "код": "E-285-7",
+   "вид": "факт",
+   "утверждение_en": "The response's candidate content parts can contain text (part.text) or an image as inlineData with base64 data; the example handles each part by type, logging text and saving image data to a PNG file.",
+   "цитата": "// Based on the part type, either show the text or save the image",
+   "источник_цитаты": "txt",
+   "раздел": "Basic request (код)",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Код: for (const part of response.response.candidates[0].content.parts) { if (part.text) ... else if (part.inlineData) { Buffer.from(part.inlineData.data, \"base64\") → fs.writeFileSync(\"gemini-native-image.png\") } }. Ответ может смешивать текст и картинку; расширение .png задано кодом, mimeType не проверяется."
+  },
+  {
+   "код": "E-285-8",
+   "вид": "инструкция",
+   "утверждение_en": "The app reads the Google AI Studio API key from the GEMINI_API_KEY environment variable (.env file).",
+   "цитата": "Add your Google AI Studio API key to the",
+   "источник_цитаты": "txt",
+   "раздел": "Getting Started: Local Development",
+   "модели": [
+    "не указано"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Строки 428-436 txt: '.env' файл, GEMINI_API_KEY=your_google_api_key. Ссылка 'here' ведёт на ai.google.dev/gemini-api/docs/api-key. Настройка приложения-примера, а не требование API."
+  },
+  {
+   "код": "E-285-9",
+   "вид": "факт",
+   "утверждение_en": "Google describes this capability as native image generation and editing with Gemini 2.0.",
+   "цитата": "Get started with native image generation and editing using Gemini 2.0 and Next.js",
+   "источник_цитаты": "txt",
+   "раздел": "About",
+   "модели": [
+    "Gemini 2.0"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Термин 'native image generation' — картинка генерируется самой моделью Gemini (в коде имя файла gemini-native-image.png). Определения термина на странице нет."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-285-10",
+   "вид": "объяснение",
+   "утверждение_en": "The page's single-call pattern: send one text prompt to a Gemini 2.0 Flash model configured with responseModalities including Image, then walk the returned parts and treat each as either text or inline base64 image data.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-285-4, E-285-5, E-285-6, E-285-7",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ответ не гарантированно состоит из одной картинки — код готов к смеси text/inlineData."
+  },
+  {
+   "код": "E-285-11",
+   "вид": "предупреждение",
+   "утверждение_en": "All code on this page targets the experimental model id gemini-2.0-flash-exp and the @google/generative-ai SDK; the page gives no date and names no Nano Banana model, so its parameters are tied to that experimental Gemini 2.0 model.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 2.0 Flash (gemini-2.0-flash-exp)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-285-4, E-285-6, E-285-9",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "api_код"
+   ],
+   "заметка": "Переносить на gemini-2.5/3.x image-модели без сверки с их документацией нельзя: страница сама о них не говорит."
+  },
+  {
+   "код": "E-285-12",
+   "вид": "объяснение",
+   "утверждение_en": "The page repeats three times that the key workflow is generate-or-edit plus conversation history for iterative, context-aware refinement.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "Gemini 2.0 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-285-1, E-285-2, E-285-3",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Повторы: вступление (строка 210), How It Works (строки 220-225), Features (строки 418-422)."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Код правки изображения (передача исходной картинки в запрос) не показан, хотя правка — главная функция примера.",
+  "Не показано, как передаётся история диалога для итеративных уточнений.",
+  "Нет данных о разрешении, соотношении сторон, формате вывода (PNG задан кодом при сохранении), лимитах, цене, водяном знаке/SynthID.",
+  "Нет даты публикации/обновления; статус модели gemini-2.0-flash-exp (экспериментальная) не пояснён.",
+  "Nano Banana и более новые image-модели не упоминаются."
+ ],
+ "сомнения": [
+  "Мета партии указывает модели 'Gemini 2.0, Nano Banana', но на странице Nano Banana нет — только Gemini 2.0 Flash / gemini-2.0-flash-exp.",
+  "Официальность подтверждена только организацией google-gemini; голоса Google и копирайта Google LLC на странице нет.",
+  "Опечатка в описании 'Nextjs quickstart for to generating' — текст README не вычитан."
+ ]
+}

@@ -1,0 +1,1971 @@
+{
+ "id": 133,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/get-started-with-gemini-3",
+ "заголовок": "Get started with Gemini 3  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: лицензия CC BY 4.0 / Apache 2.0 со ссылкой на Google Developers Site Policies; голос Google ('Gemini 3 is our most intelligent model family', 'we recommend'); примеры на официальном Google Gen AI SDK. Строки 'Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Вводный гайд по семейству Gemini 3 (текстовые/мультимодальные модели понимания: Gemini 3 / 3 Flash / 3.1 Pro / 3.1 Flash-Lite / 3.6 Flash в примерах) для разработчиков на Agent Platform. Меню ~34%; содержание: Quickstart (SDK ≥1.51.0, env), thinking_level (MINIMAL/LOW/MEDIUM/HIGH, дефолт HIGH, конфликт с thinking_budget, маппинг OpenAI reasoning_effort), media_resolution (таблица токенов для image/video/PDF, ultra_high только per-part, рекомендации), thought signatures (обязательный возврат, авто-обработка SDK), multimodal/streaming function calling, temperature (держать 1.0), список фич, prompting best practices (краткость, verbosity, шаблон grounding, дата для Search, knowledge cutoff, media_resolution, FPS), миграция (токены, PDF как IMAGE, нет сегментации), FAQ (1M/64k, 3.1 Pro без вывода картинок). Термины: dynamic thinking, thought signature ('save state'), Pan and Scan. Повторные акценты: temperature 1.0 (3 раза), компромисс media_resolution (3 раза). Image-модели генерации НЕ названы ни разу (только в меню).",
+ "модели_на_странице": [
+  "Gemini 3 (семейство)",
+  "Gemini 3 Flash",
+  "gemini-3-flash-preview",
+  "Gemini 3.1 Pro / gemini-3.1-pro-preview",
+  "Gemini 3.1 Flash-Lite",
+  "gemini-3.6-flash (примеры)",
+  "Gemini 2.5 Flash (для сегментации)"
+ ],
+ "структура": [
+  "(intro)",
+  "Quickstart",
+  "Install the Google Gen AI SDK",
+  "Set environment variables",
+  "Make your first request",
+  "Try complex reasoning tasks",
+  "Other thinking levels",
+  "New API features",
+  "Thinking level",
+  "Media resolution",
+  "Token counts",
+  "Recommended settings",
+  "Thought signatures",
+  "Multimodal function responses",
+  "Streaming function calling",
+  "Temperature",
+  "Supported features",
+  "Prompting best practices",
+  "Migration considerations",
+  "FAQ",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Get started with Gemini 3 |",
+   "итог": "ничего: заголовок документа (строка 1)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (меню и дерево документации, строки 2-1042; diff — идентично стр. 42)"
+  },
+  {
+   "n": 3,
+   "начало": "Get started with Gemini 3 Stay",
+   "итог": "ничего: заголовок страницы и виджет"
+  },
+  {
+   "n": 4,
+   "начало": "To see an example of Gemini",
+   "итог": "ничего: ссылки на ноутбук 'Intro to Gemini 3.1 Pro' (Colab/Workbench/GitHub)"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 3 is our most intelligent",
+   "итог": "E-133-1"
+  },
+  {
+   "n": 6,
+   "начало": "This guide provides a consolidated, practical",
+   "итог": "ничего: описание назначения страницы"
+  },
+  {
+   "n": 7,
+   "начало": "Quickstart Before you begin, you must",
+   "итог": "ничего: не про генерацию картинок (аутентификация API key/ADC)"
+  },
+  {
+   "n": 8,
+   "начало": "Install the Google Google Gen AI",
+   "итог": "E-133-2"
+  },
+  {
+   "n": 9,
+   "начало": "pip install --upgrade google-genai",
+   "итог": "ничего: код установки без промпта (покрыт E-133-2)"
+  },
+  {
+   "n": 10,
+   "начало": "Set environment variables to use the",
+   "итог": "ничего: не про генерацию картинок (gemini-3.1-pro-preview и gemini-3-flash-preview только на global)"
+  },
+  {
+   "n": 11,
+   "начало": "export GOOGLE_CLOUD_PROJECT = GOOGLE_CLOUD_PROJECT",
+   "итог": "E-133-3"
+  },
+  {
+   "n": 12,
+   "начало": "Make your first request By default,",
+   "итог": "E-133-4, E-133-5"
+  },
+  {
+   "n": 13,
+   "начало": "For fast, low-latency responses: from google",
+   "итог": "E-133-6"
+  },
+  {
+   "n": 14,
+   "начало": "Try complex reasoning tasks Gemini 3",
+   "итог": "E-133-7"
+  },
+  {
+   "n": 15,
+   "начало": "For slower, high-reasoning tasks: from google",
+   "итог": "E-133-8"
+  },
+  {
+   "n": 16,
+   "начало": "Other thinking levels Gemini 3 Flash",
+   "итог": "E-133-9"
+  },
+  {
+   "n": 17,
+   "начало": "MINIMAL offers close-to-zero thinking budget",
+   "итог": "ничего: повтор единицы E-133-11"
+  },
+  {
+   "n": 18,
+   "начало": "MEDIUM allows for a balance between",
+   "итог": "ничего: повтор единицы E-133-14"
+  },
+  {
+   "n": 19,
+   "начало": "New API features Gemini 3 introduces",
+   "итог": "ничего: маркетинговая вводная без содержания"
+  },
+  {
+   "n": 20,
+   "начало": "This table summarizes the core new",
+   "итог": "ничего: таблица-оглавление со ссылками (Thinking level, Media resolution, Thought signature, Temperature, Multimodal/Streaming function calling)"
+  },
+  {
+   "n": 21,
+   "начало": "Thinking level The thinking_level parameter",
+   "итог": "E-133-10"
+  },
+  {
+   "n": 22,
+   "начало": "MINIMAL : (Gemini 3 Flash and",
+   "итог": "E-133-11, E-133-12"
+  },
+  {
+   "n": 23,
+   "начало": "LOW : Constrains the model to",
+   "итог": "E-133-13"
+  },
+  {
+   "n": 24,
+   "начало": "MEDIUM : (Gemini 3 Flash, Gemini",
+   "итог": "E-133-14"
+  },
+  {
+   "n": 25,
+   "начало": "HIGH : Allows the model to",
+   "итог": "E-133-15"
+  },
+  {
+   "n": 26,
+   "начало": "Note: You cannot use both thinking_level",
+   "итог": "E-133-16, E-133-17"
+  },
+  {
+   "n": 27,
+   "начало": "Google Gen AI SDK example from",
+   "итог": "ничего: код с тривиальным промптом 'Find the race condition in this multi-threaded C++ snippet: [code here]'; синтаксис — повтор E-133-6"
+  },
+  {
+   "n": 28,
+   "начало": "OpenAI compatibility example For users utilizing",
+   "итог": "E-133-18"
+  },
+  {
+   "n": 29,
+   "начало": "import openai from google.auth import",
+   "итог": "E-133-19"
+  },
+  {
+   "n": 30,
+   "начало": "Media resolution Gemini 3 introduces granular",
+   "итог": "E-133-20, E-133-21"
+  },
+  {
+   "n": 31,
+   "начало": "You can set the resolution to",
+   "итог": "E-133-22, E-133-23, E-133-24"
+  },
+  {
+   "n": 32,
+   "начало": "Token counts This table summarizes the",
+   "итог": "ничего: вводная к таблице"
+  },
+  {
+   "n": 33,
+   "начало": "Media Resolution Image Video PDF UNSPECIFIED",
+   "итог": "E-133-25"
+  },
+  {
+   "n": 34,
+   "начало": "LOW 280 70 280 +",
+   "итог": "E-133-26"
+  },
+  {
+   "n": 35,
+   "начало": "MEDIUM 560 70 560 +",
+   "итог": "E-133-27"
+  },
+  {
+   "n": 36,
+   "начало": "HIGH 1120 280 1120 +",
+   "итог": "E-133-28"
+  },
+  {
+   "n": 37,
+   "начало": "ULTRA_HIGH 2240 N/A N/A",
+   "итог": "E-133-29"
+  },
+  {
+   "n": 38,
+   "начало": "Recommended settings Media Resolution Max Tokens",
+   "итог": "E-133-30"
+  },
+  {
+   "n": 39,
+   "начало": "high 1120 Image analysis tasks to",
+   "итог": "E-133-31"
+  },
+  {
+   "n": 40,
+   "начало": "medium 560 low Image: 280",
+   "итог": "E-133-32"
+  },
+  {
+   "n": 41,
+   "начало": "Note: For Video low is a",
+   "итог": "E-133-33"
+  },
+  {
+   "n": 42,
+   "начало": "Note: Token counts for multimodal inputs",
+   "итог": "E-133-34, E-133-35"
+  },
+  {
+   "n": 43,
+   "начало": "Setting media_resolution per individual part You",
+   "итог": "E-133-36"
+  },
+  {
+   "n": 44,
+   "начало": "Setting media_resolution globally You can also",
+   "итог": "E-133-37"
+  },
+  {
+   "n": 45,
+   "начало": "Thought signatures Thought signatures are encrypted",
+   "итог": "E-133-38"
+  },
+  {
+   "n": 46,
+   "начало": "When a thinking model decides to",
+   "итог": "E-133-39"
+  },
+  {
+   "n": 47,
+   "начало": "For more information, see Thought signatures",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 48,
+   "начало": "Why are thought signatures important? Without",
+   "итог": "ничего: про function calling (context continuity, multi-step tool use), не про картинки"
+  },
+  {
+   "n": 49,
+   "начало": "Where are thought signatures returned? Gemini",
+   "итог": "E-133-40"
+  },
+  {
+   "n": 50,
+   "начало": "Model responses with a function call",
+   "итог": "ничего: про function calling (подпись при MINIMAL, параллельные/последовательные вызовы)"
+  },
+  {
+   "n": 51,
+   "начало": "Model responses without a function call",
+   "итог": "E-133-41"
+  },
+  {
+   "n": 52,
+   "начало": "How to handle thought signatures? There",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 53,
+   "начало": "Automated handling (recommended) If you are",
+   "итог": "E-133-42"
+  },
+  {
+   "n": 54,
+   "начало": "Manual function calling example When using",
+   "итог": "ничего: код function calling (погода), промпт 'What's the weather like in London?' тривиален, не про картинки"
+  },
+  {
+   "n": 55,
+   "начало": "Automatic function calling example When using",
+   "итог": "ничего: код function calling, промпт 'What's the temperature in Boston?' тривиален"
+  },
+  {
+   "n": 56,
+   "начало": "OpenAI compatibility example When using OpenAI",
+   "итог": "ничего: код function calling через OpenAI"
+  },
+  {
+   "n": 57,
+   "начало": "See the full code example.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 58,
+   "начало": "Manual handling If you are interacting",
+   "итог": "E-133-43"
+  },
+  {
+   "n": 59,
+   "начало": "Multimodal function responses Multimodal function calling",
+   "итог": "E-133-44"
+  },
+  {
+   "n": 60,
+   "начало": "from google import genai ... get_image_declaration",
+   "итог": "ничего: код function calling с картинкой в FunctionResponsePart (dress.jpg); промпт 'Show me the green shirt I ordered last month.' тривиален — механизм покрыт E-133-44"
+  },
+  {
+   "n": 61,
+   "начало": "Streaming function calling You can use",
+   "итог": "ничего: не про картинки (stream_function_call_arguments, пример ответа JSON)"
+  },
+  {
+   "n": 62,
+   "начало": "Temperature Range for Gemini 3: 0.0",
+   "итог": "E-133-45"
+  },
+  {
+   "n": 63,
+   "начало": "For Gemini 3, it is strongly",
+   "итог": "E-133-46"
+  },
+  {
+   "n": 64,
+   "начало": "While previous models often benefited from",
+   "итог": "E-133-47"
+  },
+  {
+   "n": 65,
+   "начало": "Changing the temperature (setting it to",
+   "итог": "E-133-48"
+  },
+  {
+   "n": 66,
+   "начало": "Supported features Gemini 3 models also",
+   "итог": "E-133-49"
+  },
+  {
+   "n": 67,
+   "начало": "Prompting best practices Gemini 3 is",
+   "итог": "E-133-50"
+  },
+  {
+   "n": 68,
+   "начало": "Precise instructions: Be concise in your",
+   "итог": "E-133-51, E-133-52"
+  },
+  {
+   "n": 69,
+   "начало": "Output verbosity: By default, Gemini 3",
+   "итог": "E-133-53"
+  },
+  {
+   "n": 70,
+   "начало": "Grounding: For grounding use cases, we",
+   "итог": "E-133-54, E-133-55, E-133-56"
+  },
+  {
+   "n": 71,
+   "начало": "Using the Google Search tool: When",
+   "итог": "E-133-57"
+  },
+  {
+   "n": 72,
+   "начало": "For time-sensitive user queries that require",
+   "итог": "E-133-58"
+  },
+  {
+   "n": 73,
+   "начало": "Knowledge cutoff : For certain queries,",
+   "итог": "E-133-59"
+  },
+  {
+   "n": 74,
+   "начало": "Recommendation : Adding the following clause",
+   "итог": "E-133-60"
+  },
+  {
+   "n": 75,
+   "начало": "Using media_resolution : Use the media_resolution",
+   "итог": "E-133-61"
+  },
+  {
+   "n": 76,
+   "начало": "Improving video analysis : Use a higher",
+   "итог": "E-133-62"
+  },
+  {
+   "n": 77,
+   "начало": "Migration considerations Consider the following features",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 78,
+   "начало": "Thinking level : Gemini 3 models use",
+   "итог": "ничего: повтор единицы E-133-10 ('low or high' — см. противоречия)"
+  },
+  {
+   "n": 79,
+   "начало": "Temperature settings: If your existing code",
+   "итог": "E-133-63"
+  },
+  {
+   "n": 80,
+   "начало": "Thought signatures : For Gemini 3",
+   "итог": "E-133-64"
+  },
+  {
+   "n": 81,
+   "начало": "Media resolution and tokenization : Gemini",
+   "итог": "E-133-65"
+  },
+  {
+   "n": 82,
+   "начало": "Token counting for multimodality input: Token",
+   "итог": "ничего: повтор единицы E-133-34"
+  },
+  {
+   "n": 83,
+   "начало": "Token consumption: Migrating to Gemini 3",
+   "итог": "E-133-66, E-133-67"
+  },
+  {
+   "n": 84,
+   "начало": "PDF & document understanding: Default OCR",
+   "итог": "E-133-68 (совет тестировать media_resolution 'high' для плотных PDF — не про картинки)"
+  },
+  {
+   "n": 85,
+   "начало": "Image segmentation: Image segmentation is not",
+   "итог": "E-133-69"
+  },
+  {
+   "n": 86,
+   "начало": "Multimodal function responses : For Gemini",
+   "итог": "ничего: повтор единицы E-133-44"
+  },
+  {
+   "n": 87,
+   "начало": "FAQ Which region is gemini-3.1-pro-preview available",
+   "итог": "ничего: не про генерацию картинок (регион текстовой preview-модели: Global)"
+  },
+  {
+   "n": 88,
+   "начало": "What are the context window limits?",
+   "итог": "E-133-70"
+  },
+  {
+   "n": 89,
+   "начало": "Does gemini-3.1-pro-preview support image output?",
+   "итог": "E-133-71"
+  },
+  {
+   "n": 90,
+   "начало": "Does gemini-3.1-pro-preview support Gemini Live",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "What's next Learn more about Gemini",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 92,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности)"
+  },
+  {
+   "n": 93,
+   "начало": "Last updated 2026-09-22 UTC. Need",
+   "итог": "ничего: дата страницы и виджет отзыва"
+  },
+  {
+   "n": 94,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-133-1",
+   "вид": "факт",
+   "утверждение_en": "Google describes Gemini 3 as its most intelligent model family to date, built on state-of-the-art reasoning.",
+   "цитата": "is our most intelligent model family to date, built\non a foundation of state-of-the-art reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-2",
+   "вид": "правило",
+   "утверждение_en": "Gemini 3 API features require the Google Gen AI SDK for Python version 1.51.0 or later.",
+   "цитата": "Gemini 3 API features require Google Gen AI SDK for Python version 1.51.0 or later.",
+   "источник_цитаты": "txt",
+   "раздел": "Quickstart / Install the Google Gen AI SDK",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-3",
+   "вид": "инструкция",
+   "утверждение_en": "To use the Gen AI SDK with Agent Platform, set GOOGLE_CLOUD_PROJECT to the project ID, GOOGLE_CLOUD_LOCATION=global and GOOGLE_GENAI_USE_ENTERPRISE=True.",
+   "цитата": "export\nGOOGLE_CLOUD_PROJECT\n=\nGOOGLE_CLOUD_PROJECT\nexport\nGOOGLE_CLOUD_LOCATION\n=\nglobal\nexport\nGOOGLE_GENAI_USE_ENTERPRISE\n=\nTrue",
+   "источник_цитаты": "txt",
+   "раздел": "Quickstart / Set environment variables",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Кодовый блок (html <pre> 1); в txt по токену на строку."
+  },
+  {
+   "код": "E-133-4",
+   "вид": "факт",
+   "утверждение_en": "By default Gemini 3 models and Gemini 3 Flash use dynamic thinking to reason through prompts.",
+   "цитата": "By default, Gemini 3 models and Gemini 3 Flash use\ndynamic thinking to reason through\nprompts.",
+   "источник_цитаты": "txt",
+   "раздел": "Make your first request",
+   "модели": [
+    "Gemini 3",
+    "Gemini 3 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-5",
+   "вид": "приём",
+   "утверждение_en": "For faster, lower-latency responses when complex reasoning isn't required, thinking_level can be constrained; low thinking is ideal for high-throughput tasks where speed matters most.",
+   "цитата": "For faster, lower-latency responses when complex reasoning isn't\nrequired, you can constrain the model's\nthinking_level\n. Low thinking is\nideal for high-throughput tasks where speed is paramount.",
+   "источник_цитаты": "txt",
+   "раздел": "Make your first request",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-6",
+   "вид": "факт",
+   "утверждение_en": "In the Python SDK the thinking level is set through config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(thinking_level=types.ThinkingLevel.LOW)).",
+   "цитата": "thinking_config\n=\ntypes\n.\nThinkingConfig\n(\nthinking_level\n=\ntypes\n.\nThinkingLevel\n.\nLOW",
+   "источник_цитаты": "txt",
+   "раздел": "Make your first request (code)",
+   "модели": [
+    "gemini-3.6-flash (в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Кодовый блок (html <pre> 2); промпт примера 'How does AI work?' тривиален."
+  },
+  {
+   "код": "E-133-7",
+   "вид": "правило",
+   "утверждение_en": "For complex tasks such as multi-step planning, verified code generation or deep tool use, use high thinking levels.",
+   "цитата": "Gemini 3 excels at advanced reasoning. For complex tasks like\nmulti-step planning, verified code generation, or deep tool use, use high\nthinking levels.",
+   "источник_цитаты": "txt",
+   "раздел": "Try complex reasoning tasks",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example high-reasoning prompt for Gemini 3: a C++ task stated as a role/task sentence, a concrete deliverable, and a numbered list of hard constraints introduced by 'Your solution MUST adhere to the following strict constraints'.",
+   "цитата": "You are tasked with implementing the classic Thread-Safe Double-Checked Locking (DCL) Singleton pattern in modern C++. This task is non-trivial and requires specialized concurrency knowledge to prevent memory reordering issues.",
+   "источник_цитаты": "html",
+   "раздел": "Try complex reasoning tasks (code)",
+   "модели": [
+    "gemini-3.6-flash (в примере)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "НЕ про картинки (код). Полный промпт >60 слов: 1) постановка задачи и её сложность; 2) конкретный результат ('Write a complete, runnable C++ program named `dcl_singleton.cpp`...'); 3) 'Your solution MUST adhere to the following strict constraints:' + 5 пронумерованных требований. Работу делают: явный артефакт, MUST-формулировка, нумерованные ограничения. Используется с thinking_level HIGH."
+  },
+  {
+   "код": "E-133-9",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Flash introduces two new thinking levels, MINIMAL and MEDIUM, for more control over how the model handles complex reasoning.",
+   "цитата": "Gemini 3 Flash introduces two new thinking levels:\nMINIMAL\nand\nMEDIUM\nto give you even more control over how the model handles complex\nreasoning tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Other thinking levels",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-10",
+   "вид": "объяснение",
+   "утверждение_en": "The thinking_level parameter sets a thinking budget for response generation, balancing response quality against reasoning complexity, latency and cost.",
+   "цитата": "parameter lets you specify a thinking budget for\nthe model's response generation. By selecting one of two states, you can\nexplicitly balance the trade-offs between response quality and reasoning\ncomplexity and latency and cost.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "цены"
+   ],
+   "заметка": "Текст говорит 'one of two states', хотя ниже перечислены 4 уровня (см. противоречия)."
+  },
+  {
+   "код": "E-133-11",
+   "вид": "факт",
+   "утверждение_en": "MINIMAL (Gemini 3 Flash and Gemini 3.1 Flash-Lite only) makes the model use as few thinking tokens as possible and is best for low-complexity tasks.",
+   "цитата": "(Gemini 3 Flash and Gemini 3.1 Flash-Lite only)\nConstrains the model to\nuse as few tokens as possible for thinking and is best used for\nlow-complexity tasks that wouldn't benefit from extensive reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / MINIMAL",
+   "модели": [
+    "Gemini 3 Flash",
+    "Gemini 3.1 Flash-Lite"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-12",
+   "вид": "ограничение",
+   "утверждение_en": "MINIMAL is as close as possible to a zero thinking budget but still requires thought signatures.",
+   "цитата": "is as close as possible to a zero budget for thinking, but still\nrequires\nthought signatures",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / MINIMAL",
+   "модели": [
+    "Gemini 3 Flash",
+    "Gemini 3.1 Flash-Lite"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-13",
+   "вид": "факт",
+   "утверждение_en": "LOW makes the model use fewer thinking tokens and suits simpler tasks and high-throughput workloads where speed is essential.",
+   "цитата": "Constrains the model to use fewer tokens for thinking and is suitable\nfor simpler tasks where extensive reasoning is not required.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / LOW",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-14",
+   "вид": "факт",
+   "утверждение_en": "MEDIUM (Gemini 3 Flash, Gemini 3.1 Pro and Gemini 3.1 Flash-Lite only) is a balanced level for moderately complex tasks that benefit from reasoning but not deep multi-step planning.",
+   "цитата": "(Gemini 3 Flash, Gemini 3.1 Pro, and Gemini 3.1 Flash-Lite only)\nOffers a balanced approach\nsuitable for tasks of moderate complexity that benefit from reasoning but\ndon't require deep, multi-step planning.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / MEDIUM",
+   "модели": [
+    "Gemini 3 Flash",
+    "Gemini 3.1 Pro",
+    "Gemini 3.1 Flash-Lite"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-15",
+   "вид": "факт",
+   "утверждение_en": "HIGH lets the model use more thinking tokens for complex prompts requiring deep reasoning and is the default level for Gemini 3 models and Gemini 3 Flash.",
+   "цитата": "Allows the model to use more tokens for thinking and is suitable for\ncomplex prompts requiring deep reasoning, such as multi-step planning,\nverified code generation, or advanced function calling scenarios. This is\nthe default level for Gemini 3 models and\nGemini 3 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / HIGH",
+   "модели": [
+    "Gemini 3",
+    "Gemini 3 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-16",
+   "вид": "ограничение",
+   "утверждение_en": "thinking_level and the legacy thinking_budget cannot be used in the same request; doing so returns a 400 error.",
+   "цитата": "You cannot use both\nthinking_level\nand the legacy\nthinking_budget\nparameter in the same request. Doing so will return a\n400\nerror.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / Note",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-17",
+   "вид": "факт",
+   "утверждение_en": "thinking_level is optional; if omitted the model uses its default setting, HIGH.",
+   "цитата": "parameter is optional. If omitted, the model will use its\ndefault setting (\nHIGH\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / Note",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-18",
+   "вид": "факт",
+   "утверждение_en": "In the OpenAI compatibility layer reasoning_effort maps to thinking_level: none maps to minimal (Gemini 3 Flash only) and medium maps to medium for all Gemini 3 models.",
+   "цитата": "reasoning_effort\nmaps to\nthinking_level\n.\nnone\n: maps to\nthinking_level\nminimal (Gemini 3 Flash only).\nmedium\n: maps to\nthinking_level\nmedium for all Gemini 3 models.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / OpenAI compatibility example",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Комментарий в коде ниже говорит 'Map to thinking_level high.' (см. противоречия)."
+  },
+  {
+   "код": "E-133-19",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example prompt used with reasoning_effort=\"medium\": a bash-script request that specifies the exact input format with a literal example and requires the same format for output.",
+   "цитата": "Write a bash script that takes a matrix represented as a string with\nformat '[1,2],[3,4],[5,6]' and prints the transpose in the same format.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / OpenAI compatibility example (code)",
+   "модели": [
+    "gemini-3.6-flash (в примере)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "НЕ про картинки. Кодовый блок (html <pre> 5); в html апострофы экранированы, поэтому цитата из txt. Работу делает буквальный пример формата входа и требование того же формата на выходе."
+  },
+  {
+   "код": "E-133-20",
+   "вид": "объяснение",
+   "утверждение_en": "Higher media_resolution improves the model's ability to read fine text or identify small details in inputs but increases token usage and latency.",
+   "цитата": "parameter. Higher resolutions improve\nthe model's ability to read fine text or identify small details, but increase\ntoken usage and latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Про входные медиа (понимание), не про выходное разрешение. Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-21",
+   "вид": "факт",
+   "утверждение_en": "media_resolution determines the maximum number of tokens allocated per input image, PDF page or video frame.",
+   "цитата": "parameter determines the\nmaximum number of tokens allocated per input image, PDF page or video\nframe.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-22",
+   "вид": "факт",
+   "утверждение_en": "media_resolution can be set to low, medium or high globally (via generation_config) or per individual media part.",
+   "цитата": "You can set the resolution to\nlow\n,\nmedium\n, or\nhigh\nglobally\n(using\ngeneration_config\n) or for individual media parts.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-23",
+   "вид": "ограничение",
+   "утверждение_en": "The ultra_high media resolution can only be set for individual media parts.",
+   "цитата": "ultra_high\nresolution can only be set for individual media parts.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-24",
+   "вид": "факт",
+   "утверждение_en": "If media_resolution is unspecified, the model uses optimal defaults based on the media type.",
+   "цитата": "If unspecified, the\nmodel uses optimal defaults based on the media type.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-25",
+   "вид": "факт",
+   "утверждение_en": "With media_resolution UNSPECIFIED (default) an image is about 1120 tokens, a video frame 70 and a PDF 560.",
+   "цитата": "UNSPECIFIED\n(Default)\n1120\n70\n560",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Token counts",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": "Колонки: Image | Video | PDF (по html)."
+  },
+  {
+   "код": "E-133-26",
+   "вид": "факт",
+   "утверждение_en": "With media_resolution LOW an image is about 280 tokens, a video frame 70 and a PDF 280 plus text.",
+   "цитата": "LOW\n280\n70\n280 + Text",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Token counts",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-27",
+   "вид": "факт",
+   "утверждение_en": "With media_resolution MEDIUM an image is about 560 tokens, a video frame 70 and a PDF 560 plus text.",
+   "цитата": "MEDIUM\n560\n70\n560 + Text",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Token counts",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-28",
+   "вид": "факт",
+   "утверждение_en": "With media_resolution HIGH an image is about 1120 tokens, a video frame 280 and a PDF 1120 plus text.",
+   "цитата": "HIGH\n1120\n280\n1120 + Text",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Token counts",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-29",
+   "вид": "факт",
+   "утверждение_en": "With media_resolution ULTRA_HIGH an image is about 2240 tokens; it is not available for video or PDF.",
+   "цитата": "ULTRA_HIGH\n2240\nN/A\nN/A",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Token counts",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-30",
+   "вид": "правило",
+   "утверждение_en": "Use ultra_high (max 2240 tokens) for tasks requiring analysis of fine details in images, such as screen-recording stills or high-resolution photos.",
+   "цитата": "ultra_high\n2240\nTasks requiring analysis of fine details in images, such as processing screen recording stills or high-resolution photos.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Recommended settings",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Про анализ входных картинок. Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-31",
+   "вид": "правило",
+   "утверждение_en": "Use high (max 1120 tokens) for image analysis tasks to ensure maximum quality.",
+   "цитата": "high\n1120\nImage analysis tasks to ensure maximum quality.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Recommended settings",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-32",
+   "вид": "правило",
+   "утверждение_en": "medium (560) and low (image 280, video 70) are described as sufficient for most tasks.",
+   "цитата": "medium\n560\nlow\nImage: 280 Video: 70\nSufficient for most tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Recommended settings",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "По html ячейка 'Sufficient for most tasks' стоит в строке low; у medium ячейка пустая — относится ли фраза к medium, неясно."
+  },
+  {
+   "код": "E-133-33",
+   "вид": "факт",
+   "утверждение_en": "For video, low media resolution is a maximum of 70 tokens per frame.",
+   "цитата": "For Video\nlow\nis a maximum of 70 tokens per frame.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Note",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-34",
+   "вид": "предупреждение",
+   "утверждение_en": "Token counts for multimodal inputs are estimates based on media_resolution; count_tokens may not match consumed tokens, and accurate billing usage is only available after execution in usage_metadata.",
+   "цитата": "API call may not match the final consumed tokens. The\naccurate usage for billing is only available after execution within the\nresponse's\nusage_metadata",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Note",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-35",
+   "вид": "приём",
+   "утверждение_en": "Because media_resolution directly affects token count, lowering it (for example to LOW) may be needed to fit very long inputs such as long videos or extensive documents.",
+   "цитата": "token count, you may need to lower the resolution (for example, to\nLOW\n) to fit\nvery long inputs, such as long videos or extensive documents.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Note",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-36",
+   "вид": "факт",
+   "утверждение_en": "Per-part media resolution is set in the Python SDK with media_resolution=types.PartMediaResolution(level=types.PartMediaResolutionLevel.MEDIA_RESOLUTION_HIGH) on a Part.",
+   "цитата": "media_resolution\n=\ntypes\n.\nPartMediaResolution\n(\nlevel\n=\ntypes\n.\nPartMediaResolutionLevel\n.\nMEDIA_RESOLUTION_HIGH",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Setting media_resolution per individual part (code)",
+   "модели": [
+    "gemini-3.6-flash (в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Кодовый блок (html <pre> 6): картинка HIGH, видео LOW в одном запросе; промпт 'When does the image appear in the video? What is the context?'."
+  },
+  {
+   "код": "E-133-37",
+   "вид": "факт",
+   "утверждение_en": "Global media resolution is set in the Python SDK with config=types.GenerateContentConfig(media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW).",
+   "цитата": "media_resolution\n=\ntypes\n.\nMediaResolution\n.\nMEDIA_RESOLUTION_LOW",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Setting media_resolution globally (code)",
+   "модели": [
+    "gemini-3.6-flash (в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код",
+    "рефы"
+   ],
+   "заметка": "Кодовый блок (html <pre> 7); промпт 'What is in the image?' тривиален."
+  },
+  {
+   "код": "E-133-38",
+   "вид": "объяснение",
+   "утверждение_en": "Thought signatures are encrypted tokens that preserve the model's reasoning state during multi-turn conversations, specifically when using function calling.",
+   "цитата": "Thought signatures are encrypted tokens that preserve the model's reasoning\nstate during multi-turn conversations, specifically when using function\ncalling.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-39",
+   "вид": "объяснение",
+   "утверждение_en": "A thought signature acts as a 'save state' that lets the model resume its chain of thought after the function result is provided.",
+   "цитата": "The thought signature acts as a \"save state,\"\nallowing the model to resume its chain of thought seamlessly once you provide\nthe function's result.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-40",
+   "вид": "правило",
+   "утверждение_en": "To keep context across multiple turns with Gemini 3 models and Gemini 3 Flash, thought signatures must be returned in subsequent requests.",
+   "цитата": "To ensure\nthe model maintains context across multiple turns of a conversation, you must\nreturn the thought signatures in your subsequent requests.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures / Where are thought signatures returned?",
+   "модели": [
+    "Gemini 3",
+    "Gemini 3 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-41",
+   "вид": "факт",
+   "утверждение_en": "Model responses without a function call return a thought signature inside the last part returned by the model.",
+   "цитата": "Model responses without a function call will return a thought signature\ninside the last part returned by the model.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures / Where are thought signatures returned?",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-42",
+   "вид": "правило",
+   "утверждение_en": "Using the Gen AI SDKs or OpenAI Chat Completions with standard chat history, or appending the full model response, handles thought signatures automatically; this automated handling is recommended.",
+   "цитата": "and utilizing the standard chat history\nfeatures or appending the full model response,\nthought_signatures\nare\nhandled automatically.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures / Automated handling (recommended)",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-43",
+   "вид": "правило",
+   "утверждение_en": "When managing raw API payloads, the thought signature must be returned in the exact part where it was received; otherwise Gemini 3 returns a 400 error.",
+   "цитата": "return this signature in the exact part where it was received\nwhen sending the conversation history back.\nIf proper signatures are not returned, Gemini 3 will return a 400",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures / Manual handling",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-44",
+   "вид": "факт",
+   "утверждение_en": "Multimodal function calling lets function responses contain multimodal objects such as images, whereas standard function calling supports only text-based function responses.",
+   "цитата": "Multimodal function calling allows users to have function responses containing\nmultimodal objects allowing for improved utilization of function calling\ncapabilities of the model. Standard function calling only supports text-based\nfunction responses",
+   "источник_цитаты": "txt",
+   "раздел": "Multimodal function responses",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В миграционном разделе: для Gemini 3 можно включать image и PDF в function responses."
+  },
+  {
+   "код": "E-133-45",
+   "вид": "факт",
+   "утверждение_en": "Temperature for Gemini 3 ranges from 0.0 to 2.0 with a default of 1.0.",
+   "цитата": "Range for Gemini 3: 0.0 - 2.0 (default: 1.0)",
+   "источник_цитаты": "txt",
+   "раздел": "Temperature",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-46",
+   "вид": "правило",
+   "утверждение_en": "For Gemini 3 it is strongly recommended to keep temperature at its default value of 1.0.",
+   "цитата": "For Gemini 3, it is strongly recommended to keep the\ntemperature\nparameter at its default value of\n1.0\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Temperature",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'strongly recommended' — сильная рекомендация. Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-47",
+   "вид": "объяснение",
+   "утверждение_en": "Earlier models benefited from tuning temperature for creativity versus determinism, but Gemini 3's reasoning is optimized for the default setting.",
+   "цитата": "While previous models often benefited from tuning temperature to control\ncreativity versus determinism, Gemini 3's reasoning capabilities\nare optimized for the default setting.",
+   "источник_цитаты": "txt",
+   "раздел": "Temperature",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-48",
+   "вид": "предупреждение",
+   "утверждение_en": "Setting temperature below 1.0 on Gemini 3 may cause unexpected behavior such as looping or degraded performance, especially in complex math or reasoning tasks.",
+   "цитата": "Changing the temperature (setting it to less than\n1.0\n) may lead to unexpected\nbehavior, such as looping or degraded performance, particularly in complex\nmathematical or reasoning tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Temperature",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-49",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 models support system instructions, structured output, function calling, grounding with Google Search, code execution, URL context, thinking, context caching, count tokens, chat completions, batch prediction, Provisioned Throughput and standard pay-as-you-go.",
+   "цитата": "Gemini 3 models also support the following features:\nSystem instructions\nStructured output\nFunction calling\nGrounding with Google Search\nCode execution\nURL Context\nThinking\nContext caching\nCount tokens\nChat completions\nBatch prediction\nProvisioned Throughput\nStandard pay-as-you-go",
+   "источник_цитаты": "txt",
+   "раздел": "Supported features",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Сказано про 'Gemini 3 models' в целом; Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-50",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 is a reasoning model, which changes how it should be prompted.",
+   "цитата": "Gemini 3 is a reasoning model, which changes how you should prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-51",
+   "вид": "правило",
+   "утверждение_en": "Be concise in input prompts: Gemini 3 responds best to direct, clear instructions.",
+   "цитата": "Be concise in your input prompts. Gemini 3\nresponds best to direct, clear instructions.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Precise instructions",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-52",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 3 may over-analyze verbose or overly complex prompt-engineering techniques used for older models.",
+   "цитата": "It may over-analyze verbose\nor overly complex prompt engineering techniques used for older models.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Precise instructions",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Image-модели на странице не названы; применимость к Nano Banana не подтверждена."
+  },
+  {
+   "код": "E-133-53",
+   "вид": "приём",
+   "утверждение_en": "Gemini 3 is less verbose by default; for a more conversational persona the model must be steered explicitly in the prompt, e.g. 'Explain this as a friendly, talkative assistant'.",
+   "цитата": "By default, Gemini 3 is less verbose and\nprefers providing direct, efficient answers. If your use case requires a\nmore conversational or \"chatty\" persona, you must explicitly steer the\nmodel in the prompt (for example, \"Explain this as a friendly, talkative\nassistant\").",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Output verbosity",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Текстовые ответы; принцип 'явно задавай то, что отличается от дефолта'."
+  },
+  {
+   "код": "E-133-54",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Recommended developer instruction for grounding (part 1): define the assistant as strictly grounded in the User Context, relying only on facts directly mentioned and not on its own knowledge.",
+   "цитата": "You are a strictly grounded assistant limited to the information provided in the User Context. In your answers, rely **only** on the facts that are directly mentioned in that context. You must **not** access or utilize your own knowledge or common sense to answer.",
+   "источник_цитаты": "html",
+   "раздел": "Prompting best practices / Grounding",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "grounding"
+   ],
+   "заметка": "Шаблон для текстового grounding по контексту, не про картинки. Жирные **...** — часть шаблона. Структура: роль → источник истины → запрет своих знаний."
+  },
+  {
+   "код": "E-133-55",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Recommended grounding instruction (part 2): do not assume or infer; report facts exactly as they appear, leaving no room for speculation or interpretation.",
+   "цитата": "Do not assume or infer from the provided facts; simply report them exactly as they appear. Your answer must be factual and fully truthful to the provided text, leaving absolutely no room for speculation or interpretation.",
+   "источник_цитаты": "html",
+   "раздел": "Prompting best practices / Grounding",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "grounding"
+   ],
+   "заметка": "Продолжение того же шаблона."
+  },
+  {
+   "код": "E-133-56",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Recommended grounding instruction (part 3): treat the context as the absolute limit of truth and state that information is not available when the exact answer is not in the context.",
+   "цитата": "Treat the provided context as the absolute limit of truth; any facts or details that are not directly mentioned in the context must be considered **completely untruthful** and **completely unsupported**. If the exact answer is not explicitly written in the context, you must state that the information is not available.",
+   "источник_цитаты": "html",
+   "раздел": "Prompting best practices / Grounding",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "grounding"
+   ],
+   "заметка": "Окончание шаблона: явное поведение при отсутствии ответа."
+  },
+  {
+   "код": "E-133-57",
+   "вид": "предупреждение",
+   "утверждение_en": "With the Google Search tool, Gemini 3 Flash can confuse the current date with events in 2024 and search for the wrong year; the current date should be reinforced in system instructions.",
+   "цитата": "Gemini 3 Flash can at times confuse the current date / time for\nevents in 2024. This can result in the model\nformulating search queries for the wrong year. To ensure the model utilizes\nthe correct time period, explicitly reinforce the current date in",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Using the Google Search tool",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-58",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "System-instruction clause for time-sensitive search: follow the provided current time (date and year) when formulating search queries, and state the current year.",
+   "цитата": "For time-sensitive user queries that require up-to-date information, you MUST follow the provided current time (date and year) when formulating search queries in tool calls. Remember it is 2025 this year.",
+   "источник_цитаты": "html",
+   "раздел": "Prompting best practices / Using the Google Search tool",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Год '2025' зашит в пример; по смыслу совета подставляется актуальная дата."
+  },
+  {
+   "код": "E-133-59",
+   "вид": "приём",
+   "утверждение_en": "Gemini 3 Flash benefits from being told its knowledge cutoff when the Google Search tool is disabled and the query requires identifying the cutoff.",
+   "цитата": "For certain queries, Gemini 3 Flash benefits\nfrom being explicitly told its knowledge cutoff. This is the case when the\nGoogle Search tool is disabled and the query explicitly requires the model\nto be able to identify the cutoff data in parametric knowledge.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Knowledge cutoff",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-60",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Recommended system-instruction clause: 'Your knowledge cutoff date is January 2025.'",
+   "цитата": "Your knowledge cutoff date is January 2025.",
+   "источник_цитаты": "html",
+   "раздел": "Prompting best practices / Knowledge cutoff",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-61",
+   "вид": "правило",
+   "утверждение_en": "Use media_resolution to control the maximum tokens used to represent an image or video frames: high captures detail with more tokens, lower optimizes cost and latency for images with less visual detail.",
+   "цитата": "parameter to control the\nmaximum number of tokens the model uses to represent an image or frames in\nvideos. High resolution will enable the model to capture details in an image,\nand may use more tokens per frame, while lower resolution allows for optimizing\ncost and latency for images with less visual detail.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Using media_resolution",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-62",
+   "вид": "приём",
+   "утверждение_en": "Use a higher FPS sampling rate for videos requiring granular temporal analysis such as fast action or high-speed motion tracking.",
+   "цитата": "Use a higher Frame Per Second (FPS) sampling rate for\nvideos requiring granular temporal analysis, such as fast-action understanding\nor high-speed motion tracking.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Improving video analysis",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-63",
+   "вид": "инструкция",
+   "утверждение_en": "When migrating, remove explicit temperature settings (especially low values for determinism) and use the Gemini 3 default of 1.0 to avoid looping or degraded performance on complex tasks.",
+   "цитата": "If your existing code explicitly sets\ntemperature\n(especially to low values for deterministic outputs), it is\nrecommended to remove this parameter and use the Gemini 3 default\nof\n1.0\nto avoid potential looping issues or performance degradation on\ncomplex tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Temperature settings",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-64",
+   "вид": "предупреждение",
+   "утверждение_en": "For Gemini 3 models, if a thought signature is expected in a turn but not provided, the model returns an error instead of a warning.",
+   "цитата": "For Gemini 3 models, if a\nthought signature is expected in a turn but not provided, the model\nreturns an error instead of a warning.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Thought signatures",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-65",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 models use a variable sequence length for media tokenization instead of Pan and Scan, with new default resolutions and token costs for images, PDFs and video.",
+   "цитата": "use a variable sequence length for media tokenization instead of Pan\nand Scan, and have new default resolutions and token costs for images,\nPDFs, and video.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Media resolution and tokenization",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-66",
+   "вид": "факт",
+   "утверждение_en": "Migrating to Gemini 3 defaults may increase token usage for images and PDFs but decrease it for video.",
+   "цитата": "Migrating to Gemini 3 defaults may\nincrease\ntoken usage for images and PDFs but\ndecrease\ntoken usage for video.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Token consumption",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-67",
+   "вид": "правило",
+   "утверждение_en": "If requests exceed the context window because of higher default resolutions, explicitly reduce the media resolution.",
+   "цитата": "If requests now exceed the context window due to higher default\nresolutions, it is recommended to explicitly reduce the media resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Token consumption",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-68",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 models, PDF token counts in usage_metadata are reported under the IMAGE modality instead of DOCUMENT.",
+   "цитата": "For Gemini 3 models, PDF token counts in\nusage_metadata\nare reported under the IMAGE modality instead of DOCUMENT.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / PDF & document understanding",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-69",
+   "вид": "ограничение",
+   "утверждение_en": "Image segmentation is not supported by Gemini 3 models; for built-in segmentation Google recommends continuing to use Gemini 2.5 Flash with thinking turned off.",
+   "цитата": "Image segmentation is not supported by\nGemini 3 models. For workloads requiring built-in image\nsegmentation, it is recommended to continue to utilize Gemini 2.5 Flash\nwith thinking turned off.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations / Image segmentation",
+   "модели": [
+    "Gemini 3",
+    "Gemini 2.5 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сегментация = разметка масок на входной картинке (понимание), не генерация."
+  },
+  {
+   "код": "E-133-70",
+   "вид": "лимит",
+   "утверждение_en": "Per the FAQ, Gemini 3 models support a 1 million token input context window and up to 64k output tokens.",
+   "цитата": "Gemini 3 models support a 1 million token input context window and up to 64k tokens of output.",
+   "источник_цитаты": "txt",
+   "раздел": "FAQ",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Сказано про 'Gemini 3 models' в целом (контекст FAQ — gemini-3.1-pro-preview); к image-моделям не применять без проверки."
+  },
+  {
+   "код": "E-133-71",
+   "вид": "ограничение",
+   "утверждение_en": "gemini-3.1-pro-preview does not support image output.",
+   "цитата": "Does\ngemini-3.1-pro-preview\nsupport image output? No.",
+   "источник_цитаты": "txt",
+   "раздел": "FAQ",
+   "модели": [
+    "gemini-3.1-pro-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Текстовая Pro-модель картинок не генерирует."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-133-72",
+   "вид": "предупреждение",
+   "утверждение_en": "The page is inconsistent about how many thinking levels exist: it says thinking_level selects 'one of two states' and the migration note says 'low or high', yet the Thinking level section lists four levels (MINIMAL, LOW, MEDIUM, HIGH) with per-model availability.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / Migration considerations",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-133-10, E-133-11, E-133-13, E-133-14, E-133-15",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-73",
+   "вид": "предупреждение",
+   "утверждение_en": "The OpenAI example sets reasoning_effort=\"medium\" with the comment 'Map to thinking_level high.', contradicting the text that medium maps to thinking_level medium.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking level / OpenAI compatibility example",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-133-18, E-133-19",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Комментарий виден в html <pre> 5 и в txt."
+  },
+  {
+   "код": "E-133-74",
+   "вид": "предупреждение",
+   "утверждение_en": "This page never names an image-generation model and its FAQ says gemini-3.1-pro-preview has no image output; its thinking, temperature, media_resolution and prompting guidance is stated for Gemini 3 text/understanding models, so applying it to Nano Banana models is not confirmed here.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "(вся страница)",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-133-71 и проверки html (Nano Banana / flash-image / pro-image встречаются только в меню)",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-75",
+   "вид": "правило",
+   "утверждение_en": "The page repeats three times that Gemini 3 should run at the default temperature 1.0 (range note, strong recommendation, migration advice to remove custom temperature), making it the page's strongest parameter emphasis.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Temperature / Migration considerations",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-133-45, E-133-46, E-133-48, E-133-63",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-133-76",
+   "вид": "объяснение",
+   "утверждение_en": "Across three sections the page frames media_resolution as a detail-versus-tokens/latency trade-off; per the token table the default for images (1120 tokens) equals the HIGH level, so leaving it unspecified already spends HIGH-level tokens on each input image.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution / Prompting best practices / Migration considerations",
+   "модели": [
+    "Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-133-20, E-133-25, E-133-28, E-133-61, E-133-66",
+   "тема": [
+    "рефы",
+    "цены"
+   ],
+   "заметка": "Совпадение UNSPECIFIED=1120 и HIGH=1120 для Image — вывод из таблицы, страница этого не формулирует."
+  },
+  {
+   "код": "E-133-77",
+   "вид": "приём",
+   "утверждение_en": "Because the advice is to 'explicitly reinforce the current date', the literal year in the example clause ('Remember it is 2025 this year') has to be replaced with the actual current year when used.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices / Using the Google Search tool",
+   "модели": [
+    "Gemini 3 Flash"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-133-57, E-133-58",
+   "тема": [
+    "grounding",
+    "промптинг"
+   ],
+   "заметка": "Страница обновлена 2026-09-22, а шаблон содержит 2025."
+  }
+ ],
+ "противоречия_внутри": [
+  "thinking_level: 'By selecting one of two states' и в миграции '(low or high)' vs четыре уровня MINIMAL/LOW/MEDIUM/HIGH (E-133-10 vs E-133-11..15).",
+  "OpenAI-пример: reasoning_effort=\"medium\" с комментарием '# Map to thinking_level high.' vs текст 'medium : maps to thinking_level medium for all Gemini 3 models' (E-133-18 vs E-133-19).",
+  "MINIMAL/MEDIUM: 'Gemini 3 Flash introduces two new thinking levels' vs MINIMAL '(Gemini 3 Flash and Gemini 3.1 Flash-Lite only)', MEDIUM '(Gemini 3 Flash, Gemini 3.1 Pro, and Gemini 3.1 Flash-Lite only)'; при этом OpenAI-маппинг: none→minimal '(Gemini 3 Flash only)', medium→medium 'for all Gemini 3 models' (E-133-9, E-133-11, E-133-14, E-133-18)."
+ ],
+ "не_сказано": [
+  "Ни одна image-модель генерации (Nano Banana) не названа; нет imageConfig/aspect ratio/image size/responseModalities.",
+  "Не сказано, какие thinking_level поддерживают image-модели и их дефолт.",
+  "Не сказано, как media_resolution влияет на референсные картинки при генерации изображений.",
+  "Промптинг-советы даны для текстовых ответов; про промпты для картинок — ничего.",
+  "Не упомянуты SynthID/C2PA."
+ ],
+ "сомнения": [
+  "Страница не про генерацию картинок (сомнение партии подтверждено): все единицы помечены моделями 'Gemini 3 ...' как в тексте; переносить на Nano Banana — только после сверки со страницами image-моделей.",
+  "Строка 'Sufficient for most tasks' в таблице Recommended settings стоит в строке low, у medium ячейка пустая — к medium относится или нет, неясно.",
+  "В примерах кода несовпадение MIME: a-man-and-a-dog.png подан как image/jpeg; dress.jpg в FunctionResponseFileData подан как image/png.",
+  "Шаблон даты содержит 'Remember it is 2025 this year', а страница обновлена 2026-09-22; knowledge cutoff 'January 2025' — для Gemini 3 Flash.",
+  "В txt код разбит по одному токену на строку; цитаты кода взяты в этом виде. Опечатка 'Google Google Gen AI SDK' — как в оригинале.",
+  "Второй признак официальности — стандартный подвал Google; строки 'Google LLC' нет."
+ ]
+}

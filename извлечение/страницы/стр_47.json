@@ -1,0 +1,668 @@
+{
+ "id": 47,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/start/get-started-with-gemini-3",
+ "заголовок": "Get started with Gemini 3  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished в html нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('Gemini 3 is our most intelligent model family to date')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Практический гайд Google Cloud для разработчиков на Gemini Enterprise Agent Platform по началу работы с Gemini 3 как reasoning-семейством (код на gemini-3.6-flash, FAQ про gemini-3.1-pro-preview): установка SDK, thinking_level, media_resolution для входных медиа, thought signatures и function calling, temperature, prompting best practices, migration, FAQ. Генерации картинок страница не касается; про изображения — только как вход (токены media_resolution, сегментация) и одна строка, что gemini-3.1-pro-preview не выдаёт картинки. Повторно подчёркивает: оценка токенов мультимодального входа приблизительна, биллинг — по usage_metadata; дефолт temperature 1.0; обязательность thought signatures.",
+ "модели_на_странице": [
+  "gemini-3.1-pro-preview",
+  "gemini-3-flash-preview",
+  "gemini-3.6-flash (в коде)",
+  "Gemini 3 Flash",
+  "Gemini 3.1 Flash-Lite",
+  "Gemini 2.5 Flash (для сегментации)",
+  "в навигации: 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image (без содержания)"
+ ],
+ "структура": [
+  "Quickstart (SDK, env, first request, complex reasoning, other thinking levels)",
+  "New API features (Thinking level, OpenAI compatibility, Media resolution: token counts, recommended settings, per-part/global)",
+  "Thought signatures (why, where, how: automated/manual)",
+  "Multimodal function responses",
+  "Streaming function calling",
+  "Temperature",
+  "Supported features",
+  "Prompting best practices",
+  "Migration considerations",
+  "FAQ",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in, вкладки продукта), строки 1-69"
+  },
+  {
+   "n": 2,
+   "начало": "Console Overview Beginner's guide Get started",
+   "итог": "ничего: обвязка сайта (левое меню документации Agent Platform: модели, partner/open models, Build, Deploy, Administer, Build your own model и т.д.), строки 70-998; в меню есть только заголовки 'Generate images with Gemini', 'Gemini image generation best practices', 'Gemini image generation limitations', '3 Pro Image', '3.1 Flash Image', '2.5 Flash Image', '3.1 Flash-Lite Image' без содержания"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started Get Started with Google Cloud",
+   "итог": "ничего: обвязка сайта (повтор верхнего меню продуктов), строки 999-1035"
+  },
+  {
+   "n": 4,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок, 'Stay organized with collections'), строки 1036-1043"
+  },
+  {
+   "n": 5,
+   "начало": "To see an example of Gemini",
+   "итог": "ничего: ссылки на ноутбук 'Intro to Gemini 3.1 Pro' (Colab/Workbench/GitHub), строки 1044-1054"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3 is our most intelligent",
+   "итог": "ничего: маркетинг без содержания про картинки (семейство reasoning-моделей), строки 1055-1058"
+  },
+  {
+   "n": 7,
+   "начало": "This guide provides a consolidated, practical",
+   "итог": "ничего: вводная фраза гайда, строки 1059-1061"
+  },
+  {
+   "n": 8,
+   "начало": "Quickstart Before you begin, you must",
+   "итог": "ничего: не про генерацию картинок (аутентификация API key/ADC), строки 1062-1065"
+  },
+  {
+   "n": 9,
+   "начало": "Install the Google Google Gen",
+   "итог": "ничего: не про генерацию картинок (Gen AI SDK >= 1.51.0 для функций Gemini 3; pip-команда), строки 1066-1067"
+  },
+  {
+   "n": 10,
+   "начало": "Set environment variables to use",
+   "итог": "ничего: не про генерацию картинок (global endpoint для gemini-3.1-pro-preview и gemini-3-flash-preview; export-команды), строки 1068-1075"
+  },
+  {
+   "n": 11,
+   "начало": "Make your first request By default",
+   "итог": "ничего: не про генерацию картинок (thinking_level LOW для текстовых запросов; код без промпта для картинок), строки 1076-1086"
+  },
+  {
+   "n": 12,
+   "начало": "Try complex reasoning tasks Gemini 3",
+   "итог": "ничего: не про генерацию картинок (HIGH thinking; код с текстовым промптом про C++ singleton), строки 1087-1093"
+  },
+  {
+   "n": 13,
+   "начало": "Other thinking levels Gemini 3 Flash",
+   "итог": "ничего: не про генерацию картинок (MINIMAL/MEDIUM у Gemini 3 Flash), строки 1094-1101"
+  },
+  {
+   "n": 14,
+   "начало": "New API features Gemini 3 introduces",
+   "итог": "ничего: не про генерацию картинок (вводная к таблице), строки 1102-1106"
+  },
+  {
+   "n": 15,
+   "начало": "New Feature/API ChangeDocumentation Model: gemini-3.1-pro-previewModel",
+   "итог": "ничего: таблица-ссылки на документацию (Media resolution -> Image understanding и т.д.), строки 1107-1119"
+  },
+  {
+   "n": 16,
+   "начало": "Thinking level The thinking_level parameter",
+   "итог": "ничего: не про генерацию картинок (thinking_level текстовых Gemini 3; image-модели не названы), строки 1120-1124"
+  },
+  {
+   "n": 17,
+   "начало": "MINIMAL: (Gemini 3 Flash and",
+   "итог": "ничего: не про генерацию картинок (описание уровней MINIMAL/LOW/MEDIUM/HIGH для Gemini 3 Flash/3.1 Pro/3.1 Flash-Lite), строки 1125-1143"
+  },
+  {
+   "n": 18,
+   "начало": "Note: You cannot use both",
+   "итог": "ничего: не про генерацию картинок (thinking_level и thinking_budget вместе -> 400; дефолт HIGH — для текстовых Gemini 3), строки 1144-1147"
+  },
+  {
+   "n": 19,
+   "начало": "Google Gen AI SDK example from",
+   "итог": "ничего: код без промпта для картинок (thinking_level HIGH), строки 1148-1149"
+  },
+  {
+   "n": 20,
+   "начало": "OpenAI compatibility example For users",
+   "итог": "ничего: не про генерацию картинок (reasoning_effort -> thinking_level; код с текстовым промптом), строки 1150-1156"
+  },
+  {
+   "n": 21,
+   "начало": "Media resolution Gemini 3 introduces granular",
+   "итог": "E-47-1, E-47-2"
+  },
+  {
+   "n": 22,
+   "начало": "You can set the resolution",
+   "итог": "E-47-3"
+  },
+  {
+   "n": 23,
+   "начало": "Token counts This table summarizes the",
+   "итог": "E-47-4"
+  },
+  {
+   "n": 24,
+   "начало": "Recommended settings Media ResolutionMax TokensUsage",
+   "итог": "E-47-5"
+  },
+  {
+   "n": 25,
+   "начало": "Note:Token counts for multimodal inputs",
+   "итог": "E-47-6; хвост про снижение разрешения для длинных видео/документов — ничего: не про изображения"
+  },
+  {
+   "n": 26,
+   "начало": "Setting media_resolution per individual part",
+   "итог": "E-47-7 (кодовый блок без промпта генерации; прочитан по html PRE 6)"
+  },
+  {
+   "n": 27,
+   "начало": "Setting media_resolution globally You can",
+   "итог": "E-47-8 (кодовый блок без промпта генерации; прочитан по html PRE 7)"
+  },
+  {
+   "n": 28,
+   "начало": "Thought signatures Thought signatures are",
+   "итог": "ничего: не про генерацию картинок (thought signatures в function calling), строки 1196-1205"
+  },
+  {
+   "n": 29,
+   "начало": "Why are thought signatures important?",
+   "итог": "ничего: не про генерацию картинок (function calling), строки 1206-1211"
+  },
+  {
+   "n": 30,
+   "начало": "Where are thought signatures returned?",
+   "итог": "ничего: не про генерацию картинок (правила возврата подписей при function calling), строки 1212-1224"
+  },
+  {
+   "n": 31,
+   "начало": "How to handle thought signatures?",
+   "итог": "ничего: не про генерацию картинок (автоматическая обработка SDK), строки 1225-1233"
+  },
+  {
+   "n": 32,
+   "начало": "Manual function calling example When",
+   "итог": "ничего: код без промпта для картинок (get_weather), строки 1234-1237"
+  },
+  {
+   "n": 33,
+   "начало": "Automatic function calling example When",
+   "итог": "ничего: код без промпта для картинок, строки 1238-1241"
+  },
+  {
+   "n": 34,
+   "начало": "OpenAI compatibility example When using",
+   "итог": "ничего: код без промпта для картинок, строки 1242-1246"
+  },
+  {
+   "n": 35,
+   "начало": "Manual handling If you are",
+   "итог": "ничего: не про генерацию картинок (ручная передача thought_signature, ошибка 400), строки 1247-1254"
+  },
+  {
+   "n": 36,
+   "начало": "Multimodal function responses Multimodal function",
+   "итог": "ничего: не про генерацию картинок (картинка как ответ функции — вход, не генерация; код get_image), строки 1255-1260"
+  },
+  {
+   "n": 37,
+   "начало": "Streaming function calling You can",
+   "итог": "ничего: не про генерацию картинок (stream_function_call_arguments; код и JSON-ответ), строки 1261-1267"
+  },
+  {
+   "n": 38,
+   "начало": "Temperature Range for Gemini 3:",
+   "итог": "ничего: не про генерацию картинок (temperature 1.0 для reasoning Gemini 3; image-модели не названы — см. не_сказано), строки 1268-1277"
+  },
+  {
+   "n": 39,
+   "начало": "Supported features Gemini 3 models also",
+   "итог": "ничего: список поддерживаемых функций текстовых Gemini 3 (ссылки), строки 1278-1292"
+  },
+  {
+   "n": 40,
+   "начало": "Prompting best practices Gemini 3 is",
+   "итог": "ничего: не про генерацию картинок (промптинг reasoning-модели: краткость, verbosity), строки 1293-1302"
+  },
+  {
+   "n": 41,
+   "начало": "Grounding: For grounding use cases,",
+   "итог": "ничего: не про генерацию картинок (системная инструкция strictly grounded assistant для текстовых ответов), строки 1303-1305"
+  },
+  {
+   "n": 42,
+   "начало": "Using the Google Search tool:",
+   "итог": "ничего: не про генерацию картинок (подсказка текущей даты в system instructions), строки 1306-1312"
+  },
+  {
+   "n": 43,
+   "начало": "Knowledge cutoff: For certain queries,",
+   "итог": "ничего: не про генерацию картинок (knowledge cutoff clause), строки 1313-1318"
+  },
+  {
+   "n": 44,
+   "начало": "Using media_resolution: Use the media_resolution",
+   "итог": "E-47-9"
+  },
+  {
+   "n": 45,
+   "начало": "Improving video analysis: Use a",
+   "итог": "ничего: не про изображения (FPS для видео), строки 1324-1326"
+  },
+  {
+   "n": 46,
+   "начало": "Migration considerations Consider the following",
+   "итог": "ничего: вводная фраза раздела, строки 1327-1328"
+  },
+  {
+   "n": 47,
+   "начало": "Thinking level: Gemini 3 models",
+   "итог": "ничего: не про генерацию картинок (thinking_level), строки 1329-1332"
+  },
+  {
+   "n": 48,
+   "начало": "Temperature settings: If your existing",
+   "итог": "ничего: не про генерацию картинок (убрать низкую temperature для Gemini 3 reasoning), строки 1333-1337"
+  },
+  {
+   "n": 49,
+   "начало": "Thought signatures: For Gemini 3",
+   "итог": "ничего: не про генерацию картинок (ошибка вместо warning), строки 1338-1340"
+  },
+  {
+   "n": 50,
+   "начало": "Media resolution and tokenization: Gemini",
+   "итог": "E-47-10"
+  },
+  {
+   "n": 51,
+   "начало": "Token counting for multimodality input:",
+   "итог": "ничего: повтор единицы E-47-6"
+  },
+  {
+   "n": 52,
+   "начало": "Token consumption: Migrating to Gemini",
+   "итог": "E-47-11"
+  },
+  {
+   "n": 53,
+   "начало": "PDF & document understanding: Default",
+   "итог": "ничего: не про изображения (OCR PDF; PDF-токены учитываются под модальностью IMAGE — бухгалтерия PDF), строки 1354-1358"
+  },
+  {
+   "n": 54,
+   "начало": "Image segmentation: Image segmentation is",
+   "итог": "E-47-12"
+  },
+  {
+   "n": 55,
+   "начало": "Multimodal function responses: For Gemini",
+   "итог": "ничего: не про генерацию картинок (картинки/PDF во входе function responses), строки 1363-1364"
+  },
+  {
+   "n": 56,
+   "начало": "FAQ Which region isgemini-3.1-pro-previewavailable on",
+   "итог": "ничего: не про генерацию картинок (регион Global), строка 1365"
+  },
+  {
+   "n": 57,
+   "начало": "What are the context window",
+   "итог": "ничего: не про генерацию картинок (1M вход / 64k выход текстовых Gemini 3), строка 1366"
+  },
+  {
+   "n": 58,
+   "начало": "Does gemini-3.1-pro-preview support image output?",
+   "итог": "E-47-13"
+  },
+  {
+   "n": 59,
+   "начало": "Does gemini-3.1-pro-preview support Gemini",
+   "итог": "ничего: не про генерацию картинок (Live API), строки 1368-1369"
+  },
+  {
+   "n": 60,
+   "начало": "What's next Learn more about",
+   "итог": "ничего: ссылки 'What's next', строки 1370-1377"
+  },
+  {
+   "n": 61,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия CC BY 4.0 / Apache 2.0, ссылка на Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1378-1380"
+  },
+  {
+   "n": 62,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1381-1425"
+  },
+  {
+   "n": 63,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-47-14, E-47-15"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-47-1",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 gives granular control over multimodal vision processing via media_resolution; higher resolutions improve the model's ability to read fine text or identify small details in inputs, but increase token usage and latency.",
+   "цитата": "Higher resolutions improve\nthe model's ability to read fine text or identify small details, but increase\ntoken usage and latency.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "другое"
+   ],
+   "заметка": "Речь о ВХОДНЫХ изображениях (понимание/vision processing), не о разрешении сгенерированной картинки. Применимость к рефам image-моделей страница не утверждает."
+  },
+  {
+   "код": "E-47-2",
+   "вид": "факт",
+   "утверждение_en": "The media_resolution parameter determines the maximum number of tokens allocated per input image, PDF page or video frame.",
+   "цитата": "The media_resolution parameter determines the\nmaximum number of tokens allocated per input image, PDF page or video\nframe.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "другое"
+   ],
+   "заметка": "Определение параметра: входные медиа."
+  },
+  {
+   "код": "E-47-3",
+   "вид": "инструкция",
+   "утверждение_en": "media_resolution can be set to low, medium, or high globally (via generation_config) or per individual media part; ultra_high can only be set per individual media part; if unspecified, the model uses optimal defaults based on the media type.",
+   "цитата": "You can set the resolution to low, medium, or high globally\n(using generation_config) or for individual media parts. The ultra_high\nresolution can only be set for individual media parts. If unspecified, the\nmodel uses optimal defaults based on the media type.",
+   "источник_цитаты": "txt",
+   "раздел": "Media resolution",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "другое"
+   ],
+   "заметка": "ultra_high — только на уровне части (part), не глобально."
+  },
+  {
+   "код": "E-47-4",
+   "вид": "лимит",
+   "утверждение_en": "Approximate token counts per input image by media_resolution: UNSPECIFIED (default) 1120, LOW 280, MEDIUM 560, HIGH 1120, ULTRA_HIGH 2240 (video per frame: 70/70/70/280/N/A; PDF: 560/280+text/560+text/1120+text/N/A).",
+   "цитата": "Media ResolutionImageVideoPDF\nUNSPECIFIED (Default)112070560\nLOW28070280 + Text\nMEDIUM56070560 + Text\nHIGH11202801120 + Text\nULTRA_HIGH2240N/AN/A",
+   "источник_цитаты": "txt",
+   "раздел": "Token counts",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "В .txt таблица склеена без разделителей; столбцы восстановлены по html-таблице (Image | Video | PDF). Числа приблизительные ('approximate token counts')."
+  },
+  {
+   "код": "E-47-5",
+   "вид": "правило",
+   "утверждение_en": "Recommended media_resolution usage: ultra_high (max 2240 tokens) for tasks requiring analysis of fine details in images such as screen recording stills or high-resolution photos; high (1120) for image analysis tasks to ensure maximum quality; low (image 280, video 70) is sufficient for most tasks.",
+   "цитата": "ultra_high2240Tasks requiring analysis of fine details in images, such as processing screen recording stills or high-resolution photos.\nhigh1120Image analysis tasks to ensure maximum quality.\nmedium560\nlowImage: 280 Video: 70Sufficient for most tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Recommended settings",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "другое"
+   ],
+   "заметка": "Таблица 'Recommended settings'; для medium рекомендация не дана (пустая ячейка в html). Контекст — анализ изображений, не генерация."
+  },
+  {
+   "код": "E-47-6",
+   "вид": "предупреждение",
+   "утверждение_en": "Token counts for multimodal inputs (including images) are estimates based on the chosen media_resolution, so the count_tokens result may not match the final consumed tokens; accurate billing usage is only available after execution in the response's usage_metadata.",
+   "цитата": "Token counts for multimodal inputs (images, video. Audio, PDF) are\nan estimation based on the chosen media_resolution. As such, the result\nfrom the count_tokens API call may not match the final consumed tokens. The\naccurate usage for billing is only available after execution within the\nresponse's usage_metadata.",
+   "источник_цитаты": "txt",
+   "раздел": "Token counts (Note)",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Повторено почти дословно в Migration considerations (Token counting for multimodality input)."
+  },
+  {
+   "код": "E-47-7",
+   "вид": "инструкция",
+   "утверждение_en": "media_resolution can be set per individual media part in the Gen AI SDK with types.PartMediaResolution(level=types.PartMediaResolutionLevel.MEDIA_RESOLUTION_HIGH) on the image Part.",
+   "цитата": "You can set media_resolution per individual media part:",
+   "источник_цитаты": "txt",
+   "раздел": "Setting media_resolution per individual part",
+   "модели": [
+    "gemini-3.6-flash (в коде примера)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; имя параметра выведено из кодового блока",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Код: изображение gs://cloud-samples-data/generative-ai/image/a-man-and-a-dog.png с MEDIA_RESOLUTION_HIGH, видео с MEDIA_RESOLUTION_LOW, текст 'When does the image appear in the video? What is the context?'. Промпта для генерации картинки нет. В коде mime_type='image/jpeg' при .png-файле."
+  },
+  {
+   "код": "E-47-8",
+   "вид": "инструкция",
+   "утверждение_en": "media_resolution can also be set globally in GenerateContentConfig, e.g. media_resolution=types.MediaResolution.MEDIA_RESOLUTION_LOW.",
+   "цитата": "You can also set media_resolution globally (using GenerateContentConfig):",
+   "источник_цитаты": "txt",
+   "раздел": "Setting media_resolution globally",
+   "модели": [
+    "gemini-3.6-flash (в коде примера)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; значение выведено из кодового блока",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример-вопрос 'What is in the image?' — понимание картинки, не генерация."
+  },
+  {
+   "код": "E-47-9",
+   "вид": "приём",
+   "утверждение_en": "Use media_resolution to control the maximum number of tokens used to represent an image or video frames: high resolution lets the model capture details in an image (may use more tokens), while lower resolution optimizes cost and latency for images with less visual detail.",
+   "цитата": "Using media_resolution: Use the media_resolution parameter to control the\nmaximum number of tokens the model uses to represent an image or frames in\nvideos. High resolution will enable the model to capture details in an image,\nand may use more tokens per frame, while lower resolution allows for optimizing\ncost and latency for images with less visual detail.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompting best practices",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "другое"
+   ],
+   "заметка": "Раздел 'Prompting best practices' для Gemini 3 как reasoning-модели; относится к входным изображениям."
+  },
+  {
+   "код": "E-47-10",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 models use a variable sequence length for media tokenization instead of Pan and Scan, and have new default resolutions and token costs for images, PDFs, and video.",
+   "цитата": "Media resolution and tokenization: Gemini 3 models\nuse a variable sequence length for media tokenization instead of Pan\nand Scan, and have new default resolutions and token costs for images,\nPDFs, and video.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations",
+   "модели": [
+    "Gemini 3 models (как в тексте)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "другое"
+   ],
+   "заметка": "Механизм токенизации входных медиа."
+  },
+  {
+   "код": "E-47-11",
+   "вид": "предупреждение",
+   "утверждение_en": "Migrating to Gemini 3 defaults may increase token usage for images and PDFs (but decrease it for video); if requests exceed the context window due to higher default resolutions, it is recommended to explicitly reduce the media resolution.",
+   "цитата": "Token consumption: Migrating to Gemini 3 defaults may\nincrease token usage for images and PDFs but decrease token usage for video.\nIf requests now exceed the context window due to higher default\nresolutions, it is recommended to explicitly reduce the media resolution.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Входные изображения."
+  },
+  {
+   "код": "E-47-12",
+   "вид": "ограничение",
+   "утверждение_en": "Image segmentation is not supported by Gemini 3 models; for workloads requiring built-in image segmentation, it is recommended to continue using Gemini 2.5 Flash with thinking turned off.",
+   "цитата": "Image segmentation: Image segmentation is not supported by\nGemini 3 models. For workloads requiring built-in image\nsegmentation, it is recommended to continue to utilize Gemini 2.5 Flash\nwith thinking turned off.",
+   "источник_цитаты": "txt",
+   "раздел": "Migration considerations",
+   "модели": [
+    "Gemini 3 models",
+    "Gemini 2.5 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Сегментация — задача понимания изображения (маски), не генерации. Gemini 2.5 Flash здесь — текстовая модель, не 2.5 Flash Image."
+  },
+  {
+   "код": "E-47-13",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-pro-preview does not support image output.",
+   "цитата": "Does gemini-3.1-pro-preview support image output? No.",
+   "источник_цитаты": "txt",
+   "раздел": "FAQ",
+   "модели": [
+    "gemini-3.1-pro-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Для генерации картинок нужны отдельные image-модели (в навигации сайта: 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-47-14",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 input images, the unspecified (default) media resolution costs about the same as HIGH (1120 tokens per image), while the page calls LOW (280 tokens) sufficient for most tasks; so leaving the default spends about 4x the tokens of LOW per image.",
+   "цитата": "UNSPECIFIED (Default)112070560",
+   "источник_цитаты": "txt",
+   "раздел": "Token counts / Recommended settings",
+   "модели": [
+    "Gemini 3 (семейство, как названо в тексте раздела; image-модели не названы)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-47-4, E-47-5",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Вывод: по умолчанию для картинок = уровень HIGH; явная рекомендация 'low sufficient for most tasks' означает, что экономия требует явной установки. Страница сама этого вывода не формулирует."
+  },
+  {
+   "код": "E-47-15",
+   "вид": "факт",
+   "утверждение_en": "All image-related guidance on this page concerns images as INPUT (understanding, token cost, segmentation); the only statement about image OUTPUT is that gemini-3.1-pro-preview does not support it — image-output models appear only as separate entries in the site navigation.",
+   "цитата": "Does gemini-3.1-pro-preview support image output? No.",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-pro-preview",
+    "Gemini 3 (семейство)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-47-1, E-47-2, E-47-9, E-47-12, E-47-13",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "другое"
+   ],
+   "заметка": "Граница применимости страницы: гайд про reasoning/текстовые модели. Советы по thinking_level, temperature, prompting best practices на image-модели страница не распространяет."
+  }
+ ],
+ "противоречия_внутри": [
+  "Раздел Thinking level: 'By selecting one of two states' — но перечислены четыре уровня (MINIMAL, LOW, MEDIUM, HIGH); в Migration considerations снова '(low or high)'. Не про картинки.",
+  "OpenAI compatibility: текст 'medium: maps to thinking_level medium', а в коде комментарий 'reasoning_effort=\"medium\",# Map to thinking_level high.' Не про картинки.",
+  "Код per-part media_resolution: файл a-man-and-a-dog.png передан с mime_type='image/jpeg'; второй Part записан как 'Part(' без 'types.'.",
+  "Таблица Recommended settings: low 'Sufficient for most tasks', но дефолт для изображений (UNSPECIFIED) = 1120 токенов, как HIGH (см. E-47-14) — не противоречие, а расхождение дефолта с рекомендацией."
+ ],
+ "не_сказано": [
+  "Страница не говорит, распространяются ли советы по thinking_level, temperature (держать 1.0), thought signatures и 'Prompting best practices' на Gemini 3 image-модели (gemini-3-pro-image, gemini-3.1-flash-image, gemini-3.1-flash-lite-image).",
+  "Не сказано, действует ли media_resolution на референс-изображения, подаваемые в image-модели для генерации/редактирования.",
+  "Нет ни слова о разрешении/формате ВЫХОДНОГО изображения, об image_config, aspect ratio.",
+  "Ссылки в меню на 'Gemini image generation best practices/limitations' — без содержания на этой странице."
+ ],
+ "сомнения": [
+  "Страница о reasoning/текстовых моделях; единицы E-47-1…E-47-11 — про входные изображения (понимание), их перенос на image-генерацию не подтверждён текстом.",
+  "Модели в коде 'gemini-3.6-flash' при FAQ про 'gemini-3.1-pro-preview' — страница собрана из разных версий; для image-моделей это не важно.",
+  "Совет в Prompting best practices 'Be concise… may over-analyze verbose prompts' относится к reasoning-модели Gemini 3; не извлечён как правило для картинок, чтобы не переносить его на image-промпты без основания."
+ ]
+}

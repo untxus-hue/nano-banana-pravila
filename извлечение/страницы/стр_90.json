@@ -1,0 +1,1191 @@
+{
+ "id": 90,
+ "url": "https://codelabs.developers.google.com/gemini-for-developers",
+ "заголовок": "Gemini for Developers  |  Google Codelabs",
+ "дата_в_тексте": "«As of today (February 2026)» в разделе 4; в html last-updated 2026-07-22T22:44:37Z (google-codelab-about)",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "Подвал «Except as otherwise noted… see the Google Developers Site Policies» (стр. 1608-1614 .txt); автор в html — Mete Atamel (принадлежность к Google на странице не указана; ссылки на примеры ведут в его личный github.com/meteatamel).",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Обзорный кодлаб (72 минуты, автор Mete Atamel) по экосистеме Gemini для разработчиков: продукты (Gemini App, NotebookLM, AI Studio, Agent Platform Studio, Antigravity), модели (список картинкой, «as of February 2026»), Google Gen AI SDK (единый интерфейс Google AI / Google Cloud), Interactions API, длинный контекст, thinking, инструменты (Search, Maps, Code Execution, Computer Use, File Search, Function Calling), Deep Research агент, генерация картинок (раздел 11), TTS, spatial understanding, Live API. Про картинки только раздел 11: определение Nano Banana как нативной генерации Gemini; две модели — Nano Banana (Gemini Flash Image: скорость, объём, низкая задержка) и Nano Banana Pro (Gemini Pro Image: профессиональные ассеты, рассуждение, сложные инструкции, точный текст); Python-код редактирования (prompt + PIL image → gemini-3.1-flash-image, разбор частей ответа); где попробовать (Gemini App → Tools → 🍌 Create images) и пример разговорного промпта. Плюс упоминания генерации картинок в продуктах (Gemini App, NotebookLM-инфографика, AI Studio Playground) и категории Imagegen-моделей на Google Cloud.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2) — в коде; в тексте «Nano Banana: The Gemini Flash Image model»",
+  "gemini-3-pro-image (Nano Banana Pro) — в тексте «The Gemini Pro Image model», id не дан",
+  "Imagen — «Imagegen models» (только ссылка)",
+  "нерелевантные: gemini-3.5-flash, gemini-3.1-flash-tts-preview, deep-research-pro-preview-12-2025, Computer Use (preview)"
+ ],
+ "структура": [
+  "1. Introduction",
+  "2. The Gemini Family",
+  "3. Gemini Powered Tools (Gemini App, NotebookLM, AI Studio, Agent Platform Studio, Antigravity, выбор инструмента)",
+  "4. Gemini Models",
+  "5. Google Gen AI SDK",
+  "6. Interactions API",
+  "7. Long Context Window",
+  "8. Thinking Mode",
+  "9. Tools (Google Search, Google Maps, Code Execution, Computer Use, File Search, Function Calling)",
+  "10. Agents",
+  "11. Image Generation (определение, две модели, код редактирования, Gemini App)",
+  "12. Text-to-Speech Generation",
+  "13. Spatial Understanding",
+  "14. Live API",
+  "15. Conclusion + References"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Gemini for Developers  |  Google Codelabs (стр. 1)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English Deutsch (стр. 2-26)",
+   "итог": "ничего: обвязка сайта (меню языков, Sign in)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini for Developers (стр. 27)",
+   "итог": "ничего: заголовок кодлаба"
+  },
+  {
+   "n": 4,
+   "начало": "1. Introduction 👋 / In this codelab, you will learn everything",
+   "итог": "ничего: обзор кодлаба; «native image & audio output» раскрыто в разделе 11 — повтор E-90-7, E-90-8"
+  },
+  {
+   "n": 5,
+   "начало": "At the end of this codelab, you",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 6,
+   "начало": "💡What you'll learn",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 7,
+   "начало": "Different Gemini models.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 8,
+   "начало": "Tools powered by Gemini models.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 9,
+   "начало": "How to integrate with Gemini using",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 10,
+   "начало": "Long context window of Gemini.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini's thinking mode.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 12,
+   "начало": "Different built-in tools such as Google",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 13,
+   "начало": "How to interact with research agents",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 14,
+   "начало": "Image and Text-to-Speech Generation.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 15,
+   "начало": "Spatial understanding of Gemini.",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 16,
+   "начало": "Live API for real-time voice and",
+   "итог": "ничего: пункт перечня тем кодлаба (содержание — в соответствующих разделах)"
+  },
+  {
+   "n": 17,
+   "начало": "⚠️ What you'll need",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 18,
+   "начало": "An API key for Google AI",
+   "итог": "ничего: общие требования кодлаба, не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "A Google Cloud Project with billing",
+   "итог": "ничего: общие требования кодлаба, не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "Your local development environment or Cloud",
+   "итог": "ничего: среда разработки"
+  },
+  {
+   "n": 21,
+   "начало": "2. The Gemini Family 🫂 / Gemini is Google's AI model",
+   "итог": "ничего: не про генерацию картинок (общее позиционирование Gemini)"
+  },
+  {
+   "n": 22,
+   "начало": "Gemini is not just a model.",
+   "итог": "ничего: не про генерацию картинок (бренд Gemini и продукты)"
+  },
+  {
+   "n": 23,
+   "начало": "3. Gemini Powered Tools 🧰 / Let's briefly take a look",
+   "итог": "ничего: вводная фраза"
+  },
+  {
+   "n": 24,
+   "начало": "Gemini App 💬 / Gemini App (gemini.google.com) is a chat-based",
+   "итог": "ничего: не про генерацию картинок (модели Flash-Lite/Flash/Pro и уровни thinking в приложении)"
+  },
+  {
+   "n": 25,
+   "начало": "It also has tools for Deep",
+   "итог": "E-90-1"
+  },
+  {
+   "n": 26,
+   "начало": "NotebookLM 📓 / NotebookLM (notebooklm.google.com) is an AI-powered",
+   "итог": "E-90-2"
+  },
+  {
+   "n": 27,
+   "начало": "Google AI Studio 🎨 / Google AI Studio (ai.dev) is the fastest",
+   "итог": "E-90-3"
+  },
+  {
+   "n": 28,
+   "начало": "Under the Agents section, you can",
+   "итог": "ничего: не про генерацию картинок (Agents, Build-панель AI Studio)"
+  },
+  {
+   "n": 29,
+   "начало": "Gemini Enterprise Agent Platform Studio ☁️ / Gemini Enterprise",
+   "итог": "ничего: не про генерацию картинок (описание платформы)"
+  },
+  {
+   "n": 30,
+   "начало": "Google Antigravity 🚀 / Antigravity (antigravity.google) is an agentic",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 31,
+   "начало": "Feel free to download and play",
+   "итог": "ничего: вводная фраза"
+  },
+  {
+   "n": 32,
+   "начало": "If you're just starting out, you'd",
+   "итог": "ничего: не про генерацию картинок (выбор инструмента для кодинга)"
+  },
+  {
+   "n": 33,
+   "начало": "If you're vibe-coding a web application,",
+   "итог": "ничего: не про генерацию картинок (выбор инструмента для кодинга)"
+  },
+  {
+   "n": 34,
+   "начало": "If you want to build a complex",
+   "итог": "ничего: не про генерацию картинок (выбор инструмента для кодинга)"
+  },
+  {
+   "n": 35,
+   "начало": "If you want to deploy or already",
+   "итог": "ничего: не про генерацию картинок (выбор инструмента для кодинга)"
+  },
+  {
+   "n": 36,
+   "начало": "Of course, you can mix and",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 37,
+   "начало": "4. Gemini Models 🧠 / Gemini Models are constantly getting better",
+   "итог": "ничего: список «featured models» дан картинкой (alt 5e5d54c5aa547474.png), текстом не читается; дата «As of today (February 2026)» учтена в дата_в_тексте"
+  },
+  {
+   "n": 38,
+   "начало": "There are many other Generally available",
+   "итог": "E-90-4"
+  },
+  {
+   "n": 39,
+   "начало": "Take a look to visit Google",
+   "итог": "ничего: ссылка на документацию"
+  },
+  {
+   "n": 40,
+   "начало": "5. Google Gen AI SDK 📦 / To integrate Gemini with your",
+   "итог": "ничего: вводная фраза (раскрыто в E-90-5)"
+  },
+  {
+   "n": 41,
+   "начало": "As we discussed earlier, you can",
+   "итог": "E-90-5"
+  },
+  {
+   "n": 42,
+   "начало": "Google Gen AI SDK currently supports Python,",
+   "итог": "ничего: общий факт SDK (языки), не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "For example, this is how you'd",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 44,
+   "начало": "client = genai . Client ( api_key (стр. 147-178)",
+   "итог": "ничего: код без промпта про картинки (текстовый вызов gemini-3.5-flash)"
+  },
+  {
+   "n": 45,
+   "начало": "To do the same against Gemini",
+   "итог": "E-90-6"
+  },
+  {
+   "n": 46,
+   "начало": "client = genai . Client ( vertexai = True (стр. 180-219)",
+   "итог": "E-90-6 (код к единице: vertexai=True, project, location=\"us-central1\")"
+  },
+  {
+   "n": 47,
+   "начало": "To run these samples yourself, you",
+   "итог": "ничего: ссылка на репозиторий примеров"
+  },
+  {
+   "n": 48,
+   "начало": "6. Interactions API 🔄 / The Interactions API (beta) is a new",
+   "итог": "ничего: не про генерацию картинок (Interactions API)"
+  },
+  {
+   "n": 49,
+   "начало": "This is how you'd have a",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 50,
+   "начало": "interaction = client . interactions . create (стр. 232-259)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 51,
+   "начало": "You can have a stateful conversation",
+   "итог": "ничего: не про генерацию картинок (stateful-диалог через previous_interaction_id показан на тексте)"
+  },
+  {
+   "n": 52,
+   "начало": "interaction1 = client . interactions . create (стр. 261-333)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 53,
+   "начало": "The Interactions API is designed for",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 54,
+   "начало": "To run these samples yourself, you",
+   "итог": "ничего: ссылка на репозиторий"
+  },
+  {
+   "n": 55,
+   "начало": "7. Long Context Window 🪟 / Many Gemini models come with",
+   "итог": "ничего: не про генерацию картинок (длинный контекст)"
+  },
+  {
+   "n": 56,
+   "начало": "To see the long context window",
+   "итог": "ничего: не про генерацию картинок (Prompt Gallery, Extract Video Chapters)"
+  },
+  {
+   "n": 57,
+   "начало": "Once you run it with the",
+   "итог": "ничего: вводная к выводу"
+  },
+  {
+   "n": 58,
+   "начало": "[ { \"timecode\" : \"00:00\" (стр. 349-390)",
+   "итог": "ничего: пример вывода, не про картинки"
+  },
+  {
+   "n": 59,
+   "начало": "This is only possible thanks to",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 60,
+   "начало": "8. Thinking Mode 🧠 / The Gemini models use an internal",
+   "итог": "ничего: общая механика thinking для текстовых моделей Gemini, картинки не упомянуты"
+  },
+  {
+   "n": 61,
+   "начало": "To see the thinking mode in",
+   "итог": "ничего: не про генерацию картинок (AI Studio, уровень thinking)"
+  },
+  {
+   "n": 62,
+   "начало": "If you click on the Get code",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 63,
+   "начало": "response = client . models . generate_content (стр. 402-439)",
+   "итог": "ничего: код без промпта про картинки (thinking_level=\"low\", include_thoughts)"
+  },
+  {
+   "n": 64,
+   "начало": "Play with different prompts and different",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "9. Tools 🧰 / Gemini comes with a number",
+   "итог": "ничего: не про генерацию картинок (встроенные инструменты)"
+  },
+  {
+   "n": 66,
+   "начало": "Google Search 🔎 / You can ground model responses",
+   "итог": "ничего: grounding текстовых ответов, не про картинки"
+  },
+  {
+   "n": 67,
+   "начало": "In Agent Platform Studio (console.cloud.google.com/agent-platform/studio)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 68,
+   "начало": "Then, you can ask a question",
+   "итог": "ничего: пример текстового запроса"
+  },
+  {
+   "n": 69,
+   "начало": "You usually get a response for",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 70,
+   "начало": "In London today ( Friday , May (стр. 456-481)",
+   "итог": "ничего: пример вывода"
+  },
+  {
+   "n": 71,
+   "начало": "Now, enable the Google Search grounding",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 72,
+   "начало": "In London today ( Wednesday , February (стр. 483-507)",
+   "итог": "ничего: пример вывода"
+  },
+  {
+   "n": 73,
+   "начало": "This is how you'd have Google",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 74,
+   "начало": "google_search_tool = Tool ( google_search (стр. 509-542)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 75,
+   "начало": "Google Maps 🗺️ / You can also ground model",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 76,
+   "начало": "To see it in action, you",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "Can you show me some Greek (стр. 546-559)",
+   "итог": "ничего: пример текстового запроса"
+  },
+  {
+   "n": 78,
+   "начало": "The code for it looks something",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 79,
+   "начало": "google_maps_tool = Tool ( google_maps (стр. 561-620)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 80,
+   "начало": "Code Execution 🧑‍💻 / Gemini can generate and run",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 81,
+   "начало": "To try this out,switch to Google",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 82,
+   "начало": "What is the sum of the (стр. 625-635)",
+   "итог": "ничего: пример текстового запроса"
+  },
+  {
+   "n": 83,
+   "начало": "Gemini should generate some Python code",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 84,
+   "начало": "You can run the code execution",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 85,
+   "начало": "code_execution_tool = Tool ( code_execution (стр. 638-675)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 86,
+   "начало": "Computer Use 🖥️ / The Gemini Computer Use model",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 87,
+   "начало": "To see it in action, you",
+   "итог": "ничего: не про генерацию картинок (репозиторий computer-use-preview)"
+  },
+  {
+   "n": 88,
+   "начало": "As an example, you can get",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 89,
+   "начало": "export GEMINI_API_KEY = your - api (стр. 683-757)",
+   "итог": "ничего: пример запуска агента, не про картинки"
+  },
+  {
+   "n": 90,
+   "начало": "You should see Gemini open an",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "File Search 📁 / Note: File Search Tool is currently",
+   "итог": "ничего: не про генерацию картинок (File Search / RAG)"
+  },
+  {
+   "n": 92,
+   "начало": "To see it in action, you",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 93,
+   "начало": "Get your API key from Google",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 94,
+   "начало": "export GEMINI_API_KEY = your - gemini (стр. 769-808)",
+   "итог": "ничего: команды, не про картинки"
+  },
+  {
+   "n": 95,
+   "начало": "Ask a question about the PDF",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 96,
+   "начало": "python main . py generate_content (стр. 810-821)",
+   "итог": "ничего: команда, не про картинки"
+  },
+  {
+   "n": 97,
+   "начало": "You should get a response grounded",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 98,
+   "начало": "Generating content with file search store (стр. 823-890)",
+   "итог": "ничего: пример вывода"
+  },
+  {
+   "n": 99,
+   "начало": "Function Calling 📲 / If the built-in tools are not enough",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 100,
+   "начало": "For example, you can have a",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 101,
+   "начало": "def location_to_lat_long ( location (стр. 894-931)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 102,
+   "начало": "You can also have a function",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 103,
+   "начало": "def lat_long_to_weather ( latitude (стр. 933-988)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 104,
+   "начало": "Now, you can pass those two",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 105,
+   "начало": "def generate_content_with_function_calls (стр. 990-1058)",
+   "итог": "ничего: код без промпта про картинки"
+  },
+  {
+   "n": 106,
+   "начало": "To see it in action, you",
+   "итог": "ничего: ссылка на репозиторий"
+  },
+  {
+   "n": 107,
+   "начало": "10. Agents 🤖 / The Interactions API of Gemini is designed",
+   "итог": "ничего: не про генерацию картинок (Deep Research Agent)"
+  },
+  {
+   "n": 108,
+   "начало": "Here's how you'd use the Deep",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 109,
+   "начало": "interaction = client . interactions . create (стр. 1071-1119)",
+   "итог": "ничего: код без промпта про картинки (агент deep-research-pro-preview-12-2025)"
+  },
+  {
+   "n": 110,
+   "начало": "To run this sample yourself, you (стр. 1120-1137)",
+   "итог": "ничего: команды запуска"
+  },
+  {
+   "n": 111,
+   "начало": "You should see the research done",
+   "итог": "ничего: вводная к выводу"
+  },
+  {
+   "n": 112,
+   "начало": "User : Research the history of (стр. 1139-1251)",
+   "итог": "ничего: пример отчёта агента, не про картинки"
+  },
+  {
+   "n": 113,
+   "начало": "11. Image Generation 📷 / Nano Banana 🍌 is the name",
+   "итог": "E-90-7, E-90-8"
+  },
+  {
+   "n": 114,
+   "начало": "Nano Banana refers to two distinct",
+   "итог": "E-90-9, E-90-19"
+  },
+  {
+   "n": 115,
+   "начало": "Nano Banana : The Gemini Flash Image model.",
+   "итог": "E-90-10, E-90-19"
+  },
+  {
+   "n": 116,
+   "начало": "Nano Banana Pro : The Gemini Pro Image",
+   "итог": "E-90-11"
+  },
+  {
+   "n": 117,
+   "начало": "Here's a snippet of code where",
+   "итог": "E-90-12"
+  },
+  {
+   "n": 118,
+   "начало": "from google import genai / from google.genai import types / from PIL import Image / client = genai.Client() (стр. 1261-1278)",
+   "итог": "ничего: код без промпта (импорты и клиент; genai.Client() без параметров — учтено в заметке E-90-12)"
+  },
+  {
+   "n": 119,
+   "начало": "prompt = ( \"Create a picture of my cat (стр. 1279-1285)",
+   "итог": "E-90-13, E-90-20"
+  },
+  {
+   "n": 120,
+   "начало": "image = Image . open ( \"/path/to/cat_image.png\" ) (стр. 1286-1293)",
+   "итог": "E-90-12 (код к единице)"
+  },
+  {
+   "n": 121,
+   "начало": "response = client . models . generate_content ( model = \"gemini-3.1-flash-image\" (стр. 1294-1313)",
+   "итог": "E-90-12, E-90-14, E-90-21"
+  },
+  {
+   "n": 122,
+   "начало": "for part in response . parts (стр. 1314-1354)",
+   "итог": "E-90-15, E-90-21"
+  },
+  {
+   "n": 123,
+   "начало": "Nano Banana is available in Gemini",
+   "итог": "E-90-16, E-90-17"
+  },
+  {
+   "n": 124,
+   "начало": "Can you transform this picture of mine (стр. 1362-1377)",
+   "итог": "E-90-18, E-90-20"
+  },
+  {
+   "n": 125,
+   "начало": "(html) две картинки после промпта: 41a830bea8cf3c9f.png, 2fc9ac5b7008aafb.png",
+   "итог": "ничего: картинки без подписей (alt — хэш-имена)"
+  },
+  {
+   "n": 126,
+   "начало": "12. Text-to-Speech Generation 🎶 / Gemini can transform text input",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 127,
+   "начало": "The TTS capability differs from speech",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 128,
+   "начало": "Here's a snippet of code for",
+   "итог": "ничего: вводная к коду"
+  },
+  {
+   "n": 129,
+   "начало": "` from google import genai (стр. 1382-1537)",
+   "итог": "ничего: код TTS, не про картинки"
+  },
+  {
+   "n": 130,
+   "начало": "You can see more samples in",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 131,
+   "начало": "You can also try out generating",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 132,
+   "начало": "13. Spatial Understanding 🌐 / Gemini has advanced object detection",
+   "итог": "ничего: детекция объектов, не генерация картинок"
+  },
+  {
+   "n": 133,
+   "начало": "Go to the Google AI Studio Starter Applets",
+   "итог": "ничего: не про генерацию картинок (запуск апплета Spatial Understanding)"
+  },
+  {
+   "n": 134,
+   "начало": "npm install npm run dev (стр. 1556-1563)",
+   "итог": "ничего: команды"
+  },
+  {
+   "n": 135,
+   "начало": "Now, you can start choosing some",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 136,
+   "начало": "For example, you can detect \"shadows\"",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 137,
+   "начало": "Play with different images and see",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 138,
+   "начало": "14. Live API 🎤 / The Live API enables low-latency",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 139,
+   "начало": "Go ahead and try out the",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 140,
+   "начало": "Go ahead and start sharing your",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 141,
+   "начало": "Can you describe what you see (стр. 1577-1586)",
+   "итог": "ничего: пример голосового запроса"
+  },
+  {
+   "n": 142,
+   "начало": "You'll be amazed how natural the",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 143,
+   "начало": "15. Conclusion / In this codelab, we covered",
+   "итог": "ничего: итог кодлаба без новых фактов"
+  },
+  {
+   "n": 144,
+   "начало": "References / Gemini App / NotebookLM (стр. 1590-1607)",
+   "итог": "ничего: список ссылок (в т.ч. «Nano Banana Image Generation» → ai.google.dev/gemini-api/docs/image-generation)"
+  },
+  {
+   "n": 145,
+   "начало": "Except as otherwise noted, the content",
+   "итог": "ничего: обвязка сайта (лицензия; «Google Developers Site Policies» — признак официальности)"
+  },
+  {
+   "n": 146,
+   "начало": "[[[\"Easy to understand\",\"easyToUnderstand\"",
+   "итог": "ничего: обвязка сайта (форма отзыва)"
+  },
+  {
+   "n": 147,
+   "начало": "Connect / Blog / Facebook (стр. 1616-1666)",
+   "итог": "ничего: обвязка сайта (подвал Google Developers, меню языков)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-90-1",
+   "вид": "факт",
+   "утверждение_en": "The Gemini App includes tools for image generation (alongside Deep Research, video and music generation).",
+   "цитата": "It also has tools for Deep Research, image, video, music generation and more. Gemini app is great for everyday usage.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Gemini Powered Tools 🧰 / Gemini App 💬",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-90-2",
+   "вид": "факт",
+   "утверждение_en": "NotebookLM generates audio overviews, video overviews, infographics and more from the sources the user uploaded.",
+   "цитата": "It also generates interesting and engaging audio overviews, video overviews, infographics, and more from the sources you uploaded.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Gemini Powered Tools 🧰 / NotebookLM 📓",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Инфографика как вид генерируемого изображения в продукте; какая модель её делает, страница не говорит."
+  },
+  {
+   "код": "E-90-3",
+   "вид": "факт",
+   "утверждение_en": "In Google AI Studio, the Playground panel lets you experiment with models under the Models section to generate text, images and video.",
+   "цитата": "section to generate text, image, video and also try out real-time voice and video with Gemini Live API.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Gemini Powered Tools 🧰 / Google AI Studio 🎨",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Текст разбит ссылками на строки 77-81 («The Playground panel … under Models section to generate text, image, video…»); цитата — строка 81."
+  },
+  {
+   "код": "E-90-4",
+   "вид": "факт",
+   "утверждение_en": "Among model families on Google Cloud, the page lists \"Imagegen models\" (linked to the Imagen models section) separately from Gemini, Gemma, embedding and Veo models.",
+   "цитата": "Imagegen models",
+   "источник_цитаты": "txt",
+   "раздел": "4. Gemini Models 🧠",
+   "модели": [
+    "Imagen (на странице «Imagegen models», ссылка #imagen-models)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка ведёт на docs.cloud.google.com/vertex-ai/generative-ai/docs/models#imagen-models. Imagen на странице больше нигде не упоминается."
+  },
+  {
+   "код": "E-90-5",
+   "вид": "факт",
+   "утверждение_en": "The Google Gen AI SDK provides a unified interface to Gemini models through both the Google AI API and the Google Cloud API; with a few exceptions, code that runs on one platform runs on both.",
+   "цитата": "provides a unified interface to Gemini models through both the Google AI API and the Google Cloud API. With a few exceptions, code that runs on one platform will run on both.",
+   "источник_цитаты": "txt",
+   "раздел": "5. Google Gen AI SDK 📦",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее для моделей Gemini, в т.ч. image-моделей (раздел 11 использует тот же client.models.generate_content). Какие именно «few exceptions» — не сказано."
+  },
+  {
+   "код": "E-90-6",
+   "вид": "инструкция",
+   "утверждение_en": "To call Gemini through Agent Platform in Google Cloud instead of Google AI, you only change the client initialization (vertexai=True, project, location); the rest of the code stays the same.",
+   "цитата": "To do the same against Gemini in Agent Platform in Google Cloud, you just need to change the client initialization and the rest is the same:",
+   "источник_цитаты": "txt",
+   "раздел": "5. Google Gen AI SDK 📦",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В коде (стр. 180-219): genai.Client(vertexai=True, project=…, location=\"us-central1\"). Пример на текстовой модели gemini-3.5-flash; к картинкам прямо не применён."
+  },
+  {
+   "код": "E-90-7",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is the name for Gemini's native image generation capabilities.",
+   "цитата": "🍌 is the name for Gemini's native image generation capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Определение: «Nano Banana» — имя нативной генерации изображений Gemini (не отдельного продукта). В txt слово «Nano Banana» вынесено ссылкой на строку 1253."
+  },
+  {
+   "код": "E-90-8",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini can generate and process images conversationally with text, images, or a combination of both, which lets you create, edit and iterate on visuals with control.",
+   "цитата": "Gemini can generate and process images conversationally with text, images, or a combination of both. This lets you create, edit, and iterate on visuals with control.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Ключевое: разговорный режим (итерации в диалоге) и смешанный вход текст+картинки."
+  },
+  {
+   "код": "E-90-9",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana refers to two distinct models available in the Gemini API: Nano Banana and Nano Banana Pro.",
+   "цитата": "Nano Banana refers to two distinct models available in the Gemini API:",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (Gemini Flash Image)",
+    "Nano Banana Pro (Gemini Pro Image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Страница называет ровно две модели; Nano Banana 2 / 2 Lite / 2.5 Flash Image отдельно не упомянуты (см. не_сказано и E-90-19)."
+  },
+  {
+   "код": "E-90-10",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is the Gemini Flash Image model, designed for speed and efficiency and optimized for high-volume, low-latency tasks.",
+   "цитата": ": The Gemini Flash Image model. This model is designed for speed and efficiency, optimized for high-volume, low-latency tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Gemini Flash Image — «Nano Banana» (версия в тексте не названа; код раздела использует gemini-3.1-flash-image)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Назначение Flash: скорость, объём, низкая задержка."
+  },
+  {
+   "код": "E-90-11",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana Pro is the Gemini Pro Image model, designed for professional asset production; it uses advanced reasoning to follow complex instructions and render high-fidelity text.",
+   "цитата": ": The Gemini Pro Image model. This model is designed for professional asset production, utilizing advanced reasoning to follow complex instructions and render high-fidelity text.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в тексте «The Gemini Pro Image model», версия не названа"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "текст_в_кадре"
+   ],
+   "заметка": "Назначение Pro: профессиональные ассеты; сильные стороны — сложные инструкции (за счёт рассуждения) и точный текст в кадре."
+  },
+  {
+   "код": "E-90-12",
+   "вид": "инструкция",
+   "утверждение_en": "To edit an existing image with Nano Banana, pass the text prompt and the image (e.g. a PIL Image) together in the contents list of generate_content.",
+   "цитата": "Here's a snippet of code where you can pass an existing image and ask Nano Banana to edit the image:",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; детали — из кода (contents=[prompt, image], Image.open(\"/path/to/cat_image.png\"))",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "редактирование"
+   ],
+   "заметка": "Код Python, google-genai + PIL; client = genai.Client() без параметров (ключ из окружения)."
+  },
+  {
+   "код": "E-90-13",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example edit prompt used with an input photo: \"Create a picture of my cat eating a nano-banana in a fancy restaurant under the Gemini constellation\".",
+   "цитата": "\"Create a picture of my cat eating a nano-banana in a \"\n\"fancy restaurant under the Gemini constellation\"",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷 / код",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "В коде промпт — неявная конкатенация двух строк Python: «Create a picture of my cat eating a nano-banana in a fancy restaurant under the Gemini constellation» (в txt строки 1282-1283, в html разбито span-ами; цитата — точная подстрока txt с кавычками Python). Структура: поручение «Create a picture of» → субъект из референса по содержанию («my cat», не «this image») → действие → место («fancy restaurant») → фоновая деталь («under the Gemini constellation»). Хотя раздел называет это редактированием, промпт сформулирован как создание новой сцены с субъектом из фото."
+  },
+  {
+   "код": "E-90-14",
+   "вид": "факт",
+   "утверждение_en": "The Nano Banana editing sample calls the model ID \"gemini-3.1-flash-image\".",
+   "цитата": "\"gemini-3.1-flash-image\"",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷 / код",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Id без суффикса -preview."
+  },
+  {
+   "код": "E-90-15",
+   "вид": "факт",
+   "утверждение_en": "The response can contain both text parts and image parts; the sample iterates over response.parts, prints text parts, and saves parts with inline_data as an image via part.as_image().",
+   "цитата": "inline_data\nis\nnot\nNone",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷 / код",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (код: for part in response.parts: if part.text … elif part.inline_data … part.as_image().save(\"generated_image.png\"))",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В txt код разбит по токену на строку; цитата — стр. 1338-1341. Ответ модели смешанный (текст + картинка)."
+  },
+  {
+   "код": "E-90-16",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana is available in the Gemini App, Google AI Studio and Agent Platform Studio; the simplest way to try it is the Gemini App.",
+   "цитата": "Nano Banana is available in Gemini App, AI Studio, or Agent Platform Studio. The simplest way to try it out is in Gemini App.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-90-17",
+   "вид": "инструкция",
+   "утверждение_en": "In the Gemini App (gemini.google.com), select \"🍌 Create images\" under Tools, then upload an image and give an instruction.",
+   "цитата": "select\n🍌 Create images\nunder\nTools\n. Then, upload an image and try something fun.",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "Путь в UI: Tools → 🍌 Create images → загрузить картинку → написать просьбу."
+  },
+  {
+   "код": "E-90-18",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example conversational edit prompt for an uploaded photo in the Gemini App: \"Can you transform this picture of mine to a nice beach on a tropical island?\"",
+   "цитата": "Can\nyou\ntransform\nthis\npicture\nof\nmine\nto\na\nnice\nbeach\non\na\ntropical\nisland\n?",
+   "источник_цитаты": "txt",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "редактирование"
+   ],
+   "заметка": "В txt и html текст разбит по словам (txt — строка на слово, стр. 1362-1377; html — span на слово), поэтому цитата — точная подстрока txt с переносами. Промпт: «Can you transform this picture of mine to a nice beach on a tropical island?». Структура: вежливый вопрос → глагол преобразования «transform» → ссылка на загруженное фото («this picture of mine») → целевая сцена (пляж на тропическом острове). Без стиля, света, камеры. После промпта в html две картинки (alt — хэш-имена 41a830bea8cf3c9f.png, 2fc9ac5b7008aafb.png) — до/после, без подписей."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-90-19",
+   "вид": "факт",
+   "утверждение_en": "On this page \"Nano Banana\" denotes the Gemini Flash Image model without a version, while the section's code uses gemini-3.1-flash-image; the name \"Nano Banana 2\" never appears.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-90-9, E-90-10, E-90-14",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Для сводки: «Nano Banana» здесь = текущая Flash Image модель (в коде 3.1), а не обязательно оригинальная gemini-2.5-flash-image."
+  },
+  {
+   "код": "E-90-20",
+   "вид": "приём",
+   "утверждение_en": "Both edit examples phrase the edit as a creation request or a conversational question rather than an explicit edit command, and identify the input image in natural possessive terms (\"my cat\", \"this picture of mine\").",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "11. Image Generation 📷",
+   "модели": [
+    "Nano Banana (семейство)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-90-13, E-90-18",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Наблюдение по двум примерам; правилом страница это не формулирует."
+  },
+  {
+   "код": "E-90-21",
+   "вид": "факт",
+   "утверждение_en": "The page's image-editing code sets no generation config: no response_modalities, aspect ratio or image size are passed; the text prompt precedes the image in contents, and the response is handled as mixed text and image parts.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "11. Image Generation 📷 / код",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2) — id из кода раздела; в тексте просто «Nano Banana»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-90-12, E-90-14, E-90-15",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Порядок [prompt, image] — наблюдение по одному примеру, не требование."
+  }
+ ],
+ "противоречия_внутри": [
+  "Раздел 11 говорит, что «Nano Banana refers to two distinct models» (Flash Image и Pro Image), не называя версий, а код использует конкретный gemini-3.1-flash-image — текст и код не противоречат, но текст не отражает, что Flash Image существует в нескольких версиях (2.5 / 3.1 / 3.1 Lite)."
+ ],
+ "не_сказано": [
+  "Нет параметров изображения: aspect ratio, image_size/разрешение, response_modalities в примере не задаются и не объясняются.",
+  "Нет советов по промптингу картинок, кроме двух примеров.",
+  "Не названы Nano Banana 2, Nano Banana 2 Lite, gemini-2.5-flash-image; id модели Pro не дан.",
+  "Нет цен, лимитов, водяного знака SynthID, политики безопасности.",
+  "Список «featured models» дан только картинкой — текстом не извлекается.",
+  "Thinking описан только для текстовых моделей; связь с image-моделями не упомянута."
+ ],
+ "сомнения": [
+  "Дата: в тексте «February 2026», в html last-updated 2026-07-22 — содержимое могло обновляться после февраля; для единиц раздела 11 собственной даты нет.",
+  "Принадлежность автора (Mete Atamel) к Google на странице не указана; официальность — по подвалу Google Developers Site Policies.",
+  "Цитаты промптов из кода: в txt и html текст разбит (строка/span на токен), поэтому цитаты E-90-13 и E-90-18 — точные подстроки txt с кавычками Python / переносами строк, а полный текст промпта дан в заметке.",
+  "Единицы E-90-1..E-90-6 — из разделов не про картинки (продукты, SDK); включены, т.к. касаются доступа к генерации картинок и вызова API; при сводке можно понизить вес."
+ ]
+}

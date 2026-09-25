@@ -1,0 +1,512 @@
+{
+ "id": 283,
+ "url": "https://github.com/google-gemini/veo-3-nano-banana-gemini-api-quickstart",
+ "заголовок": "GitHub - google-gemini/veo-3-nano-banana-gemini-api-quickstart: Veo 3 & Nano Banana Gemini API Quickstart · GitHub",
+ "дата_в_тексте": null,
+ "официальность": {
+  "домен": "github.com",
+  "второй_признак": "Репозиторий организации google-gemini (шапка «google-gemini / veo-3-nano-banana-gemini-api-quickstart»), лицензия Apache-2.0. При этом README прямо пишет «(This is not an official Google product.)» — стандартная оговорка Google-примеров о статусе продукта, не об авторстве.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница GitHub-репозитория google-gemini/veo-3-nano-banana-gemini-api-quickstart: README Next.js-квикстарта для Gemini API с Veo 3, Imagen 4 и Gemini 2.5 Flash Image («nano banana»). Для разработчиков. Режимы: Create Image (Imagen 4 или Gemini 2.5 Flash Image), Edit Image и Compose Image (несколько картинок + текст; только Gemini 2.5 Flash Image), Create Video (Veo 3). Требования: GEMINI_API_KEY; предупреждение, что все три модели — только платный тариф Gemini API. Структура маршрутов API, ссылки на документацию, позиционирование: Imagen 4 — качественная генерация, Gemini 2.5 Flash — быстрая генерация, редактирование, композиция. Отсылка к Google Flow как полноценной студии. Дат нет. Кода с промптами на странице нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana», местами «Gemini 2.5 Flash»",
+  "Imagen 4",
+  "нерелевантные для картинок: Veo 3"
+ ],
+ "структура": [
+  "Шапка GitHub и файлы репозитория",
+  "README: заголовок и вводная",
+  "Note (Flow, не официальный продукт)",
+  "Features (Create/Edit/Compose Image, Create Video, Quick Actions)",
+  "Getting Started (Prerequisites, Warning о платном тарифе, Install, Run)",
+  "Project Structure",
+  "Official Docs and Resources",
+  "How it Works (Image APIs, Video APIs)",
+  "Technologies Used",
+  "Questions, License",
+  "About / подвал GitHub"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "GitHub - google-gemini/veo-3-nano-banana-gemini-api-quickstart (стр. 1)",
+   "итог": "ничего: обвязка сайта (заголовок вкладки)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to content Navigation Menu … Sign up Appearance settings (стр. 2-107)",
+   "итог": "ничего: обвязка сайта (меню GitHub)"
+  },
+  {
+   "n": 3,
+   "начало": "You signed in with another tab… Dismiss alert {{ message }} (стр. 108-119)",
+   "итог": "ничего: обвязка сайта (служебные уведомления)"
+  },
+  {
+   "n": 4,
+   "начало": "google-gemini / veo-3-nano-banana-gemini-api-quickstart / Public / Notifications (стр. 120-124)",
+   "итог": "ничего: обвязка сайта (шапка репозитория; организация google-gemini — признак официальности)"
+  },
+  {
+   "n": 5,
+   "начало": "Fork 100 Star 335 … View all files (стр. 125-200)",
+   "итог": "ничего: обвязка сайта (статистика, 26 коммитов, список файлов)"
+  },
+  {
+   "n": 6,
+   "начало": "Repository files navigation README Apache-2.0 license (стр. 201-206)",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 7,
+   "начало": "Gemini API Veo 3 & Nano Banana Quickstart (стр. 207)",
+   "итог": "ничего: заголовок README"
+  },
+  {
+   "n": 8,
+   "начало": "A NextJs quickstart for creating and editing images (стр. 208-214)",
+   "итог": "E-283-1"
+  },
+  {
+   "n": 9,
+   "начало": "Compose Edit Video (стр. 215-217)",
+   "итог": "ничего: скриншоты режимов (alt «Compose», «Edit», «Video») без описания"
+  },
+  {
+   "n": 10,
+   "начало": "Note / If you want a full studio, consider Google's Flow (стр. 218-221)",
+   "итог": "E-283-2"
+  },
+  {
+   "n": 11,
+   "начало": "(This is not an official Google product.)",
+   "итог": "E-283-3"
+  },
+  {
+   "n": 12,
+   "начало": "Features / The quickstart provides a unified composer UI",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 13,
+   "начало": "Create Image : Generate images from text prompts (стр. 225-230)",
+   "итог": "E-283-4, E-283-12"
+  },
+  {
+   "n": 14,
+   "начало": "Edit Image : Edit an image based (стр. 231-234)",
+   "итог": "E-283-5, E-283-12"
+  },
+  {
+   "n": 15,
+   "начало": "Compose Image : Combine multiple images with (стр. 235-238)",
+   "итог": "E-283-6, E-283-12"
+  },
+  {
+   "n": 16,
+   "начало": "Create Video : Generate videos from text prompts or an initial image (стр. 239-242)",
+   "итог": "ничего: генерация видео Veo 3"
+  },
+  {
+   "n": 17,
+   "начало": "Quick Actions & UI Features / Seamless navigation… Cut videos (стр. 243-246)",
+   "итог": "ничего: не про генерацию картинок (UI приложения)"
+  },
+  {
+   "n": 18,
+   "начало": "Getting Started: Development and Local Testing / Follow these steps",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 19,
+   "начало": "1. Prerequisites: / Node.js and npm",
+   "итог": "ничего: среда разработки"
+  },
+  {
+   "n": 20,
+   "начало": "GEMINI_API_KEY : The application requires a GEMINI API key (стр. 251-258)",
+   "итог": "E-283-7"
+  },
+  {
+   "n": 21,
+   "начало": "Warning / Google Veo 3, Imagen 4, and Gemini 2.5 Flash Image are part of the Gemini API Paid tier",
+   "итог": "E-283-8"
+  },
+  {
+   "n": 22,
+   "начало": "2. Install Dependencies: npm install",
+   "итог": "ничего: команда"
+  },
+  {
+   "n": 23,
+   "начало": "3. Run Development Server: npm run dev … localhost:3000 (стр. 263-267)",
+   "итог": "ничего: команда"
+  },
+  {
+   "n": 24,
+   "начало": "Project Structure / The project is a standard Next.js",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 25,
+   "начало": "app/ : Contains the main application logic / page.tsx (стр. 270-273)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 26,
+   "начало": "api/ : API routes for different operations",
+   "итог": "ничего: вводная к списку маршрутов"
+  },
+  {
+   "n": 27,
+   "начало": "imagen/generate/ : Image generation with Imagen 4",
+   "итог": "E-283-9"
+  },
+  {
+   "n": 28,
+   "начало": "gemini/generate/ : Image generation with Gemini 2.5 Flash Image",
+   "итог": "E-283-9"
+  },
+  {
+   "n": 29,
+   "начало": "gemini/edit/ : Image editing/composition with Gemini 2.5 Flash Image",
+   "итог": "E-283-9, E-283-12"
+  },
+  {
+   "n": 30,
+   "начало": "veo/generate/ … veo/operation/ … veo/download/ (стр. 282-287)",
+   "итог": "ничего: не про генерацию картинок (маршруты видео)"
+  },
+  {
+   "n": 31,
+   "начало": "components/ : Reusable React components / ui/Composer.tsx … ui/dropzone.tsx (стр. 288-297)",
+   "итог": "ничего: не про генерацию картинок (компоненты UI)"
+  },
+  {
+   "n": 32,
+   "начало": "lib/ : Utility functions / public/ : Static assets (стр. 298-301)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 33,
+   "начало": "Official Docs and Resources / Gemini API docs… Imagen 4 Guide (стр. 302-308)",
+   "итог": "ничего: ссылки на документацию"
+  },
+  {
+   "n": 34,
+   "начало": "How it Works / The application uses the following API routes",
+   "итог": "ничего: вводная"
+  },
+  {
+   "n": 35,
+   "начало": "Image APIs / app/api/imagen/generate/route.ts … app/api/gemini/generate/route.ts (стр. 311-315)",
+   "итог": "ничего: повтор единицы E-283-9"
+  },
+  {
+   "n": 36,
+   "начало": "app/api/gemini/edit/route.ts : Handles image editing and composition with Gemini 2.5 Flash (supports multiple images)",
+   "итог": "E-283-10"
+  },
+  {
+   "n": 37,
+   "начало": "Video APIs / app/api/veo/generate/route.ts … (стр. 318-324)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "Technologies Used / Next.js … Tailwind CSS (стр. 325-331)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 39,
+   "начало": "Gemini API with: / Veo 3 - For video generation (стр. 332-335)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 40,
+   "начало": "Imagen 4 - For high-quality image generation / Gemini 2.5 Flash - For fast image generation (стр. 336-339)",
+   "итог": "E-283-11, E-283-12"
+  },
+  {
+   "n": 41,
+   "начало": "Questions and feature requests / Want a feature? (стр. 340-342)",
+   "итог": "ничего: призыв открыть issue"
+  },
+  {
+   "n": 42,
+   "начало": "License / This project is licensed under the Apache License 2.0.",
+   "итог": "ничего: обвязка сайта"
+  },
+  {
+   "n": 43,
+   "начало": "About / Veo 3 & Nano Banana Gemini API Quickstart / ai.studio (стр. 345-347)",
+   "итог": "ничего: описание репозитория (ссылка ai.studio)"
+  },
+  {
+   "n": 44,
+   "начало": "Resources Readme … Languages (стр. 348-367)",
+   "итог": "ничего: обвязка сайта (боковая панель GitHub)"
+  },
+  {
+   "n": 45,
+   "начало": "Footer © 2026 GitHub, Inc. … You can’t perform that action (стр. 368-380)",
+   "итог": "ничего: обвязка сайта (подвал GitHub)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-283-1",
+   "вид": "факт",
+   "утверждение_en": "The quickstart is a Next.js app for creating and editing images and videos with Gemini API models Veo 3, Imagen 4 and Gemini 2.5 Flash Image, which the README calls \"nano banana\".",
+   "цитата": "Gemini 2.5 Flash Image aka nano banana",
+   "источник_цитаты": "txt",
+   "раздел": "README / Gemini API Veo 3 & Nano Banana Quickstart",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4",
+    "Veo 3"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Соответствие имени: nano banana = Gemini 2.5 Flash Image. Вводная фраза: «A NextJs quickstart for creating and editing images and videos using Google's latest Gemini API models including…»."
+  },
+  {
+   "код": "E-283-2",
+   "вид": "факт",
+   "утверждение_en": "For a full studio the README points to Google's Flow, a professional environment for Veo/Imagen; the repo is meant as a lightweight studio for learning to build your own UI on the Gemini API.",
+   "цитата": "(a professional environment for Veo/Imagen). Use this repo as a lightweight studio to learn how to build your own UI that generates content with Google's AI models via the Gemini API.",
+   "источник_цитаты": "txt",
+   "раздел": "README / Note",
+   "модели": [
+    "Veo",
+    "Imagen"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-283-3",
+   "вид": "факт",
+   "утверждение_en": "The README states that the quickstart is not an official Google product.",
+   "цитата": "(This is not an official Google product.)",
+   "источник_цитаты": "txt",
+   "раздел": "README / Note",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Стандартная оговорка для репозиториев Google-организаций: код-пример без статуса поддерживаемого продукта. Учитывать при весе единиц (см. официальность)."
+  },
+  {
+   "код": "E-283-4",
+   "вид": "факт",
+   "утверждение_en": "The Create Image mode generates images from text prompts using either Imagen 4 or Gemini 2.5 Flash Image.",
+   "цитата": "Create Image\n: Generate images from text prompts using\nImagen 4\nor\nGemini 2.5 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "README / Features",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-283-5",
+   "вид": "факт",
+   "утверждение_en": "The Edit Image mode edits an image based on a text prompt using Gemini 2.5 Flash Image.",
+   "цитата": "Edit Image\n: Edit an image based on a text prompt using\nGemini 2.5 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "README / Features",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Для редактирования Imagen 4 не предлагается."
+  },
+  {
+   "код": "E-283-6",
+   "вид": "факт",
+   "утверждение_en": "The Compose Image mode combines multiple images with a text prompt to create a new image using Gemini 2.5 Flash Image.",
+   "цитата": "Compose Image\n: Combine multiple images with a text prompt to create a new image using\nGemini 2.5 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "README / Features",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Мульти-референсная композиция: несколько входных картинок + текст → новая картинка."
+  },
+  {
+   "код": "E-283-7",
+   "вид": "инструкция",
+   "утверждение_en": "The app requires a Gemini API key, provided as GEMINI_API_KEY in a .env file in the project root or as a system environment variable.",
+   "цитата": "GEMINI_API_KEY=\"YOUR_API_KEY\"",
+   "источник_цитаты": "txt",
+   "раздел": "README / Getting Started / 1. Prerequisites",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-283-8",
+   "вид": "ограничение",
+   "утверждение_en": "Veo 3, Imagen 4 and Gemini 2.5 Flash Image are part of the Gemini API paid tier; you need to be on the paid tier to use these models.",
+   "цитата": "Google Veo 3, Imagen 4, and Gemini 2.5 Flash Image are part of the Gemini API Paid tier. You will need to be on the paid tier to use these models.",
+   "источник_цитаты": "txt",
+   "раздел": "README / Getting Started / Warning",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4",
+    "Veo 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": "Блок «Warning» README; даты у утверждения нет — состояние тарифов на момент написания README, могло измениться."
+  },
+  {
+   "код": "E-283-9",
+   "вид": "факт",
+   "утверждение_en": "The app uses separate API routes for image generation with Imagen 4 (imagen/generate), image generation with Gemini 2.5 Flash Image (gemini/generate), and image editing/composition with Gemini 2.5 Flash Image (gemini/edit).",
+   "цитата": "gemini/edit/\n: Image editing/composition with Gemini 2.5 Flash Image",
+   "источник_цитаты": "txt",
+   "раздел": "README / Project Structure",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строки imagen/generate/, gemini/generate/, gemini/edit/)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Редактирование и композиция идут одним маршрутом."
+  },
+  {
+   "код": "E-283-10",
+   "вид": "факт",
+   "утверждение_en": "The editing/composition route handles image editing and composition with Gemini 2.5 Flash and supports multiple input images.",
+   "цитата": ": Handles image editing and composition with Gemini 2.5 Flash (supports multiple images)",
+   "источник_цитаты": "txt",
+   "раздел": "README / How it Works / Image APIs",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "api_код"
+   ],
+   "заметка": "Здесь модель названа «Gemini 2.5 Flash» без «Image» — см. противоречия_внутри."
+  },
+  {
+   "код": "E-283-11",
+   "вид": "факт",
+   "утверждение_en": "The README positions Imagen 4 for high-quality image generation and Gemini 2.5 Flash for fast image generation, editing and composition.",
+   "цитата": "Imagen 4\n- For high-quality image generation\nGemini 2.5 Flash\n- For fast image generation, editing, and composition",
+   "источник_цитаты": "txt",
+   "раздел": "README / Technologies Used",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сравнение по назначению: Imagen 4 — качество генерации; Gemini 2.5 Flash (Image) — скорость + редактирование + композиция."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-283-12",
+   "вид": "факт",
+   "утверждение_en": "In this app, Imagen 4 is used only for text-to-image creation, while editing and multi-image composition are routed exclusively to Gemini 2.5 Flash Image.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "README (Features, Project Structure, How it Works, Technologies)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana) — «Gemini 2.5 Flash Image aka nano banana»",
+    "Imagen 4"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-283-4, E-283-5, E-283-6, E-283-9, E-283-11",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "редактирование"
+   ],
+   "заметка": "Это описание устройства приложения, не утверждение о возможностях Imagen 4 вообще; README не говорит, что Imagen не умеет редактировать."
+  }
+ ],
+ "противоречия_внутри": [
+  "Одна модель названа то «Gemini 2.5 Flash Image» (Features, Warning, Project Structure), то «Gemini 2.5 Flash» (How it Works, Technologies Used) — неточность именования."
+ ],
+ "не_сказано": [
+  "Нет ни одного промпта, кода вызова, параметров изображения (соотношение сторон, размер).",
+  "Не сказано, сколько картинок можно подать в Compose (только «multiple images»).",
+  "Нет даты README — неизвестно, актуально ли требование платного тарифа.",
+  "Не сказано, почему Imagen 4 не используется для редактирования."
+ ],
+ "сомнения": [
+  "«(This is not an official Google product.)» — при подтверждённой организации google-gemini; вес единиц как «официальной позиции» ниже, чем у документации.",
+  "Требование платного тарифа (E-283-8) без даты — может быть устаревшим.",
+  "Страница новые модели (Nano Banana 2 / Pro) не упоминает — отражает состояние на момент gemini-2.5-flash-image."
+ ]
+}

@@ -1,0 +1,1422 @@
+{
+ "id": 50,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-image",
+ "заголовок": "Gemini 3.1 Flash Image (Nano Banana 2)  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC; Release date: May 28, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com (canonical совпадает с url)",
+  "второй_признак": "подвал: лицензия CC BY 4.0 / Apache 2.0 со ссылкой на Google Developers Site Policies (developers.google.com/site-policies), ссылки 'Google Cloud terms', 'About Google'. Строки 'Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 3.1 Flash Image (Nano Banana 2) в документации Gemini Enterprise Agent Platform; для разработчиков Google Cloud. Меню сайта ~95%; содержание (строки 1042-1203) — справочная таблица: ID, модальности (видео — только вход), контекст 131,072, лимиты входа (14 картинок, 10 видео, 1 YouTube URL), 15 соотношений сторон, разрешения 512/1K/2K/4K, MIME-типы, параметры по умолчанию, регионы (global + мульти-регионы us/eu), GA 28.05.2026, security controls, таблица токенов (вход 1,120 на картинку, выход 747-2,520). Промптов и кода нет (0 <pre>; <code> — только ID, MIME, регионы).",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)"
+ ],
+ "структура": [
+  "(intro)",
+  "Model ID",
+  "Modalities",
+  "Token limits",
+  "Capabilities",
+  "Tools",
+  "Consumption options",
+  "Input size limit",
+  "Technical specifications (Image, Text, Video)",
+  "Parameter defaults",
+  "Supported regions",
+  "Versions",
+  "Security controls",
+  "Image generation specifications"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню, строки 1-81; сверено diff — идентично стр. 42)"
+  },
+  {
+   "n": 2,
+   "начало": "Overview Beginner's guide Get started",
+   "итог": "ничего: обвязка сайта (левое дерево документации, строки 82-998)"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started Get Started with Google",
+   "итог": "ничего: обвязка сайта (повтор меню и хлебные крошки, строки 999-1041)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3.1 Flash Image (Nano Banana",
+   "итог": "E-50-1"
+  },
+  {
+   "n": 5,
+   "начало": "Stay organized with collections Save and",
+   "итог": "ничего: обвязка сайта (виджет)"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3.1 Flash Image (Nano Banana 2) is optimized",
+   "итог": "E-50-3"
+  },
+  {
+   "n": 7,
+   "начало": "Try in Agent StudioDeploy example appPricing",
+   "итог": "ничего: обвязка (кнопки-ссылки)"
+  },
+  {
+   "n": 8,
+   "начало": "Note: \"Deploy example app\" requires a",
+   "итог": "ничего: не про генерацию картинок (демо-приложение)"
+  },
+  {
+   "n": 9,
+   "начало": "Model IDgemini-3.1-flash-image",
+   "итог": "E-50-2"
+  },
+  {
+   "n": 10,
+   "начало": "Modalities description Text Input and output",
+   "итог": "E-50-4"
+  },
+  {
+   "n": 11,
+   "начало": "mic_off Audio Not supported",
+   "итог": "E-50-5"
+  },
+  {
+   "n": 12,
+   "начало": "videocam Video Input only",
+   "итог": "E-50-6"
+  },
+  {
+   "n": 13,
+   "начало": "Token limitsContext window131,072",
+   "итог": "E-50-7"
+  },
+  {
+   "n": 14,
+   "начало": "Maximum output tokens32,768",
+   "итог": "E-50-8"
+  },
+  {
+   "n": 15,
+   "начало": "Capabilities Thinking Supported",
+   "итог": "E-50-9"
+  },
+  {
+   "n": 16,
+   "начало": "System instructions Supported",
+   "итог": "E-50-10"
+  },
+  {
+   "n": 17,
+   "начало": "Gemini Live API Not supported Structured",
+   "итог": "E-50-11"
+  },
+  {
+   "n": 18,
+   "начало": "Context caching Implicit context caching",
+   "итог": "E-50-12"
+  },
+  {
+   "n": 19,
+   "начало": "Count Tokens Supported",
+   "итог": "E-50-13"
+  },
+  {
+   "n": 20,
+   "начало": "RAG Engine Not supported Chat",
+   "итог": "E-50-14"
+  },
+  {
+   "n": 21,
+   "начало": "Image generation Image generation, Image",
+   "итог": "E-50-15"
+  },
+  {
+   "n": 22,
+   "начало": "Edit images Edit images, Multi-turn",
+   "итог": "E-50-16"
+  },
+  {
+   "n": 23,
+   "начало": "Interleaved images and text Supported",
+   "итог": "E-50-17"
+  },
+  {
+   "n": 24,
+   "начало": "Content Credentials (C2PA) Supported",
+   "итог": "E-50-18"
+  },
+  {
+   "n": 25,
+   "начало": "Virtual try-on Not supported",
+   "итог": "E-50-19"
+  },
+  {
+   "n": 26,
+   "начало": "Tools Grounding Google Search Supported",
+   "итог": "E-50-20"
+  },
+  {
+   "n": 27,
+   "начало": "Code execution Not supported Function",
+   "итог": "E-50-21"
+  },
+  {
+   "n": 28,
+   "начало": "Consumption options Provisioned Throughput Supported",
+   "итог": "E-50-22"
+  },
+  {
+   "n": 29,
+   "начало": "Pay-as-you-go Standard PayGo, Flex PayGo",
+   "итог": "E-50-23"
+  },
+  {
+   "n": 30,
+   "начало": "Fixed quota Not supported",
+   "итог": "E-50-24"
+  },
+  {
+   "n": 31,
+   "начало": "Input size limit 500 MB",
+   "итог": "E-50-25"
+  },
+  {
+   "n": 32,
+   "начало": "Technical specificationsImagephoto Maximum images per",
+   "итог": "E-50-26"
+  },
+  {
+   "n": 33,
+   "начало": "Maximum file size per file for",
+   "итог": "E-50-27"
+  },
+  {
+   "n": 34,
+   "начало": "Maximum file size per file from",
+   "итог": "E-50-28"
+  },
+  {
+   "n": 35,
+   "начало": "Maximum number of output images per",
+   "итог": "E-50-29"
+  },
+  {
+   "n": 36,
+   "начало": "Supported aspect ratios: 1:1, 3:2",
+   "итог": "E-50-30"
+  },
+  {
+   "n": 37,
+   "начало": "Supported resolutions: 512, 1K, 2K",
+   "итог": "E-50-31"
+  },
+  {
+   "n": 38,
+   "начало": "Supported MIME types: image/png, image/jpeg",
+   "итог": "E-50-32"
+  },
+  {
+   "n": 39,
+   "начало": "Textdescription Maximum number of files per",
+   "итог": "E-50-33"
+  },
+  {
+   "n": 40,
+   "начало": "Maximum file size per file: 50",
+   "итог": "E-50-34"
+  },
+  {
+   "n": 41,
+   "начало": "Supported MIME types: application/pdf, text/plain",
+   "итог": "E-50-35"
+  },
+  {
+   "n": 42,
+   "начало": "Videovideocam Maximum number of input video",
+   "итог": "E-50-36"
+  },
+  {
+   "n": 43,
+   "начало": "Maximum YouTube URLs per prompt: 1",
+   "итог": "E-50-37"
+  },
+  {
+   "n": 44,
+   "начало": "Maximum video length (without audio): As",
+   "итог": "E-50-38"
+  },
+  {
+   "n": 45,
+   "начало": "Supported MIME types: video/x-flv, video/quicktime",
+   "итог": "E-50-39"
+  },
+  {
+   "n": 46,
+   "начало": "Parameter defaultstune Temperature: 0.0-2.0 (default",
+   "итог": "E-50-40"
+  },
+  {
+   "n": 47,
+   "начало": "topP: 0.0-1.0 (default 0.95)",
+   "итог": "E-50-41"
+  },
+  {
+   "n": 48,
+   "начало": "candidateCount: 1",
+   "итог": "E-50-42"
+  },
+  {
+   "n": 49,
+   "начало": "Supported regions Model availability Global:",
+   "итог": "E-50-43"
+  },
+  {
+   "n": 50,
+   "начало": "ML processing Multi-region: us, eu",
+   "итог": "E-50-44"
+  },
+  {
+   "n": 51,
+   "начало": "Provisioned Throughput Global: global Multi-region",
+   "итог": "E-50-45"
+  },
+  {
+   "n": 52,
+   "начало": "Versions gemini-3.1-flash-image Launch stage: GA",
+   "итог": "E-50-46"
+  },
+  {
+   "n": 53,
+   "начало": "Retirement date: May 28, 2027",
+   "итог": "E-50-47"
+  },
+  {
+   "n": 54,
+   "начало": "Security controlsOnline prediction Data residency CMEK",
+   "итог": "E-50-48"
+  },
+  {
+   "n": 55,
+   "начало": "See Security controls for more information.",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 56,
+   "начало": "Image generation specifications Gemini 3.1 Flash",
+   "итог": "E-50-49"
+  },
+  {
+   "n": 57,
+   "начало": "Output image token consumption varies based",
+   "итог": "ничего: вводная фраза к таблице (строки 58-61)"
+  },
+  {
+   "n": 58,
+   "начало": "Output resolutionApproximate megapixelsOutput image tokens 5120.25747",
+   "итог": "E-50-50"
+  },
+  {
+   "n": 59,
+   "начало": "1K11,120",
+   "итог": "E-50-51"
+  },
+  {
+   "n": 60,
+   "начало": "2K41,680",
+   "итог": "E-50-52"
+  },
+  {
+   "n": 61,
+   "начало": "4K162,520",
+   "итог": "E-50-53"
+  },
+  {
+   "n": 62,
+   "начало": "Note: Additional charges apply for input",
+   "итог": "E-50-54"
+  },
+  {
+   "n": 63,
+   "начало": "For more information about image generation",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 64,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, Google Developers Site Policies — признак официальности)"
+  },
+  {
+   "n": 65,
+   "начало": "Last updated 2026-09-22 UTC.",
+   "итог": "ничего: дата страницы (в дата_в_тексте)"
+  },
+  {
+   "n": 66,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал, строки 1207-1251; идентичен стр. 42)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-50-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image is the model marketed as Nano Banana 2.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2)",
+   "источник_цитаты": "txt",
+   "раздел": "(page title)",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-2",
+   "вид": "факт",
+   "утверждение_en": "The model ID for Gemini 3.1 Flash Image (Nano Banana 2) is gemini-3.1-flash-image.",
+   "цитата": "Model IDgemini-3.1-flash-image",
+   "источник_цитаты": "txt",
+   "раздел": "Model ID",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Колонки склеены в txt."
+  },
+  {
+   "код": "E-50-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image is optimized for image understanding and generation and offers a balance of price and performance.",
+   "цитата": "Gemini 3.1 Flash Image (Nano Banana 2) is optimized for\nimage understanding and generation and offers a balance of price and\nperformance.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Позиционирование: цена/производительность, а не максимальное качество."
+  },
+  {
+   "код": "E-50-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image supports text and image as both input and output modalities.",
+   "цитата": "Text\nInput and output\nphoto\nImage\nInput and output",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-5",
+   "вид": "ограничение",
+   "утверждение_en": "Audio is not supported as a modality for Gemini 3.1 Flash Image.",
+   "цитата": "mic_off\nAudio\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-6",
+   "вид": "факт",
+   "утверждение_en": "Video is supported as an input-only modality for Gemini 3.1 Flash Image.",
+   "цитата": "videocam\nVideo\nInput only",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Видео только на вход; видео на выходе нет."
+  },
+  {
+   "код": "E-50-7",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image has a context window of 131,072 tokens.",
+   "цитата": "Token limitsContext window131,072",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "В разделе Technical specifications тот же лимит назван '128k'."
+  },
+  {
+   "код": "E-50-8",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image has a maximum of 32,768 output tokens.",
+   "цитата": "Maximum output tokens32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-9",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Thinking\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Уровни thinking не описаны."
+  },
+  {
+   "код": "E-50-10",
+   "вид": "факт",
+   "утверждение_en": "System instructions are supported by Gemini 3.1 Flash Image.",
+   "цитата": "System instructions\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-11",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Live API and structured output are not supported by Gemini 3.1 Flash Image.",
+   "цитата": "Gemini Live API\nNot supported\nStructured output\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-12",
+   "вид": "факт",
+   "утверждение_en": "Implicit context caching is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Context caching\nImplicit context caching\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-13",
+   "вид": "факт",
+   "утверждение_en": "Count Tokens is supported for Gemini 3.1 Flash Image.",
+   "цитата": "Count Tokens\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-14",
+   "вид": "ограничение",
+   "утверждение_en": "RAG Engine, chat completions, tuning and URL context are not supported by Gemini 3.1 Flash Image.",
+   "цитата": "RAG Engine\nNot supported\nChat completions\nNot supported\nTuning\nNot supported\nURL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-15",
+   "вид": "факт",
+   "утверждение_en": "Image generation, including image generation from video input, is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Image generation, Image generation from video input\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Согласуется с Video = Input only."
+  },
+  {
+   "код": "E-50-16",
+   "вид": "факт",
+   "утверждение_en": "Image editing, including multi-turn image editing, is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Edit images, Multi-turn image editing\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-17",
+   "вид": "факт",
+   "утверждение_en": "Interleaved images and text output is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Interleaved images and text\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-18",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials (C2PA) are supported by Gemini 3.1 Flash Image.",
+   "цитата": "Content Credentials (C2PA)\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-19",
+   "вид": "ограничение",
+   "утверждение_en": "Virtual try-on is not supported by Gemini 3.1 Flash Image.",
+   "цитата": "Virtual try-on\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-20",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search is supported by Gemini 3.1 Flash Image.",
+   "цитата": "Grounding\nGoogle Search\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-21",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution and function calling tools are not supported by Gemini 3.1 Flash Image.",
+   "цитата": "Code execution\nNot supported\nFunction calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-22",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput and batch inference are supported consumption options for Gemini 3.1 Flash Image.",
+   "цитата": "Provisioned Throughput\nSupported\nBatch inference\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-23",
+   "вид": "факт",
+   "утверждение_en": "Pay-as-you-go is supported via Standard PayGo and Flex PayGo for Gemini 3.1 Flash Image.",
+   "цитата": "Standard PayGo, Flex PayGo\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Priority PayGo не указан."
+  },
+  {
+   "код": "E-50-24",
+   "вид": "ограничение",
+   "утверждение_en": "Fixed quota is not supported as a consumption option for Gemini 3.1 Flash Image.",
+   "цитата": "Fixed quota\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-25",
+   "вид": "лимит",
+   "утверждение_en": "The input size limit for Gemini 3.1 Flash Image is 500 MB.",
+   "цитата": "Input size limit\n500 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Input size limit",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-26",
+   "вид": "лимит",
+   "утверждение_en": "A single Gemini 3.1 Flash Image prompt can include at most 14 images.",
+   "цитата": "Maximum images per prompt:\n14",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-27",
+   "вид": "лимит",
+   "утверждение_en": "Each image file sent as inline data or uploaded directly through the console can be at most 7 MB.",
+   "цитата": "Maximum file size per file for inline data or direct uploads through the console:\n7 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-28",
+   "вид": "лимит",
+   "утверждение_en": "Each image file read from Google Cloud Storage can be at most 30 MB.",
+   "цитата": "Maximum file size per file from Google Cloud Storage:\n30 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-29",
+   "вид": "лимит",
+   "утверждение_en": "The number of output images per prompt has no fixed count; it is limited by the 32,768 output-token limit.",
+   "цитата": "Maximum number of output images per prompt:\nLimited to 32,768 output tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-30",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image supports the aspect ratios 1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9 and 9:21.",
+   "цитата": "Supported aspect ratios:\n1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9, 9:21",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "15 соотношений."
+  },
+  {
+   "код": "E-50-31",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image supports output resolutions of 512, 1K, 2K and 4K.",
+   "цитата": "Supported resolutions:\n512, 1K, 2K, 4K",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Есть вариант ниже 1K — '512'."
+  },
+  {
+   "код": "E-50-32",
+   "вид": "факт",
+   "утверждение_en": "Supported image MIME types are image/png, image/jpeg, image/webp, image/heic and image/heif.",
+   "цитата": "Supported MIME types:\nimage/png, image/jpeg, image/webp, image/heic, image/heif",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-33",
+   "вид": "лимит",
+   "утверждение_en": "The maximum number of text/document files and pages per file per prompt is bounded only by the 128k-token context window.",
+   "цитата": "Maximum number of files per prompt:\nAs supported by the 128k token context window\nMaximum number of pages per file:\nAs supported by the 128k token context window",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-34",
+   "вид": "лимит",
+   "утверждение_en": "Each text/document file can be up to 50 MB for API and Cloud Storage imports, or 7 MB when uploaded directly through the Google Cloud console.",
+   "цитата": "50 MB (API and Cloud Storage imports) or 7 MB (direct upload through Google Cloud console)",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-35",
+   "вид": "факт",
+   "утверждение_en": "Supported document MIME types are application/pdf and text/plain.",
+   "цитата": "Supported MIME types:\napplication/pdf, text/plain",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-36",
+   "вид": "лимит",
+   "утверждение_en": "A single Gemini 3.1 Flash Image prompt can include at most 10 input video files.",
+   "цитата": "Maximum number of input video files per prompt:\n10",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Video",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-37",
+   "вид": "лимит",
+   "утверждение_en": "A single Gemini 3.1 Flash Image prompt can include at most 1 YouTube URL.",
+   "цитата": "Maximum YouTube URLs per prompt:\n1",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Video",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-38",
+   "вид": "лимит",
+   "утверждение_en": "Maximum video length (without audio) is whatever fits in the 128k-token context window, approximately 25 minutes.",
+   "цитата": "Maximum video length (without audio):\nAs supported by the 128k token context window (approximately 25 minutes).",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Video",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Частота сэмплинга/токены на секунду на этой странице не указаны."
+  },
+  {
+   "код": "E-50-39",
+   "вид": "факт",
+   "утверждение_en": "Supported video MIME types are video/x-flv, video/quicktime, video/mpeg, video/mpegs, video/mpg, video/mp4, video/webm, video/wmv and video/3gpp.",
+   "цитата": "video/x-flv, video/quicktime, video/mpeg, video/mpegs, video/mpg, video/mp4, video/webm, video/wmv, video/3gpp",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Video",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-40",
+   "вид": "факт",
+   "утверждение_en": "Temperature for Gemini 3.1 Flash Image ranges from 0.0 to 2.0 with a default of 1.0.",
+   "цитата": "Temperature: 0.0-2.0 (default 1.0)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-41",
+   "вид": "факт",
+   "утверждение_en": "topP for Gemini 3.1 Flash Image ranges from 0.0 to 1.0 with a default of 0.95.",
+   "цитата": "topP: 0.0-1.0 (default 0.95)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-42",
+   "вид": "факт",
+   "утверждение_en": "candidateCount for Gemini 3.1 Flash Image is 1.",
+   "цитата": "candidateCount: 1",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-43",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image is available in the global region and in the us and eu multi-regions.",
+   "цитата": "Model availability\nGlobal: global\nMulti-region: us, eu",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-44",
+   "вид": "факт",
+   "утверждение_en": "ML processing for Gemini 3.1 Flash Image is available in the us and eu multi-regions.",
+   "цитата": "ML processing\nMulti-region: us, eu",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Важно для требований к месту обработки данных."
+  },
+  {
+   "код": "E-50-45",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput and Standard PayGo for Gemini 3.1 Flash Image are available in global and in the us and eu multi-regions.",
+   "цитата": "Provisioned Throughput\nGlobal: global\nMulti-region: us, eu\nStandard PayGo\nGlobal: global\nMulti-region: us, eu",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Для Flex PayGo и Batch регионы не перечислены."
+  },
+  {
+   "код": "E-50-46",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image is at GA launch stage with a release date of May 28, 2026.",
+   "цитата": "Launch stage: GA\nRelease date: May 28, 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-47",
+   "вид": "факт",
+   "утверждение_en": "The retirement date of gemini-3.1-flash-image is May 28, 2027 or later.",
+   "цитата": "Retirement date: May 28, 2027 or later",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-48",
+   "вид": "факт",
+   "утверждение_en": "Data residency, CMEK, VPC-SC and AXT security controls are listed for online prediction, batch inference and context caching.",
+   "цитата": "Security controlsOnline prediction\nData residency\nCMEK\nVPC-SC\nAXT",
+   "источник_цитаты": "txt",
+   "раздел": "Security controls",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Тот же список повторён для Batch inference и Context caching."
+  },
+  {
+   "код": "E-50-49",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image consumes 1,120 tokens per input image.",
+   "цитата": "Gemini 3.1 Flash Image consumes 1,120 tokens per input image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-50-50",
+   "вид": "факт",
+   "утверждение_en": "A 512 output image is approximately 0.25 megapixels and consumes 747 output image tokens.",
+   "цитата": "5120.25747",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "В txt колонки склеены; по html: 512 | 0.25 | 747."
+  },
+  {
+   "код": "E-50-51",
+   "вид": "факт",
+   "утверждение_en": "A 1K output image is approximately 1 megapixel and consumes 1,120 output image tokens.",
+   "цитата": "1K11,120",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "По html: 1K | 1 | 1,120."
+  },
+  {
+   "код": "E-50-52",
+   "вид": "факт",
+   "утверждение_en": "A 2K output image is approximately 4 megapixels and consumes 1,680 output image tokens.",
+   "цитата": "2K41,680",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "По html: 2K | 4 | 1,680."
+  },
+  {
+   "код": "E-50-53",
+   "вид": "факт",
+   "утверждение_en": "A 4K output image is approximately 16 megapixels and consumes 2,520 output image tokens.",
+   "цитата": "4K162,520",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "По html: 4K | 16 | 2,520."
+  },
+  {
+   "код": "E-50-54",
+   "вид": "факт",
+   "утверждение_en": "Additional charges apply for input and output tokens of other modalities such as text and video; the pricing page has the latest prices.",
+   "цитата": "Note: Additional charges apply for input and output tokens for other modalities,\nsuch as text and video.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-50-55",
+   "вид": "объяснение",
+   "утверждение_en": "On this card output image tokens rise at every resolution step (747 at 512, 1,120 at 1K, 1,680 at 2K, 2,520 at 4K), so 512 is the cheapest output size, while each input image costs a flat 1,120 tokens.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-50-49, E-50-50, E-50-51, E-50-52, E-50-53",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Сопоставление строк таблицы; шаг ≈×1.5 между соседними разрешениями — арифметика, не слова Google."
+  },
+  {
+   "код": "E-50-56",
+   "вид": "объяснение",
+   "утверждение_en": "Because output-image count is capped only by the 32,768 output-token limit, arithmetic from the table gives about 13 images at 4K, 19 at 2K, 29 at 1K or 43 at 512 per response before any text or thought tokens.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image generation specifications",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-50-29, E-50-50, E-50-51, E-50-52, E-50-53",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Арифметика 32768/токены-на-картинку, не утверждение Google."
+  },
+  {
+   "код": "E-50-57",
+   "вид": "факт",
+   "утверждение_en": "Video can be supplied as input (not output) and used for image generation from video: up to 10 video files or 1 YouTube URL per prompt, up to about 25 minutes within the 128k context.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities / Capabilities / Technical specifications (Video)",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-50-6, E-50-15, E-50-36, E-50-37, E-50-38",
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сведение трёх разделов карточки; страница не говорит, сколько кадров/токенов уходит на секунду видео."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Не названы имена API-параметров для aspect ratio/разрешения и формат значения '512'.",
+  "Не сказано, какое разрешение и соотношение по умолчанию.",
+  "Уровни thinking и возможность отключить thinking не описаны.",
+  "Не указана частота сэмплинга видео и расход токенов на секунду видео.",
+  "Не сказано, зависит ли расход 1,120 токенов на входную картинку от её разрешения/media_resolution.",
+  "Регионы для Flex PayGo и Batch inference не перечислены.",
+  "Цен в деньгах нет; промптинг-рекомендаций и примеров промптов нет.",
+  "SynthID не упомянут — только C2PA."
+ ],
+ "сомнения": [
+  "Таблица токенов в txt склеена ('5120.25747'); разбор сверен с html (512|0.25|747; 1K|1|1,120; 2K|4|1,680; 4K|16|2,520).",
+  "Контекст указан двумя способами: 131,072 (Token limits) и '128k' (Technical specifications) — это одно и то же число (128×1024), не противоречие.",
+  "Второй признак официальности — стандартный подвал Google, строки 'Google LLC' нет."
+ ]
+}

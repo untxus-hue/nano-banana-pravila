@@ -1,0 +1,418 @@
+{
+ "id": 102,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/tuning/image",
+ "заголовок": "Image tuning  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал и html); даты публикации нет",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0, ссылки 'About Google', 'Google Cloud terms'; образцы датасетов в бакете gs://cloud-samples-data (Google). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Страница документации Agent Platform для ML-инженеров о supervised fine-tuning Gemini на image-данных для ПОНИМАНИЯ изображений (изображение на входе). Для генерации картинок главное — Note: тюнинг image generation моделей не поддерживается, стиль/субъект генерации направлять через страницы Generate/Edit images with Gemini (отсылка повторена в What's next). Остальное — use cases понимания, лимиты датасета (30 картинок/пример, 20MB), формат датасета (fileUri), mediaResolution (компромисс качество/токены, дефолт HIGH, токены LOW 64/MEDIUM 256/HIGH 256+pan-and-scan для Gemini ≤3; per-Part для Gemini 3+ с приоритетом над global), образцы датасетов. Термины: mediaResolution, pan and scan images, Part-level resolution.",
+ "модели_на_странице": [
+  "Gemini models (обобщённо, тюнинг понимания)",
+  "'Gemini versions 3 and earlier' / 'Gemini 3 models and higher' (без названий)",
+  "image generation models (обобщённо — тюнинг не поддерживается)"
+ ],
+ "структура": [
+  "Image tuning — вступление и Note",
+  "Use cases",
+  "Limitations",
+  "Dataset format",
+  "mediaResolution for Gemini versions 3 and earlier",
+  "mediaResolution for Gemini versions 3 and higher",
+  "Sample datasets",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню, языки, вкладки продукта, левое меню Models, повтор верхнего меню), строки 1-1035; побайтно совпадают с меню id99 (сверено diff), в меню видны пункты Image generation / Image tuning — навигация"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML Gemini",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Image tuning', Stay organized with collections), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "This page provides prerequisites and detailed",
+   "итог": "ничего: вводная фраза о содержании страницы (supervised fine-tuning на image-данных), учтено в картине"
+  },
+  {
+   "n": 4,
+   "начало": "Note: This page describes fine-tuning Gemini",
+   "итог": "E-102-1, E-102-2, E-102-3"
+  },
+  {
+   "n": 5,
+   "начало": "Use cases Fine-tuning lets you adapt",
+   "итог": "ничего: не про генерацию картинок (вводная к use cases тюнинга)"
+  },
+  {
+   "n": 6,
+   "начало": "Product catalog enhancement: Extract key",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 7,
+   "начало": "Image moderation: Fine-tune a model to",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 8,
+   "начало": "Visual inspection: Train a model to",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 9,
+   "начало": "Image classification: Improve the accuracy of",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 10,
+   "начало": "Image-based recommendations: Analyze images to provide",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 11,
+   "начало": "Table content extraction: Extract data from",
+   "итог": "ничего: не про генерацию картинок (use case тюнинга понимания изображений)"
+  },
+  {
+   "n": 12,
+   "начало": "Limitations Maximum images per example: 30",
+   "итог": "E-102-4"
+  },
+  {
+   "n": 13,
+   "начало": "Maximum image file size: 20MB",
+   "итог": "E-102-5"
+  },
+  {
+   "n": 14,
+   "начало": "To learn more about image sample",
+   "итог": "ничего: ссылка на страницу Image understanding"
+  },
+  {
+   "n": 15,
+   "начало": "The fileUri for your dataset can",
+   "итог": "E-102-6"
+  },
+  {
+   "n": 16,
+   "начало": "The mediaResolution field of the GenerationConfig",
+   "итог": "E-102-7, E-102-8"
+  },
+  {
+   "n": 17,
+   "начало": "mediaResolution for Gemini versions 3 and earlier / The following are the supported",
+   "итог": "E-102-9"
+  },
+  {
+   "n": 18,
+   "начало": "To see the generic format example,",
+   "итог": "ничего: ссылка на Dataset example for Gemini"
+  },
+  {
+   "n": 19,
+   "начало": "The following is an example of an image dataset: {\"contents\":…}",
+   "итог": "ничего: код без промпта для генерации — пример строки датасета тюнинга понимания (промпт 'Describe this image in detail…' описательный, ответ модели — описание фото); иллюстрирует E-102-7 (mediaResolution LOW в generationConfig); блок <pre> в html совпадает с .txt"
+  },
+  {
+   "n": 20,
+   "начало": "mediaResolution for Gemini versions 3 and higher / For Gemini 3 models and higher",
+   "итог": "E-102-10"
+  },
+  {
+   "n": 21,
+   "начало": "For more information about part-level resolution",
+   "итог": "ничего: ссылка на страницу Media resolution"
+  },
+  {
+   "n": 22,
+   "начало": "Part-level media resolution settings take precedence",
+   "итог": "E-102-11"
+  },
+  {
+   "n": 23,
+   "начало": "The following is an example dataset that sets … {\"contents\":…gs://ultra_high_res_image.jpeg…}",
+   "итог": "ничего: код без промпта для генерации — пример датасета с Part-level HIGH и global LOW, иллюстрирует E-102-10/E-102-11; промпт 'Describe these images in detail.' — описательный"
+  },
+  {
+   "n": 24,
+   "начало": "Sample datasets You can use the",
+   "итог": "ничего: не про генерацию картинок (образцы датасетов тюнинга; упомянут 'text model supervised fine-tuning job')"
+  },
+  {
+   "n": 25,
+   "начало": "To use the sample tuning dataset, … training_dataset_uri",
+   "итог": "ничего: код без промпта (URI образца обучающего датасета, gemini-2_0/image)"
+  },
+  {
+   "n": 26,
+   "начало": "To use the sample validation dataset, … validation_dataset_uri",
+   "итог": "ничего: код без промпта (URI образца валидационного датасета)"
+  },
+  {
+   "n": 27,
+   "начало": "What's next To learn more about",
+   "итог": "ничего: ссылки (Image understanding; Generate/Edit images with Gemini — повтор отсылки E-102-3; supervised fine-tuning; Jump Start Solution)"
+  },
+  {
+   "n": 28,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies, 'Last updated 2026-09-22 UTC' — использовано в дате и официальности)"
+  },
+  {
+   "n": 29,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-102-1",
+   "вид": "факт",
+   "утверждение_en": "This page's fine-tuning is for image understanding and analysis, i.e. Gemini models using image data as input.",
+   "цитата": "Note: This page describes fine-tuning Gemini models for\nimage understanding and analysis (using image data as input).",
+   "источник_цитаты": "txt",
+   "раздел": "Image tuning — Note",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Разграничение: тюнинг понимания ≠ тюнинг генерации."
+  },
+  {
+   "код": "E-102-2",
+   "вид": "ограничение",
+   "утверждение_en": "Fine-tuning image generation models is not supported.",
+   "цитата": "Fine-tuning image generation models is not supported.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tuning — Note",
+   "модели": "не указано (image generation models в целом, без названий)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "стиль"
+   ],
+   "заметка": "Ключевая единица страницы для генерации: LoRA/SFT-подгонка генеративной image-модели под стиль/субъект на Agent Platform недоступна."
+  },
+  {
+   "код": "E-102-3",
+   "вид": "правило",
+   "утверждение_en": "To guide generated images toward a specific visual style or subject, use the Generate images with Gemini or Edit images with Gemini guidance instead of fine-tuning.",
+   "цитата": "To guide generated\nimages toward a specific visual style or subject, see\nGenerate images with Gemini or\nEdit images with Gemini.",
+   "источник_цитаты": "txt",
+   "раздел": "Image tuning — Note",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "редактирование"
+   ],
+   "заметка": "Страница только отсылает к другим страницам; какие именно приёмы — здесь не сказано."
+  },
+  {
+   "код": "E-102-4",
+   "вид": "лимит",
+   "утверждение_en": "For image-understanding tuning datasets, the maximum number of images per example is 30.",
+   "цитата": "Maximum images per example: 30",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано (Gemini-модели для тюнинга понимания изображений)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимит датасета тюнинга, не запроса генерации; переносить на число рефов при генерации нельзя."
+  },
+  {
+   "код": "E-102-5",
+   "вид": "лимит",
+   "утверждение_en": "For image-understanding tuning datasets, the maximum image file size is 20MB.",
+   "цитата": "Maximum image file size: 20MB",
+   "источник_цитаты": "txt",
+   "раздел": "Limitations",
+   "модели": "не указано (Gemini-модели для тюнинга понимания изображений)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Лимит датасета тюнинга."
+  },
+  {
+   "код": "E-102-6",
+   "вид": "факт",
+   "утверждение_en": "In a tuning dataset, fileUri can be a Cloud Storage bucket URI or a publicly available HTTP or HTTPS URL.",
+   "цитата": "The fileUri for your dataset can be the URI for a file in a Cloud Storage\nbucket, or it can be a publicly available HTTP or HTTPS URL.",
+   "источник_цитаты": "txt",
+   "раздел": "Dataset format",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Контекст — датасет тюнинга."
+  },
+  {
+   "код": "E-102-7",
+   "вид": "объяснение",
+   "утверждение_en": "The mediaResolution field of GenerationConfig controls the tradeoff between the quality of the media sent for tuning and the number of tokens used to represent it; higher resolution lets the model perceive more detail but uses more tokens.",
+   "цитата": "used to control the tradeoff between the quality of the media file being sent\nfor tuning and the number of tokens used to represent the media. A higher\nresolution allows the model to perceive more detail, which can lead to a more\nnuanced tuned model behavior, but it will also use more tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Dataset format",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "mediaResolution — параметр входных медиа (восприятие), не разрешения выходной картинки."
+  },
+  {
+   "код": "E-102-8",
+   "вид": "факт",
+   "утверждение_en": "mediaResolution does not affect the image dimensions sent to the model; when not specified, the default is MEDIA_RESOLUTION_HIGH.",
+   "цитата": "This doesn't\naffect the image dimensions sent to the model. When not specified, the default\nresolution is MEDIA_RESOLUTION_HIGH.",
+   "источник_цитаты": "txt",
+   "раздел": "Dataset format",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Дефолт указан для тюнинга."
+  },
+  {
+   "код": "E-102-9",
+   "вид": "факт",
+   "утверждение_en": "For fine-tuning image data on Gemini versions 3 and earlier, supported mediaResolution values are MEDIA_RESOLUTION_LOW (64 tokens), MEDIA_RESOLUTION_MEDIUM (256 tokens), and MEDIA_RESOLUTION_HIGH (256 tokens + 256 tokens per pan-and-scan image).",
+   "цитата": "MEDIA_RESOLUTION_LOW: 64 tokens\nMEDIA_RESOLUTION_MEDIUM: 256 tokens\nMEDIA_RESOLUTION_HIGH: 256 tokens + (256 tokens * number of pan and scan images)",
+   "источник_цитаты": "txt",
+   "раздел": "mediaResolution for Gemini versions 3 and earlier",
+   "модели": "не указано (Gemini versions 3 and earlier)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "MEDIUM и HIGH имеют одинаковую базу 256; HIGH добавляет pan-and-scan."
+  },
+  {
+   "код": "E-102-10",
+   "вид": "факт",
+   "утверждение_en": "For Gemini 3 models and higher, media resolution can also be set per individual media Part, allowing mixed resolutions in a dataset (e.g. HIGH for one item, LOW for another).",
+   "цитата": "For Gemini 3 models and higher, you can also set the media resolution\nper individual media Part.",
+   "источник_цитаты": "txt",
+   "раздел": "mediaResolution for Gemini versions 3 and higher",
+   "модели": "не указано (Gemini 3 models and higher)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-102-11",
+   "вид": "правило",
+   "утверждение_en": "Part-level media resolution settings take precedence over global settings.",
+   "цитата": "Part-level media resolution settings take precedence over global settings.",
+   "источник_цитаты": "txt",
+   "раздел": "mediaResolution for Gemini versions 3 and higher",
+   "модели": "не указано (Gemini 3 models and higher)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Правило приоритета; пример ниже: global LOW + Part HIGH для 'ultra_high_res_image'."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-102-12",
+   "вид": "правило",
+   "утверждение_en": "Style or subject control of generated images on this platform is not achieved by fine-tuning (unsupported); the page twice redirects it to prompting/editing guidance (Generate images / Edit images with Gemini).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Image tuning (вся страница)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-102-2, E-102-3",
+   "дата_единицы": null,
+   "тема": [
+    "стиль",
+    "модели_сравнение"
+   ],
+   "заметка": "Отсылка повторена в Note и в What's next — повторный акцент страницы."
+  },
+  {
+   "код": "E-102-13",
+   "вид": "приём",
+   "утверждение_en": "On Gemini 3+, token cost of input images can be managed by setting a low global mediaResolution and raising it only on the Part that needs detail, since Part-level settings override global ones (shown in the page's second dataset example).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "mediaResolution for Gemini versions 3 and higher",
+   "модели": "не указано (Gemini 3 models and higher)",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-102-7, E-102-10, E-102-11",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "лимиты_квоты"
+   ],
+   "заметка": "Страница показывает это только для датасетов тюнинга понимания; применимость к запросам генерации (рефы) здесь не утверждается."
+  }
+ ],
+ "противоречия_внутри": [
+  "Заголовки 'mediaResolution for Gemini versions 3 and earlier' и 'for Gemini versions 3 and higher' оба включают версию 3 — для Gemini 3 неясно, какой набор значений/токенов действует (страница отсылает к Media resolution).",
+  "В разделе Sample datasets сказано 'creating a text model supervised fine-tuning job', хотя датасеты — image (путь gemini-2_0/image)."
+ ],
+ "не_сказано": [
+  "Не названы конкретные image generation модели (Nano Banana и др.), для которых тюнинг не поддерживается — сказано обобщённо.",
+  "Не сказано, какими приёмами направлять стиль/субъект генерации — только ссылки на другие страницы.",
+  "Не сказано, действуют ли лимиты 30 изображений/20MB и токены mediaResolution для запросов генерации (рефы) — только для датасетов тюнинга."
+ ],
+ "сомнения": [
+  "Страница о тюнинге понимания изображений, не о генерации; к генерации относятся E-102-2/E-102-3 и вывод E-102-12. Лимиты и mediaResolution извлечены как факты платформы с явным указанием, что это контекст тюнинга.",
+  "Строки 1-1035 (меню) побайтно совпадают с меню id99 — прочитаны при разборе id99, идентичность подтверждена diff."
+ ]
+}

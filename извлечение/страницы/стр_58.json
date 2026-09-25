@@ -1,0 +1,537 @@
+{
+ "id": 58,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/batch-inference",
+ "заголовок": "Batch inference with Gemini  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал; meta published_time/datePublished нет)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал 'For details, see the Google Developers Site Policies' + текст от лица Google ('When more customers are active and our capacity is saturated')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Обзорный гайд Google Cloud по batch inference (бывш. batch prediction) для Gemini на Agent Platform: зачем (скидка 50%, высокие лимиты, упрощённый процесс), какие модели поддерживают (в т.ч. все четыре image-модели), global endpoint, квоты и ограничения (пул ресурсов, очередь 72 ч, 200 000 запросов, 1 ГБ, 24 ч, отмена, неподдерживаемые PT/explicit caching/RAG, SLA), best practices. Про картинки прямо — одна строка: выход изображений в batch только 1K, 2K/4K не поддерживаются. Страница ориентирована на текстовые сценарии.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)",
+  "gemini-3.1-flash-image",
+  "gemini-3-pro-image",
+  "gemini-2.5-flash-image",
+  "текстовые Gemini 3.8/3.7/3.6/3.5/3.1/3/2.5/2.0"
+ ],
+ "структура": [
+  "ноутбук",
+  "вводная",
+  "Why use batch inference?",
+  "Gemini models that support batch inference",
+  "Global endpoint model support",
+  "Quotas and limits",
+  "Best practices",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта — верхнее меню, левое меню, повтор меню продуктов (строки 1-1035) совпадают до байта со страницей id 47 (проверено diff)"
+  },
+  {
+   "n": 2,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, Send feedback, заголовок 'Batch inference with Gemini', 'Stay organized'), строки 1036-1044"
+  },
+  {
+   "n": 3,
+   "начало": "To see an example of",
+   "итог": "ничего: ссылки на ноутбук 'Intro to Batch Predictions with the Gemini API', строки 1045-1055"
+  },
+  {
+   "n": 4,
+   "начало": "Get asynchronous, high-throughput, and cost-effective",
+   "итог": "ничего: вводная (batch inference, formerly batch prediction; план гайда), строки 1056-1059"
+  },
+  {
+   "n": 5,
+   "начало": "Why use batch inference? In",
+   "итог": "ничего: мотивировка про language model без содержания про картинки, строки 1060-1064"
+  },
+  {
+   "n": 6,
+   "начало": "Cost-Effectiveness: Batch processing is offered",
+   "итог": "E-58-3, E-58-4"
+  },
+  {
+   "n": 7,
+   "начало": "High rate limits: Process hundreds",
+   "итог": "E-58-5"
+  },
+  {
+   "n": 8,
+   "начало": "Simplified Workflow: Instead of managing",
+   "итог": "E-58-5 (вторая часть единицы)"
+  },
+  {
+   "n": 9,
+   "начало": "Batch inference is optimized for",
+   "итог": "ничего: не про генерацию картинок (сценарии Content Generation текстом, Data Annotation, Offline Analysis), строки 1080-1086"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini models that support batch",
+   "итог": "ничего: заголовок и вводная фраза списка, строки 1087-1088"
+  },
+  {
+   "n": 11,
+   "начало": "Note: Batch inference is not",
+   "итог": "ничего: не про генерацию картинок (tuned Gemini 3+ не поддерживаются в batch; image-модели не тюнятся на этой странице), строки 1089-1090"
+  },
+  {
+   "n": 12,
+   "начало": "Click to expand supported models",
+   "итог": "E-58-1 (список строк 1091-1106; текстовые модели — ничего)"
+  },
+  {
+   "n": 13,
+   "начало": "Global endpoint model support Batch",
+   "итог": "E-58-13"
+  },
+  {
+   "n": 14,
+   "начало": "Quotas and limits While batch",
+   "итог": "ничего: вводная фраза раздела, строки 1116-1118"
+  },
+  {
+   "n": 15,
+   "начало": "Quota: There are no predefined",
+   "итог": "E-58-6"
+  },
+  {
+   "n": 16,
+   "начало": "Queue Time: When our service",
+   "итог": "E-58-7"
+  },
+  {
+   "n": 17,
+   "начало": "Request Limits: A single batch",
+   "итог": "E-58-8"
+  },
+  {
+   "n": 18,
+   "начало": "Processing Time: Batch jobs are",
+   "итог": "E-58-9"
+  },
+  {
+   "n": 19,
+   "начало": "Canceled jobs: You can cancel",
+   "итог": "E-58-10"
+  },
+  {
+   "n": 20,
+   "начало": "Unsupported features: Batch inference doesn't",
+   "итог": "E-58-11"
+  },
+  {
+   "n": 21,
+   "начало": "Batch inference implicit caching isn't",
+   "итог": "ничего: не про генерацию картинок (Gemini 2.0 Flash / 2.0 Flash-Lite), строки 1137-1138"
+  },
+  {
+   "n": 22,
+   "начало": "Image output: Batch inference is",
+   "итог": "E-58-2"
+  },
+  {
+   "n": 23,
+   "начало": "Note: Batch inference is not",
+   "итог": "E-58-12"
+  },
+  {
+   "n": 24,
+   "начало": "Best practices To get the",
+   "итог": "ничего: вводная фраза раздела, строки 1142-1144"
+  },
+  {
+   "n": 25,
+   "начало": "Combine jobs: To maximize throughput,",
+   "итог": "E-58-14"
+  },
+  {
+   "n": 26,
+   "начало": "Monitor Job Status: You can",
+   "итог": "E-58-15 (часть единицы)"
+  },
+  {
+   "n": 27,
+   "начало": "Optimize for Cost: Take advantage",
+   "итог": "E-58-15"
+  },
+  {
+   "n": 28,
+   "начало": "What's next Create a batch",
+   "итог": "ничего: ссылки 'What's next', строки 1152-1154"
+  },
+  {
+   "n": 29,
+   "начало": "Send feedback Except as otherwise",
+   "итог": "ничего: обвязка сайта (лицензия, Google Developers Site Policies — признак официальности; Last updated 2026-09-22 UTC), строки 1155-1157"
+  },
+  {
+   "n": 30,
+   "начало": "Products and pricing See all",
+   "итог": "ничего: обвязка сайта (подвал Google Cloud, языки), строки 1158-1202"
+  },
+  {
+   "n": 31,
+   "начало": "[длинная дистанция по всей странице]",
+   "итог": "E-58-16, E-58-17"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-58-1",
+   "вид": "факт",
+   "утверждение_en": "Batch inference is supported by the image models Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite), Gemini 3.1 Flash Image, Gemini 3 Pro Image and Gemini 2.5 Flash Image (along with other base Gemini models listed).",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nGemini 3.1 Flash-Lite\nGemini 3.1 Flash Image\nGemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini models that support batch inference",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; 2.5 Flash Image — из той же колонки списка (строка 1105)",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Список скрыт под 'Click to expand supported models'; полный список: 3.8/3.7/3.6 Flash, 3.5 Flash-Lite, 3.5 Flash, 3.1 Pro preview, 3.1 Flash-Lite Image, 3.1 Flash-Lite, 3.1 Flash Image, 3 Pro Image, 3 Flash preview, 2.5 Pro, 2.5 Flash-Lite, 2.5 Flash Image, 2.5 Flash."
+  },
+  {
+   "код": "E-58-2",
+   "вид": "ограничение",
+   "утверждение_en": "For image output, batch inference is limited to the default 1K resolution; 2K and 4K outputs are not supported.",
+   "цитата": "Image output: Batch inference is limited to the default 1K resolution.\n2K and 4K outputs are not supported.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Единственная строка страницы, прямо про генерацию изображений. Модели в этой строке не перечислены — относится ко всем image-моделям в batch."
+  },
+  {
+   "код": "E-58-3",
+   "вид": "факт",
+   "утверждение_en": "Batch processing is offered at a 50% discounted rate compared to real-time inference, suited to large-scale, non-urgent tasks.",
+   "цитата": "Cost-Effectiveness: Batch processing is offered at a 50% discounted rate\ncompared to real-time inference, making it ideal for large-scale, non-urgent\ntasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Why use batch inference?",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Скидка для image-выходов отдельно не оговорена — общая для batch."
+  },
+  {
+   "код": "E-58-4",
+   "вид": "факт",
+   "утверждение_en": "Implicit caching is enabled by default for Gemini 2.5 and Gemini 3 models and gives a 90% discount on cached tokens versus standard input tokens; cache and batch discounts don't stack — the 90% cache-hit discount takes precedence over the batch discount.",
+   "цитата": "Implicit caching is enabled by default for Gemini 2.5 and\nGemini 3 models.\nImplicit caching provides a\n90% discount on cached tokens compared to standard input tokens. However,\nthe discounts for cache and batch don't stack. The 90% cache hit discount\ntakes precedence over the batch discount.",
+   "источник_цитаты": "txt",
+   "раздел": "Why use batch inference?",
+   "модели": [
+    "Gemini 2.5 and Gemini 3 models (как в тексте; image-модели не выделены)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Касается входных токенов (промпт, референсы); для image-моделей отдельно не подтверждено."
+  },
+  {
+   "код": "E-58-5",
+   "вид": "факт",
+   "утверждение_en": "Batch inference lets you process hundreds of thousands of requests in a single batch with a higher rate limit than the real-time Gemini API; the service handles format validation, parallelizes requests and automatically retries to strive for a high completion rate with 24 hours turnaround time.",
+   "цитата": "High rate limits: Process hundreds of thousands of requests in a single\nbatch with a higher rate limit compared to the real-time Gemini API.",
+   "источник_цитаты": "txt",
+   "раздел": "Why use batch inference?",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Объединяет пункты High rate limits и Simplified Workflow (строки 1073-1079)."
+  },
+  {
+   "код": "E-58-6",
+   "вид": "лимит",
+   "утверждение_en": "Batch inference has no predefined quota limits; it uses a large shared pool of resources allocated dynamically by availability and real-time demand across all customers of that model, so when capacity is saturated batch requests might be queued.",
+   "цитата": "Quota: There are no predefined quota limits on your usage. Instead, batch\nservice provides access to a large, shared pool of resources, dynamically\nallocated based on availability of resources and real-time demand\nacross all customers of that model.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-7",
+   "вид": "лимит",
+   "утверждение_en": "Under high traffic a batch job queues for capacity and remains in queue for up to 72 hours before it expires.",
+   "цитата": "The job remains in queue for up to 72 hours before it\nexpires.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-8",
+   "вид": "лимит",
+   "утверждение_en": "A single batch job may include up to 200,000 requests; with Cloud Storage input there is also a 1GB file size limit.",
+   "цитата": "Request Limits: A single batch job may include up to 200,000 requests. If\nyou are using Cloud Storage as input, there is also a file size limit of 1GB.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "При генерации картинок с референсами в инлайне лимит 1GB на входной файл может стать ограничивающим — страница этого не говорит."
+  },
+  {
+   "код": "E-58-9",
+   "вид": "лимит",
+   "утверждение_en": "Batch jobs are asynchronous and not designed for real-time applications; most jobs complete within 24 hours after they start running (excluding queue time); after 24 hours incomplete jobs are cancelled and only completed requests are charged.",
+   "цитата": "Most jobs complete within 24 hours after\nit starts running (not counting the queue time). After 24 hours, incomplete\njobs are cancelled, and you'll only be charged for completed requests.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-10",
+   "вид": "факт",
+   "утверждение_en": "Batch inference jobs can be cancelled at any time; remaining work is cancelled, completed work is returned, and only completed work is charged.",
+   "цитата": "Canceled jobs: You can cancel batch inference jobs at any time. When you\ncancel a job, any remaining work is cancelled, and any already completed work\nis returned. You'll only be charged for the completed work.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-11",
+   "вид": "ограничение",
+   "утверждение_en": "Batch inference doesn't support Provisioned Throughput, explicit caching or RAG.",
+   "цитата": "Unsupported features: Batch inference doesn't support Provisioned Throughput, explicit caching or RAG.",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Значит, купленные GSU для Gemini 3 Image (см. страницу PT) на batch-задания не распространяются — вывод, прямо не сказан."
+  },
+  {
+   "код": "E-58-12",
+   "вид": "предупреждение",
+   "утверждение_en": "Batch inference is not a Covered Service and is excluded from the Service Level Objective (SLO) of any Service Level Agreement (SLA).",
+   "цитата": "Note: Batch inference is not a Covered Service and is excluded from the Service Level Objective (SLO) of any Service Level Agreement (SLA).",
+   "источник_цитаты": "txt",
+   "раздел": "Quotas and limits",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-13",
+   "вид": "факт",
+   "утверждение_en": "Batch inference supports the global endpoint for base Gemini models (not for tuned models); the global endpoint improves availability by serving from any supported region but doesn't support data residency requirements — use regional endpoints if you have them.",
+   "цитата": "Batch inference supports using the\nglobal endpoint\nfor base Gemini models. It doesn't support the global endpoint for\ntuned Gemini models.",
+   "источник_цитаты": "txt",
+   "раздел": "Global endpoint model support",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-14",
+   "вид": "приём",
+   "утверждение_en": "To maximize throughput, combine smaller jobs into one large job within system limits; e.g. one batch job with 200,000 requests gives better throughput than 1000 jobs with 200 requests each.",
+   "цитата": "Combine jobs: To maximize throughput, combine smaller jobs into one large\njob, within system limits. For example, submitting one batch job with 200,000\nrequests will give you better throughput than 1000 jobs with 200 requests each.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-58-15",
+   "вид": "приём",
+   "утверждение_en": "Use batch processing for any tasks that don't require an immediate response to take advantage of its cost savings; monitor job progress via API, SDK or UI and check error messages if a job fails.",
+   "цитата": "Optimize for Cost: Take advantage of the cost savings offered by batch\nprocessing for any tasks that don't require an immediate response.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо; применимость к image-моделям выведена из E-58-1",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Объединяет Monitor Job Status и Optimize for Cost."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-58-16",
+   "вид": "ограничение",
+   "утверждение_en": "For bulk image generation, batch inference covers all four image models but only at the default 1K output; 2K and 4K images must be generated outside batch, and batch cannot use Provisioned Throughput.",
+   "цитата": "2K and 4K outputs are not supported.",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image",
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-58-1, E-58-2, E-58-11",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Сведение: batch = дешевле на 50%, но только 1K."
+  },
+  {
+   "код": "E-58-17",
+   "вид": "факт",
+   "утверждение_en": "The page's rationale and use cases for batch are text-centric ('language model', product descriptions, 'creative text in bulk'); image generation appears only as the single 1K output limitation and in the supported-model list.",
+   "цитата": "Content Generation: Generate product descriptions, social media posts, or\nother creative text in bulk.",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "все модели из списка поддерживаемых batch (включая gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-3-pro-image, gemini-2.5-flash-image) — правило общее для batch"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-58-1, E-58-2 и разделов Why use batch inference / optimized tasks",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Граница: примеры и best practices не проверены для image-задач."
+  }
+ ],
+ "противоречия_внутри": [
+  "'The following base and tuned Gemini models support batch inference' — и сразу Note: tuned Gemini 3 and higher не поддерживаются (для image-моделей не существенно).",
+  "'Quota: There are no predefined quota limits' при 'Request Limits: up to 200,000 requests' на задание — не противоречие по сути (квота vs размер задания), но формулировки конфликтуют на первый взгляд."
+ ],
+ "не_сказано": [
+  "Можно ли в batch задавать aspect ratio и другие параметры image_config (кроме того, что разрешение только 1K).",
+  "Цена image-выходов в batch отдельно (только общая скидка 50%).",
+  "Работают ли в batch референс-картинки, многоходовое редактирование, thinking у 3 Pro Image.",
+  "Относится ли ограничение 1K ко всем четырём image-моделям одинаково (модели в строке 'Image output' не перечислены)."
+ ],
+ "сомнения": [
+  "Общие batch-лимиты (E-58-3…E-58-15) извлечены, потому что список поддерживаемых моделей прямо включает image-модели; сама страница эти лимиты к картинкам отдельно не привязывает.",
+  "'Gemini 3.1 Propreview' / 'Gemini 3 Flashpreview' в .txt — склейка названия с меткой preview."
+ ]
+}

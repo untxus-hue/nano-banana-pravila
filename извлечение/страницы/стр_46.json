@@ -1,0 +1,975 @@
+{
+ "id": 46,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking",
+ "заголовок": "Thinking  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал .txt и html); meta datePublished/dateModified в html нет.",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: «Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies.»; og:site_name «Google Cloud Documentation»; подвал «About Google», «Google Cloud terms». Строки «© Google LLC» нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочная страница Google Cloud (Gemini Enterprise Agent Platform, бывш. Vertex AI) о режиме мышления моделей Gemini для разработчиков: какие модели поддерживают thinking, как им управлять (thinking_level для Gemini 3+, thinking_budget для 2.5 и ранее), как смотреть сводки мыслей (include_thoughts), зачем возвращать thought signatures, как тарифицируются токены мышления. Про картинки: три image-модели (3.1 Flash-Lite Image = Nano Banana 2 Lite, 3.1 Flash Image, 3 Pro Image) есть в списке поддерживаемых и в таблице thinking_level с урезанным набором уровней (Flash image: MINIMAL/HIGH, default MINIMAL; Pro Image: только HIGH); одна оговорка «image processing might not emit text summaries». Все примеры кода — текстовые (решение уравнения, «How does AI work?»). Повторно подчёркиваются: thought signatures обязательны (MINIMAL тоже, 400 без них; «regardless of the thinking level»), отключить мышление нельзя у Pro-моделей. Собственные термины: thinking_level (MINIMAL/LOW/MEDIUM/HIGH), thinking_budget, dynamic budget (-1), thought summaries, include_thoughts, thought signatures, Agent Studio.",
+ "модели_на_странице": [
+  "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+  "Gemini 3.1 Flash Image",
+  "Gemini 3 Pro Image",
+  "Gemini Omni Flash / Omni 1.1 Flash (preview)",
+  "Gemini 3.8 Flash Cyber",
+  "Gemini 3.8 / 3.7 / 3.6 / 3.5 Flash",
+  "Gemini 3.5 Flash-Lite",
+  "Gemini 3.1 Pro (preview)",
+  "Gemini 3.1 Flash-Lite",
+  "Gemini 3 Flash (preview)",
+  "Gemini 3 Pro (в тексте, не в списке)",
+  "Gemini 2.5 Pro / 2.5 Flash / 2.5 Flash-Lite",
+  "в коде: gemini-3-flash-preview, gemini-3.5-flash, gemini-3.1-pro-preview, gemini-2.5-flash, gemini-2.5-pro",
+  "Gemini 2.5 Flash Image — только в левом меню, в контенте нет"
+ ],
+ "структура": [
+  "Вступление (что такое thinking, включён по умолчанию)",
+  "Supported models (раскрывающийся список)",
+  "Control model thinking: Gemini 3 and later models (таблица thinking_level, уровни MINIMAL/LOW/MEDIUM/HIGH с кодом, ограничения)",
+  "Control model thinking: Gemini 2.5 and earlier models (thinking_budget, таблица, вкладки Console/Python/Node.js/Go/Java)",
+  "View thought summaries (include_thoughts, вкладки кода, сценарии без сводок)",
+  "Thought signatures",
+  "Prompting techniques",
+  "Pricing",
+  "What's next",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content / Documentation … Get Started with Google Cloud … English … Sign in",
+   "итог": "ничего: обвязка (шапка Google Cloud, стр. 1-53)"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Enterprise Agent Platform Start free Overview Studio Agents Models … Console",
+   "итог": "ничего: обвязка (меню продукта, стр. 54-75)"
+  },
+  {
+   "n": 3,
+   "начало": "Overview Beginner's guide Get started … Code samples for all products (левое меню, стр. 76-1035)",
+   "итог": "ничего: обвязка (левое меню; названия разделов про картинки — «Generate images with Gemini», «Gemini image generation limitations», «Provisioned Throughput for Gemini 3 (Nano Banana) models» и модели 3 Pro Image / 3.1 Flash Image / 2.5 Flash Image / 3.1 Flash-Lite Image — только заголовки ссылок)"
+  },
+  {
+   "n": 4,
+   "начало": "Home Documentation AI and ML Gemini Enterprise Agent Platform Models Send feedback",
+   "итог": "ничего: обвязка (хлебные крошки)"
+  },
+  {
+   "n": 5,
+   "начало": "Thinking / Stay organized with collections / Save and categorize content based on your preferences.",
+   "итог": "ничего: заголовок и виджет сохранения"
+  },
+  {
+   "n": 6,
+   "начало": "Thinking models are trained to generate an internal \"thinking process\" before producing a response.",
+   "итог": "E-46-1"
+  },
+  {
+   "n": 7,
+   "начало": "The thinking process is enabled by default across Gemini models. When you use Agent Studio …",
+   "итог": "E-46-2"
+  },
+  {
+   "n": 8,
+   "начало": "Supported models / Thinking is supported in the following models: / Click to expand supported models",
+   "итог": "E-46-3 (вводная к списку)"
+  },
+  {
+   "n": 9,
+   "начало": "Gemini Omni Flash preview … Gemini 3.5 Flash … Gemini 3.1 Pro preview (стр. 1055-1063)",
+   "итог": "ничего: не image-модели"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+   "итог": "E-46-3"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini 3.1 Flash-Lite",
+   "итог": "ничего: не image-модель"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 3.1 Flash Image",
+   "итог": "E-46-3"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini 3 Pro Image",
+   "итог": "E-46-3"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 3 Flash preview / Gemini 2.5 Pro / Gemini 2.5 Flash-Lite / Gemini 2.5 Flash",
+   "итог": "ничего: не image-модели (отсутствие Gemini 2.5 Flash Image — в длинной дистанции E-46-29)"
+  },
+  {
+   "n": 15,
+   "начало": "Control model thinking / You can control the amount of thinking the model performs",
+   "итог": "E-46-4"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini 3 and later models / Gemini 3 models introduce the thinking_level parameter",
+   "итог": "E-46-5"
+  },
+  {
+   "n": 17,
+   "начало": "The following table summarizes which thinking_level values are supported by each model / Model | Supported | Default",
+   "итог": "E-46-6, E-46-7, E-46-8 (шапка таблицы)"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini 3.8 Flash Cyber … Gemini 3.1 Pro preview (строки таблицы, LOW/MEDIUM/HIGH, MINIMAL…)",
+   "итог": "ничего: не image-модели"
+  },
+  {
+   "n": 19,
+   "начало": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) | MINIMAL, HIGH | MINIMAL",
+   "итог": "E-46-6"
+  },
+  {
+   "n": 20,
+   "начало": "Gemini 3.1 Flash-Lite | MINIMAL, LOW, MEDIUM, HIGH | MINIMAL",
+   "итог": "ничего: не image-модель"
+  },
+  {
+   "n": 21,
+   "начало": "Gemini 3.1 Flash Image | MINIMAL, HIGH | MINIMAL",
+   "итог": "E-46-7"
+  },
+  {
+   "n": 22,
+   "начало": "Gemini 3 Pro Image | HIGH | HIGH",
+   "итог": "E-46-8"
+  },
+  {
+   "n": 23,
+   "начало": "Gemini 3 Flash preview | MINIMAL, LOW, MEDIUM, HIGH | HIGH",
+   "итог": "ничего: не image-модель"
+  },
+  {
+   "n": 24,
+   "начало": "MINIMAL: Constrains the model to use as few tokens as possible for thinking … 400 error. For more information, see Thought signatures.",
+   "итог": "E-46-9, E-46-10"
+  },
+  {
+   "n": 25,
+   "начало": "код MINIMAL (gemini-3-flash-preview, \"How does AI work?\", ThinkingLevel.MINIMAL)",
+   "итог": "E-46-11"
+  },
+  {
+   "n": 26,
+   "начало": "LOW: Constrains the model to use fewer tokens for thinking … LOW is ideal for high-throughput tasks",
+   "итог": "ничего: уровень LOW не поддерживается image-моделями (по таблице)"
+  },
+  {
+   "n": 27,
+   "начало": "код LOW (gemini-3.5-flash)",
+   "итог": "ничего: текстовый пример, LOW не для image-моделей"
+  },
+  {
+   "n": 28,
+   "начало": "MEDIUM: Offers a balanced approach suitable for tasks of moderate complexity",
+   "итог": "ничего: уровень MEDIUM не поддерживается image-моделями (по таблице)"
+  },
+  {
+   "n": 29,
+   "начало": "код MEDIUM (gemini-3-flash-preview)",
+   "итог": "ничего: текстовый пример, MEDIUM не для image-моделей"
+  },
+  {
+   "n": 30,
+   "начало": "HIGH: Allows the model to use more tokens for thinking … default level for Gemini 3 Pro models and Gemini 3 Flash. Use this configuration when replacing tasks …",
+   "итог": "E-46-12"
+  },
+  {
+   "n": 31,
+   "начало": "код HIGH (gemini-3.5-flash, \"Find the race condition …\")",
+   "итог": "ничего: текстовый пример (форма параметра — E-46-11)"
+  },
+  {
+   "n": 32,
+   "начало": "Thinking cannot be turned off for Gemini 3 Pro and Gemini 3.1 Pro.",
+   "итог": "E-46-13"
+  },
+  {
+   "n": 33,
+   "начало": "If you specify both thinking_level and thinking_budget in the same request for a Gemini 3 model",
+   "итог": "E-46-14"
+  },
+  {
+   "n": 34,
+   "начало": "Gemini 2.5 and earlier models / For models earlier than Gemini 3, you can control thinking using the thinking_budget parameter … 8,192 tokens … -1",
+   "итог": "ничего: не про image-модели (thinking_budget текстовых 2.5; Gemini 2.5 Flash Image в списке поддерживаемых нет)"
+  },
+  {
+   "n": 35,
+   "начало": "You can manually set thinking_budget to impose a soft upper limit … set the budget to 0",
+   "итог": "ничего: не про image-модели (thinking_budget)"
+  },
+  {
+   "n": 36,
+   "начало": "The following table shows the minimum and maximum amounts … Gemini 2.5 Flash / 2.5 Pro / 2.5 Flash-Lite",
+   "итог": "ничего: не про image-модели (бюджеты текстовых 2.5)"
+  },
+  {
+   "n": 37,
+   "начало": "If you set thinking_budget to 0 when using Gemini 2.5 Flash and Gemini 2.5 Flash-Lite … Thinking can't be turned off for Gemini 2.5 Pro.",
+   "итог": "ничего: не про image-модели"
+  },
+  {
+   "n": 38,
+   "начало": "If you use the thinking_level parameter with a model earlier than Gemini 3, the model returns an error.",
+   "итог": "E-46-15"
+  },
+  {
+   "n": 39,
+   "начало": "Console: Open Agent Studio > Create prompt … Thinking budget drop-down … slider",
+   "итог": "ничего: UI настройки thinking_budget, не про image-модели"
+  },
+  {
+   "n": 40,
+   "начало": "Python: Install pip install --upgrade google-genai / env vars / код thinking_budget=1024 (gemini-3.5-flash) + thoughts_token_count",
+   "итог": "ничего: текстовый пример (несоответствие модели — в противоречиях)"
+  },
+  {
+   "n": 41,
+   "начало": "Node.js: npm install @google/genai / env vars / код thinkingBudget 1024 (gemini-2.5-flash)",
+   "итог": "ничего: текстовый пример"
+  },
+  {
+   "n": 42,
+   "начало": "Go: … generateThinkingBudgetContentWithText (gemini-2.5-flash)",
+   "итог": "ничего: текстовый пример"
+  },
+  {
+   "n": 43,
+   "начало": "Java: … ThinkingBudgetWithTxt (gemini-2.5-flash)",
+   "итог": "ничего: текстовый пример"
+  },
+  {
+   "n": 44,
+   "начало": "View thought summaries / Thought summaries provide visibility into the intermediate reasoning steps",
+   "итог": "E-46-16"
+  },
+  {
+   "n": 45,
+   "начало": "In Agent Studio, thought summaries are enabled by default and viewable by expanding the Thoughts panel.",
+   "итог": "E-46-17"
+  },
+  {
+   "n": 46,
+   "начало": "When using the API, you can enable thought summaries by setting include_thoughts=True in your ThinkingConfig:",
+   "итог": "E-46-18"
+  },
+  {
+   "n": 47,
+   "начало": "Console: Thought summaries are enabled by default in Agent Studio.",
+   "итог": "E-46-17 (повтор во вкладке)"
+  },
+  {
+   "n": 48,
+   "начало": "Python / Node.js / Go / Java: include_thoughts код (gemini-3.1-pro-preview, gemini-2.5-pro; part.thought) + длинные примеры рассуждений о x^2 + 4x + 4",
+   "итог": "E-46-19 (пример рассуждения — не про картинки)"
+  },
+  {
+   "n": 49,
+   "начало": "A response may contain a thought signature without thought summary text … Low-complexity requests … Disabled summaries",
+   "итог": "E-46-20"
+  },
+  {
+   "n": 50,
+   "начало": "Non-text reasoning modalities: Certain modalities (such as image processing) might not emit text summaries.",
+   "итог": "E-46-21"
+  },
+  {
+   "n": 51,
+   "начало": "Your application should always gracefully handle responses where thought summary content is absent or empty",
+   "итог": "E-46-22"
+  },
+  {
+   "n": 52,
+   "начало": "Thought signatures / Thought signatures are encrypted representations of the model's internal thought process",
+   "итог": "E-46-23"
+  },
+  {
+   "n": 53,
+   "начало": "To ensure the model maintains full context across multiple turns … you must return the thought signatures … handled automatically.",
+   "итог": "E-46-24, E-46-25"
+  },
+  {
+   "n": 54,
+   "начало": "For detailed rules, examples, and multi-turn workflow patterns, see Thought signatures.",
+   "итог": "ничего: ссылка на другую страницу"
+  },
+  {
+   "n": 55,
+   "начало": "Prompting techniques / Effective prompt design helps you steer model reasoning … see the Thinking prompting guide.",
+   "итог": "ничего: общая отсылка к Thinking prompting guide без содержания"
+  },
+  {
+   "n": 56,
+   "начало": "Pricing / You are charged for the tokens that are generated during a model's thinking process.",
+   "итог": "E-46-26"
+  },
+  {
+   "n": 57,
+   "начало": "For more information, see Agent Platform pricing. To learn how to manage costs, see Control model thinking.",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 58,
+   "начало": "What's next: Guide Thought signatures / Guide Thinking prompting guide / Console Google Cloud Console",
+   "итог": "ничего: ссылки"
+  },
+  {
+   "n": 59,
+   "начало": "Send feedback / Except as otherwise noted … Google Developers Site Policies … Last updated 2026-09-22 UTC.",
+   "итог": "ничего: обвязка (лицензия — признак официальности; дата вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 60,
+   "начало": "Products and pricing … About Google Privacy Site terms Google Cloud terms … Subscribe / English … 日本語",
+   "итог": "ничего: обвязка (подвал Google Cloud, языки; стр. 1291-1335)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-46-1",
+   "вид": "объяснение",
+   "утверждение_en": "Thinking models are trained to generate an internal \"thinking process\" before producing a response, which makes them capable of stronger reasoning, multi-step planning, mathematical problem-solving and code generation than models without thinking.",
+   "цитата": "Thinking models are trained to generate an internal \"thinking process\" before\nproducing a response. As a result, thinking models are capable of stronger\nreasoning, multi-step planning, mathematical problem-solving, and code\ngeneration than models without thinking capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking (вступление)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Общее описание механизма; польза для картинок на странице не описана (перечислены только рассуждение, планирование, математика, код)."
+  },
+  {
+   "код": "E-46-2",
+   "вид": "факт",
+   "утверждение_en": "The thinking process is enabled by default across Gemini models; in Agent Studio on Gemini Enterprise Agent Platform the full thinking process can be viewed together with the generated response.",
+   "цитата": "The thinking process is enabled by default across Gemini models. When\nyou use Agent Studio on Gemini Enterprise Agent Platform, you can view the full thinking\nprocess together with the model's generated response.",
+   "источник_цитаты": "txt",
+   "раздел": "Thinking (вступление)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "продукт_ui"
+   ],
+   "заметка": "Противоречит формулировке раздела Pricing «For some models … thinking is enabled by default» (см. противоречия)."
+  },
+  {
+   "код": "E-46-3",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by the image models Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite), Gemini 3.1 Flash Image and Gemini 3 Pro Image (they appear in the list of thinking-supported models).",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nGemini 3.1 Flash-Lite\nGemini 3.1 Flash Image\nGemini 3 Pro Image",
+   "источник_цитаты": "txt",
+   "раздел": "Supported models",
+   "модели": [
+    "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+    "Gemini 3.1 Flash Image (Nano Banana 2)",
+    "Gemini 3 Pro Image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "В html пункты ведут на /models/gemini/3-1-flash-lite-image, /3-1-flash-image, /3-pro-image. Имя «Nano Banana» дано только у Lite; для 3.1 Flash Image и 3 Pro Image соответствие Nano Banana 2 / Pro — из общего словаря, не со страницы. Gemini 2.5 Flash Image в списке нет (E-46-29). Цитата захватывает и строку «Gemini 3.1 Flash-Lite» (текстовая модель) между ними — так идёт список."
+  },
+  {
+   "код": "E-46-4",
+   "вид": "факт",
+   "утверждение_en": "The amount of thinking before the response can be controlled, and the control method differs by model version.",
+   "цитата": "You can control the amount of thinking the model performs before returning a\nresponse. The method for controlling thinking differs depending on the model\nversion.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-46-5",
+   "вид": "приём",
+   "утверждение_en": "Gemini 3 models use the thinking_level parameter, which replaces budget configuration with discrete levels; to get faster, lower-latency responses when complex reasoning isn't required, thinking_level can be constrained.",
+   "цитата": "Gemini 3 models introduce the thinking_level parameter, which\nsimplifies thinking budget configuration into discrete levels. For faster,\nlower-latency responses when complex reasoning isn't required, you can\nconstrain the model's thinking_level.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models",
+   "модели": [
+    "Gemini 3 and later models"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Image-модели поколения 3 / 3.1 подпадают под «Gemini 3 and later» и в таблице имеют thinking_level (E-46-6..8)."
+  },
+  {
+   "код": "E-46-6",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) supports only thinking_level MINIMAL and HIGH, and its default is MINIMAL.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)\nMINIMAL, HIGHMINIMAL",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (таблица thinking_level)",
+   "модели": [
+    "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "В .txt ячейки слиты: «MINIMAL, HIGH» + «MINIMAL»; по html: Supported = MINIMAL, HIGH; Default = MINIMAL."
+  },
+  {
+   "код": "E-46-7",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3.1 Flash Image supports only thinking_level MINIMAL and HIGH, and its default is MINIMAL.",
+   "цитата": "Gemini 3.1 Flash Image\nMINIMAL, HIGHMINIMAL",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (таблица thinking_level)",
+   "модели": [
+    "Gemini 3.1 Flash Image (Nano Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Ячейки слиты в .txt; по html: Supported = MINIMAL, HIGH; Default = MINIMAL. LOW и MEDIUM не поддерживаются."
+  },
+  {
+   "код": "E-46-8",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro Image supports only thinking_level HIGH, which is also its default.",
+   "цитата": "Gemini 3 Pro Image\nHIGHHIGH",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (таблица thinking_level)",
+   "модели": [
+    "Gemini 3 Pro Image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Ячейки слиты в .txt; по html: Supported = HIGH; Default = HIGH. Уровень мышления у Pro Image понизить нельзя."
+  },
+  {
+   "код": "E-46-9",
+   "вид": "объяснение",
+   "утверждение_en": "MINIMAL constrains the model to use as few thinking tokens as possible and is best for low-complexity tasks that wouldn't benefit from extensive reasoning.",
+   "цитата": "MINIMAL: Constrains the model to use as few tokens as possible for\nthinking and is best used for low-complexity tasks that wouldn't benefit\nfrom extensive reasoning.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (уровни)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Для Nano Banana 2 и 2 Lite MINIMAL — уровень по умолчанию (E-46-6, E-46-7). В том же абзаце: MINIMAL — default для Gemini 3.1 Flash-Lite (текстовой)."
+  },
+  {
+   "код": "E-46-10",
+   "вид": "предупреждение",
+   "утверждение_en": "MINIMAL is as close as possible to a zero thinking budget but still requires thought signatures; if thought signatures aren't provided in the request, the model returns a 400 error.",
+   "цитата": "MINIMAL is as close as possible to a zero\nbudget for thinking but still requires thought\nsignatures. If\nthought signatures aren't provided in your request, the model returns a\n400 error.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (уровни, MINIMAL)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "В каком именно запросе нужны подписи (очевидно — в последующих ходах с историей) здесь не уточнено; детали — на странице Thought signatures."
+  },
+  {
+   "код": "E-46-11",
+   "вид": "факт",
+   "утверждение_en": "In the Gen AI SDK, thinking_level is set through GenerateContentConfig(thinking_config=ThinkingConfig(thinking_level=ThinkingLevel.<LEVEL>)) in generate_content.",
+   "цитата": "thinking_config=types.ThinkingConfig(thinking_level=types.ThinkingLevel.MINIMAL)",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (примеры кода)",
+   "модели": [
+    "gemini-3-flash-preview (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "В .txt код слит без пробелов; в html — отформатирован. Примеры только на текстовых моделях (gemini-3-flash-preview, gemini-3.5-flash); для image-моделей кода нет."
+  },
+  {
+   "код": "E-46-12",
+   "вид": "объяснение",
+   "утверждение_en": "HIGH lets the model use more thinking tokens and suits complex prompts requiring deep reasoning (multi-step planning, verified code generation, advanced function calling); it is the default level for Gemini 3 Pro models and Gemini 3 Flash.",
+   "цитата": "HIGH: Allows the model to use more tokens for thinking and is suitable for\ncomplex prompts requiring deep reasoning, such as multi-step planning,\nverified code generation, or advanced function calling scenarios. This is the\ndefault level for Gemini 3 Pro models and Gemini 3 Flash.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models (уровни, HIGH)",
+   "модели": [
+    "Gemini 3 Pro models",
+    "Gemini 3 Flash"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "«Gemini 3 Pro models» согласуется с таблицей для Gemini 3 Pro Image (default HIGH). HIGH — единственный уровень кроме MINIMAL, доступный Flash image-моделям."
+  },
+  {
+   "код": "E-46-13",
+   "вид": "ограничение",
+   "утверждение_en": "Thinking cannot be turned off for Gemini 3 Pro and Gemini 3.1 Pro.",
+   "цитата": "Thinking cannot be turned off for Gemini 3 Pro and Gemini 3.1 Pro.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models",
+   "модели": [
+    "Gemini 3 Pro",
+    "Gemini 3.1 Pro"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Относится ли «Gemini 3 Pro» к Gemini 3 Pro Image — не сказано; по таблице у Pro Image доступен только HIGH, что с этим согласуется. Самой модели «Gemini 3 Pro» в списке поддерживаемых нет."
+  },
+  {
+   "код": "E-46-14",
+   "вид": "ограничение",
+   "утверждение_en": "Specifying both thinking_level and thinking_budget in the same request for a Gemini 3 model returns an error.",
+   "цитата": "If you specify both thinking_level and thinking_budget in the same request\nfor a Gemini 3 model, the model returns an error.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 3 and later models",
+   "модели": [
+    "Gemini 3 models"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Касается и image-моделей поколения 3 / 3.1 (выведено из того, что они — Gemini 3 и имеют thinking_level)."
+  },
+  {
+   "код": "E-46-15",
+   "вид": "ограничение",
+   "утверждение_en": "Using the thinking_level parameter with a model earlier than Gemini 3 returns an error.",
+   "цитата": "If you use the thinking_level parameter with a model earlier than Gemini 3, the\nmodel returns an error.",
+   "источник_цитаты": "txt",
+   "раздел": "Control model thinking — Gemini 2.5 and earlier models",
+   "модели": [
+    "модели ранее Gemini 3"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "По формулировке распространяется и на Gemini 2.5 Flash Image (Nano Banana), хотя эта модель на странице не названа."
+  },
+  {
+   "код": "E-46-16",
+   "вид": "факт",
+   "утверждение_en": "Thought summaries give visibility into the model's intermediate reasoning steps and are available in Gemini 2.5 and newer models.",
+   "цитата": "Thought summaries provide visibility into the intermediate reasoning steps\nthe model performed while generating a response. You can view thought summaries\nin Gemini 2.5 and newer models.",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": [
+    "Gemini 2.5 and newer models"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Оговорка ниже: для некоторых модальностей (обработка изображений) текстовых сводок может не быть (E-46-21)."
+  },
+  {
+   "код": "E-46-17",
+   "вид": "факт",
+   "утверждение_en": "In Agent Studio, thought summaries are enabled by default and are shown by expanding the Thoughts panel.",
+   "цитата": "In Agent Studio, thought summaries are\nenabled by default and viewable by expanding the Thoughts panel.",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "продукт_ui"
+   ],
+   "заметка": "Повторено во вкладке Console."
+  },
+  {
+   "код": "E-46-18",
+   "вид": "инструкция",
+   "утверждение_en": "Through the API, thought summaries are enabled by setting include_thoughts=True in ThinkingConfig.",
+   "цитата": "When using the API, you can enable thought summaries by setting\ninclude_thoughts=True in your ThinkingConfig:",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-46-19",
+   "вид": "факт",
+   "утверждение_en": "In the response, thought summary parts are marked with part.thought; code iterates over response.candidates[0].content.parts to separate thoughts from the answer.",
+   "цитата": "for part in response.candidates[0].content.parts:\n    if part and part.thought:  # show thoughts\n        print(part.text)",
+   "источник_цитаты": "html",
+   "раздел": "View thought summaries (пример Python)",
+   "модели": [
+    "gemini-3.1-pro-preview (так в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Код взят из html (в .txt он слит без пробелов). Примеры Node.js/Go/Java делают то же на gemini-2.5-pro."
+  },
+  {
+   "код": "E-46-20",
+   "вид": "факт",
+   "утверждение_en": "A response may contain a thought signature without thought summary text for low-complexity requests (minimal reasoning needed) or when thought summaries were not requested or were explicitly turned off.",
+   "цитата": "A response may contain a thought signature without thought summary text in the\nfollowing scenarios:\nLow-complexity requests: The model required minimal reasoning steps to\nformulate the response.\nDisabled summaries: Thought summaries were not requested or were\nexplicitly turned off.",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-46-21",
+   "вид": "предупреждение",
+   "утверждение_en": "Certain non-text reasoning modalities, such as image processing, might not emit text thought summaries, so a response can carry a thought signature without summary text.",
+   "цитата": "Non-text reasoning modalities: Certain modalities (such as image\nprocessing) might not emit text summaries.",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Единственное место страницы, где картинки упомянуты в тексте. «image processing» — обработка изображений; о генерации картинок прямо не сказано."
+  },
+  {
+   "код": "E-46-22",
+   "вид": "правило",
+   "утверждение_en": "Applications should always gracefully handle responses where thought summary content is absent or empty, while preserving the associated thought signatures.",
+   "цитата": "Your application should always gracefully handle responses where thought summary\ncontent is absent or empty while preserving the associated thought signatures.",
+   "источник_цитаты": "txt",
+   "раздел": "View thought summaries",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "«should always» — сильная рекомендация."
+  },
+  {
+   "код": "E-46-23",
+   "вид": "объяснение",
+   "утверждение_en": "Thought signatures are encrypted representations of the model's internal thought process that preserve the Gemini reasoning state during multi-turn conversations, especially when using function calling.",
+   "цитата": "Thought signatures are encrypted representations of the model's internal thought\nprocess that preserve the Gemini reasoning state during multi-turn\nconversations, especially when using function\ncalling.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-46-24",
+   "вид": "правило",
+   "утверждение_en": "To keep full context across turns, thought signatures from previous responses must be returned in subsequent requests, regardless of the thinking level used.",
+   "цитата": "To ensure the model maintains full context across multiple turns of a\nconversation, you must return the thought signatures from previous responses in\nyour subsequent requests, regardless of the thinking level used.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "«regardless of the thinking level» — включая MINIMAL (по умолчанию у Nano Banana 2 / 2 Lite)."
+  },
+  {
+   "код": "E-46-25",
+   "вид": "факт",
+   "утверждение_en": "With the official Google Gen AI SDK (Python, Node.js, Go or Java), thought signatures are handled automatically when using the standard chat history features or appending the full model response to the history.",
+   "цитата": "If you are\nusing the official Google Google Gen AI SDK (Python, Node.js, Go, or\nJava) and using the standard chat history features or appending the full model\nresponse to the history, thought signatures are handled automatically.",
+   "источник_цитаты": "txt",
+   "раздел": "Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход",
+    "api_код"
+   ],
+   "заметка": "Опечатка источника «Google Google Gen AI SDK» сохранена в цитате."
+  },
+  {
+   "код": "E-46-26",
+   "вид": "факт",
+   "утверждение_en": "Tokens generated during the model's thinking process are charged; for some models, such as Gemini 3 Pro and Gemini 2.5 Pro, thinking is on by default and these tokens are billed.",
+   "цитата": "You are charged for the tokens that are generated during a model's thinking\nprocess. For some models, such as Gemini 3 Pro and\nGemini 2.5 Pro, thinking is enabled by\ndefault and you are billed for these tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Pricing",
+   "модели": [
+    "Gemini 3 Pro",
+    "Gemini 2.5 Pro"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "thinking"
+   ],
+   "заметка": "Цены мышления для image-моделей отдельно не названы; ссылка на Agent Platform pricing."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-46-27",
+   "вид": "предупреждение",
+   "утверждение_en": "Nano Banana 2 (Gemini 3.1 Flash Image) and Nano Banana 2 Lite default to thinking_level MINIMAL, and MINIMAL still requires thought signatures (400 error without them); combined with the rule to return signatures regardless of level, multi-turn requests to these image models must carry the previous thought signatures even at the default setting.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Control model thinking + Thought signatures",
+   "модели": [
+    "Gemini 3.1 Flash Image (Nano Banana 2)",
+    "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-46-6, E-46-7, E-46-10, E-46-24",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": "Страница не говорит о картинках в этих пунктах; вывод — из сложения таблицы и правил."
+  },
+  {
+   "код": "E-46-28",
+   "вид": "факт",
+   "утверждение_en": "Image models have a reduced thinking_level set compared with text models: the Flash image models allow only MINIMAL or HIGH (no LOW or MEDIUM) and Gemini 3 Pro Image allows only HIGH, so the LOW/MEDIUM guidance does not apply to image models and Pro Image's thinking cannot be lowered.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Control model thinking — таблица + описания уровней",
+   "модели": [
+    "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+    "Gemini 3.1 Flash Image (Nano Banana 2)",
+    "Gemini 3 Pro Image (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-46-6, E-46-7, E-46-8, E-46-9, E-46-12",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "Выбор для Flash image-моделей бинарный: минимум (по умолчанию) или максимум."
+  },
+  {
+   "код": "E-46-29",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (the original Nano Banana) is not in the thinking-supported model list, while Gemini 2.5 Pro, 2.5 Flash-Lite and 2.5 Flash are; the page gives no thinking information for it.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Supported models (сравнение со списком и левым меню)",
+   "модели": [
+    "Gemini 2.5 Flash Image (Nano Banana) — отсутствует"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-46-3 и списка поддерживаемых моделей (стр. 1055-1071); в левом меню страницы «2.5 Flash Image» есть",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "модели_сравнение"
+   ],
+   "заметка": "Отсутствие в списке — не прямое утверждение «не поддерживает»."
+  },
+  {
+   "код": "E-46-30",
+   "вид": "предупреждение",
+   "утверждение_en": "For image-related reasoning, include_thoughts may yield no text summaries (image processing might not emit them), so an image application should expect empty summaries while still preserving and returning thought signatures.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "View thought summaries + Thought signatures",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-46-18, E-46-21, E-46-22, E-46-24",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": null
+  },
+  {
+   "код": "E-46-31",
+   "вид": "объяснение",
+   "утверждение_en": "Thinking is controlled by two mutually exclusive mechanisms split by model generation — thinking_level for Gemini 3 and later (including the Gemini 3 / 3.1 image models) and thinking_budget for Gemini 2.5 and earlier; sending both to a Gemini 3 model or thinking_level to a pre-3 model returns an error.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Control model thinking (оба подраздела)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-46-5, E-46-14, E-46-15, E-46-6..E-46-8",
+   "дата_единицы": null,
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "Подходит ли thinking_budget отдельно для Gemini 3 моделей — прямо не сказано (при этом пример Python в разделе 2.5 использует gemini-3.5-flash с thinking_budget)."
+  },
+  {
+   "код": "E-46-32",
+   "вид": "факт",
+   "утверждение_en": "Because thinking tokens are billed and Gemini 3 Pro Image only supports thinking_level HIGH, thinking cost for Nano Banana Pro cannot be reduced through thinking_level, whereas the Flash image models default to the cheapest level (MINIMAL).",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Pricing + таблица thinking_level",
+   "модели": [
+    "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+    "Gemini 3.1 Flash Image (Nano Banana 2)",
+    "Gemini 3 Pro Image (Nano Banana Pro)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "выведено из E-46-26, E-46-8, E-46-6, E-46-7",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "thinking"
+   ],
+   "заметка": "Цены за токены мышления image-моделей на странице не приведены; вывод только о рычаге управления."
+  }
+ ],
+ "противоречия_внутри": [
+  "Вступление: «The thinking process is enabled by default across Gemini models» против Pricing: «For some models, such as Gemini 3 Pro and Gemini 2.5 Pro, thinking is enabled by default» (E-46-2 против E-46-26).",
+  "«Thinking cannot be turned off for Gemini 3 Pro» и «default level for Gemini 3 Pro models» (E-46-13, E-46-12) — модели «Gemini 3 Pro» нет в списке поддерживаемых (там 3.1 Pro preview и 3 Pro Image); к какой модели относится утверждение, неясно.",
+  "Не про картинки: пример Python в разделе «Gemini 2.5 and earlier models» использует model=\"gemini-3.5-flash\" с thinking_budget=1024, хотя раздел утверждает, что thinking_budget — механизм для моделей ранее Gemini 3.",
+  "Не про картинки: в тексте «official Google Google Gen AI SDK» — опечатка источника."
+ ],
+ "не_сказано": [
+  "Как мышление влияет на качество/композицию сгенерированной картинки — ничего.",
+  "Нет ни одного примера вызова image-модели с thinking_level; нет кода image-запроса.",
+  "Не сказано, возвращают ли image-модели сводки мыслей при include_thoughts (есть только общая оговорка про «image processing»).",
+  "Цены токенов мышления для image-моделей не названы.",
+  "Поддерживает ли Gemini 2.5 Flash Image (Nano Banana) мышление — не сказано (в списке её нет).",
+  "Где именно нужны thought signatures в многоходовой правке картинок — отсылка на страницу Thought signatures.",
+  "Нет ничего про aspect ratio, image size, response modalities, media resolution, лимиты входных картинок."
+ ],
+ "сомнения": [
+  "Соответствие «Gemini 3.1 Flash Image» = Nano Banana 2 и «Gemini 3 Pro Image» = Nano Banana Pro на странице не написано (подписано только «Nano Banana 2 Lite»); принято по общему словарю задачи и ссылкам на страницы моделей.",
+  "Ячейки таблиц в .txt слиты («MINIMAL, HIGHMINIMAL», «HIGHHIGH», «Gemini 2.5 Flash124,576»); значения проверены по html. Цитаты взяты как есть из .txt.",
+  "Страница Vertex/Agent Platform (Google Cloud), а не Gemini Developer API — набор уровней и значения по умолчанию могут отличаться между платформами."
+ ]
+}

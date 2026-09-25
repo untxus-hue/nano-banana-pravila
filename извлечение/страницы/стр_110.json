@@ -1,0 +1,1111 @@
+{
+ "id": 110,
+ "url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month",
+ "заголовок": "What Google Cloud announced in AI this month – and how it helps you | Google Cloud Blog",
+ "дата_в_тексте": "September 1, 2026 (в html: JSON-LD datePublished 2026-09-01); внутри — разделы по месяцам: без подписи (август 2026), July, June, May, April, March, February, «Janurary» (2026)",
+ "официальность": {
+  "домен": "cloud.google.com",
+  "второй_признак": "автор Andrea Morange, Editor, Google Cloud; JSON-LD publisher = Organization «Google Cloud»; текст от лица Google («we announced», «our»)",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Ежемесячный дайджест блога Google Cloud (обновлён 01.09.2026), накопительный за январь–август 2026: анонсы, thought leadership, гайды. Аудитория — клиенты и разработчики Google Cloud. О генерации изображений — несколько пунктов: Nano Banana 2 (февраль), ultimate Nano Banana prompting guide с формулой «[Reference images] + [Relationship instruction] + [New scenario]» и демо-агент Cityscape с промптом «Generate a cityscape for Kyoto» (март), GA Nano Banana 2 и Nano Banana Pro через Gemini Enterprise Agent Platform и инструмент Google Pics (май), переезд сервисов Vertex AI в Agent Platform (апрель). Остальное (~95%) — агенты, безопасность, TPU, данные, Veo, TTS, Lyria.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-image (Nano Banana 2)",
+  "gemini-3-pro-image (Nano Banana Pro)",
+  "«Nano Banana» (обобщённо, в названии гайда)",
+  "Google Pics (инструмент; модель не названа)",
+  "не-image: Gemini 3.5, Gemini 3.5 Flash, Gemini Omni, Gemini 3.1 Pro, Gemini 3 Flash Preview, Veo 3.1 / Veo 3.1 Lite / Veo 3.1 Fast, Gemini 3.1 Flash TTS, Lyria 3, Gemini Embedding 2, Gemini 3.1 Flash Live, Claude Fable 5, Claude Opus/Sonnet 4.6"
+ ],
+ "структура": [
+  "Рубрика, H1, дата, автор, промо",
+  "Editor’s note",
+  "[август 2026, без подписи]: Top announcements / Thought leadership / News you can use",
+  "July",
+  "June",
+  "May",
+  "April (Next ’26)",
+  "March",
+  "February",
+  "Janurary",
+  "Ссылка на выпуск 2025",
+  "Related articles, подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "AI & Machine Learning",
+   "итог": "ничего: обвязка — рубрика (в .txt нет строки title)"
+  },
+  {
+   "n": 2,
+   "начало": "What Google Cloud announced in AI this month",
+   "итог": "ничего: заголовок H1"
+  },
+  {
+   "n": 3,
+   "начало": "September 1, 2026",
+   "итог": "ничего: метаданные — дата и автор (строки 3-5), использованы в официальности"
+  },
+  {
+   "n": 4,
+   "начало": "Try Gemini Enterprise today",
+   "итог": "ничего: обвязка — рекламный блок (строки 6-8)"
+  },
+  {
+   "n": 5,
+   "начало": "Editor’s note: Want to keep up with the",
+   "итог": "ничего: пояснение формата дайджеста"
+  },
+  {
+   "n": 6,
+   "начало": "This month, we focused on making AI highly",
+   "итог": "ничего: вводная августа (FinOps, отраслевые решения)"
+  },
+  {
+   "n": 7,
+   "начало": "Top announcements",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 8,
+   "начало": "FinOps for the AI era: New flexible billing",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 9,
+   "начало": "Gemini Enterprise for Financial Services: We’re bringing Google’s",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini Enterprise for Legal: Gemini Enterprise for Legal",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 11,
+   "начало": "Expanding Google Antigravity for enterprise customers: Antigravity is",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 12,
+   "начало": "Thought leadership (editor’s pick):",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 13,
+   "начало": "Tokenomics: Why smart teams spend more on AI,",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 14,
+   "начало": "Meet the researcher fighting AI hallucinations at Google",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 15,
+   "начало": "What sports cars can teach us about optimizing",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 16,
+   "начало": "News you can use:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 17,
+   "начало": "Looking for a steer on your foundation or",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 18,
+   "начало": "10 questions every startup should answer before moving",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 19,
+   "начало": "Your chance to start building AI agents from",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 20,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 21,
+   "начало": "$300 in free credit to try Google Cloud",
+   "итог": "ничего: обвязка — промо $300 (строки 25-27)"
+  },
+  {
+   "n": 22,
+   "начало": "July",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 23,
+   "начало": "Since launching the Gemini Enterprise Agent Platform a",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 24,
+   "начало": "Along with a batch of new platform updates,",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 25,
+   "начало": "Top announcements",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 26,
+   "начало": "What’s new in Gemini Enterprise Agent Platform: In",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 27,
+   "начало": "Now in preview: Find and fix software vulnerabilities",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 28,
+   "начало": "Solve harder problems with AlphaEvolve, now available to",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 29,
+   "начало": "Thought leadership (editor’s pick):",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 30,
+   "начало": "If automation requires delegation, then delegation requires trust.",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 31,
+   "начало": "Here’s our picks for the month to learn",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 32,
+   "начало": "How leaders can scale AI by trading control",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 33,
+   "начало": "What makes an AI agent trustworthy: Context is",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 34,
+   "начало": "News you can use:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 35,
+   "начало": "What if you’re looking for a steer on",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 36,
+   "начало": "Automate your agent development lifecycle using any coding",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 37,
+   "начало": "Why AI apps fail in production (And how",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 38,
+   "начало": "13 hands-on demos to build on Gemini Enterprise",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 39,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 40,
+   "начало": "June",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 41,
+   "начало": "Our main focus in June was helping your",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 42,
+   "начало": "We even shared a cool virtual shopping demo",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 43,
+   "начало": "Top announcements",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 44,
+   "начало": "Introducing the Open Knowledge Format: We introduced the",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 45,
+   "начало": "Collaboration with Apple on its expanded Private Cloud",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 46,
+   "начало": "Claude Fable 5: Available on Google Cloud: Claude",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 47,
+   "начало": "Cloud Atelier: How Gemini Enterprise is helping restyle",
+   "итог": "ничего: Cloud Atelier — виртуальный шопинг на Cannes; генерация изображений и модели не упомянуты"
+  },
+  {
+   "n": 48,
+   "начало": "Thought leadership (editor’s pick):",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 49,
+   "начало": "How Google Cloud Security uses AI internally: To",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 50,
+   "начало": "The 4 lessons that guided AI Threat Defense:",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 51,
+   "начало": "News you can use:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 52,
+   "начало": "5 lessons from red teaming AI applications: To",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 53,
+   "начало": "How to unlock true ROI in software development",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 54,
+   "начало": "Agent Factory Recap: 100X engineering with AI agents",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 55,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 56,
+   "начало": "May",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 57,
+   "начало": "We’ve had a busy month! Between announcing Gemini",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 58,
+   "начало": "To learn more about our I/O announcements, here’s",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 59,
+   "начало": "Top announcements",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 60,
+   "начало": "Introducing Google AI Threat Defense to help you",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 61,
+   "начало": "Gemini 3.5: Our latest family of models combines",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 62,
+   "начало": "Gemini Omni: Our new model is a leap",
+   "итог": "ничего: Gemini Omni — «any output from any input, starting with video»; image-генерация и модели Nano Banana не названы"
+  },
+  {
+   "n": 63,
+   "начало": "Google Antigravity: Google Antigravity’s expanded capabilities and new",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 64,
+   "начало": "Gemini Spark: For Gemini Enterprise and Workspace customers,",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 65,
+   "начало": "Google Workspace: Google Pics, our new image generation",
+   "итог": "E-110-1"
+  },
+  {
+   "n": 66,
+   "начало": "Managed Agents API on Agent Platform: Allows developers",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 67,
+   "начало": "CodeMender: A powerful AI security agent provided through",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 68,
+   "начало": "Nano Banana 2 and Nano Banana Pro are",
+   "итог": "E-110-2"
+  },
+  {
+   "n": 69,
+   "начало": "Thought leadership (editor’s pick):",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 70,
+   "начало": "Cloud CISO Perspectives: How Google + Wiz changes",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 71,
+   "начало": "News you can use:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 72,
+   "начало": "What Google I/O '26 means for developing agents",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 73,
+   "начало": "Five must-have guides to move agents into production",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 74,
+   "начало": "How to build an AI-ready security program for",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 75,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 76,
+   "начало": "April",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 77,
+   "начало": "We hosted Google Cloud Next in Las Vegas",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 78,
+   "начало": "If you missed the livestream, take a look",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 79,
+   "начало": "Top announcements",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 80,
+   "начало": "1. Gemini Enterprise Agent Platform: Our new, comprehensive",
+   "итог": "E-110-3"
+  },
+  {
+   "n": 81,
+   "начало": "The platform is designed around four core pillars",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 82,
+   "начало": "2. Gemini Enterpriseapp has all the key components",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 83,
+   "начало": "Agent Designer uses the same no-code agent designer",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 84,
+   "начало": "Long-running agents aredesigned to execute complex business processes.",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 85,
+   "начало": "Inbox in Gemini Enterprise provides a central location",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 86,
+   "начало": "Projects create a dedicated space where the agent’s",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 87,
+   "начало": "Skills create simple shortcuts using an “@” mention",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 88,
+   "начало": "Canvas gives our customers an interactive editor directly",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 89,
+   "начало": "Agent Gallery provides access to third-party agentsfrom partners",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 90,
+   "начало": "3. AI Hypercomputer: Designed specifically for demanding AI",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 91,
+   "начало": "TPU 8t, optimized for training, uses breakthrough Inter-Chip",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 92,
+   "начало": "TPU 8i, optimized for inference, uses our new",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 93,
+   "начало": "4. The Agentic Data Cloud: A new data",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 94,
+   "начало": "Cross-Cloud Lakehouse, standardized on Apache Iceberg, is our",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 95,
+   "начало": "Knowledge Catalog constructs a unified, dynamic context graph",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 96,
+   "начало": "5. Protecting the agentic enterprise: Security built for",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 97,
+   "начало": "Agentic defense: Three new agents in Google Security",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 98,
+   "начало": "Protecting AI and cloud apps across any infrastructure",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 99,
+   "начало": "Securing agents and the agentic web: Model Armor",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 100,
+   "начало": "Trusted Cloud: We’re simplifying permissions with modern IAM,",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 101,
+   "начало": "New partner-supported workflows for Google Security Operations: This",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 102,
+   "начало": "You can catch up on all our security",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 103,
+   "начало": "News you can use",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 104,
+   "начало": "Guide to prompting Gemini 3.1 Flash TTS (text-to-speech):",
+   "итог": "ничего: гайд по промптингу Gemini 3.1 Flash TTS (аудио), не изображения"
+  },
+  {
+   "n": 105,
+   "начало": "Ultimate prompting guide for Lyria 3 models: Lyria",
+   "итог": "ничего: гайд по промптингу Lyria 3 (музыка), не изображения"
+  },
+  {
+   "n": 106,
+   "начало": "How to find the sweet spot between cost",
+   "итог": "ничего: общий гайд по цене/производительности (PayGo и др.), image-моделей нет"
+  },
+  {
+   "n": 107,
+   "начало": "Essential AI and cloud security now on by",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 108,
+   "начало": "Securing AI inference on GKE with Model Armor:",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 109,
+   "начало": "Cloud CISO Perspectives: AI, security, and the workforce",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 110,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 111,
+   "начало": "March",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 112,
+   "начало": "March was a busy month for our AI",
+   "итог": "ничего: вводная марта (Embedding 2, Veo 3.1 Lite, Wiz)"
+  },
+  {
+   "n": 113,
+   "начало": "Alongside these launches, we created comprehensive guides to",
+   "итог": "E-110-4"
+  },
+  {
+   "n": 114,
+   "начало": "Top hits:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 115,
+   "начало": "Gemini Embedding 2: Our first natively multimodal embedding",
+   "итог": "ничего: Gemini Embedding 2 — изображения как вход эмбеддингов, не генерация"
+  },
+  {
+   "n": 116,
+   "начало": "Build with Veo 3.1 Lite, our most cost-effective",
+   "итог": "ничего: Veo 3.1 Lite — видео-модель"
+  },
+  {
+   "n": 117,
+   "начало": "Here’s a fun bonus: Check out our ultimate",
+   "итог": "ничего: гайд по промптингу Veo 3.1 — видео"
+  },
+  {
+   "n": 118,
+   "начало": "Welcoming Wiz to Google Cloud: Redefining security for",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 119,
+   "начало": "Gemini 3.1 Flash Live: Making audio AI more",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 120,
+   "начало": "News you can use:",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 121,
+   "начало": "The ultimate Nano Banana prompting guide:This is a",
+   "итог": "E-110-5, E-110-6"
+  },
+  {
+   "n": 122,
+   "начало": "A developer’s guide to training with Ironwood TPUs:",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 123,
+   "начало": "How to build production-ready AI agents with Google-managed",
+   "итог": "E-110-7, E-110-8"
+  },
+  {
+   "n": 124,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 125,
+   "начало": "February",
+   "итог": "ничего: заголовок месяца"
+  },
+  {
+   "n": 126,
+   "начало": "In February, we’re giving developers more reasoning power",
+   "итог": "E-110-9 (остальное — Gemini 3.1 Pro, Claude 4.6, обучение)"
+  },
+  {
+   "n": 127,
+   "начало": "Here’s a rundown of our latest news, tools,",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 128,
+   "начало": "Top hits",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 129,
+   "начало": "Pro-level image generation gets faster and more accessible",
+   "итог": "E-110-10"
+  },
+  {
+   "n": 130,
+   "начало": "Introducing Gemini 3.1 Pro on Google Cloud:Gemini 3.1",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 131,
+   "начало": "Announcing Claude Opus 4.6 and Claude Sonnet 4.6",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 132,
+   "начало": "New AI threats report: Distillation, experimentation, and integration:",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 133,
+   "начало": "News you can use",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 134,
+   "начало": "A developer's guide to production-ready AI agents: To",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 135,
+   "начало": "Gemini Enterprise Agent Ready (GEAR) program now available:We",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 136,
+   "начало": "Your guide to Provisioned Throughput (PT) on Vertex",
+   "итог": "ничего: гайд по Provisioned Throughput на Vertex AI, без image-специфики"
+  },
+  {
+   "n": 137,
+   "начало": "How AI can boost defenders, from defense in",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 138,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 139,
+   "начало": "Janurary",
+   "итог": "ничего: заголовок месяца («Janurary» — опечатка в оригинале)"
+  },
+  {
+   "n": 140,
+   "начало": "We used to have to learn the language",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 141,
+   "начало": "We kicked off the year by exploring the",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 142,
+   "начало": "We brought that same fluency to our creative",
+   "итог": "ничего: связка к списку ниже"
+  },
+  {
+   "n": 143,
+   "начало": "Updates to Veo 3.1 allow creators to use",
+   "итог": "ничего: Veo 3.1 — видео по референсным изображениям, не image-генерация"
+  },
+  {
+   "n": 144,
+   "начало": "Natural language queries: With Comments to SQL in",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 145,
+   "начало": "Let’s dive in.",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 146,
+   "начало": "Top hits",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 147,
+   "начало": "1. Gemini Enterprise for Customer Experience (CX):Specifically built",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 148,
+   "начало": "2. We announced Universal Commerce Protocol (UCP):A new",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 149,
+   "начало": "3. We updated Veo 3.1, including improvements to",
+   "итог": "ничего: Veo 3.1 Ingredients to Video — видео"
+  },
+  {
+   "n": 150,
+   "начало": "Improvements to Veo 3.1 Ingredients to Video, our",
+   "итог": "ничего: Veo 3.1 — видео по референсным изображениям"
+  },
+  {
+   "n": 151,
+   "начало": "Native vertical outputs for Ingredients to Video (portrait",
+   "итог": "ничего: Veo — вертикальное видео"
+  },
+  {
+   "n": 152,
+   "начало": "State-of-the-art upscaling to 1080p and 4K resolution 1",
+   "итог": "ничего: Veo — апскейл видео до 1080p/4K (сноска «1» в оригинале без текста)"
+  },
+  {
+   "n": 153,
+   "начало": "These updates are launching in the Gemini app,",
+   "итог": "ничего: поверхности запуска Veo"
+  },
+  {
+   "n": 154,
+   "начало": "4. Vibe querying with comments-to-SQL: Crafting complex SQL",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 155,
+   "начало": "News you can use",
+   "итог": "ничего: подзаголовок раздела"
+  },
+  {
+   "n": 156,
+   "начало": "Mastering Gemini CLI: Your complete guide from installation",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 157,
+   "начало": "How Google SREs use Gemini CLI to solve",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 158,
+   "начало": "Getting started with Gemini 3: Deploy your first",
+   "итог": "ничего: Gemini 3 Flash Preview (текст/код), не изображения"
+  },
+  {
+   "n": 159,
+   "начало": "Practical guidance: Building with the Secure AI Framework",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 160,
+   "начало": "The truths about AI hacking that every CISO",
+   "итог": "ничего: не про генерацию изображений (агенты/безопасность/инфраструктура/прочие модели)"
+  },
+  {
+   "n": 161,
+   "начало": "Stay tuned for monthly updates on Google Cloud’s",
+   "итог": "ничего: повторяющаяся концовка месяца (Stay tuned)"
+  },
+  {
+   "n": 162,
+   "начало": "AI & Machine Learning",
+   "итог": "ничего: обвязка — ссылка на выпуск 2025 года (строки 168-171)"
+  },
+  {
+   "n": 163,
+   "начало": "Posted in",
+   "итог": "ничего: обвязка — рубрики"
+  },
+  {
+   "n": 164,
+   "начало": "Related articles",
+   "итог": "ничего: обвязка — связанные статьи (строки 175-187)"
+  },
+  {
+   "n": 165,
+   "начало": "Footer Links",
+   "итог": "ничего: обвязка — подвал (строки 188-196)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-110-1",
+   "вид": "факт",
+   "утверждение_en": "Google Pics is presented as Google's new image generation and editing tool in Google Workspace (May 2026 announcements).",
+   "цитата": "Google Pics, our new image generation and editing tool",
+   "источник_цитаты": "txt",
+   "раздел": "May / Top announcements (Google Workspace)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "май 2026",
+   "тема": [
+    "продукт_ui",
+    "редактирование"
+   ],
+   "заметка": "На этой странице модель под Google Pics не названа (в других источниках — Nano Banana). Подробностей нет."
+  },
+  {
+   "код": "E-110-2",
+   "вид": "факт",
+   "утверждение_en": "In May 2026 Nano Banana 2 and Nano Banana Pro became generally available via Gemini Enterprise Agent Platform.",
+   "цитата": "Nano Banana 2 and Nano Banana Pro are generally available: Available today via Gemini Enterprise Agent Platform, organizations are already putting the models to work.",
+   "источник_цитаты": "txt",
+   "раздел": "May / Top announcements",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "май 2026",
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка «Learn more here» → cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available. Nano Banana 2 Lite не упомянут."
+  },
+  {
+   "код": "E-110-3",
+   "вид": "факт",
+   "утверждение_en": "From April 2026 all Vertex AI services and roadmap evolutions are delivered exclusively through Gemini Enterprise Agent Platform rather than as a standalone service.",
+   "цитата": "Moving forward, all Vertex AI services and roadmap evolutions will be delivered exclusively through the Agent Platform, rather than as a standalone service, to power the next generation of agent development.",
+   "источник_цитаты": "txt",
+   "раздел": "April / Top announcements (1. Gemini Enterprise Agent Platform)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "апрель 2026 (Google Cloud Next, 22 апреля)",
+   "тема": [
+    "продукт_ui"
+   ],
+   "заметка": "Контекст для image-моделей: доступ к Nano Banana на Google Cloud с этого момента называется через Agent Platform (см. E-110-2), а не Vertex AI. Модели изображений в этом пункте не названы."
+  },
+  {
+   "код": "E-110-4",
+   "вид": "факт",
+   "утверждение_en": "Google published guides in March 2026 that include prompting formulas for Nano Banana 2.",
+   "цитата": "from prompting formulas for Nano Banana 2, to practical advice for optimizing your TPU training.",
+   "источник_цитаты": "txt",
+   "раздел": "March / вступление",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Сами формулы здесь не приведены; одна из них дана ниже (E-110-6)."
+  },
+  {
+   "код": "E-110-5",
+   "вид": "факт",
+   "утверждение_en": "Google's ultimate Nano Banana prompting guide is based on weeks of testing Nano Banana 2 and Nano Banana Pro against many use cases to probe their limits.",
+   "цитата": "We spent weeks testing Nano Banana 2 and Nano Banana Pro against every use case we could imagine to test its limits.",
+   "источник_цитаты": "txt",
+   "раздел": "March / News you can use (The ultimate Nano Banana prompting guide)",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Ссылка → cloud.google.com/blog/products/ai-machine-learning/ultimate-prompting-guide-for-nano-banana. Названо «a must-read for anyone working with Nano Banana»."
+  },
+  {
+   "код": "E-110-6",
+   "вид": "шаблон_промпта",
+   "утверждение_en": "Example prompt formula from Google's Nano Banana prompting guide: [Reference images] + [Relationship instruction] + [New scenario].",
+   "цитата": "Here’s an example formula: [Reference images] + [Relationship instruction] + [New scenario]",
+   "источник_цитаты": "txt",
+   "раздел": "March / News you can use (The ultimate Nano Banana prompting guide)",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "Разбор: три слота — (1) референсные изображения, (2) инструкция, как референсы связаны между собой / что из каждого брать, (3) описание новой сцены. Расшифровка слотов — моё толкование по названиям, страница слоты не объясняет. «example formula» — одна из формул, не единственная. За формулой в html идёт картинка без alt-текста (alt = URL файла)."
+  },
+  {
+   "код": "E-110-7",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example of a simple text prompt that a demo ADK agent (Cityscape) turns into an AI-generated city image: \"Generate a cityscape for Kyoto\".",
+   "цитата": "Generate a cityscape for Kyoto",
+   "источник_цитаты": "txt",
+   "раздел": "March / News you can use (How to build production-ready AI agents with Google-managed MCP servers)",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Разбор: минимальный промпт «глагол + объект + место» без стиля, света и композиции; назначение — демо агента, не образец качественного промпта. Модель изображений не названа. ADK назван здесь «Application Development Kit»."
+  },
+  {
+   "код": "E-110-8",
+   "вид": "факт",
+   "утверждение_en": "Google's guide on building production-ready AI agents with Google-managed MCP servers uses Cityscape, an ADK demo agent that turns a text prompt into a unique AI-generated city image.",
+   "цитата": "Cityscape is a demo agent built with Google's Application Development Kit (ADK) that turns a simple text prompt",
+   "источник_цитаты": "txt",
+   "раздел": "March / News you can use (How to build production-ready AI agents with Google-managed MCP servers)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ссылка → cloud.google.com/blog/products/ai-machine-learning/how-to-build-ai-agents-with-google-managed-mcp-servers. Архитектура: агент ADK + Google-managed MCP servers."
+  },
+  {
+   "код": "E-110-9",
+   "вид": "факт",
+   "утверждение_en": "In February 2026 Google Cloud announced Nano Banana 2 as bringing faster creative scaling to developers.",
+   "цитата": "and faster creative scaling with Nano Banana 2",
+   "источник_цитаты": "txt",
+   "раздел": "February / вступление",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "февраль 2026",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Дата прихода NB2 на Google Cloud — февраль 2026; статус (preview) здесь не назван."
+  },
+  {
+   "код": "E-110-10",
+   "вид": "факт",
+   "утверждение_en": "Nano Banana 2 is positioned as pro-level image generation that is faster and more accessible, meant to integrate into workflows and scale.",
+   "цитата": "Pro-level image generation gets faster and more accessible with Nano Banana 2: To build creative that stands out, you need models that naturally integrate into your workflows and scale with ease.",
+   "источник_цитаты": "txt",
+   "раздел": "February / Top hits",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "февраль 2026",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "«Pro-level» — сравнение с Nano Banana Pro по смыслу; цифр скорости/цены нет. Ссылка → cloud.google.com/blog/products/ai-machine-learning/bringing-nano-banana-2-to-enterprise."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-110-11",
+   "вид": "объяснение",
+   "утверждение_en": "Timeline of the Nano Banana family on Google Cloud as assembled from this digest: Nano Banana 2 announced in February 2026, a prompting guide covering Nano Banana 2 and Nano Banana Pro in March 2026, general availability of both via Gemini Enterprise Agent Platform in May 2026, and Google Pics launched in Workspace in May 2026.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-110-9, E-110-10, E-110-4, E-110-5, E-110-2, E-110-1",
+   "дата_единицы": "февраль–май 2026",
+   "тема": [
+    "продукт_ui",
+    "модели_сравнение"
+   ],
+   "заметка": "Статус NB2 до мая (preview) — вывод из того, что GA объявлен в мае; прямо не сказано."
+  },
+  {
+   "код": "E-110-12",
+   "вид": "объяснение",
+   "утверждение_en": "The [Reference images] + [Relationship instruction] + [New scenario] formula comes from a guide that tested both Nano Banana 2 and Nano Banana Pro, so the page does not restrict it to one of the two models.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-image",
+    "gemini-3-pro-image"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-110-5, E-110-6, E-110-4",
+   "дата_единицы": "март 2026",
+   "тема": [
+    "промптинг",
+    "рефы"
+   ],
+   "заметка": "При этом вступление марта (E-110-4) говорит о формулах только для Nano Banana 2 — см. противоречия."
+  }
+ ],
+ "противоречия_внутри": [
+  "Вступление марта (строка 119) говорит о «prompting formulas for Nano Banana 2», а сам пункт про гайд (строка 127) — что тестировались Nano Banana 2 и Nano Banana Pro; гайд, видимо, общий для обеих.",
+  "ADK здесь расшифрован как «Application Development Kit» (строка 129); в других материалах Google — Agent Development Kit. Вероятно, опечатка."
+ ],
+ "не_сказано": [
+  "Формула «[Reference images] + [Relationship instruction] + [New scenario]» не расшифрована: нет примера заполнения, числа референсов, формулировки «relationship instruction».",
+  "Nano Banana 2 Lite не упомянут вовсе.",
+  "На какой модели работает Google Pics — не сказано.",
+  "Нет id моделей, цен, лимитов, разрешений.",
+  "Нет даты перехода NB2/NB Pro из preview; только что GA — в мае 2026."
+ ],
+ "сомнения": [
+  "Страница — накопительный дайджест, переписываемый каждый месяц; содержание на другую дату может отличаться.",
+  "Сопоставление Nano Banana 2 → gemini-3.1-flash-image и Nano Banana Pro → gemini-3-pro-image — по словарю задания, id на странице нет.",
+  "Промпт «Generate a cityscape for Kyoto» — пример демо-агента; какая модель изображений в нём используется, страница не говорит."
+ ]
+}

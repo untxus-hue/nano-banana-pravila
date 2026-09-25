@@ -1,0 +1,1258 @@
+{
+ "id": 42,
+ "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-pro-image",
+ "заголовок": "Gemini 3 Pro Image (Nano Banana Pro)  |  Gemini Enterprise Agent Platform  |  Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC; Release date: May 28, 2026",
+ "официальность": {
+  "домен": "docs.cloud.google.com (canonical в html: docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-pro-image)",
+  "второй_признак": "подвал: 'content of this page is licensed under the Creative Commons Attribution 4.0 License ... see the Google Developers Site Policies' (ссылка developers.google.com/site-policies), ссылки 'Google Cloud terms', 'About Google'; кнопка Model Garden ведёт на console.cloud.google.com/.../publishers/google/model-garden/gemini-3-pro-image. Строки 'Google LLC' на странице нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Карточка модели Gemini 3 Pro Image (Nano Banana Pro) в документации Gemini Enterprise Agent Platform (бывш. Vertex AI) для разработчиков/админов Google Cloud. ~95% текста — меню сайта; содержание (строки 1042-1188) — справочная таблица: ID модели, модальности, токен-лимиты, поддерживаемые возможности и инструменты, варианты потребления, лимиты входа (14 картинок, 7/30 МБ), 15 соотношений сторон, разрешения 1K/2K/4K, MIME-типы, параметры по умолчанию, регион global, версия GA 28.05.2026, security controls и таблица токенов на картинку. Собственных терминов нет; повторного акцента нет, кроме 'Supported/Not supported'. Промптов и кодовых примеров нет (в html 0 <pre>, <code> только ID модели, MIME-типы и 'global').",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro)"
+ ],
+ "структура": [
+  "(intro)",
+  "Model ID",
+  "Modalities",
+  "Token limits",
+  "Capabilities",
+  "Tools",
+  "Consumption options",
+  "Input size limit",
+  "Technical specifications (Image, Text)",
+  "Parameter defaults",
+  "Supported regions",
+  "Versions",
+  "Security controls",
+  "Image generation specifications"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню, строки 1-81)"
+  },
+  {
+   "n": 2,
+   "начало": "Overview Beginner's guide Get started",
+   "итог": "ничего: обвязка сайта (левое дерево документации, строки 82-998; в нём лишь названия разделов вроде 'Gemini image generation best practices', 'Provisioned Throughput for Gemini 3 (Nano Banana) models')"
+  },
+  {
+   "n": 3,
+   "начало": "Get Started Get Started with Google",
+   "итог": "ничего: обвязка сайта (повтор верхнего меню и хлебные крошки, строки 999-1041)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini 3 Pro Image (Nano Banana",
+   "итог": "E-42-1"
+  },
+  {
+   "n": 5,
+   "начало": "Stay organized with collections Save and",
+   "итог": "ничего: обвязка сайта (виджет сохранения)"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3 Pro Image (Nano Banana Pro), is designed",
+   "итог": "E-42-3, E-42-4"
+  },
+  {
+   "n": 7,
+   "начало": "Try in Agent StudioView in Model",
+   "итог": "ничего: обвязка (кнопки-ссылки)"
+  },
+  {
+   "n": 8,
+   "начало": "Note: \"Deploy example app\" requires a",
+   "итог": "ничего: не про генерацию картинок (требование к проекту для демо-приложения)"
+  },
+  {
+   "n": 9,
+   "начало": "Model IDgemini-3-pro-image",
+   "итог": "E-42-2"
+  },
+  {
+   "n": 10,
+   "начало": "Modalities description Text Input and output",
+   "итог": "E-42-5"
+  },
+  {
+   "n": 11,
+   "начало": "mic_off Audio Not supported videocam_off",
+   "итог": "E-42-6"
+  },
+  {
+   "n": 12,
+   "начало": "Token limitsContext window65,536",
+   "итог": "E-42-7"
+  },
+  {
+   "n": 13,
+   "начало": "Maximum output tokens32,768",
+   "итог": "E-42-8"
+  },
+  {
+   "n": 14,
+   "начало": "Capabilities Thinking Supported",
+   "итог": "E-42-9"
+  },
+  {
+   "n": 15,
+   "начало": "System instructions Supported",
+   "итог": "E-42-10"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini Live API Not supported Structured",
+   "итог": "E-42-11"
+  },
+  {
+   "n": 17,
+   "начало": "Context caching Implicit context caching",
+   "итог": "E-42-12"
+  },
+  {
+   "n": 18,
+   "начало": "Count Tokens Supported",
+   "итог": "E-42-13"
+  },
+  {
+   "n": 19,
+   "начало": "RAG Engine Not supported Chat",
+   "итог": "E-42-14"
+  },
+  {
+   "n": 20,
+   "начало": "Image generation Image generation, Image",
+   "итог": "E-42-15"
+  },
+  {
+   "n": 21,
+   "начало": "Edit images Edit images, Multi-turn",
+   "итог": "E-42-16"
+  },
+  {
+   "n": 22,
+   "начало": "Interleaved images and text Supported",
+   "итог": "E-42-17"
+  },
+  {
+   "n": 23,
+   "начало": "Content Credentials (C2PA) Supported",
+   "итог": "E-42-18"
+  },
+  {
+   "n": 24,
+   "начало": "Virtual try-on Not supported",
+   "итог": "E-42-19"
+  },
+  {
+   "n": 25,
+   "начало": "Tools Grounding Google Search Supported",
+   "итог": "E-42-20"
+  },
+  {
+   "n": 26,
+   "начало": "Code execution Not supported Function",
+   "итог": "E-42-21"
+  },
+  {
+   "n": 27,
+   "начало": "Consumption options Provisioned Throughput Supported",
+   "итог": "E-42-22"
+  },
+  {
+   "n": 28,
+   "начало": "Pay-as-you-go Standard PayGo, Flex PayGo",
+   "итог": "E-42-23"
+  },
+  {
+   "n": 29,
+   "начало": "Fixed quota Not supported",
+   "итог": "E-42-24"
+  },
+  {
+   "n": 30,
+   "начало": "Input size limit 500 MB",
+   "итог": "E-42-25"
+  },
+  {
+   "n": 31,
+   "начало": "Technical specificationsImagephoto Maximum images per",
+   "итог": "E-42-26"
+  },
+  {
+   "n": 32,
+   "начало": "Maximum file size per file for",
+   "итог": "E-42-27"
+  },
+  {
+   "n": 33,
+   "начало": "Maximum file size per file from",
+   "итог": "E-42-28"
+  },
+  {
+   "n": 34,
+   "начало": "Maximum number of output images per",
+   "итог": "E-42-29"
+  },
+  {
+   "n": 35,
+   "начало": "Supported aspect ratios: 1:1, 3:2",
+   "итог": "E-42-30"
+  },
+  {
+   "n": 36,
+   "начало": "Supported resolutions: 1K, 2K, 4K",
+   "итог": "E-42-31"
+  },
+  {
+   "n": 37,
+   "начало": "Supported MIME types: image/png, image/jpeg",
+   "итог": "E-42-32"
+  },
+  {
+   "n": 38,
+   "начало": "Textdescription Maximum number of files per",
+   "итог": "E-42-33"
+  },
+  {
+   "n": 39,
+   "начало": "Maximum file size per file: 50",
+   "итог": "E-42-34"
+  },
+  {
+   "n": 40,
+   "начало": "Supported MIME types: application/pdf, text/plain",
+   "итог": "E-42-35"
+  },
+  {
+   "n": 41,
+   "начало": "Parameter defaultstune Temperature: 0.0-2.0 (default",
+   "итог": "E-42-36"
+  },
+  {
+   "n": 42,
+   "начало": "topP: 0.0-1.0 (default 0.95)",
+   "итог": "E-42-37"
+  },
+  {
+   "n": 43,
+   "начало": "candidateCount: 1",
+   "итог": "E-42-38"
+  },
+  {
+   "n": 44,
+   "начало": "Supported regions Model availability Global:",
+   "итог": "E-42-39"
+  },
+  {
+   "n": 45,
+   "начало": "Versions gemini-3-pro-image Launch stage: GA",
+   "итог": "E-42-40"
+  },
+  {
+   "n": 46,
+   "начало": "Retirement date: May 28, 2027",
+   "итог": "E-42-41"
+  },
+  {
+   "n": 47,
+   "начало": "Security controlsOnline prediction Data residency CMEK",
+   "итог": "E-42-42"
+  },
+  {
+   "n": 48,
+   "начало": "See Security controls for more information.",
+   "итог": "ничего: ссылка на другую страницу"
+  },
+  {
+   "n": 49,
+   "начало": "Image generation specifications Gemini 3 Pro",
+   "итог": "E-42-43"
+  },
+  {
+   "n": 50,
+   "начало": "Output image token consumption varies based",
+   "итог": "ничего: вводная фраза к таблице, содержание — в строках 51-53"
+  },
+  {
+   "n": 51,
+   "начало": "Output resolutionApproximate megapixelsOutput image tokens 1K11,120",
+   "итог": "E-42-44"
+  },
+  {
+   "n": 52,
+   "начало": "2K41,120",
+   "итог": "E-42-45"
+  },
+  {
+   "n": 53,
+   "начало": "4K162,000",
+   "итог": "E-42-46"
+  },
+  {
+   "n": 54,
+   "начало": "Note: Additional charges apply for input",
+   "итог": "E-42-47"
+  },
+  {
+   "n": 55,
+   "начало": "For more information about image generation",
+   "итог": "ничего: ссылка на другую страницу"
+  },
+  {
+   "n": 56,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия CC BY 4.0 / Apache 2.0, Google Developers Site Policies — использовано как признак официальности)"
+  },
+  {
+   "n": 57,
+   "начало": "Last updated 2026-09-22 UTC.",
+   "итог": "ничего: дата страницы (вынесена в дата_в_тексте)"
+  },
+  {
+   "n": 58,
+   "начало": "Products and pricing See all products",
+   "итог": "ничего: обвязка сайта (подвал, строки 1190-1234)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-42-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is the model marketed as Nano Banana Pro.",
+   "цитата": "Gemini 3 Pro Image (Nano Banana Pro)",
+   "источник_цитаты": "txt",
+   "раздел": "(page title)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сопоставление имени продукта и названия модели."
+  },
+  {
+   "код": "E-42-2",
+   "вид": "факт",
+   "утверждение_en": "The model ID for Gemini 3 Pro Image (Nano Banana Pro) is gemini-3-pro-image.",
+   "цитата": "Model IDgemini-3-pro-image",
+   "источник_цитаты": "txt",
+   "раздел": "Model ID",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "В txt колонки таблицы склеены: 'Model ID' + 'gemini-3-pro-image'."
+  },
+  {
+   "код": "E-42-3",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 3 Pro Image is designed to tackle the most challenging image generation by incorporating state-of-the-art reasoning capabilities.",
+   "цитата": "designed to tackle the most challenging image generation by incorporating\nstate-of-the-art reasoning capabilities.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "Механизм позиционирования: качество на сложных задачах объясняется встроенным рассуждением."
+  },
+  {
+   "код": "E-42-4",
+   "вид": "факт",
+   "утверждение_en": "Google describes Gemini 3 Pro Image as the best model for complex and multi-turn image generation and editing, with improved accuracy and enhanced image quality.",
+   "цитата": "It's the best model for complex and\nmulti-turn image generation and editing, having improved accuracy and enhanced\nimage quality.",
+   "источник_цитаты": "txt",
+   "раздел": "(intro)",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "мультиход"
+   ],
+   "заметка": "Сравнительное утверждение без указания, с какими моделями сравнивается."
+  },
+  {
+   "код": "E-42-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image supports text and image as both input and output modalities.",
+   "цитата": "Text\nInput and output\nphoto\nImage\nInput and output",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'photo' — имя иконки, склеенное в txt."
+  },
+  {
+   "код": "E-42-6",
+   "вид": "ограничение",
+   "утверждение_en": "Audio and video are listed as not supported modalities for Gemini 3 Pro Image.",
+   "цитата": "Audio\nNot supported\nvideocam_off\nVideo\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Противоречит строке Capabilities 'Image generation from video input — Supported' (см. длинную дистанцию)."
+  },
+  {
+   "код": "E-42-7",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro Image has a context window of 65,536 tokens.",
+   "цитата": "Token limitsContext window65,536",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-8",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 3 Pro Image has a maximum of 32,768 output tokens.",
+   "цитата": "Maximum output tokens32,768",
+   "источник_цитаты": "txt",
+   "раздел": "Token limits",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-9",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by Gemini 3 Pro Image.",
+   "цитата": "Thinking\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Уровни/отключение thinking на странице не описаны."
+  },
+  {
+   "код": "E-42-10",
+   "вид": "факт",
+   "утверждение_en": "System instructions are supported by Gemini 3 Pro Image.",
+   "цитата": "System instructions\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-11",
+   "вид": "ограничение",
+   "утверждение_en": "Gemini Live API and structured output are not supported by Gemini 3 Pro Image.",
+   "цитата": "Gemini Live API\nNot supported\nStructured output\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-12",
+   "вид": "факт",
+   "утверждение_en": "Implicit context caching is supported by Gemini 3 Pro Image.",
+   "цитата": "Context caching\nImplicit context caching\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Упомянуто только implicit caching; про explicit ничего."
+  },
+  {
+   "код": "E-42-13",
+   "вид": "факт",
+   "утверждение_en": "Count Tokens is supported for Gemini 3 Pro Image.",
+   "цитата": "Count Tokens\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-14",
+   "вид": "ограничение",
+   "утверждение_en": "RAG Engine, chat completions, tuning and URL context are not supported by Gemini 3 Pro Image.",
+   "цитата": "RAG Engine\nNot supported\nChat completions\nNot supported\nTuning\nNot supported\nURL context\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-15",
+   "вид": "факт",
+   "утверждение_en": "Image generation, including image generation from video input, is supported by Gemini 3 Pro Image.",
+   "цитата": "Image generation, Image generation from video input\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Видео-вход для генерации картинки заявлен здесь, но в Modalities Video = Not supported."
+  },
+  {
+   "код": "E-42-16",
+   "вид": "факт",
+   "утверждение_en": "Image editing, including multi-turn image editing, is supported by Gemini 3 Pro Image.",
+   "цитата": "Edit images, Multi-turn image editing\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-17",
+   "вид": "факт",
+   "утверждение_en": "Interleaved images and text output is supported by Gemini 3 Pro Image.",
+   "цитата": "Interleaved images and text\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-18",
+   "вид": "факт",
+   "утверждение_en": "Content Credentials (C2PA) are supported by Gemini 3 Pro Image.",
+   "цитата": "Content Credentials (C2PA)\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Механизм C2PA на странице не раскрыт."
+  },
+  {
+   "код": "E-42-19",
+   "вид": "ограничение",
+   "утверждение_en": "Virtual try-on is not supported by Gemini 3 Pro Image.",
+   "цитата": "Virtual try-on\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-20",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search is supported by Gemini 3 Pro Image.",
+   "цитата": "Grounding\nGoogle Search\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Другие виды grounding (Maps, Image Search) не перечислены."
+  },
+  {
+   "код": "E-42-21",
+   "вид": "ограничение",
+   "утверждение_en": "Code execution and function calling tools are not supported by Gemini 3 Pro Image.",
+   "цитата": "Code execution\nNot supported\nFunction calling\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Tools",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-22",
+   "вид": "факт",
+   "утверждение_en": "Provisioned Throughput and batch inference are supported consumption options for Gemini 3 Pro Image.",
+   "цитата": "Provisioned Throughput\nSupported\nBatch inference\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-23",
+   "вид": "факт",
+   "утверждение_en": "Pay-as-you-go is supported via Standard PayGo and Flex PayGo for Gemini 3 Pro Image.",
+   "цитата": "Standard PayGo, Flex PayGo\nSupported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Priority PayGo в списке не указан."
+  },
+  {
+   "код": "E-42-24",
+   "вид": "ограничение",
+   "утверждение_en": "Fixed quota is not supported as a consumption option for Gemini 3 Pro Image.",
+   "цитата": "Fixed quota\nNot supported",
+   "источник_цитаты": "txt",
+   "раздел": "Consumption options",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-25",
+   "вид": "лимит",
+   "утверждение_en": "The input size limit for Gemini 3 Pro Image is 500 MB.",
+   "цитата": "Input size limit\n500 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Input size limit",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-26",
+   "вид": "лимит",
+   "утверждение_en": "A single Gemini 3 Pro Image prompt can include at most 14 images.",
+   "цитата": "Maximum images per prompt:\n14",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "Потолок входных изображений (референсов) на запрос."
+  },
+  {
+   "код": "E-42-27",
+   "вид": "лимит",
+   "утверждение_en": "Each image file sent as inline data or uploaded directly through the console can be at most 7 MB.",
+   "цитата": "Maximum file size per file for inline data or direct uploads through the console:\n7 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-28",
+   "вид": "лимит",
+   "утверждение_en": "Each image file read from Google Cloud Storage can be at most 30 MB.",
+   "цитата": "Maximum file size per file from Google Cloud Storage:\n30 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-29",
+   "вид": "лимит",
+   "утверждение_en": "The number of output images per prompt has no fixed count; it is limited by the 32,768 output-token limit.",
+   "цитата": "Maximum number of output images per prompt:\nLimited to 32,768 output tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-30",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image supports the aspect ratios 1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9 and 9:21.",
+   "цитата": "Supported aspect ratios:\n1:1, 3:2, 2:3, 3:4, 1:4, 4:1, 4:3, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9, 9:21",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "15 соотношений, включая экстремальные 1:8/8:1 и 1:4/4:1."
+  },
+  {
+   "код": "E-42-31",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image supports output resolutions of 1K, 2K and 4K.",
+   "цитата": "Supported resolutions:\n1K, 2K, 4K",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-32",
+   "вид": "факт",
+   "утверждение_en": "Supported image MIME types are image/png, image/jpeg, image/webp, image/heic and image/heif.",
+   "цитата": "Supported MIME types:\nimage/png, image/jpeg, image/webp, image/heic, image/heif",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-33",
+   "вид": "лимит",
+   "утверждение_en": "The maximum number of text/document files and pages per file per prompt is bounded only by the 65,536-token context window.",
+   "цитата": "Maximum number of files per prompt:\nAs supported by the 65,536 token context window\nMaximum number of pages per file:\nAs supported by the 65,536 token context window",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Относится к PDF/текстовым файлам на входе."
+  },
+  {
+   "код": "E-42-34",
+   "вид": "лимит",
+   "утверждение_en": "Each text/document file can be up to 50 MB for API and Cloud Storage imports, or 7 MB when uploaded directly through the Google Cloud console.",
+   "цитата": "50 MB (API and Cloud Storage imports) or 7 MB (direct upload through Google Cloud console)",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-35",
+   "вид": "факт",
+   "утверждение_en": "Supported document MIME types are application/pdf and text/plain.",
+   "цитата": "application/pdf, text/plain",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Text",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-36",
+   "вид": "факт",
+   "утверждение_en": "Temperature for Gemini 3 Pro Image ranges from 0.0 to 2.0 with a default of 1.0.",
+   "цитата": "Temperature: 0.0-2.0 (default 1.0)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-37",
+   "вид": "факт",
+   "утверждение_en": "topP for Gemini 3 Pro Image ranges from 0.0 to 1.0 with a default of 0.95.",
+   "цитата": "topP: 0.0-1.0 (default 0.95)",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-38",
+   "вид": "факт",
+   "утверждение_en": "candidateCount for Gemini 3 Pro Image is 1.",
+   "цитата": "candidateCount: 1",
+   "источник_цитаты": "txt",
+   "раздел": "Parameter defaults",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Один кандидат на ответ; несколько вариантов — отдельными запросами или несколькими картинками в пределах токенов (выведение не делается здесь)."
+  },
+  {
+   "код": "E-42-39",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is available in the global region.",
+   "цитата": "Global: global",
+   "источник_цитаты": "txt",
+   "раздел": "Supported regions",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Региональные эндпоинты не перечислены."
+  },
+  {
+   "код": "E-42-40",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image is at GA launch stage with a release date of May 28, 2026.",
+   "цитата": "Launch stage: GA\nRelease date: May 28, 2026",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-41",
+   "вид": "факт",
+   "утверждение_en": "The retirement date of gemini-3-pro-image is May 28, 2027 or later.",
+   "цитата": "Retirement date: May 28, 2027 or later",
+   "источник_цитаты": "txt",
+   "раздел": "Versions",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-42-42",
+   "вид": "факт",
+   "утверждение_en": "Data residency, CMEK, VPC-SC and AXT security controls are listed for online prediction, batch inference and context caching.",
+   "цитата": "Security controlsOnline prediction\nData residency\nCMEK\nVPC-SC\nAXT",
+   "источник_цитаты": "txt",
+   "раздел": "Security controls",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Цитата покрывает первый блок; для Batch inference и Context caching тот же список повторён."
+  },
+  {
+   "код": "E-42-43",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image consumes 560 tokens per input image.",
+   "цитата": "Gemini 3 Pro Image consumes 560 tokens per input image.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "рефы"
+   ],
+   "заметка": "Фиксированное число, без зависимости от разрешения входа."
+  },
+  {
+   "код": "E-42-44",
+   "вид": "факт",
+   "утверждение_en": "A 1K output image is approximately 1 megapixel and consumes 1,120 output image tokens.",
+   "цитата": "1K11,120",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "В txt колонки склеены; по html строка таблицы: 1K | 1 | 1,120."
+  },
+  {
+   "код": "E-42-45",
+   "вид": "факт",
+   "утверждение_en": "A 2K output image is approximately 4 megapixels and consumes 1,120 output image tokens.",
+   "цитата": "2K41,120",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "В txt колонки склеены; по html: 2K | 4 | 1,120."
+  },
+  {
+   "код": "E-42-46",
+   "вид": "факт",
+   "утверждение_en": "A 4K output image is approximately 16 megapixels and consumes 2,000 output image tokens.",
+   "цитата": "4K162,000",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "В txt колонки склеены; по html: 4K | 16 | 2,000."
+  },
+  {
+   "код": "E-42-47",
+   "вид": "факт",
+   "утверждение_en": "Additional charges apply for input and output tokens of other modalities such as text and video; the pricing page has the latest prices.",
+   "цитата": "Note: Additional charges apply for input and output tokens for other modalities,\nsuch as text and video.",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-42-48",
+   "вид": "факт",
+   "утверждение_en": "Per the token table, choosing 2K instead of 1K does not increase output image tokens (both 1,120), while 4K raises it to 2,000.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-42-44, E-42-45, E-42-46",
+   "тема": [
+    "цены",
+    "форматы_разрешение"
+   ],
+   "заметка": "Сравнение строк таблицы; сам Google вывода о выгодности 2K не делает."
+  },
+  {
+   "код": "E-42-49",
+   "вид": "предупреждение",
+   "утверждение_en": "The page is internally inconsistent about video: Modalities lists Video as not supported, while Capabilities lists image generation from video input as supported.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Modalities / Capabilities",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-42-6, E-42-15",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Правило по видео-входу для NB Pro нельзя строить только на этой странице."
+  },
+  {
+   "код": "E-42-50",
+   "вид": "объяснение",
+   "утверждение_en": "Because output-image count is capped only by the 32,768 output-token limit, the token budget bounds how many images one response can contain; arithmetic from the table gives about 16 images at 4K or about 29 at 1K/2K before any text or thought tokens.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Technical specifications / Image generation specifications",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-42-29, E-42-44, E-42-45, E-42-46",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Арифметика (32768/2000, 32768/1120), не утверждение Google; реальные числа уменьшат текст и thinking-токены."
+  }
+ ],
+ "противоречия_внутри": [
+  "Modalities: 'Video — Not supported' vs Capabilities: 'Image generation from video input — Supported' (E-42-6 vs E-42-15)."
+ ],
+ "не_сказано": [
+  "Не названы имена параметров API для выбора aspect ratio и разрешения (imageConfig и т.п.) — только списки значений.",
+  "Не сказано, какое разрешение/соотношение по умолчанию.",
+  "Не сказано, можно ли отключить thinking или выбрать его уровень — только 'Thinking Supported'.",
+  "Нет спецификаций видео-входа (размер, длительность, fps), хотя заявлена генерация из видео.",
+  "Не сказано, зависит ли расход 560 токенов на входную картинку от её разрешения или media_resolution.",
+  "Цен в деньгах нет — отсылка на pricing page.",
+  "Нет никаких рекомендаций по промптингу и примеров промптов.",
+  "Не упомянут SynthID/водяной знак — только C2PA."
+ ],
+ "сомнения": [
+  "В txt таблица токенов склеена ('1K11,120'); разбор по колонкам сверен с html (1K|1|1,120; 2K|4|1,120; 4K|16|2,000). Цитаты оставлены склеенными как в txt.",
+  "Второй признак официальности — стандартный подвал Google (Site Policies/лицензия), а не строка 'Google LLC'; вердикт 'подтверждена' поставлен по нему.",
+  "URL в партии (vertex-ai/generative-ai/docs/...) отличается от canonical в html (gemini-enterprise-agent-platform/models/gemini/3-pro-image) — вероятно редирект."
+ ]
+}

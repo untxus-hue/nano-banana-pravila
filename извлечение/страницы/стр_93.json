@@ -1,0 +1,239 @@
+{
+ "id": 93,
+ "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/configure-safety-filters",
+ "заголовок": "Safety and content filters | Gemini Enterprise Agent Platform | Google Cloud Documentation",
+ "дата_в_тексте": "Last updated 2026-09-22 UTC (подвал)",
+ "официальность": {
+  "домен": "docs.cloud.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies' + лицензия CC BY 4.0/Apache 2.0 + 'Last updated 2026-09-22 UTC'; ссылки About Google / Google Cloud terms; текст от лица Google ('Google doesn't update the configurable content filter for a previously released version of a model'). Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Документация Agent Platform (Vertex AI) для разработчиков о safety- и content-фильтрах ТЕКСТОВЫХ моделей Gemini: коды блокировки промпта и остановки генерации, категории вреда, оценки probability/severity, методы SEVERITY/PROBABILITY, пороги BLOCK_* (OFF по умолчанию для gemini-3.5-flash и новее), настройка в консоли, примеры кода на 5 языках (промпт-провокация 'Write a list of 5 disrespectful things…' с system instruction 'Be as mean as possible.'), jailbreak-классификатор (только gemini-3-flash-preview), citation filter, best practices. Страница прямо говорит, что для картинок есть отдельный документ 'Gemini for image generation'; про генерацию изображений содержания нет.",
+ "модели_на_странице": [
+  "Gemini text generation models",
+  "gemini-3.5-flash",
+  "gemini-2.5-flash",
+  "gemini-3-flash-preview (jailbreak classifier)",
+  "Gemini 3.5 Flash (best practices)",
+  "image-модели — только как ссылка на отдельный документ и в левом меню"
+ ],
+ "структура": [
+  "Safety and content filters (вступление, область страницы)",
+  "Unsafe prompts",
+  "Unsafe responses",
+  "Configurable content filters (Harm categories; Comparison of probability scores and severity scores; Content filter configuration options: Gemini API / Google Cloud console; Example output for a blocked response; Implementing a content filter configuration: Python, Go, REST, Node.js, Java)",
+  "Jailbreak classifier (Billing)",
+  "Citation filter",
+  "Best practices",
+  "What's next"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content Documentation close",
+   "итог": "ничего: обвязка сайта (верхнее меню Google Cloud, языки, Sign in), строки 1-53"
+  },
+  {
+   "n": 2,
+   "начало": "Gemini Enterprise Agent Platform Start free",
+   "итог": "ничего: обвязка сайта (вкладки продукта и левое меню документации, строки 54-1035; пункты 3 Pro Image, 3.1 Flash Image, 2.5 Flash Image, 3.1 Flash-Lite Image, раздел Image generation и 'Provisioned Throughput for Gemini 3 (Nano Banana) models' — навигация, не содержание)"
+  },
+  {
+   "n": 3,
+   "начало": "Home Documentation AI and ML",
+   "итог": "ничего: обвязка сайта (хлебные крошки, H1, Stay organized with collections), строки 1036-1044"
+  },
+  {
+   "n": 4,
+   "начало": "To see an example of getting",
+   "итог": "ничего: ссылки на ноутбук Responsible AI (Colab / Workbench / GitHub), строки 1045-1055"
+  },
+  {
+   "n": 5,
+   "начало": "Google's generative AI models are designed",
+   "итог": "E-93-1"
+  },
+  {
+   "n": 6,
+   "начало": "This page is for the safety",
+   "итог": "E-93-2"
+  },
+  {
+   "n": 7,
+   "начало": "This page describes each safety and",
+   "итог": "ничего: оглавление страницы, строки 1066-1070"
+  },
+  {
+   "n": 8,
+   "начало": "Safety and content filters act as",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) — фильтры не влияют на поведение модели, управляемость через system instructions; строки 1071-1073"
+  },
+  {
+   "n": 9,
+   "начало": "Unsafe prompts The Gemini API provides",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (коды блокировки промпта PROHIBITED_CONTENT / BLOCKED_REASON_UNSPECIFIED / OTHER и примеры promptFeedback), строки 1074-1090"
+  },
+  {
+   "n": 10,
+   "начало": "Unsafe responses The following filters can",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (non-configurable CSAM/PII, configurable, citation; коды FinishReason; фильтр очищает Candidate.content и не даёт обратной связи модели), строки 1091-1116"
+  },
+  {
+   "n": 11,
+   "начало": "Configurable content filters Content filters assess",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (две оценки probability/severity; фильтры не версионируются отдельно от моделей), строки 1117-1125"
+  },
+  {
+   "n": 12,
+   "начало": "Harm categories Content filters assess content",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (Hate Speech, Harassment, Sexually Explicit, Dangerous Content), строки 1126-1132"
+  },
+  {
+   "n": 13,
+   "начало": "Comparison of probability scores and severity",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (шкалы 0.0-1.0, 4 уровня), строки 1133-1144"
+  },
+  {
+   "n": 14,
+   "начало": "Content filter configuration options You can",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (SEVERITY по умолчанию, пороги BLOCK_*, OFF по умолчанию для gemini-3.5-flash+, BLOCK_NONE, пример SafetySetting), строки 1145-1173"
+  },
+  {
+   "n": 15,
+   "начало": "Google Cloud console The Google Cloud",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (пороги консоли Off / Block few / some / most, шаги в Agent Studio), строки 1174-1196"
+  },
+  {
+   "n": 16,
+   "начало": "Example output for a blocked response",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (пример JSON с finishReason SAFETY), строки 1197-1200"
+  },
+  {
+   "n": 17,
+   "начало": "Implementing a content filter configuration The",
+   "итог": "ничего: код без промпта про картинки (Python и Go: system instruction 'Be as mean as possible.', промпт 'Write a list of 5 disrespectful things…', gemini-3.5-flash / gemini-2.5-flash), строки 1201-1218"
+  },
+  {
+   "n": 18,
+   "начало": "REST Before using any of the",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (REST-замены, роль обязательна даже в single-turn, категории и пороги с дефолтом BLOCK_MEDIUM_AND_ABOVE, curl/PowerShell), строки 1219-1303"
+  },
+  {
+   "n": 19,
+   "начало": "You should receive a JSON response",
+   "итог": "ничего: пример ответа на понимание изображения ('The picture shows a table…'), не генерация; строки 1304-1376"
+  },
+  {
+   "n": 20,
+   "начало": "Example curl command LOCATION=\"us-central1\"MODEL_ID=\"gemini-3.5-flash\"PROJECT_ID=\"test-project\" curl",
+   "итог": "ничего: код без промпта про картинки (safety_settings с OFF / BLOCK_* для текста 'Hello!'), строки 1377-1383"
+  },
+  {
+   "n": 21,
+   "начало": "Node.js Install npm install @google/genai",
+   "итог": "ничего: код без промпта про картинки (повтор того же текстового примера на Node.js и Java), строки 1384-1400"
+  },
+  {
+   "n": 22,
+   "начало": "Jailbreak classifier Preview This feature is",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (Preview, только gemini-3-flash-preview, выключен по умолчанию, пример результата, бесплатно), строки 1401-1432"
+  },
+  {
+   "n": 23,
+   "начало": "Citation filter The generative code features",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (цитирование веб-страниц и лицензий кода), строки 1433-1444"
+  },
+  {
+   "n": 24,
+   "начало": "Best practices While content filters help",
+   "итог": "ничего: не про генерацию картинок (страница прямо ограничена текстовыми моделями Gemini, см. E-93-2) (фильтры могут блокировать безобидное и пропускать вредное; Gemini 3.5 Flash безопасен и без фильтров; тестировать настройки), строки 1445-1450"
+  },
+  {
+   "n": 25,
+   "начало": "What's next Learn about system instructions",
+   "итог": "ничего: ссылки на соседние страницы, строки 1451-1455"
+  },
+  {
+   "n": 26,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка сайта (лицензия, Site Policies, 'Last updated 2026-09-22 UTC', подвал Google Cloud, языки), строки 1456-1503"
+  },
+  {
+   "n": 27,
+   "начало": "(вся страница, проход длинная дистанция)",
+   "итог": "E-93-3 (длинная дистанция)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-93-1",
+   "вид": "факт",
+   "утверждение_en": "Google's generative AI models are designed to prioritize safety but can still generate harmful responses, especially when explicitly prompted; content filters can be configured to block potentially harmful responses.",
+   "цитата": "Google's generative AI models are designed to prioritize safety. However, they\ncan still generate harmful responses, especially when they're explicitly\nprompted. To further enhance safety and minimize misuse, you can configure\ncontent filters to block potentially harmful responses.",
+   "источник_цитаты": "txt",
+   "раздел": "Safety and content filters (вступление)",
+   "модели": "Google's generative AI models (родовая фраза)",
+   "применимость": "политика",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Общее вступление; следующая фраза сужает страницу до текстовых моделей, так что настройка фильтров, описанная ниже, к картинкам не относится."
+  },
+  {
+   "код": "E-93-2",
+   "вид": "ограничение",
+   "утверждение_en": "This page covers safety filters of the Gemini text generation models only; safety filters and responsible AI for image generation are documented separately (\"Gemini for image generation\"), as are Veo and Computer use.",
+   "цитата": "This page is for the safety filters of the Gemini text generation models.\nFor information about safety filters and responsible AI for other Google models,\nsee the following documentation:\nGemini for image generation\nResponsible AI for Veo\nComputer use",
+   "источник_цитаты": "txt",
+   "раздел": "Safety and content filters (вступление)",
+   "модели": [
+    "Gemini text generation models",
+    "Gemini for image generation (ссылка на отдельный документ)"
+   ],
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Ключевая единица страницы для базы правил картинок: всё содержание ниже (категории вреда, пороги BLOCK_*, OFF по умолчанию для gemini-3.5-flash+, SEVERITY/PROBABILITY, jailbreak-классификатор, citation filter) — про ТЕКСТОВЫЕ модели."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-93-3",
+   "вид": "предупреждение",
+   "утверждение_en": "Harm categories, BLOCK_* thresholds, the OFF default for gemini-3.5-flash and later, the SEVERITY/PROBABILITY harm-block methods, the jailbreak classifier and citation filter described on this page should not be assumed to apply to Gemini image generation; image-generation safety must be taken from the separate image-generation responsible-AI documentation.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "вся страница",
+   "модели": [
+    "Gemini text generation models"
+   ],
+   "применимость": "политика",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-93-2",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Вывод из явного ограничения области страницы; сама страница о картинках больше ничего не говорит."
+  }
+ ],
+ "противоречия_внутри": [
+  "Дефолт порога: в разделе Gemini API — 'For gemini-3.5-flash and subsequent models, OFF is the default value', в REST-разделе — 'BLOCK_MEDIUM_AND_ABOVE (default)'; в консоли — 'Off (default)' (не про картинки).",
+  "REST-раздел описывает THRESHOLD как порог 'based on probability', тогда как метод по умолчанию в Gemini API — SEVERITY (probability + severity) (не про картинки)."
+ ],
+ "не_сказано": [
+  "Как safety-фильтры, категории и пороги работают для image-моделей (Nano Banana) — страница отсылает к отдельному документу.",
+  "Действуют ли safetySettings из этой страницы на выход картинок и коды IMAGE_SAFETY / IMAGE_PROHIBITED_CONTENT — не упоминаются."
+ ],
+ "сомнения": [
+  "Метаданные партии верно отметили, что страница про текстовые модели; извлечены только вступление и явное ограничение области + вывод о неприменимости.",
+  "Пример REST-ответа описывает картинку ('The picture shows a table with a white tablecloth…') — это понимание изображения текстовой моделью, не генерация; не извлекалось."
+ ]
+}

@@ -1,0 +1,1897 @@
+{
+ "id": 229,
+ "url": "https://firebase.google.com/docs/ai-logic/models",
+ "заголовок": "Learn about supported models  |  Firebase AI Logic",
+ "дата_в_тексте": "Last updated 2026-09-24 UTC (подвал); meta published_time/datePublished в html нет",
+ "официальность": {
+  "домен": "firebase.google.com",
+  "второй_признак": "подвал: 'For details, see the Google Developers Site Policies', лицензии CC BY 4.0 / Apache 2.0, Terms/Privacy Google; фраза 'no longer accessible or supported by Google' — текст от лица Google. Строки 'Copyright Google LLC' нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Справочник Firebase AI Logic по всем поддерживаемым моделям Gemini (для разработчиков мобильных/веб-приложений). Для картинок важны: описания трёх Nano Banana (Pro — highly contextual, NB2 — speed/high-volume и featured, Lite — ultra-low latency/interactive), таблицы сравнения (вход/выход, возможности, лимиты) — значения да/нет даны иконками только в html; лимиты: 14 входных картинок по 7 МБ, 14 PDF по 14 страниц, выходные картинки до лимита выходных токенов, токены вход 65k/131k/65k, выход 32k/32k/4k; thinking у всех трёх, Search-grounding у Pro и NB2, но не у Lite; общий лимит запроса 20 МБ; жизненный цикл версий (stable/preview/experimental, -latest не рекомендуется, Remote Config); таблицы имён с датами релиза/отключения (стабильные image-модели от 2026-05-28/06-30, preview до 2026-06-25); предыдущее поколение: gemini-2.5-flash-image (3 картинки, без thinking/grounding, отключение 2026-10-02) и Imagen. Повторно подчёркивается: Blaze-план обязателен для всех image-моделей; Remote Config для смены имени модели.",
+ "модели_на_странице": [
+  "gemini-3-pro-image",
+  "gemini-3-pro-image-preview",
+  "gemini-3.1-flash-image",
+  "gemini-3.1-flash-image-preview",
+  "gemini-3.1-flash-lite-image",
+  "gemini-2.5-flash-image",
+  "imagen-4.0-generate-001",
+  "imagen-4.0-fast-generate-001",
+  "imagen-4.0-ultra-generate-001",
+  "imagen-3.0-capability-001",
+  "imagen-3.0-generate-002",
+  "imagen-3.0-generate-001",
+  "imagen-3.0-fast-generate-001"
+ ],
+ "структура": [
+  "Баннеры",
+  "Featured models",
+  "General-use models",
+  "Image-generating models",
+  "Audio-generating models",
+  "Compare models: Supported input and output / Supported capabilities and features / Specifications and limitations",
+  "Find additional detailed information",
+  "Model versioning and naming patterns",
+  "Best practices for using model versions",
+  "Available model names (General-use / Image-generating / TTS / Live)",
+  "Programmatically list all available models",
+  "Supported languages",
+  "Information about previous models (таблицы предыдущего поколения, имена и даты отключения)",
+  "Next steps",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Learn about supported models | Firebase",
+   "итог": "ничего: заголовок страницы (title)"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Build Build",
+   "итог": "ничего: обвязка сайта Firebase (меню, языки, левое меню документации), строки 2-408 — идентичны стр. 228"
+  },
+  {
+   "n": 3,
+   "начало": "Starting November 2, 2026, Firebase App",
+   "итог": "E-229-1"
+  },
+  {
+   "n": 4,
+   "начало": "Model updates: The latest Gemini models",
+   "итог": "ничего: не про генерацию картинок (анонс Gemini 3.8 Flash)"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini 2.5 models will shut down",
+   "итог": "E-229-2"
+  },
+  {
+   "n": 6,
+   "начало": "Firebase Documentation Firebase AI Logic AI",
+   "итог": "ничего: обвязка (хлебные крошки, H1, Stay organized)"
+  },
+  {
+   "n": 7,
+   "начало": "For mobile and web apps, the",
+   "итог": "ничего: общая вводная про SDK, без содержания про картинки"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini models are considered multimodal because",
+   "итог": "ничего: общее определение мультимодальности, не специфично для генерации картинок"
+  },
+  {
+   "n": 9,
+   "начало": "Also, review our FAQ about all",
+   "итог": "ничего: ссылка на FAQ"
+  },
+  {
+   "n": 10,
+   "начало": "Featured models FAST AND INTELLIGENT Gemini",
+   "итог": "ничего: не про генерацию картинок (Gemini 3.8 Flash, 3.5 Flash-Lite)"
+  },
+  {
+   "n": 11,
+   "начало": "IMAGE GENERATING Gemini 3.1 Flash Image",
+   "итог": "E-229-3"
+  },
+  {
+   "n": 12,
+   "начало": "General-use models arrow_downward Go to tables",
+   "итог": "ничего: не про генерацию картинок (текстовые модели, включая Older stable)"
+  },
+  {
+   "n": 13,
+   "начало": "Image-generating models arrow_downward Go to",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 3 Pro Image ( Nano Banana",
+   "итог": "E-229-4"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini 3.1 Flash Image ( Nano Banana 2 ) gemini-3.1-flash-image Powerful",
+   "итог": "ничего: повтор E-229-3"
+  },
+  {
+   "n": 16,
+   "начало": "Gemini 3.1 Flash-Lite Image ( Nano",
+   "итог": "E-229-5"
+  },
+  {
+   "n": 17,
+   "начало": "Audio-generating models Text-to-speech (TTS) models",
+   "итог": "ничего: не про генерацию картинок (TTS, Live API)"
+  },
+  {
+   "n": 18,
+   "начало": "The remainder of this page provides",
+   "итог": "ничего: оглавление страницы"
+  },
+  {
+   "n": 19,
+   "начало": "Compare models Each model has different",
+   "итог": "E-229-6"
+  },
+  {
+   "n": 20,
+   "начало": "If you can't find the information",
+   "итог": "ничего: ссылки на документацию провайдеров"
+  },
+  {
+   "n": 21,
+   "начало": "Note: We recommend reviewing details about",
+   "итог": "E-229-7"
+  },
+  {
+   "n": 22,
+   "начало": "Supported input and output The following",
+   "итог": "ничего: заголовок и вводная к таблице"
+  },
+  {
+   "n": 23,
+   "начало": "Gemini 3.x Pro, Flash, Flash‑Lite Gemini 3.x Pro Image (шапка)",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 24,
+   "начало": "Input types Text Code Documents Images",
+   "итог": "E-229-8"
+  },
+  {
+   "n": 25,
+   "начало": "Video (строка Input types)",
+   "итог": "E-229-9"
+  },
+  {
+   "n": 26,
+   "начало": "Audio (строка Input types)",
+   "итог": "ничего: повтор E-229-8 (аудио не поддерживается image-моделями)"
+  },
+  {
+   "n": 27,
+   "начало": "Output types Text Text (streaming) Code",
+   "итог": "E-229-10"
+  },
+  {
+   "n": 28,
+   "начало": "Supported capabilities and features The following",
+   "итог": "ничего: заголовок, вводная и шапка таблицы"
+  },
+  {
+   "n": 29,
+   "начало": "Thinking",
+   "итог": "E-229-11"
+  },
+  {
+   "n": 30,
+   "начало": "Generate text from text-only or multimodal",
+   "итог": "E-229-12"
+  },
+  {
+   "n": 31,
+   "начало": "Generate images Edit images",
+   "итог": "E-229-13"
+  },
+  {
+   "n": 32,
+   "начало": "Generate audio speech streamed audio",
+   "итог": "ничего: image-модели аудио не генерируют (строка про TTS/Live)"
+  },
+  {
+   "n": 33,
+   "начало": "Generate structured output (like JSON)",
+   "итог": "ничего: повтор E-229-10 (structured output — нет)"
+  },
+  {
+   "n": 34,
+   "начало": "Analyze documents / Analyze images / Analyze video / Analyze audio",
+   "итог": "E-229-14"
+  },
+  {
+   "n": 35,
+   "начало": "Multi-turn chat",
+   "итог": "E-229-15"
+  },
+  {
+   "n": 36,
+   "начало": "Bidirectional multimodal streaming",
+   "итог": "E-229-16"
+  },
+  {
+   "n": 37,
+   "начало": "Supported tools Function calling Code execution",
+   "итог": "E-229-16"
+  },
+  {
+   "n": 38,
+   "начало": "Grounding with Google Search",
+   "итог": "E-229-17"
+  },
+  {
+   "n": 39,
+   "начало": "Grounding with Google Maps",
+   "итог": "ничего: повтор E-229-16 (Maps — нет)"
+  },
+  {
+   "n": 40,
+   "начало": "Note: When using Firebase AI Logic",
+   "итог": "E-229-18"
+  },
+  {
+   "n": 41,
+   "начало": "Specifications and limitations The following table",
+   "итог": "ничего: заголовок, вводная и шапка таблицы"
+  },
+  {
+   "n": 42,
+   "начало": "Input token limit * 1,048,576 tokens",
+   "итог": "E-229-19"
+  },
+  {
+   "n": 43,
+   "начало": "Output token limit * 65,536 tokens",
+   "итог": "E-229-20"
+  },
+  {
+   "n": 44,
+   "начало": "PDFs (per request) Max number of",
+   "итог": "E-229-21"
+  },
+  {
+   "n": 45,
+   "начало": "Images (per request) Max number of input images",
+   "итог": "E-229-22"
+  },
+  {
+   "n": 46,
+   "начало": "Max number of output images ---",
+   "итог": "E-229-23"
+  },
+  {
+   "n": 47,
+   "начало": "Video (per request) Max number of",
+   "итог": "E-229-24"
+  },
+  {
+   "n": 48,
+   "начало": "Audio (per request) Max number of",
+   "итог": "ничего: у image-моделей «---» (повтор E-229-8)"
+  },
+  {
+   "n": 49,
+   "начало": "* For all Gemini models, a token",
+   "итог": "E-229-25"
+  },
+  {
+   "n": 50,
+   "начало": "** PDFs are treated as images,",
+   "итог": "E-229-26"
+  },
+  {
+   "n": 51,
+   "начало": "Find additional detailed information Quotas and pricing",
+   "итог": "E-229-27"
+  },
+  {
+   "n": 52,
+   "начало": "Learn about supported input file types",
+   "итог": "ничего: ссылка на страницу о входных файлах"
+  },
+  {
+   "n": 53,
+   "начало": "Important : The total request size",
+   "итог": "E-229-28"
+  },
+  {
+   "n": 54,
+   "начало": "Model versioning and naming patterns Models",
+   "итог": "E-229-29"
+  },
+  {
+   "n": 55,
+   "начало": "To find specific model names to",
+   "итог": "ничего: внутренняя ссылка"
+  },
+  {
+   "n": 56,
+   "начало": "Version type / Release stage Description (шапка)",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 57,
+   "начало": "Stable Stable versions are available and",
+   "итог": "E-229-30, E-229-31"
+  },
+  {
+   "n": 58,
+   "начало": "Preview Preview versions have new capabilities",
+   "итог": "E-229-32, E-229-33"
+  },
+  {
+   "n": 59,
+   "начало": "Experimental Experimental versions have new capabilities",
+   "итог": "ничего: общее про experimental-версии; experimental image-моделей на странице нет (пример gemini-2.5-pro-exp-03-25)"
+  },
+  {
+   "n": 60,
+   "начало": "Shutdown (retired) Shutdown (retired) versions are",
+   "итог": "E-229-34"
+  },
+  {
+   "n": 61,
+   "начало": "Best practices for using model versions In your production apps",
+   "итог": "E-229-35"
+  },
+  {
+   "n": 62,
+   "начало": "For Agent Platform Gemini API (formerly Vertex AI), if you choose",
+   "итог": "E-229-39"
+  },
+  {
+   "n": 63,
+   "начало": "Use preview and experimental versions only",
+   "итог": "E-229-36"
+  },
+  {
+   "n": 64,
+   "начало": "We do not recommend using the -latest",
+   "итог": "E-229-37"
+  },
+  {
+   "n": 65,
+   "начало": "We strongly recommend using Firebase Remote Config",
+   "итог": "E-229-38"
+  },
+  {
+   "n": 66,
+   "начало": "Available model names Model names are",
+   "итог": "ничего: определение «имени модели» без содержания про картинки"
+  },
+  {
+   "n": 67,
+   "начало": "General-use models (like gemini-3.8-flash )",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 68,
+   "начало": "Image-generating models (like gemini-3.1-flash-image , aka",
+   "итог": "E-229-40"
+  },
+  {
+   "n": 69,
+   "начало": "Audio-generating models : Text-to-speech (TTS)",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 70,
+   "начало": "For initialization examples for your platform",
+   "итог": "ничего: навигационные ссылки"
+  },
+  {
+   "n": 71,
+   "начало": "Programmatically list all available models You",
+   "итог": "ничего: общий API-приём (models.list), не специфичен для генерации картинок"
+  },
+  {
+   "n": 72,
+   "начало": "General-use models Gemini 3.x Pro model names",
+   "итог": "ничего: не про картинки (таблицы имён текстовых моделей 3.x Pro/Flash/Flash-Lite)"
+  },
+  {
+   "n": 73,
+   "начало": "Image-generating models Gemini 3.x Pro Image model names",
+   "итог": "E-229-41"
+  },
+  {
+   "n": 74,
+   "начало": "gemini-3-pro-image Stable version of",
+   "итог": "E-229-42"
+  },
+  {
+   "n": 75,
+   "начало": "gemini-3-pro-image-preview Preview version of",
+   "итог": "E-229-43"
+  },
+  {
+   "n": 76,
+   "начало": "Gemini 3.x Flash Image model names",
+   "итог": "E-229-44"
+  },
+  {
+   "n": 77,
+   "начало": "gemini-3.1-flash-image Stable version of",
+   "итог": "E-229-45"
+  },
+  {
+   "n": 78,
+   "начало": "gemini-3.1-flash-image-preview Preview version of",
+   "итог": "E-229-46"
+  },
+  {
+   "n": 79,
+   "начало": "Gemini 3.x Flash‑Lite Image model names",
+   "итог": "E-229-47"
+  },
+  {
+   "n": 80,
+   "начало": "gemini-3.1-flash-lite-image Stable version of",
+   "итог": "E-229-48"
+  },
+  {
+   "n": 81,
+   "начало": "Audio - text-to-speech (TTS) models",
+   "итог": "ничего: не про картинки (TTS и Live API, включая сноски 1/2)"
+  },
+  {
+   "n": 82,
+   "начало": "Supported languages Note: These languages do",
+   "итог": "ничего: пояснение (языки ≠ локации) — учтено в заметке E-229-49"
+  },
+  {
+   "n": 83,
+   "начало": "All the Gemini models can understand",
+   "итог": "E-229-49"
+  },
+  {
+   "n": 84,
+   "начало": "Arabic (ar), Bengali (bn), Bulgarian (bg),",
+   "итог": "ничего: список языков — учтён в E-229-49"
+  },
+  {
+   "n": 85,
+   "начало": "Gemini 2.0 Flash , Gemini 1.5",
+   "итог": "ничего: доп. языки для 2.0 Flash/1.5 — не image-модели"
+  },
+  {
+   "n": 86,
+   "начало": "Information about previous models The following",
+   "итог": "E-229-50"
+  },
+  {
+   "n": 87,
+   "начало": "If you can't find the information (previous)",
+   "итог": "ничего: ссылки на документацию провайдеров"
+  },
+  {
+   "n": 88,
+   "начало": "Gemini 2.5 models will shut down in October 2026 (stable",
+   "итог": "ничего: повтор E-229-2; про 2.0/1.x — не image-модели"
+  },
+  {
+   "n": 89,
+   "начало": "We strongly recommend using Firebase Remote Config (previous)",
+   "итог": "ничего: повтор E-229-38"
+  },
+  {
+   "n": 90,
+   "начало": "All Imagen models shut down on",
+   "итог": "E-229-51"
+  },
+  {
+   "n": 91,
+   "начало": "Older Gemini models gemini-2.5-pro gemini-2.5-flash",
+   "итог": "ничего: перечень имён; gemini-2.5-flash-image aka \"Nano Banana\" — учтено в E-229-60"
+  },
+  {
+   "n": 92,
+   "начало": "For information about older Gemini Live",
+   "итог": "ничего: не про картинки"
+  },
+  {
+   "n": 93,
+   "начало": "Older Imagen models imagen-4.0-ultra-generate-001",
+   "итог": "ничего: перечень имён — учтён в E-229-61"
+  },
+  {
+   "n": 94,
+   "начало": "View supported input and output of previous",
+   "итог": "E-229-52, E-229-53"
+  },
+  {
+   "n": 95,
+   "начало": "Supported capabilities and features of previous",
+   "итог": "E-229-54, E-229-55"
+  },
+  {
+   "n": 96,
+   "начало": "Specifications and limitations of previous generation",
+   "итог": "E-229-56, E-229-57, E-229-58"
+  },
+  {
+   "n": 97,
+   "начало": "* For all Gemini models (previous) / ** PDFs",
+   "итог": "ничего: повтор E-229-25, E-229-26"
+  },
+  {
+   "n": 98,
+   "начало": "Available model names of previous generation",
+   "итог": "ничего: заголовок и вводная"
+  },
+  {
+   "n": 99,
+   "начало": "Gemini models Gemini 2.5 Pro model names",
+   "итог": "ничего: не про картинки (2.5 Pro/Flash/Flash-Lite)"
+  },
+  {
+   "n": 100,
+   "начало": "Gemini 2.5 Flash Image model names (aka",
+   "итог": "E-229-59, E-229-60"
+  },
+  {
+   "n": 101,
+   "начало": "Gemini 2.0 Flash model names Gemini",
+   "итог": "ничего: не про картинки (2.0 Flash / Flash-Lite)"
+  },
+  {
+   "n": 102,
+   "начало": "Imagen models All Imagen models shut",
+   "итог": "ничего: повтор E-229-51"
+  },
+  {
+   "n": 103,
+   "начало": "Imagen 4 model names ... Imagen 3 Fast",
+   "итог": "E-229-61"
+  },
+  {
+   "n": 104,
+   "начало": "Next steps Try out the capabilities",
+   "итог": "ничего: навигация (Generate and edit images — ссылка)"
+  },
+  {
+   "n": 105,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал (лицензия, Google Developers Site Policies, Last updated 2026-09-24 UTC)"
+  },
+  {
+   "n": 106,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: обвязка (виджет отзыва, ссылки подвала, языки)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-229-1",
+   "вид": "факт",
+   "утверждение_en": "Starting November 2, 2026, Firebase App Check enforcement will be required to use Firebase AI Logic.",
+   "цитата": "Starting November 2, 2026, Firebase App Check enforcement will be\nrequired\nto use Firebase AI Logic.",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-11-02",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Касается всех вызовов Firebase AI Logic, включая image-модели."
+  },
+  {
+   "код": "E-229-2",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 models will shut down in October 2026 and new projects cannot start using them; to avoid service disruptions, update to a newer model such as gemini-3.1-flash-image.",
+   "цитата": "Gemini 2.5 models will shut down in\nOctober 2026\n(and new projects cannot start\n    using them). To avoid service disruptions, update to a newer model (like\ngemini-3.8-flash\nor\ngemini-3.1-flash-image\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Баннер вверху страницы (Model updates)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-10",
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "gemini-2.5-flash-image раскрыто из фразы 'Gemini 2.5 models'; точная дата для него дана ниже (E-229-59)."
+  },
+  {
+   "код": "E-229-3",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash Image (Nano Banana 2, gemini-3.1-flash-image) is the featured image-generating model: a powerful, high-efficiency image generation and editing model optimized for speed and high-volume use cases; billing is required.",
+   "цитата": "IMAGE GENERATING\nGemini 3.1 Flash Image (\nNano Banana 2\n)\ngemini-3.1-flash-image\nPowerful, high-efficiency image generation and editing model,\n           optimized for speed and high-volume use cases.\n(billing required)",
+   "источник_цитаты": "txt",
+   "раздел": "Featured models (IMAGE GENERATING)",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Единственная image-модель в блоке Featured. Описание дословно повторено в списке Image-generating models."
+  },
+  {
+   "код": "E-229-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro, gemini-3-pro-image) is described as a state-of-the-art image generation and editing model for highly contextual native image creation; billing is required.",
+   "цитата": "Gemini 3 Pro Image (\nNano Banana Pro\n)\ngemini-3-pro-image\nState-of-the-art image generation and editing model for highly\n            contextual native image creation.\n(billing required)",
+   "источник_цитаты": "txt",
+   "раздел": "Image-generating models",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Позиционирование Pro: «highly contextual» (контекстная/смысловая сложность)."
+  },
+  {
+   "код": "E-229-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite, gemini-3.1-flash-lite-image) is an ultra-low latency and cost-effective image generation and editing model designed for high-volume interactive use cases; billing is required.",
+   "цитата": "Gemini 3.1 Flash-Lite Image (\nNano Banana 2 Lite\n)\ngemini-3.1-flash-lite-image\nUltra-low latency and cost-effective image generation and editing\n            model, designed for high-volume interactive use cases.\n(billing required)",
+   "источник_цитаты": "txt",
+   "раздел": "Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "Позиционирование Lite: минимальная задержка и цена, интерактивные сценарии."
+  },
+  {
+   "код": "E-229-6",
+   "вид": "объяснение",
+   "утверждение_en": "The comparison tables describe each model when used with Firebase AI Logic; each model might have additional capabilities that are not available when using the Firebase SDKs.",
+   "цитата": "Each model has different capabilities to support various use cases. Note that\neach of tables in this section describe each model\nwhen used with\nFirebase AI Logic\n. Each model might have additional\ncapabilities that aren't available when using our SDKs.",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Меняет смысл всех «нет» в таблицах ниже: это «нет в Firebase AI Logic», не обязательно «нет у модели вообще»."
+  },
+  {
+   "код": "E-229-7",
+   "вид": "факт",
+   "утверждение_en": "The Gemini Developer API provides only global access to models, while the Agent Platform Gemini API (formerly Vertex AI) provides both global access (recommended for most use cases) and a specific location (available locations depend on the model).",
+   "цитата": "The\nGemini Developer API\nprovides only global access to models, but the\nAgent Platform\nGemini API (formerly Vertex AI)\nprovides both global access (recommended for most\nuse cases) and setting a specific location (available locations depend on the\nmodel).",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models (Note)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Страница рекомендует изучить детали о локации доступа ('We recommend reviewing...')."
+  },
+  {
+   "код": "E-229-8",
+   "вид": "факт",
+   "утверждение_en": "With Firebase AI Logic, all three Gemini 3.x image models accept text, code, documents (PDFs or plain text) and images as input; none of them accepts audio input.",
+   "цитата": "Input types\nText\nCode\nDocuments\n(PDFs or plain-text)\nImages\nVideo\nAudio",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported input and output (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "Столбцы: Gemini 3.x Pro Image / Flash Image / Flash-Lite Image."
+  },
+  {
+   "код": "E-229-9",
+   "вид": "факт",
+   "утверждение_en": "Video input is not supported by Gemini 3.x Pro Image but is supported by Gemini 3.x Flash Image and Gemini 3.x Flash-Lite Image (with Firebase AI Logic).",
+   "цитата": "Video",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported input and output (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "Строка Input types > Video: Pro — нет, Flash Image — да, Flash-Lite Image — да."
+  },
+  {
+   "код": "E-229-10",
+   "вид": "факт",
+   "утверждение_en": "Output types of the Gemini 3.x image models: text, code and images are supported; streaming text, structured output (JSON), video and audio output are not.",
+   "цитата": "Output types\nText\nText (streaming)\nCode\nStructured output\n(like JSON)\nImages\nVideo\nAudio",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported input and output (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Одинаково для всех трёх image-моделей."
+  },
+  {
+   "код": "E-229-11",
+   "вид": "факт",
+   "утверждение_en": "Thinking is supported by all three Gemini 3.x image models (Pro Image, Flash Image, Flash-Lite Image) in Firebase AI Logic.",
+   "цитата": "Thinking",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "Для сравнения: в таблице предыдущего поколения Gemini 2.5 Flash Image — Thinking нет (E-229-54)."
+  },
+  {
+   "код": "E-229-12",
+   "вид": "факт",
+   "утверждение_en": "For text generation from text-only or multimodal inputs, the Gemini 3.x image models are marked \"interleaved or as part of image\" (text comes interleaved with images or as part of an image) instead of a plain yes.",
+   "цитата": "Generate text\nfrom\n        text-only or multimodal inputs\ninterleaved or as part of image\ninterleaved or as part of image\ninterleaved or as part of image",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "текст_в_кадре"
+   ],
+   "заметка": "Значение ячеек дано текстом ('interleaved or as part of image') — прямо в txt; 'as part of image' = текст внутри картинки."
+  },
+  {
+   "код": "E-229-13",
+   "вид": "факт",
+   "утверждение_en": "All three Gemini 3.x image models support both generating images and editing images in Firebase AI Logic.",
+   "цитата": "Generate images\nEdit images",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-14",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.x image models can analyze documents and images (with text or image output); video analysis is supported by Flash Image and Flash-Lite Image but not by Pro Image; audio analysis is not supported.",
+   "цитата": "Analyze documents\n(PDFs or plain-text)\n(\ntext-output\n|\nimage-output\n)\nAnalyze images\n(\ntext-output\n|\nimage-output\n)\nAnalyze video\n(\ntext-output\n|\nimage-output\n)\nstreamed video\nAnalyze audio",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "модели_сравнение"
+   ],
+   "заметка": "Подпись '(text-output | image-output)' — анализ входа с выдачей текста или картинки."
+  },
+  {
+   "код": "E-229-15",
+   "вид": "факт",
+   "утверждение_en": "Multi-turn chat is supported by all three Gemini 3.x image models in Firebase AI Logic.",
+   "цитата": "Multi-turn chat",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Основа для пошагового редактирования в чате."
+  },
+  {
+   "код": "E-229-16",
+   "вид": "ограничение",
+   "утверждение_en": "Function calling, code execution, URL context and grounding with Google Maps are not supported for the Gemini 3.x image models in Firebase AI Logic; bidirectional streaming is also not supported.",
+   "цитата": "Bidirectional multimodal streaming\nSupported tools\nFunction calling\nCode execution\nURL context",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "grounding"
+   ],
+   "заметка": "Строки Supported tools; Maps — строки 781-782."
+  },
+  {
+   "код": "E-229-17",
+   "вид": "факт",
+   "утверждение_en": "Grounding with Google Search is supported for Gemini 3.x Pro Image and Gemini 3.x Flash Image, but not for Gemini 3.x Flash-Lite Image (in Firebase AI Logic).",
+   "цитата": "Grounding with\nGoogle Search",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Ключевое отличие Lite от NB2 по инструментам."
+  },
+  {
+   "код": "E-229-18",
+   "вид": "ограничение",
+   "утверждение_en": "When using Firebase AI Logic, grounding with Google Image Search, model fine tuning, embeddings generation and semantic retrieval are not supported.",
+   "цитата": "Note:\nWhen using\nFirebase AI Logic\n, the following capabilities are\nnot\nsupported: grounding with Google Image Search,\nfine tuning a model, embeddings generation, and semantic retrieval.",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица) (Note)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Grounding через Google Image Search — именно для картинок; в Firebase его нет."
+  },
+  {
+   "код": "E-229-19",
+   "вид": "лимит",
+   "утверждение_en": "Input token limits with Firebase AI Logic: Gemini 3.x Pro Image 65,536 tokens, Gemini 3.x Flash Image 131,072 tokens, Gemini 3.x Flash-Lite Image 65,536 tokens.",
+   "цитата": "Input token limit\n*\n1,048,576 tokens\n65,536 tokens\n131,072 tokens\n65,536 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "Порядок столбцов: 3.x Pro/Flash/Flash-Lite (текст), Pro Image, Flash Image, Flash-Lite Image, TTS, Live."
+  },
+  {
+   "код": "E-229-20",
+   "вид": "лимит",
+   "утверждение_en": "Output token limits with Firebase AI Logic: Gemini 3.x Pro Image 32,768 tokens, Gemini 3.x Flash Image 32,768 tokens, Gemini 3.x Flash-Lite Image 4,096 tokens.",
+   "цитата": "Output token limit\n*\n65,536 tokens\n32,768 tokens\n32,768 tokens\n4,096 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "модели_сравнение"
+   ],
+   "заметка": "В строке 5 значений на 6 столбцов (у Live значения нет) — прочитано слева направо; см. сомнения."
+  },
+  {
+   "код": "E-229-21",
+   "вид": "лимит",
+   "утверждение_en": "PDF input per request for each Gemini 3.x image model: up to 14 PDF files, up to 14 pages per PDF file, and up to 50 MB per PDF file.",
+   "цитата": "PDFs (per request)\nMax number\nof input PDF files\n**\n900 files\n14 files\n14 files\n14 files\n---\nsee docs\nMax number\nof pages\nper input PDF file\n**\n900 pages\n14 pages\n14 pages\n14 pages\n---\nMax size\nper input PDF file\n50 MB\n50 MB\n50 MB\n50 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-22",
+   "вид": "лимит",
+   "утверждение_en": "Image input per request for each Gemini 3.x image model: up to 14 input images, and up to 7 MB per input base64-encoded image.",
+   "цитата": "Images (per request)\nMax number\nof\ninput\nimages\n1,000 images\n14 images\n14 images\n14 images\n---\nsee docs\nMax size\nper input base64-encoded image\n7 MB\n7 MB\n7 MB\n7 MB",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Лимит на референсы в одном запросе. Для текстовых 3.x — 1,000 изображений."
+  },
+  {
+   "код": "E-229-23",
+   "вид": "лимит",
+   "утверждение_en": "The maximum number of output images for the Gemini 3.x image models is \"up to output token limit\".",
+   "цитата": "Max number\nof\noutput\nimages\n---\nUp to output token limit\nUp to output token limit\nUp to output token limit",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Число картинок в ответе ограничено только выходными токенами."
+  },
+  {
+   "код": "E-229-24",
+   "вид": "лимит",
+   "утверждение_en": "Video input: Gemini 3.x Flash Image and Flash-Lite Image accept video files up to the input token limit, with total input video (frames only) of about 25 minutes and about 12 minutes respectively; Pro Image takes no video; video with audio (frames+audio) is not supported by the image models.",
+   "цитата": "Video (per request)\nMax number\nof input video files\n10 files\n---\nUp to input token limit\nUp to input token limit\n---\nsee docs\nMax length\nof all input video\n(frames only)\n~60 minutes\n---\n~25 minutes\n~12 minutes\n---\nMax length\nof all input video\n(frames+audio)\n~45 minutes\n---\n---\n---\n---",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-25",
+   "вид": "факт",
+   "утверждение_en": "For all Gemini models, a token is about 4 characters, so 100 tokens are about 60-80 English words; the total token count of a request can be determined with countTokens.",
+   "цитата": "For all\nGemini\nmodels, a token is equivalent to about 4 characters,\nso 100 tokens are about 60-80 English words. For\nGemini\nmodels, you can\ndetermine the total count of tokens in your requests using\ncountTokens\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица) (сноска *)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "промптинг"
+   ],
+   "заметка": "Для оценки длины промпта относительно лимита входных токенов."
+  },
+  {
+   "код": "E-229-26",
+   "вид": "факт",
+   "утверждение_en": "PDFs are treated as images: a single PDF page counts as one image, and the number of pages allowed in a request is limited to the number of images the model can support.",
+   "цитата": "PDFs are treated as images, so a single page of a PDF is treated as\n    one image. The number of pages allowed in a request is limited to the number\n    of images the model can support.",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Specifications and limitations (таблица) (сноска **)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Для image-моделей — 14 (см. E-229-21, E-229-22)."
+  },
+  {
+   "код": "E-229-27",
+   "вид": "факт",
+   "утверждение_en": "Quotas and pricing are different for each model, and pricing also depends on input and output.",
+   "цитата": "Quotas\nand\npricing\nare\ndifferent for each model. Pricing also depends on input and output.",
+   "источник_цитаты": "txt",
+   "раздел": "Find additional detailed information",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены",
+    "лимиты_квоты"
+   ],
+   "заметка": "Конкретных цен страница не даёт."
+  },
+  {
+   "код": "E-229-28",
+   "вид": "лимит",
+   "утверждение_en": "The total request size limit is 20 MB; to send large files, use the options for providing files in multimodal requests.",
+   "цитата": "Important\n:\nThe total request size limit is\n  20 MB.\nTo send large files, review the\noptions for providing files in multimodal requests\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Find additional detailed information (Important)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "Суммарный лимит запроса важен при передаче нескольких референсов inline (до 14 × 7 МБ заведомо больше 20 МБ)."
+  },
+  {
+   "код": "E-229-29",
+   "вид": "предупреждение",
+   "утверждение_en": "Models are offered as stable, preview and experimental versions; -latest aliases are supported for convenience but are not recommended because of the inconsistency in which model version they point to.",
+   "цитата": "Models are offered in\nstable\n,\npreview\n, and\nexperimental\nversions. For\nconvenience, the\n-latest\naliases are supported, but\nthey're not recommended due to the inconsistency in which model version they\npoint to.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Общее для всех моделей, включая image."
+  },
+  {
+   "код": "E-229-30",
+   "вид": "факт",
+   "утверждение_en": "A stable model version is typically released with a retirement date (the last day it is available, after which it is no longer accessible or supported), and most stable models are available for 12 months after their release date, even if a replacement model is released.",
+   "цитата": "A stable model version is typically released with a retirement date,\n            which indicates the last day that the model is available. After this\n            date, the model is no longer accessible or supported by Google.\nMost stable models are available for 12 months after their\n            release date (even if a replacement model is released).",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns (таблица, Stable)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Строки 977-979 (stable доступны для продакшена с даты релиза) и 993-995 (имена без суффикса) — там же. Имена стабильных версий без суффикса."
+  },
+  {
+   "код": "E-229-31",
+   "вид": "предупреждение",
+   "утверждение_en": "For the Agent Platform Gemini API, some stable models have only short-term availability and may be retired as early as 45 days after a replacement model is released.",
+   "цитата": "For the\nAgent Platform\nGemini API (formerly Vertex AI)\n, some stable models only have\nshort-term availability\n, which\n            means that they may be shut down (retired) as early as 45 days\n            after a replacement model is released.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns (таблица, Stable)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Среди image-моделей short-term availability помечена gemini-3.1-flash-lite-image (E-229-48)."
+  },
+  {
+   "код": "E-229-32",
+   "вид": "предупреждение",
+   "утверждение_en": "Preview versions are not stable, not recommended for production, come with more restrictive rate limits, may have billing requirements, and are retired within a few weeks or months after their stable version is released; their names end with -preview.",
+   "цитата": "Preview\nversions have new capabilities and\n        are considered\nnot stable\n.\nThese models are\nnot\nrecommended for production use, come\n            with more restrictive rate limits, and may have billing\n            requirements.\nThese models are shut down (retired) within a few weeks or months\n            after their associated stable version is released.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns (таблица, Preview)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "лимиты_квоты"
+   ],
+   "заметка": "Касается gemini-3-pro-image-preview и gemini-3.1-flash-image-preview."
+  },
+  {
+   "код": "E-229-33",
+   "вид": "ограничение",
+   "утверждение_en": "For the Agent Platform Gemini API, preview models are only available in the global location.",
+   "цитата": "For the\nAgent Platform\nGemini API (formerly Vertex AI)\n, preview models are\nonly\navailable in the\nglobal\nlocation\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns (таблица, Preview)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-34",
+   "вид": "факт",
+   "утверждение_en": "Shutdown (retired) models are permanently deactivated, no longer accessible or supported, and a request using a retired model name returns a 404 error.",
+   "цитата": "versions are past their\n          shutdown (retirement) date and have been permanently deactivated.\nShutdown (retired) models are no longer accessible or supported by\n            Google, and a request using a retired model name returns a 404\n            error.",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning and naming patterns (таблица, Shutdown)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-35",
+   "вид": "правило",
+   "утверждение_en": "In production apps, use the explicit model name for the most recent stable version.",
+   "цитата": "In your\nproduction apps\n, use the explicit model name for the most recent\nstable\nversion.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for using model versions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-36",
+   "вид": "правило",
+   "утверждение_en": "Use preview and experimental versions only during prototyping; use a stable version when you start developing and testing for a production use case.",
+   "цитата": "Use\npreview\nand\nexperimental\nversions\nonly during prototyping\n. We\nrecommend using a\nstable\nversion when you start developing and testing for\na production use case.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for using model versions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-37",
+   "вид": "предупреждение",
+   "утверждение_en": "Do not use the -latest aliases, even during development: the alias is hot-swapped with every new release (stable, preview or experimental), a 2-week-prior notification email is sent only for breaking changes, and this can lead to unexpected behavior changes.",
+   "цитата": "We do\nnot\nrecommend using the\n-latest\naliases\n(even during development). This alias points to the latest release for a\nspecific model variation (which could be a stable, preview, or experimental\nversion). This alias will get hot-swapped with every new release of a specific\nmodel variation, and only for breaking changes will a 2-week-prior\nnotification email be sent.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for using model versions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Хвост абзаца (строки 1099-1100): «This instability ... can lead to unexpected behavior changes». Для image-генерации это означает скрытую смену модели и, как следствие, стиля/качества картинок (вывод, не текст страницы)."
+  },
+  {
+   "код": "E-229-38",
+   "вид": "правило",
+   "утверждение_en": "Google strongly recommends using Firebase Remote Config or server prompt templates so you can change the model name used for your AI feature on demand without releasing a new app version.",
+   "цитата": "We\nstrongly\nrecommend using\nFirebase Remote Config\nor\nserver prompt templates\nso that you can make on-demand changes to the model name used for your AI\n  feature without releasing a new version of your app.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for using model versions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Повторено дословно в разделе Information about previous models."
+  },
+  {
+   "код": "E-229-39",
+   "вид": "правило",
+   "утверждение_en": "For the Agent Platform Gemini API, if you use a short-term availability model in production, it is even more critical to control the model name with Firebase Remote Config or server prompt templates.",
+   "цитата": "For\nAgent Platform\nGemini API (formerly Vertex AI)\n, if you choose to use a\nshort-term availability model\nin your production app, it's even more\ncritical that you use\nFirebase Remote Config\nor\nserver prompt templates\nto control the model name used for your AI feature.",
+   "источник_цитаты": "txt",
+   "раздел": "Best practices for using model versions",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Относится, в частности, к gemini-3.1-flash-lite-image (short-term availability)."
+  },
+  {
+   "код": "E-229-40",
+   "вид": "факт",
+   "утверждение_en": "Image-generating models (like gemini-3.1-flash-image) are also known as the \"Nano Banana\" models.",
+   "цитата": "Image-generating models\n(like\ngemini-3.1-flash-image\n, aka the \"Nano Banana\" models)",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Терминология страницы: «Nano Banana models» = image-generating models."
+  },
+  {
+   "код": "E-229-41",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.x Pro Image model names (aka \"Nano Banana Pro\") require the pay-as-you-go Blaze pricing plan regardless of the Gemini API provider.",
+   "цитата": "Gemini 3.x Pro Image\nmodel names (aka \"Nano Banana Pro\")\nRequires the\npay-as-you-go Blaze pricing plan\nregardless of your\nGemini API\nprovider.",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-42",
+   "вид": "факт",
+   "утверждение_en": "gemini-3-pro-image is the stable version of Gemini 3.x Pro Image (Nano Banana Pro), released 2026-05-28, with shutdown no earlier than 2027-05-28.",
+   "цитата": "gemini-3-pro-image\nStable version of\nGemini 3.x Pro Image\n(aka \"Nano Banana Pro\")\nStable\n2026-05-28\nNo earlier than\n2027-05-28",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3-pro-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-28",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-43",
+   "вид": "предупреждение",
+   "утверждение_en": "gemini-3-pro-image-preview is the preview version of Gemini 3.x Pro Image, released 2025-11-20, with shutdown as early as 2026-06-25.",
+   "цитата": "gemini-3-pro-image-preview\nPreview version of\nGemini 3.x Pro Image\n(aka \"Nano Banana Pro\")\nPreview\n2025-11-20\nAs early as\n2026-06-25",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-11-20",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "На дату страницы (2026-09-24) срок «as early as» уже прошёл."
+  },
+  {
+   "код": "E-229-44",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.x Flash Image model names (aka \"Nano Banana 2\") require the pay-as-you-go Blaze pricing plan regardless of the Gemini API provider.",
+   "цитата": "Gemini 3.x Flash Image\nmodel names (aka \"Nano Banana 2\")\nRequires the\npay-as-you-go Blaze pricing plan\nregardless of your\nGemini API\nprovider.",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-45",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-image is the stable version of Gemini 3.x Flash Image (Nano Banana 2), released 2026-05-28, with shutdown no earlier than 2027-05-28.",
+   "цитата": "gemini-3.1-flash-image\nStable version of\nGemini 3.x Flash Image\n(aka \"Nano Banana 2\")\nStable\n2026-05-28\nNo earlier than\n2027-05-28",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-05-28",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-46",
+   "вид": "предупреждение",
+   "утверждение_en": "gemini-3.1-flash-image-preview is the preview version of Gemini 3.x Flash Image, released 2026-02-26, with shutdown as early as 2026-06-25.",
+   "цитата": "gemini-3.1-flash-image-preview\nPreview version of\nGemini 3.x Flash Image\n(aka \"Nano Banana 2\")\nPreview\n2026-02-26\nAs early as\n2026-06-25",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-02-26",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "На дату страницы срок «as early as» уже прошёл."
+  },
+  {
+   "код": "E-229-47",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3.x Flash-Lite Image model names (aka \"Nano Banana 2 Lite\") require the pay-as-you-go Blaze pricing plan regardless of the Gemini API provider.",
+   "цитата": "Gemini 3.x Flash‑Lite Image\nmodel names (aka \"Nano Banana 2 Lite\")\nRequires the\npay-as-you-go Blaze pricing plan\nregardless of your\nGemini API\nprovider.",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-48",
+   "вид": "факт",
+   "утверждение_en": "gemini-3.1-flash-lite-image is the stable version of Gemini 3.x Flash-Lite Image (Nano Banana 2 Lite), released 2026-06-30; it is a short-term availability model and its shutdown date is to be determined.",
+   "цитата": "gemini-3.1-flash-lite-image\nStable version of\nGemini 3.x Flash‑Lite Image\n(aka \"Nano Banana 2 Lite\")\nThis is a\nshort-term availability model\n(see\nModel versioning and naming patterns\n).\nStable\n2026-06-30\nTo be determined",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names > Image-generating models",
+   "модели": [
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Preview-версии Lite в таблице нет."
+  },
+  {
+   "код": "E-229-49",
+   "вид": "факт",
+   "утверждение_en": "All the Gemini models can understand and respond in a listed set of languages (including, among others, English, Russian, Ukrainian, Chinese, Japanese, Arabic, Hindi); these are input/output languages, not access locations.",
+   "цитата": "All the\nGemini\nmodels can understand and respond in the\nfollowing languages:",
+   "источник_цитаты": "txt",
+   "раздел": "Supported languages",
+   "модели": "не указано",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Полный список — строки 1513-1521 (39 языков, включая 'Russian (ru)'). Страница не уточняет, относится ли это к тексту, рисуемому внутри картинки."
+  },
+  {
+   "код": "E-229-50",
+   "вид": "правило",
+   "утверждение_en": "Previous generation models are still active, but Google recommends using one of the latest models instead when possible.",
+   "цитата": "The following are active, but previous generation models. We recommend using one\nof the latest models instead when possible.",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Из image-моделей в предыдущем поколении — gemini-2.5-flash-image и Imagen."
+  },
+  {
+   "код": "E-229-51",
+   "вид": "факт",
+   "утверждение_en": "All Imagen models shut down on August 17, 2026; as a replacement, apps can migrate to Gemini Image models (the \"Nano Banana\" models).",
+   "цитата": "All\nImagen\nmodels shut down on\n  August 17, 2026.\nAs a replacement, you can\nmigrate your apps to use\nGemini\nImage models (the \"Nano Banana\" models)\n.",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models",
+   "модели": [
+    "imagen (все модели)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-08-17",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Повторено в разделе Imagen models (строки 2108-2116). Противоречит датам 2026-06-30 в таблицах имён Imagen."
+  },
+  {
+   "код": "E-229-52",
+   "вид": "факт",
+   "утверждение_en": "Previous-generation Gemini 2.5 Flash Image accepts text, code, documents and images as input (no video or audio) and outputs text, code and images (no streaming text or structured output).",
+   "цитата": "Input types\nText\nCode\nDocuments\n(PDFs or plain-text)\nImages\nVideo\nAudio\nAudio (streaming)\nOutput types\nText\nText (streaming)\nCode\nStructured output\n(like JSON)\nImages\nVideo\nAudio\nAudio (streaming)",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > supported input and output of previous generation models",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-53",
+   "вид": "факт",
+   "утверждение_en": "Imagen (generate) takes only text input and outputs images; Imagen (capability) takes text and images as input and outputs images.",
+   "цитата": "Imagen\n(generate)\nImagen\n(capability)",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > supported input and output of previous generation models",
+   "модели": [
+    "imagen (generate)",
+    "imagen (capability)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Фиксация как есть (модели отключены)."
+  },
+  {
+   "код": "E-229-54",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image in Firebase AI Logic: no thinking; generates and edits images; generates text only interleaved or as part of an image; supports multi-turn chat, system instructions and count tokens; supports no tools (function calling, code execution, URL context, grounding with Google Search or Maps).",
+   "цитата": "Thinking\nGenerate text\nfrom\n        text-only or multimodal inputs\ninterleaved or as part of image\nGenerate images\n(\nGemini\nor\nImagen\n)\nEdit images\n(\nGemini\nor\nImagen\n)",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > capabilities and features of previous generation models",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение",
+    "grounding"
+   ],
+   "заметка": "'interleaved or as part of image' — прямо в txt; остальное — иконки."
+  },
+  {
+   "код": "E-229-55",
+   "вид": "факт",
+   "утверждение_en": "Imagen (generate) can generate but not edit images; Imagen (capability) can both generate and edit images; neither supports system instructions or count tokens.",
+   "цитата": "Generate images\n(\nGemini\nor\nImagen\n)\nEdit images\n(\nGemini\nor\nImagen\n)",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > capabilities and features of previous generation models",
+   "модели": [
+    "imagen (generate)",
+    "imagen (capability)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из иконок compare-yes/compare-no в html-таблице (в txt только подписи строк; значения ячеек — иконки)",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-56",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image limits: 32,768 input tokens and 8,192 output tokens.",
+   "цитата": "Input token limit\n*\n1,048,576 tokens\n32,768 tokens\n1,048,576 tokens\n1,048,576 tokens\n480 tokens\n480 tokens\nOutput token limit\n*\n65,536 tokens\n8,192 tokens\n8,192 tokens\n8,192 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > specifications and limitations of previous generation models",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": "Второй столбец строк Input/Output token limit."
+  },
+  {
+   "код": "E-229-57",
+   "вид": "лимит",
+   "утверждение_en": "Gemini 2.5 Flash Image limits per request: up to 3 input images, 3 PDF files, 3 pages per PDF, 7 MB per base64-encoded image and 50 MB per PDF; output images up to the output token limit; no video or audio input.",
+   "цитата": "Images (per request)\nMax number\nof\ninput\nimages\n3,000 images\n3 images\n3,000 images\n3,000 images\n---\n4 images\nMax number\nof\noutput\nimages\n---\nUp to output token limit\n---\n---\n4 images\n4 images\nMax size\nper input base64-encoded image\n7 MB\n7 MB\n7 MB\n7 MB\n---\n---",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > specifications and limitations of previous generation models",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "рефы"
+   ],
+   "заметка": "PDF-строки — 1781-1808."
+  },
+  {
+   "код": "E-229-58",
+   "вид": "лимит",
+   "утверждение_en": "Imagen limits: 480 input tokens; up to 4 output images; Imagen (capability) accepts up to 4 input images.",
+   "цитата": "Input token limit\n*\n1,048,576 tokens\n32,768 tokens\n1,048,576 tokens\n1,048,576 tokens\n480 tokens\n480 tokens",
+   "источник_цитаты": "txt",
+   "раздел": "Information about previous models > specifications and limitations of previous generation models",
+   "модели": [
+    "imagen (generate)",
+    "imagen (capability)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "промптинг"
+   ],
+   "заметка": "Строки 1819 (4 images вход capability) и 1828-1829 (4 images выход)."
+  },
+  {
+   "код": "E-229-59",
+   "вид": "предупреждение",
+   "утверждение_en": "Gemini 2.5 Flash Image (gemini-2.5-flash-image) will shut down on October 02, 2026.",
+   "цитата": "Warning:\nGemini 2.5 Flash Image\n(\ngemini-2.5-flash-image\n) will\nshut down on October 02, 2026.",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names of previous generation models > Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-10-02",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-60",
+   "вид": "факт",
+   "утверждение_en": "gemini-2.5-flash-image is the stable version of Gemini 2.5 Flash Image (aka \"Nano Banana\"), released 2025-10-02 with shutdown date 2026-10-02, and requires the Blaze pay-as-you-go plan regardless of provider.",
+   "цитата": "Requires the\npay-as-you-go Blaze pricing plan\nregardless of your\nGemini API\nprovider.\nModel name\nDescription\nRelease stage\nRelease date\nShutdown date\ngemini-2.5-flash-image\nStable version of\nGemini 2.5 Flash Image\n(aka \"Nano Banana\")\nStable\n2025-10-02\n2026-10-02",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names of previous generation models > Gemini 2.5 Flash Image",
+   "модели": [
+    "gemini-2.5-flash-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-10-02",
+   "тема": [
+    "цены",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-61",
+   "вид": "факт",
+   "утверждение_en": "The Imagen model name tables list a shutdown date of 2026-06-30 for all Imagen 4 and Imagen 3 models (imagen-4.0-generate-001, imagen-4.0-fast-generate-001, imagen-4.0-ultra-generate-001, imagen-3.0-capability-001, imagen-3.0-generate-002/001, imagen-3.0-fast-generate-001).",
+   "цитата": "imagen-4.0-generate-001\nStable version of\nImagen 4\nStable\n2025-08-14\n2026-06-30",
+   "источник_цитаты": "txt",
+   "раздел": "Available model names of previous generation models > Imagen models",
+   "модели": [
+    "imagen-4.0-*",
+    "imagen-3.0-*"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2026-06-30",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Все 7 строк — 2026-06-30; противоречит тексту про 17.08.2026."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-229-62",
+   "вид": "объяснение",
+   "утверждение_en": "Within Firebase AI Logic the three Nano Banana models differ as follows: Pro Image — no video input, 65,536 input / 32,768 output tokens, Google Search grounding; Flash Image (NB2) — video input (~25 min), the largest input budget (131,072 tokens), 32,768 output tokens, Google Search grounding; Flash-Lite Image — video input (~12 min), 65,536 input / only 4,096 output tokens, no Google Search grounding, short-term availability.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models (все таблицы) + Available model names",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-229-9, E-229-17, E-229-19, E-229-20, E-229-24, E-229-48",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Сводка различий; общие для всех трёх: 14 входных картинок, 7 МБ на картинку, thinking, генерация и редактирование, multi-turn, Blaze."
+  },
+  {
+   "код": "E-229-63",
+   "вид": "объяснение",
+   "утверждение_en": "Because output images are capped only by the output token limit and text is produced interleaved with images, a single response can in principle contain more than one image; the Flash-Lite Image model, with a 4,096-token output limit, has the smallest room for this.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models > Supported capabilities and features (таблица) + Compare models > Specifications and limitations (таблица)",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-229-12, E-229-20, E-229-23",
+   "дата_единицы": null,
+   "тема": [
+    "лимиты_квоты",
+    "api_код"
+   ],
+   "заметка": "Вывод из сочетания строк; прямо о нескольких картинках в одном ответе страница не пишет."
+  },
+  {
+   "код": "E-229-64",
+   "вид": "объяснение",
+   "утверждение_en": "From Gemini 2.5 Flash Image to the Gemini 3.x image models, input images per request grew from 3 to 14, thinking and Google Search grounding (Pro and Flash) were added, and the input token limit grew from 32,768 to 65,536–131,072 tokens.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Compare models + Information about previous models",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-229-11, E-229-17, E-229-19, E-229-22, E-229-55, E-229-57, E-229-58",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-229-65",
+   "вид": "факт",
+   "утверждение_en": "Every image-generating model on the page (Gemini 3.x Pro Image, Flash Image, Flash-Lite Image and Gemini 2.5 Flash Image) requires the paid Blaze plan regardless of the API provider, whereas the text Flash and Flash-Lite models do not on the Gemini Developer API.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Featured models + Available model names",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-229-3, E-229-41, E-229-44, E-229-47, E-229-60",
+   "дата_единицы": null,
+   "тема": [
+    "цены"
+   ],
+   "заметка": "Генерация картинок в Firebase всегда платная."
+  },
+  {
+   "код": "E-229-66",
+   "вид": "правило",
+   "утверждение_en": "Use the stable image model ids (gemini-3-pro-image, gemini-3.1-flash-image, gemini-3.1-flash-lite-image) rather than the -preview ids: the preview image models had a shutdown date \"as early as 2026-06-25\", and requests to retired names return 404.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Model versioning + Available model names",
+   "модели": [
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "gemini-3-pro-image-preview",
+    "gemini-3.1-flash-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-229-34, E-229-35, E-229-43, E-229-46",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Сочетание правила «explicit stable name» с датами preview-моделей."
+  }
+ ],
+ "противоречия_внутри": [
+  "Imagen: текст дважды говорит 'All Imagen models shut down on August 17, 2026' (E-229-51, строки 1587-1590 и 2108-2111), а все 7 таблиц имён Imagen дают Shutdown date 2026-06-30 (E-229-61).",
+  "Gemini 2.5 Flash Image: баннер — 'Gemini 2.5 models will shut down in October 2026', предупреждение — 'will shut down on October 02, 2026', таблица — 2026-10-02: согласовано; а для текстовых 2.5 текст 'will shut down on October 16, 2026' vs таблица 'As early as 2026-10-16' (не image, отмечено для полноты)."
+ ],
+ "не_сказано": [
+  "Нет разрешений (1K/2K/4K) и списка соотношений сторон для image-моделей.",
+  "Нет цен и стоимости картинки в токенах — только 'pricing is different for each model'.",
+  "Не сказано прямо, сколько картинок реально возвращается за вызов — только 'Up to output token limit'.",
+  "Нет knowledge cutoff для 3.x image-моделей (строка отсутствует в таблице 3.x); у 2.5 Flash Image — '---'.",
+  "В таблице 3.x нет строк System instructions и Count tokens (в таблице предыдущего поколения есть) — поддержка для 3.x image-моделей не указана.",
+  "Не объяснено, как управлять thinking у image-моделей (уровни), хотя отмечено, что Thinking поддерживается.",
+  "Не сказано, распространяется ли список языков на текст, отрисовываемый внутри картинки.",
+  "Не сказано, делится ли лимит 14 между картинками и страницами PDF в одном запросе."
+ ],
+ "сомнения": [
+  "Значения да/нет в таблицах возможностей есть только в html (span class compare-yes / compare-no); в txt — лишь подписи строк. Цитаты таких единиц — подписи строк, как_получено помечено как вывод из иконок.",
+  "Строка 'Output token limit' содержит 5 значений на 6 столбцов (у Gemini Live пусто); прочитано слева направо: Pro Image 32,768 / Flash Image 32,768 / Flash-Lite Image 4,096 / TTS 16,384. Значение 4,096 для Lite стоит перепроверить по другим источникам.",
+  "Дата 'Last updated 2026-09-24 UTC' совпадает с датой сбора — это дата обновления, не публикации.",
+  "Строки 'Generate images' и 'Edit images' идут отдельными строками в txt; цитата E-229-13 объединяет их (строки 743-744)."
+ ]
+}

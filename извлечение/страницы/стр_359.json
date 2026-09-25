@@ -1,0 +1,1156 @@
+{
+ "id": 359,
+ "url": "https://www.kaggle.com/competitions/banana/discussion/609783",
+ "заголовок": "Nano Banana Hackathon | Kaggle",
+ "дата_в_тексте": "в тексте только относительные «a year ago»; служебная строка снимка: «снято 2026-09-24»; html (title у меток времени): соревнование 2025-09-08, пост хоста 2025-09-29 16:23 UTC, поправка хоста 2025-09-30 15:33 UTC, комментарий с советом про seed 2025-10-02 18:58 UTC",
+ "официальность": {
+  "домен": "kaggle.com (принадлежит Google; «Kaggle uses cookies from Google»)",
+  "второй_признак": "шапка соревнования «Google DeepMind · Community Hackathon»; пост от «Competition Host» Amit Vadi написан от лица Google DeepMind («As we shared when Gemini 2.5 Flash Image (Nano Banana) was released… Google DeepMind’s approach»; «our commitment»). Работодатель автора на странице прямо не указан. Комментарии участников — не Google.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Тред обсуждения соревнования Kaggle «Nano Banana Hackathon» (хост Google DeepMind). Пост хоста: поздравление, процедура судейства (800+ работ, критерии), раздел «Key Developer Insights and Technical Themes» (консистентность персонажа «решена» Gemini 2.5 Flash Image; слияние 3–5 входов по ролям; итеративная правка с передачей предыдущего изображения, примеры «Make it sunset», «Move object closer»; технические домены; многомодельные пайплайны Gemini Flash → JSON → Nano Banana → ElevenLabs), список 50 проектов-победителей с описаниями от хоста (часть описывает приёмы: самокритика, analyze-generate-refine, маски/эскизы, bounding box, OCR+Search, Story Bible, гибрид с алгоритмами). Дальше ~50 комментариев участников, почти все — жалобы на судейство и выдачу призов; хост в комментарии признал неточности своего поста о процедуре. Последний комментарий участника даёт непроверенный совет: нумеровать референсы, «maintain exact facial features from image 1», держать seed постоянным (заявлено −80% дрейфа).",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)",
+  "Gemini Flash (текстовая, версия не указана) — в пайплайнах",
+  "Gemini 2.5 TTS/STT — в комментарии участника, не про картинки"
+ ],
+ "структура": [
+  "Служебная строка снимка",
+  "Меню Kaggle",
+  "Шапка соревнования (Google DeepMind)",
+  "Пост хоста: поздравление",
+  "How Was Judging Done?",
+  "Key Developer Insights and Technical Themes (5 пунктов)",
+  "And the Winners Are… (50 проектов + 2 спецприза)",
+  "Why So Many Submissions Were Strong",
+  "67 Comments (участники; 3 комментария хоста; 1 — Kaggle Staff)"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "https://www.kaggle.com/competitions/banana/discussion/609783 снято 2026-09-24 chrome dump-dom (строки 1-2)",
+   "итог": "ничего: служебная строка сохранения страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Nano Banana Hackathon | Kaggle menu … OK, Got it. (строки 3-33)",
+   "итог": "ничего: обвязка сайта (меню Kaggle, cookie-баннер)"
+  },
+  {
+   "n": 3,
+   "начало": "Google DeepMind · Community Hackathon · … Rules (строки 34-48)",
+   "итог": "ничего: шапка соревнования (хост Google DeepMind — использован для официальности; вкладки)"
+  },
+  {
+   "n": 4,
+   "начало": "Amit Vadi · Posted a year ago · Competition Host … Winners of the Nano Banana Hackathon! (строки 49-58)",
+   "итог": "ничего: автор, бейдж, голоса, заголовок поста"
+  },
+  {
+   "n": 5,
+   "начало": "First, let me say what an (строка 59)",
+   "итог": "ничего: поздравление, без содержания"
+  },
+  {
+   "n": 6,
+   "начало": "As we shared when Gemini 2.5 (строка 60)",
+   "итог": "E-359-1"
+  },
+  {
+   "n": 7,
+   "начало": "How Was Judging Done? The challenge (строки 61-62)",
+   "итог": "ничего: не про генерацию картинок (статистика конкурса: 800+ работ)"
+  },
+  {
+   "n": 8,
+   "начало": "Our judging process was thorough and (строка 63)",
+   "итог": "ничего: вводная о судействе"
+  },
+  {
+   "n": 9,
+   "начало": "1) Initial Screening: We first conducted (строка 64)",
+   "итог": "ничего: не про генерацию картинок (критерии отбора; позже исправлено хостом — см. противоречия)"
+  },
+  {
+   "n": 10,
+   "начало": "2) Deep Expert Review: The second (строка 65)",
+   "итог": "ничего: не про генерацию картинок (критерии судейства 40/30/20/10%)"
+  },
+  {
+   "n": 11,
+   "начало": "3) Final Deliberation: Finally, all top-scoring (строка 66)",
+   "итог": "ничего: не про генерацию картинок (процедура; упоминание consistency and fusion — повтор E-359-2, E-359-3)"
+  },
+  {
+   "n": 12,
+   "начало": "We are confident that this rigorous (строка 67)",
+   "итог": "ничего: маркетинг без содержания"
+  },
+  {
+   "n": 13,
+   "начало": "Key Developer Insights and Technical Themes (строка 68)",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 14,
+   "начало": "Overall, the judges were incredibly impressed (строка 69)",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 15,
+   "начало": "1) Consistency Solved: The majority of (строка 70)",
+   "итог": "E-359-2"
+  },
+  {
+   "n": 16,
+   "начало": "2) Complex Fusion Mastery: We saw (строка 71)",
+   "итог": "E-359-3"
+  },
+  {
+   "n": 17,
+   "начало": "3) Intelligent Refinement: The most innovative (строка 72)",
+   "итог": "E-359-4, E-359-5, E-359-6"
+  },
+  {
+   "n": 18,
+   "начало": "4) Beyond Art: A significant portion (строка 73)",
+   "итог": "E-359-7"
+  },
+  {
+   "n": 19,
+   "начало": "5) Prompt Orchestration: Many submissions used (строка 74)",
+   "итог": "E-359-8"
+  },
+  {
+   "n": 20,
+   "начало": "And the Winners Are… 🏆 Because (строки 75-76)",
+   "итог": "ничего: заголовок и вводная к списку 50 проектов"
+  },
+  {
+   "n": 21,
+   "начало": "The Banana Board: Your AI Electronics Tutor (by David Fernandez) — Transforms STEM education by converting (строки 77-79)",
+   "итог": "ничего: сценарий проекта без приёма (электроника, обучение)"
+  },
+  {
+   "n": 22,
+   "начало": "Surgical Visualisations (by Surgical Banana) — Addresses a critical medical need (строки 80-82)",
+   "итог": "ничего: сценарий проекта без приёма (превью хирургии на фото пациента)"
+  },
+  {
+   "n": 23,
+   "начало": "RealityFlux (by Auravana) — Streams a live camera feed (строки 83-85)",
+   "итог": "ничего: сценарий проекта без приёма (живая камера, AR)"
+  },
+  {
+   "n": 24,
+   "начало": "Post Compose (by Mert Gulsun) — Solves a universally relatable problem (строки 86-88)",
+   "итог": "E-359-9"
+  },
+  {
+   "n": 25,
+   "начало": "SingleShot3D (by G Welinder) — Generates perfectly consistent multi-view product (строки 89-91)",
+   "итог": "E-359-10"
+  },
+  {
+   "n": 26,
+   "начало": "Visual Artificer (by AndreasCo1) — Empowers users to transform their (строки 92-94)",
+   "итог": "ничего: сценарий проекта без приёма («spells» не раскрыты)"
+  },
+  {
+   "n": 27,
+   "начало": "ForgeOne (by Giulio Leone) — Implements an AI system that (строки 95-97)",
+   "итог": "E-359-11"
+  },
+  {
+   "n": 28,
+   "начало": "Life Machine (by sonderone) — Creates a personalized, visually evolving (строки 98-100)",
+   "итог": "ничего: сценарий проекта без приёма (смена стилей по сюжету)"
+  },
+  {
+   "n": 29,
+   "начало": "NanoStudio (by Powerhouse) — Provides a comprehensive, professionally polished (строки 101-103)",
+   "итог": "ничего: приём не раскрыт («advanced prompt engineering for identity preservation», batch processing — без деталей)"
+  },
+  {
+   "n": 30,
+   "начало": "FrameFusion.ai (by Lawrence) — Executes an ambitious and professionally (строки 104-106)",
+   "итог": "ничего: сценарий проекта (storyboard-to-video, «character drift» — упомянут, решение не раскрыто)"
+  },
+  {
+   "n": 31,
+   "начало": "The Daily Banana (by SummitSat) — Elevates the comic creator genre (строки 107-109)",
+   "итог": "E-359-12"
+  },
+  {
+   "n": 32,
+   "начало": "Sozofix, AI DIY assistant (by RairoRapha) — Combines sustainability with a voice-first (строки 110-112)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 33,
+   "начало": "Hephaestus (by One_Horizon) — Transforms 2D blueprints into immersive, (строки 113-115)",
+   "итог": "ничего: сценарий проекта без приёма (чертёж → 360°)"
+  },
+  {
+   "n": 34,
+   "начало": "Whisper of Guardian (by suhmieum) — Drives a deeply immersive and (строки 116-118)",
+   "итог": "ничего: сценарий проекта без приёма (RPG)"
+  },
+  {
+   "n": 35,
+   "начало": "AnimaBanana (by Anton Begehr) — Converts static character images into (строки 119-121)",
+   "итог": "E-359-13"
+  },
+  {
+   "n": 36,
+   "начало": "AI3D NanoDimensions (by yosun) — Explores AI generation with 3D (строки 122-124)",
+   "итог": "ничего: сценарий проекта без приёма (3D point clouds)"
+  },
+  {
+   "n": 37,
+   "начало": "Quicktoons (by Alex Blaze) — Integrates AI for character creation, (строки 125-127)",
+   "итог": "ничего: сценарий проекта без приёма (анимация в браузере)"
+  },
+  {
+   "n": 38,
+   "начало": "Looks Like Me (by Verbali) — Personalizes emotion communication tools for (строки 128-130)",
+   "итог": "ничего: сценарий проекта без приёма (своё лицо на эмоциональных карточках; повтор E-359-2)"
+  },
+  {
+   "n": 39,
+   "начало": "Visual Witness System (by fares mallouli) — Fuses fragmented visual evidence into (строки 131-133)",
+   "итог": "ничего: сценарий проекта (слияние фрагментов в сцену — повтор E-359-3)"
+  },
+  {
+   "n": 40,
+   "начало": "AI Font Generation (by Antoine Descamps) — Solves the problem of uneditable (строки 134-136)",
+   "итог": "E-359-14"
+  },
+  {
+   "n": 41,
+   "начало": "2D-to-3D CAD Converter (by yo_michi22) — Accurately extracts dimensions from 2D (строки 137-139)",
+   "итог": "ничего: сценарий проекта без приёма (чертёж → 3D)"
+  },
+  {
+   "n": 42,
+   "начало": "AIR (Architectural AI Render) (by kalmsong) — Features a beautifully designed and (строки 140-142)",
+   "итог": "E-359-15"
+  },
+  {
+   "n": 43,
+   "начало": "Easy Nano Banana (by Sangrak Choi) — Critiques and improves its own (строки 143-145)",
+   "итог": "E-359-16"
+  },
+  {
+   "n": 44,
+   "начало": "BananaForge (by Franz Haberfellner) — Provides a technically strong solution (строки 146-148)",
+   "итог": "ничего: повтор E-359-10 (фронт и тыл из одного изображения)"
+  },
+  {
+   "n": 45,
+   "начало": "Sketch Star (by R2theD) — Uses AI to analyze user-drawn (строки 149-151)",
+   "итог": "ничего: сценарий проекта без приёма (игра)"
+  },
+  {
+   "n": 46,
+   "начало": "LifeTrace Timeline (by Chris Tang) — Transforms raw location data into (строки 152-154)",
+   "итог": "ничего: сценарий проекта без приёма (геоданные → дневник)"
+  },
+  {
+   "n": 47,
+   "начало": "Nano Infograph (by codebird17) — Converts lengthy video transcripts into (строки 155-157)",
+   "итог": "ничего: сценарий проекта без приёма (транскрипт → инфографика)"
+  },
+  {
+   "n": 48,
+   "начало": "Scientific Illustration AI (by LogicLab) — Automates the creation of publication-ready (строки 158-160)",
+   "итог": "ничего: повтор приёма самокритики E-359-11/E-359-16 (self-critique loop for accuracy) — учтён в E-359-25"
+  },
+  {
+   "n": 49,
+   "начало": "AI-Powered Ad Creative Personalization (by ajinkya1372) — Automates the workflow of adapting (строки 161-163)",
+   "итог": "ничего: сценарий проекта без приёма (адаптация рекламы)"
+  },
+  {
+   "n": 50,
+   "начало": "Prompt Party Nano (by Ryan Gardner) — Fosters social creativity and teamwork (строки 164-166)",
+   "итог": "ничего: сценарий проекта без приёма (совместное редактирование)"
+  },
+  {
+   "n": 51,
+   "начало": "DiagramBot (by DiagramBot) — Saves technical writers hours by (строки 167-169)",
+   "итог": "ничего: сценарий проекта без приёма (диаграммы из блог-постов, «almost-ready»)"
+  },
+  {
+   "n": 52,
+   "начало": "Neighborly (by Ethan Torbenson) — Allows users to visualize architectural (строки 170-172)",
+   "итог": "E-359-17"
+  },
+  {
+   "n": 53,
+   "начало": "PlantAI (by Karthik V K) — Provides instant, multilingual diagnosis of (строки 173-175)",
+   "итог": "ничего: не про генерацию картинок (диагностика болезней растений)"
+  },
+  {
+   "n": 54,
+   "начало": "MagicSpin 360° (by Abu Bakar) — Turns your 2D images into (строки 176-178)",
+   "итог": "ничего: сценарий проекта без приёма (2D → 360°)"
+  },
+  {
+   "n": 55,
+   "начало": "AI Nail Art Studio (by JooHeeKim94) — Offers realistic virtual try-on experiences (строки 179-181)",
+   "итог": "ничего: сценарий проекта без приёма (виртуальная примерка)"
+  },
+  {
+   "n": 56,
+   "начало": "StoryMagic (by Nishant Shreshth) — Transforms a child's photo into (строки 182-184)",
+   "итог": "ничего: сценарий проекта (фото ребёнка → персонаж; повтор E-359-2)"
+  },
+  {
+   "n": 57,
+   "начало": "Edison Plus (by LouisChanhooPark) — Solves a real business problem (строки 185-187)",
+   "итог": "ничего: сценарий проекта без приёма (мокапы мерча)"
+  },
+  {
+   "n": 58,
+   "начало": "RoomRecast (by Romain) — Offers virtual staging and decluttering (строки 188-190)",
+   "итог": "E-359-18"
+  },
+  {
+   "n": 59,
+   "начало": "See Before You Eat (by Muhammad Saad) — Transforms restaurant menus into grounded, (строки 191-193)",
+   "итог": "E-359-19"
+  },
+  {
+   "n": 60,
+   "начало": "ArtLens (by Mark Greenfield) — Bridges art history and modern (строки 194-196)",
+   "итог": "ничего: сценарий проекта без приёма (картины → реальные сцены)"
+  },
+  {
+   "n": 61,
+   "начало": "The Crystal Within (by Shankar Gangwani) — Transforms emotions into personalized, abstract (строки 197-199)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 62,
+   "начало": "Comic Book AI (by Cheick Diakite) — Helps creators build consistent comic (строки 200-202)",
+   "итог": "E-359-20"
+  },
+  {
+   "n": 63,
+   "начало": "Time Travel Map (by Igor Diachuk #2) — Lets users explore any location (строки 203-205)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 64,
+   "начало": "Smart Garage (by Smart Garage Africa) — Spots car damage, estimates repair (строки 206-208)",
+   "итог": "ничего: сценарий проекта без приёма (ремонт авто, два языка)"
+  },
+  {
+   "n": 65,
+   "начало": "Maxie AI Product Image Automation (by Osita Miles) — Streamlines e-commerce product photography by (строки 209-211)",
+   "итог": "E-359-21"
+  },
+  {
+   "n": 66,
+   "начало": "PBR Texture Generator (by Nikhil Joson) — Generates complete sets of seamless, (строки 212-214)",
+   "итог": "E-359-22"
+  },
+  {
+   "n": 67,
+   "начало": "Nano Banana Monster Studio (by Dorien Van den Abbeele) — All-in-one AI photo editing suite (строки 215-217)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 68,
+   "начало": "Storybook (by OGAmanJaiswal) — Creates vibrant, visually consistent storybooks (строки 218-220)",
+   "итог": "ничего: сценарий проекта (консистентные книжки из текста или рефов; повтор E-359-2)"
+  },
+  {
+   "n": 69,
+   "начало": "BeastBlend (by Megan Hsu) — Generates whimsical animal hybrids and (строки 221-223)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 70,
+   "начало": "Echo - The AI Storyteller (by Tejaswini Ray) — Generates personalized, dynamic audio stories (строки 224-226)",
+   "итог": "ничего: сценарий проекта без приёма"
+  },
+  {
+   "n": 71,
+   "начало": "Special Technology Prize - Fal Winner … ElevenLabs Winner … (строки 227-232)",
+   "итог": "ничего: спецпризы, без содержания"
+  },
+  {
+   "n": 72,
+   "начало": "Why So Many Submissions Were Strong (строки 233-240)",
+   "итог": "ничего: не про генерацию картинок (что отличало победителей: подача и влияние)"
+  },
+  {
+   "n": 73,
+   "начало": "Congratulations again to all winners … (строки 241-242)",
+   "итог": "ничего: поздравление"
+  },
+  {
+   "n": 74,
+   "начало": "8 17 18 5 2 Please sign in … Hotness (строки 243-254)",
+   "итог": "ничего: обвязка сайта (реакции, вход, заголовок комментариев)"
+  },
+  {
+   "n": 75,
+   "начало": "Комментарий Dana Akerman: Congratulations to the winners I noticed (строки 255-267)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 76,
+   "начало": "Комментарий Umair Khan: let me tell u guys they (строки 268-276)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "Комментарий CHOI: I have a feeling they might (строки 277-284)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 78,
+   "начало": "Комментарий Marlon Kaulich: Congratulations, but I got some questions: (строки 285-299)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 79,
+   "начало": "Комментарий Ma Panha (Rezoluti0n): Yikes—this hackathon feels like a mess. (строки 300-306)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 80,
+   "начало": "Комментарий Sidharth Sapien: Damn, if it were a comparison (строки 307-314)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 81,
+   "начало": "Комментарий Amit Vadi: Thank you for your feedback. I (строки 315-325)",
+   "итог": "ничего: пост хоста — поправка к процедуре судейства (не про генерацию; учтено в противоречия_внутри)"
+  },
+  {
+   "n": 82,
+   "начало": "Комментарий Mrutyunjay Patil: Thank you for this amazing opportunity, (строки 326-334)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 83,
+   "начало": "Комментарий Addison Howard: Hey there - we (Kaggle) are (строки 335-342)",
+   "итог": "ничего: сотрудник Kaggle о выдаче призов, не про генерацию"
+  },
+  {
+   "n": 84,
+   "начало": "Комментарий Mrutyunjay Patil: Thanks for the update! (строки 343-349)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 85,
+   "начало": "Комментарий Taeho: You said submissions weren’t filtered out (строки 350-362)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 86,
+   "начало": "Комментарий ahmet bektes: Thanks for the extra explanation. Congrats (строки 363-369)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 87,
+   "начало": "Комментарий Ma Panha (Rezoluti0n): This hackathon turned into a hot (строки 370-379)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 88,
+   "начало": "Комментарий Sidharth Sapien: yes! for those of us affected (строки 380-387)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 89,
+   "начало": "Комментарий ahmet bektes: Congrats to all winners. However, I (строки 388-396)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 90,
+   "начало": "Комментарий Shaurya Gupta: Yes I agree since I put (строки 397-403)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 91,
+   "начало": "Комментарий ahmet bektes: I hear you but this is (строки 404-410)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 92,
+   "начало": "Комментарий David Fernandez: Feeling truly honored that my project, (строки 411-425)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 93,
+   "начало": "Комментарий Taeho: First of all, congratulations to all (строки 426-443)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 94,
+   "начало": "Комментарий Seif Abdelaziz: I agree. I made an iOS (строки 444-450)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 95,
+   "начало": "Комментарий SS: I too have same reservations … (строки 451-466)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 96,
+   "начало": "Комментарий Jesse Tudela: Same here unfortunately since mine was (строки 467-474)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 97,
+   "начало": "Комментарий SS: Hi @amitvadi , but the judgement (строки 475-498)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 98,
+   "начало": "Комментарий Bilel Aroua: Big congrats to the winners. We (строки 499-506)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 99,
+   "начало": "Комментарий Sahil Tanna: Absolutely thrilled and honored to see (строки 507-518)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 100,
+   "начало": "Комментарий kaushik079: This is truly a great app. (строки 519-525)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 101,
+   "начало": "Комментарий Sahil Tanna: thank you so muchh (строки 526-532)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 102,
+   "начало": "Комментарий tayyab: appreciate the kind words! glad you (строки 533-540)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 103,
+   "начало": "Комментарий Mrutyunjay Patil: Honored that my project NanoStudio is (строки 541-550)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 104,
+   "начало": "Комментарий Shay Cohen: Congratulations to all of the winners (строки 551-560)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 105,
+   "начало": "Комментарий iham lievin: Same here — I’m also one (строки 561-567)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 106,
+   "начало": "Комментарий Ryan Gardner: I am also a winner and (строки 568-578)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 107,
+   "начало": "Комментарий Amit Vadi: Hi all! We will have an (строки 579-586)",
+   "итог": "ничего: ответ хоста о сроках призов, не про генерацию"
+  },
+  {
+   "n": 108,
+   "начало": "Комментарий Naresh1511: Congratulations to all the winners. However, (строки 587-594)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 109,
+   "начало": "Комментарий Sidharth Sapien: Yeah this is an absolute scam, (строки 595-602)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 110,
+   "начало": "Комментарий Dorien Van den Abbeele: If you were a winner & (строки 603-610)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 111,
+   "начало": "Комментарий iham lievin: Hi everyone, I’d like to ask (строки 611-625)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 112,
+   "начало": "Комментарий Sahil Tanna: Hi, our project Hephaestus has received (строки 626-632)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 113,
+   "начало": "Комментарий iham lievin: Mine not yet , I haven’t (строки 633-641)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 114,
+   "начало": "Комментарий Ryan Gardner: My project recieved the GCP credits (строки 642-648)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 115,
+   "начало": "Комментарий Sahil Tanna: any updates on the ElevenLabs and (строки 649-656)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 116,
+   "начало": "Комментарий Dorien Van den Abbeele: GCP credits were received, but same (строки 657-664)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 117,
+   "начало": "Комментарий Auravana: anyone got the credit yet? (строки 665-671)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 118,
+   "начало": "Комментарий Romain: Nope, still waiting as well… (строки 672-678)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 119,
+   "начало": "Комментарий LogicLab: Nope, still waiting as well… (строки 679-685)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 120,
+   "начало": "Комментарий Mrutyunjay Patil: Anyone got credits yet? I'm still (строки 686-692)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 121,
+   "начало": "Комментарий iham lievin: I’m also one of the winners, (строки 693-699)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 122,
+   "начало": "Комментарий AliHmaou: Hi, I would absolutely love to (строки 700-712)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 123,
+   "начало": "Комментарий iham lievin: Hi everyone, First of all, congratulations (строки 713-730)",
+   "итог": "ничего: комментарий участника (слова не Google) — судейство, правила конкурса, призы, благодарности или вопросы; не про генерацию картинок"
+  },
+  {
+   "n": 124,
+   "начало": "Комментарий Mehmet Özel: The format definitely drove a lot (строки 731-737)",
+   "итог": "ничего: вопрос участника без содержания"
+  },
+  {
+   "n": 125,
+   "начало": "Комментарий Mehmet Özel: The technical challenges in this hackathon (строки 738-744)",
+   "итог": "ничего: вопрос участника без содержания"
+  },
+  {
+   "n": 126,
+   "начало": "Комментарий Mehmet Özel: For multi-image fusion, the most critical (строки 745-751)",
+   "итог": "[E-359-23 удалено: слова участника, не Google], [E-359-24 удалено: слова участника, не Google]"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-359-1",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image is Nano Banana; Google DeepMind states that multimodal capability and visual consistency are foundational to its approach to generative models.",
+   "цитата": "As we shared when Gemini 2.5 Flash Image (Nano Banana) was released, multimodal capability and visual consistency are foundational to Google DeepMind’s approach to generative models.",
+   "источник_цитаты": "txt",
+   "раздел": "Winners of the Nano Banana Hackathon! (пост хоста)",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-29",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Связка имён: Gemini 2.5 Flash Image = Nano Banana."
+  },
+  {
+   "код": "E-359-2",
+   "вид": "факт",
+   "утверждение_en": "According to the hackathon judges, most top submissions showed that character consistency is effectively solved with Gemini 2.5 Flash Image, enabling production-ready storytelling and e-commerce applications.",
+   "цитата": "1) Consistency Solved: The majority of top submissions proved that the Character Consistency problem, a long-standing hurdle in generative media, is effectively solved using the Gemini 2.5 Flash Image model, opening the door for production-ready storytelling and e-commerce applications.",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "2025-09-29",
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Сильное оценочное утверждение судей по итогам конкурса, не спецификация модели. Ср. противоречия_внутри (character drift)."
+  },
+  {
+   "код": "E-359-3",
+   "вид": "приём",
+   "утверждение_en": "Many projects successfully performed multi-image fusion by blending 3–5 distinct inputs (e.g., character photo, scene reference, style guide, product image) into one cohesive output.",
+   "цитата": "2) Complex Fusion Mastery: We saw numerous projects successfully execute complex Multi-Image Fusion by blending 3–5 distinct inputs (e.g., character photo, scene reference, style guide, and product image) into a single, cohesive output.",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Роли входов: персонаж, сцена, стайлгайд, товар. 3–5 — наблюдение по проектам, а не лимит модели."
+  },
+  {
+   "код": "E-359-4",
+   "вид": "приём",
+   "утверждение_en": "The most innovative projects used iterative editing: the previously generated image is passed as a key input for the next generation, enabling conversational editing that preserves the original image's 'DNA'.",
+   "цитата": "3) Intelligent Refinement: The most innovative projects leveraged the model's capacity for Iterative Editing, using the previous generated image as a critical input for the next generation. This technique allowed for sophisticated conversational editing (e.g., \"Make it sunset,\" \"Move object closer\") that preserves original image DNA.",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Механизм итерации: вход следующего шага = предыдущий выход."
+  },
+  {
+   "код": "E-359-5",
+   "вид": "пример_промпта",
+   "утверждение_en": "Iterative conversational edit example: 'Make it sunset'.",
+   "цитата": "\"Make it sunset,\"",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Промпт-правка: «Make it sunset». Структура: make it + новое состояние сцены (время суток/свет); объект — вся предыдущая картинка («it»). Запятая внутри кавычек — оригинал."
+  },
+  {
+   "код": "E-359-6",
+   "вид": "пример_промпта",
+   "утверждение_en": "Iterative conversational edit example: 'Move object closer'.",
+   "цитата": "\"Move object closer\"",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Промпт-правка: «Move object closer». Структура: глагол перемещения + объект + направление; композиционная правка без пересказа сцены. «object» — обобщение в тексте Google, в реальном промпте называют конкретный предмет (вывод)."
+  },
+  {
+   "код": "E-359-7",
+   "вид": "факт",
+   "утверждение_en": "A significant portion of winning projects applied the model's multimodal capabilities to technical domains such as scientific illustration, CAD conversion and medical visualization.",
+   "цитата": "4) Beyond Art: A significant portion of winning projects applied the multimodal capabilities to technical domains, such as Scientific Illustration, CAD Conversion, and Medical Visualization, proving the utility of the AI model far beyond basic image generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "продукт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-359-8",
+   "вид": "приём",
+   "утверждение_en": "Many submissions used multi-model pipelines, e.g., Gemini Flash to produce structured JSON scripts, then Nano Banana for image creation, then ElevenLabs for voice-over.",
+   "цитата": "5) Prompt Orchestration: Many submissions used sophisticated multi-model pipelines (e.g., Gemini Flash for structured JSON scripts, then Nano Banana for image creation, and ElevenLabs for voice-over), showcasing a mastery of AI orchestration.",
+   "источник_цитаты": "txt",
+   "раздел": "Key Developer Insights and Technical Themes",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)",
+    "Gemini Flash (текстовая, версия не указана)",
+    "ElevenLabs (не Google)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "api_код"
+   ],
+   "заметка": "Термин страницы: Prompt Orchestration. Текстовая модель готовит структурированный JSON-сценарий, который затем кормит генерацию картинок."
+  },
+  {
+   "код": "E-359-9",
+   "вид": "факт",
+   "утверждение_en": "A winning project fused individual shots into photorealistic group photos, matching lighting, perspective and shadows.",
+   "цитата": "Solves a universally relatable problem by seamlessly fusing individual shots into photorealistic group photos, precisely matching lighting, perspective, and shadows, making group photography effortless.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — Post Compose",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-10",
+   "вид": "факт",
+   "утверждение_en": "A winning project generated consistent multi-view product images from a single input image for 2D-to-3D pipelines.",
+   "цитата": "Generates perfectly consistent multi-view product images from a single input, streamlining 2D-to-3D pipelines through technical innovation for 3D asset creation.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — SingleShot3D",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. То же — BananaForge (фронт и тыл из одного изображения)."
+  },
+  {
+   "код": "E-359-11",
+   "вид": "приём",
+   "утверждение_en": "A winning project had the AI critique and refine its own creative output against professional scorecards (automated quality control).",
+   "цитата": "Implements an AI system that critiques and refines its own creative output against professional scorecards, setting a new standard for automated, quality-controlled creative workflows.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — ForgeOne",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-12",
+   "вид": "приём",
+   "утверждение_en": "A winning comic-creator project used an 'analyze, generate, refine' pipeline that processes reference images to ground the story plan before generating visuals, producing highly coherent outputs.",
+   "цитата": "Elevates the comic creator genre with a sophisticated \"analyze, generate, refine\" pipeline, intelligently processing reference images to ground the story plan before generating visuals, resulting in highly coherent outputs.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — The Daily Banana",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. Порядок: сначала анализ референсов и план, потом генерация, потом доработка."
+  },
+  {
+   "код": "E-359-13",
+   "вид": "факт",
+   "утверждение_en": "A winning project converted static character images into multi-frame animation sequences with high style consistency and precise pose editing.",
+   "цитата": "Converts static character images into fluid, multi-frame animation sequences with high style consistency and precise pose editing for accessible animation creation in a sophisticated AI Character Animation Studio.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — AnimaBanana",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-14",
+   "вид": "ограничение",
+   "утверждение_en": "Text in AI-generated images is not editable (it is part of the pixels); one winning project addressed this by generating custom, usable fonts from text descriptions.",
+   "цитата": "Solves the problem of uneditable text in AI images by creating custom, usable fonts from simple text descriptions.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — AI Font Generation",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. «Проблема нередактируемого текста» названа хостом как известное ограничение."
+  },
+  {
+   "код": "E-359-15",
+   "вид": "приём",
+   "утверждение_en": "A winning architectural renderer gave precise visual control through sketches and masks for iterative design in a conversational interface.",
+   "цитата": "Features a beautifully designed and highly functional conversational renderer for architects, including precise visual control via sketches and masks for iterative design.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — AIR (Architectural AI Render)",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. Как именно передаются маски/эскизы — не раскрыто."
+  },
+  {
+   "код": "E-359-16",
+   "вид": "приём",
+   "утверждение_en": "A winning project critiqued and improved its own prompts before generating images, a self-correction loop that made outputs more reliable and higher quality.",
+   "цитата": "Critiques and improves its own prompts to generate images, leading to more reliable and higher-quality outputs through a self-correction loop.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — Easy Nano Banana",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-17",
+   "вид": "приём",
+   "утверждение_en": "A winning civic-tech project visualized architectural changes on real street views using bounding boxes ('Bounding Box Magic').",
+   "цитата": "Allows users to visualize architectural changes with \"Bounding Box Magic\" on real street views in a smart civic tech tool for urban planning.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — Neighborly",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. Механизм «Bounding Box Magic» не раскрыт; по названию — локализация правки рамкой (вывод)."
+  },
+  {
+   "код": "E-359-18",
+   "вид": "факт",
+   "утверждение_en": "A winning project offered virtual staging and decluttering of rooms with architectural preservation and precise in-painting.",
+   "цитата": "Offers virtual staging and decluttering with guaranteed architectural preservation and precise in-painting capabilities for realtors and designers.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — RoomRecast",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. «Guaranteed» — формулировка описания, не гарантия модели."
+  },
+  {
+   "код": "E-359-19",
+   "вид": "приём",
+   "утверждение_en": "A winning project turned restaurant menus into grounded photorealistic dish images by combining OCR with Google Search.",
+   "цитата": "Transforms restaurant menus into grounded, photorealistic dish visuals using OCR and Google Search in a fantastic idea, enhancing dining decisions and menu accessibility.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — See Before You Eat",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-20",
+   "вид": "приём",
+   "утверждение_en": "A winning project kept comic pages consistent using a comprehensive 'Story Bible' system.",
+   "цитата": "Helps creators build consistent comic pages from a comprehensive \"Story Bible\" system, demonstrating a professional product vision and accessible creation.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — Comic Book AI",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "мультиход"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. Содержимое «Story Bible» не раскрыто (по смыслу — единый справочник персонажей/мира)."
+  },
+  {
+   "код": "E-359-21",
+   "вид": "факт",
+   "утверждение_en": "A winning e-commerce project transformed a single product photo into every color, size and style variant automatically.",
+   "цитата": "Streamlines e-commerce product photography by transforming a single product photo into every color, size, and style variant automatically, instantly, and at scale.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — Maxie AI Product Image Automation",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "рефы",
+    "редактирование"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google."
+  },
+  {
+   "код": "E-359-22",
+   "вид": "приём",
+   "утверждение_en": "A winning project generated seamless, tileable PBR texture maps using a hybrid AI/algorithmic approach for precision.",
+   "цитата": "Generates complete sets of seamless, tileable PBR texture maps with a hybrid AI/algorithmic approach for precision and creativity in a highly technical tool for 3D artists.",
+   "источник_цитаты": "txt",
+   "раздел": "And the Winners Are… (описания проектов от хоста) — PBR Texture Generator",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Описание проекта участника, написанное хостом (Google DeepMind); приём — участника, не рекомендация Google. Для точных технических свойств (бесшовность) — дополнение алгоритмами."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-359-25",
+   "вид": "приём",
+   "утверждение_en": "Loops recur across the judges' insights and winning projects: iterative editing with the previous output as input, self-critique against scorecards, self-correcting prompts, an analyze-generate-refine pipeline, and a self-critique loop for scientific accuracy.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "выведено из E-359-4, E-359-11, E-359-12, E-359-16 и описания Scientific Illustration AI (строка 160)",
+   "дата_единицы": null,
+   "тема": [
+    "мультиход",
+    "промптинг"
+   ],
+   "заметка": "Приёмы участников в изложении хоста; Google их не формулирует как правило."
+  },
+  {
+   "код": "E-359-26",
+   "вид": "объяснение",
+   "утверждение_en": "Successful fusion treats reference images as role-typed inputs (character, scene, style guide, product); the participant tip extends this by numbering references and stating per-image constraints, but that extension is not from Google.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Gemini 2.5 Flash Image / Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-359-3, E-359-23",
+   "дата_единицы": null,
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Разделять: роли входов — от хоста; нумерация и ограничения по номеру — от участника."
+  }
+ ],
+ "противоречия_внутри": [
+  "Пост хоста (строка 64) описывает первичный отбор как обязательное наличие живого демо-URL «not just a GitHub link or notebook», а комментарий хоста (строки 322-324) признаёт «inaccuracies»: работы не отсеивались за ссылку на GitHub, видео сверх 2 минут не штрафовались. Для генерации картинок не важно, но снижает точность поста как источника.",
+  "Хост утверждает, что консистентность персонажа «effectively solved» (E-359-2), но в том же посте проект FrameFusion описан как решающий «critical \"character drift\" problem» (для видео), а участник (E-359-24) советует меры против дрейфа персонажа при итеративной правке — дрейф как проблема упоминается на странице и после заявления «solved»."
+ ],
+ "не_сказано": [
+  "Хост нигде не говорит о параметре seed — совет держать seed постоянным есть только у участника (E-359-24).",
+  "Тексты промптов победителей не приведены; кроме «Make it sunset» и «Move object closer» примеров нет.",
+  "Лимит числа входных изображений модели не назван; «3–5» — наблюдение по проектам.",
+  "Как технически передавать предыдущее изображение (в том же диалоге или новым запросом) — не раскрыто.",
+  "SynthID, соотношения сторон, разрешение, цены — не упомянуты."
+ ],
+ "сомнения": [
+  "Смешанный источник: официальный пост хоста (Google DeepMind) + комментарии участников; единицы E-359-9…E-359-22 — описания сторонних проектов, написанные хостом; E-359-23, E-359-24 — слова участника, непроверенные.",
+  "Хост сам признал неточности в своём посте (по судейству) — это снижает доверие к посту в целом, хотя раздел Key Developer Insights им не исправлялся.",
+  "Работодатель Amit Vadi на странице не указан; вердикт «подтверждена» основан на бейдже Competition Host соревнования Google DeepMind и тексте от лица Google DeepMind.",
+  "Цифра «80%» снижения дрейфа (E-359-24) — без методики и источника."
+ ],
+ "удалено_как_неофициал": [
+  "E-359-23",
+  "E-359-24"
+ ]
+}

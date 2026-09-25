@@ -1,0 +1,629 @@
+{
+ "id": 106,
+ "url": "https://codelabs.developers.google.com/gemini-interactions-java-sdk",
+ "заголовок": "Build Multimodal Apps and Custom Managed Agents with the Gemini Interactions Java SDK  |  Google Codelabs",
+ "дата_в_тексте": "в тексте нет; в html last-updated 2026-06-05T14:04:11Z (google-codelab-about)",
+ "официальность": {
+  "домен": "codelabs.developers.google.com",
+  "второй_признак": "Строка «…For details, see the Google Developers Site Policies» (стр. 165 .txt); автор в html — Guillaume Laforge (принадлежность к Google на странице не указана); SDK — «custom», из его личного пространства io.github.glaforge.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Java-кодлаб (52 минуты, автор Guillaume Laforge, обновлён 2026-06-05) по Gemini Interactions API через кастомный Java SDK: шаговая архитектура ответа (ThoughtStep, ModelOutputStep…), управляемый TTS, музыка Lyria 3, картинки Nano Banana Pro (раздел 6), Deep Research с совместным планированием, кастомные агенты в облачной песочнице. Про картинки: Gemini 3 Pro Image = Nano Banana Pro; модальность IMAGE → инфографика/диаграммы/скетчноуты из текста; пример — скетчноут-конспект статьи (gemini-3-pro-image-preview, шаблон «hand-drawn and hand-written sketchnote style summary infographic, with a pure white background, about the following information: %s»), извлечение байтов ImageContent из ModelOutputStep и сохранение в PNG. Повторный акцент кодлаба — фильтрация шагов по типу (ModelOutputStep) и явный запрос модальности.",
+ "модели_на_странице": [
+  "gemini-3-pro-image (Nano Banana Pro) — «Gemini 3 Pro Image», id gemini-3-pro-image-preview",
+  "нерелевантные: gemini-3.5-flash, gemini-3.1-flash-tts-preview, models/lyria-3-clip-preview, deep-research-preview-04-2026, antigravity-preview-05-2026"
+ ],
+ "структура": [
+  "1. Welcome (Interactions API, Managed Agents, What you'll learn/need)",
+  "2. Setup: Project & API Key",
+  "3. Hello World: Step Architecture",
+  "4. Steerable Audio: TTS",
+  "5. Music Generation with Lyria 3",
+  "6. Visualizing with Sketchnotes (Nano Banana Pro)",
+  "7. Steering Agents: Collaborative Deep Research",
+  "8. Custom Agents & Cloud Sandboxes",
+  "9. Congratulations!"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Skip to main content / English Deutsch (стр. 1-25)",
+   "итог": "ничего: обвязка сайта (меню языков, Sign in; строки заголовка вкладки в .txt нет)"
+  },
+  {
+   "n": 2,
+   "начало": "Build Multimodal Apps and Custom Managed Agents (стр. 26)",
+   "итог": "ничего: заголовок кодлаба"
+  },
+  {
+   "n": 3,
+   "начало": "1. Welcome, Gemini Developer! / In this codelab, you'll learn",
+   "итог": "E-106-1"
+  },
+  {
+   "n": 4,
+   "начало": "What is the Gemini Interactions API?",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 5,
+   "начало": "Traditional LLM APIs are stateless and",
+   "итог": "ничего: не про генерацию картинок (мотивация stateful API)"
+  },
+  {
+   "n": 6,
+   "начало": "The Gemini Interactions API shifts this",
+   "итог": "ничего: не про генерацию картинок (серверное состояние, шаги; контекст для E-106-2)"
+  },
+  {
+   "n": 7,
+   "начало": "ThoughtStep: The model's internal reasoning process.",
+   "итог": "ничего: не про картинки (учтено в E-106-3)"
+  },
+  {
+   "n": 8,
+   "начало": "ModelOutputStep: Text, audio, or image",
+   "итог": "E-106-2, E-106-12"
+  },
+  {
+   "n": 9,
+   "начало": "ToolCallStep & ToolResultStep: System or",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 10,
+   "начало": "UserInteractionStep: Points where the system",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 11,
+   "начало": "What are Managed Agents?",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 12,
+   "начало": "Orchestrating autonomous agents—handling loops, retry",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "Managed Agents are a platform-level solution",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 14,
+   "начало": "Built-in Agents: Ready-to-use specialized agents,",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 15,
+   "начало": "Custom Managed Agents: Autonomous entities that",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 16,
+   "начало": "By using the Gemini Interactions Java",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 17,
+   "начало": "What you'll learn",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 18,
+   "начало": "How to navigate the new polymorphic",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 19,
+   "начало": "How to stream expressive TTS audio",
+   "итог": "ничего: не про генерацию картинок (TTS)"
+  },
+  {
+   "n": 20,
+   "начало": "How to generate music (MP3 +",
+   "итог": "ничего: не про генерацию картинок (Lyria)"
+  },
+  {
+   "n": 21,
+   "начало": "How to generate visual sketchnotes with",
+   "итог": "ничего: повтор единиц E-106-4, E-106-5 (раскрыто в разделе 6)"
+  },
+  {
+   "n": 22,
+   "начало": "How to steer the Deep Research",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 23,
+   "начало": "How to provision a custom agent",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 24,
+   "начало": "What you'll need",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 25,
+   "начало": "Java 21 or higher.",
+   "итог": "ничего: не про генерацию картинок (среда)"
+  },
+  {
+   "n": 26,
+   "начало": "Apache Maven.",
+   "итог": "ничего: не про генерацию картинок (среда)"
+  },
+  {
+   "n": 27,
+   "начало": "A text editor or IDE (IntelliJ",
+   "итог": "ничего: не про генерацию картинок (среда)"
+  },
+  {
+   "n": 28,
+   "начало": "A Gemini API Key (from Google",
+   "итог": "ничего: общее требование кодлаба"
+  },
+  {
+   "n": 29,
+   "начало": "2. Setup: Project & API Key / Create Maven Project (стр. 54-65)",
+   "итог": "ничего: не про генерацию картинок (создание Maven-проекта)"
+  },
+  {
+   "n": 30,
+   "начало": "Open your pom.xml file and configure (стр. 66-71)",
+   "итог": "ничего: не про генерацию картинок (версия Java)"
+  },
+  {
+   "n": 31,
+   "начало": "Add the SDK dependency inside the (стр. 72-77)",
+   "итог": "E-106-1 (деталь: io.github.glaforge / gemini-interactions-api-sdk / 0.10.1)"
+  },
+  {
+   "n": 32,
+   "начало": "Configure API Key / Get a Gemini API key (стр. 78-84)",
+   "итог": "ничего: не про генерацию картинок (переменная GEMINI_API_KEY)"
+  },
+  {
+   "n": 33,
+   "начало": "3. Hello World: Navigating the Step (стр. 85-87)",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 34,
+   "начало": "Create HelloInteractions.java / packagecom.example; (стр. 88-90)",
+   "итог": "ничего: код без промпта про картинки (gemini-3.5-flash, текст)"
+  },
+  {
+   "n": 35,
+   "начало": "Run the Code / Compile and run (стр. 91-93)",
+   "итог": "ничего: команда запуска"
+  },
+  {
+   "n": 36,
+   "начало": "Key Concept: The response.steps() list",
+   "итог": "E-106-3, E-106-12"
+  },
+  {
+   "n": 37,
+   "начало": "4. Steerable Audio: Streaming Expressive TTS (стр. 95-97)",
+   "итог": "ничего: не про генерацию картинок (TTS Gemini 3.1 Flash)"
+  },
+  {
+   "n": 38,
+   "начало": "Create StreamingDJ.java / packagecom.example; (стр. 98-100)",
+   "итог": "ничего: код TTS (промпт аудио-профиля), не про картинки"
+  },
+  {
+   "n": 39,
+   "начало": "Run the Code / Listen to the Output (стр. 101-105)",
+   "итог": "ничего: команда и ссылка на аудио"
+  },
+  {
+   "n": 40,
+   "начало": "Key Concept: Setting .stream(true) allows",
+   "итог": "ничего: не про генерацию картинок (стриминг аудио)"
+  },
+  {
+   "n": 41,
+   "начало": "5. Music Generation with Lyria 3 (стр. 107-108)",
+   "итог": "ничего: не про генерацию картинок (Lyria)"
+  },
+  {
+   "n": 42,
+   "начало": "Create MusicGenerator.java / packagecom.example; (стр. 109-111)",
+   "итог": "ничего: код Lyria, не про картинки"
+  },
+  {
+   "n": 43,
+   "начало": "Run the Code / Listen to the Generated Song (стр. 112-116)",
+   "итог": "ничего: команда и ссылка на MP3"
+  },
+  {
+   "n": 44,
+   "начало": "Key Concept: The Interactions API returns native MP3",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 45,
+   "начало": "6. Visualizing with Sketchnotes (Nano Banana Pro) / Gemini 3 Pro Image (also known",
+   "итог": "E-106-4, E-106-5"
+  },
+  {
+   "n": 46,
+   "начало": "In this step, you will generate",
+   "итог": "E-106-6, E-106-11"
+  },
+  {
+   "n": 47,
+   "начало": "Create ImageGenerator.java / Create the file",
+   "итог": "ничего: инструкция по созданию файла"
+  },
+  {
+   "n": 48,
+   "начало": "packagecom.example;…publicclassImageGenerator (стр. 123)",
+   "итог": "E-106-7, E-106-8, E-106-9, E-106-5, E-106-10, E-106-11, E-106-12"
+  },
+  {
+   "n": 49,
+   "начало": "Run the Code / mvn compile exec:java -Dexec.mainClass=com.example.ImageGenerator",
+   "итог": "ничего: команда запуска"
+  },
+  {
+   "n": 50,
+   "начало": "Generated Sketchnote / Here is the generated",
+   "итог": "ничего: картинка результата (в html alt «Generated Sketchnote»), описания нет"
+  },
+  {
+   "n": 51,
+   "начало": "Key Concept: Just like with audio,",
+   "итог": "E-106-10"
+  },
+  {
+   "n": 52,
+   "начало": "7. Steering Agents: Collaborative Deep Research / Deep Research is a powerful",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 53,
+   "начало": "You will implement a multi-turn conversation",
+   "итог": "ничего: не про генерацию картинок (previousInteractionId для агента)"
+  },
+  {
+   "n": 54,
+   "начало": "Create CollaborativeResearch.java / packagecom.example; (стр. 132-134)",
+   "итог": "ничего: код агента, не про картинки"
+  },
+  {
+   "n": 55,
+   "начало": "Run the Code / Generated Report Output (стр. 135-139)",
+   "итог": "ничего: команда и ссылка на отчёт"
+  },
+  {
+   "n": 56,
+   "начало": "Key Concept: Setting collaborative_planning=true inside",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 57,
+   "начало": "8. Custom Agents & Cloud Sandboxes / For complex developer tasks",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 58,
+   "начало": "In this step, you will provision",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 59,
+   "начало": "Create GitHubAnalyzer.java / packagecom.example; (стр. 144-146)",
+   "итог": "ничего: код агента, не про картинки"
+  },
+  {
+   "n": 60,
+   "начало": "Run the Code / Generated Analysis Output (стр. 147-151)",
+   "итог": "ничего: команда и ссылка"
+  },
+  {
+   "n": 61,
+   "начало": "Important Note: Custom Agent resources should",
+   "итог": "ничего: не про генерацию картинок (очистка ресурсов агента)"
+  },
+  {
+   "n": 62,
+   "начало": "9. Congratulations! / You have completed the codelab",
+   "итог": "ничего: итог"
+  },
+  {
+   "n": 63,
+   "начало": "What you've accomplished: / Navigated the Step Architecture",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 64,
+   "начало": "Streamed Expressive TTS: Used Director's Notes",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 65,
+   "начало": "Generated Music: Generated MP3 tracks and",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 66,
+   "начало": "Generated Sketchnotes: Created visual summaries using",
+   "итог": "ничего: повтор единицы E-106-4"
+  },
+  {
+   "n": 67,
+   "начало": "Steered Deep Research: Utilized Collaborative Planning",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 68,
+   "начало": "Provisioned Custom Agents: Created sandboxed environments",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 69,
+   "начало": "Learn More: / Explore the SDK source (стр. 162-164)",
+   "итог": "ничего: ссылки (GitHub SDK, блог glaforge.dev)"
+  },
+  {
+   "n": 70,
+   "начало": "Except as otherwise noted, the content",
+   "итог": "ничего: обвязка сайта (лицензия; «Google Developers Site Policies» — признак официальности)"
+  },
+  {
+   "n": 71,
+   "начало": "Connect / Blog / Facebook (стр. 166-216)",
+   "итог": "ничего: обвязка сайта (подвал Google Developers, меню языков)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-106-1",
+   "вид": "факт",
+   "утверждение_en": "The codelab uses a custom Java SDK for the Gemini Interactions API (Maven artifact io.github.glaforge:gemini-interactions-api-sdk, version 0.10.1), not the Google Gen AI SDK.",
+   "цитата": "In this codelab, you'll learn how to build next-generation AI applications in Java using the custom Gemini Interactions SDK.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Welcome, Gemini Developer!",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо; артефакт и версия — из раздела 2 (<groupId>io.github.glaforge</groupId>, <version>0.10.1</version>)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Важно для переносимости кода: классы ModelInteractionParams, Interaction.Modality, Step.ModelOutputStep, Content.ImageContent — из этого SDK."
+  },
+  {
+   "код": "E-106-2",
+   "вид": "факт",
+   "утверждение_en": "In the Interactions API, generated text, audio or image content is returned inside a ModelOutputStep of the interaction's step timeline.",
+   "цитата": "ModelOutputStep: Text, audio, or image content generated by the model.",
+   "источник_цитаты": "txt",
+   "раздел": "1. Welcome, Gemini Developer! / What is the Gemini Interactions API?",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Картинка приходит не отдельным полем ответа, а как контент шага ModelOutputStep."
+  },
+  {
+   "код": "E-106-3",
+   "вид": "правило",
+   "утверждение_en": "Because models can reason, a ThoughtStep may appear first in response.steps(); it is best practice to filter the steps to locate the ModelOutputStep.",
+   "цитата": "Because models can perform reasoning, a ThoughtStep might appear first. It is best practice to filter the steps to locate the ModelOutputStep containing the generated TextContent.",
+   "источник_цитаты": "txt",
+   "раздел": "3. Hello World: Navigating the Step Architecture / Key Concept",
+   "модели": "не указано (пример на gemini-3.5-flash)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "thinking"
+   ],
+   "заметка": "Сказано для текстового вывода; в разделе 6 тот же приём (фильтр ModelOutputStep) применён к картинке — см. E-106-10, E-106-12."
+  },
+  {
+   "код": "E-106-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image is also known as Nano Banana Pro and can generate images.",
+   "цитата": "Gemini 3 Pro Image (also known as Nano Banana Pro) can generate images.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-106-5",
+   "вид": "инструкция",
+   "утверждение_en": "By requesting the IMAGE response modality, Nano Banana Pro can generate infographics, diagrams or sketchnotes from text input.",
+   "цитата": "By requesting the IMAGE modality, you can generate infographics, diagrams, or sketchnotes based on text input.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо; в коде .responseModalities(Interaction.Modality.IMAGE)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "текст_в_кадре"
+   ],
+   "заметка": "В коде запрошена только модальность IMAGE (без TEXT) — ответ ожидается только картинкой."
+  },
+  {
+   "код": "E-106-6",
+   "вид": "приём",
+   "утверждение_en": "A text article can be turned into a sketchnote-style visual summary with Nano Banana Pro and saved as a PNG file.",
+   "цитата": "In this step, you will generate a sketchnote summary of an article about Managed Agents and save it as a PNG file.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "текст_в_кадре",
+    "стиль"
+   ],
+   "заметка": "Сценарий «текст → визуальный конспект»: модель сама решает, что вынести в картинку."
+  },
+  {
+   "код": "E-106-7",
+   "вид": "факт",
+   "утверждение_en": "The sketchnote example calls the model ID \"gemini-3-pro-image-preview\".",
+   "цитата": ".model(\"gemini-3-pro-image-preview\")",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro) / ImageGenerator.java",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Id с суффиксом -preview."
+  },
+  {
+   "код": "E-106-8",
+   "вид": "факт",
+   "утверждение_en": "The source content inserted into the sketchnote prompt is a short plain-text summary (five sentences) about Managed Agents, passed verbatim.",
+   "цитата": "Managed Agents in the Gemini API allow developers to run autonomous agents that reason, plan, use tools, and execute code inside isolated cloud sandboxes. The Gemini API handles the infrastructure (containers, network, runtime). It is powered by the Antigravity agent running on Gemini 3.5 Flash. The Java Interactions SDK supports these capabilities, utilizing a Step-based architecture to model the execution timeline.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro) / ImageGenerator.java (String articleSummary)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Это содержимое подставляется вместо %s в шаблон E-106-9. Текст плотный, фактический, без указаний по раскладке — раскладку и выбор ключевых пунктов модель делает сама."
+  },
+  {
+   "код": "E-106-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Sketchnote prompt template: \"Create a hand-drawn and hand-written sketchnote style summary infographic, with a pure white background, about the following information: %s\", where %s is the article text.",
+   "цитата": "Create a hand-drawn and hand-written sketchnote style summary infographic, with a pure white background, about the following information: %s",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro) / ImageGenerator.java",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": "В html промпт разбит на строки Java text block (\"\"\" … \"\"\") с пустой строкой перед %s; в txt — одной строкой (цитата — точная подстрока txt). Структура: глагол «Create» → стиль исполнения («hand-drawn and hand-written» — и рисунок, и надписи от руки) → жанр («sketchnote style summary infographic») → ограничение фона («with a pure white background») → связка «about the following information:» → сырой текст-источник. Работу делают: двойное указание рукописности (рисунок + текст), жанр-конспект и жёсткий чистый фон."
+  },
+  {
+   "код": "E-106-10",
+   "вид": "факт",
+   "утверждение_en": "The generated image is extracted by filtering the ModelOutputStep content for Content.ImageContent; the data is returned as raw bytes that can be saved directly as a .png file.",
+   "цитата": "Just like with audio, we extract the image bytes from the polymorphic ModelOutputStep by filtering for Content.ImageContent. The data is returned as raw bytes, which can be saved directly as a .png file.",
+   "источник_цитаты": "txt",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro) / Key Concept",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Без base64-декодирования в этом SDK: image.data() → Files.write(\"sketchnote.png\")."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-106-11",
+   "вид": "приём",
+   "утверждение_en": "The sketchnote prompt is built as a fixed style instruction (medium + genre + background constraint) followed by \"about the following information:\" and the raw source text, so the same template can visualize any text.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "6. Visualizing with Sketchnotes (Nano Banana Pro)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-106-6, E-106-8, E-106-9",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг",
+    "текст_в_кадре"
+   ],
+   "заметка": "Разделение «инструкция стиля / содержимое» видно из String.format с %s; правилом страница это не формулирует."
+  },
+  {
+   "код": "E-106-12",
+   "вид": "факт",
+   "утверждение_en": "Across the codelab's generation examples, the output modality is requested explicitly (IMAGE for Nano Banana Pro; AUDIO for TTS; AUDIO+TEXT for Lyria) and outputs are read by filtering ModelOutputStep content by type; for images only IMAGE is requested and ImageContent is extracted.",
+   "цитата": "",
+   "источник_цитаты": "—",
+   "раздел": "Разделы 4-6",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro) — в коде id gemini-3-pro-image-preview"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-106-2, E-106-3, E-106-5, E-106-10",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Для картинки TEXT-модальность не запрашивается — текстовых пояснений модели в ответе не ожидается."
+  }
+ ],
+ "противоречия_внутри": [],
+ "не_сказано": [
+  "Нет параметров изображения (aspect ratio, разрешение) — используются значения по умолчанию.",
+  "Нет объяснения, почему выбрана Pro-модель, и нет сравнения с Flash Image.",
+  "Не сказано, как получить текстовые пояснения к картинке или сделать правку в мультиходе.",
+  "Нет цен, лимитов, водяного знака."
+ ],
+ "сомнения": [
+  "SDK — неофициальный («custom»), io.github.glaforge; классы и вызовы не переносятся на Google Gen AI SDK один к одному.",
+  "Принадлежность автора (Guillaume Laforge) к Google на странице не указана; официальность — по строке Google Developers Site Policies.",
+  "Даты в тексте нет; дата только из атрибута html."
+ ]
+}

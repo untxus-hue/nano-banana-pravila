@@ -1,0 +1,753 @@
+{
+ "id": 7,
+ "url": "https://ai.google.dev/gemini-api/docs/openai",
+ "заголовок": "OpenAI compatibility",
+ "дата_в_тексте": "Last updated 2026-09-02 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал 'Google Developers Site Policies' (CC BY 4.0 / Apache 2.0), 'Last updated 2026-09-02 UTC.'; текст от лица Google ('we recommend', 'while we extend feature support')",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Руководство по вызову Gemini API через библиотеки OpenAI (Python, JS) и REST: смена api_key/base_url/model; разделы Thinking, Streaming, Function calling, Image understanding, Generate an image, Generate a video, Audio understanding, Structured output, Embeddings, Batch API, Flex/Priority, extra_body (таблица Gemini-параметров для Chat/Images/Video), List/Retrieve models, Current limitations. Для разработчиков, мигрирующих с OpenAI. Про картинки: генерация через images.generate с gemini-2.5-flash-image или gemini-3-pro-image-preview; поддерживаемые параметры prompt/model/n/size/response_format; прочие молча игнорируются; через extra_body — aspect_ratio, generation_config, safety_settings, tools (grounding только для gemini-3-pro-image-preview). Повторно подчёркивается extra_body как путь к Gemini-функциям. Слой совместимости — в бете.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image",
+  "gemini-3-pro-image-preview",
+  "gemini-3.8-flash (чат-примеры)",
+  "Gemini 3.1 Pro / 3.1 Flash-Lite / 3 Flash / 2.5 (таблица thinking)",
+  "veo-3.1-generate-preview (видео)",
+  "gemini-embedding-2-preview, gemini-embedding-001 (эмбеддинги)"
+ ],
+ "структура": [
+  "Обвязка сайта (строки 2-188, идентична стр. 2)",
+  "OpenAI compatibility (вводная, базовый пример)",
+  "What changed? Just three lines!",
+  "Thinking",
+  "Streaming",
+  "Function calling",
+  "Image understanding",
+  "Generate an image",
+  "Generate a video",
+  "Check video status",
+  "Audio understanding",
+  "Structured output",
+  "Embeddings",
+  "Batch API",
+  "Flex and Priority inference",
+  "Enable Gemini features with extra_body (таблица)",
+  "Example using extra_body",
+  "List models",
+  "Retrieve a model",
+  "Current limitations",
+  "What's next",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "OpenAI compatibility | Gemini API |",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev (языки, верхнее и левое меню), строки 2-181 — совпадает до байта со страницей 2 (проверено diff строк 2-188)"
+  },
+  {
+   "n": 3,
+   "начало": "Gemini 3.8 Flash is now available.",
+   "итог": "ничего: баннер сайта, строки 182-184"
+  },
+  {
+   "n": 4,
+   "начало": "Home Gemini API Docs Send feedback",
+   "итог": "ничего: хлебные крошки, строки 185-188"
+  },
+  {
+   "n": 5,
+   "начало": "OpenAI compatibility",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini models are accessible using the",
+   "итог": "E-7-1"
+  },
+  {
+   "n": 7,
+   "начало": "Python from openai import OpenAI client",
+   "итог": "ничего: код без промпта для картинок (базовый чат-пример gemini-3.8-flash, Python/JS/REST), строки 198-356"
+  },
+  {
+   "n": 8,
+   "начало": "What changed? Just three lines!",
+   "итог": "ничего: подзаголовок"
+  },
+  {
+   "n": 9,
+   "начало": "api_key=\"GEMINI_API_KEY\" : Replace \" GEMINI_API_KEY",
+   "итог": "E-7-2"
+  },
+  {
+   "n": 10,
+   "начало": "base_url=\"https://generativelanguage.googleapis.com/v1beta/openai/\" : This tells",
+   "итог": "E-7-2"
+  },
+  {
+   "n": 11,
+   "начало": "model=\"gemini-3.8-flash\" : Choose a compatible",
+   "итог": "ничего: выбор модели для чата (для картинок — E-7-3)"
+  },
+  {
+   "n": 12,
+   "начало": "Thinking",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini models are trained to think",
+   "итог": "ничего: не про генерацию картинок (thinking текстовых моделей)"
+  },
+  {
+   "n": 14,
+   "начало": "Different Gemini models have different reasoning",
+   "итог": "ничего: не про генерацию картинок (таблица reasoning_effort → thinking_level/budget для Gemini 3.1 Pro, 3.1 Flash-Lite, 3 Flash, 2.5; image-модели не названы), строки 379-410"
+  },
+  {
+   "n": 15,
+   "начало": "If no reasoning_effort is specified, Gemini",
+   "итог": "ничего: не про генерацию картинок (дефолт thinking текстовых моделей)"
+  },
+  {
+   "n": 16,
+   "начало": "If you want to disable thinking,",
+   "итог": "ничего: не про генерацию картинок ('Reasoning cannot be turned off for Gemini 2.5 Pro or 3 models' — контекст чат-моделей, image-модели не названы)"
+  },
+  {
+   "n": 17,
+   "начало": "Python from openai import OpenAI client",
+   "итог": "ничего: код без промпта для картинок (reasoning_effort='low'), строки 425-592"
+  },
+  {
+   "n": 18,
+   "начало": "Gemini thinking models also produce thought",
+   "итог": "ничего: не про генерацию картинок (thought summaries)"
+  },
+  {
+   "n": 19,
+   "начало": "You can use the extra_body field",
+   "итог": "ничего: повтор E-7-11 (механизм extra_body)"
+  },
+  {
+   "n": 20,
+   "начало": "Note that reasoning_effort and thinking_level",
+   "итог": "ничего: не про генерацию картинок (конфликт reasoning_effort и thinking_level/budget в чате)"
+  },
+  {
+   "n": 21,
+   "начало": "Python from openai import OpenAI client",
+   "итог": "ничего: код без промпта для картинок (extra_body.google.thinking_config), строки 608-786; схема вложенности учтена в E-7-19"
+  },
+  {
+   "n": 22,
+   "начало": "Gemini 3 supports OpenAI compatibility for",
+   "итог": "ничего: не про генерацию картинок (thought signatures в chat completions)"
+  },
+  {
+   "n": 23,
+   "начало": "Streaming The Gemini API supports streaming",
+   "итог": "ничего: не про генерацию картинок (стриминг чата), строки 791-980"
+  },
+  {
+   "n": 24,
+   "начало": "Function calling Function calling makes it",
+   "итог": "ничего: не про генерацию картинок (function calling), строки 981-1295"
+  },
+  {
+   "n": 25,
+   "начало": "Image understanding Gemini models are natively",
+   "итог": "ничего: не про генерацию (понимание изображений текстовой моделью gemini-3.8-flash; image_url с data:image/jpeg;base64), строки 1296-1625"
+  },
+  {
+   "n": 26,
+   "начало": "Generate an image",
+   "итог": "ничего: заголовок раздела"
+  },
+  {
+   "n": 27,
+   "начало": "Generate an image using gemini-2.5-flash-image or",
+   "итог": "E-7-3, E-7-4, E-7-5"
+  },
+  {
+   "n": 28,
+   "начало": "You can enable Grounding with Google",
+   "итог": "E-7-6, E-7-7"
+  },
+  {
+   "n": 29,
+   "начало": "Python import base64 from openai import",
+   "итог": "E-7-8, E-7-9 (Python-пример, строки 1654-1733; прочитан по html <pre> 18)"
+  },
+  {
+   "n": 30,
+   "начало": "JavaScript import OpenAI from \"openai\"; const",
+   "итог": "E-7-8, E-7-9 (JS-пример, строки 1734-1799; html <pre> 19; промпт тот же)"
+  },
+  {
+   "n": 31,
+   "начало": "REST curl \"https://generativelanguage.googleapis.com/v1beta/openai/images/generations\"",
+   "итог": "E-7-8, E-7-9, E-7-10 (REST-пример, строки 1800-1816; html <pre> 20)"
+  },
+  {
+   "n": 32,
+   "начало": "Generate a video Generate a video",
+   "итог": "ничего: не про картинки (видео Veo через /v1/videos), строки 1817-1982"
+  },
+  {
+   "n": 33,
+   "начало": "Check video status Video generation is",
+   "итог": "ничего: не про картинки (опрос статуса видео), строки 1983-2215"
+  },
+  {
+   "n": 34,
+   "начало": "Audio understanding Analyze audio input:",
+   "итог": "ничего: не про картинки (аудио; заметка 'Argument list too long' — про аудио в curl), строки 2216-2494"
+  },
+  {
+   "n": 35,
+   "начало": "Structured output Gemini models can output",
+   "итог": "ничего: не про картинки (structured output), строки 2495-2722"
+  },
+  {
+   "n": 36,
+   "начало": "Embeddings Text embeddings measure the relatedness",
+   "итог": "ничего: не про картинки (эмбеддинги), строки 2723-2843"
+  },
+  {
+   "n": 37,
+   "начало": "Batch API You can create batch",
+   "итог": "ничего: не про картинки (batch для chat/embeddings; image-batch не упомянут), строки 2844-3126"
+  },
+  {
+   "n": 38,
+   "начало": "Flex and Priority inference The Gemini",
+   "итог": "ничего: не про картинки (service_tier в чате), строки 3127-3196"
+  },
+  {
+   "n": 39,
+   "начало": "Enable Gemini features with extra_body There",
+   "итог": "E-7-11"
+  },
+  {
+   "n": 40,
+   "начало": "Parameter Type Endpoint Description",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 41,
+   "начало": "cached_content Text Chat Corresponds to",
+   "итог": "ничего: строка таблицы для Chat (не про картинки)"
+  },
+  {
+   "n": 42,
+   "начало": "thinking_config Object Chat Corresponds to",
+   "итог": "ничего: строка таблицы для Chat (не про картинки)"
+  },
+  {
+   "n": 43,
+   "начало": "aspect_ratio Text Images Output aspect",
+   "итог": "E-7-12"
+  },
+  {
+   "n": 44,
+   "начало": "generation_config Object Images Gemini generation",
+   "итог": "E-7-13"
+  },
+  {
+   "n": 45,
+   "начало": "safety_settings List Images Custom safety",
+   "итог": "E-7-14"
+  },
+  {
+   "n": 46,
+   "начало": "tools List Images Enables grounding",
+   "итог": "E-7-15"
+  },
+  {
+   "n": 47,
+   "начало": "aspect_ratio Text Video Dimensions of",
+   "итог": "ничего: строка таблицы для Video (не про картинки)"
+  },
+  {
+   "n": 48,
+   "начало": "resolution Text Video Output resolution",
+   "итог": "ничего: строка таблицы для Video (720p/1080p/4K, апсемплер)"
+  },
+  {
+   "n": 49,
+   "начало": "duration_seconds Integer Video Generation length",
+   "итог": "ничего: строка таблицы для Video (4/6/8 с)"
+  },
+  {
+   "n": 50,
+   "начало": "frame_rate Text Video Frame rate",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 51,
+   "начало": "input_reference Text Video Reference input",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 52,
+   "начало": "extend_video_id Text Video ID of",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 53,
+   "начало": "negative_prompt Text Video Items to",
+   "итог": "ничего: строка таблицы для Video (negative_prompt только для видео)"
+  },
+  {
+   "n": 54,
+   "начало": "seed Integer Video Integer for deterministic",
+   "итог": "ничего: строка таблицы для Video (seed только для видео)"
+  },
+  {
+   "n": 55,
+   "начало": "style Text Video Visual styling (cinematic",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 56,
+   "начало": "person_generation Text Video Controls generation",
+   "итог": "ничего: строка таблицы для Video (allow_adult/allow_all/dont_allow)"
+  },
+  {
+   "n": 57,
+   "начало": "reference_images List Video Up to",
+   "итог": "ничего: строка таблицы для Video (до 3 референсов стиля/персонажа — для видео, не картинок)"
+  },
+  {
+   "n": 58,
+   "начало": "image Text Video Base64-encoded initial",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 59,
+   "начало": "last_frame Object Video Final image",
+   "итог": "ничего: строка таблицы для Video"
+  },
+  {
+   "n": 60,
+   "начало": "Example using extra_body Here's an example",
+   "итог": "ничего: пример cached_content для чата, строки 3339-3437; схема вложенности учтена в E-7-19"
+  },
+  {
+   "n": 61,
+   "начало": "List models Get a list of",
+   "итог": "ничего: не про картинки (список моделей), строки 3438-3536"
+  },
+  {
+   "n": 62,
+   "начало": "Retrieve a model Retrieve a Gemini",
+   "итог": "ничего: не про картинки, строки 3537-3626"
+  },
+  {
+   "n": 63,
+   "начало": "Current limitations Support for the OpenAI",
+   "итог": "E-7-16"
+  },
+  {
+   "n": 64,
+   "начало": "What's next Try our OpenAI Compatibility",
+   "итог": "ничего: ссылка на Colab, строки 3633-3637"
+  },
+  {
+   "n": 65,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: подвал — лицензия и Google Developers Site Policies, Last updated 2026-09-02 (признак официальности), строки 3638-3646"
+  },
+  {
+   "n": 66,
+   "начало": "Need to tell us more? [[[\"Easy",
+   "итог": "ничего: виджет отзыва, подвал, языки, строки 3647-3672 (совпадает с хвостом стр. 2)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-7-1",
+   "вид": "правило",
+   "утверждение_en": "Gemini models are accessible through the OpenAI libraries and REST API by changing three lines of code; if you are not already using the OpenAI libraries, Google recommends calling the Gemini API directly.",
+   "цитата": "aren't already using the OpenAI libraries, we recommend that you call the",
+   "источник_цитаты": "txt",
+   "раздел": "OpenAI compatibility (вводная)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Относится ко всему слою совместимости, включая генерацию картинок. Полная фраза: '...If you aren't already using the OpenAI libraries, we recommend that you call the Gemini API directly.' (строки 194-197)."
+  },
+  {
+   "код": "E-7-2",
+   "вид": "инструкция",
+   "утверждение_en": "To use Gemini via the OpenAI library, set api_key to a Gemini API key (obtainable in Google AI Studio) and base_url to https://generativelanguage.googleapis.com/v1beta/openai/, which sends requests to the Gemini API endpoint instead of the default URL.",
+   "цитата": "base_url=\"https://generativelanguage.googleapis.com/v1beta/openai/\"",
+   "источник_цитаты": "txt",
+   "раздел": "What changed? Just three lines!",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Тот же base_url используется в примерах генерации картинок (client.images.generate). Третья строка — model, выбрать совместимую модель Gemini."
+  },
+  {
+   "код": "E-7-3",
+   "вид": "факт",
+   "утверждение_en": "Through the OpenAI compatibility layer, images can be generated with gemini-2.5-flash-image or gemini-3-pro-image-preview.",
+   "цитата": "Generate an image using\ngemini-2.5-flash-image\nor\ngemini-3-pro-image-preview",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "модели_сравнение"
+   ],
+   "заметка": "Названы только две image-модели; gemini-3.1-flash-image (Nano Banana 2) и 3.1 Flash Lite Image на странице не упоминаются. Pro — с суффиксом -preview."
+  },
+  {
+   "код": "E-7-4",
+   "вид": "лимит",
+   "утверждение_en": "The OpenAI-compatible image generation endpoint supports the parameters prompt, model, n, size and response_format.",
+   "цитата": ". Supported parameters include\nprompt\n,\nmodel\n,\nn\n,\nsize\n, and\nresponse_format",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Допустимые значения size не указаны; соотношение сторон задаётся отдельно через extra_body.aspect_ratio (E-7-12)."
+  },
+  {
+   "код": "E-7-5",
+   "вид": "предупреждение",
+   "утверждение_en": "Any image-generation parameters not listed among the supported ones or in the extra_body section are silently ignored by the compatibility layer.",
+   "цитата": ". Any other parameters not listed here or in the\nextra_body\nsection will be silently ignored by the compatibility layer.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ошибки не будет — параметр просто пропадёт. Важная ловушка при переносе OpenAI-кода (quality, style и т.п.)."
+  },
+  {
+   "код": "E-7-6",
+   "вид": "инструкция",
+   "утверждение_en": "For image generation via the compatibility layer, Grounding with Google Search can be enabled and safety settings configured through the extra_body parameter.",
+   "цитата": "You can enable\nGrounding with Google Search\nand configure\nsafety settings\nusing the\nextra_body\nparameter.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Сами ключи — в таблице extra_body: tools (E-7-15), safety_settings (E-7-14)."
+  },
+  {
+   "код": "E-7-7",
+   "вид": "ограничение",
+   "утверждение_en": "Grounding with Google Search is only available on Gemini 3 and newer models.",
+   "цитата": "Grounding with Google Search is only available on Gemini 3 and newer models.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "В разделе картинок из двух названных моделей это означает gemini-3-pro-image-preview (но не gemini-2.5-flash-image). Таблица extra_body сужает ещё жёстче: 'Only for gemini-3-pro-image-preview' (E-7-15)."
+  },
+  {
+   "код": "E-7-8",
+   "вид": "пример_промпта",
+   "утверждение_en": "Example image prompt used in all three code samples (Python, JavaScript, REST) with gemini-2.5-flash-image: 'a portrait of a sheepadoodle wearing a cape'.",
+   "цитата": "a portrait of a sheepadoodle wearing a cape",
+   "источник_цитаты": "html",
+   "раздел": "Generate an image (код)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Цитата из <pre> в html (то же в txt строки 1696/1777/1813). Структура: тип кадра ('a portrait of') + субъект ('a sheepadoodle') + атрибут ('wearing a cape'). Короткая именная группа без стиля, света, камеры — демонстрация вызова, не образец качественного промпта."
+  },
+  {
+   "код": "E-7-9",
+   "вид": "инструкция",
+   "утверждение_en": "In the OpenAI-compatible images.generate call, the samples request response_format 'b64_json' with n=1 and decode each item's b64_json field from response.data into an image.",
+   "цитата": "\"response_format\": \"b64_json\",",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image (код)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Python: client.images.generate(model=\"gemini-2.5-flash-image\", prompt=..., response_format='b64_json', n=1); for image_data in response.data: Image.open(BytesIO(base64.b64decode(image_data.b64_json))). JS: openai.images.generate({...}) → image.data. Цитата — REST-вариант (txt, строка 1814). Другие значения response_format (например url) не упоминаются."
+  },
+  {
+   "код": "E-7-10",
+   "вид": "факт",
+   "утверждение_en": "The REST endpoint for OpenAI-compatible image generation is https://generativelanguage.googleapis.com/v1beta/openai/images/generations.",
+   "цитата": "\"https://generativelanguage.googleapis.com/v1beta/openai/images/generations\"",
+   "источник_цитаты": "txt",
+   "раздел": "Generate an image (REST)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Заголовки: Content-Type: application/json, Authorization: Bearer GEMINI_API_KEY; тело: model, prompt, response_format, n."
+  },
+  {
+   "код": "E-7-11",
+   "вид": "факт",
+   "утверждение_en": "Gemini features not available in OpenAI models can be enabled through the extra_body field.",
+   "цитата": "There are several features supported by Gemini that are not available in OpenAI",
+   "источник_цитаты": "txt",
+   "раздел": "Enable Gemini features with extra_body",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "То же в разделе Thinking: 'You can use the extra_body field to include Gemini fields in your request.' (строки 596-599)."
+  },
+  {
+   "код": "E-7-12",
+   "вид": "факт",
+   "утверждение_en": "For the Images endpoint, extra_body.aspect_ratio (text) sets the output aspect ratio, e.g. \"16:9\", \"1:1\", \"9:16\".",
+   "цитата": "aspect_ratio\nText\nImages\nOutput aspect ratio (e.g.,\n\"16:9\"\n,\n\"1:1\"\n,\n\"9:16\"\n).",
+   "источник_цитаты": "txt",
+   "раздел": "Enable Gemini features with extra_body (таблица)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Строка таблицы с Endpoint = Images. Приведены только примеры, полный список допустимых соотношений не дан. Модели в строке не названы; раздел Generate an image — gemini-2.5-flash-image / gemini-3-pro-image-preview."
+  },
+  {
+   "код": "E-7-13",
+   "вид": "факт",
+   "утверждение_en": "For the Images endpoint, extra_body.generation_config (object) passes a Gemini generation config, e.g. {\"responseModalities\": [\"IMAGE\"], \"candidateCount\": 2}.",
+   "цитата": "generation_config\nObject\nImages\nGemini generation config object (e.g.,\n{\"responseModalities\": [\"IMAGE\"], \"candidateCount\": 2}",
+   "источник_цитаты": "txt",
+   "раздел": "Enable Gemini features with extra_body (таблица)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Пример показывает ключи нативного Gemini-конфига в camelCase: responseModalities [\"IMAGE\"] (только картинка) и candidateCount 2. Как candidateCount соотносится с верхнеуровневым n — не сказано."
+  },
+  {
+   "код": "E-7-14",
+   "вид": "факт",
+   "утверждение_en": "For the Images endpoint, extra_body.safety_settings (list) sets custom safety threshold filters, e.g. [{\"category\": \"HARM_CATEGORY_HATE_SPEECH\", \"threshold\": \"BLOCK_NONE\"}].",
+   "цитата": "Custom safety threshold filters (e.g.,\n[{\"category\": \"HARM_CATEGORY_HATE_SPEECH\", \"threshold\": \"BLOCK_NONE\"}]",
+   "источник_цитаты": "txt",
+   "раздел": "Enable Gemini features with extra_body (таблица)",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": "Строка safety_settings / List / Images. Перечня категорий и порогов нет."
+  },
+  {
+   "код": "E-7-15",
+   "вид": "ограничение",
+   "утверждение_en": "For the Images endpoint, extra_body.tools (list) enables grounding, e.g. [{\"google_search\": {}}], and is only for gemini-3-pro-image-preview.",
+   "цитата": "Enables grounding (e.g.,\n[{\"google_search\": {}}]\n). Only for\ngemini-3-pro-image-preview",
+   "источник_цитаты": "txt",
+   "раздел": "Enable Gemini features with extra_body (таблица)",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Строка tools / List / Images."
+  },
+  {
+   "код": "E-7-16",
+   "вид": "ограничение",
+   "утверждение_en": "Support for the OpenAI libraries is still in beta while Google extends feature support.",
+   "цитата": "Support for the OpenAI libraries is still in beta while we extend feature support.",
+   "источник_цитаты": "txt",
+   "раздел": "Current limitations",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Ограничение всего слоя совместимости, в том числе генерации картинок. По вопросам параметров — Developer Forum."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-7-17",
+   "вид": "правило",
+   "утверждение_en": "When generating images through the OpenAI compatibility layer, only prompt, model, n, size and response_format go at top level; Gemini-specific image controls (aspect_ratio, generation_config, safety_settings, tools) must be passed via extra_body, otherwise they are silently dropped.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "выведено из E-7-4, E-7-5, E-7-12, E-7-13, E-7-14, E-7-15",
+   "дата_единицы": null,
+   "тема": [
+    "api_код",
+    "форматы_разрешение"
+   ],
+   "заметка": "Страница прямо не пишет 'must' для aspect_ratio, но из E-7-5 следует: всё вне списка и вне extra_body игнорируется."
+  },
+  {
+   "код": "E-7-18",
+   "вид": "ограничение",
+   "утверждение_en": "Search grounding for image generation via the compatibility layer is available only for gemini-3-pro-image-preview among the documented image models; gemini-2.5-flash-image cannot be grounded here.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "gemini-3-pro-image-preview (Nano Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-7-3, E-7-7, E-7-15",
+   "дата_единицы": null,
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": "Две формулировки ('Gemini 3 and newer' и 'Only for gemini-3-pro-image-preview') дают один и тот же результат для перечисленных моделей."
+  },
+  {
+   "код": "E-7-19",
+   "вид": "объяснение",
+   "утверждение_en": "The page's extra_body examples (thinking_config and cached_content, chat endpoint) nest Gemini fields under a 'google' key — in Python as extra_body={'extra_body': {'google': {...}}}, in JavaScript and REST as extra_body: {'google': {...}}; no image-generation example of extra_body is given.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Вся страница",
+   "модели": "не указано",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-7-11 и кодовых блоков разделов Thinking и Example using extra_body (html <pre> 6-8, 39)",
+   "дата_единицы": null,
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Куда именно класть aspect_ratio/safety_settings/tools для images.generate (под 'google' или нет) — страница не показывает."
+  }
+ ],
+ "противоречия_внутри": [
+  "Пример 'Example using extra_body' задаёт base_url=\"https://generativelanguage.googleapis.com/v1beta/\" (без 'openai/'), во всех остальных примерах — \".../v1beta/openai/\". Не про картинки.",
+  "В JSONL-примере batch-эмбеддингов модель записана как 'ggemini-embedding-001' (опечатка), в соседней строке — 'gemini-embedding-001'. Не про картинки.",
+  "Grounding: в тексте раздела 'only available on Gemini 3 and newer models', в таблице extra_body — 'Only for gemini-3-pro-image-preview'; для перечисленных image-моделей результат совпадает, но таблица формально уже."
+ ],
+ "не_сказано": [
+  "Допустимые значения size для image-эндпойнта и связь size с extra_body.aspect_ratio (для видео сказано 'Maps from size if not specified', для картинок — нет).",
+  "Как n соотносится с generation_config.candidateCount.",
+  "Нет примера image-запроса с extra_body (aspect_ratio/safety_settings/tools) и не показано, нужно ли вкладывать их под ключ 'google'.",
+  "Нет редактирования картинок (images.edit) и передачи референсных изображений для генерации через слой совместимости.",
+  "Не упомянуты gemini-3.1-flash-image (Nano Banana 2) и gemini-3.1-flash-lite-image; разрешения (1K/2K/4K), thinking для image-моделей, image-batch.",
+  "Нет значений response_format кроме b64_json; нет упоминания SynthID."
+ ],
+ "сомнения": [
+  "Id Pro-модели на этой странице — gemini-3-pro-image-preview (с -preview); актуальность суффикса относительно других страниц не сверялась (сводка — отдельный этап).",
+  "Единицы E-7-1, E-7-2, E-7-11, E-7-16 — общие для слоя совместимости; к картинкам относятся потому, что image-вызовы идут через тот же слой."
+ ]
+}

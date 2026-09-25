@@ -1,0 +1,1999 @@
+{
+ "id": 326,
+ "url": "https://github.com/google-gemini/cookbook/raw/refs/heads/main/quickstarts/Get_Started_Nano_Banana.ipynb",
+ "заголовок": "Gemini Built-in Image generation (aka 🍌Nano-Banana models) — Get_Started_Nano_Banana.ipynb",
+ "дата_в_тексте": "нет даты; '##### Copyright 2026 Google LLC.'",
+ "официальность": {
+  "домен": "github.com/google-gemini/cookbook",
+  "второй_признак": "ячейка '##### Copyright 2026 Google LLC.' + организация google-gemini",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Официальный quickstart Gemini API cookbook (Colab, Python google-genai >= 2.9.0, Interactions API) для разработчиков по трём моделям: Nano-Banana 2 Lite (gemini-3.1-flash-lite-image, дефолт ноутбука), Nano-Banana 2 (gemini-3.1-flash-image), Nano-Banana Pro (gemini-3-pro-image-preview). Разделы: генерация, редактирование через previous_interaction_id, aspect ratio (таблица с размерами 1K и поддержкой по моделям), несколько картинок в ответе, multi-turn, смешение картинок (лимиты 3/14/6), thinking и thought signatures, Search grounding, Image grounding (только NB2), разрешение 512px/1K/2K/4K, многоязычный текст и перевод, high-fidelity композиция, video-to-image (NB2, через generate_content), затем 'Other cool prompts to test' (13 готовых промптов) и конвертация sprite-sheet в GIF. Даты нет (копирайт 2026). Термины: Interactions API, previous_interaction_id, image_generation_config, image_size, thinking_level, thought_signature, high fidelity. Повторные акценты: какая модель что поддерживает (метки '(Nano-Banana Pro & 2)' в заголовках), previous_interaction_id для консистентности, image_generation_config для формата/размера.",
+ "модели_на_странице": [
+  "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+  "gemini-3.1-flash-image (Nano-Banana 2)",
+  "gemini-3-pro-image-preview (Nano-Banana Pro)",
+  "Imagen (упомянут как альтернатива, diffusion-based)",
+  "Gemini 3 models (thought signatures)"
+ ],
+ "структура": [
+  "(лицензия)",
+  "Gemini Built-in Image generation (aka 🍌Nano-Banana models): вводная, три модели",
+  "Setup: Install SDK / API key / Initialize client / Select a model / Helper function",
+  "Generate images",
+  "Edit images",
+  "Control aspect ratio",
+  "Get multiple images (ex: tell stories)",
+  "Chat mode / Multi-turn conversations",
+  "Mix multiple pictures",
+  "Advanced Capabilities: Thinking (Nano-Banana Pro & 2): Check thoughts and summaries / Thought signatures",
+  "Search Grounding (Nano-Banana Pro & 2): Display Grounding Sources",
+  "Image Grounding (Nano-Banana 2)",
+  "Resolution Control: 512px, 1K, 2K, and 4K",
+  "Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)",
+  "High-Fidelity Multi-Image Composition",
+  "Video-to-Image Generation (Nano-Banana 2)",
+  "Other cool prompts to test: Back to the 80s / Mini-figurine / Stickers / Multi-image fusion / Colorize and restore images / Google Map transformation / Isometric landmark / What does Google know about me? / Text-heavy images / Theater program / Famous meme restyling / Sprites",
+  "Next Steps"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "##### Copyright 2026 Google LLC.",
+   "итог": "ничего: обвязка (копирайт; признак официальности)"
+  },
+  {
+   "n": 2,
+   "начало": "# @title Licensed under the Apache License",
+   "итог": "ничего: обвязка (лицензия)"
+  },
+  {
+   "n": 3,
+   "начало": "# Gemini Built-in Image generation (aka 🍌Nano-Banana models)",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 4,
+   "начало": "<a ... Run in Google Colab</a> / ---",
+   "итог": "ничего: обвязка (кнопка)"
+  },
+  {
+   "n": 5,
+   "начало": "This notebook will show you how to use the native image generation",
+   "итог": "ничего: вводная (Interactions API — см. E-326-7)"
+  },
+  {
+   "n": 6,
+   "начало": "- **Nano-Banana 2 Lite (`gemini-3.1-flash-lite-image`)**",
+   "итог": "E-326-1"
+  },
+  {
+   "n": 7,
+   "начало": "- **Nano-Banana 2 (`gemini-3.1-flash-image`)**",
+   "итог": "E-326-2"
+  },
+  {
+   "n": 8,
+   "начало": "- **Nano-Banana Pro (`gemini-3-pro-image-preview`)**",
+   "итог": "E-326-3"
+  },
+  {
+   "n": 9,
+   "начало": "> **Note:** [Enable billing]",
+   "итог": "E-326-4"
+  },
+  {
+   "n": 10,
+   "начало": "Note that [Imagen] models also offer",
+   "итог": "E-326-5"
+  },
+  {
+   "n": 11,
+   "начало": "## Setup / ### Install SDK",
+   "итог": "ничего: заголовки"
+  },
+  {
+   "n": 12,
+   "начало": "%pip install -U -q \"google-genai>=2.9.0\"",
+   "итог": "E-326-6"
+  },
+  {
+   "n": 13,
+   "начало": "### Setup your API key / userdata.get",
+   "итог": "ничего: обвязка (ключ в Colab Secret)"
+  },
+  {
+   "n": 14,
+   "начало": "### Initialize SDK client / genai.Client(api_key=...)",
+   "итог": "ничего: обвязка"
+  },
+  {
+   "n": 15,
+   "начало": "### Select a model: You can choose between the three",
+   "итог": "E-326-1, E-326-2, E-326-3 (повтор вводной; дефолт Lite)"
+  },
+  {
+   "n": 16,
+   "начало": "MODEL_ID = \"gemini-3.1-flash-lite-image\" # @param",
+   "итог": "ничего: повтор E-326-1 (дефолт)"
+  },
+  {
+   "n": 17,
+   "начало": "### Helper function: The helper function below extracts",
+   "итог": "E-326-7"
+  },
+  {
+   "n": 18,
+   "начало": "код show_interaction",
+   "итог": "E-326-7"
+  },
+  {
+   "n": 19,
+   "начало": "## Generate images: Using the Gemini Image generation model",
+   "итог": "E-326-7"
+  },
+  {
+   "n": 20,
+   "начало": "You can set `response_modalities` to indicate",
+   "итог": "E-326-8"
+  },
+  {
+   "n": 21,
+   "начало": "If you only want an image and don't need text",
+   "итог": "E-326-8"
+  },
+  {
+   "n": 22,
+   "начало": "код prompt = Create a photorealistic image of a siamese cat",
+   "итог": "E-326-9"
+  },
+  {
+   "n": 23,
+   "начало": "## Edit images: To edit an image, use `previous_interaction_id`",
+   "итог": "E-326-10"
+  },
+  {
+   "n": 24,
+   "начало": "код text_prompt = Create a side view picture of that cat",
+   "итог": "E-326-11"
+  },
+  {
+   "n": 25,
+   "начало": "As you can see, you can clearly recognize",
+   "итог": "E-326-12"
+  },
+  {
+   "n": 26,
+   "начало": "## Control aspect ratio: You can control the aspect ratio. By default",
+   "итог": "E-326-13"
+  },
+  {
+   "n": 27,
+   "начало": "To control the aspect ratio, add `aspect_ratio`",
+   "итог": "E-326-14"
+  },
+  {
+   "n": 28,
+   "начало": "| Aspect ratio | Models Supported | Output Dimensions (1K) | (шапка)",
+   "итог": "ничего: шапка таблицы"
+  },
+  {
+   "n": 29,
+   "начало": "| 1:1 | All",
+   "итог": "E-326-15"
+  },
+  {
+   "n": 30,
+   "начало": "| 2:3 / 3:2 | All",
+   "итог": "E-326-16"
+  },
+  {
+   "n": 31,
+   "начало": "| 3:4 / 4:3 | All",
+   "итог": "E-326-17"
+  },
+  {
+   "n": 32,
+   "начало": "| 4:5 / 5:4 | All",
+   "итог": "E-326-18"
+  },
+  {
+   "n": 33,
+   "начало": "| 9:16 / 16:9 | All",
+   "итог": "E-326-19"
+  },
+  {
+   "n": 34,
+   "начало": "| 21:9 | All",
+   "итог": "E-326-20"
+  },
+  {
+   "n": 35,
+   "начало": "| 1:4 / 4:1 | Nano-Banana 2 & Pro",
+   "итог": "E-326-21"
+  },
+  {
+   "n": 36,
+   "начало": "| 1:8 / 8:1 | Nano-Banana 2 & Pro",
+   "итог": "E-326-22"
+  },
+  {
+   "n": 37,
+   "начало": "код prompt = A cute cat sleeping on a sunny windowsill; aspect_ratio @param",
+   "итог": "E-326-23"
+  },
+  {
+   "n": 38,
+   "начало": "## Get multiple images (ex: tell stories): You can ask Gemini",
+   "итог": "E-326-24"
+  },
+  {
+   "n": 39,
+   "начало": "код prompt = Show me how to bake macarons with images / A visual story of a seed; цикл по interaction.steps",
+   "итог": "E-326-25, E-326-26"
+  },
+  {
+   "n": 40,
+   "начало": "## Chat mode / Multi-turn conversations: You can chain",
+   "итог": "E-326-27"
+  },
+  {
+   "n": 41,
+   "начало": "код # Turn 1: Create initial character",
+   "итог": "E-326-28"
+  },
+  {
+   "n": 42,
+   "начало": "код # Turn 2: Add detail",
+   "итог": "E-326-29"
+  },
+  {
+   "n": 43,
+   "начало": "код # Turn 3: Change environment",
+   "итог": "E-326-30"
+  },
+  {
+   "n": 44,
+   "начало": "код # Turn 4: Dynamic action",
+   "итог": "E-326-31"
+  },
+  {
+   "n": 45,
+   "начало": "You can also control the aspect ratio of the output image during multi-turn",
+   "итог": "E-326-32"
+  },
+  {
+   "n": 46,
+   "начало": "код turn5 = ... Bring it back to the bedroom",
+   "итог": "E-326-33"
+  },
+  {
+   "n": 47,
+   "начало": "## Mix multiple pictures: You can mix multiple images (up to 3",
+   "итог": "E-326-34"
+  },
+  {
+   "n": 48,
+   "начало": "код wget sweets.png, car.png; image_to_base64; prompt Create a cute toy candy car",
+   "итог": "E-326-35"
+  },
+  {
+   "n": 49,
+   "начало": "## Advanced Capabilities: Thinking (Nano-Banana Pro & 2)",
+   "итог": "E-326-36"
+  },
+  {
+   "n": 50,
+   "начало": "код prompt = Create an unusual but realistic image that might go viral; thinking_level high",
+   "итог": "E-326-38, E-326-37"
+  },
+  {
+   "n": 51,
+   "начало": "### Check thoughts and summaries: You can inspect the thinking",
+   "итог": "E-326-39"
+  },
+  {
+   "n": 52,
+   "начало": "код for step in interaction.steps: step.type == thought",
+   "итог": "E-326-39"
+  },
+  {
+   "n": 53,
+   "начало": "### Thought signatures: Gemini 3 models include",
+   "итог": "E-326-40"
+  },
+  {
+   "n": 54,
+   "начало": "код Display a trimmed preview of thought signatures",
+   "итог": "ничего: код без промпта (печать сигнатур)"
+  },
+  {
+   "n": 55,
+   "начало": "## Search Grounding (Nano-Banana Pro & 2): ... support Google Search grounding",
+   "итог": "E-326-41"
+  },
+  {
+   "n": 56,
+   "начало": "> **Note:** Search grounding is supported on",
+   "итог": "E-326-42"
+  },
+  {
+   "n": 57,
+   "начало": "код prompt = Visualize the current weather forecast ... tools=[google_search]",
+   "итог": "E-326-44, E-326-43"
+  },
+  {
+   "n": 58,
+   "начало": "### Display Grounding Sources: You can extract grounding sources",
+   "итог": "E-326-45"
+  },
+  {
+   "n": 59,
+   "начало": "код grounding_metadata / grounding_chunks",
+   "итог": "E-326-45"
+  },
+  {
+   "n": 60,
+   "начало": "## Image Grounding (Nano-Banana 2): ... is also capable of searching for relevant images",
+   "итог": "E-326-46"
+  },
+  {
+   "n": 61,
+   "начало": "код prompt = A detailed scientific illustration of a Timarete",
+   "итог": "E-326-47"
+  },
+  {
+   "n": 62,
+   "начало": "## Resolution Control: Gemini models support multiple output resolutions:",
+   "итог": "ничего: вводная к списку"
+  },
+  {
+   "n": 63,
+   "начало": "- **512px**: Supported by",
+   "итог": "E-326-48"
+  },
+  {
+   "n": 64,
+   "начало": "- **1K (Default)**: Supported by all models.",
+   "итог": "E-326-49"
+  },
+  {
+   "n": 65,
+   "начало": "- **2K / 4K**: Supported by",
+   "итог": "E-326-50"
+  },
+  {
+   "n": 66,
+   "начало": "код prompt = A photo of an oak tree ... image_size: resolution",
+   "итог": "E-326-52, E-326-51"
+  },
+  {
+   "n": 67,
+   "начало": "## Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)",
+   "итог": "E-326-53"
+  },
+  {
+   "n": 68,
+   "начало": "код # Generate initial infographic in Spanish",
+   "итог": "E-326-54"
+  },
+  {
+   "n": 69,
+   "начало": "код # Translate the infographic to Japanese keeping visual style intact",
+   "итог": "E-326-55"
+  },
+  {
+   "n": 70,
+   "начало": "## High-Fidelity Multi-Image Composition: ... up to 14 input images",
+   "итог": "E-326-56"
+  },
+  {
+   "n": 71,
+   "начало": "код prompt = Create a marketing photoshoot of these items",
+   "итог": "E-326-57"
+  },
+  {
+   "n": 72,
+   "начало": "## Video-to-Image Generation (Nano-Banana 2): ... can ingest video files",
+   "итог": "E-326-58"
+  },
+  {
+   "n": 73,
+   "начало": "код # Pass a public YouTube video URL ... Generate a vintage movie poster",
+   "итог": "E-326-59"
+  },
+  {
+   "n": 74,
+   "начало": "## Other cool prompts to test",
+   "итог": "ничего: заголовок"
+  },
+  {
+   "n": 75,
+   "начало": "### Back to the 80s + код",
+   "итог": "E-326-60"
+  },
+  {
+   "n": 76,
+   "начало": "### Mini-figurine + код",
+   "итог": "E-326-61"
+  },
+  {
+   "n": 77,
+   "начало": "### Stickers + код",
+   "итог": "E-326-62"
+  },
+  {
+   "n": 78,
+   "начало": "### Multi-image fusion: Tip: Combine multiple images into a single collage",
+   "итог": "E-326-63"
+  },
+  {
+   "n": 79,
+   "начало": "код Combine everything in these images to create a 60s",
+   "итог": "E-326-64"
+  },
+  {
+   "n": 80,
+   "начало": "### Colorize and restore images + код",
+   "итог": "E-326-65"
+  },
+  {
+   "n": 81,
+   "начало": "### Google Map transformation + код",
+   "итог": "E-326-66"
+  },
+  {
+   "n": 82,
+   "начало": "### Isometric landmark + код",
+   "итог": "E-326-67"
+  },
+  {
+   "n": 83,
+   "начало": "### What does Google know about me? (Nano-Banana Pro & Nano-Banana 2) + код Search the web then generate",
+   "итог": "E-326-68"
+  },
+  {
+   "n": 84,
+   "начало": "код # Display grounding sources if available (повтор)",
+   "итог": "ничего: повтор E-326-45"
+  },
+  {
+   "n": 85,
+   "начало": "### Text-heavy images (Nano-Banana Pro & Nano-Banana 2) + код",
+   "итог": "E-326-69"
+  },
+  {
+   "n": 86,
+   "начало": "### Theater program (Nano-Banana Pro & Nano-Banana 2) + код",
+   "итог": "E-326-70"
+  },
+  {
+   "n": 87,
+   "начало": "### Famous meme restyling (Nano-Banana Pro & Nano-Banana 2) + код",
+   "итог": "E-326-71"
+  },
+  {
+   "n": 88,
+   "начало": "### Sprites (Nano-Banana Pro & Nano-Banana 2) + код",
+   "итог": "E-326-72"
+  },
+  {
+   "n": 89,
+   "начало": "This will give you a grid like this one: <img> Now let's convert it into an animated GIF.",
+   "итог": "E-326-73"
+  },
+  {
+   "n": 90,
+   "начало": "код # @title Convert sprite sheet to animated GIF",
+   "итог": "E-326-73"
+  },
+  {
+   "n": 91,
+   "начало": "This should give you something like this GIF ... AI Studio App",
+   "итог": "ничего: обвязка (картинка и ссылка)"
+  },
+  {
+   "n": 92,
+   "начало": "## Next Steps / Useful documentation references",
+   "итог": "ничего: обвязка (ссылка на документацию)"
+  },
+  {
+   "n": 93,
+   "начало": "metadata colab / kernelspec / language_info / nbformat",
+   "итог": "ничего: обвязка (метаданные ноутбука)"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-326-1",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana 2 Lite (gemini-3.1-flash-lite-image) is the fastest and most cost-effective image model, includes a free tier, and suits high-throughput generation, rapid prototyping and interactive applications.",
+   "цитата": "The fastest and most cost-effective image generation model. It includes a free tier, making it ideal for high-throughput generation, rapid prototyping, and interactive applications.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (три модели)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "цены"
+   ],
+   "заметка": "в разделе Select a model: 'Fastest and cheapest with a free tier. You will use it as the default throughout this quickstart.'"
+  },
+  {
+   "код": "E-326-2",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana 2 (gemini-3.1-flash-image) is the standard, versatile image model balancing speed and quality, with wide aspect ratios (1:8 to 8:1), Google Search grounding, image grounding and multimodal video-to-image inputs.",
+   "цитата": "The standard, highly versatile image model. It balances speed, quality, wide aspect ratios (from 1:8 to 8:1), Google Search grounding, image grounding, and multimodal video-to-image inputs.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (три модели)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "в Select a model: 'General-purpose model with Search and Image grounding.'"
+  },
+  {
+   "код": "E-326-3",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana Pro (gemini-3-pro-image-preview) is the flagship model with advanced reasoning (thinking), 4K resolution, complex typography rendering and high-fidelity multi-image composition.",
+   "цитата": "The flagship model with advanced reasoning (thinking), 4K resolution, complex typography rendering, and high-fidelity multi-image composition.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (три модели)",
+   "модели": [
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение",
+    "thinking"
+   ],
+   "заметка": "в Select a model: 'Flagship model with thinking and 4K resolution.'"
+  },
+  {
+   "код": "E-326-4",
+   "вид": "лимит",
+   "утверждение_en": "Enabling billing gives higher rate limits and unlocks all models.",
+   "цитата": "to get higher rate limits and unlock all models.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (три модели)",
+   "модели": "не указано",
+   "применимость": "политика",
+   "сила": "факт",
+   "как_получено": "прямо (Note: Enable billing …)",
+   "тема": [
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-5",
+   "вид": "факт",
+   "утверждение_en": "Imagen models also offer image generation for those looking for dedicated diffusion-based text-to-image generation.",
+   "цитата": "models also offer image generation if you are looking for dedicated diffusion-based text-to-image generation.",
+   "источник_цитаты": "txt",
+   "раздел": "Вводная (три модели)",
+   "модели": [
+    "Imagen"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "начало фразы: 'Note that [Imagen](./Get_started_imagen.ipynb)'"
+  },
+  {
+   "код": "E-326-6",
+   "вид": "ограничение",
+   "утверждение_en": "google-genai >= 2.9.0 is the minimum SDK version needed for the nano-banana models in this notebook.",
+   "цитата": "# minimum version needed for the nano-banana models",
+   "источник_цитаты": "txt",
+   "раздел": "Setup / Install SDK",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо (комментарий к %pip install -U -q \"google-genai>=2.9.0\")",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-7",
+   "вид": "факт",
+   "утверждение_en": "Image generation uses client.interactions.create (Interactions API); outputs are read via interaction.output_text and interaction.output_image (base64 data).",
+   "цитата": "The helper function below extracts and renders text and image outputs from an `interaction` object using `interaction.output_text` and `interaction.output_image`.",
+   "источник_цитаты": "txt",
+   "раздел": "Setup / Helper function",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'Using the Gemini Image generation model with the Interactions API is simple: you call `client.interactions.create`.'"
+  },
+  {
+   "код": "E-326-8",
+   "вид": "приём",
+   "утверждение_en": "Set response_modalities=['text','image'] to expect text and images in the output; if you only want an image and no text, set response_modalities=['image'].",
+   "цитата": "If you only want an image and don't need text, you can set `response_modalities=[\\\"image\\\"]`.",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "в Interactions API значения строчными: 'text', 'image'"
+  },
+  {
+   "код": "E-326-9",
+   "вид": "пример_промпта",
+   "утверждение_en": "Generation prompt: photorealistic siamese cat with heterochromia (green left eye, blue right), red face patches and a black-and-pink nose.",
+   "цитата": "Create a photorealistic image of a siamese cat with a green left eye and a blue right one and red patches on his face and a black and pink nose",
+   "источник_цитаты": "txt",
+   "раздел": "Generate images",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Структура: 'Create a photorealistic image of' (медиум) + субъект + перечень уникальных отличительных признаков — эти признаки затем служат проверкой консистентности при редактировании (E-326-11, E-326-12)."
+  },
+  {
+   "код": "E-326-10",
+   "вид": "приём",
+   "утверждение_en": "To edit an image, pass previous_interaction_id to refer back to the original interaction; this lets Gemini keep character and style consistency across edits without re-uploading image bytes.",
+   "цитата": "To edit an image, use `previous_interaction_id` to refer back to your original interaction. This allows Gemini to maintain character and style consistency across edits without having to re-upload image bytes.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-11",
+   "вид": "пример_промпта",
+   "утверждение_en": "Edit prompt in a follow-up interaction: side view of 'that cat' in a tropical forest, eating a nano-banana, under the stars.",
+   "цитата": "Create a side view picture of that cat, in a tropical forest, eating a nano-banana, under the stars",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование",
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: ракурс ('side view') + ссылка на субъект предыдущего хода ('that cat') + место + действие + время/свет. Внешность кота не повторяется."
+  },
+  {
+   "код": "E-326-12",
+   "вид": "факт",
+   "утверждение_en": "After a follow-up edit via previous_interaction_id, the same cat is clearly recognizable by its peculiar nose and eyes.",
+   "цитата": "As you can see, you can clearly recognize the same cat with its peculiar nose and eyes.",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "рефы"
+   ],
+   "заметка": "наблюдение на примере"
+  },
+  {
+   "код": "E-326-13",
+   "вид": "правило",
+   "утверждение_en": "By default the model generates square (1:1) images unless matching input images.",
+   "цитата": "By default, the model generates square (1:1) images unless matching input images.",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "т.е. при входных картинках формат по умолчанию следует им"
+  },
+  {
+   "код": "E-326-14",
+   "вид": "инструкция",
+   "утверждение_en": "To control aspect ratio, add aspect_ratio to image_generation_config inside generation_config.",
+   "цитата": "To control the aspect ratio, add `aspect_ratio` to `image_generation_config` in `generation_config`.",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "код: generation_config={'image_generation_config': {'aspect_ratio': aspect_ratio}}"
+  },
+  {
+   "код": "E-326-15",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratio 1:1 is supported by all three models; 1K output 1024x1024.",
+   "цитата": "| 1:1 | All (NB2Lite, NB2, NBP) | 1024x1024 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-16",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 2:3 / 3:2 are supported by all models; 1K output 832x1248 / 1248x832.",
+   "цитата": "| 2:3 / 3:2 | All (NB2Lite, NB2, NBP) | 832x1248 / 1248x832 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-17",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 3:4 / 4:3 are supported by all models; 1K output 864x1184 / 1184x864.",
+   "цитата": "| 3:4 / 4:3 | All (NB2Lite, NB2, NBP) | 864x1184 / 1184x864 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-18",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 4:5 / 5:4 are supported by all models; 1K output 896x1152 / 1152x896.",
+   "цитата": "| 4:5 / 5:4 | All (NB2Lite, NB2, NBP) | 896x1152 / 1152x896 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-19",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 9:16 / 16:9 are supported by all models; 1K output 768x1344 / 1344x768.",
+   "цитата": "| 9:16 / 16:9 | All (NB2Lite, NB2, NBP) | 768x1344 / 1344x768 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-20",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratio 21:9 is supported by all models; 1K output 1536x672.",
+   "цитата": "| 21:9 | All (NB2Lite, NB2, NBP) | 1536x672 |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "9:21 в таблице нет"
+  },
+  {
+   "код": "E-326-21",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 1:4 / 4:1 (ultrawide/panoramic) are supported only by Nano-Banana 2 and Pro.",
+   "цитата": "| 1:4 / 4:1 | Nano-Banana 2 \\u0026 Pro | Ultrawide / Panoramic |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "размеры в пикселях не указаны; в txt '&' закодирован как \\u0026"
+  },
+  {
+   "код": "E-326-22",
+   "вид": "лимит",
+   "утверждение_en": "Aspect ratios 1:8 / 8:1 (extreme panoramic) are supported only by Nano-Banana 2 and Pro.",
+   "цитата": "| 1:8 / 8:1 | Nano-Banana 2 \\u0026 Pro | Extreme panoramic |",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (строка таблицы)",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "размеры в пикселях не указаны"
+  },
+  {
+   "код": "E-326-23",
+   "вид": "пример_промпта",
+   "утверждение_en": "Aspect-ratio example prompt (with aspect_ratio '16:9' in config): a cute cat sleeping on a sunny windowsill next to a potted plant.",
+   "цитата": "A cute cat sleeping on a sunny windowsill next to a potted plant",
+   "источник_цитаты": "txt",
+   "раздел": "Control aspect ratio",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "Формат задан параметром, в тексте промпта о нём ни слова. Список значений в @param: 1:1, 1:4, 1:8, 2:3, 3:2, 3:4, 4:1, 4:3, 4:5, 5:4, 8:1, 9:16, 16:9, 21:9."
+  },
+  {
+   "код": "E-326-24",
+   "вид": "приём",
+   "утверждение_en": "You can ask Gemini to generate multiple images in a single interaction to illustrate step-by-step instructions or visual stories; the images and text come back as model_output steps.",
+   "цитата": "You can ask Gemini to generate multiple images in a single interaction to illustrate step-by-step instructions or visual stories.",
+   "источник_цитаты": "txt",
+   "раздел": "Get multiple images (ex: tell stories)",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "промптинг"
+   ],
+   "заметка": "код перебирает interaction.steps (type 'model_output'), в каждом content может быть text или image"
+  },
+  {
+   "код": "E-326-25",
+   "вид": "пример_промпта",
+   "утверждение_en": "Multi-image prompt: Show me how to bake macarons with images.",
+   "цитата": "Show me how to bake macarons with images",
+   "источник_цитаты": "txt",
+   "раздел": "Get multiple images (ex: tell stories)",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Структура: просьба-инструкция + явное 'with images' — модель чередует шаги текстом и картинками."
+  },
+  {
+   "код": "E-326-26",
+   "вид": "пример_промпта",
+   "утверждение_en": "Alternative multi-image prompt: A visual story of a seed growing into a giant flower.",
+   "цитата": "A visual story of a seed growing into a giant flower",
+   "источник_цитаты": "txt",
+   "раздел": "Get multiple images (ex: tell stories)",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (вариант в @param)",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "'visual story' задаёт последовательность кадров без указания их числа"
+  },
+  {
+   "код": "E-326-27",
+   "вид": "приём",
+   "утверждение_en": "Chain multiple turns with previous_interaction_id to iterate on a character or scene interactively.",
+   "цитата": "You can chain multiple turns using `previous_interaction_id` to iterate on a character or scene interactively.",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "каждый следующий ход передаёт id предыдущего (turn2 -> turn1.id и т.д.)"
+  },
+  {
+   "код": "E-326-28",
+   "вид": "пример_промпта",
+   "утверждение_en": "Turn 1: create an image of a plastic toy fox figurine in a kid's bedroom, possibly on the floor next to wooden blocks.",
+   "цитата": "Create an image of a plastic toy fox figurine in a kid's bedroom, \\\"\\n\",\n\" \\\"it can be on the floor next to wooden blocks",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt склеенные python-строки)",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Чистый текст: 'Create an image of a plastic toy fox figurine in a kid's bedroom, it can be on the floor next to wooden blocks'. Структура: материал+тип субъекта + место; мягкая формулировка расположения ('it can be') оставляет модели свободу."
+  },
+  {
+   "код": "E-326-29",
+   "вид": "пример_промпта",
+   "утверждение_en": "Turn 2 (add detail): add a blue planet on the figurine's helmet or hat, adding one if needed.",
+   "цитата": "Add a blue planet on the figurine's helmet or hat (add one if needed)",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "Условная инструкция на случай отсутствия элемента ('add one if needed')."
+  },
+  {
+   "код": "E-326-30",
+   "вид": "пример_промпта",
+   "утверждение_en": "Turn 3 (change environment): Move that figurine to a tropical beach.",
+   "цитата": "Move that figurine to a tropical beach",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "редактирование"
+   ],
+   "заметка": "'that figurine' — ссылка на субъект из контекста."
+  },
+  {
+   "код": "E-326-31",
+   "вид": "пример_промпта",
+   "утверждение_en": "Turn 4 (dynamic action): now it should be base-jumping from a spaceship with a wingsuit.",
+   "цитата": "Now it should be base-jumping from a spaceship with a wingsuit",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход"
+   ],
+   "заметка": "Декларативная форма ('it should be') вместо императива."
+  },
+  {
+   "код": "E-326-32",
+   "вид": "приём",
+   "утверждение_en": "Aspect ratio can also be set during multi-turn interactions (generation_config with image_generation_config on a follow-up turn).",
+   "цитата": "You can also control the aspect ratio of the output image during multi-turn interactions.",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-33",
+   "вид": "пример_промпта",
+   "утверждение_en": "Turn 5 with aspect_ratio 16:9: Bring it back to the bedroom in an ultra-wide panoramic shot.",
+   "цитата": "Bring it back to the bedroom in an ultra-wide panoramic shot",
+   "источник_цитаты": "txt",
+   "раздел": "Chat mode / Multi-turn conversations",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "мультиход",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Слова о кадре ('ultra-wide panoramic shot') дублируют параметр формата; см. противоречия."
+  },
+  {
+   "код": "E-326-34",
+   "вид": "лимит",
+   "утверждение_en": "You can mix multiple input images — up to 3 with Nano-Banana 2 Lite, up to 14 with Nano-Banana 2 and Pro (6 with high fidelity) — to combine characters into one scene or style an object from reference photos.",
+   "цитата": "You can mix multiple images (up to 3 with Nano-Banana 2 Lite, up to 14 with Nano-Banana 2 and Pro, 6 with high fidelity), either to combine multiple characters into a single scene or to style an object based on reference photos.",
+   "источник_цитаты": "txt",
+   "раздел": "Mix multiple pictures",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-35",
+   "вид": "пример_промпта",
+   "утверждение_en": "Mixing prompt with two images: create a cute toy candy car combining the style and elements of these two images.",
+   "цитата": "Create a cute toy candy car combining the style and elements of these two images",
+   "источник_цитаты": "txt",
+   "раздел": "Mix multiple pictures",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы"
+   ],
+   "заметка": "Структура: результат (стиль+тип объекта) + что брать из входов ('the style and elements of these two images'). Вход: [text, image(sweets.png), image(car.png)] — текст первым, картинки как {'type':'image','data':base64,'mime_type':...}."
+  },
+  {
+   "код": "E-326-36",
+   "вид": "объяснение",
+   "утверждение_en": "Nano-Banana Pro and Nano-Banana 2 include reasoning ('thinking') to evaluate prompt instructions and plan visual composition before generating the image.",
+   "цитата": "include reasoning capabilities (\\\"thinking\\\") to evaluate prompt instructions and plan visual composition before generating the image.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced Capabilities: Thinking (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-37",
+   "вид": "факт",
+   "утверждение_en": "Thinking level is set in generation_config, e.g. 'thinking_level': 'high' with gemini-3.1-flash-image.",
+   "цитата": "\\\"thinking_level\\\": \\\"high\\\",",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced Capabilities: Thinking (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо (код)",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": "другие значения на странице не перечислены"
+  },
+  {
+   "код": "E-326-38",
+   "вид": "пример_промпта",
+   "утверждение_en": "Thinking example prompt: Create an unusual but realistic image that might go viral.",
+   "цитата": "Create an unusual but realistic image that might go viral",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced Capabilities: Thinking (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "промптинг"
+   ],
+   "заметка": "Открытый промпт без конкретики — задача для 'планирования' моделью (thinking_level high, 16:9)."
+  },
+  {
+   "код": "E-326-39",
+   "вид": "факт",
+   "утверждение_en": "The thinking process can be inspected: thought steps expose summaries (step.type == 'thought', step.summary).",
+   "цитата": "You can inspect the thinking process that guided the image generation:",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced Capabilities: Thinking (Nano-Banana Pro & 2) / Check thoughts and summaries",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-40",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 models include thought_signature fields in thought steps to maintain reasoning context across multi-turn interactions.",
+   "цитата": "Gemini 3 models include `thought_signature` fields in thought steps to maintain reasoning context across multi-turn interactions.",
+   "источник_цитаты": "txt",
+   "раздел": "Advanced Capabilities: Thinking (Nano-Banana Pro & 2) / Thought signatures",
+   "модели": [
+    "Gemini 3 models (здесь: gemini-3.1-flash-image в примере)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking",
+    "мультиход"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-41",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana Pro and Nano-Banana 2 support Google Search grounding, letting the model fetch real-time web information to depict current events, weather forecasts or specific real-world topics.",
+   "цитата": "This allows the model to fetch real-time information from the web to accurately depict current events, weather forecasts, or specific real-world topics.",
+   "источник_цитаты": "txt",
+   "раздел": "Search Grounding (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-42",
+   "вид": "ограничение",
+   "утверждение_en": "Search grounding is supported on gemini-3.1-flash-image and gemini-3-pro-image-preview (not listed for Nano-Banana 2 Lite).",
+   "цитата": "Search grounding is supported on `gemini-3.1-flash-image` and `gemini-3-pro-image-preview`.",
+   "источник_цитаты": "txt",
+   "раздел": "Search Grounding (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо (Note); про Lite — выведено из отсутствия в списке",
+   "тема": [
+    "grounding",
+    "модели_сравнение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-43",
+   "вид": "инструкция",
+   "утверждение_en": "Enable Google Search grounding by passing tools=[{'type': 'google_search'}] to interactions.create.",
+   "цитата": "tools=[{\\\"type\\\": \\\"google_search\\\"}],",
+   "источник_цитаты": "txt",
+   "раздел": "Search Grounding (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо (код)",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": "тот же tools используется и в разделе Image Grounding"
+  },
+  {
+   "код": "E-326-44",
+   "вид": "пример_промпта",
+   "утверждение_en": "Search-grounded prompt: visualize the current 5-day Tokyo weather forecast as a clean, modern weather chart with visual icons for each day.",
+   "цитата": "Visualize the current weather forecast for the next 5 days in Tokyo as a \\\"\\n\",\n\" \\\"clean, modern weather chart. Add visual icons for each day.",
+   "источник_цитаты": "txt",
+   "раздел": "Search Grounding (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt склеенные python-строки)",
+   "тема": [
+    "grounding",
+    "текст_в_кадре"
+   ],
+   "заметка": "Чистый текст: 'Visualize the current weather forecast for the next 5 days in Tokyo as a clean, modern weather chart. Add visual icons for each day.' Структура: актуальные данные ('current', 'next 5 days', место) -> форма визуала (chart, стиль) -> элементы."
+  },
+  {
+   "код": "E-326-45",
+   "вид": "факт",
+   "утверждение_en": "Grounding sources can be extracted from interaction steps via grounding_metadata.grounding_chunks (web title and uri).",
+   "цитата": "You can extract grounding sources from the interaction steps:",
+   "источник_цитаты": "txt",
+   "раздел": "Search Grounding (Nano-Banana Pro & 2) / Display Grounding Sources",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "api_код"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-46",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana 2 can also search for relevant images on Google Search to visually ground its generations, giving high accuracy for specific species, landmarks and objects.",
+   "цитата": "is also capable of searching for relevant images on Google Search to visually ground its generations, providing high accuracy for specific species, landmarks, and objects.",
+   "источник_цитаты": "txt",
+   "раздел": "Image Grounding (Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "рефы"
+   ],
+   "заметка": "заголовок раздела помечен только '(Nano-Banana 2)'"
+  },
+  {
+   "код": "E-326-47",
+   "вид": "пример_промпта",
+   "утверждение_en": "Image-grounding prompt: detailed scientific illustration of a Timarete thelxione polychaete worm resting on coral.",
+   "цитата": "A detailed scientific illustration of a Timarete thelxione polychaete worm resting on coral",
+   "источник_цитаты": "txt",
+   "раздел": "Image Grounding (Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Структура: жанр ('detailed scientific illustration') + точное латинское название вида (повод для поиска картинок) + поза/среда."
+  },
+  {
+   "код": "E-326-48",
+   "вид": "лимит",
+   "утверждение_en": "512px output is supported by Nano-Banana 2 Lite and Nano-Banana 2, for ultra-fast, low-latency rendering.",
+   "цитата": "- **512px**: Supported by **Nano-Banana 2 Lite** and **Nano-Banana 2** for ultra-fast, low-latency rendering.",
+   "источник_цитаты": "txt",
+   "раздел": "Resolution Control: 512px, 1K, 2K, and 4K",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-49",
+   "вид": "лимит",
+   "утверждение_en": "1K is the default resolution and is supported by all models.",
+   "цитата": "- **1K (Default)**: Supported by all models.",
+   "источник_цитаты": "txt",
+   "раздел": "Resolution Control: 512px, 1K, 2K, and 4K",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-50",
+   "вид": "лимит",
+   "утверждение_en": "2K and 4K are supported by Nano-Banana 2 and Nano-Banana Pro, for high-resolution photography and print.",
+   "цитата": "- **2K / 4K**: Supported by **Nano-Banana 2** and **Nano-Banana Pro** for high-resolution photography and print.",
+   "источник_цитаты": "txt",
+   "раздел": "Resolution Control: 512px, 1K, 2K, and 4K",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-51",
+   "вид": "инструкция",
+   "утверждение_en": "Set resolution with image_size ('512px', '1K', '2K', '4K') inside image_generation_config, alongside aspect_ratio.",
+   "цитата": "\\\"image_size\\\": resolution,",
+   "источник_цитаты": "txt",
+   "раздел": "Resolution Control: 512px, 1K, 2K, and 4K",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "требование",
+   "как_получено": "прямо (код; значения из @param)",
+   "тема": [
+    "форматы_разрешение",
+    "api_код"
+   ],
+   "заметка": "значения в @param: [\"512px\", \"1K\", \"2K\", \"4K\"]"
+  },
+  {
+   "код": "E-326-52",
+   "вид": "пример_промпта",
+   "утверждение_en": "Resolution example prompt (2K, 1:1): a photo of an oak tree experiencing every season in four quadrants.",
+   "цитата": "A photo of an oak tree experiencing every season in four quadrants",
+   "источник_цитаты": "txt",
+   "раздел": "Resolution Control: 512px, 1K, 2K, and 4K",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: медиум ('A photo') + субъект + концепт + раскладка кадра ('in four quadrants')."
+  },
+  {
+   "код": "E-326-53",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana Pro and Nano-Banana 2 can generate and translate complex text, diagrams and infographics in dozens of languages.",
+   "цитата": "can generate and translate complex text, diagrams, and infographics in dozens of languages.",
+   "источник_цитаты": "txt",
+   "раздел": "Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-54",
+   "вид": "пример_промпта",
+   "утверждение_en": "Infographic prompt (16:9, 2K): explain Einstein's theory of General Relativity for a 6th grader, in Spanish.",
+   "цитата": "Make an infographic explaining Einstein's theory of General Relativity \\\"\\n\",\n\" \\\"suitable for a 6th grader in Spanish",
+   "источник_цитаты": "txt",
+   "раздел": "Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt склеенные python-строки)",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Чистый текст: 'Make an infographic explaining Einstein's theory of General Relativity suitable for a 6th grader in Spanish'. Структура: тип визуала + тема + аудитория (уровень сложности) + язык текста."
+  },
+  {
+   "код": "E-326-55",
+   "вид": "пример_промпта",
+   "утверждение_en": "Translation follow-up prompt (with previous_interaction_id): translate this infographic into Japanese, keeping everything else the same.",
+   "цитата": "Translate this infographic into Japanese, keeping everything else the same",
+   "источник_цитаты": "txt",
+   "раздел": "Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "редактирование",
+    "мультиход"
+   ],
+   "заметка": "Операция + явная оговорка неизменности ('keeping everything else the same'); комментарий в коде: 'keeping visual style intact'."
+  },
+  {
+   "код": "E-326-56",
+   "вид": "лимит",
+   "утверждение_en": "Nano-Banana 2 and Nano-Banana Pro can combine up to 14 input images, with up to 6 in high fidelity, into a unified composition.",
+   "цитата": "can combine up to 14 input images (with up to 6 in high fidelity) into a unified composition.",
+   "источник_цитаты": "txt",
+   "раздел": "High-Fidelity Multi-Image Composition",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": "повтор лимита из E-326-34"
+  },
+  {
+   "код": "E-326-57",
+   "вид": "пример_промпта",
+   "утверждение_en": "Composition prompt (16:9): marketing photoshoot of these items on a modern minimalist wooden table, focusing on the items and replacing backgrounds.",
+   "цитата": "Create a marketing photoshoot of these items arranged on a modern \\\"\\n\",\n\" \\\"minimalist wooden table. Focus on the items and replace backgrounds.",
+   "источник_цитаты": "txt",
+   "раздел": "High-Fidelity Multi-Image Composition",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt склеенные python-строки)",
+   "тема": [
+    "рефы",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Чистый текст: 'Create a marketing photoshoot of these items arranged on a modern minimalist wooden table. Focus on the items and replace backgrounds.' Структура: жанр съёмки + субъекты со входа ('these items') + поверхность/стиль + фокус + что заменить."
+  },
+  {
+   "код": "E-326-58",
+   "вид": "факт",
+   "утверждение_en": "Nano-Banana 2 can ingest video files or public YouTube video URLs and generate new images based on video scenes.",
+   "цитата": "can ingest video files or public YouTube video URLs and generate new images based on video scenes.",
+   "источник_цитаты": "txt",
+   "раздел": "Video-to-Image Generation (Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "другое"
+   ],
+   "заметка": "пример через client.models.generate_content: Part(file_data=FileData(file_uri=YouTube URL, mime_type='video/mp4')), затем текст; config response_modalities=['image']"
+  },
+  {
+   "код": "E-326-59",
+   "вид": "пример_промпта",
+   "утверждение_en": "Video-to-image prompt: generate a vintage movie poster inspired by the scenes in this video.",
+   "цитата": "Generate a vintage movie poster inspired by the scenes in this video",
+   "источник_цитаты": "txt",
+   "раздел": "Video-to-Image Generation (Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "рефы"
+   ],
+   "заметка": "Структура: тип результата + стиль эпохи + источник ('inspired by the scenes in this video'). Видео передаётся ДО текста."
+  },
+  {
+   "код": "E-326-60",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Back to the 80s' prompt with a person photo: photograph of the person as if living in the 1980s, capturing the distinct fashion, hairstyles and atmosphere.",
+   "цитата": "Create a photograph of the person in this image as if they were living in the 1980s.\\n\",\n\"The photograph should capture the distinct fashion, hairstyles, and atmosphere.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Back to the 80s",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (в txt строки разделены JSON-разметкой ячейки)",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: медиум + субъект со входа + эпоха через 'as if' -> 2-е предложение: какие признаки эпохи передать (мода, причёски, атмосфера)."
+  },
+  {
+   "код": "E-326-61",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Mini-figurine' prompt: 1/7 scale commercialized figurine of the characters in the picture on a computer desk with a round transparent acrylic base, next to a collectible packaging box with flat illustrations.",
+   "цитата": "Create a 1/7 scale commercialized figurine of the characters in the picture.\\n\",\n\"The figurine is placed on a computer desk with a round transparent acrylic base.\\n\",\n\"Next to the screen is a collectible packaging box with flat illustrations.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Mini-figurine",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Структура: объект (масштаб, тип) из персонажей входа -> размещение и подставка -> окружение (коробка). Три предложения: что, где, что рядом."
+  },
+  {
+   "код": "E-326-62",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Stickers' prompt: a single sticker in distinct Pop Art style with bold thick black outlines around all figures and text and a limited flat 1960s comic-book palette.",
+   "цитата": "Create a single sticker in the distinct Pop Art style.\\n\",\n\"The image should feature bold, thick black outlines around all figures and text.\\n\",\n\"Utilize a limited, flat color palette characteristic of 1960s comic books.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Stickers",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Структура: формат ('a single sticker') + стиль -> признак стиля 1 (контуры) -> признак стиля 2 (палитра с привязкой к эпохе). Стиль раскрыт через конкретные визуальные признаки."
+  },
+  {
+   "код": "E-326-63",
+   "вид": "приём",
+   "утверждение_en": "Tip: combine multiple images into a single collage first if you need to go beyond the image upload limit.",
+   "цитата": "Tip: Combine multiple images into a single collage first if you need to go beyond the image upload limit.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Multi-image fusion",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "лимиты_квоты"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-64",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Multi-image fusion' prompt with three images: combine everything in these images to create a 60s inspired fashion editorial photoshoot.",
+   "цитата": "Combine everything in these images to create a 60s inspired fashion editorial photoshoot.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Multi-image fusion",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "стиль"
+   ],
+   "заметка": "Входы: person.jpg, car.png, Mont_St_Michel.png (3 картинки = максимум для Lite, дефолтной модели)."
+  },
+  {
+   "код": "E-326-65",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Colorize and restore' prompt: restore and colorize this photograph with natural, realistic colors and atmospheric lighting.",
+   "цитата": "Restore and colorize this photograph, adding natural, realistic colors and atmospheric lighting.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Colorize and restore images",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "редактирование"
+   ],
+   "заметка": "Операции + характер цвета + свет."
+  },
+  {
+   "код": "E-326-66",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Google Map transformation' prompt: show what you see from the red arrow perspective looking towards the landmark.",
+   "цитата": "Show me what you see from the red arrow perspective looking towards the landmark.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Google Map transformation",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "камера_свет_композиция",
+    "рефы"
+   ],
+   "заметка": "Позиция камеры задана пометкой на входной картинке (красная стрелка) — промпт ссылается на разметку на изображении."
+  },
+  {
+   "код": "E-326-67",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Isometric landmark' prompt: take this location and make the landmark an isometric image (building only), in retro game style.",
+   "цитата": "Take this location and make the landmark an isometric image (building only), in retro game style.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Isometric landmark",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Проекция ('isometric') + ограничение содержимого в скобках ('building only') + стиль."
+  },
+  {
+   "код": "E-326-68",
+   "вид": "пример_промпта",
+   "утверждение_en": "Search-grounded open prompt: search the web then generate an image of isometric perspective, detailed pixel art.",
+   "цитата": "Search the web then generate an image of isometric perspective, detailed pixel art.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / What does Google know about me?",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding",
+    "стиль"
+   ],
+   "заметка": "Порядок действий назван явно ('Search the web then generate'); с tools google_search."
+  },
+  {
+   "код": "E-326-69",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Text-heavy images' prompt (16:9): an infographic about how sonnets work, containing a sonnet about bananas and a lengthy literary analysis, with good vintage aesthetics.",
+   "цитата": "Show me an infographic about how sonnets work, using a sonnet about bananas written in it,\\n\",\n\"along with a lengthy literary analysis of the poem. Good vintage aesthetics.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Text-heavy images (Nano-Banana Pro & Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре"
+   ],
+   "заметка": "Модель сама сочиняет текст (сонет и анализ) и верстает его; стиль — одной фразой в конце."
+  },
+  {
+   "код": "E-326-70",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Theater program' prompt (4:3): photo of a program for a Broadway show about TCG players on a theater seat, professional and glossy, showing the cover and a page with the stage.",
+   "цитата": "A photo of a program for the Broadway show about TCG players on a nice theater seat,\\n\",\n\"professional and glossy, showing the cover and a page with the stage.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Theater program (Nano-Banana Pro & Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "текст_в_кадре",
+    "камера_свет_композиция"
+   ],
+   "заметка": "Структура: медиум ('A photo of') + печатный объект + тема + где лежит + качество материала + что видно (обложка и разворот)."
+  },
+  {
+   "код": "E-326-71",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Famous meme restyling' prompt: describe the famous 'this is fine' dog-in-burning-room meme, then ask for a detailed handcrafted papier-mâché version.",
+   "цитата": "There's a very famous meme about a dog in a room on fire saying 'this is fine'.\\n\",\n\"Can you create a detailed handcrafted papier-mâché version of this scene?",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Famous meme restyling (Nano-Banana Pro & Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "стиль"
+   ],
+   "заметка": "Референс описан словами (без картинки), затем материал/техника переосмысления; вопросительная форма."
+  },
+  {
+   "код": "E-326-72",
+   "вид": "пример_промпта",
+   "утверждение_en": "'Sprites' prompt (1:1): sprite sheet of a jumping illustration, 3x3 grid, white background, sequence, frame-by-frame animation, square aspect ratio, follow the reference structure.",
+   "цитата": "Sprite sheet of a jumping illustration, 3x3 grid, white background, sequence,\\n\",\n\"frame-by-frame animation, square aspect ratio. Follow the reference structure.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Sprites (Nano-Banana Pro & Nano-Banana 2)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "форматы_разрешение",
+    "мультиход"
+   ],
+   "заметка": "Список ключевых слов через запятую: тип листа + действие + сетка + фон + последовательность + формат. Референс не передаётся (см. противоречия)."
+  },
+  {
+   "код": "E-326-73",
+   "вид": "приём",
+   "утверждение_en": "A 3x3 sprite-sheet output can be cut into 9 equal frames and assembled into an animated GIF.",
+   "цитата": "Now let's convert it into an animated GIF.",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test / Sprites",
+   "модели": [
+    "gemini-3.1-flash-image (Nano-Banana 2)"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо (код: num_cols, num_rows = 3, 3; crop; save_all; duration=150)",
+   "тема": [
+    "другое"
+   ],
+   "заметка": "постобработка вне модели"
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-326-74",
+   "вид": "факт",
+   "утверждение_en": "Capability matrix as stated on the page: Lite — 512px/1K, ratios up to 21:9, up to 3 input images, free tier, no search grounding listed; NB2 — 512px to 4K, 1:8 to 8:1, up to 14 images (6 high-fidelity), search and image grounding, thinking, video-to-image; Pro — 1K to 4K, 1:8 to 8:1, up to 14 images (6 high-fidelity), search grounding, thinking, complex typography.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "выведено из E-326-1, E-326-2, E-326-3, E-326-21, E-326-22, E-326-34, E-326-42, E-326-46, E-326-48, E-326-49, E-326-50, E-326-36, E-326-58",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "512px для Pro и thinking для Lite на странице не упомянуты"
+  },
+  {
+   "код": "E-326-75",
+   "вид": "приём",
+   "утверждение_en": "Follow-up prompts in chained interactions never restate the subject's appearance; they refer to it deictically ('that cat', 'that figurine', 'it', 'this infographic') and state only the change.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Edit images / Chat mode / Multilingual",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "выведено из E-326-11, E-326-29, E-326-30, E-326-31, E-326-33, E-326-55",
+   "тема": [
+    "мультиход",
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-326-76",
+   "вид": "правило",
+   "утверждение_en": "Format and size are controlled by parameters (aspect_ratio, image_size in image_generation_config), not by prompt words; most sample prompts contain no format instructions.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "вся страница",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano-Banana 2 Lite)",
+    "gemini-3.1-flash-image (Nano-Banana 2)",
+    "gemini-3-pro-image-preview (Nano-Banana Pro)"
+   ],
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-326-14, E-326-51, E-326-23, E-326-52",
+   "тема": [
+    "форматы_разрешение"
+   ],
+   "заметка": "исключения: E-326-33 и E-326-72 упоминают кадр/формат словами при заданном параметре"
+  },
+  {
+   "код": "E-326-77",
+   "вид": "объяснение",
+   "утверждение_en": "Most sample prompts are one to three sentences: output type/medium + subject + setting, with style defined by concrete visual traits (outlines, palette, era markers) when style matters.",
+   "цитата": "",
+   "источник_цитаты": "txt",
+   "раздел": "Other cool prompts to test",
+   "модели": [
+    "MODEL_ID по умолчанию = gemini-3.1-flash-lite-image (Nano-Banana 2 Lite); переключаемо на NB2/Pro"
+   ],
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из E-326-60, E-326-61, E-326-62, E-326-65, E-326-67, E-326-70",
+   "тема": [
+    "промптинг",
+    "стиль"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "Turn 5 (E-326-33) просит 'ultra-wide panoramic shot', но в параметре задан 16:9; в таблице E-326-21 'Ultrawide / Panoramic' — это 1:4 / 4:1 (доступно только NB2 и Pro, а дефолтная модель — Lite).",
+  "Промпт Sprites (E-326-72) говорит 'Follow the reference structure', но референс-картинка в запрос не передаётся (только текст).",
+  "ID Pro везде с суффиксом '-preview' ('gemini-3-pro-image-preview'), у NB2 и Lite — без; во вводной 'три специализированные модели', без статусов.",
+  "Раздел 'Image Grounding (Nano-Banana 2)' использует тот же tools=[{'type': 'google_search'}], что и Search Grounding — как включается именно поиск картинок, не показано.",
+  "Video-to-Image — единственный раздел на старом API client.models.generate_content (остальные — Interactions API)."
+ ],
+ "не_сказано": [
+  "Нет цен (только 'most cost-effective', 'free tier'), нет конкретных rate limits — только 'Enable billing to get higher rate limits'.",
+  "Нет пиксельных размеров для 1:4/4:1, 1:8/8:1 и для 2K/4K; нет размеров 512px.",
+  "Не сказано, поддерживает ли Lite thinking и какой thinking_level по умолчанию; какие ещё значения thinking_level допустимы.",
+  "Нет упоминания SynthID/водяного знака, политики безопасности, ограничений на людей.",
+  "Не сказано, что считается 'high fidelity' среди 14 картинок и как выбрать эти 6."
+ ],
+ "сомнения": [
+  "Цитаты промптов из кода содержат артефакты JSON/python (\\\\n\", кавычки) — так они записаны в txt; чистый текст дан в заметках.",
+  "Метки моделей в заголовках ('Nano-Banana Pro & 2') и в тексте местами расходятся с кодом, где используется только gemini-3.1-flash-image; поведение Pro в этих разделах не демонстрируется.",
+  "'Other cool prompts' без меток модели запускаются на MODEL_ID (по умолчанию Lite)."
+ ]
+}

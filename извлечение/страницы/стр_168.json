@@ -1,0 +1,346 @@
+{
+ "id": 168,
+ "url": "https://deepmind.google/models/model-cards/",
+ "заголовок": "Model cards — Google DeepMind",
+ "дата_в_тексте": "Даты самой страницы нет (meta в html нет). Самая свежая запись таблицы — 'Updated 23 September 2026' (Gemini 3.8 Audio, строка 291).",
+ "официальность": {
+  "домен": "deepmind.google",
+  "второй_признак": "форма подписки 'I accept Google's Terms and Conditions … Google's Privacy Policy' и подвал 'About Google / Google products / Privacy / Terms'; ссылки на PDF-карточки в бакете storage.googleapis.com/deepmind-media. Строки Copyright нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Индекс модельных карточек Google DeepMind для разработчиков и исследователей: четыре таблицы (Gemini; Generative models — image, music and video; Robotics; Gemma) с колонками 'Model card / Published or updated date / Link'. Около 65% текста — меню и подвал, совпадающие до байта с хабом id 136. Для картинок: даты карточек Gemini 2.5 Flash Image (общая с 2.5 Flash), Gemini 3 Pro Image, Gemini 3.1 Flash Image, Gemini 3.1 Flash-Lite Image (все в разделе Gemini) и Imagen 4 (в разделе Generative models). Ссылки на сами карточки — только в html. Термин: model card = 'simple, structured overview'. Кодовых блоков и примеров нет.",
+ "модели_на_странице": [
+  "gemini-2.5-flash-image (Gemini 2.5 Flash Image)",
+  "gemini-3-pro-image (Gemini 3 Pro Image)",
+  "gemini-3.1-flash-image (Gemini 3.1 Flash Image)",
+  "gemini-3.1-flash-lite-image (Gemini 3.1 Flash-Lite Image)",
+  "Imagen 4",
+  "прочие (не картинки): Gemini 1.0-3.8, Omni Flash, Veo 3/3.1 Lite, Lyria 3/3.5, Robotics, Gemma"
+ ],
+ "структура": [
+  "Мега-меню DeepMind",
+  "Model cards (заголовок)",
+  "Gemini — таблица",
+  "Generative models — таблица",
+  "Robotics — таблица",
+  "Gemma — таблица",
+  "Примечание о modelcards.withgoogle.com и сноска 1",
+  "Follow us",
+  "Подвал"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "TITLE::Model cards — Google DeepMind",
+   "итог": "ничего: заголовок страницы, строки 1-2"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content Explore our next generation AI systems … Build with Gemini Try Gemini",
+   "итог": "ничего: обвязка сайта — мега-меню DeepMind и переключатель сайтов; строки 3-277 совпадают до байта со строками 3-277 стр. 136 (diff пуст)"
+  },
+  {
+   "n": 3,
+   "начало": "Model cards Simple, structured overviews of how an advanced AI model was designed and evaluated.",
+   "итог": "E-168-1 (строки 279-280)"
+  },
+  {
+   "n": 4,
+   "начало": "Gemini Generative models Robotics Gemma",
+   "итог": "ничего: вкладки-навигация, строки 282-285"
+  },
+  {
+   "n": 5,
+   "начало": "Gemini Our most intelligent AI models Model card Published or updated date Link to model card",
+   "итог": "ничего: заголовок раздела и шапка таблицы, строки 287-290"
+  },
+  {
+   "n": 6,
+   "начало": "Gemini 3.8 Audio … Gemini 3.8 Flash … Gemini Omni Flash … Gemini 3.5 Audio … Gemini 3.7 Flash … Gemini 3.6 Flash … Gemini 3.5 Flash-Lite",
+   "итог": "ничего: не про генерацию картинок (карточки текстовых/аудио/Omni моделей), строки 291-297"
+  },
+  {
+   "n": 7,
+   "начало": "Gemini 3.1 Flash-Lite Image Updated 30 June 2026",
+   "итог": "E-168-2 (строка 298)"
+  },
+  {
+   "n": 8,
+   "начало": "Gemini 3.5 Flash … Gemini 3.1 Flash Audio … Gemini 3.1 Flash-Lite",
+   "итог": "ничего: не про генерацию картинок, строки 299-301"
+  },
+  {
+   "n": 9,
+   "начало": "Gemini 3.1 Flash Image Updated 26 February 2026",
+   "итог": "E-168-3 (строка 302)"
+  },
+  {
+   "n": 10,
+   "начало": "Gemini 3.1 Pro … Gemini 3 Flash",
+   "итог": "ничего: не про генерацию картинок, строки 303-304"
+  },
+  {
+   "n": 11,
+   "начало": "Gemini 3 Pro Image Updated 20 November 2025",
+   "итог": "E-168-4 (строка 305)"
+  },
+  {
+   "n": 12,
+   "начало": "Gemini 3 Pro Updated 18 November 2025",
+   "итог": "ничего: текстовая модель (база Pro Image), учтена в заметке E-168-4, строка 306"
+  },
+  {
+   "n": 13,
+   "начало": "Gemini 2.5 Computer Use … Gemini 2.5 Deep Think … Gemini 2.5 Flash-Lite",
+   "итог": "ничего: не про генерацию картинок, строки 307-309"
+  },
+  {
+   "n": 14,
+   "начало": "Gemini 2.5 Flash and Gemini 2.5 Flash Image Updated 26 September 2025",
+   "итог": "E-168-5 (строка 310)"
+  },
+  {
+   "n": 15,
+   "начало": "Gemini 2.5 Pro … Gemini 2.0 Flash … Gemini 2.0 Flash-Lite … Gemini 1.5 … Gemini 1.0",
+   "итог": "ничего: не про генерацию картинок, строки 311-315"
+  },
+  {
+   "n": 16,
+   "начало": "Generative models Image, music and video generation models Model card Published or updated date",
+   "итог": "E-168-6 (подзаголовок раздела, строки 317-320)"
+  },
+  {
+   "n": 17,
+   "начало": "Lyria 3.5 … Veo 3.1 Lite … Lyria 3 … Veo 3",
+   "итог": "ничего: не про генерацию картинок (музыка/видео), строки 321-324"
+  },
+  {
+   "n": 18,
+   "начало": "Imagen 4 Updated 20 May 2025",
+   "итог": "E-168-6 (строка 325)"
+  },
+  {
+   "n": 19,
+   "начало": "Robotics Allowing robots to take action … Gemini Robotics-ER 2 … Gemini Robotics On-Device",
+   "итог": "ничего: не про генерацию картинок, строки 327-335"
+  },
+  {
+   "n": 20,
+   "начало": "Gemma Lightweight, state-of-the-art open models … DiffusionGemma … ShieldGemma 1",
+   "итог": "ничего: не про генерацию картинок (открытые модели Gemma; назначение ShieldGemma 2/PaliGemma на странице не описано), строки 337-354"
+  },
+  {
+   "n": 21,
+   "начало": "Model cards were previously hosted on modelcards.withgoogle.com",
+   "итог": "E-168-7 (строка 356)"
+  },
+  {
+   "n": 22,
+   "начало": "1 Gemini 2.0 Pro was released as an experimental model only.",
+   "итог": "ничего: не про генерацию картинок; сноска без ссылки в таблице (см. противоречия_внутри), строка 357"
+  },
+  {
+   "n": 23,
+   "начало": "Follow us Sign up for updates … Cookies management controls",
+   "итог": "ничего: форма подписки (признак официальности) и подвал; строки 359-430 совпадают до байта со строками 401-472 стр. 136 (diff пуст)"
+  },
+  {
+   "n": 24,
+   "начало": "ДЛИННАЯ ДИСТАНЦИЯ (вся страница)",
+   "итог": "E-168-8, E-168-9"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-168-1",
+   "вид": "объяснение",
+   "утверждение_en": "Model cards are simple, structured overviews of how an advanced AI model was designed and evaluated.",
+   "цитата": "Simple, structured overviews of how an advanced AI model was designed and evaluated.",
+   "источник_цитаты": "txt",
+   "раздел": "Model cards (заголовок)",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Определение жанра документа; источник ограничений/безопасности по каждой модели."
+  },
+  {
+   "код": "E-168-2",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 3.1 Flash-Lite Image (Nano Banana 2 Lite) model card is listed with date 'Updated 30 June 2026'.",
+   "цитата": "Gemini 3.1 Flash-Lite Image Updated 30 June 2026 View model card",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini — Our most intelligent AI models (таблица model cards)",
+   "модели": [
+    "gemini-3.1-flash-lite-image (Nano Banana 2 Lite)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "30 June 2026",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка в html: deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/. Колонка называется 'Published or updated date' — дата релиза это или обновления, не различено."
+  },
+  {
+   "код": "E-168-3",
+   "вид": "факт",
+   "утверждение_en": "The Gemini 3.1 Flash Image (Nano Banana 2) model card is listed with date 'Updated 26 February 2026'.",
+   "цитата": "Gemini 3.1 Flash Image Updated 26 February 2026 View model card",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini — Our most intelligent AI models (таблица model cards)",
+   "модели": [
+    "gemini-3.1-flash-image (Nano Banana 2)"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "26 February 2026",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка в html: deepmind.google/models/model-cards/gemini-3-1-flash-image/."
+  },
+  {
+   "код": "E-168-4",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 Pro Image (Nano Banana Pro) has its own model card, listed 'Updated 20 November 2025', separate from the Gemini 3 Pro card ('Updated 18 November 2025').",
+   "цитата": "Gemini 3 Pro Image Updated 20 November 2025 View model card",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini — Our most intelligent AI models (таблица model cards)",
+   "модели": [
+    "gemini-3-pro-image (Nano Banana Pro)",
+    "Gemini 3 Pro"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "20 November 2025",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка в html: deepmind.google/models/model-cards/gemini-3-pro-image/ (отдельная страница), тогда как PDF id 153 — карточка Gemini 3 Pro."
+  },
+  {
+   "код": "E-168-5",
+   "вид": "факт",
+   "утверждение_en": "Gemini 2.5 Flash Image (original Nano Banana) shares a single model card with Gemini 2.5 Flash, listed 'Updated 26 September 2025'.",
+   "цитата": "Gemini 2.5 Flash and Gemini 2.5 Flash Image Updated 26 September 2025 View model card",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini — Our most intelligent AI models (таблица model cards)",
+   "модели": [
+    "gemini-2.5-flash-image (Nano Banana)",
+    "Gemini 2.5 Flash"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "26 September 2025",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка в html: storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf — общий PDF с текстовой 2.5 Flash."
+  },
+  {
+   "код": "E-168-6",
+   "вид": "факт",
+   "утверждение_en": "Imagen 4 is listed under 'Generative models — Image, music and video generation models', with its model card 'Updated 20 May 2025'.",
+   "цитата": "Imagen 4 Updated 20 May 2025 View model card",
+   "источник_цитаты": "txt",
+   "раздел": "Generative models — Image, music and video generation models",
+   "модели": [
+    "Imagen 4"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": "20 May 2025",
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Ссылка в html: storage.googleapis.com/deepmind-media/Model-Cards/Imagen-4-Model-Card.pdf. Подзаголовок раздела: 'Image, music and video generation models'."
+  },
+  {
+   "код": "E-168-7",
+   "вид": "факт",
+   "утверждение_en": "Model cards were previously hosted on modelcards.withgoogle.com.",
+   "цитата": "Model cards were previously hosted on modelcards.withgoogle.com",
+   "источник_цитаты": "txt",
+   "раздел": "Примечание под таблицами",
+   "модели": "не указано",
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "дата_единицы": null,
+   "тема": [
+    "другое"
+   ],
+   "заметка": "Полезно для поиска старых карточек (например, ранних image-моделей)."
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-168-8",
+   "вид": "факт",
+   "утверждение_en": "By listed card dates, the Gemini image-model line runs: Gemini 2.5 Flash Image (26 Sep 2025, shared card with 2.5 Flash) → Gemini 3 Pro Image (20 Nov 2025) → Gemini 3.1 Flash Image (26 Feb 2026) → Gemini 3.1 Flash-Lite Image (30 Jun 2026).",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini (таблица model cards)",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-168-2, E-168-3, E-168-4, E-168-5",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Даты — 'Updated', не обязательно даты релиза."
+  },
+  {
+   "код": "E-168-9",
+   "вид": "факт",
+   "утверждение_en": "The index files Gemini image models (2.5 Flash Image, 3 Pro Image, 3.1 Flash Image, 3.1 Flash-Lite Image) under the Gemini section, while Imagen 4 is filed under 'Generative models' (image, music and video generation) — Gemini image models are treated as Gemini-family models, not as a separate image-generation line.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini / Generative models",
+   "модели": [
+    "gemini-2.5-flash-image",
+    "gemini-3-pro-image",
+    "gemini-3.1-flash-image",
+    "gemini-3.1-flash-lite-image",
+    "Imagen 4"
+   ],
+   "применимость": "продукт",
+   "сила": "факт",
+   "как_получено": "выведено из E-168-2, E-168-3, E-168-4, E-168-5, E-168-6",
+   "дата_единицы": null,
+   "тема": [
+    "модели_сравнение"
+   ],
+   "заметка": "Вывод по структуре таблиц."
+  }
+ ],
+ "противоречия_внутри": [
+  "Сноска '1 Gemini 2.0 Pro was released as an experimental model only.' не привязана ни к одной строке таблицы (в html <sup>1</sup> стоит только в самой сноске; Gemini 2.0 Pro в списке нет).",
+  "Таблица Gemini упорядочена по дате не строго: 'Gemini 2.5 Deep Think Updated 1 August 2025' стоит выше 'Gemini 2.5 Flash-Lite Updated 26 September 2025'."
+ ],
+ "не_сказано": [
+  "Не различено, где дата релиза, а где дата обновления (все записи с префиксом 'Updated', колонка — 'Published or updated date').",
+  "Имена Nano Banana на странице не используются — только технические названия моделей.",
+  "Содержание карточек (ограничения, безопасность) не пересказано."
+ ],
+ "сомнения": [
+  "Расхождение между страницами: здесь 'Gemini 3 Pro Updated 18 November 2025', а PDF id 153 указывает 'Last Updated: May 2026' — индекс мог не обновить дату (отметить на этапе сведения).",
+  "Ценность для правил низкая — только даты и связи карточек."
+ ]
+}

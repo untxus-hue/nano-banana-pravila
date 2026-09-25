@@ -1,0 +1,1015 @@
+{
+ "id": 271,
+ "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+ "заголовок": "Prompt design strategies  |  Gemini API  |  Google AI for Developers",
+ "дата_в_тексте": "Last updated 2026-09-17 UTC",
+ "официальность": {
+  "домен": "ai.google.dev",
+  "второй_признак": "подвал: лицензионная строка 'For details, see the Google Developers Site Policies', Terms/Privacy; сайт 'Google AI for Developers'. Строки Copyright Google LLC нет.",
+  "вердикт": "подтверждена"
+ },
+ "картина": "Общий гайд Gemini API по составлению промптов для разработчиков. Не про генерацию картинок: все примеры — текстовые задачи, выполненные на gemini-2.5-flash; генерацию картинок страница отсылает к отдельным гайдам ('Prompting for image generation', 'Nano Banana prompt guide'). Структура: ясные инструкции (input, constraints, response format), zero-/few-shot, контекст, декомпозиция, параметры модели (temperature/topK/topP, примечание держать значения по умолчанию для Gemini 3.x), стратегии итерации, fallback responses, grounding и code execution, раздел Gemini 3 (базовые принципы, стратегии Flash, thinking, структурированные промпты, шаблон), агентные сценарии. Дата: Last updated 2026-09-17. Термины: zero-shot/few-shot, completion strategy, fallback response, equal-class inputs. Повторные акценты: итерация и порядок частей промпта.",
+ "модели_на_странице": [
+  "gemini-2.5-flash (подписи под примерами)",
+  "Gemini 3 / Gemini 3.x / Gemini 3 Flash (общими словами)",
+  "Gemini 2.5 and 3 series (thinking)",
+  "image-модели не названы; в меню 'Nano Banana'"
+ ],
+ "структура": [
+  "Вступление + Topic-specific prompt guides",
+  "Clear and specific instructions (Input, Partial input completion, Constraints, Response format)",
+  "Zero-shot vs few-shot prompts (Optimal number of examples, Consistent formatting)",
+  "Add context",
+  "Break down prompts into components",
+  "Experiment with model parameters",
+  "Prompt iteration strategies",
+  "Fallback responses",
+  "Grounding and code execution",
+  "Gemini 3 (Core prompting principles, Gemini 3 Flash strategies, Enhancing reasoning and planning, Structured prompting examples, Example template)",
+  "Agentic workflows",
+  "Next steps"
+ ],
+ "ведомость": [
+  {
+   "n": 1,
+   "начало": "Prompt design strategies | Gemini API",
+   "итог": "ничего: заголовок страницы"
+  },
+  {
+   "n": 2,
+   "начало": "Skip to main content / English",
+   "итог": "ничего: обвязка сайта ai.google.dev (языки, левое меню, баннер 'Gemini 3.8 Flash is now available'), строки 2-188"
+  },
+  {
+   "n": 3,
+   "начало": "Prompt design strategies Prompt design is",
+   "итог": "ничего: заголовок и определение без правила"
+  },
+  {
+   "n": 4,
+   "начало": "Note: Prompt engineering is iterative.",
+   "итог": "E-271-1"
+  },
+  {
+   "n": 5,
+   "начало": "Topic-specific prompt guides Looking for more",
+   "итог": "ничего: ссылки на отдельные гайды (в т.ч. 'Prompting for image generation'); учтено в E-271-33"
+  },
+  {
+   "n": 6,
+   "начало": "You can find other sample prompts",
+   "итог": "ничего: ссылка на prompt gallery"
+  },
+  {
+   "n": 7,
+   "начало": "Clear and specific instructions An effective",
+   "итог": "E-271-2"
+  },
+  {
+   "n": 8,
+   "начало": "Input Input is the required text",
+   "итог": "ничего: классификация входов текстовых задач, не про генерацию картинок"
+  },
+  {
+   "n": 9,
+   "начало": "Input type Prompt Generated output (таблица: Question/Task/Entity)",
+   "итог": "ничего: примеры текстовых задач (кодовые блоки без image-промптов)"
+  },
+  {
+   "n": 10,
+   "начало": "Partial input completion Generative language models",
+   "итог": "ничего: механика автодополнения текста, не про генерацию картинок"
+  },
+  {
+   "n": 11,
+   "начало": "The following example provides a prompt (JSON order)",
+   "итог": "ничего: пример текстовой задачи (JSON), не про генерацию картинок"
+  },
+  {
+   "n": 12,
+   "начало": "While the model did as prompted,",
+   "итог": "ничего: пример текстовой задачи (response prefix), не про генерацию картинок"
+  },
+  {
+   "n": 13,
+   "начало": "Notice how \"cheeseburger\" was excluded",
+   "итог": "ничего: разбор текстового примера"
+  },
+  {
+   "n": 14,
+   "начало": "While you can specify the format of simple JSON",
+   "итог": "ничего: не про генерацию картинок (structured output для JSON)"
+  },
+  {
+   "n": 15,
+   "начало": "Constraints Specify any constraints on reading",
+   "итог": "E-271-3"
+  },
+  {
+   "n": 16,
+   "начало": "Prompt: Summarize this text in one sentence",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 17,
+   "начало": "Response format You can give instructions",
+   "итог": "ничего: формат текстового ответа (таблица, список), не про генерацию картинок"
+  },
+  {
+   "n": 18,
+   "начало": "System instruction All questions should be answered",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 19,
+   "начало": "Format responses with the completion strategy",
+   "итог": "ничего: механика автодополнения текста, не про генерацию картинок"
+  },
+  {
+   "n": 20,
+   "начало": "The prompt didn't specify the format for the outline",
+   "итог": "ничего: разбор текстового примера"
+  },
+  {
+   "n": 21,
+   "начало": "Zero-shot vs few-shot prompts You can include examples",
+   "итог": "E-271-4, E-271-5"
+  },
+  {
+   "n": 22,
+   "начало": "We recommend to always include few-shot",
+   "итог": "E-271-6"
+  },
+  {
+   "n": 23,
+   "начало": "The following zero-shot prompt asks the model",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 24,
+   "начало": "If your use case requires the model to produce concise responses",
+   "итог": "ничего: разбор текстового примера (краткость ответа)"
+  },
+  {
+   "n": 25,
+   "начало": "Prompt: Below are some examples showing a question",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 26,
+   "начало": "Optimal number of examples Models like",
+   "итог": "E-271-7"
+  },
+  {
+   "n": 27,
+   "начало": "Consistent formatting Make sure that the",
+   "итог": "E-271-8"
+  },
+  {
+   "n": 28,
+   "начало": "Add context You can include instructions",
+   "итог": "E-271-9"
+  },
+  {
+   "n": 29,
+   "начало": "The following example asks the model to give troubleshooting",
+   "итог": "ничего: пример текстовой задачи (роутер)"
+  },
+  {
+   "n": 30,
+   "начало": "The response looks like generic troubleshooting",
+   "итог": "ничего: разбор текстового примера"
+  },
+  {
+   "n": 31,
+   "начало": "To customize the response for the specific router",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 32,
+   "начало": "Break down prompts into components For",
+   "итог": "ничего: вводная (содержание — в пунктах)"
+  },
+  {
+   "n": 33,
+   "начало": "Break down instructions: Instead of having",
+   "итог": "E-271-10"
+  },
+  {
+   "n": 34,
+   "начало": "Chain prompts: For complex tasks that",
+   "итог": "E-271-11"
+  },
+  {
+   "n": 35,
+   "начало": "Aggregate responses: Aggregation is when you",
+   "итог": "E-271-12"
+  },
+  {
+   "n": 36,
+   "начало": "Experiment with model parameters Each call",
+   "итог": "E-271-13"
+  },
+  {
+   "n": 37,
+   "начало": "Max output tokens: Specifies the maximum",
+   "итог": "ничего: токены текстового ответа, не про генерацию картинок"
+  },
+  {
+   "n": 38,
+   "начало": "Temperature: The temperature controls the degree",
+   "итог": "E-271-14"
+  },
+  {
+   "n": 39,
+   "начало": "Note: The `temperature`, `top_p`, and `top_k`",
+   "итог": "E-271-15"
+  },
+  {
+   "n": 40,
+   "начало": "topK : The topK parameter changes",
+   "итог": "ничего: механика семплирования токенов текста, к картинкам не отнесена"
+  },
+  {
+   "n": 41,
+   "начало": "topP : The topP parameter changes",
+   "итог": "ничего: механика семплирования токенов текста (default 0.95), к картинкам не отнесена"
+  },
+  {
+   "n": 42,
+   "начало": "stop_sequences : Set a stop sequence",
+   "итог": "ничего: не про генерацию картинок"
+  },
+  {
+   "n": 43,
+   "начало": "Prompt iteration strategies Prompt design can",
+   "итог": "ничего: вводная раздела"
+  },
+  {
+   "n": 44,
+   "начало": "Use different phrasing: Using different words",
+   "итог": "E-271-16"
+  },
+  {
+   "n": 45,
+   "начало": "Version 1: How do I bake a pie?",
+   "итог": "ничего: пример текстовой задачи"
+  },
+  {
+   "n": 46,
+   "начало": "Switch to an analogous task: If you",
+   "итог": "E-271-17"
+  },
+  {
+   "n": 47,
+   "начало": "This prompt tells the model to categorize a book",
+   "итог": "ничего: пример текстовой задачи (The Odyssey)"
+  },
+  {
+   "n": 48,
+   "начало": "The response is correct, but the model didn't stay",
+   "итог": "ничего: разбор текстового примера"
+  },
+  {
+   "n": 49,
+   "начало": "Change the order of prompt content:",
+   "итог": "E-271-18"
+  },
+  {
+   "n": 50,
+   "начало": "Version 1: [examples] [context] [input]",
+   "итог": "ничего: схема порядков, учтена в E-271-18"
+  },
+  {
+   "n": 51,
+   "начало": "Fallback responses A fallback response is",
+   "итог": "E-271-19"
+  },
+  {
+   "n": 52,
+   "начало": "If the model responds with a fallback",
+   "итог": "E-271-20"
+  },
+  {
+   "n": 53,
+   "начало": "Grounding and code execution Gemini is able to use tools",
+   "итог": "ничего: вводная раздела"
+  },
+  {
+   "n": 54,
+   "начало": "Grounding with Google Search connects the",
+   "итог": "E-271-21"
+  },
+  {
+   "n": 55,
+   "начало": "Gemini's code execution tool enables",
+   "итог": "ничего: не про генерацию картинок (арифметика в коде)"
+  },
+  {
+   "n": 56,
+   "начало": "Gemini 3 Gemini 3 models are designed",
+   "итог": "E-271-22"
+  },
+  {
+   "n": 57,
+   "начало": "Core prompting principles Be precise and direct:",
+   "итог": "E-271-23"
+  },
+  {
+   "n": 58,
+   "начало": "Use consistent structure: Employ clear delimiters",
+   "итог": "E-271-24"
+  },
+  {
+   "n": 59,
+   "начало": "Define parameters: Explicitly explain any ambiguous",
+   "итог": "E-271-25"
+  },
+  {
+   "n": 60,
+   "начало": "Control output verbosity: By default, Gemini",
+   "итог": "ничего: многословность текстового ответа, не про генерацию картинок"
+  },
+  {
+   "n": 61,
+   "начало": "Handle multimodal inputs coherently: When using",
+   "итог": "E-271-26"
+  },
+  {
+   "n": 62,
+   "начало": "Prioritize critical instructions: Place essential",
+   "итог": "E-271-27"
+  },
+  {
+   "n": 63,
+   "начало": "Structure for long contexts: When providing",
+   "итог": "E-271-28"
+  },
+  {
+   "n": 64,
+   "начало": "Anchor context: After a large block",
+   "итог": "E-271-29"
+  },
+  {
+   "n": 65,
+   "начало": "Gemini 3 Flash strategies Current day accuracy:",
+   "итог": "ничего: системная оговорка о дате для текстовых запросов Gemini 3 Flash, не про генерацию картинок"
+  },
+  {
+   "n": 66,
+   "начало": "Knowledge cutoff accuracy: Add the following clause",
+   "итог": "ничего: системная оговорка о дате отсечки знаний, не про генерацию картинок"
+  },
+  {
+   "n": 67,
+   "начало": "Grounding performance: Add the following clause",
+   "итог": "ничего: системная инструкция строгого grounding для текста, не про генерацию картинок"
+  },
+  {
+   "n": 68,
+   "начало": "Enhancing reasoning and planning Gemini 2.5 and 3",
+   "итог": "E-271-30, E-271-31"
+  },
+  {
+   "n": 69,
+   "начало": "See the Gemini thinking documentation",
+   "итог": "ничего: ссылка"
+  },
+  {
+   "n": 70,
+   "начало": "Structured prompting examples Using tags or Markdown",
+   "итог": "E-271-32"
+  },
+  {
+   "n": 71,
+   "начало": "XML example: <role> You are a helpful",
+   "итог": "ничего: шаблон для текстовой задачи, иллюстрирует E-271-24"
+  },
+  {
+   "n": 72,
+   "начало": "Markdown example: # Identity",
+   "итог": "ничего: шаблон для текстовой задачи, иллюстрирует E-271-24"
+  },
+  {
+   "n": 73,
+   "начало": "Example template combining best practices This",
+   "итог": "ничего: шаблон системной инструкции для текстовых задач; призыв итерировать учтён в E-271-35"
+  },
+  {
+   "n": 74,
+   "начало": "Agentic workflows For deep agentic workflows",
+   "итог": "ничего: агентные сценарии, не про генерацию картинок"
+  },
+  {
+   "n": 75,
+   "начало": "Reasoning and strategy (Logical decomposition, Problem diagnosis, Information exhaustiveness)",
+   "итог": "ничего: агентные сценарии, не про генерацию картинок"
+  },
+  {
+   "n": 76,
+   "начало": "Execution and reliability (Adaptability, Persistence, Risk Assessment)",
+   "итог": "ничего: агентные сценарии, не про генерацию картинок"
+  },
+  {
+   "n": 77,
+   "начало": "Interaction and output (Ambiguity, Verbosity, Precision)",
+   "итог": "ничего: агентные сценарии, не про генерацию картинок"
+  },
+  {
+   "n": 78,
+   "начало": "System instruction template The following system instruction",
+   "итог": "ничего: шаблон системной инструкции агента, не про генерацию картинок"
+  },
+  {
+   "n": 79,
+   "начало": "Next steps Now that you have",
+   "итог": "ничего: ссылки (в т.ч. на Nano Banana prompt guide), учтено в E-271-33"
+  },
+  {
+   "n": 80,
+   "начало": "Send feedback Except as otherwise noted,",
+   "итог": "ничего: обвязка (лицензия, 'Last updated 2026-09-17 UTC'), виджет отзыва, подвал"
+  }
+ ],
+ "единицы": [
+  {
+   "код": "E-271-1",
+   "вид": "правило",
+   "утверждение_en": "Prompt engineering is iterative: the guidelines and templates are starting points, so experiment and refine based on your use case and observed model responses.",
+   "цитата": "Prompt engineering is iterative. These guidelines and templates are\nstarting points. Experiment and refine based on your specific use cases and\nobserved model responses.",
+   "источник_цитаты": "txt",
+   "раздел": "Вступление",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Note в начале страницы. Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-2",
+   "вид": "правило",
+   "утверждение_en": "An effective way to customize model behavior is to give clear and specific instructions, which can be a question, step-by-step tasks, or a detailed mapping of the user's experience and mindset.",
+   "цитата": "An effective and efficient way to customize model behavior is to provide it with\nclear and specific instructions. Instructions can be in the form of a question,\nstep-by-step tasks, or as complex as mapping out a user's experience and mindset.",
+   "источник_цитаты": "txt",
+   "раздел": "Clear and specific instructions",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-3",
+   "вид": "приём",
+   "утверждение_en": "Specify constraints on reading the prompt or generating the response; you can tell the model what to do and not to do.",
+   "цитата": "Specify any constraints on reading the prompt or generating a response. You can\ntell the model what to do and not to do.",
+   "источник_цитаты": "txt",
+   "раздел": "Clear and specific instructions / Constraints",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Разрешает и запреты ('not to do'). Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-4",
+   "вид": "объяснение",
+   "утверждение_en": "Examples in the prompt show the model what getting it right looks like; the model identifies patterns and relationships from them and applies them when responding.",
+   "цитата": "You can include examples in the prompt that show the model what getting it right\nlooks like. The model attempts to identify patterns and relationships from the\nexamples and applies them when generating a response.",
+   "источник_цитаты": "txt",
+   "раздел": "Zero-shot vs few-shot prompts",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-5",
+   "вид": "приём",
+   "утверждение_en": "Few-shot prompts are often used to regulate formatting, phrasing, scoping or general patterning; use specific and varied examples to help the model narrow its focus.",
+   "цитата": "Few-shot prompts are often used\nto regulate the formatting, phrasing, scoping, or general patterning of model\nresponses. Use specific and varied examples to help the model narrow its focus\nand generate more accurate results.",
+   "источник_цитаты": "txt",
+   "раздел": "Zero-shot vs few-shot prompts",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-6",
+   "вид": "правило",
+   "утверждение_en": "Google recommends always including few-shot examples in prompts; prompts without them are likely less effective, and instructions can be removed if the examples show the task clearly enough.",
+   "цитата": "We recommend to always include few-shot examples in your prompts. Prompts without\nfew-shot examples are likely to be less effective. In fact, you can remove\ninstructions from your prompt if your examples are clear enough in showing the\ntask at hand.",
+   "источник_цитаты": "txt",
+   "раздел": "Zero-shot vs few-shot prompts",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Сильная формулировка 'always'. Для генерации картинок страница этого не проверяет и примеров с картинками не даёт. Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-7",
+   "вид": "предупреждение",
+   "утверждение_en": "You may need to experiment with the number of examples; with too many examples the model may start to overfit its response to them.",
+   "цитата": "Models like Gemini can often pick up on patterns using a few examples, though\nyou may need to experiment with the number of examples to provide in the prompt\nfor the best results. At the same time, if you include too many examples,\nthe model may start to\noverfit\nthe response to the examples.",
+   "источник_цитаты": "txt",
+   "раздел": "Zero-shot vs few-shot prompts / Optimal number of examples",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-8",
+   "вид": "правило",
+   "утверждение_en": "Keep the structure and formatting of few-shot examples the same to avoid responses with undesired formats.",
+   "цитата": "Make sure that the structure and formatting of few-shot examples are the same to\navoid responses with undesired formats.",
+   "источник_цитаты": "txt",
+   "раздел": "Zero-shot vs few-shot prompts / Consistent formatting",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Далее уточнено: XML-теги, пробелы, переводы строк, разделители примеров. Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-9",
+   "вид": "приём",
+   "утверждение_en": "Include the instructions and information the model needs to solve the problem instead of assuming it has all required information; context helps it understand constraints and details.",
+   "цитата": "You can include instructions and information in a prompt that the model needs\nto solve a problem, instead of assuming that the model has all of the required\ninformation. This contextual information helps the model understand the constraints\nand details of what you're asking for it to do.",
+   "источник_цитаты": "txt",
+   "раздел": "Add context",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-10",
+   "вид": "приём",
+   "утверждение_en": "For complex prompts, instead of many instructions in one prompt, create one prompt per instruction and choose which to process based on the user's input.",
+   "цитата": "Instead of having many instructions in one\nprompt, create one prompt per instruction. You can choose which prompt to\nprocess based on the user's input.",
+   "источник_цитаты": "txt",
+   "раздел": "Break down prompts into components",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-11",
+   "вид": "приём",
+   "утверждение_en": "For multi-step tasks, make each step a prompt and chain them so the output of one prompt becomes the input of the next.",
+   "цитата": "For complex tasks that involve multiple sequential steps,\nmake each step a prompt and chain the prompts together in a sequence. In this\nsequential chain of prompts, the output of one prompt in the sequence becomes\nthe input of the next prompt. The output of the last prompt in the sequence\nis the final output.",
+   "источник_цитаты": "txt",
+   "раздел": "Break down prompts into components",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг",
+    "мультиход"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-12",
+   "вид": "приём",
+   "утверждение_en": "Aggregate responses: perform different parallel tasks on different portions of the data and aggregate the results into the final output.",
+   "цитата": "Aggregation is when you want to perform different\nparallel tasks on different portions of the data and aggregate the results to\nproduce the final output. For example, you can tell the model to perform one\noperation on the first part of the data, perform another operation on the rest\nof the data and aggregate the results.",
+   "источник_цитаты": "txt",
+   "раздел": "Break down prompts into components",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-13",
+   "вид": "приём",
+   "утверждение_en": "Experiment with different parameter values to find the best for the task; the available parameters may differ between models.",
+   "цитата": "Experiment with different parameter values to get\nthe best values for the task. The parameters available for\ndifferent models may differ.",
+   "источник_цитаты": "txt",
+   "раздел": "Experiment with model parameters",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-14",
+   "вид": "объяснение",
+   "утверждение_en": "Lower temperatures suit more deterministic, less open-ended responses, higher temperatures can give more diverse or creative results, and temperature 0 always selects the highest-probability response.",
+   "цитата": "Lower temperatures are good\nfor prompts that require a more deterministic or less open-ended response,\nwhile higher temperatures can lead to more diverse or creative results. A\ntemperature of 0 is deterministic, meaning that the highest probability\nresponse is always selected.",
+   "источник_цитаты": "txt",
+   "раздел": "Experiment with model parameters",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "Механика семплирования; для картинок не раскрыто. Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-15",
+   "вид": "правило",
+   "утверждение_en": "For Gemini 3.x models Google strongly recommends keeping temperature, top_p and top_k at their defaults; changing them (e.g. temperature below 1.0) can cause looping or degraded performance.",
+   "цитата": "The `temperature`, `top_p`, and `top_k` parameters control how the model\ngenerates responses. Although you can modify these parameters, we strongly\nrecommend keeping them at their default values for Gemini 3.x models. Changing\nthese parameters (for example, setting the temperature below 1.0) can cause\nunexpected behavior, such as looping or degraded performance, particularly in\ncomplex mathematical or reasoning tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Experiment with model parameters",
+   "модели": "Gemini 3.x models (раскрыто из фразы 'for Gemini 3.x models'; image-модели явно не названы)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "api_код"
+   ],
+   "заметка": "'strongly recommend' — сильная рекомендация; Gemini 3.x image-модели страница отдельно не называет."
+  },
+  {
+   "код": "E-271-16",
+   "вид": "приём",
+   "утверждение_en": "If you don't get the expected results, try rephrasing the prompt; different wording with the same meaning often yields different responses.",
+   "цитата": "Using different words or phrasing in your prompts\noften yields different responses from the model even though they all mean the\nsame thing. If you're not getting the expected results from your prompt, try\nrephrasing it.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt iteration strategies",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-17",
+   "вид": "приём",
+   "утверждение_en": "If the model won't follow instructions for a task, try instructions for an analogous task that achieves the same result.",
+   "цитата": "If you can't get the model to follow your\ninstructions for a task, try giving it instructions for an analogous task\nthat achieves the same result.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt iteration strategies",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-18",
+   "вид": "приём",
+   "утверждение_en": "The order of content in the prompt can affect the response; try changing the order of examples, context and input.",
+   "цитата": "The order of the content in the prompt\ncan sometimes affect the response. Try changing the content order and see\nhow that affects the response.",
+   "источник_цитаты": "txt",
+   "раздел": "Prompt iteration strategies",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Показаны три порядка: [examples][context][input], [input][examples][context], [examples][input][context]. Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-19",
+   "вид": "факт",
+   "утверждение_en": "A fallback response (e.g. 'I'm not able to help with that, as I'm only a language model.') is returned when the prompt or the response triggers a safety filter.",
+   "цитата": "A fallback response is a response returned by the model when either the prompt\nor the response triggers a safety filter. An example of a fallback response is\n\"I'm not able to help with that, as I'm only a language model.\"",
+   "источник_цитаты": "txt",
+   "раздел": "Fallback responses",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "параметры_вызова",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак"
+   ],
+   "заметка": " Общий принцип промптинга Gemini; страница не относит его к генерации картинок."
+  },
+  {
+   "код": "E-271-20",
+   "вид": "приём",
+   "утверждение_en": "If the model returns a fallback response, try increasing the temperature.",
+   "цитата": "If the model responds with a fallback response, try increasing the temperature.",
+   "источник_цитаты": "txt",
+   "раздел": "Fallback responses",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "безопасность_водяной_знак",
+    "api_код"
+   ],
+   "заметка": "Ср. правило E-271-15 (держать параметры по умолчанию для Gemini 3.x) — см. противоречия."
+  },
+  {
+   "код": "E-271-21",
+   "вид": "правило",
+   "утверждение_en": "Grounding with Google Search connects Gemini to real-time web content and should be enabled whenever the model may need obscure or recent facts.",
+   "цитата": "Grounding with Google Search\nconnects the\nGemini model to real-time web content, and should be enabled whenever the model\nmay need to know obscure or recent facts.",
+   "источник_цитаты": "txt",
+   "раздел": "Grounding and code execution",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "параметры_вызова",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "grounding"
+   ],
+   "заметка": "Для картинок (инфографика с актуальными данными) страница это прямо не применяет."
+  },
+  {
+   "код": "E-271-22",
+   "вид": "факт",
+   "утверждение_en": "Gemini 3 models respond best to prompts that are direct, well-structured, and clearly define the task and any constraints.",
+   "цитата": "Gemini 3 models\nare designed for advanced\nreasoning and instruction following.\nThey respond best to prompts that are direct, well-structured, and clearly\ndefine the task and any constraints.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-23",
+   "вид": "правило",
+   "утверждение_en": "Be precise and direct: state your goal clearly and concisely and avoid unnecessary or overly persuasive language.",
+   "цитата": "Be precise and direct:\nState your goal clearly and concisely. Avoid\nunnecessary or overly persuasive language.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-24",
+   "вид": "правило",
+   "утверждение_en": "Use consistent structure: separate prompt parts with clear delimiters such as XML-style tags or Markdown headings, and use one format consistently within a prompt.",
+   "цитата": "Use consistent structure:\nEmploy clear delimiters to separate different\nparts of your prompt. XML-style tags (e.g.,\n<context>\n,\n<task>\n) or\nMarkdown headings are effective. Choose one format and use it consistently\nwithin a single prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-25",
+   "вид": "правило",
+   "утверждение_en": "Explicitly explain any ambiguous terms or parameters.",
+   "цитата": "Define parameters:\nExplicitly explain any ambiguous terms or parameters.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-26",
+   "вид": "правило",
+   "утверждение_en": "Handle multimodal inputs coherently: treat text, images, audio and video as equal-class inputs and make instructions clearly reference each modality as needed.",
+   "цитата": "Handle multimodal inputs coherently:\nWhen using text, images, audio, or\nvideo, treat them as equal-class inputs. Ensure your instructions clearly\nreference each modality as needed.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "рефы",
+    "промптинг"
+   ],
+   "заметка": "Ближайший к картинкам принцип: инструкция должна явно ссылаться на каждую входную картинку."
+  },
+  {
+   "код": "E-271-27",
+   "вид": "правило",
+   "утверждение_en": "Place essential behavioral constraints, persona and output-format requirements in the system instruction or at the very beginning of the user prompt.",
+   "цитата": "Prioritize critical instructions:\nPlace essential behavioral\nconstraints, role definitions (persona), and output format requirements in\nthe System Instruction or at the very beginning of the user prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-28",
+   "вид": "правило",
+   "утверждение_en": "With large amounts of context, supply all the context first and place your specific instructions or questions at the very end of the prompt.",
+   "цитата": "Structure for long contexts:\nWhen providing large amounts of context\n(e.g., documents, code), supply all the context first. Place your specific\ninstructions or questions at the very\nend\nof the prompt.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-29",
+   "вид": "приём",
+   "утверждение_en": "After a large block of data, use a clear transition phrase such as 'Based on the information above...' to bridge context and query.",
+   "цитата": "Anchor context:\nAfter a large block of data, use a clear transition\nphrase to bridge the context and your query, such as \"Based on the\ninformation above...\"",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Многоточие — часть примера источника."
+  },
+  {
+   "код": "E-271-30",
+   "вид": "объяснение",
+   "утверждение_en": "Gemini 2.5 and 3 series models automatically generate internal thinking to improve reasoning, so it's generally unnecessary to have the model outline or detail its reasoning steps in the response.",
+   "цитата": "Gemini 2.5 and 3 series models automatically generate internal \"thinking\" text\nto improve reasoning performance. As such, it's generally not necessary to have\nthe model outline, plan, or detail reasoning steps in the returned response\nitself.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Enhancing reasoning and planning",
+   "модели": "Gemini 2.5 и 3 series (раскрыто из фразы 'Gemini 2.5 and 3 series models')",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "К image-моделям прямо не отнесено."
+  },
+  {
+   "код": "E-271-31",
+   "вид": "приём",
+   "утверждение_en": "For problems requiring heavy reasoning, a simple request like 'Think very hard before answering' can improve performance at the cost of extra thinking tokens.",
+   "цитата": "For problems that require heavy reasoning, simple requests like \"Think\nvery hard before answering\" can improve performance, though at the cost of\nextra thinking tokens.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Enhancing reasoning and planning",
+   "модели": "Gemini 2.5 и 3 series (раскрыто из фразы 'Gemini 2.5 and 3 series models')",
+   "применимость": "промпт",
+   "сила": "возможность",
+   "как_получено": "прямо",
+   "тема": [
+    "thinking"
+   ],
+   "заметка": "К image-моделям прямо не отнесено."
+  },
+  {
+   "код": "E-271-32",
+   "вид": "объяснение",
+   "утверждение_en": "Using tags or Markdown helps the model distinguish between instructions, context and tasks.",
+   "цитата": "Using tags or Markdown helps the model distinguish between instructions,\ncontext, and tasks.",
+   "источник_цитаты": "txt",
+   "раздел": "Gemini 3 / Structured prompting examples",
+   "модели": "Gemini 3 models (раскрыто из заголовка раздела 'Gemini 3'; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "прямо",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "длинная_дистанция": [
+  {
+   "код": "E-271-33",
+   "вид": "объяснение",
+   "утверждение_en": "The page is a general Gemini prompting guide: all examples are text tasks run on gemini-2.5-flash, and image prompting is deferred to separate guides ('Prompting for image generation', 'Nano Banana prompt guide'); its principles apply to image generation only by extension.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Вступление",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "факт",
+   "как_получено": "выведено из структуры страницы: раздел Topic-specific prompt guides, Next steps, подписи (gemini-2.5-flash) под примерами",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": "Рамка применимости всех единиц страницы."
+  },
+  {
+   "код": "E-271-34",
+   "вид": "приём",
+   "утверждение_en": "Placement matters across the page: critical constraints, persona and format go first (system instruction or start), long context goes before a final question at the very end with an anchoring phrase, and reordering is itself an iteration tactic.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Gemini 3 / Core prompting principles",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-271-18, E-271-27, E-271-28, E-271-29",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  },
+  {
+   "код": "E-271-35",
+   "вид": "правило",
+   "утверждение_en": "Iteration is the page's repeated message: the opening note, the whole iteration-strategies section and the Gemini 3 template all tell you to iterate and adapt prompts to your use case.",
+   "цитата": "",
+   "источник_цитаты": "нет",
+   "раздел": "Prompt iteration strategies",
+   "модели": "Gemini (общий гайд; к image-моделям явно не отнесено)",
+   "применимость": "промпт",
+   "сила": "рекомендация",
+   "как_получено": "выведено из E-271-1, E-271-16, E-271-17, E-271-18, строки 845-846 шаблона",
+   "тема": [
+    "промптинг"
+   ],
+   "заметка": ""
+  }
+ ],
+ "противоречия_внутри": [
+  "'If the model responds with a fallback response, try increasing the temperature' (строка 695) против 'we strongly recommend keeping them at their default values for Gemini 3.x models' (строки 550-555) — для Gemini 3.x совет менять temperature расходится с советом не трогать параметры.",
+  "'We recommend to always include few-shot examples' против раздела Gemini 3 'Be precise and direct… concisely' — не противоречие, но страница не говорит, как сочетать few-shot с краткостью."
+ ],
+ "не_сказано": [
+  "Ничего конкретного о промптах для генерации картинок — только ссылки на отдельные гайды.",
+  "Не сказано, относятся ли рекомендации для Gemini 3.x (параметры по умолчанию, структура, мультимодальные входы) к image-моделям Gemini 3 (Nano Banana Pro/2).",
+  "Нет примеров few-shot с картинками или мультимодальных примеров вообще."
+ ],
+ "сомнения": [
+  "Страница общая (не про картинки); единицы извлечены как общие принципы промптинга Gemini с пометкой в заметке и в поле модели, что к image-моделям они страницей не отнесены.",
+  "Многие кодовые блоки — текстовые примеры (41 блок <pre>), ни одного image-промпта; в ведомости помечены как 'пример текстовой задачи'.",
+  "Раздел агентных сценариев и системные оговорки Gemini 3 Flash пропущены как не относящиеся к генерации картинок."
+ ]
+}
