@@ -483,7 +483,7 @@
     {
      "вид": "модели",
      "что": "ядро_en — дословно вывод экстрактора E-144-39 про одну страницу («The page’s prompts range from…», блог NB2), а модели pro, lite, other = «да» поставлены по другим выводам (NotebookLM, ноутбуки Lite, Imagen 3 Customization), к которым текст ядра не относится; лучший_источник E-85-61 (Imagen) тоже не формулирует текст ядра.",
-     "доказательство": "E-144-39 модели: gemini-3.1-flash-image, раздел «Сноски с промптами (7, 8, 9)» стр. 144; E-85-61: «Person examples on this page use comma-separated descriptor lists…» (imagen-3.0-capability-001); E-176-26 (Pro, NotebookLM); E-77-23, E-326-77 (Lite).",
+     "доказательство": "E-144-39 модели: gemini-3.1-flash-image, раздел «Сноски с промптами (Read the prompts) (7, 8, 9)» стр. 144; E-85-61: «Person examples on this page use comma-separated descriptor lists…» (imagen-3.0-capability-001); E-176-26 (Pro, NotebookLM); E-77-23, E-326-77 (Lite).",
      "предложение": "Переписать ядро_en в класс по всем выводам: \"Google's example prompts range from short fragments or one to three sentences (label + subject + setting, descriptor tails) to long 220-260-word descriptions written as captions of a finished photo\", а наблюдение по стр. 144 оставить оговоркой для nb2; лучший_источник согласовать с текстом."
     }
    ]
@@ -535,7 +535,7 @@
     {
      "вид": "трассировка",
      "что": "ядро_en (вывод E-207-12) считает «90s photo album» и «disposable camera» названием носителя съёмки, но в исходном промпте E-207-4 это предметы в кадре («A 90s photo album rests beside me with a disposable camera»); носитель/эпоху там задаёт только «The photo should have a grainy 90s style». Сам E-207-4, из которого взяты три цитаты ядра, среди источников ядра отсутствует (он в темах рефы и камера).",
-     "доказательство": "E-207-4 цитата: «… The photo should have a grainy 90s style with a light source like a lamp … A 90s photo album rests beside me with a disposable camera. …»; E-207-12 утв_en: «… (\"grainy 90s style\", \"90s photo album\", \"disposable camera\") …».",
+     "доказательство": "E-207-4 цитата: «… The photo should have a grainy 90s style with a light source like a lamp … A 90s photo album rests beside me with a disposable camera. …»; E-207-12 утв_en: «… \"grainy 90s style\", \"90s photo album\", \"disposable camera\"), and add medium artifacts …».",
      "предложение": "Убрать «90s photo album» и «disposable camera» из списка носителей в ядро_en (оставить «grainy 90s style»), добавить E-207-4 в примеры ядра."
     }
    ]
