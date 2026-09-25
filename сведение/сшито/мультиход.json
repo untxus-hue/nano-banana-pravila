@@ -9099,8 +9099,11 @@
     },
     {
      "термин": "role",
-     "значение_en": "Usage in the source: \"role string Optional.\"",
+     "значение_en": "In generateContent the whole history is passed in each request; the model's turns are inserted with the role model.",
      "коды": [
+      "E-19-2",
+      "E-125-4",
+      "E-125-10",
       "E-19-24"
      ]
     }
@@ -15829,16 +15832,6 @@
    ],
    "ядра": [
     "Я-мультиход-28"
-   ]
-  },
-  {
-   "термин": "role",
-   "значение_en": "Usage in the source: \"role string Optional.\"",
-   "коды": [
-    "E-19-24"
-   ],
-   "ядра": [
-    "Я-мультиход-29"
    ]
   },
   {
