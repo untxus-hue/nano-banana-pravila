@@ -1,0 +1,3178 @@
+[
+ {
+  "термин": "1980s color film",
+  "значение_en": "a 1980s film look named for a nostalgic or gritty vibe ('as if on 1980s color film, slightly grainy')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-11"
+  ]
+ },
+ {
+  "термин": "360-degree views",
+  "значение_en": "views of a character all around, obtained iteratively by passing the previous frames",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-9"
+  ]
+ },
+ {
+  "термин": "accessory sheet",
+  "значение_en": "a separate sheet for accessories instead of including them in the character sheet",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-25"
+  ]
+ },
+ {
+  "термин": "accurate spelling",
+  "значение_en": "in-image text written without spelling errors",
+  "синонимы": [
+   "correctly spelt"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-11",
+   "П-текст_в_кадре-28"
+  ]
+ },
+ {
+  "термин": "Action",
+  "значение_en": "what is happening in the shot; a prompt element",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-13"
+  ]
+ },
+ {
+  "термин": "Analytical task",
+  "значение_en": "a slot of the web-search prompt formula: how the retrieved data changes the scene",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-2"
+  ]
+ },
+ {
+  "термин": "Anchor context",
+  "значение_en": "a transition phrase after a large block of data before the question, such as 'Based on the information above...'",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-23"
+  ]
+ },
+ {
+  "термин": "archive image",
+  "значение_en": "the original old image from which the character is extracted",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-23"
+  ]
+ },
+ {
+  "термин": "art movement",
+  "значение_en": "an art movement used as a source of style",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-3"
+  ]
+ },
+ {
+  "термин": "aspect ratio",
+  "значение_en": "the proportions of the output image; in the API a string such as \"16:9\", in prompts written as text",
+  "синонимы": [
+   "aspect ratio (size)",
+   "AR",
+   "dimensions",
+   "[aspect ratio] slot",
+   "size",
+   "format (aspect ratio)",
+   "frame format",
+   "[Aspect ratio]"
+  ],
+  "омонимы": [
+   {
+    "смысл": "image format: the format of an image named by its purpose and orientation, e.g. \"widescreen backdrop\" or \"vertical social post\"",
+    "где_употребляется": "П-форматы_разрешение-3"
+   },
+   {
+    "смысл": "visual type: a type of visual (photo, card, book illustration, infographic, isometric cutaway, triptych, timeline) named in the prompt; it carries meaning by itself",
+    "где_употребляется": "П-промптинг-11, П-промптинг-33, П-промптинг-57, П-рефы-34"
+   },
+   {
+    "смысл": "output format: the required form of the answer, such as a table, bullet points or an email",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   }
+  ],
+  "записи": [
+   "П-камера_свет_композиция-37",
+   "П-промптинг-54",
+   "П-форматы_разрешение-3",
+   "П-форматы_разрешение-4",
+   "П-форматы_разрешение-5",
+   "П-форматы_разрешение-6"
+  ]
+ },
+ {
+  "термин": "aspect ratio adherence",
+  "значение_en": "how well the output keeps the requested aspect ratio",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-6"
+  ]
+ },
+ {
+  "термин": "asset liquidity",
+  "значение_en": "one master concept turned into all required formats, resolutions and aspect ratios",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-8"
+  ]
+ },
+ {
+  "термин": "avant-garde",
+  "значение_en": "a level or genre label used as a context reference for the style ('5-star avant-garde restaurant', 'avant-garde art film')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-29"
+  ]
+ },
+ {
+  "термин": "blank canvas",
+  "значение_en": "a blank image of the required proportions or dimensions, passed as an input before the text to set the shape of the result",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "the metaphor 'blank canvas' for generation from text only, without reference images; in content_en replaced by 'text-only generation (no reference images)'",
+    "где_употребляется": "П-промптинг-7, П-промптинг-17"
+   }
+  ],
+  "записи": [
+   "П-рефы-17",
+   "П-форматы_разрешение-2"
+  ]
+ },
+ {
+  "термин": "blockReason",
+  "значение_en": "the API response field with the reason a prompt was blocked (in promptFeedback); when it is set, no candidates are returned",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-56"
+  ]
+ },
+ {
+  "термин": "brand-new reference image",
+  "значение_en": "a new clean character reference generated from an archive image, not cut out pixel by pixel",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-23"
+  ]
+ },
+ {
+  "термин": "calligram",
+  "значение_en": "a technique where the shape of a word depicts its meaning (e.g. the word \"WAVE\" in the silhouette of a wave)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-14"
+  ]
+ },
+ {
+  "термин": "caption (in-image)",
+  "значение_en": "a line of text placed in the image as a title or label, e.g. a caption at the top of a character sheet",
+  "синонимы": [
+   "in-image caption"
+  ],
+  "омонимы": [
+   {
+    "смысл": "descriptive caption: a long prompt written as a caption of an already finished image or photo ('This is a … photograph')",
+    "где_употребляется": "П-промптинг-12, П-стиль-26"
+   },
+   {
+    "смысл": "caption box / speech bubble / dialogue box: a caption box or speech bubble in a comic panel; the text inside it is in quotes",
+    "где_употребляется": "П-текст_в_кадре-16"
+   }
+  ],
+  "записи": [
+   "П-текст_в_кадре-6"
+  ]
+ },
+ {
+  "термин": "caption box / speech bubble / dialogue box",
+  "значение_en": "a caption box or speech bubble in a comic panel; the text inside it is in quotes",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "descriptive caption: a long prompt written as a caption of an already finished image or photo ('This is a … photograph')",
+    "где_употребляется": "П-промптинг-12, П-стиль-26"
+   },
+   {
+    "смысл": "caption (in-image): a line of text placed in the image as a title or label, e.g. a caption at the top of a character sheet",
+    "где_употребляется": "П-текст_в_кадре-6"
+   }
+  ],
+  "записи": [
+   "П-текст_в_кадре-16"
+  ]
+ },
+ {
+  "термин": "capture medium",
+  "значение_en": "the medium with which a photo was captured, named to set the photo look (e.g. Daguerreotype, wet plate photography, instant film)",
+  "синонимы": [
+   "Daguerreotype",
+   "wet plate photography",
+   "instant film"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-12",
+   "П-стиль-30"
+  ]
+ },
+ {
+  "термин": "card stock",
+  "значение_en": "the paper of a greeting card, described with its thickness and finish",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-15"
+  ]
+ },
+ {
+  "термин": "change aspect ratio",
+  "значение_en": "an edit prompt that switches a finished image to another aspect ratio",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-7"
+  ]
+ },
+ {
+  "термин": "character consistency",
+  "значение_en": "keeping the appearance of a character, person, pet or object recognizable across prompts, generations and edits",
+  "синонимы": [
+   "consistency",
+   "consistent look across edits",
+   "likeness",
+   "identity",
+   "character resemblance",
+   "object fidelity"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-16",
+   "П-редактирование-5",
+   "П-рефы-11",
+   "П-рефы-15",
+   "П-рефы-46"
+  ]
+ },
+ {
+  "термин": "character consistency drift",
+  "значение_en": "a gradual drift of a character's features after many iterative edits",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-8"
+  ]
+ },
+ {
+  "термин": "character sheet",
+  "значение_en": "several views of one character in one image; the reference for subsequent generations",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-24"
+  ]
+ },
+ {
+  "термин": "chiaroscuro",
+  "значение_en": "lighting with harsh, high contrast: hard directional light and deep shadows",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-12"
+  ]
+ },
+ {
+  "термин": "cinematic still",
+  "значение_en": "a film still; a medium label with which cinematic prompts open",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-25"
+  ]
+ },
+ {
+  "термин": "cinematize",
+  "значение_en": "turn a drawing, illustration or object into a photorealistic live-action film still",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-8"
+  ]
+ },
+ {
+  "термин": "clear scene descriptions",
+  "значение_en": "clear descriptions of the scene of each panel, on which sequential art is built",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-12"
+  ]
+ },
+ {
+  "термин": "clearly defined character",
+  "значение_en": "a character established in the first prompt with specific details, so that follow-up prompts can place it in new contexts",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-6"
+  ]
+ },
+ {
+  "термин": "closed prompt",
+  "значение_en": "a prompt with specific instructions and constraints to control the output",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-3"
+  ]
+ },
+ {
+  "термин": "coherent and well-formatted text",
+  "значение_en": "text in an image that is coherent and well formatted, as in a menu or a poster",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-10"
+  ]
+ },
+ {
+  "термин": "color grading",
+  "значение_en": "color correction of the image as a carrier of mood (e.g. cinematic color grading with muted teal tones)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-15",
+   "П-редактирование-25",
+   "П-стиль-11"
+  ]
+ },
+ {
+  "термин": "color palette",
+  "значение_en": "the colors of the image named explicitly, e.g. a palette of three named colors",
+  "синонимы": [
+   "color scheme",
+   "color theme"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-21",
+   "П-текст_в_кадре-4"
+  ]
+ },
+ {
+  "термин": "colorize",
+  "значение_en": "add color to an image (colorization)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-5",
+   "П-стиль-7"
+  ]
+ },
+ {
+  "термин": "complex typography",
+  "значение_en": "demanding typography that the model can struggle with and that is refined through follow-up prompts",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-28"
+  ]
+ },
+ {
+  "термин": "composition",
+  "значение_en": "Google does not distinguish two readings: framing (shot size, angle, orientation) and the arrangement of elements in the frame.",
+  "синонимы": [
+   "Composition",
+   "[Composition]"
+  ],
+  "омонимы": [
+   {
+    "смысл": "composition: (label line): a separate 'composition:' line in logo example prompts that sets the rendering and the background (e.g. 'composition: flat vector rendering of all logos in black on a single white background')",
+    "где_употребляется": "П-стиль-2, П-текст_в_кадре-8"
+   },
+   {
+    "смысл": "Multi-image to image (composition & style transfer): a generation mode with several input images that leads to a new scene or a style transfer; 'composition' here means combining several input images into one scene",
+    "где_употребляется": "П-рефы-9"
+   }
+  ],
+  "записи": [
+   "П-камера_свет_композиция-1",
+   "П-камера_свет_композиция-4",
+   "П-камера_свет_композиция-8",
+   "П-камера_свет_композиция-21",
+   "П-камера_свет_композиция-25",
+   "П-камера_свет_композиция-27",
+   "П-камера_свет_композиция-37",
+   "П-промптинг-1",
+   "П-промптинг-10",
+   "П-промптинг-11",
+   "П-промптинг-12",
+   "П-промптинг-13",
+   "П-промптинг-17",
+   "П-промптинг-19",
+   "П-редактирование-6",
+   "П-редактирование-9",
+   "П-рефы-8",
+   "П-стиль-3",
+   "П-стиль-28",
+   "П-стиль-33",
+   "П-текст_в_кадре-17"
+  ]
+ },
+ {
+  "термин": "composition: (label line)",
+  "значение_en": "a separate 'composition:' line in logo example prompts that sets the rendering and the background (e.g. 'composition: flat vector rendering of all logos in black on a single white background')",
+  "синонимы": [
+   "composition:"
+  ],
+  "омонимы": [
+   {
+    "смысл": "composition: Google does not distinguish two readings: framing (shot size, angle, orientation) and the arrangement of elements in the frame.",
+    "где_употребляется": "П-камера_свет_композиция-1, П-камера_свет_композиция-4, П-камера_свет_композиция-8, П-камера_свет_композиция-21, П-камера_свет_композиция-25, П-камера_свет_композиция-27, П-камера_свет_композиция-37, П-промптинг-1, П-промптинг-10, П-промптинг-11, П-промптинг-12, П-промптинг-13, П-промптинг-17, П-промптинг-19, П-редактирование-6, П-редактирование-9, П-рефы-8, П-стиль-3, П-стиль-28, П-стиль-33, П-текст_в_кадре-17"
+   },
+   {
+    "смысл": "Multi-image to image (composition & style transfer): a generation mode with several input images that leads to a new scene or a style transfer; 'composition' here means combining several input images into one scene",
+    "где_употребляется": "П-рефы-9"
+   }
+  ],
+  "записи": [
+   "П-стиль-2",
+   "П-текст_в_кадре-8"
+  ]
+ },
+ {
+  "термин": "consistency, fusion, editing",
+  "значение_en": "the three advanced features named for the image API: character consistency, multi-image fusion and prompt-based editing",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-46"
+  ]
+ },
+ {
+  "термин": "context and intent",
+  "значение_en": "the purpose of the image (segment, aesthetics, brand domain, positioning) stated in the prompt, from which the model infers the style",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "conversation context: the previous turns and images of the same conversation that the model keeps when generating the next image",
+    "где_употребляется": "П-мультиход-4"
+   },
+   {
+    "смысл": "input data: large amounts of material (documents, code) supplied in the prompt for the task, placed before the specific instructions or questions",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   },
+   {
+    "смысл": "User Context: the information given to a strictly grounded assistant; the only allowed source of facts",
+    "где_употребляется": "П-grounding-7"
+   },
+   {
+    "смысл": "location: 'Location/context' — the formula slot that means the place where the scene takes place",
+    "где_употребляется": "П-промптинг-17"
+   }
+  ],
+  "записи": [
+   "П-промптинг-8",
+   "П-стиль-2"
+  ]
+ },
+ {
+  "термин": "conversation",
+  "значение_en": "a multi-turn exchange with the model in which previous turns and images stay in context; the boundary of the model's memory of previous images. In the Interactions API a session is a previous_interaction_id chain; in the SDK a chat (chats.create / sendMessage)",
+  "синонимы": [
+   "multi-turn conversation",
+   "same conversation",
+   "single conversation",
+   "same session",
+   "chat mode",
+   "different instance",
+   "new conversation",
+   "chat session",
+   "chat instance",
+   "session"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-1",
+   "П-мультиход-4",
+   "П-мультиход-6",
+   "П-мультиход-7",
+   "П-мультиход-8",
+   "П-мультиход-15"
+  ]
+ },
+ {
+  "термин": "conversation context",
+  "значение_en": "the previous turns and images of the same conversation that the model keeps when generating the next image",
+  "синонимы": [
+   "remembering",
+   "context (conversation)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "context and intent: the purpose of the image (segment, aesthetics, brand domain, positioning) stated in the prompt, from which the model infers the style",
+    "где_употребляется": "П-промптинг-8, П-стиль-2"
+   },
+   {
+    "смысл": "input data: large amounts of material (documents, code) supplied in the prompt for the task, placed before the specific instructions or questions",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   },
+   {
+    "смысл": "User Context: the information given to a strictly grounded assistant; the only allowed source of facts",
+    "где_употребляется": "П-grounding-7"
+   },
+   {
+    "смысл": "location: 'Location/context' — the formula slot that means the place where the scene takes place",
+    "где_употребляется": "П-промптинг-17"
+   }
+  ],
+  "записи": [
+   "П-мультиход-4"
+  ]
+ },
+ {
+  "термин": "conversational editing",
+  "значение_en": "editing an image in plain words over several turns of a conversation: the model returns an image, the user replies with changes, and the model keeps editing; no masks or special syntax",
+  "синонимы": [
+   "multi-turn image editing",
+   "multi-turn",
+   "conversationally",
+   "conversational nature",
+   "iterative edits"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-1",
+   "П-мультиход-2",
+   "П-мультиход-3",
+   "П-мультиход-8",
+   "П-промптинг-32",
+   "П-промптинг-43",
+   "П-стиль-10"
+  ]
+ },
+ {
+  "термин": "craquelure",
+  "значение_en": "the natural network of cracks in the paint layer, kept in restoration as part of the artwork's history",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-30",
+   "П-стиль-7"
+  ]
+ },
+ {
+  "термин": "creative direction",
+  "значение_en": "art direction: the overall artistic solution",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-46"
+  ]
+ },
+ {
+  "термин": "critical details",
+  "значение_en": "details whose distortion is unacceptable (a face, a logo); they are described in detail",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-10"
+  ]
+ },
+ {
+  "термин": "critique",
+  "значение_en": "a critique of the result by the model, used to refine the assets",
+  "синонимы": [
+   "constructive critiques"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-32"
+  ]
+ },
+ {
+  "термин": "cultural nuances or idiomatic phrases",
+  "значение_en": "language aspects of in-image text, besides grammar and spelling, that the model can struggle with when generating or translating text",
+  "синонимы": [
+   "cultural nuances",
+   "idiomatic phrases"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-29"
+  ]
+ },
+ {
+  "термин": "current limitations",
+  "значение_en": "the model's known limitations, among which stylization and style adaptation are listed",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-20",
+   "П-стиль-31"
+  ]
+ },
+ {
+  "термин": "cut-out window",
+  "значение_en": "letters that act as a window onto an image: the image is visible only inside the letterforms",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-13"
+  ]
+ },
+ {
+  "термин": "cutaway illustration",
+  "значение_en": "an illustration type that can be named as the visual theme of an explainer",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-15"
+  ]
+ },
+ {
+  "термин": "data visualization",
+  "значение_en": "an image that presents data, such as a chart, generated from provided content or from world knowledge",
+  "синонимы": [
+   "rough data visualizations"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-4",
+   "П-текст_в_кадре-25"
+  ]
+ },
+ {
+  "термин": "data-driven outputs",
+  "значение_en": "outputs that carry data, such as infographics, diagrams and data visualizations",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-4"
+  ]
+ },
+ {
+  "термин": "debossed",
+  "значение_en": "a graphic pressed into the card as part of the card design",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-15"
+  ]
+ },
+ {
+  "термин": "declarative / descriptive prompt",
+  "значение_en": "a prompt that describes the expected result",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-13"
+  ]
+ },
+ {
+  "термин": "define the canvas",
+  "значение_en": "setting the composition and aspect ratio of the image in the prompt, pairing a ratio with a medium and an orientation (e.g. 'A 9:16 vertical poster')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-3"
+  ]
+ },
+ {
+  "термин": "degrees of freedom",
+  "значение_en": "the openness of a prompt that the model fills in by default (for example the width of margins)",
+  "синонимы": [
+   "degree of freedom"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-26",
+   "П-камера_свет_композиция-27"
+  ]
+ },
+ {
+  "термин": "deictic reference",
+  "значение_en": "referring to the input with words such as 'this photo', 'this image', 'this product', 'this concept', 'that <subject>'",
+  "синонимы": [
+   "this concept"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-15",
+   "П-текст_в_кадре-23"
+  ]
+ },
+ {
+  "термин": "depth of field",
+  "значение_en": "the depth of field of the image, which an edit can alter to focus on different subjects",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-25"
+  ]
+ },
+ {
+  "термин": "descriptive caption",
+  "значение_en": "a long prompt written as a caption of an already finished image or photo ('This is a … photograph')",
+  "синонимы": [
+   "photo-caption-style description"
+  ],
+  "омонимы": [
+   {
+    "смысл": "caption (in-image): a line of text placed in the image as a title or label, e.g. a caption at the top of a character sheet",
+    "где_употребляется": "П-текст_в_кадре-6"
+   },
+   {
+    "смысл": "caption box / speech bubble / dialogue box: a caption box or speech bubble in a comic panel; the text inside it is in quotes",
+    "где_употребляется": "П-текст_в_кадре-16"
+   }
+  ],
+  "записи": [
+   "П-промптинг-12",
+   "П-стиль-26"
+  ]
+ },
+ {
+  "термин": "descriptor tail",
+  "значение_en": "a comma-separated tail of style or technique descriptors after the main sentences of a prompt",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-26"
+  ]
+ },
+ {
+  "термин": "design guidelines",
+  "значение_en": "explicit design guidelines set for an AI tool, against which the model critiques the assets",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-32"
+  ]
+ },
+ {
+  "термин": "design style name",
+  "значение_en": "a named interior design style or trend used as the style target (e.g. Mid-Century Modern, Bohemian Chic, dopamine decor)",
+  "синонимы": [
+   "Mid-Century Modern",
+   "Bohemian Chic",
+   "dopamine decor"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-23"
+  ]
+ },
+ {
+  "термин": "desired words",
+  "значение_en": "the words that must appear in the image; they are put in quotes",
+  "синонимы": [
+   "text to render"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2",
+   "П-текст_в_кадре-4"
+  ]
+ },
+ {
+  "термин": "detailed description",
+  "значение_en": "a detailed description of the character given when a new conversation is started to retain consistency",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-8"
+  ]
+ },
+ {
+  "термин": "detailed prompt",
+  "значение_en": "a prompt with specifics about the subject, surroundings, lighting, composition and overall mood; it gives more control and brings the result closer to what was imagined",
+  "синонимы": [
+   "detailed prompts"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-1"
+  ]
+ },
+ {
+  "термин": "director",
+  "значение_en": "the prompt author's role in generation from text only: describes the scene narratively rather than as a list of words",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-7"
+  ]
+ },
+ {
+  "термин": "disjointed scenes",
+  "значение_en": "a scene whose pieces do not come together as a whole",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-20"
+  ]
+ },
+ {
+  "термин": "distance to subject",
+  "значение_en": "a dimension of the scene description that sets the shot size (e.g. a close up)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-36"
+  ]
+ },
+ {
+  "термин": "drape",
+  "значение_en": "drape graphics over a three-dimensional surface with its folds, lighting and texture",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-23"
+  ]
+ },
+ {
+  "термин": "dusty graphite look",
+  "значение_en": "a description of the graphite dust marks of a pencil drawing",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-28"
+  ]
+ },
+ {
+  "термин": "editing instructions",
+  "значение_en": "requests to change an existing image; the sixth prompt element, used only when modifying an existing image",
+  "синонимы": [
+   "Editing Instructions",
+   "Editing instructions"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-13",
+   "П-редактирование-12"
+  ]
+ },
+ {
+  "термин": "educational explainer",
+  "значение_en": "an explanatory image: an infographic, a diagram or a technical breakdown",
+  "синонимы": [
+   "educational explainers",
+   "explainer"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-4",
+   "П-промптинг-34",
+   "П-текст_в_кадре-25"
+  ]
+ },
+ {
+  "термин": "emotional resonance",
+  "значение_en": "the emotional response the image should evoke; an element the prompt defines alongside composition, lighting and aspect ratio",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-7"
+  ]
+ },
+ {
+  "термин": "era label",
+  "значение_en": "an era or decade named as the style of the image (e.g. 90s grunge, 80s preppy, vintage, retro-style, 16-bit)",
+  "синонимы": [
+   "90s grunge",
+   "80s preppy",
+   "vintage",
+   "retro-style",
+   "16-bit"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-13",
+   "П-стиль-29"
+  ]
+ },
+ {
+  "термин": "era markers",
+  "значение_en": "markers of an era named as concrete visual traits of a style",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-27"
+  ]
+ },
+ {
+  "термин": "exact styling",
+  "значение_en": "line-by-line specification of the styling of each line of text (position, words in quotes, description, typeface)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-6"
+  ]
+ },
+ {
+  "термин": "expressive word",
+  "значение_en": "a rule for the words the model chooses: each text item is a word whose letters express its meaning visually",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-8"
+  ]
+ },
+ {
+  "термин": "factual assets",
+  "значение_en": "images with factually correct content (infographics, diagrams)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-5"
+  ]
+ },
+ {
+  "термин": "factual constraints",
+  "значение_en": "an accuracy requirement in the prompt plus factually correct input data",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-35"
+  ]
+ },
+ {
+  "термин": "factuality",
+  "значение_en": "factual accuracy of the output",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-4"
+  ]
+ },
+ {
+  "термин": "feedback",
+  "значение_en": "feedback on the result given in the next turn, from which the model changes the style of its images or retells the story",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-10"
+  ]
+ },
+ {
+  "термин": "few-shot prompt",
+  "значение_en": "a prompt with several examples of the correct answer; with images, image and sample-caption pairs included in the prompt",
+  "синонимы": [
+   "a few examples"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-28"
+  ]
+ },
+ {
+  "термин": "figurine",
+  "значение_en": "a photo of a person or pet turned into an image of a collectible figurine",
+  "синонимы": [
+   "collectible figurine",
+   "custom miniature figures"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-22"
+  ]
+ },
+ {
+  "термин": "film grain",
+  "значение_en": "the grain of photographic film used as a descriptor of the look (e.g. warm film grain)",
+  "синонимы": [
+   "grain"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-11",
+   "П-стиль-12"
+  ]
+ },
+ {
+  "термин": "film stock",
+  "значение_en": "the type of film named as a carrier of the look and mood",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-11"
+  ]
+ },
+ {
+  "термин": "flat lay photography",
+  "значение_en": "shooting a layout from above",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-29"
+  ]
+ },
+ {
+  "термин": "Follow this style",
+  "значение_en": "the style wrapper line that carries the style text in every image prompt of a series: Follow this style: \"{style}\"",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-9"
+  ]
+ },
+ {
+  "термин": "follow-up prompt",
+  "значение_en": "the next message in the same conversation, a short command that refines or edits the previous result",
+  "синонимы": [
+   "follow-up prompts",
+   "follow-up commands",
+   "follow-up turn",
+   "next turn"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-1",
+   "П-мультиход-2",
+   "П-мультиход-6"
+  ]
+ },
+ {
+  "термин": "font",
+  "значение_en": "a typeface named in the prompt as an alternative to describing the typography style in words",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "font style (descriptively)",
+  "значение_en": "a font style described in words (weight, color, font class such as bold, sans-serif, calligraphic), not necessarily by a typeface name",
+  "синонимы": [
+   "font style",
+   "typography style"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2",
+   "П-текст_в_кадре-3",
+   "П-текст_в_кадре-4"
+  ]
+ },
+ {
+  "термин": "foreign phrasing",
+  "значение_en": "a specific wording in another language for the in-image text, given as exact translated text in quote marks",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-19"
+  ]
+ },
+ {
+  "термин": "full-bleed",
+  "значение_en": "an edge-to-edge composition without margins; the default for photos",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-27",
+   "П-промптинг-11"
+  ]
+ },
+ {
+  "термин": "game and digital styles",
+  "значение_en": "game and digital styles the model can create, such as voxel art, pixel art, game assets and retro game style",
+  "синонимы": [
+   "voxel art",
+   "game assets",
+   "pixel art",
+   "retro game style"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-14"
+  ]
+ },
+ {
+  "термин": "gold foil",
+  "значение_en": "foil accents of the card design",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-15"
+  ]
+ },
+ {
+  "термин": "golden hour",
+  "значение_en": "golden-hour lighting, one of the defaults the model fills in for an open cinematic prompt",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-26"
+  ]
+ },
+ {
+  "термин": "golden hour backlighting",
+  "значение_en": "backlighting at golden hour that creates long shadows; a dramatic lighting effect",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-12"
+  ]
+ },
+ {
+  "термин": "GoPro / Fujifilm camera / cheap disposable camera",
+  "значение_en": "camera types named in the prompt for a look: an immersive, distorted action feel; authentic color science; a raw, nostalgic flash aesthetic",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-13"
+  ]
+ },
+ {
+  "термин": "grounding with Google Search",
+  "значение_en": "grounding generation on Google Search results: the model retrieves data based on the prompt",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-25"
+  ]
+ },
+ {
+  "термин": "guardrails",
+  "значение_en": "references and brand guidelines that constrain the model so that the output stays on brand",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-4",
+   "П-стиль-33"
+  ]
+ },
+ {
+  "термин": "halftone dot pattern",
+  "значение_en": "halftone dots, a trait of retro print",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-16"
+  ]
+ },
+ {
+  "термин": "hallucinations",
+  "значение_en": "incorrect information invented by the model; a general limitation of foundation models",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-5"
+  ]
+ },
+ {
+  "термин": "handwriting",
+  "значение_en": "lettering that simulates types of handwriting, specified in words",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "handwritten text",
+  "значение_en": "text written by hand in an input image or document",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-31"
+  ]
+ },
+ {
+  "термин": "high-fidelity inputs",
+  "значение_en": "detailed prompts and high-quality references as a condition for a high-quality result",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-4"
+  ]
+ },
+ {
+  "термин": "high-key",
+  "значение_en": "a shot description paired with the shot size in a close-up product example ('A close-up, high-key image')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-7"
+  ]
+ },
+ {
+  "термин": "hyper-specific",
+  "значение_en": "maximum specificity: a generic word is replaced by a description of type, material, finish and shape details",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-1"
+  ]
+ },
+ {
+  "термин": "i18n text rendering",
+  "значение_en": "rendering text in the image in different languages",
+  "синонимы": [
+   "localized text rendering",
+   "multilingual text generation"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-20"
+  ]
+ },
+ {
+  "термин": "image + text-to-image (editing)",
+  "значение_en": "an editing mode: an image as input plus a text request",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-1"
+  ]
+ },
+ {
+  "термин": "Image 1 / Image 2",
+  "значение_en": "labels of the input images in the prompt text (numbers or letters), in the order of the parts; they assign each image its role",
+  "синонимы": [
+   "Image A / Image B / Image C",
+   "index before the image"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-5",
+   "П-рефы-6"
+  ]
+ },
+ {
+  "термин": "image format",
+  "значение_en": "the format of an image named by its purpose and orientation, e.g. \"widescreen backdrop\" or \"vertical social post\"",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "aspect ratio: the proportions of the output image; in the API a string such as \"16:9\", in prompts written as text",
+    "где_употребляется": "П-камера_свет_композиция-37, П-промптинг-54, П-форматы_разрешение-3, П-форматы_разрешение-4, П-форматы_разрешение-5, П-форматы_разрешение-6"
+   },
+   {
+    "смысл": "visual type: a type of visual (photo, card, book illustration, infographic, isometric cutaway, triptych, timeline) named in the prompt; it carries meaning by itself",
+    "где_употребляется": "П-промптинг-11, П-промптинг-33, П-промптинг-57, П-рефы-34"
+   },
+   {
+    "смысл": "output format: the required form of the answer, such as a table, bullet points or an email",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   }
+  ],
+  "записи": [
+   "П-форматы_разрешение-3"
+  ]
+ },
+ {
+  "термин": "image type / medium label",
+  "значение_en": "an explicit label of the image type, medium or genre in the prompt (e.g. 'A whimsical illustration of', 'Claymation scene.')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-25"
+  ]
+ },
+ {
+  "термин": "image understanding",
+  "значение_en": "the model reading an input image: answering about it, locating and counting objects, detecting text",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-31"
+  ]
+ },
+ {
+  "термин": "image-to-image",
+  "значение_en": "generation from an input image to a changed image, e.g. language changes on menus or signs that keep the original style or layout",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-21"
+  ]
+ },
+ {
+  "термин": "impasto brushstrokes",
+  "значение_en": "impasto brushstrokes named as a trait of the target painting style",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-3"
+  ]
+ },
+ {
+  "термин": "imperative prompt",
+  "значение_en": "a command prompt that describes the actions to perform on the input",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-13"
+  ]
+ },
+ {
+  "термин": "in-image localization",
+  "значение_en": "generating or translating text directly inside the image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-21"
+  ]
+ },
+ {
+  "термин": "infographic style",
+  "значение_en": "a style named as the visual theme of an infographic",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-15"
+  ]
+ },
+ {
+  "термин": "ink / doodle",
+  "значение_en": "drawn markup over an image as a way to indicate an edit",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-19"
+  ]
+ },
+ {
+  "термин": "input aspect ratio",
+  "значение_en": "the aspect ratio of the image being edited",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-1"
+  ]
+ },
+ {
+  "термин": "input data",
+  "значение_en": "large amounts of material (documents, code) supplied in the prompt for the task, placed before the specific instructions or questions",
+  "синонимы": [
+   "context (input data)",
+   "Context (Persona / Task / Context / Format)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "conversation context: the previous turns and images of the same conversation that the model keeps when generating the next image",
+    "где_употребляется": "П-мультиход-4"
+   },
+   {
+    "смысл": "context and intent: the purpose of the image (segment, aesthetics, brand domain, positioning) stated in the prompt, from which the model infers the style",
+    "где_употребляется": "П-промптинг-8, П-стиль-2"
+   },
+   {
+    "смысл": "User Context: the information given to a strictly grounded assistant; the only allowed source of facts",
+    "где_употребляется": "П-grounding-7"
+   },
+   {
+    "смысл": "location: 'Location/context' — the formula slot that means the place where the scene takes place",
+    "где_употребляется": "П-промптинг-17"
+   }
+  ],
+  "записи": [
+   "П-промптинг-23"
+  ]
+ },
+ {
+  "термин": "input image",
+  "значение_en": "the image passed to the model in the request, for example the image being edited",
+  "синонимы": [
+   "base image",
+   "source image",
+   "original image"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-11"
+  ]
+ },
+ {
+  "термин": "instruction following",
+  "значение_en": "accuracy of following the prompt instructions and meeting its requirements",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-52"
+  ]
+ },
+ {
+  "термин": "integrate / blend seamlessly",
+  "значение_en": "how an inserted element should match the input image physically and in lighting",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-8"
+  ]
+ },
+ {
+  "термин": "interleaved or as part of image",
+  "значение_en": "text output that comes interleaved with images or inside the image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-30"
+  ]
+ },
+ {
+  "термин": "interleaved text and images",
+  "значение_en": "a response in which text blocks and images alternate within one turn",
+  "синонимы": [
+   "interleaved",
+   "interleaved content"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-38"
+  ]
+ },
+ {
+  "термин": "isometric",
+  "значение_en": "an isometric projection set by a word in the prompt",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-28",
+   "П-стиль-14"
+  ]
+ },
+ {
+  "термин": "iterate and refine",
+  "значение_en": "refining a result with small follow-up edits instead of expecting a perfect image on the first attempt",
+  "синонимы": [
+   "iterate on visuals",
+   "small changes"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-1",
+   "П-мультиход-3"
+  ]
+ },
+ {
+  "термин": "keep-clause",
+  "значение_en": "a phrase in an edit prompt that states what must stay unchanged (e.g. 'keeping everything else the same', 'Maintain existing pose and framing')",
+  "синонимы": [
+   "what is staying the same / keep exactly the same",
+   "keeping everything else the same",
+   "preserving the original visual design",
+   "Maintain existing pose and framing",
+   "keeping the original subject intact",
+   "locked in its current position"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-11",
+   "П-стиль-4",
+   "П-текст_в_кадре-22",
+   "П-форматы_разрешение-7"
+  ]
+ },
+ {
+  "термин": "kerned",
+  "значение_en": "a description of the lettering: perfectly kerned letters with a clean, geometric precision",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-15"
+  ]
+ },
+ {
+  "термин": "key-value prompt",
+  "значение_en": "a prompt made of 'key: value' pairs (Task, Subject, Corrections, Background, Border, Position)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-13"
+  ]
+ },
+ {
+  "термин": "keywords",
+  "значение_en": "a list of disconnected words or tags; contrasted with narrative description and treated as an insufficient form of prompt",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-7"
+  ]
+ },
+ {
+  "термин": "knowledge cutoff",
+  "значение_en": "the date up to which the model knows the world without search",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-2"
+  ]
+ },
+ {
+  "термин": "label",
+  "значение_en": "a label for an element: generic ('with a bold label') or exact words in quotes",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-6"
+  ]
+ },
+ {
+  "термин": "language code",
+  "значение_en": "a code for a language; the language can be named in words in the prompt instead",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "large model",
+  "значение_en": "a larger image model used for a complex transformation instead of successive, easier steps",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-5"
+  ]
+ },
+ {
+  "термин": "legible text",
+  "значение_en": "readable text in the image: letters are distinguishable and words can be read",
+  "синонимы": [
+   "legible",
+   "sharp, legible text",
+   "legible, stylized text"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-11",
+   "П-текст_в_кадре-32"
+  ]
+ },
+ {
+  "термин": "letterforms",
+  "значение_en": "the shapes of the letters of the rendered text, which can be built from a material, formed by objects or act as a window onto an image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-13"
+  ]
+ },
+ {
+  "термин": "lettering style",
+  "значение_en": "a lettering style carried over from a reference image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-14"
+  ]
+ },
+ {
+  "термин": "[lighting setup, e.g., three-point softbox setup]",
+  "значение_en": "a template slot for the lighting setup, with an example value given in the template itself",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-7"
+  ]
+ },
+ {
+  "термин": "live-action movie still",
+  "значение_en": "a still from a live-action film",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-8"
+  ]
+ },
+ {
+  "термин": "local edits",
+  "значение_en": "precise edits of one part of an image described in plain language, without a mask image; the rest of the image stays untouched",
+  "синонимы": [
+   "localized editing",
+   "targeted transformation",
+   "semantic masking",
+   "mask-free editing",
+   "pixel-perfect editing",
+   "inpainting"
+  ],
+  "омонимы": [
+   {
+    "смысл": "masked editing: editing inside an area set by a mask; named among advanced features that can produce unnatural results or artifacts",
+    "где_употребляется": "П-редактирование-20"
+   }
+  ],
+  "записи": [
+   "П-мультиход-2",
+   "П-редактирование-9",
+   "П-редактирование-17",
+   "П-редактирование-18",
+   "П-текст_в_кадре-24"
+  ]
+ },
+ {
+  "термин": "localize / localization",
+  "значение_en": "translating the lettering and adapting the image to a region; it can also change visual elements (setting, props)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-21",
+   "П-текст_в_кадре-23"
+  ]
+ },
+ {
+  "термин": "location",
+  "значение_en": "where the scene takes place (the place or environment); time of day and light are often included here",
+  "синонимы": [
+   "Location",
+   "Location / Setting",
+   "Location/context",
+   "setting / environment",
+   "setting",
+   "<scene> (formula slot: the place)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "scene: the whole depicted scene, not only the place (the <scene> slot of the Gemini app formula means the place)",
+    "где_употребляется": "most records"
+   },
+   {
+    "смысл": "context: in 'Location/context' the word means the place; elsewhere see conversation context, context and intent, input data, User Context",
+    "где_употребляется": "П-мультиход-4, П-промптинг-8, П-стиль-2, П-промптинг-14, П-промптинг-23, П-grounding-7"
+   }
+  ],
+  "записи": [
+   "П-камера_свет_композиция-33",
+   "П-промптинг-13",
+   "П-промптинг-17",
+   "П-промптинг-19",
+   "П-текст_в_кадре-23"
+  ]
+ },
+ {
+  "термин": "logic and reasoning",
+  "значение_en": "the model's ability to rely on its understanding of the world and physics for complex scenes and for the next step",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-7"
+  ]
+ },
+ {
+  "термин": "long-form text rendering / long paragraphs / page length",
+  "значение_en": "long text in the image (paragraphs, a page); a known weak spot of the models",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-27"
+  ]
+ },
+ {
+  "термин": "look and feel",
+  "значение_en": "the overall visual look of a brand or deck, carried over to mockups or slides",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-32"
+  ]
+ },
+ {
+  "термин": "macro lens",
+  "значение_en": "a lens specified for intricate details",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-14"
+  ]
+ },
+ {
+  "термин": "masked editing",
+  "значение_en": "editing inside an area set by a mask; named among advanced features that can produce unnatural results or artifacts",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "local edits: precise edits of one part of an image described in plain language, without a mask image; the rest of the image stays untouched",
+    "где_употребляется": "П-мультиход-2, П-редактирование-9, П-редактирование-17, П-редактирование-18, П-текст_в_кадре-24"
+   }
+  ],
+  "записи": [
+   "П-редактирование-20"
+  ]
+ },
+ {
+  "термин": "match the original image's style, lighting, and perspective",
+  "значение_en": "the model itself fits an edit to the style, lighting and perspective of the input image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-3"
+  ]
+ },
+ {
+  "термин": "medium artifacts",
+  "значение_en": "artifacts of the capture medium (streaks, stains, grain) added to set the photo look",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-30"
+  ]
+ },
+ {
+  "термин": "minimalist",
+  "значение_en": "a minimalist aesthetic, used for logos and mockups",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-2"
+  ]
+ },
+ {
+  "термин": "modalities (Firebase)",
+  "значение_en": "recommended usage patterns (text-to-image, editing and others); not a request field and not the same as responseModalities",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-22"
+  ]
+ },
+ {
+  "термин": "modality",
+  "значение_en": "the kind of output (text or image) that the prompt asks for explicitly",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-30"
+  ]
+ },
+ {
+  "термин": "multi-image fusion",
+  "значение_en": "merging several input images into one new image",
+  "синонимы": [
+   "fusion / multi-image fusion",
+   "fusion / blend",
+   "multi-image fusion / blend",
+   "blend realities"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-2",
+   "П-рефы-9",
+   "П-рефы-46"
+  ]
+ },
+ {
+  "термин": "multi-image story",
+  "значение_en": "a story told across a series of images generated in one request, possibly based on a single reference image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-10"
+  ]
+ },
+ {
+  "термин": "Multi-image to image (composition & style transfer)",
+  "значение_en": "a generation mode with several input images that leads to a new scene or a style transfer; 'composition' here means combining several input images into one scene",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "composition: Google does not distinguish two readings: framing (shot size, angle, orientation) and the arrangement of elements in the frame.",
+    "где_употребляется": "П-камера_свет_композиция-1, П-камера_свет_композиция-4, П-камера_свет_композиция-8, П-камера_свет_композиция-21, П-камера_свет_композиция-25, П-камера_свет_композиция-27, П-камера_свет_композиция-37, П-промптинг-1, П-промптинг-10, П-промптинг-11, П-промптинг-12, П-промптинг-13, П-промптинг-17, П-промптинг-19, П-редактирование-6, П-редактирование-9, П-рефы-8, П-стиль-3, П-стиль-28, П-стиль-33, П-текст_в_кадре-17"
+   },
+   {
+    "смысл": "composition: (label line): a separate 'composition:' line in logo example prompts that sets the rendering and the background (e.g. 'composition: flat vector rendering of all logos in black on a single white background')",
+    "где_употребляется": "П-стиль-2, П-текст_в_кадре-8"
+   }
+  ],
+  "записи": [
+   "П-рефы-9"
+  ]
+ },
+ {
+  "термин": "muted teal tones",
+  "значение_en": "a color-grading description for a modern, moody aesthetic ('Cinematic color grading with muted teal tones')",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-11"
+  ]
+ },
+ {
+  "термин": "narrative prompt",
+  "значение_en": "describing the scene as a connected paragraph, like a director",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-7"
+  ]
+ },
+ {
+  "термин": "native image generation",
+  "значение_en": "image generation by the multimodal Gemini model itself, without a separate image model",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-1",
+   "П-модели_сравнение-7",
+   "П-мультиход-3",
+   "П-редактирование-2"
+  ]
+ },
+ {
+  "термин": "native multimodality",
+  "значение_en": "the model was built to process text and images at the same time",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-3"
+  ]
+ },
+ {
+  "термин": "natively multimodal reasoning models",
+  "значение_en": "the Gemini series of models that understand several modalities and reason; the image models are its members",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-модели_сравнение-1"
+  ]
+ },
+ {
+  "термин": "negative prompt",
+  "значение_en": "a list of what must not be in the image: for the Gemini image models a text block inside the prompt, not a call parameter; for Imagen a separate field",
+  "синонимы": [
+   "negative prompt (in Google notebook)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "semantic negative prompt: what is unwanted is expressed by a positive description of the intended scene instead of a bare exclusion ('no' + an object)",
+    "где_употребляется": "П-промптинг-29, П-текст_в_кадре-12"
+   }
+  ],
+  "записи": [
+   "П-промптинг-29",
+   "П-промптинг-31",
+   "П-текст_в_кадре-12"
+  ]
+ },
+ {
+  "термин": "negative space",
+  "значение_en": "an empty area of the frame, often for overlaying text",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-8",
+   "П-текст_в_кадре-17"
+  ]
+ },
+ {
+  "термин": "New scenario",
+  "значение_en": "a description of the new scene into which the result is placed",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-18"
+  ]
+ },
+ {
+  "термин": "NO_IMAGE",
+  "значение_en": "the finish reason when the model returned only text without an image (often with an ambiguous prompt)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-22"
+  ]
+ },
+ {
+  "термин": "off-center / centered / top right corner / left edge",
+  "значение_en": "frame-layout words that place elements in the frame",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-20"
+  ]
+ },
+ {
+  "термин": "open prompt",
+  "значение_en": "a prompt that generates images in full creative mode, without specific constraints",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-3"
+  ]
+ },
+ {
+  "термин": "orientation",
+  "значение_en": "orientation words (portrait, landscape, square, vertical, ultra-wide panoramic) used together with or instead of a numeric ratio",
+  "синонимы": [
+   "portrait / landscape",
+   "landscape / square / ultra-wide panoramic",
+   "orientation (vertical portrait / square / landscape)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "portrait as a shot size in the list of Composition examples (extreme close-up, wide shot, low angle shot, portrait)",
+    "где_употребляется": "П-промптинг-13"
+   }
+  ],
+  "записи": [
+   "П-камера_свет_композиция-4",
+   "П-форматы_разрешение-4",
+   "П-форматы_разрешение-5"
+  ]
+ },
+ {
+  "термин": "original scene",
+  "значение_en": "the first scene of an earlier environment, used as the reference to return to that environment instead of the latest scene",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-27"
+  ]
+ },
+ {
+  "термин": "orthographic blueprints",
+  "значение_en": "orthographic drawings or views for 3D modeling",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-28"
+  ]
+ },
+ {
+  "термин": "outline",
+  "значение_en": "an outline or as many details as wanted, given to the model to write up in the wanted form (a poem, an infographic, an invitation)",
+  "синонимы": [
+   "necessary details"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-9"
+  ]
+ },
+ {
+  "термин": "outpainting",
+  "значение_en": "extending an image beyond its original borders using a larger canvas",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-26"
+  ]
+ },
+ {
+  "термин": "output format",
+  "значение_en": "the required form of the answer, such as a table, bullet points or an email",
+  "синонимы": [
+   "Format (Persona / Task / Context / Format)"
+  ],
+  "омонимы": [
+   {
+    "смысл": "aspect ratio: the proportions of the output image; in the API a string such as \"16:9\", in prompts written as text",
+    "где_употребляется": "П-камера_свет_композиция-37, П-промптинг-54, П-форматы_разрешение-3, П-форматы_разрешение-4, П-форматы_разрешение-5, П-форматы_разрешение-6"
+   },
+   {
+    "смысл": "image format: the format of an image named by its purpose and orientation, e.g. \"widescreen backdrop\" or \"vertical social post\"",
+    "где_употребляется": "П-форматы_разрешение-3"
+   },
+   {
+    "смысл": "visual type: a type of visual (photo, card, book illustration, infographic, isometric cutaway, triptych, timeline) named in the prompt; it carries meaning by itself",
+    "где_употребляется": "П-промптинг-11, П-промптинг-33, П-промптинг-57, П-рефы-34"
+   },
+   {
+    "смысл": "answer format: the fixed format of captions in a few-shot sequence",
+    "где_употребляется": "П-промптинг-28"
+   }
+  ],
+  "записи": [
+   "П-промптинг-23"
+  ]
+ },
+ {
+  "термин": "output styles (slide, image, infographic)",
+  "значение_en": "an explicit choice of the result type in the Help me visualize side panel",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-продукт_ui-5"
+  ]
+ },
+ {
+  "термин": "overall aesthetic",
+  "значение_en": "the overall look of the image, e.g. 3D animation, film noir, watercolor painting, photorealistic, 1990s product photography",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-1"
+  ]
+ },
+ {
+  "термин": "overall design",
+  "значение_en": "the overall design of an image with text, stated clearly together with the text and its font style",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-3"
+  ]
+ },
+ {
+  "термин": "overhaul the entire aesthetic",
+  "значение_en": "a complete change of aesthetics as an editing option",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-6"
+  ]
+ },
+ {
+  "термин": "overlay text",
+  "значение_en": "text placed over an image later, for which a background with negative space is created",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-17"
+  ]
+ },
+ {
+  "термин": "persistent ink",
+  "значение_en": "traces of the drawn markup that remain in the result",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-19"
+  ]
+ },
+ {
+  "термин": "photographic and cinematic terms",
+  "значение_en": "camera and shot vocabulary used in the prompt to control the composition, e.g. wide-angle shot, macro shot, low-angle perspective, low angle, aerial view, 85mm portrait lens, Dutch angle",
+  "синонимы": [
+   "wide-angle shot / macro shot / low-angle perspective",
+   "85mm portrait lens / Dutch angle",
+   "low angle / aerial view"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-1"
+  ]
+ },
+ {
+  "термин": "photorealistic imagery",
+  "значение_en": "high-quality photorealistic images with true-to-life details",
+  "синонимы": [
+   "true-to-life details"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-18"
+  ]
+ },
+ {
+  "термин": "physical makeup / materiality",
+  "значение_en": "the material, colour, texture and finish of an object stated instead of a generic name",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-9"
+  ]
+ },
+ {
+  "термин": "power prompt",
+  "значение_en": "a model-improved version of a prompt obtained with the request 'Make this a power prompt: ...'",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-46"
+  ]
+ },
+ {
+  "термин": "Preserve the original composition",
+  "значение_en": "a clause of the style-transfer template that keeps the composition of the input image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-3"
+  ]
+ },
+ {
+  "термин": "preserved",
+  "значение_en": "carried over unchanged from the previous scene when the prompt does not specify it (e.g. the light source, quality and direction)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-13"
+  ]
+ },
+ {
+  "термин": "previous scene",
+  "значение_en": "the previous scene of a series, attached with the character sheet as context for the next frame",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-13"
+  ]
+ },
+ {
+  "термин": "previously generated images",
+  "значение_en": "images generated earlier that are passed as inputs to the next generation to maintain consistency",
+  "синонимы": [
+   "previously generated characters",
+   "iterative editing"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-9",
+   "П-мультиход-15"
+  ]
+ },
+ {
+  "термин": "product image editing",
+  "значение_en": "keeping the main product while changing the background or its position",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-22"
+  ]
+ },
+ {
+  "термин": "product recontextualization",
+  "значение_en": "moving a product from a photo with a plain background into a new scene or setting while keeping it",
+  "синонимы": [
+   "recontextualize"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-22",
+   "П-рефы-39"
+  ]
+ },
+ {
+  "термин": "product visualization / virtual room placement",
+  "значение_en": "e-commerce scenarios: showing a product in an interior or setting",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-22"
+  ]
+ },
+ {
+  "термин": "prompt",
+  "значение_en": "a natural-language request to a generative model: questions, instructions, context, examples or partial input; it can contain several modalities",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-15",
+   "П-промптинг-16"
+  ]
+ },
+ {
+  "термин": "prompt design",
+  "значение_en": "creating a prompt that produces the needed answer; a process of trial and error",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-40"
+  ]
+ },
+ {
+  "термин": "Prompt Orchestration",
+  "значение_en": "a multi-model pipeline: a text model writes a structured script, the image model draws",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-42"
+  ]
+ },
+ {
+  "термин": "prompt-based pipeline",
+  "значение_en": "a generation pipeline based on prompts and assets, without fine-tuning",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-51"
+  ]
+ },
+ {
+  "термин": "quotes / quote marks",
+  "значение_en": "quotation marks around the exact words that must appear in the image, or around an exact ready-made translation",
+  "синонимы": [
+   "quote marks"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2",
+   "П-текст_в_кадре-19"
+  ]
+ },
+ {
+  "термин": "reading level",
+  "значение_en": "the level of the in-image text, set by who reads it (a school grade, an adult reading the text to a child)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-26"
+  ]
+ },
+ {
+  "термин": "real-life references",
+  "значение_en": "real images found through search that inspire more detailed depictions",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-1"
+  ]
+ },
+ {
+  "термин": "real-world data",
+  "значение_en": "data the model is told to retrieve instead of describing a fictional scene",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-2"
+  ]
+ },
+ {
+  "термин": "reducing / expanding background",
+  "значение_en": "the two ways named in edit examples to reach a new aspect ratio: reduce or expand the background",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-7"
+  ]
+ },
+ {
+  "термин": "reference image",
+  "значение_en": "an input image from which the model builds a new one: its content (object, character, place) or style is carried into the result",
+  "синонимы": [
+   "reference"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-27"
+  ]
+ },
+ {
+  "термин": "reference image with the correct dimensions",
+  "значение_en": "an image of the target size passed with the prompt to get a specific aspect ratio",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-2"
+  ]
+ },
+ {
+  "термин": "reframe",
+  "значение_en": "change the framing of a finished image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-6"
+  ]
+ },
+ {
+  "термин": "regional cultural cues",
+  "значение_en": "cultural cues of a region added to the language specification",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "reimagine",
+  "значение_en": "reinterpret an image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-6"
+  ]
+ },
+ {
+  "термин": "reinterpret scenes",
+  "значение_en": "reinterpret a scene in another style",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-19"
+  ]
+ },
+ {
+  "термин": "Relationship instruction",
+  "значение_en": "an instruction on how the references relate to each other: the role of each reference, what to take from each and how to combine them",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-18"
+  ]
+ },
+ {
+  "термин": "resize without cropping",
+  "значение_en": "resizing a creation to another aspect ratio without cropping the details",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-8"
+  ]
+ },
+ {
+  "термин": "response modalities TEXT+IMAGE",
+  "значение_en": "the call setting that asks for both text and image output, used for mixed text-and-image responses",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-38"
+  ]
+ },
+ {
+  "термин": "restoration",
+  "значение_en": "repairing damage, cleaning up and straightening an old image, often together with colorizing it",
+  "синонимы": [
+   "restore / colorize"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-27",
+   "П-стиль-7"
+  ]
+ },
+ {
+  "термин": "retro print aesthetic",
+  "значение_en": "a retro print look, marked for example by a halftone dot pattern",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-16"
+  ]
+ },
+ {
+  "термин": "retro-futuristic aesthetic",
+  "значение_en": "an example of an overall aesthetic, alongside realistic characters and something totally abstract",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-1"
+  ]
+ },
+ {
+  "термин": "rich textures",
+  "значение_en": "detailed surface textures (fabric, metal, leather, paper) rendered in the image",
+  "синонимы": [
+   "richer textures",
+   "complex textures"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-17"
+  ]
+ },
+ {
+  "термин": "semantic negative prompt",
+  "значение_en": "what is unwanted is expressed by a positive description of the intended scene instead of a bare exclusion ('no' + an object)",
+  "синонимы": [
+   "semantic negative prompts / positive framing",
+   "positive framing"
+  ],
+  "омонимы": [
+   {
+    "смысл": "negative prompt: a list of what must not be in the image: for the Gemini image models a text block inside the prompt, not a call parameter; for Imagen a separate field",
+    "где_употребляется": "П-промптинг-29, П-промптинг-31, П-текст_в_кадре-12"
+   }
+  ],
+  "записи": [
+   "П-промптинг-29",
+   "П-текст_в_кадре-12"
+  ]
+ },
+ {
+  "термин": "sequential art",
+  "значение_en": "a comic or storyboard made of panels, created panel by panel",
+  "синонимы": [
+   "storyboard",
+   "panel by panel"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-12",
+   "П-промптинг-26",
+   "П-текст_в_кадре-16"
+  ]
+ },
+ {
+  "термин": "several images at once",
+  "значение_en": "several images generated from one request to explore and compare creative options side by side",
+  "синонимы": [
+   "multiple images with just one prompt",
+   "distinct variations"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-10"
+  ]
+ },
+ {
+  "термин": "shallow depth of field (f/1.8)",
+  "значение_en": "a shallow depth of field requested together with a low-angle shot to force the perspective",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-14"
+  ]
+ },
+ {
+  "термин": "shot types",
+  "значение_en": "names of shot size and camera angle, such as extreme close-up, wide shot, low angle shot, establishing shot, medium shot, close-up, POV shot",
+  "синонимы": [
+   "extreme close-up / wide shot / low angle shot",
+   "establishing shot / medium shot / close-up / POV shot"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-4"
+  ]
+ },
+ {
+  "термин": "simple prompt / short prompt",
+  "значение_en": "a prompt of one or two sentences; it produces a quality image but gives less control",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-2"
+  ]
+ },
+ {
+  "термин": "single workflow",
+  "значение_en": "the scope of one piece of work (a storyboard, a narrative) within which character resemblance and object fidelity are maintained",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-16"
+  ]
+ },
+ {
+  "термин": "sketchnote",
+  "значение_en": "a hand-drawn visual summary infographic based on source text",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-49",
+   "П-стиль-15",
+   "П-текст_в_кадре-9"
+  ]
+ },
+ {
+  "термин": "skill (Agent Skills, Genkit)",
+  "значение_en": "a SKILL.md file with instructions, loaded into the model context on activation by its trigger description",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-30"
+  ]
+ },
+ {
+  "термин": "slot machine user experience",
+  "значение_en": "random generation without control over the result",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-18"
+  ]
+ },
+ {
+  "термин": "small text (often blurry in 1k model)",
+  "значение_en": "small text in the image, often blurry at 1K output; a known limitation",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-27"
+  ]
+ },
+ {
+  "термин": "smaller steps",
+  "значение_en": "a complex task broken down into successive, easier steps processed one at a time",
+  "синонимы": [
+   "iterative process",
+   "successive, easier steps"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-5"
+  ]
+ },
+ {
+  "термин": "soft-focus",
+  "значение_en": "a soft-focus effect used to describe a nostalgic retro look",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-12"
+  ]
+ },
+ {
+  "термин": "Source/Search request",
+  "значение_en": "a slot of the web-search prompt formula: the request to retrieve real-world data",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-2"
+  ]
+ },
+ {
+  "термин": "spatial localisation",
+  "значение_en": "placement by the sides of the frame; a known limitation is left/right confusion",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-19"
+  ]
+ },
+ {
+  "термин": "spatial reasoning",
+  "значение_en": "reasoning about the positions of objects in an input image; imprecise in the understanding models",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-47"
+  ]
+ },
+ {
+  "термин": "spatial understanding",
+  "значение_en": "the model's ability to produce other views of a subject while preserving its visual features; the basis for 3D manipulation",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-17",
+   "П-рефы-24"
+  ]
+ },
+ {
+  "термин": "specific details",
+  "значение_en": "particular details of an image, such as colors or objects, changed by follow-up commands",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-2"
+  ]
+ },
+ {
+  "термин": "specific subjects",
+  "значение_en": "particular real subjects (species, landmarks, objects) that image search helps render more accurately",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-1"
+  ]
+ },
+ {
+  "термин": "Specific text integration",
+  "значение_en": "stating explicitly what text should appear and how it looks (role, text, weight, color, position)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-3"
+  ]
+ },
+ {
+  "термин": "sprite sheet",
+  "значение_en": "a single grid image containing the frames of an animation",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-26"
+  ]
+ },
+ {
+  "термин": "strictly grounded",
+  "значение_en": "an answer based only on the given context, without the model's own knowledge",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-7"
+  ]
+ },
+ {
+  "термин": "strong verb",
+  "значение_en": "a verb naming the primary operation of the prompt at its start: Generate, Create, Change, Transform",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-21"
+  ]
+ },
+ {
+  "термин": "structured output",
+  "значение_en": "a text model response that follows a JSON schema (for example a name and a prompt)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-46"
+  ]
+ },
+ {
+  "термин": "studio-quality control",
+  "значение_en": "controlling the lighting and camera parameters of an image by editing (angle, focus, color grading, lighting)",
+  "синонимы": [
+   "studio-quality control edits"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-25"
+  ]
+ },
+ {
+  "термин": "style",
+  "значение_en": "the style of the image: the medium (photo, illustration, watercolor) and the overall aesthetic; also a genre or an era",
+  "синонимы": [
+   "Style",
+   "[Style]",
+   "visual style"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-13",
+   "П-промптинг-17",
+   "П-стиль-1"
+  ]
+ },
+ {
+  "термин": "style prompt",
+  "значение_en": "the style text inserted into every prompt of a series",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-9"
+  ]
+ },
+ {
+  "термин": "style transfer",
+  "значение_en": "redrawing the content of an image in a different artistic style while keeping its composition or subject",
+  "синонимы": [
+   "stylization",
+   "style adaptation",
+   "transforming image styles"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-3",
+   "П-стиль-5",
+   "П-стиль-20",
+   "П-стиль-31"
+  ]
+ },
+ {
+  "термин": "Subject",
+  "значение_en": "who or what is in the shot; a noun with distinguishing features, stated specifically",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-13"
+  ]
+ },
+ {
+  "термин": "succinct story / elaborate tableau",
+  "значение_en": "a condensed story (meaning, event) plus an elaborate verbal picture of the scene details",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-промптинг-7"
+  ]
+ },
+ {
+  "термин": "system instructions (API field)",
+  "значение_en": "developer instructions passed in the API system instruction field, separate from the content: a preamble that sets the model's behavior before the user's instructions",
+  "синонимы": [
+   "system instruction",
+   "system_instruction",
+   "systemInstruction"
+  ],
+  "омонимы": [
+   {
+    "смысл": "system instructions (prompt block): a block of rules and prohibitions for the images, added as text to every prompt of a series and sent as a regular message; it acts as a negative prompt; not the API system instruction field",
+    "где_употребляется": "П-мультиход-15, П-промптинг-31, П-стиль-9, П-текст_в_кадре-12"
+   }
+  ],
+  "записи": [
+   "П-grounding-6",
+   "П-промптинг-23",
+   "П-редактирование-30"
+  ]
+ },
+ {
+  "термин": "system instructions (prompt block)",
+  "значение_en": "a block of rules and prohibitions for the images, added as text to every prompt of a series and sent as a regular message; it acts as a negative prompt; not the API system instruction field",
+  "синонимы": [
+   "\"system instructions\"",
+   "{system_instructions}"
+  ],
+  "омонимы": [
+   {
+    "смысл": "system instructions (API field): developer instructions passed in the API system instruction field, separate from the content: a preamble that sets the model's behavior before the user's instructions",
+    "где_употребляется": "П-grounding-6, П-промптинг-23, П-редактирование-30"
+   }
+  ],
+  "записи": [
+   "П-мультиход-15",
+   "П-промптинг-31",
+   "П-стиль-9",
+   "П-текст_в_кадре-12"
+  ]
+ },
+ {
+  "термин": "target language",
+  "значение_en": "the language in which the in-image text must appear; specified in the prompt in words",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "text concepts",
+  "значение_en": "text options worked out in conversation before generating the image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2",
+   "П-текст_в_кадре-7"
+  ]
+ },
+ {
+  "термин": "text explainers",
+  "значение_en": "explanatory texts inside an infographic",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-26"
+  ]
+ },
+ {
+  "термин": "text rendering",
+  "значение_en": "the model drawing text directly inside the image",
+  "синонимы": [
+   "Advanced text rendering"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-32"
+  ]
+ },
+ {
+  "термин": "Text-first hack",
+  "значение_en": "first get the text in conversation with the model, then ask for an image with that text",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2",
+   "П-текст_в_кадре-7"
+  ]
+ },
+ {
+  "термин": "textures, fonts and calligraphy",
+  "значение_en": "the variety of textures, fonts and calligraphy available for text in mockups and posters",
+  "синонимы": [
+   "calligraphy"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-16",
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "Think very hard before answering",
+  "значение_en": "an example prompt phrase that can improve performance on heavy-reasoning problems at the cost of extra thinking tokens",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-thinking-3"
+  ]
+ },
+ {
+  "термин": "thinking",
+  "значение_en": "the model's reasoning process before it produces the image: it evaluates the prompt instructions and plans the visual composition",
+  "синонимы": [
+   "Thinking (process)",
+   "reasoning",
+   "deep reasoning",
+   "plan visual composition"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-thinking-1"
+  ]
+ },
+ {
+  "термин": "thinking model",
+  "значение_en": "a model trained to generate an internal thinking process before producing a response; this changes the way of prompting",
+  "синонимы": [
+   "thinking models",
+   "reasoning model"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-thinking-1",
+   "П-промптинг-27"
+  ]
+ },
+ {
+  "термин": "thought process",
+  "значение_en": "the model's internal step-by-step reasoning text, generated before the response; it can be viewed to see how the prompt was interpreted",
+  "синонимы": [
+   "internal \"thinking\" text"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-thinking-2",
+   "П-thinking-3"
+  ]
+ },
+ {
+  "термин": "thought summaries",
+  "значение_en": "summaries of the model's reasoning returned by the API when enabled; a prompt debugging tool",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-thinking-2",
+   "П-промптинг-40"
+  ]
+ },
+ {
+  "термин": "three-point softbox setup",
+  "значение_en": "a studio lighting setup to evenly light a product",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-11"
+  ]
+ },
+ {
+  "термин": "time-sensitive queries",
+  "значение_en": "user queries that require up-to-date information; for them the model must follow the provided current date when formulating search queries",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-6"
+  ]
+ },
+ {
+  "термин": "top-down, bird's-eye view / overhead shot",
+  "значение_en": "a strictly overhead view",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-29"
+  ]
+ },
+ {
+  "термин": "transform",
+  "значение_en": "turn an image into something significantly different",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-6"
+  ]
+ },
+ {
+  "термин": "[type of shot] / [camera angle] / [lens type]",
+  "значение_en": "slots of the photorealism template for the shot size, the camera angle and the lens",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-5"
+  ]
+ },
+ {
+  "термин": "typographic poster",
+  "значение_en": "a poster built around typography: bold letters spelling a word fill the frame",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-13"
+  ]
+ },
+ {
+  "термин": "typography / typographic results",
+  "значение_en": "text styling: typeface, weight, size, placement",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-2"
+  ]
+ },
+ {
+  "термин": "ultra-wide panoramic shot",
+  "значение_en": "framing words for a very wide shot; as ratio names, ultrawide / panoramic correspond to 1:4 / 4:1",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-30"
+  ]
+ },
+ {
+  "термин": "unique art styles",
+  "значение_en": "distinct artistic styles the model can switch to, beyond photographic style, illustrations and cartoons",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-19"
+  ]
+ },
+ {
+  "термин": "User Context",
+  "значение_en": "the information given to a strictly grounded assistant; the only allowed source of facts",
+  "синонимы": [],
+  "омонимы": [
+   {
+    "смысл": "conversation context: the previous turns and images of the same conversation that the model keeps when generating the next image",
+    "где_употребляется": "П-мультиход-4"
+   },
+   {
+    "смысл": "context and intent: the purpose of the image (segment, aesthetics, brand domain, positioning) stated in the prompt, from which the model infers the style",
+    "где_употребляется": "П-промптинг-8, П-стиль-2"
+   },
+   {
+    "смысл": "input data: large amounts of material (documents, code) supplied in the prompt for the task, placed before the specific instructions or questions",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   },
+   {
+    "смысл": "location: 'Location/context' — the formula slot that means the place where the scene takes place",
+    "где_употребляется": "П-промптинг-17"
+   }
+  ],
+  "записи": [
+   "П-grounding-7"
+  ]
+ },
+ {
+  "термин": "Using the provided image of [subject]",
+  "значение_en": "the opening reference of an editing template to the input image that names its subject",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-редактирование-7"
+  ]
+ },
+ {
+  "термин": "versioning tax",
+  "значение_en": "the cost of manually producing many versions and sizes of one asset",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-форматы_разрешение-8"
+  ]
+ },
+ {
+  "термин": "virtual try-on",
+  "значение_en": "dressing the person from one input image in the clothing from another",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-40"
+  ]
+ },
+ {
+  "термин": "visible pencil strokes",
+  "значение_en": "a description of the pencil strokes of a drawn medium",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-28"
+  ]
+ },
+ {
+  "термин": "Visual and text fidelity",
+  "значение_en": "accuracy of visuals and text in the image: small faces, spelling, fine details",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-текст_в_кадре-28"
+  ]
+ },
+ {
+  "термин": "visual artifacts",
+  "значение_en": "errors and inconsistencies typical of AI-generated content: text, hands, teeth, background, light and shadows, repetitive patterns",
+  "синонимы": [
+   "inconsistencies or errors common in AI-generated content"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-безопасность_водяной_знак-1"
+  ]
+ },
+ {
+  "термин": "visual DNA",
+  "значение_en": "the overall look of the frame, which changes with the choice of camera type",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-13"
+  ]
+ },
+ {
+  "термин": "visual fidelity",
+  "значение_en": "image accuracy and quality",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-18"
+  ]
+ },
+ {
+  "термин": "visual grounding",
+  "значение_en": "a separate search type in the google_search tool: retrieved web images go to the model as visual context; NB2 only",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-1"
+  ]
+ },
+ {
+  "термин": "visual references",
+  "значение_en": "reference images the model is told to find before generating",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-3"
+  ]
+ },
+ {
+  "термин": "visual templates",
+  "значение_en": "one sample layout from which a series of uniform cards is generated",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-рефы-38"
+  ]
+ },
+ {
+  "термин": "visual theme",
+  "значение_en": "the visual treatment that an infographic, diagram or explainer must follow",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-15"
+  ]
+ },
+ {
+  "термин": "visual traits",
+  "значение_en": "concrete visual traits of a style (outlines, palette, era markers) used to spell it out",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-27"
+  ]
+ },
+ {
+  "термин": "Visual translation",
+  "значение_en": "a slot of the web-search prompt formula: the visual form into which the retrieved data is turned",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-2"
+  ]
+ },
+ {
+  "термин": "visual type",
+  "значение_en": "a type of visual (photo, card, book illustration, infographic, isometric cutaway, triptych, timeline) named in the prompt; it carries meaning by itself",
+  "синонимы": [
+   "type of visual",
+   "format (visual type)",
+   "visual format"
+  ],
+  "омонимы": [
+   {
+    "смысл": "aspect ratio: the proportions of the output image; in the API a string such as \"16:9\", in prompts written as text",
+    "где_употребляется": "П-камера_свет_композиция-37, П-промптинг-54, П-форматы_разрешение-3, П-форматы_разрешение-4, П-форматы_разрешение-5, П-форматы_разрешение-6"
+   },
+   {
+    "смысл": "image format: the format of an image named by its purpose and orientation, e.g. \"widescreen backdrop\" or \"vertical social post\"",
+    "где_употребляется": "П-форматы_разрешение-3"
+   },
+   {
+    "смысл": "output format: the required form of the answer, such as a table, bullet points or an email",
+    "где_употребляется": "П-промптинг-14, П-промптинг-23"
+   }
+  ],
+  "записи": [
+   "П-промптинг-11",
+   "П-промптинг-33",
+   "П-промптинг-57",
+   "П-рефы-34"
+  ]
+ },
+ {
+  "термин": "visually ground",
+  "значение_en": "use images found on Google Search as a visual basis for the generation",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-1"
+  ]
+ },
+ {
+  "термин": "what / how",
+  "значение_en": "the subject matter of the image (what) and its aesthetic execution (how)",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-стиль-33"
+  ]
+ },
+ {
+  "термин": "what comes next",
+  "значение_en": "the plausible next step or consequence of an action that the model predicts from the first image",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-мультиход-7"
+  ]
+ },
+ {
+  "термин": "wide-angle lens",
+  "значение_en": "a lens asked for to show a vast scale",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-камера_свет_композиция-14"
+  ]
+ },
+ {
+  "термин": "world knowledge",
+  "значение_en": "the model's knowledge of real objects, places, eras and processes from its training, on which generation relies; it works without search",
+  "синонимы": [
+   "real-world knowledge",
+   "knowledge base"
+  ],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-4",
+   "П-grounding-5",
+   "П-модели_сравнение-4",
+   "П-промптинг-36",
+   "П-текст_в_кадре-25"
+  ]
+ },
+ {
+  "термин": "Your plan is to first search … and generate after",
+  "значение_en": "the plan sentence of a prompt template that tells the model to search for visual references before generating",
+  "синонимы": [],
+  "омонимы": [],
+  "записи": [
+   "П-grounding-3"
+  ]
+ }
+]
