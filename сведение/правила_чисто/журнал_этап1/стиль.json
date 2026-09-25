@@ -1,0 +1,236 @@
+[
+ {
+  "id": "П-стиль-2",
+  "поле": "caveats_en[1]",
+  "было": "Vertex AI \"When to use Gemini or Imagen\" recommends Imagen 4 for \"Infusing branding, style, or generating logos and product designs.\"; the Imagen 4 endpoints are discontinued, Imagen is shut down in the Gemini API and all Imagen models are retired. (models: other)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-2",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Vertex AI \"When to use Gemini or Imagen\" recommends Imagen 4 for \"Infusing branding, style, or generating logos and product designs.\"; the Imagen 4 endpoints are discontinued, Imagen is shut down in the Gemini API and all Imagen models are retired. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-3",
+  "поле": "caveats_en[5]",
+  "было": "In the style-transfer recipe the text part is sent before the content image (parts=[text, content_image]); the rule to place a single image before the text prompt comes from image-understanding docs for text models, not from image-generation docs. (models: nb25)",
+  "стало": "In the style-transfer example the text part is sent before the content image (parts=[text, content_image]). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-3",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "In the style-transfer recipe the text part is sent before the content image (parts=[text, content_image]); the rule to place a single image before the text prompt comes from image-understanding docs for text models, not from image-generation docs. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-9",
+  "поле": "caveats_en[1]",
+  "было": "In the source notebook the first-turn f-string still contains the code comment \"# TODO: Sysyem instructions\", which is sent inside the prompt. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-9",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "In the source notebook the first-turn f-string still contains the code comment \"# TODO: Sysyem instructions\", which is sent inside the prompt. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-10",
+  "поле": "caveats_en[1]",
+  "было": "The statement comes from Gemini 2.0 Flash experimental native image generation. (models: other)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-10",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "The statement comes from Gemini 2.0 Flash experimental native image generation. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-12",
+  "поле": "caveats_en[1]",
+  "было": "These statements describe user trends, not instructions. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-12",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "These statements describe user trends, not instructions. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-14",
+  "поле": "caveats_en[1]",
+  "было": "Dated statement: 'the newest iteration in the media generation series' holds as of December 2025; it is not a current ranking of models. (models: pro)",
+  "стало": "",
+  "основание": "Ч6; Ч3 (К-ДАТА)",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-14",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Dated statement: 'the newest iteration in the media generation series' holds as of December 2025; it is not a current ranking of models. (models: pro)",
+  "основание": "Ч6; Ч3 (К-ДАТА)",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-23",
+  "поле": "caveats_en[0]",
+  "было": "In Lens a user takes a photo of a bedroom and asks to see it reimagined using the \"dopamine decor\" trend; the exact prompt is not shown. (models: nb25)",
+  "стало": "In Lens a user takes a photo of a bedroom and asks to see it reimagined using the \"dopamine decor\" trend. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-23",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "the exact prompt is not shown",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-23",
+  "поле": "caveats_en[1]",
+  "было": "The statement comes from Space Lift, a demo interior design app. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-23",
+  "поле": "паспорт.примечание",
+  "было": "the exact prompt is not shown",
+  "стало": "the exact prompt is not shown; The statement comes from Space Lift, a demo interior design app. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-24",
+  "поле": "caveats_en[0]",
+  "было": "The content of the design guidelines is not stated. (models: unspecified)",
+  "стало": "",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#60",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-24",
+  "поле": "паспорт.примечание",
+  "было": "No model key (pro, nb2, lite, nb25) is marked as applicable in the core: the only source (a course description, rank 5) names Gemini without a version.",
+  "стало": "No model key (pro, nb2, lite, nb25) is marked as applicable in the core: the only source (a course description, rank 5) names Gemini without a version.; The content of the design guidelines is not stated. (models: unspecified)",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#60",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-25",
+  "поле": "caveats_en[0]",
+  "было": "In the prompting-tips examples every initial generation prompt opens with the image type or medium (often with a style adjective), followed by the subject. (models: nb25)",
+  "стало": "In the example prompts for this model every initial generation prompt opens with the image type or medium (often with a style adjective), followed by the subject. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-25",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "In the prompting-tips examples every initial generation prompt opens with the image type or medium (often with a style adjective), followed by the subject. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-25",
+  "поле": "caveats_en[5]",
+  "было": "Imagen material here is historical: Imagen models are retired. (models: other)",
+  "стало": "Imagen models are retired. (models: other)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-25",
+  "поле": "паспорт.примечание",
+  "было": "In the prompting-tips examples every initial generation prompt opens with the image type or medium (often with a style adjective), followed by the subject. (models: nb25)",
+  "стало": "In the prompting-tips examples every initial generation prompt opens with the image type or medium (often with a style adjective), followed by the subject. (models: nb25); Imagen material here is historical",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-27",
+  "поле": "caveats_en[1]",
+  "было": "In the Creative Director advice every recommended term is paired with its intended effect (e.g. GoPro for an immersive, distorted action feel; 1980s color film for a nostalgic or gritty vibe). (models: pro, nb2)",
+  "стало": "Each recommended term is paired with its intended effect (e.g. GoPro for an immersive, distorted action feel; 1980s color film for a nostalgic or gritty vibe). (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-27",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "In the Creative Director advice every recommended term is paired with its intended effect (e.g. GoPro for an immersive, distorted action feel; 1980s color film for a nostalgic or gritty vibe). (models: pro, nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-31",
+  "поле": "content_en",
+  "было": "Style adaptation and character consistency are presented as key strengths and are also listed as current limitations: these results can fail and are not guaranteed.",
+  "стало": "Style adaptation and character consistency can fail and are not guaranteed.",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#2",
+  "решение": "применено"
+ },
+ {
+  "id": "П-стиль-31",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Style adaptation and character consistency are presented as key strengths and are also listed as current limitations",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#2",
+  "решение": "применено"
+ }
+]
