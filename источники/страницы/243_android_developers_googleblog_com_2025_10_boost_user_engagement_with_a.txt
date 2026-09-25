@@ -1,0 +1,361 @@
+Android Developers Blog: Boost user engagement with AI Image Generation
+☰
+Android Developers Blog
+The latest Android and Google Play news for app and game
+          developers.
+🔍
+Android Developers
+→
+Jetpack
+Kotlin
+Docs
+News
+Platform
+Android Studio
+Google Play
+Jetpack
+Kotlin
+Docs
+News
+Platform
+Android Studio
+Google Play
+Jetpack
+Kotlin
+Docs
+News
+More
+|
+13 October 2025
+Boost user engagement with AI Image Generation
+Share this post
+LinkedIn
+Twitter
+Facebook
+Email
+Copy link
+Link copied to clipboard
+Posted by Thomas Ezan, Senior Developer Relations Engineer and Mozart Louis, Developer Relations Engineer
+Adding custom images to your app can significantly improve and personalize user experience and boost user engagement. This post explores two new capabilities for image generation with Firebase AI Logic: the specialized Imagen editing features, currently in preview, and the general availability of Gemini 2.5 Flash Image (a.k.a "Nano Banana"), designed for contextual or conversational image generation.
+Boost user engagement with images generated via Firebase AI Logic
+Image generation models can be used to create custom user profile avatars or to integrate personalized visual assets directly into key screen flows.
+For example, Imagen offers new editing features (in developer preview). You can now draw a mask and utilize inpainting to generate pixels within the masked area. Additionally, outpainting is available to generate pixels outside the mask.
+Imagen supports inpainting, letting generate only a part of an image.
+Alternatively, Gemini 2.5 Flash Image (a.k.a Nano Banana), can use extended world knowledge and the reasoning capabilities of the Gemini models to generate contextually relevant images, which is ideal for creating dynamic illustrations that align with a user's current in-app experience.
+Use Gemini 2.5 Flash Image to create dynamic illustrations contextually relevant to your app.
+Finally, the ability to conversationally and iteratively edit images allow users to edit a photo using natural language.
+Use Gemini 2.5 Flash Image to edit a picture using natural language.
+When starting to integrate AI to your application, it is important to learn about
+AI safety
+. It is particularly key to assess your application's security risks, consider adjustments to mitigate safety risks, perform safety testing appropriate to your use case and solicit user feedback and monitor content.
+Imagen or Gemini: The choice is yours
+The difference between
+Gemini 2.5 Flash Image
+("Nano Banana") and
+Imagen
+lies in their primary focus and advanced capabilities. Gemini 2.5 Flash Image, as an image model within the larger Gemini family, excels in conversational image editing, maintaining context and subject consistency across multiple iterations, and leveraging "world knowledge and reasoning" to create contextually relevant visuals or embed accurate visuals within long text sequences.
+Imagen is Google’s specialized image generation model, designed for greater creative control, specializing in highly photorealistic outputs, artistic detail, specific styles, and providing explicit controls for specifying the aspect ratio or format of the generated image.
+Gemini 2.5 Flash Images
+(Nano Banana
+🍌
+)
+Imagen
+🌎 world knowledge and reasoning for more contextually relevant images
+💬 edit images conversationally while maintaining context
+📖 embed accurate visuals within long text sequences
+📐 specify the aspect ratio or format of generated images
+🖌️Support of mask-based editing for in-painting and out-painting.
+🎚️ greater control over details of the generated image (quality, artistic detail and specific styles)
+Let’s see how to use them in your app.
+Inpainting with Imagen
+A few months ago, we released new editing features for Imagen. Although Imagen is now ready for production for image generation, editing features are still in
+developer preview
+.
+Imagen editing features include
+inpainting
+and
+outpainting
+, mask-based image editing features. This new capability allows users to modify specific areas of an image without regenerating the entire picture. This means you can preserve the best parts of your image and only alter what you wish to change.
+Use Imagen editing features to make precise targeted changes in an image and guaranteeing the rest of the image integrity
+These changes are made while maintaining the core elements and overall integrity of the original image and modifying only the area in the mask.
+To implement inpainting with Imagen, first initialize
+imagen-3.0-capability-001
+a specific Imagen model supporting editing features:
+// Copyright 2025 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
+val
+editingModel
+=
+Firebase.
+ai
+(backend
+=
+GenerativeBackend.
+vertexAI
+()).
+imagenModel
+(
+"imagen-3.0-capability-001"
+,
+generationConfig
+=
+ImagenGenerationConfig(
+numberOfImages
+=
+1
+,
+aspectRatio
+=
+ImagenAspectRatio.
+SQUARE_1x1
+,
+imageFormat
+=
+ImagenImageFormat.
+jpeg
+(compressionQuality
+=
+75
+),
+),
+)
+From there, define the inpainting function:
+// Copyright 2025 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
+val
+prompt
+=
+"remove the pancakes and make it an omelet instead"
+suspend
+fun
+inpaintImageWithMask
+(sourceImage:
+Bitmap,
+maskImage:
+Bitmap,
+prompt:
+String
+,
+editSteps:
+Int
+=
+50
+):
+Bitmap
+{
+val
+imageResponse
+=
+editingModel.
+editImage
+(
+referenceImages
+=
+listOf(
+ImagenRawImage(sourceImage.
+toImagenInlineImage
+()),
+ImagenRawMask(maskImage.
+toImagenInlineImage
+()),
+),
+prompt
+=
+prompt,
+config
+=
+ImagenEditingConfig(
+editMode
+=
+ImagenEditMode.
+INPAINT_INSERTION
+,
+editSteps
+=
+editSteps,
+),
+)
+return
+imageResponse.
+images
+.
+first
+().
+asBitmap
+()
+}
+You provide both a
+sourceImage
+, a
+maskImage
+and a
+prompt
+for the edit and the number of edit steps to be performed.
+You can see it in action in the
+Imagen Editing Sample
+in the Android AI Sample catalog!
+And Imagen also supports
+outpainting
+that enables you to let the model generate the pixels outside of a mask. You can also use Imagen’s Image customization capabilities to change the style of a picture or update a subject in a picture. Read more about it in the
+Android developer documentation
+.
+Conversational image generation with Gemini 2.5 Flash Image
+One way to edit images with Gemini 2.5 Flash Image is to use the model’s multi-turn chat capabilities.
+First, initialize the model:
+// Copyright 2025 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
+val
+model
+=
+Firebase.
+ai
+(backend
+=
+GenerativeBackend.
+googleAI
+()).
+generativeModel
+(
+modelName
+=
+"gemini-2.5-flash-image"
+,
+// Configure the model to respond with text and images (required)
+generationConfig
+=
+generationConfig
+{
+responseModalities
+=
+listOf(ResponseModality.
+TEXT
+,
+ResponseModality.
+IMAGE
+)
+}
+)
+To achieve a similar outcome to the mask-based Imagen method described above, we can utilize the
+chat
+API to initiate a conversation with Gemini 2.5 Flash Image.
+// Copyright 2025 Google LLC.
+// SPDX-License-Identifier: Apache-2.0
+// Initialize the chat
+val
+chat
+=
+model.
+startChat
+()
+// Load a bitmap
+val
+source
+=
+ImageDecoder.
+createSource
+(context.
+contentResolver
+,
+uri)
+val
+bitmap
+=
+ImageDecoder.
+decodeBitmap
+(source)
+// Create the initial prompt instructing the model to edit the image
+val
+prompt
+=
+content
+{
+image(bitmap)
+text(
+"remove the pancakes and add an omelet"
+)
+}
+// To generate an initial response, send a user message with the image and text prompt
+var
+response
+=
+chat.
+sendMessage
+(prompt)
+// Inspect the returned image
+var
+generatedImageAsBitmap
+=
+response
+.
+candidates
+.
+first
+().
+content
+.
+parts
+.
+filterIsInstance
+<
+ImagePart
+>
+().
+firstOrNull
+()
+?.
+image
+// Follow up requests do not need to specify the image again
+response
+=
+chat.
+sendMessage
+(
+"Now, center the omelet in the pan"
+)
+generatedImageAsBitmap
+=
+response
+.
+candidates
+.
+first
+().
+content
+.
+parts
+.
+filterIsInstance
+<
+ImagePart
+>
+().
+firstOrNull
+()
+?.
+image
+You can see it in action in the
+Gemini Image Chat sample
+in the Android AI Sample catalog and read more about it in the
+Android documentation
+.
+Conclusion
+Both Imagen and Gemini 2.5 Flash Image offer powerful capabilities, allowing you to select the ideal image generation model to personalize your app and boost user engagement, depending on your specific use case.
+Gemini
+GenAI
+Imagen
+Newer post
+Older post
+Google developers blog
+Google Developers Blog
+Connect
+Android Developers
+Google Play
+Subscribe
+Feed
+Newsletter
+Privacy
+|
+License
+|
+Brand guidelines
+Get news and tips by email

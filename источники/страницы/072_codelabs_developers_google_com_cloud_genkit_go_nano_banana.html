@@ -1,0 +1,1850 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google Codelabs">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1a73e8"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/codelabs/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/touchicon-180.png"><link rel="canonical" href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google Codelabs" href="https://codelabs.developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana" /><link rel="alternate" hreflang="x-default" href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana" /><link rel="alternate" hreflang="ar"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana?hl=vi" /><title>Build a photo restoration app using Genkit Go and Nano Banana Pro &nbsp;|&nbsp; Google Codelabs</title>
+
+<meta property="og:title" content="Build a photo restoration app using Genkit Go and Nano Banana Pro &nbsp;|&nbsp; Google Codelabs"><meta name="description" content="In this codelab you are going to learn how to use Genkit Go, Nano Banana Pro (Gemini 3 Pro Image) and Google Cloud Run to create a photo restoration command line application and web server.">
+  <meta property="og:description" content="In this codelab you are going to learn how to use Genkit Go, Nano Banana Pro (Gemini 3 Pro Image) and Google Cloud Run to create a photo restoration command line application and web server."><meta property="og:url" content="https://codelabs.developers.google.com/cloud-genkit-go-nano-banana"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    </head>
+  <body class="color-scheme--light"
+        template="codelab"
+        theme="codelabs-theme"
+        type="codelab"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Google Codelabs"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://codelabs.developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                          fp-auth
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars hidden>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Build a photo restoration app using Genkit Go and Nano Banana Pro<devsite-actions hidden data-nosnippet></devsite-actions>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id="1dPM4r3Q-yWEJdYBSRnpghhnwEVPZE4WiLoSE_ZDrlFQ"
+                    id="cloud-genkit-go-nano-banana"
+                    title="Build a photo restoration app using Genkit Go and Nano Banana Pro"
+                    no-tooltip=""
+                    environment="web"
+                    category="cloud,gemini"
+                    feedback-link="https://github.com/googlecodelabs/feedback/issues/new?title=[cloud-genkit-go-nano-banana]"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="3" step="0">
+          
+            <google-codelab-about codelab-title="Build a photo restoration app using Genkit Go and Nano Banana Pro"
+                                  authors="Daniela Petruzalek"
+                                  last-updated="2026-05-31T23:02:56Z"
+                                  duration="60">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          
+          <p>In this codelab, we are going to build <strong>GlowUp</strong>, a photo restoration tool. GlowUp uses AI to restore old, damaged, or black-and-white photos, creating high-quality 4K color images. You can use this tool to give a new life to your family photos, or even adapt it to restore damaged illustrations, drawings, paintings or other forms of images.</p>
+<p>You will use  <a href="https://genkit.dev/docs/get-started/?lang=go" target="_blank"><strong>Genkit Go</strong></a> to implement the application logic and  <a href="https://deepmind.google/models/gemini-image/pro/" target="_blank"><strong>Gemini 3 Pro Image</strong></a> (also known as <strong>Nano Banana Pro</strong>) as the model to process the photos.</p>
+<h2 is-upgraded id="prerequisites" data-text="Prerequisites" tabindex="-1">Prerequisites</h2>
+<ul>
+<li>Basic knowledge of the Go programming language</li>
+<li>Basic knowledge of the Google Cloud console</li>
+</ul>
+<h2 class="checklist" is-upgraded id="what-youll-learn" data-text="What you'll learn" tabindex="-1">What you'll learn</h2>
+<ul class="checklist">
+<li>How to develop Genkit applications in Go</li>
+<li>Basic Genkit concepts like flows, plugins and prompts</li>
+<li>How to write prompts with handlebar templates</li>
+<li>How to get image data from model responses</li>
+</ul>
+<h2 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1">What you'll need</h2>
+<p>This workshop can be done entirely within the <strong>Google Cloud Shell</strong>, which comes with all the necessary dependencies (gcloud CLI, code editor, Go, Gemini CLI) <strong>pre-installed</strong>.</p>
+<p><strong>Alternatively</strong>, if you prefer to work on your own machine, you will need the following:</p>
+<ul>
+<li>The Go toolchain (version 1.24 or higher)</li>
+<li>Node.js v20 or later (for <code translate="no" dir="ltr">genkit</code> CLI)</li>
+<li>A terminal with the <code translate="no" dir="ltr">gcloud</code> CLI installed</li>
+<li>An IDE to edit your code like VS Code or similar</li>
+<li><strong>Recommended:</strong> a coding agent like  <a href="https://geminicli.com" target="_blank"><strong>Gemini CLI</strong></a> or  <a href="https://antigravity.google/" target="_blank"><strong>Antigravity</strong></a></li>
+</ul>
+<h2 is-upgraded id="key-technologies" data-text="Key Technologies" tabindex="-1">Key Technologies</h2>
+<p>Here you can find more information about the technologies we will be utilizing:</p>
+<ul>
+<li>Gemini Nano Banana Pro (Gemini 3 Pro Image): the model powering our restoration process</li>
+<li>Genkit Go: our toolkit for orchestrating model calls</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Environment Setup" duration="10" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Environment Setup" tabindex="-1">
+              2. Environment Setup
+          </h2>
+          
+          <p>You can run this lab from your machine or totally on the cloud. Even if you decide to run the code locally, for the server-side components to be deployed to the cloud you will need a Google Cloud project. Follow the steps in the next section to create it.</p>
+<h2 is-upgraded id="self-paced-environment-setup" data-text="Self-paced environment setup" tabindex="-1"><strong>Self-paced environment setup</strong></h2>
+<ol type="1">
+<li>Sign-in to the  <a href="http://console.cloud.google.com" target="_blank">Google Cloud Console</a> and create a new project or reuse an existing one. If you don&#39;t already have a Gmail or Google Workspace account, you must  <a href="https://accounts.google.com/SignUp" target="_blank">create one</a>.</li>
+</ol>
+<p class="image-container"><img alt="295004821bab6a87.png" style="width: 328.00px" src="/static/cloud-genkit-go-nano-banana/img/295004821bab6a87.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/295004821bab6a87_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><img alt="37d264871000675d.png" style="width: 401.24px" src="/static/cloud-genkit-go-nano-banana/img/37d264871000675d.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/37d264871000675d_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"><img alt="96d86d3d5655cdbe.png" style="width: 466.00px" src="/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/96d86d3d5655cdbe_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<ul>
+<li>The <strong>Project name</strong> is the display name for this project&#39;s participants. It is a character string not used by Google APIs. You can always update it.</li>
+<li>The <strong>Project ID</strong> is unique across all Google Cloud projects and is immutable (cannot be changed after it has been set). The Cloud Console auto-generates a unique string; usually you don&#39;t care what it is. In most codelabs, you&#39;ll need to reference your Project ID (typically identified as <code translate="no" dir="ltr">PROJECT_ID</code>). If you don&#39;t like the generated ID, you might generate another random one. Alternatively, you can try your own, and see if it&#39;s available. It can&#39;t be changed after this step and remains for the duration of the project.</li>
+<li>For your information, there is a third value, a <strong>Project Number</strong>, which some APIs use. Learn more about all three of these values in the  <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects#before_you_begin" target="_blank">documentation</a>.</li>
+</ul>
+<aside class="warning"><p><strong>Caution:</strong> A project ID is globally unique and can&#39;t be used by anyone else after you&#39;ve selected it. You are the only user of that ID. Even if a project is deleted, the ID can&#39;t be used again</p>
+</aside>
+<aside class="special"><p><strong>Note:</strong> If you use a Gmail account, you can leave the default location set to <strong>No organization</strong>. If you use a Google Workspace account, choose a location that makes sense for your organization.</p>
+</aside>
+<ol type="1" start="2">
+<li>Next, you&#39;ll need to  <a href="https://console.cloud.google.com/billing" target="_blank">enable billing</a> in the Cloud Console to use Cloud resources/APIs. Running through this codelab won&#39;t cost much, if anything at all. To shut down resources to avoid incurring billing beyond this tutorial, you can delete the resources you created or delete the project. New Google Cloud users are eligible for the  <a href="http://cloud.google.com/free" target="_blank">$300 USD Free Trial</a> program.</li>
+</ol>
+<h2 is-upgraded id="start-cloud-shell" data-text="Start Cloud Shell" tabindex="-1"><strong>Start Cloud Shell</strong></h2>
+<aside class="special"><p><strong>Attention:</strong> if you would like to do the development part of this codelab on your own machine, you can skip this section. Make sure you have the dependencies described in the &#34;What you&#39;ll need&#34; section of the introduction before moving forward.</p>
+</aside>
+<p>While Google Cloud can be operated remotely from your laptop, in this codelab you will be using  <a href="https://cloud.google.com/cloud-shell/" target="_blank">Google Cloud Shell</a>, a command line environment running in the Cloud.</p>
+<p>From the  <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a>, click the Cloud Shell icon on the top right toolbar:</p>
+<p class="image-container"><img alt="Activate Cloud Shell" style="width: 325.50px" src="/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f36cd6aa5b8a7c86_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>It should only take a few moments to provision and connect to the environment. When it is finished, you should see something like this:</p>
+<p class="image-container"><img alt="Screenshot of Google Cloud Shell terminal showing that the environment has connected" style="width: 624.00px" src="/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/320e18fedb7fbe0_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>This virtual machine is loaded with all the development tools you&#39;ll need. It offers a persistent 5GB home directory, and runs on Google Cloud, greatly enhancing network performance and authentication. All of your work in this codelab can be done within a browser. You do not need to install anything.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Project Setup" duration="5" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Project Setup" tabindex="-1">
+              3. Project Setup
+          </h2>
+          
+          <h2 is-upgraded id="create-the-project" data-text="Create the project" tabindex="-1">Create the project</h2>
+<p>First, we need to create a new directory for your project and initialize the Go module. In your terminal, run the following commands:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">mkdir</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">p</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span><span class="devsite-syntax-w"> &amp;&amp; </span><span class="devsite-syntax-nx">cd</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span>
+<span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mod</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">init</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="install-genkit-cli" data-text="Install Genkit CLI" tabindex="-1">Install Genkit CLI</h2>
+<p>Now we need to install the Genkit CLI. This gives you access to local developer tools, including the Developer UI. In your terminal window type:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">curl</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">sL</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">dev</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">bash</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="configure-environment-variables" data-text="Configure environment variables" tabindex="-1">Configure environment variables</h2>
+<aside class="special"><p><strong>Important!</strong> The Gemini 3 Pro Image model (<code translate="no" dir="ltr">gemini-3-pro-image-preview</code>) is currently <strong>only</strong> available in the global location on Vertex AI. You <strong>must</strong> set your location to <code translate="no" dir="ltr">global</code> for the restoration flow to work.</p>
+</aside>
+<p>Ensure you have your correct Google Cloud credentials set up. Location must be <code translate="no" dir="ltr">global</code> when using Gemini 3 Pro Preview models (Nano Banana Pro is one of them).</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">export</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">GOOGLE_CLOUD_PROJECT</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">gcloud</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">config</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">get</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">project</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nx">export</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">GOOGLE_CLOUD_LOCATION</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-nx">global</span>
+</code></pre></devsite-code>
+<p>Run the following command in shell mode to enable the Vertex AI API for the current project:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">gcloud</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">services</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">enable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">aiplatform</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">googleapis</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">com</span>
+</code></pre></devsite-code>
+<p>And if you are running from your local machine (not on CloudShell), you will need to authenticate with the gcloud command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">gcloud</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">auth</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">application</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">default</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">login</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Create your first Genkit application" duration="15" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Create your first Genkit application" tabindex="-1">
+              4. Create your first Genkit application
+          </h2>
+          
+          <p>Genkit is an open-source framework designed to help developers build, deploy, and monitor production-ready AI-powered applications. In this section, we&#39;ll create a simple &#34;Hello World&#34; application to help you get comfortable with the framework before we dive into the photo restoration logic.</p>
+<h2 is-upgraded id="genkit-terminology" data-text="Genkit terminology" tabindex="-1">Genkit terminology</h2>
+<p>Before starting your work with Genkit it is important to understand a few key terms:</p>
+<ul>
+<li><strong>Plugins:</strong> used to extend Genkit&#39;s capabilities. Among other things, it is through plugins that you register AI models to power your application.</li>
+<li><strong>Flows:</strong> the main architectural component of Genkit. A typical flow would take an input, process it and return an output. It doesn&#39;t necessarily require a model to be used, but most of the time you will use models inside your flows.</li>
+<li><strong>Prompts:</strong> interaction templates stored in the  <a href="https://github.com/google/dotprompt" target="_blank">dotprompt</a> format (saved as <code translate="no" dir="ltr">*.prompt</code> files). These not only contain the model instructions but also configurations like model name, model parameters, inputs and outputs.</li>
+</ul>
+<h2 is-upgraded id="connecting-with-ai-models" data-text="Connecting with AI models" tabindex="-1">Connecting with AI models</h2>
+<p>Genkit uses <strong>plugins</strong> to connect your code to model providers. There are plugins for all major model providers, including Google, Anthropic and OpenAI.You can also use plugins to connect to local models (e.g. using Ollama) or to extend Genkit&#39;s capabilities (e.g. connect to MCP servers).</p>
+<p>For accessing Google models, you should use the <code translate="no" dir="ltr">googlegenai</code> plugin. It supports two backends:</p>
+<ul>
+<li>Google AI: Best for prototyping. Uses an API Key.</li>
+<li>Vertex AI (Google Cloud): Recommended for production. Uses project ID and location.</li>
+</ul>
+<p>In this codelab we are going to use Vertex AI authentication referencing the project you created in the beginning of the lab.</p>
+<h2 is-upgraded id="creating-a-greeter-flow" data-text="Creating a greeter flow" tabindex="-1">Creating a greeter flow</h2>
+<p>Before digging deeper into the Glow Up photo restoration flow, let&#39;s build a basic flow to get familiar with the concepts and ensure that our setup is working properly..</p>
+<p>A flow is a special Genkit function that wraps your AI logic to provide:</p>
+<ul>
+<li><strong>Type-safe inputs and outputs:</strong> Define schemas using Go structs for static and runtime validation</li>
+<li><strong>Streaming support:</strong> Stream partial responses or custom data</li>
+<li><strong>Developer UI integration:</strong> Test and debug flows with visual traces</li>
+<li><strong>Easy deployment:</strong> Deploy as HTTP endpoints to any platform</li>
+</ul>
+<p>Open your IDE and create a <code translate="no" dir="ltr">main.go</code> file in your project directory. If using cloudshell you can use the following command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">cloudshell</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">edit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">go</span>
+</code></pre></devsite-code>
+<p>Then add the following code:</p>
+<h3 is-upgraded id="main.go" data-text="main.go" tabindex="-1"><a href="https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/01_greeter/main.go" target="_blank">main.go</a></h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"context"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"log"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os/signal"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"syscall"</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/genkit"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/ai"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/plugins/googlegenai"</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-kd">func</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">signal</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">NotifyContext</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Background</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">os</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Interrupt</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">syscall</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">SIGTERM</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">defer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Initialize Genkit with the Vertex AI plugin</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Init</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithPlugins</span><span class="devsite-syntax-p">(</span>&amp;<span class="devsite-syntax-nx">googlegenai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">VertexAI</span><span class="devsite-syntax-p">{}),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Define the greeter flow</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DefineFlow</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"greeter"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">func</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">error</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">GenerateText</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithModelName</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"vertexai/gemini-2.5-pro"</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithPrompt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"Say a warm and creative hello to %s"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">})</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Register the flow here in the next steps</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Println</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"GlowUp initialized. Ready for flows."</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Done</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Save the file and then run go mod tidy to update your dependencies:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mod</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">tidy</span>
+</code></pre></devsite-code>
+<p>The code above initializes Genkit with the VertexAI plugin, defines a flow named &#34;greeter&#34; and then waits forever on <code translate="no" dir="ltr">&lt;-ctx.Done()</code>. We are holding the execution so that this program doesn&#39;t terminate immediately, as we are not giving it any instructions to actually execute the flow.</p>
+<p>This means that if you run this program as it is now it won&#39;t do much on its own - we need to invoke the flow somehow. While in a real production application we would be wrapping this flow in a web server or CLI app, during development time we can use the <code translate="no" dir="ltr">genkit</code> CLI to help us develop and optimize the flow.</p>
+<p>The <code translate="no" dir="ltr">genkit</code> CLI was developed to help us test models, prompts, flows and other components of the Genkit stack. It also has full support for traces which is very convenient when you want to understand how the application is working under the hood. To launch our greeter flow using the <code translate="no" dir="ltr">genkit</code> CLI run the following command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">go</span>
+</code></pre></devsite-code>
+<p>This will spin up the Telemetry API and Developer UI endpoints. You should see something like this:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>$ genkit start -- go run main.go
+Telemetry API running on http://localhost:4033
+Project root: /home/daniela/glowup
+Genkit Developer UI: http://localhost:4000
+</pre></devsite-code>
+<aside class="warning"><p><strong>Note:</strong> if you are running this codelab from CloudShell, there is a  <a href="https://github.com/firebase/genkit/issues/4796" target="_blank">bug</a> preventing the Dev UI to launch flows correctly. You can still use the genkit CLI to run the flow, but using the command line instead. To do this, <strong>open a second terminal in CloudShell</strong> and run the command <code translate="no" dir="ltr">genkit flow:run greeter '"name"'.</code></p>
+</aside>
+<p>If you open <code translate="no" dir="ltr">localhost:4000</code> on your browser to launch the Dev-UI. You should see a screen like this:</p>
+<p class="image-container"><img alt="93d9bd9e1bd6627d.png" style="width: 624.00px" src="/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/93d9bd9e1bd6627d_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Take your time to explore the Dev UI. Maybe trigger the &#34;greeter&#34; flow once just to see how it works.</p>
+<h2 is-upgraded id="using-prompt-templates" data-text="Using prompt templates" tabindex="-1">Using prompt templates</h2>
+<p>While you can hardcode your prompts in model calls like we did in the previous example, a better approach would be to create prompt templates to store all the prompts of our application in a centralized way. This not only makes it easier to find them when doing maintenance of the code, but also allows you to experiment with the prompts independently of the flows.</p>
+<p>To define prompt templates, Genkit uses the open source  <a href="https://github.com/google/dotprompt" target="_blank">dotprompt</a> format, saved as <code translate="no" dir="ltr">*.prompt</code> files. A <code translate="no" dir="ltr">.prompt</code> file consists of two parts:</p>
+<ol type="1">
+<li><strong>Frontmatter:</strong> A YAML block that defines the model, model parameters, and both input and output schemas</li>
+<li>Body: The body of the prompt itself, which can be templated using the &#34;handlebars&#34; syntax. For example, if you define an input named <code translate="no" dir="ltr">variable-name</code>, you can reference it in the body as <code translate="no" dir="ltr">&#123;&#123;variable-name}}</code>.</li>
+</ol>
+<aside class="special"><p><strong>Note:</strong> Genkit by default loads all prompts in the <code translate="no" dir="ltr">prompts</code> folder based on the location where the binary was launched. You can also customize this folder name during Genkit initialization.</p>
+</aside>
+<p>The directory structure of the project will look like this:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>glowup/
+ ├── main.go        
+ └── prompts/
+      └── greeter.prompt
+</pre></devsite-code>
+<p>Let&#39;s see this in practice. First create the folder to store your prompts:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">mkdir</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">p</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompts</span>
+</code></pre></devsite-code>
+<p>Then create a <code translate="no" dir="ltr">greeter.prompt</code> file:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">cloudshell</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">edit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompts</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">greeter</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">prompt</span>
+</code></pre></devsite-code>
+<p>And insert the following content:</p>
+<aside class="warning"><p><strong>Attention!</strong> Due to limitations of the codelab platform, it is not possible to render the *.prompt files correctly, so please click on the GitHub link below to see the full contents of the file in text form.</p>
+</aside>
+<h3 is-upgraded id="greeter.prompt" data-text="greeter.prompt" tabindex="-1"><a href="https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/greeter.prompt" target="_blank">greeter.prompt</a></h3>
+<p class="image-container"><img alt="ec9fc82a98604123.png" style="width: 502.36px" src="/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/ec9fc82a98604123_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>This prompt showcases a few of the features of the template language. First, we specify the model <code translate="no" dir="ltr">vertexai/gemini-2.5-flash</code> in the frontmatter. To specify a model, you need to use the nomenclature defined in the respective plugin documentation.</p>
+<p>The config section allows us to configure the model parameters. We are using temperature 1.9 to allow the model to be more creative. Temperature ranges from 0 (more consistent outputs) to 2 (more creative outputs). This and other model parameters are usually published in the model&#39;s model sheet. For example, here is the model sheet for  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash" target="_blank">gemini-2.5-flash</a>.</p>
+<p>The input section allows us to specify arguments for the prompt. In this case we are defining the name as a string. After the frontmatter we have the prompt body. The first block here defines the system prompt  and the second block is the user prompt. All these elements together allow for some very powerful prompting techniques. You can check the full documentation for <code translate="no" dir="ltr">dotprompt</code>  <a href="https://google.github.io/dotprompt/getting-started/" target="_blank">here</a>.</p>
+<p>Now, let&#39;s adapt the <code translate="no" dir="ltr">greeter</code> flow to use the prompt we just created:</p>
+<h3 is-upgraded id="main.go_1" data-text="main.go" tabindex="-1"><a href="https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/02_greeter/main.go" target="_blank">main.go</a></h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"context"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os/signal"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"syscall"</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/ai"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/genkit"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/plugins/googlegenai"</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-kd">func</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">signal</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">NotifyContext</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Background</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">os</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Interrupt</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">syscall</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">SIGTERM</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">defer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Initialize Genkit with the Vertex AI plugin</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Init</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithPlugins</span><span class="devsite-syntax-p">(</span>&amp;<span class="devsite-syntax-nx">googlegenai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">VertexAI</span><span class="devsite-syntax-p">{}),</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithDefaultModel</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"vertexai/gemini-2.5-flash"</span><span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Define the greeter flow</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DefineFlow</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"greeter"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">func</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">error</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">LookupPrompt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"greeter"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">map</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-kt">any</span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-s">"name"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">name</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Execute</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithInput</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Text</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">})</span>
+
+<span class="devsite-syntax-w">        </span>&lt;<span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Done</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>Try running the flow from the command line, with and without a name to see the difference. Running without a name:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">flow</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">greeter</span>
+</code></pre></devsite-code>
+<p>Example output:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>$ genkit flow:run greeter
+Telemetry API running on http://localhost:4035
+Running &#39;/flow/greeter&#39; (stream=false)...
+Result:
+&#34;Hello there, absolutely delightful human!\n\nThe very moment your message arrived, the day instantly sparkled a little brighter. It&#39;s not just nice, it&#39;s genuinely **wonderful** to meet you!\n\nMay your entire day be filled with unexpected pockets of joy, effortless triumphs, and all the happiness you truly deserve! We&#39;re thrilled to have you here!&#34;
+</pre></devsite-code>
+<p>And with a name:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">flow</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">greeter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-s">"Daniela"</span><span class="devsite-syntax-err">'</span>
+</code></pre></devsite-code>
+<p>Example output:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>$ genkit flow:run greeter &#39;&#34;Daniela&#34;&#39;
+Telemetry API running on http://localhost:4035
+Running &#39;/flow/greeter&#39; (stream=false)...
+Result:
+&#34;Well hello there, Daniela! What a truly beautiful name, and what an absolute pleasure it is to meet you!\n\nRight from this moment, I just know your day is going to be brimming with positive energy and wonderful surprises. May it be filled with brilliant ideas, joyful moments, and the delightful realization that you&#39;re an amazing person doing incredible things. So glad you&#39;re here!&#34;
+</pre></devsite-code>
+<p>You can see that the template worked as expected. We are ready to take this project to the next level!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Restoring Images with Nano Banana Pro" duration="15" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Restoring Images with Nano Banana Pro" tabindex="-1">
+              5. Restoring Images with Nano Banana Pro
+          </h2>
+          
+          <h2 is-upgraded id="the-restoration-prompt" data-text="The Restoration Prompt" tabindex="-1">The Restoration Prompt</h2>
+<p>Now that you are familiar with the building blocks of Genkit, it is time to create our photo restoration prompt.</p>
+<p>Create a file named <code translate="no" dir="ltr">glowup.prompt</code> in the prompts directory, and paste on it the following content:</p>
+<aside class="warning"><p><strong>Attention!</strong> Due to limitations of the codelab platform, it is not possible to render the *.prompt files correctly, so please click on the GitHub link below to see the full contents of the file in text form.</p>
+</aside>
+<h3 is-upgraded id="glowup.prompt" data-text="glowup.prompt" tabindex="-1"><a href="https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/glowup.prompt" target="_blank">glowup.prompt</a></h3>
+<p class="image-container"><img alt="fd0f1551466c8138.png" style="width: 624.00px" src="/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/fd0f1551466c8138_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>The restoration prompt follows the same pattern as our &#34;greeter&#34; prompt, with just a couple of notable differences:</p>
+<ul>
+<li><strong>Image size:</strong> the <code translate="no" dir="ltr">imageSize</code> property of <code translate="no" dir="ltr">imageConfig</code> is a model-specific parameter of Nano Banana Pro. It allows us to specify the  <a href="https://ai.google.dev/gemini-api/docs/image-generation#generate-4k-images" target="_blank">output size</a> as 1K, 2K or 4K.</li>
+<li><strong>Media input:</strong> we are using the <code translate="no" dir="ltr">&#123;&#123; media }}</code>  template to inject the photo in the user prompt. This technique allows us to send multi-modal prompts to the model (text + image).</li>
+</ul>
+<p>You can test this prompt on the Dev UI. Feel free to tweak it to see how it affects the output.</p>
+<h2 is-upgraded id="the-image-restoration-flow" data-text="The image restoration flow" tabindex="-1">The image restoration flow</h2>
+<p>With the restoration prompt ready, now let&#39;s build our CLI application. Replace the contents of <code translate="no" dir="ltr">main.go</code> with the code below:</p>
+<h3 is-upgraded id="main.go_2" data-text="main.go" tabindex="-1"><a href="https://github.com/GoogleCloudPlatform/devrel-demos/blob/main/codelabs/genkit/cloud-genkit-go-nano-banana/03_glowup/main.go" target="_blank">main.go</a></h3>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"context"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"encoding/base64"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"errors"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"flag"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"fmt"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"log"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"mime"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os/signal"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"strings"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"syscall"</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/ai"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/genkit"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/plugins/googlegenai"</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-kd">func</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">url</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">flag</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">String</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"url"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"url of the image to restore"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">contentType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">flag</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">String</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"contentType"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"image/jpeg"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"content type of the image (default: image/jpeg)"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">flag</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Parse</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">signal</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">NotifyContext</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Background</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">os</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Interrupt</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">syscall</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">SIGTERM</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">defer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">cancel</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Initialize Genkit with the Vertex AI plugin</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Init</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithPlugins</span><span class="devsite-syntax-p">(</span>&amp;<span class="devsite-syntax-nx">googlegenai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">VertexAI</span><span class="devsite-syntax-p">{}),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Input schema for the glowUp flow</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-kd">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">struct</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">URL</span><span class="devsite-syntax-w">         </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">`json:"url,omitempty"`</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">ContentType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">`json:"contentType,omitempty"`</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">glowup</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DefineFlow</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"glowUp"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">func</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Input</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">error</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// 1. Retrieve prompt</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">LookupPrompt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"glowup"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">errors</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">New</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"prompt 'glowup' not found"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Execute</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithInput</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fmt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Errorf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"generation failed: %w"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Media</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">})</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// triggers the flow and returns the encoded response from the model</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">out</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Run</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Input</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-nx">URL</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-nx">url</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ContentType</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-nx">contentType</span><span class="devsite-syntax-p">})</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatalln</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// decodes image data and returns the appropriate file extension</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">data</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ext</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">decode</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">out</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatalln</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// writes restored file to disk</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">filename</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"restored"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ext</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">os</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WriteFile</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">filename</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">data</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mo">0644</span><span class="devsite-syntax-p">);</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatalln</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-c1">// decode returns the decoded data and the file extension appropriate for the mime type</span>
+<span class="devsite-syntax-kd">func</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">decode</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">([]</span><span class="devsite-syntax-kt">byte</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">error</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">!</span><span class="devsite-syntax-nx">strings</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">HasPrefix</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"data:"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">errors</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">New</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"unsupported enconding format"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">strings</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">TrimPrefix</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"data:"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">parts</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">strings</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Split</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">text</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">";base64,"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">parts</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">]</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">decoded</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">base64</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">StdEncoding</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DecodeString</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">parts</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">])</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">ext</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mime</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">ExtensionsByType</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">mimeType</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">decoded</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ext</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">],</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>The code is very similar in structure to the <code translate="no" dir="ltr">greeter</code> flow, but this time it is adapted to run as a standalone CLI application. Instead of blocking forever it will run the <code translate="no" dir="ltr">glowUp</code> flow, decode the output and save the resulting binary data to disk.</p>
+<p>We need to decode the output because the model returns the image data in the following format:</p>
+<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>data:&lt;mime type&gt;;base64,&lt;base64 encoded image&gt;
+</pre></devsite-code>
+<p>You can see in the <code translate="no" dir="ltr">decode</code> function that we are using string manipulation to split the mime type and encoded image parts. Then we use the <code translate="no" dir="ltr">mime.ExtensionByType</code> and <code translate="no" dir="ltr">base64.DecodeString</code> functions to extract the information we need to save the file.</p>
+<h2 is-upgraded id="testing-the-restoration-flow" data-text="Testing the restoration flow" tabindex="-1">Testing the restoration flow</h2>
+<p>Now it is finally time to run this flow with a real picture! If you don&#39;t have any old photos needing some restoration at hand, you can try with this public domain picture retrieved from the  <a href="https://www.loc.gov/resource/fsa.8c01765/" target="_blank">Library of Congress</a> website:</p>
+<p class="image-container"><img alt="f0fc83a81e88052a.png" style="width: 624.00px" src="/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/f0fc83a81e88052a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Here is the direct link to the photograph to pass it to the flow:  <a href="https://tile.loc.gov/storage-services/service/pnp/fsa/8c01000/8c01700/8c01765v.jpg" target="_blank">https://tile.loc.gov/storage-services/service/pnp/fsa/8c01000/8c01700/8c01765v.jpg</a></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">export</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">IMAGE_URL</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-s">"https://tile.loc.gov/storage-services/service/pnp/fsa/8c01000/8c01700/8c01765v.jpg"</span>
+<span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">url</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-nx">IMAGE_URL</span>
+</code></pre></devsite-code>
+<p>And here is the restored and colorized output:</p>
+<p class="image-container"><img alt="5ed7bfcf6d26313c.png" style="width: 624.00px" src="/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c.png" srcset="https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_36.png 36w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_48.png 48w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_72.png 72w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_96.png 96w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_480.png 480w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_720.png 720w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_856.png 856w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_960.png 960w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_1440.png 1440w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_1920.png 1920w,https://codelabs.developers.google.com/static/cloud-genkit-go-nano-banana/img/5ed7bfcf6d26313c_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Success!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Deploying glowUp as a web service" duration="10" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Deploying glowUp as a web service" tabindex="-1">
+              6. Deploying glowUp as a web service
+          </h2>
+          
+          <p>If instead of a command line application you want to expose your flows in a web service, Genkit provides a convenient way to convert flows to endpoints using the <code translate="no" dir="ltr">genkit.Handler</code> adapter. The code below registers the <code translate="no" dir="ltr">glowUp</code> flow as a <code translate="no" dir="ltr">glowUp</code> endpoint using <code translate="no" dir="ltr">genkit.Handler</code>.</p>
+<p>You can expose them with a regular HTTP server as you would normally using the <code translate="no" dir="ltr">http</code> package from the standard library, but Genkit also provides a <code translate="no" dir="ltr">server</code> plugin that helps with some of the common server boilerplate, like handling shutdown signals gracefully.</p>
+<p>Replace the content of <code translate="no" dir="ltr">main.go</code> with the code below to create your web server.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">package</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span>
+
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"context"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"errors"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"fmt"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"log"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"net/http"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"os"</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/ai"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/genkit"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/plugins/googlegenai"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"github.com/firebase/genkit/go/plugins/server"</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-kd">func</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Background</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">PORT</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">os</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Getenv</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"PORT"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PORT</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">PORT</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"8080"</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">listenAddr</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">":"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">PORT</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Initialize Genkit with the Vertex AI plugin</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Init</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithPlugins</span><span class="devsite-syntax-p">(</span>&amp;<span class="devsite-syntax-nx">googlegenai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">VertexAI</span><span class="devsite-syntax-p">{}),</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-c1">// Input schema for the glowUp flow</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-kd">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">struct</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">URL</span><span class="devsite-syntax-w">         </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">`json:"url,omitempty"`</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">ContentType</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">`json:"contentType,omitempty"`</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">DefineFlow</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"glowUp"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">func</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">context</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Context</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Input</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-kt">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">error</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">LookupPrompt</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"glowup"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">==</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">errors</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">New</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"prompt 'glowup' not found"</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prompt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Execute</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ai</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">WithInput</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fmt</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Errorf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"generation failed: %w"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">return</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">resp</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Media</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">})</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Printf</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"GlowUp Flow Server started. Listening on %s"</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listenAddr</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-nx">mux</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">http</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">NewServeMux</span><span class="devsite-syntax-p">()</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">_</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">flow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">range</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">ListFlows</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">mux</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">HandleFunc</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"POST /"</span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-nx">flow</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Name</span><span class="devsite-syntax-p">(),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">genkit</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Handler</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">flow</span><span class="devsite-syntax-p">))</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">:=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">server</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Start</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">listenAddr</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mux</span><span class="devsite-syntax-p">);</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-c1">// Check if the error is due to context cancellation</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ctx</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Err</span><span class="devsite-syntax-p">()</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">!=</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">nil</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Println</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s">"GlowUp server shutting down gracefully..."</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">                        </span><span class="devsite-syntax-k">return</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-w">                </span><span class="devsite-syntax-nx">log</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">Fatal</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">err</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>You can either run this service locally or in the cloud. To run locally you can just run the file directly as the program now is complete, so we don&#39;t need to launch it via the genkit CLI. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-k">go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">main</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-k">go</span>
+</code></pre></devsite-code>
+<p>Since this is a blocking operation, you need to launch a second terminal to test it. The quickest way would be to use the <code translate="no" dir="ltr">curl</code> command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">curl</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">sS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">X</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">POST</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">http</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-c1">//localhost:8080/glowUp \</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">H</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Content-Type: application/json"</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-s">"data"</span><span class="devsite-syntax-p">:{</span><span class="devsite-syntax-s">"url"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-nx">IMAGE_URL</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"contentType"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-s">"image/jpeg"</span><span class="devsite-syntax-p">}}</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     &gt; </span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">json</span>
+</code></pre></devsite-code>
+<p>Because this is a server response we need to decode the base64 image:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">cat</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">json</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">jq</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">r</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">awk</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">F</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-sc">','</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-nx">print</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">base64</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> &gt; </span><span class="devsite-syntax-nx">restored</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">png</span>
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Note:</strong> the best way to do this test is to build a small client that would both send the requests to the server and parse the response, saving it to a file. You can &#34;vibe code&#34; one using the prompt provided later in this chapter.</p>
+</aside>
+<h2 is-upgraded id="deploy-the-web-service-to-cloud-run" data-text="Deploy the web service to Cloud Run" tabindex="-1">Deploy the web service to Cloud Run</h2>
+<p>It is fine that this server &#34;works on my machine&#34;, but in the ideal world we would deploy it somewhere else accessible to all our users. One of the most convenient ways to deploy services like this is to use Cloud Run&#39;s deploy from source feature. With this feature you don&#39;t even need to build the container yourself, everything is automated.</p>
+<aside class="special"><p><strong>Note:</strong> if you are running <code translate="no" dir="ltr">gcloud run deploy</code> for the first time you will be asked to enable the Cloud Run APIs.</p>
+</aside>
+<p>To deploy this service to Cloud Run using deployment from source, execute the following command (replace the project id with your own):</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">gcloud</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">deploy</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">source</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">region</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">us</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">central1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">no</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">allow</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">unauthenticated</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">set</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">env</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">vars</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">GOOGLE_GENAI_USE_VERTEXAI</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-nx">True</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-nx">GOOGLE_CLOUD_LOCATION</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-nx">GOOGLE_CLOUD_LOCATION</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-nx">GOOGLE_CLOUD_PROJECT</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-nx">GOOGLE_CLOUD_PROJECT</span>
+</code></pre></devsite-code>
+<p>The deployment can take a few minutes to complete. Once you are done you can test the endpoint by sending another request via <code translate="no" dir="ltr">curl</code>:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">GLOWUP_URL</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">gcloud</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">services</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">describe</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">glowup</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">region</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">us</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">central1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">format</span><span class="devsite-syntax-p">=</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-nx">value</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">status</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">url</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-nx">curl</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">X</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">POST</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"$GLOWUP_URL/glowUp"</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">H</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Authorization: Bearer $(gcloud auth print-identity-token)"</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">H</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Content-Type: application/json"</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"{\"data\":{\"url\":\"$IMAGE_URL\", \"contentType\":\"image/jpeg\"} }"</span><span class="devsite-syntax-w"> </span>\
+<span class="devsite-syntax-w">     &gt; </span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">json</span>
+</code></pre></devsite-code>
+<p>Again, we need to decode the base64 image:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">cat</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">json</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">jq</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">r</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">result</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">awk</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">F</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-sc">','</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-nx">print</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">$</span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">base64</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> &gt; </span><span class="devsite-syntax-nx">restored_cloudrun</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">png</span>
+</code></pre></devsite-code>
+<p>Now we have a fully working photo restoration web server!</p>
+<h2 is-upgraded id="optional:-vibe-coding-a-client-application" data-text='Optional: "Vibe coding" a client application' tabindex="-1">Optional: "Vibe coding" a client application</h2>
+<p>Writing manual code is fun but can also be challenging if you never have done a certain type of project before. Luckily today we have coding agents that can help us to speed up the process.</p>
+<p>In this step instead of writing the code ourselves we are going to ask Gemini CLI (or your favorite coding agent) to do the work for us. Use the following prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Go"><code translate="no" dir="ltr"><span class="devsite-syntax-nx">GlowUp</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">photo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restoration</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">service</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">takes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restoration</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">input</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">returns</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restored</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">picture</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">output</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">task</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">application</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">uses</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">this</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">server</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">process</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">image</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">urls</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">save</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restored</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">locally</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-nx">TODO</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Write</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CLI</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">application</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">receives</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">three</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">arguments</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">an</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">url</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">required</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">content</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">optional</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">defaults</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">image</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">jpeg</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">addr</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">server</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">address</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">optional</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">defaults</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">localhost</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-mi">8080</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CLI</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">should</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">send</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">POST</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">request</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">glowUp</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">endpoint</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">server</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">body</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">{</span><span class="devsite-syntax-s">"data"</span><span class="devsite-syntax-p">:{</span><span class="devsite-syntax-s">"url"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span>&lt;<span class="devsite-syntax-nx">url</span>&gt;<span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"contentType"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span>&lt;<span class="devsite-syntax-nx">contentType</span>&gt;<span class="devsite-syntax-p">}</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">}</span><span class="devsite-syntax-err">'</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">server</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">response</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">should</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">be</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">parsed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">stripping</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"data:"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prefix</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">remainder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">have</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">format</span><span class="devsite-syntax-w"> </span>&lt;<span class="devsite-syntax-nx">mimeType</span>&gt;<span class="devsite-syntax-p">;</span><span class="devsite-syntax-nx">base64</span><span class="devsite-syntax-p">,</span>&lt;<span class="devsite-syntax-nx">encoded</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">imageData</span>&gt;
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Extract</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">convert</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">extension</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">using</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">package</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Extract</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">image</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">decode</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">using</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">base64</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">package</span>
+<span class="devsite-syntax-nx">Save</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">named</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"restored"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">detected</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">extension</span>
+
+<span class="devsite-syntax-nx">Acceptance</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Criteria</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">builds</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">successfully</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">client</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restore</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">image</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">https</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-c1">//tile.loc.gov/storage-services/service/pnp/fsa/8c01000/8c01700/8c01765v.jpg</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Check</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">restored</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">png</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">exists</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">after</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">processing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">image</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">above</span>
+</code></pre></devsite-code>
+<p>The agent might need to reorganise the files a bit as we cannot have two functions &#34;main&#34; in the same module. Watch it work and steer it towards the right implementation giving it the server code or snippets if necessary.</p>
+<h2 is-upgraded id="cleaning-up-after-the-lab" data-text="Cleaning up after the lab" tabindex="-1">Cleaning up after the lab</h2>
+<aside class="warning"><p><strong>Attention:</strong> Make sure you delete the Cloud Run deployment before wrapping up this session, especially if you are using an unauthenticated Cloud Run instance to avoid incurring unexpected charges to your GCP billing account.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Conclusion" duration="2" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Conclusion" tabindex="-1">
+              7. Conclusion
+          </h2>
+          
+          <p>Congratulations! You have successfully built a high-fidelity photo restoration app using Genkit and Nano Banana Pro,</p>
+<p>In this codelab you have learned how to:</p>
+<ul>
+<li>Configure your environment to develop Genkit Go applications</li>
+<li>Create multi-modal prompts with <code translate="no" dir="ltr">dotprompt</code></li>
+<li>Create Genkit flows using prompt templates</li>
+<li>Use Nano Banana Pro to process images</li>
+<li>Package Genkit flows as command-line applications and web services</li>
+<li>Deploy Genkit applications to Cloud Run</li>
+</ul>
+<p>Once you are done testing, remember to clean up the environment.</p>
+<h2 is-upgraded id="next-steps" data-text="Next steps" tabindex="-1">Next steps</h2>
+<p>You can continue your learning journey by exploring other codelabs in this platform, or making improvements to glowUp on your own.</p>
+<p>If you need some ideas for improvements, you could try:</p>
+<ul>
+<li>Enable the glowUp CLI to restore local files</li>
+<li>Create a frontend for the GlowUp web service</li>
+<li>Automatically detect the MIME type from the data</li>
+<li>Perform other types of image processing (from photo to drawing, from drawing to photo, sketch to final art, etc.</li>
+<li>Create or improve the client (maybe build a smartphone app?)</li>
+</ul>
+<p>The possibilities are endless! If the idea of going on your own feels a bit intimidating, you can always employ the help of a coding agent like  <a href="https://geminicli.com/" target="_blank">Gemini CLI</a> or  <a href="https://antigravity.google" target="_blank">Antigravity</a>. And if you want to do more with Genkit, coding agents paired with the  <a href="https://genkit.dev/docs/mcp-server/?lang=go" target="_blank">Genkit MCP Server</a> can make your life much easier.</p>
+<p>Finally, if you want to access the full code for this repo, you can find it  <a href="https://github.com/danicat/glowup" target="_blank">here</a>.</p>
+<p>Happy coding!</p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//googledevelopers.blogspot.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.facebook.com/Google-Developers-967415219957038"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Facebook
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//medium.com/google-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Medium
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//twitter.com/googledevs"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.youtube.com/user/GoogleDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.womentechmakers.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/gdg"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/experts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/accelerators"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.developers.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.cloud.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//play.google.com/apps/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.firebase.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.actions.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//cast.google.com/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//chrome.google.com/webstore/developer/dashboard"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//developers.google.com/terms/site-terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;codelabs&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="yKGwGPFznUXeXbOuNWISejng3UUFth">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/js/app_loader.js', '[17,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs","https://codelabs-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/codelabs/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","codelabs.developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["MiscFeatureFlags__enable_variable_operator_index_yaml","DevPro__enable_devpro_offers","DevPro__enable_nvidia_credits_card","DevPro__enable_code_assist","DevPro__enable_developer_subscriptions","AIStudioInteractionsToggle__interactions_are_default","Profiles__enable_complete_playlist_endpoint","Cloud__enable_free_trial_server_call","MiscFeatureFlags__enable_explain_this_code","Profiles__enable_recognition_badges","Profiles__enable_user_type","Cloud__fast_free_trial","MiscFeatureFlags__enable_view_transitions","Search__enable_page_map","Experiments__reqs_query_experiments","EngEduTelemetry__enable_engedu_telemetry","Concierge__enable_remove_info_panel_tags","MiscFeatureFlags__enable_firebase_utm","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_developer_profile_pages_as_content","Profiles__enable_awarding_url","MiscFeatureFlags__enable_project_variables","SignIn__enable_l1_signup_flow","Cloud__cache_serialized_dynamic_content","Profiles__enable_playlist_community_acl","Profiles__enable_page_saving","Profiles__enable_callout_notifications","DevPro__enable_free_benefits","DevPro__enable_firebase_workspaces_card","Profiles__require_profile_eligibility_for_signin","DevPro__enable_google_one_card","DevPro__enable_enterprise","Profiles__enable_developer_profile_benefits_ui_redesign","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__developers_footer_image","MiscFeatureFlags__remove_cross_domain_tracking_params","DevPro__enable_g1_integration","MiscFeatureFlags__developers_footer_dark_image","Profiles__enable_completecodelab_endpoint","Profiles__enable_purchase_prompts","DevPro__enable_devsite_captcha","Search__enable_ai_eligibility_checks","DevPro__remove_eu_tax_intake_form","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_appearance_cookies","Profiles__enable_developer_profiles_callout","DevPro__enable_google_payments_buyflow","CloudShell__cloud_shell_button","Search__enable_ai_search_summaries_for_all","DevPro__enable_cloud_innovators_plus","Cloud__enable_cloudx_experiment_ids","Profiles__enable_public_developer_profiles","Search__enable_dynamic_content_confidential_banner","CloudShell__cloud_code_overflow_menu","Cloud__enable_cloud_shell","Profiles__enable_release_notes_notifications","DevPro__enable_embed_profile_creation","Profiles__enable_completequiz_endpoint","Cloud__enable_legacy_calculator_redirect","Profiles__enable_targeted_hero","MiscFeatureFlags__enable_variable_operator","DevPro__enable_g1_ineligible_redirect","Search__enable_suggestions_from_borg","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_auto_apply_credits","TpcFeatures__proxy_prod_host","BookNav__enable_tenant_cache_key","DevPro__enable_credits_banner","DevPro__enable_google_payments","DevPro__enable_vertex_credit_card","Concierge__enable_pushui","Profiles__enable_join_program_group_endpoint","MiscFeatureFlags__fix_lower_breadcrumbs","MiscFeatureFlags__enable_explicit_template_dependencies","Concierge__enable_actions_menu","Profiles__enable_stripe_subscription_management","Analytics__enable_devpro_interaction_logging","Profiles__enable_profile_collections","Analytics__enable_clearcut_logging","Cloud__enable_cloud_shell_fte_user_flow"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,null,"https://developerprofiles-pa.clients6.google.com",[17,"codelabs","Google Codelabs","codelabs.developers.google.com",null,"codelabs-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],null,null,null,null,null,null,[1]],null,[33,null,null,null,null,null,"/images/lockup.svg",null,null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,29,32,36],null,[[],[1,1]],[[null,null,null,null,null,null,null,null,null,null,null,null,1]],null,4],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,1,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

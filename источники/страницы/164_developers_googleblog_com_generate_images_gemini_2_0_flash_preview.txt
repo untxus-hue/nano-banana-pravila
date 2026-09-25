@@ -1,0 +1,156 @@
+TITLE::Create and edit images with Gemini 2.0 in preview
+            
+            
+            - Google Developers Blog
+Create and edit images with Gemini 2.0 in preview
+
+- Google Developers Blog 
+
+Community/Events 
+Learn 
+Blog 
+YouTube 
+
+Search 
+
+Community/Events 
+Learn 
+Blog 
+YouTube 
+
+Gemini / Google AI Studio 
+
+Create and edit images with Gemini 2.0 in preview 
+
+MAY 7, 2025 
+
+Kat Kampf Product Manager 
+Share 
+Facebook 
+Twitter 
+LinkedIn 
+Mail 
+
+Based on the enthusiasm from developers, we are excited to announce that Image Generation capabilities are now available in preview with Gemini 2.0 Flash . 
+Developers can start integrating conversational image generation and editing with higher rate limits via the Gemini API in Google AI Studio and Vertex AI today using the model name “gemini-2.0-flash-preview-image-generation”. 
+
+What's new in Gemini 2.0 Flash image generation 
+In addition to enabling higher rate limits and pricing , we have also improved the model with: 
+
+Better visual quality (vs experimental version) 
+
+More accurate text rendering (vs experimental version) 
+
+Significantly reduced filter block rates (vs experimental version) 
+
+Gemini 2.0 Flash image generation in action 
+We have loved seeing the community reception of Gemini's image generation capabilities. Here’s a closer look at some of the key functionalities developers have been excited about: 
+
+1) Recontextualize products in new environments. 
+
+2) Collaboratively edit images in real-time. 
+Try it today with the Gemini Co-Drawing Sample App in AI Studio. 
+
+Sorry, your browser doesn't support playback for this video 
+
+3) Edit specific parts of images conversationally, without changing anything else. 
+
+4) Dynamically create new product SKUs with text rendering and image. 
+
+5) Ideate with Gemini 2.0 Flash as your partner: 
+
+Sorry, your browser doesn't support playback for this video 
+(right click and open in new tab to view) 
+
+Start building with Gemini’s native image capabilities today 
+from google import genai
+from google.genai import types
+client = genai.Client(api_key="GEMINI_API_KEY")
+response = client.models.generate_content(
+model="gemini-2.0-flash-preview-image-generation",
+contents=(
+"Show me how to bake a macaron with images."
+),
+config=types.GenerateContentConfig(
+response_modalities=["TEXT", "IMAGE"]
+),
+) 
+Python 
+Copied 
+
+You can read more about image generation in our API docs . This preview is available for developers to start building through Google AI Studio and Vertex AI . 
+We look forward to bringing further quality improvements, new capabilities, and expanded rate limits soon. We can’t wait to see what you build with Gemini 2.0 Flash Image Generation. 
+
+posted in: 
+
+Gemini 
+Google AI Studio 
+Web 
+AI 
+Announcements 
+Documentation 
+Vertex AI 
+image generation 
+Developer Tools 
+Gemini 2.0 Flash 
+
+Previous 
+Next 
+Related Posts 
+
+AI Announcements Events 
+Colab is now part of your Google AI plan 
+SEPT. 22, 2026 
+
+Mobile Web Announcements Solutions 
+Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google 
+AUG. 13, 2026 
+
+Web AI How-To Guides Announcements 
+Mastering Edge AI on Raspberry Pi with LiteRT and Gemma 
+AUG. 11, 2026 
+
+Gemini Web AI Tutorials How-To Guides 
+Turn creative prompts into interactive XR experiences with Gemini 
+FEB. 19, 2026 
+
+AI Announcements Explore 
+Introducing Support for Local AI Models in the Antigravity SDK 
+SEPT. 23, 2026 
+
+Gemini Google AI Studio AI Events 
+How we built the Google I/O 2026 Save the Date experience 
+MARCH 3, 2026 
+
+Connect 
+Blog 
+Bluesky 
+Instagram 
+LinkedIn 
+X (Twitter) 
+YouTube 
+Programs 
+Google Developer Program 
+Google Developer Groups 
+Google Developer Experts 
+Accelerators 
+Women Techmakers 
+Google Cloud & NVIDIA 
+Developer consoles 
+Google API Console 
+Google Cloud Platform Console 
+Google Play Console 
+Firebase Console 
+Actions on Google Console 
+Cast SDK Developer Console 
+Chrome Web Store Dashboard 
+Google Home Developer Console 
+
+Android 
+Chrome 
+Firebase 
+Google Cloud Platform 
+All products 
+Manage cookies 
+Terms 
+Privacy

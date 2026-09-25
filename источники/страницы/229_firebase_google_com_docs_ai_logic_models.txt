@@ -1,0 +1,2302 @@
+Learn about supported models  |  Firebase AI Logic
+Skip to main content
+Build
+Build
+Get to market quickly and securely with products that can scale globally
+Go to Build
+Build Products
+App Check
+App Hosting
+Authentication
+Cloud Functions
+Cloud Storage
+SQL Connect
+Extensions
+Firestore
+Hosting
+Phone Number Verification
+Realtime Database
+Firebase AI Logic
+Generative AI
+Run
+Run
+Run your app with confidence and deliver the best experience for your users
+Go to Run
+Run Products
+A/B Testing
+App Distribution
+Cloud Messaging
+Crashlytics
+Google Analytics
+In-App Messaging
+Performance Monitoring
+Remote Config
+Test Lab
+Solutions
+Pricing
+Docs
+Overview
+Fundamentals
+AI
+Build
+Run
+Reference
+Samples
+Community
+Learn
+Stories
+Support
+/
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Blog
+Go to console
+Sign in
+Documentation
+Firebase AI Logic
+Overview
+Fundamentals
+Add Firebase - Apple platforms (iOS+)
+Add Firebase - Android
+Add Firebase - Web
+Add Firebase - Flutter
+Add Firebase - C++
+Add Firebase - Unity
+Add Firebase - Server environments
+Manage Firebase projects
+Supported platforms & frameworks
+AI
+Develop with AI assistance
+Overview
+Gemini in Firebase
+Streamline development with an AI-powered assistant in Firebase interfaces and tools.
+AI tools, skills, & MCP
+Access agentive development tools, like our agent skills and MCP server.
+Firebase Studio (deprecated)
+Build and ship full-stack AI-infused apps right from your browser.
+Build AI-powered apps
+Firebase AI Logic
+Build genAI features and securely access Gemini models directly from your mobile & web apps.
+Build
+Authentication
+Simplify user authentication and sign-in on a secure, all-in-one identity platform.
+Phone Number Verification
+Obtain the phone number of a device directly from the carrier, without SMS.
+App Check
+Protect your backend resources from abuse and unauthorized access.
+Security Rules
+Define granular, server-enforced rules to protect your database and storage data.
+SQL Connect
+Build and scale your apps using a fully-managed PostgreSQL relational database service.
+Firestore
+Store and sync data using a scalable NoSQL cloud database with rich data models and queryability.
+Realtime Database
+Store and sync data in realtime with a NoSQL cloud database.
+Storage
+Store and serve content like images, audio, video with a secure cloud-hosted solution.
+App Hosting
+Deploy your modern, full-stack web apps with server-side rendering and AI features.
+Hosting
+Deploy your static and single-page web apps to a global CDN with a single command.
+Cloud Functions
+Run backend code in response to events without provisioning or managing a server.
+Extensions (deprecated)
+Deploy pre-built integrations and solutions for common tasks.
+Emulator Suite
+Test your app in real-world conditions without affecting live data.
+Run
+Test Lab
+Test your Android and iOS apps on a wide range of real and virtual devices, all in the cloud.
+App Distribution
+Streamline delivery of pre-release Android and iOS apps to trusted testers.
+Crashlytics
+Track, prioritize, and fix app stability issues.
+Performance Monitoring
+Gain real-time insight into your app's performance and fix issues.
+Remote Config
+Instantly change your app's behavior and appearance, without publishing an update.
+A/B Testing
+Test variants to make data-driven decisions about changes, features, and campaigns.
+Cloud Messaging
+Send notifications and messages to your users on Android, iOS, and the Web.
+In-App Messaging
+Engage your active users with targeted, contextual messages within your app.
+Google Analytics
+Gain insights into user behavior, and optimize your app's marketing and performance.
+Google AdMob
+Monetize your app, gain user insights, and tailor the ad experience.
+Google Ads
+Run smarter campaigns, find high-value users, and measure in-app conversions.
+Reference
+Samples
+Build
+More
+Run
+More
+Solutions
+Pricing
+Docs
+More
+Overview
+Fundamentals
+More
+AI
+More
+Build
+More
+Run
+More
+Reference
+Samples
+Community
+More
+Support
+Blog
+Go to console
+Overview
+Develop with AI assistance
+Develop with AI assistance
+Gemini in Firebase
+Introduction
+Set up Gemini in Firebase
+Try Gemini in the Firebase console
+AI tools and integrations
+Firebase agent skills
+Firebase MCP server
+Integrate Firebase services using AI assistance
+Google AI Studio integration
+Prompts
+Overview
+Set up a backend
+Write security rules
+Add AI features
+Deploy to hosting
+Prioritize & fix issues
+Firebase Studio
+Firebase Studio sunset and project migration
+Introduction
+Get started
+Get started with an existing project
+Get started with the App Prototyping agent
+Get started with a template
+Firebase Studio pricing, quotas, and limits
+AI assistance in Firebase Studio
+Introduction
+Get assistance from Gemini
+Configure Gemini assistance
+Effective prompting
+Connect to MCP servers
+Preview, publish, and monitor
+Preview web and Android apps
+Publish apps
+Monitor and protect web apps
+Upload your app to GitHub
+Optimize your Firebase Studio workspace
+About Firebase Studio workspaces
+Customize your Firebase Studio workspace
+Connect to a Firebase project
+Integrate with Google and Firebase services
+Create custom templates
+Create a shortcut to a predefined workspace
+Share your workspace
+Create a button to import code into Firebase Studio
+Solutions
+Develop, publish, and monitor a full-stack web app
+Build an app with the Gemini API
+Troubleshoot and debug
+Debug your app
+FAQ and troubleshooting
+Reference
+dev.nix Reference
+Project IDX is now part of Firebase Studio
+Licensed software
+Connect with us
+Build AI-powered apps
+Firebase AI Logic
+Introduction
+Get started
+Models
+SDK reference docs
+Security
+Security checklist
+Prevent abuse with App Check
+Core capabilities
+Text
+Chat
+Images
+Analyze images
+Generate & edit images (Nano Banana)
+Migrate from Imagen to Gemini
+Video
+Analyze video
+Audio
+Analyze audio
+Generate audio
+Generate speech (TTS)
+Documents (PDFs)
+Analyze documents (PDFs)
+Structured output (JSON)
+Streaming responses
+Specialized capabilities
+Hybrid & on-device inference
+Overview
+iOS+
+Get started
+Configuration options
+Android
+Get started
+Configuration options
+Structured output (JSON)
+Web
+Get started
+Configuration options
+Structured output (JSON)
+Real-time bidirectional streaming (Live API)
+Get started
+Capabilities
+Configuration options
+Manage sessions
+Limits & specifications
+Provide tools to the model
+Function calling
+Code execution
+URL context
+Grounding - Google Search
+Grounding - Google Maps
+Control generation of responses
+Overview of options
+Prompt design
+Model configuration
+Thinking
+Safety settings
+System instructions
+Get ready for production
+Production checklist
+Restrict requests to authenticated users
+Change model name remotely
+Locations
+Context caching
+Pricing
+Rate limits & quota
+Count tokens
+Monitor costs, usage, & metrics
+Solutions
+Overview
+Include large files in requests with Cloud Storage
+Store & access prompt templates on the server
+Get started
+Multi-turn interactions
+Format, syntax, & examples
+Best practices & considerations
+Manage templates
+Version with Remote Config
+Template-only mode
+Advanced workflows
+Dynamically update your app with Remote Config
+Run server-side scripts before & after requests
+Access Gemini API via Apple's Foundation Models framework
+Get started
+Capabilities
+Config options
+Provide tools
+Additional information
+Input file types & requirements
+Migration guides
+Migrate from GA "Vertex AI in Firebase"
+Migrate from preview "Vertex AI in Firebase"
+Migrate from "Google AI client SDKs"
+Data governance & Responsible AI
+Cloud Audit Logging
+FAQ and troubleshooting
+Error codes
+Give feedback
+Build
+Go to Build
+Build Products
+App Check
+App Hosting
+Authentication
+Cloud Functions
+Cloud Storage
+SQL Connect
+Extensions
+Firestore
+Hosting
+Phone Number Verification
+Realtime Database
+Firebase AI Logic
+Generative AI
+Run
+Go to Run
+Run Products
+A/B Testing
+App Distribution
+Cloud Messaging
+Crashlytics
+Google Analytics
+In-App Messaging
+Performance Monitoring
+Remote Config
+Test Lab
+Overview
+Fundamentals
+AI
+Build
+Run
+Reference
+Samples
+Learn
+Stories
+Add Firebase - Apple platforms (iOS+)
+Add Firebase - Android
+Add Firebase - Web
+Add Firebase - Flutter
+Add Firebase - C++
+Add Firebase - Unity
+Add Firebase - Server environments
+Manage Firebase projects
+Supported platforms & frameworks
+Develop with AI assistance
+Overview
+Gemini in Firebase
+AI tools, skills, & MCP
+Firebase Studio (deprecated)
+Build AI-powered apps
+Firebase AI Logic
+Authentication
+Phone Number Verification
+App Check
+Security Rules
+SQL Connect
+Firestore
+Realtime Database
+Storage
+App Hosting
+Hosting
+Cloud Functions
+Extensions (deprecated)
+Emulator Suite
+Test Lab
+App Distribution
+Crashlytics
+Performance Monitoring
+Remote Config
+A/B Testing
+Cloud Messaging
+In-App Messaging
+Google Analytics
+Google AdMob
+Google Ads
+Starting November 2, 2026, Firebase App Check enforcement will be
+required
+to use Firebase AI Logic.
+Learn more.
+Model updates:
+The latest Gemini models, like
+Gemini 3.8 Flash
+, are available to use with
+    Firebase AI Logic!
+Learn more.
+Gemini 2.5 models will shut down in
+October 2026
+(and new projects cannot start
+    using them). To avoid service disruptions, update to a newer model (like
+gemini-3.8-flash
+or
+gemini-3.1-flash-image
+).
+    Any stable Gemini Live API 2.5 models are not impacted.
+Learn more.
+Firebase
+Documentation
+Firebase AI Logic
+AI
+Send feedback
+Learn about supported models
+Stay organized with collections
+Save and categorize content based on your preferences.
+For mobile and web apps, the
+Firebase AI Logic
+SDKs let you interact
+with the supported
+Gemini
+models
+directly from your app.
+Gemini
+models are considered
+multimodal
+because they're capable of
+processing and even generating multiple modalities, including text, code, PDFs,
+images, video, and audio.
+Also, review our
+FAQ
+about all the models that
+Firebase AI Logic
+supports and does not support.
+Featured models
+FAST AND INTELLIGENT
+Gemini 3.8 Flash
+gemini-3.8-flash
+Frontier-class performance rivaling larger models at a fraction of
+            the cost.
+(billing
+not
+required)
+ULTRA FAST
+Gemini 3.5 Flash-Lite
+gemini-3.5-flash-lite
+High-volume, cost-sensitive workhorse model with the performance and
+            quality of the Gemini 3 series.
+(billing
+not
+required)
+IMAGE GENERATING
+Gemini 3.1 Flash Image (
+Nano Banana 2
+)
+gemini-3.1-flash-image
+Powerful, high-efficiency image generation and editing model,
+           optimized for speed and high-volume use cases.
+(billing required)
+General-use models
+arrow_downward
+Go to tables with model details
+Gemini 3.1 Pro
+gemini-3.1-pro-preview
+Advanced intelligence, complex problem-solving skills, and powerful
+            agentic and vibe coding capabilities.
+(billing required)
+Gemini 3.8 Flash
+gemini-3.8-flash
+Frontier-class performance rivaling larger models at a fraction of
+            the cost.
+(billing
+not
+required)
+Gemini 3.5 Flash-Lite
+gemini-3.5-flash-lite
+High-volume, cost-sensitive workhorse model with the performance and
+            quality of the Gemini 3 series.
+(billing
+not
+required)
+Older stable general-use models
+Gemini 3.7 Flash
+(
+gemini-3.7-flash
+):
+Previous
+Gemini 3.x Flash
+model for frontier-class performance
+rivaling larger models at a fraction of the cost.
+(billing
+not
+required)
+Gemini 3.6 Flash
+(
+gemini-3.6-flash
+):
+Previous
+Gemini 3.x Flash
+model for frontier-class performance
+rivaling larger models at a fraction of the cost.
+(billing
+not
+required)
+Gemini 3.5 Flash
+(
+gemini-3.5-flash
+):
+Previous
+Gemini 3.x Flash
+model for frontier-class performance
+rivaling larger models at a fraction of the cost.
+(billing
+not
+required)
+Gemini 3.1 Flash‑Lite
+(
+gemini-3.1-flash-lite
+):
+Previous
+Gemini 3.x Flash‑Lite
+model for high-volume, cost-sensitive
+workhorse tasks.
+(billing
+not
+required)
+Image-generating models
+arrow_downward
+Go to tables with model details
+Gemini 3 Pro Image (
+Nano Banana Pro
+)
+gemini-3-pro-image
+State-of-the-art image generation and editing model for highly
+            contextual native image creation.
+(billing required)
+Gemini 3.1 Flash Image (
+Nano Banana 2
+)
+gemini-3.1-flash-image
+Powerful, high-efficiency image generation and editing model,
+            optimized for speed and high-volume use cases.
+(billing required)
+Gemini 3.1 Flash-Lite Image (
+Nano Banana 2 Lite
+)
+gemini-3.1-flash-lite-image
+Ultra-low latency and cost-effective image generation and editing
+            model, designed for high-volume interactive use cases.
+(billing required)
+Audio-generating models
+Text-to-speech (TTS) models
+You can generate speech from text input with
+Gemini
+TTS models.
+arrow_downward
+Go to tables with model details
+Gemini 3.x Flash TTS
+gemini-3.1-flash-tts-preview
+Powerful, low-latency speech generation from text input.
+(billing
+not
+required)
+Live API
+models
+You can generate
+bidirectional streamed
+audio with models that support the
+Gemini Live API
+.
+arrow_downward
+Go to tables with model details
+Gemini 3.x Flash with Gemini Live API native audio
+Gemini Developer API:
+gemini-3.1-flash-live-preview
+Agent Platform Gemini API:
+not supported
+Enables low-latency, real-time voice and video interactions with a
+            Gemini model that is
+bidirectional
+.
+(billing
+not
+required)
+Gemini 2.5 Flash with Gemini Live API native audio
+Gemini Developer API:
+gemini-2.5-flash-native-audio-preview-12-2025
+Agent Platform Gemini API:
+gemini-live-2.5-flash-native-audio
+Enables low-latency, real-time voice and video interactions with a
+            Gemini model that is
+bidirectional
+.
+(billing
+not
+required)
+The remainder of this page provides detailed information about the models
+supported by
+Firebase AI Logic
+.
+Compare models
+:
+Supported input and output
+High-level comparison of the supported capabilities
+Specifications and limitations, for example max input tokens or max length
+of input video
+Description of
+how models are versioned
+, specifically their
+stable
+,
+preview
+, and
+experimental
+versions
+Lists of
+available model names
+to include in your
+code during initialization
+Lists of
+supported languages
+for the models
+At the bottom of this page, you can
+view detailed information about previous generation models
+.
+Compare models
+Each model has different capabilities to support various use cases. Note that
+each of tables in this section describe each model
+when used with
+Firebase AI Logic
+. Each model might have additional
+capabilities that aren't available when using our SDKs.
+If you can't find the information you're looking for in the following
+sub-sections, you can find even more information in your chosen API provider
+documentation:
+Gemini Developer API
+or
+Agent Platform
+Gemini API (formerly Vertex AI)
+.
+Note:
+We recommend reviewing details about
+the location for where you access a model
+.
+The
+Gemini Developer API
+provides only global access to models, but the
+Agent Platform
+Gemini API (formerly Vertex AI)
+provides both global access (recommended for most
+use cases) and setting a specific location (available locations depend on the
+model).
+Supported input and output
+The following table lists the supported input and output types
+when using each model with
+Firebase AI Logic
+.
+To learn about supported file types, see
+Supported input files and requirements
+.
+Gemini 3.x
+Pro, Flash, Flash‑Lite
+Gemini 3.x
+Pro
+Image
+Gemini 3.x
+Flash
+Image
+Gemini 3.x
+Flash‑Lite
+Image
+Gemini 3.x
+Flash
+TTS
+Gemini
+Live
+Input types
+Text
+Code
+Documents
+(PDFs or plain-text)
+Images
+Video
+Audio
+Output types
+Text
+Text (streaming)
+Code
+Structured output
+(like JSON)
+Images
+Video
+Audio
+Supported capabilities and features
+The following table lists the supported capabilities and features
+when using each model with
+Firebase AI Logic
+.
+Gemini 3.x
+Pro, Flash, Flash‑Lite
+Gemini 3.x
+Pro
+Image
+Gemini 3.x
+Flash
+Image
+Gemini 3.x
+Flash‑Lite
+Image
+Gemini 3.x
+Flash
+TTS
+Gemini
+Live
+Thinking
+Generate text
+from
+        text-only or multimodal inputs
+interleaved or as part of image
+interleaved or as part of image
+interleaved or as part of image
+transcription of audio
+Generate images
+Edit images
+Generate audio
+speech
+streamed audio
+Generate
+          structured output
+(like JSON)
+Analyze documents
+(PDFs or plain-text)
+(
+text-output
+|
+image-output
+)
+Analyze images
+(
+text-output
+|
+image-output
+)
+Analyze video
+(
+text-output
+|
+image-output
+)
+streamed video
+Analyze audio
+streamed audio
+Multi-turn chat
+Bidirectional multimodal streaming
+Supported tools
+Function calling
+Code execution
+URL context
+Grounding with
+Google Search
+Grounding with
+Google Maps
+Note:
+When using
+Firebase AI Logic
+, the following capabilities are
+not
+supported: grounding with Google Image Search,
+fine tuning a model, embeddings generation, and semantic retrieval.
+Specifications and limitations
+The following table lists the specifications and limitations
+when using each model with
+Firebase AI Logic
+.
+Property
+Gemini 3.x
+Pro, Flash, Flash‑Lite
+Gemini 3.x
+Pro
+Image
+Gemini 3.x
+Flash
+Image
+Gemini 3.x
+Flash‑Lite
+Image
+Gemini 3.x
+Flash
+TTS
+Gemini
+Live
+Input token limit
+*
+1,048,576 tokens
+65,536 tokens
+131,072 tokens
+65,536 tokens
+8,192 tokens
+see docs
+Output token limit
+*
+65,536 tokens
+32,768 tokens
+32,768 tokens
+4,096 tokens
+16,384 tokens
+PDFs (per request)
+Max number
+of input PDF files
+**
+900 files
+14 files
+14 files
+14 files
+---
+see docs
+Max number
+of pages
+per input PDF file
+**
+900 pages
+14 pages
+14 pages
+14 pages
+---
+Max size
+per input PDF file
+50 MB
+50 MB
+50 MB
+50 MB
+---
+Images (per request)
+Max number
+of
+input
+images
+1,000 images
+14 images
+14 images
+14 images
+---
+see docs
+Max size
+per input base64-encoded image
+7 MB
+7 MB
+7 MB
+7 MB
+---
+Max number
+of
+output
+images
+---
+Up to output token limit
+Up to output token limit
+Up to output token limit
+---
+Video (per request)
+Max number
+of input video files
+10 files
+---
+Up to input token limit
+Up to input token limit
+---
+see docs
+Max length
+of all input video
+(frames only)
+~60 minutes
+---
+~25 minutes
+~12 minutes
+---
+Max length
+of all input video
+(frames+audio)
+~45 minutes
+---
+---
+---
+---
+Audio (per request)
+Max number
+of input audio files
+1 file
+---
+---
+---
+---
+see docs
+Max length
+of all input audio
+~8.4 hours
+---
+---
+---
+---
+*
+For all
+Gemini
+models, a token is equivalent to about 4 characters,
+so 100 tokens are about 60-80 English words. For
+Gemini
+models, you can
+determine the total count of tokens in your requests using
+countTokens
+.
+**
+PDFs are treated as images, so a single page of a PDF is treated as
+    one image. The number of pages allowed in a request is limited to the number
+    of images the model can support.
+Find additional detailed information
+Quotas
+and
+pricing
+are
+different for each model. Pricing also depends on input and output.
+Learn about supported input file types, how to specify MIME type, and how to
+make sure that your input files and multimodal requests meet the requirements
+and follow best practices in
+Supported input files and requirements
+.
+Important
+:
+The total request size limit is
+  20 MB.
+To send large files, review the
+options for providing files in multimodal requests
+.
+Model versioning and naming patterns
+Models are offered in
+stable
+,
+preview
+, and
+experimental
+versions. For
+convenience, the
+-latest
+aliases are supported, but
+they're not recommended due to the inconsistency in which model version they
+point to.
+Make sure to review our
+best practices for using model versions
+.
+To find specific model names to use in your code, see the
+"available model names"
+section later on this page.
+Version type /
+Release stage
+Description
+Model name pattern
+Stable
+Stable
+versions are available and supported
+        for production use starting on the release date.
+A stable model version is typically released with a retirement date,
+            which indicates the last day that the model is available. After this
+            date, the model is no longer accessible or supported by Google.
+Most stable models are available for 12 months after their
+            release date (even if a replacement model is released).
+For the
+Agent Platform
+Gemini API (formerly Vertex AI)
+, some stable models only have
+short-term availability
+, which
+            means that they may be shut down (retired) as early as 45 days
+            after a replacement model is released.
+Model names of stable versions have no suffix
+Example:
+gemini-3.8-flash
+Preview
+Preview
+versions have new capabilities and
+        are considered
+not stable
+.
+These models are
+not
+recommended for production use, come
+            with more restrictive rate limits, and may have billing
+            requirements.
+These models are shut down (retired) within a few weeks or months
+            after their associated stable version is released.
+For the
+Agent Platform
+Gemini API (formerly Vertex AI)
+, preview models are
+only
+available in the
+global
+location
+.
+Model names of preview versions are appended with
+-preview
+Example:
+gemini-3-pro-preview
+Experimental
+Experimental
+versions have new capabilities
+        and are considered
+not stable
+.
+These models are
+not
+recommended for production use and
+            come with more restrictive rate limits. Experimental models are
+            intended for gathering feedback and to enable experimentation with
+            our latest features.
+These models are shut down (retired) within a few weeks or months
+            after their associated stable version is released.
+For the
+Agent Platform
+Gemini API (formerly Vertex AI)
+, experimental models are
+only
+available in the
+global
+location
+.
+Model names of experimental versions are appended with
+-exp
+along with the model's
+          release date (
+-MM-DD
+)
+Example:
+gemini-2.5-pro-exp-03-25
+(released on March 25, 2025)
+Shutdown (retired)
+Shutdown (retired)
+versions are past their
+          shutdown (retirement) date and have been permanently deactivated.
+Shutdown (retired) models are no longer accessible or supported by
+            Google, and a request using a retired model name returns a 404
+            error.
+---
+Best practices for using model versions
+In your
+production apps
+, use the explicit model name for the most recent
+stable
+version.
+For
+Agent Platform
+Gemini API (formerly Vertex AI)
+, if you choose to use a
+short-term availability model
+in your production app, it's even more
+critical that you use
+Firebase Remote Config
+or
+server prompt templates
+to control the model name used for your AI feature.
+Use
+preview
+and
+experimental
+versions
+only during prototyping
+. We
+recommend using a
+stable
+version when you start developing and testing for
+a production use case.
+We do
+not
+recommend using the
+-latest
+aliases
+(even during development). This alias points to the latest release for a
+specific model variation (which could be a stable, preview, or experimental
+version). This alias will get hot-swapped with every new release of a specific
+model variation, and only for breaking changes will a 2-week-prior
+notification email be sent. This instability of which model you're actually
+using can lead to unexpected behavior changes for your AI feature.
+We
+strongly
+recommend using
+Firebase Remote Config
+or
+server prompt templates
+so that you can make on-demand changes to the model name used for your AI
+  feature without releasing a new version of your app.
+Available model names
+Model names are the explicit values that you include
+in your code
+during
+initialization of the model.
+General-use models
+(like
+gemini-3.8-flash
+)
+Image-generating models
+(like
+gemini-3.1-flash-image
+, aka the "Nano Banana" models)
+Audio-generating models
+:
+Text-to-speech (TTS) models
+(like
+gemini-3.1-flash-tts-preview
+)
+Live API
+models
+(like
+gemini-live-2.5-flash-native-audio
+)
+For initialization examples for your platform, see the
+getting started guide
+.
+For details about the release stages (especially for use cases, billing, and
+shutdown), see
+model versioning and naming patterns
+.
+Programmatically list all available models
+You can list all available models names using the REST API:
+Gemini Developer API
+: Call the
+models.list
+endpoint
+Agent Platform
+Gemini API (formerly Vertex AI)
+: Call the
+publishers.models.list
+endpoint
+Note that this returned list will include
+all
+models supported by the
+API providers, but
+Firebase AI Logic
+only supports the
+Gemini
+models described on this page.
+General-use models
+Gemini 3.x Pro
+model names
+Requires the
+pay-as-you-go Blaze pricing plan
+regardless of your
+Gemini API
+provider.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.1-pro-preview
+Latest preview version of
+Gemini 3.x Pro
+Preview
+2026-02-19
+To be determined
+Gemini 3.x Flash
+model names
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.8-flash
+Latest stable version of
+Gemini 3.x Flash
+This is a
+short-term availability model
+(see
+Model versioning and naming patterns
+).
+Stable
+2026-09-02
+To be determined
+gemini-3.7-flash
+Stable version of
+Gemini 3.x Flash
+This is a
+short-term availability model
+(see
+Model versioning and naming patterns
+).
+Stable
+2026-08-13
+To be determined
+gemini-3.6-flash
+Stable version of
+Gemini 3.x Flash
+This is a
+short-term availability model
+(see
+Model versioning and naming patterns
+).
+Stable
+2026-07-21
+To be determined
+gemini-3.5-flash
+Stable version of
+Gemini 3.x Flash
+Stable
+2026-05-19
+No earlier than
+2027-05-19
+gemini-3-flash-preview
+Preview version of
+Gemini 3.x Flash
+Preview
+2025-12-17
+To be determined
+Gemini 3.x Flash‑Lite
+model names
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.5-flash-lite
+Latest stable version of
+Gemini 3.x Flash‑Lite
+Stable
+2026-07-21
+No earlier than
+2027-07-21
+gemini-3.1-flash-lite
+Stable version of
+Gemini 3.x Flash‑Lite
+Stable
+2026-05-07
+No earlier than
+2027-05-07
+Image-generating models
+Gemini 3.x Pro Image
+model names (aka "Nano Banana Pro")
+Requires the
+pay-as-you-go Blaze pricing plan
+regardless of your
+Gemini API
+provider.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3-pro-image
+Stable version of
+Gemini 3.x Pro Image
+(aka "Nano Banana Pro")
+Stable
+2026-05-28
+No earlier than
+2027-05-28
+gemini-3-pro-image-preview
+Preview version of
+Gemini 3.x Pro Image
+(aka "Nano Banana Pro")
+Preview
+2025-11-20
+As early as
+2026-06-25
+Gemini 3.x Flash Image
+model names (aka "Nano Banana 2")
+Requires the
+pay-as-you-go Blaze pricing plan
+regardless of your
+Gemini API
+provider.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.1-flash-image
+Stable version of
+Gemini 3.x Flash Image
+(aka "Nano Banana 2")
+Stable
+2026-05-28
+No earlier than
+2027-05-28
+gemini-3.1-flash-image-preview
+Preview version of
+Gemini 3.x Flash Image
+(aka "Nano Banana 2")
+Preview
+2026-02-26
+As early as
+2026-06-25
+Gemini 3.x Flash‑Lite Image
+model names (aka "Nano Banana 2 Lite")
+Requires the
+pay-as-you-go Blaze pricing plan
+regardless of your
+Gemini API
+provider.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.1-flash-lite-image
+Stable version of
+Gemini 3.x Flash‑Lite Image
+(aka "Nano Banana 2 Lite")
+This is a
+short-term availability model
+(see
+Model versioning and naming patterns
+).
+Stable
+2026-06-30
+To be determined
+Audio - text-to-speech (TTS) models
+Gemini 3.x Flash TTS
+model names
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.1-flash-tts-preview
+Preview version for
+Gemini 3.x Flash TTS
+Preview
+2026-06-17
+To be determined
+Note:
+Firebase AI Logic
+supports the Gemini 2.x TTS models, but our
+documentation for TTS models is focused on using the 3.x TTS models.
+Audio -
+Live API
+models
+Gemini 3.x Flash Live
+model names
+Gemini Developer API
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-3.1-flash-live-preview
+1
+Preview version for the
+Live API
+on the
+Gemini Developer API
+Preview
+2026-03-26
+To be determined
+Agent Platform
+Gemini API (formerly Vertex AI)
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+The
+Agent Platform
+Gemini API (formerly Vertex AI)
+does not support any
+Gemini Live 3.x
+models.
+1
+Only
+supported by the
+Gemini Developer API
+.
+  Also, even though this is a preview model, it's available on the
+  "free tier" of the
+Gemini Developer API
+.
+Gemini 2.5 Flash Live
+model names
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+(usually preview models require a paid
+  plan).
+Even though the following models have different model names depending on the
+Gemini
+API provider, the features of the model are the same.
+Gemini Developer API
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.5-flash-native-audio-preview-12-2025
+1
+Preview version for the
+Live API
+on the
+Gemini Developer API
+Preview
+2025-12-12
+To be determined
+gemini-2.5-flash-native-audio-preview-09-2025
+1
+Initial preview version for the
+Live API
+on the
+Gemini Developer API
+Preview
+2025-09-18
+To be determined
+Agent Platform
+Gemini API (formerly Vertex AI)
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-live-2.5-flash-native-audio
+2
+Stable version for the
+Live API
+on the
+Agent Platform
+Gemini API (formerly Vertex AI)
+Stable
+2025-12-12
+No earlier than
+2026-12-12
+gemini-live-2.5-flash-preview-native-audio-09-2025
+2
+Preview version for the
+Live API
+on the
+Agent Platform
+Gemini API (formerly Vertex AI)
+Preview
+2025-09-18
+To be determined
+1
+Only
+supported by the
+Gemini Developer API
+.
+  Also, even though these are preview models, they're available on the
+  "free tier" of the
+Gemini Developer API
+.
+2
+Only
+supported by the
+Agent Platform
+Gemini API (formerly Vertex AI)
+.
+  Also, these models are
+not
+available in the
+global
+location.
+Supported languages
+Note:
+These languages
+do not represent the locations for accessing the model
+;
+instead, these are the
+languages
+that the
+Gemini
+models can
+understand and respond in (for example, the text input and output).
+If needed, see
+specify the location for accessing a model
+.
+All the
+Gemini
+models can understand and respond in the
+following languages:
+Arabic (ar), Bengali (bn), Bulgarian (bg),
+Chinese simplified and traditional (zh), Croatian (hr), Czech (cs),
+Danish (da), Dutch (nl), English (en), Estonian (et), Finnish (fi),
+French (fr), German (de), Greek (el), Hebrew (iw), Hindi (hi), Hungarian (hu),
+Indonesian (id), Italian (it), Japanese (ja), Korean (ko), Latvian (lv),
+Lithuanian (lt), Norwegian (no), Polish (pl), Portuguese (pt), Romanian (ro),
+Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),
+Swahili (sw), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk),
+Vietnamese (vi)
+Gemini 2.0 Flash
+,
+Gemini 1.5 Pro
+and
+Gemini 1.5 Flash
+models can understand and respond in the
+following
+additional
+languages:
+Afrikaans (af), Amharic (am), Assamese (as), Azerbaijani (az),
+Belarusian (be), Bosnian (bs), Catalan (ca), Cebuano (ceb), Corsican (co),
+Welsh (cy), Dhivehi (dv), Esperanto (eo), Basque (eu), Persian (fa),
+Filipino (Tagalog) (fil), Frisian (fy), Irish (ga), Scots Gaelic (gd),
+Galician (gl), Gujarati (gu), Hausa (ha), Hawaiian (haw), Hmong (hmn),
+Haitian Creole (ht), Armenian (hy), Igbo (ig), Icelandic (is), Javanese (jv),
+Georgian (ka), Kazakh (kk), Khmer (km), Kannada (kn), Krio (kri),
+Kurdish (ku), Kyrgyz (ky), Latin (la), Luxembourgish (lb), Lao (lo),
+Malagasy (mg), Maori (mi), Macedonian (mk), Malayalam (ml), Mongolian (mn),
+Meiteilon (Manipuri) (mni-Mtei), Marathi (mr), Malay (ms), Maltese (mt),
+Myanmar (Burmese) (my), Nepali (ne), Nyanja (Chichewa) (ny),
+Odia (Oriya) (or), Punjabi (pa), Pashto (ps), Sindhi (sd),
+Sinhala (Sinhalese) (si), Samoan (sm), Shona (sn), Somali (so), Albanian (sq),
+Sesotho (st), Sundanese (su), Tamil (ta), Telugu (te), Tajik (tg),
+Uyghur (ug), Urdu (ur), Uzbek (uz), Xhosa (xh), Yiddish (yi), Yoruba (yo),
+Zulu (zu)
+Information about previous models
+The following are active, but previous generation models. We recommend using one
+of the latest models instead when possible.
+If you can't find the information you're looking for in the following
+sub-sections, you can find even more information in your chosen API provider
+documentation:
+Gemini Developer API
+or
+Agent Platform
+Gemini API (formerly Vertex AI)
+Gemini 2.5
+models will shut down in
+October 2026
+(stable Gemini Live API 2.5 models are not impacted).
+Gemini 2.0 Flash
+and
+Gemini 2.0 Flash‑Lite
+models were
+    shut down on June 1, 2026 (stable
+Gemini Live API
+2.0 models are not
+    impacted). All
+Gemini 1.0
+models and
+Gemini 1.5
+are already shutdown, and all requests to these models return a 404 error.
+To avoid service disruption, update to a
+newer model
+(for example,
+gemini-3.1-flash-lite
+).
+Learn more.
+We
+strongly
+recommend using
+Firebase Remote Config
+or
+server prompt templates
+so that you can make on-demand changes to the model name used for your AI
+    feature without releasing a new version of your app.
+All
+Imagen
+models shut down on
+  August 17, 2026.
+As a replacement, you can
+migrate your apps to use
+Gemini
+Image models (the "Nano Banana" models)
+.
+Older
+Gemini
+models
+gemini-2.5-pro
+gemini-2.5-flash
+gemini-2.5-flash-lite
+gemini-2.5-flash-image
+(aka "Nano Banana")
+gemini-2.0-flash-001
+(and its auto-updated alias
+gemini-2.0-flash
+)
+gemini-2.0-flash-lite-001
+(and its auto-updated alias
+gemini-2.0-flash-lite
+)
+For information about older
+Gemini Live API
+models, see the
+Gemini API
+provider documentation:
+gemini-2.0-flash-live-001
+gemini-2.0-flash-live-preview-04-09
+gemini-live-2.5-flash-preview
+Older
+Imagen
+models
+imagen-4.0-ultra-generate-001
+imagen-4.0-generate-001
+imagen-4.0-fast-generate-001
+imagen-3.0-capability-001
+imagen-3.0-generate-002
+imagen-3.0-generate-001
+imagen-3.0-fast-generate-001
+View details about about previous models
+View supported input and output of previous generation models
+These are the input and output types
+when using each model with
+Firebase AI Logic
+:
+Gemini 2.5
+Pro, Flash, Flash‑Lite
+Gemini 2.5
+Flash
+Image
+Gemini 2.0
+Flash
+Gemini 2.0
+Flash‑Lite
+Imagen
+(generate)
+Imagen
+(capability)
+Input types
+Text
+Code
+Documents
+(PDFs or plain-text)
+Images
+Video
+Audio
+Audio (streaming)
+Output types
+Text
+Text (streaming)
+Code
+Structured output
+(like JSON)
+Images
+Video
+Audio
+Audio (streaming)
+Supported capabilities and features of previous generation models
+These are the capabilities and features
+when using each model with
+Firebase AI Logic
+:
+Gemini 2.5
+Pro, Flash, Flash‑Lite
+Gemini 2.5
+Flash
+Image
+Gemini 2.0
+Flash
+Gemini 2.0
+Flash‑Lite
+Imagen
+(generate)
+Imagen
+(capability)
+Thinking
+Generate text
+from
+        text-only or multimodal inputs
+interleaved or as part of image
+Generate images
+(
+Gemini
+or
+Imagen
+)
+Edit images
+(
+Gemini
+or
+Imagen
+)
+Generate audio
+Generate
+          structured output
+(like JSON)
+Analyze documents
+(PDFs or plain-text)
+(
+text-output
+|
+image-output
+)
+Analyze images
+(
+text-output
+|
+image-output
+)
+Analyze video
+(
+text-output
+|
+image-output
+)
+Analyze audio
+Multi-turn chat
+Bidirectional multimodal streaming
+Supported tools
+Function calling
+Code execution
+URL context
+Grounding with
+Google Search
+Grounding with
+Google Maps
+System instructions
+Count tokens
+Specifications and limitations of previous generation models
+These are the specifications and limitations
+when using each model with
+Firebase AI Logic
+:
+Property
+Gemini 2.5
+Pro, Flash, Flash‑Lite
+Gemini 2.5
+Flash
+Image
+Gemini 2.0
+Flash
+Gemini 2.0
+Flash‑Lite
+Imagen
+(generate)
+Imagen
+(capability)
+Input token limit
+*
+1,048,576 tokens
+32,768 tokens
+1,048,576 tokens
+1,048,576 tokens
+480 tokens
+480 tokens
+Output token limit
+*
+65,536 tokens
+8,192 tokens
+8,192 tokens
+8,192 tokens
+---
+---
+Knowledge cutoff date
+January 2025
+---
+June 2024
+June 2024
+---
+---
+PDFs (per request)
+Max number
+of input PDF files
+**
+3,000 files
+3 files
+3,000 files
+3,000 files
+---
+---
+Max number
+of pages
+per input PDF file
+**
+1,000 pages
+3 pages
+1,000 pages
+1,000 pages
+---
+---
+Max size
+per input PDF file
+50 MB
+50 MB
+50 MB
+50 MB
+---
+---
+Images (per request)
+Max number
+of
+input
+images
+3,000 images
+3 images
+3,000 images
+3,000 images
+---
+4 images
+Max number
+of
+output
+images
+---
+Up to output token limit
+---
+---
+4 images
+4 images
+Max size
+per input base64-encoded image
+7 MB
+7 MB
+7 MB
+7 MB
+---
+---
+Video (per request)
+Max number
+of input video files
+10 files
+---
+10 files
+10 files
+---
+---
+Max length
+of all input video
+(frames only)
+~60 minutes
+---
+~60 minutes
+~60 minutes
+---
+---
+Max length
+of all input video
+(frames+audio)
+~45 minutes
+---
+~45 minutes
+~45 minutes
+---
+---
+Audio (per request)
+Max number
+of
+input
+audio files
+1 file
+---
+1 file
+1 file
+---
+---
+Max number
+of
+output
+audio files
+---
+---
+---
+---
+---
+---
+Max length
+of all
+input
+audio
+~8.4 hours
+---
+~8.4 hours
+~8.4 hours
+---
+---
+Max length
+of all
+output
+audio
+---
+---
+---
+---
+---
+---
+*
+For all
+Gemini
+models, a token is equivalent to about 4 characters,
+so 100 tokens are about 60-80 English words. For
+Gemini
+models, you can
+determine the total count of tokens in your requests using
+countTokens
+.
+**
+PDFs are treated as images, so a single page of a PDF is treated as
+    one image. The number of pages allowed in a request is limited to the number
+    of images the model can support.
+Available model names of previous generation models (including shutdown dates)
+Model names are the explicit values that you include
+in your code
+during
+initialization of the model.
+Gemini models
+Gemini 2.5 Pro
+model names
+Warning:
+Gemini 2.5 Pro
+(
+gemini-2.5-pro
+) will
+shut down on October 16, 2026 (
+Gemini Developer API
+) or
+October 20, 2026 (
+Agent Platform
+Gemini API (formerly Vertex AI)
+).
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.5-pro
+Stable version of
+Gemini 2.5 Pro
+Stable
+2025-06-17
+As early as
+2026-10-16
+Gemini 2.5 Flash
+model names
+Warning:
+Gemini 2.5 Flash
+(
+gemini-2.5-flash
+) will
+shut down on October 16, 2026 (
+Gemini Developer API
+) or
+October 20, 2026 (
+Agent Platform
+Gemini API (formerly Vertex AI)
+).
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.5-flash
+Stable version of
+Gemini 2.5 Flash
+Stable
+2025-06-17
+As early as
+2026-10-16
+Gemini 2.5 Flash‑Lite
+model names
+Warning:
+Gemini 2.5 Flash‑Lite
+(
+gemini-2.5-flash-lite
+) will
+shut down on October 16, 2026 (
+Gemini Developer API
+) or
+October 20, 2026 (
+Agent Platform
+Gemini API (formerly Vertex AI)
+).
+Does
+not
+require the pay-as-you-go Blaze pricing plan if you're
+  using the
+Gemini Developer API
+.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.5-flash-lite
+Stable version of
+Gemini 2.5 Flash‑Lite
+Stable
+2025-07-22
+As early as
+2026-10-16
+Gemini 2.5 Flash Image
+model names (aka "Nano Banana")
+Warning:
+Gemini 2.5 Flash Image
+(
+gemini-2.5-flash-image
+) will
+shut down on October 02, 2026.
+Requires the
+pay-as-you-go Blaze pricing plan
+regardless of your
+Gemini API
+provider.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.5-flash-image
+Stable version of
+Gemini 2.5 Flash Image
+(aka "Nano Banana")
+Stable
+2025-10-02
+2026-10-02
+Gemini 2.0 Flash
+model names
+Gemini 2.0 Flash
+shut down on June 1, 2026. To avoid service disruption, update to a newer
+    model like
+gemini-3.1-flash-lite
+.
+Learn more.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.0-flash-001
+Latest stable version of
+Gemini 2.0 Flash
+Stable
+2025-02-05
+2026-06-01
+gemini-2.0-flash
+Auto-updated alias pointing to the
+latest stable
+version of
+Gemini 2.0 Flash
+(currently
+gemini-2.0-flash-001
+)
+Stable
+2025-02-10
+2026-06-01
+Gemini 2.0 Flash‑Lite
+model names
+Gemini 2.0 Flash‑Lite
+shut down on June 1, 2026. To avoid service disruption, update to a newer
+    model like
+gemini-3.1-flash-lite
+.
+Learn more.
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+gemini-2.0-flash-lite-001
+Latest stable version of
+Gemini 2.0 Flash‑Lite
+Stable
+2025-02-25
+2026-06-01
+gemini-2.0-flash-lite
+Auto-updated alias pointing to the
+latest stable
+version of
+Gemini 2.0 Flash‑Lite
+(currently
+gemini-2.0-flash-lite-001
+)
+Stable
+2025-02-25
+2026-06-01
+Imagen models
+All
+Imagen
+models shut down on
+  August 17, 2026.
+As a replacement, you can
+migrate your apps to use
+Gemini
+Image models (the "Nano Banana" models)
+.
+Imagen 4
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-4.0-generate-001
+Stable version of
+Imagen 4
+Stable
+2025-08-14
+2026-06-30
+Imagen 4 Fast
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-4.0-fast-generate-001
+Stable version of
+Imagen 4 Fast
+Stable
+2025-08-14
+2026-06-30
+Imagen 4 Ultra
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-4.0-ultra-generate-001
+Stable version of
+Imagen 4 Ultra
+Stable
+2025-08-14
+2026-06-30
+Imagen 3 Capability
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-3.0-capability-001
+Initial stable version of
+Imagen 3 Capability
+Stable
+2024-12-10
+2026-06-30
+Imagen 3
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-3.0-generate-002
+Latest stable version of
+Imagen 3
+Stable
+2025-01-23
+2026-06-30
+imagen-3.0-generate-001
+Initial stable version of
+Imagen 3
+Stable
+2024-07-31
+2026-06-30
+Imagen 3 Fast
+model names
+Model name
+Description
+Release stage
+Release date
+Shutdown date
+imagen-3.0-fast-generate-001
+Initial stable version of
+Imagen 3 Fast
+Stable
+2024-07-31
+2026-06-30
+Next steps
+Try out the capabilities of the
+Gemini API
+Build
+multi-turn conversations (chat)
+.
+Generate text from
+text-only prompts
+.
+Generate text by prompting with various file types, like
+images
+,
+PDFs
+,
+video
+, and
+audio
+.
+Generate structured output (like JSON)
+from both text and multimodal prompts.
+Generate and edit images
+from both text and multimodal prompts.
+Generate speech (both single- and
+    multiple-speakers)
+using
+Gemini
+text-to-speech (TTS) models.
+Stream input and output
+(including audio)
+  using the
+Gemini Live API
+.
+Use tools (like
+function calling
+and Grounding with
+Google Search
+or
+Google Maps
+)
+  to connect a
+Gemini
+model to other parts of your app and external
+  systems and information.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-09-24 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]]
+Learn
+Developer guides
+SDK & API reference
+Samples
+Libraries
+GitHub
+Stay connected
+Check out the blog
+Find us on Reddit
+Follow on X
+Subscribe on YouTube
+Attend an event
+Support
+Contact support
+Stack Overflow
+Google group
+Release notes
+Brand guidelines
+FAQs
+Android
+Chrome
+Firebase
+Google Cloud Platform
+All products
+Terms
+Privacy
+Manage cookies
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

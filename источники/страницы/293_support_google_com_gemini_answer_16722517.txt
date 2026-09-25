@@ -1,0 +1,291 @@
+Verify AI-generated images, videos, and audio - Computer - Gemini Apps Help
+Skip to main content
+Gemini Apps Help
+Sign in
+Google Help
+Help Center
+Community
+Gemini Apps
+Privacy Policy
+Terms of Service
+Submit feedback
+Send feedback on...
+This help content & information
+General Help Center experience
+Close
+Next
+Help Center
+Community
+Privacy Hub
+Gemini Apps
+Verify AI-generated images, videos, and audio
+You can use the verification tool available within the Gemini App for signed-in users, to help identify images, videos, and audio generated or edited by AI models.
+There are two technologies used to check for AI-generated content in Gemini Apps:
+SynthID:
+Uses invisible watermarks to determine if images, videos, and audio were generated or edited specifically by Google's AI models.
+Content Credentials:
+A technology that acts like a digital passport, documenting the digital content's origin and history, and is used for both AI and non-AI content.
+Important:
+Verification with Content Credentials is available at
+gemini.google.com
+and in the Gemini app for Android.  It will be available in the Gemini app for iOS soon.
+What you need
+To use AI verification, you need:
+A personal account or qualified Workspace account
+The latest version of the Gemini App if you use the app to verify content.
+To be signed in to Gemini Apps.
+Learn how to sign in to Gemini Apps
+.
+Upload your content for verification
+Important:
+You can only choose a single image, video, or audio file to verify at a time, and it should have a file size of 100 MB or less.
+Videos need to be less than 90 seconds each, and audio files need to be less than 1 hour each
+If you're taking a screenshot of an image to verify, make sure to crop tight around the image to get maximum accuracy, and don’t upload a collage of multiple distinct images.
+On your computer, go to
+https://gemini.google.com
+.
+Click Add files
+.
+To upload a supported file from your device click Upload Files
+.
+To upload a supported file from Google photos, click
+More Uploads
+Photos
+.
+To add a supported file from your Google Drive, click Add from Drive
+.
+Tip:
+To add files from your Drive, you need to have Keep Activity on and connect Google Workspace to Gemini Apps. If it’s not connected, you'll get the option to connect it.
+Learn about your Gemini Apps and Google Workspace data
+.
+Ask a verification question such as:
+"Was this image/video/audio created or edited by Google AI?"
+"Is this AI-generated?"
+"Is this a real video?"
+About the verification results
+Important:
+While other companies have started to adopt SynthID watermarks, Gemini can currently only recognize content created by Google AI tools.
+Content Credentials can help provide info about origin and history of content and whether AI tools were used to create or edit it.
+After the verification process is complete, Gemini will provide a response based on the results of the verification.
+For SynthID
+If a SynthID watermark is detected, it means all or part of the image or video was created or edited by Google's AI models.
+If a SynthID watermark isn’t detected, it means the image or video wasn’t created or edited by Google AI, but it could have been created by other AI systems.
+In some cases it isn’t clear if the image or video was created or edited by Google AI or not. Some common reasons for this are:
+"Not enough details to watermark" (e.g., very simple or abstract content).
+"Likely too small an edit" (minor alterations might not carry a detectable watermark).
+For video files, Gemini will state which parts of the video a SynthID watermark was detected. This doesn’t mean it was detected in all parts of that portion of the video.
+For Content Credentials
+If the content contains Content Credentials, you can view a summary of:
+Media composition.
+Edit history.
+Whether or not AI was used.
+Other ways to identify AI-generated content
+While content verification in the Gemini app can be a powerful tool, you can also use other methods to identify potentially AI-generated content:
+Look for visual artifacts:
+Examine images and videos for inconsistencies or errors that are common in AI-generated content. These can include:
+Inconsistent or garbled text within the image or video.
+Errors in small details, such as hands, teeth, or background elements.
+Inconsistent shadows and lighting.
+Repetitive patterns that seem unnatural.
+Reverse image search:
+Use reverse image search tools (e.g., Google Images) to find original sources or similar images. This can help you determine if the content has a known origin or if it's new and not created or altered by AI.
+Metadata analysis:
+If you have access to the original file (not a screenshot), you can check for embedded information. For photos this can include EXIF data with camera models, dates, and settings.
+Traces of editing software:
+Metadata can sometimes show if professional editing software was used.
+Common questions about SynthID
+What is SynthID?
+SynthID is a tool that embeds digital watermarks directly into content generated by Google's AI models. Currently, it can be used to verify whether images, videos, or audio files were created or edited by Google AI tools.
+Learn more about SynthID
+.
+Why did Google create SynthID?
+Generative AI technologies are rapidly evolving, and AI-generated content is becoming harder to distinguish from content not created or edited by AI. The ability to identify when content is AI-generated helps increase transparency.
+Can SynthID still be used if the original AI-generated file is changed?
+Yes.  The digital watermark will usually still exist even if the image, video, or audio is re-scaled, re-colored, compressed or altered in other ways. However, there's still a chance that after many alterations the watermark won’t be detected.
+What is the difference between digital watermarks and metadata added to AI-generated content?
+Watermarks are embedded directly into content and used for verification purposes. The digital watermarks are not visible to users. Metadata allows content creators to add additional context with original files to provide more information about the content. Both watermarks and metadata are used to increase transparency around AI-generated content.
+Is there a limit to the number of checks per day?
+There’s a usage quota of approximately 10 image checks, 10 video checks (up to 5 minutes total), and 10 audio checks (up to 3 hours total) within any 24-hour rolling window. If you reach these limits, the Gemini App will notify you.
+Common questions about Content Credentials
+What are Content Credentials?
+Content Credentials
+are a technology that provides media history and transparency, including whether AI was involved in the creation of the content. It is an industry standard developed by the Coalition for Content Provenance and Authenticity (C2PA), and is supported by many products from different companies.
+How do Content Credentials help me make informed decisions?
+What Content Credentials do
+Provide details about the origin and history of content through a standard that works across devices and apps from different companies.
+Provide information from the app or device maker about AI or non-AI tools used to create or edit an image, video, or audio file.
+What Content Credentials don’t do
+Tell you if an image, video, or audio file is definitely AI-generated, but you can use the origin and history information with the content itself to make informed decisions.
+How does Content Credentials info work in Gemini Apps?
+Important:
+Content Credentials verification is available for image, video, or audio files from devices and apps that support compatible versions of the Content Credentials format.
+If available, the Content Credentials will:
+Show the company that provided and cryptographically signed the information. For example, “Info by Google LLC” shows that Google provided the information.
+The result may list more than one company.
+What do these Content Credential errors mean?
+If Gemini Apps attempt to verify Content Credentials but there’s an issue, they may display a message saying that the Credentials are invalid. This could be due to these common errors:
+Incorrectly modified:
+Content Credentials are built on history that’s maintained and signed by each editor of the file. If the media history was tampered with or modified without an appropriate update of the C2PA data, an error occurs.
+Incompatible or unsupported:
+Gemini Apps supports Content Credentials versions 2.2 and later, from products on the
+C2PA Conforming Products List
+. Credentials from products outside that list may not be considered valid or trusted. Additionally, some third-party Content Credentials apps store the metadata remotely, separate from the image, video, or audio file; Gemini Apps don’t support remote metadata.
+Unrecognized:
+A file may contain malformed Content Credentials when the app that generated the file experienced a bug. Gemini Apps may detect the Credentials, but can’t interpret them in some cases.
+Related resources
+Use Gemini Apps
+Manage & delete your Gemini Apps activity
+Upload & analyze files in Gemini Apps
+Gemini Apps Privacy Hub
+Computer
+Android
+iPhone & iPad
+More
+Need more help?
+Try these next steps:
+Post to the help community
+Get answers from community members
+true
+Help
+1 of 18
+Use Gemini Apps
+2 of 18
+What you need to sign in to Gemini Apps
+3 of 18
+Gemini Apps limits & upgrades for Google AI subscribers
+4 of 18
+Find & manage your recent chats in Gemini Apps
+5 of 18
+Use & manage Connected Apps in Gemini
+6 of 18
+Manage your Google AI plan from Gemini Apps
+7 of 18
+Where you can use the Gemini web app
+8 of 18
+Upload & analyze files in Gemini Apps
+9 of 18
+Organize your projects with notebooks in Gemini Apps
+10 of 18
+Schedule actions in Gemini Apps
+11 of 18
+Use Deep Think in Gemini Apps
+12 of 18
+Verify AI-generated images, videos, and audio
+13 of 18
+Import from other AI platforms to Gemini Apps
+14 of 18
+Learn about generative AI
+15 of 18
+Learn in creative ways with generative AI
+16 of 18
+Guide your child's Gemini Apps experience
+17 of 18
+Use the Gemini app on Mac
+18 of 18
+Use the Gemini app for Windows
+©2026 Google
+Privacy Policy
+Terms of Service
+Language
+Afrikaans‎
+azərbaycan‎
+bosanski‎
+català‎
+dansk‎
+Deutsch‎
+eesti‎
+English (United Kingdom)‎
+español‎
+español (Latinoamérica)‎
+euskara‎
+Filipino‎
+français‎
+français (Canada)‎
+galego‎
+hrvatski‎
+Indonesia‎
+isiZulu‎
+italiano‎
+Kiswahili‎
+latviešu‎
+lietuvių‎
+magyar‎
+Melayu‎
+Nederlands‎
+norsk‎
+o‘zbek‎
+polski‎
+português‎
+português (Brasil)‎
+română‎
+shqip‎
+slovenčina‎
+slovenščina‎
+suomi‎
+svenska‎
+Tiếng Việt‎
+Türkçe‎
+íslenska‎
+čeština‎
+Ελληνικά‎
+беларуская‎
+български‎
+македонски‎
+монгол‎
+русский‎
+српски‎
+українська‎
+қазақ тілі‎
+հայերեն‎
+‏
+עברית
+‏
+اردو
+‏
+العربية
+‏
+فارسی
+नेपाली‎
+मराठी‎
+हिन्दी‎
+অসমীয়া‎
+বাংলা‎
+ਪੰਜਾਬੀ‎
+ଓଡ଼ିଆ‎
+தமிழ்‎
+తెలుగు‎
+ไทย‎
+ລາວ‎
+ქართული‎
+አማርኛ‎
+ខ្មែរ‎
+中文（简体）‎
+中文（繁體）‎
+中文（香港）‎
+日本語‎
+한국어‎
+English‎
+Enable Dark Mode
+Send feedback on...
+This help content & information
+General Help Center experience
+Search
+Clear search
+Close search
+Google apps
+Main menu
+2398948221823448124
+true
+Search Help Center
+false
+true
+true
+true
+true
+true
+5295044
+false
+false
+false
+false
+false

@@ -1,0 +1,1833 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google Codelabs">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1a73e8"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/codelabs/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/touchicon-180.png"><link rel="canonical" href="https://codelabs.developers.google.com/gemini-for-developers"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google Codelabs" href="https://codelabs.developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://codelabs.developers.google.com/gemini-for-developers" /><link rel="alternate" hreflang="x-default" href="https://codelabs.developers.google.com/gemini-for-developers" /><link rel="alternate" hreflang="ar"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://codelabs.developers.google.com/gemini-for-developers?hl=vi" /><title>Gemini for Developers &nbsp;|&nbsp; Google Codelabs</title>
+
+<meta property="og:title" content="Gemini for Developers &nbsp;|&nbsp; Google Codelabs"><meta name="description" content="In this codelab, you will learn everything you need to know, as a developer, about the Gemini ecosystem. More specifically, you’ll cover different Gemini models, the tools they power, integration using the Google Gen AI SDK, and various features like long context, thinking mode, spatial understanding, Live API, and native image &amp;amp; audio output.">
+  <meta property="og:description" content="In this codelab, you will learn everything you need to know, as a developer, about the Gemini ecosystem. More specifically, you’ll cover different Gemini models, the tools they power, integration using the Google Gen AI SDK, and various features like long context, thinking mode, spatial understanding, Live API, and native image &amp;amp; audio output."><meta property="og:url" content="https://codelabs.developers.google.com/gemini-for-developers"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    </head>
+  <body class="color-scheme--light"
+        template="codelab"
+        theme="codelabs-theme"
+        type="codelab"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Google Codelabs"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://codelabs.developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                          fp-auth
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars hidden>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Gemini for Developers<devsite-actions hidden data-nosnippet></devsite-actions>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid="UA-52746336-1"
+                    codelab-ga4id=""
+                    doc-id="1-iKaTZURtQHDk0yANhdrE_-vruXio6uIfnXAtFpqzFU"
+                    id="gemini-for-developers"
+                    title="Gemini for Developers"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/googlecodelabs/feedback/issues/new?title=[gemini-for-developers]&amp;lassignees=meteatamel"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction 👋" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="Gemini for Developers"
+                                  authors="Mete Atamel"
+                                  last-updated="2026-07-22T22:44:37Z"
+                                  duration="72">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction 👋" tabindex="-1">
+              1. Introduction 👋
+          </h2>
+          
+          <p>In this codelab, you will learn everything you need to know, as a developer, about the Gemini ecosystem. More specifically, you&#39;ll get to learn about different Gemini models, different tools powered by Gemini, Google Gen AI SDK to integrate with Gemini. You&#39;ll also explore various features of Gemini such as its long context, thinking mode, spatial understanding, Live API, native image &amp; audio output, and more.</p>
+<p>At the end of this codelab, you should have a solid understanding of the Gemini ecosystem.</p>
+<h3 is-upgraded id="💡what-youll-learn" data-text="💡What you'll learn" tabindex="-1"><strong>💡What you'll learn</strong></h3>
+<ul>
+<li>Different Gemini models.</li>
+<li>Tools powered by Gemini models.</li>
+<li>How to integrate with Gemini using the Google Gen AI SDK.</li>
+<li>Long context window of Gemini.</li>
+<li>Gemini&#39;s thinking mode.</li>
+<li>Different built-in tools such as Google Search, Google Maps.</li>
+<li>How to interact with research agents with Interactions API.</li>
+<li>Image and Text-to-Speech Generation.</li>
+<li>Spatial understanding of Gemini.</li>
+<li>Live API for real-time voice and video interactions.</li>
+</ul>
+<h3 is-upgraded id="⚠️-what-youll-need" data-text="⚠️ What you'll need" tabindex="-1"><strong>⚠️ What you'll need</strong></h3>
+<ul>
+<li>An API key for Google AI studio samples.</li>
+<li>A Google Cloud Project with billing enabled for Google Cloud samples.</li>
+<li>Your local development environment or Cloud Shell Editor in Google Cloud.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="The Gemini Family 🫂" duration="2" step="1">
+          
+          <h2 class="step-title" id="1" data-text="The Gemini Family 🫂" tabindex="-1">
+              2. The Gemini Family 🫂
+          </h2>
+          
+          <p><strong>Gemini</strong> is Google&#39;s AI model that brings any idea to life. It&#39;s a great model for multimodal understanding and agentic and vibe coding  — all built on a foundation of state-of-the-art reasoning. You can watch this video for a quick overview of the Gemini model:</p>
+<devsite-youtube video-id="98DcoXwGX6I"></devsite-youtube>
+<p>Gemini is not just a model. It is also an umbrella brand used in Google products</p>
+<p>that utilize the Gemini model. There&#39;s a spectrum of Gemini products from consumer focused <strong>Gemini app</strong> and <strong>NotebookLM</strong> to developer focused <strong>AI Studio</strong> to enterprise focused <strong>Agent Platform</strong> of Google Cloud. There are also developer tools like <strong>Antigravity, Antigravity IDE</strong>, and <strong>Antigravity CLI</strong> powered by Gemini.</p>
+<p class="image-container"><img alt="6f44fa40314df324.png" style="width: 599.00px" src="/static/gemini-for-developers/img/6f44fa40314df324.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6f44fa40314df324_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Gemini Powered Tools 🧰" duration="12" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Gemini Powered Tools 🧰" tabindex="-1">
+              3. Gemini Powered Tools 🧰
+          </h2>
+          
+          <p>Let&#39;s briefly take a look at the tools powered by Gemini.</p>
+<h2 is-upgraded id="gemini-app-💬" data-text="Gemini App 💬" tabindex="-1">Gemini App 💬</h2>
+<p>Gemini App ( <a href="https://gemini.google.com/" target="_blank">gemini.google.com</a>) is a chat-based consumer application. It&#39;s the easiest way to interact with different Gemini models (Flash-Lite, Flash, Pro) at different thinking levels.</p>
+<p class="image-container"><img alt="cde5194f9102fbb4.png" style="width: 624.00px" src="/static/gemini-for-developers/img/cde5194f9102fbb4.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/cde5194f9102fbb4_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>It also has tools for Deep Research, image, video, music generation and more. Gemini app is great for everyday usage.</p>
+<h2 is-upgraded id="notebooklm-📓" data-text="NotebookLM 📓" tabindex="-1">NotebookLM 📓</h2>
+<p>NotebookLM ( <a href="https://notebooklm.google.com/" target="_blank">notebooklm.google.com</a>) is an AI-powered research partner. Upload PDFs, websites, YouTube videos, audio files, Google Docs, Google Slides and more, and NotebookLM will summarize them and make interesting connections between topics, all powered by the latest version of Gemini&#39;s multimodal understanding capabilities. It also generates interesting and engaging audio overviews, video overviews, infographics, and more from the sources you uploaded.</p>
+<p class="image-container"><img alt="268c5970045d78d1.png" style="width: 624.00px" src="/static/gemini-for-developers/img/268c5970045d78d1.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/268c5970045d78d1_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="google-ai-studio-🎨" data-text="Google AI Studio 🎨" tabindex="-1">Google AI Studio 🎨</h2>
+<p>Google AI Studio ( <a href="http://ai.dev" target="_blank">ai.dev</a>) is the fastest way to start building with Gemini. The <strong>Playground</strong> panel in Google AI Studio allows you to experiment with different models under <strong>Models</strong> section to generate text, image, video and also try out real-time voice and video with Gemini Live API.</p>
+<p class="image-container"><img alt="8e814b6f6bf27d1f.png" style="width: 624.00px" src="/static/gemini-for-developers/img/8e814b6f6bf27d1f.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/8e814b6f6bf27d1f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Under the <strong>Agents</strong> section, you can try out the managed agents in Gemini. The <strong>Build</strong> panel in Google AI Studio allows you to vibe-code full-stack web applications and deploy them to Cloud Run on Google Cloud and push the code to GitHub. You can also build Android apps.</p>
+<p class="image-container"><img alt="f5a4924025b0327f.png" style="width: 624.00px" src="/static/gemini-for-developers/img/f5a4924025b0327f.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/f5a4924025b0327f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="gemini-enterprise-agent-platform-studio-☁️" data-text="Gemini Enterprise Agent Platform Studio ☁️" tabindex="-1">Gemini Enterprise Agent Platform Studio ☁️</h2>
+<p>Gemini Enterprise Agent Platform is a fully-managed, unified AI development platform for building and using generative AI in Google Cloud. Gemini Enterprise Agent Platform Studio ( <a href="https://console.cloud.google.com/agent-platform" target="_blank">console.cloud.google.com/agent-platform</a>) helps you test, tune, and deploy enterprise-ready generative AI applications.</p>
+<p class="image-container"><img alt="d3661cc01f05699b.png" style="width: 624.00px" src="/static/gemini-for-developers/img/d3661cc01f05699b.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/d3661cc01f05699b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="google-antigravity-🚀" data-text="Google Antigravity 🚀" tabindex="-1">Google Antigravity 🚀</h2>
+<p><strong>Antigravity</strong> ( <a href="https://antigravity.google" target="_blank">antigravity.google</a>) is an agentic development platform. Antigravity enables developers to operate at a higher, task-oriented level managing agents across workspaces. It also has <strong>Antigravity IDE</strong>, a familiar AI-driven IDE experience and <strong>Antigravity CLI</strong> for a command line interface.</p>
+<p class="image-container"><img alt="ead9b0cc24dc8ddc.png" style="width: 624.00px" src="/static/gemini-for-developers/img/ead9b0cc24dc8ddc.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/ead9b0cc24dc8ddc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Feel free to download and play with these tools.  Here&#39;s some general guidance on which tool to use when:</p>
+<ul>
+<li>If you&#39;re just starting out, you&#39;d probably use Gemini App to ask questions or generate some basic code.</li>
+<li>If you&#39;re vibe-coding a web application, Google AI Studio is probably the tool you&#39;d choose.</li>
+<li>If you want to build a complex application with the context from your local development environment, then you&#39;d choose Google Antigravity.</li>
+<li>If you want to deploy or already use Google Cloud and want the enterprise level support and features, Agent Platform and its studio is what you&#39;d choose.</li>
+</ul>
+<p>Of course, you can mix and match these tools. For example, start with vibe coding in AI Studio to push to GitHub and then use Antigravity to continue coding and then deploying to Google Cloud.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Gemini Models 🧠" duration="2" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Gemini Models 🧠" tabindex="-1">
+              4. Gemini Models 🧠
+          </h2>
+          
+          <p>Gemini Models are constantly getting better with new versions every few months. As of today (February 2026), these are the featured models on on Google Cloud:</p>
+<p class="image-container"><img alt="5e5d54c5aa547474.png" style="width: 455.00px" src="/static/gemini-for-developers/img/5e5d54c5aa547474.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/5e5d54c5aa547474_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>There are many other  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#generally_available_models" target="_blank">Generally available Gemini models</a>,  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#preview-gemini-models" target="_blank">Preview Gemini models</a>, the open  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#gemma_models" target="_blank">Gemma models</a>,  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#embeddings-models" target="_blank">Embedding models</a>,  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#imagen-models" target="_blank">Imagegen models</a>,  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models#veo-models" target="_blank">Veo models</a>, and more.</p>
+<p>Take a look to visit  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models" target="_blank">Google Models</a> documentation page to explore the major models available on Google Cloud for different use cases.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Google Gen AI SDK 📦" duration="5" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Google Gen AI SDK 📦" tabindex="-1">
+              5. Google Gen AI SDK 📦
+          </h2>
+          
+          <p>To integrate Gemini with your application, you can use the  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/sdks/overview" target="_blank">Google Gen AI SDK</a>.</p>
+<p>As we discussed earlier, you can access Gemini models through <strong>Google AI Studio</strong> or <strong>Agent Platform Studio</strong>. The  <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/sdks/overview" target="_blank">Google Gen AI SDK</a> provides a unified interface to Gemini models through both the Google AI API and the Google Cloud API. With a few exceptions, code that runs on one platform will run on both.</p>
+<p class="image-container"><img alt="b792733abd4d794a.png" style="width: 624.00px" src="/static/gemini-for-developers/img/b792733abd4d794a.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/b792733abd4d794a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Google Gen AI SDK currently supports  <a href="https://pypi.org/project/google-genai/" target="_blank">Python</a>,  <a href="https://pkg.go.dev/google.golang.org/genai" target="_blank">Go</a>,  <a href="https://www.npmjs.com/package/@google/genai" target="_blank">Node</a>,  <a href="https://search.maven.org/artifact/com.google.genai/google-genai" target="_blank">Java</a>, and  <a href="https://www.nuget.org/packages/Google.GenAI" target="_blank">C#</a>.</p>
+<p>For example, this is how you&#39;d talk to Gemini in Google AI in Python:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">(</span>
+  <span class="devsite-syntax-n">api_key</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">gemini</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">key</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+  <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Why is the sky blue?"</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>To do the same against Gemini in Agent Platform in Google Cloud, you just need to change the client initialization and the rest is the same:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">(</span>
+  <span class="devsite-syntax-n">vertexai</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-kc">True</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">project</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cloud</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">project</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">location</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"us-central1"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+  <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Why is the sky blue?"</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>To run these samples yourself, you can run  <a href="https://github.com/meteatamel/genai-samples/blob/main/vertexai/gemini2/hello-world/main.py" target="_blank"><code translate="no" dir="ltr">main.py</code></a> in  <a href="https://github.com/meteatamel/genai-samples/tree/main/vertexai/gemini2/hello-world" target="_blank">github.com/meteatamel/genai-samples/tree/main/vertexai/gemini2/hello-world</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Interactions API 🔄" duration="0" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Interactions API 🔄" tabindex="-1">
+              6. Interactions API 🔄
+          </h2>
+          
+          <p>The  <a href="https://ai.google.dev/gemini-api/docs/interactions" target="_blank">Interactions API</a> (beta) is a new unified interface for interacting with Gemini models and agents. As an improved alternative to the  <a href="https://ai.google.dev/api/generate-content#method:-models.generatecontent" target="_blank"><code translate="no" dir="ltr">generateContent</code></a> API, it simplifies state management, tool orchestration, and long-running tasks.</p>
+<p>This is how you&#39;d have a basic interaction with the new API:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">interaction</span> <span class="devsite-syntax-o">=</span>  <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">interactions</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">create</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-nb">input</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Tell me a short joke."</span>
+<span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">interaction</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">outputs</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>You can have a stateful conversation by passing the interaction id from the previous interaction:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">interaction1</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">interactions</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">create</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-nb">input</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Hi, my name is Phil."</span>
+<span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Model: </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">interaction1</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">outputs</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">interaction2</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">interactions</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">create</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-nb">input</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"What is my name?"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">previous_interaction_id</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">interaction1</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">id</span>
+<span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Model: </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">interaction2</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">outputs</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>The  <a href="https://ai.google.dev/gemini-api/docs/interactions" target="_blank">Interactions API</a> is designed for building and interacting with agents, and includes support for function calling, built-in tools, structured outputs, and the Model Context Protocol (MCP).  To see how it can be used with the Deep Research Agent, see the Agents 🤖  step below.</p>
+<p>To run these samples yourself, you can run  <a href="https://github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api/main.py" target="_blank"><code translate="no" dir="ltr">main.py</code></a> in  <a href="https://github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api" target="_blank">github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Long Context Window 🪟" duration="5" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Long Context Window 🪟" tabindex="-1">
+              7. Long Context Window 🪟
+          </h2>
+          
+          <p>Many Gemini models come with large context windows of 1 million or more tokens. Historically, large language models (LLMs) were significantly limited by the amount of text (or tokens) that could be passed to the model at one time. The Gemini long context window unlocks many new use cases and developer paradigms.</p>
+<p>To see the long context window in action, you can go to  <a href="http://console.cloud.google.com/agent-platform/studio/prompt-gallery" target="_blank">Agent Platform Studio Prompt Gallery</a> and choose the <code translate="no" dir="ltr">Extract Video Chapters</code> prompt. This prompt groups the video content into chapters and provides a summary for each chapter.</p>
+<p>Once you run it with the supplied video, you should get an output similar to the following:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-p">[</span>
+  <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-s2">"timecode"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"00:00"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-s2">"chapterSummary"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"The video opens with scenic views of Rio de Janeiro, introducing the </span><span class="devsite-syntax-se">\"</span><span class="devsite-syntax-s2">Marvelous City</span><span class="devsite-syntax-se">\"</span><span class="devsite-syntax-s2"> and its famous beaches like Ipanema and Copacabana, before pivoting to the existence of the favelas."</span>
+  <span class="devsite-syntax-p">},</span>
+  <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-s2">"timecode"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"00:20"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-s2">"chapterSummary"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"The narrator describes the favelas, home to one in five Rio residents, highlighting that while often associated with crime and poverty, this is only a small part of their story."</span>
+  <span class="devsite-syntax-p">},</span>
+  <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-s2">"timecode"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"00:36"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-s2">"chapterSummary"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"Google introduces its project to map the favelas, emphasizing that providing addresses to these uncharted areas is a crucial step in giving residents an identity."</span>
+  <span class="devsite-syntax-p">},</span>
+  <span class="devsite-syntax-p">{</span>
+    <span class="devsite-syntax-s2">"timecode"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"00:43"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-s2">"chapterSummary"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"The video concludes by focusing on the people of the favelas, inviting viewers to go beyond the map and explore their world through a 360-degree experience."</span>
+  <span class="devsite-syntax-p">}</span>
+<span class="devsite-syntax-p">]</span>
+</code></pre></devsite-code>
+<p>This is only possible thanks to the long context window of Gemini!</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Thinking Mode 🧠" duration="5" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Thinking Mode 🧠" tabindex="-1">
+              8. Thinking Mode 🧠
+          </h2>
+          
+          <p>The Gemini models use an internal thinking process that significantly improves their reasoning for complex tasks. Thinking levels (Gemini 3) and budgets (Gemini 2.5) control the thinking behaviour. You can also enable the <code translate="no" dir="ltr">include_thoughts</code> flag to see the model&#39;s raw thoughts.</p>
+<p>To see the thinking mode in action, let&#39;s open up Google AI Studio ( <a href="http://ai.dev/prompts/new_chat" target="_blank">ai.dev</a>) and start a new chat. On the right side panel, you can set the thinking level.</p>
+<p>If you click on the <code translate="no" dir="ltr">Get code</code> button on top right, you can also see how you can set the thinking level in code, something similar to this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"How does AI work?"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span>
+        <span class="devsite-syntax-n">thinking_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">ThinkingConfig</span><span class="devsite-syntax-p">(</span>
+          <span class="devsite-syntax-n">thinking_level</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"low"</span><span class="devsite-syntax-p">,</span>
+          <span class="devsite-syntax-n">include_thoughts</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-kc">True</span>
+        <span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-p">),</span>
+<span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>Play with different prompts and different thinking levels to see the behavior of the model.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Tools 🧰" duration="15" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Tools 🧰" tabindex="-1">
+              9. Tools 🧰
+          </h2>
+          
+          <p>Gemini comes with a number of built-in tools such as Google Search, Google Maps, Code Execution, Computer Use, File Search, and more. You can also define your custom tools with Function Calling. Let&#39;s take a look at how to use them briefly.</p>
+<h2 is-upgraded id="google-search-🔎" data-text="Google Search 🔎" tabindex="-1">Google Search 🔎</h2>
+<p>You can ground model responses in Google Search results for more accurate, up-to-date, and relevant responses.</p>
+<p>In Agent Platform Studio ( <a href="http://console.cloud.google.com/agent-platform/studio" target="_blank">console.cloud.google.com/agent-platform/studio</a>), or Google AI Studio ( <a href="http://ai.dev//prompts/new_chat" target="_blank">ai.dev</a>), you can start a new chat and <strong>make sure the Google Search grounding is off</strong>.</p>
+<p>Then, you can ask a question about today&#39;s weather for your location. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">How</span><span class="devsite-syntax-s1">'s the weather in London today?</span>
+</code></pre></devsite-code>
+<p>You usually get a response for a day in the past because the model does not have access to the latest information. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">In</span> <span class="devsite-syntax-n">London</span> <span class="devsite-syntax-n">today</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Friday</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">May</span> <span class="devsite-syntax-mi">24</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-mi">2025</span><span class="devsite-syntax-p">),</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">weather</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">bit</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">mixed</span> <span class="devsite-syntax-n">bag</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">typical</span> <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">late</span> <span class="devsite-syntax-n">May</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p>Now, enable the Google Search grounding and ask the same question. You should get up-to-date weather information with links to the grounding sources:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">In</span> <span class="devsite-syntax-n">London</span> <span class="devsite-syntax-n">today</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Wednesday</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">February</span> <span class="devsite-syntax-mi">11</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-mi">2026</span><span class="devsite-syntax-p">),</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">weather</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">cool</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">mostly</span> <span class="devsite-syntax-n">cloudy</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">chance</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">light</span> <span class="devsite-syntax-n">rain</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p>This is how you&#39;d have Google Search grounding in your code. You can also click on the Code button to get a grounding sample:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">google_search_tool</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Tool</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">google_search</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GoogleSearch</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"How's the weather like today in London?"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">google_search_tool</span><span class="devsite-syntax-p">])</span>
+<span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="google-maps-🗺️" data-text="Google Maps 🗺️" tabindex="-1">Google Maps 🗺️</h2>
+<p>You can also ground model responses with Google Maps, which has access to information on over 250 million places.</p>
+<p>To see it in action, you can choose Google Maps instead of Google Search under the grounding section of the model settings in Agent Platform studio and ask a question that requires Maps data, for example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">show</span> <span class="devsite-syntax-n">me</span> <span class="devsite-syntax-n">some</span> <span class="devsite-syntax-n">Greek</span> <span class="devsite-syntax-n">restaurants</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">their</span> <span class="devsite-syntax-nb">map</span> <span class="devsite-syntax-n">coordinates</span> <span class="devsite-syntax-n">near</span> <span class="devsite-syntax-n">me</span><span class="devsite-syntax-err">?</span>
+</code></pre></devsite-code>
+<p>The code for it looks something like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">google_maps_tool</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Tool</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">google_maps</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GoogleMaps</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"What are the best restaurants near here?"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">google_maps_tool</span><span class="devsite-syntax-p">]),</span>
+       <span class="devsite-syntax-c1"># Optional: Provide location context (this is in Los Angeles)</span>
+        <span class="devsite-syntax-n">tool_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">ToolConfig</span><span class="devsite-syntax-p">(</span>
+          <span class="devsite-syntax-n">retrieval_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">RetrievalConfig</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">lat_lng</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">LatLng</span><span class="devsite-syntax-p">(</span>
+                <span class="devsite-syntax-n">latitude</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mf">34.050481</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">longitude</span><span class="devsite-syntax-o">=-</span><span class="devsite-syntax-mf">118.248526</span><span class="devsite-syntax-p">))),</span>
+<span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="code-execution-🧑‍💻" data-text="Code Execution 🧑‍💻" tabindex="-1">Code Execution 🧑‍💻</h2>
+<p>Gemini can generate and run Python code with a list of supported libraries (pandas, numpy, PyPDF2, etc.). This is useful for applications that benefit from code-based reasoning (e.g. solving equations)</p>
+<p>To try this out,switch to Google AI Studio, start a new chat, and make sure <code translate="no" dir="ltr">Code execution</code> toggle is on. Then, ask a question where the code execution tool might be useful. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">What</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-nb">sum</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">first</span> <span class="devsite-syntax-mi">50</span> <span class="devsite-syntax-n">prime</span> <span class="devsite-syntax-n">numbers</span><span class="devsite-syntax-err">?</span> 
+</code></pre></devsite-code>
+<p>Gemini should generate some Python code and run it. In the end, the right answer is 5117.</p>
+<p>You can run the code execution tool from the code as follows:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">code_execution_tool</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Tool</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">code_execution</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">ToolCodeExecution</span><span class="devsite-syntax-p">())</span>
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+  <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.5-flash"</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"What is the sum of the first 50 prime numbers?"</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">code_execution_tool</span><span class="devsite-syntax-p">],</span>
+    <span class="devsite-syntax-n">temperature</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">))</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="computer-use-🖥️" data-text="Computer Use 🖥️" tabindex="-1">Computer Use 🖥️</h2>
+<p>The Gemini Computer Use model (preview) enables you to build browser control agents to automate tasks. It works in this loop:</p>
+<p class="image-container"><img alt="de6edbd0163e6ee3.png" style="width: 624.00px" src="/static/gemini-for-developers/img/de6edbd0163e6ee3.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/de6edbd0163e6ee3_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>To see it in action, you can run  <a href="https://github.com/google-gemini/computer-use-preview/blob/main/main.py" target="_blank"><code translate="no" dir="ltr">main.py</code></a> in  <a href="http://github.com/google-gemini/computer-use-preview" target="_blank">github.com/google-gemini/computer-use-preview</a>. Follow the instructions in the repository to create the python virtual env and install dependencies.</p>
+<p>As an example, you can get your API key from Google AI Studio and ask Gemini to search for flights for you:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">export</span> <span class="devsite-syntax-n">GEMINI_API_KEY</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">key</span>
+
+<span class="devsite-syntax-n">python</span> <span class="devsite-syntax-n">main</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">query</span> <span class="devsite-syntax-s2">"Find me top 5 fights sorted by price with the following constraints:</span>
+
+<span class="devsite-syntax-n">Flight</span> <span class="devsite-syntax-n">site</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">use</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">www</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">com</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">travel</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">flights</span>
+<span class="devsite-syntax-n">From</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">London</span>
+<span class="devsite-syntax-n">To</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Larnaca</span>
+<span class="devsite-syntax-n">One</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">way</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">roundtrip</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">One</span> <span class="devsite-syntax-n">way</span>
+<span class="devsite-syntax-n">Date</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">leave</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Sometime</span> <span class="devsite-syntax-nb">next</span> <span class="devsite-syntax-n">week</span>
+<span class="devsite-syntax-n">Date</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-k">return</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">N</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">A</span>
+<span class="devsite-syntax-n">Travel</span> <span class="devsite-syntax-n">preferences</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">Direct</span> <span class="devsite-syntax-n">flights</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">No</span> <span class="devsite-syntax-n">flights</span> <span class="devsite-syntax-n">before</span> <span class="devsite-syntax-mi">10</span><span class="devsite-syntax-n">am</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">Carry</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">luggage</span><span class="devsite-syntax-s2">"</span>
+</code></pre></devsite-code>
+<p>You should see Gemini open an incognito browser and start searching for flights for you!</p>
+<h2 is-upgraded id="file-search-📁" data-text="File Search 📁" tabindex="-1">File Search 📁</h2>
+<aside class="warning"><p><strong>Note:</strong> File Search Tool is currently only supported on Google AI.</p>
+</aside>
+<p>File Search Tool enables effortless Retrieval Augmented Generation (RAG). Just upload your files and it does all the RAG details of chunking, embedding, retrieving for you.</p>
+<p>To see it in action, you can run  <a href="https://github.com/meteatamel/genai-beyond-basics/blob/main/samples/grounding/file-search-tool/main.py" target="_blank"><code translate="no" dir="ltr">main.py</code></a> in  <a href="https://github.com/meteatamel/genai-beyond-basics/blob/main/samples/grounding/file-search-tool" target="_blank">github.com/meteatamel/genai-beyond-basics/blob/main/samples/grounding/file-search-tool</a>.</p>
+<p>Get your API key from Google AI Studio and create a file search store:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">export</span> <span class="devsite-syntax-n">GEMINI_API_KEY</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">gemini</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">key</span>
+
+<span class="devsite-syntax-n">python</span> <span class="devsite-syntax-n">main</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span> <span class="devsite-syntax-n">create_store</span> <span class="devsite-syntax-n">my</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">search</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">store</span>
+</code></pre></devsite-code>
+<p>Upload a PDF to the store:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">python</span> <span class="devsite-syntax-n">main</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span> <span class="devsite-syntax-n">upload_to_store</span> <span class="devsite-syntax-n">fileSearchStores</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">myfilesearchstore</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">5</span><span class="devsite-syntax-n">a9x71ifjge9</span> <span class="devsite-syntax-n">cymbal</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">starlight</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mf">2024.</span><span class="devsite-syntax-n">pdf</span>
+</code></pre></devsite-code>
+<p>Ask a question about the PDF pointing to the store:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">python</span> <span class="devsite-syntax-n">main</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span> <span class="devsite-syntax-n">generate_content</span> <span class="devsite-syntax-s2">"What's the cargo capacity of Cymbal Starlight?"</span> <span class="devsite-syntax-n">fileSearchStores</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">myfilesearchstore</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">5</span><span class="devsite-syntax-n">a9x71ifjge9</span>
+</code></pre></devsite-code>
+<p>You should get a response grounded with the PDF:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">Generating</span> <span class="devsite-syntax-n">content</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-n">search</span> <span class="devsite-syntax-n">store</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">fileSearchStores</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">myfilesearchstore</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">5</span><span class="devsite-syntax-n">a9x71ifjge9</span>
+<span class="devsite-syntax-n">Response</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">The</span> <span class="devsite-syntax-n">Cymbal</span> <span class="devsite-syntax-n">Starlight</span> <span class="devsite-syntax-mi">2024</span> <span class="devsite-syntax-n">has</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">cargo</span> <span class="devsite-syntax-n">capacity</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-mf">13.5</span> <span class="devsite-syntax-n">cubic</span> <span class="devsite-syntax-n">feet</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">which</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">located</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">trunk</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">vehicle</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">It</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">important</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">distribute</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">weight</span> <span class="devsite-syntax-n">evenly</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-n">overload</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">trunk</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">this</span> <span class="devsite-syntax-n">could</span> <span class="devsite-syntax-n">impact</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">vehicle</span><span class="devsite-syntax-s1">'s handling and stability. The vehicle can also accommodate up to two suitcases in the trunk, and it is recommended to use soft-sided luggage to maximize space and cargo straps to secure it while driving.</span>
+<span class="devsite-syntax-n">Grounding</span> <span class="devsite-syntax-n">sources</span><span class="devsite-syntax-p">:</span>  <span class="devsite-syntax-n">cymbal</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">starlight</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mf">2024.</span><span class="devsite-syntax-n">pdf</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="function-calling-📲" data-text="Function Calling 📲" tabindex="-1">Function Calling 📲</h2>
+<p>If the built-in tools are not enough, you can also define your own tools (functions) in Gemini. You simply submit a Python function as a tool (instead of submitting a detailed OpenAPI specification of the function). It is automatically used as a tool by the model and the SDK.</p>
+<p>For example, you can have a function to return a latitude and longitude of a location:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">location_to_lat_long</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">location</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">):</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Given a location, returns the latitude and longitude</span>
+
+<span class="devsite-syntax-sd">    Args:</span>
+<span class="devsite-syntax-sd">        location: The location for which to get the weather.</span>
+
+<span class="devsite-syntax-sd">    Returns:</span>
+<span class="devsite-syntax-sd">        The latitude and longitude information in JSON.</span>
+<span class="devsite-syntax-sd">    """</span>
+    <span class="devsite-syntax-n">logger</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">info</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Calling location_to_lat_long(</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">location</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">)"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-n">url</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"https://geocoding-api.open-meteo.com/v1/search?name=</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">location</span><span class="devsite-syntax-si">}</span>&amp;<span class="devsite-syntax-s2">count=1"</span>
+    <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-n">api_request</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">url</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>You can also have a function to return the weather information from a latitude and longitude:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">lat_long_to_weather</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">latitude</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">longitude</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">):</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Given a latitude and longitude, returns the weather information</span>
+
+<span class="devsite-syntax-sd">    Args:</span>
+<span class="devsite-syntax-sd">        latitude: The latitude of a location</span>
+<span class="devsite-syntax-sd">        longitude: The longitude of a location</span>
+
+<span class="devsite-syntax-sd">    Returns:</span>
+<span class="devsite-syntax-sd">        The weather information for the location in JSON.</span>
+<span class="devsite-syntax-sd">    """</span>
+    <span class="devsite-syntax-n">logger</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">info</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Calling lat_long_to_weather(</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">latitude</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">, </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">longitude</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">)"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-n">url</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"https://api.open-meteo.com/v1/forecast?latitude=</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">latitude</span><span class="devsite-syntax-si">}</span>&amp;<span class="devsite-syntax-s2">longitude=</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">longitude</span><span class="devsite-syntax-si">}</span>&amp;<span class="devsite-syntax-s2">current=temperature_2m,"</span>
+           <span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"relative_humidity_2m,surface_pressure,wind_speed_10m,wind_direction_10m&amp;forecast_days=1"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-n">api_request</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">url</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>Now, you can pass those two functions as tools to Gemini and let it use to fetch the weather information for a location:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">generate_content_with_function_calls</span><span class="devsite-syntax-p">():</span>
+    <span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">(</span>
+        <span class="devsite-syntax-n">vertexai</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-kc">True</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">project</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">PROJECT_ID</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">location</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">LOCATION</span><span class="devsite-syntax-p">)</span>
+
+    <span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+        <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">MODEL_ID</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">PROMPT</span><span class="devsite-syntax-p">,</span>
+        <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">system_instruction</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span>
+                <span class="devsite-syntax-s2">"You are a helpful weather assistant."</span><span class="devsite-syntax-p">,</span>
+                <span class="devsite-syntax-s2">"Your mission is to provide weather information for different cities."</span>
+                <span class="devsite-syntax-s2">"Make sure your responses are in plain text format (no markdown) and include all the cities asked."</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-p">],</span>
+            <span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">location_to_lat_long</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">lat_long_to_weather</span><span class="devsite-syntax-p">],</span>
+            <span class="devsite-syntax-n">temperature</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">),</span>
+    <span class="devsite-syntax-p">)</span>
+
+    <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-c1">#print(response.automatic_function_calling_history)</span>
+</code></pre></devsite-code>
+<p>To see it in action, you can run  <a href="https://github.com/meteatamel/genai-beyond-basics/blob/main/samples/function-calling/weather/main_genaisdk.py" target="_blank"><code translate="no" dir="ltr">main_genaisdk.py</code></a> in  <a href="https://github.com/meteatamel/genai-beyond-basics/blob/main/samples/function-calling/weather" target="_blank">github.com/meteatamel/genai-beyond-basics/blob/main/samples/function-calling/weather</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Agents 🤖" duration="5" step="9">
+          
+          <h2 class="step-title" id="9" data-text="Agents 🤖" tabindex="-1">
+              10. Agents 🤖
+          </h2>
+          
+          <p>The  <a href="https://ai.google.dev/gemini-api/docs/interactions" target="_blank">Interactions API</a> of Gemini is designed for building and interacting with agents. You can use specialized agents like Gemini Deep Research Agent. The  <a href="https://ai.google.dev/gemini-api/docs/deep-research" target="_blank">Gemini Deep Research Agent</a> autonomously plans, executes, and synthesizes multi-step research tasks. It navigates complex information landscapes using web search and your own data to produce detailed, cited reports.</p>
+<p>Here&#39;s how you&#39;d use the Deep Research agent with the Interaction API:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">interaction</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">interactions</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">create</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-nb">input</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Research the history of the Google TPUs."</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"deep-research-pro-preview-12-2025"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">background</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-kc">True</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">while</span> <span class="devsite-syntax-kc">True</span><span class="devsite-syntax-p">:</span>
+    <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">interaction</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">status</span> <span class="devsite-syntax-o">==</span> <span class="devsite-syntax-s2">"completed"</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-se">\n</span><span class="devsite-syntax-s2">Final Report:</span><span class="devsite-syntax-se">\n</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-n">interaction</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">outputs</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-k">break</span>
+</code></pre></devsite-code>
+<p>To run this sample yourself, you can run  <a href="https://github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api/main.py" target="_blank"><code translate="no" dir="ltr">main.py</code></a> in  <a href="https://github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api" target="_blank">github.com/meteatamel/genai-samples/blob/main/vertexai/interactions-api</a>.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">export</span> <span class="devsite-syntax-n">GOOGLE_API_KEY</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">key</span>
+<span class="devsite-syntax-n">python</span> <span class="devsite-syntax-n">main</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span> <span class="devsite-syntax-n">agent</span>
+</code></pre></devsite-code>
+<p>You should see the research done after a while:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">User</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Research</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">history</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">Google</span> <span class="devsite-syntax-n">TPUs</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">focus</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-mi">2025</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-mi">2026</span>
+
+<span class="devsite-syntax-n">Status</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">in_progress</span>
+<span class="devsite-syntax-n">Status</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">in_progress</span>
+<span class="devsite-syntax-n">Status</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">in_progress</span>
+<span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-n">Model</span> <span class="devsite-syntax-n">Final</span> <span class="devsite-syntax-n">Report</span><span class="devsite-syntax-p">:</span>
+ <span class="devsite-syntax-c1"># Architectural Convergence and Commercial Expansion: The History of Google TPUs (2015–2026)</span>
+
+<span class="devsite-syntax-c1">## Key Findings</span>
+<span class="devsite-syntax-o">*</span>   <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Strategic</span> <span class="devsite-syntax-n">Pivot</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">2025</span><span class="devsite-syntax-p">):</span><span class="devsite-syntax-o">**</span> <span class="devsite-syntax-n">Google</span> <span class="devsite-syntax-n">transitioned</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">Tensor</span> <span class="devsite-syntax-n">Processing</span> <span class="devsite-syntax-n">Unit</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">TPU</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">a</span> <span class="devsite-syntax-n">primarily</span> <span class="devsite-syntax-n">internal</span> <span class="devsite-syntax-n">differentiator</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">commercial</span> <span class="devsite-syntax-n">merchant</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">silicon</span> <span class="devsite-syntax-n">competitor</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">epitomized</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">massive</span> <span class="devsite-syntax-s2">"Ironwood"</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">TPU</span> <span class="devsite-syntax-n">v7</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-n">deployment</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">external</span> <span class="devsite-syntax-n">sales</span> <span class="devsite-syntax-n">strategy</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-o">*</span>   <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Technological</span> <span class="devsite-syntax-n">Leap</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-o">**</span> <span class="devsite-syntax-n">The</span> <span class="devsite-syntax-n">introduction</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">TPU</span> <span class="devsite-syntax-n">v7</span> <span class="devsite-syntax-s2">"Ironwood"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-mi">2025</span> <span class="devsite-syntax-n">marked</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">paradigm</span> <span class="devsite-syntax-n">shift</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">utilizing</span> <span class="devsite-syntax-mi">3</span><span class="devsite-syntax-n">nm</span> <span class="devsite-syntax-n">process</span> <span class="devsite-syntax-n">technology</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">deliver</span> <span class="devsite-syntax-mf">42.5</span> <span class="devsite-syntax-n">exaFLOPS</span> <span class="devsite-syntax-n">per</span> <span class="devsite-syntax-n">pod</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">directly</span> <span class="devsite-syntax-n">challenging</span> <span class="devsite-syntax-n">NVIDIA</span><span class="devsite-syntax-s1">'s Blackwell architecture in the high-performance computing (HPC) sector.</span>
+<span class="devsite-syntax-o">...</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Image Generation 📷" duration="3" step="10">
+          
+          <h2 class="step-title" id="10" data-text="Image Generation 📷" tabindex="-1">
+              11. Image Generation 📷
+          </h2>
+          
+          <p><a href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank">Nano Banana</a> 🍌 is the name for Gemini&#39;s native image generation capabilities. Gemini can generate and process images conversationally with text, images, or a combination of both. This lets you create, edit, and iterate on visuals with control.</p>
+<p>Nano Banana refers to two distinct models available in the Gemini API:</p>
+<ul>
+<li><strong>Nano Banana</strong>: The Gemini Flash Image model. This model is designed for speed and efficiency, optimized for high-volume, low-latency tasks.</li>
+<li><strong>Nano Banana Pro</strong>: The Gemini Pro Image model. This model is designed for professional asset production, utilizing advanced reasoning to follow complex instructions and render high-fidelity text.</li>
+</ul>
+<p>Here&#39;s a snippet of code where you can pass an existing image and ask Nano Banana to edit the image:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">genai</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.genai</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">types</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">PIL</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Image</span>
+
+<span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-n">prompt</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-s2">"Create a picture of my cat eating a nano-banana in a "</span>
+    <span class="devsite-syntax-s2">"fancy restaurant under the Gemini constellation"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">image</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Image</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">open</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"/path/to/cat_image.png"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.1-flash-image"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">prompt</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">image</span><span class="devsite-syntax-p">],</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">part</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">parts</span><span class="devsite-syntax-p">:</span>
+    <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">part</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-kc">None</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">part</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">text</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">elif</span> <span class="devsite-syntax-n">part</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">inline_data</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-kc">None</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-n">image</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">part</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">as_image</span><span class="devsite-syntax-p">()</span>
+        <span class="devsite-syntax-n">image</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">save</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"generated_image.png"</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>Nano Banana is available in Gemini App, AI Studio, or Agent Platform Studio. The simplest way to try it out is in Gemini App. In Gemini App ( <a href="https://gemini.google.com/" target="_blank"><code translate="no" dir="ltr">gemini.google.com</code></a>), select <code translate="no" dir="ltr">🍌 Create images</code> under <code translate="no" dir="ltr">Tools</code>. Then, upload an image and try something fun. For example, you can say:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">transform</span> <span class="devsite-syntax-n">this</span> <span class="devsite-syntax-n">picture</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">mine</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">nice</span> <span class="devsite-syntax-n">beach</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">tropical</span> <span class="devsite-syntax-n">island</span><span class="devsite-syntax-err">?</span>
+</code></pre></devsite-code>
+<p class="image-container"><img alt="41a830bea8cf3c9f.png" style="width: 289.39px" src="/static/gemini-for-developers/img/41a830bea8cf3c9f.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/41a830bea8cf3c9f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <img alt="2fc9ac5b7008aafb.png" style="width: 260.50px" src="/static/gemini-for-developers/img/2fc9ac5b7008aafb.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2fc9ac5b7008aafb_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Text-to-Speech Generation 🎶" duration="3" step="11">
+          
+          <h2 class="step-title" id="11" data-text="Text-to-Speech Generation 🎶" tabindex="-1">
+              12. Text-to-Speech Generation 🎶
+          </h2>
+          
+          <p>Gemini can transform text input into single speaker or multi-speaker audio using Gemini text-to-speech (TTS) generation capabilities. TTS generation is controllable, meaning you can use natural language to structure interactions and guide the style, accent, pace, and tone of the audio.</p>
+<p>The TTS capability differs from speech generation provided through the Live API, which is designed for interactive, unstructured audio, and multimodal inputs and outputs. While the Live API excels in dynamic conversational contexts, TTS through the Gemini API is tailored for scenarios that require exact text recitation with fine-grained control over style and sound, such as podcast or audiobook generation.</p>
+<p>Here&#39;s a snippet of code for single-speaker TTS:</p>
+<p>`</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">genai</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.genai</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">types</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">wave</span>
+
+<span class="devsite-syntax-c1"># Set up the wave file to save the output:</span>
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">wave_file</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">filename</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">pcm</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">channels</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">rate</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mi">24000</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">sample_width</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">):</span>
+   <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">wave</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">open</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">filename</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"wb"</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">wf</span><span class="devsite-syntax-p">:</span>
+      <span class="devsite-syntax-n">wf</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setnchannels</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">channels</span><span class="devsite-syntax-p">)</span>
+      <span class="devsite-syntax-n">wf</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setsampwidth</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">sample_width</span><span class="devsite-syntax-p">)</span>
+      <span class="devsite-syntax-n">wf</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">setframerate</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">rate</span><span class="devsite-syntax-p">)</span>
+      <span class="devsite-syntax-n">wf</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">writeframes</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">pcm</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">client</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">genai</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">Client</span><span class="devsite-syntax-p">()</span>
+
+<span class="devsite-syntax-n">response</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">client</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">generate_content</span><span class="devsite-syntax-p">(</span>
+   <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.1-flash-tts-preview"</span><span class="devsite-syntax-p">,</span>
+   <span class="devsite-syntax-n">contents</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"Say cheerfully: Have a wonderful day!"</span><span class="devsite-syntax-p">,</span>
+   <span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">GenerateContentConfig</span><span class="devsite-syntax-p">(</span>
+      <span class="devsite-syntax-n">response_modalities</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"AUDIO"</span><span class="devsite-syntax-p">],</span>
+      <span class="devsite-syntax-n">speech_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">SpeechConfig</span><span class="devsite-syntax-p">(</span>
+         <span class="devsite-syntax-n">voice_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">VoiceConfig</span><span class="devsite-syntax-p">(</span>
+            <span class="devsite-syntax-n">prebuilt_voice_config</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">types</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">PrebuiltVoiceConfig</span><span class="devsite-syntax-p">(</span>
+               <span class="devsite-syntax-n">voice_name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s1">'Kore'</span><span class="devsite-syntax-p">,</span>
+            <span class="devsite-syntax-p">)</span>
+         <span class="devsite-syntax-p">)</span>
+      <span class="devsite-syntax-p">),</span>
+   <span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">data</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">response</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">candidates</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">content</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">parts</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">inline_data</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">data</span>
+
+<span class="devsite-syntax-n">file_name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s1">'out.wav'</span>
+<span class="devsite-syntax-n">wave_file</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">file_name</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">data</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-c1"># Saves the file to current directory</span>
+</code></pre></devsite-code>
+<p>You can see more samples in  <a href="https://ai.google.dev/gemini-api/docs/speech-generation" target="_blank">Text-to-speech generation (TTS) documentation</a>.</p>
+<p>You can also try out generating speech in Google AI Studio playground. Play with different prompts in  <a href="https://aistudio.google.com/generate-speech" target="_blank">generate-speech</a> app.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Spatial Understanding 🌐" duration="5" step="12">
+          
+          <h2 class="step-title" id="12" data-text="Spatial Understanding 🌐" tabindex="-1">
+              13. Spatial Understanding 🌐
+          </h2>
+          
+          <p>Gemini has advanced object detection and spatial understanding. The easiest way to understand this is to see it in action.</p>
+<p>Go to the  <a href="https://github.com/google-gemini/starter-applets" target="_blank">Google AI Studio Starter Applets</a> and navigate to  <a href="https://github.com/google-gemini/starter-applets/tree/main/spatial" target="_blank">Spatial Understanding</a> app.</p>
+<p>Update the <code translate="no" dir="ltr">.env</code> file with your Google AI Studio key, update the model in <code translate="no" dir="ltr">src/consts.tsx</code> to one of the latest models. Install dependencies and start the app:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">npm</span> <span class="devsite-syntax-n">install</span>
+<span class="devsite-syntax-n">npm</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">dev</span>
+</code></pre></devsite-code>
+<p>Navigate to  <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a>.</p>
+<p>Now, you can start choosing some images and try to detect some items in the image with Gemini.</p>
+<p>For example, you can detect &#34;shadows&#34; or &#34;fruits&#34; in different images:</p>
+<p class="image-container"><img alt="6a521c961664339.png" style="width: 288.99px" src="/static/gemini-for-developers/img/6a521c961664339.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/6a521c961664339_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"> <img alt="2260ab81a8c9a5e8.png" style="width: 168.50px" src="/static/gemini-for-developers/img/2260ab81a8c9a5e8.png" srcset="https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_36.png 36w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_48.png 48w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_72.png 72w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_96.png 96w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_480.png 480w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_720.png 720w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_856.png 856w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_960.png 960w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_1440.png 1440w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_1920.png 1920w,https://codelabs.developers.google.com/static/gemini-for-developers/img/2260ab81a8c9a5e8_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Play with different images and see how well Gemini detects and labels different objects.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Live API 🎤" duration="8" step="13">
+          
+          <h2 class="step-title" id="13" data-text="Live API 🎤" tabindex="-1">
+              14. Live API 🎤
+          </h2>
+          
+          <p>The  <a href="https://ai.google.dev/gemini-api/docs/live" target="_blank">Live API</a> enables low-latency, real-time voice and video interactions with Gemini. It processes continuous streams of audio, video, or text to deliver immediate, human-like spoken responses, creating a natural conversational experience for your users.</p>
+<p>Go ahead and try out the  <a href="https://aistudio.google.com/live" target="_blank">Live API in Google AI Studio</a> or the  <a href="https://console.cloud.google.com/agent-platform/studio/multimodal-live" target="_blank">Live API in Agent Platform Studio</a>. In both apps, you can share your voice, video, and screen and have a live conversation with Gemini.</p>
+<p>Go ahead and start sharing your video or screen, and ask Gemini general things via voice. For example:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code translate="no" dir="ltr"><span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">describe</span> <span class="devsite-syntax-n">what</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">see</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">screen</span><span class="devsite-syntax-err">?</span>
+</code></pre></devsite-code>
+<p>You&#39;ll be amazed how natural the responses will sound from Gemini.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Conclusion" duration="0" step="14">
+          
+          <h2 class="step-title" id="14" data-text="Conclusion" tabindex="-1">
+              15. Conclusion
+          </h2>
+          
+          <p>In this codelab, we covered the Gemini ecosystem, starting with the Gemini family of products and learning how to integrate the models into our applications using the unified Google Gen AI SDK. We explored Gemini&#39;s cutting-edge features, including the Long Context Window, Thinking Mode, built-in grounding tools, Live API, and Spatial Understanding. We encourage you to dive deeper into the reference docs and continue experimenting with the full potential of Gemini.</p>
+<h2 is-upgraded id="references" data-text="References" tabindex="-1"><strong>References</strong></h2>
+<ul>
+<li><a href="https://gemini.google.com/" target="_blank">Gemini App</a></li>
+<li><a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a></li>
+<li><a href="http://ai.dev" target="_blank">Google AI Studio</a></li>
+<li><a href="http://console.cloud.google.com/agent-platform/studio" target="_blank">Agent Platform Studio</a></li>
+<li><a href="https://antigravity.google/" target="_blank">Google Antigravity</a></li>
+<li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models" target="_blank">Gemini Models</a></li>
+<li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/sdks/overview" target="_blank">Google Gen AI SDK</a></li>
+<li><a href="https://pypi.org/project/google-genai/" target="_blank">Python SDK</a></li>
+<li><a href="https://pkg.go.dev/google.golang.org/genai" target="_blank">Go SDK</a></li>
+<li><a href="https://www.npmjs.com/package/@google/genai" target="_blank">Node SDK</a></li>
+<li><a href="https://search.maven.org/artifact/com.google.genai/google-genai" target="_blank">Java SDK</a></li>
+<li><a href="https://www.nuget.org/packages/Google.GenAI" target="_blank">C# SDK</a></li>
+<li><a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/sdks/overview" target="_blank">Interactions API</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/deep-research" target="_blank">Gemini Deep Research Agent</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank">Nano Banana Image Generation</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/speech-generation" target="_blank">Text-to-Speech Generation (TTS)</a></li>
+<li><a href="https://ai.google.dev/gemini-api/docs/live" target="_blank">Live API</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//googledevelopers.blogspot.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.facebook.com/Google-Developers-967415219957038"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Facebook
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//medium.com/google-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Medium
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//twitter.com/googledevs"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.youtube.com/user/GoogleDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.womentechmakers.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/gdg"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/experts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/accelerators"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.developers.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.cloud.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//play.google.com/apps/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.firebase.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.actions.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//cast.google.com/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//chrome.google.com/webstore/developer/dashboard"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//developers.google.com/terms/site-terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;codelabs&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="qSODOnafDCduMF1onQtwU/zgxfGcin">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/js/app_loader.js', '[17,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs","https://codelabs-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/codelabs/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v01e820f11dab21f3ca0f6bae75161414eea27d2d73afb4b420c81b7d54dc150c/codelabs/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","codelabs.developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["CloudShell__cloud_code_overflow_menu","Search__enable_ai_eligibility_checks","DevPro__enable_firebase_workspaces_card","MiscFeatureFlags__developers_footer_image","MiscFeatureFlags__enable_project_variables","Search__enable_page_map","Profiles__enable_completecodelab_endpoint","Profiles__require_profile_eligibility_for_signin","Profiles__enable_complete_playlist_endpoint","Concierge__enable_actions_menu","MiscFeatureFlags__remove_cross_domain_tracking_params","Profiles__enable_release_notes_notifications","Analytics__enable_devpro_interaction_logging","DevPro__enable_g1_integration","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__fix_lower_breadcrumbs","Profiles__enable_developer_profile_benefits_ui_redesign","Profiles__enable_auto_apply_credits","DevPro__enable_credits_banner","DevPro__enable_google_one_card","DevPro__enable_vertex_credit_card","Concierge__enable_pushui","Profiles__enable_stripe_subscription_management","Profiles__enable_public_developer_profiles","DevPro__enable_g1_ineligible_redirect","DevPro__remove_eu_tax_intake_form","DevPro__enable_nvidia_credits_card","Search__enable_suggestions_from_borg","Cloud__fast_free_trial","Experiments__reqs_query_experiments","DevPro__enable_embed_profile_creation","AIStudioInteractionsToggle__interactions_are_default","Profiles__enable_user_type","Search__enable_ai_search_summaries_for_all","MiscFeatureFlags__enable_firebase_utm","SignIn__enable_l1_signup_flow","DevPro__enable_free_benefits","Profiles__enable_dashboard_curated_recommendations","DevPro__enable_code_assist","Profiles__enable_awarding_url","Profiles__enable_completequiz_endpoint","Cloud__enable_free_trial_server_call","CloudShell__cloud_shell_button","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_variable_operator","Profiles__enable_join_program_group_endpoint","Cloud__enable_cloud_shell","DevPro__enable_cloud_innovators_plus","MiscFeatureFlags__enable_variable_operator_index_yaml","MiscFeatureFlags__enable_explain_this_code","Profiles__enable_playlist_community_acl","Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_appearance_cookies","BookNav__enable_tenant_cache_key","TpcFeatures__enable_unmirrored_page_left_nav","Analytics__enable_clearcut_logging","DevPro__enable_devpro_offers","MiscFeatureFlags__enable_view_transitions","Profiles__enable_recognition_badges","Profiles__enable_developer_profile_pages_as_content","TpcFeatures__proxy_prod_host","Profiles__enable_targeted_hero","DevPro__enable_google_payments","Search__enable_dynamic_content_confidential_banner","DevPro__enable_devsite_captcha","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__developers_footer_dark_image","Cloud__cache_serialized_dynamic_content","Profiles__enable_developer_profiles_callout","Cloud__enable_cloud_shell_fte_user_flow","DevPro__enable_google_payments_buyflow","Profiles__enable_page_saving","DevPro__enable_enterprise","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_purchase_prompts","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Concierge__enable_remove_info_panel_tags","DevPro__enable_developer_subscriptions","Profiles__enable_callout_notifications","Profiles__enable_profile_collections"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,null,"https://developerprofiles-pa.clients6.google.com",[17,"codelabs","Google Codelabs","codelabs.developers.google.com",null,"codelabs-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],null,null,null,null,null,null,[1]],null,[33,null,null,null,null,null,"/images/lockup.svg",null,null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,29,32,36],null,[[],[1,1]],[[null,null,null,null,null,null,null,null,null,null,null,null,1]],null,4],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,1,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

@@ -1,0 +1,507 @@
+GitHub - google-gemini/gemini-image-editing-nextjs-quickstart: Get started with native image generation and editing using Gemini 2.0 and Next.js · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub Copilot
+Write better code with AI
+GitHub Copilot app
+Direct agents from issue to merge
+MCP Registry
+Integrate external tools
+DEVELOPER WORKFLOWS
+Actions
+Automate any workflow
+Codespaces
+Instant dev environments
+Issues
+Plan and track work
+Code Review
+Manage code changes
+Code Quality
+Enforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced Security
+Find and fix vulnerabilities
+Code security
+Secure your code as you build
+Secret protection
+Stop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub Sponsors
+Fund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platform
+AI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced Security
+Enterprise-grade security features
+Copilot for Business
+Enterprise-grade AI features
+Premium Support
+Enterprise-grade 24/7 support
+Pricing
+Search
+/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window.
+Reload
+to refresh your session.
+You signed out in another tab or window.
+Reload
+to refresh your session.
+You switched accounts on another tab or window.
+Reload
+to refresh your session.
+Dismiss alert
+{{ message }}
+google-gemini
+/
+gemini-image-editing-nextjs-quickstart
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+113
+Star
+540
+Code
+Issues
+3
+Pull requests
+17
+Actions
+Projects
+Security and quality
+0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+main
+Branches
+Tags
+Go to file
+Code
+Open more actions menu
+Latest commit
+History
+28 Commits
+28 Commits
+Folders and files
+Name
+Name
+Last commit message
+Last commit date
+app
+app
+assets
+assets
+components
+components
+lib
+lib
+public
+public
+.env.example
+.env.example
+.gitignore
+.gitignore
+Dockerfile
+Dockerfile
+LICENSE
+LICENSE
+README.md
+README.md
+components.json
+components.json
+empty-module.ts
+empty-module.ts
+eslint.config.mjs
+eslint.config.mjs
+next-env.d.ts
+next-env.d.ts
+next.config.ts
+next.config.ts
+package-lock.json
+package-lock.json
+package.json
+package.json
+postcss.config.mjs
+postcss.config.mjs
+tailwind.config.ts
+tailwind.config.ts
+tsconfig.json
+tsconfig.json
+View all files
+Repository files navigation
+README
+Apache-2.0 license
+Security
+More
+items
+Gemini 2.0 Flash Image Generation and Editing
+Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash. It allows users to generate images from text prompts or edit existing images through natural language instructions, maintaining conversation context for iterative refinements. Try out the hosted demo at
+Hugging Face Spaces
+.
+demo.mov
+Get your
+GEMINI_API_KEY
+key
+here
+and start building.
+How It Works:
+Create Images
+: Generate images from text prompts using Gemini 2.0 Flash
+Edit Images
+: Upload an image and provide instructions to modify it
+Conversation History
+: Maintain context through a conversation with the AI for iterative refinements
+Download Results
+: Save your generated or edited images
+Basic request
+For developers who want to call the Gemini API directly, you can use the Google Generative AI JavaScript SDK:
+const
+{
+GoogleGenerativeAI
+}
+=
+require
+(
+"@google/generative-ai"
+)
+;
+const
+fs
+=
+require
+(
+"fs"
+)
+;
+const
+genAI
+=
+new
+GoogleGenerativeAI
+(
+process
+.
+env
+.
+GEMINI_API_KEY
+)
+;
+async
+function
+generateImage
+(
+)
+{
+const
+contents
+=
+"Hi, can you create a 3d rendered image of a pig "
++
+"with wings and a top hat flying over a happy "
++
+"futuristic scifi city with lots of greenery?"
+;
+// Set responseModalities to include "Image" so the model can generate
+const
+model
+=
+genAI
+.
+getGenerativeModel
+(
+{
+model
+:
+"gemini-2.0-flash-exp"
+,
+generationConfig
+:
+{
+responseModalities
+:
+[
+"Text"
+,
+"Image"
+]
+}
+}
+)
+;
+try
+{
+const
+response
+=
+await
+model
+.
+generateContent
+(
+contents
+)
+;
+for
+(
+const
+part
+of
+response
+.
+response
+.
+candidates
+[
+0
+]
+.
+content
+.
+parts
+)
+{
+// Based on the part type, either show the text or save the image
+if
+(
+part
+.
+text
+)
+{
+console
+.
+log
+(
+part
+.
+text
+)
+;
+}
+else
+if
+(
+part
+.
+inlineData
+)
+{
+const
+imageData
+=
+part
+.
+inlineData
+.
+data
+;
+const
+buffer
+=
+Buffer
+.
+from
+(
+imageData
+,
+"base64"
+)
+;
+fs
+.
+writeFileSync
+(
+"gemini-native-image.png"
+,
+buffer
+)
+;
+console
+.
+log
+(
+"Image saved as gemini-native-image.png"
+)
+;
+}
+}
+}
+catch
+(
+error
+)
+{
+console
+.
+error
+(
+"Error generating content:"
+,
+error
+)
+;
+}
+}
+Features
+🎨 Text-to-image generation with Gemini 2.0 Flash
+🖌️ Image editing through natural language instructions
+💬 Conversation history for context-aware image refinements
+📱 Responsive UI built with Next.js and shadcn/ui
+🔄 Seamless workflow between creation and editing modes
+⚡ Uses Gemini 2.0 Flash Javascript SDK
+Getting Started
+Local Development
+First, set up your environment variables:
+cp .env.example .env
+Add your Google AI Studio API key to the
+.env
+file:
+Get your
+GEMINI_API_KEY
+key
+here
+.
+GEMINI_API_KEY=your_google_api_key
+Then, install dependencies and run the development server:
+npm install
+npm run dev
+Open
+http://localhost:3000
+with your browser to see the application.
+Deployment
+Vercel
+Docker
+Build the Docker image:
+docker build -t nextjs-gemini-image-editing
+.
+Run the container with your Google API key:
+docker run -p 3000:3000 -e GEMINI_API_KEY=your_google_api_key nextjs-gemini-image-editing
+Or using an environment file:
+#
+Run container with env file
+docker run -p 3000:3000 --env-file .env nextjs-gemini-image-editing
+Open
+http://localhost:3000
+with your browser to see the application.
+Technologies Used
+Next.js
+- React framework for the web application
+Google Gemini 2.0 Flash
+- AI model for image generation and editing
+shadcn/ui
+- Re-usable components built using Radix UI and Tailwind CSS
+License
+This project is licensed under the Apache License 2.0 - see the
+LICENSE
+file for details.
+About
+Get started with native image generation and editing using Gemini 2.0 and Next.js
+ai.google.dev/gemini-api/docs/image-generation
+Topics
+gemini
+gemini-api
+Resources
+Readme
+Apache-2.0 license
+Security policy
+Security policy
+Activity
+Custom properties
+Stars
+540
+stars
+Watchers
+9
+watching
+Forks
+113
+forks
+Report repository
+Used by
+Contributors
+Languages
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

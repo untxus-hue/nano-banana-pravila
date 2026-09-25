@@ -1,0 +1,210 @@
+Skip to main content
+Documentation
+close
+Get Started
+Get Started with Google Cloud
+Product List
+Cloud Customer Care
+Featured Products
+Agent Platform
+Apigee API Management
+BigQuery
+Compute Engine
+Cloud CDN
+Cloud Run
+Cloud Storage
+Cloud SQL
+Gemini Enterprise
+Google Kubernetes Engine
+Looker
+Cross-product Tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+Technology Areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Vertex AI
+Start free
+Documentation
+More
+Console
+Get Started
+Get Started with Google Cloud
+Product List
+Cloud Customer Care
+Featured Products
+Agent Platform
+Apigee API Management
+BigQuery
+Compute Engine
+Cloud CDN
+Cloud Run
+Cloud Storage
+Cloud SQL
+Gemini Enterprise
+Google Kubernetes Engine
+Looker
+Cross-product Tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+Technology Areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Vertex AI documentation is no longer being updated
+Vertex AI's services are now part of Gemini Enterprise Agent Platform. See the most up-to-date information in the Agent Platform documentation.
+Home
+Documentation
+AI and ML
+Vertex AI
+Send feedback
+Edit images with Imagen on Vertex AI
+Stay organized with collections
+Save and categorize content based on your preferences.
+Caution: The following table describes image generation endpoints that
+are deprecated and their replacements. We recommend updating your model
+endpoints before June 30, 2026, to avoid service disruption.
+Discontinued endpointsRecommended endpoint migration
+imagegeneration@002gemini-2.5-flash-image
+imagegeneration@003gemini-2.5-flash-image
+imagegeneration@004gemini-2.5-flash-image
+imagegeneration@005gemini-2.5-flash-image
+imagegeneration@006gemini-2.5-flash-image
+imagetext@001gemini-2.5-flash-image
+imagen-3.0-capability-001gemini-2.5-flash-image
+imagen-3.0-capability-002gemini-2.5-flash-image
+imagen-3.0-fast-generate-001gemini-2.5-flash-image
+imagen-3.0-generate-001gemini-2.5-flash-image
+imagen-3.0-generate-002gemini-2.5-flash-image
+imagen-4.0-fast-generate-001gemini-2.5-flash-image
+imagen-4.0-generate-001gemini-2.5-flash-image
+imagen-4.0-ultra-generate-001gemini-2.5-flash-image
+Imagen on Vertex AI lets you edit Imagen-generated or existing
+images. You can specify part of the image to modify in addition to a text
+description of the updates (mask-base editing).
+Advanced multi-turn editing is a key strength of Gemini models. For
+more information, see Edit images with
+Gemini.
+Types of available editing tools
+Imagen supports mask-based editing. Mask-based editing lets you
+specify a targeted area to apply edits to. This method of editing is good for
+edits that apply to only parts of an image. Mask-based editing is useful for the
+following types of image edits:
+Insert objects into an image
+Remove objects from an image
+Expand the content of an image
+Replace the background of an image
+Locations
+A location is a region you can specify in a request to
+control where data is stored at rest. For a list of available regions, see
+Generative AI on Vertex AI locations.
+Safety filtering
+Both input data and output content are checked for offensive material when you
+send an image editing request to Imagen. This means offensive
+input data from a text prompt or from a base image you provide can be blocked. Similarly, offensive output images might also be blocked, affecting the number of generated images you get in a response.
+For more information about safety filtering and blocked content handling, see
+Responsible AI and usage guidelines for
+Imagen.
+Model versions
+There are multiple image generation models that you can use. Each model may have
+limits that are specific to that model. For more
+information, see Imagen
+models.
+What's next
+Insert objects into an image
+Remove objects from an image
+Expand the content of an image
+Edit product images
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-09-18 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Android
+Chrome
+Firebase
+Google AI
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

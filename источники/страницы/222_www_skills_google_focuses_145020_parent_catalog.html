@@ -1,0 +1,1278 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Generate Images with Nano Banana Pro on Agent Platform | Google Skills</title>
+<link crossorigin href='https://cdn.qwiklabs.com' rel='preconnect'>
+<link crossorigin href='https://fonts.gstatic.com' rel='preconnect'>
+<link crossorigin href='https://fonts.googleapis.com' rel='preconnect'>
+<link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/google-symbols.woff2' rel='preload' type='font/woff2'>
+<link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/material-icons.woff2' rel='preload' type='font/woff2'>
+<link as='font' crossorigin='anonymous' href='https://cdn.qwiklabs.com/fonts/google-material-icons.woff2' rel='preload' type='font/woff2'>
+<style>
+  @mixin font_face_props {
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Google Material Icons';
+    src: url('https://cdn.qwiklabs.com/fonts/google-material-icons.woff2') format('woff2');
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Material Icons';
+    src: url('https://cdn.qwiklabs.com/fonts/material-icons.woff2') format('woff2');
+  }
+  
+  @font-face {
+    @include font_face_props;
+  
+    font-family: 'Google Symbols';
+    src: url('https://cdn.qwiklabs.com/fonts/google-symbols.woff2') format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+  }
+  
+  .google-symbols {
+    font-family: 'Google Symbols';
+  }
+  
+  .google-material-icons {
+    font-family: 'Google Material Icons';
+  }
+  
+  .material-icons,
+  .google-symbols,
+  .google-material-icons {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+
+<meta name="action-cable-url" content="/cable" />
+<script>
+//<![CDATA[
+window.gon={};gon.deployment="google-run";
+//]]>
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    if (arguments[0] === 'event') {
+      dataLayer.push({ event: arguments[1], eventParams: arguments[2] }, { eventParams: undefined });
+    } else {
+      dataLayer.push(arguments);
+    }
+  }
+  let gtmLoaded = false;
+  function glueCookieNotificationBarLoaded() {
+    if (!gtmLoaded) {
+      dataLayerInit(
+        false,
+        false,
+        false,
+        false,
+        'google-run'
+      );
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',"GTM-MBRHNDG7");
+      pushPageEvent();
+      if (typeof sessEvent !== 'undefined') {
+        pushSessionEvent(sessEvent, sessLoginStatus, sessPreviousPath);
+      }
+      gtmLoaded = true;
+    }
+  }
+</script>
+<script src="https://cdn.qwiklabs.com/assets/hallofmirrors/polyfills/webcomponents-loader-2e147cb1679d97581f981243bfc2d1c03dc34a58.js"></script>
+<script src="https://cdn.qwiklabs.com/assets/head_scripts-78121e337319c81329ed63eb61196ea57f74a57d.js"></script>
+<script src="https://cdn.qwiklabs.com/assets/vendor-1c75122c864db561eb016ef97dbd4eb4a740856f.js"></script>
+<script src="https://cdn.qwiklabs.com/assets/application-de2f135d6864593a70810f0d774c1c9edbcf0509.js"></script>
+<script src="https://cdn.qwiklabs.com/assets/hallofmirrors/hallofmirrors-8141b2c98a8bb62ded73ab587e012fec79bb27bf.js"></script>
+<script src="https://cdn.qwiklabs.com/nk_components/1.1.45/index.js"></script>
+<script src="https://support.google.com/inapp/api.js"></script>
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="wuWlIkj7B55FiVC2NY1HR25V2Zs6Dcum0y1l2-cHLmCZvy9wpX7tpuEGYnjQV2cX9Wd5QCNuHtPiziBV-2bQxA" />
+<meta content='width=device-width, initial-scale=1.0, user-scalable=yes' name='viewport'>
+<meta content='1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0' name='google-site-verification'>
+<meta content='max-snippet:-1, max-image-preview:large' name='robots'>
+<meta content='#3681E4' property='msapplication-TileColor'>
+<meta content='/super_G_optimized.png' property='msapplication-TileImage'>
+<meta content='{&quot;userId&quot;:null,&quot;experimentIds&quot;:[&quot;use_docebo_features&quot;,&quot;switch_path_and_explore_headers&quot;,&quot;show_new_course_exams&quot;,&quot;learning_plan_search&quot;,&quot;search_suggestions&quot;,&quot;dialog_queue&quot;,&quot;relaunch_credentials&quot;,&quot;new_org_dashboard_announcement&quot;,&quot;use_mosaic&quot;,&quot;innovator_gear_sign_in&quot;,&quot;landing_page&quot;,&quot;dashboard_jobs&quot;,&quot;course_exams&quot;,&quot;one_stop_hub&quot;,&quot;search_autocomplete&quot;,&quot;show_org_catalog_button&quot;,&quot;lab_page_redesign&quot;,&quot;relaunch&quot;,&quot;analytics_v2&quot;,&quot;next_2026_collections&quot;,&quot;recert&quot;,&quot;docebo_sync&quot;,&quot;cache_explore_page_result&quot;,&quot;gamification&quot;,&quot;learner_grace_period_upgrade&quot;,&quot;remove_gdp_subscription&quot;,&quot;in_context_all_labs&quot;,&quot;offboard_gwg_june&quot;,&quot;new_sidenav&quot;,&quot;learning_plan_slug&quot;,&quot;chime_use_abuse_details&quot;,&quot;search_sort_by&quot;,&quot;gamification_xp&quot;,&quot;front_door_landing_page&quot;,&quot;credly_integration_announcement_modal&quot;,&quot;interview_warmup_turndown&quot;,&quot;zendesk_to_cases&quot;,&quot;recert_query_all_used_cert_activities&quot;,&quot;learn_with_ai&quot;,&quot;gamification_ui&quot;,&quot;challenge_lab_fast_track&quot;,&quot;gwg_paid_chip&quot;,&quot;entity_api_keys&quot;,&quot;search_async&quot;,&quot;updated_recalculation_ux&quot;,&quot;sitemap_poc&quot;,&quot;docebo_sync_org_support&quot;,&quot;feedback&quot;,&quot;relaunch_grid_list&quot;,&quot;cdn_fonts&quot;,&quot;wipeout_hard_delete&quot;,&quot;credly&quot;,&quot;gamification_leaderboards&quot;,&quot;relaunch_subscriptions&quot;,&quot;subscription_ux&quot;,&quot;org_invite_link&quot;,&quot;use_recommender_agent&quot;,&quot;gamification_streaks&quot;,&quot;recalculate_activities&quot;,&quot;discovery_lab_duration_estimate&quot;,&quot;one_tap&quot;,&quot;banner_breadcrumbs&quot;,&quot;sso_redirect&quot;,&quot;offboard_gwg_aug&quot;,&quot;hide_unpopular_filters&quot;,&quot;reroute_new_interview_warmup&quot;,&quot;quota_service_use_lua&quot;,&quot;google_dev_payment&quot;,&quot;oauth_risc_shutoff&quot;,&quot;in_context_view&quot;,&quot;onramp&quot;,&quot;alexandria_subscriptions_pagination&quot;,&quot;relaunch_for_sso&quot;,&quot;docebo_ux&quot;,&quot;relaunch_extra&quot;,&quot;canonical_domain_redirect&quot;,&quot;catalog_filter_chips&quot;,&quot;gamification_achievements&quot;,&quot;new_org_dashboard&quot;,&quot;relaunch_collection_ai&quot;,&quot;catalog_filters_button&quot;,&quot;innovator_sign_in&quot;,&quot;gamification_leagues&quot;,&quot;auto_upgrade_game_labs&quot;,&quot;gamification_ui_data&quot;,&quot;gwg_catalog&quot;]}' name='help-api-product-data'>
+<meta content='{&quot;groupIds&quot;:[]}' name='help-api-custom-data'>
+<meta content='In this lab, you use Nano Banana Pro, which is a highly capable, generalist, multimodal model. It provides top-tier image generation along with conversational features for editing images.' name='description'>
+<meta content='Google Skills' name='author'>
+<meta content='https://www.skills.google/focuses/145020' property='og:url'>
+<meta content='Generate Images with Nano Banana Pro on Agent Platform | Google Skills' property='og:title'>
+<meta content='website' property='og:type'>
+<meta content='/super_G_optimized.png' property='og:image'>
+<meta content='1200' property='og:image:width'>
+<meta content='630' property='og:image:height'>
+<meta content='image/png' property='og:image:type'>
+<meta content='Google Skills' property='og:site_name'>
+<meta content='In this lab, you use Nano Banana Pro, which is a highly capable, generalist, multimodal model. It provides top-tier image generation along with conversational features for editing images.' property='og:description'>
+
+
+<link href='https://www.skills.google/focuses/145020?locale=ar&amp;parent=catalog' hreflang='ar' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=de&amp;parent=catalog' hreflang='de' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=es&amp;parent=catalog' hreflang='es' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=fr&amp;parent=catalog' hreflang='fr' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=fr_CA&amp;parent=catalog' hreflang='fr-CA' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=he&amp;parent=catalog' hreflang='he' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=id&amp;parent=catalog' hreflang='id' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=it&amp;parent=catalog' hreflang='it' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=ja&amp;parent=catalog' hreflang='ja' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=ko&amp;parent=catalog' hreflang='ko' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=pl&amp;parent=catalog' hreflang='pl' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=pt_BR&amp;parent=catalog' hreflang='pt-BR' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=pt_PT&amp;parent=catalog' hreflang='pt-PT' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=ru&amp;parent=catalog' hreflang='ru' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=tr&amp;parent=catalog' hreflang='tr' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=uk&amp;parent=catalog' hreflang='uk' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=zh&amp;parent=catalog' hreflang='zh' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?locale=zh_TW&amp;parent=catalog' hreflang='zh-TW' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?parent=catalog' hreflang='en' rel='alternate'>
+<link href='https://www.skills.google/focuses/145020?parent=catalog' hreflang='x-default' rel='alternate'>
+<link href='https://cdn.qwiklabs.com/X46FrQX4iLxHW5MxL8jICvgZM0evMEKscCeQO%2BazGdo%3D' rel='icon' type='image/x-icon'>
+<link href='https://www.skills.google/focuses/145020?parent=catalog' rel='canonical'>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto+Mono:400,700|Roboto:300,400,500,700|Google+Sans:300,400,500,700|Google+Sans+Display:400|Google+Sans+Text:400,500,700" />
+
+<link rel="stylesheet" href="https://cdn.qwiklabs.com/assets/application-09c24d09113def71f1c5b6f12b4e22978e2d4a78.css" media="all" />
+<link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" />
+
+
+<style>
+  :root {
+    --primary-text-on-surface-color: #355d9c;
+    --primary-text-on-surface-color-dark: #2f538b;
+    --primary-text-on-surface-color-darker: #29497a;
+    --primary-text-on-surface-color-darkest: #243e69;
+    --primary-surface-color: #586d8d;
+    --primary-surface-color-rgb: 88,109,141;
+    --primary-surface-color-light: #e0e4eb;
+    --primary-surface-color-lightest: #eff2f5;
+    --text-on-primary-color: #ffffff;
+    --accent-text-on-surface-color: #f000e8;
+    --accent-surface-color: #f9ab00;
+    --accent-surface-color-rgb: 249,171,0;
+    --accent-surface-color-light: #ffefcc;
+    --text-on-accent-color: #000000;
+  }
+</style>
+
+
+
+</head>
+<body class='lab-show l-full relaunch lab-page-redesign learner-layout-body relaunch '>
+<div class='body-container' relaunch>
+<div class='body-header'>
+<ql-toolbar class='app-toolbar' jumpEnabled role='banner'>
+<div class='toolbar-navigation' slot='navigation'>
+<ql-toggle-button animatedToggle="true" expandable="true" for="app-nav" onIcon="menu_open" offIcon="menu" label="Menu" class="always-show" data-tooltip-text="Menu"></ql-toggle-button>
+</div>
+<div class='toolbar-title gs-logo' slot='title'>
+<a class="custom-logo" aria-label="Google Skills" href="/"><div class="custom-logo"><img alt="Google Skills" height="24" aria-label="Google Skills" src="https://cdn.qwiklabs.com/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U%3D" /></div></a>
+
+</div>
+<div class='search-bar tablet-hide' slot='search'><div class='search-bar-container visible-search-header'>
+<form class="header-search-form" action="/catalog" accept-charset="UTF-8" method="get">
+<input aria-autocomplete='list' aria-controls='searchbar-autocomplete-menu-center' aria-expanded='false' autocomplete='off' class='header-search-input' id='searchbar-autocomplete-center' name='keywords' placeholder='What do you want to learn today?' role='combobox'>
+<div class='elevation-3' id='searchbar-autocomplete-loading-icon-center'>
+<ql-spinner></ql-spinner>
+<div class='ql-body-small'>Loading...</div>
+</div>
+<div class='elevation-3' id='searchbar-autocomplete-no-results-center'>
+<div class='ql-body-small'>No results found.</div>
+</div>
+<ul aria-hidden='true' aria-live='polite' class='hide' id='searchbar-autocomplete-menu-center' role='listbox'></ul>
+<ql-icon-button class='search-bar-button search-button' icon='search' label='Search' type='submit'></ql-icon-button>
+</form>
+
+<ql-icon-button class='exit-search-button show-tablet' icon='close' inert label='Exit search'></ql-icon-button>
+</div>
+</div>
+<div class='toolbar-actions' slot='action'>
+
+<ql-icon-button id='control-panel-target' style='display: none;'>
+dashboard
+</ql-icon-button>
+<ql-menu for='control-panel-target' id='control-panel-menu'></ql-menu>
+
+<div class='hide-under-390'>
+<ql-icon-button class='header-search-button show-tablet' data-toggle='tooltip' icon='search' label='Search for Google Skills content' title='Search'></ql-icon-button>
+
+</div>
+<ql-icon-button class='mobile-hide' data-tooltip-text='Help' icon='help_outline' id='help-menu-button' label='Help options'></ql-icon-button>
+<ql-menu for='help-menu-button' id='help-menu'>
+<ql-menu-item data-analytics-action='opened_help' data-analytics-label='lab' label='Help Center' onclick='hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:null},&quot;context&quot;:&quot;lab&quot;})'></ql-menu-item>
+<ql-menu-item href='https://support.google.com/qwiklabs/contact/Google_Skills' label='Contact Us' target='_blank'></ql-menu-item>
+<ql-menu-item href='https://reportingwidget.google.com/widget/54?cid=1&amp;url=https://www.skills.google/focuses/145020?' label='Report Illegal Content'></ql-menu-item>
+</ql-menu>
+
+<ql-icon-button class='mobile-hide' data-tooltip-text='Language' icon='language' id='language' label='Language options'></ql-icon-button>
+<ql-menu for='language'>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ar' href='/focuses/145020?locale=ar&amp;parent=catalog' label='العربية‬‎' lang='ar'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='de' href='/focuses/145020?locale=de&amp;parent=catalog' label='Deutsch' lang='de'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='en' href='/focuses/145020?locale=en&amp;parent=catalog' label='English' lang='en'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='es' href='/focuses/145020?locale=es&amp;parent=catalog' label='español (Latinoamérica)' lang='es'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='fr' href='/focuses/145020?locale=fr&amp;parent=catalog' label='français' lang='fr'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='fr_CA' href='/focuses/145020?locale=fr_CA&amp;parent=catalog' label='français (Canada)' lang='fr-CA'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='he' href='/focuses/145020?locale=he&amp;parent=catalog' label='עברית' lang='he'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='id' href='/focuses/145020?locale=id&amp;parent=catalog' label='bahasa Indonesia' lang='id'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='it' href='/focuses/145020?locale=it&amp;parent=catalog' label='italiano' lang='it'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ja' href='/focuses/145020?locale=ja&amp;parent=catalog' label='日本語' lang='ja'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ko' href='/focuses/145020?locale=ko&amp;parent=catalog' label='한국어' lang='ko'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pl' href='/focuses/145020?locale=pl&amp;parent=catalog' label='polski' lang='pl'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pt_BR' href='/focuses/145020?locale=pt_BR&amp;parent=catalog' label='português (Brasil)' lang='pt-BR'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pt_PT' href='/focuses/145020?locale=pt_PT&amp;parent=catalog' label='português (Portugal)' lang='pt-PT'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ru' href='/focuses/145020?locale=ru&amp;parent=catalog' label='русский' lang='ru'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='tr' href='/focuses/145020?locale=tr&amp;parent=catalog' label='Türkçe' lang='tr'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='uk' href='/focuses/145020?locale=uk&amp;parent=catalog' label='українська' lang='uk'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='zh' href='/focuses/145020?locale=zh&amp;parent=catalog' label='简体中文' lang='zh'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='zh_TW' href='/focuses/145020?locale=zh_TW&amp;parent=catalog' label='繁體中文' lang='zh-TW'></ql-menu-item>
+</ql-menu>
+
+<ql-icon-button aria-expanded='false' aria-haspopup aria-label='More options' class='mobile-show' data-toggle='tooltip' icon='more_vert' id='mobile-more-menu-button' title='More options'></ql-icon-button>
+<ql-menu for='mobile-more-menu-button' id='mobile-more-menu'>
+
+
+<ql-menu-item class='show-under-390 search-submenu' label='Search'></ql-menu-item>
+<ql-menu-item aria-controls='help-submenu' aria-expanded='false' aria-haspopup='true' id='help-submenu-button' label='Help' role='button' tabindex='0'></ql-menu-item>
+<ql-menu-item aria-controls='language-submenu' aria-expanded='false' aria-haspopup='true' id='language-submenu-button' label='Language' role='button' tabindex='0'></ql-menu-item>
+</ql-menu>
+
+<ql-menu class='submenu' for='help-submenu-button' id='help-submenu'>
+<ql-menu-item data-analytics-action='opened_help' data-analytics-label='lab' label='Help Center' onclick='hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:null},&quot;context&quot;:&quot;lab&quot;})'></ql-menu-item>
+<ql-menu-item href='https://support.google.com/qwiklabs/contact/Google_Skills' label='Contact Us' target='_blank'></ql-menu-item>
+<ql-menu-item href='https://reportingwidget.google.com/widget/54?cid=1&amp;url=https%3A%2F%2Fwww.skills.google%2Ffocuses%2F145020%3F' label='Report Illegal Content'></ql-menu-item>
+</ql-menu>
+<ql-menu class='submenu' for='language-submenu-button' id='language-submenu'>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ar' href='/focuses/145020?locale=ar&amp;parent=catalog' label='العربية‬‎' lang='ar' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='de' href='/focuses/145020?locale=de&amp;parent=catalog' label='Deutsch' lang='de' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='en' href='/focuses/145020?locale=en&amp;parent=catalog' label='English' lang='en' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='es' href='/focuses/145020?locale=es&amp;parent=catalog' label='español (Latinoamérica)' lang='es' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='fr' href='/focuses/145020?locale=fr&amp;parent=catalog' label='français' lang='fr' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='fr_CA' href='/focuses/145020?locale=fr_CA&amp;parent=catalog' label='français (Canada)' lang='fr-CA' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='he' href='/focuses/145020?locale=he&amp;parent=catalog' label='עברית' lang='he' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='id' href='/focuses/145020?locale=id&amp;parent=catalog' label='bahasa Indonesia' lang='id' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='it' href='/focuses/145020?locale=it&amp;parent=catalog' label='italiano' lang='it' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ja' href='/focuses/145020?locale=ja&amp;parent=catalog' label='日本語' lang='ja' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ko' href='/focuses/145020?locale=ko&amp;parent=catalog' label='한국어' lang='ko' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pl' href='/focuses/145020?locale=pl&amp;parent=catalog' label='polski' lang='pl' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pt_BR' href='/focuses/145020?locale=pt_BR&amp;parent=catalog' label='português (Brasil)' lang='pt-BR' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='pt_PT' href='/focuses/145020?locale=pt_PT&amp;parent=catalog' label='português (Portugal)' lang='pt-PT' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='ru' href='/focuses/145020?locale=ru&amp;parent=catalog' label='русский' lang='ru' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='tr' href='/focuses/145020?locale=tr&amp;parent=catalog' label='Türkçe' lang='tr' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='uk' href='/focuses/145020?locale=uk&amp;parent=catalog' label='українська' lang='uk' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='zh' href='/focuses/145020?locale=zh&amp;parent=catalog' label='简体中文' lang='zh' role='menuitem'></ql-menu-item>
+<ql-menu-item data-analytics-action='changed_locale' data-analytics-label='zh_TW' href='/focuses/145020?locale=zh_TW&amp;parent=catalog' label='繁體中文' lang='zh-TW' role='menuitem'></ql-menu-item>
+</ql-menu>
+
+<ql-button class='mobile-hide' data-analytics-action='clicked_header_sign_in' data-analytics-actions='[&quot;clicked_header_sign_in&quot;, &quot;navigation&quot;]' data-analytics-button-text='Sign in' data-analytics-label='Sign in' data-analytics-legacy-event-name='clicked_header_sign_in' data-analytics-link-url='/users/sign_in' data-analytics-position='header' data-analytics-type='eventParams' href='/users/sign_in' label='Sign in' text></ql-button>
+<ql-button ariaLabel='Join by creating an account' class='join-btn' data-analytics-action='clicked_header_join' data-analytics-actions='[&quot;clicked_header_join&quot;, &quot;navigation&quot;]' data-analytics-button-text='Join' data-analytics-label='Join' data-analytics-legacy-event-name='clicked_header_join' data-analytics-link-url='/users/sign_up' data-analytics-position='header' data-analytics-type='eventParams' href='/users/sign_up' label='Join'></ql-button>
+<script src='https://accounts.google.com/gsi/client'></script>
+<div data-authenticity_token='aBYsYOWClfyvcy3UO--rLPqDACr7FQmw7CGvOFNgd5AzTKYyCAd_xAv8HxreNYt8YbGg8eJ23MXdwuq2TwGJNA' data-cancel_on_tap_outside='false' data-client_id='1023251155897-tb54g624q9e77gtsrnemgv4c2ihekurv.apps.googleusercontent.com' data-login_uri='/auth/google?tos=false' data-prompt_parent_id='g_id_onload' data-turbo='false' id='g_id_onload'></div>
+
+
+</div>
+</ql-toolbar>
+</div>
+<div class='body-container__inner'>
+<ql-sidenav id='app-nav' items='[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Home&quot;,&quot;icon&quot;:&quot;home&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Home&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Catalog&quot;,&quot;icon&quot;:&quot;book_2&quot;,&quot;active&quot;:true,&quot;href&quot;:&quot;/catalog&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Catalog&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Paths&quot;,&quot;icon&quot;:&quot;conversion_path&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/paths&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Paths&quot;}},{&quot;type&quot;:&quot;dropdown&quot;,&quot;label&quot;:&quot;Collections&quot;,&quot;icon&quot;:&quot;category&quot;,&quot;active&quot;:false,&quot;children&quot;:[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;AI Boost Bites&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/ai-boost-bites&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;AI Boost Bites&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Cloud&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/cloud&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;Cloud&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;DeepMind&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/collections/deepmind&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_collections&quot;,&quot;label&quot;:&quot;DeepMind&quot;}}],&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Collections&quot;}},{&quot;type&quot;:&quot;dropdown&quot;,&quot;label&quot;:&quot;Credentials&quot;,&quot;icon&quot;:&quot;license&quot;,&quot;active&quot;:false,&quot;children&quot;:[{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Certificate&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/certificate&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Certificate&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Skill badge&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/skill_badge&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Skill badge&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Certification&quot;,&quot;icon&quot;:null,&quot;active&quot;:false,&quot;href&quot;:&quot;/credentials/tech_certification&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav_credentials&quot;,&quot;label&quot;:&quot;Certification&quot;}}],&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Credentials&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Subscriptions&quot;,&quot;icon&quot;:&quot;subscriptions&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/subscriptions&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Subscriptions&quot;}},{&quot;type&quot;:&quot;item&quot;,&quot;label&quot;:&quot;Organizations&quot;,&quot;icon&quot;:&quot;corporate_fare&quot;,&quot;active&quot;:false,&quot;href&quot;:&quot;/learningcenter&quot;,&quot;analytics&quot;:{&quot;position&quot;:&quot;application_sidenav&quot;,&quot;label&quot;:&quot;Organizations&quot;}}]'>
+<ql-fab data-analytics-action='login_start' data-analytics-button-text='Sign in' data-analytics-label='Sign in' data-analytics-position='application_sidenav' data-analytics-type='eventParams' expandable href='/users/sign_in' icon='login' label='Sign in' slot='start'></ql-fab>
+</ql-sidenav>
+
+<div class='body-content'>
+<div class='banner'>
+<div id='callout-container'>
+</div>
+
+</div>
+<div class='page-header'>
+<div class='page-main-banner'>
+<div class='page-main-banner-breadcrumbs'>
+<nav aria-label='Breadcrumb' class='breadcrumbs-container' role='navigation'>
+<ol>
+<li class='breadcrumb-item ql-label-medium'>
+<ql-icon-button href='/' icon='home_filled' iconFill></ql-icon-button>
+
+<ql-icon class='breadcrumb-arrow'>navigate_next</ql-icon>
+</li>
+<li class='breadcrumb-item ql-label-medium' tabindex='0'>
+Generate Images with Nano Banana Pro on Agent Platform
+</li>
+</ol>
+</nav>
+
+</div>
+<aside aria-label='Free trial' class='page-main-banner-console-free-trial'>
+<div class='console-free-trial'>
+<p class='console-free-trial-content ql-body-medium'>
+Apply your skills in Google Cloud console
+</p>
+<div class='console-free-trial-actions'>
+<ql-button data-analytics-action='gcp_cta' data-analytics-position='free trial banner' data-analytics-type='eventParams' elevated href='https://console.cloud.google.com/freetrial' label='Get started' target='_blank'></ql-button>
+</div>
+</div>
+</aside>
+</div>
+
+</div>
+<main id='jump-content' tabindex='-1'>
+
+
+
+
+
+<div class='lab-assessment__tab js-open-lab-assessment-panel'>
+<button class='js-lab-assessment-total-score'>
+—/100
+</button>
+</div>
+<div aria-labelledby='lab-assessment-checkpoint' class='lab-assessment__panel js-lab-assessment-panel' role='dialog'>
+<div class='lab-assessment__panel__header'>
+<h4 id='lab-assessment-checkpoint'>Checkpoints</h4>
+<ql-icon-button class='js-close-lab-assessment-panel' icon='arrow_forward' label='Close dialog'></ql-icon-button>
+</div>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Import libraries
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Import libraries' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Import libraries' step_no='1'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-1'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Load the Gemini model
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Load the Gemini model' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Load the Gemini model' step_no='2'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-2'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Text-to-image cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Text-to-image cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Text-to-image cell in notebook' step_no='3'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-3'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run See the thoughts cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run See the thoughts cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run See the thoughts cell in notebook' step_no='4'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-4'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Grounding with search results cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Grounding with search results cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Grounding with search results cell in notebook' step_no='5'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-5'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Image sizes cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Image sizes cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Image sizes cell in notebook' step_no='6'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-6'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Localization cell in notebook.
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Localization cell in notebook.' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Localization cell in notebook.' step_no='7'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-7'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Multi-turn image editing (chat) cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Multi-turn image editing (chat) cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Multi-turn image editing (chat) cell in notebook' step_no='8'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-8'>
+</span>
+/ 15
+</p>
+</div>
+</div>
+
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Multiple reference images cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Multiple reference images cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Multiple reference images cell in notebook' step_no='9'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-9'>
+</span>
+/ 15
+</p>
+</div>
+</div>
+
+</div>
+<ql-drawer-container class='js-lab-state' data-analytics-payload='{&quot;label&quot;:&quot;Generate Images with Nano Banana Pro on Agent Platform&quot;,&quot;lab_name&quot;:&quot;Generate Images with Nano Banana Pro on Agent Platform&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;google-run&quot;}' data-focus-id='145020' data-lab-duration='3600' data-parent='catalog' data-payment-required data-recaptcha-enabled data-recaptcha-error-message='reCAPTCHA verification error. Please refresh and try again.' data-recaptcha-load-error-message='reCAPTCHA could not load. Please disable any ad blockers or privacy extensions and try again.' id='lab-container'>
+<script src="https://www.recaptcha.net/recaptcha/api.js?render=6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr"   ></script>
+        <script>
+          // Define function so that we can call it again later if we need to reset it
+          // This executes reCAPTCHA and then calls our callback.
+          function executeRecaptchaForStartLab() {
+            grecaptcha.ready(function() {
+              grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'}).then(function(token) {
+                setInputWithRecaptchaResponseTokenForStartLab('g-recaptcha-response-data-start-lab', token)
+              });
+            });
+          };
+          // Invoke immediately
+          executeRecaptchaForStartLab()
+
+          // Async variant so you can await this function from another async function (no need for
+          // an explicit callback function then!)
+          // Returns a Promise that resolves with the response token.
+          async function executeRecaptchaForStartLabAsync() {
+            return new Promise((resolve, reject) => {
+             grecaptcha.ready(async function() {
+                resolve(await grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'}))
+              });
+            })
+          };
+
+                  var setInputWithRecaptchaResponseTokenForStartLab = function(id, token) {
+          var element = document.getElementById(id);
+          if (element !== null) element.value = token;
+        }
+
+        </script>
+<input type="hidden" name="g-recaptcha-response-data[start_lab]" id="g-recaptcha-response-data-start-lab" data-sitekey="6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr" class="g-recaptcha g-recaptcha-response "/>
+
+<ql-drawer id='terminal-drawer' slot='drawer'>
+<iframe allow='clipboard-read' class='terminal' id='embedded-resource'></iframe>
+</ql-drawer>
+<ql-drawer-content class='js-lab-wrapper' id='lab-content' slot='drawer-content'>
+<ql-drawer-container id='lab-content-container'>
+<ql-drawer-content id='lab-instructions' slot='drawer-content'>
+<div class='lab-content-container'>
+<div class='alert alert--fake js-alert'>
+<p class='alert__message js-alert-message' role='alert'></p>
+<ql-icon-button class='alert__close js-alert-close' icon='clear'></ql-icon-button>
+<iframe class='l-ie-iframe-fix' tabindex='-1'></iframe>
+</div>
+<div class='lab-content__renderable-instructions js-lab-content'>
+<ql-lab-header chips='[&quot;1 Credit&quot;,&quot;1 hour&quot;,&quot;Introductory&quot;,&quot;Updated 6 days ago&quot;,&quot;ID: GSP1363&quot;]' class='js-lab-control-panel' connectionFiles='[]' currentPoints='0' labContentItems='[{&quot;id&quot;:&quot;step1&quot;,&quot;title&quot;:&quot;GSP1363&quot;},{&quot;id&quot;:&quot;step2&quot;,&quot;title&quot;:&quot;Overview&quot;},{&quot;id&quot;:&quot;step3&quot;,&quot;title&quot;:&quot;Objectives&quot;},{&quot;id&quot;:&quot;step4&quot;,&quot;title&quot;:&quot;Setup and requirements&quot;},{&quot;id&quot;:&quot;step5&quot;,&quot;title&quot;:&quot;Task 1. Open the notebook in Agent Platform Workbench&quot;},{&quot;id&quot;:&quot;step6&quot;,&quot;title&quot;:&quot;Task 2. Get started&quot;},{&quot;id&quot;:&quot;step7&quot;,&quot;title&quot;:&quot;Task 3. Generate images&quot;},{&quot;id&quot;:&quot;step8&quot;,&quot;title&quot;:&quot;Task 4. Edit images&quot;},{&quot;id&quot;:&quot;step9&quot;,&quot;title&quot;:&quot;Congratulations!&quot;}]' labControlButton='{&quot;disabled&quot;:true,&quot;pending&quot;:false,&quot;running&quot;:false}' labDetails='[]' labTimer='{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:3600,&quot;totalDurationSeconds&quot;:3600}' labTitle='Generate Images with Nano Banana Pro on Agent Platform' provisioning='false' provisioningSecondsRemaining='null' studentResources='[]' totalPoints='100'>
+<div aria-live='polite' class='hidden' id='recaptcha-v2-start-lab' slot='recaptcha'>
+<script src="https://www.recaptcha.net/recaptcha/api.js" async defer ></script>
+<div data-sitekey="6LeOI8IUAAAAAPkHlMAE9NReCD_1WD81iYlBlCnV" data-callback="recaptchaComplete" data-expired-callback="expireV2Token" class="g-recaptcha "></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LeOI8IUAAAAAPkHlMAE9NReCD_1WD81iYlBlCnV"
+                    name="ReCAPTCHA"
+                    style="width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Import libraries
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Import libraries' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Import libraries' step_no='1'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-1'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Load the Gemini model
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Load the Gemini model' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Load the Gemini model' step_no='2'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-2'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Text-to-image cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Text-to-image cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Text-to-image cell in notebook' step_no='3'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-3'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run See the thoughts cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run See the thoughts cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run See the thoughts cell in notebook' step_no='4'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-4'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Grounding with search results cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Grounding with search results cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Grounding with search results cell in notebook' step_no='5'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-5'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Image sizes cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Image sizes cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Image sizes cell in notebook' step_no='6'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-6'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Localization cell in notebook.
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Localization cell in notebook.' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Localization cell in notebook.' step_no='7'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-7'>
+</span>
+/ 10
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Multi-turn image editing (chat) cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Multi-turn image editing (chat) cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Multi-turn image editing (chat) cell in notebook' step_no='8'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-8'>
+</span>
+/ 15
+</p>
+</div>
+</div>
+
+</div>
+<div slot='checkpoints'>
+<div class='lab-assessment__step'>
+<p class='lab-assessment__step__title ql-title-small' id='lab-assessment-step-title'>
+Run Multiple reference images cell in notebook
+</p>
+<div class='lab-assessment__step__action'>
+<ql-button aria-label='Check my progress for Run Multiple reference images cell in notebook' class='js-show-run-step-button' data-analytics-action='check_progress_results' data-analytics-position='lab_assessment_panel' description='Run Multiple reference images cell in notebook' step_no='9'>
+Check my progress
+</ql-button>
+<p class='lab-assessment__step__score ql-title-small'>
+<span class='js-assessment-step-score-9'>
+</span>
+/ 15
+</p>
+</div>
+</div>
+
+</div>
+</ql-lab-header>
+
+<div class='lab-preamble__ai_notice'>
+<ql-callout icon='spark' id='ai-notice-33229' severity='info'>
+<div slot='content'>
+This lab may incorporate AI tools to support your learning.
+</div>
+</ql-callout>
+</div>
+<div class='instruction-signed-in-card'>
+<div class='lab-mobile-card card elevation-2'>
+<img src="https://cdn.qwiklabs.com/assets/labs/send_link_image-5f833bd146929134c423c83e4bb520429ce72180.png" />
+<div class='ql-title-large'>This content is not yet optimized for mobile devices.</div>
+<div class='ql-body-large'>For the best experience, please visit us on a desktop computer using a link sent by email.</div>
+<ql-button href='/focuses/145020/resume_on_desktop_email?parent=catalog' icon='link' label='Send link' method='post'></ql-button>
+</div>
+
+</div>
+<div class='markdown-lab-instructions js-markdown-instructions' id='markdown-lab-instructions'>
+
+<h2 id="step1">GSP1363</h2>
+<img alt="Google Cloud self-paced labs" src="https://cdn.qwiklabs.com/dW94pPHsWo4RxbyHDUVE7oyXDZS3QNm40RnYsQ9Mf2o%3D" width="600">
+
+<h2 id="step2">Overview</h2>
+<p>The <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="Nano Banana Pro"></ql-variable> model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities. <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="Nano Banana Pro"></ql-variable> is also able to show its work, allowing you to see the 'thought process' behind the generated output.</p>
+<p>In this lab, you use the <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="Nano Banana Pro"></ql-variable> model in Agent Platform using the Google Gen AI SDK. You explore an image generation scenario and an image editing scenario.</p>
+<h3>Prerequisites</h3>
+<p>Before starting this lab, you should be familiar with:</p>
+<ul>
+<li>Basic Python programming.</li>
+<li>General API concepts.</li>
+<li>Running Python code in a Jupyter notebook on <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/notebooks/workbench/introduction" target="_blank">Agent Platform Workbench</a>.</li>
+</ul>
+
+<h2 id="step3">Objectives</h2>
+<p>You use the Google Gen AI SDK within a Jupyter notebook to do the following:</p>
+<ul>
+<li>Generate images: Create images from text, view the model's reasoning, use search grounding, and adjust aspect ratios.</li>
+<li>Edit images: Modify specific areas (localization), edit via chat (multi-turn), and multiple reference images.</li>
+</ul>
+<ql-infobox>
+<strong>NOTE:</strong> Expect higher latency when using this model compared to Nano Banana as a result of the more advanced capabilities.
+</ql-infobox>
+<h2 id="step4">Setup and requirements</h2>
+<h3>Before you click the Start Lab button</h3>
+<p>Read these instructions. Labs are timed and you cannot pause them. The timer, which starts when you click <strong>Start Lab</strong>, shows how long Google Cloud resources are made available to you.</p>
+<p>This hands-on lab lets you do the lab activities in a real cloud environment, not in a simulation or demo environment. It does so by giving you new, temporary credentials you use to sign in and access Google Cloud for the duration of the lab.</p>
+<p>To complete this lab, you need:</p>
+<ul>
+<li>Access to a standard internet browser (Chrome browser recommended).</li>
+</ul>
+<ql-warningbox>
+<strong>Note:</strong> Use an Incognito (recommended) or private browser window to run this lab. This prevents conflicts between your personal account and the student account, which may cause extra charges incurred to your personal account.
+</ql-warningbox>
+<ul>
+<li>Time to complete the lab—remember, once you start, you cannot pause a lab.</li>
+</ul>
+<ql-warningbox>
+<strong>Note:</strong> Use only the student account for this lab. If you use a different Google Cloud account, you may incur charges to that account.
+</ql-warningbox>
+
+<h3>How to start your lab and sign in to the Google Cloud console</h3>
+<ol>
+<li>
+<p>Click the <strong>Start Lab</strong> button. If you need to pay for the lab, a dialog opens for you to select your payment method.
+On the right is the <strong>Lab setup and access</strong> panel with the following:</p>
+<ul>
+<li>The <strong>Open Google Cloud console</strong> button</li>
+<li>The temporary credentials (username and password) that you must use for this lab</li>
+<li>Other information, if needed, to step through this lab</li>
+</ul>
+<p>Note that the lab timer is located near the top of the page, showing the remaining time.</p>
+</li>
+<li>
+<p>Click <strong>Open Google Cloud console</strong> (or right-click and select <strong>Open Link in Incognito Window</strong> if you are running the Chrome browser).</p>
+<p>The lab spins up resources, and then opens another tab that shows the Sign in page.</p>
+<p><strong><em>Tip:</em></strong> Arrange the tabs in separate windows, side-by-side.</p>
+<ql-infobox>
+<strong>Note: </strong>If you see the <strong>Choose an account</strong> dialog, click <strong>Use Another Account</strong>.        
+ </ql-infobox>
+</li>
+<li>
+<p>If necessary, copy the <strong>Username</strong> below and paste it into the <strong>Sign in</strong> dialog.</p>
+<ql-code-block nowrap templated="">
+ {{{user_0.username | "Username"}}}
+ </ql-code-block>
+<p>You can also find the Username in the <strong>Lab setup and access</strong> panel.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Copy the <strong>Password</strong> below and paste it into the <strong>Welcome</strong> dialog.</p>
+<ql-code-block nowrap templated="">
+ {{{user_0.password | "Password"}}}
+ </ql-code-block>
+<p>You can also find the Password in the <strong>Lab setup and access</strong> panel.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+<ql-infobox>
+<strong>Important: </strong>You must use the credentials the lab provides you. Do not use your Google Cloud account credentials. 
+ </ql-infobox>
+<ql-warningbox>
+<strong>Note: </strong>Using your own Google Cloud account for this lab may incur extra charges.
+ </ql-warningbox>
+</li>
+<li>
+<p>Click through the subsequent pages:</p>
+<ul>
+<li>Accept the terms and conditions.</li>
+<li>Do not add recovery options or two-factor authentication (because this is a temporary account).</li>
+<li>Do not sign up for free trials.</li>
+</ul>
+</li>
+</ol>
+<p>After a few moments, the Google Cloud console opens in this tab.</p>
+<ql-infobox>
+<strong>Note:</strong> To access Google Cloud products and services, click the <strong>Navigation menu</strong> or type the service or product name in the <strong>Search</strong> field.
+<img alt="Navigation menu icon and Search field" src="https://cdn.qwiklabs.com/9Fk8NYFp3quE9mF%2FilWF6%2FlXY9OUBi3UWtb2Ne4uXNU%3D">
+</ql-infobox>
+
+<h2 id="step5">Task 1. Open the notebook in Agent Platform Workbench</h2>
+<ol>
+<li>
+<p>In the Google Cloud console, on the Navigation menu (<img alt="Navigation menu icon" src="https://cdn.qwiklabs.com/tkgw1TDgj4Q%2BYKQUW4jUFd0O5OEKlUMBRYbhlCrF0WY%3D">), click <strong>Agent Platform &gt; Notebooks &gt; Workbench</strong>.</p>
+</li>
+<li>
+<p>Find the <ql-variable key="project_0.startup_script.workbench_name" placeholder="Workbench instance name"></ql-variable> instance and click on the <strong>Open JupyterLab</strong> button.</p>
+</li>
+</ol>
+<p>The JupyterLab interface for your Workbench instance opens in a new browser tab.</p>
+
+<h2 id="step6">Task 2. Get started</h2>
+<p>In this task, you first open the notebook file. You then initialize the notebook's environment by installing the necessary Google Gen AI SDK and importing required Python libraries. It establishes the connection to Agent Platform by configuring the Google Cloud project credentials and initializing the genai client, and finally defines the specific <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable> model version that will be used for the subsequent image generation tasks.</p>
+<h3>Set up the notebook</h3>
+<ol>
+<li>
+<p>Open the <ql-variable disablehighlight="" key="project_0.startup_script.notebook_name" placeholder="notebook name"></ql-variable> file.</p>
+</li>
+<li>
+<p>In the <strong>Select Kernel</strong> dialog, choose <strong>Python 3 (Local)</strong> from the list of available kernels.</p>
+</li>
+<li>
+<p>Run through the <strong>Get started</strong> section of the notebook. The Project ID is pre-configured for you.</p>
+</li>
+</ol>
+<ql-infobox>
+<b>Note:</b> If you experience a 429 response from any of the notebook cell executions, wait one minute before running the cell again to proceed.
+</ql-infobox>
+<h3>Install the Google Gen AI SDK for Python</h3>
+<p>Install the Google Gen AI SDK for Python using the pip command. This library provides the essential tools required to interact with the <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable> model and Agent Platform services throughout the notebook.</p>
+<ul>
+<li>Run through the <strong>Install Google Gen AI SDK for Python</strong> section of the notebook.</li>
+</ul>
+<h3>Import libraries</h3>
+<p>Import the essential Python libraries required to interact with the Agent Platform service and display the generated results. This includes the google-genai client for accessing the model and specific display utilities for rendering images and text directly within the notebook interface.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Import libraries</strong> section to import the required libraries.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="1">
+Install packages and import libraries.
+</ql-activity-tracking></p>
+<h3>Set Google Cloud project information and create the client</h3>
+<p>In this section, you set up your Google Cloud project variables and initialize the Agent Platform client. This step configures your notebook environment to authenticate and communicate with the Agent Platform service using the project ID provided by the lab.</p>
+<h3>Load the Gemini model</h3>
+<p>Define the specific model identifier to be used throughout the lab. This ensures that the notebook interacts with the correct version of the <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable> model for all your image generation and editing tasks.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Load the Gemini model</strong> section to initialize the model variable.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="2">
+Run through the <strong>Load the Gemini model</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h2 id="step7">Task 3. Generate images</h2>
+<p>In this task, you explore the core creation capabilities of <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable>. You learn how to generate images from text prompts while configuring parameters such as aspect ratio and image resolution. You also examine the model's "thought process" to understand its reasoning, and use the Google Search tool to generate images grounded in real-time information, such as weather forecasts.</p>
+<p>Run through the <strong>Generate images</strong> section in the notebook. In this section, you explore text-to-image generation capabilities, view model thoughts, and adjust image sizes.</p>
+<h3>Implement text-to-image</h3>
+<p>In this section, you generate your first image using a text-only prompt. You configure specific settings, such as the aspect ratio, to control the shape and layout of the final visual output.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Implement text-to-image</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="3">
+Run through the <strong>Implement text-to-image</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h3>See the thoughts</h3>
+<p>Here, you examine the internal reasoning of the <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable> model. You view the step-by-step "thought process" the model generates to understand how it interprets your prompt before creating the image.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>See the thoughts</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="4">
+Run through the <strong>See the thoughts</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h3>Ground with search results</h3>
+<p>You can connect the model to real-world information using a Google Search tool. In this section, the model retrieves up-to-date data—such as a weather forecast—and uses it to generate accurate, data-driven visuals.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Ground with search results</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="5">
+Run through the <strong>Ground with search results</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h3>Set image size</h3>
+<p>You can adjust the resolution of the generated output. In this section, you specify a desired quality setting, such as 2K, to control the detail and file size of the resulting image.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Image sizes</strong> section.
+Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="6">
+Run through the <strong>Image sizes</strong> section of the notebook.
+</ql-activity-tracking>
+</li>
+</ul>
+<h2 id="step8">Task 4. Edit images</h2>
+<p>This task demonstrates how to modify existing visual content using the model's multimodal capabilities. You perform specific tasks like "localization" to translate text within an image and use multi-turn chat to iteratively refine an image through conversation. Finally, you learn how to pass multiple reference images to the model to generate new outputs that preserve the style and context of the original inputs.</p>
+<p>Run through the <strong>Image editing</strong> section in the notebook. In this section, you localize text within images and perform multi-turn editing using reference images.</p>
+<h3>Localize image text</h3>
+<p>You can modify text within an existing image. In this section, you upload an image containing text and instruct the model to translate the content into a different language while preserving the original visual design.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Localization</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="7">
+Run through the <strong>Localization</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h3>Perform multi-turn image editing (chat)</h3>
+<p>You can use a chat session to refine an image iteratively. In this section, you start with a base image and issue follow-up commands to change specific details—like colors or objects—without needing to rewrite the entire prompt from scratch.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Multi-turn image editing (chat)</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="8">
+Run through the <strong>Multi-turn image editing (chat)</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h3>Reference multiple images</h3>
+<p>You can provide the model with a collection of reference images to guide the generation process. In this section, the model combines elements and styles from these multiple sources to create a cohesive new scene.</p>
+<ul>
+<li>In the notebook, execute the cells in the <strong>Multiple reference images</strong> section.</li>
+</ul>
+<p>Click <strong>Check my progress</strong> to verify the objective.
+<ql-activity-tracking step="9">
+Run through the <strong>Multiple reference images</strong> section of the notebook.
+</ql-activity-tracking></p>
+<h2 id="step9">Congratulations!</h2>
+<p>You worked with the <ql-variable disablehighlight="" key="project_0.startup_script.gemini_pro_image_model_name" placeholder="model_name"></ql-variable> model in a Jupyter notebook using the Gemini API and Gen AI SDK for Generative AI.</p>
+<h3>Next steps / Learn more</h3>
+<p>Check out the following resources to learn more about Gen AI and the Gemini Enterprise Agent Platform:</p>
+<ul>
+<li>Read the <a href="https://deepmind.google/technologies/gemini/" target="_blank">Google DeepMind Gemini Models Overview</a> to learn about core model capabilities.</li>
+<li>Explore the official <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform" target="_blank">Agent Platform Documentation</a> for design, scaling, and deployment guidelines.</li>
+<li>Review the <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/agents/overview" target="_blank">Agents on Agent Platform Overview</a> to understand how to build and govern custom agents.</li>
+<li>Watch the <a href="https://www.youtube.com/@googlecloudtech/" target="_blank">Generative AI on YouTube playlist</a> for video tutorials and product demos.</li>
+<li>Explore other notebooks and samples in the <a href="https://github.com/GoogleCloudPlatform/generative-ai" target="_blank">Google Cloud Generative AI repository</a>.</li>
+<li>Explore the <a href="https://github.com/google/adk-samples" target="_blank">Google Agent Development Kit (ADK) Samples repository</a> for custom agent templates.</li>
+</ul>
+
+<h3>Google Cloud training and certification</h3>
+<p>...helps you make the most of Google Cloud technologies. <a href="https://cloud.google.com/training" target="_blank">Our classes</a> include technical skills and best practices to help you get up to speed quickly and continue your learning journey. We offer fundamental to advanced level training, with on-demand, live, and virtual options to suit your busy schedule. <a href="https://cloud.google.com/certification/" target="_blank">Certifications</a> help you validate and prove your skill and expertise in Google Cloud technologies.</p>
+
+<p><strong>Manual Last Updated May 22, 2026</strong></p>
+<p><strong>Lab Last Tested January 30, 2026</strong></p>
+<p>Copyright 2026 Google LLC. All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.</p>
+
+
+
+
+
+</div>
+</div>
+
+
+<div class='lab-content__end-lab-button js-end-lab-button-container hidden'>
+<ql-lab-control-button class='js-end-lab-button' running></ql-lab-control-button>
+</div>
+<div class='lab-content__renderable-instructions'>
+
+</div>
+</div>
+</ql-drawer-content>
+</ql-drawer-container>
+</ql-drawer-content>
+</ql-drawer-container>
+
+
+
+</main>
+
+<footer slot='drawer-content'>
+<nav ariaLabel='Footer navigation' class='application-footer relaunch-extra'>
+
+<div class='footer-container'>
+<div class='footer-logo'>
+<a class="custom-logo" aria-label="Google Skills" href="/"><div class="custom-logo"><img alt="Google Skills" height="24" aria-label="Google Skills" src="https://cdn.qwiklabs.com/lqJbxogu4tSLez1OvjDcIO8rwow6cPLwvrfIdmQLf6U%3D" /></div></a>
+</div>
+<div class='footer-row'>
+<a href="/">Home</a>
+<a href="/catalog">Catalog</a>
+<a href="/paths">Paths</a>
+<a href="/subscriptions">Subscriptions</a>
+<a href="/profile/stay_on_track">Activities</a>
+<a href="/profile/badges">Achievements</a>
+<a href="/my_account/profile">Settings</a>
+<a href="/users/sign_in">Sign in or Join</a>
+</div>
+<div class='footer-row'>
+<a class="g-cloud-youtube" target="_blank" rel="noopener" href="https://www.youtube.com/@googlecloud"><ql-icon icon='video_youtube'></ql-icon>
+Youtube
+</a><a rel="noopener" onclick="hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:null},&quot;context&quot;:&quot;lab&quot;}); return false;" href="/help">Help Center</a>
+<a href="/terms_of_service">Terms</a>
+<a target="_blank" href="/privacy_policy">Privacy</a>
+<a aria-hidden='true' class='glue-cookie-notification-bar-control'>
+Manage cookies
+</a>
+</div>
+</div>
+
+</nav>
+</footer>
+</div>
+</div>
+</div>
+
+
+<span class='hidden' id='flash-sibling-before'></span>
+<ql-snackbar></ql-snackbar>
+
+<script data-glue-cookie-notification-bar-category='2A' src='https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js'></script>
+
+
+
+<ql-dialog carousel id='private-mode-modal' noDefaultDismiss showPaginationProgress>
+<div class='page' slot='page'>
+<div class='page-content'>
+<img src="https://cdn.qwiklabs.com/assets/labs/start_lab-f45aca49782d4033c3ff688160387ac98c66941d.png" />
+<div class='page-text'>
+<h1 class='ql-headline-small'>
+Before you begin
+</h1>
+<div class='ql-body-large'>
+<ol>
+  <li>Labs create a Google Cloud project and resources for a fixed time</li>
+  <li>Labs have a time limit and no pause feature. If you end the lab, you'll have to restart from the beginning.</li>
+  <li>On the top left of your screen, click <strong>Start lab</strong> to begin</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class='page' slot='page'>
+<div class='page-content'>
+<img src="https://cdn.qwiklabs.com/assets/labs/open_incognito_window-3ab2004605e88542dd7732361c3fc0e010c7fb6e.png" />
+<div class='page-text'>
+<h1 class='ql-headline-small'>
+Use private browsing
+</h1>
+<div class='ql-body-large'>
+<ol>
+  <li>Copy the provided <strong>Username</strong> and <strong>Password</strong> for the lab</li>
+  <li>Click <strong>Open console</strong> in private mode</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class='page' slot='page'>
+<div class='page-content'>
+<img src="https://cdn.qwiklabs.com/assets/labs/google_sign_in-f9eb84339d08f7db8c5fdfa7ce7726d3531dae80.png" />
+<div class='page-text'>
+<h1 class='ql-headline-small'>
+Sign in to the Console
+</h1>
+<div class='ql-body-large'>
+<ol>
+  <li><strong>Sign in</strong> using your lab credentials. Using other credentials might cause errors or incur charges.</li>
+  <li><strong>Accept</strong> the terms, and skip the recovery resource page</li>
+  <li>Don't click <strong>End lab</strong> unless you've finished the lab or want to restart it, as it will clear your work and remove the project</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</ql-dialog>
+
+<ql-dialog headline='Score Details' icon='task_alt' id='jupyter-feedback-modal'>
+<iframe id='jupyter-feedback-frame' srcdoc='' title='Jupyter Feedback'></iframe>
+</ql-dialog>
+
+<ql-dialog id='lab-notification-dialog' noDefaultAction noDefaultDismiss>
+<img src="https://cdn.qwiklabs.com/assets/lab_enablement_notification/disable_lab-47cff1f6bc3610f58767251ff93c2f99cf4f9040.png" />
+<p class='title ql-headline-4'>This content is not currently available</p>
+<p class='description ql-body-1'>We can notify you via email when it becomes available</p>
+<ql-button href='/focuses/145020/set_up_lab_forward_url?parent=catalog' id='lab-notification-close-button' label='No, thanks' slot='action' text></ql-button>
+<ql-button fill id='lab-notification-submit' label='Yes, notify me' slot='action' text></ql-button>
+</ql-dialog>
+<ql-dialog id='lab-notification-subscribed-dialog' noDefaultAction noDefaultDismiss>
+<img src="https://cdn.qwiklabs.com/assets/lab_enablement_notification/notifcation_subscribed-2b4f9e51439e1a107488ab58a6e13c3c62ef8855.png" />
+<p class='title ql-headline-4'>Great!</p>
+<p class='description ql-body-1'>We can contact you via email if it becomes available</p>
+<ql-button href='/focuses/145020/set_up_lab_forward_url?parent=catalog' id='lab-notification-subscribed-close-button' label='Back to screen' slot='action' text></ql-button>
+</ql-dialog>
+
+<ql-dialog forInnovator id='lab-quota-modal' noDefaultAction>
+<img id="quota-image" class="lab-image-small" src="https://cdn.qwiklabs.com/assets/quota_management/quota_empty-2ba3ec879dea3091828ec9cfa060947292e2c554.png" />
+<p class='title quota-header'>
+<p class='description quota-body'></p>
+<ql-button filled id='close_button' label='Got it' slot='action' text></ql-button>
+</p>
+</ql-dialog>
+<ql-dialog forInnovator id='lab-quota-one-lab-modal' noDefaultAction>
+<img id="quota-image" class="lab-image-medium" src="https://cdn.qwiklabs.com/assets/quota_management/one_lab_quota-77010e9a83e0a6c7543477868b8b808d70222adb.png" />
+<p class='title quota-header'>One lab at a time</p>
+<p class='description quota-body'>Confirm to end all existing labs and start this one</p>
+<ql-button filled id='cancel_button' label='Cancel' onclick='ql.quotaManagementAlert.closeOneLabModal();' slot='action' text></ql-button>
+<ql-button filled id='confirm_button' label='Confirm' slot='action' text></ql-button>
+<script>
+  var quotaEmptyPath = "https://cdn.qwiklabs.com/assets/quota_management/quota_empty-2ba3ec879dea3091828ec9cfa060947292e2c554.png";
+  var quotaWarningOneLeftPath = "https://cdn.qwiklabs.com/assets/quota_management/quota_1_warning-d4669345281d01d38c7a13eed888f72469860ed8.png";
+  var quotaWarningFiveLeftPath = "https://cdn.qwiklabs.com/assets/quota_management/quota_5_warning-4f647be02bcbb65e2bbf18ea19d5493032524116.png";
+</script>
+</ql-dialog>
+
+<ql-dialog id='incorrect-start-lab-modal' noDefaultAction noDefaultDismiss>
+<div class='body'>
+<img src="https://cdn.qwiklabs.com/assets/labs/open_incognito_window-3ab2004605e88542dd7732361c3fc0e010c7fb6e.png" />
+<div class='page-text'>
+<h1 class='ql-headline-small'>
+Use private browsing to run the lab
+</h1>
+<div class='ql-body-large'>
+Using an Incognito or private browser window is the best way to run
+this lab. This prevents any conflicts between your personal account
+and the Student account, which may cause extra charges incurred to
+your personal account.
+</div>
+</div>
+</div>
+<div class='actions'>
+<ql-button id='incorrect-start-lab-modal-cancel' label='Cancel' onclick='document.getElementById(&#39;incorrect-start-lab-modal&#39;).close()' slot='action'></ql-button>
+</div>
+</ql-dialog>
+
+<div class='modal fade' id='lab-details-modal'>
+<div class='modal-container'>
+<div class='modal-content mdl-shadow--24dp'>
+<div class='modal-body'>
+<p class='l-mbm'>
+In this lab, you use Nano Banana Pro, which is a highly capable, generalist, multimodal model. It provides top-tier image generation along with conversational features for editing images.
+</p>
+<p class='small-label l-mbs'>
+<strong>
+Duration:
+</strong>
+4m setup
+&middot;
+60m access
+&middot;
+60m completion
+</p>
+<p class='small-label l-mbs'>
+<strong>AWS Region:</strong>
+[] <strong></strong>
+</p>
+<p class='small-label l-mbs'>
+<span><strong>Levels: </strong>introductory</span>
+</p>
+<p class='small-label'>
+<strong>
+Permalink:
+</strong>
+<a href="https://www.skills.google/catalog_lab/33229">https://www.skills.google/catalog_lab/33229</a>
+</p>
+</div>
+<div class='modal-actions'>
+<a class='button button--text' data-dismiss='modal'>
+Got It
+</a>
+</div>
+
+
+</div>
+</div>
+<iframe class='l-ie-iframe-fix' tabindex='-1' title='modal'></iframe>
+</div>
+
+
+<script>
+  document.addEventListener("turbo:load", function () {
+    ql.initMaterialInputs();
+    ql.tomSelect.init();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    Turbo.session.drive = false;
+    ql.mobileOverflowMenu.init();
+  ql.jumpContent.init();
+  ql.labControlPanel.addRecaptchaErrorHandler();
+  initLabContent();
+  ql.labRedesign.setupRedesignStickyHeader();
+  ql.labRedesign.initRedesignToc();
+  ql.incorrectStartLabModal.init();
+  ql.labAssessment.init({ openPanelAutomatically: true });
+  ql.labLayout.enableResizeLayout();
+  ql.searchHeader.init({isRelaunch: true});
+  (new ql.searchAutocomplete()).init({forHeaderNew: true, topSuggestions: [{"label":"mars, incorporated"},{"label":"cloud architecture"},{"label":"generative ai"},{"label":"data analyst"},{"label":"security fundamentals"}]});
+  ql.mobileOverflowMenu.init();
+  ql.messages.init();
+  ql.jumpContent.init();
+  
+  }, {once: true});
+</script>
+<script>
+  document.addEventListener("turbo:load", () => ql.analyticsV2.init(), {once: true});
+  document.addEventListener("turbo:frame-load", () => ql.analyticsV2.init(), {once: true});
+</script>
+<script>
+  document.addEventListener("turbo:load", function () {
+    ql.celebrations.init({"course_complete":"COURSE COMPLETED","document_complete":"DOCUMENT COMPLETED","experience_label":"Experience points","lab_complete":"LAB COMPLETED","learning_plan_complete":"PATH COMPLETED","lesson_complete":"LESSON COMPLETED","quiz_complete":"QUIZ COMPLETED","video_complete":"VIDEO COMPLETED"});
+    ql.achievements.init();
+  }, {once: true});
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,475 @@
+### CODE
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+### MARKDOWN
+# Gemini 2.5 Flash Image (Nano Banana 🍌) Generation
+
+> **NOTE:** On October 2, 2026, Gemini 2.5 Flash Image will be retired on Gemini Enterprise Agent Platform. After this date, you will be unable to use this model. Please use Gemini 3.1 Flash Image (Nano Banana 2) or Gemini 3 Pro Image (Nano Banana Pro) instead.
+
+<table align="left">
+  <td style="text-align: center">
+    <a href="https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb">
+      <img width="32px" src="https://www.gstatic.com/pantheon/images/bigquery/welcome_page/colab-logo.svg" alt="Google Colaboratory logo"><br> Open in Colab
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://console.cloud.google.com/agent-platform/colab/import/https:%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fgetting-started%2Fintro_gemini_2_5_image_gen.ipynb">
+      <img width="32px" src="https://lh3.googleusercontent.com/JmcxdQi-qOpctIvWKgPtrzZdJJK-J3sWE1RsfjZNwshCFgE_9fULcNpuXYTilIR2hjwN" alt="Google Cloud Colab Enterprise logo"><br> Open in Colab Enterprise
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://console.cloud.google.com/agent-platform/workbench/instances?download_url=https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb">
+      <img width="32px" src="https://storage.googleapis.com/github-repo/workbench-icon.svg" alt="Workbench logo"><br> Open in Workbench
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb">
+      <img width="32px" src="https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-24.svg" alt="GitHub logo"><br> View on GitHub
+    </a>
+  </td>
+</table>
+
+<div style="clear: both;"></div>
+
+<p>
+<b>Share to:</b>
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn logo">
+</a>
+
+<a href="https://bsky.app/intent/compose?text=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky logo">
+</a>
+
+<a href="https://twitter.com/intent/tweet?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg" alt="X logo">
+</a>
+
+<a href="https://reddit.com/submit?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://redditinc.com/hubfs/Reddit%20Inc/Brand/Reddit_Logo.png" alt="Reddit logo">
+</a>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_2_5_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo">
+</a>
+</p>
+
+### MARKDOWN
+| Author |
+| --- |
+| [Katie Nguyen](https://github.com/katiemn) |
+
+### MARKDOWN
+## Overview
+
+Gemini 2.5 Flash Image is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities. This enables you to converse with Gemini and create or edit images with interwoven text.
+
+In this tutorial, you'll learn how to use Gemini 2.5 Flash Image on Agent Platform using the Google Gen AI SDK to try out the following scenarios:
+  - Image generation:
+    - Text-to-image generation
+    - Interleaved image and text sequences
+  - Image editing:
+    - Image-to-image with subject customization and style transfer
+    - Multi-turn image editing with localization
+    - Editing with multiple reference images
+
+### MARKDOWN
+## Get started
+
+### MARKDOWN
+### Install Google Gen AI SDK for Python
+
+### CODE
+%pip install --upgrade --quiet google-genai
+
+### MARKDOWN
+### Authenticate your notebook environment (Colab only)
+
+If you are running this notebook on Google Colab, run the following cell to authenticate your environment.
+
+### CODE
+import sys
+
+if "google.colab" in sys.modules:
+    from google.colab import auth
+
+    auth.authenticate_user()
+
+### MARKDOWN
+### Import libraries
+
+### MARKDOWN
+### Set Google Cloud project information
+
+To get started using Agent Platform, you must have an existing Google Cloud project and [enable the Agent Platform API](https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com).
+
+Learn more about [setting up a project](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects) and a [development environment](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment).
+
+### CODE
+import os
+from io import BytesIO
+
+import matplotlib.image as img
+import matplotlib.pyplot as plt
+import requests
+from IPython.display import Image, Markdown, display
+from PIL import Image as PIL_Image
+from google import genai
+from google.genai.types import FinishReason, GenerateContentConfig, ImageConfig, Part
+
+# fmt: off
+PROJECT_ID = "[your-project-id]"  # @param {type: "string", placeholder: "[your-project-id]", isTemplate: true}
+# fmt: on
+if not PROJECT_ID or PROJECT_ID == "[your-project-id]":
+    PROJECT_ID = str(os.environ.get("GOOGLE_CLOUD_PROJECT"))
+
+LOCATION = "global"
+
+client = genai.Client(enterprise=True, project=PROJECT_ID, location=LOCATION)
+
+### MARKDOWN
+### Load the image model
+
+
+### CODE
+MODEL_ID = "gemini-2.5-flash-image"
+
+### MARKDOWN
+## Image generation
+
+First, you'll send text prompts to Gemini 2.5 Flash Image describing the images you'd like to generate.
+
+
+### MARKDOWN
+### Text to image
+
+In the cell below, you'll call the `generate_content` method and pass in the following arguments:
+
+  - `model`: The ID of the model you want to use.
+  - `contents`: This is your prompt, in this case, a text only user message describing the image to be generated.
+  - `config`: A config for specifying content settings.
+    - `response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list.
+    - `ImageConfig`: Set the `aspect_ratio`. Valid ratios are: "1:1", "3:2", "2:3", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"
+    - `candidate_count`: The number of candidates to generate.
+
+
+All generated images include a [SynthID watermark](https://deepmind.google/technologies/synthid/).
+
+### CODE
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents="a cartoon infographic on flying sneakers",
+    config=GenerateContentConfig(
+        response_modalities=["IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="9:16",
+        ),
+        candidate_count=1,
+    ),
+)
+
+# Check for errors if an image is not generated
+if response.candidates[0].finish_reason != FinishReason.STOP:
+    reason = response.candidates[0].finish_reason
+    raise ValueError(f"Prompt Content Error: {reason}")
+
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Text to image and text
+
+In addition to generating images, Gemini can also create interleaved sequences of images and text.
+
+For example, you could ask the model to generate a recipe for banana bread with images showing different stages of the cooking process. Or, you could ask the model to generate images of different wildflowers with accompanying titles and descriptions.
+
+Let's try out the interleaved text and image functionality by prompting Gemini 2.5 Flash Image to create a tutorial for assembling a peanut butter and jelly sandwich.
+
+You'll notice that in the prompt we ask the model to generate both text and images for each step. This encourages the model to create interleaved text and images. Also, make sure to set `response_modalities=["TEXT", "IMAGE"]` so you'll get both modalities in the response.
+
+### CODE
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents="Create a tutorial explaining how to make a peanut butter and jelly sandwich in three easy steps. For each step, provide a title with the number of the step, an explanation, and also generate an image to illustrate the content. Label each image with the step number but no other words.",
+    config=GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="4:3",
+        ),
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+## Image editing
+
+Gemini 2.5 Flash Image can generate image-to-image outputs from multiple reference images. This is useful for tasks like ensuring character consistency, generating logos, transferring styles, and inserting or removing objects.
+
+### Subject customization
+
+Let's try out a subject customization example by asking Gemini 2.5 Flash Image to create an image of this dog in a pencil sketch style.
+
+
+### MARKDOWN
+#### Download the dog image
+
+The following example uses an image from Cloud Storage. If you prefer to use a different image, you can either change the URL in the `wget` command or, if you have a local file, update the `subject_image` variable in the subsequent step.
+
+### CODE
+!wget https://storage.googleapis.com/cloud-samples-data/generative-ai/image/dog-1.jpg
+
+### CODE
+subject_image = "dog-1.jpg"  # @param {type: 'string'}
+
+# Display the image
+fig, axis = plt.subplots(1, 1, figsize=(6, 12))
+axis.imshow(img.imread(subject_image))
+axis.axis("off")
+plt.show()
+
+### MARKDOWN
+#### Send the request
+
+Since you're including data from a local image in the request, you'll need to include `Part.from_bytes` to the request `contents`.
+
+### CODE
+with open(subject_image, "rb") as f:
+    image = f.read()
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+        Part.from_bytes(
+            data=image,
+            mime_type="image/jpeg",
+        ),
+        "Create a pencil sketch image of this dog wearing a cowboy hat in a western-themed setting.",
+    ],
+    config=GenerateContentConfig(
+        response_modalities=["IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="1:1",
+        ),
+        candidate_count=1,
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Style transfer
+
+In this next example, you'll use the style from a living room to reimagine a kitchen in the same style.
+
+### MARKDOWN
+#### Download the living room image
+
+Again, the following example uses an image from Cloud Storage. If you prefer to use a different image, you can either change the URL in the `wget` command or, if you have a local file, update the `style_image` variable in the subsequent step.
+
+### CODE
+!wget https://storage.googleapis.com/cloud-samples-data/generative-ai/image/living-room.png
+
+### CODE
+style_image = "living-room.png"  # @param {type: 'string'}
+
+# Display the image
+fig, axis = plt.subplots(1, 1, figsize=(6, 12))
+axis.imshow(img.imread(style_image))
+axis.axis("off")
+plt.show()
+
+### MARKDOWN
+#### Send the request
+
+### CODE
+with open(style_image, "rb") as f:
+    image = f.read()
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+        Part.from_bytes(
+            data=image,
+            mime_type="image/png",
+        ),
+        "Using the concepts, colors, and themes from this living room generate a kitchen and dining room with the same aesthetic.",
+    ],
+    config=GenerateContentConfig(
+        response_modalities=["IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="21:9",
+        ),
+        candidate_count=1,
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Multi-turn image editing
+
+In this next section, you supply a starting image and iteratively alter certain aspects of the image by chatting with Gemini 2.5 Flash Image.
+
+
+Rather than using local images in the next example, you'll use images stored in Google Cloud Storage. Run the next step to view the starting image of a perfume bottle. If you'd like to use a different image from Cloud Storage, replace the `perfume_url` and `perfume_uri` below.
+
+### CODE
+perfume_url = (
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/perfume.jpg"
+)
+perfume_uri = "gs://cloud-samples-data/generative-ai/image/perfume.jpg"
+
+
+# Display the image
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+perfume_image = PIL_Image.open(BytesIO(requests.get(perfume_url).content))
+axes[0].imshow(perfume_image)
+for i, ax in enumerate(axes):
+    ax.axis("off")
+plt.show()
+
+### MARKDOWN
+#### Start a chat
+
+In this next step, you'll start a chat so you can continuously edit your images by talking with Gemini. Since you're now using reference images stored in Cloud Storage, you'll use `Part.from_uri` in the `message` content.
+
+### CODE
+chat = client.chats.create(model=MODEL_ID)
+
+response = chat.send_message(
+    message=[
+        Part.from_uri(
+            file_uri=perfume_uri,
+            mime_type="image/jpeg",
+        ),
+        "change the perfume color to a light purple",
+    ],
+    config=GenerateContentConfig(
+        response_modalities=["IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="3:2",
+        ),
+    ),
+)
+
+data = perfume_uri
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+        data = part.inline_data.data
+
+### MARKDOWN
+Now, you'll include the previous image data in a new message in the existing chat, along with a new text prompt, to update the previously generated image. This time, you'll ask to write a word on the perfume bottle, and since Gemini is able to handle different languages, let's ask for the word in French.
+
+### CODE
+response = chat.send_message(
+    message=[
+        Part.from_bytes(
+            data=data,
+            mime_type="image/jpeg",
+        ),
+        "inscribe the word flowers in French on the perfume bottle in a delicate white cursive font",
+    ],
+    config=GenerateContentConfig(
+        response_modalities=["IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="3:2",
+        ),
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Multiple reference images
+
+When editing images with Gemini 2.5 Flash Image, you can also supply multiple input images to create new ones. In this next example, you'll prompt Gemini with an image of a woman and a suitcase. You'll then ask Gemini to combine the objects from these images in order to create a new one. You'll also ask Gemini to supply text to accompany the image.
+
+
+Run the following cell to visualize the starting images stored in Cloud Storage.
+
+### CODE
+person_url = (
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/woman.jpg"
+)
+suitcase_url = (
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/suitcase.png"
+)
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+person_image = PIL_Image.open(BytesIO(requests.get(person_url).content))
+axes[0].imshow(person_image)
+suitcase_image = PIL_Image.open(BytesIO(requests.get(suitcase_url).content))
+axes[1].imshow(suitcase_image)
+for i, ax in enumerate(axes):
+    ax.axis("off")
+plt.show()
+
+### MARKDOWN
+Now, you'll send the request. The only difference from previous image editing calls is that you'll supply multiple `Part.from_uri` instances depending on the number of reference images you have.
+
+### CODE
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+        Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/suitcase.png",
+            mime_type="image/png",
+        ),
+        Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/woman.jpg",
+            mime_type="image/jpeg",
+        ),
+        "Generate an image of the woman pulling the suitcase in an airport. Separately, write a short caption for this image that would be suitable for a social media post.",
+    ],
+    config=GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=ImageConfig(
+            aspect_ratio="9:16",
+        ),
+        candidate_count=1,
+    ),
+)
+
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))

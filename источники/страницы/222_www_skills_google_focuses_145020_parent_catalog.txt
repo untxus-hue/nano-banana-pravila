@@ -1,0 +1,402 @@
+Generate Images with Nano Banana Pro on Agent Platform | Google Skills
+Loading...
+No results found.
+dashboard
+navigate_next
+Generate Images with Nano Banana Pro on Agent Platform
+Apply your skills in Google Cloud console
+—/100
+Checkpoints
+Import libraries
+Check my progress
+/ 10
+Load the Gemini model
+Check my progress
+/ 10
+Run Text-to-image cell in notebook
+Check my progress
+/ 10
+Run See the thoughts cell in notebook
+Check my progress
+/ 10
+Run Grounding with search results cell in notebook
+Check my progress
+/ 10
+Run Image sizes cell in notebook
+Check my progress
+/ 10
+Run Localization cell in notebook.
+Check my progress
+/ 10
+Run Multi-turn image editing (chat) cell in notebook
+Check my progress
+/ 15
+Run Multiple reference images cell in notebook
+Check my progress
+/ 15
+Import libraries
+Check my progress
+/ 10
+Load the Gemini model
+Check my progress
+/ 10
+Run Text-to-image cell in notebook
+Check my progress
+/ 10
+Run See the thoughts cell in notebook
+Check my progress
+/ 10
+Run Grounding with search results cell in notebook
+Check my progress
+/ 10
+Run Image sizes cell in notebook
+Check my progress
+/ 10
+Run Localization cell in notebook.
+Check my progress
+/ 10
+Run Multi-turn image editing (chat) cell in notebook
+Check my progress
+/ 15
+Run Multiple reference images cell in notebook
+Check my progress
+/ 15
+This lab may incorporate AI tools to support your learning.
+This content is not yet optimized for mobile devices.
+For the best experience, please visit us on a desktop computer using a link sent by email.
+GSP1363
+Overview
+The
+model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities.
+is also able to show its work, allowing you to see the 'thought process' behind the generated output.
+In this lab, you use the
+model in Agent Platform using the Google Gen AI SDK. You explore an image generation scenario and an image editing scenario.
+Prerequisites
+Before starting this lab, you should be familiar with:
+Basic Python programming.
+General API concepts.
+Running Python code in a Jupyter notebook on
+Agent Platform Workbench
+.
+Objectives
+You use the Google Gen AI SDK within a Jupyter notebook to do the following:
+Generate images: Create images from text, view the model's reasoning, use search grounding, and adjust aspect ratios.
+Edit images: Modify specific areas (localization), edit via chat (multi-turn), and multiple reference images.
+NOTE:
+Expect higher latency when using this model compared to Nano Banana as a result of the more advanced capabilities.
+Setup and requirements
+Before you click the Start Lab button
+Read these instructions. Labs are timed and you cannot pause them. The timer, which starts when you click
+Start Lab
+, shows how long Google Cloud resources are made available to you.
+This hands-on lab lets you do the lab activities in a real cloud environment, not in a simulation or demo environment. It does so by giving you new, temporary credentials you use to sign in and access Google Cloud for the duration of the lab.
+To complete this lab, you need:
+Access to a standard internet browser (Chrome browser recommended).
+Note:
+Use an Incognito (recommended) or private browser window to run this lab. This prevents conflicts between your personal account and the student account, which may cause extra charges incurred to your personal account.
+Time to complete the lab—remember, once you start, you cannot pause a lab.
+Note:
+Use only the student account for this lab. If you use a different Google Cloud account, you may incur charges to that account.
+How to start your lab and sign in to the Google Cloud console
+Click the
+Start Lab
+button. If you need to pay for the lab, a dialog opens for you to select your payment method.
+On the right is the
+Lab setup and access
+panel with the following:
+The
+Open Google Cloud console
+button
+The temporary credentials (username and password) that you must use for this lab
+Other information, if needed, to step through this lab
+Note that the lab timer is located near the top of the page, showing the remaining time.
+Click
+Open Google Cloud console
+(or right-click and select
+Open Link in Incognito Window
+if you are running the Chrome browser).
+The lab spins up resources, and then opens another tab that shows the Sign in page.
+Tip:
+Arrange the tabs in separate windows, side-by-side.
+Note:
+If you see the
+Choose an account
+dialog, click
+Use Another Account
+.
+If necessary, copy the
+Username
+below and paste it into the
+Sign in
+dialog.
+{{{user_0.username | "Username"}}}
+You can also find the Username in the
+Lab setup and access
+panel.
+Click
+Next
+.
+Copy the
+Password
+below and paste it into the
+Welcome
+dialog.
+{{{user_0.password | "Password"}}}
+You can also find the Password in the
+Lab setup and access
+panel.
+Click
+Next
+.
+Important:
+You must use the credentials the lab provides you. Do not use your Google Cloud account credentials.
+Note:
+Using your own Google Cloud account for this lab may incur extra charges.
+Click through the subsequent pages:
+Accept the terms and conditions.
+Do not add recovery options or two-factor authentication (because this is a temporary account).
+Do not sign up for free trials.
+After a few moments, the Google Cloud console opens in this tab.
+Note:
+To access Google Cloud products and services, click the
+Navigation menu
+or type the service or product name in the
+Search
+field.
+Task 1. Open the notebook in Agent Platform Workbench
+In the Google Cloud console, on the Navigation menu (
+), click
+Agent Platform > Notebooks > Workbench
+.
+Find the
+instance and click on the
+Open JupyterLab
+button.
+The JupyterLab interface for your Workbench instance opens in a new browser tab.
+Task 2. Get started
+In this task, you first open the notebook file. You then initialize the notebook's environment by installing the necessary Google Gen AI SDK and importing required Python libraries. It establishes the connection to Agent Platform by configuring the Google Cloud project credentials and initializing the genai client, and finally defines the specific
+model version that will be used for the subsequent image generation tasks.
+Set up the notebook
+Open the
+file.
+In the
+Select Kernel
+dialog, choose
+Python 3 (Local)
+from the list of available kernels.
+Run through the
+Get started
+section of the notebook. The Project ID is pre-configured for you.
+Note:
+If you experience a 429 response from any of the notebook cell executions, wait one minute before running the cell again to proceed.
+Install the Google Gen AI SDK for Python
+Install the Google Gen AI SDK for Python using the pip command. This library provides the essential tools required to interact with the
+model and Agent Platform services throughout the notebook.
+Run through the
+Install Google Gen AI SDK for Python
+section of the notebook.
+Import libraries
+Import the essential Python libraries required to interact with the Agent Platform service and display the generated results. This includes the google-genai client for accessing the model and specific display utilities for rendering images and text directly within the notebook interface.
+In the notebook, execute the cells in the
+Import libraries
+section to import the required libraries.
+Click
+Check my progress
+to verify the objective.
+Install packages and import libraries.
+Set Google Cloud project information and create the client
+In this section, you set up your Google Cloud project variables and initialize the Agent Platform client. This step configures your notebook environment to authenticate and communicate with the Agent Platform service using the project ID provided by the lab.
+Load the Gemini model
+Define the specific model identifier to be used throughout the lab. This ensures that the notebook interacts with the correct version of the
+model for all your image generation and editing tasks.
+In the notebook, execute the cells in the
+Load the Gemini model
+section to initialize the model variable.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Load the Gemini model
+section of the notebook.
+Task 3. Generate images
+In this task, you explore the core creation capabilities of
+. You learn how to generate images from text prompts while configuring parameters such as aspect ratio and image resolution. You also examine the model's "thought process" to understand its reasoning, and use the Google Search tool to generate images grounded in real-time information, such as weather forecasts.
+Run through the
+Generate images
+section in the notebook. In this section, you explore text-to-image generation capabilities, view model thoughts, and adjust image sizes.
+Implement text-to-image
+In this section, you generate your first image using a text-only prompt. You configure specific settings, such as the aspect ratio, to control the shape and layout of the final visual output.
+In the notebook, execute the cells in the
+Implement text-to-image
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Implement text-to-image
+section of the notebook.
+See the thoughts
+Here, you examine the internal reasoning of the
+model. You view the step-by-step "thought process" the model generates to understand how it interprets your prompt before creating the image.
+In the notebook, execute the cells in the
+See the thoughts
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+See the thoughts
+section of the notebook.
+Ground with search results
+You can connect the model to real-world information using a Google Search tool. In this section, the model retrieves up-to-date data—such as a weather forecast—and uses it to generate accurate, data-driven visuals.
+In the notebook, execute the cells in the
+Ground with search results
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Ground with search results
+section of the notebook.
+Set image size
+You can adjust the resolution of the generated output. In this section, you specify a desired quality setting, such as 2K, to control the detail and file size of the resulting image.
+In the notebook, execute the cells in the
+Image sizes
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Image sizes
+section of the notebook.
+Task 4. Edit images
+This task demonstrates how to modify existing visual content using the model's multimodal capabilities. You perform specific tasks like "localization" to translate text within an image and use multi-turn chat to iteratively refine an image through conversation. Finally, you learn how to pass multiple reference images to the model to generate new outputs that preserve the style and context of the original inputs.
+Run through the
+Image editing
+section in the notebook. In this section, you localize text within images and perform multi-turn editing using reference images.
+Localize image text
+You can modify text within an existing image. In this section, you upload an image containing text and instruct the model to translate the content into a different language while preserving the original visual design.
+In the notebook, execute the cells in the
+Localization
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Localization
+section of the notebook.
+Perform multi-turn image editing (chat)
+You can use a chat session to refine an image iteratively. In this section, you start with a base image and issue follow-up commands to change specific details—like colors or objects—without needing to rewrite the entire prompt from scratch.
+In the notebook, execute the cells in the
+Multi-turn image editing (chat)
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Multi-turn image editing (chat)
+section of the notebook.
+Reference multiple images
+You can provide the model with a collection of reference images to guide the generation process. In this section, the model combines elements and styles from these multiple sources to create a cohesive new scene.
+In the notebook, execute the cells in the
+Multiple reference images
+section.
+Click
+Check my progress
+to verify the objective.
+Run through the
+Multiple reference images
+section of the notebook.
+Congratulations!
+You worked with the
+model in a Jupyter notebook using the Gemini API and Gen AI SDK for Generative AI.
+Next steps / Learn more
+Check out the following resources to learn more about Gen AI and the Gemini Enterprise Agent Platform:
+Read the
+Google DeepMind Gemini Models Overview
+to learn about core model capabilities.
+Explore the official
+Agent Platform Documentation
+for design, scaling, and deployment guidelines.
+Review the
+Agents on Agent Platform Overview
+to understand how to build and govern custom agents.
+Watch the
+Generative AI on YouTube playlist
+for video tutorials and product demos.
+Explore other notebooks and samples in the
+Google Cloud Generative AI repository
+.
+Explore the
+Google Agent Development Kit (ADK) Samples repository
+for custom agent templates.
+Google Cloud training and certification
+...helps you make the most of Google Cloud technologies.
+Our classes
+include technical skills and best practices to help you get up to speed quickly and continue your learning journey. We offer fundamental to advanced level training, with on-demand, live, and virtual options to suit your busy schedule.
+Certifications
+help you validate and prove your skill and expertise in Google Cloud technologies.
+Manual Last Updated May 22, 2026
+Lab Last Tested January 30, 2026
+Copyright 2026 Google LLC. All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
+Home
+Catalog
+Paths
+Subscriptions
+Activities
+Achievements
+Settings
+Sign in or Join
+Youtube
+Help Center
+Terms
+Privacy
+Manage cookies
+Before you begin
+Labs create a Google Cloud project and resources for a fixed time
+Labs have a time limit and no pause feature. If you end the lab, you'll have to restart from the beginning.
+On the top left of your screen, click
+Start lab
+to begin
+Use private browsing
+Copy the provided
+Username
+and
+Password
+for the lab
+Click
+Open console
+in private mode
+Sign in to the Console
+Sign in
+using your lab credentials. Using other credentials might cause errors or incur charges.
+Accept
+the terms, and skip the recovery resource page
+Don't click
+End lab
+unless you've finished the lab or want to restart it, as it will clear your work and remove the project
+This content is not currently available
+We can notify you via email when it becomes available
+Great!
+We can contact you via email if it becomes available
+One lab at a time
+Confirm to end all existing labs and start this one
+Use private browsing to run the lab
+Using an Incognito or private browser window is the best way to run
+this lab. This prevents any conflicts between your personal account
+and the Student account, which may cause extra charges incurred to
+your personal account.
+In this lab, you use Nano Banana Pro, which is a highly capable, generalist, multimodal model. It provides top-tier image generation along with conversational features for editing images.
+Duration:
+4m setup
+·
+60m access
+·
+60m completion
+AWS Region:
+[]
+Levels:
+introductory
+Permalink:
+https://www.skills.google/catalog_lab/33229
+Got It

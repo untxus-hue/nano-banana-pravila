@@ -1,0 +1,166 @@
+Agent Factory Recap: Antigravity and Nano Banana Pro with Remik | Google Cloud Blog
+Jump to Content
+Cloud
+Blog
+Contact sales
+Get started for free
+Cloud
+Blog
+Solutions & technology
+AI & Machine Learning
+API Management
+Application Development
+Application Modernization
+Chrome Enterprise
+Compute
+Containers & Kubernetes
+Data Analytics
+Databases
+DevOps & SRE
+Maps & Geospatial
+Security
+Security & Identity
+Threat Intelligence
+Infrastructure
+Infrastructure Modernization
+Networking
+Productivity & Collaboration
+SAP on Google Cloud
+Storage & Data Transfer
+Sustainability
+Ecosystem
+IT Leaders
+Industries
+Financial Services
+Healthcare & Life Sciences
+Manufacturing
+Media & Entertainment
+Public Sector
+Retail
+Supply Chain
+Telecommunications
+Partners
+Startups & SMB
+Training & Certifications
+Inside Google Cloud
+Google Cloud Next & Events
+Google Cloud Consulting
+Google Maps Platform
+Google Workspace
+Developers & Practitioners
+Transform with Google Cloud
+Contact sales
+Get started for free
+Developers & Practitioners
+Agent Factory Recap: Antigravity and Nano Banana Pro with Remik
+January 22, 2026
+Vlad Kolesnikov
+Developer Relations Engineer
+Remigiusz Samborski
+Lead Developer Relations Engineer
+In Episode #17 of the
+Agent Factory podcast
+, we step away from the purely theoretical and get our hands dirty with the latest developer tools from Google. Together with Vlad, we take a deep dive into Antigravity and Nano Banana Pro, demonstrating how to build AI agents that bridge the gap between code generation and high-fidelity media.
+This post guides you through the
+key ideas
+from our conversation. Use it to quickly recap topics or dive deeper into specific segments with
+links and timestamps
+.
+Antigravity - a new agentic mission control
+Timestamp:
+02:02
+Antigravity
+is Google’s new agent-first development application. It is designed as a multi-window IDE that uses
+Gemini 3
+under the hood to manage complex, asynchronous coding tasks. Unlike a standard text editor, Antigravity features a dedicated Agent Manager view where developers can interact with agents through planning modes, artifact reviews, and built-in browsers for live UI testing.
+Nano Banana Pro and why it’s so special
+Timestamp:
+03:47
+The model behind our slide generator is Nano Banana Pro (the technical name is Gemini 3 Pro Image model). What sets Nano Banana Pro apart is its ability to "think" before it creates. It uses
+Google Search grounding
+to retrieve real-time data, like current weather or live stock charts, and integrates that information into the generated image.
+The Factory Floor
+The Factory Floor is our segment for getting hands-on. Here, we moved from high-level concepts to practical code with live demos.
+Agent Architecture
+Timestamp:
+06:41
+We dove into the architecture for building the slide generator agent using a combination of the
+Agent Development Kit (ADK)
+,
+Antigravity
+, and
+Nano Banana Pro
+. Moreover we explained how these components interconnect to support the flow from a user prompt to a high-fidelity presentation by leveraging a Model Context Protocol (MCP) server.
+Agent Starter Pack
+Timestamp:
+10:04
+We started by introducing
+Agent Starter Pack
+and using it to spin up a new ADK project.
+Vibe Coding a Slide Generator Agent
+Timestamp:
+14:56
+Using Antigravity’s "Always Review" mode, we submitted a prompt to build a completely new slides agent which will use a
+MCP server
+to create detailed images.
+We highlighted how Antigravity handles tasks and implementation plan reviews, allowing the developer to modify the agent's proposed steps before it executes them. We also dove into automated testing with Antigravity’s web browser plugin functionality.
+Results
+Timestamp:
+32:25
+The slides generator agent successfully called the MCP tools to generate a series of images stored in a Cloud Storage bucket, presenting the final links directly in the UI. Antigravity reviewed the results and to our surprise immediately suggested additional improvements.
+Conclusion
+We are moving into an era where building an agent isn't just about the LLM; it's about the orchestration of tools, planning, and high-fidelity output. Antigravity is our agent manager and Nano Banana Pro acts as an asset creator.
+We can’t wait to see what our viewers create next with these powerful tools!
+Resources and links
+Antigravity →
+https://goo.gle/3XMvGwf
+Nano Banana Pro →
+https://goo.gle/3KMmKUG
+Agent starter pack →
+https://goo.gle/4oLfypT
+Agent Development Kit (Python) →
+https://goo.gle/4p0Pszm
+GitHub with demo code →
+https://goo.gle/48N83IN
+Connect with us
+Remik →
+LinkedIn
+,
+X
+,
+GitHub
+Vlad →
+LinkedIn
+,
+X
+,
+GitHub
+Posted in
+Developers & Practitioners
+Related articles
+Developers & Practitioners
+A guide to speeding up your video processing with AlphaEvolve
+By Anant Nawalgaria • 6-minute read
+Developers & Practitioners
+The DevFest Community Workshop Experience: Building Real Agents Together
+By Christina Lin • 3-minute read
+Developers & Practitioners
+Best practices for handling cloud reliability incidents
+By Flemming Christensen • 14-minute read
+Developers & Practitioners
+Introducing the Google Cloud Developer Plugin for AI Coding Agents
+By Jonathan Lee • 5-minute read
+Footer Links
+Follow us
+Google Cloud
+Google Cloud Products
+Privacy
+Terms
+Cookies management controls
+Help
+Language
+‪English‬
+‪Deutsch‬
+‪Français‬
+‪한국어‬
+‪日本語‬

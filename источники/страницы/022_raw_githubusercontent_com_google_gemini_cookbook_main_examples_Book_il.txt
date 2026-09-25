@@ -1,0 +1,1152 @@
+### MARKDOWN ###
+##### Copyright 2026 Google LLC.
+
+### CODE ###
+# @title Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+### MARKDOWN ###
+# Illustrating a book using Nano Banana and genMedia models
+
+### MARKDOWN ###
+<a target="_blank" href="https://colab.research.google.com/github/google-gemini/cookbook/blob/main/examples/Book_illustration.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=30/></a>
+
+### MARKDOWN ###
+In this guide, you are going to use multiple Gemini features (long context, multimodality, structured output, file API, chat mode...) in conjunction with the [Nano Banana](../quickstarts/Get_Started_Nano_Banana.ipynb) image generation model to illustrate a book.
+
+You will also explore how to bring your illustrations to life with:
+- 🎬 **[Veo](../quickstarts/Get_started_Veo.ipynb)** — Animate a chapter illustration into a short video
+- 🎵 **[Lyria 3.5](../quickstarts/Get_started_Lyria.ipynb)** — Generate instrumental background music for each chapter
+- 🗣️ **[TTS](../quickstarts/Get_started_TTS.ipynb)** — Have a narrator read the opening of a chapter aloud
+
+Each concept will be explained along the way, but if you need a simpler introduction to Gemini Image generation model, check the [getting started](../quickstarts/Get_Started_Nano_Banana.ipynb) notebook, or the [Image generation documentation](https://ai.google.dev/gemini-api/docs/image-generation).
+
+Note: for the sake of the notebook's size (and your billing if you run it), the number of images has been limited to 3 characters and 3 chapters each time, but feel free to remove the limitation if you want more with your own experimentations.
+
+Also note that this notebook used to use [Imagen](https://ai.google.dev/gemini-api/docs/imagen) models instead of Nano Banana. If you are interested in the Imagen version, checked-out this [old version](../../c604f672f621186f609b1d977a918250eaca19f2/examples/Book_illustration.ipynb).
+
+### MARKDOWN ###
+> **Note:** [Enable billing](https://ai.google.dev/gemini-api/docs/billing#enable-cloud-billing) to use Image Generation. This is a pay-as-you-go feature (cf. [pricing](https://ai.google.dev/pricing#gemini-2.5-flash-image-preview)). This does **not** apply if you use `gemini-2.5-flash-image` (Nano Banana) which has a free tier.
+>
+> This notebook also includes optional sections for **Video generation** ([Veo](../quickstarts/Get_started_Veo.ipynb)), **Music generation** ([Lyria 3.5](../quickstarts/Get_started_Lyria.ipynb)), and **Text-to-Speech** ([TTS](../quickstarts/Get_started_TTS.ipynb)) which are all paid features. Each has its own opt-in checkbox that you need to enable before running.
+
+### MARKDOWN ###
+## 0/ Setup
+
+This section install the SDK, set it up using your [API key](../quickstarts/Authentication.ipynb), imports the relevant libs, downloads the sample videos and upload them to Gemini.
+
+Just collapse (click on the little arrow on the left of the title) and run this section if you want to jump straight to the examples (just don't forget to run it otherwise nothing will work).
+
+### MARKDOWN ###
+### Setup your API key
+
+To run the following cell, your API key must be stored it in a Colab Secret named `GEMINI_API_KEY`. If you don't already have an API key, or you're not sure how to create a Colab Secret, see [Authentication ![image](https://storage.googleapis.com/generativeai-downloads/images/colab_icon16.png)](../quickstarts/Authentication.ipynb) for an example.
+
+### CODE ###
+from google.colab import userdata
+
+GEMINI_API_KEY=userdata.get('GEMINI_API_KEY')
+
+### MARKDOWN ###
+### Install SDK
+
+### CODE ###
+%pip install -U -q "google-genai>=2.24.0"  # 2.24+ for interactions API
+
+### MARKDOWN ###
+### Initialize SDK client
+
+With the new SDK you now only need to initialize a client with you API key (or OAuth if using [Vertex AI](https://link_to_vertex_AI)). The model is now set in each call.
+
+### CODE ###
+from google import genai
+from google.genai import types
+
+client = genai.Client(
+    api_key=GEMINI_API_KEY,
+    http_options=types.HttpOptions(
+        retry_options=types.HttpRetryOptions(
+            attempts=5,
+            initial_delay=2.0,
+            max_delay=60.0,
+            http_status_codes=[429, 500, 502, 503, 504]
+        )
+    )
+)
+
+### MARKDOWN ###
+### Imports
+
+Some imports to display markdown text and images in Colab.
+
+### CODE ###
+import json
+from PIL import Image
+from IPython.display import display, Markdown
+
+### MARKDOWN ###
+### Select models
+
+Select the models you qre going to use and confirm that you are aware that some of those models don't have a free tier, so running the notebook might cost you a bit.
+
+You can also use the [`priority` service tier](https://ai.google.dev/gemini-api/docs/priority-inference) to be certain your requests will go through (but be careful, it means they will be twice as expensive).
+
+### CODE ###
+IMAGE_MODEL_ID = "gemini-3.1-flash-lite-image"  # @param ["gemini-3-pro-image-preview", "gemini-3.1-flash-image-preview", "gemini-3.1-flash-lite-image", "gemini-2.5-flash-image"] {"allow-input": true, "isTemplate": true}
+GEMINI_MODEL_ID = "gemini-3.8-flash"  # @param ["gemini-3.1-pro-preview", "gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-pro"] {"allow-input": true, "isTemplate": true}
+
+# Models for optional paid features (Veo, Lyria, TTS)
+LYRIA_MODEL_ID = "lyria-3.5"  # @param ["lyria-3.5", "lyria-3-clip-preview"] {"allow-input": true, "isTemplate": true}
+TTS_MODEL_ID = "gemini-3.8-flash-tts"  # @param ["gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts"] {"allow-input": true, "isTemplate": true}
+
+# These optional sections are all paid - toggle them on if you want to run them
+I_understand_this_is_a_paid_API = False  # @param {"type": "boolean"}
+service_tier = "standard"  # @param ["flex","standard","priority"]
+
+### MARKDOWN ###
+For the sake of the notebook's size (and your billing if you run it), the number of images has been limited to 5 characters and 3 chapters each time, but feel free to remove the limitation if you want more with your own experimentations.
+
+### CODE ###
+max_character_images = 5 # @param {type:"integer",isTemplate: true, min:1}
+max_chapter_images = 3 # @param {type:"integer",isTemplate: true, min:1}
+
+### MARKDOWN ###
+# Illustrate a book: The Wind in the Willows
+
+### MARKDOWN ###
+## 1/ Get a book and upload using the File API
+
+Start by downloading a book from the open-source [Project Gutenberg](https://www.gutenberg.org) library. For example, it can be [The Wind in the Willows](https://en.wikipedia.org/wiki/The_Wind_in_the_Willows) from Kenneth Grahame.
+
+The file API (`client.files.upload`) are used to upload the file so that Gemini can easily access it.
+
+### CODE ###
+import requests
+
+url = "https://www.gutenberg.org/cache/epub/289/pg289.txt"  # @param {type:"string"}
+
+response = requests.get(url)
+with open("book.txt", "wb") as file:
+    file.write(response.content)
+
+book = client.files.upload(file="book.txt")
+
+
+### MARKDOWN ###
+Let's also define some more instructions which will act as "system instructions" or a negative prompt to tell the model what you do not want to see (text on the images).
+
+### CODE ###
+system_instructions = """
+  There must be no text on the image, it should not look like a cover page.
+  It should be an full illustration with no borders, titles, nor description.
+  Unless asked otherwise, stay family-friendly with uplifting colors.
+  Each produced should be a simple image, no panels.
+"""
+
+### MARKDOWN ###
+## 2/ Start the chat
+
+You are going to chain interactions via their IDs here so that Gemini will keep the history of what you asked it, and also so that you don't have to send it the book every time. More details on chat mode in the [Get Started](https://colab.sandbox.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Get_started.ipynb#chat) notebook.
+
+You should also define the format of the output you want using [structured output](https://ai.google.dev/gemini-api/docs/structured-output?lang=python#generate-json). You will mainly use Gemini to generate prompts so let's define a Pydantic model with two fields, a name and a prompt:
+
+### CODE ###
+from pydantic import BaseModel
+
+class Prompt(BaseModel):
+    name: str
+    prompt: str
+
+
+### MARKDOWN ###
+`client.interactions.create` starts the chat and defines its main parameters (model and the output you want).
+
+### CODE ###
+# Start the conversation with the book content
+book_interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input=[
+        {"type": "text", "text": "Here's a book, to illustrate using Nano Banana. Don't say anything for now, instructions will follow."},
+        {"type": "document", "uri": book.uri},
+    ],
+    service_tier=service_tier,
+)
+
+
+### MARKDOWN ###
+The first message sent to the model is just to give it a bit of context ("*to illustrate using Nano Banana*"), and more importantly give it the book.
+
+It could have been done during the next step, especially since you're not interested in what the model has to say this time, but splitting the two steps makes it clearer.
+
+### MARKDOWN ###
+## 3/ Define a style
+
+If you want to test a specific style, just write it down and Gemini will use it. Still, tell Gemini about it so it will adapt the prompts it will generate accordingly.
+
+If you prefer to let Gemini choose the best style for the book, leave the style empty and ask Gemini to define a style fitting to the book.
+
+### CODE ###
+style = "" # @param {type:"string", "placeholder":"Write your own style or leave empty to let Gemini generate one"}
+
+if style=="":
+  style_interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input="Can you define a art style that would fit the story but with a twist? Just give us the prompt for the art syle that will added to the furture prompts.",
+      previous_interaction_id=book_interaction.id,
+      service_tier=service_tier,
+  )
+  last_interaction = style_interaction
+  style = style_interaction.output_text
+else:
+  style_interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input=f'The art style will be:"{style}". Keep that in mind when generating future prompts. Keep quiet for now, instructions will follow.',
+      previous_interaction_id=book_interaction.id,
+      service_tier=service_tier,
+  )
+  last_interaction = style_interaction
+
+display(Markdown(f"### Style:"))
+print(style)
+
+style = f'Follow this style: "{style}" '
+
+
+### MARKDOWN ###
+## 4/ Generate portraits of the main characters
+
+You are now ready to start generating images, starting with the main characters.
+
+Ask Gemini to describe each of the main characters (excluding children as Nano Banana can't generate images of them in EEA) and check that the output follows the format requested.
+
+### CODE ###
+characters_prompts_interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input="Can you describe the main characters (only the adults) and prepare a prompt describing them with as much details as possible (use the descriptions from the book) so Nano Banana can generate images of them? Each prompt should be at least 50 words.",
+    previous_interaction_id=style_interaction.id,
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Prompt.model_json_schema()},
+    },
+    service_tier=service_tier,
+)
+last_interaction = characters_prompts_interaction
+
+characters = json.loads(characters_prompts_interaction.output_text)
+
+print(json.dumps(characters, indent=4))
+
+
+### MARKDOWN ###
+Now that you have the prompts, you just need to loop on all the characters and have Nano Banana generate an image for them. This model uses the same API as the text generation models.
+
+Like before, for the sake of consistency, you are going to use chat mode, but within a different instance.
+
+For an extensive explanation on the Nano Banana model and its options, check the [getting started with Nano Banana](../quickstarts/Get_Started_Nano_Banana.ipynb) notebook. But here's a quick overview of what being used here:
+* `prompt` is the prompt passed down to Nano Banana. You're not just sending what Gemini has generate to describe the chacaters but also our style and our system instructions.
+* `response_modalities=['Image']` because you only want images
+* `aspect_ratio="9:16"` because you want portraits images
+
+Note that you could have used system instructions but the model currently ignores them, so they are passed as a message instead.
+
+### CODE ###
+# TODO: try using the last interaction (characters_prompts_interaction)
+
+### CODE ###
+character_images = []
+last_image_interaction = None
+
+# Set up the image generation context
+# TODO: do we need the first turn?
+characters_image_interaction = client.interactions.create(
+    model=IMAGE_MODEL_ID,
+    input=f"""
+      You are going to generate portrait images to illustrate The Wind in the Willows from Kenneth Grahame.
+      The style we want you to follow is: {style}
+      Also follow those rules: {system_instructions} # TODO: Sysyem instructions
+    """,
+    service_tier=service_tier,
+)
+
+for character in characters[:max_character_images]:
+  display(Markdown(f"### {character['name']}"))
+  display(Markdown(character['prompt']))
+
+  characters_image_interaction = client.interactions.create(
+      model=IMAGE_MODEL_ID,
+      input=f"Create an illustration for {character['name']} following this description: {character['prompt']}",
+      previous_interaction_id=characters_image_interaction.id,
+      service_tier=service_tier,
+  )
+
+  # Extract image from interaction steps
+  # TODO: try output_image
+  generated_image = None
+  for step in reversed(characters_image_interaction.steps):
+      if step.type == "model_output" and step.content:
+          for content in reversed(step.content):
+              if content.type == "image":
+                  generated_image = content
+                  break
+          if generated_image:
+              break
+
+  if generated_image:
+      from IPython.display import display as disp, HTML
+      import base64
+      img_html = f'<img src="data:{generated_image.mime_type};base64,{generated_image.data}" style="max-width:512px" />'
+      disp(HTML(img_html))
+  else:
+      print(f"No image generated for {character['name']}")
+
+  character_images.append(generated_image)
+
+last_image_interaction = characters_image_interaction
+# Be careful; long output (see below)
+
+
+### MARKDOWN ###
+## 5/ Illustrate the chapters of the book
+
+After the characters, it's now time to create illustrations for the content of the book. You are going to ask Gemini to generate prompts for each chapter and then ask Nano Banana to generate images based on those prompts.
+
+### CODE ###
+chapters_prompts_interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input="Now, for each chapters of the book, give me a prompt to illustrate what happens in it. It should be a single image, not a multi-tiled page. Be very descriptive, especially of the characters. Be very descriptive and remember to tell their name and to reuse the character prompts if they appear in the images. Also list all characters who appear in it.",
+    previous_interaction_id=characters_prompts_interaction.id,
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Prompt.model_json_schema()},
+    },
+    service_tier=service_tier,
+)
+last_interaction = chapters_prompts_interaction
+
+chapters = json.loads(chapters_prompts_interaction.steps[-1].content[0].text)[:max_chapter_images]
+
+print(json.dumps(chapters, indent=4))
+
+
+### CODE ###
+chapters_image_interaction = client.interactions.create(
+    model=IMAGE_MODEL_ID,
+    input="Starting from now, we're going to illustrate the book's chapters. Don't forget to refer to your previous illustrations of the characters to keep the characters consistency, but feel free to change their position.",
+    previous_interaction_id=last_image_interaction.id,
+    service_tier=service_tier,
+)
+last_image_interaction = chapters_image_interaction
+
+for chapter in chapters:
+  display(Markdown(f"### {chapter['name']}"))
+  display(Markdown(chapter['prompt']))
+
+  chapters_image_interaction = client.interactions.create(
+      model=IMAGE_MODEL_ID,
+      input=f"Create an illustration for {chapter['name']} using the previously generated characters following this description: {chapter['prompt']}",
+      previous_interaction_id=last_image_interaction.id,
+      service_tier=service_tier,
+  )
+  last_image_interaction = chapters_image_interaction
+
+  # TODO: use output_image?
+  for step in reversed(chapters_image_interaction.steps):
+      if step.type == "model_output" and step.content:
+          for content in reversed(step.content):
+              if content.type == "image":
+                  generated_image = content
+                  from PIL import Image as PILImage
+                  import io, base64
+                  img = PILImage.open(io.BytesIO(base64.b64decode(content.data)))
+                  display(img)
+                  break
+          break
+
+# Be careful; long output (see below)
+
+
+### MARKDOWN ###
+### Bonus: Going further with more granular control
+
+If you have a lot of characters, want to make sure the model is using the right references, you can ask it to list all characters present in each chapter image so that you can pass only those characters's images to the model. This would also work if you have reccuring locations, items, etc...
+
+### CODE ###
+class Chapter(BaseModel):
+    name: str
+    prompt: str
+    characters: list[str]
+
+### CODE ###
+chapters_prompts_interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input="Now, for each chapters of the book, give me a prompt to illustrate what happens in it. Be very descriptive, especially of the characters. Be very descriptive and remember to tell their name and to reuse the character prompts if they appear in the images. Also list all characters who appear in it.",
+    previous_interaction_id=characters_prompts_interaction.id,
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Chapter.model_json_schema()},
+    },
+    service_tier=service_tier,
+)
+last_interaction = chapters_prompts_interaction
+
+chapters = json.loads(chapters_prompts_interaction.steps[-1].content[0].text)[:max_chapter_images]
+
+print(json.dumps(chapters, indent=4))
+
+
+### CODE ###
+# @title Character ref image finder { display-mode: "form" }
+import base64
+from typing import List
+from google.genai import types
+
+def get_character_references_images(
+    requested_character_names: List[str]
+) -> List:
+    """
+    Takes a list of character names and returns a flattened list of
+    character images ready to be fed into Gemini's send_message as content parts,
+    using the global 'characters' and 'character_images' variables.
+
+    Args:
+        requested_character_names: A list of strings, where each string is a character's name.
+
+    Returns:
+        A list of image objects for the requested characters.
+    """
+    gemini_content_parts = []
+
+    # Create a mapping from character name to its data and image for efficient lookup
+    character_map = {}
+    for i, char_data in enumerate(characters):
+        if i < len(character_images): # Ensure there's a corresponding image
+            character_map[char_data['name']] = (char_data['prompt'], character_images[i])
+        else:
+            print(f"Warning: No image found for character '{char_data['name']}' at index {i}. Skipping image for this character.")
+            character_map[char_data['name']] = (char_data['prompt'], None) # Or handle as needed
+
+    for char_name in requested_character_names:
+        if char_name in character_map:
+            char_prompt, char_image = character_map[char_name]
+
+            if char_image:
+                # Decode the base64 string to bytes
+                image_bytes = base64.b64decode(char_image.data)
+                gemini_content_parts.append(types.Part.from_bytes(data=image_bytes, mime_type=char_image.mime_type))
+            else:
+                print(f"Warning: No image available for {char_name}.")
+        else:
+            print(f"Warning: Character '{char_name}' not found in the available characters.")
+
+    return gemini_content_parts
+
+### MARKDOWN ###
+Now let's generate the chapters's images using the right reference images and no chaining.
+
+### CODE ###
+for chapter in chapters:
+  display(Markdown(f"### {chapter['name']}"))
+  display(Markdown(chapter['prompt']))
+
+  # Fetch the reference images and convert them to the expected dictionary format
+  image_inputs = []
+  for char_name in chapter['characters']:
+      for i, char_data in enumerate(characters):
+          if char_data['name'] == char_name and i < len(character_images):
+              char_img = character_images[i]
+              if char_img:
+                  image_inputs.append({
+                      "type": "image",
+                      "data": char_img.data,
+                      "mime_type": char_img.mime_type
+                  })
+              break
+
+  interaction = client.interactions.create(
+      model=IMAGE_MODEL_ID,
+      input=[
+          {"type": "text", "text": f"""
+              Create this illustration for {chapter['name']}:
+                {chapter['prompt']}
+              Use the provided images as references of what the characters look like.
+          """},
+      ] + image_inputs,
+      system_instruction=system_instructions,
+  )
+
+  generated_image = interaction.output_image
+  if generated_image:
+      from IPython.display import Image, display
+      import base64
+      display(Image(data=base64.b64decode(generated_image.data)))
+
+
+### MARKDOWN ###
+## 6/ Animate a chapter illustration with Veo
+
+Now that you have illustrated the chapters, you can bring one of those illustrations to life using [Veo](../quickstarts/Get_started_Veo.ipynb), Google DeepMind's video generation model. Veo can take an image as a starting frame and animate it into a short video.
+
+> **Note:** Video generation with Veo is significantly more expensive than image generation. Check the [pricing page](https://ai.google.dev/pricing) for details.
+
+Veo is currently not supported by the interactions API so you have to use `generate_videos` instead, and you can't chain.
+
+### CODE ###
+VEO_MODEL_ID = "veo-3.1-lite-generate-preview" # @param ["veo-3.1-generate-preview", "veo-3.1-fast-generate-preview", "veo-3.1-lite-generate-preview"] {"allow-input": true, "isTemplate": true}
+
+### MARKDOWN ###
+Use Gemini to generate a short animation prompt based on the chapter illustration, then pass it to Veo along with the image as the starting frame:
+
+### CODE ###
+if not I_understand_this_is_a_paid_API:
+  print("Video generation is a paid feature. Set 'I_also_want_to_generate_videos' to True above if you want to run it.")
+
+else:
+  import time
+  import io
+  import base64
+
+  # Pick the last chapter illustration to animate
+  last_chapter = chapters[-1]
+  display(Markdown(f"### Animating: {last_chapter['name']}"))
+
+  # Convert interaction image content to types.Image for Veo
+  image_bytes = base64.b64decode(generated_image.data)
+  veo_image = types.Image(image_bytes=image_bytes, mime_type=generated_image.mime_type)
+
+  # Generate a video from the image
+  operation = client.models.generate_videos(
+      model=VEO_MODEL_ID,
+      prompt=last_chapter['prompt'],
+      image=veo_image,
+      config=types.GenerateVideosConfig(
+          aspect_ratio="16:9",
+          resolution="720p",
+      ),
+  )
+
+  # Wait for the video to be generated (takes about a minute)
+  while not operation.done:
+      time.sleep(20)
+      operation = client.operations.get(operation)
+
+  for n, generated_video in enumerate(operation.result.generated_videos):
+      client.files.download(file=generated_video.video)
+      generated_video.video.save(f"chapter_video_{n}.mp4")
+      display(generated_video.video.show())
+
+
+### MARKDOWN ###
+Alternatively you can also have Gemini come up with a prompt, and pass the character reference images.
+
+### CODE ###
+if not I_understand_this_is_a_paid_API:
+  print("Video generation is a paid feature. Set 'I_also_want_to_generate_videos' to True above if you want to run it.")
+
+else:
+  import time
+  import io
+  import base64
+
+  # Pick the last chapter illustration to animate
+  last_chapter = chapters[1]
+  display(Markdown(f"### Animating: {last_chapter['name']}"))
+
+  interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input=[
+          {"type": "text", "text": f'We\'re going to animate "{last_chapter["name"]}", can you create a prompt for Veo about what\'s happening in the next few seconds after this initial image?'},
+          {"type": "image", "data": generated_image.data, "mime_type": generated_image.mime_type},
+      ],
+      previous_interaction_id=last_interaction.id,
+      response_format={
+          "type": "text",
+          "mime_type": "application/json",
+          "schema": {"type": "array", "items": Prompt.model_json_schema()},
+      },
+      service_tier=service_tier,
+  )
+  last_interaction = interaction
+  veo_prompt = json.loads(interaction.steps[-1].content[0].text)[0]
+  display(Markdown(veo_prompt['prompt']))
+
+  # Convert interaction image content to types.Image for Veo
+  image_bytes = base64.b64decode(generated_image.data)
+  veo_image = types.Image(image_bytes=image_bytes, mime_type=generated_image.mime_type)
+
+  # Generate a video from the image (Veo doesn't support interactions API)
+  operation = client.models.generate_videos(
+      model=VEO_MODEL_ID,
+      prompt=veo_prompt['prompt'],
+      image=veo_image,
+      config=types.GenerateVideosConfig(
+          aspect_ratio="16:9",
+          resolution="720p",
+          #reference_images=[] # you should pass the characters' images as references
+      ),
+  )
+
+  # Wait for the video to be generated (takes about a minute)
+  while not operation.done:
+      time.sleep(20)
+      operation = client.operations.get(operation)
+
+  for n, generated_video in enumerate(operation.result.generated_videos):
+      client.files.download(file=generated_video.video)
+      generated_video.video.save(f"chapter_video_{n}.mp4")
+      display(generated_video.video.show())
+
+
+### MARKDOWN ###
+## 7/ Generate chapter music with Lyria 3.5
+
+[Lyria 3.5](https://deepmind.google/technologies/lyria/) lets you generate instrumental music from a text prompt. Let's create a unique soundtrack for each chapter!
+
+For more details, see the [Lyria 3.5 quickstart](../quickstarts/Get_started_Lyria.ipynb) notebook.
+
+### CODE ###
+if not I_understand_this_is_a_paid_API:
+  print("Music generation is a paid feature. Set 'I_understand_this_is_a_paid_API' to True above if you want to run it.")
+
+else:
+  from IPython.display import Audio
+
+  # Generate short music prompts for each chapter
+  music_prompts_interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input="We're going to create instrumental songs for each chapter, can you create a prompt for Lyria 3.5, the music generation model for each chapter? Keep a certain consistency but also highlight each chapter specificities so that each song has its own flavor.",
+      previous_interaction_id=chapters_prompts_interaction.id,
+      response_format={
+          "type": "text",
+          "mime_type": "application/json",
+          "schema": {"type": "array", "items": Prompt.model_json_schema()},
+      },
+      service_tier=service_tier,
+  )
+  last_interaction = music_prompts_interaction
+  chapters_music_prompts = json.loads(music_prompts_interaction.output_text)
+
+  display(Markdown("## Generating music prompts"))
+
+  for chapter in chapters_music_prompts[:max_chapter_images]:
+    display(Markdown(f"### Music for: {chapter['name']}"))
+    display(Markdown(chapter['prompt']))
+
+    music_interaction = client.interactions.create(
+        model=LYRIA_MODEL_ID,
+        input=chapter['prompt'],
+        response_modalities=["audio"],
+    )
+
+    # TODO: try output-music/audio
+    for step in music_interaction.steps:
+        if step.type == "model_output" and step.content:
+            for content in step.content:
+                if content.type == "audio" and content.data:
+                    import base64
+                    audio_bytes = base64.b64decode(content.data)
+                    print("\nAudio:")
+                    display(Audio(audio_bytes, rate=48000))
+                    break
+
+
+### MARKDOWN ###
+## 8/ Text-to-Speech narration
+
+Let's bring the story to life by narrating a dialog using a TTS model.
+
+For more details, see the [TTS quickstart](../quickstarts/Get_started_TTS.ipynb) notebook.
+
+### CODE ###
+# @title Helper functions (just run that cell) { display-mode: "form" }
+
+import base64
+import contextlib
+import wave
+from IPython.display import Audio, display
+
+file_index = 0
+
+
+@contextlib.contextmanager
+def wave_file(filename, channels=1, rate=24000, sample_width=2):
+    with wave.open(filename, "wb") as wf:
+        wf.setnchannels(channels)
+        wf.setsampwidth(sample_width)
+        wf.setframerate(rate)
+        yield wf
+
+
+def play_audio(interaction):
+    # Extract audio from interaction steps
+    for step in interaction.steps:
+        if step.type == "model_output" and step.content:
+            for content in step.content:
+                if content.type == "audio" and content.data:
+                    audio_data = base64.b64decode(content.data)
+                    play_audio_blob_bytes(audio_data)
+                    return
+    print("No audio found in interaction")
+
+
+def play_audio_blob_bytes(audio_bytes):
+    global file_index
+    file_index += 1
+    fname = f"audio_{file_index}.wav"
+    if audio_bytes[:4] == b"RIFF":
+        with open(fname, "wb") as f:
+            f.write(audio_bytes)
+    else:
+        with wave_file(fname) as wav:
+            wav.writeframes(audio_bytes)
+    display(Audio(fname))
+
+### CODE ###
+if not I_understand_this_is_a_paid_API:
+    print(
+        "TTS is a paid feature. Set 'I_understand_this_is_a_paid_API' to True above if you want to use it."
+    )
+else:
+    import json
+    from IPython.display import Audio
+    from google.genai import types
+    from pydantic import BaseModel, Field
+
+    class DialogTurn(BaseModel):
+        speaker: str = Field(description="Either 'Narrator' or 'Character'")
+        style: str = Field(
+            description="Delivery style, tone, accent, and pacing for this turn"
+        )
+        text: str = Field(
+            description="Verbatim line spoken by the Narrator or Character"
+        )
+
+    class SceneDialog(BaseModel):
+        turns: list[DialogTurn]
+
+    dialog_interaction = client.interactions.create(
+        model=GEMINI_MODEL_ID,
+        input=[
+            {
+                "type": "text",
+                "text": """
+                  Extract the dialog from the first chapter of the book that starts with
+                  "Small neat ears and thick silky hair." and ends with "his heels in the
+                  air.", and structure it as a play with turns spoken by either "Narrator"
+                  or "Character".
+                  Give each turn a specific delivery style (tone, accent, speed) and keep
+                  each character's style consistent across the scene.
+                """,
+            },
+            {"type": "document", "uri": book.uri},
+        ],
+        response_format=SceneDialog,
+    )
+
+    display(Markdown("## First dialog"))
+    dialog_json = dialog_interaction.steps[-1].content[0].text
+    scene = SceneDialog.model_validate_json(dialog_json)
+    for turn in scene.turns:
+        display(Markdown(f"**{turn.speaker}** *({turn.style})*: {turn.text}"))
+
+    tts_input = [
+        {
+            "type": "text",
+            "text": turn.text,
+            "annotations": [
+                {
+                    "type": "speech_metadata",
+                    "speaker": turn.speaker,
+                    "style": turn.style,
+                }
+            ],
+        }
+        for turn in scene.turns
+    ]
+
+    tts_interaction = client.interactions.create(
+        model=TTS_MODEL_ID,
+        input=tts_input,
+        response_format={"type": "audio"},
+        generation_config={
+            "speech_config": [
+                {"speaker": "Narrator", "voice": "Aoede"},
+                {"speaker": "Character", "voice": "Puck"},
+            ]
+        },
+    )
+
+    play_audio(tts_interaction)
+
+### MARKDOWN ###
+## 9/ Mix everything together
+
+Let's now try to mix all that together.
+
+### CODE ###
+if (
+    not I_understand_this_is_a_paid_API
+    or "tts_interaction" not in locals()
+    or tts_interaction is None
+):
+    print(
+        "TTS/Music is a paid feature. Please set 'I_understand_this_is_a_paid_API = True' and run the previous cells."
+    )
+else:
+    %pip install -q moviepy==1.0.3
+
+    import base64
+    import wave
+    import moviepy.editor as mpe
+    from IPython.display import Video, display
+
+    print("Extracting TTS narration...")
+    tts_audio_bytes = None
+    for step in tts_interaction.steps:
+        if step.type == "model_output" and step.content:
+            for content in step.content:
+                if content.type == "audio":
+                    tts_audio_bytes = base64.b64decode(content.data)
+                    break
+
+    if not tts_audio_bytes:
+        raise ValueError("No TTS audio found in tts_interaction.")
+
+    # Write TTS audio (check if it already has a RIFF header, otherwise wrap raw 24kHz PCM)
+    if tts_audio_bytes.startswith(b"RIFF"):
+        with open("tts.wav", "wb") as f:
+            f.write(tts_audio_bytes)
+    else:
+        with wave.open("tts.wav", "wb") as wf:
+            wf.setnchannels(1)
+            wf.setsampwidth(2)
+            wf.setframerate(24000)
+            wf.writeframes(tts_audio_bytes)
+
+    print("Extracting Image from previous interaction...")
+    # Use the generated_image variable from our previous cell's output
+    with open("illustration.png", "wb") as f:
+        f.write(base64.b64decode(generated_image.data))
+
+    print("Extracting Background Music from previous interaction...")
+    music_bytes = None
+    if "music_interaction" in locals() and music_interaction:
+        for step in music_interaction.steps:
+            if step.type == "model_output" and step.content:
+                for content in step.content:
+                    if content.type == "audio":
+                        music_bytes = base64.b64decode(content.data)
+                        break
+
+    # Check if it already has a RIFF header, otherwise write it as raw 48kHz PCM
+    if music_bytes:
+        if music_bytes.startswith(b"RIFF"):
+            with open("music.wav", "wb") as f:
+                f.write(music_bytes)
+        else:
+            with wave.open("music.wav", "wb") as wf:
+                wf.setnchannels(1)
+                wf.setsampwidth(2)
+                wf.setframerate(48000)
+                wf.writeframes(music_bytes)
+    else:
+        print("No music found in music_interaction.")
+
+    print("Mixing video with MoviePy...")
+    tts_clip = mpe.AudioFileClip("tts.wav")
+    if music_bytes:
+        music_clip = mpe.AudioFileClip("music.wav").volumex(0.24)
+        # Adjust music duration to match TTS narration
+        if music_clip.duration < tts_clip.duration:
+            music_clip = mpe.afx.audio_loop(
+                music_clip, duration=tts_clip.duration
+            )
+        else:
+            music_clip = music_clip.subclip(0, tts_clip.duration)
+        final_audio = mpe.CompositeAudioClip([tts_clip, music_clip])
+    else:
+        final_audio = tts_clip
+
+    img_clip = mpe.ImageClip("illustration.png").set_duration(tts_clip.duration)
+    video = img_clip.set_audio(final_audio)
+
+    video_file = "chapter_mixed.mp4"
+    video.write_videofile(
+        video_file, fps=1, codec="libx264", audio_codec="aac", logger=None
+    )
+
+    print("Done! Displaying video:")
+    display(Video(video_file, embed=True))
+
+### MARKDOWN ###
+# With an Audiobook: The Adventures of Chatterer the Red Squirrel
+
+This time, you are going to use an audiobook as the source, and in this case *The Adventures of Chatterer the Red Squirrel* audiobook from the open-source library [Librivox](https://librivox.org/the-adventures-of-chatterer-the-red-squirel-by-thornton-w-burgess/).
+
+### MARKDOWN ###
+## 1/ Get the audiobook and merge its chapters
+You could upload all the chapters one by one, but it's easier to merge all the chapters together befor uploading the audiobook and only deal with one file.
+
+For the sake of the length of the demonstration, you will only merge the first 5 chapters, but feel free to update the code and try on the full book.
+
+### CODE ###
+%pip install pydub
+import os
+import zipfile
+from pydub import AudioSegment
+
+# Download the zip file
+!wget https://www.archive.org/download/chatterertheredsquirrel_1307_librivox/chatterertheredsquirrel_1307_librivox_64kb_mp3.zip
+
+# Unzip the file
+with zipfile.ZipFile("chatterertheredsquirrel_1307_librivox_64kb_mp3.zip", 'r') as zip_ref:
+    zip_ref.extractall("audiobook")
+
+# Get a list of all MP3 files in the extracted folder
+mp3_files = [f for f in os.listdir("audiobook") if f.endswith('.mp3')]
+
+mp3_files.sort()
+
+if len(mp3_files) > 1:
+    combined_audio = AudioSegment.empty()
+    for i in range(min(5, len(mp3_files))):  # Limit to 5 or fewer chapters
+        mp3_file = mp3_files[i]  # Get the filename using the index
+        combined_audio += AudioSegment.from_mp3(os.path.join("audiobook", mp3_file))
+    combined_audio.export("audiobook.mp3", format="mp3")
+    print("MP3 files merged into audiobook.mp3")
+else:
+    print("Only one MP3 file found, no merging needed.")
+
+### MARKDOWN ###
+Now upload it using the File API:
+
+### CODE ###
+audiobook = client.files.upload(file="audiobook.mp3")
+
+### MARKDOWN ###
+## 2/ Start the chat
+
+Oonce again, using [chat mode](https://ai.google.dev/gemini-api/docs/text-generation?lang=python#chat) here let Gemini will keep the history of what you asked it, and also so that you don't have to send it the book every time.
+
+[Structured output](https://ai.google.dev/gemini-api/docs/structured-output?lang=python#generate-json) is used to force Gemini to output nice lists of prompts.
+
+### CODE ###
+from pydantic import BaseModel
+
+class Prompt(BaseModel):
+    name: str
+    prompt: str
+
+
+### CODE ###
+# Re-run this cell if you want to start anew.
+last_interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input=[
+        {"type": "text", "text": "Here's an audiobook, to illustrate using Nano Banana. Don't say anything for now, instructions will follow."},
+        {"type": "document", "uri": audiobook.uri},
+    ],
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Prompt.model_json_schema()},
+    },
+)
+
+
+### MARKDOWN ###
+## 3/ Define a style
+
+If you want to test a specific style, just write it down and Gemini will use it. Still, tell Gemini about it so it will adapt the prompts it will generate accordingly. That's what is illustrated here with a futuristic style.
+
+If you prefer to let Gemini choose the best style for the book, leave the style empty and ask Gemini to define a style fitting to the book.
+
+### CODE ###
+style = "futuristic, science fiction, utopia, saturated, neon lights" # @param {type:"string", "placeholder":"Write your own style or leave empty to let Gemini generate one"}
+
+if style == "":
+  interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input="Can you define a art style that would fit the story? Just give us the prompt for the art syle that will added to the furture prompts.",
+      previous_interaction_id=last_interaction.id,
+      response_format={
+          "type": "text",
+          "mime_type": "application/json",
+          "schema": {"type": "array", "items": Prompt.model_json_schema()},
+      },
+  )
+  last_interaction = interaction
+  style = json.loads(interaction.steps[-1].content[0].text)[0]["prompt"]
+else:
+  interaction = client.interactions.create(
+      model=GEMINI_MODEL_ID,
+      input=f'The art style will be:"{style}". Keep that in mind when generating future prompts. Keep quiet for now, instructions will follow.',
+      previous_interaction_id=last_interaction.id,
+      response_format={
+          "type": "text",
+          "mime_type": "application/json",
+          "schema": {"type": "array", "items": Prompt.model_json_schema()},
+      },
+  )
+  last_interaction = interaction
+
+display(Markdown(f"### Style:"))
+print(style)
+
+style = f'Follow this style: "{style}" '
+
+
+### CODE ###
+system_instructions = """
+  There must be no text on the image, it should not look like a cover page.
+  It should be an full illustration with no borders, titles, nor description.
+  Stay family-friendly with uplifting colors.
+  Each produced should be a simple image, no panels.
+"""
+
+### MARKDOWN ###
+## 4/ Generate portraits of the main characters
+
+You are now ready to start generating images, starting with the main characters.
+
+### CODE ###
+interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input="Can you describe the main characters and prepare a prompt describing them with as much details as possible (use the descriptions from the book) so Nano Banana can generate images of them?",
+    previous_interaction_id=last_interaction.id,
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Prompt.model_json_schema()},
+    },
+)
+last_interaction = interaction
+
+characters = json.loads(interaction.steps[-1].content[0].text)
+
+print(json.dumps(characters, indent=4))
+
+
+### CODE ###
+last_image_interaction = client.interactions.create(
+    model=IMAGE_MODEL_ID,
+    input=f"""
+  You are going to generate portrait images to illustrate The Adventures of Chatterer the Red Squirrel from Thornton W. Burgess.
+  The style we want you to follow is: {style}
+  Also follow those rules: {system_instructions}
+""",
+)
+
+for character in characters[:max_character_images]:
+  display(Markdown(f"### {character['name']}"))
+  display(Markdown(character['prompt']))
+
+  interaction = client.interactions.create(
+      model=IMAGE_MODEL_ID,
+      input=f"Create an illustration for {character['name']} following this description: {character['prompt']}",
+      previous_interaction_id=last_image_interaction.id,
+  )
+  last_image_interaction = interaction
+
+  for step in reversed(interaction.steps):
+      if step.type == "model_output" and step.content:
+          for content in reversed(step.content):
+              if content.type == "image":
+                  generated_image = content
+                  from IPython.display import display as disp, HTML
+                  img_html = f'<img src="data:{content.mime_type};base64,{content.data}" style="max-width:512px" />'
+                  disp(HTML(img_html))
+                  break
+          break
+
+# Be careful; long output (see below)
+
+
+### MARKDOWN ###
+## 5/ Illustrate the chapters of the book
+
+After the characters, it's now time to create illustrations for the content of the book. You are going to ask Gemini to generate prompts for each chapter and then ask Nano Banana to generate images based on those prompts.
+
+### CODE ###
+interaction = client.interactions.create(
+    model=GEMINI_MODEL_ID,
+    input="Now, for each chapter of the book, give me a prompt to illustrate what happens in it. Be very descriptive, especially of the characters. Remember to reuse the character prompts if they appear in the image",
+    previous_interaction_id=last_interaction.id,
+    response_format={
+        "type": "text",
+        "mime_type": "application/json",
+        "schema": {"type": "array", "items": Prompt.model_json_schema()},
+    },
+)
+last_interaction = interaction
+
+chapters = json.loads(interaction.steps[-1].content[0].text)[:max_chapter_images]
+
+print(json.dumps(chapters, indent=4))
+
+
+### CODE ###
+interaction = client.interactions.create(
+    model=IMAGE_MODEL_ID,
+    input="Starting from now, we're going to illustrate the book's chapters. Don't forget to refer to your previous illustrations of the characters to keep the characters consistency, but feel free to change their position.",
+    previous_interaction_id=last_image_interaction.id,
+)
+last_image_interaction = interaction
+
+for chapter in chapters:
+  display(Markdown(f"### {chapter['name']}"))
+  display(Markdown(chapter['prompt']))
+
+  interaction = client.interactions.create(
+      model=IMAGE_MODEL_ID,
+      input=f"Create an illustration for {chapter['name']} using the previously generated characters following this description: {chapter['prompt']}",
+      previous_interaction_id=last_image_interaction.id,
+  )
+  last_image_interaction = interaction
+
+  for step in reversed(interaction.steps):
+      if step.type == "model_output" and step.content:
+          for content in reversed(step.content):
+              if content.type == "image":
+                  generated_image = content
+                  from IPython.display import display as disp, HTML
+                  img_html = f'<img src="data:{content.mime_type};base64,{content.data}" style="max-width:512px" />'
+                  disp(HTML(img_html))
+                  break
+          break
+
+# Be careful; long output (see below)
+
+
+### MARKDOWN ###
+# Next Steps
+
+**Useful documentation references:**
+
+Check the documentation for more details about the different features you used in this notebook:
+- [Interactions API](https://ai.google.dev/gemini-api/docs/interactions): Chain interactions easily using the `previous_interaction_id` parameter,
+- [Image generation](https://ai.google.dev/gemini-api/docs/image-generation): Generate and edit images using Nano Banana (`gemini-3.1-flash-image-preview` and `gemini-3-pro-image-preview`),
+- [Video generation](https://ai.google.dev/gemini-api/docs/video): Generate videos from text, frames, or reference images using Veo (`veo-3.1-generate-preview`),
+- [Music generation](https://ai.google.dev/gemini-api/docs/music-generation): Generate songs or instrumental tracks using Lyria (`lyria-3-clip-preview` and `lyria-3-pro-preview`),
+- [Text-to-speech](https://ai.google.dev/gemini-api/docs/speech-generation) & [Voices API](https://ai.google.dev/gemini-api/docs/voice-design): Read text aloud using Gemini TTS (`gemini-3.8-flash-tts`) and custom designed voices.
+
+**Related examples:**
+
+Check out these other end-to-end application examples:
+- [ Story Writing with Prompt Chaining](https://colab.research.google.com/github/google-gemini/cookbook/blob/main/examples/Story_Writing_with_Prompt_Chaining.ipynb)
+- [Voice-driven Game using the Live API](https://colab.research.google.com/github/google-gemini/cookbook/blob/main/examples/LiveAPI_game.ipynb)
+
+**Continue your discovery of the Gemini API:**
+
+Check the [Quickstarts folder](https://github.com/google-gemini/cookbook/tree/main/quickstarts/) of the cookbook to learn more about all the different features of the Gemini API.

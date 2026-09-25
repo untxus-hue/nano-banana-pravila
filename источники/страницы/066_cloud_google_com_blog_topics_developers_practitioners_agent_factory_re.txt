@@ -1,0 +1,79 @@
+Developers & Practitioners
+Agent Factory Recap: Building with Gemini 3, AI Studio, Antigravity, and Nano Banana
+December 10, 2025
+Amit Maraj
+AI Developer Relations Engineer
+Paige Bailey
+UTL - Developer Relations, Google DeepMind
+Welcome back to The Agent Factory! This week, we went beyond the hype to dissect the technical details of Google's massive wave of AI releases. We were joined by Paige Bailey, the UTL for Developer Relations at DeepMind, to break down everything from the new Gemini 3 model to the Antigravity IDE.
+Google has been shipping at a breakneck pace—literally a new model or feature nearly every day—and this episode is all about how developers can harness these tools right now.
+This post guides you through the key ideas from our conversation. Use it to quickly recap topics or dive deeper into specific segments with links and timestamps.
+The Tech Stack - What is it?
+We tossed around a few new names in this episode. Here is a quick primer on the tech discussed:
+Gemini 3: The latest iteration of Google's model family. While Gemini 1 was about understanding and Gemini 2 was about reasoning, Gemini 3 is designed for acting and coding. It features improved tool use and function calling.
+Antigravity: Google's new AI-native IDE (Integrated Development Environment) designed to integrate Gemini 3 directly into the coding workflow, allowing for multimodal inputs like screenshots to drive code changes.
+Nano Banana Pro: The newest iteration in the media generation series, capable of creating high-fidelity images, voxel art, and game assets.
+The Factory Floor
+The Factory Floor is our segment for getting hands-on. Here, we moved from high-level concepts to practical code with live demos.
+Building "Nordic Shield" with Gemini 3
+Timestamp: 11:20
+Paige demonstrated the "Build" feature in AI Studio to create a complex React application from scratch. The goal was to test the model's ability to self-correct and handle specific design constraints.
+The Prompt: Create an insurance cataloging app using the webcam and microphone. It needed a "Nordic/IKEA" design theme, an inventory list, and the ability to estimate item value using Google Search grounding.
+The Process: Gemini 3 generated a React Native app, set up the directory structure, and wrote its own prompts for the agents.
+The Result: The app, named "Nordic Shield," successfully cataloged items (like a Pixel 7 and a soda can) via video. When it encountered audio issues, it generated a reasoning trace to debug the problem live. It successfully utilized Gemini Live for the conversation and executed a secondary "agentic" step to search Google for the estimated value of the items.
+Redesigning a Website with Antigravity
+Timestamp: 30:27
+We shifted gears to look at Google's new IDE, Antigravity. The goal was to update an existing, text-heavy website to match a new, vibrant "neo-brutalist" design aesthetic using only screenshots as a guide.
+The Input: The existing codebase plus two screenshots of the desired visual style (doodly, pastel, notebook-esque).
+The Implementation: Antigravity analyzed the images to understand the design philosophy. It created a task list and an implementation plan to ensure it stayed grounded.
+The Outcome: The IDE successfully refactored the site to match the brand guidelines, introducing "jiggling pill" UI elements and updating the color palette to match the provided screenshots perfectly.
+Paige Bailey on The Evolution of Gemini
+We sat down with Paige to understand how DeepMind is approaching the rapid evolution of their models and what it means for developers building agents today.
+The Three Stages of Gemini
+Timestamp: 2:49
+Paige outlined the clear evolutionary path of the Gemini family. She explained that the original Gemini was focused on multimodal understanding (video, text, audio). Gemini 2 introduced thinking—the ability to reason and plan step-by-step. Gemini 3, the current iteration, is all about acting. This model is optimized for acting on its reasoning, specifically through coding and tool use, allowing for composite architectures where models work together rather than in isolation.
+Pre-Training vs. Post-Training
+Timestamp: 4:55
+We discussed the "schooling" of these models. Paige used a great analogy:
+Pre-training is like sending the model to school. It involves giving Gemini access to massive amounts of tokens (internet data, synthetic data, video game footage) to learn the basics.
+Post-training is "on-the-job experience." This is where DeepMind provides specific, hand-curated examples of complex workflows, such as multi-turn conversations that involve editing websites or using multiple tools to accomplish a single task.
+The "Vending Bench"
+Timestamp: 6:48
+Benchmarks are changing. Paige introduced us to a fascinating new evaluation metric called Vending Bench. This test gauges a model's ability to run a passive business—specifically, a vending machine. The model must figure out stock, reorder items, deploy restockers, and do long-range planning to maximize uptime. The score is determined by how much profit the model generates in a year. Currently, Gemini 3 Pro is generating around $5,462 per machine, showing significant improvements in long-term strategic decision-making.
+Creative Multimodality with Nano Banana
+Timestamp: 28:34
+We also touched on the creative side of the stack. Paige highlighted that when you combine reasoning with multimodal outputs, the possibilities explode. She shared examples of Nano Banana Pro being used to generate game assets, orthographic blueprints for 3D modeling (like castles), and detailed physics explainers. The key takeaway is the power of combining these media models with search grounding to create accurate, high-fidelity visual assets.
+Conclusion
+It is incredible to see not just the models, but the entire ecosystem Google is building—from the hardware to the IDEs like Antigravity. The ability to deploy these agents directly to Google Cloud with a single click bridges the gap between a cool demo and a production-ready application.
+As Paige mentioned, the trajectory is exponential. Whether you are building passive businesses or complex coding agents, the tools are ready.
+Your turn to build
+If you haven't yet, head over to AI Studio or try out the Gemini API.
+Try the "Vending Bench" challenge yourself—can you build an agent that runs a better business than Gemini 3?
+Let us know what you build!
+Connect with us
+Amit Maraj → LinkedIn, X, TikTok
+Paige Bailey → LinkedIn, X
+Posted in
+Developers & Practitioners
+Related articles
+Developers & Practitioners
+A guide to speeding up your video processing with AlphaEvolve
+By Anant Nawalgaria • 6-minute read
+Developers & Practitioners
+The DevFest Community Workshop Experience: Building Real Agents Together
+By Christina Lin • 3-minute read
+Developers & Practitioners
+Best practices for handling cloud reliability incidents
+By Flemming Christensen • 14-minute read
+Developers & Practitioners
+Introducing the Google Cloud Developer Plugin for AI Coding Agents
+By Jonathan Lee • 5-minute read
+Footer Links
+Follow us
+Google Cloud
+Google Cloud Products
+Privacy
+Terms
+Cookies management controls
+Help
+Language‪English‬‪Deutsch‬‪Français‬‪한국어‬‪日本語‬

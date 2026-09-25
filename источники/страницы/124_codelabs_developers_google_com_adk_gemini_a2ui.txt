@@ -1,0 +1,222 @@
+Skip to main content
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Build Rich Agentic Interfaces with ADK and A2UI
+1. Introduction
+A2UI enables AI agents to generate rich, interactive user interfaces that render natively across web, mobile, and desktop—without executing arbitrary code. Instead of text-only responses or risky code execution, A2UI lets agents send declarative component descriptions that clients render using their own native widgets. It's like having agents speak a universal UI language.
+In this hands-on lab you will first create an image generation agent using Agent Development Kit (ADK) and Gemini 3.1 Flash Image (a.k.a. Nano Banana 2). Then you will use A2UI to create a custom interface that goes beyond a typical chatbot, showcasing how you can dynamically generate interfaces to enable richer agent-user interactions.
+What you'll learn
+Create an agent using ADK python
+Configure the agent to stream A2UI components to the frontend
+Create a custom frontend to render A2UI elements
+Prerequisites
+Basic knowledge of AI agents
+Basic understanding of python syntax
+Basic understanding of frontend concepts
+2. Setup
+Follow the instructions below to initialize the Google Cloud Project needed for this codelab. After initializing the project, it is recommended that you run this codelab on Cloud Shell, as it comes with all the tools needed to run it out of the box.
+If you prefer to run this codelab in your local environment you will need to install python, uv and a code editor before proceeding. All the instructions in this codelab assume you are running it in Cloud Shell unless mentioned otherwise.
+Self-paced environment setup
+Sign-in to the Google Cloud Console and create a new project or reuse an existing one. If you don't already have a Gmail or Google Workspace account, you must create one.
+The Project name is the display name for this project's participants. It is a character string not used by Google APIs. You can always update it.
+The Project ID is unique across all Google Cloud projects and is immutable (cannot be changed after it has been set). The Cloud Console auto-generates a unique string; usually you don't care what it is. In most codelabs, you'll need to reference your Project ID (typically identified as PROJECT_ID). If you don't like the generated ID, you might generate another random one. Alternatively, you can try your own, and see if it's available. It can't be changed after this step and remains for the duration of the project.
+For your information, there is a third value, a Project Number, which some APIs use. Learn more about all three of these values in the documentation.
+Caution: A project ID is globally unique and can't be used by anyone else after you've selected it. You are the only user of that ID. Even if a project is deleted, the ID can't be used again
+Note: If you use a Gmail account, you can leave the default location set to No organization. If you use a Google Workspace account, choose a location that makes sense for your organization.
+Next, you'll need to enable billing in the Cloud Console to use Cloud resources/APIs. Running through this codelab won't cost much, if anything at all. To shut down resources to avoid incurring billing beyond this tutorial, you can delete the resources you created or delete the project. New Google Cloud users are eligible for the $300 USD Free Trial program.
+Start Cloud Shell
+While Google Cloud can be operated remotely from your laptop, in this codelab you will be using Google Cloud Shell, a command line environment running in the Cloud.
+From the Google Cloud Console, click the Cloud Shell icon on the top right toolbar:
+It should only take a few moments to provision and connect to the environment. When it is finished, you should see something like this:
+This virtual machine is loaded with all the development tools you'll need. It offers a persistent 5GB home directory, and runs on Google Cloud, greatly enhancing network performance and authentication. All of your work in this codelab can be done within a browser. You do not need to install anything.
+3. Create a new ADK agent
+Create a folder for this workshop called a2ui_lab:
+mkdir -p ~/a2ui_lab && cd ~/a2ui_lab
+Configure the uv package manager in this folder and install dependencies:
+uv init && uv add google-adk fastapi uvicorn a2ui-agent-sdk
+Enable the AI Platform API (to make Gemini model calls)
+gcloud services enable aiplatform.googleapis.com
+Initialize the ADK agent in this folder:
+exportGOOGLE_CLOUD_PROJECT=`gcloudconfiggetproject`uvrunadkcreate--modelgemini-3.5-flash--project$GOOGLE_CLOUD_PROJECT--regionglobalart_creator
+You should see an output similar to this:
+$ uv run adk create --model gemini-3.5-flash --project $GOOGLE_CLOUD_PROJECT --region global art_creator
+Agent created in ~/a2ui_lab/art_creator:
+- .env
+- __init__.py
+- agent.py
+⚠️ WARNING: Secrets (like GOOGLE_API_KEY) are stored in .env.
+Please ensure .env is added to your .gitignore to avoid committing secrets to version control.
+Please note that uv run is a command that executes commands within the context of the current uv repository, which we created when we ran uv init. The command adk was installed into this repository when we added the google-adk package dependency.
+In the ADK documentation you are often going to see the adk commands without the uv run prefix, but whenever running commands in this workshop always prefix adk with uv run so it runs the correct command line utility.
+Now that the basic agent structure is created we can define the image generation agent in agent.py.
+Open the Cloud Shell editor with the following command:
+cloudshell workspace ~/a2ui_lab
+Replace the content of art_creator/agent.py with the code below:
+art_creator/agent.py
+importosimporttimefromgoogle.adk.agents.llm_agentimportAgentfromgoogle.adk.tools.tool_contextimportToolContextfromgoogle.genaiimporttypes# Load env variablesfromdotenvimportload_dotenvload_dotenv(os.path.join(os.path.dirname(__file__),".env"))asyncdefgenerate_image(prompt:str,tool_context:ToolContext)-> dict:"""Generates a high-quality image based on the user's detailed description prompt. Args: prompt: A descriptive text prompt describing the image to generate. tool_context: Context for the tool execution. """fromgoogle.genaiimportClientclient=Client(vertexai=True,project=os.environ.get("GOOGLE_CLOUD_PROJECT"),location=os.environ.get("GOOGLE_CLOUD_LOCATION","global"))try:response=client.models.generate_content(model="gemini-3.1-flash-image",contents=prompt,config=types.GenerateContentConfig(response_modalities=['TEXT','IMAGE'],))image_bytes=Noneforpartinresponse.partsor[]:ifpart.inline_dataisnotNone:image_bytes=part.inline_data.databreakifnotimage_bytes:return{"status":"failed","detail":"No image data returned"}filename=f"image_{int(time.time())}.png"awaittool_context.save_artifact(filename,types.Part.from_bytes(data=image_bytes,mime_type='image/png'),)return{"status":"success","filename":filename,"url":f"/api/artifacts/{tool_context.session.id}/{filename}"}exceptExceptionase:return{"status":"failed","detail":str(e)}root_agent=Agent(name="art_agent",model="gemini-3.5-flash",description="A basic art generation agent.",instruction=("You are an art assistant. When the user describes an image they want to generate, ""use the generate_image tool to create it, then return a text message containing the image's URL."),tools=[generate_image],)
+You can now test the agent in ADK's development UI using the command uv run adk web:
+uvrunadkweb--port8080--allow_origins"*"--reload_agents
+Then click on the Web Preview button and select Preview on Port 8080. This will open the development UI on your browser.
+Use ADK's development UI to test the agent capabilities by giving it a few prompts, like:
+Anime girl sleeping under a tree. Pastel colors. 16:9
+Photograph of a cabin reflected in the lake. Late afternoon. Nostalgic feeling.
+You should see the agent responding with text and the generated image.
+4. Create a simple frontend
+Now we will build a dedicated web app for our agent. We will use FastAPI to run our ADK runner and serve a simple single-page chat interface.
+First, stop the ADK dev server by typing Ctrl+C in your terminal. Then create a file named main.py in the workspace root (~/a2ui_lab/main.py) with the following content:
+main.py
+importosimportloggingfromfastapiimportFastAPI,HTTPExceptionfromfastapi.staticfilesimportStaticFilesfrompydanticimportBaseModelfromgoogle.adk.runnersimportInMemoryRunnerfromgoogle.adk.agents.run_configimportRunConfigfromgoogle.genaiimporttypesfromart_creator.agentimportroot_agentlogging.basicConfig(level=logging.INFO)logger=logging.getLogger(__name__)app=FastAPI(title="Art Agent - Simple Chat")classChatRequest(BaseModel):prompt:strsession_id:str="default_session"static_dir=os.path.join(os.path.dirname(__file__),"static")os.makedirs(static_dir,exist_ok=True)runner=InMemoryRunner(agent=root_agent)runner.auto_create_session=True@app.get("/api/artifacts/{session_id}/{filename}")asyncdefget_artifact(session_id:str,filename:str):user_id="default_user"part=awaitrunner.artifact_service.load_artifact(app_name=runner.app_name,user_id=user_id,filename=filename,session_id=session_id)ifnotpart:raiseHTTPException(status_code=404,detail="Artifact not found")ifpart.inline_data:fromfastapi.responsesimportResponsereturnResponse(content=part.inline_data.data,media_type=part.inline_data.mime_type)raiseHTTPException(status_code=400,detail="Unsupported artifact format")@app.post("/api/chat")asyncdefchat_endpoint(request:ChatRequest):ifnotrequest.prompt.strip():raiseHTTPException(status_code=400,detail="Prompt cannot be empty")user_id="default_user"content=types.Content(role="user",parts=[types.Part.from_text(text=request.prompt)])full_response_text=""try:asyncforeventinrunner.run_async(user_id=user_id,session_id=request.session_id,new_message=content,run_config=RunConfig(save_input_blobs_as_artifacts=True),):ifevent.contentandevent.content.parts:ifevent.author!="user":forpartinevent.content.parts:ifpart.text:full_response_text+=part.textelifpart.inline_data:try:# Process raw binary/custom text parts (A2UI callback packages)text_data=part.inline_data.data.decode("utf-8")full_response_text+=text_dataexceptException:passexceptExceptionase:logger.exception("Error running ADK agent:")raiseHTTPException(status_code=500,detail=str(e))image_url=Nonetry:artifact_keys=awaitrunner.artifact_service.list_artifact_keys(app_name=runner.app_name,user_id=user_id,session_id=request.session_id)image_keys=[kforkinartifact_keysifk.startswith("image_")andk.endswith(".png")]ifimage_keys:sorted_keys=sorted(image_keys,reverse=True)image_url=f"/api/artifacts/{request.session_id}/{sorted_keys[0]}"exceptException:passreturn{"text":full_response_text.strip(),"image_url":image_url}app.mount("/static",StaticFiles(directory=static_dir),name="static")@app.get("/")asyncdefread_index():fromfastapi.responsesimportFileResponsereturnFileResponse(os.path.join(static_dir,"index.html"))
+Next, create the static directory to store the frontend files:
+mkdir -p static
+Now add the index HTML (static/index.html):
+static/index.html
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width, initial-scale=1.0">
+<title>ArtAgent-SimpleChat</title>
+<linkrel="stylesheet"href="/static/style.css">
+</head>
+<body>
+<divclass="container">
+<divid="chat-messages"class="messages">
+<divclass="message system">
+<strong>System:</strong>WelcometotheArtAgent!Describetheimageyouwanttogenerate.</div>
+</div>
+<formid="chat-form"class="input-form">
+<inputtype="text"id="user-input"placeholder="Type image description..."autocomplete="off"required>
+<buttontype="submit">Generate</button>
+</form>
+</div>
+<scriptsrc="/static/app.js"></script>
+</body>
+</html>
+And the styling CSS (static/style.css):
+static/style.css
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background-color:#f7f9fa;margin:0;padding:20px;display:flex;justify-content:center;}.container{width:100%;max-width:600px;background:#ffffff;border:1pxsolid#e1e8ed;border-radius:8px;box-shadow:02px4pxrgba(0,0,0,0.05);display:flex;flex-direction:column;height:80vh;}.messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;}.message{padding:10px14px;border-radius:6px;max-width:85%;line-height:1.4;word-wrap:break-word;}.message.user{background-color:#e8f5fe;align-self:flex-end;}.message.agent{background-color:#f1f3f4;align-self:flex-start;}.message.system{background-color:#fff;border:1pxsolid#e1e8ed;color:#657786;align-self:center;font-size:13px;text-align:center;}.input-form{display:flex;border-top:1pxsolid#e1e8ed;padding:12px;}.input-forminput{flex:1;border:1pxsolid#ccc;border-radius:4px;padding:10px;font-size:14px;outline:none;}.input-formbutton{background-color:#1da1f2;color:white;border:none;border-radius:4px;padding:10px16px;margin-left:8px;font-size:14px;font-weight:bold;cursor:pointer;}.input-formbutton:hover{background-color:#1a91da;}.generated-img{max-width:100%;border-radius:4px;margin-top:8px;display:block;}.image-card{border:1pxsolid#ddd;border-radius:6px;padding:12px;background-color:#fff;margin-top:8px;}.btn-download{background-color:#1da1f2;color:white;border:none;border-radius:4px;padding:8px12px;font-size:13px;font-weight:bold;cursor:pointer;margin-top:8px;width:100%;}
+Finally, add the JavaScript controller (static/app.js):
+static/app.js
+document.addEventListener('DOMContentLoaded',()=>{constchatForm=document.getElementById('chat-form');constuserInput=document.getElementById('user-input');constchatMessages=document.getElementById('chat-messages');constsessionId="session_"+Math.random().toString(36).substring(2,9);chatForm.addEventListener('submit',async(e)=>{e.preventDefault();constprompt=userInput.value.trim();if(!prompt)return;userInput.value='';appendMessage('user',prompt);consttempBubble=appendMessage('agent','...');try{constresponse=awaitfetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,session_id:sessionId})});constdata=awaitresponse.json();tempBubble.remove();consttextValue=(data && typeofdata==='object' && data.text)?data.text:"";constimageUrl=(data && typeofdata==='object' && data.image_url)?data.image_url:null;appendMessage('agent',textValue,imageUrl);}catch(error){tempBubble.remove();appendMessage('agent',`Error:${error.message}`);}});functionappendMessage(sender,text,imageUrl=null){constbubble=document.createElement('div');bubble.className=`message${sender}`;constcontent=document.createElement('span');content.innerHTML=`<strong>${sender==='user'?'You':'Agent'}:</strong>`;consttextNode=document.createTextNode(text);content.appendChild(textNode);bubble.appendChild(content);//Alwaysformatmulti-lineJSONblocksnicelyifthemessageisfromtheagentandlookslikeJSONif(sender==='agent' && text && (text.startsWith('{')||text.startsWith('['))){bubble.style.fontFamily='monospace';bubble.style.whiteSpace='pre-wrap';bubble.style.fontSize='12px';}if(imageUrl){constcard=document.createElement('div');card.className='image-card';constimg=document.createElement('img');img.src=imageUrl;img.className='generated-img';card.appendChild(img);constdlBtn=document.createElement('button');dlBtn.className='btn-download';dlBtn.textContent='Download PNG';dlBtn.onclick=()=>{constlink=document.createElement('a');link.href=imageUrl;link.download=`generation-${Date.now()}.png`;link.click();};card.appendChild(dlBtn);bubble.appendChild(card);}chatMessages.appendChild(bubble);chatMessages.scrollTop=chatMessages.scrollHeight;returnbubble;}});
+Test your web app by starting the FastAPI server:
+uv run python -m uvicorn main:app --port 8080 --host 0.0.0.0
+Use the Web Preview on Port 8080 to access your customized chat. You can now talk directly to the agent.
+5. Configure the agent to emit A2UI messages
+Now, let's update the agent to return structured UI instead of just text. We will use the official a2ui-agent-sdk to build an A2UI aware system prompt for the agent.
+When using the A2UI SDK, instead of defining the agent instructions directly, we use the A2uiSchemaManager class which will structure the agent's system prompt to understand the interface generation capabilities of A2UI, including giving access to the component catalog, the full component schema and usage examples (if available).
+First, stop the FastAPI server with Ctrl+C.
+Modify art_creator/agent.py to integrate A2uiSchemaManager and our new a2ui_callback hook:
+art_creator/agent.py
+importosimporttimefromgoogle.adk.agents.llm_agentimportAgentfromgoogle.adk.tools.tool_contextimportToolContextfromgoogle.genaiimporttypesfroma2ui.schema.managerimportA2uiSchemaManagerfroma2ui.basic_catalog.providerimportBasicCatalog# Load env variablesfromdotenvimportload_dotenvload_dotenv(os.path.join(os.path.dirname(__file__),".env"))asyncdefgenerate_image(prompt:str,tool_context:ToolContext)-> dict:"""Generates a high-quality image based on the user's detailed description prompt."""fromgoogle.genaiimportClientclient=Client(vertexai=True,project=os.environ.get("GOOGLE_CLOUD_PROJECT"),location=os.environ.get("GOOGLE_CLOUD_LOCATION","global"))try:response=client.models.generate_content(model="gemini-3.1-flash-image",contents=prompt,config=types.GenerateContentConfig(response_modalities=['TEXT','IMAGE'],))image_bytes=Noneforpartinresponse.partsor[]:ifpart.inline_dataisnotNone:image_bytes=part.inline_data.databreakifnotimage_bytes:return{"status":"failed","detail":"No image data returned"}filename=f"image_{int(time.time())}.png"awaittool_context.save_artifact(filename,types.Part.from_bytes(data=image_bytes,mime_type='image/png'),)return{"status":"success","filename":filename,"url":f"/api/artifacts/{tool_context.session.id}/{filename}"}exceptExceptionase:return{"status":"failed","detail":str(e)}schema_manager=A2uiSchemaManager(version="0.8",catalogs=[BasicCatalog.get_config("0.8")],)instruction=schema_manager.generate_system_prompt(role_description=("You are a specialized Image Creator agent. ""When given an image description, analyze the prompt and ask the user for any missing details. ""The image generation prompt should include: ""Subject, environment, style, lighting, color and mood. "),workflow_description=("1. if the user greets you, greet the user back explaining your purpose. ""2. if the user describes an image, DO NOT GENERATE IT IMMEDIATELY: compare with "" the ideal generation prompt and ask the user for any missing details using "" rich A2UI UI elements only. NOTE: only run this step once per image, if the user "" decides to not detail one or more elements it is ok. ""3. combine the original prompt with the responses in the UI elements and call `generate_image` "" with the generated prompt. "" DO NOT INCLUDE EXAMPLES IN THE GENERATED PROMPT, ONLY THE ELEMENTS THE USER ASKED FOR. ""4. display the resulting image to the user in a card including the image, the prompt and a "" download button"),ui_description=("Use Card, Text, Image, Multichoice and Button components to present the options. ""Always include a single choice selection box for image resolution (1K, 2K or 4K) and one for ""aspect ratio (1:1, 16:9 or 9:16). ""When rendering the final output (generated image) always render the generated image using an ""Image component with the url bound to the image's URL/path returned by the tool. ""Add a Text component with the prompt that generated the image. ""Include a Button component labeled 'Download PNG' to allow downloading the image. ""Do NOT use markdown formatting in text values. Use the usageHint property for heading levels instead. ""Respond ONLY with the A2UI JSON array. Do NOT include any text ""outside the JSON. Put all explanations into Text components."),include_schema=True,)root_agent=Agent(model="gemini-3.5-flash",name="art_agent_a2ui",instruction=instruction,tools=[generate_image],)
+Note how now the agent instructions are generated by the schema_manager.generate_system_prompt call instead of being hardcoded in the agent definition.
+Test your web app by starting the FastAPI server:
+uv run python -m uvicorn main:app --port 8080 --host 0.0.0.0
+Use the Web Preview on Port 8080 to access your customized chat. You will notice that now the agent is emitting JSON messages instead of normal text. This is the internal representation of the A2UI elements which we are going to render in the next section.
+6. Create a custom frontend for the agent
+At this stage, our client gets a list of clean A2UI messages (beginRendering, surfaceUpdate, and dataModelUpdate). We will now build a custom client-side rendering engine in plain JavaScript to see these components in action.
+Note: for real apps, you would use a framework like React or Lit with the official A2UI Renderer. Here, we are building a simple frontend just to demonstrate the concept and not get distracted by the many different frontend stacks out there.
+Here is the complete static/app.js with A2UI parsing and rendering logic:
+static/app.js
+document.addEventListener('DOMContentLoaded',()=>{constchatForm=document.getElementById('chat-form');constuserInput=document.getElementById('user-input');constchatMessages=document.getElementById('chat-messages');constsessionId="session_"+Math.random().toString(36).substring(2,9);asyncfunctionsendChat(prompt,showInUi=true){if(!prompt)return;if(showInUi){appendMessage('user',prompt);}consttempBubble=appendMessage('agent','...');try{constresponse=awaitfetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,session_id:sessionId})});constdata=awaitresponse.json();tempBubble.remove();lettext=data.text||"";leta2uiMessages=[];//1.Extract<a2ui-json>blocksconsta2uiRegex=/<a2ui-json>(.*?)<\/a2ui-json>/gs;letmatch;while((match=a2uiRegex.exec(text))!==null){try{constjsonStr=match[1].trim();constparsed=JSON.parse(jsonStr);constparsedList=Array.isArray(parsed)?parsed:[parsed];for(constmsgofparsedList){if(msg && typeofmsg==='object'){a2uiMessages.push(msg);}}}catch(e){console.error("Error parsing <a2ui-json> block:",e);}}//2.Extract<a2a_datapart_json>blocks(forrobusthistory/callbackparsing)consta2aRegex=/<a2a_datapart_json>(.*?)<\/a2a_datapart_json>/gs;while((match=a2aRegex.exec(text))!==null){try{constjsonStr=match[1].trim();constparsed=JSON.parse(jsonStr);constdataMsg=(parsed && parsed.kind==='data')?parsed.data:parsed;if(dataMsg && typeofdataMsg==='object'){a2uiMessages.push(dataMsg);}}catch(e){console.error("Error parsing <a2a_datapart_json> block:",e);}}//3.CleanXMLandA2UIJSONtagsfromdisplayedconversationaltextconstcleanText=text.replace(/<(a2ui-json|a2a_datapart_json)>.*?<\/\1>/gs,'').trim();constimageUrl=(data && typeofdata==='object' && data.image_url)?data.image_url:null;appendMessage('agent',cleanText,imageUrl,a2uiMessages);}catch(error){tempBubble.remove();appendMessage('agent',`Error:${error.message}`);}}chatForm.addEventListener('submit',async(e)=>{e.preventDefault();constprompt=userInput.value.trim();if(!prompt)return;userInput.value='';awaitsendChat(prompt,true);});functionrenderA2UI(a2uiMessages){try{letrootId=null;constcomponents={};constdataModel={};for(constmsgofa2uiMessages){if(msg.beginRendering){rootId=msg.beginRendering.root;}elseif(msg.surfaceUpdate){for(constitemofmsg.surfaceUpdate.components){components[item.id]=item.component;}}elseif(msg.dataModelUpdate){for(constitemofmsg.dataModelUpdate.contents){constval=item.valueString!==undefined?item.valueString:item.valueBool!==undefined?item.valueBool:item.valueInt!==undefined?item.valueInt:item.valueDouble!==undefined?item.valueDouble:item.valueString;dataModel[item.key]=val;}}}if(!rootId||Object.keys(components).length===0){returnnull;}functionresolveValue(valObj){if(!valObj)return'';letval='';if(typeofvalObj==='string')val=valObj;elseif(valObj.literalString!==undefined)val=valObj.literalString;elseif(valObj.path!==undefined)val=dataModel[valObj.path]||'';elseval=JSON.stringify(valObj);//DynamicallyreplaceanywrongsessionIDsinartifactURLswiththeactivesessionIdif(typeofval==='string' && val.includes('/api/artifacts/')){val=val.replace(/\/api\/artifacts\/session_[a-z0-9]+/g,`/api/artifacts/${sessionId}`);}returnval;}functionbuildElement(id){try{constcompDesc=components[id];if(!compDesc)returnnull;consttype=Object.keys(compDesc)[0];constprops=compDesc[type];constel=document.createElement('div');el.className=`a2ui-componenta2ui-${type.toLowerCase()}`;el.style.margin='4px 0';if(type==='Column'){el.style.display='flex';el.style.flexDirection='column';el.style.gap='8px';constchildren=props.children?.explicitList||[];for(constchildIdofchildren){constchildEl=buildElement(childId);if(childEl)el.appendChild(childEl);}}elseif(type==='Row'){el.style.display='flex';el.style.flexDirection='row';el.style.gap='8px';el.style.alignItems='center';constchildren=props.children?.explicitList||[];for(constchildIdofchildren){constchildEl=buildElement(childId);if(childEl)el.appendChild(childEl);}}elseif(type==='Card'){el.style.border='1px solid #ddd';el.style.borderRadius='6px';el.style.padding='12px';el.style.backgroundColor='#fdfdfd';el.style.marginTop='8px';if(props.child){constchildEl=buildElement(props.child);if(childEl)el.appendChild(childEl);}}elseif(type==='Text'){consttextVal=resolveValue(props.text);consttag=props.usageHint==='h1'?'h3':props.usageHint==='h2'?'h4':'p';consttextEl=document.createElement(tag);textEl.textContent=textVal;textEl.style.margin='0 0 4px 0';el.appendChild(textEl);}elseif(type==='Image'){constsrcVal=resolveValue(props.url)||resolveValue(props.src);constimgEl=document.createElement('img');imgEl.src=srcVal;imgEl.style.maxWidth='100%';imgEl.style.borderRadius='4px';imgEl.style.display='block';imgEl.style.marginTop='6px';imgEl.className='generated-img';el.appendChild(imgEl);}elseif(type==='Divider'){consthrEl=document.createElement('hr');hrEl.style.border='0';hrEl.style.borderTop='1px solid #eee';hrEl.style.margin='12px 0';el.appendChild(hrEl);}elseif(type==='MultipleChoice'){constlabelVal=resolveValue(props.label);constoptions=props.options?.explicitList||(Array.isArray(props.options)?props.options:[]);constcontainer=document.createElement('div');container.style.display='flex';container.style.flexDirection='column';container.style.gap='4px';container.style.margin='8px 0';if(labelVal){constlabelEl=document.createElement('label');labelEl.textContent=labelVal;labelEl.style.fontSize='12px';labelEl.style.fontWeight='bold';container.appendChild(labelEl);}constselectEl=document.createElement('select');selectEl.className='a2ui-select';selectEl.name=id;for(constoptionofoptions){constoptEl=document.createElement('option');optEl.value=option.value!==undefined?option.value:(option.id!==undefined?option.id:'');optEl.textContent=resolveValue(option.label);selectEl.appendChild(optEl);}container.appendChild(selectEl);el.appendChild(container);}elseif(type==='Button'){letlabelVal=props.label?resolveValue(props.label):'';if(!labelVal && props.child){constchildComp=components[props.child];if(childComp && childComp.Text){labelVal=resolveValue(childComp.Text.text);}}constbtnEl=document.createElement('button');btnEl.className='btn-download';btnEl.textContent=labelVal||'Submit';btnEl.addEventListener('click',(e)=>{e.preventDefault();constaction=props.action;letdownloadUrl=null;if(action && (action.name==='download_file'||action.name==='download') && action.context){consturlContext=action.context.find(ctx=>ctx.key==='url');if(urlContext){downloadUrl=resolveValue(urlContext.value);}}constisDownload=downloadUrl||(labelVal && labelVal.toLowerCase().includes('download'));if(isDownload){constfinalUrl=downloadUrl||(el.closest('.message')?.querySelector('img')?.src);if(finalUrl){constlink=document.createElement('a');link.href=finalUrl;link.download=`generation-${Date.now()}.png`;link.click();}}else{constbubbleEl=el.closest('.message');constselects=bubbleEl.querySelectorAll('.a2ui-select');letanswers=[];selects.forEach(sel=>{letlabelText=sel.previousSibling?sel.previousSibling.textContent:sel.name;constselectedText=sel.options[sel.selectedIndex]?.textContent||sel.value;answers.push(`-${labelText}:${selectedText}`);});if(answers.length > 0){constresponseText=`Selectedoptions:\n`+answers.join('\n');sendChat(responseText,false);}else{sendChat(labelVal||'Submit',false);}}});el.appendChild(btnEl);}returnel;}catch(err){console.error('Error building component:',id,err);returnnull;}}returnbuildElement(rootId);}catch(err){console.error('Error in renderA2UI:',err);returnnull;}}functionappendMessage(sender,text,imageUrl=null,a2ui=null){constbubble=document.createElement('div');bubble.className=`message${sender}`;consttextSpan=document.createElement('span');textSpan.innerHTML=`<strong>${sender==='user'?'You':'Agent'}:</strong>`;bubble.appendChild(textSpan);if(text){consttextContent=document.createTextNode(text);textSpan.appendChild(textContent);}if(sender==='agent' && a2ui && a2ui.length > 0){consta2uiEl=renderA2UI(a2ui);if(a2uiEl){bubble.appendChild(a2uiEl);}}if(imageUrl){constimgContainer=document.createElement('div');imgContainer.style.marginTop='8px';constimg=document.createElement('img');img.src=imageUrl;img.style.maxWidth='100%';img.style.borderRadius='4px';img.className='generated-img';imgContainer.appendChild(img);bubble.appendChild(imgContainer);}chatMessages.appendChild(bubble);chatMessages.scrollTop=chatMessages.scrollHeight;returnbubble;}});
+Start the FastAPI app server again:
+uv run python -m uvicorn main:app --port 8080 --host 0.0.0.0
+And talk to your fully dynamic A2UI Art Creator agent!
+7. Congratulations!
+You built an ADK agent that dynamically generates UI elements using A2UI. You can continue your learning journey by exploring the diverse framework integrations or exploring the documentation in the references below.
+Build a production frontend
+In this workshop we used a custom made pure JS frontend for didactic purposes, but for production you would build a frontend using one of the official A2UI renderers:
+Platform
+Renderer
+Install
+Web (React)
+@a2ui/react
+npm install @a2ui/react
+Web (Lit)
+@a2ui/lit
+npm install @a2ui/lit
+Web (Angular)
+@a2ui/angular
+npm install @a2ui/angular
+Mobile/Desktop
+Flutter GenUI SDK
+Getting started
+Reference docs
+A2UI specification and docs
+A2UI GitHub repo
+A2UI renderers
+ADK documentation
+ADK A2UI integration
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Connect
+Blog
+Facebook
+Medium
+Twitter
+YouTube
+Programs
+Women Techmakers
+Google Developer Groups
+Google Developer Experts
+Accelerators
+Developer consoles
+Google API Console
+Google Cloud Platform Console
+Google Play Console
+Firebase Console
+Actions on Google Console
+Cast SDK Developer Console
+Chrome Web Store Dashboard
+Android
+Chrome
+Firebase
+Google Cloud Platform
+All products
+Terms
+Privacy
+Manage cookies
+Sign up for the Google Developers newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

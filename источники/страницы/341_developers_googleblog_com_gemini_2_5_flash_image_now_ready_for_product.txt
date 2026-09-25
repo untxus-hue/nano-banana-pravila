@@ -1,0 +1,114 @@
+Gemini 2.5 Flash Image now ready for production with new aspect ratios
+- Google Developers Blog
+Community/Events
+Learn
+Blog
+YouTube
+Search
+Community/Events
+Learn
+Blog
+YouTube
+Gemini 2.5 Flash Image now ready for production with new aspect ratios
+OCT. 2, 2025
+Alisa FortinProduct Manager
+Naina RaisinghaniProduct ManagerGenAI Product
+Seth OdoomProduct Manager
+Guillaume VernadeGemini Developer Advocate
+Share
+Facebook
+Twitter
+LinkedIn
+Mail
+Our state-of-the-art image generation and editing model which has captured the imagination of the world, Gemini 2.5 Flash Image 🍌, is now generally available, ready for production environments, and comes with new features like a wider range of aspect ratios in addition to being able to specify image-only output.
+Gemini 2.5 Flash Image empowers users to seamlessly blend multiple images, maintain consistent characters for richer storytelling, perform targeted edits with natural language, and leverage Gemini's extensive world knowledge for image generation and modification. The model is accessible through the Gemini API on Google AI Studio and on Vertex AI for enterprise use.
+Further expanding creative possibilities, the model now supports 10 different aspect ratios. This allows for effortless content creation across various formats, from cinematic landscapes to vertical social media posts.
+Supported ratios include:
+Landscape: 21:9, 16:9, 4:3, 3:2
+Square: 1:1
+Portrait: 9:16, 3:4, 2:3
+Flexible: 5:4, 4:5
+Created images with different aspect ratios
+What people are building
+Cartwheel is harnessing AI to move beyond the "slot machine user experience" of many image generators, giving artists direct control to bring their creative vision to life. After months of building their "Pose Mode" feature and finding that other models failed to deliver, the team found a solution in the Gemini 2.5 Flash Image. By combining Cartwheel's 3D posing tool with Gemini 2.5 Flash Image, they have created a powerful new image creation system that delivers unparalleled character control and consistency.
+“Other models couldn't render characters from arbitrary camera angles or maintain faithfulness to a pose without sacrificing "world knowledge". The new Gemini 2.5 Flash Image model was the first that could provide both.” - Andrew Carr, Co-founder of Cartwheel
+Link to Youtube Video
+(visible only when JS is disabled)
+Volley, the creators of the AI powered dungeon crawler Wit's End, use Gemini 2.5 Flash Image to generate and edit visuals in-session—character portraits, dynamic scene stills, multi-character compositions, and quick iterative edits from chat or voice.
+“The model demonstrates state-of-the-art rule-following to aesthetic guidance while retaining latency under <10s, unlocking many live applications, for example, letting players select styles and refine outputs in multi-turn loops.” - James Wilsterman, CTO at Volley
+Link to Youtube Video
+(visible only when JS is disabled)
+It's been incredible to see the community's creativity in action during recent hackathons with Kaggle and Cerebral Valley, which saw hundreds of submissions showcasing the model's capabilities in diverse fields like STEM education, marketing collateral, and real-time augmented reality.
+Start building
+Developers can begin building with Gemini 2.5 Flash Image today. Check out the developer docs and cookbook for guidance on the new features, including the expanded aspect ratios and the ability to specify image-only output. The model is available via the Gemini API and for testing in Google AI Studio.
+Building with Gemini 2.5 Flash Image is easy with Google AI Studio’s “build mode.” Instantly create and remix custom AI-powered apps from a single prompt, like "Build me an image editing app with filters." When you're ready, deploy your creation directly from AI Studio or save the code to GitHub—all for free. Try out and remix some of our example apps:
+Bananimate: Create animated GIFs with Nano Banana from your images and prompts.
+Enhance: Infinitely zoom into any photography with our creative upscaler. See if you can find the easter-egg (hint: 🍌)
+Fit check: Upload a photo of yourself and an outfit to see how it looks on you. A virtual fitting room powered by Nano Banana.
+Gemini 2.5 Flash Image is priced at $0.039 per image, with a rate of $30.00 per 1 million output tokens. Pricing for other input and output modalities aligns with the standard Gemini 2.5 Flash pricing.
+Here is a sample code to get you started:
+from google import genai
+from google.genai import types
+from PIL import Image
+client = genai.Client()
+prompt = "Create a photograph of the subject in this image as if they were living in the 1980s. The photograph should capture the distinct fashion, hairstyles, and overall atmosphere of that time period."
+image = Image.open('/path/to/image.png')
+response = client.models.generate_content(
+model="gemini-2.5-flash-image",
+contents=[prompt, image],
+config=types.GenerateContentConfig(
+response_modalities=["IMAGE"],
+image_config=types.ImageConfig(
+aspect_ratio="16:9",
+)
+)
+)
+for part in response.parts:
+if part.inline_data is not None:
+generated_image = part.as_image()
+generated_image.show()
+Python
+Copied
+We are continually amazed by the creativity of our developer community. We can't wait to see what you build next!
+posted in:
+AI
+Previous
+Next
+Related Posts
+AIAnnouncementsExplore
+Introducing Support for Local AI Models in the Antigravity SDK
+SEPT. 23, 2026
+AIAnnouncementsEvents
+Colab is now part of your Google AI plan
+SEPT. 22, 2026
+Connect
+Blog
+Bluesky
+Instagram
+LinkedIn
+X (Twitter)
+YouTube
+Programs
+Google Developer Program
+Google Developer Groups
+Google Developer Experts
+Accelerators
+Women Techmakers
+Google Cloud & NVIDIA
+Developer consoles
+Google API Console
+Google Cloud Platform Console
+Google Play Console
+Firebase Console
+Actions on Google Console
+Cast SDK Developer Console
+Chrome Web Store Dashboard
+Google Home Developer Console
+Android
+Chrome
+Firebase
+Google Cloud Platform
+All products
+Manage cookies
+Terms
+Privacy

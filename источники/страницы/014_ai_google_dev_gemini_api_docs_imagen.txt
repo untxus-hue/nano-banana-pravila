@@ -1,0 +1,100 @@
+Generate images using Imagen  |  Gemini API  |  Google AI for Developers
+Skip to main content
+/
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Shqip
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Get API key
+Cookbook
+Community
+Sign in
+Gemini API
+Get API key
+Cookbook
+Community
+Gemini 3.8 Flash is now available.
+Try it out
+.
+Home
+Gemini API
+Send feedback
+Generate images using Imagen
+Imagen models are shut down. Use Nano Banana for image generation.
+Imagen is Google's legacy image generation model. It is now shut down
+and no longer available in the Gemini API.
+Migrate to Nano Banana
+Migrate to Nano Banana for image generation:
+Model name
+: Use
+gemini-2.5-flash-image
+(or Nano Banana 2 models such as
+gemini-3.1-flash-image
+) instead of Imagen model names.
+Method
+: Use
+client.models.generate_content
+instead of
+client.models.generate_images
+.
+Response handling
+: Nano Banana returns content parts containing image data
+instead of a specific image response object.
+See the
+Image generation guide
+for
+details and examples.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-09-17 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-17 UTC."],[],[]]
+Terms
+Privacy
+Manage cookies
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Shqip
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

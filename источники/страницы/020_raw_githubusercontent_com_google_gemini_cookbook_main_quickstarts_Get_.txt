@@ -1,0 +1,906 @@
+### MARKDOWN ###
+##### Copyright 2026 Google LLC.
+
+### CODE ###
+# @title Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+### MARKDOWN ###
+# Gemini Built-in Image generation (aka 🍌Nano-Banana models)
+
+### MARKDOWN ###
+<a target="_blank" href="https://colab.research.google.com/github/google-gemini/cookbook/blob/main/quickstarts/Get_Started_Nano_Banana.ipynb"><img src="https://www.tensorflow.org/images/colab_logo_32px.png" />Run in Google Colab</a>
+
+### MARKDOWN ###
+---
+
+### MARKDOWN ###
+This notebook will show you how to use the native image generation and editing features of Gemini using the **Google GenAI SDK** and the **Interactions API**.
+
+Gemini offers three specialized image models:
+- **Nano-Banana 2 Lite (`gemini-3.1-flash-lite-image`)**: The fastest and most cost-effective image generation model. It includes a free tier, making it ideal for high-throughput generation, rapid prototyping, and interactive applications.
+- **Nano-Banana 2 (`gemini-3.1-flash-image`)**: The standard, highly versatile image model. It balances speed, quality, wide aspect ratios (from 1:8 to 8:1), Google Search grounding, image grounding, and multimodal video-to-image inputs.
+- **Nano-Banana Pro (`gemini-3-pro-image-preview`)**: The flagship model with advanced reasoning (thinking), 4K resolution, complex typography rendering, and high-fidelity multi-image composition.
+
+### MARKDOWN ###
+> **Note:** [Enable billing](https://ai.google.dev/gemini-api/docs/billing#enable-billing) to get higher rate limits and unlock all models.
+
+### MARKDOWN ###
+Note that [Imagen](./Get_started_imagen.ipynb) models also offer image generation if you are looking for dedicated diffusion-based text-to-image generation.
+
+### MARKDOWN ###
+## Setup
+
+### MARKDOWN ###
+### Install SDK
+
+### CODE ###
+%pip install -U -q "google-genai>=2.9.0"  # minimum version needed for the nano-banana models
+
+### MARKDOWN ###
+### Setup your API key
+
+To run the following cell, your API key must be stored in a Colab Secret named `GEMINI_API_KEY`. If you don't already have an API key, or you're unsure how to create a Secret, see the [Authentication quickstart](Authentication.ipynb) for an example.
+
+### CODE ###
+from google.colab import userdata
+
+GEMINI_API_KEY = userdata.get("GEMINI_API_KEY")
+
+### MARKDOWN ###
+### Initialize SDK client
+
+With the `google-genai` SDK, initialize the client using your API key.
+
+### CODE ###
+from google import genai
+from google.genai import types
+
+client = genai.Client(api_key=GEMINI_API_KEY)
+
+### MARKDOWN ###
+### Select a model
+
+You can choose between the three Nano-Banana models:
+* **`gemini-3-pro-image-preview`** (Nano-Banana Pro): Flagship model with thinking and 4K resolution.
+* **`gemini-3.1-flash-image`** (Nano-Banana 2): General-purpose model with Search and Image grounding.
+* **`gemini-3.1-flash-lite-image`** (Nano-Banana 2 Lite): Fastest and cheapest with a free tier. You will use it as the default throughout this quickstart.
+
+### CODE ###
+MODEL_ID = "gemini-3.1-flash-lite-image"  # @param ["gemini-3-pro-image-preview", "gemini-3.1-flash-image", "gemini-3.1-flash-lite-image"] {"allow-input": true, "isTemplate": true}
+
+### MARKDOWN ###
+### Helper function
+
+### MARKDOWN ###
+The helper function below extracts and renders text and image outputs from an `interaction` object using `interaction.output_text` and `interaction.output_image`.
+
+### CODE ###
+import base64
+import io
+from IPython.display import display, HTML, Markdown
+from PIL import Image
+
+
+def show_interaction(interaction):
+  """Displays text and image outputs from an interaction."""
+  if getattr(interaction, "output_text", None):
+    display(Markdown(interaction.output_text))
+  if getattr(interaction, "output_image", None):
+    image_data = base64.b64decode(interaction.output_image.data)
+    display(Image.open(io.BytesIO(image_data)))
+
+### MARKDOWN ###
+## Generate images
+
+Using the Gemini Image generation model with the Interactions API is simple: you call `client.interactions.create`.
+
+You can set `response_modalities` to indicate to the model that you are expecting text and images in the output: `response_modalities=["text", "image"]`.
+
+If you only want an image and don't need text, you can set `response_modalities=["image"]`.
+
+### CODE ###
+prompt = "Create a photorealistic image of a siamese cat with a green left eye and a blue right one and red patches on his face and a black and pink nose"  # @param {type:"string"}
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=prompt,
+    response_modalities=[
+        "text",
+        "image",
+    ],  # response_modalities=['image'] if you only want the image
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+## Edit images
+
+To edit an image, use `previous_interaction_id` to refer back to your original interaction. This allows Gemini to maintain character and style consistency across edits without having to re-upload image bytes.
+
+### CODE ###
+text_prompt = "Create a side view picture of that cat, in a tropical forest, eating a nano-banana, under the stars"  # @param {type:"string"}
+
+edit_interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=text_prompt,
+    previous_interaction_id=interaction.id,
+    response_modalities=["text", "image"],
+)
+
+show_interaction(edit_interaction)
+
+### MARKDOWN ###
+As you can see, you can clearly recognize the same cat with its peculiar nose and eyes.
+
+### MARKDOWN ###
+## Control aspect ratio
+
+You can control the aspect ratio of the output image. By default, the model generates square (1:1) images unless matching input images.
+
+To control the aspect ratio, add `aspect_ratio` to `image_generation_config` in `generation_config`. The available aspect ratios include:
+
+| Aspect ratio | Models Supported | Output Dimensions (1K) |
+| --- | --- | --- |
+| 1:1 | All (NB2Lite, NB2, NBP) | 1024x1024 |
+| 2:3 / 3:2 | All (NB2Lite, NB2, NBP) | 832x1248 / 1248x832 |
+| 3:4 / 4:3 | All (NB2Lite, NB2, NBP) | 864x1184 / 1184x864 |
+| 4:5 / 5:4 | All (NB2Lite, NB2, NBP) | 896x1152 / 1152x896 |
+| 9:16 / 16:9 | All (NB2Lite, NB2, NBP) | 768x1344 / 1344x768 |
+| 21:9 | All (NB2Lite, NB2, NBP) | 1536x672 |
+| 1:4 / 4:1 | Nano-Banana 2 & Pro | Ultrawide / Panoramic |
+| 1:8 / 8:1 | Nano-Banana 2 & Pro | Extreme panoramic |
+
+### CODE ###
+prompt = "A cute cat sleeping on a sunny windowsill next to a potted plant"  # @param {type:"string"}
+aspect_ratio = "16:9"  # @param ["1:1","1:4","1:8","2:3","3:2","3:4","4:1","4:3","4:5","5:4","8:1","9:16","16:9","21:9"]
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=prompt,
+    generation_config={
+        "image_generation_config": {"aspect_ratio": aspect_ratio}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+## Get multiple images (ex: tell stories)
+
+You can ask Gemini to generate multiple images in a single interaction to illustrate step-by-step instructions or visual stories.
+
+### CODE ###
+prompt = "Show me how to bake macarons with images"  # @param ["Show me how to bake macarons with images", "A visual story of a seed growing into a giant flower"] {"allow-input": true}
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=prompt,
+    response_modalities=["text", "image"],
+)
+
+for step in interaction.steps:
+  if step.type == "model_output" and step.content:
+    for content in step.content:
+      if getattr(content, "text", None):
+        display(Markdown(content.text))
+      if getattr(content, "image", None):
+        img_bytes = base64.b64decode(content.image.data)
+        display(Image.open(io.BytesIO(img_bytes)))
+
+### MARKDOWN ###
+## Chat mode / Multi-turn conversations
+
+You can chain multiple turns using `previous_interaction_id` to iterate on a character or scene interactively.
+
+### CODE ###
+# Turn 1: Create initial character
+message = (
+    "Create an image of a plastic toy fox figurine in a kid's bedroom, "
+    "it can be on the floor next to wooden blocks"
+)
+turn1 = client.interactions.create(
+    model=MODEL_ID,
+    input=message,
+    response_modalities=["text", "image"],
+)
+show_interaction(turn1)
+
+### CODE ###
+# Turn 2: Add detail
+turn2 = client.interactions.create(
+    model=MODEL_ID,
+    input="Add a blue planet on the figurine's helmet or hat (add one if needed)",
+    previous_interaction_id=turn1.id,
+    response_modalities=["text", "image"],
+)
+show_interaction(turn2)
+
+### CODE ###
+# Turn 3: Change environment
+turn3 = client.interactions.create(
+    model=MODEL_ID,
+    input="Move that figurine to a tropical beach",
+    previous_interaction_id=turn2.id,
+    response_modalities=["text", "image"],
+)
+show_interaction(turn3)
+
+### CODE ###
+# Turn 4: Dynamic action
+turn4 = client.interactions.create(
+    model=MODEL_ID,
+    input="Now it should be base-jumping from a spaceship with a wingsuit",
+    previous_interaction_id=turn3.id,
+    response_modalities=["text", "image"],
+)
+show_interaction(turn4)
+
+### MARKDOWN ###
+You can also control the aspect ratio of the output image during multi-turn interactions.
+
+### CODE ###
+turn5 = client.interactions.create(
+    model=MODEL_ID,
+    input="Bring it back to the bedroom in an ultra-wide panoramic shot",
+    previous_interaction_id=turn4.id,
+    generation_config={"image_generation_config": {"aspect_ratio": "16:9"}},
+    response_modalities=["text", "image"],
+)
+show_interaction(turn5)
+
+### MARKDOWN ###
+## Mix multiple pictures
+
+You can mix multiple images (up to 3 with Nano-Banana 2 Lite, up to 14 with Nano-Banana 2 and Pro, 6 with high fidelity), either to combine multiple characters into a single scene or to style an object based on reference photos.
+
+### CODE ###
+import base64
+from PIL import Image
+
+# Download sample reference images
+!wget "https://storage.googleapis.com/generativeai-downloads/images/sweets.png" -O "sweets.png" -q
+!wget "https://storage.googleapis.com/generativeai-downloads/images/car.png" -O "car.png" -q
+
+
+def image_to_base64(path):
+  with open(path, "rb") as f:
+    return base64.b64encode(f.read()).decode("utf-8")
+
+
+prompt = "Create a cute toy candy car combining the style and elements of these two images"
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("sweets.png"),
+            "mime_type": "image/png",
+        },
+        {
+            "type": "image",
+            "data": image_to_base64("car.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+<a name="thinking"></a>
+## Advanced Capabilities: Thinking (Nano-Banana Pro & 2)
+
+**Nano-Banana Pro** (`gemini-3-pro-image-preview`) and **Nano-Banana 2** (`gemini-3.1-flash-image`) include reasoning capabilities ("thinking") to evaluate prompt instructions and plan visual composition before generating the image.
+
+### CODE ###
+prompt = "Create an unusual but realistic image that might go viral"  # @param {type:"string"}
+aspect_ratio = "16:9"  # @param ["1:1","1:4","1:8","2:3","3:2","3:4","4:1","4:3","4:5","5:4","8:1","9:16","16:9","21:9"]
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=prompt,
+    generation_config={
+        "thinking_level": "high",
+        "image_generation_config": {"aspect_ratio": aspect_ratio},
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Check thoughts and summaries
+
+You can inspect the thinking process that guided the image generation:
+
+### CODE ###
+for step in interaction.steps:
+  if step.type == "thought" and getattr(step, "summary", None):
+    summary_items = (
+        step.summary if isinstance(step.summary, list) else [step.summary]
+    )
+    for item in summary_items:
+      text = getattr(item, "text", str(item))
+      display(Markdown(f"**Thought:** {text}"))
+
+### MARKDOWN ###
+### Thought signatures
+
+Gemini 3 models include `thought_signature` fields in thought steps to maintain reasoning context across multi-turn interactions.
+
+### CODE ###
+# Display a trimmed preview of thought signatures:
+for step in interaction.steps:
+  if hasattr(step, "thought_signature") and step.thought_signature:
+    sig = str(step.thought_signature)
+    print(f"Thought signature preview: {sig[:50]}... (total length: {len(sig)})")
+
+### MARKDOWN ###
+<a name="grounding"></a>
+## Search Grounding (Nano-Banana Pro & 2)
+
+**Nano-Banana Pro** and **Nano-Banana 2** support Google Search grounding. This allows the model to fetch real-time information from the web to accurately depict current events, weather forecasts, or specific real-world topics.
+
+> **Note:** Search grounding is supported on `gemini-3.1-flash-image` and `gemini-3-pro-image-preview`.
+
+### CODE ###
+prompt = (
+    "Visualize the current weather forecast for the next 5 days in Tokyo as a "
+    "clean, modern weather chart. Add visual icons for each day."
+)
+aspect_ratio = "16:9"  # @param ["1:1","1:4","1:8","2:3","3:2","3:4","4:1","4:3","4:5","5:4","8:1","9:16","16:9","21:9"]
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=prompt,
+    tools=[{"type": "google_search"}],
+    generation_config={
+        "image_generation_config": {"aspect_ratio": aspect_ratio}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Display Grounding Sources
+
+You can extract grounding sources from the interaction steps:
+
+### CODE ###
+# Display grounding sources if available
+for step in interaction.steps:
+  if step.type == "model_output" and hasattr(step, "grounding_metadata"):
+    metadata = step.grounding_metadata
+    if metadata and hasattr(metadata, "grounding_chunks"):
+      display(Markdown("### Grounding Sources:"))
+      for chunk in metadata.grounding_chunks:
+        if hasattr(chunk, "web") and chunk.web:
+          title = getattr(chunk.web, "title", "Source")
+          uri = getattr(chunk.web, "uri", "#")
+          display(HTML(f"- <a href='{uri}' target='_blank'>{title}</a>"))
+
+### MARKDOWN ###
+<a name="image_grounding"></a>
+## Image Grounding (Nano-Banana 2)
+
+**Nano-Banana 2** (`gemini-3.1-flash-image`) is also capable of searching for relevant images on Google Search to visually ground its generations, providing high accuracy for specific species, landmarks, and objects.
+
+### CODE ###
+prompt = "A detailed scientific illustration of a Timarete thelxione polychaete worm resting on coral"  # @param {type:"string"}
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=prompt,
+    tools=[{"type": "google_search"}],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+<a name="image_size"></a>
+## Resolution Control: 512px, 1K, 2K, and 4K
+
+Gemini models support multiple output resolutions:
+- **512px**: Supported by **Nano-Banana 2 Lite** and **Nano-Banana 2** for ultra-fast, low-latency rendering.
+- **1K (Default)**: Supported by all models.
+- **2K / 4K**: Supported by **Nano-Banana 2** and **Nano-Banana Pro** for high-resolution photography and print.
+
+### CODE ###
+prompt = "A photo of an oak tree experiencing every season in four quadrants"
+resolution = "2K"  # @param ["512px", "1K", "2K", "4K"]
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=prompt,
+    generation_config={
+        "image_generation_config": {
+            "aspect_ratio": "1:1",
+            "image_size": resolution,
+        }
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+<a name="translate"></a>
+## Multilingual Text Rendering & Translation (Nano-Banana Pro & 2)
+
+**Nano-Banana Pro** and **Nano-Banana 2** can generate and translate complex text, diagrams, and infographics in dozens of languages.
+
+### CODE ###
+# Generate initial infographic in Spanish
+info_prompt = (
+    "Make an infographic explaining Einstein's theory of General Relativity "
+    "suitable for a 6th grader in Spanish"
+)
+
+infographic = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=info_prompt,
+    generation_config={
+        "image_generation_config": {
+            "aspect_ratio": "16:9",
+            "image_size": "2K",
+        }
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(infographic)
+
+### CODE ###
+# Translate the infographic to Japanese keeping visual style intact
+translate_prompt = (
+    "Translate this infographic into Japanese, keeping everything else the same"
+)
+
+translated_infographic = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=translate_prompt,
+    previous_interaction_id=infographic.id,
+    generation_config={
+        "image_generation_config": {
+            "aspect_ratio": "16:9",
+            "image_size": "2K",
+        }
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(translated_infographic)
+
+### MARKDOWN ###
+<a name="mix"></a>
+## High-Fidelity Multi-Image Composition
+
+**Nano-Banana 2** and **Nano-Banana Pro** can combine up to 14 input images (with up to 6 in high fidelity) into a unified composition.
+
+### CODE ###
+prompt = (
+    "Create a marketing photoshoot of these items arranged on a modern "
+    "minimalist wooden table. Focus on the items and replace backgrounds."
+)
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=[
+        {"type": "text", "text": prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("sweets.png"),
+            "mime_type": "image/png",
+        },
+        {
+            "type": "image",
+            "data": image_to_base64("car.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    generation_config={
+        "image_generation_config": {"aspect_ratio": "16:9"}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+<a name="video_to_image"></a>
+## Video-to-Image Generation (Nano-Banana 2)
+
+**Nano-Banana 2** (`gemini-3.1-flash-image`) can ingest video files or public YouTube video URLs and generate new images based on video scenes.
+
+### CODE ###
+# Pass a public YouTube video URL as part of the input
+response = client.models.generate_content(
+    model="gemini-3.1-flash-image",
+    contents=[
+        types.Part(
+            file_data=types.FileData(
+                file_uri="https://www.youtube.com/watch?v=kBPk_T_pUj8",
+                mime_type="video/mp4",
+            )
+        ),
+        "Generate a vintage movie poster inspired by the scenes in this video",
+    ],
+    config=types.GenerateContentConfig(
+        response_modalities=["image"],
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+  if part.inline_data:
+    img = Image.open(io.BytesIO(part.inline_data.data))
+    display(img)
+
+### MARKDOWN ###
+## Other cool prompts to test
+
+### MARKDOWN ###
+### Back to the 80s
+
+### CODE ###
+text_prompt = """
+Create a photograph of the person in this image as if they were living in the 1980s.
+The photograph should capture the distinct fashion, hairstyles, and atmosphere.
+"""
+
+!wget "https://storage.googleapis.com/generativeai-downloads/images/firefighter.jpg" -O "person.jpg" -q
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("person.jpg"),
+            "mime_type": "image/jpeg",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Mini-figurine
+
+### CODE ###
+text_prompt = """
+Create a 1/7 scale commercialized figurine of the characters in the picture.
+The figurine is placed on a computer desk with a round transparent acrylic base.
+Next to the screen is a collectible packaging box with flat illustrations.
+"""
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("sweets.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Stickers
+
+### CODE ###
+text_prompt = """
+Create a single sticker in the distinct Pop Art style.
+The image should feature bold, thick black outlines around all figures and text.
+Utilize a limited, flat color palette characteristic of 1960s comic books.
+"""
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("car.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Multi-image fusion
+Tip: Combine multiple images into a single collage first if you need to go beyond the image upload limit.
+
+### CODE ###
+text_prompt = """
+Combine everything in these images to create a 60s inspired fashion editorial photoshoot.
+"""
+
+!wget "https://storage.googleapis.com/generativeai-downloads/images/Mont_St_Michel.png" -O "Mont_St_Michel.png" -q
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("person.jpg"),
+            "mime_type": "image/jpeg",
+        },
+        {
+            "type": "image",
+            "data": image_to_base64("car.png"),
+            "mime_type": "image/png",
+        },
+        {
+            "type": "image",
+            "data": image_to_base64("Mont_St_Michel.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Colorize and restore images
+
+### CODE ###
+text_prompt = """
+Restore and colorize this photograph, adding natural, realistic colors and atmospheric lighting.
+"""
+
+!wget "https://storage.googleapis.com/generativeai-downloads/images/instrument.jpg" -O "instrument.jpg" -q
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("instrument.jpg"),
+            "mime_type": "image/jpeg",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Google Map transformation
+
+### CODE ###
+text_prompt = """
+Show me what you see from the red arrow perspective looking towards the landmark.
+"""
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("Mont_St_Michel.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Isometric landmark
+
+### CODE ###
+text_prompt = """
+Take this location and make the landmark an isometric image (building only), in retro game style.
+"""
+
+interaction = client.interactions.create(
+    model=MODEL_ID,
+    input=[
+        {"type": "text", "text": text_prompt},
+        {
+            "type": "image",
+            "data": image_to_base64("Mont_St_Michel.png"),
+            "mime_type": "image/png",
+        },
+    ],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### What does Google know about me? (Nano-Banana Pro & Nano-Banana 2)
+
+### CODE ###
+text_prompt = """
+Search the web then generate an image of isometric perspective, detailed pixel art.
+"""
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=text_prompt,
+    tools=[{"type": "google_search"}],
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### CODE ###
+# Display grounding sources if available
+for step in interaction.steps:
+  if step.type == "model_output" and hasattr(step, "grounding_metadata"):
+    metadata = step.grounding_metadata
+    if metadata and hasattr(metadata, "grounding_chunks"):
+      display(Markdown("### Grounding Sources:"))
+      for chunk in metadata.grounding_chunks:
+        if hasattr(chunk, "web") and chunk.web:
+          title = getattr(chunk.web, "title", "Source")
+          uri = getattr(chunk.web, "uri", "#")
+          display(HTML(f"- <a href='{uri}' target='_blank'>{title}</a>"))
+
+### MARKDOWN ###
+### Text-heavy images (Nano-Banana Pro & Nano-Banana 2)
+
+### CODE ###
+text_prompt = """
+Show me an infographic about how sonnets work, using a sonnet about bananas written in it,
+along with a lengthy literary analysis of the poem. Good vintage aesthetics.
+"""
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=text_prompt,
+    generation_config={
+        "image_generation_config": {"aspect_ratio": "16:9"}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Theater program (Nano-Banana Pro & Nano-Banana 2)
+
+### CODE ###
+text_prompt = """
+A photo of a program for the Broadway show about TCG players on a nice theater seat,
+professional and glossy, showing the cover and a page with the stage.
+"""
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=text_prompt,
+    generation_config={
+        "image_generation_config": {"aspect_ratio": "4:3"}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Famous meme restyling (Nano-Banana Pro & Nano-Banana 2)
+
+### CODE ###
+text_prompt = """
+There's a very famous meme about a dog in a room on fire saying 'this is fine'.
+Can you create a detailed handcrafted papier-mâché version of this scene?
+"""
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=text_prompt,
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+### MARKDOWN ###
+### Sprites (Nano-Banana Pro & Nano-Banana 2)
+
+### CODE ###
+text_prompt = """
+Sprite sheet of a jumping illustration, 3x3 grid, white background, sequence,
+frame-by-frame animation, square aspect ratio. Follow the reference structure.
+"""
+
+interaction = client.interactions.create(
+    model="gemini-3.1-flash-image",
+    input=text_prompt,
+    generation_config={
+        "image_generation_config": {"aspect_ratio": "1:1"}
+    },
+    response_modalities=["text", "image"],
+)
+
+show_interaction(interaction)
+
+if interaction.output_image:
+  with open("sprites.png", "wb") as f:
+    f.write(base64.b64decode(interaction.output_image.data))
+
+### MARKDOWN ###
+This will give you a grid like this one:
+
+<img src="https://storage.googleapis.com/generativeai-downloads/images/sprite.png">
+
+
+Now let's convert it into an animated GIF.
+
+### CODE ###
+# @title Convert sprite sheet to animated GIF
+from IPython.display import display, Image as IPImage
+from PIL import Image
+
+try:
+  image = Image.open("sprites.png")
+  total_width, total_height = image.size
+
+  num_cols, num_rows = 3, 3
+  sprite_width = total_width // num_cols
+  sprite_height = total_height // num_rows
+
+  frames = []
+  for row in range(num_rows):
+    for col in range(num_cols):
+      box = (
+          col * sprite_width,
+          row * sprite_height,
+          (col + 1) * sprite_width,
+          (row + 1) * sprite_height,
+      )
+      frames.append(image.crop(box))
+
+  gif_path = "sprites.gif"
+  frames[0].save(
+      gif_path,
+      save_all=True,
+      append_images=frames[1:],
+      duration=150,
+      loop=0,
+  )
+  display(IPImage(filename=gif_path))
+except Exception as e:
+  print("GIF creation skipped:", e)
+
+### MARKDOWN ###
+This should give you something like this GIF:
+
+<img src="https://storage.googleapis.com/generativeai-downloads/images/sprite.gif">
+
+Another nice use case of a grid using Nano-Banana Pro and 2 can be found [in this AI Studio App](https://ai.studio/apps/7dcb417f-b814-477d-bd2b-8f7b0792ca47?fullscreenApplet=true).
+
+### MARKDOWN ###
+## Next Steps
+### Useful documentation references:
+
+Check the [image generation documentation](https://ai.google.dev/gemini-api/docs/image-generation) for more details about the image generation capabilities of Gemini models.

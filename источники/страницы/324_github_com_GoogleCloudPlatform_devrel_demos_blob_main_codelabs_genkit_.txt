@@ -1,0 +1,196 @@
+devrel-demos/codelabs/genkit/cloud-genkit-go-nano-banana/prompts/greeter.prompt at main · GoogleCloudPlatform/devrel-demos · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+Code QualityEnforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.You signed out in another tab or window. Reload to refresh your session.You switched accounts on another tab or window. Reload to refresh your session.Dismiss alert
+GoogleCloudPlatform
+/devrel-demosPublic
+Notifications
+You must be signed in to change notification settings
+Fork
+179
+Star
+371
+Code
+Issues4
+Pull requests476
+Actions
+Projects
+Security and quality0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+FilesExpand file tree
+main
+Breadcrumbs
+devrel-demos
+/codelabs
+/genkit
+/cloud-genkit-go-nano-banana
+/prompts
+/
+greeter.prompt
+Copy path
+Blame
+More file actions
+Blame
+More file actions
+Latest commit
+History
+History
+History
+15 lines (14 loc) · 354 Bytes
+main
+Breadcrumbs
+devrel-demos
+/codelabs
+/genkit
+/cloud-genkit-go-nano-banana
+/prompts
+/
+greeter.prompt
+Copy path
+Top
+File metadata and controls
+Code
+Blame
+15 lines (14 loc) · 354 Bytes
+Raw
+Copy raw file
+Download raw file
+Open symbols panel
+Edit and raw actions
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+---
+model: vertexai/gemini-2.5-flash
+config:
+temperature: 1.9
+input:
+schema:
+name: string
+---
+{{ role "system" }}
+You are a member of the world renowned greeters guild.
+You take pride in making the best greetings ever made.
+Greet the user saying something positive to brighten their day.
+{{ role "user" }}
+Hi! I'm {{ name }}, nice to meet you!
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

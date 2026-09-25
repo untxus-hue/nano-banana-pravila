@@ -1,0 +1,380 @@
+GitHub - google-gemini/veo-3-nano-banana-gemini-api-quickstart: Veo 3 & Nano Banana Gemini API Quickstart · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub Copilot
+Write better code with AI
+GitHub Copilot app
+Direct agents from issue to merge
+MCP Registry
+Integrate external tools
+DEVELOPER WORKFLOWS
+Actions
+Automate any workflow
+Codespaces
+Instant dev environments
+Issues
+Plan and track work
+Code Review
+Manage code changes
+Code Quality
+Enforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced Security
+Find and fix vulnerabilities
+Code security
+Secure your code as you build
+Secret protection
+Stop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub Sponsors
+Fund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platform
+AI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced Security
+Enterprise-grade security features
+Copilot for Business
+Enterprise-grade AI features
+Premium Support
+Enterprise-grade 24/7 support
+Pricing
+Search
+/
+Sign in
+Sign up
+Appearance settings
+You signed in with another tab or window.
+Reload
+to refresh your session.
+You signed out in another tab or window.
+Reload
+to refresh your session.
+You switched accounts on another tab or window.
+Reload
+to refresh your session.
+Dismiss alert
+{{ message }}
+google-gemini
+/
+veo-3-nano-banana-gemini-api-quickstart
+Public
+Notifications
+You must be signed in to change notification settings
+Fork
+100
+Star
+335
+Code
+Issues
+3
+Pull requests
+12
+Actions
+Projects
+Security and quality
+0
+Insights
+Additional navigation options
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security and quality
+Insights
+main
+Branches
+Tags
+Go to file
+Code
+Open more actions menu
+Latest commit
+History
+26 Commits
+26 Commits
+Folders and files
+Name
+Name
+Last commit message
+Last commit date
+.allstar
+.allstar
+.gemini/
+commands/
+plan
+.gemini/
+commands/
+plan
+app
+app
+components/
+ui
+components/
+ui
+lib
+lib
+public
+public
+.gitignore
+.gitignore
+LICENSE
+LICENSE
+README.md
+README.md
+components.json
+components.json
+eslint.config.mjs
+eslint.config.mjs
+next.config.ts
+next.config.ts
+package-lock.json
+package-lock.json
+package.json
+package.json
+postcss.config.mjs
+postcss.config.mjs
+tsconfig.json
+tsconfig.json
+View all files
+Repository files navigation
+README
+Apache-2.0 license
+Security
+More
+items
+Gemini API Veo 3 & Nano Banana Quickstart
+A NextJs quickstart for creating and editing images and videos using Google's latest Gemini API models including
+Veo 3
+,
+Imagen 4
+, and
+Gemini 2.5 Flash Image aka nano banana
+.
+Compose
+Edit
+Video
+Note
+If you want a full studio, consider
+Google's Flow
+(a professional environment for Veo/Imagen). Use this repo as a lightweight studio to learn how to build your own UI that generates content with Google's AI models via the Gemini API.
+(This is not an official Google product.)
+Features
+The quickstart provides a unified composer UI with different modes for content creation:
+Create Image
+: Generate images from text prompts using
+Imagen 4
+or
+Gemini 2.5 Flash Image
+.
+Edit Image
+: Edit an image based on a text prompt using
+Gemini 2.5 Flash Image
+.
+Compose Image
+: Combine multiple images with a text prompt to create a new image using
+Gemini 2.5 Flash Image
+.
+Create Video
+: Generate videos from text prompts or an initial image using
+Veo 3
+.
+Quick Actions & UI Features
+Seamless navigation between modes after generating content
+Download generated images & videos
+Cut videos directly in the browser to specific time ranges
+Getting Started: Development and Local Testing
+Follow these steps to get the application running locally for development and testing.
+1. Prerequisites:
+Node.js and npm (or yarn/pnpm)
+GEMINI_API_KEY
+: The application requires a
+GEMINI API key
+. Either create a
+.env
+file in the project root and add your API key:
+GEMINI_API_KEY="YOUR_API_KEY"
+or set the environment variable in your system.
+Warning
+Google Veo 3, Imagen 4, and Gemini 2.5 Flash Image are part of the Gemini API Paid tier. You will need to be on the paid tier to use these models.
+2. Install Dependencies:
+npm install
+3. Run Development Server:
+npm run dev
+Open your browser and navigate to
+http://localhost:3000
+to see the application.
+Project Structure
+The project is a standard Next.js application with the following key directories:
+app/
+: Contains the main application logic and pages
+page.tsx
+: Main page with the unified composer UI.
+api/
+: API routes for different operations
+imagen/generate/
+: Image generation with Imagen 4
+gemini/generate/
+: Image generation with Gemini 2.5 Flash Image
+gemini/edit/
+: Image editing/composition with Gemini 2.5 Flash Image
+veo/generate/
+: Video generation operations
+veo/operation/
+: Check video generation status
+veo/download/
+: Download generated videos
+components/
+: Reusable React components
+ui/Composer.tsx
+: The main unified composer for all interactions.
+ui/VideoPlayer.tsx
+: Video player with trimming
+ui/ModelSelector.tsx
+: Model selection component
+ui/dropzone.tsx
+: Drag-and-drop component for file uploads.
+lib/
+: Utility functions and schema definitions
+public/
+: Static assets
+Official Docs and Resources
+Gemini API docs:
+https://ai.google.dev/gemini-api/docs
+Veo 3 Guide:
+https://ai.google.dev/gemini-api/docs/video?example=dialogue
+Imagen 4 Guide:
+https://ai.google.dev/gemini-api/docs/imagen
+How it Works
+The application uses the following API routes to interact with the Google models:
+Image APIs
+app/api/imagen/generate/route.ts
+: Handles image generation requests with Imagen 4
+app/api/gemini/generate/route.ts
+: Handles image generation requests with Gemini 2.5 Flash Image
+app/api/gemini/edit/route.ts
+: Handles image editing and composition with Gemini 2.5 Flash (supports multiple images)
+Video APIs
+app/api/veo/generate/route.ts
+: Handles video generation requests with Veo 3
+app/api/veo/operation/route.ts
+: Checks the status of video generation operations
+app/api/veo/download/route.ts
+: Downloads generated videos
+Technologies Used
+Next.js
+- React framework for building the user interface
+React
+- JavaScript library for building user interfaces
+Tailwind CSS
+- For styling
+Gemini API
+with:
+Veo 3
+- For video generation
+Imagen 4
+- For high-quality image generation
+Gemini 2.5 Flash
+- For fast image generation, editing, and composition
+Questions and feature requests
+Want a feature?
+Please open an issue describing the use case and proposed behavior.
+License
+This project is licensed under the Apache License 2.0.
+About
+Veo 3 & Nano Banana Gemini API Quickstart
+ai.studio
+Resources
+Readme
+Apache-2.0 license
+Security policy
+Security policy
+Activity
+Custom properties
+Stars
+335
+stars
+Watchers
+4
+watching
+Forks
+100
+forks
+Report repository
+Used by
+Contributors
+Languages
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

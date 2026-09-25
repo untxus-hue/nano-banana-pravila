@@ -1,0 +1,1571 @@
+Use model configuration to control responses  |  Firebase AI Logic
+Skip to main content
+Build
+Build
+Get to market quickly and securely with products that can scale globally
+Go to Build
+Build Products
+App Check
+App Hosting
+Authentication
+Cloud Functions
+Cloud Storage
+SQL Connect
+Extensions
+Firestore
+Hosting
+Phone Number Verification
+Realtime Database
+Firebase AI Logic
+Generative AI
+Run
+Run
+Run your app with confidence and deliver the best experience for your users
+Go to Run
+Run Products
+A/B Testing
+App Distribution
+Cloud Messaging
+Crashlytics
+Google Analytics
+In-App Messaging
+Performance Monitoring
+Remote Config
+Test Lab
+Solutions
+Pricing
+Docs
+Overview
+Fundamentals
+AI
+Build
+Run
+Reference
+Samples
+Community
+Learn
+Stories
+Support
+/
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Blog
+Go to console
+Sign in
+Documentation
+Firebase AI Logic
+Overview
+Fundamentals
+Add Firebase - Apple platforms (iOS+)
+Add Firebase - Android
+Add Firebase - Web
+Add Firebase - Flutter
+Add Firebase - C++
+Add Firebase - Unity
+Add Firebase - Server environments
+Manage Firebase projects
+Supported platforms & frameworks
+AI
+Develop with AI assistance
+Overview
+Gemini in Firebase
+Streamline development with an AI-powered assistant in Firebase interfaces and tools.
+AI tools, skills, & MCP
+Access agentive development tools, like our agent skills and MCP server.
+Firebase Studio (deprecated)
+Build and ship full-stack AI-infused apps right from your browser.
+Build AI-powered apps
+Firebase AI Logic
+Build genAI features and securely access Gemini models directly from your mobile & web apps.
+Build
+Authentication
+Simplify user authentication and sign-in on a secure, all-in-one identity platform.
+Phone Number Verification
+Obtain the phone number of a device directly from the carrier, without SMS.
+App Check
+Protect your backend resources from abuse and unauthorized access.
+Security Rules
+Define granular, server-enforced rules to protect your database and storage data.
+SQL Connect
+Build and scale your apps using a fully-managed PostgreSQL relational database service.
+Firestore
+Store and sync data using a scalable NoSQL cloud database with rich data models and queryability.
+Realtime Database
+Store and sync data in realtime with a NoSQL cloud database.
+Storage
+Store and serve content like images, audio, video with a secure cloud-hosted solution.
+App Hosting
+Deploy your modern, full-stack web apps with server-side rendering and AI features.
+Hosting
+Deploy your static and single-page web apps to a global CDN with a single command.
+Cloud Functions
+Run backend code in response to events without provisioning or managing a server.
+Extensions (deprecated)
+Deploy pre-built integrations and solutions for common tasks.
+Emulator Suite
+Test your app in real-world conditions without affecting live data.
+Run
+Test Lab
+Test your Android and iOS apps on a wide range of real and virtual devices, all in the cloud.
+App Distribution
+Streamline delivery of pre-release Android and iOS apps to trusted testers.
+Crashlytics
+Track, prioritize, and fix app stability issues.
+Performance Monitoring
+Gain real-time insight into your app's performance and fix issues.
+Remote Config
+Instantly change your app's behavior and appearance, without publishing an update.
+A/B Testing
+Test variants to make data-driven decisions about changes, features, and campaigns.
+Cloud Messaging
+Send notifications and messages to your users on Android, iOS, and the Web.
+In-App Messaging
+Engage your active users with targeted, contextual messages within your app.
+Google Analytics
+Gain insights into user behavior, and optimize your app's marketing and performance.
+Google AdMob
+Monetize your app, gain user insights, and tailor the ad experience.
+Google Ads
+Run smarter campaigns, find high-value users, and measure in-app conversions.
+Reference
+Samples
+Build
+More
+Run
+More
+Solutions
+Pricing
+Docs
+More
+Overview
+Fundamentals
+More
+AI
+More
+Build
+More
+Run
+More
+Reference
+Samples
+Community
+More
+Support
+Blog
+Go to console
+Overview
+Develop with AI assistance
+Develop with AI assistance
+Gemini in Firebase
+Introduction
+Set up Gemini in Firebase
+Try Gemini in the Firebase console
+AI tools and integrations
+Firebase agent skills
+Firebase MCP server
+Integrate Firebase services using AI assistance
+Google AI Studio integration
+Prompts
+Overview
+Set up a backend
+Write security rules
+Add AI features
+Deploy to hosting
+Prioritize & fix issues
+Firebase Studio
+Firebase Studio sunset and project migration
+Introduction
+Get started
+Get started with an existing project
+Get started with the App Prototyping agent
+Get started with a template
+Firebase Studio pricing, quotas, and limits
+AI assistance in Firebase Studio
+Introduction
+Get assistance from Gemini
+Configure Gemini assistance
+Effective prompting
+Connect to MCP servers
+Preview, publish, and monitor
+Preview web and Android apps
+Publish apps
+Monitor and protect web apps
+Upload your app to GitHub
+Optimize your Firebase Studio workspace
+About Firebase Studio workspaces
+Customize your Firebase Studio workspace
+Connect to a Firebase project
+Integrate with Google and Firebase services
+Create custom templates
+Create a shortcut to a predefined workspace
+Share your workspace
+Create a button to import code into Firebase Studio
+Solutions
+Develop, publish, and monitor a full-stack web app
+Build an app with the Gemini API
+Troubleshoot and debug
+Debug your app
+FAQ and troubleshooting
+Reference
+dev.nix Reference
+Project IDX is now part of Firebase Studio
+Licensed software
+Connect with us
+Build AI-powered apps
+Firebase AI Logic
+Introduction
+Get started
+Models
+SDK reference docs
+Security
+Security checklist
+Prevent abuse with App Check
+Core capabilities
+Text
+Chat
+Images
+Analyze images
+Generate & edit images (Nano Banana)
+Migrate from Imagen to Gemini
+Video
+Analyze video
+Audio
+Analyze audio
+Generate audio
+Generate speech (TTS)
+Documents (PDFs)
+Analyze documents (PDFs)
+Structured output (JSON)
+Streaming responses
+Specialized capabilities
+Hybrid & on-device inference
+Overview
+iOS+
+Get started
+Configuration options
+Android
+Get started
+Configuration options
+Structured output (JSON)
+Web
+Get started
+Configuration options
+Structured output (JSON)
+Real-time bidirectional streaming (Live API)
+Get started
+Capabilities
+Configuration options
+Manage sessions
+Limits & specifications
+Provide tools to the model
+Function calling
+Code execution
+URL context
+Grounding - Google Search
+Grounding - Google Maps
+Control generation of responses
+Overview of options
+Prompt design
+Model configuration
+Thinking
+Safety settings
+System instructions
+Get ready for production
+Production checklist
+Restrict requests to authenticated users
+Change model name remotely
+Locations
+Context caching
+Pricing
+Rate limits & quota
+Count tokens
+Monitor costs, usage, & metrics
+Solutions
+Overview
+Include large files in requests with Cloud Storage
+Store & access prompt templates on the server
+Get started
+Multi-turn interactions
+Format, syntax, & examples
+Best practices & considerations
+Manage templates
+Version with Remote Config
+Template-only mode
+Advanced workflows
+Dynamically update your app with Remote Config
+Run server-side scripts before & after requests
+Access Gemini API via Apple's Foundation Models framework
+Get started
+Capabilities
+Config options
+Provide tools
+Additional information
+Input file types & requirements
+Migration guides
+Migrate from GA "Vertex AI in Firebase"
+Migrate from preview "Vertex AI in Firebase"
+Migrate from "Google AI client SDKs"
+Data governance & Responsible AI
+Cloud Audit Logging
+FAQ and troubleshooting
+Error codes
+Give feedback
+Build
+Go to Build
+Build Products
+App Check
+App Hosting
+Authentication
+Cloud Functions
+Cloud Storage
+SQL Connect
+Extensions
+Firestore
+Hosting
+Phone Number Verification
+Realtime Database
+Firebase AI Logic
+Generative AI
+Run
+Go to Run
+Run Products
+A/B Testing
+App Distribution
+Cloud Messaging
+Crashlytics
+Google Analytics
+In-App Messaging
+Performance Monitoring
+Remote Config
+Test Lab
+Overview
+Fundamentals
+AI
+Build
+Run
+Reference
+Samples
+Learn
+Stories
+Add Firebase - Apple platforms (iOS+)
+Add Firebase - Android
+Add Firebase - Web
+Add Firebase - Flutter
+Add Firebase - C++
+Add Firebase - Unity
+Add Firebase - Server environments
+Manage Firebase projects
+Supported platforms & frameworks
+Develop with AI assistance
+Overview
+Gemini in Firebase
+AI tools, skills, & MCP
+Firebase Studio (deprecated)
+Build AI-powered apps
+Firebase AI Logic
+Authentication
+Phone Number Verification
+App Check
+Security Rules
+SQL Connect
+Firestore
+Realtime Database
+Storage
+App Hosting
+Hosting
+Cloud Functions
+Extensions (deprecated)
+Emulator Suite
+Test Lab
+App Distribution
+Crashlytics
+Performance Monitoring
+Remote Config
+A/B Testing
+Cloud Messaging
+In-App Messaging
+Google Analytics
+Google AdMob
+Google Ads
+Starting November 2, 2026, Firebase App Check enforcement will be
+required
+to use Firebase AI Logic.
+Learn more.
+Model updates:
+The latest Gemini models, like
+Gemini 3.8 Flash
+, are available to use with
+    Firebase AI Logic!
+Learn more.
+Gemini 2.5 models will shut down in
+October 2026
+(and new projects cannot start
+    using them). To avoid service disruptions, update to a newer model (like
+gemini-3.8-flash
+or
+gemini-3.1-flash-image
+).
+    Any stable Gemini Live API 2.5 models are not impacted.
+Learn more.
+Firebase
+Documentation
+Firebase AI Logic
+AI
+Send feedback
+Use model configuration to control responses
+Stay organized with collections
+Save and categorize content based on your preferences.
+In each call to a model, you can send along a model configuration to control how
+the model generates a response. Each model supports different configuration
+options, like setting
+maxOutputTokens
+or specialized configs for thinking,
+response modalities, images, or speech.
+For the majority of use cases when accessing a
+Gemini
+model, you
+configure the model using
+GenerationConfig
+. However, if you're configuring a
+Gemini Live API
+model, then you use
+LiveGenerationConfig
+.
+This page shows how to set up the configuration for
+Gemini
+models and
+provides a
+description of each parameter
+.
+arrow_downward
+Jump to
+Gemini
+config
+arrow_downward
+Jump to
+Gemini Live API
+config
+GenerationConfig
+for
+Gemini
+models
+Click your
+Gemini API
+provider to view provider-specific content
+        and code on this page.
+Gemini Developer API
+Agent Platform Gemini API
+Set a
+GenerationConfig
+for the majority of
+Gemini
+models, including
+general-use models, image-generating models ("Nano Banana" models), and
+text-to-speech (TTS) models.
+The configuration is maintained for the lifetime of the
+GenerativeModel
+instance. If you want to use a different config, create and use a new instance
+with a different config.
+For the latest general-use
+Gemini 3.x
+models, the following
+    parameters are now unsupported: temperature, top-K, top-P, frequency
+    penalty, presence penalty, and candidate count. Remove them from your app's
+    code.
+Temperature, top-K, or top-P
+: All the general-use
+Gemini 3.x
+models will ignore them.
+Frequency penalty, presence penalty, and candidate count
+:
+      Starting with
+gemini-3.7-flash
+, the request will
+fail
+with a 400 error.
+Swift
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+import
+FirebaseAILogic
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+let
+config
+=
+GenerationConfig
+(
+maxOutputTokens
+:
+200
+,
+stopSequences
+:
+[
+"red"
+]
+)
+// Initialize the Gemini Developer API backend service.
+// Specify the config as part of creating the `GenerativeModel` instance.
+let
+model
+=
+FirebaseAI
+.
+firebaseAI
+(
+backend
+:
+.
+googleAI
+()).
+generativeModel
+(
+modelName
+:
+"
+GEMINI_MODEL_NAME
+"
+,
+generationConfig
+:
+config
+)
+// ...
+Kotlin
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+// ...
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+val
+config
+=
+generationConfig
+{
+maxOutputTokens
+=
+200
+stopSequences
+=
+listOf
+(
+"red"
+)
+}
+// Initialize the Gemini Developer API backend service.
+// Specify the config as part of creating the `GenerativeModel` instance.
+val
+model
+=
+Firebase
+.
+ai
+(
+backend
+=
+GenerativeBackend
+.
+googleAI
+()).
+generativeModel
+(
+modelName
+=
+"
+GEMINI_MODEL_NAME
+"
+,
+generationConfig
+=
+config
+)
+// ...
+Java
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+// ...
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+GenerationConfig
+.
+Builder
+configBuilder
+=
+new
+GenerationConfig
+.
+Builder
+();
+configBuilder
+.
+maxOutputTokens
+=
+200
+;
+configBuilder
+.
+stopSequences
+=
+List
+.
+of
+(
+"red"
+);
+GenerationConfig
+config
+=
+configBuilder
+.
+build
+();
+// Specify the config as part of creating the `GenerativeModel` instance.
+GenerativeModelFutures
+model
+=
+GenerativeModelFutures
+.
+from
+(
+FirebaseAI
+.
+getInstance
+(
+GenerativeBackend
+.
+googleAI
+())
+.
+generativeModel
+(
+"
+GEMINI_MODEL_NAME
+"
+,
+config
+);
+);
+// ...
+Web
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+// ...
+// Initialize the Gemini Developer API backend service.
+const
+ai
+=
+getAI
+(
+firebaseApp
+,
+{
+backend
+:
+new
+GoogleAIBackend
+()
+});
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+const
+generationConfig
+=
+{
+maxOutputTokens
+:
+200
+,
+stopSequences
+:
+[
+"red"
+],
+};
+// Specify the config as part of creating the `GenerativeModel` instance.
+const
+model
+=
+getGenerativeModel
+(
+ai
+,
+{
+model
+:
+"
+GEMINI_MODEL_NAME
+"
+,
+generationConfig
+});
+// ...
+Dart
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+// ...
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+final
+generationConfig
+=
+GenerationConfig
+(
+maxOutputTokens:
+200
+,
+stopSequences:
+[
+"red"
+],
+);
+// Initialize the Gemini Developer API backend service.
+// Specify the config as part of creating the `GenerativeModel` instance.
+final
+model
+=
+FirebaseAI
+.
+googleAI
+().
+generativeModel
+(
+model:
+'
+GEMINI_MODEL_NAME
+'
+,
+config:
+generationConfig
+,
+);
+// ...
+Unity
+Set the values of the parameters in a
+GenerationConfig
+as part of creating a
+GenerativeModel
+instance.
+// ...
+// Set parameter values in a `GenerationConfig`.
+// IMPORTANT: Example values shown here. Make sure to update for your use case.
+// For the latest general-use Gemini models, the following parameters are now unsupported:
+// temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count
+var
+generationConfig
+=
+new
+GenerationConfig
+(
+maxOutputTokens
+:
+200
+,
+stopSequences
+:
+new
+string
+[]
+{
+"red"
+}
+);
+// Initialize the Gemini Developer API backend service.
+// Specify the config as part of creating the `GenerativeModel` instance.
+var
+ai
+=
+FirebaseAI
+.
+GetInstance
+(
+FirebaseAI
+.
+Backend
+.
+GoogleAI
+());
+var
+model
+=
+ai
+.
+GetGenerativeModel
+(
+modelName
+:
+"
+GEMINI_MODEL_NAME
+"
+,
+generationConfig
+:
+generationConfig
+);
+You can find a
+description of each parameter
+in the next section of this page.
+You can experiment with prompts and model configurations using
+Google AI Studio
+.
+LiveGenerationConfig
+for
+Gemini Live API
+models
+Click your
+Gemini API
+provider to view provider-specific content
+        and code on this page.
+Gemini Developer API
+Agent Platform Gemini API
+Set a
+LiveGenerationConfig
+only when using
+Gemini Live API
+models.
+The configuration is maintained for the lifetime of the
+LiveModel
+instance. If you want to use a different config, create and use a new instance
+with a different config.
+Swift
+Set the values of parameters in the
+liveGenerationConfig
+during initialization of the
+LiveModel
+instance:
+// ...
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+let
+config
+=
+LiveGenerationConfig
+(
+maxOutputTokens
+:
+200
+,
+responseModalities
+:
+[.
+audio
+],
+speech
+:
+SpeechConfig
+(
+voiceName
+:
+"Fenrir"
+),
+)
+// Specify the config as part of creating the `liveModel` instance.
+let
+liveModel
+=
+FirebaseAI
+.
+firebaseAI
+(
+backend
+:
+.
+googleAI
+()).
+liveModel
+(
+modelName
+:
+"
+GEMINI_LIVE_MODEL_NAME
+"
+,
+generationConfig
+:
+config
+)
+// ...
+Kotlin
+Set the values of parameters in a
+LiveGenerationConfig
+as part of creating a
+LiveModel
+instance.
+// ...
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+val
+config
+=
+liveGenerationConfig
+{
+maxOutputTokens
+=
+200
+responseModality
+=
+ResponseModality
+.
+AUDIO
+speechConfig
+=
+SpeechConfig
+(
+voice
+=
+Voices
+.
+FENRIR
+)
+}
+// Specify the config as part of creating the `LiveModel` instance.
+val
+liveModel
+=
+Firebase
+.
+ai
+(
+backend
+=
+GenerativeBackend
+.
+agentPlatform
+()).
+liveModel
+(
+modelName
+=
+"
+GEMINI_LIVE_MODEL_NAME
+"
+,
+generationConfig
+=
+config
+)
+// ...
+Java
+Set the values of parameters in a
+LiveGenerationConfig
+as part of creating a
+LiveModel
+instance.
+// ...
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+LiveGenerationConfig
+.
+Builder
+configBuilder
+=
+new
+LiveGenerationConfig
+.
+Builder
+();
+configBuilder
+.
+setMaxOutputTokens
+(
+200
+);
+configBuilder
+.
+setResponseModality
+(
+ResponseModality
+.
+AUDIO
+);
+configBuilder
+.
+setSpeechConfig
+(
+new
+SpeechConfig
+(
+Voices
+.
+FENRIR
+));
+LiveGenerationConfig
+config
+=
+configBuilder
+.
+build
+();
+// Specify the config as part of creating the `LiveModel` instance.
+LiveGenerativeModel
+lm
+=
+FirebaseAI
+.
+getInstance
+(
+GenerativeBackend
+.
+googleAI
+()).
+liveModel
+(
+"
+GEMINI_LIVE_MODEL_NAME
+"
+,
+config
+);
+// ...
+Web
+Set the values of parameters in the
+LiveGenerationConfig
+during initialization of the
+LiveGenerativeModel
+instance:
+// ...
+// Initialize the Gemini Developer API backend service.
+const
+ai
+=
+getAI
+(
+firebaseApp
+,
+{
+backend
+:
+new
+GoogleAIBackend
+()
+});
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+const
+liveGenerationConfig
+=
+{
+maxOutputTokens
+:
+200
+,
+responseModalities
+:
+[
+ResponseModality
+.
+AUDIO
+],
+speechConfig
+:
+{
+voiceConfig
+:
+{
+prebuiltVoiceConfig
+:
+{
+voiceName
+:
+"Fenrir"
+},
+},
+},
+};
+// Specify the config as part of creating the `LiveGenerativeModel` instance.
+const
+liveModel
+=
+getLiveGenerativeModel
+(
+ai
+,
+{
+model
+:
+"
+GEMINI_LIVE_MODEL_NAME
+"
+,
+liveGenerationConfig
+,
+});
+// ...
+Dart
+Set the values of parameters in a
+LiveGenerationConfig
+as part of creating a
+LiveGenerativeModel
+instance.
+// ...
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+final
+config
+=
+LiveGenerationConfig
+(
+maxOutputTokens:
+200
+,
+responseModalities:
+[
+ResponseModalities
+.
+audio
+],
+speechConfig:
+SpeechConfig
+(
+voiceName:
+'Fenrir'
+),
+);
+// Specify the config as part of creating the `liveGenerativeModel` instance.
+final
+liveModel
+=
+FirebaseAI
+.
+googleAI
+().
+liveGenerativeModel
+(
+model:
+'
+GEMINI_LIVE_MODEL_NAME
+'
+,
+liveGenerationConfig:
+config
+,
+);
+// ...
+Unity
+Set the values of parameters in a
+LiveGenerationConfig
+as part of creating a
+LiveModel
+instance.
+// ...
+// Set parameter values in a `LiveGenerationConfig` (example values shown here).
+var
+config
+=
+new
+LiveGenerationConfig
+(
+maxOutputTokens
+:
+200
+,
+responseModalities
+:
+new
+[]
+{
+ResponseModality
+.
+Audio
+},
+speechConfig
+:
+SpeechConfig
+.
+UsePrebuiltVoice
+(
+"Fenrir"
+)
+);
+// Specify the config as part of creating the `LiveModel` instance.
+var
+liveModel
+=
+FirebaseAI
+.
+GetInstance
+(
+FirebaseAI
+.
+Backend
+.
+GoogleAI
+()).
+GetLiveModel
+(
+modelName
+:
+"
+GEMINI_LIVE_MODEL_NAME
+"
+,
+liveGenerationConfig
+:
+config
+);
+// ...
+You can find a
+description of each parameter
+in the next section of this page.
+You can experiment with prompts and model configurations using
+Google AI Studio
+.
+Description of parameters
+The following table is a high-level overview of the available parameters. Some
+parameters are only applicable for certain models.
+For the latest general-use
+Gemini 3.x
+models, the following
+    parameters are now unsupported: temperature, top-K, top-P, frequency
+    penalty, presence penalty, and candidate count. Remove them from your app's
+    code.
+Temperature, top-K, or top-P
+: All the general-use
+Gemini 3.x
+models will ignore them.
+Frequency penalty, presence penalty, and candidate count
+:
+      Starting with
+gemini-3.7-flash
+, the request will
+fail
+with a 400 error.
+Parameter
+Description
+Limitations
+Default value
+Audio timestamp
+audioTimestamp
+Enables timestamp understanding for audio-only input files.
+Boolean
+Only applicable when using a
+GenerativeModel
+configuration and the input type is an audio-only file.
+false
+Max output tokens
+maxOutputTokens
+Specifies the maximum number of tokens that can be generated in the
+        response.
+---
+---
+Stop sequences
+stopSequences
+Specifies a list of strings that tells the model to stop generating
+        content if one of the strings is encountered in the response.
+Only applicable when using a
+GenerativeModel
+configuration.
+Not applicable for
+          Image models ("Nano Banana") or
+          TTS models.
+---
+Specialized configurations
+Thinking
+thinkingConfig
+Controls the "thinking process" for the models when they're
+          generating a response.
+Control the amount of thinking that the model can do using a
+thinking level
+(
+Gemini 3.x
+and later models).
+Control whether to include
+thought summaries
+.
+Supported values: See the
+thinking documentation
+Not applicable for TTS models.
+Firebase AI Logic
+does
+not yet
+support setting a
+thinkingConfig
+for
+Live API
+models.
+Depends on the model
+Response modalities
+responseModalities
+Specifies the type of output (like text, audio, or images).
+Only applicable (and
+required
+) when using
+Gemini
+Image models ("Nano Banana" models), TTS models, and
+Live API
+models.
+---
+Image characteristics
+imageConfig
+Specifies the aspect ratio and resolution of generated images.
+Supported values: See
+Configure image generation
+Only applicable when using
+Gemini
+Image models ("Nano Banana"
+          models).
+1:1 aspect ratio (square)
+1024x1024 resolution
+Speech (voice)
+speechConfig
+Specifies the voice used for the audio output.
+Only applicable when using TTS models and
+Live API
+models.
+Required for TTS models.
+Puck
+Note
+: The following configurations are also
+  supported in the
+GenerationConfig
+:
+Generating structured output (like JSON)
+is controlled by using the
+responseMimeType
+and
+responseSchema
+parameters.
+These parameters are only supported for general-use text models
+      (
+not
+for
+Gemini
+Image models ("Nano Banana" models),
+      TTS models, or
+Live API
+models).
+Temperature, top-K, top-P, frequency penalty, presence penalty, and candidate count are unsupported
+For the latest general-use
+Gemini 3.x
+models, the following
+    parameters are now unsupported: temperature, top-K, top-P, frequency
+    penalty, presence penalty, and candidate count. Remove them from your app's
+    code.
+Temperature, top-K, or top-P
+: All the general-use
+Gemini 3.x
+models will ignore them.
+Frequency penalty, presence penalty, and candidate count
+:
+      Starting with
+gemini-3.7-flash
+, the request will
+fail
+with a 400 error.
+Parameter
+Description
+Limitations
+Default value
+Candidate count
+candidateCount
+Specifies the number of response variations to return. For each request,
+        you're charged for the output tokens of all candidates, but you're only
+        charged once for the input tokens.
+Setting
+candidateCount
+is unsupported.
+Supported values:
+1
+-
+8
+(inclusive)
+Only applicable when using
+generateContent
+.
+Not applicable when using
+generateContentStream
+,
+          Image models ("Nano Banana"),
+          TTS models, or
+Live API
+models.
+1
+Frequency penalty
+frequencyPenalty
+Controls the probability of including tokens that repeatedly appear in
+          the generated response.
+Positive values penalize tokens that repeatedly appear in the
+          generated content, decreasing the probability of repeating content.
+Setting
+frequencyPenalty
+is unsupported.
+Not applicable for
+        Image models ("Nano Banana") or
+        TTS models.
+---
+Presence penalty
+presencePenalty
+Controls the probability of including tokens that already appear in
+          the generated response.
+Positive values penalize tokens that already appear in the generated
+          content, increasing the probability of generating more diverse
+          content.
+Setting
+presencePenalty
+is unsupported.
+Not applicable for
+        Image models ("Nano Banana") or
+        TTS models.
+---
+Temperature
+temperature
+Controls the degree of randomness in the response.
+Lower temperatures result in more deterministic responses, and higher
+        temperatures result in more diverse or creative responses.
+Setting
+temperature
+is unsupported.
+---
+Depends on the model
+Top-K
+topK
+Limits the number of highest probability words used in the
+        generated content.
+A top-K value of
+1
+means the next selected token should be
+the most probable
+among all tokens in the model's vocabulary,
+        while a top-K value of
+n
+means that the next token should
+        be selected from among
+the
+n
+most probable
+tokens
+        (all based on the temperature that's set).
+Setting
+topK
+is unsupported.
+---
+Depends on the model
+Top-P
+topP
+Controls diversity of generated content.
+Tokens are selected from the most probable (see top-K above) to least
+        probable until the sum of their probabilities equals the top-P value.
+Setting
+topP
+is unsupported.
+---
+Depends on the model
+Other options to control content generation
+Learn more about
+prompt design
+so that you can influence the model to generate output specific to your needs.
+Use
+safety settings
+to adjust the likelihood of getting responses that may be considered
+  harmful, including hate speech and sexually explicit content.
+Set
+system instructions
+to steer the behavior of the model. This feature is like a preamble that you
+  add before the model gets exposed to any further instructions from the end user.
+Pass a
+response schema
+along with the prompt to specify a specific output schema. This feature is
+  most commonly used when
+generating JSON output
+,
+  but it can also be used for
+classification tasks
+(like when you want the model to use specific labels or tags).
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-09-24 UTC.
+Need to tell us more?
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],["Last updated 2026-09-24 UTC."],[],[]]
+Learn
+Developer guides
+SDK & API reference
+Samples
+Libraries
+GitHub
+Stay connected
+Check out the blog
+Find us on Reddit
+Follow on X
+Subscribe on YouTube
+Attend an event
+Support
+Contact support
+Stack Overflow
+Google group
+Release notes
+Brand guidelines
+FAQs
+Android
+Chrome
+Firebase
+Google Cloud Platform
+All products
+Terms
+Privacy
+Manage cookies
+English
+Deutsch
+Español – América Latina
+Français
+Indonesia
+Italiano
+Polski
+Português – Brasil
+Tiếng Việt
+Türkçe
+Русский
+עברית
+العربيّة
+فارسی
+हिंदी
+বাংলা
+ภาษาไทย
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,293 @@
+Skip to main content
+Documentation
+close
+Get Started
+Get Started with Google Cloud
+Product List
+Cloud Customer Care
+Featured Products
+Agent Platform
+Apigee API Management
+BigQuery
+Compute Engine
+Cloud CDN
+Cloud Run
+Cloud Storage
+Cloud SQL
+Gemini Enterprise
+Google Kubernetes Engine
+Looker
+Cross-product Tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+Technology Areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Vertex AI
+Start free
+Documentation
+More
+Console
+Get Started
+Get Started with Google Cloud
+Product List
+Cloud Customer Care
+Featured Products
+Agent Platform
+Apigee API Management
+BigQuery
+Compute Engine
+Cloud CDN
+Cloud Run
+Cloud Storage
+Cloud SQL
+Gemini Enterprise
+Google Kubernetes Engine
+Looker
+Cross-product Tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+SDK, languages, frameworks, and tools
+Technology Areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Industry solutions
+Migration
+Networking
+Observability and monitoring
+Security
+Storage
+Vertex AI documentation is no longer being updated
+Vertex AI's services are now part of Gemini Enterprise Agent Platform. See the most up-to-date information in the Agent Platform documentation.
+Home
+Documentation
+AI and ML
+Vertex AI
+Send feedback
+Set output resolution
+Stay organized with collections
+Save and categorize content based on your preferences.
+Caution: The following table describes image generation endpoints that
+are deprecated and their replacements. We recommend updating your model
+endpoints before June 30, 2026, to avoid service disruption.
+Discontinued endpointsRecommended endpoint migration
+imagegeneration@002gemini-2.5-flash-image
+imagegeneration@003gemini-2.5-flash-image
+imagegeneration@004gemini-2.5-flash-image
+imagegeneration@005gemini-2.5-flash-image
+imagegeneration@006gemini-2.5-flash-image
+imagetext@001gemini-2.5-flash-image
+imagen-3.0-capability-001gemini-2.5-flash-image
+imagen-3.0-capability-002gemini-2.5-flash-image
+imagen-3.0-fast-generate-001gemini-2.5-flash-image
+imagen-3.0-generate-001gemini-2.5-flash-image
+imagen-3.0-generate-002gemini-2.5-flash-image
+imagen-4.0-fast-generate-001gemini-2.5-flash-image
+imagen-4.0-generate-001gemini-2.5-flash-image
+imagen-4.0-ultra-generate-001gemini-2.5-flash-image
+Imagen on Vertex AI lets you set the output resolution of generated images when you
+use the following Imagen 4 models:
+imagen-4.0-generate-001
+imagen-4.0-fast-generate-001
+* {Console}
+In the Google Cloud console, go to the Vertex AI > Vertex AI Studio
+page.
+Go to Vertex AI Studio
+Click Generate media.
+Click Image.
+From the Task list, select Text-to-image.
+From the Model list, select the Imagen model to use.
+In the Prompt box, enter a prompt that describes how to edit the
+image.
+Click chevron_forward Parameters, and then adjust the following options:
+Aspect ratio: Choose an aspect ratio from the available options.
+Number of results: Adjust the slider to select 1 to 4 generated
+images.
+Output resolution: Choose an output resolution from the available
+options.
+Click Run.
+REST
+For more information about the Imagen API, see the following:
+Method:
+endpoints.predict
+VisionGenerativeModelInstance
+VisionGenerativeModelParams
+VisionGenerativeModelResult
+Before using any of the request data,
+make the following replacements:
+REGION: The region that
+your project is located in. For more information about supported regions,
+see Generative AI on
+Vertex AI locations.
+TEXT_PROMPT: The
+text prompt to use to generate images.
+PROJECT_ID: Your
+Google Cloud project ID.
+MODEL_VERSION:
+The Imagen model version to use. The following are accepted
+values when using sampleImageSize:
+imagen-4.0-generate-001
+imagen-4.0-ultra-generate-001
+IMAGE_RESOLUTION: The output image
+resolution. The following are accepted:
+"1K"
+"2K"
+The default setting is "1K".
+IMAGE_COUNT: The
+number of images to generate. The accepted range of values is 1
+to 4.
+HTTP method and URL:
+POST https://REGION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/REGION/publishers/google/models/MODEL_VERSION:predict
+Request JSON body:
+{
+"instances": [
+{
+"prompt": "TEXT_PROMPT"
+}
+],
+"parameters": {
+"sampleImageSize": "IMAGE_RESOLUTION",
+"sampleCount": IMAGE_COUNT
+}
+}
+To send your request, choose one of these options:
+curl
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using Cloud Shell,
+which automatically logs you into the gcloud CLI
+.
+You can check the currently active account by running
+gcloud auth list.
+Save the request body in a file named request.json,
+and execute the following command:
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json; charset=utf-8" \
+-d @request.json \
+"https://REGION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/REGION/publishers/google/models/MODEL_VERSION:predict"
+PowerShell
+Note:
+The following command assumes that you have logged in to
+the gcloud CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+You can check the currently active account by running
+gcloud auth list.
+Save the request body in a file named request.json,
+and execute the following command:
+$cred = gcloud auth print-access-token
+$headers = @{ "Authorization" = "Bearer $cred" }
+Invoke-WebRequest `
+-Method POST `
+-Headers $headers `
+-ContentType: "application/json; charset=utf-8" `
+-InFile request.json `
+-Uri "https://REGION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/REGION/publishers/google/models/MODEL_VERSION:predict" | Select-Object -Expand Content
+The request returns image objects. In this example, two image objects are
+returned, with two prediction objects as base64-encoded images.
+{
+"predictions": [
+{
+"mimeType": "image/png",
+"bytesBase64Encoded": "BASE64_IMG_BYTES"
+},
+{
+"bytesBase64Encoded": "BASE64_IMG_BYTES",
+"mimeType": "image/png"
+}
+]
+}
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2026-09-18 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Android
+Chrome
+Firebase
+Google AI
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+עברית
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

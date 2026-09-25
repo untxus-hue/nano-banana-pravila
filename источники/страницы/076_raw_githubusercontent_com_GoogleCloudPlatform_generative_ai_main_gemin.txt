@@ -1,0 +1,649 @@
+### CODE
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+### MARKDOWN
+# Gemini 3.1 Flash Image (Nano Banana 2 🍌) Generation
+
+<table align="left">
+  <td style="text-align: center">
+    <a href="https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb">
+      <img width="32px" src="https://www.gstatic.com/pantheon/images/bigquery/welcome_page/colab-logo.svg" alt="Google Colaboratory logo"><br> Open in Colab
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://console.cloud.google.com/agent-platform/colab/import/https:%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fgetting-started%2Fintro_gemini_3_1_flash_image_gen.ipynb">
+      <img width="32px" src="https://lh3.googleusercontent.com/JmcxdQi-qOpctIvWKgPtrzZdJJK-J3sWE1RsfjZNwshCFgE_9fULcNpuXYTilIR2hjwN" alt="Google Cloud Colab Enterprise logo"><br> Open in Colab Enterprise
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://console.cloud.google.com/agent-platform/workbench/instances?download_url=https://raw.githubusercontent.com/GoogleCloudPlatform/generative-ai/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb">
+      <img width="32px" src="https://storage.googleapis.com/github-repo/workbench-icon.svg" alt="Workbench logo"><br> Open in Workbench
+    </a>
+  </td>
+  <td style="text-align: center">
+    <a href="https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb">
+      <img width="32px" src="https://raw.githubusercontent.com/primer/octicons/refs/heads/main/icons/mark-github-24.svg" alt="GitHub logo"><br> View on GitHub
+    </a>
+  </td>
+</table>
+
+<div style="clear: both;"></div>
+
+<p>
+<b>Share to:</b>
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn logo">
+</a>
+
+<a href="https://bsky.app/intent/compose?text=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky logo">
+</a>
+
+<a href="https://twitter.com/intent/tweet?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg" alt="X logo">
+</a>
+
+<a href="https://reddit.com/submit?url=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://redditinc.com/hubfs/Reddit%20Inc/Brand/Reddit_Logo.png" alt="Reddit logo">
+</a>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/getting-started/intro_gemini_3_1_flash_image_gen.ipynb" target="_blank">
+  <img width="20px" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo">
+</a>
+</p>
+
+### MARKDOWN
+| Author |
+| --- |
+| [Katie Nguyen](https://github.com/katiemn) |
+
+### MARKDOWN
+## Overview
+This notebook will show you how to use the Gemini 3.1 Flash Image (Nano Banana 2) image model. This model is a powerful, generalist multimodal model that offers state-of-the-art image generation and conversational image editing capabilities. It's also able to show its work, allowing you to set the thinking level and see the 'thought process' behind the generated output.
+
+In this tutorial, you'll learn how to use gemini-3.1-flash-image on Agent Platform using the Google Gen AI SDK to try out the following scenarios:
+
+- Image generation:
+  - Text-to-image generation
+  - Model thoughts
+  - Prominent people filter
+  - Grounding with web and image search
+  - Image sizing
+  - Video-to-image generation
+- Image editing:
+  - Localization
+  - Multi-turn image editing (chat)
+  - Editing with reference images
+
+### MARKDOWN
+## Get started
+
+### MARKDOWN
+### Install Google Gen AI SDK for Python
+
+
+### CODE
+%pip install --upgrade --quiet google-genai
+
+### MARKDOWN
+### Authenticate your notebook environment (Colab only)
+
+If you are running this notebook on Google Colab, run the following cell to authenticate your environment.
+
+### CODE
+import sys
+
+if "google.colab" in sys.modules:
+    from google.colab import auth
+
+    auth.authenticate_user()
+
+### MARKDOWN
+### Import libraries
+
+### CODE
+import warnings
+
+from IPython.display import Image, Markdown, display, Video
+from google import genai
+from google.genai import types
+
+warnings.filterwarnings("ignore")
+
+### MARKDOWN
+### Set Google Cloud project information
+
+To get started using Agent Platform, you must have an existing Google Cloud project and [enable the Agent Platform API](https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com).
+
+Learn more about [setting up a project](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects) and a [development environment](https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment).
+
+**NOTE:** Nano Banana 2 is available in the following regions: `global`, `us`, and `eu`. Search grounding features are not [regionalized](https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/supported-capabilities). 
+
+### CODE
+import os
+
+# fmt: off
+PROJECT_ID = "[your-project-id]"  # @param {type: "string", placeholder: "[your-project-id]", isTemplate: true}
+# fmt: on
+if not PROJECT_ID or PROJECT_ID == "[your-project-id]":
+    PROJECT_ID = str(os.environ.get("GOOGLE_CLOUD_PROJECT"))
+
+LOCATION = "global" # "us", "eu"
+
+client = genai.Client(enterprise=True, project=PROJECT_ID, location=LOCATION)
+
+### MARKDOWN
+### Load the model
+
+### CODE
+MODEL_ID = "gemini-3.1-flash-image"
+
+### MARKDOWN
+## Image generation
+
+### MARKDOWN
+### Text-to-image
+
+In the cell below, you'll call the `generate_content` method and modify the following arguments:
+
+  - `prompt`: A text-only user message describing the image to be generated.
+  - `config`: A config for specifying content settings.
+    - `response_modalities`: To generate an image, you must include `IMAGE` in the `response_modalities` list. To get both text and images, specify `IMAGE` and `TEXT`.
+    - `ImageConfig`: Set the `aspect_ratio`. Valid ratios are: 1:1, 3:2, 2:3, 3:4, 4:3, 1:4, 4:1, 4:5, 5:4, 1:8, 8:1, 9:16, 16:9, 21:9
+    - `ThinkingConfig`: Set the `thinking_level` to `HIGH` or `MINIMAL`, and if you'd like to view the model thoughts, set `include_thoughts` to `True`.
+      - `HIGH`: Allows the model to use more tokens for thinking and is suitable for complex prompts requiring deep reasoning.
+      - `MINIMAL`: Constrains the model to use as few tokens as possible for thinking and is best used for low-complexity tasks.
+
+
+All generated images include a [SynthID watermark](https://deepmind.google/technologies/synthid/).
+
+### CODE
+prompt = """
+A high-contrast, grainy black and white street photography shot. A woman in dark sunglasses is captured in mid-stride with elegant motion blur. Overlaid on the image are large, white, pillowy bubble lines that curve around her to trace her silhouette. A word is added to the top of the image in the same white, bubble font: STYLE.
+"""
+aspect_ratio = "3:2"
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=["IMAGE", "TEXT"],
+        image_config=types.ImageConfig(
+            aspect_ratio=aspect_ratio,
+            output_mime_type="image/png",
+        ),
+        thinking_config=types.ThinkingConfig(
+            include_thoughts=True, thinking_level=types.ThinkingLevel.HIGH
+        ),
+    ),
+)
+
+# Check for errors if an image is not generated
+if response.candidates[0].finish_reason != types.FinishReason.STOP:
+    reason = response.candidates[0].finish_reason
+    raise ValueError(f"Prompt Content Error: {reason}")
+
+for part in response.candidates[0].content.parts:
+    if part.thought:
+        continue  # Skip displaying thoughts
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### See the thoughts
+
+Since this is a thinking model, you can check the thoughts that led to the image being produced.
+
+### CODE
+for part in response.parts:
+    if part.thought:
+        if part.text:
+            display(Markdown(part.text))
+        elif part.inline_data:
+            display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Prominent people
+
+You can block the model from generating photorealistic images of prominent people by setting `prominent_people` to `types.ProminentPeople.BLOCK_PROMINENT_PEOPLE`.
+
+### CODE
+prompt = "Generate an image of Beyonce"
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=["IMAGE", "TEXT"],
+        image_config=types.ImageConfig(
+            aspect_ratio="1:1",
+            prominent_people=types.ProminentPeople.BLOCK_PROMINENT_PEOPLE,
+        ),
+    ),
+)
+
+# Check for errors if an image is not generated
+if response.candidates[0].finish_reason != types.FinishReason.STOP:
+    print(response.candidates[0].finish_reason, response.candidates[0].finish_message)
+else:
+    for part in response.candidates[0].content.parts:
+        if part.thought:
+            continue
+        if part.inline_data:
+            display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Grounding with web search results
+
+With this model, you can also generate responses that are grounded in the results of a Google Search.
+
+To display the grounding data, use the helper function in the following cell.
+
+### CODE
+def print_search_grounding_data(response: types.GenerateContentResponse) -> None:
+    """Prints response with grounding citations in Markdown format."""
+    grounding_metadata = response.candidates[0].grounding_metadata
+    lines = []
+
+    if response.text:
+        ENCODING = "utf-8"
+        text_bytes = response.text.encode(ENCODING)
+        last_byte_index = 0
+
+        if grounding_metadata.grounding_supports:
+            for support in grounding_metadata.grounding_supports:
+                lines.append(
+                    text_bytes[last_byte_index : support.segment.end_index].decode(
+                        ENCODING
+                    )
+                )
+                footnotes = "".join(
+                    [f"[{i + 1}]" for i in support.grounding_chunk_indices]
+                )
+                lines.append(f" {footnotes}")
+                last_byte_index = support.segment.end_index
+
+        if last_byte_index < len(text_bytes):
+            lines.append(text_bytes[last_byte_index:].decode(ENCODING))
+
+    lines.append("\n\n----\n## Grounding Sources\n")
+
+    if grounding_metadata.grounding_chunks:
+        lines.append("### Grounding Chunks\n")
+        for i, chunk in enumerate(grounding_metadata.grounding_chunks, start=1):
+            context = chunk.web or chunk.retrieved_context or chunk.maps
+            image = chunk.image
+
+            if not context and not image:
+                continue
+
+            if image:
+                title = image.title or "Image Source"
+                uri = image.source_uri or "#"
+                image_uri = image.image_uri
+                domain = image.domain
+
+                lines.append(f"{i}. [{title}]({uri})\n")
+                if domain:
+                    lines.append(f"    - Domain: `{domain}`\n")
+                if image_uri:
+                    lines.append(f"    <img src='{image_uri}' width='250'>\n\n")
+
+            elif context:
+                uri = context.uri
+                title = context.title or "Source"
+                if uri:
+                    uri = uri.replace(" ", "%20")
+                    if uri.startswith("gs://"):
+                        uri = uri.replace("gs://", "https://storage.googleapis.com/", 1)
+
+                lines.append(f"{i}. [{title}]({uri})\n")
+                if hasattr(context, "text") and context.text:
+                    lines.append(f"{context.text}\n\n")
+
+    web_queries = grounding_metadata.web_search_queries or []
+    image_queries = getattr(grounding_metadata, "image_search_queries", []) or []
+
+    all_queries = list(web_queries) + list(image_queries)
+
+    if all_queries:
+        lines.append(f"\n**Web Search Queries:** {all_queries}\n")
+
+        if grounding_metadata.search_entry_point:
+            lines.append(
+                f"\n**Search Entry Point:**\n{grounding_metadata.search_entry_point.rendered_content}\n"
+            )
+    elif grounding_metadata.retrieval_queries:
+        lines.append(
+            f"\n**Retrieval Queries:** {grounding_metadata.retrieval_queries}\n"
+        )
+
+    display(Markdown("".join(lines)))
+
+### MARKDOWN
+Next, you'll create a Google Search tool and include it in the `tools` parameter of the following request to perform a web search.
+
+### CODE
+prompt = """
+A cinematic, wide-angle illustration of the NFL team's stadium that won the 2026 Super Bowl. Digital art style with high-detail architecture.
+"""
+google_search = types.Tool(
+    google_search=types.GoogleSearch(
+        search_types=types.SearchTypes(web_search=types.WebSearch())
+    )
+)
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=types.ImageConfig(
+            aspect_ratio="21:9",
+        ),
+        thinking_config=types.ThinkingConfig(
+            include_thoughts=True, thinking_level=types.ThinkingLevel.HIGH
+        ),
+        tools=[google_search],
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+print_search_grounding_data(response)
+
+### MARKDOWN
+Below, you'll do the same thing, except with an image search.
+
+### CODE
+prompt = "Generate a watercolor image of the Lansdowne Bridge"
+google_search = types.Tool(
+    google_search=types.GoogleSearch(
+        search_types=types.SearchTypes(
+            image_search=types.ImageSearch(),
+        )
+    )
+)
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=types.ImageConfig(
+            aspect_ratio="16:9",
+        ),
+        thinking_config=types.ThinkingConfig(
+            include_thoughts=True, thinking_level=types.ThinkingLevel.HIGH
+        ),
+        tools=[google_search],
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+
+print_search_grounding_data(response)
+
+### MARKDOWN
+### Image sizes
+
+You can have Nano Banana 2 generate images with an `image_size` of `512`, `1K`, `2K`, or `4K`.
+
+### CODE
+prompt = """
+Macro photography of a vibrant teal and lime green chameleon perched on a mossy branch.
+"""
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=prompt,
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=types.ImageConfig(
+            aspect_ratio="1:1",
+            image_size="4K",
+        ),
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.thought:
+        continue
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Video-to-image
+
+### MARKDOWN
+Nano Banana 2 is also able to generate images from a video. The model is able to observe the frames and generate new images based on the visual content.
+
+Start by downloading and displaying a video below.
+
+### CODE
+!wget https://storage.googleapis.com/cloud-samples-data/generative-ai/video/animals.mp4
+
+video_file = "animals.mp4"
+display(Video(video_file, embed=True, width=600))
+
+### CODE
+with open(video_file, "rb") as f:
+    video = f.read()
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+      types.Part.from_bytes(
+          data=video,
+          mime_type="video/mp4"
+      ),
+      "Generate an illustration of every animal featured in this video",
+    ],
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+    ),
+)
+
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+You can also generate images from YouTube videos and videos in Cloud Storage. Simply provide the `file_uri` and `mime_type` in the request.
+
+### CODE
+youtube_link = "https://www.youtube.com/watch?v=rjoMZyxncUI"
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+      types.Part.from_uri(
+          file_uri=youtube_link,
+          mime_type="video/mp4"
+      ),
+      "Generate an infographic of the topics covered in this video",
+    ],
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+    ),
+)
+
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+## Image editing
+
+You can also edit images with this model; simply pass the original image as part of the prompt.
+
+### MARKDOWN
+### Localization
+
+You can also translate the text in images through image editing. Start by downloading the image and displaying it below.
+
+### CODE
+!wget https://storage.googleapis.com/cloud-samples-data/generative-ai/image/city-street.png
+
+starting_image = "city-street.png"
+display(Image(filename=starting_image, width=500))
+
+### CODE
+with open(starting_image, "rb") as f:
+    image = f.read()
+
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+        types.Part.from_bytes(
+            data=image,
+            mime_type="image/png",
+        ),
+        "Change the text in this infographic from English to Japanese.",
+    ],
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Multi-turn image editing (chat)
+
+In this next section, you'll generate a starting image and iteratively alter certain aspects of the image by chatting with the model.
+
+### CODE
+chat = client.chats.create(
+    model=MODEL_ID,
+    config=types.GenerateContentConfig(response_modalities=["TEXT", "IMAGE"]),
+)
+
+message = "A minimalist overhead shot of two dense florist buckets on a smooth grey pavement. One contains a bouquet of pink baby's breath, and the other contains a cluster of pale blush poppies."
+response = chat.send_message(message)
+
+for part in response.candidates[0].content.parts:
+    if part.thought:
+        continue
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+Now, you'll send a new message in the existing chat to update the previously generated image.
+
+### CODE
+message = "Change the poppies to white dahlias and add a third bucket of pink hydrangeas in the top right corner."
+response = chat.send_message(message)
+
+for part in response.candidates[0].content.parts:
+    if part.thought:
+        continue
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
+
+### MARKDOWN
+### Multiple reference images
+
+With Nano Banana 2, you can include up to 14 reference images in a request to generate a new image that preserves the content of the original images.
+
+Run the following cell to visualize the starting images stored in Cloud Storage.
+
+### CODE
+from io import BytesIO
+
+import matplotlib.pyplot as plt
+import requests
+from PIL import Image as PIL_Image
+
+image_urls = [
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/woman.jpeg",
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/black-boots.jpg",
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/black-bag.jpg",
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/shirt.jpg",
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/jacket.jpg",
+    "https://storage.googleapis.com/cloud-samples-data/generative-ai/image/white-pants.jpg",
+]
+
+fig, axes = plt.subplots(2, 3, figsize=(12, 8))
+for i, ax in enumerate(axes.flatten()):
+    ax.imshow(PIL_Image.open(BytesIO(requests.get(image_urls[i]).content)))
+    ax.axis("off")
+plt.show()
+
+### MARKDOWN
+The process for sending the request is similar to previous image editing calls. The main difference is that you will provide multiple `Part.from_uri` instances, one for each reference image.
+
+### CODE
+response = client.models.generate_content(
+    model=MODEL_ID,
+    contents=[
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/woman.jpeg",
+            mime_type="image/jpeg",
+        ),
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/black-boots.jpg",
+            mime_type="image/png",
+        ),
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/black-bag.jpg",
+            mime_type="image/png",
+        ),
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/shirt.jpg",
+            mime_type="image/png",
+        ),
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/jacket.jpg",
+            mime_type="image/jpeg",
+        ),
+        types.Part.from_uri(
+            file_uri="gs://cloud-samples-data/generative-ai/image/white-pants.jpg",
+            mime_type="image/png",
+        ),
+        "Generate an image of a woman wearing white pants, a navy blue shirt, a cropped trench coat, and black boots. She's carrying a black bag. The outline of the woman is cropped against a piece of cardstock with a giant paperclip attached at the top.",
+    ],
+    config=types.GenerateContentConfig(
+        response_modalities=["TEXT", "IMAGE"],
+        image_config=types.ImageConfig(
+            aspect_ratio="4:3",
+        ),
+    ),
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text:
+        display(Markdown(part.text))
+    if part.inline_data:
+        display(Image(data=part.inline_data.data, width=500))
