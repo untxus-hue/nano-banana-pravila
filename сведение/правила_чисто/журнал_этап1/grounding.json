@@ -1,0 +1,157 @@
+[
+ {
+  "id": "П-grounding-1",
+  "поле": "content_en",
+  "было": "The model can search for relevant images on Google Search to visually ground its generations, providing high accuracy for specific species, landmarks and objects.",
+  "стало": "The model can search for relevant images on the web to visually ground its generations, providing high accuracy for specific species, landmarks and objects.",
+  "основание": "К-ПРОЧЕЕ",
+  "контроль": "",
+  "решение": "применено: имя продукта «Google Search» в content_en заменено на «the web» (линия прораба 3; самопроверка: нет «Google» в content_en); основание формулировки — цитата E-165-3 «images from web search» и caveats_en[1] записи. Вопрос В-2 отчёта конвертации (разрешить названия продуктов) — за прорабом"
+ },
+ {
+  "id": "П-grounding-2",
+  "поле": "caveats_en[1]",
+  "было": "The formula is given for NB2 and Pro in the section on real-time information from web search; the worked example is attributed to NB2 (models: pro, nb2).",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-2",
+  "поле": "caveats_en[2]",
+  "было": "At the time of the guide this feature was coming soon to Vertex AI; a later Agent Platform model card lists Grounding: Google Search as Supported (models: nb2).",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-2",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "The formula is given for NB2 and Pro in the section on real-time information from web search; the worked example is attributed to NB2 (models: pro, nb2).; At the time of the guide this feature was coming soon to Vertex AI; a later Agent Platform model card lists Grounding: Google Search as Supported (models: nb2).",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-3",
+  "поле": "caveats_en[0]",
+  "было": "The example prompts also say \"no text\" and set \"Aspect ratio 16:9\" (models: nb2).",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено: разбор набора примеров (выведено из примеров); сами предметы и фразы примеров остаются в forbids_in_output_en"
+ },
+ {
+  "id": "П-grounding-3",
+  "поле": "caveats_en[1]",
+  "было": "Across the example prompts only the place and the style vary: color chalk sketch, ink sketch, bright colored Synthetic Cubism; places: Museum Clos Lucé, Bletchley Park Mansion (models: nb2).",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено: разбор набора примеров (выведено из примеров); сами предметы и фразы примеров остаются в forbids_in_output_en"
+ },
+ {
+  "id": "П-grounding-3",
+  "поле": "паспорт.примечание",
+  "было": "Strength lowered from recommendation to possibility under K3: the example prompts stand in showcase sections (Capabilities - Apply real-world knowledge; Read the prompts), not presented as advice.",
+  "стало": "Strength lowered from recommendation to possibility under K3: the example prompts stand in showcase sections (Capabilities - Apply real-world knowledge; Read the prompts), not presented as advice.; The example prompts also say \"no text\" and set \"Aspect ratio 16:9\" (models: nb2).; Across the example prompts only the place and the style vary: color chalk sketch, ink sketch, bright colored Synthetic Cubism; places: Museum Clos Lucé, Bletchley Park Mansion (models: nb2).",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-5",
+  "поле": "content_en",
+  "было": "The model uses Gemini's real-world knowledge to deliver precise results and reflect the real world, from complex infographics to historically accurate scenes.",
+  "стало": "The model uses its real-world knowledge to deliver precise results and reflect the real world, from complex infographics to historically accurate scenes.",
+  "основание": "К-ПРОЧЕЕ",
+  "контроль": "замечания#30",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-5",
+  "поле": "not_applies_when_en",
+  "было": "Data after January 2025 or live data is needed: only search provides it (see the real-time web search rule and the knowledge cutoff rule).",
+  "стало": "Data after the model's knowledge cutoff or live data is needed: only search provides it.",
+  "основание": "К-ДАТА",
+  "контроль": "замечания#7",
+  "решение": "применено: дата «January 2025» (срез pro/nb2; запись на все четыре модели) заменена на «the model's knowledge cutoff» по предложению контролёра, исходный текст поля дословно в паспорт.примечание (линия прораба 4); ссылка «(see the real-time web search rule and the knowledge cutoff rule)» убрана"
+ },
+ {
+  "id": "П-grounding-5",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Data after January 2025 or live data is needed: only search provides it (see the real-time web search rule and the knowledge cutoff rule).",
+  "основание": "К-ДАТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-6",
+  "поле": "forbids_in_output_en",
+  "было": [
+   "Remember it is 2025 this year."
+  ],
+  "стало": [],
+  "основание": "К-ДАТА",
+  "контроль": "",
+  "решение": "применено: линия прораба 4 — дата (год) в forbids_in_output_en; фраза дословно в паспорт.примечание. Оговорки с этой фразой (caveats_en[1], [2]) — мета об источнике, тоже перенесены в примечание, так что в полях для генератора года больше нет"
+ },
+ {
+  "id": "П-grounding-6",
+  "поле": "caveats_en[0]",
+  "было": "Stated for Gemini 3 Flash, a text model; the source does not apply it to image models (models: other).",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-6",
+  "поле": "caveats_en[1]",
+  "было": "In the source the model confuses the current date and time for events in 2024 (models: other).",
+  "стало": "",
+  "основание": "Ч6; К-ДАТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-6",
+  "поле": "caveats_en[2]",
+  "было": "In the source the year is hard-coded: \"Remember it is 2025 this year.\" (models: other).",
+  "стало": "",
+  "основание": "Ч6; К-ДАТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-6",
+  "поле": "паспорт.примечание",
+  "было": "No Nano Banana model key is marked as applicable in the core: the advice is stated only for Gemini 3 Flash (key other), so models and models_partial are empty. The hard-coded year sentence of the source is kept in caveats_en and forbids_in_output_en because dates are not allowed in content_en.",
+  "стало": "No Nano Banana model key is marked as applicable in the core: the advice is stated only for Gemini 3 Flash (key other), so models and models_partial are empty. The hard-coded year sentence of the source is kept in caveats_en and forbids_in_output_en because dates are not allowed in content_en.; Remember it is 2025 this year.; Stated for Gemini 3 Flash, a text model; the source does not apply it to image models (models: other).; In the source the model confuses the current date and time for events in 2024 (models: other).; In the source the year is hard-coded: \"Remember it is 2025 this year.\" (models: other).",
+  "основание": "К-ДАТА; Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-7",
+  "поле": "caveats_en[0]",
+  "было": "Stated for Gemini 3 for a text answer based on the given context; image models are not named (models: unspecified).",
+  "стало": "",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#35",
+  "решение": "применено"
+ },
+ {
+  "id": "П-grounding-7",
+  "поле": "паспорт.примечание",
+  "было": "No model key is marked as applicable in the core (only unspecified): the source page is about Gemini 3 text answers and does not name an image model, so models and models_partial are empty.",
+  "стало": "No model key is marked as applicable in the core (only unspecified): the source page is about Gemini 3 text answers and does not name an image model, so models and models_partial are empty.; Stated for Gemini 3 for a text answer based on the given context; image models are not named (models: unspecified).",
+  "основание": "К-МЕТА",
+  "контроль": "",
+  "решение": "применено"
+ }
+]

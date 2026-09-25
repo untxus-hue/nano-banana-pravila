@@ -1,0 +1,191 @@
+[
+ {
+  "id": "П-форматы_разрешение-2",
+  "поле": "caveats_en[1]",
+  "было": "Canvas helper presets: 1:1 1024x1024, 3:4 768x1024, 4:3 1024x768, 9:16 720x1280, 16:9 1280x720 (notebook choice, not guaranteed output sizes). (models: nb25)",
+  "стало": "Canvas helper presets: 1:1 1024x1024, 3:4 768x1024, 4:3 1024x768, 9:16 720x1280, 16:9 1280x720 (not guaranteed output sizes). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-2",
+  "поле": "caveats_en[2]",
+  "было": "In the notebook the canvas is always referenced in the text too; no aspect-ratio config parameter is used. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено: оговорка о практике ноутбука; содержательная часть (канва упоминается и в тексте) уже есть в content_en, шаг 2"
+ },
+ {
+  "id": "П-форматы_разрешение-2",
+  "поле": "caveats_en[3]",
+  "было": "The prompting article controls aspect ratio only through prompt wording, the input image, the last uploaded image, or a correctly sized reference, never an API parameter. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-2",
+  "поле": "caveats_en[4]",
+  "было": "This is a recipe from the preview era, before the GA aspect_ratio parameter. (models: nb25)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-2",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Canvas helper presets: 1:1 1024x1024, 3:4 768x1024, 4:3 1024x768, 9:16 720x1280, 16:9 1280x720 (notebook choice, not guaranteed output sizes). (models: nb25); In the notebook the canvas is always referenced in the text too; no aspect-ratio config parameter is used. (models: nb25); The prompting article controls aspect ratio only through prompt wording, the input image, the last uploaded image, or a correctly sized reference, never an API parameter. (models: nb25); This is a recipe from the preview era, before the GA aspect_ratio parameter. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-3",
+  "поле": "caveats_en[2]",
+  "было": "Think about composition, style, image quality and aspect ratio; the product page calls the ratio \"size\". (models: nb2)",
+  "стало": "Think about composition, style, image quality and aspect ratio. (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-3",
+  "поле": "caveats_en[3]",
+  "было": "Desired dimensions can be prompted for, but the output can fail to support the request (see the aspect ratio adherence core). (models: nb25)",
+  "стало": "Desired dimensions can be prompted for, but the output can fail to support the request. (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-3",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Think about composition, style, image quality and aspect ratio; the product page calls the ratio \"size\". (models: nb2); Desired dimensions can be prompted for, but the output can fail to support the request (see the aspect ratio adherence core). (models: nb25)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-4",
+  "поле": "caveats_en[3]",
+  "было": "The product FAQ builds prompts in layers and writes the ratio as text at the end, for example \"... with 2:3 aspect ratio.\" (models: nb2)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено: подлежащее — страница (FAQ продукта); содержательная часть (соотношение текстом в конце) уже есть в models_partial[nb2] и в examples (E-213-21)"
+ },
+ {
+  "id": "П-форматы_разрешение-4",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "The product FAQ builds prompts in layers and writes the ratio as text at the end, for example \"... with 2:3 aspect ratio.\" (models: nb2)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-5",
+  "поле": "caveats_en[3]",
+  "было": "Next to the example prompts on the model showcase pages, the product blogs and the marketing guide, no separate aspect-ratio parameter is shown. (models: pro, nb2)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-5",
+  "поле": "caveats_en[4]",
+  "было": "Counter-examples: a cookbook follow-up turn \"in an ultra-wide panoramic shot\" runs with aspect_ratio 16:9 in the config, and the page with the interleaved example also shows REST imageConfig.aspectRatio \"16:9\". (models: unspecified)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-5",
+  "поле": "caveats_en[5]",
+  "было": "For Lite the only support is an interleaved example page that lists Lite among its models. (models: lite)",
+  "стало": "",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-5",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Next to the example prompts on the model showcase pages, the product blogs and the marketing guide, no separate aspect-ratio parameter is shown. (models: pro, nb2); Counter-examples: a cookbook follow-up turn \"in an ultra-wide panoramic shot\" runs with aspect_ratio 16:9 in the config, and the page with the interleaved example also shows REST imageConfig.aspectRatio \"16:9\". (models: unspecified); For Lite the only support is an interleaved example page that lists Lite among its models. (models: lite)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-6",
+  "поле": "caveats_en[0]",
+  "было": "Key update: \"Improved aspect ratio adherence\" (the baseline is not named). (models: nb2)",
+  "стало": "Key update: \"Improved aspect ratio adherence\". (models: nb2)",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#75",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-6",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Key update: \"Improved aspect ratio adherence\" (the baseline is not named). (models: nb2)",
+  "основание": "К-МЕТА",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-7",
+  "поле": "caveats_en[0]",
+  "было": "Ratios requested in prompt text across the examples: 1:1, 4:3, 5:3, 1.85:1, 2.39:1, 2.75:1, 4:1, 9:16, 1:4; whether these are API-supported presets is not stated. (models: pro)",
+  "стало": "Ratios requested in prompt text across the examples: 1:1, 4:3, 5:3, 1.85:1, 2.39:1, 2.75:1, 4:1, 9:16, 1:4. (models: pro)",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#76",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-7",
+  "поле": "caveats_en[1]",
+  "было": "\"Reducing background\" is used for narrower targets, \"expanding background\" or \"expanding image downwards and upwards\" for wider or vertical ones (reading of the example sets). (models: pro)",
+  "стало": "\"Reducing background\" is used for narrower targets, \"expanding background\" or \"expanding image downwards and upwards\" for wider or vertical ones. (models: pro)",
+  "основание": "Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-7",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Ratios requested in prompt text across the examples: 1:1, 4:3, 5:3, 1.85:1, 2.39:1, 2.75:1, 4:1, 9:16, 1:4; whether these are API-supported presets is not stated. (models: pro); \"Reducing background\" is used for narrower targets, \"expanding background\" or \"expanding image downwards and upwards\" for wider or vertical ones (reading of the example sets). (models: pro)",
+  "основание": "К-МЕТА; Ч6",
+  "контроль": "",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-8",
+  "поле": "caveats_en[1]",
+  "было": "Instantly resize creations to fit whatever format is required, all without cropping the details; how this is done is not stated. (models: nb2)",
+  "стало": "Instantly resize creations to fit whatever format is required, all without cropping the details. (models: nb2)",
+  "основание": "К-МЕТА",
+  "контроль": "замечания#77",
+  "решение": "применено"
+ },
+ {
+  "id": "П-форматы_разрешение-8",
+  "поле": "паспорт.примечание",
+  "было": "",
+  "стало": "Instantly resize creations to fit whatever format is required, all without cropping the details; how this is done is not stated. (models: nb2)",
+  "основание": "К-МЕТА",
+  "контроль": "",
+  "решение": "применено"
+ }
+]
